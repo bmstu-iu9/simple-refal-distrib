@@ -19,7 +19,7 @@ setlocal
   pushd %DIR%
   set FILELIST=%MAINSRC%.cpp
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINE% -I..\srlib %FILELIST%
+  %CPPLINE% -I..\srlib -DDONT_PRINT_STATISTICS %FILELIST%
   if exist %MAINSRC%.exe move %MAINSRC%.exe ..\bin\%TARGET%.exe
   if exist a.exe move a.exe ..\bin\%TARGET%.exe
   if exist *.obj erase *.obj

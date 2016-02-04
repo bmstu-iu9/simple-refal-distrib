@@ -7,7 +7,7 @@ make_dir() {
   DIR=$1
   TARGET=$2
 
-  $CPPLINE -Isrlib -obin/$TARGET $DIR/*.cpp
+  $CPPLINE -Isrlib -DDONT_PRINT_STATISTICS -obin/$TARGET $DIR/*.cpp
 }
 
 make_dir compiler srefc
