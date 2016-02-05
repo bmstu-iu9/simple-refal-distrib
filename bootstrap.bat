@@ -3,9 +3,9 @@ setlocal
   mkdir bin >NUL 2>NUL
   call c-plus-plus.conf.bat
 
-  call :MAKE_DIR compiler srefc srefc
+  call :MAKE_DIR compiler srefc-core srefc
   call :MAKE_DIR lexgen lexgen LexGen
-  call :MAKE_DIR srmake srmake SRMake
+  call :MAKE_DIR srmake srmake-core SRMake
 
   goto :EOF
 endlocal

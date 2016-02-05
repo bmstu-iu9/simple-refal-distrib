@@ -1,2 +1,2 @@
 @echo off
-rd /s /q bin
+erase bin\*.exe

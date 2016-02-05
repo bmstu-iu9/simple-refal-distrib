@@ -10,6 +10,6 @@ make_dir() {
   $CPPLINE -Isrlib -DDONT_PRINT_STATISTICS -obin/$TARGET $DIR/*.cpp
 }
 
-make_dir compiler srefc
+make_dir compiler srefc-core
 make_dir lexgen lexgen
-make_dir srmake srmake
+make_dir srmake srmake-core

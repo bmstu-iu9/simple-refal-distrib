@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf bin
+rm -f bin/*-core bin/lexgen
