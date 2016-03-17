@@ -760,12 +760,13 @@ static refalrts::FnResult ShiftVariable(refalrts::Iter arg_begin, refalrts::Iter
     //4: e.Variables#1/1
     //6: s.Mode#1/1
     //7: s.VarDepth#1/1
+    //8: e.Index#1/1
     // ( s.Mode#1 e.Index#1 s.VarDepth#1 ) e.Variables#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icContextSet, 0, 4, 0},
     {refalrts::icsVarLeft, 0, 6, 2},
     {refalrts::icsVarRight, 0, 7, 2},
-    // Unused closed variable e.Index#1
+    {refalrts::icContextSet, 0, 8, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icSpliceEVar, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -938,6 +939,7 @@ static refalrts::FnResult ShiftVariable(refalrts::Iter arg_begin, refalrts::Iter
   //4: e.Variables#1/1
   //6: s.Mode#1/1
   //7: s.VarDepth#1/1
+  //8: e.Index#1/1
   // ( s.Mode#1 e.Index#1 s.VarDepth#1 ) e.Variables#1
   context[2] = 0;
   context[3] = 0;
@@ -949,7 +951,8 @@ static refalrts::FnResult ShiftVariable(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_right( context[7], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Index#1
+  context[8] = context[2];
+  context[9] = context[3];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -2117,12 +2120,13 @@ refalrts::FnResult Cntx_CheckVariable(refalrts::Iter arg_begin, refalrts::Iter a
     //8: s.StackDepth#1/1
     //9: e.Variables#1/1
     //11: s.Mode#1/1
+    //12: e.Index#1/1
     // [Context  s.StackDepth#1 e.Variables#1 ] s.Mode#1 e.Index#1
     {refalrts::icADTLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 8, 2},
     {refalrts::icContextSet, 0, 9, 2},
     {refalrts::icsVarLeft, 0, 11, 0},
-    // Unused closed variable e.Index#1
+    {refalrts::icContextSet, 0, 12, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenADT, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -2350,6 +2354,7 @@ refalrts::FnResult Cntx_CheckVariable(refalrts::Iter arg_begin, refalrts::Iter a
   //8: s.StackDepth#1/1
   //9: e.Variables#1/1
   //11: s.Mode#1/1
+  //12: e.Index#1/1
   // [Context  s.StackDepth#1 e.Variables#1 ] s.Mode#1 e.Index#1
   context[2] = 0;
   context[3] = 0;
@@ -2361,7 +2366,8 @@ refalrts::FnResult Cntx_CheckVariable(refalrts::Iter arg_begin, refalrts::Iter a
   context[10] = context[3];
   if( ! refalrts::svar_left( context[11], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Index#1
+  context[12] = context[0];
+  context[13] = context[1];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;

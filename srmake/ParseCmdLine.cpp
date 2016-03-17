@@ -193,8 +193,10 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +19, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
     // ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
@@ -203,8 +205,8 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 6},
     {refalrts::icEmpty, 0, 0, 6},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
+    {refalrts::icContextSet, 0, 13, 2},
+    {refalrts::icContextSet, 0, 15, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icIdent, 0, 1, 9},
@@ -263,8 +265,10 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +19, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
     // ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-d' )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
@@ -273,8 +277,8 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 6},
     {refalrts::icEmpty, 0, 0, 6},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
+    {refalrts::icContextSet, 0, 13, 2},
+    {refalrts::icContextSet, 0, 15, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icIdent, 0, 1, 9},
@@ -504,6 +508,8 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
     // ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' )
     context[2] = 0;
     context[3] = 0;
@@ -525,8 +531,10 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[4];
+    context[16] = context[5];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -641,6 +649,8 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
     // ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-d' )
     context[2] = 0;
     context[3] = 0;
@@ -662,8 +672,10 @@ static refalrts::FnResult DoParseCommandLine(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[4];
+    context[16] = context[5];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -912,9 +924,13 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {"Multiple declaration of C++ compiler command line", 49}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +24, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //15: t.Compiler#1/1
+    //16: e.ScannedFiles#1/1
+    //18: e.Folders#1/1
+    //20: e.CompileCommand#1/1
+    //22: e.Options#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' ) ( e.CompileCommand#1 ) e.Options#1
     {refalrts::ictVarLeft, 0, 15, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
@@ -924,10 +940,10 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 6},
     {refalrts::icBracketLeft, 0, 8, 0},
     {refalrts::icEmpty, 0, 0, 6},
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.CompileCommand#1
-    // Unused closed variable e.Options#1
+    {refalrts::icContextSet, 0, 16, 2},
+    {refalrts::icContextSet, 0, 18, 4},
+    {refalrts::icContextSet, 0, 20, 8},
+    {refalrts::icContextSet, 0, 22, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 10},
     {refalrts::icIdent, 0, 0, 11},
@@ -939,9 +955,11 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +22, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //13: t.Compiler#1/1
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
+    //17: t.Compiler#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' )
     {refalrts::icBracketRight, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 2},
@@ -949,9 +967,9 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icBracketRight, 0, 4, 0},
     {refalrts::icBracketRight, 0, 6, 0},
     {refalrts::icEmpty, 0, 0, 2},
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    {refalrts::ictVarLeft, 0, 13, 0},
+    {refalrts::icContextSet, 0, 13, 6},
+    {refalrts::icContextSet, 0, 15, 4},
+    {refalrts::ictVarLeft, 0, 17, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
@@ -1014,9 +1032,11 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +22, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //13: t.Compiler#1/1
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
+    //17: t.Compiler#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-d' )
     {refalrts::icBracketRight, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 2},
@@ -1024,9 +1044,9 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icBracketRight, 0, 4, 0},
     {refalrts::icBracketRight, 0, 6, 0},
     {refalrts::icEmpty, 0, 0, 2},
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    {refalrts::ictVarLeft, 0, 13, 0},
+    {refalrts::icContextSet, 0, 13, 6},
+    {refalrts::icContextSet, 0, 15, 4},
+    {refalrts::ictVarLeft, 0, 17, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
@@ -1164,6 +1184,10 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //15: t.Compiler#1/1
+    //16: e.ScannedFiles#1/1
+    //18: e.Folders#1/1
+    //20: e.CompileCommand#1/1
+    //22: e.Options#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' ) ( e.CompileCommand#1 ) e.Options#1
     if( ! refalrts::tvar_left( context[15], context[0], context[1] ) )
       continue;
@@ -1189,10 +1213,14 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.CompileCommand#1
-    // Unused closed variable e.Options#1
+    context[16] = context[2];
+    context[17] = context[3];
+    context[18] = context[4];
+    context[19] = context[5];
+    context[20] = context[8];
+    context[21] = context[9];
+    context[22] = context[0];
+    context[23] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -1221,7 +1249,9 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //13: t.Compiler#1/1
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
+    //17: t.Compiler#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-c' )
     context[2] = 0;
     context[3] = 0;
@@ -1241,9 +1271,11 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    if( ! refalrts::tvar_left( context[13], context[0], context[1] ) )
+    context[13] = context[6];
+    context[14] = context[7];
+    context[15] = context[4];
+    context[16] = context[5];
+    if( ! refalrts::tvar_left( context[17], context[0], context[1] ) )
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
@@ -1365,7 +1397,9 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //13: t.Compiler#1/1
+    //13: e.ScannedFiles#1/1
+    //15: e.Folders#1/1
+    //17: t.Compiler#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( '-d' )
     context[2] = 0;
     context[3] = 0;
@@ -1385,9 +1419,11 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // Unused closed variable e.ScannedFiles#1
-    // Unused closed variable e.Folders#1
-    if( ! refalrts::tvar_left( context[13], context[0], context[1] ) )
+    context[13] = context[6];
+    context[14] = context[7];
+    context[15] = context[4];
+    context[16] = context[5];
+    if( ! refalrts::tvar_left( context[17], context[0], context[1] ) )
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
@@ -1613,9 +1649,9 @@ static refalrts::FnResult DoParseFileNames(refalrts::Iter arg_begin, refalrts::I
 
 static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
+  // issue here memory for vars with 24 elems
+  refalrts::Iter context[24];
+  refalrts::zeros( context, 24 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { DoParseFileNamesOnly, "DoParseFileNamesOnly" }
@@ -1624,21 +1660,22 @@ static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrt
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +32, 0, 0},
+    {refalrts::icOnFailGoTo, +33, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //15: t.Compiler#1/1
     //16: e.ScannedFiles#1/1
-    //18: e.NextFileName#1/1
-    //20: e.Files#1/1
+    //18: e.Folders#1/1
+    //20: e.NextFileName#1/1
+    //22: e.Files#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( e.NextFileName#1 ) e.Files#1
     {refalrts::ictVarLeft, 0, 15, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icBracketLeft, 0, 6, 0},
     {refalrts::icContextSet, 0, 16, 2},
-    // Unused closed variable e.Folders#1
-    {refalrts::icContextSet, 0, 18, 6},
-    {refalrts::icContextSet, 0, 20, 0},
+    {refalrts::icContextSet, 0, 18, 4},
+    {refalrts::icContextSet, 0, 20, 6},
+    {refalrts::icContextSet, 0, 22, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icFunc, 0, 0, 9},
@@ -1650,12 +1687,12 @@ static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 14},
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icSpliceElem, 0, 0, 14},
-    {refalrts::icSpliceEVar, 0, 0, 20},
+    {refalrts::icSpliceEVar, 0, 0, 22},
     {refalrts::icLinkBrackets, 10, 13, 0},
     {refalrts::icSpliceElem, 0, 0, 13},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
-    {refalrts::icSpliceEVar, 0, 0, 18},
+    {refalrts::icSpliceEVar, 0, 0, 20},
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icSpliceElem, 0, 0, 10},
@@ -1702,8 +1739,9 @@ static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //15: t.Compiler#1/1
     //16: e.ScannedFiles#1/1
-    //18: e.NextFileName#1/1
-    //20: e.Files#1/1
+    //18: e.Folders#1/1
+    //20: e.NextFileName#1/1
+    //22: e.Files#1/1
     // t.Compiler#1 ( e.ScannedFiles#1 ) ( e.Folders#1 ) ( e.NextFileName#1 ) e.Files#1
     if( ! refalrts::tvar_left( context[15], context[0], context[1] ) )
       continue;
@@ -1721,11 +1759,12 @@ static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrt
       continue;
     context[16] = context[2];
     context[17] = context[3];
-    // Unused closed variable e.Folders#1
-    context[18] = context[6];
-    context[19] = context[7];
-    context[20] = context[0];
-    context[21] = context[1];
+    context[18] = context[4];
+    context[19] = context[5];
+    context[20] = context[6];
+    context[21] = context[7];
+    context[22] = context[0];
+    context[23] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -1746,12 +1785,12 @@ static refalrts::FnResult DoParseFileNamesOnly(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[14] );
     refalrts::push_stack( context[8] );
     res = refalrts::splice_elem( res, context[14] );
-    res = refalrts::splice_evar( res, context[20], context[21] );
+    res = refalrts::splice_evar( res, context[22], context[23] );
     refalrts::link_brackets( context[10], context[13] );
     res = refalrts::splice_elem( res, context[13] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
-    res = refalrts::splice_evar( res, context[18], context[19] );
+    res = refalrts::splice_evar( res, context[20], context[21] );
     res = refalrts::splice_elem( res, context[11] );
     res = refalrts::splice_evar( res, context[16], context[17] );
     res = refalrts::splice_elem( res, context[10] );

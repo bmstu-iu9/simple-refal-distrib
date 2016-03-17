@@ -5243,7 +5243,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //29: s.Sample#1/1
     //30: e.Indent#1/2
     //32: e.Indent#1/3
-    // ( e.Indent#1 ) ( # CmdCopyVar 'e s.Target#1 s.Sample#1 )
+    // ( e.Indent#1 ) ( # CmdCopyVar 'e' s.Target#1 s.Sample#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icIdentLeft, 0, 48, 4},
@@ -5632,7 +5632,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //17: e.Indent#1/1
     //19: s.Number#1/1
     //20: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdInsertVar 'e s.Number#1 )
+    // ( e.Indent#1 ) ( # CmdInsertVar 'e' s.Number#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icIdentLeft, 0, 42, 4},
@@ -7589,7 +7589,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //24: s.Target#1/1
     //25: s.Sample#1/1
     //26: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdArrCopy 'e s.Target#1 s.Sample#1 )
+    // ( e.Indent#1 ) ( # CmdArrCopy 'e' s.Target#1 s.Sample#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icIdentLeft, 0, 11, 4},
@@ -7699,7 +7699,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //17: e.Indent#1/1
     //19: s.Offset#1/1
     //20: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdArrSplice 'e s.Offset#1 )
+    // ( e.Indent#1 ) ( # CmdArrSplice 'e' s.Offset#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icIdentLeft, 0, 10, 4},
@@ -10400,7 +10400,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //29: s.Sample#1/1
     //30: e.Indent#1/2
     //32: e.Indent#1/3
-    // ( e.Indent#1 ) ( # CmdCopyVar 'e s.Target#1 s.Sample#1 )
+    // ( e.Indent#1 ) ( # CmdCopyVar 'e' s.Target#1 s.Sample#1 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -11053,7 +11053,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //17: e.Indent#1/1
     //19: s.Number#1/1
     //20: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdInsertVar 'e s.Number#1 )
+    // ( e.Indent#1 ) ( # CmdInsertVar 'e' s.Number#1 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14356,7 +14356,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //24: s.Target#1/1
     //25: s.Sample#1/1
     //26: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdArrCopy 'e s.Target#1 s.Sample#1 )
+    // ( e.Indent#1 ) ( # CmdArrCopy 'e' s.Target#1 s.Sample#1 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14542,7 +14542,7 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     //17: e.Indent#1/1
     //19: s.Offset#1/1
     //20: e.Indent#1/2
-    // ( e.Indent#1 ) ( # CmdArrSplice 'e s.Offset#1 )
+    // ( e.Indent#1 ) ( # CmdArrSplice 'e' s.Offset#1 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -16636,9 +16636,9 @@ static refalrts::FnResult PrintMatchADT(refalrts::Iter arg_begin, refalrts::Iter
 
 static refalrts::FnResult BreakerFromIndent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 4 elems
-  refalrts::Iter context[4];
-  refalrts::zeros( context, 4 );
+  // issue here memory for vars with 6 elems
+  refalrts::Iter context[6];
+  refalrts::zeros( context, 6 );
 #ifdef INTERPRET
   using refalrts::functions;
   using refalrts::idents;
@@ -16659,8 +16659,9 @@ static refalrts::FnResult BreakerFromIndent(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceRange, 0, 0, 2},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //4: e.OtherIndent#1/1
     // e.OtherIndent#1
-    // Unused closed variable e.OtherIndent#1
+    {refalrts::icContextSet, 0, 4, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icString, 0, 0, 2},
     {refalrts::icSpliceRange, 0, 0, 2},
@@ -16704,8 +16705,10 @@ static refalrts::FnResult BreakerFromIndent(refalrts::Iter arg_begin, refalrts::
   refalrts::move_left( context[0], context[1] );
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
+  //4: e.OtherIndent#1/1
   // e.OtherIndent#1
-  // Unused closed variable e.OtherIndent#1
+  context[4] = context[0];
+  context[5] = context[1];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -17243,7 +17246,7 @@ static refalrts::FnResult PrintMatchRepeated(refalrts::Iter arg_begin, refalrts:
     //24: s.BracketNumber#1/1
     //25: s.VarNumber#1/1
     //26: s.SampleNumber#1/1
-    // ( e.Indent#1 ) s.Direction#1 s.BracketNumber#1 'e s.VarNumber#1 s.SampleNumber#1
+    // ( e.Indent#1 ) s.Direction#1 s.BracketNumber#1 'e' s.VarNumber#1 s.SampleNumber#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icContextSet, 0, 21, 2},
     {refalrts::icsVarLeft, 0, 23, 0},
@@ -17379,7 +17382,7 @@ static refalrts::FnResult PrintMatchRepeated(refalrts::Iter arg_begin, refalrts:
     //24: s.BracketNumber#1/1
     //25: s.VarNumber#1/1
     //26: s.SampleNumber#1/1
-    // ( e.Indent#1 ) s.Direction#1 s.BracketNumber#1 'e s.VarNumber#1 s.SampleNumber#1
+    // ( e.Indent#1 ) s.Direction#1 s.BracketNumber#1 'e' s.VarNumber#1 s.SampleNumber#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )

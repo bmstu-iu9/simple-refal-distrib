@@ -1877,9 +1877,9 @@ static refalrts::FnResult CollectorObject(refalrts::Iter arg_begin, refalrts::It
 
 static refalrts::FnResult lambda_Collector_Compiler_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 6 elems
-  refalrts::Iter context[6];
-  refalrts::zeros( context, 6 );
+  // issue here memory for vars with 7 elems
+  refalrts::Iter context[7];
+  refalrts::zeros( context, 7 );
 #ifdef INTERPRET
   using refalrts::functions;
   static const refalrts::RefalIdentifier idents[] = {
@@ -1902,11 +1902,12 @@ static refalrts::FnResult lambda_Collector_Compiler_0(refalrts::Iter arg_begin, 
     {refalrts::icSpliceEVar, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //5: e.Command#1/1
     // ( e.Command#1 ) # ErrorFile
     {refalrts::icIdentRight, 0, 1, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.Command#1
+    {refalrts::icContextSet, 0, 5, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icIdent, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 4},
@@ -1953,6 +1954,7 @@ static refalrts::FnResult lambda_Collector_Compiler_0(refalrts::Iter arg_begin, 
   refalrts::move_left( context[0], context[1] );
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
+  //5: e.Command#1/1
   // ( e.Command#1 ) # ErrorFile
   if( ! refalrts::ident_right(  & ident_ErrorFile<int>::name, context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -1962,7 +1964,8 @@ static refalrts::FnResult lambda_Collector_Compiler_0(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Command#1
+  context[5] = context[2];
+  context[6] = context[3];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -1999,17 +2002,21 @@ static refalrts::FnResult lambda_Collector_Compiler_1(refalrts::Iter arg_begin, 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +19, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //11: e.Command#1/1
+    //13: e.Folders#1/1
+    //15: e.Files#1/1
+    //17: e.NewCommand#2/1
     // ( e.Command#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddCompileCommand e.NewCommand#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icBracketLeft, 0, 6, 0},
     {refalrts::icIdentLeft, 0, 5, 0},
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewCommand#2
+    {refalrts::icContextSet, 0, 11, 2},
+    {refalrts::icContextSet, 0, 13, 4},
+    {refalrts::icContextSet, 0, 15, 6},
+    {refalrts::icContextSet, 0, 17, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icFunc, 0, 4, 9},
@@ -2213,6 +2220,10 @@ static refalrts::FnResult lambda_Collector_Compiler_1(refalrts::Iter arg_begin, 
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //11: e.Command#1/1
+    //13: e.Folders#1/1
+    //15: e.Files#1/1
+    //17: e.NewCommand#2/1
     // ( e.Command#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddCompileCommand e.NewCommand#2
     context[2] = 0;
     context[3] = 0;
@@ -2228,10 +2239,14 @@ static refalrts::FnResult lambda_Collector_Compiler_1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::ident_left(  & ident_AddCompileCommand<int>::name, context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewCommand#2
+    context[11] = context[2];
+    context[12] = context[3];
+    context[13] = context[4];
+    context[14] = context[5];
+    context[15] = context[6];
+    context[16] = context[7];
+    context[17] = context[0];
+    context[18] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -2771,9 +2786,9 @@ static refalrts::FnResult Collector_Error_CC(refalrts::Iter arg_begin, refalrts:
 
 static refalrts::FnResult lambda_Collector_ErrorFile_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 6 elems
-  refalrts::Iter context[6];
-  refalrts::zeros( context, 6 );
+  // issue here memory for vars with 7 elems
+  refalrts::Iter context[7];
+  refalrts::zeros( context, 7 );
 #ifdef INTERPRET
   using refalrts::functions;
   static const refalrts::RefalIdentifier idents[] = {
@@ -2784,13 +2799,14 @@ static refalrts::FnResult lambda_Collector_ErrorFile_0(refalrts::Iter arg_begin,
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +8, 0, 0},
+    {refalrts::icOnFailGoTo, +9, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //5: e.ErrorFile#1/1
     // ( e.ErrorFile#1 ) # CompileCommand
     {refalrts::icIdentRight, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.ErrorFile#1
+    {refalrts::icContextSet, 0, 5, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icIdent, 0, 1, 4},
     {refalrts::icSpliceElem, 0, 0, 4},
@@ -2821,6 +2837,7 @@ static refalrts::FnResult lambda_Collector_ErrorFile_0(refalrts::Iter arg_begin,
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //5: e.ErrorFile#1/1
     // ( e.ErrorFile#1 ) # CompileCommand
     if( ! refalrts::ident_right(  & ident_CompileCommand<int>::name, context[0], context[1] ) )
       continue;
@@ -2830,7 +2847,8 @@ static refalrts::FnResult lambda_Collector_ErrorFile_0(refalrts::Iter arg_begin,
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.ErrorFile#1
+    context[5] = context[2];
+    context[6] = context[3];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -2942,10 +2960,12 @@ static refalrts::FnResult lambda_Collector_ErrorFile_1(refalrts::Iter arg_begin,
     {refalrts::icSpliceElem, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 8},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +18, 0, 0},
+    {refalrts::icOnFailGoTo, +20, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //11: e.ErrorFile#1/1
     //13: e.ErrorFile#1/2
+    //15: e.Folders#1/1
+    //17: e.Files#1/1
     // ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddErrorFile e.ErrorFile#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
@@ -2954,8 +2974,8 @@ static refalrts::FnResult lambda_Collector_ErrorFile_1(refalrts::Iter arg_begin,
     {refalrts::icContextSet, 0, 11, 2},
     {refalrts::iceRepeatLeft, 13, 11, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
+    {refalrts::icContextSet, 0, 15, 4},
+    {refalrts::icContextSet, 0, 17, 6},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icFunc, 0, 3, 9},
@@ -3197,6 +3217,8 @@ static refalrts::FnResult lambda_Collector_ErrorFile_1(refalrts::Iter arg_begin,
     refalrts::move_right( context[0], context[1] );
     //11: e.ErrorFile#1/1
     //13: e.ErrorFile#1/2
+    //15: e.Folders#1/1
+    //17: e.Files#1/1
     // ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddErrorFile e.ErrorFile#1
     context[2] = 0;
     context[3] = 0;
@@ -3218,8 +3240,10 @@ static refalrts::FnResult lambda_Collector_ErrorFile_1(refalrts::Iter arg_begin,
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
+    context[15] = context[4];
+    context[16] = context[5];
+    context[17] = context[6];
+    context[18] = context[7];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -3674,9 +3698,9 @@ static refalrts::FnResult Collector_Error_EF(refalrts::Iter arg_begin, refalrts:
 
 static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 8 elems
-  refalrts::Iter context[8];
-  refalrts::zeros( context, 8 );
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
 #ifdef INTERPRET
   using refalrts::functions;
   static const refalrts::RefalIdentifier idents[] = {
@@ -3686,28 +3710,30 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter a
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +9, 0, 0},
+    {refalrts::icOnFailGoTo, +10, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //6: e.Command#1/1
+    //6: e.ErrorFile#1/1
+    //8: e.Command#1/1
     // ( e.ErrorFile#1 ) ( e.Command#1 ) # CompileCommand
     {refalrts::icIdentRight, 0, 1, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.ErrorFile#1
-    {refalrts::icContextSet, 0, 6, 4},
+    {refalrts::icContextSet, 0, 6, 2},
+    {refalrts::icContextSet, 0, 8, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icSpliceEVar, 0, 0, 6},
+    {refalrts::icSpliceEVar, 0, 0, 8},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //6: e.ErrorFile#1/1
+    //8: e.Command#1/1
     // ( e.ErrorFile#1 ) ( e.Command#1 ) # ErrorFile
     {refalrts::icIdentRight, 0, 0, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icContextSet, 0, 6, 2},
-    // Unused closed variable e.Command#1
+    {refalrts::icContextSet, 0, 8, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icSpliceEVar, 0, 0, 6},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -3727,7 +3753,8 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter a
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //6: e.Command#1/1
+    //6: e.ErrorFile#1/1
+    //8: e.Command#1/1
     // ( e.ErrorFile#1 ) ( e.Command#1 ) # CompileCommand
     if( ! refalrts::ident_right(  & ident_CompileCommand<int>::name, context[0], context[1] ) )
       continue;
@@ -3741,13 +3768,14 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter a
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.ErrorFile#1
-    context[6] = context[4];
-    context[7] = context[5];
+    context[6] = context[2];
+    context[7] = context[3];
+    context[8] = context[4];
+    context[9] = context[5];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    res = refalrts::splice_evar( res, context[6], context[7] );
+    res = refalrts::splice_evar( res, context[8], context[9] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -3759,6 +3787,7 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter a
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
   //6: e.ErrorFile#1/1
+  //8: e.Command#1/1
   // ( e.ErrorFile#1 ) ( e.Command#1 ) # ErrorFile
   if( ! refalrts::ident_right(  & ident_ErrorFile<int>::name, context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -3774,7 +3803,8 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_0(refalrts::Iter a
     return refalrts::cRecognitionImpossible;
   context[6] = context[2];
   context[7] = context[3];
-  // Unused closed variable e.Command#1
+  context[8] = context[4];
+  context[9] = context[5];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -3809,19 +3839,24 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +16, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //13: e.Command#1/1
+    //15: e.ErrorFile#1/1
+    //17: e.Folders#1/1
+    //19: e.Files#1/1
+    //21: e.NewCommand#2/1
     // ( e.Command#1 ) ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddCompileCommand e.NewCommand#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icBracketLeft, 0, 6, 0},
     {refalrts::icBracketLeft, 0, 8, 0},
     {refalrts::icIdentLeft, 0, 5, 0},
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.ErrorFile#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewCommand#2
+    {refalrts::icContextSet, 0, 13, 2},
+    {refalrts::icContextSet, 0, 15, 4},
+    {refalrts::icContextSet, 0, 17, 6},
+    {refalrts::icContextSet, 0, 19, 8},
+    {refalrts::icContextSet, 0, 21, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 10},
     {refalrts::icFunc, 0, 4, 11},
@@ -3832,19 +3867,24 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +16, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //13: e.Command#1/1
+    //15: e.ErrorFile#1/1
+    //17: e.Folders#1/1
+    //19: e.Files#1/1
+    //21: e.NewFile#2/1
     // ( e.Command#1 ) ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddErrorFile e.NewFile#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icBracketLeft, 0, 6, 0},
     {refalrts::icBracketLeft, 0, 8, 0},
     {refalrts::icIdentLeft, 0, 4, 0},
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.ErrorFile#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewFile#2
+    {refalrts::icContextSet, 0, 13, 2},
+    {refalrts::icContextSet, 0, 15, 4},
+    {refalrts::icContextSet, 0, 17, 6},
+    {refalrts::icContextSet, 0, 19, 8},
+    {refalrts::icContextSet, 0, 21, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 10},
     {refalrts::icFunc, 0, 3, 11},
@@ -4036,6 +4076,11 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //13: e.Command#1/1
+    //15: e.ErrorFile#1/1
+    //17: e.Folders#1/1
+    //19: e.Files#1/1
+    //21: e.NewCommand#2/1
     // ( e.Command#1 ) ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddCompileCommand e.NewCommand#2
     context[2] = 0;
     context[3] = 0;
@@ -4055,11 +4100,16 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
       continue;
     if( ! refalrts::ident_left(  & ident_AddCompileCommand<int>::name, context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.ErrorFile#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewCommand#2
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[4];
+    context[16] = context[5];
+    context[17] = context[6];
+    context[18] = context[7];
+    context[19] = context[8];
+    context[20] = context[9];
+    context[21] = context[0];
+    context[22] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4086,6 +4136,11 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //13: e.Command#1/1
+    //15: e.ErrorFile#1/1
+    //17: e.Folders#1/1
+    //19: e.Files#1/1
+    //21: e.NewFile#2/1
     // ( e.Command#1 ) ( e.ErrorFile#1 ) ( e.Folders#1 ) ( e.Files#1 ) # AddErrorFile e.NewFile#2
     context[2] = 0;
     context[3] = 0;
@@ -4105,11 +4160,16 @@ static refalrts::FnResult lambda_Collector_Compiler_ErrorFile_1(refalrts::Iter a
       continue;
     if( ! refalrts::ident_left(  & ident_AddErrorFile<int>::name, context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Command#1
-    // Unused closed variable e.ErrorFile#1
-    // Unused closed variable e.Folders#1
-    // Unused closed variable e.Files#1
-    // Unused closed variable e.NewFile#2
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[4];
+    context[16] = context[5];
+    context[17] = context[6];
+    context[18] = context[7];
+    context[19] = context[8];
+    context[20] = context[9];
+    context[21] = context[0];
+    context[22] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4585,9 +4645,9 @@ static refalrts::FnResult Collector_Compiler_ErrorFile(refalrts::Iter arg_begin,
 
 static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 11 elems
-  refalrts::Iter context[11];
-  refalrts::zeros( context, 11 );
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Collector_Error, "Collector_Error" }
@@ -4603,14 +4663,15 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //7: e.Message#1/1
+    //9: e.Command#2/1
     // ( e.Message#1 ) # AddCompileCommand e.Command#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 5, 0},
     {refalrts::icContextSet, 0, 7, 2},
-    // Unused closed variable e.Command#2
+    {refalrts::icContextSet, 0, 9, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -4622,14 +4683,15 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //7: e.Message#1/1
+    //9: e.ErrorFile#2/1
     // ( e.Message#1 ) # AddErrorFile e.ErrorFile#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 4, 0},
     {refalrts::icContextSet, 0, 7, 2},
-    // Unused closed variable e.ErrorFile#2
+    {refalrts::icContextSet, 0, 9, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -4641,14 +4703,15 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //7: e.Message#1/1
+    //9: e.FileName#2/1
     // ( e.Message#1 ) # AddFile e.FileName#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 3, 0},
     {refalrts::icContextSet, 0, 7, 2},
-    // Unused closed variable e.FileName#2
+    {refalrts::icContextSet, 0, 9, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -4660,14 +4723,15 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //7: e.Message#1/1
+    //9: e.FolderName#2/1
     // ( e.Message#1 ) # AddFolder e.FolderName#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 2, 0},
     {refalrts::icContextSet, 0, 7, 2},
-    // Unused closed variable e.FolderName#2
+    {refalrts::icContextSet, 0, 9, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -4681,13 +4745,15 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //9: e.Message#1/1
+    //11: e.Folders#2/1
+    //13: e.Files#2/1
     // ( e.Message#1 ) # GetInfo ( e.Folders#2 ) e.Files#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 1, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icContextSet, 0, 9, 2},
-    // Unused closed variable e.Folders#2
-    // Unused closed variable e.Files#2
+    {refalrts::icContextSet, 0, 11, 4},
+    {refalrts::icContextSet, 0, 13, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 6},
     {refalrts::icIdent, 0, 0, 7},
@@ -4715,6 +4781,7 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //7: e.Message#1/1
+    //9: e.Command#2/1
     // ( e.Message#1 ) # AddCompileCommand e.Command#2
     context[2] = 0;
     context[3] = 0;
@@ -4724,7 +4791,8 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
       continue;
     context[7] = context[2];
     context[8] = context[3];
-    // Unused closed variable e.Command#2
+    context[9] = context[0];
+    context[10] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4753,6 +4821,7 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //7: e.Message#1/1
+    //9: e.ErrorFile#2/1
     // ( e.Message#1 ) # AddErrorFile e.ErrorFile#2
     context[2] = 0;
     context[3] = 0;
@@ -4762,7 +4831,8 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
       continue;
     context[7] = context[2];
     context[8] = context[3];
-    // Unused closed variable e.ErrorFile#2
+    context[9] = context[0];
+    context[10] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4791,6 +4861,7 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //7: e.Message#1/1
+    //9: e.FileName#2/1
     // ( e.Message#1 ) # AddFile e.FileName#2
     context[2] = 0;
     context[3] = 0;
@@ -4800,7 +4871,8 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
       continue;
     context[7] = context[2];
     context[8] = context[3];
-    // Unused closed variable e.FileName#2
+    context[9] = context[0];
+    context[10] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4829,6 +4901,7 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //7: e.Message#1/1
+    //9: e.FolderName#2/1
     // ( e.Message#1 ) # AddFolder e.FolderName#2
     context[2] = 0;
     context[3] = 0;
@@ -4838,7 +4911,8 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
       continue;
     context[7] = context[2];
     context[8] = context[3];
-    // Unused closed variable e.FolderName#2
+    context[9] = context[0];
+    context[10] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -4865,6 +4939,8 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
   //9: e.Message#1/1
+  //11: e.Folders#2/1
+  //13: e.Files#2/1
   // ( e.Message#1 ) # GetInfo ( e.Folders#2 ) e.Files#2
   context[2] = 0;
   context[3] = 0;
@@ -4878,8 +4954,10 @@ static refalrts::FnResult lambda_Collector_Error_0(refalrts::Iter arg_begin, ref
     return refalrts::cRecognitionImpossible;
   context[9] = context[2];
   context[10] = context[3];
-  // Unused closed variable e.Folders#2
-  // Unused closed variable e.Files#2
+  context[11] = context[4];
+  context[12] = context[5];
+  context[13] = context[0];
+  context[14] = context[1];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;

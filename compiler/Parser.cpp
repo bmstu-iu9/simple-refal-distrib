@@ -2742,9 +2742,9 @@ static refalrts::FnResult AddExtern(refalrts::Iter arg_begin, refalrts::Iter arg
 
 static refalrts::FnResult DontAdd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 6 elems
-  refalrts::Iter context[6];
-  refalrts::zeros( context, 6 );
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
 #ifdef INTERPRET
   using refalrts::functions;
   using refalrts::idents;
@@ -2756,12 +2756,13 @@ static refalrts::FnResult DontAdd(refalrts::Iter arg_begin, refalrts::Iter arg_e
     //3: t.SymTable#1/1
     //4: s.ScopeClass#1/1
     //5: s.LnNum#1/1
+    //6: e.Name#1/1
     // t.ErrorList#1 t.SymTable#1 s.ScopeClass#1 s.LnNum#1 e.Name#1
     {refalrts::ictVarLeft, 0, 2, 0},
     {refalrts::ictVarLeft, 0, 3, 0},
     {refalrts::icsVarLeft, 0, 4, 0},
     {refalrts::icsVarLeft, 0, 5, 0},
-    // Unused closed variable e.Name#1
+    {refalrts::icContextSet, 0, 6, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icSpliceSTVar, 0, 0, 3},
     {refalrts::icSpliceSTVar, 0, 0, 2},
@@ -2784,6 +2785,7 @@ static refalrts::FnResult DontAdd(refalrts::Iter arg_begin, refalrts::Iter arg_e
   //3: t.SymTable#1/1
   //4: s.ScopeClass#1/1
   //5: s.LnNum#1/1
+  //6: e.Name#1/1
   // t.ErrorList#1 t.SymTable#1 s.ScopeClass#1 s.LnNum#1 e.Name#1
   if( ! refalrts::tvar_left( context[2], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -2793,7 +2795,8 @@ static refalrts::FnResult DontAdd(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[5], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Name#1
+  context[6] = context[0];
+  context[7] = context[1];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -4597,36 +4600,37 @@ static refalrts::FnResult ParseFunction(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //11: s.ScopeClass#1/1
-    //12: t.ErrorList#1/1
-    //13: t.SymTable#1/1
-    //14: t.Unexpected#1/1
-    //15: e.Tail#1/1
-    //17: t.Unexpected#1/2
+    //12: e.Name#1/1
+    //14: t.ErrorList#1/1
+    //15: t.SymTable#1/1
+    //16: t.Unexpected#1/1
+    //17: e.Tail#1/1
+    //19: t.Unexpected#1/2
     // s.ScopeClass#1 ( e.Name#1 ) t.ErrorList#1 t.SymTable#1 t.Unexpected#1 e.Tail#1
     {refalrts::icsVarLeft, 0, 11, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Name#1
-    {refalrts::ictVarLeft, 0, 12, 0},
-    {refalrts::ictVarLeft, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
     {refalrts::ictVarLeft, 0, 14, 0},
-    {refalrts::icContextSet, 0, 15, 0},
+    {refalrts::ictVarLeft, 0, 15, 0},
+    {refalrts::ictVarLeft, 0, 16, 0},
+    {refalrts::icContextSet, 0, 17, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icCopySTVar, 17, 14, 0},
+    {refalrts::icCopySTVar, 19, 16, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icBracket, 0, refalrts::ibCloseBracket, 5},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icFunc, 0, 0, 7},
     {refalrts::icString, 0, 0, 8},
     {refalrts::icBracket, 0, refalrts::ibCloseCall, 10},
-    {refalrts::icSpliceEVar, 0, 0, 15},
-    {refalrts::icSpliceSTVar, 0, 0, 17},
-    {refalrts::icSpliceSTVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 17},
+    {refalrts::icSpliceSTVar, 0, 0, 19},
+    {refalrts::icSpliceSTVar, 0, 0, 15},
     {refalrts::icPushStack, 0, 0, 10},
     {refalrts::icPushStack, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceRange, 0, 0, 8},
+    {refalrts::icSpliceSTVar, 0, 0, 16},
     {refalrts::icSpliceSTVar, 0, 0, 14},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icLinkBrackets, 4, 5, 0},
@@ -4763,11 +4767,12 @@ static refalrts::FnResult ParseFunction(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
   //11: s.ScopeClass#1/1
-  //12: t.ErrorList#1/1
-  //13: t.SymTable#1/1
-  //14: t.Unexpected#1/1
-  //15: e.Tail#1/1
-  //17: t.Unexpected#1/2
+  //12: e.Name#1/1
+  //14: t.ErrorList#1/1
+  //15: t.SymTable#1/1
+  //16: t.Unexpected#1/1
+  //17: e.Tail#1/1
+  //19: t.Unexpected#1/2
   // s.ScopeClass#1 ( e.Name#1 ) t.ErrorList#1 t.SymTable#1 t.Unexpected#1 e.Tail#1
   if( ! refalrts::svar_left( context[11], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -4775,19 +4780,20 @@ static refalrts::FnResult ParseFunction(refalrts::Iter arg_begin, refalrts::Iter
   context[3] = 0;
   if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Name#1
-  if( ! refalrts::tvar_left( context[12], context[0], context[1] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::tvar_left( context[13], context[0], context[1] ) )
-    return refalrts::cRecognitionImpossible;
+  context[12] = context[2];
+  context[13] = context[3];
   if( ! refalrts::tvar_left( context[14], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  context[15] = context[0];
-  context[16] = context[1];
+  if( ! refalrts::tvar_left( context[15], context[0], context[1] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::tvar_left( context[16], context[0], context[1] ) )
+    return refalrts::cRecognitionImpossible;
+  context[17] = context[0];
+  context[18] = context[1];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
-  if (! refalrts::copy_stvar(context[17], context[14]))
+  if (! refalrts::copy_stvar(context[19], context[16]))
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[4] ) )
     return refalrts::cNoMemory;
@@ -4801,15 +4807,15 @@ static refalrts::FnResult ParseFunction(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  res = refalrts::splice_evar( res, context[15], context[16] );
-  res = refalrts::splice_stvar( res, context[17] );
-  res = refalrts::splice_stvar( res, context[13] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_stvar( res, context[19] );
+  res = refalrts::splice_stvar( res, context[15] );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[6] );
   res = refalrts::splice_elem( res, context[10] );
   res = refalrts::splice_evar( res, context[8], context[9] );
+  res = refalrts::splice_stvar( res, context[16] );
   res = refalrts::splice_stvar( res, context[14] );
-  res = refalrts::splice_stvar( res, context[12] );
   res = refalrts::splice_elem( res, context[7] );
   res = refalrts::splice_elem( res, context[6] );
   refalrts::link_brackets( context[4], context[5] );
@@ -4988,14 +4994,15 @@ static refalrts::FnResult lambda_ResolveLambdaName_0(refalrts::Iter arg_begin, r
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //4: t.OtherTerm#2/1
+    //4: e.MainName#1/1
+    //6: t.OtherTerm#2/1
     // ( e.MainName#1 ) t.OtherTerm#2
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.MainName#1
-    {refalrts::ictVarLeft, 0, 4, 0},
+    {refalrts::icContextSet, 0, 4, 2},
+    {refalrts::ictVarLeft, 0, 6, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icSpliceSTVar, 0, 0, 4},
+    {refalrts::icSpliceSTVar, 0, 0, 6},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -5279,21 +5286,23 @@ static refalrts::FnResult lambda_ResolveLambdaName_0(refalrts::Iter arg_begin, r
   refalrts::move_left( context[0], context[1] );
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
-  //4: t.OtherTerm#2/1
+  //4: e.MainName#1/1
+  //6: t.OtherTerm#2/1
   // ( e.MainName#1 ) t.OtherTerm#2
   context[2] = 0;
   context[3] = 0;
   if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.MainName#1
-  if( ! refalrts::tvar_left( context[4], context[0], context[1] ) )
+  context[4] = context[2];
+  context[5] = context[3];
+  if( ! refalrts::tvar_left( context[6], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
-  res = refalrts::splice_stvar( res, context[4] );
+  res = refalrts::splice_stvar( res, context[6] );
   refalrts::use( res );
   refalrts::splice_to_freelist( arg_begin, arg_end );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -6836,7 +6845,7 @@ static refalrts::FnResult lambda_CreateContext_0(refalrts::Iter arg_begin, refal
     {refalrts::icOnFailGoTo, +24, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //11: e.Index#2/1
-    // ( 'e e.Index#2 )
+    // ( 'e' e.Index#2 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 2},
     {refalrts::icEmpty, 0, 0, 0},
@@ -6896,7 +6905,7 @@ static refalrts::FnResult lambda_CreateContext_0(refalrts::Iter arg_begin, refal
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //11: e.Index#2/1
-    // ( 'e e.Index#2 )
+    // ( 'e' e.Index#2 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7053,9 +7062,9 @@ static refalrts::FnResult CreateContext(refalrts::Iter arg_begin, refalrts::Iter
 
 static refalrts::FnResult lambda_ParseSentence_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
+  // issue here memory for vars with 24 elems
+  refalrts::Iter context[24];
+  refalrts::zeros( context, 24 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { EL_AddErrorAt, "EL_AddErrorAt" }
@@ -7107,6 +7116,7 @@ static refalrts::FnResult lambda_ParseSentence_0(refalrts::Iter arg_begin, refal
     //18: e.Tokens#2/1
     //20: s.NextResultTerm#2/1
     //21: s.LnNum#2/1
+    //22: e.Info#2/1
     // t.ErrorList#2 t.SymTable#2 t.Context#2 ( e.Pattern#2 ) ( s.NextResultTerm#2 s.LnNum#2 e.Info#2 ) e.Tokens#2
     {refalrts::ictVarLeft, 0, 13, 0},
     {refalrts::ictVarLeft, 0, 14, 0},
@@ -7117,7 +7127,7 @@ static refalrts::FnResult lambda_ParseSentence_0(refalrts::Iter arg_begin, refal
     {refalrts::icContextSet, 0, 18, 0},
     {refalrts::icsVarLeft, 0, 20, 4},
     {refalrts::icsVarLeft, 0, 21, 4},
-    // Unused closed variable e.Info#2
+    {refalrts::icContextSet, 0, 22, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icFunc, 0, 0, 7},
@@ -7220,6 +7230,7 @@ static refalrts::FnResult lambda_ParseSentence_0(refalrts::Iter arg_begin, refal
   //18: e.Tokens#2/1
   //20: s.NextResultTerm#2/1
   //21: s.LnNum#2/1
+  //22: e.Info#2/1
   // t.ErrorList#2 t.SymTable#2 t.Context#2 ( e.Pattern#2 ) ( s.NextResultTerm#2 s.LnNum#2 e.Info#2 ) e.Tokens#2
   if( ! refalrts::tvar_left( context[13], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -7243,7 +7254,8 @@ static refalrts::FnResult lambda_ParseSentence_0(refalrts::Iter arg_begin, refal
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[21], context[4], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.Info#2
+  context[22] = context[4];
+  context[23] = context[5];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
@@ -12136,27 +12148,28 @@ static refalrts::FnResult lambda_CheckAddVariable_0(refalrts::Iter arg_begin, re
     {"Variable hide operator^ must be applied to first occurence of variable ", 71}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //4: t.ErrorList#1/1
     //5: s.LnNum#1/1
     //6: s.Mode#1/1
-    //7: t.Context#2/1
-    //8: s.Depth#2/1
+    //7: e.Index#1/1
+    //9: t.Context#2/1
+    //10: s.Depth#2/1
     // t.ErrorList#1 s.LnNum#1 s.Mode#1 ( e.Index#1 ) t.Context#2 # Success s.Depth#2
     {refalrts::ictVarLeft, 0, 4, 0},
     {refalrts::icsVarLeft, 0, 5, 0},
     {refalrts::icsVarLeft, 0, 6, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Index#1
-    {refalrts::ictVarLeft, 0, 7, 0},
+    {refalrts::icContextSet, 0, 7, 2},
+    {refalrts::ictVarLeft, 0, 9, 0},
     {refalrts::icIdentLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 8, 0},
+    {refalrts::icsVarLeft, 0, 10, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icSpliceSTVar, 0, 0, 8},
+    {refalrts::icSpliceSTVar, 0, 0, 10},
     {refalrts::icSpliceSTVar, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 7},
+    {refalrts::icSpliceSTVar, 0, 0, 9},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +30, 0, 0},
@@ -12258,8 +12271,9 @@ static refalrts::FnResult lambda_CheckAddVariable_0(refalrts::Iter arg_begin, re
     //4: t.ErrorList#1/1
     //5: s.LnNum#1/1
     //6: s.Mode#1/1
-    //7: t.Context#2/1
-    //8: s.Depth#2/1
+    //7: e.Index#1/1
+    //9: t.Context#2/1
+    //10: s.Depth#2/1
     // t.ErrorList#1 s.LnNum#1 s.Mode#1 ( e.Index#1 ) t.Context#2 # Success s.Depth#2
     if( ! refalrts::tvar_left( context[4], context[0], context[1] ) )
       continue;
@@ -12271,21 +12285,22 @@ static refalrts::FnResult lambda_CheckAddVariable_0(refalrts::Iter arg_begin, re
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Index#1
-    if( ! refalrts::tvar_left( context[7], context[0], context[1] ) )
+    context[7] = context[2];
+    context[8] = context[3];
+    if( ! refalrts::tvar_left( context[9], context[0], context[1] ) )
       continue;
     if( ! refalrts::ident_left(  & ident_Success<int>::name, context[0], context[1] ) )
       continue;
-    if( ! refalrts::svar_left( context[8], context[0], context[1] ) )
+    if( ! refalrts::svar_left( context[10], context[0], context[1] ) )
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    res = refalrts::splice_stvar( res, context[8] );
+    res = refalrts::splice_stvar( res, context[10] );
     res = refalrts::splice_stvar( res, context[6] );
-    res = refalrts::splice_stvar( res, context[7] );
+    res = refalrts::splice_stvar( res, context[9] );
     res = refalrts::splice_stvar( res, context[4] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
@@ -13003,8 +13018,9 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
     //24: e.MultiBracket#1/1
     //26: e.Scanned#1/1
     //28: e.Tail#1/1
-    //30: t.ErrorList#2/1
-    //31: t.Context#2/1
+    //30: e.Index#1/1
+    //32: t.ErrorList#2/1
+    //33: t.Context#2/1
     // ( e.Functions#1 ) t.SymTable#1 ( e.MultiBracket#1 ) ( e.Scanned#1 ) ( e.Tail#1 ) ( e.Index#1 ) t.ErrorList#2 t.Context#2
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icContextSet, 0, 21, 2},
@@ -13016,9 +13032,9 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
     {refalrts::icContextSet, 0, 24, 4},
     {refalrts::icContextSet, 0, 26, 6},
     {refalrts::icContextSet, 0, 28, 8},
-    // Unused closed variable e.Index#1
-    {refalrts::ictVarLeft, 0, 30, 0},
-    {refalrts::ictVarLeft, 0, 31, 0},
+    {refalrts::icContextSet, 0, 30, 10},
+    {refalrts::ictVarLeft, 0, 32, 0},
+    {refalrts::ictVarLeft, 0, 33, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 12},
@@ -13042,9 +13058,9 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 17},
     {refalrts::icSpliceEVar, 0, 0, 24},
     {refalrts::icSpliceElem, 0, 0, 16},
-    {refalrts::icSpliceSTVar, 0, 0, 31},
+    {refalrts::icSpliceSTVar, 0, 0, 33},
     {refalrts::icSpliceSTVar, 0, 0, 23},
-    {refalrts::icSpliceSTVar, 0, 0, 30},
+    {refalrts::icSpliceSTVar, 0, 0, 32},
     {refalrts::icLinkBrackets, 14, 15, 0},
     {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceEVar, 0, 0, 21},
@@ -13191,8 +13207,9 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
   //24: e.MultiBracket#1/1
   //26: e.Scanned#1/1
   //28: e.Tail#1/1
-  //30: t.ErrorList#2/1
-  //31: t.Context#2/1
+  //30: e.Index#1/1
+  //32: t.ErrorList#2/1
+  //33: t.Context#2/1
   // ( e.Functions#1 ) t.SymTable#1 ( e.MultiBracket#1 ) ( e.Scanned#1 ) ( e.Tail#1 ) ( e.Index#1 ) t.ErrorList#2 t.Context#2
   context[2] = 0;
   context[3] = 0;
@@ -13224,10 +13241,11 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
   context[27] = context[7];
   context[28] = context[8];
   context[29] = context[9];
-  // Unused closed variable e.Index#1
-  if( ! refalrts::tvar_left( context[30], context[0], context[1] ) )
+  context[30] = context[10];
+  context[31] = context[11];
+  if( ! refalrts::tvar_left( context[32], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::tvar_left( context[31], context[0], context[1] ) )
+  if( ! refalrts::tvar_left( context[33], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -13264,9 +13282,9 @@ static refalrts::FnResult lambda_ParseResult_0(refalrts::Iter arg_begin, refalrt
   res = refalrts::splice_elem( res, context[17] );
   res = refalrts::splice_evar( res, context[24], context[25] );
   res = refalrts::splice_elem( res, context[16] );
-  res = refalrts::splice_stvar( res, context[31] );
+  res = refalrts::splice_stvar( res, context[33] );
   res = refalrts::splice_stvar( res, context[23] );
-  res = refalrts::splice_stvar( res, context[30] );
+  res = refalrts::splice_stvar( res, context[32] );
   refalrts::link_brackets( context[14], context[15] );
   res = refalrts::splice_elem( res, context[15] );
   res = refalrts::splice_evar( res, context[21], context[22] );
@@ -16389,27 +16407,28 @@ static refalrts::FnResult lambda_CheckUseVariable_0(refalrts::Iter arg_begin, re
     {"Variable ", 9}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +15, 0, 0},
+    {refalrts::icOnFailGoTo, +16, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //4: t.ErrorList#1/1
     //5: s.LnNum#1/1
     //6: s.Mode#1/1
-    //7: t.Context#2/1
-    //8: s.Depth#2/1
+    //7: e.Index#1/1
+    //9: t.Context#2/1
+    //10: s.Depth#2/1
     // t.ErrorList#1 s.LnNum#1 s.Mode#1 ( e.Index#1 ) t.Context#2 # ExistVariable s.Depth#2
     {refalrts::ictVarLeft, 0, 4, 0},
     {refalrts::icsVarLeft, 0, 5, 0},
     {refalrts::icsVarLeft, 0, 6, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Index#1
-    {refalrts::ictVarLeft, 0, 7, 0},
+    {refalrts::icContextSet, 0, 7, 2},
+    {refalrts::ictVarLeft, 0, 9, 0},
     {refalrts::icIdentLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 8, 0},
+    {refalrts::icsVarLeft, 0, 10, 0},
     {refalrts::icEmpty, 0, 0, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icSpliceSTVar, 0, 0, 8},
+    {refalrts::icSpliceSTVar, 0, 0, 10},
     {refalrts::icSpliceSTVar, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 7},
+    {refalrts::icSpliceSTVar, 0, 0, 9},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +30, 0, 0},
@@ -16507,8 +16526,9 @@ static refalrts::FnResult lambda_CheckUseVariable_0(refalrts::Iter arg_begin, re
     //4: t.ErrorList#1/1
     //5: s.LnNum#1/1
     //6: s.Mode#1/1
-    //7: t.Context#2/1
-    //8: s.Depth#2/1
+    //7: e.Index#1/1
+    //9: t.Context#2/1
+    //10: s.Depth#2/1
     // t.ErrorList#1 s.LnNum#1 s.Mode#1 ( e.Index#1 ) t.Context#2 # ExistVariable s.Depth#2
     if( ! refalrts::tvar_left( context[4], context[0], context[1] ) )
       continue;
@@ -16520,21 +16540,22 @@ static refalrts::FnResult lambda_CheckUseVariable_0(refalrts::Iter arg_begin, re
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Index#1
-    if( ! refalrts::tvar_left( context[7], context[0], context[1] ) )
+    context[7] = context[2];
+    context[8] = context[3];
+    if( ! refalrts::tvar_left( context[9], context[0], context[1] ) )
       continue;
     if( ! refalrts::ident_left(  & ident_ExistVariable<int>::name, context[0], context[1] ) )
       continue;
-    if( ! refalrts::svar_left( context[8], context[0], context[1] ) )
+    if( ! refalrts::svar_left( context[10], context[0], context[1] ) )
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    res = refalrts::splice_stvar( res, context[8] );
+    res = refalrts::splice_stvar( res, context[10] );
     res = refalrts::splice_stvar( res, context[6] );
-    res = refalrts::splice_stvar( res, context[7] );
+    res = refalrts::splice_stvar( res, context[9] );
     res = refalrts::splice_stvar( res, context[4] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );

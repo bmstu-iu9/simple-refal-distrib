@@ -305,7 +305,7 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     //29: s.Code#2/1
     //30: s.Code#2/2
     //31: s.Code#2/3
-    // s.Other#1 '< s.Code#2
+    // s.Other#1 '<' s.Code#2
     {refalrts::icsVarLeft, 0, 28, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('<'), 0},
     {refalrts::icsVarLeft, 0, 29, 0},
@@ -415,7 +415,7 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     //29: s.Code#2/1
     //30: s.Code#2/2
     //31: s.Code#2/3
-    // s.Other#1 '< s.Code#2
+    // s.Other#1 '<' s.Code#2
     if( ! refalrts::svar_left( context[28], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '<', context[0], context[1] ) )

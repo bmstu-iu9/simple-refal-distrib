@@ -224,13 +224,15 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //7: e.AST#2/1
+    //9: e.OutputName#1/1
     // ( e.AST#2 ) ( e.OutputName#1 ) # EL_HasErrors
     {refalrts::icIdentRight, 0, 1, 0},
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.AST#2
-    // Unused closed variable e.OutputName#1
+    {refalrts::icContextSet, 0, 7, 2},
+    {refalrts::icContextSet, 0, 9, 4},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icIdent, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -340,6 +342,8 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
   refalrts::move_left( context[0], context[1] );
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
+  //7: e.AST#2/1
+  //9: e.OutputName#1/1
   // ( e.AST#2 ) ( e.OutputName#1 ) # EL_HasErrors
   if( ! refalrts::ident_right(  & ident_EL_HasErrors<int>::name, context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -353,8 +357,10 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  // Unused closed variable e.AST#2
-  // Unused closed variable e.OutputName#1
+  context[7] = context[2];
+  context[8] = context[3];
+  context[9] = context[4];
+  context[10] = context[5];
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;

@@ -508,7 +508,7 @@ static refalrts::FnResult lambda_LexFolding_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icOnFailGoTo, +8, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     //2: e.Content#2/1
-    // '\357\273\277 e.Content#2
+    // '\357\273\277' e.Content#2
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\357'), 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\273'), 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\277'), 0},
@@ -540,7 +540,7 @@ static refalrts::FnResult lambda_LexFolding_0(refalrts::Iter arg_begin, refalrts
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
     //2: e.Content#2/1
-    // '\357\273\277 e.Content#2
+    // '\357\273\277' e.Content#2
     if( ! refalrts::char_left( '\357', context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\273', context[0], context[1] ) )
@@ -1998,7 +1998,7 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //8: e.Name_B#1/1
     //10: e.Name_E#1/1
-    // e.Name_B#1 '- e.Name_E#1
+    // e.Name_B#1 '-' e.Name_E#1
     {refalrts::icEPrepare, 0, 8, 0},
     {refalrts::icEStart, 0, 8, 0},
     {refalrts::icSave, 0, 2, 0},
@@ -2043,7 +2043,7 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //8: e.Name_B#1/1
     //10: e.Name_E#1/1
-    // e.Name_B#1 '- e.Name_E#1
+    // e.Name_B#1 '-' e.Name_E#1
     context[8] = 0;
     context[9] = 0;
     refalrts::start_e_loop();
@@ -2446,13 +2446,14 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +13, 0, 0},
+    {refalrts::icOnFailGoTo, +14, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //7: e.Accumulated#1/1
     // ( # TkNewLine e.Accumulated#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.Accumulated#1
+    {refalrts::icContextSet, 0, 7, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 8, 5},
@@ -2517,7 +2518,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icInitB0, 0, 0, 0},
     //10: s.Type#1/1
     //11: e.Index#1/1
-    // ( # TkVariable s.Type#1 '. e.Index#1 )
+    // ( # TkVariable s.Type#1 '.' e.Index#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icIdentLeft, 0, 5, 2},
     {refalrts::icEmpty, 0, 0, 0},
@@ -3245,6 +3246,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //7: e.Accumulated#1/1
     // ( # TkNewLine e.Accumulated#1 )
     context[2] = 0;
     context[3] = 0;
@@ -3254,7 +3256,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accumulated#1
+    context[7] = context[2];
+    context[8] = context[3];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -3379,7 +3382,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::move_right( context[0], context[1] );
     //10: s.Type#1/1
     //11: e.Index#1/1
-    // ( # TkVariable s.Type#1 '. e.Index#1 )
+    // ( # TkVariable s.Type#1 '.' e.Index#1 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -3834,9 +3837,9 @@ static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter a
 
 static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
 #ifdef INTERPRET
   using refalrts::functions;
   using refalrts::idents;
@@ -3847,23 +3850,25 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
     //8: s.Char#1/1
     //9: s.Char#1/2
     //10: e.Assoc_B#2/1
-    //12: s.Digit#2/1
-    //13: e.Vars_B#2/1
+    //12: e.Assoc_E#2/1
+    //14: s.Digit#2/1
+    //15: e.Vars_B#2/1
+    //17: e.Vars_E#2/1
     // s.Char#1 e.Assoc_B#2 ( s.Digit#2 e.Vars_B#2 s.Char#1 e.Vars_E#2 ) e.Assoc_E#2
     {refalrts::icsVarLeft, 0, 8, 0},
     {refalrts::icEPrepare, 0, 10, 0},
     {refalrts::icEStart, 0, 10, 0},
     {refalrts::icSave, 0, 4, 0},
     {refalrts::icBracketLeft, 0, 2, 4},
-    // Unused closed variable e.Assoc_E#2
-    {refalrts::icsVarLeft, 0, 12, 2},
-    {refalrts::icEPrepare, 0, 13, 2},
-    {refalrts::icEStart, 0, 13, 2},
+    {refalrts::icContextSet, 0, 12, 4},
+    {refalrts::icsVarLeft, 0, 14, 2},
+    {refalrts::icEPrepare, 0, 15, 2},
+    {refalrts::icEStart, 0, 15, 2},
     {refalrts::icSave, 0, 6, 2},
     {refalrts::icsRepeatLeft, 9, 8, 6},
-    // Unused closed variable e.Vars_E#2
+    {refalrts::icContextSet, 0, 17, 6},
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icFail, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
@@ -3883,8 +3888,10 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
   //8: s.Char#1/1
   //9: s.Char#1/2
   //10: e.Assoc_B#2/1
-  //12: s.Digit#2/1
-  //13: e.Vars_B#2/1
+  //12: e.Assoc_E#2/1
+  //14: s.Digit#2/1
+  //15: e.Vars_B#2/1
+  //17: e.Vars_E#2/1
   // s.Char#1 e.Assoc_B#2 ( s.Digit#2 e.Vars_B#2 s.Char#1 e.Vars_E#2 ) e.Assoc_E#2
   if( ! refalrts::svar_left( context[8], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
@@ -3898,26 +3905,28 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[4], context[5] ) )
       continue;
-    // Unused closed variable e.Assoc_E#2
-    if( ! refalrts::svar_left( context[12], context[2], context[3] ) )
+    context[12] = context[4];
+    context[13] = context[5];
+    if( ! refalrts::svar_left( context[14], context[2], context[3] ) )
       continue;
-    context[13] = 0;
-    context[14] = 0;
+    context[15] = 0;
+    context[16] = 0;
     refalrts::start_e_loop();
     do {
       context[6] = context[2];
       context[7] = context[3];
       if( ! refalrts::repeated_stvar_left( context[9], context[8], context[6], context[7] ) )
         continue;
-      // Unused closed variable e.Vars_E#2
+      context[17] = context[6];
+      context[18] = context[7];
 
       refalrts::reset_allocator();
       refalrts::Iter res = arg_begin;
-      res = refalrts::splice_stvar( res, context[12] );
+      res = refalrts::splice_stvar( res, context[14] );
       refalrts::use( res );
       refalrts::splice_to_freelist( arg_begin, arg_end );
       return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-    } while ( refalrts::open_evar_advance( context[13], context[14], context[2], context[3] ) );
+    } while ( refalrts::open_evar_advance( context[15], context[16], context[2], context[3] ) );
   } while ( refalrts::open_evar_advance( context[10], context[11], context[0], context[1] ) );
   return refalrts::FnResult(refalrts::cRecognitionImpossible | (__LINE__ << 8));
 #endif
@@ -5701,14 +5710,15 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '  e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) ' ' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(' '), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -5718,21 +5728,22 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\t e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\t' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\t'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -5742,21 +5753,22 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\r e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\r' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\r'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -5766,7 +5778,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -5777,7 +5789,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '< e.Text#1
+    // ( e.Accum#1 ) '<' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('<'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5812,7 +5824,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '> e.Text#1
+    // ( e.Accum#1 ) '>' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('>'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5847,7 +5859,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '( e.Text#1
+    // ( e.Accum#1 ) '(' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('('), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5882,7 +5894,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) ') e.Text#1
+    // ( e.Accum#1 ) ')' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(')'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5917,7 +5929,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '{ e.Text#1
+    // ( e.Accum#1 ) '{' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('{'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5952,7 +5964,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '} e.Text#1
+    // ( e.Accum#1 ) '}' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('}'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -5987,7 +5999,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '[ e.Text#1
+    // ( e.Accum#1 ) '[' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('['), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6022,7 +6034,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '] e.Text#1
+    // ( e.Accum#1 ) ']' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(']'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6057,7 +6069,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '= e.Text#1
+    // ( e.Accum#1 ) '=' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('='), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6092,7 +6104,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '; e.Text#1
+    // ( e.Accum#1 ) ';' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(';'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6127,7 +6139,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) ', e.Text#1
+    // ( e.Accum#1 ) ',' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(','), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6162,7 +6174,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '# e.Text#1
+    // ( e.Accum#1 ) '#' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('#'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6197,7 +6209,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '^ e.Text#1
+    // ( e.Accum#1 ) '^' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('^'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -6232,7 +6244,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6260,7 +6272,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6288,7 +6300,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6316,7 +6328,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6344,7 +6356,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6372,7 +6384,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6400,7 +6412,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6428,7 +6440,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6456,7 +6468,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6484,7 +6496,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6512,7 +6524,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6540,7 +6552,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6568,7 +6580,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6596,7 +6608,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6624,7 +6636,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6652,7 +6664,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6680,7 +6692,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6708,7 +6720,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6736,7 +6748,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6764,7 +6776,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6792,7 +6804,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6820,7 +6832,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6848,7 +6860,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6876,7 +6888,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6904,7 +6916,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6932,7 +6944,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6960,7 +6972,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('s'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -6988,7 +7000,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7016,7 +7028,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('t'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7044,7 +7056,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7072,7 +7084,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7100,7 +7112,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7128,7 +7140,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7156,7 +7168,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7184,7 +7196,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7212,7 +7224,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7240,7 +7252,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7268,7 +7280,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7296,7 +7308,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7320,14 +7332,15 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '$ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '$' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('$'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 3, 5},
@@ -7337,21 +7350,22 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\'' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\''), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -7361,7 +7375,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -7372,7 +7386,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    // ( e.Accum#1 ) '/' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('/'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -7400,7 +7414,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\n'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -7483,15 +7497,16 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -7504,7 +7519,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -7512,7 +7527,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -7555,17 +7570,19 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '  e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) ' ' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( ' ', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -7582,7 +7599,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -7600,17 +7617,19 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\t e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\t' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\t', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -7627,7 +7646,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -7645,17 +7664,19 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\r e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\r' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\r', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -7672,7 +7693,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -7692,7 +7713,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '< e.Text#1
+    // ( e.Accum#1 ) '<' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7753,7 +7774,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '> e.Text#1
+    // ( e.Accum#1 ) '>' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7814,7 +7835,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '( e.Text#1
+    // ( e.Accum#1 ) '(' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7875,7 +7896,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) ') e.Text#1
+    // ( e.Accum#1 ) ')' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7936,7 +7957,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '{ e.Text#1
+    // ( e.Accum#1 ) '{' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -7997,7 +8018,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '} e.Text#1
+    // ( e.Accum#1 ) '}' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8058,7 +8079,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '[ e.Text#1
+    // ( e.Accum#1 ) '[' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8119,7 +8140,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '] e.Text#1
+    // ( e.Accum#1 ) ']' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8180,7 +8201,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '= e.Text#1
+    // ( e.Accum#1 ) '=' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8241,7 +8262,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '; e.Text#1
+    // ( e.Accum#1 ) ';' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8302,7 +8323,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) ', e.Text#1
+    // ( e.Accum#1 ) ',' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8363,7 +8384,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '# e.Text#1
+    // ( e.Accum#1 ) '#' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8424,7 +8445,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '^ e.Text#1
+    // ( e.Accum#1 ) '^' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8485,7 +8506,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8536,7 +8557,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8587,7 +8608,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8638,7 +8659,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8689,7 +8710,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8740,7 +8761,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8791,7 +8812,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8842,7 +8863,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8893,7 +8914,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8944,7 +8965,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -8995,7 +9016,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9046,7 +9067,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9097,7 +9118,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9148,7 +9169,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9199,7 +9220,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9250,7 +9271,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9301,7 +9322,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9352,7 +9373,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9403,7 +9424,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9454,7 +9475,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9505,7 +9526,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9556,7 +9577,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9607,7 +9628,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9658,7 +9679,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9709,7 +9730,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9760,7 +9781,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9811,7 +9832,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9862,7 +9883,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9913,7 +9934,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -9964,7 +9985,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10015,7 +10036,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10066,7 +10087,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10117,7 +10138,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10168,7 +10189,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10219,7 +10240,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10270,7 +10291,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10321,7 +10342,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10372,7 +10393,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10423,7 +10444,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10472,17 +10493,19 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '$ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '$' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '$', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -10499,7 +10522,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -10517,17 +10540,19 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\'' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\'', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -10544,7 +10569,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -10564,7 +10589,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    // ( e.Accum#1 ) '/' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10615,7 +10640,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -10770,18 +10795,20 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -10804,7 +10831,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -10812,7 +10839,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -10867,9 +10894,9 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
 static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -10888,7 +10915,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -10916,7 +10943,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -10944,7 +10971,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -10972,7 +10999,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11000,7 +11027,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11028,7 +11055,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11056,7 +11083,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11084,7 +11111,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11112,7 +11139,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11140,7 +11167,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11168,7 +11195,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('a'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11196,7 +11223,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('b'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11224,7 +11251,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11252,7 +11279,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11280,7 +11307,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11308,7 +11335,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('f'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11336,7 +11363,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('g'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11364,7 +11391,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('h'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11392,7 +11419,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('i'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11420,7 +11447,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('j'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11448,7 +11475,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('k'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11476,7 +11503,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('l'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11504,7 +11531,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('m'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11532,7 +11559,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('n'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11560,7 +11587,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('o'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11588,7 +11615,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('p'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11616,7 +11643,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11644,7 +11671,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('r'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11672,7 +11699,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('s'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11700,7 +11727,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('t'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11728,7 +11755,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('u'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11756,7 +11783,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('v'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11784,7 +11811,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('w'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11812,7 +11839,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('x'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11840,7 +11867,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11868,7 +11895,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11896,7 +11923,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11924,7 +11951,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11952,7 +11979,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -11980,7 +12007,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12008,7 +12035,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12036,7 +12063,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12064,7 +12091,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12092,7 +12119,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12120,7 +12147,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12148,7 +12175,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12176,7 +12203,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12204,7 +12231,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12232,7 +12259,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12260,7 +12287,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12288,7 +12315,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12316,7 +12343,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12344,7 +12371,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12372,7 +12399,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12400,7 +12427,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12428,7 +12455,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12456,7 +12483,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12484,7 +12511,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12512,7 +12539,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12540,7 +12567,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12568,7 +12595,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12596,7 +12623,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12624,7 +12651,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('_'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12652,7 +12679,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -12708,15 +12735,16 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -12729,7 +12757,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -12737,7 +12765,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -12782,7 +12810,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -12833,7 +12861,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -12884,7 +12912,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -12935,7 +12963,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -12986,7 +13014,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13037,7 +13065,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13088,7 +13116,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13139,7 +13167,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13190,7 +13218,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13241,7 +13269,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13292,7 +13320,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13343,7 +13371,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13394,7 +13422,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13445,7 +13473,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13496,7 +13524,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13547,7 +13575,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13598,7 +13626,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13649,7 +13677,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13700,7 +13728,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13751,7 +13779,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13802,7 +13830,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13853,7 +13881,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13904,7 +13932,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -13955,7 +13983,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14006,7 +14034,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14057,7 +14085,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14108,7 +14136,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14159,7 +14187,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14210,7 +14238,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14261,7 +14289,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14312,7 +14340,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14363,7 +14391,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14414,7 +14442,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14465,7 +14493,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14516,7 +14544,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14567,7 +14595,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14618,7 +14646,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14669,7 +14697,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14720,7 +14748,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14771,7 +14799,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14822,7 +14850,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14873,7 +14901,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14924,7 +14952,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -14975,7 +15003,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15026,7 +15054,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15077,7 +15105,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15128,7 +15156,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15179,7 +15207,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15230,7 +15258,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15281,7 +15309,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15332,7 +15360,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15383,7 +15411,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15434,7 +15462,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15485,7 +15513,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15536,7 +15564,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15587,7 +15615,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15638,7 +15666,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15689,7 +15717,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15740,7 +15768,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15791,7 +15819,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15842,7 +15870,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15893,7 +15921,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15944,7 +15972,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -15995,7 +16023,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -16100,18 +16128,20 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -16134,7 +16164,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -16142,7 +16172,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -16197,9 +16227,9 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
 static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -16220,7 +16250,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '. e.Text#1
+    // ( e.Accum#1 ) '.' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('.'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16244,13 +16274,14 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -16264,7 +16295,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -16276,15 +16307,16 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -16297,7 +16329,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -16305,7 +16337,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -16350,7 +16382,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '. e.Text#1
+    // ( e.Accum#1 ) '.' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -16399,15 +16431,17 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -16432,7 +16466,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -16455,18 +16489,20 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -16489,7 +16525,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -16497,7 +16533,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -16552,9 +16588,9 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
 
 static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -16573,7 +16609,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16601,7 +16637,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16629,7 +16665,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16657,7 +16693,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16685,7 +16721,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16713,7 +16749,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16741,7 +16777,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16769,7 +16805,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16797,7 +16833,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16825,7 +16861,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -16881,15 +16917,16 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -16902,7 +16939,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -16910,7 +16947,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -16955,7 +16992,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17006,7 +17043,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17057,7 +17094,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17108,7 +17145,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17159,7 +17196,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17210,7 +17247,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17261,7 +17298,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17312,7 +17349,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17363,7 +17400,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17414,7 +17451,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -17519,18 +17556,20 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -17553,7 +17592,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -17561,7 +17600,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -17616,9 +17655,9 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
 static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -17639,7 +17678,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17667,7 +17706,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17695,7 +17734,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17723,7 +17762,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17751,7 +17790,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17779,7 +17818,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17807,7 +17846,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17835,7 +17874,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17863,7 +17902,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17891,7 +17930,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17919,7 +17958,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17947,7 +17986,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -17975,7 +18014,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18003,7 +18042,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18031,7 +18070,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18059,7 +18098,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18087,7 +18126,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18115,7 +18154,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18143,7 +18182,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18171,7 +18210,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18199,7 +18238,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18227,7 +18266,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18255,7 +18294,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18283,7 +18322,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18311,7 +18350,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18339,7 +18378,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -18363,13 +18402,14 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -18383,7 +18423,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -18395,15 +18435,16 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -18416,7 +18457,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -18424,7 +18465,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -18469,7 +18510,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18520,7 +18561,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18571,7 +18612,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18622,7 +18663,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18673,7 +18714,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18724,7 +18765,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18775,7 +18816,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18826,7 +18867,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18877,7 +18918,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18928,7 +18969,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -18979,7 +19020,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19030,7 +19071,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19081,7 +19122,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19132,7 +19173,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19183,7 +19224,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19234,7 +19275,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19285,7 +19326,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19336,7 +19377,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19387,7 +19428,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19438,7 +19479,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19489,7 +19530,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19540,7 +19581,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19591,7 +19632,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19642,7 +19683,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19693,7 +19734,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19744,7 +19785,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -19793,15 +19834,17 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -19826,7 +19869,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -19849,18 +19892,20 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -19883,7 +19928,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -19891,7 +19936,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -19967,7 +20012,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\''), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -20023,15 +20068,16 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -20044,7 +20090,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -20052,7 +20098,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -20097,7 +20143,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -20202,18 +20248,20 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -20236,7 +20284,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -20244,7 +20292,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -20299,9 +20347,9 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
 
 static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -20317,14 +20365,15 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('*'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -20334,21 +20383,22 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('/'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 1, 5},
@@ -20358,7 +20408,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -20397,15 +20447,16 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -20418,7 +20469,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -20426,7 +20477,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -20469,17 +20520,19 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '*', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -20496,7 +20549,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -20514,17 +20567,19 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '/', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -20541,7 +20596,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -20615,18 +20670,20 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -20649,7 +20706,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -20657,7 +20714,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -20712,9 +20769,9 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
 
 static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -20735,7 +20792,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20763,7 +20820,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20791,7 +20848,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20819,7 +20876,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20847,7 +20904,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20875,7 +20932,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20903,7 +20960,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20931,7 +20988,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20959,7 +21016,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -20987,7 +21044,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21015,7 +21072,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('a'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21043,7 +21100,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('b'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21071,7 +21128,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21099,7 +21156,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21127,7 +21184,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21155,7 +21212,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('f'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21183,7 +21240,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('g'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21211,7 +21268,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('h'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21239,7 +21296,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('i'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21267,7 +21324,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('j'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21295,7 +21352,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('k'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21323,7 +21380,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('l'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21351,7 +21408,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('m'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21379,7 +21436,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('n'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21407,7 +21464,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('o'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21435,7 +21492,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('p'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21463,7 +21520,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21491,7 +21548,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('r'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21519,7 +21576,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('s'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21547,7 +21604,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('t'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21575,7 +21632,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('u'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21603,7 +21660,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('v'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21631,7 +21688,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('w'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21659,7 +21716,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('x'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21687,7 +21744,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21715,7 +21772,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21743,7 +21800,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21771,7 +21828,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21799,7 +21856,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21827,7 +21884,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21855,7 +21912,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21883,7 +21940,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21911,7 +21968,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21939,7 +21996,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21967,7 +22024,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -21995,7 +22052,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22023,7 +22080,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22051,7 +22108,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22079,7 +22136,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22107,7 +22164,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22135,7 +22192,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22163,7 +22220,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22191,7 +22248,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22219,7 +22276,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22247,7 +22304,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22275,7 +22332,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22303,7 +22360,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22331,7 +22388,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22359,7 +22416,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22387,7 +22444,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22415,7 +22472,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22443,7 +22500,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22471,7 +22528,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('_'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22499,7 +22556,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -22523,13 +22580,14 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -22543,7 +22601,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -22555,15 +22613,16 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -22576,7 +22635,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -22584,7 +22643,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -22629,7 +22688,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22680,7 +22739,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22731,7 +22790,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22782,7 +22841,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22833,7 +22892,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22884,7 +22943,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22935,7 +22994,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -22986,7 +23045,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23037,7 +23096,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23088,7 +23147,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23139,7 +23198,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23190,7 +23249,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23241,7 +23300,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23292,7 +23351,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23343,7 +23402,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23394,7 +23453,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23445,7 +23504,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23496,7 +23555,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23547,7 +23606,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23598,7 +23657,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23649,7 +23708,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23700,7 +23759,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23751,7 +23810,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23802,7 +23861,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23853,7 +23912,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23904,7 +23963,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -23955,7 +24014,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24006,7 +24065,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24057,7 +24116,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24108,7 +24167,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24159,7 +24218,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24210,7 +24269,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24261,7 +24320,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24312,7 +24371,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24363,7 +24422,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24414,7 +24473,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24465,7 +24524,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24516,7 +24575,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24567,7 +24626,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24618,7 +24677,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24669,7 +24728,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24720,7 +24779,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24771,7 +24830,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24822,7 +24881,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24873,7 +24932,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24924,7 +24983,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -24975,7 +25034,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25026,7 +25085,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25077,7 +25136,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25128,7 +25187,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25179,7 +25238,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25230,7 +25289,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25281,7 +25340,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25332,7 +25391,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25383,7 +25442,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25434,7 +25493,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25485,7 +25544,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25536,7 +25595,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25587,7 +25646,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25638,7 +25697,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25689,7 +25748,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25740,7 +25799,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25791,7 +25850,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25842,7 +25901,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -25891,15 +25950,17 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -25924,7 +25985,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -25947,18 +26008,20 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -25981,7 +26044,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -25989,7 +26052,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -26044,9 +26107,9 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
 static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -26065,7 +26128,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26093,7 +26156,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26121,7 +26184,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26149,7 +26212,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26177,7 +26240,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26205,7 +26268,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26233,7 +26296,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26261,7 +26324,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26289,7 +26352,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26317,7 +26380,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26345,7 +26408,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26373,7 +26436,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26401,7 +26464,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26429,7 +26492,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26457,7 +26520,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26485,7 +26548,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26513,7 +26576,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26541,7 +26604,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26569,7 +26632,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26597,7 +26660,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26625,7 +26688,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26653,7 +26716,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26681,7 +26744,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26709,7 +26772,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26737,7 +26800,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26765,7 +26828,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -26821,15 +26884,16 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -26842,7 +26906,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -26850,7 +26914,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -26895,7 +26959,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -26946,7 +27010,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -26997,7 +27061,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27048,7 +27112,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27099,7 +27163,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27150,7 +27214,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27201,7 +27265,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27252,7 +27316,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27303,7 +27367,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27354,7 +27418,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27405,7 +27469,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27456,7 +27520,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27507,7 +27571,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27558,7 +27622,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27609,7 +27673,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27660,7 +27724,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27711,7 +27775,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27762,7 +27826,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27813,7 +27877,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27864,7 +27928,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27915,7 +27979,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -27966,7 +28030,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -28017,7 +28081,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -28068,7 +28132,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -28119,7 +28183,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -28170,7 +28234,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -28275,18 +28339,20 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28309,7 +28375,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -28317,7 +28383,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -28372,9 +28438,9 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
 static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -28395,14 +28461,15 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {"Unclosed quote", 14}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\\ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\\' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\\'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 3, 5},
@@ -28412,21 +28479,22 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\'' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\''), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -28436,21 +28504,22 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +29, 0, 0},
+    {refalrts::icOnFailGoTo, +30, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '\n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\n'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 4, 5},
@@ -28464,7 +28533,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -28476,12 +28545,13 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +14, 0, 0},
+    {refalrts::icOnFailGoTo, +15, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //9: e.Accum#1/1
     // ( e.Accum#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.Accum#1
+    {refalrts::icContextSet, 0, 9, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 4, 5},
@@ -28528,15 +28598,16 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -28549,7 +28620,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -28557,7 +28628,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -28600,17 +28671,19 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\\ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\\' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\\', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28627,7 +28700,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -28645,17 +28718,19 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '\'' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\'', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28672,7 +28747,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -28690,17 +28765,19 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '\n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\n', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28725,7 +28802,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -28748,6 +28825,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //9: e.Accum#1/1
     // ( e.Accum#1 )
     context[2] = 0;
     context[3] = 0;
@@ -28755,7 +28833,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
+    context[9] = context[2];
+    context[10] = context[3];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28844,18 +28923,20 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -28878,7 +28959,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -28886,7 +28967,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -28963,14 +29044,15 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {"Unexpected EOF: unclosed comment", 32}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('/'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 3, 5},
@@ -28980,21 +29062,22 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('*'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -29004,7 +29087,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -29015,7 +29098,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\n'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -29046,15 +29129,16 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: s.Any#1/1
-    //10: e.Text#1/1
+    //9: e.Accum#1/1
+    //11: s.Any#1/1
+    //12: e.Text#1/1
     // ( e.Accum#1 ) s.Any#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 9, 0},
-    {refalrts::icContextSet, 0, 10, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icsVarLeft, 0, 11, 0},
+    {refalrts::icContextSet, 0, 12, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 1, 5},
@@ -29064,19 +29148,20 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 10},
+    {refalrts::icSpliceEVar, 0, 0, 12},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +14, 0, 0},
+    {refalrts::icOnFailGoTo, +15, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
+    //9: e.Accum#1/1
     // ( e.Accum#1 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    // Unused closed variable e.Accum#1
+    {refalrts::icContextSet, 0, 9, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -29088,15 +29173,16 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -29109,7 +29195,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -29117,7 +29203,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -29160,17 +29246,19 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '/', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29187,7 +29275,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -29205,17 +29293,19 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '*', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29232,7 +29322,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -29252,7 +29342,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -29311,18 +29401,20 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: s.Any#1/1
-    //10: e.Text#1/1
+    //9: e.Accum#1/1
+    //11: s.Any#1/1
+    //12: e.Text#1/1
     // ( e.Accum#1 ) s.Any#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[9], context[0], context[1] ) )
+    context[9] = context[2];
+    context[10] = context[3];
+    if( ! refalrts::svar_left( context[11], context[0], context[1] ) )
       continue;
-    context[10] = context[0];
-    context[11] = context[1];
+    context[12] = context[0];
+    context[13] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29339,7 +29431,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -29357,6 +29449,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
+    //9: e.Accum#1/1
     // ( e.Accum#1 )
     context[2] = 0;
     context[3] = 0;
@@ -29364,7 +29457,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
+    context[9] = context[2];
+    context[10] = context[3];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29393,18 +29487,20 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29427,7 +29523,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -29435,7 +29531,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -29512,7 +29608,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\n'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -29560,15 +29656,16 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: s.Any#1/1
-    //10: e.Text#1/1
+    //9: e.Accum#1/1
+    //11: s.Any#1/1
+    //12: e.Text#1/1
     // ( e.Accum#1 ) s.Any#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 9, 0},
-    {refalrts::icContextSet, 0, 10, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icsVarLeft, 0, 11, 0},
+    {refalrts::icContextSet, 0, 12, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 1, 5},
@@ -29578,22 +29675,23 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 10},
+    {refalrts::icSpliceEVar, 0, 0, 12},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -29606,7 +29704,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -29614,7 +29712,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -29659,7 +29757,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    // ( e.Accum#1 ) '\n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -29754,18 +29852,20 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: s.Any#1/1
-    //10: e.Text#1/1
+    //9: e.Accum#1/1
+    //11: s.Any#1/1
+    //12: e.Text#1/1
     // ( e.Accum#1 ) s.Any#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[9], context[0], context[1] ) )
+    context[9] = context[2];
+    context[10] = context[3];
+    if( ! refalrts::svar_left( context[11], context[0], context[1] ) )
       continue;
-    context[10] = context[0];
-    context[11] = context[1];
+    context[12] = context[0];
+    context[13] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29782,7 +29882,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -29800,18 +29900,20 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -29834,7 +29936,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -29842,7 +29944,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -29897,9 +29999,9 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
 
 static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -29918,7 +30020,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -29946,7 +30048,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -29974,7 +30076,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30002,7 +30104,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30030,7 +30132,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30058,7 +30160,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30086,7 +30188,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30114,7 +30216,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30142,7 +30244,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30170,7 +30272,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30198,7 +30300,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('a'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30226,7 +30328,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('b'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30254,7 +30356,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30282,7 +30384,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30310,7 +30412,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30338,7 +30440,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('f'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30366,7 +30468,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('g'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30394,7 +30496,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('h'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30422,7 +30524,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('i'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30450,7 +30552,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('j'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30478,7 +30580,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('k'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30506,7 +30608,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('l'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30534,7 +30636,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('m'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30562,7 +30664,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('n'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30590,7 +30692,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('o'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30618,7 +30720,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('p'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30646,7 +30748,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30674,7 +30776,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('r'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30702,7 +30804,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('s'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30730,7 +30832,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('t'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30758,7 +30860,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('u'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30786,7 +30888,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('v'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30814,7 +30916,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('w'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30842,7 +30944,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('x'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30870,7 +30972,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30898,7 +31000,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30926,7 +31028,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30954,7 +31056,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -30982,7 +31084,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31010,7 +31112,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31038,7 +31140,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31066,7 +31168,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31094,7 +31196,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('G'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31122,7 +31224,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('H'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31150,7 +31252,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('I'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31178,7 +31280,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('J'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31206,7 +31308,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('K'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31234,7 +31336,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('L'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31262,7 +31364,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('M'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31290,7 +31392,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('N'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31318,7 +31420,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('O'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31346,7 +31448,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('P'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31374,7 +31476,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Q'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31402,7 +31504,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('R'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31430,7 +31532,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('S'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31458,7 +31560,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('T'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31486,7 +31588,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('U'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31514,7 +31616,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('V'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31542,7 +31644,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('W'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31570,7 +31672,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31598,7 +31700,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Y'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31626,7 +31728,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('Z'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31654,7 +31756,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('_'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31682,7 +31784,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -31738,15 +31840,16 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -31759,7 +31862,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -31767,7 +31870,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -31812,7 +31915,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -31863,7 +31966,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -31914,7 +32017,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -31965,7 +32068,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32016,7 +32119,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32067,7 +32170,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32118,7 +32221,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32169,7 +32272,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32220,7 +32323,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32271,7 +32374,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32322,7 +32425,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32373,7 +32476,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32424,7 +32527,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32475,7 +32578,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32526,7 +32629,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32577,7 +32680,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32628,7 +32731,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'g e.Text#1
+    // ( e.Accum#1 ) 'g' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32679,7 +32782,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'h e.Text#1
+    // ( e.Accum#1 ) 'h' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32730,7 +32833,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'i e.Text#1
+    // ( e.Accum#1 ) 'i' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32781,7 +32884,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'j e.Text#1
+    // ( e.Accum#1 ) 'j' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32832,7 +32935,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'k e.Text#1
+    // ( e.Accum#1 ) 'k' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32883,7 +32986,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'l e.Text#1
+    // ( e.Accum#1 ) 'l' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32934,7 +33037,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'm e.Text#1
+    // ( e.Accum#1 ) 'm' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -32985,7 +33088,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33036,7 +33139,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'o e.Text#1
+    // ( e.Accum#1 ) 'o' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33087,7 +33190,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'p e.Text#1
+    // ( e.Accum#1 ) 'p' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33138,7 +33241,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'q e.Text#1
+    // ( e.Accum#1 ) 'q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33189,7 +33292,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33240,7 +33343,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 's e.Text#1
+    // ( e.Accum#1 ) 's' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33291,7 +33394,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33342,7 +33445,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'u e.Text#1
+    // ( e.Accum#1 ) 'u' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33393,7 +33496,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33444,7 +33547,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'w e.Text#1
+    // ( e.Accum#1 ) 'w' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33495,7 +33598,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    // ( e.Accum#1 ) 'x' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33546,7 +33649,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'y e.Text#1
+    // ( e.Accum#1 ) 'y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33597,7 +33700,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'z e.Text#1
+    // ( e.Accum#1 ) 'z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33648,7 +33751,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33699,7 +33802,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33750,7 +33853,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33801,7 +33904,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33852,7 +33955,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33903,7 +34006,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -33954,7 +34057,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'G e.Text#1
+    // ( e.Accum#1 ) 'G' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34005,7 +34108,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'H e.Text#1
+    // ( e.Accum#1 ) 'H' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34056,7 +34159,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'I e.Text#1
+    // ( e.Accum#1 ) 'I' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34107,7 +34210,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'J e.Text#1
+    // ( e.Accum#1 ) 'J' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34158,7 +34261,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'K e.Text#1
+    // ( e.Accum#1 ) 'K' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34209,7 +34312,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'L e.Text#1
+    // ( e.Accum#1 ) 'L' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34260,7 +34363,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'M e.Text#1
+    // ( e.Accum#1 ) 'M' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34311,7 +34414,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'N e.Text#1
+    // ( e.Accum#1 ) 'N' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34362,7 +34465,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'O e.Text#1
+    // ( e.Accum#1 ) 'O' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34413,7 +34516,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'P e.Text#1
+    // ( e.Accum#1 ) 'P' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34464,7 +34567,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Q e.Text#1
+    // ( e.Accum#1 ) 'Q' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34515,7 +34618,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'R e.Text#1
+    // ( e.Accum#1 ) 'R' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34566,7 +34669,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'S e.Text#1
+    // ( e.Accum#1 ) 'S' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34617,7 +34720,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'T e.Text#1
+    // ( e.Accum#1 ) 'T' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34668,7 +34771,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'U e.Text#1
+    // ( e.Accum#1 ) 'U' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34719,7 +34822,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'V e.Text#1
+    // ( e.Accum#1 ) 'V' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34770,7 +34873,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'W e.Text#1
+    // ( e.Accum#1 ) 'W' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34821,7 +34924,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34872,7 +34975,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Y e.Text#1
+    // ( e.Accum#1 ) 'Y' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34923,7 +35026,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'Z e.Text#1
+    // ( e.Accum#1 ) 'Z' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -34974,7 +35077,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '_ e.Text#1
+    // ( e.Accum#1 ) '_' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -35025,7 +35128,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '- e.Text#1
+    // ( e.Accum#1 ) '-' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -35130,18 +35233,20 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -35164,7 +35269,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -35172,7 +35277,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -35227,9 +35332,9 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
 static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -35262,7 +35367,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('n'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35297,7 +35402,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('r'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35332,7 +35437,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('t'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35367,7 +35472,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('a'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35402,7 +35507,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('b'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35437,7 +35542,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('f'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35472,7 +35577,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('v'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35507,7 +35612,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\\ e.Text#1
+    // ( e.Accum#1 ) '\\' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\\'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35542,7 +35647,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\''), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35577,7 +35682,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\" e.Text#1
+    // ( e.Accum#1 ) '\"' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\"'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -35608,14 +35713,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'd' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 4, 5},
@@ -35625,21 +35731,22 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 4, 5},
@@ -35649,7 +35756,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -35660,7 +35767,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35688,7 +35795,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35716,7 +35823,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35744,7 +35851,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35772,7 +35879,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35800,7 +35907,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35828,7 +35935,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35856,7 +35963,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -35880,14 +35987,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'x' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('x'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -35897,21 +36005,22 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'X' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('X'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 2, 5},
@@ -35921,21 +36030,22 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +29, 0, 0},
+    {refalrts::icOnFailGoTo, +30, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '\n' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\n'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -35949,7 +36059,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -35961,13 +36071,14 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -35981,7 +36092,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -35993,15 +36104,16 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -36014,7 +36126,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -36022,7 +36134,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -36067,7 +36179,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'n e.Text#1
+    // ( e.Accum#1 ) 'n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36128,7 +36240,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'r e.Text#1
+    // ( e.Accum#1 ) 'r' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36189,7 +36301,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 't e.Text#1
+    // ( e.Accum#1 ) 't' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36250,7 +36362,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36311,7 +36423,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36372,7 +36484,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36433,7 +36545,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) 'v e.Text#1
+    // ( e.Accum#1 ) 'v' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36494,7 +36606,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\\ e.Text#1
+    // ( e.Accum#1 ) '\\' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36555,7 +36667,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36616,7 +36728,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\" e.Text#1
+    // ( e.Accum#1 ) '\"' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36675,17 +36787,19 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'd' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( 'd', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -36702,7 +36816,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -36720,17 +36834,19 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( 'D', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -36747,7 +36863,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -36767,7 +36883,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36818,7 +36934,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36869,7 +36985,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36920,7 +37036,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -36971,7 +37087,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -37022,7 +37138,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -37073,7 +37189,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -37124,7 +37240,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -37173,17 +37289,19 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'x e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'x' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( 'x', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37200,7 +37318,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -37218,17 +37336,19 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) 'X e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) 'X' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( 'X', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37245,7 +37365,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -37263,17 +37383,19 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '\n e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '\n' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '\n', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37298,7 +37420,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -37321,15 +37443,17 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37354,7 +37478,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -37377,18 +37501,20 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37411,7 +37537,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -37419,7 +37545,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -37495,7 +37621,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('\''), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -37551,15 +37677,16 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -37572,7 +37699,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -37580,7 +37707,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -37625,7 +37752,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '\' e.Text#1
+    // ( e.Accum#1 ) '\'' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -37730,18 +37857,20 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -37764,7 +37893,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -37772,7 +37901,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -37827,9 +37956,9 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
 
 static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -37846,14 +37975,15 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {"Nested comments is disabled", 27}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +29, 0, 0},
+    {refalrts::icOnFailGoTo, +30, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('*'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -37867,7 +37997,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -37904,15 +38034,16 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -37925,7 +38056,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -37933,7 +38064,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -37976,17 +38107,19 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
-    // ( e.Accum#1 ) '* e.Text#1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
+    // ( e.Accum#1 ) '*' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '*', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -38011,7 +38144,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -38080,18 +38213,20 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -38114,7 +38249,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -38122,7 +38257,7 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -38177,9 +38312,9 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
 
 static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -38193,14 +38328,15 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +20, 0, 0},
+    {refalrts::icOnFailGoTo, +21, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('/'), 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 9, 0},
+    {refalrts::icContextSet, 0, 9, 2},
+    {refalrts::icContextSet, 0, 11, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -38210,7 +38346,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 9},
+    {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icLinkBrackets, 6, 7, 0},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
@@ -38242,15 +38378,16 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -38263,7 +38400,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -38271,7 +38408,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -38314,17 +38451,19 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.Text#1/1
-    // ( e.Accum#1 ) '/ e.Text#1
+    //9: e.Accum#1/1
+    //11: e.Text#1/1
+    // ( e.Accum#1 ) '/' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
     if( ! refalrts::char_left( '/', context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[9] = context[0];
-    context[10] = context[1];
+    context[9] = context[2];
+    context[10] = context[3];
+    context[11] = context[0];
+    context[12] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -38341,7 +38480,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[4] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::link_brackets( context[6], context[7] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
@@ -38405,18 +38544,20 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -38439,7 +38580,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -38447,7 +38588,7 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -38502,9 +38643,9 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
 
 static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -38526,7 +38667,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38554,7 +38695,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38582,7 +38723,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38610,7 +38751,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38638,7 +38779,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38666,7 +38807,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38694,7 +38835,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38722,7 +38863,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38750,7 +38891,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38778,7 +38919,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -38802,13 +38943,14 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icContextSet, 0, 14, 0},
+    {refalrts::icContextSet, 0, 14, 2},
+    {refalrts::icContextSet, 0, 16, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 3, 5},
@@ -38822,7 +38964,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceEVar, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
@@ -38834,15 +38976,16 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -38855,7 +38998,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -38863,7 +39006,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -38908,7 +39051,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -38959,7 +39102,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39010,7 +39153,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39061,7 +39204,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39112,7 +39255,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39163,7 +39306,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39214,7 +39357,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39265,7 +39408,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39316,7 +39459,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39367,7 +39510,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39416,15 +39559,17 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //14: e.Text#1/1
+    //14: e.Accum#1/1
+    //16: e.Text#1/1
     // ( e.Accum#1 ) e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    context[14] = context[0];
-    context[15] = context[1];
+    context[14] = context[2];
+    context[15] = context[3];
+    context[16] = context[0];
+    context[17] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -39449,7 +39594,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[9] );
     res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
@@ -39472,18 +39617,20 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -39506,7 +39653,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -39514,7 +39661,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -39569,9 +39716,9 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
 static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -39591,7 +39738,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39619,7 +39766,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39647,7 +39794,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39675,7 +39822,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39703,7 +39850,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39731,7 +39878,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39759,7 +39906,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39787,7 +39934,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -39843,15 +39990,16 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -39864,7 +40012,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -39872,7 +40020,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -39917,7 +40065,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -39968,7 +40116,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40019,7 +40167,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40070,7 +40218,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40121,7 +40269,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40172,7 +40320,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40223,7 +40371,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40274,7 +40422,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -40379,18 +40527,20 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -40413,7 +40563,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -40421,7 +40571,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -40476,9 +40626,9 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
 static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -40498,7 +40648,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40526,7 +40676,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40554,7 +40704,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40582,7 +40732,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40610,7 +40760,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40638,7 +40788,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40666,7 +40816,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40694,7 +40844,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40722,7 +40872,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40750,7 +40900,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40778,7 +40928,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('A'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40806,7 +40956,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('B'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40834,7 +40984,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('C'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40862,7 +41012,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('D'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40890,7 +41040,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('E'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40918,7 +41068,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('F'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40946,7 +41096,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('a'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -40974,7 +41124,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('b'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -41002,7 +41152,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('c'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -41030,7 +41180,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('d'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -41058,7 +41208,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('e'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -41086,7 +41236,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('f'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -41142,15 +41292,16 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -41163,7 +41314,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -41171,7 +41322,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -41216,7 +41367,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41267,7 +41418,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41318,7 +41469,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41369,7 +41520,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41420,7 +41571,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41471,7 +41622,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41522,7 +41673,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41573,7 +41724,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41624,7 +41775,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41675,7 +41826,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41726,7 +41877,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'A e.Text#1
+    // ( e.Accum#1 ) 'A' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41777,7 +41928,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'B e.Text#1
+    // ( e.Accum#1 ) 'B' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41828,7 +41979,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'C e.Text#1
+    // ( e.Accum#1 ) 'C' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41879,7 +42030,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'D e.Text#1
+    // ( e.Accum#1 ) 'D' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41930,7 +42081,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'E e.Text#1
+    // ( e.Accum#1 ) 'E' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -41981,7 +42132,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'F e.Text#1
+    // ( e.Accum#1 ) 'F' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42032,7 +42183,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'a e.Text#1
+    // ( e.Accum#1 ) 'a' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42083,7 +42234,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'b e.Text#1
+    // ( e.Accum#1 ) 'b' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42134,7 +42285,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'c e.Text#1
+    // ( e.Accum#1 ) 'c' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42185,7 +42336,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'd e.Text#1
+    // ( e.Accum#1 ) 'd' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42236,7 +42387,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'e e.Text#1
+    // ( e.Accum#1 ) 'e' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42287,7 +42438,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) 'f e.Text#1
+    // ( e.Accum#1 ) 'f' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42392,18 +42543,20 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -42426,7 +42579,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -42434,7 +42587,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -42489,9 +42642,9 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
 static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -42511,7 +42664,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42539,7 +42692,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42567,7 +42720,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42595,7 +42748,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42623,7 +42776,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42651,7 +42804,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42679,7 +42832,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42707,7 +42860,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42735,7 +42888,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42763,7 +42916,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -42819,15 +42972,16 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -42840,7 +42994,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -42848,7 +43002,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -42893,7 +43047,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42944,7 +43098,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -42995,7 +43149,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43046,7 +43200,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43097,7 +43251,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43148,7 +43302,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43199,7 +43353,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43250,7 +43404,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43301,7 +43455,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43352,7 +43506,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43457,18 +43611,20 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -43491,7 +43647,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -43499,7 +43655,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -43554,9 +43710,9 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
 static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
@@ -43576,7 +43732,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43604,7 +43760,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43632,7 +43788,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43660,7 +43816,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43688,7 +43844,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43716,7 +43872,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43744,7 +43900,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43772,7 +43928,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 10, 2},
@@ -43828,15 +43984,16 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -43849,7 +44006,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -43857,7 +44014,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -43902,7 +44059,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -43953,7 +44110,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44004,7 +44161,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44055,7 +44212,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44106,7 +44263,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44157,7 +44314,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44208,7 +44365,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44259,7 +44416,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //10: e.Accum#1/1
     //12: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44364,18 +44521,20 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -44398,7 +44557,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -44406,7 +44565,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -44482,7 +44641,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44517,7 +44676,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44552,7 +44711,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44587,7 +44746,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44622,7 +44781,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44657,7 +44816,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44692,7 +44851,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44727,7 +44886,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44762,7 +44921,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('8'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44797,7 +44956,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('9'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -44860,15 +45019,16 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -44881,7 +45041,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -44889,7 +45049,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -44934,7 +45094,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -44995,7 +45155,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45056,7 +45216,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45117,7 +45277,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45178,7 +45338,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45239,7 +45399,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45300,7 +45460,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45361,7 +45521,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45422,7 +45582,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '8 e.Text#1
+    // ( e.Accum#1 ) '8' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45483,7 +45643,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '9 e.Text#1
+    // ( e.Accum#1 ) '9' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -45598,18 +45758,20 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -45632,7 +45794,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -45640,7 +45802,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
@@ -45716,7 +45878,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('0'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45751,7 +45913,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('1'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45786,7 +45948,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('2'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45821,7 +45983,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('3'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45856,7 +46018,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('4'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45891,7 +46053,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('5'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45926,7 +46088,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('6'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -45961,7 +46123,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icInitB0, 0, 0, 0},
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('7'), 0},
     {refalrts::icContextSet, 0, 13, 2},
@@ -46024,15 +46186,16 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +28, 0, 0},
+    {refalrts::icOnFailGoTo, +29, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     {refalrts::icBracketLeft, 0, 2, 0},
-    // Unused closed variable e.Accum#1
-    {refalrts::icsVarLeft, 0, 12, 0},
-    {refalrts::icContextSet, 0, 13, 0},
+    {refalrts::icContextSet, 0, 12, 2},
+    {refalrts::icsVarLeft, 0, 14, 0},
+    {refalrts::icContextSet, 0, 15, 0},
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icIdent, 0, 2, 5},
@@ -46045,7 +46208,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 13},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icLinkBrackets, 9, 10, 0},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
@@ -46053,7 +46216,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icLinkBrackets, 4, 6, 0},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 4},
     {refalrts::icReturnResult, 0, 0, 0},
@@ -46098,7 +46261,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '0 e.Text#1
+    // ( e.Accum#1 ) '0' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46159,7 +46322,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '1 e.Text#1
+    // ( e.Accum#1 ) '1' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46220,7 +46383,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '2 e.Text#1
+    // ( e.Accum#1 ) '2' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46281,7 +46444,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '3 e.Text#1
+    // ( e.Accum#1 ) '3' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46342,7 +46505,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '4 e.Text#1
+    // ( e.Accum#1 ) '4' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46403,7 +46566,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '5 e.Text#1
+    // ( e.Accum#1 ) '5' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46464,7 +46627,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '6 e.Text#1
+    // ( e.Accum#1 ) '6' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46525,7 +46688,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_right( context[0], context[1] );
     //13: e.Accum#1/1
     //15: e.Text#1/1
-    // ( e.Accum#1 ) '7 e.Text#1
+    // ( e.Accum#1 ) '7' e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -46640,18 +46803,20 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //12: s.Unexpected#1/1
-    //13: e.Text#1/1
+    //12: e.Accum#1/1
+    //14: s.Unexpected#1/1
+    //15: e.Text#1/1
     // ( e.Accum#1 ) s.Unexpected#1 e.Text#1
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
       continue;
-    // Unused closed variable e.Accum#1
-    if( ! refalrts::svar_left( context[12], context[0], context[1] ) )
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::svar_left( context[14], context[0], context[1] ) )
       continue;
-    context[13] = context[0];
-    context[14] = context[1];
+    context[15] = context[0];
+    context[16] = context[1];
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -46674,7 +46839,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[7] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
@@ -46682,7 +46847,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     res = refalrts::splice_elem( res, context[7] );
     refalrts::link_brackets( context[4], context[6] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_stvar( res, context[12] );
+    res = refalrts::splice_stvar( res, context[14] );
     res = refalrts::splice_elem( res, context[5] );
     res = refalrts::splice_elem( res, context[4] );
     refalrts::use( res );
