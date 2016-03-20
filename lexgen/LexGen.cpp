@@ -94,9 +94,9 @@ refalrts::FnResult Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
 static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 19 elems
-  refalrts::Iter context[19];
-  refalrts::zeros( context, 19 );
+  // issue here memory for vars with 13 elems
+  refalrts::Iter context[13];
+  refalrts::zeros( context, 13 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { WriteLine, "WriteLine" },
@@ -109,16 +109,16 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {"Command line error", 18}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +17, 0, 0},
+    {refalrts::icOnFailGoTo, +15, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.ProgName#1/1
-    //11: e.File#1/1
-    // ( e.ProgName#1 ) ( e.File#1 )
+    // ( e.ProgName#1/2 ) ( e.File#1/4 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icEmpty, 0, 0, 0},
-    {refalrts::icContextSet, 0, 9, 2},
-    {refalrts::icContextSet, 0, 11, 4},
+    // closed e.ProgName#1 as range 2
+    // closed e.File#1 as range 4
+    //2: e.ProgName#1
+    //4: e.File#1
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icFunc, 0, 2, 7},
@@ -126,16 +126,13 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icSpliceEVar, 0, 0, 11},
+    {refalrts::icSpliceEVar, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +35, 0, 0},
+    {refalrts::icOnFailGoTo, +32, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //13: e.ProgName#1/1
-    //15: e.From#1/1
-    //17: e.To#1/1
-    // ( e.ProgName#1 ) ( '-from:' e.From#1 ) ( '-to:' e.To#1 )
+    // ( e.ProgName#1/2 ) ( '-from:' e.From#1/4 ) ( '-to:' e.To#1/6 )
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 4},
@@ -150,9 +147,12 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('o'), 6},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>(':'), 6},
     {refalrts::icEmpty, 0, 0, 0},
-    {refalrts::icContextSet, 0, 13, 2},
-    {refalrts::icContextSet, 0, 15, 4},
-    {refalrts::icContextSet, 0, 17, 6},
+    // closed e.ProgName#1 as range 2
+    // closed e.From#1 as range 4
+    // closed e.To#1 as range 6
+    //2: e.ProgName#1
+    //4: e.From#1
+    //6: e.To#1
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icFunc, 0, 1, 9},
@@ -162,21 +162,21 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icPushStack, 0, 0, 12},
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icSpliceElem, 0, 0, 12},
-    {refalrts::icSpliceEVar, 0, 0, 17},
+    {refalrts::icSpliceEVar, 0, 0, 6},
     {refalrts::icLinkBrackets, 10, 11, 0},
     {refalrts::icSpliceElem, 0, 0, 11},
-    {refalrts::icSpliceEVar, 0, 0, 15},
+    {refalrts::icSpliceEVar, 0, 0, 4},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 8},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    //9: e.ProgName#1/1
-    //11: e.Other#1/1
-    // ( e.ProgName#1 ) e.Other#1
+    // ( e.ProgName#1/2 ) e.Other#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
-    {refalrts::icContextSet, 0, 9, 2},
-    {refalrts::icContextSet, 0, 11, 0},
+    // closed e.ProgName#1 as range 2
+    // closed e.Other#1 as range 0
+    //0: e.Other#1
+    //2: e.ProgName#1
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 4},
     {refalrts::icFunc, 0, 0, 5},
@@ -205,9 +205,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //9: e.ProgName#1/1
-    //11: e.File#1/1
-    // ( e.ProgName#1 ) ( e.File#1 )
+    // ( e.ProgName#1/2 ) ( e.File#1/4 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -218,10 +216,10 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    context[9] = context[2];
-    context[10] = context[3];
-    context[11] = context[4];
-    context[12] = context[5];
+    // closed e.ProgName#1 as range 2
+    // closed e.File#1 as range 4
+    //2: e.ProgName#1
+    //4: e.File#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -234,7 +232,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[6] );
     res = refalrts::splice_elem( res, context[8] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[4], context[5] );
     res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
     refalrts::use( res );
@@ -249,10 +247,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    //13: e.ProgName#1/1
-    //15: e.From#1/1
-    //17: e.To#1/1
-    // ( e.ProgName#1 ) ( '-from:' e.From#1 ) ( '-to:' e.To#1 )
+    // ( e.ProgName#1/2 ) ( '-from:' e.From#1/4 ) ( '-to:' e.To#1/6 )
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -287,12 +282,12 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
       continue;
     if( ! refalrts::empty_seq( context[0], context[1] ) )
       continue;
-    context[13] = context[2];
-    context[14] = context[3];
-    context[15] = context[4];
-    context[16] = context[5];
-    context[17] = context[6];
-    context[18] = context[7];
+    // closed e.ProgName#1 as range 2
+    // closed e.From#1 as range 4
+    // closed e.To#1 as range 6
+    //2: e.ProgName#1
+    //4: e.From#1
+    //6: e.To#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
@@ -309,10 +304,10 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[8] );
     res = refalrts::splice_elem( res, context[12] );
-    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[6], context[7] );
     refalrts::link_brackets( context[10], context[11] );
     res = refalrts::splice_elem( res, context[11] );
-    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[4], context[5] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
     res = refalrts::splice_elem( res, context[8] );
@@ -326,17 +321,15 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   refalrts::move_left( context[0], context[1] );
   refalrts::move_left( context[0], context[1] );
   refalrts::move_right( context[0], context[1] );
-  //9: e.ProgName#1/1
-  //11: e.Other#1/1
-  // ( e.ProgName#1 ) e.Other#1
+  // ( e.ProgName#1/2 ) e.Other#1/0
   context[2] = 0;
   context[3] = 0;
   if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
     return refalrts::cRecognitionImpossible;
-  context[9] = context[2];
-  context[10] = context[3];
-  context[11] = context[0];
-  context[12] = context[1];
+  // closed e.ProgName#1 as range 2
+  // closed e.Other#1 as range 0
+  //0: e.Other#1
+  //2: e.ProgName#1
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
