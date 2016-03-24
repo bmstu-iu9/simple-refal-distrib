@@ -7,7 +7,7 @@ extern refalrts::FnResult Compare(refalrts::Iter arg_begin, refalrts::Iter arg_e
 extern refalrts::FnResult Dec(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult HightLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -579,7 +579,7 @@ struct ident_TkVariable {
   }
 };
 
-static refalrts::FnResult lambda_HightLevelRASL_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HightLevelRASL_OptPattern_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
@@ -1033,14 +1033,14 @@ static refalrts::FnResult lambda_HightLevelRASL_0(refalrts::Iter arg_begin, refa
 #endif
 }
 
-refalrts::FnResult HightLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_0, "lambda_HightLevelRASL_0" },
+    { lambda_HightLevelRASL_OptPattern_0, "lambda_HightLevelRASL_OptPattern_0" },
     { Map, "Map" }
   };
   using refalrts::idents;
@@ -1088,7 +1088,7 @@ refalrts::FnResult HightLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[3], Map, "Map" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[4], lambda_HightLevelRASL_0, "lambda_HightLevelRASL_0" ) )
+  if( ! refalrts::alloc_name( context[4], lambda_HightLevelRASL_OptPattern_0, "lambda_HightLevelRASL_OptPattern_0" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[5] ) )
     return refalrts::cNoMemory;

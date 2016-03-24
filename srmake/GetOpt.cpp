@@ -95,6 +95,22 @@ struct ident_UnexpectedLongOptionParam {
   }
 };
 
+// identifier #UnknownLongOption
+template <typename SREFAL_PARAM_INT>
+struct ident_UnknownLongOption {
+  static const char *name() {
+    return "UnknownLongOption";
+  }
+};
+
+// identifier #UnknownShortOption
+template <typename SREFAL_PARAM_INT>
+struct ident_UnknownShortOption {
+  static const char *name() {
+    return "UnknownShortOption";
+  }
+};
+
 // identifier #Word
 template <typename SREFAL_PARAM_INT>
 struct ident_Word {
@@ -460,47 +476,50 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSpliceElem, 0, 0, 6},
     {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +34, 0, 0},
+    {refalrts::icOnFailGoTo, +36, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // s.Num#1/2 ( '-' e.Arg#1/3 ) e.Tail#1/0
+    // s.Num#1/2 ( '-' s.Init#1/5 e.Arg#1/3 ) e.Tail#1/0
     {refalrts::icsVarLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 3, 0},
     {refalrts::icCharLeft, 0, static_cast<unsigned char>('-'), 3},
-    // closed e.Arg#1 as range 3
     // closed e.Tail#1 as range 0
+    {refalrts::icsVarLeft, 0, 5, 3},
+    // closed e.Arg#1 as range 3
     //0: e.Tail#1
     //2: s.Num#1
     //3: e.Arg#1
-    //12: s.Num#1
+    //5: s.Init#1
+    //13: s.Num#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 5},
-    {refalrts::icIdent, 0, 1, 6},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 7},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 8},
-    {refalrts::icFunc, 0, 1, 9},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 10},
-    {refalrts::icFunc, 0, 0, 11},
-    {refalrts::icCopySTVar, 12, 2, 0},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 13},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 6},
+    {refalrts::icIdent, 0, 1, 7},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 8},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 9},
+    {refalrts::icFunc, 0, 1, 10},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 11},
+    {refalrts::icFunc, 0, 0, 12},
+    {refalrts::icCopySTVar, 13, 2, 0},
     {refalrts::icBracket, 0, refalrts::ibCloseCall, 14},
-    {refalrts::icPushStack, 0, 0, 14},
-    {refalrts::icPushStack, 0, 0, 8},
-    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 15},
+    {refalrts::icPushStack, 0, 0, 15},
+    {refalrts::icPushStack, 0, 0, 9},
+    {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icPushStack, 0, 0, 10},
-    {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icSpliceSTVar, 0, 0, 12},
+    {refalrts::icPushStack, 0, 0, 14},
+    {refalrts::icPushStack, 0, 0, 11},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceSTVar, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceElem, 0, 0, 10},
     {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icLinkBrackets, 6, 8, 0},
     {refalrts::icSpliceElem, 0, 0, 8},
-    {refalrts::icLinkBrackets, 5, 7, 0},
-    {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceEVar, 0, 0, 3},
+    {refalrts::icSpliceSTVar, 0, 0, 5},
     {refalrts::icSpliceSTVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icSpliceElem, 0, 0, 6},
-    {refalrts::icSpliceElem, 0, 0, 5},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +33, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -779,7 +798,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // s.Num#1/2 ( '-' e.Arg#1/3 ) e.Tail#1/0
+    // s.Num#1/2 ( '-' s.Init#1/5 e.Arg#1/3 ) e.Tail#1/0
     if( ! refalrts::svar_left( context[2], context[0], context[1] ) )
       continue;
     context[3] = 0;
@@ -788,53 +807,57 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
       continue;
     if( ! refalrts::char_left( '-', context[3], context[4] ) )
       continue;
-    // closed e.Arg#1 as range 3
     // closed e.Tail#1 as range 0
+    if( ! refalrts::svar_left( context[5], context[3], context[4] ) )
+      continue;
+    // closed e.Arg#1 as range 3
     //0: e.Tail#1
     //2: s.Num#1
     //3: e.Arg#1
-    //12: s.Num#1
+    //5: s.Init#1
+    //13: s.Num#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_open_bracket( context[5] ) )
+    if( ! refalrts::alloc_open_bracket( context[6] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[6], & ident_Short<int>::name ) )
+    if( ! refalrts::alloc_ident( context[7], & ident_Short<int>::name ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[7] ) )
+    if( ! refalrts::alloc_close_bracket( context[8] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[8] ) )
+    if( ! refalrts::alloc_open_call( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[9], MarkupArguments, "MarkupArguments" ) )
+    if( ! refalrts::alloc_name( context[10], MarkupArguments, "MarkupArguments" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[10] ) )
+    if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], Inc, "Inc" ) )
+    if( ! refalrts::alloc_name( context[12], Inc, "Inc" ) )
       return refalrts::cNoMemory;
-    if (! refalrts::copy_stvar(context[12], context[2]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[13] ) )
+    if (! refalrts::copy_stvar(context[13], context[2]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::push_stack( context[14] );
-    refalrts::push_stack( context[8] );
-    res = refalrts::splice_elem( res, context[14] );
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[9] );
+    res = refalrts::splice_elem( res, context[15] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    refalrts::push_stack( context[13] );
-    refalrts::push_stack( context[10] );
-    res = refalrts::splice_elem( res, context[13] );
-    res = refalrts::splice_stvar( res, context[12] );
+    refalrts::push_stack( context[14] );
+    refalrts::push_stack( context[11] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_stvar( res, context[13] );
+    res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_elem( res, context[11] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_elem( res, context[9] );
+    refalrts::link_brackets( context[6], context[8] );
     res = refalrts::splice_elem( res, context[8] );
-    refalrts::link_brackets( context[5], context[7] );
-    res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_evar( res, context[3], context[4] );
+    res = refalrts::splice_stvar( res, context[5] );
     res = refalrts::splice_stvar( res, context[2] );
+    res = refalrts::splice_elem( res, context[7] );
     res = refalrts::splice_elem( res, context[6] );
-    res = refalrts::splice_elem( res, context[5] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -1087,12 +1110,13 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
 
 static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 37 elems
-  refalrts::Iter context[37];
-  refalrts::zeros( context, 37 );
+  // issue here memory for vars with 40 elems
+  refalrts::Iter context[40];
+  refalrts::zeros( context, 40 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { ResolveOpts, "ResolveOpts" },
+    { Error, "Error" },
     { ResolveOpts_Short, "ResolveOpts_Short" },
     { ResolveOpts_Long, "ResolveOpts_Long" },
     { ResolveOpts_LongParam, "ResolveOpts_LongParam" }
@@ -1101,18 +1125,20 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     & ident_FILE<int>::name,
     & ident_Word<int>::name,
     & ident_Short<int>::name,
+    & ident_UnknownShortOption<int>::name,
+    & ident_UnknownLongOption<int>::name,
     & ident_Long<int>::name,
     & ident_Long_Param<int>::name
   };
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +66, 0, 0},
+    {refalrts::icOnFailGoTo, +68, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Descrs_B#1/9 ( s.Tag#1/13 s.HasArg#1/14 s.Opts_B#1/15 ( e.Long#1/18 ) e.Opts_E#1/11 ) e.Descrs_E#1/20 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
+    // ( e.Descrs_B#1/9 ( s.Tag#1/13 s.HasArg#1/14 e.Opts_B#1/15 ( e.Long#1/19 ) e.Opts_E#1/23 ) e.Descrs_E#1/21 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
-    {refalrts::icIdentLeft, 0, 4, 4},
+    {refalrts::icIdentLeft, 0, 6, 4},
     // closed e.ArgsTail#1 as range 0
     {refalrts::icsVarLeft, 0, 6, 4},
     {refalrts::icBracketLeft, 0, 7, 4},
@@ -1120,155 +1146,246 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Param#1 as range 4
     {refalrts::icEPrepare, 0, 9, 2},
     {refalrts::icEStart, 0, 9, 2},
-    {refalrts::icSave, 0, 20, 2},
-    {refalrts::icBracketLeft, 0, 11, 20},
+    {refalrts::icSave, 0, 21, 2},
+    {refalrts::icBracketLeft, 0, 11, 21},
     // closed e.Descrs_E#1 as range 2
     {refalrts::icsVarLeft, 0, 13, 11},
     {refalrts::icsVarLeft, 0, 14, 11},
-    {refalrts::icsVarLeft, 0, 15, 11},
-    {refalrts::icBracketLeft, 0, 16, 11},
-    {refalrts::iceRepeatLeft, 18, 7, 16},
-    {refalrts::icEmpty, 0, 0, 16},
+    {refalrts::icEPrepare, 0, 15, 11},
+    {refalrts::icEStart, 0, 15, 11},
+    {refalrts::icSave, 0, 23, 11},
+    {refalrts::icBracketLeft, 0, 17, 23},
+    {refalrts::iceRepeatLeft, 19, 7, 17},
+    {refalrts::icEmpty, 0, 0, 17},
     // closed e.Opts_E#1 as range 11
     //0: e.ArgsTail#1
     //4: e.Param#1
     //6: s.Num#1
     //7: e.Long#1
     //9: e.Descrs_B#1
-    //11: e.Opts_E#1
     //13: s.Tag#1
     //14: s.HasArg#1
-    //15: s.Opts_B#1
-    //18: e.Long#1
-    //20: e.Descrs_E#1
-    //30: s.Tag#1
-    //31: s.HasArg#1
+    //15: e.Opts_B#1
+    //19: e.Long#1
+    //21: e.Descrs_E#1
+    //23: e.Opts_E#1
+    //33: s.Tag#1
+    //34: s.HasArg#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 22},
-    {refalrts::icFunc, 0, 3, 23},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 24},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 25},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 26},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 27},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 28},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 29},
-    {refalrts::icCopySTVar, 30, 13, 0},
-    {refalrts::icCopySTVar, 31, 14, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 32},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 33},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 34},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 35},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 36},
-    {refalrts::icPushStack, 0, 0, 36},
-    {refalrts::icPushStack, 0, 0, 22},
-    {refalrts::icSpliceElem, 0, 0, 36},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 25},
+    {refalrts::icFunc, 0, 4, 26},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 27},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 28},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 29},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 30},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 31},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 32},
+    {refalrts::icCopySTVar, 33, 13, 0},
+    {refalrts::icCopySTVar, 34, 14, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 35},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 36},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 37},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 38},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 39},
+    {refalrts::icPushStack, 0, 0, 39},
+    {refalrts::icPushStack, 0, 0, 25},
+    {refalrts::icSpliceElem, 0, 0, 39},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 34, 35, 0},
-    {refalrts::icSpliceElem, 0, 0, 35},
+    {refalrts::icLinkBrackets, 37, 38, 0},
+    {refalrts::icSpliceElem, 0, 0, 38},
     {refalrts::icSpliceEVar, 0, 0, 4},
-    {refalrts::icSpliceElem, 0, 0, 34},
-    {refalrts::icLinkBrackets, 32, 33, 0},
-    {refalrts::icSpliceElem, 0, 0, 33},
-    {refalrts::icSpliceEVar, 0, 0, 18},
-    {refalrts::icSpliceElem, 0, 0, 32},
-    {refalrts::icSpliceSTVar, 0, 0, 31},
-    {refalrts::icSpliceSTVar, 0, 0, 30},
+    {refalrts::icSpliceElem, 0, 0, 37},
+    {refalrts::icLinkBrackets, 35, 36, 0},
+    {refalrts::icSpliceElem, 0, 0, 36},
+    {refalrts::icSpliceEVar, 0, 0, 19},
+    {refalrts::icSpliceElem, 0, 0, 35},
+    {refalrts::icSpliceSTVar, 0, 0, 34},
+    {refalrts::icSpliceSTVar, 0, 0, 33},
     {refalrts::icSpliceSTVar, 0, 0, 6},
-    {refalrts::icLinkBrackets, 24, 29, 0},
-    {refalrts::icSpliceElem, 0, 0, 29},
-    {refalrts::icSpliceEVar, 0, 0, 20},
-    {refalrts::icLinkBrackets, 25, 28, 0},
-    {refalrts::icSpliceElem, 0, 0, 28},
-    {refalrts::icSpliceEVar, 0, 0, 11},
-    {refalrts::icLinkBrackets, 26, 27, 0},
-    {refalrts::icSpliceElem, 0, 0, 27},
+    {refalrts::icLinkBrackets, 27, 32, 0},
+    {refalrts::icSpliceElem, 0, 0, 32},
+    {refalrts::icSpliceEVar, 0, 0, 21},
+    {refalrts::icLinkBrackets, 28, 31, 0},
+    {refalrts::icSpliceElem, 0, 0, 31},
+    {refalrts::icSpliceEVar, 0, 0, 23},
+    {refalrts::icLinkBrackets, 29, 30, 0},
+    {refalrts::icSpliceElem, 0, 0, 30},
     {refalrts::icSpliceEVar, 0, 0, 7},
-    {refalrts::icSpliceElem, 0, 0, 26},
-    {refalrts::icSpliceSTVar, 0, 0, 15},
+    {refalrts::icSpliceElem, 0, 0, 29},
+    {refalrts::icSpliceEVar, 0, 0, 15},
     {refalrts::icSpliceSTVar, 0, 0, 14},
     {refalrts::icSpliceSTVar, 0, 0, 13},
-    {refalrts::icSpliceElem, 0, 0, 25},
+    {refalrts::icSpliceElem, 0, 0, 28},
     {refalrts::icSpliceEVar, 0, 0, 9},
-    {refalrts::icSpliceElem, 0, 0, 24},
-    {refalrts::icSpliceElem, 0, 0, 23},
-    {refalrts::icSpliceElem, 0, 0, 22},
+    {refalrts::icSpliceElem, 0, 0, 27},
+    {refalrts::icSpliceElem, 0, 0, 26},
+    {refalrts::icSpliceElem, 0, 0, 25},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +59, 0, 0},
+    {refalrts::icOnFailGoTo, +34, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Descrs_B#1/7 ( s.Tag#1/11 s.HasArg#1/12 s.Opts_B#1/13 ( e.Long#1/16 ) e.Opts_E#1/9 ) e.Descrs_E#1/18 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     {refalrts::icBracketLeft, 0, 4, 0},
-    {refalrts::icIdentLeft, 0, 3, 4},
+    {refalrts::icIdentLeft, 0, 6, 4},
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 6, 4},
+    {refalrts::icBracketLeft, 0, 7, 4},
+    // closed e.Long#1 as range 7
+    // closed e.Param#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.Param#1
+    //6: s.Num#1
+    //7: e.Long#1
+    {refalrts::icEmptyResult, 0, 0, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 9},
+    {refalrts::icFunc, 0, 1, 10},
+    {refalrts::icIdent, 0, 4, 11},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 12},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 13},
+    {refalrts::icFunc, 0, 0, 14},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 15},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 16},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 17},
+    {refalrts::icPushStack, 0, 0, 17},
+    {refalrts::icPushStack, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 17},
+    {refalrts::icSpliceEVar, 0, 0, 0},
+    {refalrts::icLinkBrackets, 15, 16, 0},
+    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icLinkBrackets, 9, 12, 0},
+    {refalrts::icSpliceElem, 0, 0, 12},
+    {refalrts::icSpliceEVar, 0, 0, 7},
+    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icSpliceSTVar, 0, 0, 6},
+    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icReturnResult, 0, 0, 0},
+    {refalrts::icOnFailGoTo, +61, 0, 0},
+    {refalrts::icInitB0, 0, 0, 0},
+    // ( e.Descrs_B#1/7 ( s.Tag#1/11 s.HasArg#1/12 e.Opts_B#1/13 ( e.Long#1/17 ) e.Opts_E#1/21 ) e.Descrs_E#1/19 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
+    {refalrts::icBracketLeft, 0, 2, 0},
+    {refalrts::icBracketLeft, 0, 4, 0},
+    {refalrts::icIdentLeft, 0, 5, 4},
     // closed e.ArgsTail#1 as range 0
     {refalrts::icsVarLeft, 0, 6, 4},
     // closed e.Long#1 as range 4
     {refalrts::icEPrepare, 0, 7, 2},
     {refalrts::icEStart, 0, 7, 2},
-    {refalrts::icSave, 0, 18, 2},
-    {refalrts::icBracketLeft, 0, 9, 18},
+    {refalrts::icSave, 0, 19, 2},
+    {refalrts::icBracketLeft, 0, 9, 19},
     // closed e.Descrs_E#1 as range 2
     {refalrts::icsVarLeft, 0, 11, 9},
     {refalrts::icsVarLeft, 0, 12, 9},
-    {refalrts::icsVarLeft, 0, 13, 9},
-    {refalrts::icBracketLeft, 0, 14, 9},
-    {refalrts::iceRepeatLeft, 16, 4, 14},
-    {refalrts::icEmpty, 0, 0, 14},
+    {refalrts::icEPrepare, 0, 13, 9},
+    {refalrts::icEStart, 0, 13, 9},
+    {refalrts::icSave, 0, 21, 9},
+    {refalrts::icBracketLeft, 0, 15, 21},
+    {refalrts::iceRepeatLeft, 17, 4, 15},
+    {refalrts::icEmpty, 0, 0, 15},
     // closed e.Opts_E#1 as range 9
     //0: e.ArgsTail#1
     //4: e.Long#1
     //6: s.Num#1
     //7: e.Descrs_B#1
-    //9: e.Opts_E#1
     //11: s.Tag#1
     //12: s.HasArg#1
-    //13: s.Opts_B#1
-    //16: e.Long#1
-    //18: e.Descrs_E#1
-    //28: s.Tag#1
-    //29: s.HasArg#1
+    //13: e.Opts_B#1
+    //17: e.Long#1
+    //19: e.Descrs_E#1
+    //21: e.Opts_E#1
+    //31: s.Tag#1
+    //32: s.HasArg#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 20},
-    {refalrts::icFunc, 0, 2, 21},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 22},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 23},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 24},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 25},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 26},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 27},
-    {refalrts::icCopySTVar, 28, 11, 0},
-    {refalrts::icCopySTVar, 29, 12, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 30},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 31},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 32},
-    {refalrts::icPushStack, 0, 0, 32},
-    {refalrts::icPushStack, 0, 0, 20},
-    {refalrts::icSpliceElem, 0, 0, 32},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 23},
+    {refalrts::icFunc, 0, 3, 24},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 25},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 26},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 27},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 28},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 29},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 30},
+    {refalrts::icCopySTVar, 31, 11, 0},
+    {refalrts::icCopySTVar, 32, 12, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 33},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 34},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 35},
+    {refalrts::icPushStack, 0, 0, 35},
+    {refalrts::icPushStack, 0, 0, 23},
+    {refalrts::icSpliceElem, 0, 0, 35},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 30, 31, 0},
-    {refalrts::icSpliceElem, 0, 0, 31},
-    {refalrts::icSpliceEVar, 0, 0, 16},
-    {refalrts::icSpliceElem, 0, 0, 30},
-    {refalrts::icSpliceSTVar, 0, 0, 29},
-    {refalrts::icSpliceSTVar, 0, 0, 28},
+    {refalrts::icLinkBrackets, 33, 34, 0},
+    {refalrts::icSpliceElem, 0, 0, 34},
+    {refalrts::icSpliceEVar, 0, 0, 17},
+    {refalrts::icSpliceElem, 0, 0, 33},
+    {refalrts::icSpliceSTVar, 0, 0, 32},
+    {refalrts::icSpliceSTVar, 0, 0, 31},
     {refalrts::icSpliceSTVar, 0, 0, 6},
-    {refalrts::icLinkBrackets, 22, 27, 0},
-    {refalrts::icSpliceElem, 0, 0, 27},
-    {refalrts::icSpliceEVar, 0, 0, 18},
-    {refalrts::icLinkBrackets, 23, 26, 0},
-    {refalrts::icSpliceElem, 0, 0, 26},
-    {refalrts::icSpliceEVar, 0, 0, 9},
-    {refalrts::icLinkBrackets, 24, 25, 0},
-    {refalrts::icSpliceElem, 0, 0, 25},
+    {refalrts::icLinkBrackets, 25, 30, 0},
+    {refalrts::icSpliceElem, 0, 0, 30},
+    {refalrts::icSpliceEVar, 0, 0, 19},
+    {refalrts::icLinkBrackets, 26, 29, 0},
+    {refalrts::icSpliceElem, 0, 0, 29},
+    {refalrts::icSpliceEVar, 0, 0, 21},
+    {refalrts::icLinkBrackets, 27, 28, 0},
+    {refalrts::icSpliceElem, 0, 0, 28},
     {refalrts::icSpliceEVar, 0, 0, 4},
-    {refalrts::icSpliceElem, 0, 0, 24},
-    {refalrts::icSpliceSTVar, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 27},
+    {refalrts::icSpliceEVar, 0, 0, 13},
     {refalrts::icSpliceSTVar, 0, 0, 12},
     {refalrts::icSpliceSTVar, 0, 0, 11},
-    {refalrts::icSpliceElem, 0, 0, 23},
+    {refalrts::icSpliceElem, 0, 0, 26},
     {refalrts::icSpliceEVar, 0, 0, 7},
-    {refalrts::icSpliceElem, 0, 0, 22},
-    {refalrts::icSpliceElem, 0, 0, 21},
-    {refalrts::icSpliceElem, 0, 0, 20},
+    {refalrts::icSpliceElem, 0, 0, 25},
+    {refalrts::icSpliceElem, 0, 0, 24},
+    {refalrts::icSpliceElem, 0, 0, 23},
+    {refalrts::icReturnResult, 0, 0, 0},
+    {refalrts::icOnFailGoTo, +33, 0, 0},
+    {refalrts::icInitB0, 0, 0, 0},
+    // ( e.Description#1/2 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
+    {refalrts::icBracketLeft, 0, 2, 0},
+    {refalrts::icBracketLeft, 0, 4, 0},
+    {refalrts::icIdentLeft, 0, 5, 4},
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 6, 4},
+    // closed e.Long#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.Long#1
+    //6: s.Num#1
+    {refalrts::icEmptyResult, 0, 0, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 7},
+    {refalrts::icFunc, 0, 1, 8},
+    {refalrts::icIdent, 0, 4, 9},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 10},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 11},
+    {refalrts::icFunc, 0, 0, 12},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 13},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 14},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 15},
+    {refalrts::icPushStack, 0, 0, 15},
+    {refalrts::icPushStack, 0, 0, 11},
+    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icSpliceEVar, 0, 0, 0},
+    {refalrts::icLinkBrackets, 13, 14, 0},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 12},
+    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icLinkBrackets, 7, 10, 0},
+    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceEVar, 0, 0, 4},
+    {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icSpliceSTVar, 0, 0, 6},
+    {refalrts::icSpliceElem, 0, 0, 8},
+    {refalrts::icSpliceElem, 0, 0, 7},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +56, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -1307,7 +1424,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     //28: s.HasArg#1
     {refalrts::icEmptyResult, 0, 0, 0},
     {refalrts::icBracket, 0, refalrts::ibOpenCall, 21},
-    {refalrts::icFunc, 0, 1, 22},
+    {refalrts::icFunc, 0, 2, 22},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 23},
     {refalrts::icBracket, 0, refalrts::ibOpenBracket, 24},
     {refalrts::icBracket, 0, refalrts::ibCloseBracket, 25},
@@ -1344,6 +1461,104 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceElem, 0, 0, 23},
     {refalrts::icSpliceElem, 0, 0, 22},
     {refalrts::icSpliceElem, 0, 0, 21},
+    {refalrts::icReturnResult, 0, 0, 0},
+    {refalrts::icOnFailGoTo, +35, 0, 0},
+    {refalrts::icInitB0, 0, 0, 0},
+    // ( e.Description#1/2 ) ( # Short s.Num#1/6 s.Short#1/7 ) e.ArgsTail#1/0
+    {refalrts::icBracketLeft, 0, 2, 0},
+    {refalrts::icBracketLeft, 0, 4, 0},
+    {refalrts::icIdentLeft, 0, 2, 4},
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 6, 4},
+    {refalrts::icsVarLeft, 0, 7, 4},
+    {refalrts::icEmpty, 0, 0, 4},
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //6: s.Num#1
+    //7: s.Short#1
+    {refalrts::icEmptyResult, 0, 0, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
+    {refalrts::icFunc, 0, 1, 9},
+    {refalrts::icIdent, 0, 3, 10},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 11},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 12},
+    {refalrts::icFunc, 0, 0, 13},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 14},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 15},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 16},
+    {refalrts::icPushStack, 0, 0, 16},
+    {refalrts::icPushStack, 0, 0, 12},
+    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icSpliceEVar, 0, 0, 0},
+    {refalrts::icLinkBrackets, 14, 15, 0},
+    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 12},
+    {refalrts::icLinkBrackets, 8, 11, 0},
+    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icSpliceSTVar, 0, 0, 7},
+    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceSTVar, 0, 0, 6},
+    {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icSpliceElem, 0, 0, 8},
+    {refalrts::icReturnResult, 0, 0, 0},
+    {refalrts::icOnFailGoTo, +44, 0, 0},
+    {refalrts::icInitB0, 0, 0, 0},
+    // ( e.Description#1/2 ) ( # Short s.Num#1/6 s.Short#1/7 e.OptTail#1/4 ) e.ArgsTail#1/0
+    {refalrts::icBracketLeft, 0, 2, 0},
+    {refalrts::icBracketLeft, 0, 4, 0},
+    {refalrts::icIdentLeft, 0, 2, 4},
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 6, 4},
+    {refalrts::icsVarLeft, 0, 7, 4},
+    // closed e.OptTail#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.OptTail#1
+    //6: s.Num#1
+    //7: s.Short#1
+    //18: s.Num#1
+    {refalrts::icEmptyResult, 0, 0, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 8},
+    {refalrts::icFunc, 0, 1, 9},
+    {refalrts::icIdent, 0, 3, 10},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 11},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 12},
+    {refalrts::icFunc, 0, 0, 13},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 14},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 15},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 16},
+    {refalrts::icIdent, 0, 2, 17},
+    {refalrts::icCopySTVar, 18, 6, 0},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 19},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 20},
+    {refalrts::icPushStack, 0, 0, 20},
+    {refalrts::icPushStack, 0, 0, 12},
+    {refalrts::icSpliceElem, 0, 0, 20},
+    {refalrts::icSpliceEVar, 0, 0, 0},
+    {refalrts::icLinkBrackets, 16, 19, 0},
+    {refalrts::icSpliceElem, 0, 0, 19},
+    {refalrts::icSpliceEVar, 0, 0, 4},
+    {refalrts::icSpliceSTVar, 0, 0, 18},
+    {refalrts::icSpliceElem, 0, 0, 17},
+    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icLinkBrackets, 14, 15, 0},
+    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 12},
+    {refalrts::icLinkBrackets, 8, 11, 0},
+    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icSpliceSTVar, 0, 0, 7},
+    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceSTVar, 0, 0, 6},
+    {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icSpliceElem, 0, 0, 8},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +31, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -1395,7 +1610,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
-  int open_e_stack[8];
+  int open_e_stack[14];
   refalrts::FnResult res = refalrts::interpret_array(
     raa, context, arg_begin, arg_end,
     functions, idents, numbers, strings, open_e_stack
@@ -1409,7 +1624,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Descrs_B#1/9 ( s.Tag#1/13 s.HasArg#1/14 s.Opts_B#1/15 ( e.Long#1/18 ) e.Opts_E#1/11 ) e.Descrs_E#1/20 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
+    // ( e.Descrs_B#1/9 ( s.Tag#1/13 s.HasArg#1/14 e.Opts_B#1/15 ( e.Long#1/19 ) e.Opts_E#1/23 ) e.Descrs_E#1/21 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -1433,110 +1648,115 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     context[10] = 0;
     refalrts::start_e_loop();
     do {
-      context[20] = context[2];
-      context[21] = context[3];
+      context[21] = context[2];
+      context[22] = context[3];
       context[11] = 0;
       context[12] = 0;
-      if( ! refalrts::brackets_left( context[11], context[12], context[20], context[21] ) )
+      if( ! refalrts::brackets_left( context[11], context[12], context[21], context[22] ) )
         continue;
       // closed e.Descrs_E#1 as range 2
       if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
         continue;
       if( ! refalrts::svar_left( context[14], context[11], context[12] ) )
         continue;
-      if( ! refalrts::svar_left( context[15], context[11], context[12] ) )
-        continue;
+      context[15] = 0;
       context[16] = 0;
-      context[17] = 0;
-      if( ! refalrts::brackets_left( context[16], context[17], context[11], context[12] ) )
-        continue;
-      if( ! refalrts::repeated_evar_left( context[18], context[19], context[7], context[8], context[16], context[17] ) )
-        continue;
-      if( ! refalrts::empty_seq( context[16], context[17] ) )
-        continue;
-      // closed e.Opts_E#1 as range 11
-      //0: e.ArgsTail#1
-      //4: e.Param#1
-      //6: s.Num#1
-      //7: e.Long#1
-      //9: e.Descrs_B#1
-      //11: e.Opts_E#1
-      //13: s.Tag#1
-      //14: s.HasArg#1
-      //15: s.Opts_B#1
-      //18: e.Long#1
-      //20: e.Descrs_E#1
-      //30: s.Tag#1
-      //31: s.HasArg#1
+      refalrts::start_e_loop();
+      do {
+        context[23] = context[11];
+        context[24] = context[12];
+        context[17] = 0;
+        context[18] = 0;
+        if( ! refalrts::brackets_left( context[17], context[18], context[23], context[24] ) )
+          continue;
+        if( ! refalrts::repeated_evar_left( context[19], context[20], context[7], context[8], context[17], context[18] ) )
+          continue;
+        if( ! refalrts::empty_seq( context[17], context[18] ) )
+          continue;
+        // closed e.Opts_E#1 as range 11
+        //0: e.ArgsTail#1
+        //4: e.Param#1
+        //6: s.Num#1
+        //7: e.Long#1
+        //9: e.Descrs_B#1
+        //13: s.Tag#1
+        //14: s.HasArg#1
+        //15: e.Opts_B#1
+        //19: e.Long#1
+        //21: e.Descrs_E#1
+        //23: e.Opts_E#1
+        //33: s.Tag#1
+        //34: s.HasArg#1
 
-      refalrts::reset_allocator();
-      refalrts::Iter res = arg_begin;
-      if( ! refalrts::alloc_open_call( context[22] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[23], ResolveOpts_LongParam, "ResolveOpts_LongParam" ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[24] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[25] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[26] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[27] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[28] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[29] ) )
-        return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(context[30], context[13]))
-        return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(context[31], context[14]))
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[32] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[33] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[34] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[35] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_call( context[36] ) )
-        return refalrts::cNoMemory;
-      refalrts::push_stack( context[36] );
-      refalrts::push_stack( context[22] );
-      res = refalrts::splice_elem( res, context[36] );
-      res = refalrts::splice_evar( res, context[0], context[1] );
-      refalrts::link_brackets( context[34], context[35] );
-      res = refalrts::splice_elem( res, context[35] );
-      res = refalrts::splice_evar( res, context[4], context[5] );
-      res = refalrts::splice_elem( res, context[34] );
-      refalrts::link_brackets( context[32], context[33] );
-      res = refalrts::splice_elem( res, context[33] );
-      res = refalrts::splice_evar( res, context[18], context[19] );
-      res = refalrts::splice_elem( res, context[32] );
-      res = refalrts::splice_stvar( res, context[31] );
-      res = refalrts::splice_stvar( res, context[30] );
-      res = refalrts::splice_stvar( res, context[6] );
-      refalrts::link_brackets( context[24], context[29] );
-      res = refalrts::splice_elem( res, context[29] );
-      res = refalrts::splice_evar( res, context[20], context[21] );
-      refalrts::link_brackets( context[25], context[28] );
-      res = refalrts::splice_elem( res, context[28] );
-      res = refalrts::splice_evar( res, context[11], context[12] );
-      refalrts::link_brackets( context[26], context[27] );
-      res = refalrts::splice_elem( res, context[27] );
-      res = refalrts::splice_evar( res, context[7], context[8] );
-      res = refalrts::splice_elem( res, context[26] );
-      res = refalrts::splice_stvar( res, context[15] );
-      res = refalrts::splice_stvar( res, context[14] );
-      res = refalrts::splice_stvar( res, context[13] );
-      res = refalrts::splice_elem( res, context[25] );
-      res = refalrts::splice_evar( res, context[9], context[10] );
-      res = refalrts::splice_elem( res, context[24] );
-      res = refalrts::splice_elem( res, context[23] );
-      res = refalrts::splice_elem( res, context[22] );
-      refalrts::use( res );
-      refalrts::splice_to_freelist( arg_begin, arg_end );
-      return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+        refalrts::reset_allocator();
+        refalrts::Iter res = arg_begin;
+        if( ! refalrts::alloc_open_call( context[25] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_name( context[26], ResolveOpts_LongParam, "ResolveOpts_LongParam" ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[27] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[28] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[29] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[30] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[31] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[32] ) )
+          return refalrts::cNoMemory;
+        if (! refalrts::copy_stvar(context[33], context[13]))
+          return refalrts::cNoMemory;
+        if (! refalrts::copy_stvar(context[34], context[14]))
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[35] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[36] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[37] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[38] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_call( context[39] ) )
+          return refalrts::cNoMemory;
+        refalrts::push_stack( context[39] );
+        refalrts::push_stack( context[25] );
+        res = refalrts::splice_elem( res, context[39] );
+        res = refalrts::splice_evar( res, context[0], context[1] );
+        refalrts::link_brackets( context[37], context[38] );
+        res = refalrts::splice_elem( res, context[38] );
+        res = refalrts::splice_evar( res, context[4], context[5] );
+        res = refalrts::splice_elem( res, context[37] );
+        refalrts::link_brackets( context[35], context[36] );
+        res = refalrts::splice_elem( res, context[36] );
+        res = refalrts::splice_evar( res, context[19], context[20] );
+        res = refalrts::splice_elem( res, context[35] );
+        res = refalrts::splice_stvar( res, context[34] );
+        res = refalrts::splice_stvar( res, context[33] );
+        res = refalrts::splice_stvar( res, context[6] );
+        refalrts::link_brackets( context[27], context[32] );
+        res = refalrts::splice_elem( res, context[32] );
+        res = refalrts::splice_evar( res, context[21], context[22] );
+        refalrts::link_brackets( context[28], context[31] );
+        res = refalrts::splice_elem( res, context[31] );
+        res = refalrts::splice_evar( res, context[23], context[24] );
+        refalrts::link_brackets( context[29], context[30] );
+        res = refalrts::splice_elem( res, context[30] );
+        res = refalrts::splice_evar( res, context[7], context[8] );
+        res = refalrts::splice_elem( res, context[29] );
+        res = refalrts::splice_evar( res, context[15], context[16] );
+        res = refalrts::splice_stvar( res, context[14] );
+        res = refalrts::splice_stvar( res, context[13] );
+        res = refalrts::splice_elem( res, context[28] );
+        res = refalrts::splice_evar( res, context[9], context[10] );
+        res = refalrts::splice_elem( res, context[27] );
+        res = refalrts::splice_elem( res, context[26] );
+        res = refalrts::splice_elem( res, context[25] );
+        refalrts::use( res );
+        refalrts::splice_to_freelist( arg_begin, arg_end );
+        return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+      } while ( refalrts::open_evar_advance( context[15], context[16], context[11], context[12] ) );
     } while ( refalrts::open_evar_advance( context[9], context[10], context[2], context[3] ) );
   } while ( 0 );
 
@@ -1547,7 +1767,83 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Descrs_B#1/7 ( s.Tag#1/11 s.HasArg#1/12 s.Opts_B#1/13 ( e.Long#1/16 ) e.Opts_E#1/9 ) e.Descrs_E#1/18 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) ( # Long_Param s.Num#1/6 ( e.Long#1/7 ) e.Param#1/4 ) e.ArgsTail#1/0
+    context[2] = 0;
+    context[3] = 0;
+    if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
+      continue;
+    context[4] = 0;
+    context[5] = 0;
+    if( ! refalrts::brackets_left( context[4], context[5], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::ident_left(  & ident_Long_Param<int>::name, context[4], context[5] ) )
+      continue;
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[6], context[4], context[5] ) )
+      continue;
+    context[7] = 0;
+    context[8] = 0;
+    if( ! refalrts::brackets_left( context[7], context[8], context[4], context[5] ) )
+      continue;
+    // closed e.Long#1 as range 7
+    // closed e.Param#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.Param#1
+    //6: s.Num#1
+    //7: e.Long#1
+
+    refalrts::reset_allocator();
+    refalrts::Iter res = arg_begin;
+    if( ! refalrts::alloc_open_bracket( context[9] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[10], Error, "Error" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[11], & ident_UnknownLongOption<int>::name ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[13] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[14], ResolveOpts, "ResolveOpts" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[17] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[13] );
+    res = refalrts::splice_elem( res, context[17] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::link_brackets( context[15], context[16] );
+    res = refalrts::splice_elem( res, context[16] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[15] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_elem( res, context[13] );
+    refalrts::link_brackets( context[9], context[12] );
+    res = refalrts::splice_elem( res, context[12] );
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    res = refalrts::splice_elem( res, context[11] );
+    res = refalrts::splice_stvar( res, context[6] );
+    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_elem( res, context[9] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist( arg_begin, arg_end );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_right( context[0], context[1] );
+    // ( e.Descrs_B#1/7 ( s.Tag#1/11 s.HasArg#1/12 e.Opts_B#1/13 ( e.Long#1/17 ) e.Opts_E#1/21 ) e.Descrs_E#1/19 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -1566,102 +1862,177 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     context[8] = 0;
     refalrts::start_e_loop();
     do {
-      context[18] = context[2];
-      context[19] = context[3];
+      context[19] = context[2];
+      context[20] = context[3];
       context[9] = 0;
       context[10] = 0;
-      if( ! refalrts::brackets_left( context[9], context[10], context[18], context[19] ) )
+      if( ! refalrts::brackets_left( context[9], context[10], context[19], context[20] ) )
         continue;
       // closed e.Descrs_E#1 as range 2
       if( ! refalrts::svar_left( context[11], context[9], context[10] ) )
         continue;
       if( ! refalrts::svar_left( context[12], context[9], context[10] ) )
         continue;
-      if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
-        continue;
+      context[13] = 0;
       context[14] = 0;
-      context[15] = 0;
-      if( ! refalrts::brackets_left( context[14], context[15], context[9], context[10] ) )
-        continue;
-      if( ! refalrts::repeated_evar_left( context[16], context[17], context[4], context[5], context[14], context[15] ) )
-        continue;
-      if( ! refalrts::empty_seq( context[14], context[15] ) )
-        continue;
-      // closed e.Opts_E#1 as range 9
-      //0: e.ArgsTail#1
-      //4: e.Long#1
-      //6: s.Num#1
-      //7: e.Descrs_B#1
-      //9: e.Opts_E#1
-      //11: s.Tag#1
-      //12: s.HasArg#1
-      //13: s.Opts_B#1
-      //16: e.Long#1
-      //18: e.Descrs_E#1
-      //28: s.Tag#1
-      //29: s.HasArg#1
+      refalrts::start_e_loop();
+      do {
+        context[21] = context[9];
+        context[22] = context[10];
+        context[15] = 0;
+        context[16] = 0;
+        if( ! refalrts::brackets_left( context[15], context[16], context[21], context[22] ) )
+          continue;
+        if( ! refalrts::repeated_evar_left( context[17], context[18], context[4], context[5], context[15], context[16] ) )
+          continue;
+        if( ! refalrts::empty_seq( context[15], context[16] ) )
+          continue;
+        // closed e.Opts_E#1 as range 9
+        //0: e.ArgsTail#1
+        //4: e.Long#1
+        //6: s.Num#1
+        //7: e.Descrs_B#1
+        //11: s.Tag#1
+        //12: s.HasArg#1
+        //13: e.Opts_B#1
+        //17: e.Long#1
+        //19: e.Descrs_E#1
+        //21: e.Opts_E#1
+        //31: s.Tag#1
+        //32: s.HasArg#1
 
-      refalrts::reset_allocator();
-      refalrts::Iter res = arg_begin;
-      if( ! refalrts::alloc_open_call( context[20] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[21], ResolveOpts_Long, "ResolveOpts_Long" ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[22] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[23] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[24] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[25] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[26] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[27] ) )
-        return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(context[28], context[11]))
-        return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(context[29], context[12]))
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[30] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[31] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_call( context[32] ) )
-        return refalrts::cNoMemory;
-      refalrts::push_stack( context[32] );
-      refalrts::push_stack( context[20] );
-      res = refalrts::splice_elem( res, context[32] );
-      res = refalrts::splice_evar( res, context[0], context[1] );
-      refalrts::link_brackets( context[30], context[31] );
-      res = refalrts::splice_elem( res, context[31] );
-      res = refalrts::splice_evar( res, context[16], context[17] );
-      res = refalrts::splice_elem( res, context[30] );
-      res = refalrts::splice_stvar( res, context[29] );
-      res = refalrts::splice_stvar( res, context[28] );
-      res = refalrts::splice_stvar( res, context[6] );
-      refalrts::link_brackets( context[22], context[27] );
-      res = refalrts::splice_elem( res, context[27] );
-      res = refalrts::splice_evar( res, context[18], context[19] );
-      refalrts::link_brackets( context[23], context[26] );
-      res = refalrts::splice_elem( res, context[26] );
-      res = refalrts::splice_evar( res, context[9], context[10] );
-      refalrts::link_brackets( context[24], context[25] );
-      res = refalrts::splice_elem( res, context[25] );
-      res = refalrts::splice_evar( res, context[4], context[5] );
-      res = refalrts::splice_elem( res, context[24] );
-      res = refalrts::splice_stvar( res, context[13] );
-      res = refalrts::splice_stvar( res, context[12] );
-      res = refalrts::splice_stvar( res, context[11] );
-      res = refalrts::splice_elem( res, context[23] );
-      res = refalrts::splice_evar( res, context[7], context[8] );
-      res = refalrts::splice_elem( res, context[22] );
-      res = refalrts::splice_elem( res, context[21] );
-      res = refalrts::splice_elem( res, context[20] );
-      refalrts::use( res );
-      refalrts::splice_to_freelist( arg_begin, arg_end );
-      return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+        refalrts::reset_allocator();
+        refalrts::Iter res = arg_begin;
+        if( ! refalrts::alloc_open_call( context[23] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_name( context[24], ResolveOpts_Long, "ResolveOpts_Long" ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[25] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[26] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[27] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[28] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[29] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[30] ) )
+          return refalrts::cNoMemory;
+        if (! refalrts::copy_stvar(context[31], context[11]))
+          return refalrts::cNoMemory;
+        if (! refalrts::copy_stvar(context[32], context[12]))
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[33] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[34] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_call( context[35] ) )
+          return refalrts::cNoMemory;
+        refalrts::push_stack( context[35] );
+        refalrts::push_stack( context[23] );
+        res = refalrts::splice_elem( res, context[35] );
+        res = refalrts::splice_evar( res, context[0], context[1] );
+        refalrts::link_brackets( context[33], context[34] );
+        res = refalrts::splice_elem( res, context[34] );
+        res = refalrts::splice_evar( res, context[17], context[18] );
+        res = refalrts::splice_elem( res, context[33] );
+        res = refalrts::splice_stvar( res, context[32] );
+        res = refalrts::splice_stvar( res, context[31] );
+        res = refalrts::splice_stvar( res, context[6] );
+        refalrts::link_brackets( context[25], context[30] );
+        res = refalrts::splice_elem( res, context[30] );
+        res = refalrts::splice_evar( res, context[19], context[20] );
+        refalrts::link_brackets( context[26], context[29] );
+        res = refalrts::splice_elem( res, context[29] );
+        res = refalrts::splice_evar( res, context[21], context[22] );
+        refalrts::link_brackets( context[27], context[28] );
+        res = refalrts::splice_elem( res, context[28] );
+        res = refalrts::splice_evar( res, context[4], context[5] );
+        res = refalrts::splice_elem( res, context[27] );
+        res = refalrts::splice_evar( res, context[13], context[14] );
+        res = refalrts::splice_stvar( res, context[12] );
+        res = refalrts::splice_stvar( res, context[11] );
+        res = refalrts::splice_elem( res, context[26] );
+        res = refalrts::splice_evar( res, context[7], context[8] );
+        res = refalrts::splice_elem( res, context[25] );
+        res = refalrts::splice_elem( res, context[24] );
+        res = refalrts::splice_elem( res, context[23] );
+        refalrts::use( res );
+        refalrts::splice_to_freelist( arg_begin, arg_end );
+        return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+      } while ( refalrts::open_evar_advance( context[13], context[14], context[9], context[10] ) );
     } while ( refalrts::open_evar_advance( context[7], context[8], context[2], context[3] ) );
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_right( context[0], context[1] );
+    // ( e.Description#1/2 ) ( # Long s.Num#1/6 e.Long#1/4 ) e.ArgsTail#1/0
+    context[2] = 0;
+    context[3] = 0;
+    if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
+      continue;
+    context[4] = 0;
+    context[5] = 0;
+    if( ! refalrts::brackets_left( context[4], context[5], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::ident_left(  & ident_Long<int>::name, context[4], context[5] ) )
+      continue;
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[6], context[4], context[5] ) )
+      continue;
+    // closed e.Long#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.Long#1
+    //6: s.Num#1
+
+    refalrts::reset_allocator();
+    refalrts::Iter res = arg_begin;
+    if( ! refalrts::alloc_open_bracket( context[7] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[8], Error, "Error" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[9], & ident_UnknownLongOption<int>::name ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[10] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ResolveOpts, "ResolveOpts" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[13] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[11] );
+    res = refalrts::splice_elem( res, context[15] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::link_brackets( context[13], context[14] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[13] );
+    res = refalrts::splice_elem( res, context[12] );
+    res = refalrts::splice_elem( res, context[11] );
+    refalrts::link_brackets( context[7], context[10] );
+    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_evar( res, context[4], context[5] );
+    res = refalrts::splice_elem( res, context[9] );
+    res = refalrts::splice_stvar( res, context[6] );
+    res = refalrts::splice_elem( res, context[8] );
+    res = refalrts::splice_elem( res, context[7] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist( arg_begin, arg_end );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
   do {
@@ -1782,6 +2153,167 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
         return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
       } while ( refalrts::open_evar_advance( context[14], context[15], context[10], context[11] ) );
     } while ( refalrts::open_evar_advance( context[8], context[9], context[2], context[3] ) );
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_right( context[0], context[1] );
+    // ( e.Description#1/2 ) ( # Short s.Num#1/6 s.Short#1/7 ) e.ArgsTail#1/0
+    context[2] = 0;
+    context[3] = 0;
+    if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
+      continue;
+    context[4] = 0;
+    context[5] = 0;
+    if( ! refalrts::brackets_left( context[4], context[5], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::ident_left(  & ident_Short<int>::name, context[4], context[5] ) )
+      continue;
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[6], context[4], context[5] ) )
+      continue;
+    if( ! refalrts::svar_left( context[7], context[4], context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[4], context[5] ) )
+      continue;
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //6: s.Num#1
+    //7: s.Short#1
+
+    refalrts::reset_allocator();
+    refalrts::Iter res = arg_begin;
+    if( ! refalrts::alloc_open_bracket( context[8] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[9], Error, "Error" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[10], & ident_UnknownShortOption<int>::name ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ResolveOpts, "ResolveOpts" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[12] );
+    res = refalrts::splice_elem( res, context[16] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::link_brackets( context[14], context[15] );
+    res = refalrts::splice_elem( res, context[15] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_elem( res, context[13] );
+    res = refalrts::splice_elem( res, context[12] );
+    refalrts::link_brackets( context[8], context[11] );
+    res = refalrts::splice_elem( res, context[11] );
+    res = refalrts::splice_stvar( res, context[7] );
+    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_stvar( res, context[6] );
+    res = refalrts::splice_elem( res, context[9] );
+    res = refalrts::splice_elem( res, context[8] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist( arg_begin, arg_end );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_right( context[0], context[1] );
+    // ( e.Description#1/2 ) ( # Short s.Num#1/6 s.Short#1/7 e.OptTail#1/4 ) e.ArgsTail#1/0
+    context[2] = 0;
+    context[3] = 0;
+    if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
+      continue;
+    context[4] = 0;
+    context[5] = 0;
+    if( ! refalrts::brackets_left( context[4], context[5], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::ident_left(  & ident_Short<int>::name, context[4], context[5] ) )
+      continue;
+    // closed e.Description#1 as range 2
+    // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[6], context[4], context[5] ) )
+      continue;
+    if( ! refalrts::svar_left( context[7], context[4], context[5] ) )
+      continue;
+    // closed e.OptTail#1 as range 4
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: e.OptTail#1
+    //6: s.Num#1
+    //7: s.Short#1
+    //18: s.Num#1
+
+    refalrts::reset_allocator();
+    refalrts::Iter res = arg_begin;
+    if( ! refalrts::alloc_open_bracket( context[8] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[9], Error, "Error" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[10], & ident_UnknownShortOption<int>::name ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ResolveOpts, "ResolveOpts" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[17], & ident_Short<int>::name ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[18], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[19] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[20] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[20] );
+    refalrts::push_stack( context[12] );
+    res = refalrts::splice_elem( res, context[20] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::link_brackets( context[16], context[19] );
+    res = refalrts::splice_elem( res, context[19] );
+    res = refalrts::splice_evar( res, context[4], context[5] );
+    res = refalrts::splice_stvar( res, context[18] );
+    res = refalrts::splice_elem( res, context[17] );
+    res = refalrts::splice_elem( res, context[16] );
+    refalrts::link_brackets( context[14], context[15] );
+    res = refalrts::splice_elem( res, context[15] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_elem( res, context[13] );
+    res = refalrts::splice_elem( res, context[12] );
+    refalrts::link_brackets( context[8], context[11] );
+    res = refalrts::splice_elem( res, context[11] );
+    res = refalrts::splice_stvar( res, context[7] );
+    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_stvar( res, context[6] );
+    res = refalrts::splice_elem( res, context[9] );
+    res = refalrts::splice_elem( res, context[8] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist( arg_begin, arg_end );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
   do {
@@ -2311,9 +2843,9 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {"--", 2}
   };
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +33, 0, 0},
+    {refalrts::icOnFailGoTo, +34, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required ( e.Long#1/6 ) ( # Word e.Param#1/8 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required ( e.Long#1/6 ) ( # Word s.WordNum#1/10 e.Param#1/8 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     // closed e.Description#1 as range 2
     {refalrts::icsVarLeft, 0, 4, 0},
@@ -2323,38 +2855,40 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icBracketLeft, 0, 8, 0},
     {refalrts::icIdentLeft, 0, 3, 8},
     // closed e.Long#1 as range 6
-    // closed e.Param#1 as range 8
     // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 10, 8},
+    // closed e.Param#1 as range 8
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: e.Long#1
     //8: e.Param#1
+    //10: s.WordNum#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 10},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 11},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 12},
-    {refalrts::icFunc, 0, 0, 13},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 14},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 15},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 16},
-    {refalrts::icPushStack, 0, 0, 16},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 11},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 12},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 13},
+    {refalrts::icFunc, 0, 0, 14},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 15},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 16},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 17},
+    {refalrts::icPushStack, 0, 0, 17},
+    {refalrts::icPushStack, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 17},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 14, 15, 0},
-    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icLinkBrackets, 15, 16, 0},
+    {refalrts::icSpliceElem, 0, 0, 16},
     {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceElem, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
-    {refalrts::icLinkBrackets, 10, 11, 0},
-    {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceEVar, 0, 0, 8},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icSpliceSTVar, 0, 0, 5},
-    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +36, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -2402,9 +2936,9 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icSpliceElem, 0, 0, 9},
     {refalrts::icSpliceElem, 0, 0, 8},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +33, 0, 0},
+    {refalrts::icOnFailGoTo, +34, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional ( e.Long#1/6 ) ( # Word e.Param#1/8 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional ( e.Long#1/6 ) ( # Word s.WordNum#1/10 e.Param#1/8 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     // closed e.Description#1 as range 2
     {refalrts::icsVarLeft, 0, 4, 0},
@@ -2414,38 +2948,40 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icBracketLeft, 0, 8, 0},
     {refalrts::icIdentLeft, 0, 3, 8},
     // closed e.Long#1 as range 6
-    // closed e.Param#1 as range 8
     // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 10, 8},
+    // closed e.Param#1 as range 8
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: e.Long#1
     //8: e.Param#1
+    //10: s.WordNum#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 10},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 11},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 12},
-    {refalrts::icFunc, 0, 0, 13},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 14},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 15},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 16},
-    {refalrts::icPushStack, 0, 0, 16},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 11},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 12},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 13},
+    {refalrts::icFunc, 0, 0, 14},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 15},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 16},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 17},
+    {refalrts::icPushStack, 0, 0, 17},
+    {refalrts::icPushStack, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 17},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 14, 15, 0},
-    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icLinkBrackets, 15, 16, 0},
+    {refalrts::icSpliceElem, 0, 0, 16},
     {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceElem, 0, 0, 14},
     {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSpliceElem, 0, 0, 12},
-    {refalrts::icLinkBrackets, 10, 11, 0},
-    {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icSpliceEVar, 0, 0, 8},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icSpliceSTVar, 0, 0, 5},
-    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceElem, 0, 0, 11},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +32, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -2544,7 +3080,7 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required ( e.Long#1/6 ) ( # Word e.Param#1/8 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required ( e.Long#1/6 ) ( # Word s.WordNum#1/10 e.Param#1/8 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -2567,47 +3103,50 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::ident_left(  & ident_Word<int>::name, context[8], context[9] ) )
       continue;
     // closed e.Long#1 as range 6
-    // closed e.Param#1 as range 8
     // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
+      continue;
+    // closed e.Param#1 as range 8
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: e.Long#1
     //8: e.Param#1
+    //10: s.WordNum#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_open_bracket( context[10] ) )
+    if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[11] ) )
+    if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[12] ) )
+    if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], ResolveOpts, "ResolveOpts" ) )
+    if( ! refalrts::alloc_name( context[14], ResolveOpts, "ResolveOpts" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[14] ) )
+    if( ! refalrts::alloc_open_bracket( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[15] ) )
+    if( ! refalrts::alloc_close_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
+    if( ! refalrts::alloc_close_call( context[17] ) )
       return refalrts::cNoMemory;
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[12] );
-    res = refalrts::splice_elem( res, context[16] );
+    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[13] );
+    res = refalrts::splice_elem( res, context[17] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    refalrts::link_brackets( context[14], context[15] );
-    res = refalrts::splice_elem( res, context[15] );
+    refalrts::link_brackets( context[15], context[16] );
+    res = refalrts::splice_elem( res, context[16] );
     res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[15] );
     res = refalrts::splice_elem( res, context[14] );
     res = refalrts::splice_elem( res, context[13] );
+    refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
-    refalrts::link_brackets( context[10], context[11] );
-    res = refalrts::splice_elem( res, context[11] );
     res = refalrts::splice_evar( res, context[8], context[9] );
     res = refalrts::splice_stvar( res, context[4] );
     res = refalrts::splice_stvar( res, context[5] );
-    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_elem( res, context[11] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -2696,7 +3235,7 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional ( e.Long#1/6 ) ( # Word e.Param#1/8 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional ( e.Long#1/6 ) ( # Word s.WordNum#1/10 e.Param#1/8 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -2719,47 +3258,50 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::ident_left(  & ident_Word<int>::name, context[8], context[9] ) )
       continue;
     // closed e.Long#1 as range 6
-    // closed e.Param#1 as range 8
     // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
+      continue;
+    // closed e.Param#1 as range 8
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: e.Long#1
     //8: e.Param#1
+    //10: s.WordNum#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_open_bracket( context[10] ) )
+    if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[11] ) )
+    if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[12] ) )
+    if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], ResolveOpts, "ResolveOpts" ) )
+    if( ! refalrts::alloc_name( context[14], ResolveOpts, "ResolveOpts" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[14] ) )
+    if( ! refalrts::alloc_open_bracket( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[15] ) )
+    if( ! refalrts::alloc_close_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
+    if( ! refalrts::alloc_close_call( context[17] ) )
       return refalrts::cNoMemory;
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[12] );
-    res = refalrts::splice_elem( res, context[16] );
+    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[13] );
+    res = refalrts::splice_elem( res, context[17] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    refalrts::link_brackets( context[14], context[15] );
-    res = refalrts::splice_elem( res, context[15] );
+    refalrts::link_brackets( context[15], context[16] );
+    res = refalrts::splice_elem( res, context[16] );
     res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[15] );
     res = refalrts::splice_elem( res, context[14] );
     res = refalrts::splice_elem( res, context[13] );
+    refalrts::link_brackets( context[11], context[12] );
     res = refalrts::splice_elem( res, context[12] );
-    refalrts::link_brackets( context[10], context[11] );
-    res = refalrts::splice_elem( res, context[11] );
     res = refalrts::splice_evar( res, context[8], context[9] );
     res = refalrts::splice_stvar( res, context[4] );
     res = refalrts::splice_stvar( res, context[5] );
-    res = refalrts::splice_elem( res, context[10] );
+    res = refalrts::splice_elem( res, context[11] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -2923,9 +3465,9 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    {refalrts::icOnFailGoTo, +35, 0, 0},
+    {refalrts::icOnFailGoTo, +36, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required s.Short#1/6 ( ) ( # Word e.Param#1/9 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required s.Short#1/6 ( ) ( # Word s.WordNum#1/11 e.Param#1/9 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     // closed e.Description#1 as range 2
     {refalrts::icsVarLeft, 0, 4, 0},
@@ -2936,38 +3478,40 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icBracketLeft, 0, 9, 0},
     {refalrts::icIdentLeft, 0, 4, 9},
     {refalrts::icEmpty, 0, 0, 7},
-    // closed e.Param#1 as range 9
     // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 11, 9},
+    // closed e.Param#1 as range 9
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: s.Short#1
     //9: e.Param#1
+    //11: s.WordNum#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 11},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 12},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 13},
-    {refalrts::icFunc, 0, 0, 14},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 15},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 16},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 17},
-    {refalrts::icPushStack, 0, 0, 17},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icSpliceElem, 0, 0, 17},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 12},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 13},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 14},
+    {refalrts::icFunc, 0, 0, 15},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 16},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 17},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 18},
+    {refalrts::icPushStack, 0, 0, 18},
+    {refalrts::icPushStack, 0, 0, 14},
+    {refalrts::icSpliceElem, 0, 0, 18},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 15, 16, 0},
-    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icLinkBrackets, 16, 17, 0},
+    {refalrts::icSpliceElem, 0, 0, 17},
     {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 16},
     {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icLinkBrackets, 12, 13, 0},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icLinkBrackets, 11, 12, 0},
-    {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceEVar, 0, 0, 9},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icSpliceSTVar, 0, 0, 5},
-    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +38, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -3059,9 +3603,9 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceSTVar, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 9},
     {refalrts::icReturnResult, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +35, 0, 0},
+    {refalrts::icOnFailGoTo, +36, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional s.Short#1/6 ( ) ( # Word e.Param#1/9 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional s.Short#1/6 ( ) ( # Word s.WordNum#1/11 e.Param#1/9 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
     // closed e.Description#1 as range 2
     {refalrts::icsVarLeft, 0, 4, 0},
@@ -3072,38 +3616,40 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icBracketLeft, 0, 9, 0},
     {refalrts::icIdentLeft, 0, 4, 9},
     {refalrts::icEmpty, 0, 0, 7},
-    // closed e.Param#1 as range 9
     // closed e.ArgsTail#1 as range 0
+    {refalrts::icsVarLeft, 0, 11, 9},
+    // closed e.Param#1 as range 9
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: s.Short#1
     //9: e.Param#1
+    //11: s.WordNum#1
     {refalrts::icEmptyResult, 0, 0, 0},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 11},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 12},
-    {refalrts::icBracket, 0, refalrts::ibOpenCall, 13},
-    {refalrts::icFunc, 0, 0, 14},
-    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 15},
-    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 16},
-    {refalrts::icBracket, 0, refalrts::ibCloseCall, 17},
-    {refalrts::icPushStack, 0, 0, 17},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icSpliceElem, 0, 0, 17},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 12},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 13},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 14},
+    {refalrts::icFunc, 0, 0, 15},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 16},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 17},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 18},
+    {refalrts::icPushStack, 0, 0, 18},
+    {refalrts::icPushStack, 0, 0, 14},
+    {refalrts::icSpliceElem, 0, 0, 18},
     {refalrts::icSpliceEVar, 0, 0, 0},
-    {refalrts::icLinkBrackets, 15, 16, 0},
-    {refalrts::icSpliceElem, 0, 0, 16},
+    {refalrts::icLinkBrackets, 16, 17, 0},
+    {refalrts::icSpliceElem, 0, 0, 17},
     {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 16},
     {refalrts::icSpliceElem, 0, 0, 15},
     {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icLinkBrackets, 12, 13, 0},
     {refalrts::icSpliceElem, 0, 0, 13},
-    {refalrts::icLinkBrackets, 11, 12, 0},
-    {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icSpliceEVar, 0, 0, 9},
     {refalrts::icSpliceSTVar, 0, 0, 4},
     {refalrts::icSpliceSTVar, 0, 0, 5},
-    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icSpliceElem, 0, 0, 12},
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icOnFailGoTo, +34, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
@@ -3191,6 +3737,47 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceSTVar, 0, 0, 5},
     {refalrts::icSpliceElem, 0, 0, 9},
     {refalrts::icReturnResult, 0, 0, 0},
+    {refalrts::icOnFailGoTo, +32, 0, 0},
+    {refalrts::icInitB0, 0, 0, 0},
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # None s.Short#1/6 ( ) e.ArgsTail#1/0
+    {refalrts::icBracketLeft, 0, 2, 0},
+    // closed e.Description#1 as range 2
+    {refalrts::icsVarLeft, 0, 4, 0},
+    {refalrts::icsVarLeft, 0, 5, 0},
+    {refalrts::icIdentLeft, 0, 1, 0},
+    {refalrts::icsVarLeft, 0, 6, 0},
+    {refalrts::icBracketLeft, 0, 7, 0},
+    {refalrts::icEmpty, 0, 0, 7},
+    // closed e.ArgsTail#1 as range 0
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: s.Num#1
+    //5: s.Tag#1
+    //6: s.Short#1
+    {refalrts::icEmptyResult, 0, 0, 0},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 9},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 10},
+    {refalrts::icBracket, 0, refalrts::ibOpenCall, 11},
+    {refalrts::icFunc, 0, 0, 12},
+    {refalrts::icBracket, 0, refalrts::ibOpenBracket, 13},
+    {refalrts::icBracket, 0, refalrts::ibCloseBracket, 14},
+    {refalrts::icBracket, 0, refalrts::ibCloseCall, 15},
+    {refalrts::icPushStack, 0, 0, 15},
+    {refalrts::icPushStack, 0, 0, 11},
+    {refalrts::icSpliceElem, 0, 0, 15},
+    {refalrts::icSpliceEVar, 0, 0, 0},
+    {refalrts::icLinkBrackets, 13, 14, 0},
+    {refalrts::icSpliceElem, 0, 0, 14},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceElem, 0, 0, 13},
+    {refalrts::icSpliceElem, 0, 0, 12},
+    {refalrts::icSpliceElem, 0, 0, 11},
+    {refalrts::icLinkBrackets, 9, 10, 0},
+    {refalrts::icSpliceElem, 0, 0, 10},
+    {refalrts::icSpliceSTVar, 0, 0, 4},
+    {refalrts::icSpliceSTVar, 0, 0, 5},
+    {refalrts::icSpliceElem, 0, 0, 9},
+    {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icInitB0, 0, 0, 0},
     // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # None s.Short#1/6 ( e.OptTail#1/7 ) e.ArgsTail#1/0
     {refalrts::icBracketLeft, 0, 2, 0},
@@ -3245,7 +3832,7 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icReturnResult, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
-  int open_e_stack[6];
+  int open_e_stack[7];
   refalrts::FnResult res = refalrts::interpret_array(
     raa, context, arg_begin, arg_end,
     functions, idents, numbers, strings, open_e_stack
@@ -3259,7 +3846,7 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required s.Short#1/6 ( ) ( # Word e.Param#1/9 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Required s.Short#1/6 ( ) ( # Word s.WordNum#1/11 e.Param#1/9 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -3285,47 +3872,50 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
-    // closed e.Param#1 as range 9
     // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[11], context[9], context[10] ) )
+      continue;
+    // closed e.Param#1 as range 9
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: s.Short#1
     //9: e.Param#1
+    //11: s.WordNum#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_open_bracket( context[11] ) )
+    if( ! refalrts::alloc_open_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[12] ) )
+    if( ! refalrts::alloc_close_bracket( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[13] ) )
+    if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], ResolveOpts, "ResolveOpts" ) )
+    if( ! refalrts::alloc_name( context[15], ResolveOpts, "ResolveOpts" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[15] ) )
+    if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[16] ) )
+    if( ! refalrts::alloc_close_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[17] ) )
+    if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    refalrts::push_stack( context[17] );
-    refalrts::push_stack( context[13] );
-    res = refalrts::splice_elem( res, context[17] );
+    refalrts::push_stack( context[18] );
+    refalrts::push_stack( context[14] );
+    res = refalrts::splice_elem( res, context[18] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    refalrts::link_brackets( context[15], context[16] );
-    res = refalrts::splice_elem( res, context[16] );
+    refalrts::link_brackets( context[16], context[17] );
+    res = refalrts::splice_elem( res, context[17] );
     res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[16] );
     res = refalrts::splice_elem( res, context[15] );
     res = refalrts::splice_elem( res, context[14] );
+    refalrts::link_brackets( context[12], context[13] );
     res = refalrts::splice_elem( res, context[13] );
-    refalrts::link_brackets( context[11], context[12] );
-    res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_evar( res, context[9], context[10] );
     res = refalrts::splice_stvar( res, context[4] );
     res = refalrts::splice_stvar( res, context[5] );
-    res = refalrts::splice_elem( res, context[11] );
+    res = refalrts::splice_elem( res, context[12] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -3488,7 +4078,7 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     refalrts::move_left( context[0], context[1] );
     refalrts::move_left( context[0], context[1] );
     refalrts::move_right( context[0], context[1] );
-    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional s.Short#1/6 ( ) ( # Word e.Param#1/9 ) e.ArgsTail#1/0
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # Optional s.Short#1/6 ( ) ( # Word s.WordNum#1/11 e.Param#1/9 ) e.ArgsTail#1/0
     context[2] = 0;
     context[3] = 0;
     if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
@@ -3514,47 +4104,50 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
-    // closed e.Param#1 as range 9
     // closed e.ArgsTail#1 as range 0
+    if( ! refalrts::svar_left( context[11], context[9], context[10] ) )
+      continue;
+    // closed e.Param#1 as range 9
     //0: e.ArgsTail#1
     //2: e.Description#1
     //4: s.Num#1
     //5: s.Tag#1
     //6: s.Short#1
     //9: e.Param#1
+    //11: s.WordNum#1
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_open_bracket( context[11] ) )
+    if( ! refalrts::alloc_open_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[12] ) )
+    if( ! refalrts::alloc_close_bracket( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[13] ) )
+    if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], ResolveOpts, "ResolveOpts" ) )
+    if( ! refalrts::alloc_name( context[15], ResolveOpts, "ResolveOpts" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[15] ) )
+    if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[16] ) )
+    if( ! refalrts::alloc_close_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[17] ) )
+    if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    refalrts::push_stack( context[17] );
-    refalrts::push_stack( context[13] );
-    res = refalrts::splice_elem( res, context[17] );
+    refalrts::push_stack( context[18] );
+    refalrts::push_stack( context[14] );
+    res = refalrts::splice_elem( res, context[18] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    refalrts::link_brackets( context[15], context[16] );
-    res = refalrts::splice_elem( res, context[16] );
+    refalrts::link_brackets( context[16], context[17] );
+    res = refalrts::splice_elem( res, context[17] );
     res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[16] );
     res = refalrts::splice_elem( res, context[15] );
     res = refalrts::splice_elem( res, context[14] );
+    refalrts::link_brackets( context[12], context[13] );
     res = refalrts::splice_elem( res, context[13] );
-    refalrts::link_brackets( context[11], context[12] );
-    res = refalrts::splice_elem( res, context[12] );
     res = refalrts::splice_evar( res, context[9], context[10] );
     res = refalrts::splice_stvar( res, context[4] );
     res = refalrts::splice_stvar( res, context[5] );
-    res = refalrts::splice_elem( res, context[11] );
+    res = refalrts::splice_elem( res, context[12] );
     refalrts::use( res );
     refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -3696,6 +4289,76 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     refalrts::link_brackets( context[9], context[10] );
     res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_evar( res, context[7], context[8] );
+    res = refalrts::splice_stvar( res, context[4] );
+    res = refalrts::splice_stvar( res, context[5] );
+    res = refalrts::splice_elem( res, context[9] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist( arg_begin, arg_end );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_left( context[0], context[1] );
+    refalrts::move_right( context[0], context[1] );
+    // ( e.Description#1/2 ) s.Num#1/4 s.Tag#1/5 # None s.Short#1/6 ( ) e.ArgsTail#1/0
+    context[2] = 0;
+    context[3] = 0;
+    if( ! refalrts::brackets_left( context[2], context[3], context[0], context[1] ) )
+      continue;
+    // closed e.Description#1 as range 2
+    if( ! refalrts::svar_left( context[4], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::svar_left( context[5], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::ident_left(  & ident_None<int>::name, context[0], context[1] ) )
+      continue;
+    if( ! refalrts::svar_left( context[6], context[0], context[1] ) )
+      continue;
+    context[7] = 0;
+    context[8] = 0;
+    if( ! refalrts::brackets_left( context[7], context[8], context[0], context[1] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[7], context[8] ) )
+      continue;
+    // closed e.ArgsTail#1 as range 0
+    //0: e.ArgsTail#1
+    //2: e.Description#1
+    //4: s.Num#1
+    //5: s.Tag#1
+    //6: s.Short#1
+
+    refalrts::reset_allocator();
+    refalrts::Iter res = arg_begin;
+    if( ! refalrts::alloc_open_bracket( context[9] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[10] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ResolveOpts, "ResolveOpts" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[13] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[11] );
+    res = refalrts::splice_elem( res, context[15] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::link_brackets( context[13], context[14] );
+    res = refalrts::splice_elem( res, context[14] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_elem( res, context[13] );
+    res = refalrts::splice_elem( res, context[12] );
+    res = refalrts::splice_elem( res, context[11] );
+    refalrts::link_brackets( context[9], context[10] );
+    res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_stvar( res, context[4] );
     res = refalrts::splice_stvar( res, context[5] );
     res = refalrts::splice_elem( res, context[9] );

@@ -4,9 +4,6 @@
 
 extern refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult GenCommonHeaders(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult GenCommonTailer(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult GenIdent(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult GenProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -26,9 +23,12 @@ static refalrts::FnResult Escape(refalrts::Iter arg_begin, refalrts::Iter arg_en
 static refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult FuncArguments(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult GenCommonHeaders(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult GenCommonTailer(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenExtern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenFnStart(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenForward(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult GenIdent(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenReturn(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenSwap(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult NakedArguments(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -1931,7 +1931,7 @@ static refalrts::FnResult GenSwap(refalrts::Iter arg_begin, refalrts::Iter arg_e
 #endif
 }
 
-refalrts::FnResult GenIdent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult GenIdent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 40 elems
   refalrts::Iter context[40];
@@ -2141,7 +2141,7 @@ refalrts::FnResult GenIdent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #endif
 }
 
-refalrts::FnResult GenCommonHeaders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult GenCommonHeaders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
@@ -2244,7 +2244,7 @@ refalrts::FnResult GenCommonHeaders(refalrts::Iter arg_begin, refalrts::Iter arg
 #endif
 }
 
-refalrts::FnResult GenCommonTailer(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult GenCommonTailer(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
