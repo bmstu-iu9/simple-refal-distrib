@@ -7,7 +7,7 @@ extern refalrts::FnResult Compare(refalrts::Iter arg_begin, refalrts::Iter arg_e
 extern refalrts::FnResult Dec(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult HighLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -31,8 +31,8 @@ static refalrts::FnResult FreezeRanges(refalrts::Iter arg_begin, refalrts::Iter 
 static refalrts::FnResult GenPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult GetRangeReassigns(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult HightLevelRASL_Sentence(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult HighLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult HighLevelRASL_Sentence(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Inc2(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult IncVarOffset(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult MakeVariableComment(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -579,14 +579,14 @@ struct ident_TkVariable {
   }
 };
 
-static refalrts::FnResult lambda_HightLevelRASL_OptPattern_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_OptPattern_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { HightLevelRASL_Function, "HightLevelRASL_Function" }
+    { HighLevelRASL_Function, "HighLevelRASL_Function" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_CmdSeparator<int>::name,
@@ -785,7 +785,7 @@ static refalrts::FnResult lambda_HightLevelRASL_OptPattern_0(refalrts::Iter arg_
     refalrts::Iter res = arg_begin;
     if( ! refalrts::alloc_open_call( context[7] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[8], HightLevelRASL_Function, "HightLevelRASL_Function" ) )
+    if( ! refalrts::alloc_name( context[8], HighLevelRASL_Function, "HighLevelRASL_Function" ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
@@ -1033,14 +1033,14 @@ static refalrts::FnResult lambda_HightLevelRASL_OptPattern_0(refalrts::Iter arg_
 #endif
 }
 
-refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::FnResult HighLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_OptPattern_0, "lambda_HightLevelRASL_OptPattern_0" },
+    { lambda_HighLevelRASL_OptPattern_0, "lambda_HighLevelRASL_OptPattern_0" },
     { Map, "Map" }
   };
   using refalrts::idents;
@@ -1088,7 +1088,7 @@ refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[3], Map, "Map" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[4], lambda_HightLevelRASL_OptPattern_0, "lambda_HightLevelRASL_OptPattern_0" ) )
+  if( ! refalrts::alloc_name( context[4], lambda_HighLevelRASL_OptPattern_0, "lambda_HighLevelRASL_OptPattern_0" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[5] ) )
     return refalrts::cNoMemory;
@@ -1105,14 +1105,14 @@ refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts:
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Function_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Function_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { HightLevelRASL_Sentence, "HightLevelRASL_Sentence" }
+    { HighLevelRASL_Sentence, "HighLevelRASL_Sentence" }
   };
   using refalrts::idents;
   using refalrts::numbers;
@@ -1198,7 +1198,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_0(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], HightLevelRASL_Sentence, "HightLevelRASL_Sentence" ) )
+  if( ! refalrts::alloc_name( context[10], HighLevelRASL_Sentence, "HighLevelRASL_Sentence" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -1234,7 +1234,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_0(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Function_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Function_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
@@ -1332,14 +1332,14 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_1(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Function_2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Function_2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_Function_1, "lambda_HightLevelRASL_Function_1" },
+    { lambda_HighLevelRASL_Function_1, "lambda_HighLevelRASL_Function_1" },
     { refalrts::create_closure, "refalrts::create_closure" },
     { Compare, "Compare" },
     { Fetch, "Fetch" }
@@ -1464,7 +1464,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_2(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[14], refalrts::create_closure, "refalrts::create_closure" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], lambda_HightLevelRASL_Function_1, "lambda_HightLevelRASL_Function_1" ) )
+  if( ! refalrts::alloc_name( context[15], lambda_HighLevelRASL_Function_1, "lambda_HighLevelRASL_Function_1" ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[16], context[6]))
     return refalrts::cNoMemory;
@@ -1511,7 +1511,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_2(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Function_3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Function_3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
@@ -1634,14 +1634,14 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_3(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Function_4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Function_4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_Function_3, "lambda_HightLevelRASL_Function_3" },
+    { lambda_HighLevelRASL_Function_3, "lambda_HighLevelRASL_Function_3" },
     { Fetch, "Fetch" }
   };
   static const refalrts::RefalIdentifier idents[] = {
@@ -1785,7 +1785,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_4(refalrts::Iter arg_be
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[16], Fetch, "Fetch" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], lambda_HightLevelRASL_Function_3, "lambda_HightLevelRASL_Function_3" ) )
+    if( ! refalrts::alloc_name( context[17], lambda_HighLevelRASL_Function_3, "lambda_HighLevelRASL_Function_3" ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
@@ -1858,18 +1858,18 @@ static refalrts::FnResult lambda_HightLevelRASL_Function_4(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult HighLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_Function_4, "lambda_HightLevelRASL_Function_4" },
+    { lambda_HighLevelRASL_Function_4, "lambda_HighLevelRASL_Function_4" },
     { refalrts::create_closure, "refalrts::create_closure" },
-    { lambda_HightLevelRASL_Function_2, "lambda_HightLevelRASL_Function_2" },
+    { lambda_HighLevelRASL_Function_2, "lambda_HighLevelRASL_Function_2" },
     { MapReduce, "MapReduce" },
-    { lambda_HightLevelRASL_Function_0, "lambda_HightLevelRASL_Function_0" },
+    { lambda_HighLevelRASL_Function_0, "lambda_HighLevelRASL_Function_0" },
     { Map, "Map" },
     { Seq, "Seq" },
     { Fetch, "Fetch" }
@@ -1984,7 +1984,7 @@ static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[10], Map, "Map" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], lambda_HightLevelRASL_Function_0, "lambda_HightLevelRASL_Function_0" ) )
+  if( ! refalrts::alloc_name( context[11], lambda_HighLevelRASL_Function_0, "lambda_HighLevelRASL_Function_0" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
@@ -1992,7 +1992,7 @@ static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[14], MapReduce, "MapReduce" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], lambda_HightLevelRASL_Function_2, "lambda_HightLevelRASL_Function_2" ) )
+  if( ! refalrts::alloc_name( context[15], lambda_HighLevelRASL_Function_2, "lambda_HighLevelRASL_Function_2" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[16], 0UL ) )
     return refalrts::cNoMemory;
@@ -2002,7 +2002,7 @@ static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[19], refalrts::create_closure, "refalrts::create_closure" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], lambda_HightLevelRASL_Function_4, "lambda_HightLevelRASL_Function_4" ) )
+  if( ! refalrts::alloc_name( context[20], lambda_HighLevelRASL_Function_4, "lambda_HighLevelRASL_Function_4" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[21] ) )
     return refalrts::cNoMemory;
@@ -2053,7 +2053,7 @@ static refalrts::FnResult HightLevelRASL_Function(refalrts::Iter arg_begin, refa
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Sentence_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Sentence_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
@@ -2174,14 +2174,14 @@ static refalrts::FnResult lambda_HightLevelRASL_Sentence_0(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult lambda_HightLevelRASL_Sentence_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult lambda_HighLevelRASL_Sentence_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_Sentence_0, "lambda_HightLevelRASL_Sentence_0" },
+    { lambda_HighLevelRASL_Sentence_0, "lambda_HighLevelRASL_Sentence_0" },
     { refalrts::create_closure, "refalrts::create_closure" },
     { GenResult, "GenResult" },
     { Fetch, "Fetch" }
@@ -2305,7 +2305,7 @@ static refalrts::FnResult lambda_HightLevelRASL_Sentence_1(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[17], refalrts::create_closure, "refalrts::create_closure" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], lambda_HightLevelRASL_Sentence_0, "lambda_HightLevelRASL_Sentence_0" ) )
+  if( ! refalrts::alloc_name( context[18], lambda_HighLevelRASL_Sentence_0, "lambda_HighLevelRASL_Sentence_0" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
@@ -2347,14 +2347,14 @@ static refalrts::FnResult lambda_HightLevelRASL_Sentence_1(refalrts::Iter arg_be
 #endif
 }
 
-static refalrts::FnResult HightLevelRASL_Sentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult HighLevelRASL_Sentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_HightLevelRASL_Sentence_1, "lambda_HightLevelRASL_Sentence_1" },
+    { lambda_HighLevelRASL_Sentence_1, "lambda_HighLevelRASL_Sentence_1" },
     { refalrts::create_closure, "refalrts::create_closure" },
     { GenPattern, "GenPattern" },
     { Fetch, "Fetch" }
@@ -2453,7 +2453,7 @@ static refalrts::FnResult HightLevelRASL_Sentence(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[12], refalrts::create_closure, "refalrts::create_closure" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], lambda_HightLevelRASL_Sentence_1, "lambda_HightLevelRASL_Sentence_1" ) )
+  if( ! refalrts::alloc_name( context[13], lambda_HighLevelRASL_Sentence_1, "lambda_HighLevelRASL_Sentence_1" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[14] ) )
     return refalrts::cNoMemory;

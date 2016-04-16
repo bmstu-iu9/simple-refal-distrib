@@ -7,9 +7,9 @@ extern refalrts::FnResult EL_Create(refalrts::Iter arg_begin, refalrts::Iter arg
 extern refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult GenProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult HightLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult HightLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult HightLevelRASL_OptResult(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult HighLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult HighLevelRASL_OptPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult HighLevelRASL_OptResult(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult LowLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -868,9 +868,9 @@ static refalrts::FnResult SelectRASL(refalrts::Iter arg_begin, refalrts::Iter ar
   refalrts::zeros( context, 3 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { HightLevelRASL_OptResult, "HightLevelRASL_OptResult" },
-    { HightLevelRASL_OptPattern, "HightLevelRASL_OptPattern" },
-    { HightLevelRASL, "HightLevelRASL" }
+    { HighLevelRASL_OptResult, "HighLevelRASL_OptResult" },
+    { HighLevelRASL_OptPattern, "HighLevelRASL_OptPattern" },
+    { HighLevelRASL, "HighLevelRASL" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_OptResult<int>::name,
@@ -930,7 +930,7 @@ static refalrts::FnResult SelectRASL(refalrts::Iter arg_begin, refalrts::Iter ar
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_name( context[2], HightLevelRASL, "HightLevelRASL" ) )
+    if( ! refalrts::alloc_name( context[2], HighLevelRASL, "HighLevelRASL" ) )
       return refalrts::cNoMemory;
     res = refalrts::splice_elem( res, context[2] );
     refalrts::use( res );
@@ -953,7 +953,7 @@ static refalrts::FnResult SelectRASL(refalrts::Iter arg_begin, refalrts::Iter ar
 
     refalrts::reset_allocator();
     refalrts::Iter res = arg_begin;
-    if( ! refalrts::alloc_name( context[2], HightLevelRASL_OptPattern, "HightLevelRASL_OptPattern" ) )
+    if( ! refalrts::alloc_name( context[2], HighLevelRASL_OptPattern, "HighLevelRASL_OptPattern" ) )
       return refalrts::cNoMemory;
     res = refalrts::splice_elem( res, context[2] );
     refalrts::use( res );
@@ -974,7 +974,7 @@ static refalrts::FnResult SelectRASL(refalrts::Iter arg_begin, refalrts::Iter ar
 
   refalrts::reset_allocator();
   refalrts::Iter res = arg_begin;
-  if( ! refalrts::alloc_name( context[2], HightLevelRASL_OptResult, "HightLevelRASL_OptResult" ) )
+  if( ! refalrts::alloc_name( context[2], HighLevelRASL_OptResult, "HighLevelRASL_OptResult" ) )
     return refalrts::cNoMemory;
   res = refalrts::splice_elem( res, context[2] );
   refalrts::use( res );

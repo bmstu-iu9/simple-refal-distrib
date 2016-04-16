@@ -150,37 +150,39 @@ bool refalrts::function_right(
   }
 }
 
-bool refalrts::char_left(
+refalrts::Iter refalrts::char_left(
   char ch, refalrts::Iter& first, refalrts::Iter& last
 ) {
   assert( (first == 0) == (last == 0) );
 
   if( empty_seq( first, last ) ) {
-    return false;
+    return 0;
   } else if ( cDataChar != first->tag ) {
-    return false;
+    return 0;
   } else if ( first->char_info != ch ) {
-    return false;
+    return 0;
   } else {
+    Iter char_pos = first;
     move_left( first, last );
-    return true;
+    return char_pos;
   }
 }
 
-bool refalrts::char_right(
+refalrts::Iter refalrts::char_right(
   char ch, refalrts::Iter& first, refalrts::Iter& last
 ) {
   assert( (first == 0) == (last == 0) );
 
   if( empty_seq( first, last ) ) {
-    return false;
+    return 0;
   } else if ( cDataChar != last->tag ) {
-    return false;
+    return 0;
   } else if ( last->char_info != ch ) {
-    return false;
+    return 0;
   } else {
+    Iter char_pos = last;
     move_right( first, last );
-    return true;
+    return char_pos;
   }
 }
 
@@ -2862,16 +2864,16 @@ int main(int argc, char **argv) {
       return 0;
 
     case refalrts::cRecognitionImpossible:
-      return 1;
+      return 101;
 
     case refalrts::cNoMemory:
-      return 2;
+      return 102;
 
     case refalrts::cExit:
       return refalrts::vm::g_ret_code;
 
     default:
-      fprintf(stderr, "INTERNAL ERROR: check switch in main");
-      return 5;
+      fprintf(stderr, "INTERNAL ERROR: check switch in main (res = %d)\n", res);
+      return 105;
   }
 }
