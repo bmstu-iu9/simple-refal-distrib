@@ -10,7 +10,6 @@ extern refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult AllocatorCommandInfo(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult AllocatorCommandTag(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult AllocatorFuncArgument(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -78,6 +77,14 @@ template <typename SREFAL_PARAM_INT>
 struct ident_AlgRight {
   static const char *name() {
     return "AlgRight";
+  }
+};
+
+// identifier #AlgTerm
+template <typename SREFAL_PARAM_INT>
+struct ident_AlgTerm {
+  static const char *name() {
+    return "AlgTerm";
   }
 };
 
@@ -7465,6 +7472,71 @@ static refalrts::FnResult GenCommand(refalrts::Iter arg_begin, refalrts::Iter ar
     res = refalrts::splice_evar( res, context[20], context[20] );
     res = refalrts::splice_evar( res, context[18], context[19] );
     res = refalrts::splice_evar( res, context[1], context[1] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdRepeated/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.Var#1/17 s.Sample#1/18 )/12 >/1
+    context[2] = 0;
+    context[3] = 0;
+    context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+    context[5] = 0;
+    context[6] = 0;
+    context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+    if( ! context[7] )
+      continue;
+    refalrts::bracket_pointers(context[7], context[8]);
+    context[9] = 0;
+    context[10] = 0;
+    context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+    if( ! context[11] )
+      continue;
+    refalrts::bracket_pointers(context[11], context[12]);
+    context[13] = refalrts::ident_left(  & ident_CmdRepeated<int>::name, context[9], context[10] );
+    if( ! context[13] )
+      continue;
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+    if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[15], context[9], context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[16], context[9], context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[17], context[9], context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[18], context[9], context[10] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[9], context[10] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 } Tile{ HalfReuse: & PrintMatchRepeated/0 HalfReuse: (/4 } e.Indent#1/5/19 Tile{ HalfReuse: )/13 AsIs: s.Direction#1/14 AsIs: s.BracketNumber#1/15 AsIs: s.Mode#1/16 AsIs: s.Var#1/17 AsIs: s.Sample#1/18 HalfReuse: >/12 } Tile{ ]] }
+    if (! refalrts::copy_evar(context[19], context[20], context[5], context[6]))
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_call( context[11] );
+    refalrts::reinit_name( context[0], PrintMatchRepeated, "PrintMatchRepeated" );
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::reinit_close_bracket( context[13] );
+    refalrts::reinit_close_call( context[12] );
+    refalrts::push_stack( context[12] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[4], context[13] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[13], context[12] );
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -18534,9 +18606,9 @@ static refalrts::FnResult PrintMatchSTVarSave(refalrts::Iter arg_begin, refalrts
 
 static refalrts::FnResult PrintMatchRepeated(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 38 elems
-  refalrts::Iter context[38];
-  refalrts::zeros( context, 38 );
+  // issue here memory for vars with 70 elems
+  refalrts::Iter context[70];
+  refalrts::zeros( context, 70 );
   do {
     refalrts::start_sentence();
     context[0] = arg_begin;
@@ -18632,6 +18704,173 @@ static refalrts::FnResult PrintMatchRepeated(refalrts::Iter arg_begin, refalrts:
     res = refalrts::splice_evar( res, context[12], context[12] );
     res = refalrts::splice_evar( res, context[14], context[29] );
     refalrts::use( res );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
+    context[2] = 0;
+    context[3] = 0;
+    context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+    context[5] = 0;
+    context[6] = 0;
+    context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+    if( ! context[7] )
+      continue;
+    refalrts::bracket_pointers(context[7], context[8]);
+    context[9] = refalrts::ident_left(  & ident_AlgTerm<int>::name, context[2], context[3] );
+    if( ! context[9] )
+      continue;
+    // closed e.Indent#1 as range 5
+    if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
+      continue;
+    if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+      continue;
+    if( ! refalrts::svar_left( context[12], context[2], context[3] ) )
+      continue;
+    if( ! refalrts::svar_left( context[13], context[2], context[3] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.BracketNumber#1/10 s.Mode#1/11 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 'i'/17 'f'/18 '('/19 ' '/20 '!'/21 ' '/22 'r'/23 'e'/24 'f'/25 'a'/26 'l'/27 'r'/28 't'/29 's'/30 ':'/31 ':'/32 'r'/33 'e'/34 'p'/35 'e'/36 'a'/37 't'/38 'e'/39 'd'/40 '_'/41 's'/42 't'/43 'v'/44 'a'/45 'r'/46 '_'/47 't'/48 'e'/49 'r'/50 'm'/51 '('/52 ' '/53 </54 & ContextItem/55 Tile{ AsIs: s.VarNumber#1/12 } >/56 ','/57 ' '/58 </59 & ContextItem/60 Tile{ AsIs: s.SampleNumber#1/13 AsIs: >/1 } ' '/61 ')'/62 ' '/63 Tile{ HalfReuse: ')'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: ' '/8 HalfReuse: ' '/9 } </64 & BreakerFromIndent/65 e.Indent#1/5/66 >/68 )/69 Tile{ ]] }
+    if( ! refalrts::alloc_open_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[17], 'i' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[18], 'f' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[19], '(' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[20], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[21], '!' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[22], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[23], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[24], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[25], 'f' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[26], 'a' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[27], 'l' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[28], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[29], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[30], 's' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[31], ':' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[32], ':' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[33], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[34], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[35], 'p' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[36], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[37], 'a' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[38], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[39], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[40], 'd' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[41], '_' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[42], 's' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[43], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[44], 'v' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[45], 'a' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[46], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[47], '_' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[48], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[49], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[50], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[51], 'm' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[52], '(' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[53], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[54] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[55], ContextItem, "ContextItem" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[56] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[57], ',' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[58], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[59] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[60], ContextItem, "ContextItem" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[61], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[62], ')' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[63], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[64] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[65], BreakerFromIndent, "BreakerFromIndent" ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[66], context[67], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[68] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[69] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], ')' );
+    refalrts::reinit_close_bracket( context[4] );
+    refalrts::reinit_char( context[8], ' ' );
+    refalrts::reinit_char( context[9], ' ' );
+    refalrts::link_brackets( context[7], context[69] );
+    refalrts::push_stack( context[68] );
+    refalrts::push_stack( context[64] );
+    refalrts::link_brackets( context[14], context[4] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[59] );
+    refalrts::push_stack( context[56] );
+    refalrts::push_stack( context[54] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[64], context[69] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[61], context[63] );
+    res = refalrts::splice_evar( res, context[13], context[1] );
+    res = refalrts::splice_evar( res, context[56], context[60] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
+    res = refalrts::splice_evar( res, context[14], context[55] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -18892,6 +19131,137 @@ static refalrts::FnResult PrintMatch(refalrts::Iter arg_begin, refalrts::Iter ar
   // issue here memory for vars with 52 elems
   refalrts::Iter context[52];
   refalrts::zeros( context, 52 );
+  do {
+    refalrts::start_sentence();
+    context[0] = arg_begin;
+    context[1] = arg_end;
+    // </0 & PrintMatch/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.Offset#1/10 (/13 e.Function#1/11 )/14 e.TextRep#1/2 >/1
+    context[2] = 0;
+    context[3] = 0;
+    context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+    context[5] = 0;
+    context[6] = 0;
+    context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+    if( ! context[7] )
+      continue;
+    refalrts::bracket_pointers(context[7], context[8]);
+    context[9] = refalrts::ident_left(  & ident_AlgTerm<int>::name, context[2], context[3] );
+    if( ! context[9] )
+      continue;
+    // closed e.Indent#1 as range 5
+    if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
+      continue;
+    context[11] = 0;
+    context[12] = 0;
+    context[13] = refalrts::brackets_left( context[11], context[12], context[2], context[3] );
+    if( ! context[13] )
+      continue;
+    refalrts::bracket_pointers(context[13], context[14]);
+    // closed e.Function#1 as range 11
+    // closed e.TextRep#1 as range 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } (/15 e.Indent#1/5/16 'i'/18 'f'/19 '('/20 ' '/21 '!'/22 ' '/23 'r'/24 'e'/25 'f'/26 'a'/27 'l'/28 'r'/29 't'/30 's'/31 ':'/32 Tile{ HalfReuse: ':'/13 AsIs: e.Function#1/11 HalfReuse: '_'/14 } 't'/33 'e'/34 'r'/35 'm'/36 '('/37 ' '/38 Tile{ AsIs: e.TextRep#1/2 } ','/39 ' '/40 </41 & ContextItem/42 Tile{ AsIs: s.Offset#1/10 } >/43 ' '/44 ')'/45 ' '/46 Tile{ HalfReuse: ')'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: ' '/8 HalfReuse: ' '/9 } </47 & BreakerFromIndent/48 e.Indent#1/5/49 >/51 Tile{ HalfReuse: )/1 ]] }
+    if( ! refalrts::alloc_open_bracket( context[15] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[16], context[17], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[18], 'i' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[19], 'f' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[20], '(' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[21], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[22], '!' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[23], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[24], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[25], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[26], 'f' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[27], 'a' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[28], 'l' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[29], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[30], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[31], 's' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[32], ':' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[33], 't' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[34], 'e' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[35], 'r' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[36], 'm' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[37], '(' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[38], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[39], ',' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[40], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[41] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[42], ContextItem, "ContextItem" ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[43] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[44], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[45], ')' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[46], ' ' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[47] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[48], BreakerFromIndent, "BreakerFromIndent" ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[49], context[50], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[51] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[13], ':' );
+    refalrts::reinit_char( context[14], '_' );
+    refalrts::reinit_char( context[0], ')' );
+    refalrts::reinit_close_bracket( context[4] );
+    refalrts::reinit_char( context[8], ' ' );
+    refalrts::reinit_char( context[9], ' ' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[7], context[1] );
+    refalrts::push_stack( context[51] );
+    refalrts::push_stack( context[47] );
+    refalrts::link_brackets( context[15], context[4] );
+    refalrts::push_stack( context[43] );
+    refalrts::push_stack( context[41] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[47], context[51] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[43], context[46] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[39], context[42] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[33], context[38] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[15], context[32] );
+    refalrts::use( res );
+    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+  } while ( 0 );
+
   context[0] = arg_begin;
   context[1] = arg_end;
   // </0 & PrintMatch/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 (/13 e.Function#1/11 )/14 e.TextRep#1/2 >/1
