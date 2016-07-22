@@ -116,6 +116,12 @@ bool refalrts::empty_seq( refalrts::Iter first, refalrts::Iter last ) {
   return (first == 0) && (last == 0);
 }
 
+bool refalrts::function_term(
+  refalrts::RefalFunctionPtr func, refalrts::Iter pos
+) {
+  return (pos->tag == cDataFunction) && (pos->function_info.ptr == func);
+}
+
 refalrts::Iter refalrts::function_left(
   refalrts::RefalFunctionPtr fn, refalrts::Iter& first, refalrts::Iter& last
 ) {
@@ -371,19 +377,19 @@ void refalrts::bracket_pointers(
   right_bracket = left_bracket->link_info;
 }
 
-bool refalrts::adt_term(
+refalrts::Iter refalrts::adt_term(
   refalrts::Iter& res_first, refalrts::Iter& res_last,
   refalrts::RefalFunctionPtr tag,
   refalrts::Iter pos
 ) {
   if (pos->tag != cDataOpenADT) {
-    return false;
+    return 0;
   }
   
   refalrts::Iter adt_tag = next(pos);
   
   if (adt_tag->tag != cDataFunction && adt_tag->function_info.ptr != tag) {
-    return false;
+    return 0;
   }
   
   refalrts::Iter right_bracket = pos->link_info;
@@ -396,7 +402,7 @@ bool refalrts::adt_term(
     res_last = 0;
   }
   
-  return true;
+  return adt_tag;
 }
 
 refalrts::Iter refalrts::adt_left(
@@ -2742,14 +2748,15 @@ refalrts::FnResult refalrts::interpret_array(
 ) {
   int i = 0;
   Iter res = begin;
+  Iter trash_prev = begin->prev;
   unsigned int index;
   int stack_top = 0;
 
 #define MATCH_FAIL \
   { \
-    if (stack_top == 0) \
+    if (stack_top == 0) { \
       return refalrts::cRecognitionImpossible; \
-    else { \
+    } else { \
       i = open_e_stack[--stack_top]; \
       continue; \
     } \
@@ -2763,15 +2770,167 @@ refalrts::FnResult refalrts::interpret_array(
     Iter &bb = context[raa[i].bracket];
     Iter &be = context[raa[i].bracket + 1];
     Iter &elem = context[raa[i].bracket];
+    Iter &save_pos = context[raa[i].val1];
 
     switch(raa[i].cmd)
     {
+      case icOnFailGoTo:
+        open_e_stack[stack_top++] = i + raa[i].val1 + 1;
+        break;
+
       case icInitB0:
         context[0] = begin;
         context[1] = end;
         refalrts::move_left( context[0], context[1] );
         refalrts::move_left( context[0], context[1] );
         refalrts::move_right( context[0], context[1] );
+        break;
+
+      case icInitB0_Lite:
+        context[0] = begin;
+        context[1] = end;
+        break;
+
+      case icCharLeft:
+        if ( !char_left( static_cast<char>(raa[i].val2), bb, be) )
+          MATCH_FAIL
+        break;
+
+      case icCharRight:
+        if ( !char_right( static_cast<char>(raa[i].val2), bb, be) )
+          MATCH_FAIL
+        break;
+
+      case icCharTerm:
+        if ( !char_term( static_cast<char>(raa[i].val2), bb ) )
+          MATCH_FAIL
+        break;
+
+      case icCharLeftSave:
+        save_pos = char_left( static_cast<char>(raa[i].val2), bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icCharRightSave:
+        save_pos = char_right( static_cast<char>(raa[i].val2), bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icNumLeft:
+        if( ! refalrts::number_left(
+          static_cast<RefalNumber>(raa[i].val2), bb, be )
+        )
+          MATCH_FAIL
+       break;
+
+      case icNumRight:
+        if( ! refalrts::number_right(
+          static_cast<RefalNumber>(raa[i].val2), bb, be )
+        )
+          MATCH_FAIL
+       break;
+
+      case icNumTerm:
+        if(
+          ! refalrts::number_term( static_cast<RefalNumber>(raa[i].val2), bb )
+        )
+          MATCH_FAIL
+        break;
+
+      case icNumLeftSave:
+        save_pos = number_left( static_cast<RefalNumber>(raa[i].val2), bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icNumRightSave:
+        save_pos =
+          number_right( static_cast<RefalNumber>(raa[i].val2), bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icHugeNumLeft:
+        if( ! refalrts::number_left( numbers[raa[i].val2], bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icHugeNumRight:
+        if( ! refalrts::number_right( numbers[raa[i].val2], bb, be ) )
+          MATCH_FAIL
+       break;
+
+      case icHugeNumTerm:
+        if( ! refalrts::number_term( numbers[raa[i].val2], bb ) )
+          MATCH_FAIL
+        break;
+
+      case icHugeNumLeftSave:
+        save_pos = number_left( numbers[raa[i].val2], bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icHugeNumRightSave:
+        save_pos = number_right( numbers[raa[i].val2], bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icFuncLeft:
+        if ( !function_left( functions[raa[i].val2].ptr, bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icFuncRight:
+        if ( !function_right( functions[raa[i].val2].ptr, bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icFuncTerm:
+        if ( !function_term( functions[raa[i].val2].ptr, bb ) )
+          MATCH_FAIL
+        break;
+
+      case icFuncLeftSave:
+        save_pos = function_left( functions[raa[i].val2].ptr, bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icFuncRightSave:
+        save_pos = function_right( functions[raa[i].val2].ptr, bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icIdentLeft:
+        if( ! refalrts::ident_left( idents[raa[i].val2], bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icIdentRight:
+        if( ! refalrts::ident_right( idents[raa[i].val2], bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icIdentTerm:
+        if( ! refalrts::ident_term( idents[raa[i].val2], bb ) )
+          MATCH_FAIL
+        break;
+
+      case icIdentLeftSave:
+        save_pos = ident_left( idents[raa[i].val2], bb, be );
+        if (! save_pos)
+          MATCH_FAIL
+        break;
+
+      case icIdentRightSave:
+        save_pos = ident_right( idents[raa[i].val2], bb, be );
+        if (! save_pos)
+          MATCH_FAIL
         break;
 
       case icBracketLeft:
@@ -2790,61 +2949,42 @@ refalrts::FnResult refalrts::interpret_array(
           MATCH_FAIL
         break;
 
-      case ictVarRight:
-        index = raa[i].val2;
-        if( !refalrts::tvar_right( context[index], bb, be) )
-          MATCH_FAIL
-       break;
-
-      case ictVarLeft:
-        index = raa[i].val2;
-        if( !refalrts::tvar_left( context[index], bb, be) )
-          MATCH_FAIL
-        break;
-
-      case icsVarRight:
-        index = raa[i].val2;
-        if( !refalrts::svar_right( context[index], bb, be) )
-          MATCH_FAIL
-        break;
-
-      case icsVarLeft:
-        index = raa[i].val2;
-        if( !refalrts::svar_left( context[index], bb, be) )
-          MATCH_FAIL
-        break;
-
-      case icNumRight:
-        if( ! refalrts::number_right(
-          static_cast<RefalNumber>(raa[i].val2), bb, be )
+      case icBracketTerm:
+        if( !refalrts::brackets_term( context[raa[i].val2],
+                                      context[raa[i].val2 + 1],
+                                      bb )
         )
           MATCH_FAIL
-       break;
+        break;
 
-      case icHugeNumRight:
-        if( ! refalrts::number_right( numbers[raa[i].val2], bb, be ) )
-          MATCH_FAIL
-       break;
+      case icBracketLeftSave:
+        {
+          int inner = raa[i].val2;
+          context[inner + 2] =
+            brackets_left(context[inner], context[inner + 1], bb, be);
+          if (! context[inner + 2])
+            MATCH_FAIL
+          bracket_pointers(context[inner + 2], context[inner + 3]);
+        }
+        break;
 
-      case icNumLeft:
-        if( ! refalrts::number_left(
-          static_cast<RefalNumber>(raa[i].val2), bb, be )
+      case icBracketRightSave:
+        {
+          int inner = raa[i].val2;
+          context[inner + 2] =
+            brackets_right(context[inner], context[inner + 1], bb, be);
+          if (! context[inner + 2])
+            MATCH_FAIL
+          bracket_pointers(context[inner + 2], context[inner + 3]);
+        }
+        break;
+
+      case icADTLeft:
+        if( ! refalrts::adt_left( context[raa[i].val2],
+                                  context[raa[i].val2 + 1],
+                                  functions[raa[i].val1].ptr,
+                                  bb, be)
         )
-          MATCH_FAIL
-       break;
-
-      case icHugeNumLeft:
-        if( ! refalrts::number_left( numbers[raa[i].val2], bb, be ) )
-          MATCH_FAIL
-        break;
-
-      case icIdentRight:
-        if( ! refalrts::ident_right( idents[raa[i].val2], bb, be ) )
-          MATCH_FAIL
-        break;
-
-      case icIdentLeft:
-        if( ! refalrts::ident_left( idents[raa[i].val2], bb, be ) )
           MATCH_FAIL
         break;
 
@@ -2857,69 +2997,125 @@ refalrts::FnResult refalrts::interpret_array(
           MATCH_FAIL
         break;
 
-      case icADTLeft:
-        if( ! refalrts::adt_left( context[raa[i].val2],
+      case icADTTerm:
+        if( ! refalrts::adt_term( context[raa[i].val2],
                                   context[raa[i].val2 + 1],
                                   functions[raa[i].val1].ptr,
-                                  bb, be)
+                                  bb )
         )
           MATCH_FAIL
         break;
 
-      case icFuncRight:
-        if ( !function_right( functions[raa[i].val2].ptr, bb, be ) )
-          MATCH_FAIL
-        break;
-
-      case icFuncLeft:
-        if ( !function_left( functions[raa[i].val2].ptr, bb, be ) )
-          MATCH_FAIL
-        break;
-
-      case icCharRight:
-        if ( !char_right( static_cast<char>(raa[i].val2), bb, be) )
-          MATCH_FAIL
-        break;
-
-      case icCharLeft:
-        if ( !char_left( static_cast<char>(raa[i].val2), bb, be) )
-          MATCH_FAIL
-        break;
-
-      case iceRepeatRight:
+      case icADTLeftSave:
         {
-          int ind1, ind2;
-          ind1 = raa[i].val1;
-          ind2 = raa[i].val2;
-          if( ! refalrts::repeated_evar_right( context[ind1], context[ind1 + 1],
-                                               context[ind2], context[ind2 + 1],
-                                               bb, be)
-          )
+          int inner = raa[i].val2;
+          RefalFunctionPtr tag = functions[raa[i].val1].ptr;
+          context[inner + 2] =
+            adt_left(context[inner], context[inner + 1], tag, bb, be);
+          if (! context[inner + 2])
+            MATCH_FAIL
+          adt_pointers(context[inner + 2], context[inner + 3], context[inner + 4]);
+        }
+        break;
+
+      case icADTRightSave:
+        {
+          int inner = raa[i].val2;
+          RefalFunctionPtr tag = functions[raa[i].val1].ptr;
+          context[inner + 2] =
+            adt_right(context[inner], context[inner + 1], tag, bb, be);
+          if (! context[inner + 2])
+            MATCH_FAIL
+          adt_pointers(context[inner + 2], context[inner + 3], context[inner + 4]);
+        }
+        break;
+
+      case icADTTermSave:
+        {
+          int inner = raa[i].val2;
+          RefalFunctionPtr tag = functions[raa[i].val1].ptr;
+          context[inner + 2] =
+            adt_term(context[inner], context[inner + 1], tag, bb);
+          if (! context[inner + 2])
             MATCH_FAIL
         }
         break;
 
+      case icCallSaveLeft:
+        context[raa[i].val2 + 2] =
+          refalrts::call_left(
+            context[raa[i].val2], context[raa[i].val2 + 1], bb, be
+          );
+        break;
+
+      case icEmpty:
+        if ( !empty_seq( bb, be ) )
+          MATCH_FAIL
+        break;
+
+      case icsVarLeft:
+        index = raa[i].val2;
+        if( !refalrts::svar_left( context[index], bb, be) )
+          MATCH_FAIL
+        break;
+
+      case icsVarRight:
+        index = raa[i].val2;
+        if( !refalrts::svar_right( context[index], bb, be) )
+          MATCH_FAIL
+        break;
+
+      case icsVarTerm:
+        if( !refalrts::svar_term( bb, bb ) )
+          MATCH_FAIL
+        break;
+
+      case ictVarLeft:
+        index = raa[i].val2;
+        if( !refalrts::tvar_left( context[index], bb, be) )
+          MATCH_FAIL
+        break;
+
+      case ictVarRight:
+        index = raa[i].val2;
+        if( !refalrts::tvar_right( context[index], bb, be) )
+          MATCH_FAIL
+       break;
+
+      case ictVarLeftSave:
+        index = raa[i].val2;
+        context[index + 1] = tvar_left(context[index], bb, be);
+        if (! context[index + 1])
+          MATCH_FAIL
+        break;
+
+      case ictVarRightSave:
+        index = raa[i].val2;
+        context[index + 1] = tvar_right(context[index], bb, be);
+        if (! context[index + 1])
+          MATCH_FAIL
+        break;
+
       case iceRepeatLeft:
         {
-          int ind1, ind2;
-          ind1 = raa[i].val1;
-          ind2 = raa[i].val2;
-          if( ! refalrts::repeated_evar_left( context[ind1], context[ind1 + 1],
-                                              context[ind2], context[ind2 + 1],
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+          if( ! refalrts::repeated_evar_left( context[index], context[index + 1],
+                                              context[sample], context[sample + 1],
                                               bb, be)
           )
             MATCH_FAIL
         }
         break;
 
-      case icsRepeatRight:
-      case ictRepeatRight:
+      case iceRepeatRight:
         {
-          int ind1, ind2;
-          ind1 = raa[i].val1;
-          ind2 = raa[i].val2;
-          if( ! refalrts::repeated_stvar_right( context[ind1],  context[ind2],
-                                                bb, be) )
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+          if( ! refalrts::repeated_evar_right( context[index], context[index + 1],
+                                               context[sample], context[sample + 1],
+                                               bb, be)
+          )
             MATCH_FAIL
         }
         break;
@@ -2927,18 +3123,54 @@ refalrts::FnResult refalrts::interpret_array(
       case icsRepeatLeft:
       case ictRepeatLeft:
         {
-          int ind1, ind2;
-          ind1 = raa[i].val1;
-          ind2 = raa[i].val2;
-          if( ! refalrts::repeated_stvar_left( context[ind1],  context[ind2],
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+          if( ! refalrts::repeated_stvar_left( context[index],  context[sample],
                                                bb, be) )
             MATCH_FAIL
         }
         break;
 
-      case icSave:
-        context[raa[i].val2] = bb;
-        context[raa[i].val2 + 1] = be;
+      case icsRepeatRight:
+      case ictRepeatRight:
+        {
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+          if( ! refalrts::repeated_stvar_right( context[index],  context[sample],
+                                                bb, be) )
+            MATCH_FAIL
+        }
+        break;
+
+      case icsRepeatTerm:
+      case ictRepeatTerm:
+        assert(raa[i].bracket == raa[i].val1);
+        if( ! refalrts::repeated_stvar_term( context[raa[i].val2], bb ) )
+          MATCH_FAIL
+        break;
+
+      case ictRepeatLeftSave:
+        {
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+
+          context[index + 1] =
+            repeated_stvar_left(context[index], context[sample], bb, be);
+          if (! context[index + 1])
+            MATCH_FAIL
+        }
+        break;
+
+      case ictRepeatRightSave:
+        {
+          int index = raa[i].val1;
+          int sample = raa[i].val2;
+
+          context[index + 1] =
+            repeated_stvar_right(context[index], context[sample], bb, be);
+          if (! context[index + 1])
+            MATCH_FAIL
+        }
         break;
 
       case icEPrepare:
@@ -2960,27 +3192,56 @@ refalrts::FnResult refalrts::interpret_array(
         }
         break;
 
-      case icEmpty:
-        if ( !empty_seq( bb, be ) )
-          MATCH_FAIL
+      case icSave:
+        context[raa[i].val2] = bb;
+        context[raa[i].val2 + 1] = be;
         break;
 
-      case icChar:
+      case icEmptyResult:
+        reset_allocator();
+        break;
+
+      case icSetResRightEdge:
+        res = end->next;
+        break;
+
+      case icSetRes:
+        res = context[raa[i].bracket];
+        break;
+
+      case icCopyEVar:
+        {
+          unsigned int target = raa[i].val1;
+          unsigned int sample = raa[i].val2;
+          if (
+            ! copy_evar(
+              context[target], context[target + 1],
+              context[sample], context[sample + 1]
+            )
+          )
+            return cNoMemory;
+        }
+        break;
+
+      case icCopySTVar:
+        {
+          unsigned int target = raa[i].val1;
+          unsigned int sample = raa[i].val2;
+          if (! copy_stvar(context[target], context[sample]))
+            return cNoMemory;
+        }
+        break;
+
+      case icReinitSVar:
+        reinit_svar(elem, context[raa[i].val2]);
+        break;
+
+      case icAllocChar:
         if(!alloc_char(elem, static_cast<char>(raa[i].val2)))
           return cNoMemory;
         break;
 
-      case icInt:
-        if(!alloc_number(elem, static_cast<RefalNumber>(raa[i].val2)))
-          return cNoMemory;
-        break;
-
-      case icHugeInt:
-        if(!alloc_number(elem, numbers[raa[i].val2]))
-          return cNoMemory;
-        break;
-
-      case icFunc:
+      case icAllocFunc:
         if(
             !alloc_name(
               elem,
@@ -2991,24 +3252,22 @@ refalrts::FnResult refalrts::interpret_array(
           return cNoMemory;
         break;
 
-      case icIdent:
+      case icAllocInt:
+        if(!alloc_number(elem, static_cast<RefalNumber>(raa[i].val2)))
+          return cNoMemory;
+        break;
+
+      case icAllocHugeInt:
+        if(!alloc_number(elem, numbers[raa[i].val2]))
+          return cNoMemory;
+        break;
+
+      case icAllocIdent:
         if(!alloc_ident(elem, idents[raa[i].val2]))
           return cNoMemory;
         break;
 
-      case icString:
-        {
-          if (
-            ! alloc_chars(
-              bb, be,
-              strings[raa[i].val2].string, strings[raa[i].val2].string_len
-            )
-          )
-            return cNoMemory;
-        }
-        break;
-
-      case icBracket:
+      case icAllocBracket:
         switch(raa[i].val2)
         {
           case ibOpenADT:
@@ -3046,46 +3305,91 @@ refalrts::FnResult refalrts::interpret_array(
         }
         break;
 
-      case icCopySTVar: {
-        unsigned int target = raa[i].val1;
-        unsigned int sample = raa[i].val2;
-        if (! copy_stvar(context[target], context[sample]))
-          return cNoMemory;
-        break;
-      }
-
-      case icCopyEVar: {
-        unsigned int target = raa[i].val1;
-        unsigned int sample = raa[i].val2;
-        if (
-          ! copy_evar(
-            context[target], context[target + 1],
-            context[sample], context[sample + 1]
+      case icAllocString:
+        {
+          if (
+            ! alloc_chars(
+              bb, be,
+              strings[raa[i].val2].string, strings[raa[i].val2].string_len
+            )
           )
-        )
-          return cNoMemory;
-        break;
-      }
-
-      case icEmptyResult:
-        reset_allocator();
+            return cNoMemory;
+        }
         break;
 
-      case icSpliceElem:
-        res = splice_elem(res, elem);
+      case icReinitChar:
+        reinit_char(elem, static_cast<char>(raa[i].val2));
         break;
 
-      case icSpliceRange: {
-        res = splice_evar(res, bb, be);
-        break;
-      }
-
-      case icSpliceSTVar:
-        res = splice_stvar(res, elem);
+      case icReinitFunc:
+        reinit_name(
+          elem, functions[raa[i].val2].ptr, functions[raa[i].val2].name
+        );
         break;
 
-      case icSpliceEVar:
-        res = splice_evar(res, bb, be);
+      case icReinitInt:
+        reinit_number(elem, static_cast<RefalNumber>(raa[i].val2));
+        break;
+
+      case icReinitHugeInt:
+        reinit_number(elem, numbers[raa[i].val2]);
+        break;
+
+      case icReinitIdent:
+        reinit_ident(elem, idents[raa[i].val2]);
+        break;
+
+      case icReinitBracket:
+        switch (raa[i].val2) {
+          case ibOpenADT:
+            reinit_open_adt(elem);
+            break;
+
+          case ibOpenBracket:
+            reinit_open_bracket(elem);
+            break;
+
+          case ibOpenCall:
+            reinit_open_call(elem);
+            break;
+
+          case ibCloseADT:
+            reinit_close_adt(elem);
+            break;
+
+          case ibCloseBracket:
+            reinit_close_bracket(elem);
+            break;
+
+          case ibCloseCall:
+            reinit_close_call(elem);
+            break;
+
+          default:
+            throw UnexpectedTypeException();
+        }
+        break;
+
+      case icUpdateChar:
+        update_char(elem, static_cast<char>(raa[i].val2));
+        break;
+
+      case icUpdateFunc:
+        update_name(
+          elem, functions[raa[i].val2].ptr, functions[raa[i].val2].name
+        );
+        break;
+
+      case icUpdateInt:
+        update_number(elem, static_cast<RefalNumber>(raa[i].val2));
+        break;
+
+      case icUpdateHugeInt:
+        update_number(elem, numbers[raa[i].val2]);
+        break;
+
+      case icUpdateIdent:
+        update_ident(elem, idents[raa[i].val2]);
         break;
 
       case icLinkBrackets:
@@ -3096,18 +3400,46 @@ refalrts::FnResult refalrts::interpret_array(
         push_stack(elem);
         break;
 
-      case icOnFailGoTo:
-        open_e_stack[stack_top++] = i + raa[i].val1 + 1;
+      case icSpliceElem:
+        res = splice_elem(res, elem);
         break;
 
-      case icFail:
-        MATCH_FAIL;
+      case icSpliceEVar:
+        res = splice_evar(res, bb, be);
+        break;
+
+      case icSpliceSTVar:
+        res = splice_stvar(res, elem);
+        break;
+
+      case icSpliceRange:
+        res = splice_evar(res, bb, be);
+        break;
+
+      case icSpliceTile:
+        res = splice_evar(res, context[raa[i].val1], context[raa[i].val2]);
+        break;
 
       case icReturnResult:
         splice_to_freelist(begin, end);
         return cSuccess;
 
+      case icReturnResult_NoTrash:
+        return cSuccess;
+
+      case icTrashLeftEdge:
+        splice_to_freelist_open(trash_prev, res);
+        break;
+
+      case icTrash:
+        splice_to_freelist_open(context[raa[i].bracket], res);
+        break;
+
+      case icFail:
+        MATCH_FAIL;
+
       default:
+        printf( "bad command: %d\n", raa[i].cmd );
         assert( SWITCH_DEFAULT_VIOLATION );
         throw UnexpectedTypeException();
     }
