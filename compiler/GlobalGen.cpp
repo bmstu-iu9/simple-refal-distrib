@@ -3524,9 +3524,9 @@ static refalrts::FnResult GetMinKMN(refalrts::Iter arg_begin, refalrts::Iter arg
 
 static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 28 elems
-  refalrts::Iter context[28];
-  refalrts::zeros( context, 28 );
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { GetClasses, "GetClasses" },
@@ -3580,61 +3580,59 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     {refalrts::icSpliceTile, 6, 6, 0},
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +42, 0, 0},
+    {refalrts::icOnFailGoTo, +40, 0, 0},
     //S S S '<''>''>'
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '>'/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/11 </12 & GetClasses/13 </14 & Min/15 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } >/16 s.M#1/7/17 >/18 </19 & Max/20 </21 & Sub/22 s.K#1/5/23 s.N#1/6/24 >/25 Tile{ AsIs: s.M#1/7 HalfReuse: >/8 HalfReuse: s.K1 #5/9 HalfReuse: >/10 HalfReuse: )/1 ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 11},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 12},
-    {refalrts::icAllocFunc, 0, 0, 13},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
-    {refalrts::icAllocFunc, 0, 3, 15},
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } </11 & GetClasses/12 </13 & Min/14 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } >/15 Tile{ AsIs: s.M#1/7 } >/16 </17 & Max/18 </19 & Sub/20 s.K#1/5/21 s.N#1/6/22 >/23 Tile{ HalfReuse: s.M1 #7/8 HalfReuse: >/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
+    {refalrts::icAllocFunc, 0, 0, 12},
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
+    {refalrts::icAllocFunc, 0, 3, 14},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
-    {refalrts::icCopySTVar, 17, 7, 0},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
+    {refalrts::icAllocFunc, 0, 2, 18},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
-    {refalrts::icAllocFunc, 0, 2, 20},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 21},
-    {refalrts::icAllocFunc, 0, 1, 22},
-    {refalrts::icCopySTVar, 23, 5, 0},
-    {refalrts::icCopySTVar, 24, 6, 0},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 25},
+    {refalrts::icAllocFunc, 0, 1, 20},
+    {refalrts::icCopySTVar, 21, 5, 0},
+    {refalrts::icCopySTVar, 22, 6, 0},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
     {refalrts::icUpdateFunc, 0, 1, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 8},
-    {refalrts::icReinitSVar, 0, 5, 9},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 10},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 11, 1, 0},
-    {refalrts::icPushStack, 0, 0, 10},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icPushStack, 0, 0, 8},
+    {refalrts::icReinitSVar, 0, 7, 8},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 9},
+    {refalrts::icReinitSVar, 0, 5, 10},
+    {refalrts::icPushStack, 0, 0, 1},
+    {refalrts::icPushStack, 0, 0, 11},
+    {refalrts::icPushStack, 0, 0, 9},
+    {refalrts::icPushStack, 0, 0, 17},
+    {refalrts::icPushStack, 0, 0, 23},
     {refalrts::icPushStack, 0, 0, 19},
-    {refalrts::icPushStack, 0, 0, 25},
-    {refalrts::icPushStack, 0, 0, 21},
-    {refalrts::icPushStack, 0, 0, 18},
-    {refalrts::icPushStack, 0, 0, 14},
     {refalrts::icPushStack, 0, 0, 16},
+    {refalrts::icPushStack, 0, 0, 13},
+    {refalrts::icPushStack, 0, 0, 15},
     {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetRes, 0, 0, 7},
-    {refalrts::icSpliceTile, 16, 25, 0},
+    {refalrts::icSetRes, 0, 0, 8},
+    {refalrts::icSpliceTile, 16, 23, 0},
+    {refalrts::icSpliceTile, 7, 7, 0},
+    {refalrts::icSpliceTile, 15, 15, 0},
     {refalrts::icSpliceTile, 0, 6, 0},
-    {refalrts::icSpliceTile, 11, 15, 0},
+    {refalrts::icSpliceTile, 11, 14, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
     //S S S '<''>''='
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '='/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.K#1/5 s.N#1/6 s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GetClasses/4 } Tile{ HalfReuse: 0/8 HalfReuse: s.M1 #7/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3651,10 +3649,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''>''<'
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '<'/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('<'), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('<'), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.K#1/5 s.N#1/6 s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GetClasses/4 } Tile{ HalfReuse: 0/8 HalfReuse: s.M1 #7/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3671,10 +3669,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''<''>'
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '>'/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ } </11 & GetClasses/12 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } Tile{ HalfReuse: >/8 HalfReuse: s.K1 #5/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3697,10 +3695,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''<''='
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '='/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.K#1/5 s.N#1/6 s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GetClasses/4 } Tile{ HalfReuse: 0/8 HalfReuse: s.K1 #5/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3717,10 +3715,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''<''<'
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '<'/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('<'), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('<'), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.K#1/5 s.N#1/6 s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GetClasses/4 } Tile{ HalfReuse: 0/8 HalfReuse: s.K1 #5/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3737,10 +3735,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''=''>'
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '='/9 '>'/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('>'), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ } </11 & GetClasses/12 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } Tile{ HalfReuse: >/8 HalfReuse: s.K1 #5/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3763,10 +3761,10 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     //S S S '<''=''='
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '='/9 '='/10 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 8},
-    {refalrts::icSave, 0, 26, 2},
-    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 26},
-    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 26},
-    {refalrts::icEmpty, 0, 0, 26},
+    {refalrts::icSave, 0, 24, 2},
+    {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 24},
+    {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('='), 24},
+    {refalrts::icEmpty, 0, 0, 24},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.K#1/5 s.N#1/6 s.M#1/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GetClasses/4 } Tile{ HalfReuse: 0/8 HalfReuse: s.K1 #5/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
@@ -3877,72 +3875,68 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '>'/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '>', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '>', context[26], context[27] );
+    context[10] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/11 </12 & GetClasses/13 </14 & Min/15 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } >/16 s.M#1/7/17 >/18 </19 & Max/20 </21 & Sub/22 s.K#1/5/23 s.N#1/6/24 >/25 Tile{ AsIs: s.M#1/7 HalfReuse: >/8 HalfReuse: s.K1 #5/9 HalfReuse: >/10 HalfReuse: )/1 ]] }
-    if( ! refalrts::alloc_open_bracket( context[11] ) )
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } </11 & GetClasses/12 </13 & Min/14 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.K#1/5 AsIs: s.N#1/6 } >/15 Tile{ AsIs: s.M#1/7 } >/16 </17 & Max/18 </19 & Sub/20 s.K#1/5/21 s.N#1/6/22 >/23 Tile{ HalfReuse: s.M1 #7/8 HalfReuse: >/9 HalfReuse: s.K1 #5/10 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[12] ) )
+    if( ! refalrts::alloc_name( context[12], GetClasses, "GetClasses" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], GetClasses, "GetClasses" ) )
+    if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[14] ) )
+    if( ! refalrts::alloc_name( context[14], Min, "Min" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], Min, "Min" ) )
+    if( ! refalrts::alloc_close_call( context[15] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[16] ) )
       return refalrts::cNoMemory;
-    if (! refalrts::copy_stvar(context[17], context[7]))
+    if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[18] ) )
+    if( ! refalrts::alloc_name( context[18], Max, "Max" ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], Max, "Max" ) )
+    if( ! refalrts::alloc_name( context[20], Sub, "Sub" ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[21] ) )
+    if (! refalrts::copy_stvar(context[21], context[5]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[22], Sub, "Sub" ) )
+    if (! refalrts::copy_stvar(context[22], context[6]))
       return refalrts::cNoMemory;
-    if (! refalrts::copy_stvar(context[23], context[5]))
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_stvar(context[24], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[25] ) )
+    if( ! refalrts::alloc_close_call( context[23] ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], Sub, "Sub" );
-    refalrts::reinit_close_call( context[8] );
-    refalrts::reinit_svar( context[9], context[5] );
-    refalrts::reinit_close_call( context[10] );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[11], context[1] );
-    refalrts::push_stack( context[10] );
-    refalrts::push_stack( context[12] );
-    refalrts::push_stack( context[8] );
+    refalrts::reinit_svar( context[8], context[7] );
+    refalrts::reinit_close_call( context[9] );
+    refalrts::reinit_svar( context[10], context[5] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[11] );
+    refalrts::push_stack( context[9] );
+    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[23] );
     refalrts::push_stack( context[19] );
-    refalrts::push_stack( context[25] );
-    refalrts::push_stack( context[21] );
-    refalrts::push_stack( context[18] );
-    refalrts::push_stack( context[14] );
     refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[13] );
+    refalrts::push_stack( context[15] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[7];
-    res = refalrts::splice_evar( res, context[16], context[25] );
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[16], context[23] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[15], context[15] );
     res = refalrts::splice_evar( res, context[0], context[6] );
-    res = refalrts::splice_evar( res, context[11], context[15] );
+    res = refalrts::splice_evar( res, context[11], context[14] );
     refalrts::use( res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
@@ -3953,15 +3947,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '='/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '>', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '=', context[26], context[27] );
+    context[10] = refalrts::char_left( '=', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -3987,15 +3981,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '>'/9 '<'/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '>', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '<', context[26], context[27] );
+    context[10] = refalrts::char_left( '<', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4021,15 +4015,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '>'/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '<', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '<', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '>', context[26], context[27] );
+    context[10] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4063,15 +4057,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '='/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '<', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '<', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '=', context[26], context[27] );
+    context[10] = refalrts::char_left( '=', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4097,15 +4091,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '<'/9 '<'/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '<', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '<', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '<', context[26], context[27] );
+    context[10] = refalrts::char_left( '<', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4131,15 +4125,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '='/9 '>'/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '=', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '=', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '>', context[26], context[27] );
+    context[10] = refalrts::char_left( '>', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4173,15 +4167,15 @@ static refalrts::FnResult lambda_ComputePossibleClasses_Aux_0(refalrts::Iter arg
     // </0 & lambda_ComputePossibleClasses_Aux_0/4 s.K#1/5 s.N#1/6 s.M#1/7 '<'/8 '='/9 '='/10 >/1
     if( ! refalrts::char_term( '<', context[8] ) )
       continue;
-    context[26] = context[2];
-    context[27] = context[3];
-    context[9] = refalrts::char_left( '=', context[26], context[27] );
+    context[24] = context[2];
+    context[25] = context[3];
+    context[9] = refalrts::char_left( '=', context[24], context[25] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( '=', context[26], context[27] );
+    context[10] = refalrts::char_left( '=', context[24], context[25] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[26], context[27] ) )
+    if( ! refalrts::empty_seq( context[24], context[25] ) )
       continue;
 
     refalrts::reset_allocator();
