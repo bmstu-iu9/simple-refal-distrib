@@ -151,9 +151,9 @@ static refalrts::FnResult lambda_HighLevelRASL_0(refalrts::Iter arg_begin, refal
   refalrts::zeros( context, 23 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { HighLevelRASL_Function, "HighLevelRASL_Function" },
+    { GenSentenceFunc, "GenSentenceFunc" },
     { GenResultFuncs, "GenResultFuncs" },
-    { GenSentenceFunc, "GenSentenceFunc" }
+    { HighLevelRASL_Function, "HighLevelRASL_Function" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_CmdSeparator<int>::name,
@@ -194,7 +194,7 @@ static refalrts::FnResult lambda_HighLevelRASL_0(refalrts::Iter arg_begin, refal
     // closed e.Sentences#2 as range 21(5)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.OptResult#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL_Function/4 } </17 & GenSentenceFunc/18 Tile{ AsIs: s.Joint#1/9 } Tile{ AsIs: >/1 } </19 & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 AsIs: e.Sentences#2/21(5) HalfReuse: >/8 } Tile{ ]] }
+    //RESULT: Tile{ [[ } </17 & HighLevelRASL_Function/18 Tile{ AsIs: </0 Reuse: & GenSentenceFunc/4 AsIs: s.Joint#1/9 } Tile{ AsIs: >/1 } </19 & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 AsIs: e.Sentences#2/21(5) HalfReuse: >/8 } Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
     {refalrts::icAllocFunc, 0, 2, 18},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
@@ -204,19 +204,19 @@ static refalrts::FnResult lambda_HighLevelRASL_0(refalrts::Iter arg_begin, refal
     {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 11},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 8},
     {refalrts::icPushStack, 0, 0, 8},
-    {refalrts::icPushStack, 0, 0, 0},
+    {refalrts::icPushStack, 0, 0, 17},
     {refalrts::icLinkBrackets, 15, 16, 0},
     {refalrts::icPushStack, 0, 0, 11},
     {refalrts::icPushStack, 0, 0, 19},
     {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 17},
+    {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceTile, 7, 8, 0},
     {refalrts::icSpliceTile, 19, 20, 0},
     {refalrts::icSpliceTile, 1, 1, 0},
-    {refalrts::icSpliceTile, 9, 9, 0},
+    {refalrts::icSpliceTile, 0, 9, 0},
     {refalrts::icSpliceTile, 17, 18, 0},
-    {refalrts::icTrash, 0, 0, 4},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
     //S S (#EnumS E )
@@ -359,36 +359,36 @@ static refalrts::FnResult lambda_HighLevelRASL_0(refalrts::Iter arg_begin, refal
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.OptResult#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL_Function/4 } </17 & GenSentenceFunc/18 Tile{ AsIs: s.Joint#1/9 } Tile{ AsIs: >/1 } </19 & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 AsIs: e.Sentences#2/21(5) HalfReuse: >/8 } Tile{ ]] }
+    //RESULT: Tile{ [[ } </17 & HighLevelRASL_Function/18 Tile{ AsIs: </0 Reuse: & GenSentenceFunc/4 AsIs: s.Joint#1/9 } Tile{ AsIs: >/1 } </19 & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 AsIs: e.Sentences#2/21(5) HalfReuse: >/8 } Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[18], GenSentenceFunc, "GenSentenceFunc" ) )
+    if( ! refalrts::alloc_name( context[18], HighLevelRASL_Function, "HighLevelRASL_Function" ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[20], GenResultFuncs, "GenResultFuncs" ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], HighLevelRASL_Function, "HighLevelRASL_Function" );
+    refalrts::update_name( context[4], GenSentenceFunc, "GenSentenceFunc" );
     refalrts::reinit_svar( context[7], context[10] );
     refalrts::reinit_close_call( context[11] );
     refalrts::reinit_close_call( context[8] );
     refalrts::push_stack( context[8] );
-    refalrts::push_stack( context[0] );
+    refalrts::push_stack( context[17] );
     refalrts::link_brackets( context[15], context[16] );
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[7], context[8] );
     res = refalrts::splice_evar( res, context[19], context[20] );
     res = refalrts::splice_evar( res, context[1], context[1] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
     res = refalrts::splice_evar( res, context[17], context[18] );
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[4], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -842,21 +842,21 @@ static refalrts::FnResult GenSentenceFunc(refalrts::Iter arg_begin, refalrts::It
     // </0 & GenSentenceFunc/4 # Conjoint/5 >/1
     {refalrts::icIdentTerm, 0, 1, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & GenSentenceFunc/4 # Conjoint/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & HighLevelRASL_Function_Conjoint/0 } Tile{ ]] }
-    {refalrts::icReinitFunc, 0, 1, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & GenSentenceFunc/4 # Conjoint/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL_Function_Conjoint/1 ]] }
+    {refalrts::icReinitFunc, 0, 1, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //#Disjoint
     // </0 & GenSentenceFunc/4 # Disjoint/5 >/1
     {refalrts::icIdentTerm, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & GenSentenceFunc/4 # Disjoint/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & HighLevelRASL_Function_Disjoint/0 } Tile{ ]] }
-    {refalrts::icReinitFunc, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & GenSentenceFunc/4 # Disjoint/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL_Function_Disjoint/1 ]] }
+    {refalrts::icReinitFunc, 0, 0, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -887,14 +887,14 @@ static refalrts::FnResult GenSentenceFunc(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & GenSentenceFunc/4 # Conjoint/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & HighLevelRASL_Function_Conjoint/0 } Tile{ ]] }
-    refalrts::reinit_name( context[0], HighLevelRASL_Function_Conjoint, "HighLevelRASL_Function_Conjoint" );
+    //TRASH: {REMOVED TILE}  </0 & GenSentenceFunc/4 # Conjoint/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL_Function_Conjoint/1 ]] }
+    refalrts::reinit_name( context[1], HighLevelRASL_Function_Conjoint, "HighLevelRASL_Function_Conjoint" );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[1];
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[0], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -904,14 +904,14 @@ static refalrts::FnResult GenSentenceFunc(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  & GenSentenceFunc/4 # Disjoint/5 >/1 {REMOVED TILE} 
-  //RESULT: Tile{ [[ HalfReuse: & HighLevelRASL_Function_Disjoint/0 } Tile{ ]] }
-  refalrts::reinit_name( context[0], HighLevelRASL_Function_Disjoint, "HighLevelRASL_Function_Disjoint" );
+  //TRASH: {REMOVED TILE}  </0 & GenSentenceFunc/4 # Disjoint/5 {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL_Function_Disjoint/1 ]] }
+  refalrts::reinit_name( context[1], HighLevelRASL_Function_Disjoint, "HighLevelRASL_Function_Disjoint" );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[0], res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
 }
@@ -949,25 +949,25 @@ static refalrts::FnResult GenResultFuncs(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & GenResultFuncs/4 # NoOpt/5 >/1
     {refalrts::icIdentTerm, 0, 1, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & GenInitSubst_Simple/0 Reuse: & GenSubst_Simple/4 HalfReuse: & GenResult_Simple/5 } Tile{ ]] }
-    {refalrts::icReinitFunc, 0, 5, 0},
-    {refalrts::icUpdateFunc, 0, 4, 4},
-    {refalrts::icReinitFunc, 0, 3, 5},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 5},
+    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst_Simple/4 HalfReuse: & GenSubst_Simple/5 HalfReuse: & GenResult_Simple/1 ]] }
+    {refalrts::icUpdateFunc, 0, 5, 4},
+    {refalrts::icReinitFunc, 0, 4, 5},
+    {refalrts::icReinitFunc, 0, 3, 1},
+    {refalrts::icSetRes, 0, 0, 4},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //#OptResult
     // </0 & GenResultFuncs/4 # OptResult/5 >/1
     {refalrts::icIdentTerm, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & GenInitSubst_Save/0 Reuse: & GenSubst_Save/4 HalfReuse: & GenResult_Opt/5 } Tile{ ]] }
-    {refalrts::icReinitFunc, 0, 2, 0},
-    {refalrts::icUpdateFunc, 0, 1, 4},
-    {refalrts::icReinitFunc, 0, 0, 5},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 5},
+    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst_Save/4 HalfReuse: & GenSubst_Save/5 HalfReuse: & GenResult_Opt/1 ]] }
+    {refalrts::icUpdateFunc, 0, 2, 4},
+    {refalrts::icReinitFunc, 0, 1, 5},
+    {refalrts::icReinitFunc, 0, 0, 1},
+    {refalrts::icSetRes, 0, 0, 4},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -998,16 +998,16 @@ static refalrts::FnResult GenResultFuncs(refalrts::Iter arg_begin, refalrts::Ite
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: & GenInitSubst_Simple/0 Reuse: & GenSubst_Simple/4 HalfReuse: & GenResult_Simple/5 } Tile{ ]] }
-    refalrts::reinit_name( context[0], GenInitSubst_Simple, "GenInitSubst_Simple" );
-    refalrts::update_name( context[4], GenSubst_Simple, "GenSubst_Simple" );
-    refalrts::reinit_name( context[5], GenResult_Simple, "GenResult_Simple" );
+    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst_Simple/4 HalfReuse: & GenSubst_Simple/5 HalfReuse: & GenResult_Simple/1 ]] }
+    refalrts::update_name( context[4], GenInitSubst_Simple, "GenInitSubst_Simple" );
+    refalrts::reinit_name( context[5], GenSubst_Simple, "GenSubst_Simple" );
+    refalrts::reinit_name( context[1], GenResult_Simple, "GenResult_Simple" );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[4];
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[5], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -1017,16 +1017,16 @@ static refalrts::FnResult GenResultFuncs(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  >/1 {REMOVED TILE} 
-  //RESULT: Tile{ [[ HalfReuse: & GenInitSubst_Save/0 Reuse: & GenSubst_Save/4 HalfReuse: & GenResult_Opt/5 } Tile{ ]] }
-  refalrts::reinit_name( context[0], GenInitSubst_Save, "GenInitSubst_Save" );
-  refalrts::update_name( context[4], GenSubst_Save, "GenSubst_Save" );
-  refalrts::reinit_name( context[5], GenResult_Opt, "GenResult_Opt" );
+  //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst_Save/4 HalfReuse: & GenSubst_Save/5 HalfReuse: & GenResult_Opt/1 ]] }
+  refalrts::update_name( context[4], GenInitSubst_Save, "GenInitSubst_Save" );
+  refalrts::reinit_name( context[5], GenSubst_Save, "GenSubst_Save" );
+  refalrts::reinit_name( context[1], GenResult_Opt, "GenResult_Opt" );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[4];
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[5], res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
 }

@@ -123,32 +123,32 @@ static refalrts::FnResult lambda_PreparePatternHardSent_0(refalrts::Iter arg_beg
     // </0 & lambda_PreparePatternHardSent_0/4 'e'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('e'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 'e'/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # E/0 } Tile{ ]] }
-    {refalrts::icReinitIdent, 0, 2, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 'e'/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # E/1 ]] }
+    {refalrts::icReinitIdent, 0, 2, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
     //'t'
     // </0 & lambda_PreparePatternHardSent_0/4 't'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('t'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 't'/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # T/0 } Tile{ ]] }
-    {refalrts::icReinitIdent, 0, 1, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 't'/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # T/1 ]] }
+    {refalrts::icReinitIdent, 0, 1, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //'s'
     // </0 & lambda_PreparePatternHardSent_0/4 's'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('s'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 's'/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # S/0 } Tile{ ]] }
-    {refalrts::icReinitIdent, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 's'/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # S/1 ]] }
+    {refalrts::icReinitIdent, 0, 0, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -179,14 +179,14 @@ static refalrts::FnResult lambda_PreparePatternHardSent_0(refalrts::Iter arg_beg
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 'e'/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # E/0 } Tile{ ]] }
-    refalrts::reinit_ident( context[0], & ident_E<int>::name );
+    //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 'e'/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # E/1 ]] }
+    refalrts::reinit_ident( context[1], & ident_E<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[1];
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[0], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -198,14 +198,14 @@ static refalrts::FnResult lambda_PreparePatternHardSent_0(refalrts::Iter arg_beg
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 't'/5 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # T/0 } Tile{ ]] }
-    refalrts::reinit_ident( context[0], & ident_T<int>::name );
+    //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 't'/5 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # T/1 ]] }
+    refalrts::reinit_ident( context[1], & ident_T<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[1];
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[0], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
@@ -215,14 +215,14 @@ static refalrts::FnResult lambda_PreparePatternHardSent_0(refalrts::Iter arg_beg
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  & lambda_PreparePatternHardSent_0/4 's'/5 >/1 {REMOVED TILE} 
-  //RESULT: Tile{ [[ HalfReuse: # S/0 } Tile{ ]] }
-  refalrts::reinit_ident( context[0], & ident_S<int>::name );
+  //TRASH: {REMOVED TILE}  </0 & lambda_PreparePatternHardSent_0/4 's'/5 {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: # S/1 ]] }
+  refalrts::reinit_ident( context[1], & ident_S<int>::name );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[0], res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
 }

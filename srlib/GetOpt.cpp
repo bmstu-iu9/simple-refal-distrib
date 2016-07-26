@@ -1864,28 +1864,28 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
     // closed e.ArgsTail#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  s.Tag#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/18 } & Error/20 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/21 (/22 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocFunc, 0, 1, 20},
-    {refalrts::icAllocIdent, 0, 0, 21},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 22},
+    //RESULT: Tile{ [[ } (/20 & Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 20},
+    {refalrts::icAllocFunc, 0, 1, 21},
+    {refalrts::icAllocIdent, 0, 0, 22},
     {refalrts::icReinitChar, 0, '-', 11},
     {refalrts::icReinitChar, 0, '-', 14},
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icLinkBrackets, 7, 8, 0},
-    {refalrts::icLinkBrackets, 18, 19, 0},
-    {refalrts::icLinkBrackets, 22, 15, 0},
+    {refalrts::icLinkBrackets, 20, 19, 0},
+    {refalrts::icLinkBrackets, 18, 15, 0},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icSpliceEVar, 0, 0, 2},
     {refalrts::icSpliceTile, 0, 8, 0},
     {refalrts::icSpliceTile, 19, 19, 0},
     {refalrts::icSpliceEVar, 0, 0, 16},
     {refalrts::icSpliceTile, 11, 15, 0},
-    {refalrts::icSpliceTile, 21, 22, 0},
-    {refalrts::icSpliceTile, 9, 9, 0},
-    {refalrts::icSpliceTile, 20, 20, 0},
     {refalrts::icSpliceTile, 18, 18, 0},
+    {refalrts::icSpliceTile, 22, 22, 0},
+    {refalrts::icSpliceTile, 9, 9, 0},
+    {refalrts::icSpliceTile, 20, 21, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
@@ -2010,12 +2010,12 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  s.Tag#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/18 } & Error/20 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/21 (/22 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[20], Error, "Error" ) )
+  //RESULT: Tile{ [[ } (/20 & Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[21], & ident_UnexpectedLongOptionParam<int>::name ) )
+  if( ! refalrts::alloc_name( context[21], Error, "Error" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[22] ) )
+  if( ! refalrts::alloc_ident( context[22], & ident_UnexpectedLongOptionParam<int>::name ) )
     return refalrts::cNoMemory;
   refalrts::reinit_char( context[11], '-' );
   refalrts::reinit_char( context[14], '-' );
@@ -2023,8 +2023,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
-  refalrts::link_brackets( context[18], context[19] );
-  refalrts::link_brackets( context[22], context[15] );
+  refalrts::link_brackets( context[20], context[19] );
+  refalrts::link_brackets( context[18], context[15] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -2033,10 +2033,10 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
   res = refalrts::splice_evar( res, context[19], context[19] );
   res = refalrts::splice_evar( res, context[16], context[17] );
   res = refalrts::splice_evar( res, context[11], context[15] );
-  res = refalrts::splice_evar( res, context[21], context[22] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
-  res = refalrts::splice_evar( res, context[20], context[20] );
   res = refalrts::splice_evar( res, context[18], context[18] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
+  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[20], context[21] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -2522,7 +2522,7 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceTile, 15, 19, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +24, 0, 0},
+    {refalrts::icOnFailGoTo, +23, 0, 0},
     //(E )S S #RequiredS ()E 
     // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
@@ -2532,25 +2532,24 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     // closed e.ArgsTail#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  s.Tag#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/16 } & Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocFunc, 0, 1, 17},
-    {refalrts::icAllocIdent, 0, 6, 18},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 16},
+    //RESULT: Tile{ [[ } (/17 & Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 17},
+    {refalrts::icAllocFunc, 0, 1, 18},
+    {refalrts::icReinitIdent, 0, 6, 16},
     {refalrts::icReinitChar, 0, '-', 11},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icLinkBrackets, 7, 8, 0},
-    {refalrts::icLinkBrackets, 16, 15, 0},
+    {refalrts::icLinkBrackets, 17, 15, 0},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icSpliceEVar, 0, 0, 2},
     {refalrts::icSpliceTile, 0, 8, 0},
     {refalrts::icSpliceTile, 11, 15, 0},
-    {refalrts::icSpliceTile, 18, 18, 0},
-    {refalrts::icSpliceTile, 9, 9, 0},
-    {refalrts::icSpliceTile, 17, 17, 0},
     {refalrts::icSpliceTile, 16, 16, 0},
+    {refalrts::icSpliceTile, 9, 9, 0},
+    {refalrts::icSpliceTile, 17, 18, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
@@ -2820,29 +2819,28 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  s.Tag#1/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/16 } & Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[17], Error, "Error" ) )
+    //RESULT: Tile{ [[ } (/17 & Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[18], & ident_NoRequiredParam<int>::name ) )
+    if( ! refalrts::alloc_name( context[18], Error, "Error" ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[16] );
+    refalrts::reinit_ident( context[16], & ident_NoRequiredParam<int>::name );
     refalrts::reinit_char( context[11], '-' );
     refalrts::reinit_close_bracket( context[15] );
     refalrts::update_name( context[4], ResolveOpts, "ResolveOpts" );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
-    refalrts::link_brackets( context[16], context[15] );
+    refalrts::link_brackets( context[17], context[15] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[2], context[3] );
     res = refalrts::splice_evar( res, context[0], context[8] );
     res = refalrts::splice_evar( res, context[11], context[15] );
-    res = refalrts::splice_evar( res, context[18], context[18] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
-    res = refalrts::splice_evar( res, context[17], context[17] );
     res = refalrts::splice_evar( res, context[16], context[16] );
+    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_evar( res, context[17], context[18] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));

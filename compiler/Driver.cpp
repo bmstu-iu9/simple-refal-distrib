@@ -193,12 +193,12 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { SelectOptFlags, "SelectOptFlags" },
-    { Fetch, "Fetch" },
+    { Seq, "Seq" },
     { SaveFile, "SaveFile" },
     { GenProgram, "GenProgram" },
     { LowLevelRASL, "LowLevelRASL" },
     { HighLevelRASL, "HighLevelRASL" },
-    { Seq, "Seq" }
+    { Fetch, "Fetch" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_Fails<int>::name,
@@ -230,7 +230,7 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     // closed e.OutputName#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.AST#2/5 } </16 & Seq/17 Tile{ AsIs: (/7 } & HighLevelRASL/18 </19 Tile{ HalfReuse: & SelectOptFlags/8 AsIs: s.Opt#1/9 } >/20 )/21 (/22 & LowLevelRASL/23 Tile{ AsIs: s.GenMode#1/10 } )/24 & GenProgram/25 (/26 & SaveFile/27 Tile{ AsIs: (/13 AsIs: e.OutputName#1/11 AsIs: )/14 HalfReuse: )/15 AsIs: >/1 } >/28 # Success/29 e.OutputName#1/11/30 Tile{ ]] }
+    //RESULT: Tile{ [[ } </16 & Fetch/17 Tile{ AsIs: e.AST#2/5 } Tile{ AsIs: </0 Reuse: & Seq/4 AsIs: (/7 } & HighLevelRASL/18 </19 Tile{ HalfReuse: & SelectOptFlags/8 AsIs: s.Opt#1/9 } >/20 )/21 (/22 & LowLevelRASL/23 Tile{ AsIs: s.GenMode#1/10 } )/24 & GenProgram/25 (/26 & SaveFile/27 Tile{ AsIs: (/13 AsIs: e.OutputName#1/11 AsIs: )/14 HalfReuse: )/15 AsIs: >/1 } >/28 # Success/29 e.OutputName#1/11/30 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 16},
     {refalrts::icAllocFunc, 0, 6, 17},
     {refalrts::icAllocFunc, 0, 5, 18},
@@ -250,9 +250,9 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     {refalrts::icReinitFunc, 0, 0, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
     {refalrts::icPushStack, 0, 0, 28},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 16},
+    {refalrts::icPushStack, 0, 0, 1},
+    {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icLinkBrackets, 26, 15, 0},
     {refalrts::icLinkBrackets, 13, 14, 0},
     {refalrts::icLinkBrackets, 22, 24, 0},
@@ -268,9 +268,9 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceTile, 20, 23, 0},
     {refalrts::icSpliceTile, 8, 9, 0},
     {refalrts::icSpliceTile, 18, 19, 0},
-    {refalrts::icSpliceTile, 7, 7, 0},
-    {refalrts::icSpliceTile, 16, 17, 0},
+    {refalrts::icSpliceTile, 0, 7, 0},
     {refalrts::icSpliceEVar, 0, 0, 5},
+    {refalrts::icSpliceTile, 16, 17, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //(E )S S (E )#EL_HasErrors
     // </0 & lambda_CompileFile_1/4 (/7 e.AST#2/5 )/8 s.Opt#1/9 s.GenMode#1/10 (/13 e.OutputName#1/11 )/14 # EL_HasErrors/15 >/1
@@ -278,11 +278,11 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     // closed e.AST#2 as range 5
     // closed e.OutputName#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & lambda_CompileFile_1/4 (/7 e.AST#2/5 )/8 s.Opt#1/9 s.GenMode#1/10 (/13 e.OutputName#1/11 )/14 # EL_HasErrors/15 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # Fails/0 } Tile{ ]] }
-    {refalrts::icReinitIdent, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & lambda_CompileFile_1/4 (/7 e.AST#2/5 )/8 s.Opt#1/9 s.GenMode#1/10 (/13 e.OutputName#1/11 )/14 # EL_HasErrors/15 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
+    {refalrts::icReinitIdent, 0, 0, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -334,10 +334,10 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.AST#2/5 } </16 & Seq/17 Tile{ AsIs: (/7 } & HighLevelRASL/18 </19 Tile{ HalfReuse: & SelectOptFlags/8 AsIs: s.Opt#1/9 } >/20 )/21 (/22 & LowLevelRASL/23 Tile{ AsIs: s.GenMode#1/10 } )/24 & GenProgram/25 (/26 & SaveFile/27 Tile{ AsIs: (/13 AsIs: e.OutputName#1/11 AsIs: )/14 HalfReuse: )/15 AsIs: >/1 } >/28 # Success/29 e.OutputName#1/11/30 Tile{ ]] }
+    //RESULT: Tile{ [[ } </16 & Fetch/17 Tile{ AsIs: e.AST#2/5 } Tile{ AsIs: </0 Reuse: & Seq/4 AsIs: (/7 } & HighLevelRASL/18 </19 Tile{ HalfReuse: & SelectOptFlags/8 AsIs: s.Opt#1/9 } >/20 )/21 (/22 & LowLevelRASL/23 Tile{ AsIs: s.GenMode#1/10 } )/24 & GenProgram/25 (/26 & SaveFile/27 Tile{ AsIs: (/13 AsIs: e.OutputName#1/11 AsIs: )/14 HalfReuse: )/15 AsIs: >/1 } >/28 # Success/29 e.OutputName#1/11/30 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], Seq, "Seq" ) )
+    if( ! refalrts::alloc_name( context[17], Fetch, "Fetch" ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[18], HighLevelRASL, "HighLevelRASL" ) )
       return refalrts::cNoMemory;
@@ -365,13 +365,13 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[30], context[31], context[11], context[12]))
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], Fetch, "Fetch" );
+    refalrts::update_name( context[4], Seq, "Seq" );
     refalrts::reinit_name( context[8], SelectOptFlags, "SelectOptFlags" );
     refalrts::reinit_close_bracket( context[15] );
     refalrts::push_stack( context[28] );
-    refalrts::push_stack( context[0] );
-    refalrts::push_stack( context[1] );
     refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[26], context[15] );
     refalrts::link_brackets( context[13], context[14] );
     refalrts::link_brackets( context[22], context[24] );
@@ -389,9 +389,9 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
     res = refalrts::splice_evar( res, context[20], context[23] );
     res = refalrts::splice_evar( res, context[8], context[9] );
     res = refalrts::splice_evar( res, context[18], context[19] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[7] );
     res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::use( res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
@@ -404,14 +404,14 @@ static refalrts::FnResult lambda_CompileFile_1(refalrts::Iter arg_begin, refalrt
   // closed e.OutputName#1 as range 11
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  & lambda_CompileFile_1/4 (/7 e.AST#2/5 )/8 s.Opt#1/9 s.GenMode#1/10 (/13 e.OutputName#1/11 )/14 # EL_HasErrors/15 >/1 {REMOVED TILE} 
-  //RESULT: Tile{ [[ HalfReuse: # Fails/0 } Tile{ ]] }
-  refalrts::reinit_ident( context[0], & ident_Fails<int>::name );
+  //TRASH: {REMOVED TILE}  </0 & lambda_CompileFile_1/4 (/7 e.AST#2/5 )/8 s.Opt#1/9 s.GenMode#1/10 (/13 e.OutputName#1/11 )/14 # EL_HasErrors/15 {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
+  refalrts::reinit_ident( context[1], & ident_Fails<int>::name );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[0], res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
 }

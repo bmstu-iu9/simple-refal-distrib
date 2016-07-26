@@ -156,18 +156,18 @@ refalrts::FnResult EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.Message#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/0 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/4 } Tile{ HalfReuse: ]/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/4 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/0 } Tile{ HalfReuse: ]/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
-    {refalrts::icReinitIdent, 0, 0, 0},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
+    {refalrts::icReinitIdent, 0, 0, 4},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseADT, 1},
     {refalrts::icLinkBrackets, 7, 1, 0},
-    {refalrts::icLinkBrackets, 9, 4, 0},
+    {refalrts::icLinkBrackets, 9, 0, 0},
     {refalrts::icLinkBrackets, 12, 13, 0},
     {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceTile, 4, 4, 0},
-    {refalrts::icSpliceEVar, 0, 0, 2},
     {refalrts::icSpliceTile, 0, 0, 0},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceTile, 4, 4, 0},
     {refalrts::icSpliceTile, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
@@ -203,20 +203,20 @@ refalrts::FnResult EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/0 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/4 } Tile{ HalfReuse: ]/1 ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/4 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/0 } Tile{ HalfReuse: ]/1 ]] }
   refalrts::reinit_open_bracket( context[9] );
-  refalrts::reinit_ident( context[0], & ident_NoLine<int>::name );
-  refalrts::reinit_close_bracket( context[4] );
+  refalrts::reinit_ident( context[4], & ident_NoLine<int>::name );
+  refalrts::reinit_close_bracket( context[0] );
   refalrts::reinit_close_adt( context[1] );
   refalrts::link_brackets( context[7], context[1] );
-  refalrts::link_brackets( context[9], context[4] );
+  refalrts::link_brackets( context[9], context[0] );
   refalrts::link_brackets( context[12], context[13] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[4], context[4] );
-  res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[0], context[0] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[4], context[4] );
   res = refalrts::splice_evar( res, context[7], context[9] );
   refalrts::use( res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -246,16 +246,16 @@ refalrts::FnResult EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icsVarLeft, 0, 14, 2},
     // closed e.Message#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & EL_AddErrorAt/4 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 AsIs: s.LineNumber#1/14 AsIs: e.Message#1/2 HalfReuse: )/1 } Tile{ HalfReuse: ]/0 } Tile{ ]] }
+    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 AsIs: s.LineNumber#1/14 AsIs: e.Message#1/2 HalfReuse: )/1 } Tile{ HalfReuse: ]/4 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseADT, 0},
-    {refalrts::icLinkBrackets, 7, 0, 0},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseADT, 4},
+    {refalrts::icLinkBrackets, 7, 4, 0},
     {refalrts::icLinkBrackets, 9, 1, 0},
     {refalrts::icLinkBrackets, 12, 13, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 0, 0, 0},
+    {refalrts::icSpliceTile, 4, 4, 0},
     {refalrts::icSpliceTile, 7, 1, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
@@ -293,18 +293,18 @@ refalrts::FnResult EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_en
   // closed e.Message#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  & EL_AddErrorAt/4 {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 AsIs: s.LineNumber#1/14 AsIs: e.Message#1/2 HalfReuse: )/1 } Tile{ HalfReuse: ]/0 } Tile{ ]] }
+  //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 AsIs: s.LineNumber#1/14 AsIs: e.Message#1/2 HalfReuse: )/1 } Tile{ HalfReuse: ]/4 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[9] );
   refalrts::reinit_close_bracket( context[1] );
-  refalrts::reinit_close_adt( context[0] );
-  refalrts::link_brackets( context[7], context[0] );
+  refalrts::reinit_close_adt( context[4] );
+  refalrts::link_brackets( context[7], context[4] );
   refalrts::link_brackets( context[9], context[1] );
   refalrts::link_brackets( context[12], context[13] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[0], context[0] );
+  res = refalrts::splice_evar( res, context[4], context[4] );
   res = refalrts::splice_evar( res, context[7], context[1] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
@@ -330,7 +330,7 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
   static const refalrts::StringItem strings[] = {
     {", expected", 10},
     {"Unexpected ", 11},
-    {"known characters \"", 18}
+    {"nown characters \"", 17}
   };
   static const refalrts::RASLCommand raa[] = {
     //FAST GEN:T (S S E )E 
@@ -361,7 +361,7 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceEVar, 0, 0, 7},
     {refalrts::icTrash, 0, 0, 9},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +17, 0, 0},
+    {refalrts::icOnFailGoTo, +19, 0, 0},
     //T (#TkUnexpectedS E )E 
     // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
     {refalrts::icIdentTerm, 0, 0, 11},
@@ -369,20 +369,22 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.Expected#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE}  e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } Tile{ HalfReuse: 'n'/10 }"known characters \""/13 Tile{ AsIs: e.Unexpected#1/7 } '\"'/15 Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocString, 0, 2, 13},
-    {refalrts::icAllocChar, 0, '\"', 15},
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocChar, 0, 'n', 13},
+    {refalrts::icAllocString, 0, 2, 14},
+    {refalrts::icAllocChar, 0, '\"', 16},
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 12, 9},
     {refalrts::icReinitChar, 0, 'U', 11},
-    {refalrts::icReinitChar, 0, 'n', 10},
+    {refalrts::icReinitChar, 0, 'k', 10},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceTile, 15, 15, 0},
+    {refalrts::icSpliceTile, 16, 16, 0},
     {refalrts::icSpliceEVar, 0, 0, 7},
-    {refalrts::icSpliceTile, 13, 14, 0},
+    {refalrts::icSpliceTile, 14, 15, 0},
     {refalrts::icSpliceTile, 10, 10, 0},
+    {refalrts::icSpliceTile, 13, 13, 0},
     {refalrts::icTrash, 0, 0, 11},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //T (S S E )E 
@@ -479,24 +481,27 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE}  e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } Tile{ HalfReuse: 'n'/10 }"known characters \""/13 Tile{ AsIs: e.Unexpected#1/7 } '\"'/15 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_chars( context[13], context[14], "known characters \"", 18 ) )
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[13], 'n' ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_char( context[15], '\"' ) )
+    if( ! refalrts::alloc_chars( context[14], context[15], "nown characters \"", 17 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[16], '\"' ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], EL_AddErrorAt, "EL_AddErrorAt" );
     refalrts::reinit_svar( context[9], context[12] );
     refalrts::reinit_char( context[11], 'U' );
-    refalrts::reinit_char( context[10], 'n' );
+    refalrts::reinit_char( context[10], 'k' );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[15], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[16] );
     res = refalrts::splice_evar( res, context[7], context[8] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
     res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[13], context[13] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[11], res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -542,9 +547,9 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 
 static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { StrFromInt, "StrFromInt" },
@@ -555,8 +560,9 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
   };
   using refalrts::numbers;
   static const refalrts::StringItem strings[] = {
-    {":ERROR: ", 8},
-    {"ERRO", 4}
+    {"ERROR: ", 7},
+    {"RO", 2},
+    {" E", 2}
   };
   static const refalrts::RASLCommand raa[] = {
     //FAST GEN:(E )(S E )
@@ -570,7 +576,7 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     // closed e.idxB#0 as range 5
     {refalrts::icsVarLeft, 0, 13, 9},
     // closed e.idxTBV#0 as range 9
-    {refalrts::icOnFailGoTo, +18, 0, 0},
+    {refalrts::icOnFailGoTo, +20, 0, 0},
     //(E )(#NoLineE )
     // </0 & lambda_EL_Destroy_0/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
     {refalrts::icIdentTerm, 0, 0, 13},
@@ -578,11 +584,12 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     // closed e.Message#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  e.FileName#1/5 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: ' '/7 } Tile{ HalfReuse: ' '/1 }"ERRO"/14 Tile{ HalfReuse: 'R'/8 HalfReuse: ':'/11 HalfReuse: ' '/13 AsIs: e.Message#2/9 HalfReuse: >/12 } Tile{ ]] }
-    {refalrts::icAllocString, 0, 1, 14},
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: ' '/7 }" E"/14 Tile{ HalfReuse: 'R'/1 }"RO"/16 Tile{ HalfReuse: 'R'/8 HalfReuse: ':'/11 HalfReuse: ' '/13 AsIs: e.Message#2/9 HalfReuse: >/12 } Tile{ ]] }
+    {refalrts::icAllocString, 0, 2, 14},
+    {refalrts::icAllocString, 0, 1, 16},
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitChar, 0, ' ', 7},
-    {refalrts::icReinitChar, 0, ' ', 1},
+    {refalrts::icReinitChar, 0, 'R', 1},
     {refalrts::icReinitChar, 0, 'R', 8},
     {refalrts::icReinitChar, 0, ':', 11},
     {refalrts::icReinitChar, 0, ' ', 13},
@@ -591,8 +598,9 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceTile, 8, 12, 0},
-    {refalrts::icSpliceTile, 14, 15, 0},
+    {refalrts::icSpliceTile, 16, 17, 0},
     {refalrts::icSpliceTile, 1, 1, 0},
+    {refalrts::icSpliceTile, 14, 15, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //(E )(S E )
@@ -601,21 +609,23 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     // closed e.Message#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.FileName#1/5 } Tile{ HalfReuse: ':'/7 } Tile{ HalfReuse: </8 HalfReuse: & StrFromInt/11 AsIs: s.LineNumber#2/13 } Tile{ HalfReuse: >/12 }":ERROR: "/14 Tile{ AsIs: e.Message#2/9 } Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocString, 0, 0, 14},
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.FileName#1/5 } Tile{ HalfReuse: ':'/7 } Tile{ HalfReuse: </8 HalfReuse: & StrFromInt/11 AsIs: s.LineNumber#2/13 } >/14 Tile{ HalfReuse: ':'/12 }"ERROR: "/15 Tile{ AsIs: e.Message#2/9 } Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 14},
+    {refalrts::icAllocString, 0, 0, 15},
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitChar, 0, ':', 7},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icReinitFunc, 0, 0, 11},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 12},
+    {refalrts::icReinitChar, 0, ':', 12},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 12},
+    {refalrts::icPushStack, 0, 0, 14},
     {refalrts::icPushStack, 0, 0, 8},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icSpliceEVar, 0, 0, 9},
-    {refalrts::icSpliceTile, 14, 15, 0},
+    {refalrts::icSpliceTile, 15, 16, 0},
     {refalrts::icSpliceTile, 12, 12, 0},
+    {refalrts::icSpliceTile, 14, 14, 0},
     {refalrts::icSpliceTile, 8, 13, 0},
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icSpliceEVar, 0, 0, 5},
@@ -666,12 +676,14 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  e.FileName#1/5 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: ' '/7 } Tile{ HalfReuse: ' '/1 }"ERRO"/14 Tile{ HalfReuse: 'R'/8 HalfReuse: ':'/11 HalfReuse: ' '/13 AsIs: e.Message#2/9 HalfReuse: >/12 } Tile{ ]] }
-    if( ! refalrts::alloc_chars( context[14], context[15], "ERRO", 4 ) )
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: ' '/7 }" E"/14 Tile{ HalfReuse: 'R'/1 }"RO"/16 Tile{ HalfReuse: 'R'/8 HalfReuse: ':'/11 HalfReuse: ' '/13 AsIs: e.Message#2/9 HalfReuse: >/12 } Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[14], context[15], " E", 2 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "RO", 2 ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], WriteLine, "WriteLine" );
     refalrts::reinit_char( context[7], ' ' );
-    refalrts::reinit_char( context[1], ' ' );
+    refalrts::reinit_char( context[1], 'R' );
     refalrts::reinit_char( context[8], 'R' );
     refalrts::reinit_char( context[11], ':' );
     refalrts::reinit_char( context[13], ' ' );
@@ -682,8 +694,9 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[8], context[12] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
     res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[7], res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -696,24 +709,27 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.FileName#1/5 } Tile{ HalfReuse: ':'/7 } Tile{ HalfReuse: </8 HalfReuse: & StrFromInt/11 AsIs: s.LineNumber#2/13 } Tile{ HalfReuse: >/12 }":ERROR: "/14 Tile{ AsIs: e.Message#2/9 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_chars( context[14], context[15], ":ERROR: ", 8 ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.FileName#1/5 } Tile{ HalfReuse: ':'/7 } Tile{ HalfReuse: </8 HalfReuse: & StrFromInt/11 AsIs: s.LineNumber#2/13 } >/14 Tile{ HalfReuse: ':'/12 }"ERROR: "/15 Tile{ AsIs: e.Message#2/9 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_close_call( context[14] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[15], context[16], "ERROR: ", 7 ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], WriteLine, "WriteLine" );
   refalrts::reinit_char( context[7], ':' );
   refalrts::reinit_open_call( context[8] );
   refalrts::reinit_name( context[11], StrFromInt, "StrFromInt" );
-  refalrts::reinit_close_call( context[12] );
+  refalrts::reinit_char( context[12], ':' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[14] );
   refalrts::push_stack( context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[14], context[15] );
+  res = refalrts::splice_evar( res, context[15], context[16] );
   res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[14], context[14] );
   res = refalrts::splice_evar( res, context[8], context[13] );
   res = refalrts::splice_evar( res, context[7], context[7] );
   res = refalrts::splice_evar( res, context[5], context[6] );
@@ -759,11 +775,11 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icEmpty, 0, 0, 19},
     // closed e.FileName#1 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # EL_NoErrors/0 } Tile{ ]] }
-    {refalrts::icReinitIdent, 0, 1, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL_NoErrors/1 ]] }
+    {refalrts::icReinitIdent, 0, 1, 1},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //[ErrorList (E )E ]
     // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
@@ -841,14 +857,14 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // closed e.FileName#1 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: # EL_NoErrors/0 } Tile{ ]] }
-    refalrts::reinit_ident( context[0], & ident_EL_NoErrors<int>::name );
+    //TRASH: {REMOVED TILE}  </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL_NoErrors/1 ]] }
+    refalrts::reinit_ident( context[1], & ident_EL_NoErrors<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[1];
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[0], res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 

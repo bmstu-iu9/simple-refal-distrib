@@ -442,28 +442,28 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Folders#1 as range 16(2)
     // closed e.Name#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  'M'/14 ' '/15 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & FindFiles/0 HalfReuse: (/4 AsIs: e.Folders#1/16(2) HalfReuse: )/7 HalfReuse: (/9 HalfReuse: </10 HalfReuse: & Trim/11 } Tile{ AsIs: e.Name#1/5 } Tile{ HalfReuse: >/13 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 12},
-    {refalrts::icReinitFunc, 0, 1, 0},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 7},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 10},
-    {refalrts::icReinitFunc, 0, 0, 11},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 13},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icLinkBrackets, 9, 8, 0},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icPushStack, 0, 0, 10},
-    {refalrts::icLinkBrackets, 4, 7, 0},
-    {refalrts::icSetRes, 0, 0, 8},
-    {refalrts::icSpliceTile, 13, 13, 0},
-    {refalrts::icSpliceEVar, 0, 0, 5},
-    {refalrts::icSpliceTile, 0, 11, 0},
-    {refalrts::icSpliceTile, 12, 12, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  '/'/9 '/'/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
+    {refalrts::icUpdateFunc, 0, 1, 4},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 12},
+    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 13},
+    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 14},
+    {refalrts::icReinitFunc, 0, 0, 15},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 8},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 11},
+    {refalrts::icPushStack, 0, 0, 11},
+    {refalrts::icPushStack, 0, 0, 0},
+    {refalrts::icLinkBrackets, 13, 1, 0},
+    {refalrts::icPushStack, 0, 0, 8},
+    {refalrts::icPushStack, 0, 0, 14},
+    {refalrts::icLinkBrackets, 7, 12, 0},
+    {refalrts::icSetResRightEdge, 0, 0, 0},
+    {refalrts::icSpliceTile, 11, 11, 0},
+    {refalrts::icSpliceTile, 12, 1, 0},
+    {refalrts::icSpliceEVar, 0, 0, 16},
+    {refalrts::icSpliceTile, 7, 7, 0},
+    {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     //E 
     // </0 & FindImports/4 e.OtherLine#1/2 >/1
@@ -529,31 +529,31 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Name#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  'M'/14 ' '/15 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & FindFiles/0 HalfReuse: (/4 AsIs: e.Folders#1/16(2) HalfReuse: )/7 HalfReuse: (/9 HalfReuse: </10 HalfReuse: & Trim/11 } Tile{ AsIs: e.Name#1/5 } Tile{ HalfReuse: >/13 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[12] );
-    refalrts::reinit_name( context[0], FindFiles, "FindFiles" );
-    refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_open_call( context[10] );
-    refalrts::reinit_name( context[11], Trim, "Trim" );
-    refalrts::reinit_close_call( context[13] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[12] );
-    refalrts::link_brackets( context[9], context[8] );
-    refalrts::push_stack( context[13] );
-    refalrts::push_stack( context[10] );
-    refalrts::link_brackets( context[4], context[7] );
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  '/'/9 '/'/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
+    refalrts::update_name( context[4], FindFiles, "FindFiles" );
+    refalrts::reinit_close_bracket( context[12] );
+    refalrts::reinit_open_bracket( context[13] );
+    refalrts::reinit_open_call( context[14] );
+    refalrts::reinit_name( context[15], Trim, "Trim" );
+    refalrts::reinit_close_call( context[8] );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::reinit_close_call( context[11] );
+    refalrts::push_stack( context[11] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[13], context[1] );
+    refalrts::push_stack( context[8] );
+    refalrts::push_stack( context[14] );
+    refalrts::link_brackets( context[7], context[12] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[13], context[13] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[0], context[11] );
-    res = refalrts::splice_evar( res, context[12], context[12] );
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[11], context[11] );
+    res = refalrts::splice_evar( res, context[12], context[1] );
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( trash_prev, res );
+    refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 

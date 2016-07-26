@@ -476,9 +476,9 @@ static refalrts::FnResult lambda_Main_CheckArgs_0(refalrts::Iter arg_begin, refa
 
 static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { FormatError, "FormatError" }
@@ -490,10 +490,10 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
   };
   using refalrts::numbers;
   static const refalrts::StringItem strings[] = {
-    {"known option --", 15},
+    {"nown option --", 14},
     {"nknown option -", 15},
     {" expects paramete", 17},
-    {"ption ", 6}
+    {"tion ", 5}
   };
   static const refalrts::RASLCommand raa[] = {
     //FAST GEN:(S S E )
@@ -506,36 +506,38 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
     {refalrts::icsVarLeft, 0, 9, 5},
     {refalrts::icsVarLeft, 0, 10, 5},
     // closed e.idxBVV#0 as range 5
-    {refalrts::icOnFailGoTo, +17, 0, 0},
+    {refalrts::icOnFailGoTo, +19, 0, 0},
     //(S #NoRequiredParamE )
     // </0 & lambda_Main_CheckArgs_1/4 (/7 s.Pos#2/9 # NoRequiredParam/10 e.Opt#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 2, 10},
     // closed e.Opt#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'o'/10 }"ption "/11 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/13 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
-    {refalrts::icAllocString, 0, 3, 11},
-    {refalrts::icAllocString, 0, 2, 13},
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } 'o'/11 Tile{ HalfReuse: 'p'/10 }"tion "/12 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/14 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
+    {refalrts::icAllocChar, 0, 'o', 11},
+    {refalrts::icAllocString, 0, 3, 12},
+    {refalrts::icAllocString, 0, 2, 14},
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 9, 7},
-    {refalrts::icReinitChar, 0, 'o', 10},
+    {refalrts::icReinitChar, 0, 'p', 10},
     {refalrts::icReinitChar, 0, 'r', 8},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetRes, 0, 0, 8},
-    {refalrts::icSpliceTile, 13, 14, 0},
+    {refalrts::icSpliceTile, 14, 15, 0},
     {refalrts::icSpliceEVar, 0, 0, 5},
-    {refalrts::icSpliceTile, 11, 12, 0},
+    {refalrts::icSpliceTile, 12, 13, 0},
     {refalrts::icSpliceTile, 10, 10, 0},
+    {refalrts::icSpliceTile, 11, 11, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
     //(S #UnknownShortOptionS )
     // </0 & lambda_Main_CheckArgs_1/4 (/7 s.Pos#2/9 # UnknownShortOption/10 s.Option#2/11 )/8 >/1
     {refalrts::icIdentTerm, 0, 1, 10},
-    {refalrts::icSave, 0, 15, 5},
-    {refalrts::icsVarLeft, 0, 11, 15},
-    {refalrts::icEmpty, 0, 0, 15},
+    {refalrts::icSave, 0, 16, 5},
+    {refalrts::icsVarLeft, 0, 11, 16},
+    {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  s.Option#2/11 {REMOVED TILE} 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 }"nknown option -"/12 Tile{ HalfReuse: s.Option2 #11/8 AsIs: >/1 ]] }
@@ -557,18 +559,20 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
     // closed e.Option#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } Tile{ HalfReuse: 'n'/8 }"known option --"/11 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocString, 0, 0, 11},
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } 'n'/11 Tile{ HalfReuse: 'k'/8 }"nown option --"/12 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocChar, 0, 'n', 11},
+    {refalrts::icAllocString, 0, 0, 12},
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 9, 7},
     {refalrts::icReinitChar, 0, 'u', 10},
-    {refalrts::icReinitChar, 0, 'n', 8},
+    {refalrts::icReinitChar, 0, 'k', 8},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icSpliceEVar, 0, 0, 5},
-    {refalrts::icSpliceTile, 11, 12, 0},
+    {refalrts::icSpliceTile, 12, 13, 0},
     {refalrts::icSpliceTile, 8, 8, 0},
+    {refalrts::icSpliceTile, 11, 11, 0},
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
@@ -612,24 +616,27 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'o'/10 }"ption "/11 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/13 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_chars( context[11], context[12], "ption ", 6 ) )
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } 'o'/11 Tile{ HalfReuse: 'p'/10 }"tion "/12 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/14 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[11], 'o' ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[13], context[14], " expects paramete", 17 ) )
+    if( ! refalrts::alloc_chars( context[12], context[13], "tion ", 5 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[14], context[15], " expects paramete", 17 ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], FormatError, "FormatError" );
     refalrts::reinit_svar( context[7], context[9] );
-    refalrts::reinit_char( context[10], 'o' );
+    refalrts::reinit_char( context[10], 'p' );
     refalrts::reinit_char( context[8], 'r' );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
     res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
     res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[11] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[7], res );
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
@@ -641,11 +648,11 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
     // </0 & lambda_Main_CheckArgs_1/4 (/7 s.Pos#2/9 # UnknownShortOption/10 s.Option#2/11 )/8 >/1
     if( ! refalrts::ident_term(  & ident_UnknownShortOption<int>::name, context[10] ) )
       continue;
-    context[15] = context[5];
-    context[16] = context[6];
-    if( ! refalrts::svar_left( context[11], context[15], context[16] ) )
+    context[16] = context[5];
+    context[17] = context[6];
+    if( ! refalrts::svar_left( context[11], context[16], context[17] ) )
       continue;
-    if( ! refalrts::empty_seq( context[15], context[16] ) )
+    if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -677,21 +684,24 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } Tile{ HalfReuse: 'n'/8 }"known option --"/11 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_chars( context[11], context[12], "known option --", 15 ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } 'n'/11 Tile{ HalfReuse: 'k'/8 }"nown option --"/12 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_char( context[11], 'n' ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[12], context[13], "nown option --", 14 ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], FormatError, "FormatError" );
   refalrts::reinit_svar( context[7], context[9] );
   refalrts::reinit_char( context[10], 'u' );
-  refalrts::reinit_char( context[8], 'n' );
+  refalrts::reinit_char( context[8], 'k' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
   res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
   res = refalrts::splice_evar( res, context[10], context[10] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( context[7], res );
@@ -701,9 +711,9 @@ static refalrts::FnResult lambda_Main_CheckArgs_1(refalrts::Iter arg_begin, refa
 
 static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 28 elems
-  refalrts::Iter context[28];
-  refalrts::zeros( context, 28 );
+  // issue here memory for vars with 29 elems
+  refalrts::Iter context[29];
+  refalrts::zeros( context, 29 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { lambda_Main_CheckArgs_1, "lambda_Main_CheckArgs_1" },
@@ -724,7 +734,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
   using refalrts::numbers;
   static const refalrts::StringItem strings[] = {
     {"mmand line error: unrecognized command line", 43},
-    {"ected argument --from", 21}
+    {"cted argument --from", 20}
   };
   static const refalrts::RASLCommand raa[] = {
     //FAST GEN:(E )E 
@@ -738,12 +748,12 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icOnFailGoTo, +15, 0, 0},
     //()(#FILES E )
     // </0 & Main_CheckArgs/4 (/7 )/8 (/11 # FILE/13 s.Pos#1/14 e.FileName#1/9 )/12 >/1
-    {refalrts::icSave, 0, 22, 2},
-    {refalrts::icBracketLeftSave, 0, 9, 22},
+    {refalrts::icSave, 0, 23, 2},
+    {refalrts::icBracketLeftSave, 0, 9, 23},
     {refalrts::icIdentLeftSave, 13, 2, 9},
-    {refalrts::icSave, 0, 24, 5},
-    {refalrts::icEmpty, 0, 0, 24},
-    {refalrts::icEmpty, 0, 0, 22},
+    {refalrts::icSave, 0, 25, 5},
+    {refalrts::icEmpty, 0, 0, 25},
+    {refalrts::icEmpty, 0, 0, 23},
     {refalrts::icsVarLeft, 0, 14, 9},
     // closed e.FileName#1 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -759,82 +769,84 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icOnFailGoTo, +30, 0, 0},
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.Begin#1/9 (/13 # From/15 s.PosFrom#1/16 e.From#1/11 )/14 e.End#1/2 >/1
-    {refalrts::icSave, 0, 22, 5},
-    {refalrts::icEmpty, 0, 0, 22},
-    {refalrts::icSave, 0, 24, 2},
-    {refalrts::icEPrepare, 0, 9, 24},
-    {refalrts::icEStart, 0, 9, 24},
-    {refalrts::icSave, 0, 26, 24},
-    {refalrts::icBracketLeftSave, 0, 11, 26},
+    {refalrts::icSave, 0, 23, 5},
+    {refalrts::icEmpty, 0, 0, 23},
+    {refalrts::icSave, 0, 25, 2},
+    {refalrts::icEPrepare, 0, 9, 25},
+    {refalrts::icEStart, 0, 9, 25},
+    {refalrts::icSave, 0, 27, 25},
+    {refalrts::icBracketLeftSave, 0, 11, 27},
     {refalrts::icIdentLeftSave, 15, 1, 11},
-    // closed e.End#1 as range 26(2)
+    // closed e.End#1 as range 27(2)
     {refalrts::icsVarLeft, 0, 16, 11},
     // closed e.From#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/26(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & CreateClosure /13 HalfReuse: & lambda_Main_CheckArgs_0/15 AsIs: s.PosFrom#1/16 } Tile{ AsIs: (/7 } Tile{ AsIs: e.From#1/11 } Tile{ AsIs: )/8 } >/17 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/27(2) } Tile{ HalfReuse: </8 } Tile{ HalfReuse: & CreateClosure /13 HalfReuse: & lambda_Main_CheckArgs_0/15 AsIs: s.PosFrom#1/16 } Tile{ AsIs: (/7 } Tile{ AsIs: e.From#1/11 } Tile{ AsIs: )/14 } >/17 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
     {refalrts::icUpdateFunc, 0, 7, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 14},
+    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 8},
     {refalrts::icReinitFunc, 0, 6, 13},
     {refalrts::icReinitFunc, 0, 5, 15},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icPushStack, 0, 0, 17},
-    {refalrts::icPushStack, 0, 0, 14},
-    {refalrts::icLinkBrackets, 7, 8, 0},
+    {refalrts::icPushStack, 0, 0, 8},
+    {refalrts::icLinkBrackets, 7, 14, 0},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icSpliceTile, 17, 17, 0},
-    {refalrts::icSpliceTile, 8, 8, 0},
+    {refalrts::icSpliceTile, 14, 14, 0},
     {refalrts::icSpliceEVar, 0, 0, 11},
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icSpliceTile, 13, 16, 0},
-    {refalrts::icSpliceTile, 14, 14, 0},
-    {refalrts::icSpliceEVar, 0, 0, 26},
+    {refalrts::icSpliceTile, 8, 8, 0},
+    {refalrts::icSpliceEVar, 0, 0, 27},
     {refalrts::icSpliceEVar, 0, 0, 9},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +30, 0, 0},
+    {refalrts::icOnFailGoTo, +32, 0, 0},
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.Begin#1/9 (/13 # To/15 s.Pos#1/16 e.To#1/11 )/14 e.End#1/2 >/1
-    {refalrts::icSave, 0, 22, 5},
-    {refalrts::icEmpty, 0, 0, 22},
-    {refalrts::icSave, 0, 24, 2},
-    {refalrts::icEPrepare, 0, 9, 24},
-    {refalrts::icEStart, 0, 9, 24},
-    {refalrts::icSave, 0, 26, 24},
-    {refalrts::icBracketLeftSave, 0, 11, 26},
+    {refalrts::icSave, 0, 23, 5},
+    {refalrts::icEmpty, 0, 0, 23},
+    {refalrts::icSave, 0, 25, 2},
+    {refalrts::icEPrepare, 0, 9, 25},
+    {refalrts::icEStart, 0, 9, 25},
+    {refalrts::icSave, 0, 27, 25},
+    {refalrts::icBracketLeftSave, 0, 11, 27},
     {refalrts::icIdentLeftSave, 15, 0, 11},
-    // closed e.End#1 as range 26(2)
+    // closed e.End#1 as range 27(2)
     {refalrts::icsVarLeft, 0, 16, 11},
     // closed e.To#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/26(2) {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } Tile{ HalfReuse: 'x'/13 HalfReuse: 'p'/15 } Tile{ HalfReuse: 't'/14 }"ected argument --from"/17 >/19 </20 & Help/21 Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocString, 0, 1, 17},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 20},
-    {refalrts::icAllocFunc, 0, 2, 21},
+    //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/27(2) {REMOVED TILE} 
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } 'x'/17 Tile{ HalfReuse: 'p'/13 HalfReuse: 't'/15 } Tile{ HalfReuse: 'e'/14 }"cted argument --from"/18 >/20 </21 & Help/22 Tile{ AsIs: >/1 ]] }
+    {refalrts::icAllocChar, 0, 'x', 17},
+    {refalrts::icAllocString, 0, 1, 18},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 21},
+    {refalrts::icAllocFunc, 0, 2, 22},
     {refalrts::icUpdateFunc, 0, 4, 4},
     {refalrts::icReinitSVar, 0, 16, 7},
     {refalrts::icReinitChar, 0, 'e', 8},
-    {refalrts::icReinitChar, 0, 'x', 13},
-    {refalrts::icReinitChar, 0, 'p', 15},
-    {refalrts::icReinitChar, 0, 't', 14},
+    {refalrts::icReinitChar, 0, 'p', 13},
+    {refalrts::icReinitChar, 0, 't', 15},
+    {refalrts::icReinitChar, 0, 'e', 14},
     {refalrts::icPushStack, 0, 0, 1},
+    {refalrts::icPushStack, 0, 0, 21},
     {refalrts::icPushStack, 0, 0, 20},
-    {refalrts::icPushStack, 0, 0, 19},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceTile, 17, 21, 0},
+    {refalrts::icSpliceTile, 18, 22, 0},
     {refalrts::icSpliceTile, 14, 14, 0},
     {refalrts::icSpliceTile, 13, 15, 0},
+    {refalrts::icSpliceTile, 17, 17, 0},
     {refalrts::icTrash, 0, 0, 8},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.AnyOther#1/2 >/1
-    {refalrts::icSave, 0, 22, 5},
-    {refalrts::icEmpty, 0, 0, 22},
+    {refalrts::icSave, 0, 23, 5},
+    {refalrts::icEmpty, 0, 0, 23},
     // closed e.AnyOther#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  e.AnyOther#1/2 {REMOVED TILE} 
@@ -903,22 +915,22 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::start_sentence();
     //()(#FILES E )
     // </0 & Main_CheckArgs/4 (/7 )/8 (/11 # FILE/13 s.Pos#1/14 e.FileName#1/9 )/12 >/1
-    context[22] = context[2];
-    context[23] = context[3];
+    context[23] = context[2];
+    context[24] = context[3];
     context[9] = 0;
     context[10] = 0;
-    context[11] = refalrts::brackets_left( context[9], context[10], context[22], context[23] );
+    context[11] = refalrts::brackets_left( context[9], context[10], context[23], context[24] );
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
     context[13] = refalrts::ident_left(  & ident_FILE<int>::name, context[9], context[10] );
     if( ! context[13] )
       continue;
-    context[24] = context[5];
-    context[25] = context[6];
-    if( ! refalrts::empty_seq( context[24], context[25] ) )
+    context[25] = context[5];
+    context[26] = context[6];
+    if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
       continue;
@@ -943,132 +955,135 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::start_sentence();
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.Begin#1/9 (/13 # From/15 s.PosFrom#1/16 e.From#1/11 )/14 e.End#1/2 >/1
-    context[22] = context[5];
-    context[23] = context[6];
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    context[23] = context[5];
+    context[24] = context[6];
+    if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
-    context[24] = context[2];
-    context[25] = context[3];
+    context[25] = context[2];
+    context[26] = context[3];
     context[9] = 0;
     context[10] = 0;
     refalrts::start_e_loop();
     do {
-      context[26] = context[24];
       context[27] = context[25];
+      context[28] = context[26];
       context[11] = 0;
       context[12] = 0;
-      context[13] = refalrts::brackets_left( context[11], context[12], context[26], context[27] );
+      context[13] = refalrts::brackets_left( context[11], context[12], context[27], context[28] );
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
       context[15] = refalrts::ident_left(  & ident_From<int>::name, context[11], context[12] );
       if( ! context[15] )
         continue;
-      // closed e.End#1 as range 26(2)
+      // closed e.End#1 as range 27(2)
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.From#1 as range 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/26(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & CreateClosure /13 HalfReuse: & lambda_Main_CheckArgs_0/15 AsIs: s.PosFrom#1/16 } Tile{ AsIs: (/7 } Tile{ AsIs: e.From#1/11 } Tile{ AsIs: )/8 } >/17 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/27(2) } Tile{ HalfReuse: </8 } Tile{ HalfReuse: & CreateClosure /13 HalfReuse: & lambda_Main_CheckArgs_0/15 AsIs: s.PosFrom#1/16 } Tile{ AsIs: (/7 } Tile{ AsIs: e.From#1/11 } Tile{ AsIs: )/14 } >/17 Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_close_call( context[17] ) )
         return refalrts::cNoMemory;
       refalrts::update_name( context[4], Fetch, "Fetch" );
-      refalrts::reinit_open_call( context[14] );
+      refalrts::reinit_open_call( context[8] );
       refalrts::reinit_name( context[13], refalrts::create_closure, "refalrts::create_closure" );
       refalrts::reinit_name( context[15], lambda_Main_CheckArgs_0, "lambda_Main_CheckArgs_0" );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
       refalrts::push_stack( context[17] );
-      refalrts::push_stack( context[14] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::push_stack( context[8] );
+      refalrts::link_brackets( context[7], context[14] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
       res = refalrts::splice_evar( res, context[17], context[17] );
-      res = refalrts::splice_evar( res, context[8], context[8] );
+      res = refalrts::splice_evar( res, context[14], context[14] );
       res = refalrts::splice_evar( res, context[11], context[12] );
       res = refalrts::splice_evar( res, context[7], context[7] );
       res = refalrts::splice_evar( res, context[13], context[16] );
-      res = refalrts::splice_evar( res, context[14], context[14] );
-      res = refalrts::splice_evar( res, context[26], context[27] );
+      res = refalrts::splice_evar( res, context[8], context[8] );
+      res = refalrts::splice_evar( res, context[27], context[28] );
       res = refalrts::splice_evar( res, context[9], context[10] );
       refalrts::use( res );
       return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-    } while ( refalrts::open_evar_advance( context[9], context[10], context[24], context[25] ) );
+    } while ( refalrts::open_evar_advance( context[9], context[10], context[25], context[26] ) );
   } while ( 0 );
 
   do {
     refalrts::start_sentence();
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.Begin#1/9 (/13 # To/15 s.Pos#1/16 e.To#1/11 )/14 e.End#1/2 >/1
-    context[22] = context[5];
-    context[23] = context[6];
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    context[23] = context[5];
+    context[24] = context[6];
+    if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
-    context[24] = context[2];
-    context[25] = context[3];
+    context[25] = context[2];
+    context[26] = context[3];
     context[9] = 0;
     context[10] = 0;
     refalrts::start_e_loop();
     do {
-      context[26] = context[24];
       context[27] = context[25];
+      context[28] = context[26];
       context[11] = 0;
       context[12] = 0;
-      context[13] = refalrts::brackets_left( context[11], context[12], context[26], context[27] );
+      context[13] = refalrts::brackets_left( context[11], context[12], context[27], context[28] );
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
       context[15] = refalrts::ident_left(  & ident_To<int>::name, context[11], context[12] );
       if( ! context[15] )
         continue;
-      // closed e.End#1 as range 26(2)
+      // closed e.End#1 as range 27(2)
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.To#1 as range 11
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/26(2) {REMOVED TILE} 
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } Tile{ HalfReuse: 'x'/13 HalfReuse: 'p'/15 } Tile{ HalfReuse: 't'/14 }"ected argument --from"/17 >/19 </20 & Help/21 Tile{ AsIs: >/1 ]] }
-      if( ! refalrts::alloc_chars( context[17], context[18], "ected argument --from", 21 ) )
+      //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/27(2) {REMOVED TILE} 
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } 'x'/17 Tile{ HalfReuse: 'p'/13 HalfReuse: 't'/15 } Tile{ HalfReuse: 'e'/14 }"cted argument --from"/18 >/20 </21 & Help/22 Tile{ AsIs: >/1 ]] }
+      if( ! refalrts::alloc_char( context[17], 'x' ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_call( context[19] ) )
+      if( ! refalrts::alloc_chars( context[18], context[19], "cted argument --from", 20 ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_call( context[20] ) )
+      if( ! refalrts::alloc_close_call( context[20] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[21], Help, "Help" ) )
+      if( ! refalrts::alloc_open_call( context[21] ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_name( context[22], Help, "Help" ) )
         return refalrts::cNoMemory;
       refalrts::update_name( context[4], FormatError, "FormatError" );
       refalrts::reinit_svar( context[7], context[16] );
       refalrts::reinit_char( context[8], 'e' );
-      refalrts::reinit_char( context[13], 'x' );
-      refalrts::reinit_char( context[15], 'p' );
-      refalrts::reinit_char( context[14], 't' );
+      refalrts::reinit_char( context[13], 'p' );
+      refalrts::reinit_char( context[15], 't' );
+      refalrts::reinit_char( context[14], 'e' );
       refalrts::push_stack( context[1] );
+      refalrts::push_stack( context[21] );
       refalrts::push_stack( context[20] );
-      refalrts::push_stack( context[19] );
       refalrts::push_stack( context[0] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
-      res = refalrts::splice_evar( res, context[17], context[21] );
+      res = refalrts::splice_evar( res, context[18], context[22] );
       res = refalrts::splice_evar( res, context[14], context[14] );
       res = refalrts::splice_evar( res, context[13], context[15] );
+      res = refalrts::splice_evar( res, context[17], context[17] );
       refalrts::use( res );
       refalrts::splice_to_freelist_open( context[8], res );
       return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-    } while ( refalrts::open_evar_advance( context[9], context[10], context[24], context[25] ) );
+    } while ( refalrts::open_evar_advance( context[9], context[10], context[25], context[26] ) );
   } while ( 0 );
 
   do {
     refalrts::start_sentence();
     //()E 
     // </0 & Main_CheckArgs/4 (/7 )/8 e.AnyOther#1/2 >/1
-    context[22] = context[5];
-    context[23] = context[6];
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    context[23] = context[5];
+    context[24] = context[6];
+    if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
     // closed e.AnyOther#1 as range 2
 
