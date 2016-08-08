@@ -31,6 +31,8 @@ extern refalrts::FnResult Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Trim_L(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Type(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Type_T(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult UnBracket(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -52,7 +54,6 @@ static refalrts::FnResult gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts::Iter
 static refalrts::FnResult gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult SwDoArgList(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult WriteBracketLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 
@@ -3826,7 +3827,82 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Trim_R, "Trim-R" },
-    { Trim, "Trim" }
+    { Trim_L, "Trim-L" }
+  };
+  using refalrts::idents;
+  using refalrts::numbers;
+  using refalrts::strings;
+  static const refalrts::RASLCommand raa[] = {
+    // </0 & Trim/4 e.Line#1/2 >/1
+    {refalrts::icInitB0_Lite, 0, 0, 0},
+    {refalrts::icCallSaveLeft, 0, 2, 0},
+    // closed e.Line#1 as range 2
+    {refalrts::icEmptyResult, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } </5 & Trim-L/6 Tile{ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
+    {refalrts::icAllocFunc, 0, 1, 6},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 7},
+    {refalrts::icUpdateFunc, 0, 0, 4},
+    {refalrts::icPushStack, 0, 0, 7},
+    {refalrts::icPushStack, 0, 0, 5},
+    {refalrts::icPushStack, 0, 0, 1},
+    {refalrts::icPushStack, 0, 0, 0},
+    {refalrts::icSetResRightEdge, 0, 0, 0},
+    {refalrts::icSpliceTile, 7, 7, 0},
+    {refalrts::icSpliceTile, 0, 1, 0},
+    {refalrts::icSpliceTile, 5, 6, 0},
+    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+    {refalrts::icEnd, 0, 0, 0}
+  };
+  int open_e_stack[1];
+  refalrts::FnResult res = refalrts::interpret_array(
+    raa, context, arg_begin, arg_end,
+    functions, idents, numbers, strings, open_e_stack
+  );
+  return res;
+#else
+  // </0 & Trim/4 e.Line#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.Line#1 as range 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //RESULT: Tile{ [[ } </5 & Trim-L/6 Tile{ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[5] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[6], Trim_L, "Trim-L" ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[7] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], Trim_R, "Trim-R" );
+  refalrts::push_stack( context[7] );
+  refalrts::push_stack( context[5] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::use( res );
+  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+#endif
+}
+
+refalrts::FnResult Trim_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
+#ifdef INTERPRET
+  static const refalrts::RefalFunction functions[] = {
+    { Trim_L, "Trim-L" }
   };
   using refalrts::idents;
   using refalrts::numbers;
@@ -3834,21 +3910,21 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   static const refalrts::RASLCommand raa[] = {
     //FAST GEN: e.$
     //GLOBAL GEN: e.$
-    // </0 & Trim/4 e.idx#0/2 >/1
+    // </0 & Trim-L/4 e.idx#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.idx#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
     // ' ' e.idx
-    // </0 & Trim/4 ' '/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 ' '/5 e.Line#1/2 >/1
     {refalrts::icSave, 0, 6, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>(' '), 6},
     // closed e.Line#1 as range 6(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
-    {refalrts::icReinitFunc, 0, 1, 5},
+    {refalrts::icReinitFunc, 0, 0, 5},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSetRes, 0, 0, 4},
@@ -3856,15 +3932,15 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
     // '\t' e.idx
-    // </0 & Trim/4 '\t'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\t'/5 e.Line#1/2 >/1
     {refalrts::icSave, 0, 6, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\t'), 6},
     // closed e.Line#1 as range 6(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
-    {refalrts::icReinitFunc, 0, 1, 5},
+    {refalrts::icReinitFunc, 0, 0, 5},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSetRes, 0, 0, 4},
@@ -3872,15 +3948,15 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
     // '\r' e.idx
-    // </0 & Trim/4 '\r'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\r'/5 e.Line#1/2 >/1
     {refalrts::icSave, 0, 6, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\r'), 6},
     // closed e.Line#1 as range 6(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
-    {refalrts::icReinitFunc, 0, 1, 5},
+    {refalrts::icReinitFunc, 0, 0, 5},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSetRes, 0, 0, 4},
@@ -3888,29 +3964,29 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
     // '\n' e.idx
-    // </0 & Trim/4 '\n'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\n'/5 e.Line#1/2 >/1
     {refalrts::icSave, 0, 6, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\n'), 6},
     // closed e.Line#1 as range 6(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
-    {refalrts::icReinitFunc, 0, 1, 5},
+    {refalrts::icReinitFunc, 0, 0, 5},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 4},
     {refalrts::icSetRes, 0, 0, 4},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     // e.idx
-    // </0 & Trim/4 e.Line#1/2 >/1
+    // </0 & Trim-L/4 e.Line#1/2 >/1
     // closed e.Line#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 ]] }
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  </0 & Trim-L/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/2 } Tile{ ]] }
+    {refalrts::icSetResRightEdge, 0, 0, 0},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -3923,7 +3999,7 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #else
   //FAST GEN: e.$
   //GLOBAL GEN: e.$
-  // </0 & Trim/4 e.idx#0/2 >/1
+  // </0 & Trim-L/4 e.idx#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3933,7 +4009,7 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   do {
     refalrts::start_sentence();
     // ' ' e.idx
-    // </0 & Trim/4 ' '/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 ' '/5 e.Line#1/2 >/1
     context[6] = context[2];
     context[7] = context[3];
     context[5] = refalrts::char_left( ' ', context[6], context[7] );
@@ -3943,9 +4019,9 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], Trim, "Trim" );
+    refalrts::reinit_name( context[5], Trim_L, "Trim-L" );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3959,7 +4035,7 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   do {
     refalrts::start_sentence();
     // '\t' e.idx
-    // </0 & Trim/4 '\t'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\t'/5 e.Line#1/2 >/1
     context[6] = context[2];
     context[7] = context[3];
     context[5] = refalrts::char_left( '\t', context[6], context[7] );
@@ -3969,9 +4045,9 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], Trim, "Trim" );
+    refalrts::reinit_name( context[5], Trim_L, "Trim-L" );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3985,7 +4061,7 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   do {
     refalrts::start_sentence();
     // '\r' e.idx
-    // </0 & Trim/4 '\r'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\r'/5 e.Line#1/2 >/1
     context[6] = context[2];
     context[7] = context[3];
     context[5] = refalrts::char_left( '\r', context[6], context[7] );
@@ -3995,9 +4071,9 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], Trim, "Trim" );
+    refalrts::reinit_name( context[5], Trim_L, "Trim-L" );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4011,7 +4087,7 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   do {
     refalrts::start_sentence();
     // '\n' e.idx
-    // </0 & Trim/4 '\n'/5 e.Line#1/2 >/1
+    // </0 & Trim-L/4 '\n'/5 e.Line#1/2 >/1
     context[6] = context[2];
     context[7] = context[3];
     context[5] = refalrts::char_left( '\n', context[6], context[7] );
@@ -4021,9 +4097,9 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], Trim, "Trim" );
+    refalrts::reinit_name( context[5], Trim_L, "Trim-L" );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4035,20 +4111,23 @@ refalrts::FnResult Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   // e.idx
-  // </0 & Trim/4 e.Line#1/2 >/1
+  // </0 & Trim-L/4 e.Line#1/2 >/1
   // closed e.Line#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 ]] }
-  refalrts::update_name( context[4], Trim_R, "Trim-R" );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
+  //TRASH: {REMOVED TILE}  </0 & Trim-L/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/2 } Tile{ ]] }
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
 }
 
-static refalrts::FnResult Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::FnResult Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
