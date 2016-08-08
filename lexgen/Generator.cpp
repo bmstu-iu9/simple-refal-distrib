@@ -14324,7 +14324,7 @@ static refalrts::FnResult ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter ar
   using refalrts::idents;
   using refalrts::numbers;
   static const refalrts::StringItem strings[] = {
-    {" \t,.:;(){}[]*", 13}
+    {" \t,.:;(){}[]*&!@#$%^-_=+", 24}
   };
   static const refalrts::RASLCommand raa[] = {
     // </0 & ErrorFlush/4 (/7 e.Scanned#1/5 )/8 e.Tail#1/2 >/1
@@ -14335,7 +14335,7 @@ static refalrts::FnResult ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.Tail#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </9 & NextInSet/10 & ErrorFlush/11 & ErrorFlushFail/12 (/13 </14 & NameTailSet/15 >/16" \t,.:;(){}[]*"/17 Tile{ HalfReuse: '&'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </9 & NextInSet/10 & ErrorFlush/11 & ErrorFlushFail/12 (/13 </14 & NameTailSet/15 >/16" \t,.:;(){}[]*&!@#$%^-_=+"/17 Tile{ HalfReuse: '/'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
     {refalrts::icAllocFunc, 0, 3, 10},
     {refalrts::icAllocFunc, 0, 2, 11},
@@ -14345,7 +14345,7 @@ static refalrts::FnResult ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icAllocFunc, 0, 0, 15},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
     {refalrts::icAllocString, 0, 0, 17},
-    {refalrts::icReinitChar, 0, '&', 0},
+    {refalrts::icReinitChar, 0, '/', 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 9},
@@ -14382,7 +14382,7 @@ static refalrts::FnResult ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter ar
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } </9 & NextInSet/10 & ErrorFlush/11 & ErrorFlushFail/12 (/13 </14 & NameTailSet/15 >/16" \t,.:;(){}[]*"/17 Tile{ HalfReuse: '&'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </9 & NextInSet/10 & ErrorFlush/11 & ErrorFlushFail/12 (/13 </14 & NameTailSet/15 >/16" \t,.:;(){}[]*&!@#$%^-_=+"/17 Tile{ HalfReuse: '/'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[10], NextInSet, "NextInSet" ) )
@@ -14399,9 +14399,9 @@ static refalrts::FnResult ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[17], context[18], " \t,.:;(){}[]*", 13 ) )
+  if( ! refalrts::alloc_chars( context[17], context[18], " \t,.:;(){}[]*&!@#$%^-_=+", 24 ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_char( context[0], '&' );
+  refalrts::reinit_char( context[0], '/' );
   refalrts::reinit_close_bracket( context[4] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
