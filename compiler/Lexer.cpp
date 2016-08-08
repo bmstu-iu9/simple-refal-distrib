@@ -9,7 +9,6 @@ extern refalrts::FnResult FastIntFromStr(refalrts::Iter arg_begin, refalrts::Ite
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult LoadFile(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -21,11 +20,12 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_CharFromNum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_DigitFromChar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -211,91 +211,91 @@ struct ident_TkIdentMarker {
   }
 };
 
-// identifier #TkLiteral_BS
+// identifier #TkLiteral-BS
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_BS {
   static const char *name() {
-    return "TkLiteral_BS";
+    return "TkLiteral-BS";
   }
 };
 
-// identifier #TkLiteral_Bell
+// identifier #TkLiteral-Bell
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_Bell {
   static const char *name() {
-    return "TkLiteral_Bell";
+    return "TkLiteral-Bell";
   }
 };
 
-// identifier #TkLiteral_CarriageReturn
+// identifier #TkLiteral-CarriageReturn
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_CarriageReturn {
   static const char *name() {
-    return "TkLiteral_CarriageReturn";
+    return "TkLiteral-CarriageReturn";
   }
 };
 
-// identifier #TkLiteral_Char
+// identifier #TkLiteral-Char
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_Char {
   static const char *name() {
-    return "TkLiteral_Char";
+    return "TkLiteral-Char";
   }
 };
 
-// identifier #TkLiteral_Code
+// identifier #TkLiteral-Code
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_Code {
   static const char *name() {
-    return "TkLiteral_Code";
+    return "TkLiteral-Code";
   }
 };
 
-// identifier #TkLiteral_FF
+// identifier #TkLiteral-FF
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_FF {
   static const char *name() {
-    return "TkLiteral_FF";
+    return "TkLiteral-FF";
   }
 };
 
-// identifier #TkLiteral_NewLine
+// identifier #TkLiteral-NewLine
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_NewLine {
   static const char *name() {
-    return "TkLiteral_NewLine";
+    return "TkLiteral-NewLine";
   }
 };
 
-// identifier #TkLiteral_OCode
+// identifier #TkLiteral-OCode
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_OCode {
   static const char *name() {
-    return "TkLiteral_OCode";
+    return "TkLiteral-OCode";
   }
 };
 
-// identifier #TkLiteral_Tab
+// identifier #TkLiteral-Tab
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_Tab {
   static const char *name() {
-    return "TkLiteral_Tab";
+    return "TkLiteral-Tab";
   }
 };
 
-// identifier #TkLiteral_VT
+// identifier #TkLiteral-VT
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_VT {
   static const char *name() {
-    return "TkLiteral_VT";
+    return "TkLiteral-VT";
   }
 };
 
-// identifier #TkLiteral_XCode
+// identifier #TkLiteral-XCode
 template <typename SREFAL_PARAM_INT>
 struct ident_TkLiteral_XCode {
   static const char *name() {
-    return "TkLiteral_XCode";
+    return "TkLiteral-XCode";
   }
 };
 
@@ -435,234 +435,42 @@ struct ident_TokenUnexpectedEOF {
   }
 };
 
-static refalrts::FnResult LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 9 elems
-  refalrts::Iter context[9];
-  refalrts::zeros( context, 9 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    // </0 & LinearizeLine/4 (/7 e.Line#1/5 )/8 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icBracketLeftSave, 0, 5, 2},
-    {refalrts::icEmpty, 0, 0, 2},
-    // closed e.Line#1 as range 5
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & LinearizeLine/4 (/7 {REMOVED TILE}  )/8 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/5 } Tile{ HalfReuse: '\n'/1 ]] }
-    {refalrts::icReinitChar, 0, '\n', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceEVar, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
-  // </0 & LinearizeLine/4 (/7 e.Line#1/5 )/8 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Line#1 as range 5
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & LinearizeLine/4 (/7 {REMOVED TILE}  )/8 {REMOVED TILE} 
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/5 } Tile{ HalfReuse: '\n'/1 ]] }
-  refalrts::reinit_char( context[1], '\n' );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  refalrts::use( res );
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
-}
-
-static refalrts::FnResult lambda_LexFolding_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::FnResult LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
 #ifdef INTERPRET
-  using refalrts::functions;
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:E 
-    // </0 & lambda_LexFolding_0/4 e.idx#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    // closed e.idx#0 as range 2
-    {refalrts::icOnFailGoTo, +9, 0, 0},
-    //'\357''\273''\277'E 
-    // </0 & lambda_LexFolding_0/4 '\357'/5 '\273'/6 '\277'/7 e.Content#2/2 >/1
-    {refalrts::icSave, 0, 8, 2},
-    {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\357'), 8},
-    {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('\273'), 8},
-    {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('\277'), 8},
-    // closed e.Content#2 as range 8(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_LexFolding_0/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/8(2) } Tile{ ]] }
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceEVar, 0, 0, 8},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //E 
-    // </0 & lambda_LexFolding_0/4 e.Content#2/2 >/1
-    // closed e.Content#2 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_LexFolding_0/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/2 } Tile{ ]] }
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceEVar, 0, 0, 2},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
-  //FAST GEN:E 
-  //GLOBAL GEN:E 
-  // </0 & lambda_LexFolding_0/4 e.idx#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
-  do {
-    refalrts::start_sentence();
-    //'\357''\273''\277'E 
-    // </0 & lambda_LexFolding_0/4 '\357'/5 '\273'/6 '\277'/7 e.Content#2/2 >/1
-    context[8] = context[2];
-    context[9] = context[3];
-    context[5] = refalrts::char_left( '\357', context[8], context[9] );
-    if( ! context[5] )
-      continue;
-    context[6] = refalrts::char_left( '\273', context[8], context[9] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_left( '\277', context[8], context[9] );
-    if( ! context[7] )
-      continue;
-    // closed e.Content#2 as range 8(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & lambda_LexFolding_0/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE}  >/1 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/8(2) } Tile{ ]] }
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[8], context[9] );
-    refalrts::use( res );
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-  } while ( 0 );
-
-  //E 
-  // </0 & lambda_LexFolding_0/4 e.Content#2/2 >/1
-  // closed e.Content#2 as range 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & lambda_LexFolding_0/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/2 } Tile{ ]] }
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::use( res );
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
-}
-
-refalrts::FnResult LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 21 elems
-  refalrts::Iter context[21];
-  refalrts::zeros( context, 21 );
-#ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { LoadFile, "LoadFile" },
-    { lambda_LexFolding_0, "lambda_LexFolding_0" },
-    { LinearizeLine, "LinearizeLine" },
-    { Map, "Map" },
-    { Fetch, "Fetch" },
-    { Root, "Root" },
-    { NormalizeTokens, "NormalizeTokens" }
+    { NormalizeTokens, "NormalizeTokens" },
+    { Root, "Root" }
   };
   using refalrts::idents;
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & LexFolding/4 e.FileName#1/2 >/1
+    // </0 & LexFolding/4 e.SourceText#1/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
-    // closed e.FileName#1 as range 2
+    // closed e.SourceText#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </5 & NormalizeTokens/6 </7 & Root/8 (/9 )/10 </11 & Fetch/12 </13 & Map/14 & LinearizeLine/15 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/16 & lambda_LexFolding_0/17 >/18 >/19 >/20 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & NormalizeTokens/4 } </5 & Root/6 (/7 )/8 Tile{ AsIs: e.SourceText#1/2 } >/9 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
-    {refalrts::icAllocFunc, 0, 6, 6},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 7},
-    {refalrts::icAllocFunc, 0, 5, 8},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
-    {refalrts::icAllocFunc, 0, 4, 12},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
-    {refalrts::icAllocFunc, 0, 3, 14},
-    {refalrts::icAllocFunc, 0, 2, 15},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
-    {refalrts::icAllocFunc, 0, 1, 17},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
+    {refalrts::icAllocFunc, 0, 1, 6},
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 7},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 8},
+    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 9},
     {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 20},
-    {refalrts::icPushStack, 0, 0, 5},
-    {refalrts::icPushStack, 0, 0, 19},
-    {refalrts::icPushStack, 0, 0, 7},
-    {refalrts::icPushStack, 0, 0, 18},
-    {refalrts::icPushStack, 0, 0, 11},
-    {refalrts::icPushStack, 0, 0, 16},
-    {refalrts::icPushStack, 0, 0, 13},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icLinkBrackets, 9, 10, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 16, 20, 0},
-    {refalrts::icSpliceTile, 0, 1, 0},
-    {refalrts::icSpliceTile, 5, 15, 0},
+    {refalrts::icPushStack, 0, 0, 9},
+    {refalrts::icPushStack, 0, 0, 5},
+    {refalrts::icLinkBrackets, 7, 8, 0},
+    {refalrts::icSetRes, 0, 0, 1},
+    {refalrts::icSpliceTile, 9, 9, 0},
+    {refalrts::icSpliceEVar, 0, 0, 2},
+    {refalrts::icSpliceTile, 5, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icEnd, 0, 0, 0}
   };
@@ -673,67 +481,39 @@ refalrts::FnResult LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   );
   return res;
 #else
-  // </0 & LexFolding/4 e.FileName#1/2 >/1
+  // </0 & LexFolding/4 e.SourceText#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.FileName#1 as range 2
+  // closed e.SourceText#1 as range 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } </5 & NormalizeTokens/6 </7 & Root/8 (/9 )/10 </11 & Fetch/12 </13 & Map/14 & LinearizeLine/15 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/16 & lambda_LexFolding_0/17 >/18 >/19 >/20 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & NormalizeTokens/4 } </5 & Root/6 (/7 )/8 Tile{ AsIs: e.SourceText#1/2 } >/9 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], NormalizeTokens, "NormalizeTokens" ) )
+  if( ! refalrts::alloc_name( context[6], Root, "Root" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[7] ) )
+  if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], Root, "Root" ) )
+  if( ! refalrts::alloc_close_bracket( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[9] ) )
+  if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[11] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], Fetch, "Fetch" ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[13] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], Map, "Map" ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], LinearizeLine, "LinearizeLine" ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[16] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], lambda_LexFolding_0, "lambda_LexFolding_0" ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[18] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[19] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[20] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], LoadFile, "LoadFile" );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[5] );
-  refalrts::push_stack( context[19] );
-  refalrts::push_stack( context[7] );
-  refalrts::push_stack( context[18] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[13] );
+  refalrts::update_name( context[4], NormalizeTokens, "NormalizeTokens" );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[9], context[10] );
+  refalrts::push_stack( context[9] );
+  refalrts::push_stack( context[5] );
+  refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[16], context[20] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[15] );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[5], context[8] );
   refalrts::use( res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
@@ -762,15 +542,15 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {"RN", 2}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S 
-    //GLOBAL GEN:S 
+    //FAST GEN: s.$
+    //GLOBAL GEN: s.$
     // </0 & StrDirective/4 s.idx#0/5 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#EEnum
+    // # EEnum
     // </0 & StrDirective/4 # EEnum/5 >/1
     {refalrts::icIdentTerm, 0, 7, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -785,7 +565,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 6, 6, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#Entry
+    // # Entry
     // </0 & StrDirective/4 # Entry/5 >/1
     {refalrts::icIdentTerm, 0, 6, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -800,7 +580,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 6, 6, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //#Enum
+    // # Enum
     // </0 & StrDirective/4 # Enum/5 >/1
     {refalrts::icIdentTerm, 0, 5, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -812,7 +592,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icReinitChar, 0, 'M', 1},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#Extern
+    // # Extern
     // </0 & StrDirective/4 # Extern/5 >/1
     {refalrts::icIdentTerm, 0, 4, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -827,7 +607,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 6, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#Forward
+    // # Forward
     // </0 & StrDirective/4 # Forward/5 >/1
     {refalrts::icIdentTerm, 0, 3, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -842,7 +622,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 6, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //#Swap
+    // # Swap
     // </0 & StrDirective/4 # Swap/5 >/1
     {refalrts::icIdentTerm, 0, 2, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -854,7 +634,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icReinitChar, 0, 'P', 1},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#ESwap
+    // # ESwap
     // </0 & StrDirective/4 # ESwap/5 >/1
     {refalrts::icIdentTerm, 0, 1, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -868,7 +648,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceTile, 6, 6, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //#Ident
+    // # Ident
     // </0 & StrDirective/4 # Ident/5 >/1
     {refalrts::icIdentTerm, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -891,8 +671,8 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
   );
   return res;
 #else
-  //FAST GEN:S 
-  //GLOBAL GEN:S 
+  //FAST GEN: s.$
+  //GLOBAL GEN: s.$
   // </0 & StrDirective/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -905,7 +685,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cRecognitionImpossible;
   do {
     refalrts::start_sentence();
-    //#EEnum
+    // # EEnum
     // </0 & StrDirective/4 # EEnum/5 >/1
     if( ! refalrts::ident_term(  & ident_EEnum<int>::name, context[5] ) )
       continue;
@@ -929,7 +709,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#Entry
+    // # Entry
     // </0 & StrDirective/4 # Entry/5 >/1
     if( ! refalrts::ident_term(  & ident_Entry<int>::name, context[5] ) )
       continue;
@@ -953,7 +733,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#Enum
+    // # Enum
     // </0 & StrDirective/4 # Enum/5 >/1
     if( ! refalrts::ident_term(  & ident_Enum<int>::name, context[5] ) )
       continue;
@@ -970,7 +750,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#Extern
+    // # Extern
     // </0 & StrDirective/4 # Extern/5 >/1
     if( ! refalrts::ident_term(  & ident_Extern<int>::name, context[5] ) )
       continue;
@@ -994,7 +774,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#Forward
+    // # Forward
     // </0 & StrDirective/4 # Forward/5 >/1
     if( ! refalrts::ident_term(  & ident_Forward<int>::name, context[5] ) )
       continue;
@@ -1018,7 +798,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#Swap
+    // # Swap
     // </0 & StrDirective/4 # Swap/5 >/1
     if( ! refalrts::ident_term(  & ident_Swap<int>::name, context[5] ) )
       continue;
@@ -1035,7 +815,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //#ESwap
+    // # ESwap
     // </0 & StrDirective/4 # ESwap/5 >/1
     if( ! refalrts::ident_term(  & ident_ESwap<int>::name, context[5] ) )
       continue;
@@ -1057,7 +837,7 @@ static refalrts::FnResult StrDirective(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //#Ident
+  // # Ident
   // </0 & StrDirective/4 # Ident/5 >/1
   if( ! refalrts::ident_term(  & ident_Ident<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -1125,15 +905,15 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {"of file", 7}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:S E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: s.$ e.$
     // </0 & StrFromToken/4 s.idx#0/5 e.idxV#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     // closed e.idxV#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkCharS 
+    // # TkChar s.idx
     // </0 & StrFromToken/4 # TkChar/5 s.Char#1/6 >/1
     {refalrts::icIdentTerm, 0, 22, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1148,7 +928,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkCloseADT
+    // # TkCloseADT
     // </0 & StrFromToken/4 # TkCloseADT/5 >/1
     {refalrts::icIdentTerm, 0, 21, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1163,7 +943,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkCloseCall
+    // # TkCloseCall
     // </0 & StrFromToken/4 # TkCloseCall/5 >/1
     {refalrts::icIdentTerm, 0, 20, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1178,7 +958,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkCloseBlock
+    // # TkCloseBlock
     // </0 & StrFromToken/4 # TkCloseBlock/5 >/1
     {refalrts::icIdentTerm, 0, 19, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1193,7 +973,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkCloseBracket
+    // # TkCloseBracket
     // </0 & StrFromToken/4 # TkCloseBracket/5 >/1
     {refalrts::icIdentTerm, 0, 18, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1208,7 +988,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkComma
+    // # TkComma
     // </0 & StrFromToken/4 # TkComma/5 >/1
     {refalrts::icIdentTerm, 0, 17, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1223,7 +1003,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
-    //#TkDirectiveS 
+    // # TkDirective s.idx
     // </0 & StrFromToken/4 # TkDirective/5 s.Directive#1/6 >/1
     {refalrts::icIdentTerm, 0, 16, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1245,7 +1025,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //#TkEOF
+    // # TkEOF
     // </0 & StrFromToken/4 # TkEOF/5 >/1
     {refalrts::icIdentTerm, 0, 15, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1262,7 +1042,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 6, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +14, 0, 0},
-    //#TkErrorE 
+    // # TkError e.idx
     // </0 & StrFromToken/4 # TkError/5 e.Message#1/2 >/1
     {refalrts::icIdentTerm, 0, 14, 5},
     // closed e.Message#1 as range 2
@@ -1282,7 +1062,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 6, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkIdentMarker
+    // # TkIdentMarker
     // </0 & StrFromToken/4 # TkIdentMarker/5 >/1
     {refalrts::icIdentTerm, 0, 13, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1297,7 +1077,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //#TkNameE 
+    // # TkName e.idx
     // </0 & StrFromToken/4 # TkName/5 e.Name#1/2 >/1
     {refalrts::icIdentTerm, 0, 12, 5},
     // closed e.Name#1 as range 2
@@ -1315,7 +1095,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 1, 1, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +14, 0, 0},
-    //#TkNumberS 
+    // # TkNumber s.idx
     // </0 & StrFromToken/4 # TkNumber/5 s.Number#1/6 >/1
     {refalrts::icIdentTerm, 0, 11, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1334,7 +1114,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 7, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkOpenADT
+    // # TkOpenADT
     // </0 & StrFromToken/4 # TkOpenADT/5 >/1
     {refalrts::icIdentTerm, 0, 10, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1349,7 +1129,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkOpenCall
+    // # TkOpenCall
     // </0 & StrFromToken/4 # TkOpenCall/5 >/1
     {refalrts::icIdentTerm, 0, 9, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1364,7 +1144,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkOpenBlock
+    // # TkOpenBlock
     // </0 & StrFromToken/4 # TkOpenBlock/5 >/1
     {refalrts::icIdentTerm, 0, 8, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1379,7 +1159,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkOpenBracket
+    // # TkOpenBracket
     // </0 & StrFromToken/4 # TkOpenBracket/5 >/1
     {refalrts::icIdentTerm, 0, 7, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1394,7 +1174,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkReplace
+    // # TkReplace
     // </0 & StrFromToken/4 # TkReplace/5 >/1
     {refalrts::icIdentTerm, 0, 6, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1409,7 +1189,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkSemicolon
+    // # TkSemicolon
     // </0 & StrFromToken/4 # TkSemicolon/5 >/1
     {refalrts::icIdentTerm, 0, 5, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1424,7 +1204,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkUnexpectedE 
+    // # TkUnexpected e.idx
     // </0 & StrFromToken/4 # TkUnexpected/5 e.Unexpected#1/2 >/1
     {refalrts::icIdentTerm, 0, 4, 5},
     // closed e.Unexpected#1 as range 2
@@ -1440,7 +1220,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSpliceTile, 6, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkVariableS E 
+    // # TkVariable s.idx e.idx
     // </0 & StrFromToken/4 # TkVariable/5 s.Mode#1/6 e.Index#1/2 >/1
     {refalrts::icIdentTerm, 0, 3, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1456,7 +1236,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //#TkRedefinition
+    // # TkRedefinition
     // </0 & StrFromToken/4 # TkRedefinition/5 >/1
     {refalrts::icIdentTerm, 0, 2, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1471,7 +1251,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //#OpenS 
+    // # Open s.idx
     // </0 & StrFromToken/4 # Open/5 s.OpenBracket#1/6 >/1
     {refalrts::icIdentTerm, 0, 1, 5},
     {refalrts::icSave, 0, 10, 2},
@@ -1487,7 +1267,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icSetRes, 0, 0, 4},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //#CloseS 
+    // # Close s.idx
     // </0 & StrFromToken/4 # Close/5 s.CloseBracket#1/6 >/1
     {refalrts::icIdentTerm, 0, 0, 5},
     {refalrts::icsVarLeft, 0, 6, 2},
@@ -1511,8 +1291,8 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:S E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: s.$ e.$
   // </0 & StrFromToken/4 s.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1524,7 +1304,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
   // closed e.idxV#0 as range 2
   do {
     refalrts::start_sentence();
-    //#TkCharS 
+    // # TkChar s.idx
     // </0 & StrFromToken/4 # TkChar/5 s.Char#1/6 >/1
     if( ! refalrts::ident_term(  & ident_TkChar<int>::name, context[5] ) )
       continue;
@@ -1550,7 +1330,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkCloseADT
+    // # TkCloseADT
     // </0 & StrFromToken/4 # TkCloseADT/5 >/1
     if( ! refalrts::ident_term(  & ident_TkCloseADT<int>::name, context[5] ) )
       continue;
@@ -1575,7 +1355,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkCloseCall
+    // # TkCloseCall
     // </0 & StrFromToken/4 # TkCloseCall/5 >/1
     if( ! refalrts::ident_term(  & ident_TkCloseCall<int>::name, context[5] ) )
       continue;
@@ -1600,7 +1380,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkCloseBlock
+    // # TkCloseBlock
     // </0 & StrFromToken/4 # TkCloseBlock/5 >/1
     if( ! refalrts::ident_term(  & ident_TkCloseBlock<int>::name, context[5] ) )
       continue;
@@ -1625,7 +1405,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkCloseBracket
+    // # TkCloseBracket
     // </0 & StrFromToken/4 # TkCloseBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_TkCloseBracket<int>::name, context[5] ) )
       continue;
@@ -1650,7 +1430,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkComma
+    // # TkComma
     // </0 & StrFromToken/4 # TkComma/5 >/1
     if( ! refalrts::ident_term(  & ident_TkComma<int>::name, context[5] ) )
       continue;
@@ -1675,7 +1455,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkDirectiveS 
+    // # TkDirective s.idx
     // </0 & StrFromToken/4 # TkDirective/5 s.Directive#1/6 >/1
     if( ! refalrts::ident_term(  & ident_TkDirective<int>::name, context[5] ) )
       continue;
@@ -1710,7 +1490,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkEOF
+    // # TkEOF
     // </0 & StrFromToken/4 # TkEOF/5 >/1
     if( ! refalrts::ident_term(  & ident_TkEOF<int>::name, context[5] ) )
       continue;
@@ -1738,7 +1518,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkErrorE 
+    // # TkError e.idx
     // </0 & StrFromToken/4 # TkError/5 e.Message#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkError<int>::name, context[5] ) )
       continue;
@@ -1768,7 +1548,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkIdentMarker
+    // # TkIdentMarker
     // </0 & StrFromToken/4 # TkIdentMarker/5 >/1
     if( ! refalrts::ident_term(  & ident_TkIdentMarker<int>::name, context[5] ) )
       continue;
@@ -1793,7 +1573,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkNameE 
+    // # TkName e.idx
     // </0 & StrFromToken/4 # TkName/5 e.Name#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkName<int>::name, context[5] ) )
       continue;
@@ -1820,7 +1600,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkNumberS 
+    // # TkNumber s.idx
     // </0 & StrFromToken/4 # TkNumber/5 s.Number#1/6 >/1
     if( ! refalrts::ident_term(  & ident_TkNumber<int>::name, context[5] ) )
       continue;
@@ -1851,7 +1631,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkOpenADT
+    // # TkOpenADT
     // </0 & StrFromToken/4 # TkOpenADT/5 >/1
     if( ! refalrts::ident_term(  & ident_TkOpenADT<int>::name, context[5] ) )
       continue;
@@ -1876,7 +1656,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkOpenCall
+    // # TkOpenCall
     // </0 & StrFromToken/4 # TkOpenCall/5 >/1
     if( ! refalrts::ident_term(  & ident_TkOpenCall<int>::name, context[5] ) )
       continue;
@@ -1901,7 +1681,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkOpenBlock
+    // # TkOpenBlock
     // </0 & StrFromToken/4 # TkOpenBlock/5 >/1
     if( ! refalrts::ident_term(  & ident_TkOpenBlock<int>::name, context[5] ) )
       continue;
@@ -1926,7 +1706,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkOpenBracket
+    // # TkOpenBracket
     // </0 & StrFromToken/4 # TkOpenBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_TkOpenBracket<int>::name, context[5] ) )
       continue;
@@ -1951,7 +1731,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkReplace
+    // # TkReplace
     // </0 & StrFromToken/4 # TkReplace/5 >/1
     if( ! refalrts::ident_term(  & ident_TkReplace<int>::name, context[5] ) )
       continue;
@@ -1976,7 +1756,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkSemicolon
+    // # TkSemicolon
     // </0 & StrFromToken/4 # TkSemicolon/5 >/1
     if( ! refalrts::ident_term(  & ident_TkSemicolon<int>::name, context[5] ) )
       continue;
@@ -2001,7 +1781,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkUnexpectedE 
+    // # TkUnexpected e.idx
     // </0 & StrFromToken/4 # TkUnexpected/5 e.Unexpected#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[5] ) )
       continue;
@@ -2026,7 +1806,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkVariableS E 
+    // # TkVariable s.idx e.idx
     // </0 & StrFromToken/4 # TkVariable/5 s.Mode#1/6 e.Index#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[5] ) )
       continue;
@@ -2052,7 +1832,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#TkRedefinition
+    // # TkRedefinition
     // </0 & StrFromToken/4 # TkRedefinition/5 >/1
     if( ! refalrts::ident_term(  & ident_TkRedefinition<int>::name, context[5] ) )
       continue;
@@ -2077,7 +1857,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
 
   do {
     refalrts::start_sentence();
-    //#OpenS 
+    // # Open s.idx
     // </0 & StrFromToken/4 # Open/5 s.OpenBracket#1/6 >/1
     if( ! refalrts::ident_term(  & ident_Open<int>::name, context[5] ) )
       continue;
@@ -2103,7 +1883,7 @@ refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //#CloseS 
+  // # Close s.idx
   // </0 & StrFromToken/4 # Close/5 s.CloseBracket#1/6 >/1
   if( ! refalrts::ident_term(  & ident_Close<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -2139,29 +1919,29 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: e.$
     // </0 & NormalizeName/4 e.idx#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.idx#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //E 
-    // </0 & NormalizeName/4 e.Name_B#1/5 '-'/7 e.Name_E#1/2 >/1
+    // e.idx
+    // </0 & NormalizeName/4 e.Name-B#1/5 '_'/7 e.Name-E#1/2 >/1
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEPrepare, 0, 5, 8},
     {refalrts::icEStart, 0, 5, 8},
     {refalrts::icSave, 0, 10, 8},
-    {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('-'), 10},
-    // closed e.Name_E#1 as range 10(2)
+    {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('_'), 10},
+    // closed e.Name-E#1 as range 10(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & NormalizeName/4 AsIs: e.Name_B#1/5 Reuse: '_'/7 AsIs: e.Name_E#1/10(2) AsIs: >/1 ]] }
-    {refalrts::icUpdateChar, 0, '_', 7},
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & NormalizeName/4 AsIs: e.Name-B#1/5 Reuse: '-'/7 AsIs: e.Name-E#1/10(2) AsIs: >/1 ]] }
+    {refalrts::icUpdateChar, 0, '-', 7},
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //E 
+    // e.idx
     // </0 & NormalizeName/4 e.Name#1/2 >/1
     // closed e.Name#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -2180,8 +1960,8 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: e.$
   // </0 & NormalizeName/4 e.idx#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2191,8 +1971,8 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idx#0 as range 2
   do {
     refalrts::start_sentence();
-    //E 
-    // </0 & NormalizeName/4 e.Name_B#1/5 '-'/7 e.Name_E#1/2 >/1
+    // e.idx
+    // </0 & NormalizeName/4 e.Name-B#1/5 '_'/7 e.Name-E#1/2 >/1
     context[8] = context[2];
     context[9] = context[3];
     context[5] = 0;
@@ -2201,22 +1981,22 @@ static refalrts::FnResult NormalizeName(refalrts::Iter arg_begin, refalrts::Iter
     do {
       context[10] = context[8];
       context[11] = context[9];
-      context[7] = refalrts::char_left( '-', context[10], context[11] );
+      context[7] = refalrts::char_left( '_', context[10], context[11] );
       if( ! context[7] )
         continue;
-      // closed e.Name_E#1 as range 10(2)
+      // closed e.Name-E#1 as range 10(2)
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} 
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & NormalizeName/4 AsIs: e.Name_B#1/5 Reuse: '_'/7 AsIs: e.Name_E#1/10(2) AsIs: >/1 ]] }
-      refalrts::update_char( context[7], '_' );
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & NormalizeName/4 AsIs: e.Name-B#1/5 Reuse: '-'/7 AsIs: e.Name-E#1/10(2) AsIs: >/1 ]] }
+      refalrts::update_char( context[7], '-' );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
       return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
     } while ( refalrts::open_evar_advance( context[5], context[6], context[8], context[9] ) );
   } while ( 0 );
 
-  //E 
+  // e.idx
   // </0 & NormalizeName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
 
@@ -2278,8 +2058,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {"pected EOF", 10}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )
-    //GLOBAL GEN:(S E )
+    //FAST GEN: ( e.$ )
+    //GLOBAL GEN: ( s.$ e.$ )
     // </0 & NormalizeToken/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -2288,7 +2068,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.idxBV#0 as range 5
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(#TkDirectiveE )
+    // ( # TkDirective e.idx )
     // </0 & NormalizeToken/4 (/7 # TkDirective/9 e.Directive#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 23, 9},
     // closed e.Directive#1 as range 5
@@ -2303,7 +2083,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(#TkEOF)
+    // ( # TkEOF )
     // </0 & NormalizeToken/4 (/7 # TkEOF/9 )/8 >/1
     {refalrts::icIdentTerm, 0, 22, 9},
     {refalrts::icSave, 0, 13, 5},
@@ -2317,8 +2097,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +11, 0, 0},
-    //(#TkLiteral_CharS )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Char/9 s.Char#1/10 )/8 >/1
+    // ( # TkLiteral-Char s.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Char/9 s.Char#1/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 21, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icsVarLeft, 0, 10, 13},
@@ -2333,8 +2113,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(#TkLiteral_CodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Code/9 e.DecCode#1/5 )/8 >/1
+    // ( # TkLiteral-Code e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Code/9 e.DecCode#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 20, 9},
     // closed e.DecCode#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -2358,8 +2138,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceTile, 10, 11, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(#TkLiteral_OCodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_OCode/9 e.OctCode#1/5 )/8 >/1
+    // ( # TkLiteral-OCode e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-OCode/9 e.OctCode#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 19, 9},
     // closed e.OctCode#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -2379,8 +2159,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(#TkLiteral_XCodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_XCode/9 e.HexCode#1/5 )/8 >/1
+    // ( # TkLiteral-XCode e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-XCode/9 e.HexCode#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 18, 9},
     // closed e.HexCode#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -2400,8 +2180,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_NewLine'n')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_NewLine/9 'n'/10 )/8 >/1
+    // ( # TkLiteral-NewLine 'n' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-NewLine/9 'n'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 17, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('n'), 13},
@@ -2417,8 +2197,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_CarriageReturn'r')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_CarriageReturn/9 'r'/10 )/8 >/1
+    // ( # TkLiteral-CarriageReturn 'r' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-CarriageReturn/9 'r'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 16, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('r'), 13},
@@ -2434,8 +2214,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_Tab't')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Tab/9 't'/10 )/8 >/1
+    // ( # TkLiteral-Tab 't' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Tab/9 't'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 15, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('t'), 13},
@@ -2451,8 +2231,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_Bell'a')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Bell/9 'a'/10 )/8 >/1
+    // ( # TkLiteral-Bell 'a' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Bell/9 'a'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 14, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('a'), 13},
@@ -2468,8 +2248,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_BS'b')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_BS/9 'b'/10 )/8 >/1
+    // ( # TkLiteral-BS 'b' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-BS/9 'b'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 13, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('b'), 13},
@@ -2485,8 +2265,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_FF'f')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_FF/9 'f'/10 )/8 >/1
+    // ( # TkLiteral-FF 'f' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-FF/9 'f'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 12, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('f'), 13},
@@ -2502,8 +2282,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkLiteral_VT'v')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_VT/9 'v'/10 )/8 >/1
+    // ( # TkLiteral-VT 'v' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-VT/9 'v'/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 11, 9},
     {refalrts::icSave, 0, 13, 5},
     {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('v'), 13},
@@ -2519,7 +2299,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkNameE )
+    // ( # TkName e.idx )
     // </0 & NormalizeToken/4 (/7 # TkName/9 e.Name#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 9, 9},
     // closed e.Name#1 as range 5
@@ -2537,7 +2317,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +8, 0, 0},
-    //(#TkNewLineE )
+    // ( # TkNewLine e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNewLine/9 e.Accumulated#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 8, 9},
     // closed e.Accumulated#1 as range 5
@@ -2551,7 +2331,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#TkNumberE )
+    // ( # TkNumber e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNumber/9 e.Digits#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 7, 9},
     // closed e.Digits#1 as range 5
@@ -2569,7 +2349,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icPushStack, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //(#TkPunctuationS )
+    // ( # TkPunctuation s.idx )
     // </0 & NormalizeToken/4 (/7 # TkPunctuation/9 s.Punctuation#1/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 6, 9},
     {refalrts::icSave, 0, 13, 5},
@@ -2590,7 +2370,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //(#TkVariableS '.'E )
+    // ( # TkVariable s.idx '.' e.idx )
     // </0 & NormalizeToken/4 (/7 # TkVariable/9 s.Type#1/10 '.'/11 e.Index#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 5, 9},
     {refalrts::icSave, 0, 13, 5},
@@ -2614,7 +2394,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //(#TkUnexpectedE )
+    // ( # TkUnexpected e.idx )
     // </0 & NormalizeToken/4 (/7 # TkUnexpected/9 e.Unexpected#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 2, 9},
     // closed e.Unexpected#1 as range 5
@@ -2627,7 +2407,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +8, 0, 0},
-    //(#TokenErrorE )
+    // ( # TokenError e.idx )
     // </0 & NormalizeToken/4 (/7 # TokenError/9 e.Message#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 4, 9},
     // closed e.Message#1 as range 5
@@ -2641,7 +2421,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +8, 0, 0},
-    //(#TokenUnexpectedE )
+    // ( # TokenUnexpected e.idx )
     // </0 & NormalizeToken/4 (/7 # TokenUnexpected/9 e.Unexpected#1/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 3, 9},
     // closed e.Unexpected#1 as range 5
@@ -2654,7 +2434,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceTile, 7, 8, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(#TokenUnexpectedEOF)
+    // ( # TokenUnexpectedEOF )
     // </0 & NormalizeToken/4 (/7 # TokenUnexpectedEOF/9 )/8 >/1
     {refalrts::icIdentTerm, 0, 1, 9},
     {refalrts::icEmpty, 0, 0, 5},
@@ -2682,8 +2462,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
   );
   return res;
 #else
-  //FAST GEN:(E )
-  //GLOBAL GEN:(S E )
+  //FAST GEN: ( e.$ )
+  //GLOBAL GEN: ( s.$ e.$ )
   // </0 & NormalizeToken/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2703,7 +2483,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.idxBV#0 as range 5
   do {
     refalrts::start_sentence();
-    //(#TkDirectiveE )
+    // ( # TkDirective e.idx )
     // </0 & NormalizeToken/4 (/7 # TkDirective/9 e.Directive#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkDirective<int>::name, context[9] ) )
       continue;
@@ -2726,7 +2506,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkEOF)
+    // ( # TkEOF )
     // </0 & NormalizeToken/4 (/7 # TkEOF/9 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkEOF<int>::name, context[9] ) )
       continue;
@@ -2750,8 +2530,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_CharS )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Char/9 s.Char#1/10 )/8 >/1
+    // ( # TkLiteral-Char s.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Char/9 s.Char#1/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_Char<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -2777,8 +2557,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_CodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Code/9 e.DecCode#1/5 )/8 >/1
+    // ( # TkLiteral-Code e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Code/9 e.DecCode#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_Code<int>::name, context[9] ) )
       continue;
     // closed e.DecCode#1 as range 5
@@ -2813,8 +2593,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_OCodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_OCode/9 e.OctCode#1/5 )/8 >/1
+    // ( # TkLiteral-OCode e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-OCode/9 e.OctCode#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_OCode<int>::name, context[9] ) )
       continue;
     // closed e.OctCode#1 as range 5
@@ -2843,8 +2623,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_XCodeE )
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_XCode/9 e.HexCode#1/5 )/8 >/1
+    // ( # TkLiteral-XCode e.idx )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-XCode/9 e.HexCode#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_XCode<int>::name, context[9] ) )
       continue;
     // closed e.HexCode#1 as range 5
@@ -2873,8 +2653,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_NewLine'n')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_NewLine/9 'n'/10 )/8 >/1
+    // ( # TkLiteral-NewLine 'n' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-NewLine/9 'n'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_NewLine<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -2902,8 +2682,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_CarriageReturn'r')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_CarriageReturn/9 'r'/10 )/8 >/1
+    // ( # TkLiteral-CarriageReturn 'r' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-CarriageReturn/9 'r'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_CarriageReturn<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -2931,8 +2711,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_Tab't')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Tab/9 't'/10 )/8 >/1
+    // ( # TkLiteral-Tab 't' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Tab/9 't'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_Tab<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -2960,8 +2740,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_Bell'a')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_Bell/9 'a'/10 )/8 >/1
+    // ( # TkLiteral-Bell 'a' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-Bell/9 'a'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_Bell<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -2989,8 +2769,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_BS'b')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_BS/9 'b'/10 )/8 >/1
+    // ( # TkLiteral-BS 'b' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-BS/9 'b'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_BS<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -3018,8 +2798,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_FF'f')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_FF/9 'f'/10 )/8 >/1
+    // ( # TkLiteral-FF 'f' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-FF/9 'f'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_FF<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -3047,8 +2827,8 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkLiteral_VT'v')
-    // </0 & NormalizeToken/4 (/7 # TkLiteral_VT/9 'v'/10 )/8 >/1
+    // ( # TkLiteral-VT 'v' )
+    // </0 & NormalizeToken/4 (/7 # TkLiteral-VT/9 'v'/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkLiteral_VT<int>::name, context[9] ) )
       continue;
     context[13] = context[5];
@@ -3076,7 +2856,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkNameE )
+    // ( # TkName e.idx )
     // </0 & NormalizeToken/4 (/7 # TkName/9 e.Name#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkName<int>::name, context[9] ) )
       continue;
@@ -3099,7 +2879,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkNewLineE )
+    // ( # TkNewLine e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNewLine/9 e.Accumulated#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkNewLine<int>::name, context[9] ) )
       continue;
@@ -3121,7 +2901,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkNumberE )
+    // ( # TkNumber e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNumber/9 e.Digits#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkNumber<int>::name, context[9] ) )
       continue;
@@ -3144,7 +2924,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkPunctuationS )
+    // ( # TkPunctuation s.idx )
     // </0 & NormalizeToken/4 (/7 # TkPunctuation/9 s.Punctuation#1/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkPunctuation<int>::name, context[9] ) )
       continue;
@@ -3176,7 +2956,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkVariableS '.'E )
+    // ( # TkVariable s.idx '.' e.idx )
     // </0 & NormalizeToken/4 (/7 # TkVariable/9 s.Type#1/10 '.'/11 e.Index#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[9] ) )
       continue;
@@ -3212,7 +2992,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TkUnexpectedE )
+    // ( # TkUnexpected e.idx )
     // </0 & NormalizeToken/4 (/7 # TkUnexpected/9 e.Unexpected#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[9] ) )
       continue;
@@ -3233,7 +3013,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TokenErrorE )
+    // ( # TokenError e.idx )
     // </0 & NormalizeToken/4 (/7 # TokenError/9 e.Message#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TokenError<int>::name, context[9] ) )
       continue;
@@ -3255,7 +3035,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //(#TokenUnexpectedE )
+    // ( # TokenUnexpected e.idx )
     // </0 & NormalizeToken/4 (/7 # TokenUnexpected/9 e.Unexpected#1/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TokenUnexpected<int>::name, context[9] ) )
       continue;
@@ -3275,7 +3055,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(#TokenUnexpectedEOF)
+  // ( # TokenUnexpectedEOF )
   // </0 & NormalizeToken/4 (/7 # TokenUnexpectedEOF/9 )/8 >/1
   if( ! refalrts::ident_term(  & ident_TokenUnexpectedEOF<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
@@ -3305,7 +3085,7 @@ static refalrts::FnResult NormalizeToken(refalrts::Iter arg_begin, refalrts::Ite
 #endif
 }
 
-static refalrts::FnResult lambda_CharFromNum_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_CharFromNum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
@@ -3319,7 +3099,7 @@ static refalrts::FnResult lambda_CharFromNum_0(refalrts::Iter arg_begin, refalrt
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & lambda_CharFromNum_0/4 s.Base#1/5 s.Accum#2/6 s.Next#2/7 >/1
+    // </0 & CharFromNum\1/4 s.Base#1/5 s.Accum#2/6 s.Next#2/7 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
@@ -3352,7 +3132,7 @@ static refalrts::FnResult lambda_CharFromNum_0(refalrts::Iter arg_begin, refalrt
   );
   return res;
 #else
-  // </0 & lambda_CharFromNum_0/4 s.Base#1/5 s.Accum#2/6 s.Next#2/7 >/1
+  // </0 & CharFromNum\1/4 s.Base#1/5 s.Accum#2/6 s.Next#2/7 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3403,8 +3183,8 @@ static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter a
     { Chr, "Chr" },
     { DigitFromChar, "DigitFromChar" },
     { Map, "Map" },
-    { lambda_CharFromNum_0, "lambda_CharFromNum_0" },
-    { refalrts::create_closure, "refalrts::create_closure" },
+    { gen_CharFromNum_L1, "CharFromNum\\1" },
+    { refalrts::create_closure, "@create_closure@" },
     { Reduce, "Reduce" }
   };
   using refalrts::idents;
@@ -3418,7 +3198,7 @@ static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Chars#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 </8 & CreateClosure /9 & lambda_CharFromNum_0/10 Tile{ AsIs: s.Base#1/5 } >/11 0/12 </13 & Map/14 & DigitFromChar/15 Tile{ AsIs: e.Chars#1/2 } >/16 >/17 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 </8 & @create_closure@/9 & CharFromNum\1/10 Tile{ AsIs: s.Base#1/5 } >/11 0/12 </13 & Map/14 & DigitFromChar/15 Tile{ AsIs: e.Chars#1/2 } >/16 >/17 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icAllocFunc, 0, 5, 7},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
@@ -3468,16 +3248,16 @@ static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter a
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 </8 & CreateClosure /9 & lambda_CharFromNum_0/10 Tile{ AsIs: s.Base#1/5 } >/11 0/12 </13 & Map/14 & DigitFromChar/15 Tile{ AsIs: e.Chars#1/2 } >/16 >/17 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 </8 & @create_closure@/9 & CharFromNum\1/10 Tile{ AsIs: s.Base#1/5 } >/11 0/12 </13 & Map/14 & DigitFromChar/15 Tile{ AsIs: e.Chars#1/2 } >/16 >/17 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], Reduce, "Reduce" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], refalrts::create_closure, "refalrts::create_closure" ) )
+  if( ! refalrts::alloc_name( context[9], refalrts::create_closure, "@create_closure@" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], lambda_CharFromNum_0, "lambda_CharFromNum_0" ) )
+  if( ! refalrts::alloc_name( context[10], gen_CharFromNum_L1, "CharFromNum\\1" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
@@ -3515,7 +3295,7 @@ static refalrts::FnResult CharFromNum(refalrts::Iter arg_begin, refalrts::Iter a
 #endif
 }
 
-static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_DigitFromChar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
@@ -3526,7 +3306,7 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & lambda_DigitFromChar_0/4 s.Char#1/5 e.Assoc_B#2/6 (/10 s.Digit#2/12 e.Vars_B#2/13 s.Char#1/15 e.Vars_E#2/8 )/11 e.Assoc_E#2/2 >/1
+    // </0 & DigitFromChar\1/4 s.Char#1/5 e.Assoc-B#2/6 (/10 s.Digit#2/12 e.Vars-B#2/13 s.Char#1/15 e.Vars-E#2/8 )/11 e.Assoc-E#2/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
@@ -3534,15 +3314,15 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
     {refalrts::icEStart, 0, 6, 2},
     {refalrts::icSave, 0, 16, 2},
     {refalrts::icBracketLeftSave, 0, 8, 16},
-    // closed e.Assoc_E#2 as range 16(2)
+    // closed e.Assoc-E#2 as range 16(2)
     {refalrts::icsVarLeft, 0, 12, 8},
     {refalrts::icEPrepare, 0, 13, 8},
     {refalrts::icEStart, 0, 13, 8},
     {refalrts::icSave, 0, 18, 8},
     {refalrts::icsRepeatLeft, 15, 5, 18},
-    // closed e.Vars_E#2 as range 18(8)
+    // closed e.Vars-E#2 as range 18(8)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_DigitFromChar_0/4 s.Char#1/5 e.Assoc_B#2/6 (/10 s.Digit#2/12 e.Vars_B#2/13 s.Char#1/15 e.Vars_E#2/18(8) )/11 e.Assoc_E#2/16(2) {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & DigitFromChar\1/4 s.Char#1/5 e.Assoc-B#2/6 (/10 s.Digit#2/12 e.Vars-B#2/13 s.Char#1/15 e.Vars-E#2/18(8) )/11 e.Assoc-E#2/16(2) {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Digit2 #12/1 ]] }
     {refalrts::icReinitSVar, 0, 12, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -3558,7 +3338,7 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
   );
   return res;
 #else
-  // </0 & lambda_DigitFromChar_0/4 s.Char#1/5 e.Assoc_B#2/6 (/10 s.Digit#2/12 e.Vars_B#2/13 s.Char#1/15 e.Vars_E#2/8 )/11 e.Assoc_E#2/2 >/1
+  // </0 & DigitFromChar\1/4 s.Char#1/5 e.Assoc-B#2/6 (/10 s.Digit#2/12 e.Vars-B#2/13 s.Char#1/15 e.Vars-E#2/8 )/11 e.Assoc-E#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3578,7 +3358,7 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
     if( ! context[10] )
       continue;
     refalrts::bracket_pointers(context[10], context[11]);
-    // closed e.Assoc_E#2 as range 16(2)
+    // closed e.Assoc-E#2 as range 16(2)
     if( ! refalrts::svar_left( context[12], context[8], context[9] ) )
       continue;
     context[13] = 0;
@@ -3589,10 +3369,10 @@ static refalrts::FnResult lambda_DigitFromChar_0(refalrts::Iter arg_begin, refal
       context[19] = context[9];
       if( ! refalrts::repeated_stvar_left( context[15], context[5], context[18], context[19] ) )
         continue;
-      // closed e.Vars_E#2 as range 18(8)
+      // closed e.Vars-E#2 as range 18(8)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  </0 & lambda_DigitFromChar_0/4 s.Char#1/5 e.Assoc_B#2/6 (/10 s.Digit#2/12 e.Vars_B#2/13 s.Char#1/15 e.Vars_E#2/18(8) )/11 e.Assoc_E#2/16(2) {REMOVED TILE} 
+      //TRASH: {REMOVED TILE}  </0 & DigitFromChar\1/4 s.Char#1/5 e.Assoc-B#2/6 (/10 s.Digit#2/12 e.Vars-B#2/13 s.Char#1/15 e.Vars-E#2/18(8) )/11 e.Assoc-E#2/16(2) {REMOVED TILE} 
       //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Digit2 #12/1 ]] }
       refalrts::reinit_svar( context[1], context[12] );
       refalrts::Iter trash_prev = arg_begin->prev;
@@ -3614,8 +3394,8 @@ static refalrts::FnResult DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::zeros( context, 80 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_DigitFromChar_0, "lambda_DigitFromChar_0" },
-    { refalrts::create_closure, "refalrts::create_closure" },
+    { gen_DigitFromChar_L1, "DigitFromChar\\1" },
+    { refalrts::create_closure, "@create_closure@" },
     { Fetch, "Fetch" }
   };
   using refalrts::idents;
@@ -3636,7 +3416,7 @@ static refalrts::FnResult DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </6 & Fetch/7 (/8 0/9 '0'/10 )/11 (/12 1/13 '1'/14 )/15 (/16 2/17 '2'/18 )/19 (/20 3/21 '3'/22 )/23 (/24 4/25 '4'/26 )/27 (/28 5/29 '5'/30 )/31 (/32 6/33 '6'/34 )/35 (/36 7/37 '7'/38 )/39 (/40 8/41 '8'/42 )/43 (/44 9/45 '9'/46 )/47 (/48 10/49"Aa"/50 )/52 (/53 11/54"Bb"/55 )/57 (/58 12/59"Cc"/60 )/62 (/63 13/64"Dd"/65 )/67 (/68 14/69"Ee"/70 )/72 (/73 15/74"Ff"/75 )/77 </78 Tile{ HalfReuse: & CreateClosure /0 Reuse: & lambda_DigitFromChar_0/4 AsIs: s.Char#1/5 AsIs: >/1 } >/79 Tile{ ]] }
+    //RESULT: Tile{ [[ } </6 & Fetch/7 (/8 0/9 '0'/10 )/11 (/12 1/13 '1'/14 )/15 (/16 2/17 '2'/18 )/19 (/20 3/21 '3'/22 )/23 (/24 4/25 '4'/26 )/27 (/28 5/29 '5'/30 )/31 (/32 6/33 '6'/34 )/35 (/36 7/37 '7'/38 )/39 (/40 8/41 '8'/42 )/43 (/44 9/45 '9'/46 )/47 (/48 10/49"Aa"/50 )/52 (/53 11/54"Bb"/55 )/57 (/58 12/59"Cc"/60 )/62 (/63 13/64"Dd"/65 )/67 (/68 14/69"Ee"/70 )/72 (/73 15/74"Ff"/75 )/77 </78 Tile{ HalfReuse: & @create_closure@/0 Reuse: & DigitFromChar\1/4 AsIs: s.Char#1/5 AsIs: >/1 } >/79 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icAllocFunc, 0, 2, 7},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 8},
@@ -3754,7 +3534,7 @@ static refalrts::FnResult DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } </6 & Fetch/7 (/8 0/9 '0'/10 )/11 (/12 1/13 '1'/14 )/15 (/16 2/17 '2'/18 )/19 (/20 3/21 '3'/22 )/23 (/24 4/25 '4'/26 )/27 (/28 5/29 '5'/30 )/31 (/32 6/33 '6'/34 )/35 (/36 7/37 '7'/38 )/39 (/40 8/41 '8'/42 )/43 (/44 9/45 '9'/46 )/47 (/48 10/49"Aa"/50 )/52 (/53 11/54"Bb"/55 )/57 (/58 12/59"Cc"/60 )/62 (/63 13/64"Dd"/65 )/67 (/68 14/69"Ee"/70 )/72 (/73 15/74"Ff"/75 )/77 </78 Tile{ HalfReuse: & CreateClosure /0 Reuse: & lambda_DigitFromChar_0/4 AsIs: s.Char#1/5 AsIs: >/1 } >/79 Tile{ ]] }
+  //RESULT: Tile{ [[ } </6 & Fetch/7 (/8 0/9 '0'/10 )/11 (/12 1/13 '1'/14 )/15 (/16 2/17 '2'/18 )/19 (/20 3/21 '3'/22 )/23 (/24 4/25 '4'/26 )/27 (/28 5/29 '5'/30 )/31 (/32 6/33 '6'/34 )/35 (/36 7/37 '7'/38 )/39 (/40 8/41 '8'/42 )/43 (/44 9/45 '9'/46 )/47 (/48 10/49"Aa"/50 )/52 (/53 11/54"Bb"/55 )/57 (/58 12/59"Cc"/60 )/62 (/63 13/64"Dd"/65 )/67 (/68 14/69"Ee"/70 )/72 (/73 15/74"Ff"/75 )/77 </78 Tile{ HalfReuse: & @create_closure@/0 Reuse: & DigitFromChar\1/4 AsIs: s.Char#1/5 AsIs: >/1 } >/79 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], Fetch, "Fetch" ) )
@@ -3891,8 +3671,8 @@ static refalrts::FnResult DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[79] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], refalrts::create_closure, "refalrts::create_closure" );
-  refalrts::update_name( context[4], lambda_DigitFromChar_0, "lambda_DigitFromChar_0" );
+  refalrts::reinit_name( context[0], refalrts::create_closure, "@create_closure@" );
+  refalrts::update_name( context[4], gen_DigitFromChar_L1, "DigitFromChar\\1" );
   refalrts::push_stack( context[79] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[1] );
@@ -3948,14 +3728,14 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {"Unknown directive", 17}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: e.$
     // </0 & ValidDirective/4 e.idx#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.idx#0 as range 2
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //'E''N''U''M'
+    // 'ENUM'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'U'/7 'M'/8 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
@@ -3975,7 +3755,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //'E''E''N''U''M'
+    // 'EENUM'
     // </0 & ValidDirective/4 'E'/5 'E'/6 'N'/7 'U'/8 'M'/9 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
@@ -3996,7 +3776,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //'E''N''T''R''Y'
+    // 'ENTRY'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'T'/7 'R'/8 'Y'/9 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
@@ -4017,7 +3797,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
-    //'E''X''T''E''R''N'
+    // 'EXTERN'
     // </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 'E'/8 'R'/9 'N'/10 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
@@ -4039,7 +3819,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //'F''O''R''W''A''R''D'
+    // 'FORWARD'
     // </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 'A'/9 'R'/10 'D'/11 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('F'), 12},
@@ -4062,7 +3842,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //'S''W''A''P'
+    // 'SWAP'
     // </0 & ValidDirective/4 'S'/5 'W'/6 'A'/7 'P'/8 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('S'), 12},
@@ -4082,7 +3862,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //'E''S''W''A''P'
+    // 'ESWAP'
     // </0 & ValidDirective/4 'E'/5 'S'/6 'W'/7 'A'/8 'P'/9 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
@@ -4103,7 +3883,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //'L''A''B''E''L'
+    // 'LABEL'
     // </0 & ValidDirective/4 'L'/5 'A'/6 'B'/7 'E'/8 'L'/9 >/1
     {refalrts::icSave, 0, 12, 2},
     {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('L'), 12},
@@ -4123,7 +3903,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSetRes, 0, 0, 7},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //E 
+    // e.idx
     // </0 & ValidDirective/4 e.Other#1/2 >/1
     // closed e.Other#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4148,8 +3928,8 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: e.$
   // </0 & ValidDirective/4 e.idx#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4159,7 +3939,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.idx#0 as range 2
   do {
     refalrts::start_sentence();
-    //'E''N''U''M'
+    // 'ENUM'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'U'/7 'M'/8 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4196,7 +3976,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'E''E''N''U''M'
+    // 'EENUM'
     // </0 & ValidDirective/4 'E'/5 'E'/6 'N'/7 'U'/8 'M'/9 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4236,7 +4016,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'E''N''T''R''Y'
+    // 'ENTRY'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'T'/7 'R'/8 'Y'/9 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4276,7 +4056,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'E''X''T''E''R''N'
+    // 'EXTERN'
     // </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 'E'/8 'R'/9 'N'/10 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4319,7 +4099,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'F''O''R''W''A''R''D'
+    // 'FORWARD'
     // </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 'A'/9 'R'/10 'D'/11 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4365,7 +4145,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'S''W''A''P'
+    // 'SWAP'
     // </0 & ValidDirective/4 'S'/5 'W'/6 'A'/7 'P'/8 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4402,7 +4182,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'E''S''W''A''P'
+    // 'ESWAP'
     // </0 & ValidDirective/4 'E'/5 'S'/6 'W'/7 'A'/8 'P'/9 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4442,7 +4222,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
 
   do {
     refalrts::start_sentence();
-    //'L''A''B''E''L'
+    // 'LABEL'
     // </0 & ValidDirective/4 'L'/5 'A'/6 'B'/7 'E'/8 'L'/9 >/1
     context[12] = context[2];
     context[13] = context[3];
@@ -4480,7 +4260,7 @@ static refalrts::FnResult ValidDirective(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //E 
+  // e.idx
   // </0 & ValidDirective/4 e.Other#1/2 >/1
   // closed e.Other#1 as range 2
 
@@ -4531,15 +4311,15 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S 
-    //GLOBAL GEN:S 
+    //FAST GEN: s.$
+    //GLOBAL GEN: s.$
     // </0 & SwPunctuation/4 s.idx#0/5 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'<'
+    // '<'
     // </0 & SwPunctuation/4 '<'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4550,7 +4330,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'>'
+    // '>'
     // </0 & SwPunctuation/4 '>'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('>'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4561,7 +4341,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'{'
+    // '{'
     // </0 & SwPunctuation/4 '{'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('{'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4572,7 +4352,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'}'
+    // '}'
     // </0 & SwPunctuation/4 '}'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('}'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4583,7 +4363,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'('
+    // '('
     // </0 & SwPunctuation/4 '('/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('('), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4594,7 +4374,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //')'
+    // ')'
     // </0 & SwPunctuation/4 ')'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>(')'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4605,7 +4385,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'='
+    // '='
     // </0 & SwPunctuation/4 '='/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('='), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4616,7 +4396,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //','
+    // ','
     // </0 & SwPunctuation/4 ','/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>(','), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4627,7 +4407,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //';'
+    // ';'
     // </0 & SwPunctuation/4 ';'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>(';'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4638,7 +4418,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'['
+    // '['
     // </0 & SwPunctuation/4 '['/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('['), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4649,7 +4429,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //']'
+    // ']'
     // </0 & SwPunctuation/4 ']'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>(']'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4660,7 +4440,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'#'
+    // '#'
     // </0 & SwPunctuation/4 '#'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('#'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4670,7 +4450,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //'^'
+    // '^'
     // </0 & SwPunctuation/4 '^'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('^'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -4689,8 +4469,8 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:S 
-  //GLOBAL GEN:S 
+  //FAST GEN: s.$
+  //GLOBAL GEN: s.$
   // </0 & SwPunctuation/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4703,7 +4483,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   do {
     refalrts::start_sentence();
-    //'<'
+    // '<'
     // </0 & SwPunctuation/4 '<'/5 >/1
     if( ! refalrts::char_term( '<', context[5] ) )
       continue;
@@ -4722,7 +4502,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'>'
+    // '>'
     // </0 & SwPunctuation/4 '>'/5 >/1
     if( ! refalrts::char_term( '>', context[5] ) )
       continue;
@@ -4741,7 +4521,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'{'
+    // '{'
     // </0 & SwPunctuation/4 '{'/5 >/1
     if( ! refalrts::char_term( '{', context[5] ) )
       continue;
@@ -4760,7 +4540,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'}'
+    // '}'
     // </0 & SwPunctuation/4 '}'/5 >/1
     if( ! refalrts::char_term( '}', context[5] ) )
       continue;
@@ -4779,7 +4559,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'('
+    // '('
     // </0 & SwPunctuation/4 '('/5 >/1
     if( ! refalrts::char_term( '(', context[5] ) )
       continue;
@@ -4798,7 +4578,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //')'
+    // ')'
     // </0 & SwPunctuation/4 ')'/5 >/1
     if( ! refalrts::char_term( ')', context[5] ) )
       continue;
@@ -4817,7 +4597,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'='
+    // '='
     // </0 & SwPunctuation/4 '='/5 >/1
     if( ! refalrts::char_term( '=', context[5] ) )
       continue;
@@ -4836,7 +4616,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //','
+    // ','
     // </0 & SwPunctuation/4 ','/5 >/1
     if( ! refalrts::char_term( ',', context[5] ) )
       continue;
@@ -4855,7 +4635,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //';'
+    // ';'
     // </0 & SwPunctuation/4 ';'/5 >/1
     if( ! refalrts::char_term( ';', context[5] ) )
       continue;
@@ -4874,7 +4654,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'['
+    // '['
     // </0 & SwPunctuation/4 '['/5 >/1
     if( ! refalrts::char_term( '[', context[5] ) )
       continue;
@@ -4893,7 +4673,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //']'
+    // ']'
     // </0 & SwPunctuation/4 ']'/5 >/1
     if( ! refalrts::char_term( ']', context[5] ) )
       continue;
@@ -4912,7 +4692,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //'#'
+    // '#'
     // </0 & SwPunctuation/4 '#'/5 >/1
     if( ! refalrts::char_term( '#', context[5] ) )
       continue;
@@ -4929,7 +4709,7 @@ static refalrts::FnResult SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //'^'
+  // '^'
   // </0 & SwPunctuation/4 '^'/5 >/1
   if( ! refalrts::char_term( '^', context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -4962,8 +4742,8 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S (E )
-    //GLOBAL GEN:S (S E )
+    //FAST GEN: s.$ ( e.$ )
+    //GLOBAL GEN: s.$ ( s.$ e.$ )
     // </0 & AddLineNumber/4 s.idx#0/9 (/7 s.idxVB#0/10 e.idxVBV#0/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -4973,7 +4753,7 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icsVarLeft, 0, 10, 5},
     // closed e.idxVBV#0 as range 5
     {refalrts::icOnFailGoTo, +11, 0, 0},
-    //S (#TkNewLine)
+    // s.idx ( # TkNewLine )
     // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 # TkNewLine/10 )/8 >/1
     {refalrts::icIdentTerm, 0, 0, 10},
     {refalrts::icSave, 0, 11, 5},
@@ -4988,7 +4768,7 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //S (S E )
+    // s.idx ( s.idx e.idx )
     // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 s.TokType#1/10 e.Info#1/5 )/8 >/1
     // closed e.Info#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -5012,8 +4792,8 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:S (E )
-  //GLOBAL GEN:S (S E )
+  //FAST GEN: s.$ ( e.$ )
+  //GLOBAL GEN: s.$ ( s.$ e.$ )
   // </0 & AddLineNumber/4 s.idx#0/9 (/7 s.idxVB#0/10 e.idxVBV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -5035,7 +4815,7 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxVBV#0 as range 5
   do {
     refalrts::start_sentence();
-    //S (#TkNewLine)
+    // s.idx ( # TkNewLine )
     // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 # TkNewLine/10 )/8 >/1
     if( ! refalrts::ident_term(  & ident_TkNewLine<int>::name, context[10] ) )
       continue;
@@ -5059,7 +4839,7 @@ static refalrts::FnResult AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //S (S E )
+  // s.idx ( s.idx e.idx )
   // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 s.TokType#1/10 e.Info#1/5 )/8 >/1
   // closed e.Info#1 as range 5
 
@@ -5192,7 +4972,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { StartComment, "StartComment" },
-    { StringLiteral_Start, "StringLiteral_Start" },
+    { StringLiteral_Start, "StringLiteral-Start" },
     { Directive, "Directive" },
     { Number, "Number" },
     { VariableStart, "VariableStart" },
@@ -5210,8 +4990,8 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & Root/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -5219,7 +4999,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )' 'E 
+    // ( e.idx ) ' ' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ' '/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(' '), 13},
@@ -5236,7 +5016,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'\t'E 
+    // ( e.idx ) '\t' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\t'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\t'), 13},
@@ -5253,7 +5033,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'\r'E 
+    // ( e.idx ) '\r' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\r'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\r'), 13},
@@ -5270,7 +5050,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'<'E 
+    // ( e.idx ) '<' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '<'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('<'), 13},
@@ -5296,7 +5076,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'>'E 
+    // ( e.idx ) '>' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '>'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('>'), 13},
@@ -5322,7 +5102,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'('E 
+    // ( e.idx ) '(' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '('/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('('), 13},
@@ -5348,7 +5128,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )')'E 
+    // ( e.idx ) ')' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ')'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(')'), 13},
@@ -5374,7 +5154,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'{'E 
+    // ( e.idx ) '{' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '{'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('{'), 13},
@@ -5400,7 +5180,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'}'E 
+    // ( e.idx ) '}' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '}'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('}'), 13},
@@ -5426,7 +5206,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'['E 
+    // ( e.idx ) '[' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '['/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('['), 13},
@@ -5452,7 +5232,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )']'E 
+    // ( e.idx ) ']' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ']'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(']'), 13},
@@ -5478,7 +5258,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'='E 
+    // ( e.idx ) '=' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '='/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 13},
@@ -5504,7 +5284,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )';'E 
+    // ( e.idx ) ';' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ';'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(';'), 13},
@@ -5530,7 +5310,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )','E 
+    // ( e.idx ) ',' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ','/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(','), 13},
@@ -5556,7 +5336,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'#'E 
+    // ( e.idx ) '#' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '#'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('#'), 13},
@@ -5582,7 +5362,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'^'E 
+    // ( e.idx ) '^' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '^'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('^'), 13},
@@ -5608,7 +5388,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
@@ -5625,7 +5405,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
@@ -5642,7 +5422,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
@@ -5659,7 +5439,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
@@ -5676,7 +5456,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
@@ -5693,7 +5473,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
@@ -5710,7 +5490,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 13},
@@ -5727,7 +5507,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 13},
@@ -5744,7 +5524,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 13},
@@ -5761,7 +5541,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 13},
@@ -5778,7 +5558,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 13},
@@ -5795,7 +5575,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 13},
@@ -5812,7 +5592,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 13},
@@ -5829,7 +5609,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 13},
@@ -5846,7 +5626,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 13},
@@ -5863,7 +5643,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 13},
@@ -5880,7 +5660,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 13},
@@ -5897,7 +5677,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 13},
@@ -5914,7 +5694,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 13},
@@ -5931,7 +5711,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 13},
@@ -5948,7 +5728,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 13},
@@ -5965,7 +5745,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 13},
@@ -5982,7 +5762,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 13},
@@ -5999,7 +5779,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 13},
@@ -6016,7 +5796,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 13},
@@ -6033,7 +5813,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 13},
@@ -6050,7 +5830,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 13},
@@ -6067,7 +5847,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 13},
@@ -6084,7 +5864,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 13},
@@ -6101,7 +5881,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
@@ -6118,7 +5898,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
@@ -6135,7 +5915,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
@@ -6152,7 +5932,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
@@ -6169,7 +5949,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
@@ -6186,7 +5966,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
@@ -6203,7 +5983,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
@@ -6220,7 +6000,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
@@ -6237,7 +6017,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
@@ -6254,7 +6034,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
@@ -6271,7 +6051,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'$'E 
+    // ( e.idx ) '$' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '$'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('$'), 13},
@@ -6290,7 +6070,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'\''E 
+    // ( e.idx ) '\'' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 13},
@@ -6298,7 +6078,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Start/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Start/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -6309,7 +6089,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('/'), 13},
@@ -6326,7 +6106,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 13},
@@ -6352,7 +6132,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icEmpty, 0, 0, 13},
@@ -6368,7 +6148,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -6394,7 +6174,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 10, 11, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -6420,7 +6200,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -6448,8 +6228,8 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Root/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -6466,7 +6246,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )' 'E 
+    // ( e.idx ) ' ' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ' '/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6493,7 +6273,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'\t'E 
+    // ( e.idx ) '\t' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\t'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6520,7 +6300,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'\r'E 
+    // ( e.idx ) '\r' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\r'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6547,7 +6327,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'<'E 
+    // ( e.idx ) '<' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '<'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6586,7 +6366,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'>'E 
+    // ( e.idx ) '>' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '>'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6625,7 +6405,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'('E 
+    // ( e.idx ) '(' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '('/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6664,7 +6444,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )')'E 
+    // ( e.idx ) ')' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ')'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6703,7 +6483,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'{'E 
+    // ( e.idx ) '{' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '{'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6742,7 +6522,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'}'E 
+    // ( e.idx ) '}' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '}'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6781,7 +6561,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'['E 
+    // ( e.idx ) '[' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '['/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6820,7 +6600,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )']'E 
+    // ( e.idx ) ']' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ']'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6859,7 +6639,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'='E 
+    // ( e.idx ) '=' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '='/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6898,7 +6678,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )';'E 
+    // ( e.idx ) ';' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ';'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6937,7 +6717,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )','E 
+    // ( e.idx ) ',' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 ','/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -6976,7 +6756,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'#'E 
+    // ( e.idx ) '#' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '#'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7015,7 +6795,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'^'E 
+    // ( e.idx ) '^' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '^'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7054,7 +6834,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7078,7 +6858,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7102,7 +6882,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7126,7 +6906,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7150,7 +6930,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7174,7 +6954,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7198,7 +6978,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7222,7 +7002,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7246,7 +7026,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7270,7 +7050,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7294,7 +7074,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7318,7 +7098,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7342,7 +7122,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7366,7 +7146,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7390,7 +7170,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7414,7 +7194,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7438,7 +7218,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7462,7 +7242,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7486,7 +7266,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7510,7 +7290,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7534,7 +7314,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7558,7 +7338,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7582,7 +7362,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7606,7 +7386,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7630,7 +7410,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7654,7 +7434,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7678,7 +7458,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7702,7 +7482,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7726,7 +7506,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7750,7 +7530,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7774,7 +7554,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7798,7 +7578,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7822,7 +7602,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7846,7 +7626,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7870,7 +7650,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7894,7 +7674,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7918,7 +7698,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7942,7 +7722,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7966,7 +7746,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -7990,7 +7770,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'$'E 
+    // ( e.idx ) '$' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '$'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -8019,7 +7799,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'\''E 
+    // ( e.idx ) '\'' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -8031,8 +7811,8 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Start/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Start, "StringLiteral_Start" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Start/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Start, "StringLiteral-Start" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -8048,7 +7828,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -8072,7 +7852,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -8111,7 +7891,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )
+    // ( e.idx )
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -8136,7 +7916,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -8174,7 +7954,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Root/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -8211,7 +7991,7 @@ static refalrts::FnResult Root(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & Root/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -8257,8 +8037,8 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & Name/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -8266,7 +8046,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
@@ -8282,7 +8062,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
@@ -8298,7 +8078,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
@@ -8314,7 +8094,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
@@ -8330,7 +8110,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
@@ -8346,7 +8126,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
@@ -8362,7 +8142,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
@@ -8378,7 +8158,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
@@ -8394,7 +8174,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
@@ -8410,7 +8190,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
@@ -8426,7 +8206,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 13},
@@ -8442,7 +8222,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 13},
@@ -8458,7 +8238,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 13},
@@ -8474,7 +8254,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 13},
@@ -8490,7 +8270,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 13},
@@ -8506,7 +8286,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 13},
@@ -8522,7 +8302,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 13},
@@ -8538,7 +8318,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 13},
@@ -8554,7 +8334,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 13},
@@ -8570,7 +8350,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 13},
@@ -8586,7 +8366,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 13},
@@ -8602,7 +8382,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 13},
@@ -8618,7 +8398,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 13},
@@ -8634,7 +8414,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 13},
@@ -8650,7 +8430,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 13},
@@ -8666,7 +8446,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 13},
@@ -8682,7 +8462,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 13},
@@ -8698,7 +8478,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 13},
@@ -8714,7 +8494,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 13},
@@ -8730,7 +8510,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 13},
@@ -8746,7 +8526,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 13},
@@ -8762,7 +8542,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 13},
@@ -8778,7 +8558,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 13},
@@ -8794,7 +8574,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 13},
@@ -8810,7 +8590,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 13},
@@ -8826,7 +8606,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 13},
@@ -8842,7 +8622,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
@@ -8858,7 +8638,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
@@ -8874,7 +8654,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
@@ -8890,7 +8670,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
@@ -8906,7 +8686,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
@@ -8922,7 +8702,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
@@ -8938,7 +8718,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 13},
@@ -8954,7 +8734,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 13},
@@ -8970,7 +8750,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 13},
@@ -8986,7 +8766,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 13},
@@ -9002,7 +8782,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 13},
@@ -9018,7 +8798,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 13},
@@ -9034,7 +8814,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 13},
@@ -9050,7 +8830,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 13},
@@ -9066,7 +8846,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 13},
@@ -9082,7 +8862,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 13},
@@ -9098,7 +8878,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 13},
@@ -9114,7 +8894,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 13},
@@ -9130,7 +8910,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 13},
@@ -9146,7 +8926,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 13},
@@ -9162,7 +8942,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 13},
@@ -9178,7 +8958,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 13},
@@ -9194,7 +8974,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 13},
@@ -9210,7 +8990,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 13},
@@ -9226,7 +9006,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 13},
@@ -9242,7 +9022,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 13},
@@ -9258,7 +9038,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 13},
@@ -9274,7 +9054,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 13},
@@ -9290,7 +9070,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -9312,7 +9092,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -9339,7 +9119,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -9367,8 +9147,8 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Name/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -9385,7 +9165,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9408,7 +9188,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9431,7 +9211,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9454,7 +9234,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9477,7 +9257,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9500,7 +9280,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9523,7 +9303,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9546,7 +9326,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9569,7 +9349,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9592,7 +9372,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9615,7 +9395,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9638,7 +9418,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9661,7 +9441,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9684,7 +9464,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9707,7 +9487,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9730,7 +9510,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9753,7 +9533,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9776,7 +9556,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9799,7 +9579,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9822,7 +9602,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9845,7 +9625,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9868,7 +9648,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9891,7 +9671,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9914,7 +9694,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9937,7 +9717,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9960,7 +9740,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -9983,7 +9763,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10006,7 +9786,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10029,7 +9809,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10052,7 +9832,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10075,7 +9855,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10098,7 +9878,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10121,7 +9901,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10144,7 +9924,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10167,7 +9947,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10190,7 +9970,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10213,7 +9993,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10236,7 +10016,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10259,7 +10039,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10282,7 +10062,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10305,7 +10085,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10328,7 +10108,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10351,7 +10131,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10374,7 +10154,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10397,7 +10177,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10420,7 +10200,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10443,7 +10223,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10466,7 +10246,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10489,7 +10269,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10512,7 +10292,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10535,7 +10315,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10558,7 +10338,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10581,7 +10361,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10604,7 +10384,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10627,7 +10407,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10650,7 +10430,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10673,7 +10453,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10696,7 +10476,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10719,7 +10499,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10742,7 +10522,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10765,7 +10545,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10788,7 +10568,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10811,7 +10591,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10834,7 +10614,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -10857,7 +10637,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -10889,7 +10669,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Name/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -10927,7 +10707,7 @@ static refalrts::FnResult Name(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & Name/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -10976,8 +10756,8 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {"Expected dot", 12}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & VariableStart/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -10985,7 +10765,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'.'E 
+    // ( e.idx ) '.' e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 '.'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('.'), 14},
@@ -11002,7 +10782,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -11024,7 +10804,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 14, 2},
@@ -11051,7 +10831,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -11079,8 +10859,8 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & VariableStart/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -11097,7 +10877,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'.'E 
+    // ( e.idx ) '.' e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 '.'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -11121,7 +10901,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -11154,7 +10934,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[14] = context[2];
@@ -11192,7 +10972,7 @@ static refalrts::FnResult VariableStart(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -11238,8 +11018,8 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & Number/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -11247,7 +11027,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
@@ -11263,7 +11043,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
@@ -11279,7 +11059,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
@@ -11295,7 +11075,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
@@ -11311,7 +11091,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
@@ -11327,7 +11107,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
@@ -11343,7 +11123,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
@@ -11359,7 +11139,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
@@ -11375,7 +11155,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
@@ -11391,7 +11171,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
@@ -11407,7 +11187,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -11429,7 +11209,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -11456,7 +11236,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -11484,8 +11264,8 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Number/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -11502,7 +11282,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11525,7 +11305,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11548,7 +11328,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11571,7 +11351,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11594,7 +11374,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11617,7 +11397,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11640,7 +11420,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11663,7 +11443,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11686,7 +11466,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11709,7 +11489,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -11732,7 +11512,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -11764,7 +11544,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Number/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -11802,7 +11582,7 @@ static refalrts::FnResult Number(refalrts::Iter arg_begin, refalrts::Iter arg_en
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & Number/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -11851,8 +11631,8 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {"Expected directive name", 23}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & Directive/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -11860,7 +11640,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 14},
@@ -11877,7 +11657,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 14},
@@ -11894,7 +11674,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 14},
@@ -11911,7 +11691,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 14},
@@ -11928,7 +11708,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 14},
@@ -11945,7 +11725,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 14},
@@ -11962,7 +11742,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 14},
@@ -11979,7 +11759,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 14},
@@ -11996,7 +11776,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 14},
@@ -12013,7 +11793,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 14},
@@ -12030,7 +11810,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 14},
@@ -12047,7 +11827,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 14},
@@ -12064,7 +11844,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 14},
@@ -12081,7 +11861,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 14},
@@ -12098,7 +11878,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 14},
@@ -12115,7 +11895,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 14},
@@ -12132,7 +11912,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 14},
@@ -12149,7 +11929,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 14},
@@ -12166,7 +11946,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 14},
@@ -12183,7 +11963,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 14},
@@ -12200,7 +11980,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 14},
@@ -12217,7 +11997,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 14},
@@ -12234,7 +12014,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 14},
@@ -12251,7 +12031,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 14},
@@ -12268,7 +12048,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 14},
@@ -12285,7 +12065,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 14},
@@ -12302,7 +12082,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -12324,7 +12104,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 14, 2},
@@ -12351,7 +12131,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -12379,8 +12159,8 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Directive/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -12397,7 +12177,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12421,7 +12201,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12445,7 +12225,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12469,7 +12249,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12493,7 +12273,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12517,7 +12297,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12541,7 +12321,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12565,7 +12345,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12589,7 +12369,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12613,7 +12393,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12637,7 +12417,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12661,7 +12441,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12685,7 +12465,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12709,7 +12489,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12733,7 +12513,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12757,7 +12537,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12781,7 +12561,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12805,7 +12585,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12829,7 +12609,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12853,7 +12633,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12877,7 +12657,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12901,7 +12681,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12925,7 +12705,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12949,7 +12729,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12973,7 +12753,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -12997,7 +12777,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -13021,7 +12801,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -13054,7 +12834,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & Directive/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[14] = context[2];
@@ -13092,7 +12872,7 @@ static refalrts::FnResult Directive(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & Directive/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -13139,24 +12919,24 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Start/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Start/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\''E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\'', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 0, 12},
@@ -13176,8 +12956,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -13189,8 +12969,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -13216,8 +12996,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -13244,9 +13024,9 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Start/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Start/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -13262,8 +13042,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'\''E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '\'', context[13], context[14] );
@@ -13274,7 +13054,7 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '\'' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -13303,8 +13083,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -13320,8 +13100,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -13358,8 +13138,8 @@ static refalrts::FnResult StringLiteral_Start(refalrts::Iter arg_begin, refalrts
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Start/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -13406,8 +13186,8 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & StartComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -13415,7 +13195,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'*'E 
+    // ( e.idx ) '*' e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('*'), 13},
@@ -13434,7 +13214,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('/'), 13},
@@ -13453,7 +13233,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -13475,7 +13255,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -13502,7 +13282,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -13530,8 +13310,8 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StartComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -13548,7 +13328,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'*'E 
+    // ( e.idx ) '*' e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -13577,7 +13357,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -13606,7 +13386,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -13638,7 +13418,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -13676,7 +13456,7 @@ static refalrts::FnResult StartComment(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -13725,8 +13505,8 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {"Expected variable name", 22}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & VariableIndex/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -13734,7 +13514,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 14},
@@ -13751,7 +13531,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 14},
@@ -13768,7 +13548,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 14},
@@ -13785,7 +13565,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 14},
@@ -13802,7 +13582,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 14},
@@ -13819,7 +13599,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 14},
@@ -13836,7 +13616,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 14},
@@ -13853,7 +13633,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 14},
@@ -13870,7 +13650,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 14},
@@ -13887,7 +13667,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 14},
@@ -13904,7 +13684,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 14},
@@ -13921,7 +13701,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 14},
@@ -13938,7 +13718,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 14},
@@ -13955,7 +13735,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 14},
@@ -13972,7 +13752,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 14},
@@ -13989,7 +13769,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 14},
@@ -14006,7 +13786,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 14},
@@ -14023,7 +13803,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 14},
@@ -14040,7 +13820,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 14},
@@ -14057,7 +13837,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 14},
@@ -14074,7 +13854,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 14},
@@ -14091,7 +13871,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 14},
@@ -14108,7 +13888,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 14},
@@ -14125,7 +13905,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 14},
@@ -14142,7 +13922,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 14},
@@ -14159,7 +13939,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 14},
@@ -14176,7 +13956,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 14},
@@ -14193,7 +13973,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 14},
@@ -14210,7 +13990,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 14},
@@ -14227,7 +14007,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 14},
@@ -14244,7 +14024,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 14},
@@ -14261,7 +14041,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 14},
@@ -14278,7 +14058,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 14},
@@ -14295,7 +14075,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 14},
@@ -14312,7 +14092,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 14},
@@ -14329,7 +14109,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 14},
@@ -14346,7 +14126,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 14},
@@ -14363,7 +14143,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 14},
@@ -14380,7 +14160,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 14},
@@ -14397,7 +14177,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 14},
@@ -14414,7 +14194,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 14},
@@ -14431,7 +14211,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 14},
@@ -14448,7 +14228,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 14},
@@ -14465,7 +14245,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 14},
@@ -14482,7 +14262,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 14},
@@ -14499,7 +14279,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 14},
@@ -14516,7 +14296,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 14},
@@ -14533,7 +14313,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 14},
@@ -14550,7 +14330,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 14},
@@ -14567,7 +14347,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 14},
@@ -14584,7 +14364,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 14},
@@ -14601,7 +14381,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 14},
@@ -14618,7 +14398,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 14},
@@ -14635,7 +14415,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 14},
@@ -14652,7 +14432,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 14},
@@ -14669,7 +14449,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 14},
@@ -14686,7 +14466,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 14},
@@ -14703,7 +14483,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 14},
@@ -14720,7 +14500,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 14},
@@ -14737,7 +14517,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 14},
@@ -14754,7 +14534,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 14},
@@ -14771,7 +14551,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 14},
@@ -14788,7 +14568,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 14},
@@ -14805,7 +14585,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 14},
@@ -14822,7 +14602,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -14844,7 +14624,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 14, 2},
@@ -14871,7 +14651,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -14899,8 +14679,8 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & VariableIndex/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -14917,7 +14697,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -14941,7 +14721,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -14965,7 +14745,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -14989,7 +14769,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15013,7 +14793,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15037,7 +14817,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15061,7 +14841,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15085,7 +14865,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15109,7 +14889,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15133,7 +14913,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15157,7 +14937,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15181,7 +14961,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15205,7 +14985,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15229,7 +15009,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15253,7 +15033,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15277,7 +15057,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15301,7 +15081,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15325,7 +15105,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15349,7 +15129,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15373,7 +15153,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15397,7 +15177,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15421,7 +15201,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15445,7 +15225,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15469,7 +15249,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15493,7 +15273,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15517,7 +15297,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15541,7 +15321,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15565,7 +15345,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15589,7 +15369,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15613,7 +15393,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15637,7 +15417,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15661,7 +15441,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15685,7 +15465,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15709,7 +15489,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15733,7 +15513,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15757,7 +15537,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15781,7 +15561,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15805,7 +15585,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15829,7 +15609,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15853,7 +15633,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15877,7 +15657,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15901,7 +15681,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15925,7 +15705,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15949,7 +15729,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15973,7 +15753,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -15997,7 +15777,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16021,7 +15801,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16045,7 +15825,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16069,7 +15849,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16093,7 +15873,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16117,7 +15897,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16141,7 +15921,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16165,7 +15945,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16189,7 +15969,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16213,7 +15993,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16237,7 +16017,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16261,7 +16041,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16285,7 +16065,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16309,7 +16089,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16333,7 +16113,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16357,7 +16137,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16381,7 +16161,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16405,7 +16185,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16429,7 +16209,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
@@ -16453,7 +16233,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -16486,7 +16266,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[14] = context[2];
@@ -16524,7 +16304,7 @@ static refalrts::FnResult VariableIndex(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -16570,8 +16350,8 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & DirectiveTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -16579,7 +16359,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
@@ -16595,7 +16375,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
@@ -16611,7 +16391,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
@@ -16627,7 +16407,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
@@ -16643,7 +16423,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
@@ -16659,7 +16439,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
@@ -16675,7 +16455,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 13},
@@ -16691,7 +16471,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 13},
@@ -16707,7 +16487,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 13},
@@ -16723,7 +16503,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 13},
@@ -16739,7 +16519,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 13},
@@ -16755,7 +16535,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 13},
@@ -16771,7 +16551,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 13},
@@ -16787,7 +16567,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 13},
@@ -16803,7 +16583,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 13},
@@ -16819,7 +16599,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 13},
@@ -16835,7 +16615,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 13},
@@ -16851,7 +16631,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 13},
@@ -16867,7 +16647,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 13},
@@ -16883,7 +16663,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 13},
@@ -16899,7 +16679,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 13},
@@ -16915,7 +16695,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 13},
@@ -16931,7 +16711,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 13},
@@ -16947,7 +16727,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 13},
@@ -16963,7 +16743,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 13},
@@ -16979,7 +16759,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 13},
@@ -16995,7 +16775,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -17017,7 +16797,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -17044,7 +16824,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -17072,8 +16852,8 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & DirectiveTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -17090,7 +16870,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17113,7 +16893,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17136,7 +16916,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17159,7 +16939,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17182,7 +16962,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17205,7 +16985,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17228,7 +17008,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17251,7 +17031,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17274,7 +17054,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17297,7 +17077,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17320,7 +17100,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17343,7 +17123,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17366,7 +17146,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17389,7 +17169,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17412,7 +17192,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17435,7 +17215,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17458,7 +17238,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17481,7 +17261,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17504,7 +17284,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17527,7 +17307,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17550,7 +17330,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17573,7 +17353,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17596,7 +17376,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17619,7 +17399,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17642,7 +17422,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17665,7 +17445,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -17688,7 +17468,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -17720,7 +17500,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -17758,7 +17538,7 @@ static refalrts::FnResult DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -17794,8 +17574,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
-    { StringLiteral_Quote, "StringLiteral_Quote" },
-    { StringLiteral_Escape, "StringLiteral_Escape" }
+    { StringLiteral_Quote, "StringLiteral-Quote" },
+    { StringLiteral_Escape, "StringLiteral-Escape" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -17810,8 +17590,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {"nclosed quote", 13}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & StringLiteral/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -17819,7 +17599,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'\\'E 
+    // ( e.idx ) '\\' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\\'), 15},
@@ -17827,7 +17607,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -17838,7 +17618,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'\''E 
+    // ( e.idx ) '\'' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 15},
@@ -17846,7 +17626,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Quote/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Quote/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -17857,7 +17637,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 15},
@@ -17884,7 +17664,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +14, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icEmpty, 0, 0, 15},
@@ -17904,7 +17684,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 15, 2},
@@ -17912,7 +17692,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/10 # TkLiteral_Char/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & StringLiteral/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/15(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/10 # TkLiteral-Char/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & StringLiteral/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/15(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
     {refalrts::icAllocIdent, 0, 3, 11},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 12},
@@ -17930,7 +17710,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 11, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 15, 2},
@@ -17957,7 +17737,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -17985,8 +17765,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StringLiteral/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -18003,7 +17783,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'\\'E 
+    // ( e.idx ) '\\' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
@@ -18015,8 +17795,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape, "StringLiteral_Escape" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape, "StringLiteral-Escape" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -18032,7 +17812,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'\''E 
+    // ( e.idx ) '\'' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
@@ -18044,8 +17824,8 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Quote/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Quote, "StringLiteral_Quote" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Quote/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Quote, "StringLiteral-Quote" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -18061,7 +17841,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
@@ -18102,7 +17882,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )
+    // ( e.idx )
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 >/1
     context[15] = context[2];
     context[16] = context[3];
@@ -18132,7 +17912,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[15] = context[2];
@@ -18143,7 +17923,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/10 # TkLiteral_Char/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & StringLiteral/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/15(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/10 # TkLiteral-Char/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & StringLiteral/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/15(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[11], & ident_TkLiteral_Char<int>::name ) )
@@ -18170,7 +17950,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[15] = context[2];
@@ -18208,7 +17988,7 @@ static refalrts::FnResult StringLiteral(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & StringLiteral/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -18244,8 +18024,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
-    { CComment_CheckEnd, "CComment_CheckEnd" },
-    { CComment_CheckNested, "CComment_CheckNested" }
+    { CComment_CheckEnd, "CComment-CheckEnd" },
+    { CComment_CheckNested, "CComment-CheckNested" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -18259,8 +18039,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {"nexpected EOF: unclosed commen", 30}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & CComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -18268,7 +18048,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('/'), 13},
@@ -18276,7 +18056,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment_CheckNested/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment-CheckNested/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -18287,7 +18067,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'*'E 
+    // ( e.idx ) '*' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('*'), 13},
@@ -18295,7 +18075,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment_CheckEnd/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment-CheckEnd/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -18306,7 +18086,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 13},
@@ -18332,7 +18112,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 7, 7, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +11, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -18350,7 +18130,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +14, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icEmpty, 0, 0, 13},
@@ -18370,7 +18150,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -18397,7 +18177,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -18425,8 +18205,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & CComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -18443,7 +18223,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'/'E 
+    // ( e.idx ) '/' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18455,8 +18235,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment_CheckNested/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], CComment_CheckNested, "CComment_CheckNested" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment-CheckNested/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], CComment_CheckNested, "CComment-CheckNested" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -18472,7 +18252,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'*'E 
+    // ( e.idx ) '*' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18484,8 +18264,8 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment_CheckEnd/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], CComment_CheckEnd, "CComment_CheckEnd" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & CComment-CheckEnd/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], CComment_CheckEnd, "CComment-CheckEnd" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -18501,7 +18281,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18540,7 +18320,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -18567,7 +18347,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )
+    // ( e.idx )
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18597,7 +18377,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -18635,7 +18415,7 @@ static refalrts::FnResult CComment(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & CComment/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -18682,8 +18462,8 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & CppComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -18691,7 +18471,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 13},
@@ -18719,7 +18499,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icEmpty, 0, 0, 13},
@@ -18735,7 +18515,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +11, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -18753,7 +18533,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -18780,7 +18560,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -18808,8 +18588,8 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & CppComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -18826,7 +18606,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'\n'E 
+    // ( e.idx ) '\n' e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18867,7 +18647,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
 
   do {
     refalrts::start_sentence();
-    //(E )
+    // ( e.idx )
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -18892,7 +18672,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 s.Any#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -18919,7 +18699,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -18957,7 +18737,7 @@ static refalrts::FnResult CppComment(refalrts::Iter arg_begin, refalrts::Iter ar
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & CppComment/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -19003,8 +18783,8 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & VariableIndexTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -19012,7 +18792,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
@@ -19028,7 +18808,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
@@ -19044,7 +18824,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
@@ -19060,7 +18840,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
@@ -19076,7 +18856,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
@@ -19092,7 +18872,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
@@ -19108,7 +18888,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
@@ -19124,7 +18904,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
@@ -19140,7 +18920,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
@@ -19156,7 +18936,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
@@ -19172,7 +18952,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 13},
@@ -19188,7 +18968,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 13},
@@ -19204,7 +18984,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 13},
@@ -19220,7 +19000,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 13},
@@ -19236,7 +19016,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 13},
@@ -19252,7 +19032,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 13},
@@ -19268,7 +19048,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 13},
@@ -19284,7 +19064,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 13},
@@ -19300,7 +19080,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 13},
@@ -19316,7 +19096,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 13},
@@ -19332,7 +19112,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 13},
@@ -19348,7 +19128,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 13},
@@ -19364,7 +19144,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 13},
@@ -19380,7 +19160,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 13},
@@ -19396,7 +19176,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 13},
@@ -19412,7 +19192,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 13},
@@ -19428,7 +19208,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 13},
@@ -19444,7 +19224,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 13},
@@ -19460,7 +19240,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 13},
@@ -19476,7 +19256,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 13},
@@ -19492,7 +19272,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 13},
@@ -19508,7 +19288,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 13},
@@ -19524,7 +19304,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 13},
@@ -19540,7 +19320,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 13},
@@ -19556,7 +19336,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 13},
@@ -19572,7 +19352,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 13},
@@ -19588,7 +19368,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
@@ -19604,7 +19384,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
@@ -19620,7 +19400,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
@@ -19636,7 +19416,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
@@ -19652,7 +19432,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
@@ -19668,7 +19448,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
@@ -19684,7 +19464,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 13},
@@ -19700,7 +19480,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 13},
@@ -19716,7 +19496,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 13},
@@ -19732,7 +19512,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 13},
@@ -19748,7 +19528,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 13},
@@ -19764,7 +19544,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 13},
@@ -19780,7 +19560,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 13},
@@ -19796,7 +19576,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 13},
@@ -19812,7 +19592,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 13},
@@ -19828,7 +19608,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 13},
@@ -19844,7 +19624,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 13},
@@ -19860,7 +19640,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 13},
@@ -19876,7 +19656,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 13},
@@ -19892,7 +19672,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 13},
@@ -19908,7 +19688,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 13},
@@ -19924,7 +19704,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 13},
@@ -19940,7 +19720,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 13},
@@ -19956,7 +19736,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 13},
@@ -19972,7 +19752,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 13},
@@ -19988,7 +19768,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 13},
@@ -20004,7 +19784,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 13},
@@ -20020,7 +19800,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 13},
@@ -20036,7 +19816,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -20058,7 +19838,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
@@ -20085,7 +19865,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
@@ -20113,8 +19893,8 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & VariableIndexTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -20131,7 +19911,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
+    // ( e.idx ) '0' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20154,7 +19934,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
+    // ( e.idx ) '1' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20177,7 +19957,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
+    // ( e.idx ) '2' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20200,7 +19980,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
+    // ( e.idx ) '3' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20223,7 +20003,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
+    // ( e.idx ) '4' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20246,7 +20026,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
+    // ( e.idx ) '5' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20269,7 +20049,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
+    // ( e.idx ) '6' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20292,7 +20072,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
+    // ( e.idx ) '7' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20315,7 +20095,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
+    // ( e.idx ) '8' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20338,7 +20118,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
+    // ( e.idx ) '9' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20361,7 +20141,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'a'E 
+    // ( e.idx ) 'a' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20384,7 +20164,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'b'E 
+    // ( e.idx ) 'b' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20407,7 +20187,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'c'E 
+    // ( e.idx ) 'c' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20430,7 +20210,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'d'E 
+    // ( e.idx ) 'd' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20453,7 +20233,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'e'E 
+    // ( e.idx ) 'e' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20476,7 +20256,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'f'E 
+    // ( e.idx ) 'f' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20499,7 +20279,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'g'E 
+    // ( e.idx ) 'g' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'g'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20522,7 +20302,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'h'E 
+    // ( e.idx ) 'h' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'h'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20545,7 +20325,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'i'E 
+    // ( e.idx ) 'i' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'i'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20568,7 +20348,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'j'E 
+    // ( e.idx ) 'j' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'j'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20591,7 +20371,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'k'E 
+    // ( e.idx ) 'k' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'k'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20614,7 +20394,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'l'E 
+    // ( e.idx ) 'l' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'l'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20637,7 +20417,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'m'E 
+    // ( e.idx ) 'm' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'm'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20660,7 +20440,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'n'E 
+    // ( e.idx ) 'n' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20683,7 +20463,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'o'E 
+    // ( e.idx ) 'o' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'o'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20706,7 +20486,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'p'E 
+    // ( e.idx ) 'p' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'p'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20729,7 +20509,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'q'E 
+    // ( e.idx ) 'q' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20752,7 +20532,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'r'E 
+    // ( e.idx ) 'r' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20775,7 +20555,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'s'E 
+    // ( e.idx ) 's' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 's'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20798,7 +20578,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'t'E 
+    // ( e.idx ) 't' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20821,7 +20601,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'u'E 
+    // ( e.idx ) 'u' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'u'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20844,7 +20624,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'v'E 
+    // ( e.idx ) 'v' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20867,7 +20647,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'w'E 
+    // ( e.idx ) 'w' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'w'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20890,7 +20670,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'x'E 
+    // ( e.idx ) 'x' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20913,7 +20693,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'y'E 
+    // ( e.idx ) 'y' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20936,7 +20716,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'z'E 
+    // ( e.idx ) 'z' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20959,7 +20739,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
+    // ( e.idx ) 'A' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -20982,7 +20762,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
+    // ( e.idx ) 'B' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21005,7 +20785,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
+    // ( e.idx ) 'C' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21028,7 +20808,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
+    // ( e.idx ) 'D' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21051,7 +20831,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
+    // ( e.idx ) 'E' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21074,7 +20854,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
+    // ( e.idx ) 'F' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21097,7 +20877,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'G'E 
+    // ( e.idx ) 'G' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'G'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21120,7 +20900,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'H'E 
+    // ( e.idx ) 'H' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'H'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21143,7 +20923,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'I'E 
+    // ( e.idx ) 'I' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'I'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21166,7 +20946,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'J'E 
+    // ( e.idx ) 'J' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'J'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21189,7 +20969,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'K'E 
+    // ( e.idx ) 'K' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'K'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21212,7 +20992,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'L'E 
+    // ( e.idx ) 'L' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'L'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21235,7 +21015,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'M'E 
+    // ( e.idx ) 'M' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'M'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21258,7 +21038,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'N'E 
+    // ( e.idx ) 'N' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'N'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21281,7 +21061,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'O'E 
+    // ( e.idx ) 'O' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'O'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21304,7 +21084,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'P'E 
+    // ( e.idx ) 'P' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'P'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21327,7 +21107,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'Q'E 
+    // ( e.idx ) 'Q' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Q'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21350,7 +21130,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'R'E 
+    // ( e.idx ) 'R' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'R'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21373,7 +21153,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'S'E 
+    // ( e.idx ) 'S' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'S'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21396,7 +21176,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'T'E 
+    // ( e.idx ) 'T' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'T'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21419,7 +21199,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'U'E 
+    // ( e.idx ) 'U' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'U'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21442,7 +21222,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'V'E 
+    // ( e.idx ) 'V' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'V'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21465,7 +21245,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'W'E 
+    // ( e.idx ) 'W' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'W'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21488,7 +21268,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
+    // ( e.idx ) 'X' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21511,7 +21291,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'Y'E 
+    // ( e.idx ) 'Y' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Y'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21534,7 +21314,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'Z'E 
+    // ( e.idx ) 'Z' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 'Z'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21557,7 +21337,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'_'E 
+    // ( e.idx ) '_' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '_'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21580,7 +21360,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )'-'E 
+    // ( e.idx ) '-' e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 '-'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
@@ -21603,7 +21383,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
@@ -21635,7 +21415,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
+    // ( e.idx ) s.idx e.idx
     // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
@@ -21673,7 +21453,7 @@ static refalrts::FnResult VariableIndexTail(refalrts::Iter arg_begin, refalrts::
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -21710,9 +21490,9 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
     { StringLiteral, "StringLiteral" },
-    { StringLiteral_Escape_XCode, "StringLiteral_Escape_XCode" },
-    { StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" },
-    { StringLiteral_Escape_Code, "StringLiteral_Escape_Code" }
+    { StringLiteral_Escape_XCode, "StringLiteral-Escape-XCode" },
+    { StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" },
+    { StringLiteral_Escape_Code, "StringLiteral-Escape-Code" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -21734,24 +21514,24 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {"nclosed quote", 13}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'n'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'n' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_NewLine/4 } Tile{ AsIs: e.Accum#1/5 } 'n'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-NewLine/4 } Tile{ AsIs: e.Accum#1/5 } 'n'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'n', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21771,15 +21551,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'r'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'r' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_CarriageReturn/4 } Tile{ AsIs: e.Accum#1/5 } 'r'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-CarriageReturn/4 } Tile{ AsIs: e.Accum#1/5 } 'r'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'r', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21799,15 +21579,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'t'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
+    // ( e.idx ) 't' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Tab/4 } Tile{ AsIs: e.Accum#1/5 } 't'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Tab/4 } Tile{ AsIs: e.Accum#1/5 } 't'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 't', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21827,15 +21607,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'a'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'a' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Bell/4 } Tile{ AsIs: e.Accum#1/5 } 'a'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Bell/4 } Tile{ AsIs: e.Accum#1/5 } 'a'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'a', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21855,15 +21635,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'b'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'b' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_BS/4 } Tile{ AsIs: e.Accum#1/5 } 'b'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-BS/4 } Tile{ AsIs: e.Accum#1/5 } 'b'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'b', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21883,15 +21663,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'f'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'f' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_FF/4 } Tile{ AsIs: e.Accum#1/5 } 'f'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-FF/4 } Tile{ AsIs: e.Accum#1/5 } 'f'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'f', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21911,15 +21691,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'v'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'v' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_VT/4 } Tile{ AsIs: e.Accum#1/5 } 'v'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-VT/4 } Tile{ AsIs: e.Accum#1/5 } 'v'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'v', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21939,15 +21719,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\\'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\\' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\\'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\\'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\\'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\\', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21967,15 +21747,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\''E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\'', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -21995,15 +21775,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\"'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\"'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\"' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\"'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\"'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\"'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\"'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\"', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -22023,15 +21803,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'d'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'd' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 4, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22042,15 +21822,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'D'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'D' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 4, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22061,15 +21841,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22078,15 +21858,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22095,15 +21875,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22112,15 +21892,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22129,15 +21909,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22146,15 +21926,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22163,15 +21943,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22180,15 +21960,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 3, 4},
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22197,15 +21977,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'x'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'x' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22216,15 +21996,15 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'X'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'X' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 15},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -22235,8 +22015,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )'\n'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\n' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 15},
     // closed e.Accum#1 as range 5
@@ -22262,8 +22042,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -22284,8 +22064,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icsVarLeft, 0, 9, 15},
@@ -22311,8 +22091,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -22339,9 +22119,9 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -22357,8 +22137,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'n'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'n' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'n'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'n', context[15], context[16] );
@@ -22369,7 +22149,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_NewLine/4 } Tile{ AsIs: e.Accum#1/5 } 'n'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-NewLine/4 } Tile{ AsIs: e.Accum#1/5 } 'n'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'n' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22398,8 +22178,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'r'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'r' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'r'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'r', context[15], context[16] );
@@ -22410,7 +22190,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_CarriageReturn/4 } Tile{ AsIs: e.Accum#1/5 } 'r'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-CarriageReturn/4 } Tile{ AsIs: e.Accum#1/5 } 'r'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'r' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22439,8 +22219,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'t'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
+    // ( e.idx ) 't' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 't'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 't', context[15], context[16] );
@@ -22451,7 +22231,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Tab/4 } Tile{ AsIs: e.Accum#1/5 } 't'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Tab/4 } Tile{ AsIs: e.Accum#1/5 } 't'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 't' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22480,8 +22260,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'a'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'a' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'a', context[15], context[16] );
@@ -22492,7 +22272,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Bell/4 } Tile{ AsIs: e.Accum#1/5 } 'a'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Bell/4 } Tile{ AsIs: e.Accum#1/5 } 'a'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'a' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22521,8 +22301,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'b'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'b' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'b', context[15], context[16] );
@@ -22533,7 +22313,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_BS/4 } Tile{ AsIs: e.Accum#1/5 } 'b'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-BS/4 } Tile{ AsIs: e.Accum#1/5 } 'b'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'b' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22562,8 +22342,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'f'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'f' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'f', context[15], context[16] );
@@ -22574,7 +22354,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_FF/4 } Tile{ AsIs: e.Accum#1/5 } 'f'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-FF/4 } Tile{ AsIs: e.Accum#1/5 } 'f'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'f' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22603,8 +22383,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'v'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'v' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'v'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'v', context[15], context[16] );
@@ -22615,7 +22395,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_VT/4 } Tile{ AsIs: e.Accum#1/5 } 'v'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-VT/4 } Tile{ AsIs: e.Accum#1/5 } 'v'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], 'v' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22644,8 +22424,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'\\'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\\' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\\'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '\\', context[15], context[16] );
@@ -22656,7 +22436,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\\'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\\'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '\\' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22685,8 +22465,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'\''E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '\'', context[15], context[16] );
@@ -22697,7 +22477,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '\'' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22726,8 +22506,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'\"'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\"'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\"' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\"'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '\"', context[15], context[16] );
@@ -22738,7 +22518,7 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\"'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\"'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '\"' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -22767,8 +22547,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'d'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'd' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'd', context[15], context[16] );
@@ -22779,8 +22559,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_Code, "StringLiteral_Escape_Code" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_Code, "StringLiteral-Escape-Code" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22796,8 +22576,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'D' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'D', context[15], context[16] );
@@ -22808,8 +22588,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_Code, "StringLiteral_Escape_Code" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-Code/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_Code, "StringLiteral-Escape-Code" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22825,8 +22605,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '0', context[15], context[16] );
@@ -22837,8 +22617,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22849,8 +22629,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '1', context[15], context[16] );
@@ -22861,8 +22641,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22873,8 +22653,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '2', context[15], context[16] );
@@ -22885,8 +22665,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22897,8 +22677,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '3', context[15], context[16] );
@@ -22909,8 +22689,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22921,8 +22701,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '4', context[15], context[16] );
@@ -22933,8 +22713,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22945,8 +22725,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '5', context[15], context[16] );
@@ -22957,8 +22737,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22969,8 +22749,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '6', context[15], context[16] );
@@ -22981,8 +22761,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -22993,8 +22773,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '7', context[15], context[16] );
@@ -23005,8 +22785,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral_Escape_OCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-OCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode" );
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -23017,8 +22797,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'x'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'x' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'x'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'x', context[15], context[16] );
@@ -23029,8 +22809,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_XCode, "StringLiteral_Escape_XCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_XCode, "StringLiteral-Escape-XCode" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -23046,8 +22826,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'X'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'X' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 'X'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( 'X', context[15], context[16] );
@@ -23058,8 +22838,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  (/7 e.Accum#1/5 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral_Escape_XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], StringLiteral_Escape_XCode, "StringLiteral_Escape_XCode" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & StringLiteral-Escape-XCode/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], StringLiteral_Escape_XCode, "StringLiteral-Escape-XCode" );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -23075,8 +22855,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )'\n'E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
+    // ( e.idx ) '\n' e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 '\n'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '\n', context[15], context[16] );
@@ -23116,8 +22896,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -23149,8 +22929,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[15] = context[2];
     context[16] = context[3];
@@ -23187,8 +22967,8 @@ static refalrts::FnResult StringLiteral_Escape(refalrts::Iter arg_begin, refalrt
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Escape/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -23234,24 +23014,24 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Quote/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Quote/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'\''E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\'', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -23271,8 +23051,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23284,8 +23064,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -23311,8 +23091,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23339,9 +23119,9 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Quote/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Quote/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -23357,8 +23137,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'\''E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
+    // ( e.idx ) '\'' e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 '\''/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '\'', context[13], context[14] );
@@ -23369,7 +23149,7 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Char/4 } Tile{ AsIs: e.Accum#1/5 } '\''/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '\'' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -23398,8 +23178,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -23415,8 +23195,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -23453,8 +23233,8 @@ static refalrts::FnResult StringLiteral_Quote(refalrts::Iter arg_begin, refalrts
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Quote/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -23502,17 +23282,17 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {"ested comments is disabled", 26}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & CComment_CheckNested/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & CComment-CheckNested/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )'*'E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
+    // ( e.idx ) '*' e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('*'), 15},
     // closed e.Accum#1 as range 5
@@ -23538,8 +23318,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //(E )E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23551,8 +23331,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icsVarLeft, 0, 9, 15},
@@ -23578,8 +23358,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23606,9 +23386,9 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & CComment_CheckNested/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & CComment-CheckNested/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -23624,8 +23404,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'*'E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
+    // ( e.idx ) '*' e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 '*'/9 e.Text#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
     context[9] = refalrts::char_left( '*', context[15], context[16] );
@@ -23665,8 +23445,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -23682,8 +23462,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[15] = context[2];
     context[16] = context[3];
@@ -23720,8 +23500,8 @@ static refalrts::FnResult CComment_CheckNested(refalrts::Iter arg_begin, refalrt
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & CComment_CheckNested/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -23766,17 +23546,17 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & CComment_CheckEnd/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & CComment-CheckEnd/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(E )'/'E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
+    // ( e.idx ) '/' e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('/'), 13},
     // closed e.Accum#1 as range 5
@@ -23794,8 +23574,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //(E )E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23807,8 +23587,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -23834,8 +23614,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -23862,9 +23642,9 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & CComment_CheckEnd/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & CComment-CheckEnd/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -23880,8 +23660,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'/'E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
+    // ( e.idx ) '/' e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 '/'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '/', context[13], context[14] );
@@ -23909,8 +23689,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -23926,8 +23706,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -23964,8 +23744,8 @@ static refalrts::FnResult CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & CComment_CheckEnd/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -24001,7 +23781,7 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
     { StringLiteral, "StringLiteral" },
-    { SL_E_C1, "SL_E_C1" }
+    { SL_E_C1, "SL-E-C1" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -24014,24 +23794,24 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {"Expected decimal digit", 22}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24040,15 +23820,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24057,15 +23837,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24074,15 +23854,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24091,15 +23871,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24108,15 +23888,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24125,15 +23905,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24142,15 +23922,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24159,15 +23939,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'8'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '8', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24176,15 +23956,15 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'9'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 14},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '9', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24193,8 +23973,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -24215,8 +23995,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icsVarLeft, 0, 9, 14},
@@ -24242,8 +24022,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -24270,9 +24050,9 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Escape_Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Escape-Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -24288,8 +24068,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '0', context[14], context[15] );
@@ -24300,8 +24080,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24312,8 +24092,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '1', context[14], context[15] );
@@ -24324,8 +24104,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24336,8 +24116,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '2', context[14], context[15] );
@@ -24348,8 +24128,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24360,8 +24140,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '3', context[14], context[15] );
@@ -24372,8 +24152,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24384,8 +24164,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '4', context[14], context[15] );
@@ -24396,8 +24176,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24408,8 +24188,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '5', context[14], context[15] );
@@ -24420,8 +24200,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24432,8 +24212,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '6', context[14], context[15] );
@@ -24444,8 +24224,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24456,8 +24236,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '7', context[14], context[15] );
@@ -24468,8 +24248,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24480,8 +24260,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '8', context[14], context[15] );
@@ -24492,8 +24272,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '8' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24504,8 +24284,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[14] = context[2];
     context[15] = context[3];
     context[9] = refalrts::char_left( '9', context[14], context[15] );
@@ -24516,8 +24296,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C1, "SL_E_C1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C1, "SL-E-C1" );
     refalrts::reinit_char( context[8], '9' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24528,8 +24308,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
@@ -24561,8 +24341,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[14] = context[2];
     context[15] = context[3];
@@ -24599,8 +24379,8 @@ static refalrts::FnResult StringLiteral_Escape_Code(refalrts::Iter arg_begin, re
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Escape_Code/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -24636,7 +24416,7 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
     { StringLiteral, "StringLiteral" },
-    { SL_E_OC1, "SL_E_OC1" }
+    { SL_E_OC1, "SL-E-OC1" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -24647,24 +24427,24 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24673,15 +24453,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24690,15 +24470,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24707,15 +24487,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24724,15 +24504,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24741,15 +24521,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24758,15 +24538,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24775,15 +24555,15 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -24792,13 +24572,13 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -24814,8 +24594,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -24841,8 +24621,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -24869,9 +24649,9 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Escape_OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Escape-OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -24887,8 +24667,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -24899,8 +24679,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24911,8 +24691,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -24923,8 +24703,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24935,8 +24715,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -24947,8 +24727,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24959,8 +24739,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -24971,8 +24751,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -24983,8 +24763,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -24995,8 +24775,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25007,8 +24787,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -25019,8 +24799,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25031,8 +24811,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -25043,8 +24823,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25055,8 +24835,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -25067,8 +24847,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC1, "SL_E_OC1" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC1/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC1, "SL-E-OC1" );
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25079,14 +24859,14 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
@@ -25111,8 +24891,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -25149,8 +24929,8 @@ static refalrts::FnResult StringLiteral_Escape_OCode(refalrts::Iter arg_begin, r
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Escape_OCode/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -25196,24 +24976,24 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25221,15 +25001,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25237,15 +25017,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25253,15 +25033,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25269,15 +25049,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25285,15 +25065,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25301,15 +25081,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25317,15 +25097,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25333,15 +25113,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'8'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '8', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25349,15 +25129,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'9'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, '9', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25365,15 +25145,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'A'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'A' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'A', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25381,15 +25161,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'B'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'B' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'B', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25397,15 +25177,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'C'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'C' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'C', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25413,15 +25193,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'D'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'D' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'D', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25429,15 +25209,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'E'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'E' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'E', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25445,15 +25225,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'F'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'F' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'F', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25461,15 +25241,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'a'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'a' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'a', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25477,15 +25257,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'b'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'b' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'b', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25493,15 +25273,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'c'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'c' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'c', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25509,15 +25289,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'d'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'd' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'd', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25525,15 +25305,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'e'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'e' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'e', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25541,15 +25321,15 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(E )'f'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'f' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icReinitChar, 0, 'f', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -25557,13 +25337,13 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_XCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-XCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -25579,8 +25359,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -25606,8 +25386,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -25634,9 +25414,9 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & StringLiteral_Escape_XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & StringLiteral-Escape-XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -25652,8 +25432,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -25664,7 +25444,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25675,8 +25455,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -25687,7 +25467,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25698,8 +25478,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -25710,7 +25490,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25721,8 +25501,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -25733,7 +25513,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25744,8 +25524,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -25756,7 +25536,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25767,8 +25547,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -25779,7 +25559,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25790,8 +25570,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -25802,7 +25582,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25813,8 +25593,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -25825,7 +25605,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25836,8 +25616,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '8', context[13], context[14] );
@@ -25848,7 +25628,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '8' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25859,8 +25639,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '9', context[13], context[14] );
@@ -25871,7 +25651,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], '9' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25882,8 +25662,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'A'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'A' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'A'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'A', context[13], context[14] );
@@ -25894,7 +25674,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'A' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25905,8 +25685,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'B'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'B' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'B'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'B', context[13], context[14] );
@@ -25917,7 +25697,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'B' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25928,8 +25708,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'C'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'C' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'C'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'C', context[13], context[14] );
@@ -25940,7 +25720,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'C' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25951,8 +25731,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'D'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'D' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'D'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'D', context[13], context[14] );
@@ -25963,7 +25743,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'D' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25974,8 +25754,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'E'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'E' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'E'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'E', context[13], context[14] );
@@ -25986,7 +25766,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'E' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -25997,8 +25777,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'F'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'F' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'F'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'F', context[13], context[14] );
@@ -26009,7 +25789,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'F' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26020,8 +25800,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'a'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'a' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'a'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'a', context[13], context[14] );
@@ -26032,7 +25812,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'a' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26043,8 +25823,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'b'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'b' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'b'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'b', context[13], context[14] );
@@ -26055,7 +25835,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'b' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26066,8 +25846,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'c'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'c' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'c'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'c', context[13], context[14] );
@@ -26078,7 +25858,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'c' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26089,8 +25869,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'d'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'd' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'd'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'd', context[13], context[14] );
@@ -26101,7 +25881,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'd' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26112,8 +25892,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'e'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'e' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'e'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'e', context[13], context[14] );
@@ -26124,7 +25904,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'e' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26135,8 +25915,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )'f'E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
+    // ( e.idx ) 'f' e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 'f'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( 'f', context[13], context[14] );
@@ -26147,7 +25927,7 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral_Escape_XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & StringLiteral-Escape-XCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     refalrts::reinit_char( context[8], 'f' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26158,14 +25938,14 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_XCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-XCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_XCode<int>::name ) )
@@ -26190,8 +25970,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -26228,8 +26008,8 @@ static refalrts::FnResult StringLiteral_Escape_XCode(refalrts::Iter arg_begin, r
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & StringLiteral_Escape_XCode/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -26265,7 +26045,7 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
     { StringLiteral, "StringLiteral" },
-    { SL_E_C2, "SL_E_C2" }
+    { SL_E_C2, "SL-E-C2" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -26276,24 +26056,24 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & SL_E_C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & SL-E-C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26302,15 +26082,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26319,15 +26099,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26336,15 +26116,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26353,15 +26133,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26370,15 +26150,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26387,15 +26167,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26404,15 +26184,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26421,15 +26201,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'8'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '8', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26438,15 +26218,15 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'9'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '9', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26455,13 +26235,13 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -26477,8 +26257,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -26504,8 +26284,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -26532,9 +26312,9 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & SL_E_C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & SL-E-C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -26550,8 +26330,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -26562,8 +26342,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26574,8 +26354,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -26586,8 +26366,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26598,8 +26378,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -26610,8 +26390,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26622,8 +26402,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -26634,8 +26414,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26646,8 +26426,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -26658,8 +26438,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26670,8 +26450,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -26682,8 +26462,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26694,8 +26474,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -26706,8 +26486,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26718,8 +26498,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -26730,8 +26510,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26742,8 +26522,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '8', context[13], context[14] );
@@ -26754,8 +26534,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '8' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26766,8 +26546,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '9', context[13], context[14] );
@@ -26778,8 +26558,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_C2, "SL_E_C2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-C2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_C2, "SL-E-C2" );
     refalrts::reinit_char( context[8], '9' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -26790,14 +26570,14 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_Code<int>::name ) )
@@ -26822,8 +26602,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -26860,8 +26640,8 @@ static refalrts::FnResult SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & SL_E_C1/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -26897,7 +26677,7 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
   static const refalrts::RefalFunction functions[] = {
     { Root, "Root" },
     { StringLiteral, "StringLiteral" },
-    { SL_E_OC2, "SL_E_OC2" }
+    { SL_E_OC2, "SL-E-OC2" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_TokenUnexpectedEOF<int>::name,
@@ -26908,24 +26688,24 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & SL_E_OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & SL-E-OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'0'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '0', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26934,15 +26714,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'1'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '1', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26951,15 +26731,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'2'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '2', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26968,15 +26748,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'3'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '3', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -26985,15 +26765,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'4'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '4', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -27002,15 +26782,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'5'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '5', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -27019,15 +26799,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'6'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '6', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -27036,15 +26816,15 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //(E )'7'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitChar, 0, '7', 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -27053,13 +26833,13 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icLinkBrackets, 7, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -27075,8 +26855,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -27102,8 +26882,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -27130,9 +26910,9 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & SL_E_OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & SL-E-OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -27148,8 +26928,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -27160,8 +26940,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '0' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27172,8 +26952,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -27184,8 +26964,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '1' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27196,8 +26976,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -27208,8 +26988,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '2' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27220,8 +27000,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -27232,8 +27012,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '3' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27244,8 +27024,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -27256,8 +27036,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '4' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27268,8 +27048,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -27280,8 +27060,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '5' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27292,8 +27072,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -27304,8 +27084,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '6' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27316,8 +27096,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -27328,8 +27108,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL_E_OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], SL_E_OC2, "SL_E_OC2" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    refalrts::update_name( context[4], SL_E_OC2, "SL-E-OC2" );
     refalrts::reinit_char( context[8], '7' );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -27340,14 +27120,14 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
@@ -27372,8 +27152,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -27410,8 +27190,8 @@ static refalrts::FnResult SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & SL_E_OC1/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -27457,24 +27237,24 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & SL_E_C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & SL-E-C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'0'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '0', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27494,15 +27274,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'1'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '1', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27522,15 +27302,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'2'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '2', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27550,15 +27330,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'3'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '3', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27578,15 +27358,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'4'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '4', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27606,15 +27386,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'5'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '5', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27634,15 +27414,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'6'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '6', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27662,15 +27442,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'7'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '7', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27690,15 +27470,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'8'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '8'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '8'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '8', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27718,15 +27498,15 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'9'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '9'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '9'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '9', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -27746,13 +27526,13 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -27768,8 +27548,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -27795,8 +27575,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -27823,9 +27603,9 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & SL_E_C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & SL-E-C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -27841,8 +27621,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -27853,7 +27633,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '0' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -27882,8 +27662,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -27894,7 +27674,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '1' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -27923,8 +27703,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -27935,7 +27715,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '2' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -27964,8 +27744,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -27976,7 +27756,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '3' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28005,8 +27785,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -28017,7 +27797,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '4' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28046,8 +27826,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -28058,7 +27838,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '5' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28087,8 +27867,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -28099,7 +27879,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '6' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28128,8 +27908,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -28140,7 +27920,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '7' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28169,8 +27949,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'8'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
+    // ( e.idx ) '8' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '8'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '8', context[13], context[14] );
@@ -28181,7 +27961,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '8'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '8'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '8' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28210,8 +27990,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )'9'E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
+    // ( e.idx ) '9' e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 '9'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '9', context[13], context[14] );
@@ -28222,7 +28002,7 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_Code/4 } Tile{ AsIs: e.Accum#1/5 } '9'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-Code/4 } Tile{ AsIs: e.Accum#1/5 } '9'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '9' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28251,14 +28031,14 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_Code<int>::name ) )
@@ -28283,8 +28063,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -28321,8 +28101,8 @@ static refalrts::FnResult SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & SL_E_C2/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
@@ -28368,24 +28148,24 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
-    // </0 & SL_E_OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
+    // </0 & SL-E-OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'0'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '0', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28405,15 +28185,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'1'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '1', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28433,15 +28213,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'2'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '2', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28461,15 +28241,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'3'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '3', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28489,15 +28269,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'4'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '4', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28517,15 +28297,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'5'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '5', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28545,15 +28325,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'6'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '6', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28573,15 +28353,15 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )'7'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 13},
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '7', 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
     {refalrts::icAllocFunc, 0, 1, 12},
@@ -28601,13 +28381,13 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceEVar, 0, 0, 5},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocIdent, 0, 3, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -28623,8 +28403,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 9, 10, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     {refalrts::icSave, 0, 13, 2},
     {refalrts::icsVarLeft, 0, 9, 13},
@@ -28650,8 +28430,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSpliceTile, 10, 10, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 >/1
+    // ( e.idx )
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Accum#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -28678,9 +28458,9 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
-  // </0 & SL_E_OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
+  // </0 & SL-E-OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -28696,8 +28476,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )'0'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
+    // ( e.idx ) '0' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '0', context[13], context[14] );
@@ -28708,7 +28488,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '0' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28737,8 +28517,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'1'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
+    // ( e.idx ) '1' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '1', context[13], context[14] );
@@ -28749,7 +28529,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '1' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28778,8 +28558,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'2'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
+    // ( e.idx ) '2' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '2', context[13], context[14] );
@@ -28790,7 +28570,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '2' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28819,8 +28599,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'3'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
+    // ( e.idx ) '3' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '3', context[13], context[14] );
@@ -28831,7 +28611,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '3' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28860,8 +28640,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'4'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
+    // ( e.idx ) '4' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '4', context[13], context[14] );
@@ -28872,7 +28652,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '4' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28901,8 +28681,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'5'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
+    // ( e.idx ) '5' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '5', context[13], context[14] );
@@ -28913,7 +28693,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '5' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28942,8 +28722,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'6'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
+    // ( e.idx ) '6' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '6', context[13], context[14] );
@@ -28954,7 +28734,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '6' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -28983,8 +28763,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )'7'E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
+    // ( e.idx ) '7' e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
     context[13] = context[2];
     context[14] = context[3];
     context[9] = refalrts::char_left( '7', context[13], context[14] );
@@ -28995,7 +28775,7 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral_OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[10], '7' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
@@ -29024,14 +28804,14 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
+    // ( e.idx ) e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/9 # TkLiteral_OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
@@ -29056,8 +28836,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //(E )S E 
-    // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
+    // ( e.idx ) s.idx e.idx
+    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 s.Unexpected#1/9 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     context[13] = context[2];
     context[14] = context[3];
@@ -29094,8 +28874,8 @@ static refalrts::FnResult SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
-  // </0 & SL_E_OC2/4 (/7 e.Accum#1/5 )/8 >/1
+  // ( e.idx )
+  // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5

@@ -5,7 +5,6 @@
 extern refalrts::FnResult Add(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult GetOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult Error(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult FoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end);
@@ -31,11 +30,11 @@ struct ident_Long {
   }
 };
 
-// identifier #Long_Param
+// identifier #Long-Param
 template <typename SREFAL_PARAM_INT>
 struct ident_Long_Param {
   static const char *name() {
-    return "Long_Param";
+    return "Long-Param";
   }
 };
 
@@ -118,6 +117,11 @@ struct ident_Word {
     return "Word";
   }
 };
+
+static refalrts::FnResult Error(refalrts::Iter, refalrts::Iter) {
+  refalrts::this_is_generated_function();
+  return refalrts::FnResult(refalrts::cRecognitionImpossible | (__LINE__ << 8));
+}
 
 refalrts::FnResult GetOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -314,15 +318,15 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:S E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: s.$ e.$
     // </0 & MarkupArguments/4 s.idx#0/5 e.idxV#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     // closed e.idxV#0 as range 2
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //S ('-''-')E 
+    // s.idx ( '--' ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 19, 2},
     {refalrts::icBracketLeftSave, 0, 6, 19},
@@ -346,7 +350,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icTrash, 0, 0, 4},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +32, 0, 0},
-    //S ('-''-'E )E 
+    // s.idx ( '--' e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 e.Arg#1/12 '='/14 e.Param#1/6 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 19, 2},
     {refalrts::icBracketLeftSave, 0, 6, 19},
@@ -360,7 +364,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     // closed e.Param#1 as range 21(6)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } (/15 Tile{ HalfReuse: # Long_Param/8 HalfReuse: s.Num1 #5/10 HalfReuse: (/11 AsIs: e.Arg#1/12 HalfReuse: )/14 AsIs: e.Param#1/21(6) AsIs: )/9 } </16 & MarkupArguments/17 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/18 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/15 Tile{ HalfReuse: # Long-Param/8 HalfReuse: s.Num1 #5/10 HalfReuse: (/11 AsIs: e.Arg#1/12 HalfReuse: )/14 AsIs: e.Param#1/21(6) AsIs: )/9 } </16 & MarkupArguments/17 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/18 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 15},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 16},
     {refalrts::icAllocFunc, 0, 1, 17},
@@ -385,7 +389,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSpliceTile, 15, 15, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +23, 0, 0},
-    //S ('-''-'E )E 
+    // s.idx ( '--' e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 19, 2},
     {refalrts::icBracketLeftSave, 0, 6, 19},
@@ -415,7 +419,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSpliceTile, 8, 9, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +25, 0, 0},
-    //S ('-'S E )E 
+    // s.idx ( '-' s.idx e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 s.Init#1/11 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 19, 2},
     {refalrts::icBracketLeftSave, 0, 6, 19},
@@ -447,7 +451,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSpliceTile, 12, 12, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +22, 0, 0},
-    //S (E )E 
+    // s.idx ( e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 19, 2},
     {refalrts::icBracketLeftSave, 0, 6, 19},
@@ -475,7 +479,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSpliceTile, 8, 8, 0},
     {refalrts::icSpliceEVar, 0, 0, 6},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //S 
+    // s.idx
     // </0 & MarkupArguments/4 s.Num#1/5 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -493,8 +497,8 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:S E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: s.$ e.$
   // </0 & MarkupArguments/4 s.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -506,7 +510,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
   // closed e.idxV#0 as range 2
   do {
     refalrts::start_sentence();
-    //S ('-''-')E 
+    // s.idx ( '--' ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 )/9 e.Tail#1/2 >/1
     context[19] = context[2];
     context[20] = context[3];
@@ -548,7 +552,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
 
   do {
     refalrts::start_sentence();
-    //S ('-''-'E )E 
+    // s.idx ( '--' e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 e.Arg#1/12 '='/14 e.Param#1/6 )/9 e.Tail#1/2 >/1
     context[19] = context[2];
     context[20] = context[3];
@@ -578,7 +582,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-      //RESULT: Tile{ [[ } (/15 Tile{ HalfReuse: # Long_Param/8 HalfReuse: s.Num1 #5/10 HalfReuse: (/11 AsIs: e.Arg#1/12 HalfReuse: )/14 AsIs: e.Param#1/21(6) AsIs: )/9 } </16 & MarkupArguments/17 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/18 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } (/15 Tile{ HalfReuse: # Long-Param/8 HalfReuse: s.Num1 #5/10 HalfReuse: (/11 AsIs: e.Arg#1/12 HalfReuse: )/14 AsIs: e.Param#1/21(6) AsIs: )/9 } </16 & MarkupArguments/17 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/18 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_bracket( context[15] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[16] ) )
@@ -614,7 +618,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
 
   do {
     refalrts::start_sentence();
-    //S ('-''-'E )E 
+    // s.idx ( '--' e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 '-'/11 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     context[19] = context[2];
     context[20] = context[3];
@@ -664,7 +668,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
 
   do {
     refalrts::start_sentence();
-    //S ('-'S E )E 
+    // s.idx ( '-' s.idx e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 '-'/10 s.Init#1/11 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     context[19] = context[2];
     context[20] = context[3];
@@ -716,7 +720,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
 
   do {
     refalrts::start_sentence();
-    //S (E )E 
+    // s.idx ( e.idx ) e.idx
     // </0 & MarkupArguments/4 s.Num#1/5 (/8 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     context[19] = context[2];
     context[20] = context[3];
@@ -761,7 +765,7 @@ static refalrts::FnResult MarkupArguments(refalrts::Iter arg_begin, refalrts::It
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //S 
+  // s.idx
   // </0 & MarkupArguments/4 s.Num#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -794,15 +798,15 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:S E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: s.$ e.$
     // </0 & MarkupAllFiles/4 s.idx#0/5 e.idxV#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     // closed e.idxV#0 as range 2
     {refalrts::icOnFailGoTo, +22, 0, 0},
-    //S (E )E 
+    // s.idx ( e.idx ) e.idx
     // </0 & MarkupAllFiles/4 s.Num#1/5 (/8 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     {refalrts::icSave, 0, 15, 2},
     {refalrts::icBracketLeftSave, 0, 6, 15},
@@ -830,7 +834,7 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icSpliceTile, 8, 8, 0},
     {refalrts::icSpliceEVar, 0, 0, 6},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //S 
+    // s.idx
     // </0 & MarkupAllFiles/4 s.Num#1/5 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -848,8 +852,8 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:S E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: s.$ e.$
   // </0 & MarkupAllFiles/4 s.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -861,7 +865,7 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.idxV#0 as range 2
   do {
     refalrts::start_sentence();
-    //S (E )E 
+    // s.idx ( e.idx ) e.idx
     // </0 & MarkupAllFiles/4 s.Num#1/5 (/8 e.Arg#1/6 )/9 e.Tail#1/2 >/1
     context[15] = context[2];
     context[16] = context[3];
@@ -906,7 +910,7 @@ static refalrts::FnResult MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //S 
+  // s.idx
   // </0 & MarkupAllFiles/4 s.Num#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -931,9 +935,9 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Error, "Error" },
-    { ResolveOpts_Short, "ResolveOpts_Short" },
-    { ResolveOpts_Long, "ResolveOpts_Long" },
-    { ResolveOpts_LongParam, "ResolveOpts_LongParam" }
+    { ResolveOpts_Short, "ResolveOpts-Short" },
+    { ResolveOpts_Long, "ResolveOpts-Long" },
+    { ResolveOpts_LongParam, "ResolveOpts-LongParam" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_FILE<int>::name,
@@ -947,8 +951,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & ResolveOpts/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -956,8 +960,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +39, 0, 0},
-    //(E )(#Long_ParamS (E )E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/19 (/23 s.Tag#1/25 s.HasArg#1/26 e.Opts_B#1/27 (/31 e.Long#1/33 )/32 e.Opts_E#1/21 )/24 e.Descrs_E#1/5 )/8 (/11 # Long_Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long-Param s.idx ( e.idx ) e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/19 (/23 s.Tag#1/25 s.HasArg#1/26 e.Opts-B#1/27 (/31 e.Long#1/33 )/32 e.Opts-E#1/21 )/24 e.Descrs-E#1/5 )/8 (/11 # Long-Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
     {refalrts::icIdentLeftSave, 13, 6, 9},
@@ -971,7 +975,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icEStart, 0, 19, 39},
     {refalrts::icSave, 0, 41, 39},
     {refalrts::icBracketLeftSave, 0, 21, 41},
-    // closed e.Descrs_E#1 as range 41(5)
+    // closed e.Descrs-E#1 as range 41(5)
     {refalrts::icsVarLeft, 0, 25, 21},
     {refalrts::icsVarLeft, 0, 26, 21},
     {refalrts::icEPrepare, 0, 27, 21},
@@ -980,10 +984,10 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icBracketLeftSave, 0, 29, 43},
     {refalrts::iceRepeatLeft, 33, 15, 29},
     {refalrts::icEmpty, 0, 0, 29},
-    // closed e.Opts_E#1 as range 43(21)
+    // closed e.Opts-E#1 as range 43(21)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_LongParam/4 AsIs: (/7 AsIs: e.Descrs_B#1/19 AsIs: (/23 AsIs: s.Tag#1/25 AsIs: s.HasArg#1/26 AsIs: e.Opts_B#1/27 AsIs: (/31 AsIs: e.Long#1/33 AsIs: )/32 AsIs: e.Opts_E#1/43(21) AsIs: )/24 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #25/13 } s.HasArg#1/26/35 Tile{ AsIs: (/17 } Tile{ AsIs: e.Long#1/15 } )/36 Tile{ HalfReuse: (/18 AsIs: e.Param#1/9 AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-LongParam/4 AsIs: (/7 AsIs: e.Descrs-B#1/19 AsIs: (/23 AsIs: s.Tag#1/25 AsIs: s.HasArg#1/26 AsIs: e.Opts-B#1/27 AsIs: (/31 AsIs: e.Long#1/33 AsIs: )/32 AsIs: e.Opts-E#1/43(21) AsIs: )/24 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #25/13 } s.HasArg#1/26/35 Tile{ AsIs: (/17 } Tile{ AsIs: e.Long#1/15 } )/36 Tile{ HalfReuse: (/18 AsIs: e.Param#1/9 AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
     {refalrts::icCopySTVar, 35, 26, 0},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 36},
     {refalrts::icUpdateFunc, 0, 3, 4},
@@ -1005,8 +1009,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icTrash, 0, 0, 13},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //(E )(#Long_ParamS (E )E )E 
-    // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long_Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long-Param s.idx ( e.idx ) e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long-Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
     {refalrts::icIdentLeftSave, 13, 6, 9},
@@ -1032,8 +1036,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +34, 0, 0},
-    //(E )(#LongS E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/15 (/19 s.Tag#1/21 s.HasArg#1/22 e.Opts_B#1/23 (/27 e.Long#1/29 )/28 e.Opts_E#1/17 )/20 e.Descrs_E#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long s.idx e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/15 (/19 s.Tag#1/21 s.HasArg#1/22 e.Opts-B#1/23 (/27 e.Long#1/29 )/28 e.Opts-E#1/17 )/20 e.Descrs-E#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
     {refalrts::icIdentLeftSave, 13, 5, 9},
@@ -1045,7 +1049,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icEStart, 0, 15, 39},
     {refalrts::icSave, 0, 41, 39},
     {refalrts::icBracketLeftSave, 0, 17, 41},
-    // closed e.Descrs_E#1 as range 41(5)
+    // closed e.Descrs-E#1 as range 41(5)
     {refalrts::icsVarLeft, 0, 21, 17},
     {refalrts::icsVarLeft, 0, 22, 17},
     {refalrts::icEPrepare, 0, 23, 17},
@@ -1054,10 +1058,10 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icBracketLeftSave, 0, 25, 43},
     {refalrts::iceRepeatLeft, 29, 9, 25},
     {refalrts::icEmpty, 0, 0, 25},
-    // closed e.Opts_E#1 as range 43(17)
+    // closed e.Opts-E#1 as range 43(17)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_Long/4 AsIs: (/7 AsIs: e.Descrs_B#1/15 AsIs: (/19 AsIs: s.Tag#1/21 AsIs: s.HasArg#1/22 AsIs: e.Opts_B#1/23 AsIs: (/27 AsIs: e.Long#1/29 AsIs: )/28 AsIs: e.Opts_E#1/43(17) AsIs: )/20 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #21/13 } s.HasArg#1/22/31 (/32 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Long/4 AsIs: (/7 AsIs: e.Descrs-B#1/15 AsIs: (/19 AsIs: s.Tag#1/21 AsIs: s.HasArg#1/22 AsIs: e.Opts-B#1/23 AsIs: (/27 AsIs: e.Long#1/29 AsIs: )/28 AsIs: e.Opts-E#1/43(17) AsIs: )/20 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #21/13 } s.HasArg#1/22/31 (/32 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
     {refalrts::icCopySTVar, 31, 22, 0},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 32},
     {refalrts::icUpdateFunc, 0, 2, 4},
@@ -1075,7 +1079,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icTrash, 0, 0, 13},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )(#LongS E )E 
+    // ( e.idx ) ( # Long s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
@@ -1102,8 +1106,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceTile, 11, 14, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +34, 0, 0},
-    //(E )(#ShortS S E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/16 (/20 s.Tag#1/22 s.HasArg#1/23 e.Opts_B#1/24 s.Short#1/26 e.Opts_E#1/18 )/21 e.Descrs_E#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Short s.idx s.idx e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/16 (/20 s.Tag#1/22 s.HasArg#1/23 e.Opts-B#1/24 s.Short#1/26 e.Opts-E#1/18 )/21 e.Descrs-E#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
     {refalrts::icIdentLeftSave, 13, 3, 9},
@@ -1116,17 +1120,17 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icEStart, 0, 16, 39},
     {refalrts::icSave, 0, 41, 39},
     {refalrts::icBracketLeftSave, 0, 18, 41},
-    // closed e.Descrs_E#1 as range 41(5)
+    // closed e.Descrs-E#1 as range 41(5)
     {refalrts::icsVarLeft, 0, 22, 18},
     {refalrts::icsVarLeft, 0, 23, 18},
     {refalrts::icEPrepare, 0, 24, 18},
     {refalrts::icEStart, 0, 24, 18},
     {refalrts::icSave, 0, 43, 18},
     {refalrts::icsRepeatLeft, 26, 15, 43},
-    // closed e.Opts_E#1 as range 43(18)
+    // closed e.Opts-E#1 as range 43(18)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_Short/4 AsIs: (/7 AsIs: e.Descrs_B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.HasArg#1/23 AsIs: e.Opts_B#1/24 AsIs: s.Short#1/26 AsIs: e.Opts_E#1/43(18) AsIs: )/21 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #22/13 } s.HasArg#1/23/27 Tile{ AsIs: s.Short#1/15 } (/28 Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Short/4 AsIs: (/7 AsIs: e.Descrs-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.HasArg#1/23 AsIs: e.Opts-B#1/24 AsIs: s.Short#1/26 AsIs: e.Opts-E#1/43(18) AsIs: )/21 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #22/13 } s.HasArg#1/23/27 Tile{ AsIs: s.Short#1/15 } (/28 Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
     {refalrts::icCopySTVar, 27, 23, 0},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 28},
     {refalrts::icUpdateFunc, 0, 1, 4},
@@ -1145,7 +1149,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icTrash, 0, 0, 13},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )(#ShortS S )E 
+    // ( e.idx ) ( # Short s.idx s.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
@@ -1172,7 +1176,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceTile, 11, 14, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +23, 0, 0},
-    //(E )(#ShortS S E )E 
+    // ( e.idx ) ( # Short s.idx s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
@@ -1203,7 +1207,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceTile, 16, 19, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(E )(#WordS E )E 
+    // ( e.idx ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Word/13 s.Num#1/14 e.File#1/9 )/12 e.ArgsTail#1/2 >/1
     {refalrts::icSave, 0, 37, 2},
     {refalrts::icBracketLeftSave, 0, 9, 37},
@@ -1225,7 +1229,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceTile, 0, 8, 0},
     {refalrts::icSpliceTile, 11, 12, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 >/1
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.Description#1 as range 5
@@ -1244,8 +1248,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & ResolveOpts/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1262,8 +1266,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )(#Long_ParamS (E )E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/19 (/23 s.Tag#1/25 s.HasArg#1/26 e.Opts_B#1/27 (/31 e.Long#1/33 )/32 e.Opts_E#1/21 )/24 e.Descrs_E#1/5 )/8 (/11 # Long_Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long-Param s.idx ( e.idx ) e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/19 (/23 s.Tag#1/25 s.HasArg#1/26 e.Opts-B#1/27 (/31 e.Long#1/33 )/32 e.Opts-E#1/21 )/24 e.Descrs-E#1/5 )/8 (/11 # Long-Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
     context[9] = 0;
@@ -1300,7 +1304,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
       if( ! context[23] )
         continue;
       refalrts::bracket_pointers(context[23], context[24]);
-      // closed e.Descrs_E#1 as range 41(5)
+      // closed e.Descrs-E#1 as range 41(5)
       if( ! refalrts::svar_left( context[25], context[21], context[22] ) )
         continue;
       if( ! refalrts::svar_left( context[26], context[21], context[22] ) )
@@ -1321,16 +1325,16 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
           continue;
         if( ! refalrts::empty_seq( context[29], context[30] ) )
           continue;
-        // closed e.Opts_E#1 as range 43(21)
+        // closed e.Opts-E#1 as range 43(21)
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_LongParam/4 AsIs: (/7 AsIs: e.Descrs_B#1/19 AsIs: (/23 AsIs: s.Tag#1/25 AsIs: s.HasArg#1/26 AsIs: e.Opts_B#1/27 AsIs: (/31 AsIs: e.Long#1/33 AsIs: )/32 AsIs: e.Opts_E#1/43(21) AsIs: )/24 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #25/13 } s.HasArg#1/26/35 Tile{ AsIs: (/17 } Tile{ AsIs: e.Long#1/15 } )/36 Tile{ HalfReuse: (/18 AsIs: e.Param#1/9 AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-LongParam/4 AsIs: (/7 AsIs: e.Descrs-B#1/19 AsIs: (/23 AsIs: s.Tag#1/25 AsIs: s.HasArg#1/26 AsIs: e.Opts-B#1/27 AsIs: (/31 AsIs: e.Long#1/33 AsIs: )/32 AsIs: e.Opts-E#1/43(21) AsIs: )/24 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #25/13 } s.HasArg#1/26/35 Tile{ AsIs: (/17 } Tile{ AsIs: e.Long#1/15 } )/36 Tile{ HalfReuse: (/18 AsIs: e.Param#1/9 AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
         if (! refalrts::copy_stvar(context[35], context[26]))
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( context[36] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ResolveOpts_LongParam, "ResolveOpts_LongParam" );
+        refalrts::update_name( context[4], ResolveOpts_LongParam, "ResolveOpts-LongParam" );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[25] );
         refalrts::reinit_open_bracket( context[18] );
@@ -1357,8 +1361,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#Long_ParamS (E )E )E 
-    // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long_Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long-Param s.idx ( e.idx ) e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long-Param/13 s.Num#1/14 (/17 e.Long#1/15 )/18 e.Param#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
     context[9] = 0;
@@ -1405,8 +1409,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#LongS E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/15 (/19 s.Tag#1/21 s.HasArg#1/22 e.Opts_B#1/23 (/27 e.Long#1/29 )/28 e.Opts_E#1/17 )/20 e.Descrs_E#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Long s.idx e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/15 (/19 s.Tag#1/21 s.HasArg#1/22 e.Opts-B#1/23 (/27 e.Long#1/29 )/28 e.Opts-E#1/17 )/20 e.Descrs-E#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
     context[9] = 0;
@@ -1436,7 +1440,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
       if( ! context[19] )
         continue;
       refalrts::bracket_pointers(context[19], context[20]);
-      // closed e.Descrs_E#1 as range 41(5)
+      // closed e.Descrs-E#1 as range 41(5)
       if( ! refalrts::svar_left( context[21], context[17], context[18] ) )
         continue;
       if( ! refalrts::svar_left( context[22], context[17], context[18] ) )
@@ -1457,16 +1461,16 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
           continue;
         if( ! refalrts::empty_seq( context[25], context[26] ) )
           continue;
-        // closed e.Opts_E#1 as range 43(17)
+        // closed e.Opts-E#1 as range 43(17)
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE} 
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_Long/4 AsIs: (/7 AsIs: e.Descrs_B#1/15 AsIs: (/19 AsIs: s.Tag#1/21 AsIs: s.HasArg#1/22 AsIs: e.Opts_B#1/23 AsIs: (/27 AsIs: e.Long#1/29 AsIs: )/28 AsIs: e.Opts_E#1/43(17) AsIs: )/20 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #21/13 } s.HasArg#1/22/31 (/32 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Long/4 AsIs: (/7 AsIs: e.Descrs-B#1/15 AsIs: (/19 AsIs: s.Tag#1/21 AsIs: s.HasArg#1/22 AsIs: e.Opts-B#1/23 AsIs: (/27 AsIs: e.Long#1/29 AsIs: )/28 AsIs: e.Opts-E#1/43(17) AsIs: )/20 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #21/13 } s.HasArg#1/22/31 (/32 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
         if (! refalrts::copy_stvar(context[31], context[22]))
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[32] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ResolveOpts_Long, "ResolveOpts_Long" );
+        refalrts::update_name( context[4], ResolveOpts_Long, "ResolveOpts-Long" );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[21] );
         refalrts::push_stack( context[1] );
@@ -1489,7 +1493,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#LongS E )E 
+    // ( e.idx ) ( # Long s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Long/13 s.Num#1/14 e.Long#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
@@ -1533,8 +1537,8 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#ShortS S E )E 
-    // </0 & ResolveOpts/4 (/7 e.Descrs_B#1/16 (/20 s.Tag#1/22 s.HasArg#1/23 e.Opts_B#1/24 s.Short#1/26 e.Opts_E#1/18 )/21 e.Descrs_E#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
+    // ( e.idx ) ( # Short s.idx s.idx e.idx ) e.idx
+    // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/16 (/20 s.Tag#1/22 s.HasArg#1/23 e.Opts-B#1/24 s.Short#1/26 e.Opts-E#1/18 )/21 e.Descrs-E#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
     context[9] = 0;
@@ -1566,7 +1570,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
       if( ! context[20] )
         continue;
       refalrts::bracket_pointers(context[20], context[21]);
-      // closed e.Descrs_E#1 as range 41(5)
+      // closed e.Descrs-E#1 as range 41(5)
       if( ! refalrts::svar_left( context[22], context[18], context[19] ) )
         continue;
       if( ! refalrts::svar_left( context[23], context[18], context[19] ) )
@@ -1579,16 +1583,16 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
         context[44] = context[19];
         if( ! refalrts::repeated_stvar_left( context[26], context[15], context[43], context[44] ) )
           continue;
-        // closed e.Opts_E#1 as range 43(18)
+        // closed e.Opts-E#1 as range 43(18)
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE}  s.Num#1/14 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts_Short/4 AsIs: (/7 AsIs: e.Descrs_B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.HasArg#1/23 AsIs: e.Opts_B#1/24 AsIs: s.Short#1/26 AsIs: e.Opts_E#1/43(18) AsIs: )/21 AsIs: e.Descrs_E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #22/13 } s.HasArg#1/23/27 Tile{ AsIs: s.Short#1/15 } (/28 Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Short/4 AsIs: (/7 AsIs: e.Descrs-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.HasArg#1/23 AsIs: e.Opts-B#1/24 AsIs: s.Short#1/26 AsIs: e.Opts-E#1/43(18) AsIs: )/21 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #22/13 } s.HasArg#1/23/27 Tile{ AsIs: s.Short#1/15 } (/28 Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
         if (! refalrts::copy_stvar(context[27], context[23]))
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[28] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ResolveOpts_Short, "ResolveOpts_Short" );
+        refalrts::update_name( context[4], ResolveOpts_Short, "ResolveOpts-Short" );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[22] );
         refalrts::push_stack( context[1] );
@@ -1612,7 +1616,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#ShortS S )E 
+    // ( e.idx ) ( # Short s.idx s.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
@@ -1658,7 +1662,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#ShortS S E )E 
+    // ( e.idx ) ( # Short s.idx s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Short/13 s.Num#1/14 s.Short#1/15 e.OptTail#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
@@ -1711,7 +1715,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
 
   do {
     refalrts::start_sentence();
-    //(E )(#WordS E )E 
+    // ( e.idx ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 (/11 # Word/13 s.Num#1/14 e.File#1/9 )/12 e.ArgsTail#1/2 >/1
     context[37] = context[2];
     context[38] = context[3];
@@ -1748,7 +1752,7 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )
+  // ( e.idx )
   // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -1764,11 +1768,6 @@ static refalrts::FnResult ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter a
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif
-}
-
-static refalrts::FnResult Error(refalrts::Iter, refalrts::Iter) {
-  refalrts::this_is_generated_function();
-  return refalrts::FnResult(refalrts::cRecognitionImpossible | (__LINE__ << 8));
 }
 
 static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1790,9 +1789,9 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )S S S (E )(E )E 
-    //GLOBAL GEN:(E )S S S (E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 (/18 e.idxTVVVTB#0/16 )/19 e.idxTVVVTT#0/2 >/1
+    //FAST GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) ( e.$ ) e.$
+    //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) ( e.$ ) e.$
+    // </0 & ResolveOpts-LongParam/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 (/18 e.idxTVVVTB#0/16 )/19 e.idxTVVVTT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -1806,8 +1805,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
     // closed e.idxTVVVTB#0 as range 16
     // closed e.idxTVVVTT#0 as range 2
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //(E )S S #Required(E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( e.idx ) e.idx
+    // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 3, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1831,8 +1830,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +16, 0, 0},
-    //(E )S S #Optional(E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( e.idx ) e.idx
+    // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1855,8 +1854,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
     {refalrts::icSpliceTile, 14, 14, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )S S #None(E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # None ( e.idx ) ( e.idx ) e.idx
+    // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 1, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1897,9 +1896,9 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
   );
   return res;
 #else
-  //FAST GEN:(E )S S S (E )(E )E 
-  //GLOBAL GEN:(E )S S S (E )(E )E 
-  // </0 & ResolveOpts_LongParam/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 (/18 e.idxTVVVTB#0/16 )/19 e.idxTVVVTT#0/2 >/1
+  //FAST GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) ( e.$ ) e.$
+  // </0 & ResolveOpts-LongParam/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 (/18 e.idxTVVVTB#0/16 )/19 e.idxTVVVTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1935,8 +1934,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
   // closed e.idxTVVVTT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )S S #Required(E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( e.idx ) e.idx
+    // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -1968,8 +1967,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
 
   do {
     refalrts::start_sentence();
-    //(E )S S #Optional(E )(E )E 
-    // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( e.idx ) e.idx
+    // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -1999,8 +1998,8 @@ static refalrts::FnResult ResolveOpts_LongParam(refalrts::Iter arg_begin, refalr
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )S S #None(E )(E )E 
-  // </0 & ResolveOpts_LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+  // ( e.idx ) s.idx s.idx # None ( e.idx ) ( e.idx ) e.idx
+  // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
   if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
@@ -2064,9 +2063,9 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )S S S (E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
+    // </0 & ResolveOpts-Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2078,8 +2077,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     // closed e.idxTVVVB#0 as range 12
     // closed e.idxTVVVT#0 as range 2
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S S #Required(E )(#WordS E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
     {refalrts::icSave, 0, 22, 2},
     {refalrts::icBracketLeftSave, 0, 16, 22},
@@ -2108,8 +2107,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S S #Required(E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -2137,8 +2136,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +21, 0, 0},
-    //(E )S S #Optional(E )(#WordS E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     {refalrts::icSave, 0, 22, 2},
     {refalrts::icBracketLeftSave, 0, 16, 22},
@@ -2167,8 +2166,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //(E )S S #Optional(E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -2192,8 +2191,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icSpliceTile, 16, 16, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )S S #None(E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # None ( e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 0, 11},
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -2225,9 +2224,9 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )S S S (E )E 
-  // </0 & ResolveOpts_Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
+  // </0 & ResolveOpts-Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2256,8 +2255,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
   // closed e.idxTVVVT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )S S #Required(E )(#WordS E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     context[22] = context[2];
@@ -2303,8 +2302,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
 
   do {
     refalrts::start_sentence();
-    //(E )S S #Required(E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required ( e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -2343,8 +2342,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
 
   do {
     refalrts::start_sentence();
-    //(E )S S #Optional(E )(#WordS E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     context[22] = context[2];
@@ -2390,8 +2389,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
 
   do {
     refalrts::start_sentence();
-    //(E )S S #Optional(E )E 
-    // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional ( e.idx ) e.idx
+    // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -2423,8 +2422,8 @@ static refalrts::FnResult ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::I
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )S S #None(E )E 
-  // </0 & ResolveOpts_Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
+  // ( e.idx ) s.idx s.idx # None ( e.idx ) e.idx
+  // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
   if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
@@ -2477,9 +2476,9 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )S S S S (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
+    // </0 & ResolveOpts-Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2492,8 +2491,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     // closed e.idxTVVVVB#0 as range 13
     // closed e.idxTVVVVT#0 as range 2
     {refalrts::icOnFailGoTo, +23, 0, 0},
-    //(E )S S #RequiredS ()(#WordS E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
     {refalrts::icSave, 0, 23, 2},
     {refalrts::icBracketLeftSave, 0, 17, 23},
@@ -2523,8 +2522,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +23, 0, 0},
-    //(E )S S #RequiredS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
     {refalrts::icSave, 0, 23, 13},
     {refalrts::icEmpty, 0, 0, 23},
@@ -2553,8 +2552,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
-    //(E )S S #RequiredS (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 5, 11},
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
@@ -2578,8 +2577,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +23, 0, 0},
-    //(E )S S #OptionalS ()(#WordS E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     {refalrts::icSave, 0, 23, 2},
     {refalrts::icBracketLeftSave, 0, 17, 23},
@@ -2609,8 +2608,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )S S #OptionalS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     {refalrts::icSave, 0, 23, 13},
     {refalrts::icEmpty, 0, 0, 23},
@@ -2636,8 +2635,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +17, 0, 0},
-    //(E )S S #OptionalS (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 2, 11},
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
@@ -2661,8 +2660,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +18, 0, 0},
-    //(E )S S #NoneS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # None s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 1, 11},
     {refalrts::icSave, 0, 23, 13},
     {refalrts::icEmpty, 0, 0, 23},
@@ -2685,8 +2684,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     {refalrts::icSpliceTile, 15, 15, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )S S #NoneS (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 e.OptTail#1/13 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # None s.idx ( e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 e.OptTail#1/13 )/16 e.ArgsTail#1/2 >/1
     {refalrts::icIdentTerm, 0, 1, 11},
     // closed e.Description#1 as range 5
     // closed e.OptTail#1 as range 13
@@ -2723,9 +2722,9 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )S S S S (E )E 
-  // </0 & ResolveOpts_Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
+  // </0 & ResolveOpts-Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2756,8 +2755,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
   // closed e.idxTVVVVT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )S S #RequiredS ()(#WordS E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     context[23] = context[2];
@@ -2806,8 +2805,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #RequiredS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     context[23] = context[13];
@@ -2848,8 +2847,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #RequiredS (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Required s.idx ( e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -2881,8 +2880,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #OptionalS ()(#WordS E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( ) ( # Word s.idx e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     context[23] = context[2];
@@ -2931,8 +2930,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #OptionalS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     context[23] = context[13];
@@ -2969,8 +2968,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #OptionalS (E )E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # Optional s.idx ( e.idx ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
@@ -3002,8 +3001,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
 
   do {
     refalrts::start_sentence();
-    //(E )S S #NoneS ()E 
-    // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
+    // ( e.idx ) s.idx s.idx # None s.idx ( ) e.idx
+    // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
     if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
       continue;
     context[23] = context[13];
@@ -3035,8 +3034,8 @@ static refalrts::FnResult ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )S S #NoneS (E )E 
-  // </0 & ResolveOpts_Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 e.OptTail#1/13 )/16 e.ArgsTail#1/2 >/1
+  // ( e.idx ) s.idx s.idx # None s.idx ( e.idx ) e.idx
+  // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 e.OptTail#1/13 )/16 e.ArgsTail#1/2 >/1
   if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
@@ -3157,8 +3156,8 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: ( e.$ ) e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & DoFoldErrors/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -3166,7 +3165,7 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +22, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/9 (/13 & Error/15 s.Num#1/16 s.ErrorCode#1/17 e.Info#1/11 )/14 e.OptionsAndErrors#1/2 >/1
     // closed e.Errors#1 as range 5
     {refalrts::icSave, 0, 18, 2},
@@ -3195,7 +3194,7 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSpliceTile, 16, 14, 0},
     {refalrts::icTrash, 0, 0, 8},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/2 >/1
     // closed e.Errors#1 as range 5
     // closed e.Options#1 as range 2
@@ -3217,8 +3216,8 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
   );
   return res;
 #else
-  //FAST GEN:(E )E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & DoFoldErrors/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3235,7 +3234,7 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/9 (/13 & Error/15 s.Num#1/16 s.ErrorCode#1/17 e.Info#1/11 )/14 e.OptionsAndErrors#1/2 >/1
     // closed e.Errors#1 as range 5
     context[18] = context[2];
@@ -3284,7 +3283,7 @@ static refalrts::FnResult DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter 
     } while ( refalrts::open_evar_advance( context[9], context[10], context[18], context[19] ) );
   } while ( 0 );
 
-  //(E )E 
+  // ( e.idx ) e.idx
   // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/2 >/1
   // closed e.Errors#1 as range 5
   // closed e.Options#1 as range 2

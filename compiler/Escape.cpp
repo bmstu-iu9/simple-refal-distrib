@@ -5,9 +5,12 @@
 extern refalrts::FnResult Compare(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Div(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 
 static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -21,15 +24,15 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S 
-    //GLOBAL GEN:S 
+    //FAST GEN: s.$
+    //GLOBAL GEN: s.$
     // </0 & OctDigit/4 s.idx#0/5 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //0 
+    // 0
     // </0 & OctDigit/4 0/5 >/1
     {refalrts::icNumTerm, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -40,7 +43,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //1 
+    // 1
     // </0 & OctDigit/4 1/5 >/1
     {refalrts::icNumTerm, 0, 1, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -51,7 +54,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //2 
+    // 2
     // </0 & OctDigit/4 2/5 >/1
     {refalrts::icNumTerm, 0, 2, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -62,7 +65,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //3 
+    // 3
     // </0 & OctDigit/4 3/5 >/1
     {refalrts::icNumTerm, 0, 3, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -73,7 +76,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //4 
+    // 4
     // </0 & OctDigit/4 4/5 >/1
     {refalrts::icNumTerm, 0, 4, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -84,7 +87,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //5 
+    // 5
     // </0 & OctDigit/4 5/5 >/1
     {refalrts::icNumTerm, 0, 5, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -95,7 +98,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //6 
+    // 6
     // </0 & OctDigit/4 6/5 >/1
     {refalrts::icNumTerm, 0, 6, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -105,7 +108,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //7 
+    // 7
     // </0 & OctDigit/4 7/5 >/1
     {refalrts::icNumTerm, 0, 7, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -124,8 +127,8 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
   );
   return res;
 #else
-  //FAST GEN:S 
-  //GLOBAL GEN:S 
+  //FAST GEN: s.$
+  //GLOBAL GEN: s.$
   // </0 & OctDigit/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -138,7 +141,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   do {
     refalrts::start_sentence();
-    //0 
+    // 0
     // </0 & OctDigit/4 0/5 >/1
     if( ! refalrts::number_term( 0UL, context[5] ) )
       continue;
@@ -157,7 +160,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //1 
+    // 1
     // </0 & OctDigit/4 1/5 >/1
     if( ! refalrts::number_term( 1UL, context[5] ) )
       continue;
@@ -176,7 +179,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //2 
+    // 2
     // </0 & OctDigit/4 2/5 >/1
     if( ! refalrts::number_term( 2UL, context[5] ) )
       continue;
@@ -195,7 +198,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //3 
+    // 3
     // </0 & OctDigit/4 3/5 >/1
     if( ! refalrts::number_term( 3UL, context[5] ) )
       continue;
@@ -214,7 +217,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //4 
+    // 4
     // </0 & OctDigit/4 4/5 >/1
     if( ! refalrts::number_term( 4UL, context[5] ) )
       continue;
@@ -233,7 +236,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //5 
+    // 5
     // </0 & OctDigit/4 5/5 >/1
     if( ! refalrts::number_term( 5UL, context[5] ) )
       continue;
@@ -252,7 +255,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   do {
     refalrts::start_sentence();
-    //6 
+    // 6
     // </0 & OctDigit/4 6/5 >/1
     if( ! refalrts::number_term( 6UL, context[5] ) )
       continue;
@@ -269,7 +272,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //7 
+  // 7
   // </0 & OctDigit/4 7/5 >/1
   if( ! refalrts::number_term( 7UL, context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -287,7 +290,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
 #endif
 }
 
-static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 32 elems
   refalrts::Iter context[32];
@@ -302,9 +305,9 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S S S 
-    //GLOBAL GEN:S S S 
-    // </0 & lambda_EscapeChar_0/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
+    //FAST GEN: s.$ s.$ s.$
+    //GLOBAL GEN: s.$ s.$ s.$
+    // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
@@ -312,8 +315,8 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icsVarLeft, 0, 7, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icOnFailGoTo, +50, 0, 0},
-    //S '<'S 
-    // </0 & lambda_EscapeChar_0/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
+    // s.idx '<' s.idx
+    // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 6},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Other#1/5 {REMOVED TILE}  {REMOVED TILE} 
@@ -366,10 +369,10 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceTile, 8, 8, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //S S S 
-    // </0 & lambda_EscapeChar_0/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+    // s.idx s.idx s.idx
+    // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_EscapeChar_0/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
     {refalrts::icReinitSVar, 0, 5, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -384,9 +387,9 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
   );
   return res;
 #else
-  //FAST GEN:S S S 
-  //GLOBAL GEN:S S S 
-  // </0 & lambda_EscapeChar_0/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
+  //FAST GEN: s.$ s.$ s.$
+  //GLOBAL GEN: s.$ s.$ s.$
+  // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -402,8 +405,8 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   do {
     refalrts::start_sentence();
-    //S '<'S 
-    // </0 & lambda_EscapeChar_0/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
+    // s.idx '<' s.idx
+    // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     if( ! refalrts::char_term( '<', context[6] ) )
       continue;
 
@@ -487,11 +490,11 @@ static refalrts::FnResult lambda_EscapeChar_0(refalrts::Iter arg_begin, refalrts
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //S S S 
-  // </0 & lambda_EscapeChar_0/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+  // s.idx s.idx s.idx
+  // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & lambda_EscapeChar_0/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}  </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
   //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
   refalrts::reinit_svar( context[1], context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -511,8 +514,8 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
     { Ord, "Ord" },
-    { lambda_EscapeChar_0, "lambda_EscapeChar_0" },
-    { refalrts::create_closure, "refalrts::create_closure" },
+    { gen_EscapeChar_S7L1, "EscapeChar$7\\1" },
+    { refalrts::create_closure, "@create_closure@" },
     { Compare, "Compare" },
     { Fetch, "Fetch" }
   };
@@ -520,15 +523,15 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S 
-    //GLOBAL GEN:S 
+    //FAST GEN: s.$
+    //GLOBAL GEN: s.$
     // </0 & EscapeChar/4 s.idx#0/5 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //'\n'
+    // '\n'
     // </0 & EscapeChar/4 '\n'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\n'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -540,7 +543,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //'\t'
+    // '\t'
     // </0 & EscapeChar/4 '\t'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\t'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -552,7 +555,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //'\r'
+    // '\r'
     // </0 & EscapeChar/4 '\r'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\r'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -564,7 +567,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //'\''
+    // '\''
     // </0 & EscapeChar/4 '\''/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\''), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -576,7 +579,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //'\"'
+    // '\"'
     // </0 & EscapeChar/4 '\"'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\"'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -588,7 +591,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +6, 0, 0},
-    //'\\'
+    // '\\'
     // </0 & EscapeChar/4 '\\'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\\'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -598,11 +601,11 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     {refalrts::icSetRes, 0, 0, 5},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //S 
+    // s.idx
     // </0 & EscapeChar/4 s.Other#1/5 >/1
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & CreateClosure /14 & lambda_EscapeChar_0/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
+    //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icAllocFunc, 0, 4, 7},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
@@ -639,8 +642,8 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   );
   return res;
 #else
-  //FAST GEN:S 
-  //GLOBAL GEN:S 
+  //FAST GEN: s.$
+  //GLOBAL GEN: s.$
   // </0 & EscapeChar/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -653,7 +656,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::cRecognitionImpossible;
   do {
     refalrts::start_sentence();
-    //'\n'
+    // '\n'
     // </0 & EscapeChar/4 '\n'/5 >/1
     if( ! refalrts::char_term( '\n', context[5] ) )
       continue;
@@ -673,7 +676,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 
   do {
     refalrts::start_sentence();
-    //'\t'
+    // '\t'
     // </0 & EscapeChar/4 '\t'/5 >/1
     if( ! refalrts::char_term( '\t', context[5] ) )
       continue;
@@ -693,7 +696,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 
   do {
     refalrts::start_sentence();
-    //'\r'
+    // '\r'
     // </0 & EscapeChar/4 '\r'/5 >/1
     if( ! refalrts::char_term( '\r', context[5] ) )
       continue;
@@ -713,7 +716,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 
   do {
     refalrts::start_sentence();
-    //'\''
+    // '\''
     // </0 & EscapeChar/4 '\''/5 >/1
     if( ! refalrts::char_term( '\'', context[5] ) )
       continue;
@@ -733,7 +736,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 
   do {
     refalrts::start_sentence();
-    //'\"'
+    // '\"'
     // </0 & EscapeChar/4 '\"'/5 >/1
     if( ! refalrts::char_term( '\"', context[5] ) )
       continue;
@@ -753,7 +756,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
 
   do {
     refalrts::start_sentence();
-    //'\\'
+    // '\\'
     // </0 & EscapeChar/4 '\\'/5 >/1
     if( ! refalrts::char_term( '\\', context[5] ) )
       continue;
@@ -770,12 +773,12 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //S 
+  // s.idx
   // </0 & EscapeChar/4 s.Other#1/5 >/1
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & CreateClosure /14 & lambda_EscapeChar_0/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
+  //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], Fetch, "Fetch" ) )
@@ -792,9 +795,9 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], refalrts::create_closure, "refalrts::create_closure" ) )
+  if( ! refalrts::alloc_name( context[14], refalrts::create_closure, "@create_closure@" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], lambda_EscapeChar_0, "lambda_EscapeChar_0" ) )
+  if( ! refalrts::alloc_name( context[15], gen_EscapeChar_S7L1, "EscapeChar$7\\1" ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[16], context[5]))
     return refalrts::cNoMemory;
@@ -817,6 +820,70 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   res = refalrts::splice_evar( res, context[13], context[18] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[6], context[12] );
+  refalrts::use( res );
+  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+#endif
+}
+
+refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 6 elems
+  refalrts::Iter context[6];
+  refalrts::zeros( context, 6 );
+#ifdef INTERPRET
+  static const refalrts::RefalFunction functions[] = {
+    { EscapeChar, "EscapeChar" },
+    { Map, "Map" }
+  };
+  using refalrts::idents;
+  using refalrts::numbers;
+  using refalrts::strings;
+  static const refalrts::RASLCommand raa[] = {
+    // </0 & EscapeString/4 e.String#1/2 >/1
+    {refalrts::icInitB0_Lite, 0, 0, 0},
+    {refalrts::icCallSaveLeft, 0, 2, 0},
+    // closed e.String#1 as range 2
+    {refalrts::icEmptyResult, 0, 0, 0},
+    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
+    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
+    {refalrts::icReinitFunc, 0, 1, 0},
+    {refalrts::icUpdateFunc, 0, 0, 4},
+    {refalrts::icPushStack, 0, 0, 1},
+    {refalrts::icPushStack, 0, 0, 5},
+    {refalrts::icSetRes, 0, 0, 0},
+    {refalrts::icSpliceTile, 5, 5, 0},
+    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+    {refalrts::icEnd, 0, 0, 0}
+  };
+  int open_e_stack[1];
+  refalrts::FnResult res = refalrts::interpret_array(
+    raa, context, arg_begin, arg_end,
+    functions, idents, numbers, strings, open_e_stack
+  );
+  return res;
+#else
+  // </0 & EscapeString/4 e.String#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.String#1 as range 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[5] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[0], Map, "Map" );
+  refalrts::update_name( context[4], EscapeChar, "EscapeChar" );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
   refalrts::use( res );
   return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
 #endif

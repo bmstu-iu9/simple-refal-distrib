@@ -13,7 +13,12 @@ extern refalrts::FnResult System(refalrts::Iter arg_begin, refalrts::Iter arg_en
 extern refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_Make_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_Make_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_Make_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_MakeProject_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_MakeProject_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 
 // identifier #Fails
 template <typename SREFAL_PARAM_INT>
@@ -164,8 +169,8 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {"sage:", 5}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:E 
-    //GLOBAL GEN:(E )E 
+    //FAST GEN: e.$
+    //GLOBAL GEN: ( e.$ ) e.$
     // </0 & Main/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -173,7 +178,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.idxB#0 as range 5
     // closed e.idxT#0 as range 2
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //(E )
+    // ( e.idx )
     // </0 & Main/4 (/7 e.Program#1/5 )/8 >/1
     {refalrts::icSave, 0, 16, 2},
     {refalrts::icEmpty, 0, 0, 16},
@@ -197,7 +202,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 9, 15, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )E 
+    // ( e.idx ) e.idx
     // </0 & Main/4 (/7 e.Program#1/5 )/8 e.Arguments#1/2 >/1
     // closed e.Program#1 as range 5
     // closed e.Arguments#1 as range 2
@@ -226,8 +231,8 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   );
   return res;
 #else
-  //FAST GEN:E 
-  //GLOBAL GEN:(E )E 
+  //FAST GEN: e.$
+  //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Main/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -244,7 +249,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   // closed e.idxT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )
+    // ( e.idx )
     // </0 & Main/4 (/7 e.Program#1/5 )/8 >/1
     context[16] = context[2];
     context[17] = context[3];
@@ -281,7 +286,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )E 
+  // ( e.idx ) e.idx
   // </0 & Main/4 (/7 e.Program#1/5 )/8 e.Arguments#1/2 >/1
   // closed e.Program#1 as range 5
   // closed e.Arguments#1 as range 2
@@ -309,7 +314,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 #endif
 }
 
-static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_MakeProject_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
@@ -320,7 +325,7 @@ static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrt
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & lambda_MakeProject_0/4 (/7 s.FolderTag#2/9 e.Folder#2/5 )/8 >/1
+    // </0 & MakeProject$1\1/4 (/7 s.FolderTag#2/9 e.Folder#2/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -328,7 +333,7 @@ static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrt
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.Folder#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & lambda_MakeProject_0/4 (/7 s.FolderTag#2/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  & MakeProject$1\1/4 (/7 s.FolderTag#2/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Folder#2/5 } Tile{ HalfReuse: )/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -346,7 +351,7 @@ static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrt
   );
   return res;
 #else
-  // </0 & lambda_MakeProject_0/4 (/7 s.FolderTag#2/9 e.Folder#2/5 )/8 >/1
+  // </0 & MakeProject$1\1/4 (/7 s.FolderTag#2/9 e.Folder#2/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -365,7 +370,7 @@ static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrt
   // closed e.Folder#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  & lambda_MakeProject_0/4 (/7 s.FolderTag#2/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}  & MakeProject$1\1/4 (/7 s.FolderTag#2/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
   //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Folder#2/5 } Tile{ HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_close_bracket( context[1] );
@@ -380,7 +385,7 @@ static refalrts::FnResult lambda_MakeProject_0(refalrts::Iter arg_begin, refalrt
 #endif
 }
 
-static refalrts::FnResult lambda_MakeProject_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_MakeProject_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -398,7 +403,7 @@ static refalrts::FnResult lambda_MakeProject_1(refalrts::Iter arg_begin, refalrt
     {"omm", 3}
   };
   static const refalrts::RASLCommand raa[] = {
-    // </0 & lambda_MakeProject_1/4 (/7 s.Pos#2/9 e.Message#2/5 )/8 >/1
+    // </0 & MakeProject$2\1/4 (/7 s.Pos#2/9 e.Message#2/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -438,7 +443,7 @@ static refalrts::FnResult lambda_MakeProject_1(refalrts::Iter arg_begin, refalrt
   );
   return res;
 #else
-  // </0 & lambda_MakeProject_1/4 (/7 s.Pos#2/9 e.Message#2/5 )/8 >/1
+  // </0 & MakeProject$2\1/4 (/7 s.Pos#2/9 e.Message#2/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -499,10 +504,10 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
   refalrts::zeros( context, 30 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_MakeProject_1, "lambda_MakeProject_1" },
+    { gen_MakeProject_S2L1, "MakeProject$2\\1" },
     { Map, "Map" },
     { Exit, "Exit" },
-    { lambda_MakeProject_0, "lambda_MakeProject_0" },
+    { gen_MakeProject_S1L1, "MakeProject$1\\1" },
     { CreateFileList, "CreateFileList" },
     { Make, "Make" }
   };
@@ -513,15 +518,15 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:S E 
-    //GLOBAL GEN:S E 
+    //FAST GEN: s.$ e.$
+    //GLOBAL GEN: s.$ e.$
     // </0 & MakeProject/4 s.idx#0/5 e.idxV#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icsVarLeft, 0, 5, 2},
     // closed e.idxV#0 as range 2
     {refalrts::icOnFailGoTo, +42, 0, 0},
-    //#Success(E )(E )(E )E 
+    // # Success ( e.idx ) ( e.idx ) ( e.idx ) e.idx
     // </0 & MakeProject/4 # Success/5 (/8 e.CppCompiler#1/6 )/9 (/12 e.SrefCompiler#1/10 )/13 (/16 e.SourceFile#1/14 )/17 e.Folders#1/2 >/1
     {refalrts::icIdentTerm, 0, 1, 5},
     {refalrts::icSave, 0, 28, 2},
@@ -534,7 +539,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Folders#1 as range 28(2)
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </18 Tile{ HalfReuse: & Make/9 AsIs: (/12 AsIs: e.SrefCompiler#1/10 AsIs: )/13 AsIs: (/16 } Tile{ AsIs: e.CppCompiler#1/6 } )/19 (/20 e.Folders#1/28(2)/21 )/23 Tile{ AsIs: </0 Reuse: & CreateFileList/4 HalfReuse: (/5 HalfReuse: </8 } & Map/24 Tile{ HalfReuse: & lambda_MakeProject_0/17 AsIs: e.Folders#1/28(2) AsIs: >/1 } )/25 Tile{ AsIs: e.SourceFile#1/14 } >/26 >/27 Tile{ ]] }
+    //RESULT: Tile{ [[ } </18 Tile{ HalfReuse: & Make/9 AsIs: (/12 AsIs: e.SrefCompiler#1/10 AsIs: )/13 AsIs: (/16 } Tile{ AsIs: e.CppCompiler#1/6 } )/19 (/20 e.Folders#1/28(2)/21 )/23 Tile{ AsIs: </0 Reuse: & CreateFileList/4 HalfReuse: (/5 HalfReuse: </8 } & Map/24 Tile{ HalfReuse: & MakeProject$1\1/17 AsIs: e.Folders#1/28(2) AsIs: >/1 } )/25 Tile{ AsIs: e.SourceFile#1/14 } >/26 >/27 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 18},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 19},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 20},
@@ -571,13 +576,13 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSpliceTile, 9, 16, 0},
     {refalrts::icSpliceTile, 18, 18, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //#FailsE 
+    // # Fails e.idx
     // </0 & MakeProject/4 # Fails/5 e.Errors#1/2 >/1
     {refalrts::icIdentTerm, 0, 0, 5},
     // closed e.Errors#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & lambda_MakeProject_1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & MakeProject$2\1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icAllocFunc, 0, 2, 7},
     {refalrts::icAllocInt, 0, 1, 8},
@@ -600,8 +605,8 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
   );
   return res;
 #else
-  //FAST GEN:S E 
-  //GLOBAL GEN:S E 
+  //FAST GEN: s.$ e.$
+  //GLOBAL GEN: s.$ e.$
   // </0 & MakeProject/4 s.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -613,7 +618,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.idxV#0 as range 2
   do {
     refalrts::start_sentence();
-    //#Success(E )(E )(E )E 
+    // # Success ( e.idx ) ( e.idx ) ( e.idx ) e.idx
     // </0 & MakeProject/4 # Success/5 (/8 e.CppCompiler#1/6 )/9 (/12 e.SrefCompiler#1/10 )/13 (/16 e.SourceFile#1/14 )/17 e.Folders#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Success<int>::name, context[5] ) )
       continue;
@@ -644,7 +649,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </18 Tile{ HalfReuse: & Make/9 AsIs: (/12 AsIs: e.SrefCompiler#1/10 AsIs: )/13 AsIs: (/16 } Tile{ AsIs: e.CppCompiler#1/6 } )/19 (/20 e.Folders#1/28(2)/21 )/23 Tile{ AsIs: </0 Reuse: & CreateFileList/4 HalfReuse: (/5 HalfReuse: </8 } & Map/24 Tile{ HalfReuse: & lambda_MakeProject_0/17 AsIs: e.Folders#1/28(2) AsIs: >/1 } )/25 Tile{ AsIs: e.SourceFile#1/14 } >/26 >/27 Tile{ ]] }
+    //RESULT: Tile{ [[ } </18 Tile{ HalfReuse: & Make/9 AsIs: (/12 AsIs: e.SrefCompiler#1/10 AsIs: )/13 AsIs: (/16 } Tile{ AsIs: e.CppCompiler#1/6 } )/19 (/20 e.Folders#1/28(2)/21 )/23 Tile{ AsIs: </0 Reuse: & CreateFileList/4 HalfReuse: (/5 HalfReuse: </8 } & Map/24 Tile{ HalfReuse: & MakeProject$1\1/17 AsIs: e.Folders#1/28(2) AsIs: >/1 } )/25 Tile{ AsIs: e.SourceFile#1/14 } >/26 >/27 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[18] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[19] ) )
@@ -667,7 +672,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
     refalrts::update_name( context[4], CreateFileList, "CreateFileList" );
     refalrts::reinit_open_bracket( context[5] );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[17], lambda_MakeProject_0, "lambda_MakeProject_0" );
+    refalrts::reinit_name( context[17], gen_MakeProject_S1L1, "MakeProject$1\\1" );
     refalrts::push_stack( context[27] );
     refalrts::push_stack( context[18] );
     refalrts::push_stack( context[26] );
@@ -695,7 +700,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //#FailsE 
+  // # Fails e.idx
   // </0 & MakeProject/4 # Fails/5 e.Errors#1/2 >/1
   if( ! refalrts::ident_term(  & ident_Fails<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -703,7 +708,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & lambda_MakeProject_1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & MakeProject$2\1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], Exit, "Exit" ) )
@@ -713,7 +718,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], Map, "Map" );
-  refalrts::reinit_name( context[5], lambda_MakeProject_1, "lambda_MakeProject_1" );
+  refalrts::reinit_name( context[5], gen_MakeProject_S2L1, "MakeProject$2\\1" );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[1] );
@@ -727,7 +732,7 @@ static refalrts::FnResult MakeProject(refalrts::Iter arg_begin, refalrts::Iter a
 #endif
 }
 
-static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_Make_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
@@ -747,9 +752,9 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
     {"MMAND LINE ERROR: Unit ", 23}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )
-    //GLOBAL GEN:(S E )
-    // </0 & lambda_Make_0/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+    //FAST GEN: ( e.$ )
+    //GLOBAL GEN: ( s.$ e.$ )
+    // </0 & Make$1\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -757,8 +762,8 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.idxBV#0 as range 5
     {refalrts::icOnFailGoTo, +15, 0, 0},
-    //(#NotFoundE )
-    // </0 & lambda_Make_0/4 (/7 # NotFound/9 e.UnitName#2/5 )/8 >/1
+    // ( # NotFound e.idx )
+    // </0 & Make$1\1/4 (/7 # NotFound/9 e.UnitName#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 2, 9},
     // closed e.UnitName#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -778,24 +783,24 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 10, 11, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +5, 0, 0},
-    //(#OutputE )
-    // </0 & lambda_Make_0/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
+    // ( # Output e.idx )
+    // </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 1, 9},
     // closed e.Output#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_0/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(#Source(E )E )
-    // </0 & lambda_Make_0/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
+    // ( # Source ( e.idx ) e.idx )
+    // </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 0, 9},
     {refalrts::icBracketLeftSave, 0, 10, 5},
     // closed e.Source#2 as range 10
     // closed e.Output#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_0/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -809,9 +814,9 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:(E )
-  //GLOBAL GEN:(S E )
-  // </0 & lambda_Make_0/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+  //FAST GEN: ( e.$ )
+  //GLOBAL GEN: ( s.$ e.$ )
+  // </0 & Make$1\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -830,8 +835,8 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxBV#0 as range 5
   do {
     refalrts::start_sentence();
-    //(#NotFoundE )
-    // </0 & lambda_Make_0/4 (/7 # NotFound/9 e.UnitName#2/5 )/8 >/1
+    // ( # NotFound e.idx )
+    // </0 & Make$1\1/4 (/7 # NotFound/9 e.UnitName#2/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_NotFound<int>::name, context[9] ) )
       continue;
     // closed e.UnitName#2 as range 5
@@ -861,14 +866,14 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(#OutputE )
-    // </0 & lambda_Make_0/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
+    // ( # Output e.idx )
+    // </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_0/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -878,8 +883,8 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(#Source(E )E )
-  // </0 & lambda_Make_0/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
+  // ( # Source ( e.idx ) e.idx )
+  // </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
   if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
   context[10] = 0;
@@ -892,7 +897,7 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.Output#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & lambda_Make_0/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}  </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE} 
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -903,7 +908,7 @@ static refalrts::FnResult lambda_Make_0(refalrts::Iter arg_begin, refalrts::Iter
 #endif
 }
 
-static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_Make_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
@@ -917,9 +922,9 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(S E )
-    //GLOBAL GEN:(S E )
-    // </0 & lambda_Make_1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+    //FAST GEN: ( s.$ e.$ )
+    //GLOBAL GEN: ( s.$ e.$ )
+    // </0 & Make$2\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -927,8 +932,8 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.idxBV#0 as range 5
     {refalrts::icOnFailGoTo, +12, 0, 0},
-    //(#SearchE )
-    // </0 & lambda_Make_1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
+    // ( # Search e.idx )
+    // </0 & Make$2\1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 1, 9},
     // closed e.Folder#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -944,8 +949,8 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 0, 8, 0},
     {refalrts::icSpliceTile, 1, 1, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(#RuntimeE )
-    // </0 & lambda_Make_1/4 (/7 # Runtime/9 e.Folder#2/5 )/8 >/1
+    // ( # Runtime e.idx )
+    // </0 & Make$2\1/4 (/7 # Runtime/9 e.Folder#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 0, 9},
     // closed e.Folder#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -970,9 +975,9 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:(S E )
-  //GLOBAL GEN:(S E )
-  // </0 & lambda_Make_1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+  //FAST GEN: ( s.$ e.$ )
+  //GLOBAL GEN: ( s.$ e.$ )
+  // </0 & Make$2\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -991,8 +996,8 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxBV#0 as range 5
   do {
     refalrts::start_sentence();
-    //(#SearchE )
-    // </0 & lambda_Make_1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
+    // ( # Search e.idx )
+    // </0 & Make$2\1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_Search<int>::name, context[9] ) )
       continue;
     // closed e.Folder#2 as range 5
@@ -1015,8 +1020,8 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(#RuntimeE )
-  // </0 & lambda_Make_1/4 (/7 # Runtime/9 e.Folder#2/5 )/8 >/1
+  // ( # Runtime e.idx )
+  // </0 & Make$2\1/4 (/7 # Runtime/9 e.Folder#2/5 )/8 >/1
   if( ! refalrts::ident_term(  & ident_Runtime<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Folder#2 as range 5
@@ -1040,7 +1045,7 @@ static refalrts::FnResult lambda_Make_1(refalrts::Iter arg_begin, refalrts::Iter
 #endif
 }
 
-static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_Make_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
@@ -1054,9 +1059,9 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(S E )
-    //GLOBAL GEN:(S E )
-    // </0 & lambda_Make_2/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+    //FAST GEN: ( s.$ e.$ )
+    //GLOBAL GEN: ( s.$ e.$ )
+    // </0 & Make$2\2/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -1064,12 +1069,12 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.idxBV#0 as range 5
     {refalrts::icOnFailGoTo, +9, 0, 0},
-    //(#OutputE )
-    // </0 & lambda_Make_2/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
+    // ( # Output e.idx )
+    // </0 & Make$2\2/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 1, 9},
     // closed e.Output#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_2/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$2\2/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '\"'/9 AsIs: e.Output#2/5 HalfReuse: '\"'/8 } Tile{ ]] }
     {refalrts::icReinitChar, 0, ' ', 7},
     {refalrts::icReinitChar, 0, '\"', 9},
@@ -1078,14 +1083,14 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 7, 8, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(#Source(E )E )
-    // </0 & lambda_Make_2/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
+    // ( # Source ( e.idx ) e.idx )
+    // </0 & Make$2\2/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
     {refalrts::icIdentTerm, 0, 0, 9},
     {refalrts::icBracketLeftSave, 0, 10, 5},
     // closed e.Source#2 as range 10
     // closed e.Output#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_2/4 (/7 {REMOVED TILE}  e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$2\2/4 (/7 {REMOVED TILE}  e.Output#2/5 )/8 >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/12 AsIs: e.Source#2/10 HalfReuse: '\"'/13 } Tile{ ]] }
     {refalrts::icReinitChar, 0, ' ', 9},
     {refalrts::icReinitChar, 0, '\"', 12},
@@ -1103,9 +1108,9 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:(S E )
-  //GLOBAL GEN:(S E )
-  // </0 & lambda_Make_2/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
+  //FAST GEN: ( s.$ e.$ )
+  //GLOBAL GEN: ( s.$ e.$ )
+  // </0 & Make$2\2/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1124,14 +1129,14 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxBV#0 as range 5
   do {
     refalrts::start_sentence();
-    //(#OutputE )
-    // </0 & lambda_Make_2/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
+    // ( # Output e.idx )
+    // </0 & Make$2\2/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & lambda_Make_2/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & Make$2\2/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '\"'/9 AsIs: e.Output#2/5 HalfReuse: '\"'/8 } Tile{ ]] }
     refalrts::reinit_char( context[7], ' ' );
     refalrts::reinit_char( context[9], '\"' );
@@ -1145,8 +1150,8 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(#Source(E )E )
-  // </0 & lambda_Make_2/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
+  // ( # Source ( e.idx ) e.idx )
+  // </0 & Make$2\2/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
   if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
   context[10] = 0;
@@ -1159,7 +1164,7 @@ static refalrts::FnResult lambda_Make_2(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.Output#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & lambda_Make_2/4 (/7 {REMOVED TILE}  e.Output#2/5 )/8 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}  </0 & Make$2\2/4 (/7 {REMOVED TILE}  e.Output#2/5 )/8 >/1 {REMOVED TILE} 
   //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/12 AsIs: e.Source#2/10 HalfReuse: '\"'/13 } Tile{ ]] }
   refalrts::reinit_char( context[9], ' ' );
   refalrts::reinit_char( context[12], '\"' );
@@ -1181,12 +1186,12 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   refalrts::zeros( context, 29 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_Make_2, "lambda_Make_2" },
+    { gen_Make_S2L2, "Make$2\\2" },
     { System, "System" },
     { Map, "Map" },
-    { lambda_Make_1, "lambda_Make_1" },
+    { gen_Make_S2L1, "Make$2\\1" },
     { Exit, "Exit" },
-    { lambda_Make_0, "lambda_Make_0" }
+    { gen_Make_S1L1, "Make$1\\1" }
   };
   static const refalrts::RefalIdentifier idents[] = {
     & ident_NotFound<int>::name
@@ -1196,8 +1201,8 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {"-c", 2}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )(E )(E )E 
-    //GLOBAL GEN:(E )(E )(E )E 
+    //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
+    //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
     // </0 & Make/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -1209,8 +1214,8 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.idxTTB#0 as range 13
     // closed e.idxTTT#0 as range 2
     {refalrts::icOnFailGoTo, +24, 0, 0},
-    //(E )(E )(E )E 
-    // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units_B#1/17 (/21 # NotFound/23 e.UnitName#1/19 )/22 e.Units_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
+    // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units-B#1/17 (/21 # NotFound/23 e.UnitName#1/19 )/22 e.Units-E#1/2 >/1
     // closed e.SrefC#1 as range 5
     // closed e.CompilerCommand#1 as range 9
     // closed e.Directories#1 as range 13
@@ -1221,10 +1226,10 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icBracketLeftSave, 0, 19, 27},
     {refalrts::icIdentLeftSave, 23, 0, 19},
     // closed e.UnitName#1 as range 19
-    // closed e.Units_E#1 as range 27(2)
+    // closed e.Units-E#1 as range 27(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.SrefC#1/5 {REMOVED TILE}  e.CompilerCommand#1/9 {REMOVED TILE}  e.Directories#1/13 )/16 e.Units_B#1/17 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & lambda_Make_0/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units_E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
+    //TRASH: {REMOVED TILE}  e.SrefC#1/5 {REMOVED TILE}  e.CompilerCommand#1/9 {REMOVED TILE}  e.Directories#1/13 )/16 e.Units-B#1/17 {REMOVED TILE}  {REMOVED TILE} 
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Make$1\1/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units-E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icReinitFunc, 0, 5, 7},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 12},
@@ -1242,7 +1247,7 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icSpliceTile, 21, 1, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )(E )(E )E 
+    // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
     // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units#1/2 >/1
     // closed e.SrefC#1 as range 5
     // closed e.CompilerCommand#1 as range 9
@@ -1250,7 +1255,7 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.Units#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & lambda_Make_1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & lambda_Make_2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & Make$2\1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & Make$2\2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
     {refalrts::icAllocString, 0, 0, 17},
     {refalrts::icAllocFunc, 0, 2, 19},
     {refalrts::icAllocFunc, 0, 3, 20},
@@ -1291,8 +1296,8 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   );
   return res;
 #else
-  //FAST GEN:(E )(E )(E )E 
-  //GLOBAL GEN:(E )(E )(E )E 
+  //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
   // </0 & Make/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1323,8 +1328,8 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   // closed e.idxTTT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )(E )(E )E 
-    // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units_B#1/17 (/21 # NotFound/23 e.UnitName#1/19 )/22 e.Units_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
+    // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units-B#1/17 (/21 # NotFound/23 e.UnitName#1/19 )/22 e.Units-E#1/2 >/1
     // closed e.SrefC#1 as range 5
     // closed e.CompilerCommand#1 as range 9
     // closed e.Directories#1 as range 13
@@ -1346,13 +1351,13 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
       if( ! context[23] )
         continue;
       // closed e.UnitName#1 as range 19
-      // closed e.Units_E#1 as range 27(2)
+      // closed e.Units-E#1 as range 27(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  e.SrefC#1/5 {REMOVED TILE}  e.CompilerCommand#1/9 {REMOVED TILE}  e.Directories#1/13 )/16 e.Units_B#1/17 {REMOVED TILE}  {REMOVED TILE} 
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & lambda_Make_0/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units_E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
+      //TRASH: {REMOVED TILE}  e.SrefC#1/5 {REMOVED TILE}  e.CompilerCommand#1/9 {REMOVED TILE}  e.Directories#1/13 )/16 e.Units-B#1/17 {REMOVED TILE}  {REMOVED TILE} 
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Make$1\1/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units-E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
       refalrts::update_name( context[4], Map, "Map" );
-      refalrts::reinit_name( context[7], lambda_Make_0, "lambda_Make_0" );
+      refalrts::reinit_name( context[7], gen_Make_S1L1, "Make$1\\1" );
       refalrts::reinit_open_call( context[12] );
       refalrts::reinit_name( context[15], Exit, "Exit" );
       refalrts::reinit_number( context[8], 1UL );
@@ -1374,7 +1379,7 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     } while ( refalrts::open_evar_advance( context[17], context[18], context[25], context[26] ) );
   } while ( 0 );
 
-  //(E )(E )(E )E 
+  // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
   // </0 & Make/4 (/7 e.SrefC#1/5 )/8 (/11 e.CompilerCommand#1/9 )/12 (/15 e.Directories#1/13 )/16 e.Units#1/2 >/1
   // closed e.SrefC#1 as range 5
   // closed e.CompilerCommand#1 as range 9
@@ -1383,12 +1388,12 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & lambda_Make_1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & lambda_Make_2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & Make$2\1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & Make$2\2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[17], context[18], "-c", 2 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[19], Map, "Map" ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], lambda_Make_1, "lambda_Make_1" ) )
+  if( ! refalrts::alloc_name( context[20], gen_Make_S2L1, "Make$2\\1" ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
@@ -1404,7 +1409,7 @@ static refalrts::FnResult Make(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   refalrts::reinit_char( context[11], '\"' );
   refalrts::reinit_char( context[12], '\"' );
   refalrts::reinit_open_call( context[15] );
-  refalrts::reinit_name( context[16], lambda_Make_2, "lambda_Make_2" );
+  refalrts::reinit_name( context[16], gen_Make_S2L2, "Make$2\\2" );
   refalrts::push_stack( context[24] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );

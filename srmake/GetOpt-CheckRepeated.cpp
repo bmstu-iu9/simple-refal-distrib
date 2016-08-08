@@ -25,9 +25,9 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )(E )E 
-    //GLOBAL GEN:(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+    //FAST GEN: ( e.$ ) ( e.$ ) e.$
+    //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -36,15 +36,15 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.idxTB#0 as range 9
     // closed e.idxTT#0 as range 2
     {refalrts::icOnFailGoTo, +31, 0, 0},
-    //(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags_B#1/13 s.Tag#1/15 e.CheckedTags_E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts_B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value#1/18 )/21 e.Opts_M#1/24 (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 e.Opts_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
     {refalrts::icSave, 0, 34, 5},
     {refalrts::icEPrepare, 0, 13, 34},
     {refalrts::icEStart, 0, 13, 34},
     {refalrts::icSave, 0, 36, 34},
     {refalrts::icsVarLeft, 0, 15, 36},
-    // closed e.CheckedTags_E#1 as range 36(5)
+    // closed e.CheckedTags-E#1 as range 36(5)
     {refalrts::icSave, 0, 38, 2},
     {refalrts::icEPrepare, 0, 16, 38},
     {refalrts::icEStart, 0, 16, 38},
@@ -59,12 +59,12 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icBracketLeftSave, 0, 26, 42},
     {refalrts::icsRepeatLeft, 30, 22, 26},
     {refalrts::iceRepeatRight, 31, 18, 26},
-    // closed e.Opts_E#1 as range 42(2)
+    // closed e.Opts-E#1 as range 42(2)
     {refalrts::icsVarLeft, 0, 33, 26},
     {refalrts::icEmpty, 0, 0, 26},
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt_CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags_B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags_E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 AsIs: e.Opts_B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts_M#1/24 } Tile{ AsIs: e.Opts_E#1/42(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 AsIs: e.Opts-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
     {refalrts::icLinkBrackets, 20, 21, 0},
@@ -76,15 +76,15 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icTrash, 0, 0, 21},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +39, 0, 0},
-    //(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags_B#1/13 s.Tag#1/15 e.CheckedTags_E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts_B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts_M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
     {refalrts::icSave, 0, 34, 5},
     {refalrts::icEPrepare, 0, 13, 34},
     {refalrts::icEStart, 0, 13, 34},
     {refalrts::icSave, 0, 36, 34},
     {refalrts::icsVarLeft, 0, 15, 36},
-    // closed e.CheckedTags_E#1 as range 36(5)
+    // closed e.CheckedTags-E#1 as range 36(5)
     {refalrts::icSave, 0, 38, 2},
     {refalrts::icEPrepare, 0, 16, 38},
     {refalrts::icEStart, 0, 16, 38},
@@ -98,12 +98,12 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSave, 0, 42, 40},
     {refalrts::icBracketLeftSave, 0, 26, 42},
     {refalrts::icsRepeatLeft, 30, 22, 26},
-    // closed e.Opts_E#1 as range 42(2)
+    // closed e.Opts-E#1 as range 42(2)
     {refalrts::icsVarLeft, 0, 31, 26},
     // closed e.Value2#1 as range 26
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  e.Value2#1/26 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt_CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags_B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags_E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 HalfReuse: (/12 } Tile{ AsIs: s.Num2#1/31 } Tile{ HalfReuse: # RepeatOption/28 AsIs: s.Tag#1/30 } Tile{ AsIs: )/29 } )/32 Tile{ AsIs: e.Opts_B#1/16 } Tile{ AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value1#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts_M#1/24 } Tile{ AsIs: e.Opts_E#1/42(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 HalfReuse: (/12 } Tile{ AsIs: s.Num2#1/31 } Tile{ HalfReuse: # RepeatOption/28 AsIs: s.Tag#1/30 } Tile{ AsIs: )/29 } )/32 Tile{ AsIs: e.Opts-B#1/16 } Tile{ AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value1#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 32},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 12},
     {refalrts::icReinitIdent, 0, 0, 28},
@@ -124,13 +124,13 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     {refalrts::icSpliceTile, 31, 31, 0},
     {refalrts::icTrash, 0, 0, 12},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1
     // closed e.CheckedTags#1 as range 5
     // closed e.Errors#1 as range 9
     // closed e.Options#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}  </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 } Tile{ AsIs: e.Options#1/2 } Tile{ ]] }
     {refalrts::icLinkBrackets, 11, 12, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -147,9 +147,9 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
   );
   return res;
 #else
-  //FAST GEN:(E )(E )E 
-  //GLOBAL GEN:(E )(E )E 
-  // </0 & GetOpt_CheckRepeated/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+  //FAST GEN: ( e.$ ) ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+  // </0 & GetOpt-CheckRepeated/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -172,8 +172,8 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.idxTT#0 as range 2
   do {
     refalrts::start_sentence();
-    //(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags_B#1/13 s.Tag#1/15 e.CheckedTags_E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts_B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value#1/18 )/21 e.Opts_M#1/24 (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 e.Opts_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
     context[34] = context[5];
     context[35] = context[6];
@@ -185,7 +185,7 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
       context[37] = context[35];
       if( ! refalrts::svar_left( context[15], context[36], context[37] ) )
         continue;
-      // closed e.CheckedTags_E#1 as range 36(5)
+      // closed e.CheckedTags-E#1 as range 36(5)
       context[38] = context[2];
       context[39] = context[3];
       context[16] = 0;
@@ -221,7 +221,7 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
             continue;
           if( ! refalrts::repeated_evar_right( context[31], context[32], context[18], context[19], context[26], context[27] ) )
             continue;
-          // closed e.Opts_E#1 as range 42(2)
+          // closed e.Opts-E#1 as range 42(2)
           if( ! refalrts::svar_left( context[33], context[26], context[27] ) )
             continue;
           if( ! refalrts::empty_seq( context[26], context[27] ) )
@@ -229,7 +229,7 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE}  {REMOVED TILE}  (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 {REMOVED TILE}  {REMOVED TILE} 
-          //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt_CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags_B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags_E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 AsIs: e.Opts_B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts_M#1/24 } Tile{ AsIs: e.Opts_E#1/42(2) } Tile{ AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 AsIs: e.Opts-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
           refalrts::push_stack( context[1] );
           refalrts::push_stack( context[0] );
           refalrts::link_brackets( context[20], context[21] );
@@ -250,8 +250,8 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
 
   do {
     refalrts::start_sentence();
-    //(E )(E )E 
-    // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags_B#1/13 s.Tag#1/15 e.CheckedTags_E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts_B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts_M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts_E#1/2 >/1
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
     context[34] = context[5];
     context[35] = context[6];
@@ -263,7 +263,7 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
       context[37] = context[35];
       if( ! refalrts::svar_left( context[15], context[36], context[37] ) )
         continue;
-      // closed e.CheckedTags_E#1 as range 36(5)
+      // closed e.CheckedTags-E#1 as range 36(5)
       context[38] = context[2];
       context[39] = context[3];
       context[16] = 0;
@@ -297,14 +297,14 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
           refalrts::bracket_pointers(context[28], context[29]);
           if( ! refalrts::repeated_stvar_left( context[30], context[22], context[26], context[27] ) )
             continue;
-          // closed e.Opts_E#1 as range 42(2)
+          // closed e.Opts-E#1 as range 42(2)
           if( ! refalrts::svar_left( context[31], context[26], context[27] ) )
             continue;
           // closed e.Value2#1 as range 26
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  e.Value2#1/26 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-          //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt_CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags_B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags_E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 HalfReuse: (/12 } Tile{ AsIs: s.Num2#1/31 } Tile{ HalfReuse: # RepeatOption/28 AsIs: s.Tag#1/30 } Tile{ AsIs: )/29 } )/32 Tile{ AsIs: e.Opts_B#1/16 } Tile{ AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value1#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts_M#1/24 } Tile{ AsIs: e.Opts_E#1/42(2) } Tile{ AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 HalfReuse: (/12 } Tile{ AsIs: s.Num2#1/31 } Tile{ HalfReuse: # RepeatOption/28 AsIs: s.Tag#1/30 } Tile{ AsIs: )/29 } )/32 Tile{ AsIs: e.Opts-B#1/16 } Tile{ AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value1#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
           if( ! refalrts::alloc_close_bracket( context[32] ) )
             return refalrts::cNoMemory;
           refalrts::reinit_open_bracket( context[12] );
@@ -334,14 +334,14 @@ refalrts::FnResult GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter
     } while ( refalrts::open_evar_advance( context[13], context[14], context[34], context[35] ) );
   } while ( 0 );
 
-  //(E )(E )E 
-  // </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1
+  // ( e.idx ) ( e.idx ) e.idx
+  // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1
   // closed e.CheckedTags#1 as range 5
   // closed e.Errors#1 as range 9
   // closed e.Options#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GetOpt_CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}  </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
   //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 } Tile{ AsIs: e.Options#1/2 } Tile{ ]] }
   refalrts::link_brackets( context[11], context[12] );
   refalrts::Iter trash_prev = arg_begin->prev;

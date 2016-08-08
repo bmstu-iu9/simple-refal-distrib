@@ -12,21 +12,21 @@ extern refalrts::FnResult Sort(refalrts::Iter arg_begin, refalrts::Iter arg_end)
 extern refalrts::FnResult StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 extern refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult ErrorList(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+static refalrts::FnResult gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
 
-// identifier #EL_HasErrors
+// identifier #EL-HasErrors
 template <typename SREFAL_PARAM_INT>
 struct ident_EL_HasErrors {
   static const char *name() {
-    return "EL_HasErrors";
+    return "EL-HasErrors";
   }
 };
 
-// identifier #EL_NoErrors
+// identifier #EL-NoErrors
 template <typename SREFAL_PARAM_INT>
 struct ident_EL_NoErrors {
   static const char *name() {
-    return "EL_NoErrors";
+    return "EL-NoErrors";
   }
 };
 
@@ -72,7 +72,7 @@ refalrts::FnResult EL_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & EL_Create/4 e.FileName#1/2 >/1
+    // </0 & EL-Create/4 e.FileName#1/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.FileName#1 as range 2
@@ -100,7 +100,7 @@ refalrts::FnResult EL_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   );
   return res;
 #else
-  // </0 & EL_Create/4 e.FileName#1/2 >/1
+  // </0 & EL-Create/4 e.FileName#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -146,7 +146,7 @@ refalrts::FnResult EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & EL_AddError/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 e.Message#1/2 >/1
+    // </0 & EL-AddError/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 e.Message#1/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icADTLeftSave, 0, 5, 2},
@@ -179,7 +179,7 @@ refalrts::FnResult EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   );
   return res;
 #else
-  // </0 & EL_AddError/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 e.Message#1/2 >/1
+  // </0 & EL-AddError/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 e.Message#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -236,7 +236,7 @@ refalrts::FnResult EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_en
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    // </0 & EL_AddErrorAt/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 s.LineNumber#1/14 e.Message#1/2 >/1
+    // </0 & EL-AddErrorAt/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 s.LineNumber#1/14 e.Message#1/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icADTLeftSave, 0, 5, 2},
@@ -268,7 +268,7 @@ refalrts::FnResult EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_en
   );
   return res;
 #else
-  // </0 & EL_AddErrorAt/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 s.LineNumber#1/14 e.Message#1/2 >/1
+  // </0 & EL-AddErrorAt/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 s.LineNumber#1/14 e.Message#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -319,7 +319,7 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
   refalrts::zeros( context, 20 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { EL_AddErrorAt, "EL_AddErrorAt" },
+    { EL_AddErrorAt, "EL-AddErrorAt" },
     { StrFromToken, "StrFromToken" }
   };
   static const refalrts::RefalIdentifier idents[] = {
@@ -333,9 +333,9 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     {"nown characters \"", 17}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:T (S S E )E 
-    //GLOBAL GEN:T (S S E )E 
-    // </0 & EL_AddUnexpected/4 t.idx#0/5 (/9 s.idxVB#0/11 s.idxVBV#0/12 e.idxVBVV#0/7 )/10 e.idxVT#0/2 >/1
+    //FAST GEN: t.$ ( s.$ s.$ e.$ ) e.$
+    //GLOBAL GEN: t.$ ( s.$ s.$ e.$ ) e.$
+    // </0 & EL-AddUnexpected/4 t.idx#0/5 (/9 s.idxVB#0/11 s.idxVBV#0/12 e.idxVBVV#0/7 )/10 e.idxVT#0/2 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::ictVarLeftSave, 0, 5, 2},
@@ -345,14 +345,14 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarLeft, 0, 12, 7},
     // closed e.idxVBVV#0 as range 7
     {refalrts::icOnFailGoTo, +10, 0, 0},
-    //T (#TkErrorS E )E 
-    // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
+    // t.idx ( # TkError s.idx e.idx ) e.idx
+    // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
     {refalrts::icIdentTerm, 0, 1, 11},
     // closed e.Message#1 as range 7
     // closed e.Expected#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  # TkError/11 s.LineNumber#1/12 {REMOVED TILE}  )/10 e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 } Tile{ AsIs: e.Message#1/7 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 } Tile{ AsIs: e.Message#1/7 } Tile{ AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 12, 9},
     {refalrts::icPushStack, 0, 0, 1},
@@ -362,14 +362,14 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icTrash, 0, 0, 9},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
     {refalrts::icOnFailGoTo, +19, 0, 0},
-    //T (#TkUnexpectedS E )E 
-    // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
+    // t.idx ( # TkUnexpected s.idx e.idx ) e.idx
+    // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
     {refalrts::icIdentTerm, 0, 0, 11},
     // closed e.Unexpected#1 as range 7
     // closed e.Expected#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE}  e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'n', 13},
     {refalrts::icAllocString, 0, 2, 14},
     {refalrts::icAllocChar, 0, '\"', 16},
@@ -387,13 +387,13 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSpliceTile, 13, 13, 0},
     {refalrts::icTrash, 0, 0, 11},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //T (S S E )E 
-    // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
+    // t.idx ( s.idx s.idx e.idx ) e.idx
+    // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
     // closed e.Info#1 as range 7
     // closed e.Expected#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 }"Unexpected "/13 </15 & StrFromToken/16 Tile{ AsIs: s.Unexpected#1/11 } Tile{ AsIs: e.Info#1/7 } >/17", expected"/18 Tile{ HalfReuse: ' '/10 AsIs: e.Expected#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 }"Unexpected "/13 </15 & StrFromToken/16 Tile{ AsIs: s.Unexpected#1/11 } Tile{ AsIs: e.Info#1/7 } >/17", expected"/18 Tile{ HalfReuse: ' '/10 AsIs: e.Expected#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocString, 0, 1, 13},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 15},
     {refalrts::icAllocFunc, 0, 1, 16},
@@ -422,9 +422,9 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
   );
   return res;
 #else
-  //FAST GEN:T (S S E )E 
-  //GLOBAL GEN:T (S S E )E 
-  // </0 & EL_AddUnexpected/4 t.idx#0/5 (/9 s.idxVB#0/11 s.idxVBV#0/12 e.idxVBVV#0/7 )/10 e.idxVT#0/2 >/1
+  //FAST GEN: t.$ ( s.$ s.$ e.$ ) e.$
+  //GLOBAL GEN: t.$ ( s.$ s.$ e.$ ) e.$
+  // </0 & EL-AddUnexpected/4 t.idx#0/5 (/9 s.idxVB#0/11 s.idxVBV#0/12 e.idxVBVV#0/7 )/10 e.idxVT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -447,8 +447,8 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
   // closed e.idxVBVV#0 as range 7
   do {
     refalrts::start_sentence();
-    //T (#TkErrorS E )E 
-    // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
+    // t.idx ( # TkError s.idx e.idx ) e.idx
+    // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkError<int>::name, context[11] ) )
       continue;
     // closed e.Message#1 as range 7
@@ -456,8 +456,8 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  # TkError/11 s.LineNumber#1/12 {REMOVED TILE}  )/10 e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 } Tile{ AsIs: e.Message#1/7 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], EL_AddErrorAt, "EL_AddErrorAt" );
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 } Tile{ AsIs: e.Message#1/7 } Tile{ AsIs: >/1 ]] }
+    refalrts::update_name( context[4], EL_AddErrorAt, "EL-AddErrorAt" );
     refalrts::reinit_svar( context[9], context[12] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -472,8 +472,8 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 
   do {
     refalrts::start_sentence();
-    //T (#TkUnexpectedS E )E 
-    // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
+    // t.idx ( # TkUnexpected s.idx e.idx ) e.idx
+    // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[11] ) )
       continue;
     // closed e.Unexpected#1 as range 7
@@ -481,14 +481,14 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE}  e.Expected#1/2 {REMOVED TILE} 
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[13], 'n' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[14], context[15], "nown characters \"", 17 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[16], '\"' ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], EL_AddErrorAt, "EL_AddErrorAt" );
+    refalrts::update_name( context[4], EL_AddErrorAt, "EL-AddErrorAt" );
     refalrts::reinit_svar( context[9], context[12] );
     refalrts::reinit_char( context[11], 'U' );
     refalrts::reinit_char( context[10], 'k' );
@@ -507,14 +507,14 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //T (S S E )E 
-  // </0 & EL_AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
+  // t.idx ( s.idx s.idx e.idx ) e.idx
+  // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
   // closed e.Info#1 as range 7
   // closed e.Expected#1 as range 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.LineNumber#1/12 {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL_AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 }"Unexpected "/13 </15 & StrFromToken/16 Tile{ AsIs: s.Unexpected#1/11 } Tile{ AsIs: e.Info#1/7 } >/17", expected"/18 Tile{ HalfReuse: ' '/10 AsIs: e.Expected#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 }"Unexpected "/13 </15 & StrFromToken/16 Tile{ AsIs: s.Unexpected#1/11 } Tile{ AsIs: e.Info#1/7 } >/17", expected"/18 Tile{ HalfReuse: ' '/10 AsIs: e.Expected#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[13], context[14], "Unexpected ", 11 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
@@ -525,7 +525,7 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[18], context[19], ", expected", 10 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], EL_AddErrorAt, "EL_AddErrorAt" );
+  refalrts::update_name( context[4], EL_AddErrorAt, "EL-AddErrorAt" );
   refalrts::reinit_svar( context[9], context[12] );
   refalrts::reinit_char( context[10], ' ' );
   refalrts::push_stack( context[1] );
@@ -545,7 +545,7 @@ refalrts::FnResult EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg
 #endif
 }
 
-static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
@@ -565,9 +565,9 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     {" E", 2}
   };
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:(E )(S E )
-    //GLOBAL GEN:(E )(S E )
-    // </0 & lambda_EL_Destroy_0/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
+    //FAST GEN: ( e.$ ) ( s.$ e.$ )
+    //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
+    // </0 & EL-Destroy$2\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -577,8 +577,8 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icsVarLeft, 0, 13, 9},
     // closed e.idxTBV#0 as range 9
     {refalrts::icOnFailGoTo, +20, 0, 0},
-    //(E )(#NoLineE )
-    // </0 & lambda_EL_Destroy_0/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
+    // ( e.idx ) ( # NoLine e.idx )
+    // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
     {refalrts::icIdentTerm, 0, 0, 13},
     // closed e.FileName#1 as range 5
     // closed e.Message#2 as range 9
@@ -603,8 +603,8 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     {refalrts::icSpliceTile, 14, 15, 0},
     {refalrts::icTrash, 0, 0, 7},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //(E )(S E )
-    // </0 & lambda_EL_Destroy_0/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
+    // ( e.idx ) ( s.idx e.idx )
+    // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
     // closed e.FileName#1 as range 5
     // closed e.Message#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
@@ -639,9 +639,9 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
   );
   return res;
 #else
-  //FAST GEN:(E )(S E )
-  //GLOBAL GEN:(E )(S E )
-  // </0 & lambda_EL_Destroy_0/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
+  //FAST GEN: ( e.$ ) ( s.$ e.$ )
+  //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
+  // </0 & EL-Destroy$2\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -667,8 +667,8 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
   // closed e.idxTBV#0 as range 9
   do {
     refalrts::start_sentence();
-    //(E )(#NoLineE )
-    // </0 & lambda_EL_Destroy_0/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
+    // ( e.idx ) ( # NoLine e.idx )
+    // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_NoLine<int>::name, context[13] ) )
       continue;
     // closed e.FileName#1 as range 5
@@ -702,8 +702,8 @@ static refalrts::FnResult lambda_EL_Destroy_0(refalrts::Iter arg_begin, refalrts
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //(E )(S E )
-  // </0 & lambda_EL_Destroy_0/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
+  // ( e.idx ) ( s.idx e.idx )
+  // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
   // closed e.FileName#1 as range 5
   // closed e.Message#2 as range 9
 
@@ -745,8 +745,8 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   refalrts::zeros( context, 21 );
 #ifdef INTERPRET
   static const refalrts::RefalFunction functions[] = {
-    { lambda_EL_Destroy_0, "lambda_EL_Destroy_0" },
-    { refalrts::create_closure, "refalrts::create_closure" },
+    { gen_EL_Destroy_S2L1, "EL-Destroy$2\\1" },
+    { refalrts::create_closure, "@create_closure@" },
     { Map, "Map" },
     { Sort, "Sort" },
     { ErrorList, "ErrorList" }
@@ -758,9 +758,9 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   using refalrts::numbers;
   using refalrts::strings;
   static const refalrts::RASLCommand raa[] = {
-    //FAST GEN:[ErrorList E ]
-    //GLOBAL GEN:[ErrorList (E )E ]
-    // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.idxDB#0/10 )/13 e.idxDT#0/5 ]/9 >/1
+    //FAST GEN: [ErrorList e.$ ]
+    //GLOBAL GEN: [ErrorList ( e.$ ) e.$ ]
+    // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.idxDB#0/10 )/13 e.idxDT#0/5 ]/9 >/1
     {refalrts::icInitB0_Lite, 0, 0, 0},
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icADTLeftSave, 4, 5, 2},
@@ -769,25 +769,25 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // closed e.idxDB#0 as range 10
     // closed e.idxDT#0 as range 5
     {refalrts::icOnFailGoTo, +7, 0, 0},
-    //[ErrorList (E )]
-    // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1
+    // [ErrorList ( e.idx ) ]
+    // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1
     {refalrts::icSave, 0, 19, 5},
     {refalrts::icEmpty, 0, 0, 19},
     // closed e.FileName#1 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL_NoErrors/1 ]] }
+    //TRASH: {REMOVED TILE}  </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL-NoErrors/1 ]] }
     {refalrts::icReinitIdent, 0, 1, 1},
     {refalrts::icSetRes, 0, 0, 1},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
     {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    //[ErrorList (E )E ]
-    // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
+    // [ErrorList ( e.idx ) e.idx ]
+    // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
     // closed e.FileName#1 as range 10
     // closed e.Errors#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
     //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-    //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: </4 HalfReuse: & CreateClosure /7 Reuse: & lambda_EL_Destroy_0/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 } >/15 </16 & Sort/17 Tile{ AsIs: e.Errors#1/5 } >/18 Tile{ HalfReuse: >/9 HalfReuse: # EL_HasErrors/1 ]] }
+    //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: </4 HalfReuse: & @create_closure@/7 Reuse: & EL-Destroy$2\1/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 } >/15 </16 & Sort/17 Tile{ AsIs: e.Errors#1/5 } >/18 Tile{ HalfReuse: >/9 HalfReuse: # EL-HasErrors/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 16},
@@ -822,9 +822,9 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   );
   return res;
 #else
-  //FAST GEN:[ErrorList E ]
-  //GLOBAL GEN:[ErrorList (E )E ]
-  // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.idxDB#0/10 )/13 e.idxDT#0/5 ]/9 >/1
+  //FAST GEN: [ErrorList e.$ ]
+  //GLOBAL GEN: [ErrorList ( e.$ ) e.$ ]
+  // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.idxDB#0/10 )/13 e.idxDT#0/5 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -848,8 +848,8 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   // closed e.idxDT#0 as range 5
   do {
     refalrts::start_sentence();
-    //[ErrorList (E )]
-    // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1
+    // [ErrorList ( e.idx ) ]
+    // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1
     context[19] = context[5];
     context[20] = context[6];
     if( ! refalrts::empty_seq( context[19], context[20] ) )
@@ -857,8 +857,8 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // closed e.FileName#1 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL_NoErrors/1 ]] }
+    //TRASH: {REMOVED TILE}  </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE} 
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL-NoErrors/1 ]] }
     refalrts::reinit_ident( context[1], & ident_EL_NoErrors<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -868,14 +868,14 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
   } while ( 0 );
 
-  //[ErrorList (E )E ]
-  // </0 & EL_Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
+  // [ErrorList ( e.idx ) e.idx ]
+  // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
   // closed e.FileName#1 as range 10
   // closed e.Errors#1 as range 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
-  //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: </4 HalfReuse: & CreateClosure /7 Reuse: & lambda_EL_Destroy_0/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 } >/15 </16 & Sort/17 Tile{ AsIs: e.Errors#1/5 } >/18 Tile{ HalfReuse: >/9 HalfReuse: # EL_HasErrors/1 ]] }
+  //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: </4 HalfReuse: & @create_closure@/7 Reuse: & EL-Destroy$2\1/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 } >/15 </16 & Sort/17 Tile{ AsIs: e.Errors#1/5 } >/18 Tile{ HalfReuse: >/9 HalfReuse: # EL-HasErrors/1 ]] }
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[15] ) )
@@ -888,8 +888,8 @@ refalrts::FnResult EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], Map, "Map" );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], refalrts::create_closure, "refalrts::create_closure" );
-  refalrts::update_name( context[8], lambda_EL_Destroy_0, "lambda_EL_Destroy_0" );
+  refalrts::reinit_name( context[7], refalrts::create_closure, "@create_closure@" );
+  refalrts::update_name( context[8], gen_EL_Destroy_S2L1, "EL-Destroy$2\\1" );
   refalrts::reinit_close_call( context[9] );
   refalrts::reinit_ident( context[1], & ident_EL_HasErrors<int>::name );
   refalrts::push_stack( context[9] );
