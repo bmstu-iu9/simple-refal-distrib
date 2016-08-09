@@ -56,7 +56,7 @@ refalrts::FnResult CreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_e
     // closed e.Folders#1 as range 5
     // closed e.Unit#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 } (/9 )/10 </11 & FindFiles/12 (/13 e.Folders#1/5/14 )/16 (/17 Tile{ AsIs: e.Unit#1/2 } )/18 >/19 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
@@ -107,7 +107,7 @@ refalrts::FnResult CreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_e
   // closed e.Unit#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 } (/9 )/10 </11 & FindFiles/12 (/13 e.Folders#1/5/14 )/16 (/17 Tile{ AsIs: e.Unit#1/2 } )/18 >/19 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
@@ -180,7 +180,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
     // closed e.Folders#1 as range 5
     // closed e.Modules#1 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE}  )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Modules#1/9 } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceEVar, 0, 0, 9},
@@ -203,7 +203,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
     {refalrts::icEmpty, 0, 0, 19},
     // closed e.Modules-E#1 as range 30(9)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/15 e.NextModule#1/13 )/16 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/15 e.NextModule#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules-B#1/17 AsIs: (/21 AsIs: e.NextModule#1/23 AsIs: )/22 AsIs: e.Modules-E#1/30(9) AsIs: )/12 } Tile{ AsIs: e.NotScanned#1/26(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -222,7 +222,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
     // closed e.NextModule#1 as range 13
     // closed e.NotScanned#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules#1/9 HalfReuse: (/12 } e.NextModule#1/13/17 )/19 )/20 </21 & LoadList/22 (/23 e.Folders#1/5/24 Tile{ HalfReuse: )/15 AsIs: e.NextModule#1/13 HalfReuse: >/16 AsIs: e.NotScanned#1/2 AsIs: >/1 ]] }
     {refalrts::icCopyEVar, 17, 13, 0},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 19},
@@ -291,7 +291,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
     // closed e.Modules#1 as range 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE}  )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Modules#1/9 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -338,7 +338,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
       // closed e.Modules-E#1 as range 30(9)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  (/15 e.NextModule#1/13 )/16 {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} (/15 e.NextModule#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules-B#1/17 AsIs: (/21 AsIs: e.NextModule#1/23 AsIs: )/22 AsIs: e.Modules-E#1/30(9) AsIs: )/12 } Tile{ AsIs: e.NotScanned#1/26(2) } Tile{ AsIs: >/1 ]] }
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
@@ -369,7 +369,7 @@ static refalrts::FnResult DoCreateFileList(refalrts::Iter arg_begin, refalrts::I
   // closed e.NotScanned#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules#1/9 HalfReuse: (/12 } e.NextModule#1/13/17 )/19 )/20 </21 & LoadList/22 (/23 e.Folders#1/5/24 Tile{ HalfReuse: )/15 AsIs: e.NextModule#1/13 HalfReuse: >/16 AsIs: e.NotScanned#1/2 AsIs: >/1 ]] }
   if (! refalrts::copy_evar(context[17], context[18], context[13], context[14]))
     return refalrts::cNoMemory;
@@ -442,7 +442,7 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Folders#1 as range 16(2)
     // closed e.Name#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  '/'/9 '/'/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 12},
@@ -469,7 +469,7 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
     // </0 & FindImports/4 e.OtherLine#1/2 >/1
     // closed e.OtherLine#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -529,7 +529,7 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Name#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  '/'/9 '/'/10 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
     refalrts::update_name( context[4], FindFiles, "FindFiles" );
     refalrts::reinit_close_bracket( context[12] );
@@ -562,7 +562,7 @@ static refalrts::FnResult FindImports(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.OtherLine#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -611,7 +611,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.NextModule#1 as range 10
     // closed e.Output#1 as range 15(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  e.Output#1/15(2) {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Output#1/15(2) {REMOVED TILE}
     //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & FindImports/7 AsIs: e.Folders#1/5 AsIs: )/8 HalfReuse: </9 HalfReuse: & LoadFile/12 AsIs: e.NextModule#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
     {refalrts::icReinitFunc, 0, 1, 0},
@@ -637,7 +637,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Folders#1 as range 5
     // closed e.Output#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } & FindImports/10 Tile{ AsIs: e.Folders#1/5 } )/11 Tile{ HalfReuse: </8 HalfReuse: & LoadFile/9 AsIs: e.Output#1/2 AsIs: >/1 } >/12 Tile{ ]] }
     {refalrts::icAllocFunc, 0, 2, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
@@ -663,7 +663,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Folders#1 as range 5
     // closed e.Unit#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -714,7 +714,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Output#1 as range 15(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  e.Output#1/15(2) {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Output#1/15(2) {REMOVED TILE}
     //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & FindImports/7 AsIs: e.Folders#1/5 AsIs: )/8 HalfReuse: </9 HalfReuse: & LoadFile/12 AsIs: e.NextModule#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
@@ -749,7 +749,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Output#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } & FindImports/10 Tile{ AsIs: e.Folders#1/5 } )/11 Tile{ HalfReuse: </8 HalfReuse: & LoadFile/9 AsIs: e.Output#1/2 AsIs: >/1 } >/12 Tile{ ]] }
     if( ! refalrts::alloc_name( context[10], FindImports, "FindImports" ) )
       return refalrts::cNoMemory;
@@ -785,7 +785,7 @@ static refalrts::FnResult LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_
   // closed e.Unit#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);

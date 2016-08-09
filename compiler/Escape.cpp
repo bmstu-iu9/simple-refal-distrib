@@ -36,7 +36,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 0/5 >/1
     {refalrts::icNumTerm, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 0/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 0/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '0'/1 ]] }
     {refalrts::icReinitChar, 0, '0', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -47,7 +47,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 1/5 >/1
     {refalrts::icNumTerm, 0, 1, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 1/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 1/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '1'/1 ]] }
     {refalrts::icReinitChar, 0, '1', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -58,7 +58,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 2/5 >/1
     {refalrts::icNumTerm, 0, 2, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 2/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 2/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '2'/1 ]] }
     {refalrts::icReinitChar, 0, '2', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -69,7 +69,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 3/5 >/1
     {refalrts::icNumTerm, 0, 3, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 3/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 3/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '3'/1 ]] }
     {refalrts::icReinitChar, 0, '3', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -80,7 +80,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 4/5 >/1
     {refalrts::icNumTerm, 0, 4, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 4/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 4/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '4'/1 ]] }
     {refalrts::icReinitChar, 0, '4', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -91,7 +91,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 5/5 >/1
     {refalrts::icNumTerm, 0, 5, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 5/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 5/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '5'/1 ]] }
     {refalrts::icReinitChar, 0, '5', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -102,7 +102,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 6/5 >/1
     {refalrts::icNumTerm, 0, 6, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 6/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 6/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '6'/1 ]] }
     {refalrts::icReinitChar, 0, '6', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -112,7 +112,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     // </0 & OctDigit/4 7/5 >/1
     {refalrts::icNumTerm, 0, 7, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 7/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 7/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '7'/1 ]] }
     {refalrts::icReinitChar, 0, '7', 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -147,7 +147,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 0/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 0/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '0'/1 ]] }
     refalrts::reinit_char( context[1], '0' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -166,7 +166,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 1/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 1/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '1'/1 ]] }
     refalrts::reinit_char( context[1], '1' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -185,7 +185,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 2/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 2/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '2'/1 ]] }
     refalrts::reinit_char( context[1], '2' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -204,7 +204,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 3/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 3/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '3'/1 ]] }
     refalrts::reinit_char( context[1], '3' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -223,7 +223,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 4/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 4/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '4'/1 ]] }
     refalrts::reinit_char( context[1], '4' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -242,7 +242,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 5/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 5/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '5'/1 ]] }
     refalrts::reinit_char( context[1], '5' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -261,7 +261,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & OctDigit/4 6/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & OctDigit/4 6/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '6'/1 ]] }
     refalrts::reinit_char( context[1], '6' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -278,7 +278,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & OctDigit/4 7/5 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & OctDigit/4 7/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: '7'/1 ]] }
   refalrts::reinit_char( context[1], '7' );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -319,7 +319,7 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
     // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 6},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Other#1/5 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } '\\'/8 Tile{ AsIs: </0 Reuse: & OctDigit/4 } </9 Tile{ HalfReuse: & Div/6 AsIs: s.Code#2/7 } 64/10 >/11 >/12 </13 & OctDigit/14 </15 & Mod/16 </17 & Div/18 s.Code#2/7/19 8/20 >/21 8/22 >/23 >/24 </25 & OctDigit/26 </27 & Mod/28 s.Code#2/7/29 8/30 >/31 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, '\\', 8},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
@@ -372,7 +372,7 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
     // s.idx s.idx s.idx
     // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
     {refalrts::icReinitSVar, 0, 5, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -411,7 +411,7 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Other#1/5 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } '\\'/8 Tile{ AsIs: </0 Reuse: & OctDigit/4 } </9 Tile{ HalfReuse: & Div/6 AsIs: s.Code#2/7 } 64/10 >/11 >/12 </13 & OctDigit/14 </15 & Mod/16 </17 & Div/18 s.Code#2/7/19 8/20 >/21 8/22 >/23 >/24 </25 & OctDigit/26 </27 & Mod/28 s.Code#2/7/29 8/30 >/31 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[8], '\\' ) )
       return refalrts::cNoMemory;
@@ -494,7 +494,7 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
   // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
   refalrts::reinit_svar( context[1], context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -535,7 +535,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\n'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\n'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'n'/1 ]] }
     {refalrts::icUpdateChar, 0, '\\', 5},
     {refalrts::icReinitChar, 0, 'n', 1},
@@ -547,7 +547,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\t'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\t'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 't'/1 ]] }
     {refalrts::icUpdateChar, 0, '\\', 5},
     {refalrts::icReinitChar, 0, 't', 1},
@@ -559,7 +559,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\r'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\r'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'r'/1 ]] }
     {refalrts::icUpdateChar, 0, '\\', 5},
     {refalrts::icReinitChar, 0, 'r', 1},
@@ -571,7 +571,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\''/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\''), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\''/1 ]] }
     {refalrts::icUpdateChar, 0, '\\', 5},
     {refalrts::icReinitChar, 0, '\'', 1},
@@ -583,7 +583,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\"'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\"'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\"'/1 ]] }
     {refalrts::icUpdateChar, 0, '\\', 5},
     {refalrts::icReinitChar, 0, '\"', 1},
@@ -595,7 +595,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // </0 & EscapeChar/4 '\\'/5 >/1
     {refalrts::icCharTerm, 0, static_cast<unsigned char>('\\'), 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: '\\'/5 HalfReuse: '\\'/1 ]] }
     {refalrts::icReinitChar, 0, '\\', 1},
     {refalrts::icSetRes, 0, 0, 5},
@@ -604,7 +604,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     // s.idx
     // </0 & EscapeChar/4 s.Other#1/5 >/1
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
     {refalrts::icAllocFunc, 0, 4, 7},
@@ -662,7 +662,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'n'/1 ]] }
     refalrts::update_char( context[5], '\\' );
     refalrts::reinit_char( context[1], 'n' );
@@ -682,7 +682,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 't'/1 ]] }
     refalrts::update_char( context[5], '\\' );
     refalrts::reinit_char( context[1], 't' );
@@ -702,7 +702,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'r'/1 ]] }
     refalrts::update_char( context[5], '\\' );
     refalrts::reinit_char( context[1], 'r' );
@@ -722,7 +722,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\''/1 ]] }
     refalrts::update_char( context[5], '\\' );
     refalrts::reinit_char( context[1], '\'' );
@@ -742,7 +742,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\"'/1 ]] }
     refalrts::update_char( context[5], '\\' );
     refalrts::reinit_char( context[1], '\"' );
@@ -762,7 +762,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EscapeChar/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: '\\'/5 HalfReuse: '\\'/1 ]] }
     refalrts::reinit_char( context[1], '\\' );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -777,7 +777,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   // </0 & EscapeChar/4 s.Other#1/5 >/1
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
@@ -844,7 +844,7 @@ refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.String#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
     {refalrts::icReinitFunc, 0, 1, 0},
@@ -872,7 +872,7 @@ refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end
   // closed e.String#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;

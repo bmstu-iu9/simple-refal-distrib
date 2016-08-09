@@ -1,3 +1,103 @@
+// Automatically generated file. Don't edit!
+#include "refalrts.h"
+
+
+extern refalrts::FnResult Add(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Div(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult ReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult System(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+
+// identifier #Fails
+template <typename SREFAL_PARAM_INT>
+struct ident_Fails {
+  static const char *name() {
+    return "Fails";
+  }
+};
+
+// identifier #False
+template <typename SREFAL_PARAM_INT>
+struct ident_False {
+  static const char *name() {
+    return "False";
+  }
+};
+
+// identifier #Success
+template <typename SREFAL_PARAM_INT>
+struct ident_Success {
+  static const char *name() {
+    return "Success";
+  }
+};
+
+// identifier #True
+template <typename SREFAL_PARAM_INT>
+struct ident_True {
+  static const char *name() {
+    return "True";
+  }
+};
+
+// identifier #TypeCharacter
+template <typename SREFAL_PARAM_INT>
+struct ident_TypeCharacter {
+  static const char *name() {
+    return "TypeCharacter";
+  }
+};
+
+// identifier #TypeFile
+template <typename SREFAL_PARAM_INT>
+struct ident_TypeFile {
+  static const char *name() {
+    return "TypeFile";
+  }
+};
+
+// identifier #TypeFunction
+template <typename SREFAL_PARAM_INT>
+struct ident_TypeFunction {
+  static const char *name() {
+    return "TypeFunction";
+  }
+};
+
+// identifier #TypeIdentifier
+template <typename SREFAL_PARAM_INT>
+struct ident_TypeIdentifier {
+  static const char *name() {
+    return "TypeIdentifier";
+  }
+};
+
+// identifier #TypeNumber
+template <typename SREFAL_PARAM_INT>
+struct ident_TypeNumber {
+  static const char *name() {
+    return "TypeNumber";
+  }
+};
+
+#line 2 "Library.sref"
 #include <stdio.h>
 #include <string.h>
 #include <vector>
@@ -41,37 +141,11 @@ Iter free_ptr();
 } // namespace allocator
 
 } // namespace refalrts
-
-//==============================================================================
-// Библиотека "встроенных" функций
-//==============================================================================
-
-// Основные перечисления
-
-#define DEFINE_IDENT(ident_name) \
-  template <typename SREFAL_PARAM_INT> \
-  struct ident_ ## ident_name { \
-    static const char *name() { \
-      return #ident_name; \
-    } \
-  };
-
 #define USE_IDENT(ident_name) \
   (& ident_ ## ident_name<int>::name)
-
-DEFINE_IDENT(Success);
-DEFINE_IDENT(Fails);
-DEFINE_IDENT(True);
-DEFINE_IDENT(False);
-DEFINE_IDENT(TypeNumber);
-DEFINE_IDENT(TypeCharacter);
-DEFINE_IDENT(TypeFunction);
-DEFINE_IDENT(TypeFile);
-DEFINE_IDENT(TypeIdentifier);
-
-// Математические операции
-
+#line 147 "Library.cpp"
 refalrts::FnResult Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 72 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -108,9 +182,11 @@ refalrts::FnResult Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 186 "Library.cpp"
 }
 
 refalrts::FnResult Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 113 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -147,9 +223,11 @@ refalrts::FnResult Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 227 "Library.cpp"
 }
 
 refalrts::FnResult Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 154 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -186,9 +264,11 @@ refalrts::FnResult Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 268 "Library.cpp"
 }
 
 refalrts::FnResult Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 195 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -225,9 +305,11 @@ refalrts::FnResult Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 309 "Library.cpp"
 }
 
 refalrts::FnResult Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 236 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -264,10 +346,10 @@ refalrts::FnResult Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 350 "Library.cpp"
 }
 
-// Ввод-вывод
-
+#line 278 "Library.sref"
 refalrts::FnResult write_to_stream(
   FILE *out, refalrts::Iter str_begin, refalrts::Iter str_end
 ) {
@@ -411,8 +493,9 @@ refalrts::FnResult write_to_stream(
     return refalrts::cSuccess;
   }
 }
-
+#line 497 "Library.cpp"
 refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 425 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -439,9 +522,11 @@ refalrts::FnResult WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 526 "Library.cpp"
 }
 
 refalrts::FnResult FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 456 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -478,8 +563,10 @@ refalrts::FnResult FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 567 "Library.cpp"
 }
 
+#line 496 "Library.sref"
 refalrts::FnResult read_from_stream(
   FILE *input, refalrts::Iter& begin, refalrts::Iter& end
 ) {
@@ -520,10 +607,9 @@ refalrts::FnResult read_from_stream(
 
   return refalrts::cSuccess;
 }
-
-refalrts::FnResult ReadLine(
-  refalrts::Iter arg_begin, refalrts::Iter arg_end
-) {
+#line 611 "Library.cpp"
+refalrts::FnResult ReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 540 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -552,11 +638,11 @@ refalrts::FnResult ReadLine(
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 642 "Library.cpp"
 }
 
-refalrts::FnResult FReadLine(
-  refalrts::Iter arg_begin, refalrts::Iter arg_end
-) {
+refalrts::FnResult FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 573 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -594,8 +680,10 @@ refalrts::FnResult FReadLine(
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 684 "Library.cpp"
 }
 
+#line 614 "Library.sref"
 namespace {
 
 refalrts::FnResult string_from_seq(
@@ -637,8 +725,9 @@ refalrts::FnResult string_from_seq(
 }
 
 } // unnamed namespace
-
+#line 729 "Library.cpp"
 refalrts::FnResult FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 659 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -697,9 +786,11 @@ refalrts::FnResult FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 790 "Library.cpp"
 }
 
 refalrts::FnResult FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 722 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -733,17 +824,15 @@ refalrts::FnResult FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 828 "Library.cpp"
 }
 
-/*
-  Глобальные переменные, хранящие параметры вызова
-  (устанавливаются в refalrts.cpp).
-*/
-
+#line 764 "Library.sref"
 extern char **g_argv;
 extern int g_argc;
-
+#line 834 "Library.cpp"
 refalrts::FnResult Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 770 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -779,9 +868,11 @@ refalrts::FnResult Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 872 "Library.cpp"
 }
 
 refalrts::FnResult ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 810 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -830,9 +921,11 @@ refalrts::FnResult ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 925 "Library.cpp"
 }
 
 refalrts::FnResult GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 863 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -883,9 +976,11 @@ refalrts::FnResult GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 980 "Library.cpp"
 }
 
 refalrts::FnResult Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 918 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -910,9 +1005,11 @@ refalrts::FnResult Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1009 "Library.cpp"
 }
 
 refalrts::FnResult System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 947 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -949,11 +1046,11 @@ refalrts::FnResult System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1050 "Library.cpp"
 }
 
-// Работа с типами символов
-
 refalrts::FnResult IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 990 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1021,9 +1118,11 @@ refalrts::FnResult IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1122 "Library.cpp"
 }
 
 refalrts::FnResult StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1062 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1082,9 +1181,11 @@ refalrts::FnResult StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1185 "Library.cpp"
 }
 
 refalrts::FnResult Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1125 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1115,9 +1216,11 @@ refalrts::FnResult Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1220 "Library.cpp"
 }
 
 refalrts::FnResult Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1160 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1149,8 +1252,10 @@ refalrts::FnResult Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1256 "Library.cpp"
 }
 
+#line 1195 "Library.sref"
 namespace {
 
 template <typename T>
@@ -1165,8 +1270,9 @@ char compare_char( T x, T y ) {
 }
 
 } // unnamed namespace
-
+#line 1274 "Library.cpp"
 refalrts::FnResult SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1213 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1378,9 +1484,11 @@ refalrts::FnResult SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
+#line 1488 "Library.cpp"
 }
 
 refalrts::FnResult SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1429 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1437,4 +1545,9 @@ refalrts::FnResult SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 
 
   return refalrts::cRecognitionImpossible;
+#line 1549 "Library.cpp"
 }
+
+
+//End of file
+//FROM refalrts

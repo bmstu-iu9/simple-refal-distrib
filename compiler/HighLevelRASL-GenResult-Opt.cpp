@@ -456,7 +456,7 @@ static refalrts::FnResult gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, refal
     {refalrts::icsVarLeft, 0, 9, 2},
     // closed e.MarkedResult#3 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.ContextOffset#3/9 } (/10 # CmdResetAllocator/11 )/12 Tile{ AsIs: </0 Reuse: & GenResult-Aux/4 AsIs: (/7 AsIs: e.Trash#2/5 AsIs: )/8 } (/13 Tile{ AsIs: e.MarkedResult#3/2 } )/14 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
     {refalrts::icAllocIdent, 0, 0, 11},
@@ -504,7 +504,7 @@ static refalrts::FnResult gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, refal
   // closed e.MarkedResult#3 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: s.ContextOffset#3/9 } (/10 # CmdResetAllocator/11 )/12 Tile{ AsIs: </0 Reuse: & GenResult-Aux/4 AsIs: (/7 AsIs: e.Trash#2/5 AsIs: )/8 } (/13 Tile{ AsIs: e.MarkedResult#3/2 } )/14 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
@@ -564,7 +564,7 @@ static refalrts::FnResult gen_GenResult_Opt_L1(refalrts::Iter arg_begin, refalrt
     {refalrts::icsVarLeft, 0, 17, 2},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } & Fetch/18 Tile{ AsIs: </0 Reuse: & AddOffsets/4 AsIs: s.ContextOffset#1/17 AsIs: (/15 AsIs: e.PatternVars#1/13 AsIs: )/16 } Tile{ AsIs: e.MarkedResult#2/5 } >/19 </20 & @create_closure@/21 & GenResult-Opt\1\1/22 Tile{ AsIs: (/11 AsIs: e.Trash#2/9 AsIs: )/12 HalfReuse: >/7 } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocFunc, 0, 3, 18},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
@@ -632,7 +632,7 @@ static refalrts::FnResult gen_GenResult_Opt_L1(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } & Fetch/18 Tile{ AsIs: </0 Reuse: & AddOffsets/4 AsIs: s.ContextOffset#1/17 AsIs: (/15 AsIs: e.PatternVars#1/13 AsIs: )/16 } Tile{ AsIs: e.MarkedResult#2/5 } >/19 </20 & @create_closure@/21 & GenResult-Opt\1\1/22 Tile{ AsIs: (/11 AsIs: e.Trash#2/9 AsIs: )/12 HalfReuse: >/7 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_name( context[18], Fetch, "Fetch" ) )
     return refalrts::cNoMemory;
@@ -699,7 +699,7 @@ refalrts::FnResult GenResult_Opt(refalrts::Iter arg_begin, refalrts::Iter arg_en
     // closed e.MarkedPattern#1 as range 10
     // closed e.Result#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } </14 & Fetch/15 </16 & GST/17 (/18 (/19 # LEFT-EDGE/20 )/21 Tile{ AsIs: e.MarkedPattern#1/10 } (/22 # RIGHT-EDGE/23 )/24 )/25 (/26 (/27 # LEFT-EDGE/28 )/29 </30 Tile{ HalfReuse: & FlatResult/13 AsIs: e.Result#1/2 AsIs: >/1 } (/31 # RIGHT-EDGE/32 )/33 )/34 >/35 </36 Tile{ HalfReuse: & @create_closure@/0 Reuse: & GenResult-Opt\1/4 AsIs: s.ContextOffset#1/5 AsIs: (/8 AsIs: e.PatternVars#1/6 AsIs: )/9 HalfReuse: >/12 } >/37 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
     {refalrts::icAllocFunc, 0, 4, 15},
@@ -787,7 +787,7 @@ refalrts::FnResult GenResult_Opt(refalrts::Iter arg_begin, refalrts::Iter arg_en
   // closed e.Result#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </14 & Fetch/15 </16 & GST/17 (/18 (/19 # LEFT-EDGE/20 )/21 Tile{ AsIs: e.MarkedPattern#1/10 } (/22 # RIGHT-EDGE/23 )/24 )/25 (/26 (/27 # LEFT-EDGE/28 )/29 </30 Tile{ HalfReuse: & FlatResult/13 AsIs: e.Result#1/2 AsIs: >/1 } (/31 # RIGHT-EDGE/32 )/33 )/34 >/35 </36 Tile{ HalfReuse: & @create_closure@/0 Reuse: & GenResult-Opt\1/4 AsIs: s.ContextOffset#1/5 AsIs: (/8 AsIs: e.PatternVars#1/6 AsIs: )/9 HalfReuse: >/12 } >/37 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
@@ -913,7 +913,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.SubRange-E#1 as range 7
     // closed e.Range-E#1 as range 25(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenCall/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseCall/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
     {refalrts::icAllocIdent, 0, 8, 12},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 13},
@@ -952,7 +952,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.SubRange-E#1 as range 7
     // closed e.Range-E#1 as range 25(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenBracket/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseBracket/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
     {refalrts::icAllocIdent, 0, 5, 12},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 13},
@@ -993,7 +993,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.SubRange-E#1 as range 7
     // closed e.Range-E#1 as range 25(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Range-B#1/5 } (/16 # TkOpenADT/17 Tile{ HalfReuse: )/9 HalfReuse: (/11 HalfReuse: # TkName/14 AsIs: e.Name#1/12 AsIs: )/15 } Tile{ AsIs: </0 AsIs: & FlatResult/4 } Tile{ AsIs: e.SubRange-E#1/7 } >/18 (/19 # TkCloseADT/20 )/21 </22 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 16},
     {refalrts::icAllocIdent, 0, 2, 17},
@@ -1025,7 +1025,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & FlatResult/4 e.Range#1/2 >/1
     // closed e.Range#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & FlatResult/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & FlatResult/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Range#1/2 } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceEVar, 0, 0, 2},
@@ -1074,7 +1074,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
       // closed e.Range-E#1 as range 25(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenCall/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseCall/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
       if( ! refalrts::alloc_ident( context[12], & ident_TkOpenCall<int>::name ) )
         return refalrts::cNoMemory;
@@ -1141,7 +1141,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
       // closed e.Range-E#1 as range 25(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenBracket/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseBracket/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
       if( ! refalrts::alloc_ident( context[12], & ident_TkOpenBracket<int>::name ) )
         return refalrts::cNoMemory;
@@ -1215,7 +1215,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
       // closed e.Range-E#1 as range 25(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Range-B#1/5 } (/16 # TkOpenADT/17 Tile{ HalfReuse: )/9 HalfReuse: (/11 HalfReuse: # TkName/14 AsIs: e.Name#1/12 AsIs: )/15 } Tile{ AsIs: </0 AsIs: & FlatResult/4 } Tile{ AsIs: e.SubRange-E#1/7 } >/18 (/19 # TkCloseADT/20 )/21 </22 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_bracket( context[16] ) )
         return refalrts::cNoMemory;
@@ -1261,7 +1261,7 @@ static refalrts::FnResult FlatResult(refalrts::Iter arg_begin, refalrts::Iter ar
   // closed e.Range#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & FlatResult/4 {REMOVED TILE}  >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & FlatResult/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.Range#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -1295,7 +1295,7 @@ static refalrts::FnResult gen_CollectStrings_S1L1(refalrts::Iter arg_begin, refa
     // closed e.Chars#2 as range 5
     // closed e.Tail#2 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkString/4 } Tile{ AsIs: e.Chars#2/5 } Tile{ HalfReuse: )/7 } </9 Tile{ HalfReuse: & CollectStrings/8 AsIs: e.Tail#2/2 AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
@@ -1335,7 +1335,7 @@ static refalrts::FnResult gen_CollectStrings_S1L1(refalrts::Iter arg_begin, refa
   // closed e.Tail#2 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkString/4 } Tile{ AsIs: e.Chars#2/5 } Tile{ HalfReuse: )/7 } </9 Tile{ HalfReuse: & CollectStrings/8 AsIs: e.Tail#2/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
@@ -1398,7 +1398,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icsVarLeft, 0, 16, 10},
     {refalrts::icEmpty, 0, 0, 10},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Value1#1/15 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Value1#1/15 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } Tile{ HalfReuse: & BuildString/8 AsIs: (/12 HalfReuse: s.Value11 #15/14 AsIs: s.Value2#1/16 AsIs: )/13 AsIs: e.Tail#1/18(2) AsIs: >/1 } Tile{ HalfReuse: & CollectStrings$1\1/9 } >/17 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
     {refalrts::icUpdateFunc, 0, 3, 4},
@@ -1426,7 +1426,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
@@ -1454,7 +1454,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CallBrackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
@@ -1482,7 +1482,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # ADT-Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
@@ -1508,7 +1508,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::ictVarLeftSave, 0, 5, 18},
     // closed e.Tail#1 as range 18(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.OtherTerm#1/5 } Tile{ AsIs: </0 AsIs: & CollectStrings/4 } Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -1521,7 +1521,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & CollectStrings/4 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CollectStrings/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CollectStrings/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -1579,7 +1579,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Value1#1/15 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Value1#1/15 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } Tile{ HalfReuse: & BuildString/8 AsIs: (/12 HalfReuse: s.Value11 #15/14 AsIs: s.Value2#1/16 AsIs: )/13 AsIs: e.Tail#1/18(2) AsIs: >/1 } Tile{ HalfReuse: & CollectStrings$1\1/9 } >/17 Tile{ ]] }
     if( ! refalrts::alloc_close_call( context[17] ) )
       return refalrts::cNoMemory;
@@ -1623,7 +1623,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.Tail#1 as range 18(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[10] ) )
       return refalrts::cNoMemory;
@@ -1669,7 +1669,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.Tail#1 as range 18(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CallBrackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[10] ) )
       return refalrts::cNoMemory;
@@ -1715,7 +1715,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.Tail#1 as range 18(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # ADT-Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[10] ) )
       return refalrts::cNoMemory;
@@ -1754,7 +1754,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.Tail#1 as range 18(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.OtherTerm#1/5 } Tile{ AsIs: </0 AsIs: & CollectStrings/4 } Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1774,7 +1774,7 @@ static refalrts::FnResult CollectStrings(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & CollectStrings/4 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & CollectStrings/4 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -1817,7 +1817,7 @@ static refalrts::FnResult BuildString(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icsVarLeft, 0, 14, 9},
     {refalrts::icEmpty, 0, 0, 9},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BuildString/4 AsIs: (/7 AsIs: e.Chars#1/5 HalfReuse: s.Value1 #14/8 HalfReuse: )/11 } Tile{ AsIs: e.Tail#1/15(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icReinitSVar, 0, 14, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 11},
@@ -1833,7 +1833,7 @@ static refalrts::FnResult BuildString(refalrts::Iter arg_begin, refalrts::Iter a
     // closed e.Chars#1 as range 5
     // closed e.Tail#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & BuildString/4 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & BuildString/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Chars#1/5 AsIs: )/8 } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -1889,7 +1889,7 @@ static refalrts::FnResult BuildString(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BuildString/4 AsIs: (/7 AsIs: e.Chars#1/5 HalfReuse: s.Value1 #14/8 HalfReuse: )/11 } Tile{ AsIs: e.Tail#1/15(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[8], context[14] );
     refalrts::reinit_close_bracket( context[11] );
@@ -1911,7 +1911,7 @@ static refalrts::FnResult BuildString(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.Tail#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & BuildString/4 {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & BuildString/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Chars#1/5 AsIs: )/8 } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -1960,7 +1960,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     {refalrts::icIdentLeftSave, 9, 5, 14},
     // closed e.Tile#2 as range 14(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/14(5) )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/14(5) )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -1976,7 +1976,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     {refalrts::icsVarRight, 0, 13, 14},
     // closed e.Index#2 as range 14(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 {REMOVED TILE}  e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 Reuse: 'e'/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
     {refalrts::icUpdateIdent, 0, 3, 9},
     {refalrts::icUpdateChar, 0, 'e', 10},
@@ -1998,7 +1998,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     {refalrts::icsVarRight, 0, 13, 14},
     // closed e.Index#2 as range 14(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 {REMOVED TILE}  e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 AsIs: s.Mode#2/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
     {refalrts::icUpdateIdent, 0, 3, 9},
     {refalrts::icReinitSVar, 0, 12, 8},
@@ -2016,7 +2016,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     {refalrts::icsVarRight, 0, 10, 14},
     // closed e.String#2 as range 14(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Offset#2/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdAllocateElem/4 HalfReuse: s.Offset2 #10/7 Reuse: # ElString/9 } Tile{ AsIs: e.String#2/14(5) } Tile{ HalfReuse: )/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
     {refalrts::icReinitIdent, 0, 0, 4},
@@ -2032,7 +2032,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     // </0 & GenResult-Aux\1/4 (/7 e.Elem#2/5 )/8 >/1
     // closed e.Elem#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/9 Tile{ HalfReuse: # CmdAllocateElem/0 HalfReuse: </4 HalfReuse: & CreateElemParam/7 AsIs: e.Elem#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 9},
     {refalrts::icReinitIdent, 0, 0, 0},
@@ -2084,7 +2084,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     // closed e.Tile#2 as range 14(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/14(5) )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/14(5) )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2115,7 +2115,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     // closed e.Index#2 as range 14(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 {REMOVED TILE}  e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 Reuse: 'e'/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
     refalrts::update_ident( context[9], & ident_CmdCopyVar<int>::name );
     refalrts::update_char( context[10], 'e' );
@@ -2151,7 +2151,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     // closed e.Index#2 as range 14(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\1/4 {REMOVED TILE}  e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 AsIs: s.Mode#2/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
     refalrts::update_ident( context[9], & ident_CmdCopyVar<int>::name );
     refalrts::reinit_svar( context[8], context[12] );
@@ -2180,7 +2180,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
     // closed e.String#2 as range 14(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  s.Offset#2/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdAllocateElem/4 HalfReuse: s.Offset2 #10/7 Reuse: # ElString/9 } Tile{ AsIs: e.String#2/14(5) } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_ident( context[4], & ident_CmdAllocateElem<int>::name );
@@ -2202,7 +2202,7 @@ static refalrts::FnResult gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrt
   // closed e.Elem#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } (/9 Tile{ HalfReuse: # CmdAllocateElem/0 HalfReuse: </4 HalfReuse: & CreateElemParam/7 AsIs: e.Elem#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
@@ -2263,7 +2263,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::ictVarLeftSave, 0, 10, 18},
     {refalrts::icEmpty, 0, 0, 18},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -2281,7 +2281,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::icsVarRight, 0, 17, 10},
     // closed e.Index#3 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE}  e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE} e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdReinitSVar/9 HalfReuse: s.Offset3 #16/12 HalfReuse: s.SampleOffset3 #17/14 HalfReuse: )/15 } Tile{ ]] }
     {refalrts::icUpdateIdent, 0, 6, 9},
     {refalrts::icReinitSVar, 0, 16, 12},
@@ -2301,7 +2301,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::icEmpty, 0, 0, 18},
     // closed e.Elem#3 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # CmdReinitElem/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icReinitIdent, 0, 4, 7},
@@ -2324,7 +2324,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::icEmpty, 0, 0, 18},
     // closed e.Elem#3 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # CmdUpdateElem/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icReinitIdent, 0, 2, 7},
@@ -2345,7 +2345,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::icSave, 0, 18, 5},
     {refalrts::icEmpty, 0, 0, 18},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # LEFT-EDGE/9 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # LEFT-EDGE/9 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -2355,7 +2355,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     {refalrts::icIdentTerm, 0, 0, 9},
     {refalrts::icEmpty, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # RIGHT-EDGE/9 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # RIGHT-EDGE/9 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -2403,7 +2403,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2442,7 +2442,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     // closed e.Index#3 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE}  e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE} e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdReinitSVar/9 HalfReuse: s.Offset3 #16/12 HalfReuse: s.SampleOffset3 #17/14 HalfReuse: )/15 } Tile{ ]] }
     refalrts::update_ident( context[9], & ident_CmdReinitSVar<int>::name );
     refalrts::reinit_svar( context[12], context[16] );
@@ -2477,7 +2477,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     // closed e.Elem#3 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # CmdReinitElem/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_ident( context[7], & ident_CmdReinitElem<int>::name );
@@ -2515,7 +2515,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     // closed e.Elem#3 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # CmdUpdateElem/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_ident( context[7], & ident_CmdUpdateElem<int>::name );
@@ -2546,7 +2546,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # LEFT-EDGE/9 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # LEFT-EDGE/9 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2564,7 +2564,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, ref
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2$1\1/4 (/7 # RIGHT-EDGE/9 )/8 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # RIGHT-EDGE/9 )/8 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -2605,7 +2605,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2(refalrts::Iter arg_begin, refalrt
     {refalrts::icIdentLeftSave, 9, 0, 7},
     // closed e.Tile#2 as range 7
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  # Tile/9 {REMOVED TILE}  )/6 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # Tile/9 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & GenResult-Aux\2$1\1/5 } Tile{ AsIs: e.Tile#2/7 } Tile{ AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitFunc, 0, 0, 5},
@@ -2618,7 +2618,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2(refalrts::Iter arg_begin, refalrt
     // t.idx
     // </0 & GenResult-Aux\2/4 t.Other#2/5 >/1
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2/4 t.Other#2/5 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2/4 t.Other#2/5 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -2659,7 +2659,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2(refalrts::Iter arg_begin, refalrt
     // closed e.Tile#2 as range 7
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  # Tile/9 {REMOVED TILE}  )/6 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # Tile/9 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & GenResult-Aux\2$1\1/5 } Tile{ AsIs: e.Tile#2/7 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name( context[4], Map, "Map" );
     refalrts::reinit_name( context[5], gen_GenResult_Aux_L2S1L1, "GenResult-Aux\\2$1\\1" );
@@ -2678,7 +2678,7 @@ static refalrts::FnResult gen_GenResult_Aux_L2(refalrts::Iter arg_begin, refalrt
   // </0 & GenResult-Aux\2/4 t.Other#2/5 >/1
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GenResult-Aux\2/4 t.Other#2/5 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2/4 t.Other#2/5 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -2722,7 +2722,7 @@ static refalrts::FnResult GenResult_Aux(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Trash#1 as range 5
     // closed e.MarkedResult#1 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/13 # CmdComment/14"TRASH:"/15 </17 & TextFromExpr/18 e.Trash#1/5/19 >/21 )/22 (/23 # CmdComment/24"RESULT:"/25 </27 & TextFromExpr/28 e.MarkedResult#1/9/29 >/31 )/32 </33 & Map/34 & GenResult-Aux\1/35 e.MarkedResult#1/9/36 >/38 </39 & Map/40 & GenResult-Aux\2/41 e.MarkedResult#1/9/42 >/44 </45 & GenPushLink/46 </47 Tile{ HalfReuse: & ModifyResult/11 AsIs: e.MarkedResult#1/9 HalfReuse: >/12 AsIs: >/1 } Tile{ AsIs: </0 Reuse: & GenSplices/4 AsIs: (/7 AsIs: e.Trash#1/5 AsIs: )/8 } e.MarkedResult#1/9/48 >/50 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 13},
     {refalrts::icAllocIdent, 0, 0, 14},
@@ -2815,7 +2815,7 @@ static refalrts::FnResult GenResult_Aux(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.MarkedResult#1 as range 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } (/13 # CmdComment/14"TRASH:"/15 </17 & TextFromExpr/18 e.Trash#1/5/19 >/21 )/22 (/23 # CmdComment/24"RESULT:"/25 </27 & TextFromExpr/28 e.MarkedResult#1/9/29 >/31 )/32 </33 & Map/34 & GenResult-Aux\1/35 e.MarkedResult#1/9/36 >/38 </39 & Map/40 & GenResult-Aux\2/41 e.MarkedResult#1/9/42 >/44 </45 & GenPushLink/46 </47 Tile{ HalfReuse: & ModifyResult/11 AsIs: e.MarkedResult#1/9 HalfReuse: >/12 AsIs: >/1 } Tile{ AsIs: </0 Reuse: & GenSplices/4 AsIs: (/7 AsIs: e.Trash#1/5 AsIs: )/8 } e.MarkedResult#1/9/48 >/50 Tile{ ]] }
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
@@ -2960,7 +2960,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icsVarLeft, 0, 7, 8},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElChar/5 AsIs: s.Char#1/7 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 6, 4},
     {refalrts::icUpdateIdent, 0, 18, 5},
@@ -2976,7 +2976,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icsVarLeft, 0, 7, 8},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElNumber/5 AsIs: s.Number#1/7 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 6, 4},
     {refalrts::icUpdateIdent, 0, 16, 5},
@@ -2991,7 +2991,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenBracket/1 ]] }
     {refalrts::icReinitIdent, 0, 14, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3004,7 +3004,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseBracket/1 ]] }
     {refalrts::icReinitIdent, 0, 12, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3017,7 +3017,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenADT/1 ]] }
     {refalrts::icReinitIdent, 0, 10, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3030,7 +3030,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseADT/1 ]] }
     {refalrts::icReinitIdent, 0, 8, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3043,7 +3043,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenCall/1 ]] }
     {refalrts::icReinitIdent, 0, 6, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3056,7 +3056,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icSave, 0, 8, 2},
     {refalrts::icEmpty, 0, 0, 8},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseCall/1 ]] }
     {refalrts::icReinitIdent, 0, 4, 1},
     {refalrts::icSetRes, 0, 0, 6},
@@ -3068,7 +3068,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icIdentTerm, 0, 3, 5},
     // closed e.Name#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  # TkName/5 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # TkName/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElName/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 6, 0},
     {refalrts::icReinitIdent, 0, 2, 4},
@@ -3081,7 +3081,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icIdentTerm, 0, 1, 5},
     // closed e.Name#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  # TkIdentifier/5 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # TkIdentifier/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElIdent/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 6, 0},
     {refalrts::icReinitIdent, 0, 0, 4},
@@ -3125,7 +3125,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElChar/5 AsIs: s.Char#1/7 } Tile{ ]] }
     refalrts::reinit_svar( context[4], context[6] );
     refalrts::update_ident( context[5], & ident_ElChar<int>::name );
@@ -3152,7 +3152,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElNumber/5 AsIs: s.Number#1/7 } Tile{ ]] }
     refalrts::reinit_svar( context[4], context[6] );
     refalrts::update_ident( context[5], & ident_ElNumber<int>::name );
@@ -3177,7 +3177,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenBracket/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElOpenBracket<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3200,7 +3200,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseBracket/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElCloseBracket<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3223,7 +3223,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenADT/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElOpenADT<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3246,7 +3246,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseADT/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElCloseADT<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3269,7 +3269,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenCall/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElOpenCall<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3292,7 +3292,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseCall/1 ]] }
     refalrts::reinit_ident( context[1], & ident_ElCloseCall<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3312,7 +3312,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
     // closed e.Name#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  # TkName/5 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} # TkName/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElName/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
     refalrts::reinit_svar( context[0], context[6] );
     refalrts::reinit_ident( context[4], & ident_ElName<int>::name );
@@ -3332,7 +3332,7 @@ static refalrts::FnResult CreateElemParam(refalrts::Iter arg_begin, refalrts::It
   // closed e.Name#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  # TkIdentifier/5 {REMOVED TILE}  s.Offset#1/6 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} # TkIdentifier/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElIdent/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
   refalrts::reinit_svar( context[0], context[6] );
   refalrts::reinit_ident( context[4], & ident_ElIdent<int>::name );
@@ -3386,7 +3386,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarLeft, 0, 14, 16},
     {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenCall/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenCall/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 14, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 11},
@@ -3404,7 +3404,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarLeft, 0, 14, 16},
     {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenADT/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenADT/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 14, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 11},
@@ -3422,7 +3422,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarLeft, 0, 14, 16},
     {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenBracket/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenBracket/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 14, 8},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 11},
@@ -3442,7 +3442,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarRight, 0, 15, 18},
     // closed e.Stack#2 as range 18(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/4 AsIs: (/7 } Tile{ HalfReuse: # CmdPushStack/1 } Tile{ AsIs: s.OpenOffset#2/15 AsIs: )/8 AsIs: (/11 Reuse: # CmdPushStack/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -3468,7 +3468,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarRight, 0, 15, 18},
     // closed e.Stack#2 as range 18(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & GenPushLink\1/4 (/7 {REMOVED TILE}  s.OpenOffset#2/15 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/1 } Tile{ HalfReuse: (/8 HalfReuse: # CmdLinkBrackets/11 HalfReuse: s.OpenOffset2 #15/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -3494,7 +3494,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarRight, 0, 15, 18},
     // closed e.Stack#2 as range 18(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  & GenPushLink\1/4 (/7 {REMOVED TILE}  s.OpenOffset#2/15 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/1 } Tile{ HalfReuse: (/8 HalfReuse: # CmdLinkBrackets/11 HalfReuse: s.OpenOffset2 #15/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -3514,7 +3514,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     // closed e.Stack#2 as range 5
     // closed e.Info#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  (/11 s.tag#2/13 e.Info#2/9 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} (/11 s.tag#2/13 e.Info#2/9 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 AsIs: )/8 } Tile{ ]] }
     {refalrts::icLinkBrackets, 7, 8, 0},
     {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -3571,7 +3571,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenCall/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenCall/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     refalrts::reinit_svar( context[8], context[14] );
     refalrts::reinit_close_bracket( context[11] );
@@ -3600,7 +3600,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenADT/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenADT/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     refalrts::reinit_svar( context[8], context[14] );
     refalrts::reinit_close_bracket( context[11] );
@@ -3629,7 +3629,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  # TkOpenBracket/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenBracket/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 HalfReuse: s.Offset2 #14/8 HalfReuse: )/11 } Tile{ ]] }
     refalrts::reinit_svar( context[8], context[14] );
     refalrts::reinit_close_bracket( context[11] );
@@ -3662,7 +3662,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     // closed e.Stack#2 as range 18(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/4 AsIs: (/7 } Tile{ HalfReuse: # CmdPushStack/1 } Tile{ AsIs: s.OpenOffset#2/15 AsIs: )/8 AsIs: (/11 Reuse: # CmdPushStack/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[4] );
@@ -3701,7 +3701,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     // closed e.Stack#2 as range 18(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & GenPushLink\1/4 (/7 {REMOVED TILE}  s.OpenOffset#2/15 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/1 } Tile{ HalfReuse: (/8 HalfReuse: # CmdLinkBrackets/11 HalfReuse: s.OpenOffset2 #15/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[1] );
@@ -3740,7 +3740,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
     // closed e.Stack#2 as range 18(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  & GenPushLink\1/4 (/7 {REMOVED TILE}  s.OpenOffset#2/15 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/1 } Tile{ HalfReuse: (/8 HalfReuse: # CmdLinkBrackets/11 HalfReuse: s.OpenOffset2 #15/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[1] );
@@ -3766,7 +3766,7 @@ static refalrts::FnResult gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts:
   // closed e.Info#2 as range 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GenPushLink\1/4 {REMOVED TILE}  (/11 s.tag#2/13 e.Info#2/9 )/12 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} (/11 s.tag#2/13 e.Info#2/9 )/12 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Stack#2/5 AsIs: )/8 } Tile{ ]] }
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -3799,7 +3799,7 @@ static refalrts::FnResult gen_GenPushLink_L2(refalrts::Iter arg_begin, refalrts:
     {refalrts::icEmpty, 0, 0, 5},
     // closed e.Commands#2 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenPushLink\2/4 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenPushLink\2/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & Reverse/8 AsIs: e.Commands#2/2 AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 7},
     {refalrts::icReinitFunc, 0, 0, 8},
@@ -3834,7 +3834,7 @@ static refalrts::FnResult gen_GenPushLink_L2(refalrts::Iter arg_begin, refalrts:
   // closed e.Commands#2 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GenPushLink\2/4 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & GenPushLink\2/4 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & Reverse/8 AsIs: e.Commands#2/2 AsIs: >/1 ]] }
   refalrts::reinit_open_call( context[7] );
   refalrts::reinit_name( context[8], Reverse, "Reverse" );
@@ -3870,7 +3870,7 @@ static refalrts::FnResult GenPushLink(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icCallSaveLeft, 0, 2, 0},
     // closed e.MarkedResult#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & MapReduce/6 & GenPushLink\1/7 (/8 )/9 Tile{ AsIs: e.MarkedResult#1/2 } >/10 & GenPushLink\2/11 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
     {refalrts::icAllocFunc, 0, 3, 6},
@@ -3908,7 +3908,7 @@ static refalrts::FnResult GenPushLink(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.MarkedResult#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & MapReduce/6 & GenPushLink\1/7 (/8 )/9 Tile{ AsIs: e.MarkedResult#1/2 } >/10 & GenPushLink\2/11 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
@@ -3965,7 +3965,7 @@ static refalrts::FnResult Reverse(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::ictVarRightSave, 0, 5, 7},
     // closed e.Items#1 as range 7(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Last#1/5 } Tile{ AsIs: </0 AsIs: & Reverse/4 } Tile{ AsIs: e.Items#1/7(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -3978,7 +3978,7 @@ static refalrts::FnResult Reverse(refalrts::Iter arg_begin, refalrts::Iter arg_e
     // </0 & Reverse/4 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & Reverse/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & Reverse/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -4013,7 +4013,7 @@ static refalrts::FnResult Reverse(refalrts::Iter arg_begin, refalrts::Iter arg_e
     // closed e.Items#1 as range 7(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Last#1/5 } Tile{ AsIs: </0 AsIs: & Reverse/4 } Tile{ AsIs: e.Items#1/7(2) } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -4033,7 +4033,7 @@ static refalrts::FnResult Reverse(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & Reverse/4 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & Reverse/4 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -4075,7 +4075,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Tile#1 as range 5
     // closed e.Result#1 as range 10(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ModifyTile/4 } Tile{ AsIs: e.Tile#1/5 } Tile{ HalfReuse: >/7 HalfReuse: </9 } Tile{ HalfReuse: & ModifyResult/8 AsIs: e.Result#1/10(2) AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 7},
@@ -4098,7 +4098,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icsVarLeft, 0, 9, 5},
     // closed e.info#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.tag#1/9 AsIs: e.info#1/5 AsIs: )/8 } Tile{ AsIs: </0 AsIs: & ModifyResult/4 } Tile{ AsIs: e.Result#1/10(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -4112,7 +4112,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     // </0 & ModifyResult/4 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & ModifyResult/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyResult/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -4154,7 +4154,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Result#1 as range 10(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ModifyTile/4 } Tile{ AsIs: e.Tile#1/5 } Tile{ HalfReuse: >/7 HalfReuse: </9 } Tile{ HalfReuse: & ModifyResult/8 AsIs: e.Result#1/10(2) AsIs: >/1 ]] }
     refalrts::update_name( context[4], ModifyTile, "ModifyTile" );
     refalrts::reinit_close_call( context[7] );
@@ -4191,7 +4191,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.info#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.tag#1/9 AsIs: e.info#1/5 AsIs: )/8 } Tile{ AsIs: </0 AsIs: & ModifyResult/4 } Tile{ AsIs: e.Result#1/10(2) } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -4212,7 +4212,7 @@ static refalrts::FnResult ModifyResult(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & ModifyResult/4 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & ModifyResult/4 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -4257,7 +4257,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icEmpty, 0, 0, 5},
     // closed e.Range#1 as range 12(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 (/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 9},
     {refalrts::icReinitFunc, 0, 0, 8},
@@ -4275,7 +4275,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icEmpty, 0, 0, 5},
     // closed e.Range#1 as range 12(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 (/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 9},
     {refalrts::icReinitFunc, 0, 0, 8},
@@ -4294,7 +4294,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::ictVarLeftSave, 0, 10, 5},
     {refalrts::icEmpty, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     {refalrts::icReinitFunc, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 1},
@@ -4314,7 +4314,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::ictVarLeftSave, 0, 10, 5},
     {refalrts::icEmpty, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     {refalrts::icReinitFunc, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 1},
@@ -4334,7 +4334,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::ictVarLeftSave, 0, 10, 5},
     {refalrts::icEmpty, 0, 0, 5},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     {refalrts::icReinitFunc, 0, 0, 8},
     {refalrts::icPushStack, 0, 0, 1},
@@ -4348,7 +4348,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & ModifyTile/4 >/1
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyTile/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -4391,7 +4391,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.Range#1 as range 12(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 (/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
     refalrts::reinit_name( context[8], ModifyTile, "ModifyTile" );
@@ -4425,7 +4425,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.Range#1 as range 12(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 (/7 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
     refalrts::reinit_name( context[8], ModifyTile, "ModifyTile" );
@@ -4462,7 +4462,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_name( context[8], ModifyTile, "ModifyTile" );
     refalrts::push_stack( context[1] );
@@ -4500,7 +4500,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_name( context[8], ModifyTile, "ModifyTile" );
     refalrts::push_stack( context[1] );
@@ -4538,7 +4538,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_name( context[8], ModifyTile, "ModifyTile" );
     refalrts::push_stack( context[1] );
@@ -4559,7 +4559,7 @@ static refalrts::FnResult ModifyTile(refalrts::Iter arg_begin, refalrts::Iter ar
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & ModifyTile/4 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & ModifyTile/4 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -4613,7 +4613,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
     {refalrts::icsVarRight, 0, 21, 14},
     // closed e.Index#2 as range 14
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE}  e.Index#2/14 s.Depth#2/21 {REMOVED TILE}  )/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE} e.Index#2/14 s.Depth#2/21 {REMOVED TILE} )/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/16 Reuse: # CmdInsertVar/18 AsIs: 'e'/19 } Tile{ AsIs: s.Offset#2/20 AsIs: )/17 } Tile{ ]] }
     {refalrts::icUpdateIdent, 0, 1, 18},
     {refalrts::icLinkBrackets, 16, 17, 0},
@@ -4628,7 +4628,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
     {refalrts::icSave, 0, 22, 5},
     {refalrts::icEmpty, 0, 0, 22},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/11 # CmdInsertTile/12 </13 & BeginOffset/14 t.OneItem#2/9/15 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & EndOffset/7 AsIs: t.OneItem#2/9 HalfReuse: >/8 HalfReuse: )/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 11},
     {refalrts::icAllocIdent, 0, 0, 12},
@@ -4653,7 +4653,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
     {refalrts::ictVarRightSave, 0, 11, 5},
     // closed e.Inner#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  e.Inner#2/5 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Inner#2/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } (/13 Tile{ HalfReuse: # CmdInsertTile/0 HalfReuse: </4 HalfReuse: & BeginOffset/7 AsIs: t.Begin#2/9 } >/14 </15 & EndOffset/16 Tile{ AsIs: t.End#2/11 HalfReuse: >/8 HalfReuse: )/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 13},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 14},
@@ -4740,7 +4740,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
     // closed e.Index#2 as range 14
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE}  e.Index#2/14 s.Depth#2/21 {REMOVED TILE}  )/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE} e.Index#2/14 s.Depth#2/21 {REMOVED TILE} )/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/16 Reuse: # CmdInsertVar/18 AsIs: 'e'/19 } Tile{ AsIs: s.Offset#2/20 AsIs: )/17 } Tile{ ]] }
     refalrts::update_ident( context[18], & ident_CmdInsertVar<int>::name );
     refalrts::link_brackets( context[16], context[17] );
@@ -4764,7 +4764,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/11 # CmdInsertTile/12 </13 & BeginOffset/14 t.OneItem#2/9/15 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & EndOffset/7 AsIs: t.OneItem#2/9 HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
@@ -4802,7 +4802,7 @@ static refalrts::FnResult gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts
   // closed e.Inner#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  e.Inner#2/5 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} e.Inner#2/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } (/13 Tile{ HalfReuse: # CmdInsertTile/0 HalfReuse: </4 HalfReuse: & BeginOffset/7 AsIs: t.Begin#2/9 } >/14 </15 & EndOffset/16 Tile{ AsIs: t.End#2/11 HalfReuse: >/8 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
@@ -4880,7 +4880,7 @@ static refalrts::FnResult GenSplices(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.Result#1 as range 32(2)
     // closed e.RightTile#1 as range 14
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdSetRes/4 } Tile{ HalfReuse: </16 HalfReuse: & CalcRes/18 AsIs: e.RightTile#1/14 HalfReuse: >/17 HalfReuse: )/1 } </19 & Map/20 & GenSplices$1\1/21 </22 & CollectTiles/23 Tile{ AsIs: e.Result#1/32(2) } >/24 >/25 (/26 # CmdUseRes/27 Tile{ AsIs: )/12 } </28 & GenTrash/29 (/30 Tile{ AsIs: e.LeftTile#1/9 } Tile{ HalfReuse: )/7 AsIs: e.Trash#1/5 HalfReuse: >/8 AsIs: (/11 Reuse: # CmdReturnResult-NoTrash/13 } )/31 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
     {refalrts::icAllocFunc, 0, 4, 20},
@@ -4935,7 +4935,7 @@ static refalrts::FnResult GenSplices(refalrts::Iter arg_begin, refalrts::Iter ar
     {refalrts::icEmpty, 0, 0, 2},
     // closed e.OneTile#1 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenSplices/4 {REMOVED TILE}  (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenSplices/4 {REMOVED TILE} (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdReturnResult-NoTrash/14 AsIs: )/8 } Tile{ ]] }
     {refalrts::icUpdateIdent, 0, 0, 14},
     {refalrts::icLinkBrackets, 7, 8, 0},
@@ -5000,7 +5000,7 @@ static refalrts::FnResult GenSplices(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.RightTile#1 as range 14
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdSetRes/4 } Tile{ HalfReuse: </16 HalfReuse: & CalcRes/18 AsIs: e.RightTile#1/14 HalfReuse: >/17 HalfReuse: )/1 } </19 & Map/20 & GenSplices$1\1/21 </22 & CollectTiles/23 Tile{ AsIs: e.Result#1/32(2) } >/24 >/25 (/26 # CmdUseRes/27 Tile{ AsIs: )/12 } </28 & GenTrash/29 (/30 Tile{ AsIs: e.LeftTile#1/9 } Tile{ HalfReuse: )/7 AsIs: e.Trash#1/5 HalfReuse: >/8 AsIs: (/11 Reuse: # CmdReturnResult-NoTrash/13 } )/31 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
@@ -5079,7 +5079,7 @@ static refalrts::FnResult GenSplices(refalrts::Iter arg_begin, refalrts::Iter ar
   // closed e.OneTile#1 as range 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & GenSplices/4 {REMOVED TILE}  (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & GenSplices/4 {REMOVED TILE} (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdReturnResult-NoTrash/14 AsIs: )/8 } Tile{ ]] }
   refalrts::update_ident( context[14], & ident_CmdReturnResult_NoTrash<int>::name );
   refalrts::link_brackets( context[7], context[8] );
@@ -5124,7 +5124,7 @@ static refalrts::FnResult CalcRes(refalrts::Iter arg_begin, refalrts::Iter arg_e
     {refalrts::icSave, 0, 10, 2},
     {refalrts::icEmpty, 0, 0, 10},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CalcRes/4 (/5 # RIGHT-EDGE/9 )/6 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CalcRes/4 (/5 # RIGHT-EDGE/9 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # RIGHT-EDGE/1 ]] }
     {refalrts::icReinitIdent, 0, 0, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -5134,7 +5134,7 @@ static refalrts::FnResult CalcRes(refalrts::Iter arg_begin, refalrts::Iter arg_e
     // </0 & CalcRes/4 t.First#1/5 e.Tile#1/2 >/1
     // closed e.Tile#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.Tile#1/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.Tile#1/2 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & BeginOffset/4 AsIs: t.First#1/5 } Tile{ AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icPushStack, 0, 0, 1},
@@ -5182,7 +5182,7 @@ static refalrts::FnResult CalcRes(refalrts::Iter arg_begin, refalrts::Iter arg_e
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CalcRes/4 (/5 # RIGHT-EDGE/9 )/6 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CalcRes/4 (/5 # RIGHT-EDGE/9 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # RIGHT-EDGE/1 ]] }
     refalrts::reinit_ident( context[1], & ident_RIGHT_EDGE<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5198,7 +5198,7 @@ static refalrts::FnResult CalcRes(refalrts::Iter arg_begin, refalrts::Iter arg_e
   // closed e.Tile#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.Tile#1/2 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.Tile#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & BeginOffset/4 AsIs: t.First#1/5 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name( context[4], BeginOffset, "BeginOffset" );
   refalrts::push_stack( context[1] );
@@ -5242,7 +5242,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Tile#1 as range 5
     // closed e.Other#1 as range 14(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & CollectTiles/4 } Tile{ AsIs: e.Other#1/14(2) } Tile{ HalfReuse: >/7 HalfReuse: (/9 AsIs: e.Tile#1/5 AsIs: )/8 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 7},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
@@ -5266,7 +5266,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Tile#1 as range 7
     // closed e.Other#1 as range 16(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & CollectTiles/4 } Tile{ AsIs: e.Other#1/16(2) } Tile{ HalfReuse: >/9 HalfReuse: (/11 AsIs: e.Tile#1/7 AsIs: )/10 } </12 & CollectTiles-Alloc/13 Tile{ AsIs: e.Allocated#1/5 } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 12},
     {refalrts::icAllocFunc, 0, 0, 13},
@@ -5289,7 +5289,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
     {refalrts::icSave, 0, 14, 2},
     {refalrts::icEmpty, 0, 0, 14},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CollectTiles/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CollectTiles/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -5298,7 +5298,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
     // </0 & CollectTiles/4 e.Allocated#1/2 >/1
     // closed e.Allocated#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} 
+    //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & CollectTiles-Alloc/4 AsIs: e.Allocated#1/2 AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icPushStack, 0, 0, 1},
@@ -5341,7 +5341,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Other#1 as range 14(2)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & CollectTiles/4 } Tile{ AsIs: e.Other#1/14(2) } Tile{ HalfReuse: >/7 HalfReuse: (/9 AsIs: e.Tile#1/5 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_bracket( context[9] );
@@ -5383,7 +5383,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
       // closed e.Other#1 as range 16(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & CollectTiles/4 } Tile{ AsIs: e.Other#1/16(2) } Tile{ HalfReuse: >/9 HalfReuse: (/11 AsIs: e.Tile#1/7 AsIs: )/10 } </12 & CollectTiles-Alloc/13 Tile{ AsIs: e.Allocated#1/5 } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[12] ) )
         return refalrts::cNoMemory;
@@ -5418,7 +5418,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CollectTiles/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CollectTiles/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -5433,7 +5433,7 @@ static refalrts::FnResult CollectTiles(refalrts::Iter arg_begin, refalrts::Iter 
   // closed e.Allocated#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} 
+  //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & CollectTiles-Alloc/4 AsIs: e.Allocated#1/2 AsIs: >/1 ]] }
   refalrts::update_name( context[4], CollectTiles_Alloc, "CollectTiles-Alloc" );
   refalrts::push_stack( context[1] );
@@ -5476,7 +5476,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarRight, 0, 13, 5},
     // closed e.Index#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } </14 & CollectTiles-Alloc/15 Tile{ AsIs: e.Alloc#1/16(2) } Tile{ HalfReuse: >/0 HalfReuse: (/4 AsIs: (/7 AsIs: # TkVariableCopy/9 AsIs: 'e'/10 AsIs: e.Index#1/5 AsIs: s.Level#1/13 AsIs: s.Sample#1/12 AsIs: s.Offset#1/11 AsIs: )/8 } Tile{ HalfReuse: )/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
     {refalrts::icAllocFunc, 0, 0, 15},
@@ -5505,7 +5505,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     {refalrts::icsVarRight, 0, 13, 5},
     // closed e.Index#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/14 Tile{ AsIs: (/7 AsIs: # TkVariableCopy/9 AsIs: 'e'/10 AsIs: e.Index#1/5 AsIs: s.Level#1/13 AsIs: s.Sample#1/12 AsIs: s.Offset#1/11 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: </0 AsIs: & CollectTiles-Alloc/4 } Tile{ AsIs: e.Alloc#1/16(2) } >/15 Tile{ ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
@@ -5527,7 +5527,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     {refalrts::icSave, 0, 16, 2},
     {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & CollectTiles-Alloc/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CollectTiles-Alloc/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -5536,7 +5536,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     // </0 & CollectTiles-Alloc/4 e.Alloc#1/2 >/1
     // closed e.Alloc#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: e.Alloc#1/2 HalfReuse: )/1 ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
     {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -5590,7 +5590,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     // closed e.Index#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } </14 & CollectTiles-Alloc/15 Tile{ AsIs: e.Alloc#1/16(2) } Tile{ HalfReuse: >/0 HalfReuse: (/4 AsIs: (/7 AsIs: # TkVariableCopy/9 AsIs: 'e'/10 AsIs: e.Index#1/5 AsIs: s.Level#1/13 AsIs: s.Sample#1/12 AsIs: s.Offset#1/11 AsIs: )/8 } Tile{ HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
@@ -5641,7 +5641,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
     // closed e.Index#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } (/14 Tile{ AsIs: (/7 AsIs: # TkVariableCopy/9 AsIs: 'e'/10 AsIs: e.Index#1/5 AsIs: s.Level#1/13 AsIs: s.Sample#1/12 AsIs: s.Offset#1/11 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: </0 AsIs: & CollectTiles-Alloc/4 } Tile{ AsIs: e.Alloc#1/16(2) } >/15 Tile{ ]] }
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
@@ -5674,7 +5674,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & CollectTiles-Alloc/4 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & CollectTiles-Alloc/4 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -5689,7 +5689,7 @@ static refalrts::FnResult CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts:
   // closed e.Alloc#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: e.Alloc#1/2 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[4] );
   refalrts::reinit_close_bracket( context[1] );
@@ -5739,7 +5739,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icIdentLeftSave, 11, 2, 16},
     // closed e.Trash-E#1 as range 16(2)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  # RemovedTile/11 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} # RemovedTile/11 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & GenTrash/4 AsIs: (/7 AsIs: e.LeftTile#1/5 AsIs: )/8 } Tile{ AsIs: e.Trash-B#1/9 } Tile{ AsIs: e.Trash-E#1/16(2) } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -5756,7 +5756,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icEmpty, 0, 0, 14},
     // closed e.LeftTile#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenTrash/4 (/7 e.LeftTile#1/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenTrash/4 (/7 e.LeftTile#1/5 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -5771,7 +5771,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::icEmpty, 0, 0, 14},
     // closed e.Trash#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GenTrash/4 {REMOVED TILE}  )/8 e.Trash#1/2 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenTrash/4 {REMOVED TILE} )/8 e.Trash#1/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 HalfReuse: # CmdTrash/11 AsIs: # LEFT-EDGE/13 AsIs: )/12 } Tile{ ]] }
     {refalrts::icReinitIdent, 0, 0, 11},
     {refalrts::icLinkBrackets, 7, 12, 0},
@@ -5785,7 +5785,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     {refalrts::ictVarRightSave, 0, 9, 5},
     // closed e.LeftTile#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.LeftTile#1/5 {REMOVED TILE}  e.Trash#1/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.LeftTile#1/5 {REMOVED TILE} e.Trash#1/2 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdTrash/4 HalfReuse: </7 } & EndOffset/11 Tile{ AsIs: t.Last#1/9 HalfReuse: >/8 } Tile{ HalfReuse: )/1 ]] }
     {refalrts::icAllocFunc, 0, 0, 11},
     {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
@@ -5845,7 +5845,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
       // closed e.Trash-E#1 as range 16(2)
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  # RemovedTile/11 {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} # RemovedTile/11 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & GenTrash/4 AsIs: (/7 AsIs: e.LeftTile#1/5 AsIs: )/8 } Tile{ AsIs: e.Trash-B#1/9 } Tile{ AsIs: e.Trash-E#1/16(2) } Tile{ AsIs: >/1 ]] }
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
@@ -5872,7 +5872,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.LeftTile#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenTrash/4 (/7 e.LeftTile#1/5 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenTrash/4 (/7 e.LeftTile#1/5 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -5904,7 +5904,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
     // closed e.Trash#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GenTrash/4 {REMOVED TILE}  )/8 e.Trash#1/2 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GenTrash/4 {REMOVED TILE} )/8 e.Trash#1/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 HalfReuse: # CmdTrash/11 AsIs: # LEFT-EDGE/13 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_ident( context[11], & ident_CmdTrash<int>::name );
     refalrts::link_brackets( context[7], context[12] );
@@ -5926,7 +5926,7 @@ static refalrts::FnResult GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_
   // closed e.LeftTile#1 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.LeftTile#1/5 {REMOVED TILE}  e.Trash#1/2 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.LeftTile#1/5 {REMOVED TILE} e.Trash#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdTrash/4 HalfReuse: </7 } & EndOffset/11 Tile{ AsIs: t.Last#1/9 HalfReuse: >/8 } Tile{ HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_name( context[11], EndOffset, "EndOffset" ) )
     return refalrts::cNoMemory;
@@ -5981,7 +5981,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSave, 0, 12, 5},
     {refalrts::icEmpty, 0, 0, 12},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # AsIs/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -5996,7 +5996,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSave, 0, 12, 5},
     {refalrts::icEmpty, 0, 0, 12},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # HalfReuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -6011,7 +6011,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icSave, 0, 12, 5},
     {refalrts::icEmpty, 0, 0, 12},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # Reuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -6024,7 +6024,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icsVarTerm, 0, 12, 10},
     // closed e.Info#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     {refalrts::icReinitSVar, 0, 10, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -6073,7 +6073,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # AsIs/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6098,7 +6098,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # HalfReuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6123,7 +6123,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # Reuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & BeginOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6143,7 +6143,7 @@ static refalrts::FnResult BeginOffset(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.Info#1 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
   refalrts::reinit_svar( context[1], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6192,7 +6192,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSave, 0, 15, 5},
     {refalrts::icEmpty, 0, 0, 15},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # AsIs/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -6207,7 +6207,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSave, 0, 15, 5},
     {refalrts::icEmpty, 0, 0, 15},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # HalfReuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -6222,7 +6222,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icSave, 0, 15, 5},
     {refalrts::icEmpty, 0, 0, 15},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 # Reuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icPushStack, 0, 0, 1},
     {refalrts::icPushStack, 0, 0, 0},
@@ -6240,7 +6240,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarRight, 0, 13, 15},
     // closed e.Index#1 as range 15(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     {refalrts::icReinitSVar, 0, 10, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -6257,7 +6257,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarRight, 0, 14, 15},
     // closed e.Index#1 as range 15(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     {refalrts::icReinitSVar, 0, 10, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -6273,7 +6273,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarRight, 0, 13, 15},
     // closed e.Index#1 as range 15(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 10, 7},
@@ -6294,7 +6294,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarRight, 0, 14, 15},
     // closed e.Index#1 as range 15(5)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 10, 7},
@@ -6311,7 +6311,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icIdentTerm, 0, 0, 9},
     // closed e.String#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 10, 7},
@@ -6326,7 +6326,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     {refalrts::icsVarTerm, 0, 12, 10},
     // closed e.Info#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     {refalrts::icReinitSVar, 0, 10, 1},
     {refalrts::icSetRes, 0, 0, 1},
@@ -6375,7 +6375,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # AsIs/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6400,7 +6400,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # HalfReuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6425,7 +6425,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 # Reuse/9 {REMOVED TILE}  )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & EndOffset/4 } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -6456,7 +6456,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.Index#1 as range 15(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     refalrts::reinit_svar( context[1], context[10] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -6487,7 +6487,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.Index#1 as range 15(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
     refalrts::reinit_svar( context[1], context[10] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -6515,7 +6515,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.Index#1 as range 15(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     refalrts::update_name( context[4], Inc, "Inc" );
     refalrts::reinit_svar( context[7], context[10] );
@@ -6549,7 +6549,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.Index#1 as range 15(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     refalrts::update_name( context[4], Inc, "Inc" );
     refalrts::reinit_svar( context[7], context[10] );
@@ -6575,7 +6575,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
     // closed e.String#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
     refalrts::update_name( context[4], Inc, "Inc" );
     refalrts::reinit_svar( context[7], context[10] );
@@ -6597,7 +6597,7 @@ static refalrts::FnResult EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg
   // closed e.Info#1 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #10/1 ]] }
   refalrts::reinit_svar( context[1], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6648,7 +6648,7 @@ static refalrts::FnResult gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, refalr
     {refalrts::icsVarRight, 0, 21, 14},
     // closed e.Index#3 as range 14
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # HalfReuse/13 AsIs: (/16 AsIs: # TkVariable/18 HalfReuse: </19 } Tile{ HalfReuse: & GetSampleOffset/7 AsIs: e.PatternVars#1/5 HalfReuse: (/8 } Tile{ HalfReuse: 's'/4 } Tile{ AsIs: e.Index#3/14 } Tile{ AsIs: s.Level#3/21 } Tile{ HalfReuse: )/0 } Tile{ AsIs: >/1 } Tile{ AsIs: s.Offset#3/20 AsIs: )/17 AsIs: )/10 } Tile{ ]] }
     {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 19},
     {refalrts::icReinitFunc, 0, 0, 7},
@@ -6674,7 +6674,7 @@ static refalrts::FnResult gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, refalr
     // </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 t.Other#3/9 >/1
     // closed e.PatternVars#1 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Other#3/9 } Tile{ ]] }
     {refalrts::icSetResRightEdge, 0, 0, 0},
     {refalrts::icSpliceTile, 9, 10, 0},
@@ -6742,7 +6742,7 @@ static refalrts::FnResult gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, refalr
     // closed e.Index#3 as range 14
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # HalfReuse/13 AsIs: (/16 AsIs: # TkVariable/18 HalfReuse: </19 } Tile{ HalfReuse: & GetSampleOffset/7 AsIs: e.PatternVars#1/5 HalfReuse: (/8 } Tile{ HalfReuse: 's'/4 } Tile{ AsIs: e.Index#3/14 } Tile{ AsIs: s.Level#3/21 } Tile{ HalfReuse: )/0 } Tile{ AsIs: >/1 } Tile{ AsIs: s.Offset#3/20 AsIs: )/17 AsIs: )/10 } Tile{ ]] }
     refalrts::reinit_open_call( context[19] );
     refalrts::reinit_name( context[7], GetSampleOffset, "GetSampleOffset" );
@@ -6774,7 +6774,7 @@ static refalrts::FnResult gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, refalr
   // closed e.PatternVars#1 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 {REMOVED TILE}  >/1 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.Other#3/9 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -6829,7 +6829,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.PatternVars#1 as range 5
     // closed e.Tile#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#2/13 AsIs: (/11 AsIs: # Tile/14 } </15 & Map/16 </17 Tile{ HalfReuse: & @create_closure@/0 Reuse: & AddOffsets\1$1\1/4 AsIs: (/7 AsIs: e.PatternVars#1/5 AsIs: )/8 } >/18 Tile{ AsIs: e.Tile#2/9 } Tile{ HalfReuse: >/12 HalfReuse: )/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 15},
     {refalrts::icAllocFunc, 0, 6, 16},
@@ -6862,7 +6862,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     {refalrts::icsVarRight, 0, 16, 22},
     // closed e.Index#2 as range 22(9)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 1/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 's'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icAllocInt, 0, 1, 17},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
@@ -6898,7 +6898,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     {refalrts::icsVarRight, 0, 16, 22},
     // closed e.Index#2 as range 22(9)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 2/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 't'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icAllocInt, 0, 2, 17},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
@@ -6934,7 +6934,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     {refalrts::icsVarRight, 0, 16, 22},
     // closed e.Index#2 as range 22(9)
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 2/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 'e'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     {refalrts::icAllocInt, 0, 2, 17},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
@@ -6967,7 +6967,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.PatternVars#1 as range 5
     // closed e.String#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.PatternVars#1/5 {REMOVED TILE}  s.Offset#2/13 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: # TkString/14 AsIs: e.String#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
     {refalrts::icUpdateFunc, 0, 1, 4},
     {refalrts::icReinitSVar, 0, 13, 7},
@@ -6986,7 +6986,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.PatternVars#1 as range 5
     // closed e.Info#2 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.PatternVars#1/5 {REMOVED TILE}  s.Offset#2/13 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: s.Tag#2/14 AsIs: e.Info#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
     {refalrts::icUpdateFunc, 0, 0, 4},
     {refalrts::icReinitSVar, 0, 13, 7},
@@ -7047,7 +7047,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.Tile#2 as range 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#2/13 AsIs: (/11 AsIs: # Tile/14 } </15 & Map/16 </17 Tile{ HalfReuse: & @create_closure@/0 Reuse: & AddOffsets\1$1\1/4 AsIs: (/7 AsIs: e.PatternVars#1/5 AsIs: )/8 } >/18 Tile{ AsIs: e.Tile#2/9 } Tile{ HalfReuse: >/12 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
@@ -7096,7 +7096,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.Index#2 as range 22(9)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 1/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 's'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     if( ! refalrts::alloc_number( context[17], 1UL ) )
       return refalrts::cNoMemory;
@@ -7149,7 +7149,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.Index#2 as range 22(9)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 2/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 't'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     if( ! refalrts::alloc_number( context[17], 2UL ) )
       return refalrts::cNoMemory;
@@ -7202,7 +7202,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.Index#2 as range 22(9)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 HalfReuse: s.Offset2 #13/7 } 2/17 >/18 Tile{ HalfReuse: (/8 } # TkVariableCopy/19 </20 & GetSampleOffset/21 Tile{ AsIs: e.PatternVars#1/5 } Tile{ HalfReuse: (/14 AsIs: 'e'/15 AsIs: e.Index#2/22(9) AsIs: s.Level#2/16 AsIs: )/12 AsIs: >/1 } Tile{ AsIs: s.Offset#2/13 HalfReuse: )/11 } Tile{ ]] }
     if( ! refalrts::alloc_number( context[17], 2UL ) )
       return refalrts::cNoMemory;
@@ -7248,7 +7248,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
     // closed e.String#2 as range 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  e.PatternVars#1/5 {REMOVED TILE}  s.Offset#2/13 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: # TkString/14 AsIs: e.String#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
     refalrts::update_name( context[4], Inc2, "Inc2" );
     refalrts::reinit_svar( context[7], context[13] );
@@ -7273,7 +7273,7 @@ static refalrts::FnResult gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::
   // closed e.Info#2 as range 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.PatternVars#1/5 {REMOVED TILE}  s.Offset#2/13 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: s.Tag#2/14 AsIs: e.Info#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
   refalrts::update_name( context[4], Inc, "Inc" );
   refalrts::reinit_svar( context[7], context[13] );
@@ -7317,7 +7317,7 @@ static refalrts::FnResult AddOffsets(refalrts::Iter arg_begin, refalrts::Iter ar
     // closed e.PatternVars#1 as range 6
     // closed e.MarkedResult#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapReduce/4 } </10 & @create_closure@/11 & AddOffsets\1/12 Tile{ AsIs: (/8 AsIs: e.PatternVars#1/6 AsIs: )/9 } >/13 Tile{ AsIs: s.ContextOffset#1/5 } </14 & CollectStrings/15 Tile{ AsIs: e.MarkedResult#1/2 } >/16 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 10},
     {refalrts::icAllocFunc, 0, 3, 11},
@@ -7370,7 +7370,7 @@ static refalrts::FnResult AddOffsets(refalrts::Iter arg_begin, refalrts::Iter ar
   // closed e.MarkedResult#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapReduce/4 } </10 & @create_closure@/11 & AddOffsets\1/12 Tile{ AsIs: (/8 AsIs: e.PatternVars#1/6 AsIs: )/9 } >/13 Tile{ AsIs: s.ContextOffset#1/5 } </14 & CollectStrings/15 Tile{ AsIs: e.MarkedResult#1/2 } >/16 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
@@ -7440,7 +7440,7 @@ static refalrts::FnResult GetSampleOffset(refalrts::Iter arg_begin, refalrts::It
     {refalrts::icsVarRight, 0, 25, 13},
     // closed e.Offsets#1 as range 13
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  </0 & GetSampleOffset/4 e.PatternVars-B#1/11 (/15 s.Mode#1/17 (/20 e.Index#1/22 s.Level#1/24 )/21 e.Offsets#1/13 s.SampleOffset#1/25 )/16 e.PatternVars-E#1/26(2) (/7 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GetSampleOffset/4 e.PatternVars-B#1/11 (/15 s.Mode#1/17 (/20 e.Index#1/22 s.Level#1/24 )/21 e.Offsets#1/13 s.SampleOffset#1/25 )/16 e.PatternVars-E#1/26(2) (/7 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Mode#1/9 AsIs: e.Index#1/5 AsIs: s.Level#1/10 HalfReuse: s.SampleOffset1 #25/8 } Tile{ ]] }
     {refalrts::icReinitSVar, 0, 25, 8},
     {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -7506,7 +7506,7 @@ static refalrts::FnResult GetSampleOffset(refalrts::Iter arg_begin, refalrts::It
     // closed e.Offsets#1 as range 13
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  </0 & GetSampleOffset/4 e.PatternVars-B#1/11 (/15 s.Mode#1/17 (/20 e.Index#1/22 s.Level#1/24 )/21 e.Offsets#1/13 s.SampleOffset#1/25 )/16 e.PatternVars-E#1/26(2) (/7 {REMOVED TILE}  >/1 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} </0 & GetSampleOffset/4 e.PatternVars-B#1/11 (/15 s.Mode#1/17 (/20 e.Index#1/22 s.Level#1/24 )/21 e.Offsets#1/13 s.SampleOffset#1/25 )/16 e.PatternVars-E#1/26(2) (/7 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Mode#1/9 AsIs: e.Index#1/5 AsIs: s.Level#1/10 HalfReuse: s.SampleOffset1 #25/8 } Tile{ ]] }
     refalrts::reinit_svar( context[8], context[25] );
     refalrts::Iter trash_prev = arg_begin->prev;

@@ -93,7 +93,7 @@ refalrts::FnResult Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main/4 HalfReuse: </1 } & ArgList/5 >/6 >/7 Tile{ ]] }
     {refalrts::icAllocFunc, 0, 1, 5},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 6},
@@ -126,7 +126,7 @@ refalrts::FnResult Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main/4 HalfReuse: </1 } & ArgList/5 >/6 >/7 Tile{ ]] }
   if( ! refalrts::alloc_name( context[5], ArgList, "ArgList" ) )
     return refalrts::cNoMemory;
@@ -177,7 +177,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     // closed e.ProgName#1 as range 5
     // closed e.Options#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.ProgName#1/5 {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.ProgName#1/5 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main-CheckArgs/4 HalfReuse: </7 } & GetOpt/9 (/10 (/11 # From/12 # Required/13 'f'/14 (/15"from"/16 )/18 )/19 (/20 # To/21 # Required/22 'o'/23 (/24"to"/25 )/27 )/28 Tile{ AsIs: )/8 AsIs: e.Options#1/2 AsIs: >/1 } >/29 Tile{ ]] }
     {refalrts::icAllocFunc, 0, 1, 9},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
@@ -240,7 +240,7 @@ static refalrts::FnResult Main(refalrts::Iter arg_begin, refalrts::Iter arg_end)
   // closed e.Options#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.ProgName#1/5 {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.ProgName#1/5 {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main-CheckArgs/4 HalfReuse: </7 } & GetOpt/9 (/10 (/11 # From/12 # Required/13 'f'/14 (/15"from"/16 )/18 )/19 (/20 # To/21 # Required/22 'o'/23 (/24"to"/25 )/27 )/28 Tile{ AsIs: )/8 AsIs: e.Options#1/2 AsIs: >/1 } >/29 Tile{ ]] }
   if( ! refalrts::alloc_name( context[9], GetOpt, "GetOpt" ) )
     return refalrts::cNoMemory;
@@ -342,7 +342,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S2L1(refalrts::Iter arg_begin, refa
     {refalrts::icsVarLeft, 0, 15, 10},
     // closed e.To#2 as range 10
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.PosFrom#1/9 (/12 # To/14 s.PosTo#2/15 {REMOVED TILE}  )/13 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.PosFrom#1/9 (/12 # To/14 s.PosTo#2/15 {REMOVED TILE} )/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Generate-ToDifferent/4 AsIs: (/7 AsIs: e.From#1/5 AsIs: )/8 } Tile{ AsIs: e.To#2/10 } Tile{ AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 2, 4},
     {refalrts::icPushStack, 0, 0, 1},
@@ -357,7 +357,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S2L1(refalrts::Iter arg_begin, refa
     // closed e.From#1 as range 5
     // closed e.Other#2 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.From#1/5 {REMOVED TILE}  s.PosFrom#1/9 e.Other#2/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.From#1/5 {REMOVED TILE} s.PosFrom#1/9 e.Other#2/2 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.PosFrom1 #9/7 } Tile{ HalfReuse: 'e'/8 }"xpected argument --to"/10 >/12 </13 & Help/14 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocString, 0, 0, 10},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
@@ -425,7 +425,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S2L1(refalrts::Iter arg_begin, refa
     // closed e.To#2 as range 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  s.PosFrom#1/9 (/12 # To/14 s.PosTo#2/15 {REMOVED TILE}  )/13 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.PosFrom#1/9 (/12 # To/14 s.PosTo#2/15 {REMOVED TILE} )/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Generate-ToDifferent/4 AsIs: (/7 AsIs: e.From#1/5 AsIs: )/8 } Tile{ AsIs: e.To#2/10 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name( context[4], Generate_ToDifferent, "Generate-ToDifferent" );
     refalrts::push_stack( context[1] );
@@ -446,7 +446,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S2L1(refalrts::Iter arg_begin, refa
   // closed e.Other#2 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.From#1/5 {REMOVED TILE}  s.PosFrom#1/9 e.Other#2/2 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.From#1/5 {REMOVED TILE} s.PosFrom#1/9 e.Other#2/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.PosFrom1 #9/7 } Tile{ HalfReuse: 'e'/8 }"xpected argument --to"/10 >/12 </13 & Help/14 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[10], context[11], "xpected argument --to", 21 ) )
     return refalrts::cNoMemory;
@@ -512,7 +512,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
     {refalrts::icIdentTerm, 0, 2, 10},
     // closed e.Opt#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } 'o'/11 Tile{ HalfReuse: 'p'/10 }"tion "/12 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/14 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'o', 11},
     {refalrts::icAllocString, 0, 3, 12},
@@ -539,7 +539,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
     {refalrts::icsVarLeft, 0, 11, 16},
     {refalrts::icEmpty, 0, 0, 16},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  s.Option#2/11 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} s.Option#2/11 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 }"nknown option -"/12 Tile{ HalfReuse: s.Option2 #11/8 AsIs: >/1 ]] }
     {refalrts::icAllocString, 0, 1, 12},
     {refalrts::icUpdateFunc, 0, 0, 4},
@@ -558,7 +558,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
     {refalrts::icIdentTerm, 0, 0, 10},
     // closed e.Option#2 as range 5
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } 'n'/11 Tile{ HalfReuse: 'k'/8 }"nown option --"/12 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'n', 11},
     {refalrts::icAllocString, 0, 0, 12},
@@ -615,7 +615,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
     // closed e.Opt#2 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } 'o'/11 Tile{ HalfReuse: 'p'/10 }"tion "/12 Tile{ AsIs: e.Opt#2/5 }" expects paramete"/14 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_char( context[11], 'o' ) )
       return refalrts::cNoMemory;
@@ -656,7 +656,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  s.Option#2/11 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} s.Option#2/11 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 }"nknown option -"/12 Tile{ HalfReuse: s.Option2 #11/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_chars( context[12], context[13], "nknown option -", 15 ) )
       return refalrts::cNoMemory;
@@ -683,7 +683,7 @@ static refalrts::FnResult gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin, refa
   // closed e.Option#2 as range 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  s.Pos#2/9 {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} s.Pos#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #9/7 } Tile{ HalfReuse: 'u'/10 } 'n'/11 Tile{ HalfReuse: 'k'/8 }"nown option --"/12 Tile{ AsIs: e.Option#2/5 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_char( context[11], 'n' ) )
     return refalrts::cNoMemory;
@@ -757,7 +757,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icsVarLeft, 0, 14, 9},
     // closed e.FileName#1 as range 9
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  (/7 )/8 (/11 # FILE/13 s.Pos#1/14 {REMOVED TILE}  )/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 )/8 (/11 # FILE/13 s.Pos#1/14 {REMOVED TILE} )/12 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Generate-SelfUpdate/4 } Tile{ AsIs: e.FileName#1/9 } Tile{ AsIs: >/1 ]] }
     {refalrts::icUpdateFunc, 0, 8, 4},
     {refalrts::icPushStack, 0, 0, 1},
@@ -781,7 +781,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icsVarLeft, 0, 16, 11},
     // closed e.From#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/27(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & @create_closure@/7 HalfReuse: & Main-CheckArgs$2\1/8 } Tile{ AsIs: (/13 } Tile{ AsIs: e.From#1/11 } Tile{ HalfReuse: )/15 AsIs: s.PosFrom#1/16 } >/17 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
     {refalrts::icUpdateFunc, 0, 7, 4},
@@ -819,7 +819,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icsVarLeft, 0, 16, 11},
     // closed e.To#1 as range 11
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/27(2) {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.Begin#1/9 {REMOVED TILE} s.Pos#1/16 e.To#1/11 {REMOVED TILE} e.End#1/27(2) {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } 'x'/17 Tile{ HalfReuse: 'p'/13 HalfReuse: 't'/15 } Tile{ HalfReuse: 'e'/14 }"cted argument --from"/18 >/20 </21 & Help/22 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocChar, 0, 'x', 17},
     {refalrts::icAllocString, 0, 1, 18},
@@ -850,7 +850,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     {refalrts::icEmpty, 0, 0, 23},
     // closed e.AnyOther#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.AnyOther#1/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.AnyOther#1/2 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'C'/7 HalfReuse: 'o'/8 }"mmand line error: unrecognized command line"/9 >/11 </12 & Help/13 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocString, 0, 0, 9},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
@@ -872,7 +872,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.Errors#1 as range 5
     // closed e.AnyOther#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  e.AnyOther#1/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.AnyOther#1/2 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Main-CheckArgs$5\1/7 AsIs: e.Errors#1/5 HalfReuse: >/8 } </9 & Help/10 Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
     {refalrts::icAllocFunc, 0, 2, 10},
@@ -938,7 +938,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.FileName#1 as range 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  (/7 )/8 (/11 # FILE/13 s.Pos#1/14 {REMOVED TILE}  )/12 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} (/7 )/8 (/11 # FILE/13 s.Pos#1/14 {REMOVED TILE} )/12 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Generate-SelfUpdate/4 } Tile{ AsIs: e.FileName#1/9 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name( context[4], Generate_SelfUpdate, "Generate-SelfUpdate" );
     refalrts::push_stack( context[1] );
@@ -983,7 +983,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
       // closed e.From#1 as range 11
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#1/9 } Tile{ AsIs: e.End#1/27(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & @create_closure@/7 HalfReuse: & Main-CheckArgs$2\1/8 } Tile{ AsIs: (/13 } Tile{ AsIs: e.From#1/11 } Tile{ HalfReuse: )/15 AsIs: s.PosFrom#1/16 } >/17 Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_close_call( context[17] ) )
         return refalrts::cNoMemory;
@@ -1044,7 +1044,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
       // closed e.To#1 as range 11
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE}  e.Begin#1/9 {REMOVED TILE}  s.Pos#1/16 e.To#1/11 {REMOVED TILE}  e.End#1/27(2) {REMOVED TILE} 
+      //TRASH: {REMOVED TILE} e.Begin#1/9 {REMOVED TILE} s.Pos#1/16 e.To#1/11 {REMOVED TILE} e.End#1/27(2) {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos1 #16/7 HalfReuse: 'e'/8 } 'x'/17 Tile{ HalfReuse: 'p'/13 HalfReuse: 't'/15 } Tile{ HalfReuse: 'e'/14 }"cted argument --from"/18 >/20 </21 & Help/22 Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_char( context[17], 'x' ) )
         return refalrts::cNoMemory;
@@ -1090,7 +1090,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.AnyOther#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}  e.AnyOther#1/2 {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} e.AnyOther#1/2 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'C'/7 HalfReuse: 'o'/8 }"mmand line error: unrecognized command line"/9 >/11 </12 & Help/13 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_chars( context[9], context[10], "mmand line error: unrecognized command line", 43 ) )
       return refalrts::cNoMemory;
@@ -1122,7 +1122,7 @@ static refalrts::FnResult Main_CheckArgs(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.AnyOther#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  e.AnyOther#1/2 {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} e.AnyOther#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Main-CheckArgs$5\1/7 AsIs: e.Errors#1/5 HalfReuse: >/8 } </9 & Help/10 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
@@ -1168,7 +1168,7 @@ static refalrts::FnResult FormatError(refalrts::Iter arg_begin, refalrts::Iter a
     {refalrts::icsVarLeft, 0, 5, 2},
     // closed e.Message#1 as range 2
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Command line argument "/6 </8 & StrFromInt/9 Tile{ AsIs: s.Pos#1/5 } >/10": "/11 Tile{ AsIs: e.Message#1/2 } Tile{ AsIs: >/1 ]] }
     {refalrts::icAllocString, 0, 1, 6},
     {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
@@ -1206,7 +1206,7 @@ static refalrts::FnResult FormatError(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.Message#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Command line argument "/6 </8 & StrFromInt/9 Tile{ AsIs: s.Pos#1/5 } >/10": "/11 Tile{ AsIs: e.Message#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[6], context[7], "Command line argument ", 22 ) )
     return refalrts::cNoMemory;
@@ -1259,7 +1259,7 @@ static refalrts::FnResult Help(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     {refalrts::icCallSaveLeft, 0, 2, 0},
     {refalrts::icEmpty, 0, 0, 2},
     {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'U'/1 }"se:"/5 >/7 </8 & WriteLine/9"    lexgen filename.sref - for rewritting file\n"/10 >/12 </13 & WriteLine/14"    lexgen --from=file1.sref --to=file2.sref - for writting to other target\n"/15 >/17 </18 & WriteLine/19"    --from, -f - source file"/20 >/22 </23 & WriteLine/24"    --to, -o - target file"/25 >/27 Tile{ ]] }
     {refalrts::icAllocString, 0, 4, 5},
     {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 7},
@@ -1313,7 +1313,7 @@ static refalrts::FnResult Help(refalrts::Iter arg_begin, refalrts::Iter arg_end)
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE}  {REMOVED TILE} 
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'U'/1 }"se:"/5 >/7 </8 & WriteLine/9"    lexgen filename.sref - for rewritting file\n"/10 >/12 </13 & WriteLine/14"    lexgen --from=file1.sref --to=file2.sref - for writting to other target\n"/15 >/17 </18 & WriteLine/19"    --from, -f - source file"/20 >/22 </23 & WriteLine/24"    --to, -o - target file"/25 >/27 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[5], context[6], "se:", 3 ) )
     return refalrts::cNoMemory;
