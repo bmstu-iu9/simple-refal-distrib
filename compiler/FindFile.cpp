@@ -2,18 +2,6 @@
 #include "refalrts.h"
 
 
-extern refalrts::FnResult ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult AnalyzeSource_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-
 // identifier #Current
 template <typename SREFAL_PARAM_INT>
 struct ident_Current {
@@ -62,51 +50,157 @@ struct ident_True {
   }
 };
 
-refalrts::FnResult FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+extern refalrts::RefalFunction Map;
+#ifdef INTERPRET
+extern refalrts::RASLFunction FindFiles;
+#else
+extern refalrts::RefalFunction FindFiles;
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeFile_ByFolders;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeFile_ByFolders;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeInFolder;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeInFolder;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeFile_CheckNotFound;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeFile_CheckNotFound;
+} // unnamed namespace
+
+#endif
+extern refalrts::RefalFunction ExistFile;
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction ExistFile_T;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction ExistFile_T;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeFile;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeFile;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeSource_CheckExist;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeSource_CheckExist;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeOutput_CheckExist;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeOutput_CheckExist;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction AnalyzeBoth_CheckExist;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction AnalyzeBoth_CheckExist;
+} // unnamed namespace
+
+#endif
+
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_FindFiles {
+    static refalrts::RefalFunction *functions[] = {
+      & AnalyzeFile_ByFolders,
+      & Map
+    };
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_Current<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 11, 0, 0},
+      // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      // closed e.Folders#1 as range 5
+      // closed e.Files#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
+      {refalrts::icAllocFunc, 0, 1, 10},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitIdent, 0, 0, 7},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 9},
+      {refalrts::icLinkBrackets, 0, 8, 0},
+      {refalrts::icSetRes, 0, 0, 0},
+      {refalrts::icSpliceTile, 9, 10, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_FindFiles
+
+} // unnamed namespace
+
+refalrts::RASLFunction FindFiles(
+  "FindFiles",
+  scope_FindFiles::raa,
+  scope_FindFiles::functions,
+  scope_FindFiles::idents,
+  scope_FindFiles::numbers,
+  scope_FindFiles::strings
+);
+
+#else
+static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders" },
-    { Map, "Map" }
-  };
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_Current<int>::name
-  };
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icBracketLeftSave, 0, 5, 2},
-    // closed e.Folders#1 as range 5
-    // closed e.Files#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
-    {refalrts::icAllocFunc, 0, 1, 10},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icReinitIdent, 0, 0, 7},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 9},
-    {refalrts::icLinkBrackets, 0, 8, 0},
-    {refalrts::icSetRes, 0, 0, 0},
-    {refalrts::icSpliceTile, 9, 10, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -127,10 +221,10 @@ refalrts::FnResult FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], Map, "Map" ) )
+  if( ! refalrts::alloc_name( context[10], & Map ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::update_name( context[4], AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders" );
+  refalrts::update_name( context[4], & AnalyzeFile_ByFolders );
   refalrts::reinit_ident( context[7], & ident_Current<int>::name );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
@@ -140,64 +234,79 @@ refalrts::FnResult FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::Iter res = context[0];
   res = refalrts::splice_evar( res, context[9], context[10] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::RefalFunction FindFiles(func_FindFiles, "FindFiles");
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeFile_ByFolders {
+    static refalrts::RefalFunction *functions[] = {
+      & AnalyzeFile_CheckNotFound,
+      & AnalyzeInFolder,
+      & Map
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 17, 0, 0},
+      // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketRightSave, 0, 5, 2},
+      // closed e.Folders#1 as range 2
+      // closed e.FileName#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
+      {refalrts::icAllocFunc, 0, 2, 9},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
+      {refalrts::icAllocFunc, 0, 1, 11},
+      {refalrts::icCopyEVar, 12, 5, 0},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 1},
+      {refalrts::icPushStack, 0, 0, 16},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icPushStack, 0, 0, 15},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icLinkBrackets, 10, 14, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 15, 16, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 9, 14, 0},
+      {refalrts::icSpliceTile, 7, 1, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeFile_ByFolders
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeFile_ByFolders(
+  "AnalyzeFile-ByFolders",
+  scope_AnalyzeFile_ByFolders::raa,
+  scope_AnalyzeFile_ByFolders::functions,
+  scope_AnalyzeFile_ByFolders::idents,
+  scope_AnalyzeFile_ByFolders::numbers,
+  scope_AnalyzeFile_ByFolders::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound" },
-    { AnalyzeInFolder, "AnalyzeInFolder" },
-    { Map, "Map" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icBracketRightSave, 0, 5, 2},
-    // closed e.Folders#1 as range 2
-    // closed e.FileName#1 as range 5
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
-    {refalrts::icAllocFunc, 0, 2, 9},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
-    {refalrts::icAllocFunc, 0, 1, 11},
-    {refalrts::icCopyEVar, 12, 5, 0},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 1},
-    {refalrts::icPushStack, 0, 0, 16},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 15},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icLinkBrackets, 10, 14, 0},
-    {refalrts::icLinkBrackets, 7, 8, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 15, 16, 0},
-    {refalrts::icSpliceEVar, 0, 0, 2},
-    {refalrts::icSpliceTile, 9, 14, 0},
-    {refalrts::icSpliceTile, 7, 1, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -216,11 +325,11 @@ static refalrts::FnResult AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalr
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[9], Map, "Map" ) )
+  if( ! refalrts::alloc_name( context[9], & Map ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], AnalyzeInFolder, "AnalyzeInFolder" ) )
+  if( ! refalrts::alloc_name( context[11], & AnalyzeInFolder ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[12], context[13], context[5], context[6]))
     return refalrts::cNoMemory;
@@ -230,7 +339,7 @@ static refalrts::FnResult AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound" );
+  refalrts::update_name( context[4], & AnalyzeFile_CheckNotFound );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[16] );
   refalrts::push_stack( context[0] );
@@ -246,74 +355,93 @@ static refalrts::FnResult AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalr
   res = refalrts::splice_evar( res, context[9], context[14] );
   res = refalrts::splice_evar( res, context[7], context[1] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeInFolder {
+    static refalrts::RefalFunction *functions[] = {
+      & AnalyzeFile
+    };
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_Current<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 1, 0, 0},
+      {refalrts::icIssueMemory, 9, 0, 0},
+      //FAST GEN: e.$ t.$
+      //GLOBAL GEN: e.$ t.$
+      // </0 & AnalyzeInFolder/4 e.idx#0/2 t.idxV#0/5 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::ictVarRightSave, 0, 5, 2},
+      // closed e.idx#0 as range 2
+      {refalrts::icOnFailGoTo, +9, 0, 0},
+      // e.idx # Current
+      // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
+      {refalrts::icIdentTerm, 0, 0, 5},
+      // closed e.FileName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 5},
+      {refalrts::icPushStack, 0, 0, 5},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icTrash, 0, 0, 5},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // e.idx ( e.idx )
+      // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
+      {refalrts::icBracketTerm, 0, 7, 5},
+      // closed e.FileName#1 as range 2
+      // closed e.Folder#1 as range 7
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitChar, 0, '/', 5},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 5, 5, 0},
+      {refalrts::icSpliceEVar, 0, 0, 7},
+      {refalrts::icTrash, 0, 0, 4},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeInFolder
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeInFolder(
+  "AnalyzeInFolder",
+  scope_AnalyzeInFolder::raa,
+  scope_AnalyzeInFolder::functions,
+  scope_AnalyzeInFolder::idents,
+  scope_AnalyzeInFolder::numbers,
+  scope_AnalyzeInFolder::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { AnalyzeFile, "AnalyzeFile" }
-  };
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_Current<int>::name
-  };
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: e.$ t.$
-    //GLOBAL GEN: e.$ t.$
-    // </0 & AnalyzeInFolder/4 e.idx#0/2 t.idxV#0/5 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::ictVarRightSave, 0, 5, 2},
-    // closed e.idx#0 as range 2
-    {refalrts::icOnFailGoTo, +9, 0, 0},
-    // e.idx # Current
-    // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
-    {refalrts::icIdentTerm, 0, 0, 5},
-    // closed e.FileName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 5},
-    {refalrts::icPushStack, 0, 0, 5},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icTrash, 0, 0, 5},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // e.idx ( e.idx )
-    // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
-    {refalrts::icBracketTerm, 0, 7, 5},
-    // closed e.FileName#1 as range 2
-    // closed e.Folder#1 as range 7
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icReinitChar, 0, '/', 5},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceEVar, 0, 0, 2},
-    {refalrts::icSpliceTile, 5, 5, 0},
-    {refalrts::icSpliceEVar, 0, 0, 7},
-    {refalrts::icTrash, 0, 0, 4},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: e.$ t.$
   //GLOBAL GEN: e.$ t.$
   // </0 & AnalyzeInFolder/4 e.idx#0/2 t.idxV#0/5 >/1
@@ -337,7 +465,7 @@ static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
-    refalrts::update_name( context[4], AnalyzeFile, "AnalyzeFile" );
+    refalrts::update_name( context[4], & AnalyzeFile );
     refalrts::reinit_close_call( context[5] );
     refalrts::push_stack( context[5] );
     refalrts::push_stack( context[0] );
@@ -346,7 +474,7 @@ static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::It
     refalrts::Iter res = arg_end->next;
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[5], res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // e.idx ( e.idx )
@@ -361,7 +489,7 @@ static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::It
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], AnalyzeFile, "AnalyzeFile" );
+  refalrts::update_name( context[4], & AnalyzeFile );
   refalrts::reinit_char( context[5], '/' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -373,112 +501,131 @@ static refalrts::FnResult AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::It
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( context[4], res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeFile_CheckNotFound {
+    using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_NotFound<int>::name,
+      & ident_Output<int>::name,
+      & ident_Source<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 3, 0, 0},
+      {refalrts::icIssueMemory, 20, 0, 0},
+      //FAST GEN: e.$
+      //GLOBAL GEN: ( e.$ ) e.$
+      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      // closed e.idxB#0 as range 5
+      // closed e.idxT#0 as range 2
+      {refalrts::icOnFailGoTo, +11, 0, 0},
+      // ( e.idx ) ( # Source ( e.idx ) e.idx ) e.idx
+      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Source/13 (/16 e.Source#1/14 )/17 e.Output#1/9 )/12 e.Variants#1/2 >/1
+      {refalrts::icSave, 0, 18, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 18},
+      {refalrts::icIdentLeftSave, 13, 2, 9},
+      {refalrts::icBracketLeftSave, 0, 14, 9},
+      // closed e.FileName#1 as range 5
+      // closed e.Source#1 as range 14
+      // closed e.Output#1 as range 9
+      // closed e.Variants#1 as range 18(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Source/13 AsIs: (/16 AsIs: e.Source#1/14 AsIs: )/17 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icLinkBrackets, 16, 17, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +9, 0, 0},
+      // ( e.idx ) ( # Output e.idx ) e.idx
+      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
+      {refalrts::icSave, 0, 18, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 18},
+      {refalrts::icIdentLeftSave, 13, 1, 9},
+      // closed e.FileName#1 as range 5
+      // closed e.Output#1 as range 9
+      // closed e.Variants#1 as range 18(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Output/13 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +11, 0, 0},
+      // ( e.idx ) ( # NotFound e.idx ) e.idx
+      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
+      {refalrts::icSave, 0, 18, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 18},
+      {refalrts::icIdentLeftSave, 13, 0, 9},
+      // closed e.FileName#1 as range 5
+      // closed e.NotFoundPath#1 as range 9
+      // closed e.Variants#1 as range 18(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ AsIs: e.Variants#1/18(2) } Tile{ AsIs: >/1 ]] }
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 18},
+      {refalrts::icTrash, 0, 0, 8},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // ( e.idx )
+      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
+      {refalrts::icEmpty, 0, 0, 2},
+      // closed e.FileName#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icReinitIdent, 0, 0, 7},
+      {refalrts::icLinkBrackets, 4, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 4, 8, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeFile_CheckNotFound
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeFile_CheckNotFound(
+  "AnalyzeFile-CheckNotFound",
+  scope_AnalyzeFile_CheckNotFound::raa,
+  scope_AnalyzeFile_CheckNotFound::functions,
+  scope_AnalyzeFile_CheckNotFound::idents,
+  scope_AnalyzeFile_CheckNotFound::numbers,
+  scope_AnalyzeFile_CheckNotFound::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_NotFound<int>::name,
-    & ident_Output<int>::name,
-    & ident_Source<int>::name
-  };
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: e.$
-    //GLOBAL GEN: ( e.$ ) e.$
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icBracketLeftSave, 0, 5, 2},
-    // closed e.idxB#0 as range 5
-    // closed e.idxT#0 as range 2
-    {refalrts::icOnFailGoTo, +11, 0, 0},
-    // ( e.idx ) ( # Source ( e.idx ) e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Source/13 (/16 e.Source#1/14 )/17 e.Output#1/9 )/12 e.Variants#1/2 >/1
-    {refalrts::icSave, 0, 18, 2},
-    {refalrts::icBracketLeftSave, 0, 9, 18},
-    {refalrts::icIdentLeftSave, 13, 2, 9},
-    {refalrts::icBracketLeftSave, 0, 14, 9},
-    // closed e.FileName#1 as range 5
-    // closed e.Source#1 as range 14
-    // closed e.Output#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Source/13 AsIs: (/16 AsIs: e.Source#1/14 AsIs: )/17 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-    {refalrts::icLinkBrackets, 11, 12, 0},
-    {refalrts::icLinkBrackets, 16, 17, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 11, 12, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +9, 0, 0},
-    // ( e.idx ) ( # Output e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
-    {refalrts::icSave, 0, 18, 2},
-    {refalrts::icBracketLeftSave, 0, 9, 18},
-    {refalrts::icIdentLeftSave, 13, 1, 9},
-    // closed e.FileName#1 as range 5
-    // closed e.Output#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Output/13 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-    {refalrts::icLinkBrackets, 11, 12, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 11, 12, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +11, 0, 0},
-    // ( e.idx ) ( # NotFound e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
-    {refalrts::icSave, 0, 18, 2},
-    {refalrts::icBracketLeftSave, 0, 9, 18},
-    {refalrts::icIdentLeftSave, 13, 0, 9},
-    // closed e.FileName#1 as range 5
-    // closed e.NotFoundPath#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ AsIs: e.Variants#1/18(2) } Tile{ AsIs: >/1 ]] }
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icLinkBrackets, 7, 8, 0},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceEVar, 0, 0, 18},
-    {refalrts::icTrash, 0, 0, 8},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // ( e.idx )
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
-    {refalrts::icEmpty, 0, 0, 2},
-    // closed e.FileName#1 as range 5
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icReinitIdent, 0, 0, 7},
-    {refalrts::icLinkBrackets, 4, 8, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 4, 8, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[3];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
@@ -532,7 +679,7 @@ static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, re
     res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -564,7 +711,7 @@ static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, re
     res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -598,7 +745,7 @@ static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, re
     res = refalrts::splice_evar( res, context[18], context[19] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[8], res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // ( e.idx )
@@ -619,46 +766,64 @@ static refalrts::FnResult AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, re
   res = refalrts::splice_evar( res, context[4], context[8] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_ExistFile_T {
+    static refalrts::RefalFunction *functions[] = {
+      & ExistFile
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 7, 0, 0},
+      // </0 & ExistFile-T/4 e.FileName#1/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.FileName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
+      {refalrts::icCopyEVar, 5, 2, 0},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 5, 6, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_ExistFile_T
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction ExistFile_T(
+  "ExistFile-T",
+  scope_ExistFile_T::raa,
+  scope_ExistFile_T::functions,
+  scope_ExistFile_T::idents,
+  scope_ExistFile_T::numbers,
+  scope_ExistFile_T::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
   refalrts::zeros( context, 7 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { ExistFile, "ExistFile" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    // </0 & ExistFile-T/4 e.FileName#1/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    // closed e.FileName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
-    {refalrts::icCopyEVar, 5, 2, 0},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 5, 6, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   // </0 & ExistFile-T/4 e.FileName#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -672,7 +837,7 @@ static refalrts::FnResult ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
   if (! refalrts::copy_evar(context[5], context[6], context[2], context[3]))
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ExistFile, "ExistFile" );
+  refalrts::update_name( context[4], & ExistFile );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -680,127 +845,146 @@ static refalrts::FnResult ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter a
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[5], context[6] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction ExistFile_T(func_ExistFile_T, "ExistFile-T");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeFile {
+    static refalrts::RefalFunction *functions[] = {
+      & ExistFile_T,
+      & AnalyzeBoth_CheckExist,
+      & AnalyzeOutput_CheckExist,
+      & AnalyzeSource_CheckExist
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    static const refalrts::StringItem strings[] = {
+      {".cpp", 4},
+      {"sref", 4}
+    };
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icIssueMemory, 22, 0, 0},
+      //FAST GEN: e.$
+      //GLOBAL GEN: e.$
+      // </0 & AnalyzeFile/4 e.idx#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.idx#0 as range 2
+      {refalrts::icOnFailGoTo, +20, 0, 0},
+      // e.idx '.sref'
+      // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/9 's'/8 'r'/7 'e'/6 'f'/5 >/1
+      {refalrts::icSave, 0, 20, 2},
+      {refalrts::icCharRightSave, 5, static_cast<unsigned char>('f'), 20},
+      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('e'), 20},
+      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('r'), 20},
+      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('s'), 20},
+      {refalrts::icCharRightSave, 9, static_cast<unsigned char>('.'), 20},
+      // closed e.FileName#1 as range 20(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 10},
+      {refalrts::icAllocFunc, 0, 3, 11},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icPushStack, 0, 0, 10},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 12, 12, 0},
+      {refalrts::icSpliceTile, 0, 1, 0},
+      {refalrts::icSpliceTile, 10, 11, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // e.idx '.cpp'
+      // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
+      {refalrts::icSave, 0, 20, 2},
+      {refalrts::icCharRightSave, 5, static_cast<unsigned char>('p'), 20},
+      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('p'), 20},
+      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('c'), 20},
+      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('.'), 20},
+      // closed e.FileName#1 as range 20(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
+      {refalrts::icAllocFunc, 0, 2, 10},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 11},
+      {refalrts::icPushStack, 0, 0, 9},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 11, 11, 0},
+      {refalrts::icSpliceTile, 0, 1, 0},
+      {refalrts::icSpliceTile, 9, 10, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // e.idx
+      // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
+      // closed e.FileName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
+      {refalrts::icAllocFunc, 0, 1, 6},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 7},
+      {refalrts::icAllocString, 0, 1, 8},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 10},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 12},
+      {refalrts::icAllocFunc, 0, 0, 13},
+      {refalrts::icCopyEVar, 14, 2, 0},
+      {refalrts::icAllocString, 0, 0, 16},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitChar, 0, '.', 1},
+      {refalrts::icPushStack, 0, 0, 19},
+      {refalrts::icPushStack, 0, 0, 5},
+      {refalrts::icPushStack, 0, 0, 18},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icLinkBrackets, 7, 11, 0},
+      {refalrts::icPushStack, 0, 0, 10},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 8, 19, 0},
+      {refalrts::icSpliceTile, 0, 1, 0},
+      {refalrts::icSpliceTile, 5, 7, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeFile
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeFile(
+  "AnalyzeFile",
+  scope_AnalyzeFile::raa,
+  scope_AnalyzeFile::functions,
+  scope_AnalyzeFile::idents,
+  scope_AnalyzeFile::numbers,
+  scope_AnalyzeFile::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { ExistFile_T, "ExistFile-T" },
-    { AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist" },
-    { AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist" },
-    { AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  static const refalrts::StringItem strings[] = {
-    {".cpp", 4},
-    {"sref", 4}
-  };
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: e.$
-    //GLOBAL GEN: e.$
-    // </0 & AnalyzeFile/4 e.idx#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    // closed e.idx#0 as range 2
-    {refalrts::icOnFailGoTo, +20, 0, 0},
-    // e.idx '.sref'
-    // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/9 's'/8 'r'/7 'e'/6 'f'/5 >/1
-    {refalrts::icSave, 0, 20, 2},
-    {refalrts::icCharRightSave, 5, static_cast<unsigned char>('f'), 20},
-    {refalrts::icCharRightSave, 6, static_cast<unsigned char>('e'), 20},
-    {refalrts::icCharRightSave, 7, static_cast<unsigned char>('r'), 20},
-    {refalrts::icCharRightSave, 8, static_cast<unsigned char>('s'), 20},
-    {refalrts::icCharRightSave, 9, static_cast<unsigned char>('.'), 20},
-    // closed e.FileName#1 as range 20(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 10},
-    {refalrts::icAllocFunc, 0, 3, 11},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icPushStack, 0, 0, 10},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 12, 12, 0},
-    {refalrts::icSpliceTile, 0, 1, 0},
-    {refalrts::icSpliceTile, 10, 11, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +19, 0, 0},
-    // e.idx '.cpp'
-    // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
-    {refalrts::icSave, 0, 20, 2},
-    {refalrts::icCharRightSave, 5, static_cast<unsigned char>('p'), 20},
-    {refalrts::icCharRightSave, 6, static_cast<unsigned char>('p'), 20},
-    {refalrts::icCharRightSave, 7, static_cast<unsigned char>('c'), 20},
-    {refalrts::icCharRightSave, 8, static_cast<unsigned char>('.'), 20},
-    // closed e.FileName#1 as range 20(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
-    {refalrts::icAllocFunc, 0, 2, 10},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 11},
-    {refalrts::icPushStack, 0, 0, 9},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 11, 11, 0},
-    {refalrts::icSpliceTile, 0, 1, 0},
-    {refalrts::icSpliceTile, 9, 10, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // e.idx
-    // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
-    // closed e.FileName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
-    {refalrts::icAllocFunc, 0, 1, 6},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 7},
-    {refalrts::icAllocString, 0, 1, 8},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 10},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 12},
-    {refalrts::icAllocFunc, 0, 0, 13},
-    {refalrts::icCopyEVar, 14, 2, 0},
-    {refalrts::icAllocString, 0, 0, 16},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icReinitChar, 0, '.', 1},
-    {refalrts::icPushStack, 0, 0, 19},
-    {refalrts::icPushStack, 0, 0, 5},
-    {refalrts::icPushStack, 0, 0, 18},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icLinkBrackets, 7, 11, 0},
-    {refalrts::icPushStack, 0, 0, 10},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 8, 19, 0},
-    {refalrts::icSpliceTile, 0, 1, 0},
-    {refalrts::icSpliceTile, 5, 7, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[2];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: e.$
   //GLOBAL GEN: e.$
   // </0 & AnalyzeFile/4 e.idx#0/2 >/1
@@ -838,11 +1022,11 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist" ) )
+    if( ! refalrts::alloc_name( context[11], & AnalyzeSource_CheckExist ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[12] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ExistFile_T, "ExistFile-T" );
+    refalrts::update_name( context[4], & ExistFile_T );
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[10] );
     refalrts::push_stack( context[1] );
@@ -854,7 +1038,7 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     res = refalrts::splice_evar( res, context[0], context[1] );
     res = refalrts::splice_evar( res, context[10], context[11] );
     refalrts::use( res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -882,11 +1066,11 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[10], AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist" ) )
+    if( ! refalrts::alloc_name( context[10], & AnalyzeOutput_CheckExist ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[11] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ExistFile_T, "ExistFile-T" );
+    refalrts::update_name( context[4], & ExistFile_T );
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[9] );
     refalrts::push_stack( context[1] );
@@ -898,7 +1082,7 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     res = refalrts::splice_evar( res, context[0], context[1] );
     res = refalrts::splice_evar( res, context[9], context[10] );
     refalrts::use( res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // e.idx
@@ -910,7 +1094,7 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist" ) )
+  if( ! refalrts::alloc_name( context[6], & AnalyzeBoth_CheckExist ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
@@ -922,7 +1106,7 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], ExistFile_T, "ExistFile-T" ) )
+  if( ! refalrts::alloc_name( context[13], & ExistFile_T ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
     return refalrts::cNoMemory;
@@ -932,7 +1116,7 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ExistFile_T, "ExistFile-T" );
+  refalrts::update_name( context[4], & ExistFile_T );
   refalrts::reinit_char( context[1], '.' );
   refalrts::push_stack( context[19] );
   refalrts::push_stack( context[5] );
@@ -948,85 +1132,104 @@ static refalrts::FnResult AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter a
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeSource_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeFile(func_AnalyzeFile, "AnalyzeFile");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeSource_CheckExist {
+    using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_NotFound<int>::name,
+      & ident_False<int>::name,
+      & ident_Source<int>::name,
+      & ident_True<int>::name
+    };
+    using refalrts::numbers;
+    static const refalrts::StringItem strings[] = {
+      {".cpp", 4}
+    };
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 1, 0, 0},
+      {refalrts::icIssueMemory, 18, 0, 0},
+      //FAST GEN: s.$ e.$
+      //GLOBAL GEN: s.$ e.$
+      // </0 & AnalyzeSource-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      // closed e.idxV#0 as range 2
+      {refalrts::icOnFailGoTo, +21, 0, 0},
+      // # True e.idx '.sref'
+      // </0 & AnalyzeSource-CheckExist/4 # True/5 e.UnitName#1/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
+      {refalrts::icIdentTerm, 0, 3, 5},
+      {refalrts::icSave, 0, 16, 2},
+      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('f'), 16},
+      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('e'), 16},
+      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('r'), 16},
+      {refalrts::icCharRightSave, 9, static_cast<unsigned char>('s'), 16},
+      {refalrts::icCharRightSave, 10, static_cast<unsigned char>('.'), 16},
+      // closed e.UnitName#1 as range 16(2)
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 HalfReuse: (/5 AsIs: e.UnitName#1/16(2) AsIs: '.'/10 AsIs: 's'/9 AsIs: 'r'/8 AsIs: 'e'/7 AsIs: 'f'/6 HalfReuse: )/1 } e.UnitName#1/16(2)/11".cpp"/13 )/15 Tile{ ]] }
+      {refalrts::icCopyEVar, 11, 16, 0},
+      {refalrts::icAllocString, 0, 0, 13},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
+      {refalrts::icReinitIdent, 0, 2, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 5},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 0, 15, 0},
+      {refalrts::icLinkBrackets, 5, 1, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 13, 15, 0},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // # False e.idx
+      // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 1, 5},
+      // closed e.SourceName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#1/2 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icUpdateIdent, 0, 0, 5},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 4, 1, 0},
+      {refalrts::icSetRes, 0, 0, 4},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeSource_CheckExist
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeSource_CheckExist(
+  "AnalyzeSource-CheckExist",
+  scope_AnalyzeSource_CheckExist::raa,
+  scope_AnalyzeSource_CheckExist::functions,
+  scope_AnalyzeSource_CheckExist::idents,
+  scope_AnalyzeSource_CheckExist::numbers,
+  scope_AnalyzeSource_CheckExist::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_NotFound<int>::name,
-    & ident_False<int>::name,
-    & ident_Source<int>::name,
-    & ident_True<int>::name
-  };
-  using refalrts::numbers;
-  static const refalrts::StringItem strings[] = {
-    {".cpp", 4}
-  };
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: s.$ e.$
-    //GLOBAL GEN: s.$ e.$
-    // </0 & AnalyzeSource-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 5, 2},
-    // closed e.idxV#0 as range 2
-    {refalrts::icOnFailGoTo, +21, 0, 0},
-    // # True e.idx '.sref'
-    // </0 & AnalyzeSource-CheckExist/4 # True/5 e.UnitName#1/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
-    {refalrts::icIdentTerm, 0, 3, 5},
-    {refalrts::icSave, 0, 16, 2},
-    {refalrts::icCharRightSave, 6, static_cast<unsigned char>('f'), 16},
-    {refalrts::icCharRightSave, 7, static_cast<unsigned char>('e'), 16},
-    {refalrts::icCharRightSave, 8, static_cast<unsigned char>('r'), 16},
-    {refalrts::icCharRightSave, 9, static_cast<unsigned char>('s'), 16},
-    {refalrts::icCharRightSave, 10, static_cast<unsigned char>('.'), 16},
-    // closed e.UnitName#1 as range 16(2)
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 HalfReuse: (/5 AsIs: e.UnitName#1/16(2) AsIs: '.'/10 AsIs: 's'/9 AsIs: 'r'/8 AsIs: 'e'/7 AsIs: 'f'/6 HalfReuse: )/1 } e.UnitName#1/16(2)/11".cpp"/13 )/15 Tile{ ]] }
-    {refalrts::icCopyEVar, 11, 16, 0},
-    {refalrts::icAllocString, 0, 0, 13},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-    {refalrts::icReinitIdent, 0, 2, 4},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 5},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 0, 15, 0},
-    {refalrts::icLinkBrackets, 5, 1, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 13, 15, 0},
-    {refalrts::icSpliceTile, 11, 12, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // # False e.idx
-    // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
-    {refalrts::icIdentTerm, 0, 1, 5},
-    // closed e.SourceName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#1/2 HalfReuse: )/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icUpdateIdent, 0, 0, 5},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 4, 1, 0},
-    {refalrts::icSetRes, 0, 0, 4},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: s.$ e.$
   //GLOBAL GEN: s.$ e.$
   // </0 & AnalyzeSource-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
@@ -1084,7 +1287,7 @@ static refalrts::FnResult AnalyzeSource_CheckExist(refalrts::Iter arg_begin, ref
     res = refalrts::splice_evar( res, context[13], context[15] );
     res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::use( res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // # False e.idx
@@ -1105,71 +1308,90 @@ static refalrts::FnResult AnalyzeSource_CheckExist(refalrts::Iter arg_begin, ref
   refalrts::Iter res = context[4];
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeOutput_CheckExist {
+    using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_NotFound<int>::name,
+      & ident_False<int>::name,
+      & ident_Output<int>::name,
+      & ident_True<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 1, 0, 0},
+      {refalrts::icIssueMemory, 6, 0, 0},
+      //FAST GEN: s.$ e.$
+      //GLOBAL GEN: s.$ e.$
+      // </0 & AnalyzeOutput-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      // closed e.idxV#0 as range 2
+      {refalrts::icOnFailGoTo, +9, 0, 0},
+      // # True e.idx
+      // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 3, 5},
+      // closed e.OutName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # Output/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icUpdateIdent, 0, 2, 5},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 4, 1, 0},
+      {refalrts::icSetRes, 0, 0, 4},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // # False e.idx
+      // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 1, 5},
+      // closed e.OutName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icUpdateIdent, 0, 0, 5},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 4, 1, 0},
+      {refalrts::icSetRes, 0, 0, 4},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeOutput_CheckExist
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeOutput_CheckExist(
+  "AnalyzeOutput-CheckExist",
+  scope_AnalyzeOutput_CheckExist::raa,
+  scope_AnalyzeOutput_CheckExist::functions,
+  scope_AnalyzeOutput_CheckExist::idents,
+  scope_AnalyzeOutput_CheckExist::numbers,
+  scope_AnalyzeOutput_CheckExist::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_NotFound<int>::name,
-    & ident_False<int>::name,
-    & ident_Output<int>::name,
-    & ident_True<int>::name
-  };
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: s.$ e.$
-    //GLOBAL GEN: s.$ e.$
-    // </0 & AnalyzeOutput-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 5, 2},
-    // closed e.idxV#0 as range 2
-    {refalrts::icOnFailGoTo, +9, 0, 0},
-    // # True e.idx
-    // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
-    {refalrts::icIdentTerm, 0, 3, 5},
-    // closed e.OutName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # Output/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icUpdateIdent, 0, 2, 5},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 4, 1, 0},
-    {refalrts::icSetRes, 0, 0, 4},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // # False e.idx
-    // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
-    {refalrts::icIdentTerm, 0, 1, 5},
-    // closed e.OutName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icUpdateIdent, 0, 0, 5},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 4, 1, 0},
-    {refalrts::icSetRes, 0, 0, 4},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: s.$ e.$
   //GLOBAL GEN: s.$ e.$
   // </0 & AnalyzeOutput-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
@@ -1201,7 +1423,7 @@ static refalrts::FnResult AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, ref
     refalrts::Iter res = context[4];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // # False e.idx
@@ -1222,110 +1444,129 @@ static refalrts::FnResult AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, ref
   refalrts::Iter res = context[4];
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_AnalyzeBoth_CheckExist {
+    using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_NotFound<int>::name,
+      & ident_False<int>::name,
+      & ident_Output<int>::name,
+      & ident_True<int>::name,
+      & ident_Source<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icIssueMemory, 24, 0, 0},
+      //FAST GEN: e.$
+      //GLOBAL GEN: ( e.$ ) s.$ e.$
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      // closed e.idxB#0 as range 5
+      {refalrts::icsVarLeft, 0, 9, 2},
+      // closed e.idxTV#0 as range 2
+      {refalrts::icOnFailGoTo, +14, 0, 0},
+      // ( # True e.idx ) s.idx e.idx
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/10 e.SourceName#1/5 )/8 s.Res#1/9 e.OutName#1/2 >/1
+      {refalrts::icSave, 0, 22, 5},
+      {refalrts::icIdentLeftSave, 10, 3, 22},
+      // closed e.SourceName#1 as range 22(5)
+      // closed e.OutName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/9 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/10 AsIs: e.SourceName#1/22(5) AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icReinitIdent, 0, 4, 7},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 10},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 4, 1, 0},
+      {refalrts::icLinkBrackets, 10, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 4, 8, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +11, 0, 0},
+      // ( # False e.idx ) # True e.idx
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 3, 9},
+      {refalrts::icSave, 0, 22, 5},
+      {refalrts::icIdentLeftSave, 10, 1, 22},
+      // closed e.SourceName#1 as range 22(5)
+      // closed e.OutName#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/22(5) {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/9 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
+      {refalrts::icUpdateIdent, 0, 2, 9},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 8, 1, 0},
+      {refalrts::icSetRes, 0, 0, 8},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // ( # False e.idx '.sref' ) # False e.idx '.cpp'
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
+      {refalrts::icIdentTerm, 0, 1, 9},
+      {refalrts::icIdentLeftSave, 10, 1, 5},
+      {refalrts::icCharRightSave, 11, static_cast<unsigned char>('f'), 5},
+      {refalrts::icCharRightSave, 12, static_cast<unsigned char>('e'), 5},
+      {refalrts::icCharRightSave, 13, static_cast<unsigned char>('r'), 5},
+      {refalrts::icCharRightSave, 14, static_cast<unsigned char>('s'), 5},
+      {refalrts::icCharRightSave, 15, static_cast<unsigned char>('.'), 5},
+      {refalrts::icCharRightSave, 16, static_cast<unsigned char>('p'), 2},
+      {refalrts::icCharRightSave, 17, static_cast<unsigned char>('p'), 2},
+      {refalrts::icCharRightSave, 18, static_cast<unsigned char>('c'), 2},
+      {refalrts::icCharRightSave, 19, static_cast<unsigned char>('.'), 2},
+      // closed e.UnitName#1 as range 5
+      {refalrts::iceRepeatLeft, 20, 5, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/10 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
+      {refalrts::icUpdateIdent, 0, 0, 10},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
+      {refalrts::icLinkBrackets, 7, 15, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 7, 15, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_AnalyzeBoth_CheckExist
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction AnalyzeBoth_CheckExist(
+  "AnalyzeBoth-CheckExist",
+  scope_AnalyzeBoth_CheckExist::raa,
+  scope_AnalyzeBoth_CheckExist::functions,
+  scope_AnalyzeBoth_CheckExist::idents,
+  scope_AnalyzeBoth_CheckExist::numbers,
+  scope_AnalyzeBoth_CheckExist::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  static const refalrts::RefalIdentifier idents[] = {
-    & ident_NotFound<int>::name,
-    & ident_False<int>::name,
-    & ident_Output<int>::name,
-    & ident_True<int>::name,
-    & ident_Source<int>::name
-  };
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: e.$
-    //GLOBAL GEN: ( e.$ ) s.$ e.$
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icBracketLeftSave, 0, 5, 2},
-    // closed e.idxB#0 as range 5
-    {refalrts::icsVarLeft, 0, 9, 2},
-    // closed e.idxTV#0 as range 2
-    {refalrts::icOnFailGoTo, +14, 0, 0},
-    // ( # True e.idx ) s.idx e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/10 e.SourceName#1/5 )/8 s.Res#1/9 e.OutName#1/2 >/1
-    {refalrts::icSave, 0, 22, 5},
-    {refalrts::icIdentLeftSave, 10, 3, 22},
-    // closed e.SourceName#1 as range 22(5)
-    // closed e.OutName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/9 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/10 AsIs: e.SourceName#1/22(5) AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-    {refalrts::icReinitIdent, 0, 4, 7},
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 10},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 4, 1, 0},
-    {refalrts::icLinkBrackets, 10, 8, 0},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceEVar, 0, 0, 2},
-    {refalrts::icSpliceTile, 4, 8, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +11, 0, 0},
-    // ( # False e.idx ) # True e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
-    {refalrts::icIdentTerm, 0, 3, 9},
-    {refalrts::icSave, 0, 22, 5},
-    {refalrts::icIdentLeftSave, 10, 1, 22},
-    // closed e.SourceName#1 as range 22(5)
-    // closed e.OutName#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/22(5) {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/9 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-    {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
-    {refalrts::icUpdateIdent, 0, 2, 9},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-    {refalrts::icLinkBrackets, 8, 1, 0},
-    {refalrts::icSetRes, 0, 0, 8},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // ( # False e.idx '.sref' ) # False e.idx '.cpp'
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
-    {refalrts::icIdentTerm, 0, 1, 9},
-    {refalrts::icIdentLeftSave, 10, 1, 5},
-    {refalrts::icCharRightSave, 11, static_cast<unsigned char>('f'), 5},
-    {refalrts::icCharRightSave, 12, static_cast<unsigned char>('e'), 5},
-    {refalrts::icCharRightSave, 13, static_cast<unsigned char>('r'), 5},
-    {refalrts::icCharRightSave, 14, static_cast<unsigned char>('s'), 5},
-    {refalrts::icCharRightSave, 15, static_cast<unsigned char>('.'), 5},
-    {refalrts::icCharRightSave, 16, static_cast<unsigned char>('p'), 2},
-    {refalrts::icCharRightSave, 17, static_cast<unsigned char>('p'), 2},
-    {refalrts::icCharRightSave, 18, static_cast<unsigned char>('c'), 2},
-    {refalrts::icCharRightSave, 19, static_cast<unsigned char>('.'), 2},
-    // closed e.UnitName#1 as range 5
-    {refalrts::iceRepeatLeft, 20, 5, 2},
-    {refalrts::icEmpty, 0, 0, 2},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/10 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
-    {refalrts::icUpdateIdent, 0, 0, 10},
-    {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
-    {refalrts::icLinkBrackets, 7, 15, 0},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 7, 15, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[2];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: e.$
   //GLOBAL GEN: ( e.$ ) s.$ e.$
   // </0 & AnalyzeBoth-CheckExist/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
@@ -1372,7 +1613,7 @@ static refalrts::FnResult AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refal
     res = refalrts::splice_evar( res, context[4], context[8] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -1401,7 +1642,7 @@ static refalrts::FnResult AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refal
     refalrts::Iter res = context[8];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // ( # False e.idx '.sref' ) # False e.idx '.cpp'
@@ -1456,9 +1697,14 @@ static refalrts::FnResult AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refal
   res = refalrts::splice_evar( res, context[7], context[15] );
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
+namespace /* unnamed */ {
+refalrts::RefalFunction AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist");
+
+} // unnamed namespace
+
+#endif
 
 //End of file

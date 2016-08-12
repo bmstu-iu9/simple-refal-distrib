@@ -2,131 +2,173 @@
 #include "refalrts.h"
 
 
-extern refalrts::FnResult Compare(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Div(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Map(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-extern refalrts::FnResult Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end);
-static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end);
+extern refalrts::RefalFunction Div;
+extern refalrts::RefalFunction Mod;
+extern refalrts::RefalFunction Ord;
+extern refalrts::RefalFunction Compare;
+extern refalrts::RefalFunction Fetch;
+extern refalrts::RefalFunction Map;
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction OctDigit;
+} // unnamed namespace
 
-static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction OctDigit;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RASLFunction gen_EscapeChar_S7L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction gen_EscapeChar_S7L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RASLFunction EscapeChar;
+#else
+extern refalrts::RefalFunction EscapeChar;
+#endif
+#ifdef INTERPRET
+extern refalrts::RASLFunction EscapeString;
+#else
+extern refalrts::RefalFunction EscapeString;
+#endif
+
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_OctDigit {
+    using refalrts::functions;
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 7, 0, 0},
+      {refalrts::icIssueMemory, 6, 0, 0},
+      //FAST GEN: s.$
+      //GLOBAL GEN: s.$
+      // </0 & OctDigit/4 s.idx#0/5 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 0
+      // </0 & OctDigit/4 0/5 >/1
+      {refalrts::icNumTerm, 0, 0, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 0/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '0'/1 ]] }
+      {refalrts::icReinitChar, 0, '0', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 1
+      // </0 & OctDigit/4 1/5 >/1
+      {refalrts::icNumTerm, 0, 1, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 1/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '1'/1 ]] }
+      {refalrts::icReinitChar, 0, '1', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 2
+      // </0 & OctDigit/4 2/5 >/1
+      {refalrts::icNumTerm, 0, 2, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 2/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '2'/1 ]] }
+      {refalrts::icReinitChar, 0, '2', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 3
+      // </0 & OctDigit/4 3/5 >/1
+      {refalrts::icNumTerm, 0, 3, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 3/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '3'/1 ]] }
+      {refalrts::icReinitChar, 0, '3', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 4
+      // </0 & OctDigit/4 4/5 >/1
+      {refalrts::icNumTerm, 0, 4, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 4/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '4'/1 ]] }
+      {refalrts::icReinitChar, 0, '4', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 5
+      // </0 & OctDigit/4 5/5 >/1
+      {refalrts::icNumTerm, 0, 5, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 5/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '5'/1 ]] }
+      {refalrts::icReinitChar, 0, '5', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // 6
+      // </0 & OctDigit/4 6/5 >/1
+      {refalrts::icNumTerm, 0, 6, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 6/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '6'/1 ]] }
+      {refalrts::icReinitChar, 0, '6', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // 7
+      // </0 & OctDigit/4 7/5 >/1
+      {refalrts::icNumTerm, 0, 7, 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & OctDigit/4 7/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '7'/1 ]] }
+      {refalrts::icReinitChar, 0, '7', 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_OctDigit
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction OctDigit(
+  "OctDigit",
+  scope_OctDigit::raa,
+  scope_OctDigit::functions,
+  scope_OctDigit::idents,
+  scope_OctDigit::numbers,
+  scope_OctDigit::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-#ifdef INTERPRET
-  using refalrts::functions;
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: s.$
-    //GLOBAL GEN: s.$
-    // </0 & OctDigit/4 s.idx#0/5 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 5, 2},
-    {refalrts::icEmpty, 0, 0, 2},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 0
-    // </0 & OctDigit/4 0/5 >/1
-    {refalrts::icNumTerm, 0, 0, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 0/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '0'/1 ]] }
-    {refalrts::icReinitChar, 0, '0', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 1
-    // </0 & OctDigit/4 1/5 >/1
-    {refalrts::icNumTerm, 0, 1, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 1/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '1'/1 ]] }
-    {refalrts::icReinitChar, 0, '1', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 2
-    // </0 & OctDigit/4 2/5 >/1
-    {refalrts::icNumTerm, 0, 2, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 2/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '2'/1 ]] }
-    {refalrts::icReinitChar, 0, '2', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 3
-    // </0 & OctDigit/4 3/5 >/1
-    {refalrts::icNumTerm, 0, 3, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 3/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '3'/1 ]] }
-    {refalrts::icReinitChar, 0, '3', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 4
-    // </0 & OctDigit/4 4/5 >/1
-    {refalrts::icNumTerm, 0, 4, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 4/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '4'/1 ]] }
-    {refalrts::icReinitChar, 0, '4', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 5
-    // </0 & OctDigit/4 5/5 >/1
-    {refalrts::icNumTerm, 0, 5, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 5/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '5'/1 ]] }
-    {refalrts::icReinitChar, 0, '5', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // 6
-    // </0 & OctDigit/4 6/5 >/1
-    {refalrts::icNumTerm, 0, 6, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 6/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '6'/1 ]] }
-    {refalrts::icReinitChar, 0, '6', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // 7
-    // </0 & OctDigit/4 7/5 >/1
-    {refalrts::icNumTerm, 0, 7, 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & OctDigit/4 7/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: '7'/1 ]] }
-    {refalrts::icReinitChar, 0, '7', 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[7];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: s.$
   //GLOBAL GEN: s.$
   // </0 & OctDigit/4 s.idx#0/5 >/1
@@ -155,7 +197,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -174,7 +216,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -193,7 +235,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -212,7 +254,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -231,7 +273,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -250,7 +292,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -269,7 +311,7 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::Iter res = context[1];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // 7
@@ -286,107 +328,126 @@ static refalrts::FnResult OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_
   refalrts::Iter res = context[1];
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction OctDigit(func_OctDigit, "OctDigit");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_EscapeChar_S7L1 {
+    static refalrts::RefalFunction *functions[] = {
+      & Div,
+      & OctDigit,
+      & Mod
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 1, 0, 0},
+      {refalrts::icIssueMemory, 32, 0, 0},
+      //FAST GEN: s.$ s.$ s.$
+      //GLOBAL GEN: s.$ s.$ s.$
+      // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      {refalrts::icsVarLeft, 0, 6, 2},
+      {refalrts::icsVarLeft, 0, 7, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icOnFailGoTo, +50, 0, 0},
+      // s.idx '<' s.idx
+      // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 6},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } '\\'/8 Tile{ AsIs: </0 Reuse: & OctDigit/4 } </9 Tile{ HalfReuse: & Div/6 AsIs: s.Code#2/7 } 64/10 >/11 >/12 </13 & OctDigit/14 </15 & Mod/16 </17 & Div/18 s.Code#2/7/19 8/20 >/21 8/22 >/23 >/24 </25 & OctDigit/26 </27 & Mod/28 s.Code#2/7/29 8/30 >/31 Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocChar, 0, '\\', 8},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
+      {refalrts::icAllocInt, 0, 64, 10},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
+      {refalrts::icAllocFunc, 0, 1, 14},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 15},
+      {refalrts::icAllocFunc, 0, 2, 16},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
+      {refalrts::icAllocFunc, 0, 0, 18},
+      {refalrts::icCopySTVar, 19, 7, 0},
+      {refalrts::icAllocInt, 0, 8, 20},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 21},
+      {refalrts::icAllocInt, 0, 8, 22},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 24},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
+      {refalrts::icAllocFunc, 0, 1, 26},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 27},
+      {refalrts::icAllocFunc, 0, 2, 28},
+      {refalrts::icCopySTVar, 29, 7, 0},
+      {refalrts::icAllocInt, 0, 8, 30},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
+      {refalrts::icUpdateFunc, 0, 1, 4},
+      {refalrts::icReinitFunc, 0, 0, 6},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 25},
+      {refalrts::icPushStack, 0, 0, 31},
+      {refalrts::icPushStack, 0, 0, 27},
+      {refalrts::icPushStack, 0, 0, 24},
+      {refalrts::icPushStack, 0, 0, 13},
+      {refalrts::icPushStack, 0, 0, 23},
+      {refalrts::icPushStack, 0, 0, 15},
+      {refalrts::icPushStack, 0, 0, 21},
+      {refalrts::icPushStack, 0, 0, 17},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icPushStack, 0, 0, 11},
+      {refalrts::icPushStack, 0, 0, 9},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceTile, 10, 31, 0},
+      {refalrts::icSpliceTile, 6, 7, 0},
+      {refalrts::icSpliceTile, 9, 9, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 8, 8, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // s.idx s.idx s.idx
+      // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
+      {refalrts::icReinitSVar, 0, 5, 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_EscapeChar_S7L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction gen_EscapeChar_S7L1(
+  "EscapeChar$7\\1",
+  scope_gen_EscapeChar_S7L1::raa,
+  scope_gen_EscapeChar_S7L1::functions,
+  scope_gen_EscapeChar_S7L1::idents,
+  scope_gen_EscapeChar_S7L1::numbers,
+  scope_gen_EscapeChar_S7L1::strings
+);
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 32 elems
   refalrts::Iter context[32];
   refalrts::zeros( context, 32 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { Div, "Div" },
-    { OctDigit, "OctDigit" },
-    { Mod, "Mod" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: s.$ s.$ s.$
-    //GLOBAL GEN: s.$ s.$ s.$
-    // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 5, 2},
-    {refalrts::icsVarLeft, 0, 6, 2},
-    {refalrts::icsVarLeft, 0, 7, 2},
-    {refalrts::icEmpty, 0, 0, 2},
-    {refalrts::icOnFailGoTo, +50, 0, 0},
-    // s.idx '<' s.idx
-    // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 6},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } '\\'/8 Tile{ AsIs: </0 Reuse: & OctDigit/4 } </9 Tile{ HalfReuse: & Div/6 AsIs: s.Code#2/7 } 64/10 >/11 >/12 </13 & OctDigit/14 </15 & Mod/16 </17 & Div/18 s.Code#2/7/19 8/20 >/21 8/22 >/23 >/24 </25 & OctDigit/26 </27 & Mod/28 s.Code#2/7/29 8/30 >/31 Tile{ AsIs: >/1 ]] }
-    {refalrts::icAllocChar, 0, '\\', 8},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
-    {refalrts::icAllocInt, 0, 64, 10},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
-    {refalrts::icAllocFunc, 0, 1, 14},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 15},
-    {refalrts::icAllocFunc, 0, 2, 16},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
-    {refalrts::icAllocFunc, 0, 0, 18},
-    {refalrts::icCopySTVar, 19, 7, 0},
-    {refalrts::icAllocInt, 0, 8, 20},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 21},
-    {refalrts::icAllocInt, 0, 8, 22},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 24},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
-    {refalrts::icAllocFunc, 0, 1, 26},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 27},
-    {refalrts::icAllocFunc, 0, 2, 28},
-    {refalrts::icCopySTVar, 29, 7, 0},
-    {refalrts::icAllocInt, 0, 8, 30},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
-    {refalrts::icUpdateFunc, 0, 1, 4},
-    {refalrts::icReinitFunc, 0, 0, 6},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 25},
-    {refalrts::icPushStack, 0, 0, 31},
-    {refalrts::icPushStack, 0, 0, 27},
-    {refalrts::icPushStack, 0, 0, 24},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icPushStack, 0, 0, 23},
-    {refalrts::icPushStack, 0, 0, 15},
-    {refalrts::icPushStack, 0, 0, 21},
-    {refalrts::icPushStack, 0, 0, 17},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 11},
-    {refalrts::icPushStack, 0, 0, 9},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icSpliceTile, 10, 31, 0},
-    {refalrts::icSpliceTile, 6, 7, 0},
-    {refalrts::icSpliceTile, 9, 9, 0},
-    {refalrts::icSpliceTile, 0, 4, 0},
-    {refalrts::icSpliceTile, 8, 8, 0},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // s.idx s.idx s.idx
-    // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
-    {refalrts::icReinitSVar, 0, 5, 1},
-    {refalrts::icSetRes, 0, 0, 1},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: s.$ s.$ s.$
   //GLOBAL GEN: s.$ s.$ s.$
   // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
@@ -425,15 +486,15 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], OctDigit, "OctDigit" ) )
+    if( ! refalrts::alloc_name( context[14], & OctDigit ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], Mod, "Mod" ) )
+    if( ! refalrts::alloc_name( context[16], & Mod ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[18], Div, "Div" ) )
+    if( ! refalrts::alloc_name( context[18], & Div ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[19], context[7]))
       return refalrts::cNoMemory;
@@ -449,11 +510,11 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[25] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[26], OctDigit, "OctDigit" ) )
+    if( ! refalrts::alloc_name( context[26], & OctDigit ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[27] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[28], Mod, "Mod" ) )
+    if( ! refalrts::alloc_name( context[28], & Mod ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[29], context[7]))
       return refalrts::cNoMemory;
@@ -461,8 +522,8 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[31] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], OctDigit, "OctDigit" );
-    refalrts::reinit_name( context[6], Div, "Div" );
+    refalrts::update_name( context[4], & OctDigit );
+    refalrts::reinit_name( context[6], & Div );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[25] );
     refalrts::push_stack( context[31] );
@@ -487,7 +548,7 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
     res = refalrts::splice_evar( res, context[8], context[8] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // s.idx s.idx s.idx
@@ -502,146 +563,162 @@ static refalrts::FnResult gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts
   refalrts::Iter res = context[1];
   refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+namespace /* unnamed */ {
+refalrts::RefalFunction gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, "EscapeChar$7\\1");
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_EscapeChar {
+    static refalrts::RefalFunction *functions[] = {
+      & Ord,
+      & gen_EscapeChar_S7L1,
+      & refalrts::create_closure,
+      & Compare,
+      & Fetch
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icReserveBacktrackStack, 6, 0, 0},
+      {refalrts::icIssueMemory, 19, 0, 0},
+      //FAST GEN: s.$
+      //GLOBAL GEN: s.$
+      // </0 & EscapeChar/4 s.idx#0/5 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icOnFailGoTo, +7, 0, 0},
+      // '\n'
+      // </0 & EscapeChar/4 '\n'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\n'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'n'/1 ]] }
+      {refalrts::icUpdateChar, 0, '\\', 5},
+      {refalrts::icReinitChar, 0, 'n', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +7, 0, 0},
+      // '\t'
+      // </0 & EscapeChar/4 '\t'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\t'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 't'/1 ]] }
+      {refalrts::icUpdateChar, 0, '\\', 5},
+      {refalrts::icReinitChar, 0, 't', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +7, 0, 0},
+      // '\r'
+      // </0 & EscapeChar/4 '\r'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\r'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'r'/1 ]] }
+      {refalrts::icUpdateChar, 0, '\\', 5},
+      {refalrts::icReinitChar, 0, 'r', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +7, 0, 0},
+      // '\''
+      // </0 & EscapeChar/4 '\''/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\''), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\''/1 ]] }
+      {refalrts::icUpdateChar, 0, '\\', 5},
+      {refalrts::icReinitChar, 0, '\'', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +7, 0, 0},
+      // '\"'
+      // </0 & EscapeChar/4 '\"'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\"'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\"'/1 ]] }
+      {refalrts::icUpdateChar, 0, '\\', 5},
+      {refalrts::icReinitChar, 0, '\"', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // '\\'
+      // </0 & EscapeChar/4 '\\'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>('\\'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: '\\'/5 HalfReuse: '\\'/1 ]] }
+      {refalrts::icReinitChar, 0, '\\', 1},
+      {refalrts::icSetRes, 0, 0, 5},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // s.idx
+      // </0 & EscapeChar/4 s.Other#1/5 >/1
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
+      {refalrts::icAllocFunc, 0, 4, 7},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
+      {refalrts::icAllocFunc, 0, 3, 9},
+      {refalrts::icCopySTVar, 10, 5, 0},
+      {refalrts::icAllocChar, 0, ' ', 11},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
+      {refalrts::icAllocFunc, 0, 2, 14},
+      {refalrts::icAllocFunc, 0, 1, 15},
+      {refalrts::icCopySTVar, 16, 5, 0},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 18},
+      {refalrts::icPushStack, 0, 0, 6},
+      {refalrts::icPushStack, 0, 0, 17},
+      {refalrts::icPushStack, 0, 0, 13},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icPushStack, 0, 0, 8},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 13, 18, 0},
+      {refalrts::icSpliceTile, 0, 1, 0},
+      {refalrts::icSpliceTile, 6, 12, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_EscapeChar
+
+} // unnamed namespace
+
+refalrts::RASLFunction EscapeChar(
+  "EscapeChar",
+  scope_EscapeChar::raa,
+  scope_EscapeChar::functions,
+  scope_EscapeChar::idents,
+  scope_EscapeChar::numbers,
+  scope_EscapeChar::strings
+);
+
+#else
+static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { Ord, "Ord" },
-    { gen_EscapeChar_S7L1, "EscapeChar$7\\1" },
-    { refalrts::create_closure, "@create_closure@" },
-    { Compare, "Compare" },
-    { Fetch, "Fetch" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    //FAST GEN: s.$
-    //GLOBAL GEN: s.$
-    // </0 & EscapeChar/4 s.idx#0/5 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    {refalrts::icsVarLeft, 0, 5, 2},
-    {refalrts::icEmpty, 0, 0, 2},
-    {refalrts::icOnFailGoTo, +7, 0, 0},
-    // '\n'
-    // </0 & EscapeChar/4 '\n'/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\n'), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'n'/1 ]] }
-    {refalrts::icUpdateChar, 0, '\\', 5},
-    {refalrts::icReinitChar, 0, 'n', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +7, 0, 0},
-    // '\t'
-    // </0 & EscapeChar/4 '\t'/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\t'), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 't'/1 ]] }
-    {refalrts::icUpdateChar, 0, '\\', 5},
-    {refalrts::icReinitChar, 0, 't', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +7, 0, 0},
-    // '\r'
-    // </0 & EscapeChar/4 '\r'/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\r'), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: 'r'/1 ]] }
-    {refalrts::icUpdateChar, 0, '\\', 5},
-    {refalrts::icReinitChar, 0, 'r', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +7, 0, 0},
-    // '\''
-    // </0 & EscapeChar/4 '\''/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\''), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\''/1 ]] }
-    {refalrts::icUpdateChar, 0, '\\', 5},
-    {refalrts::icReinitChar, 0, '\'', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +7, 0, 0},
-    // '\"'
-    // </0 & EscapeChar/4 '\"'/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\"'), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: '\\'/5 HalfReuse: '\"'/1 ]] }
-    {refalrts::icUpdateChar, 0, '\\', 5},
-    {refalrts::icReinitChar, 0, '\"', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icOnFailGoTo, +6, 0, 0},
-    // '\\'
-    // </0 & EscapeChar/4 '\\'/5 >/1
-    {refalrts::icCharTerm, 0, static_cast<unsigned char>('\\'), 5},
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} </0 & EscapeChar/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: '\\'/5 HalfReuse: '\\'/1 ]] }
-    {refalrts::icReinitChar, 0, '\\', 1},
-    {refalrts::icSetRes, 0, 0, 5},
-    {refalrts::icTrashLeftEdge, 0, 0, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    // s.idx
-    // </0 & EscapeChar/4 s.Other#1/5 >/1
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 6},
-    {refalrts::icAllocFunc, 0, 4, 7},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
-    {refalrts::icAllocFunc, 0, 3, 9},
-    {refalrts::icCopySTVar, 10, 5, 0},
-    {refalrts::icAllocChar, 0, ' ', 11},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 13},
-    {refalrts::icAllocFunc, 0, 2, 14},
-    {refalrts::icAllocFunc, 0, 1, 15},
-    {refalrts::icCopySTVar, 16, 5, 0},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
-    {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 18},
-    {refalrts::icPushStack, 0, 0, 6},
-    {refalrts::icPushStack, 0, 0, 17},
-    {refalrts::icPushStack, 0, 0, 13},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 0},
-    {refalrts::icPushStack, 0, 0, 12},
-    {refalrts::icPushStack, 0, 0, 8},
-    {refalrts::icSetResRightEdge, 0, 0, 0},
-    {refalrts::icSpliceTile, 13, 18, 0},
-    {refalrts::icSpliceTile, 0, 1, 0},
-    {refalrts::icSpliceTile, 6, 12, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[6];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   //FAST GEN: s.$
   //GLOBAL GEN: s.$
   // </0 & EscapeChar/4 s.idx#0/5 >/1
@@ -671,7 +748,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -691,7 +768,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -711,7 +788,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -731,7 +808,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -751,7 +828,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   do {
@@ -770,7 +847,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     refalrts::Iter res = context[5];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
+    return refalrts::cSuccess;
   } while ( 0 );
 
   // s.idx
@@ -781,11 +858,11 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], Fetch, "Fetch" ) )
+  if( ! refalrts::alloc_name( context[7], & Fetch ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], Compare, "Compare" ) )
+  if( ! refalrts::alloc_name( context[9], & Compare ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[10], context[5]))
     return refalrts::cNoMemory;
@@ -795,9 +872,9 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], refalrts::create_closure, "@create_closure@" ) )
+  if( ! refalrts::alloc_name( context[14], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], gen_EscapeChar_S7L1, "EscapeChar$7\\1" ) )
+  if( ! refalrts::alloc_name( context[15], & gen_EscapeChar_S7L1 ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[16], context[5]))
     return refalrts::cNoMemory;
@@ -805,7 +882,7 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], Ord, "Ord" );
+  refalrts::update_name( context[4], & Ord );
   refalrts::push_stack( context[18] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[17] );
@@ -821,48 +898,60 @@ refalrts::FnResult EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) 
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[6], context[12] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
-refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+refalrts::RefalFunction EscapeChar(func_EscapeChar, "EscapeChar");
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_EscapeString {
+    static refalrts::RefalFunction *functions[] = {
+      & EscapeChar,
+      & Map
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 6, 0, 0},
+      // </0 & EscapeString/4 e.String#1/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.String#1 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
+      {refalrts::icReinitFunc, 0, 1, 0},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 5},
+      {refalrts::icSetRes, 0, 0, 0},
+      {refalrts::icSpliceTile, 5, 5, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_EscapeString
+
+} // unnamed namespace
+
+refalrts::RASLFunction EscapeString(
+  "EscapeString",
+  scope_EscapeString::raa,
+  scope_EscapeString::functions,
+  scope_EscapeString::idents,
+  scope_EscapeString::numbers,
+  scope_EscapeString::strings
+);
+
+#else
+static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-#ifdef INTERPRET
-  static const refalrts::RefalFunction functions[] = {
-    { EscapeChar, "EscapeChar" },
-    { Map, "Map" }
-  };
-  using refalrts::idents;
-  using refalrts::numbers;
-  using refalrts::strings;
-  static const refalrts::RASLCommand raa[] = {
-    // </0 & EscapeString/4 e.String#1/2 >/1
-    {refalrts::icInitB0_Lite, 0, 0, 0},
-    {refalrts::icCallSaveLeft, 0, 2, 0},
-    // closed e.String#1 as range 2
-    {refalrts::icEmptyResult, 0, 0, 0},
-    //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
-    {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
-    {refalrts::icReinitFunc, 0, 1, 0},
-    {refalrts::icUpdateFunc, 0, 0, 4},
-    {refalrts::icPushStack, 0, 0, 1},
-    {refalrts::icPushStack, 0, 0, 5},
-    {refalrts::icSetRes, 0, 0, 0},
-    {refalrts::icSpliceTile, 5, 5, 0},
-    {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-    {refalrts::icEnd, 0, 0, 0}
-  };
-  int open_e_stack[1];
-  refalrts::FnResult res = refalrts::interpret_array(
-    raa, context, arg_begin, arg_end,
-    functions, idents, numbers, strings, open_e_stack
-  );
-  return res;
-#else
   // </0 & EscapeString/4 e.String#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -876,8 +965,8 @@ refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], Map, "Map" );
-  refalrts::update_name( context[4], EscapeChar, "EscapeChar" );
+  refalrts::reinit_name( context[0], & Map );
+  refalrts::update_name( context[4], & EscapeChar );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -885,9 +974,11 @@ refalrts::FnResult EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end
   refalrts::Iter res = context[0];
   res = refalrts::splice_evar( res, context[5], context[5] );
   refalrts::use( res );
-  return refalrts::FnResult(refalrts::cSuccess | (__LINE__ << 8));
-#endif
+  return refalrts::cSuccess;
 }
 
+refalrts::RefalFunction EscapeString(func_EscapeString, "EscapeString");
+
+#endif
 
 //End of file
