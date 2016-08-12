@@ -18,349 +18,349 @@ struct ident_TypeBracket {
   }
 };
 
-extern refalrts::RefalFunction FOpen;
-extern refalrts::RefalFunction FClose;
-extern refalrts::RefalFunction FReadLine;
-extern refalrts::RefalFunction FWriteLine;
-extern refalrts::RefalFunction Add;
-extern refalrts::RefalFunction Sub;
-extern refalrts::RefalFunction IntFromStr;
-extern refalrts::RefalFunction Arg;
-extern refalrts::RefalFunction SymbCompare;
-extern refalrts::RefalFunction SymbType;
+extern refalrts::RefalFunction& FOpen;
+extern refalrts::RefalFunction& FClose;
+extern refalrts::RefalFunction& FReadLine;
+extern refalrts::RefalFunction& FWriteLine;
+extern refalrts::RefalFunction& Add;
+extern refalrts::RefalFunction& Sub;
+extern refalrts::RefalFunction& IntFromStr;
+extern refalrts::RefalFunction& Arg;
+extern refalrts::RefalFunction& SymbCompare;
+extern refalrts::RefalFunction& SymbType;
 #ifdef INTERPRET
-extern refalrts::RASLFunction Apply;
+extern refalrts::RefalFunction& Apply;
 #else
-extern refalrts::RefalFunction Apply;
+extern refalrts::RefalFunction& Apply;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Map;
+extern refalrts::RefalFunction& Map;
 #else
-extern refalrts::RefalFunction Map;
+extern refalrts::RefalFunction& Map;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Reduce;
+extern refalrts::RefalFunction& Reduce;
 #else
-extern refalrts::RefalFunction Reduce;
+extern refalrts::RefalFunction& Reduce;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Fetch;
+extern refalrts::RefalFunction& Fetch;
 #else
-extern refalrts::RefalFunction Fetch;
+extern refalrts::RefalFunction& Fetch;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Y_L1;
+extern refalrts::RefalFunction& gen_Y_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Y_L1;
+extern refalrts::RefalFunction& gen_Y_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Y;
+extern refalrts::RefalFunction& Y;
 #else
-extern refalrts::RefalFunction Y;
+extern refalrts::RefalFunction& Y;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction MapReduce;
+extern refalrts::RefalFunction& MapReduce;
 #else
-extern refalrts::RefalFunction MapReduce;
+extern refalrts::RefalFunction& MapReduce;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoMapReduce;
+extern refalrts::RefalFunction& DoMapReduce;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoMapReduce;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction MapReduce_AddScanned;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction MapReduce_AddScanned;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction UnBracket;
-#else
-extern refalrts::RefalFunction UnBracket;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction DelAccumulator;
-#else
-extern refalrts::RefalFunction DelAccumulator;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction LoadFile;
-#else
-extern refalrts::RefalFunction LoadFile;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction DoLoadFile;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction DoLoadFile;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction SaveFile;
-#else
-extern refalrts::RefalFunction SaveFile;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction WriteBracketLine;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction WriteBracketLine;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Inc;
-#else
-extern refalrts::RefalFunction Inc;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Dec;
-#else
-extern refalrts::RefalFunction Dec;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction FastIntFromStr_Guard;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction FastIntFromStr_Guard;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction FastIntFromStr;
-#else
-extern refalrts::RefalFunction FastIntFromStr;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction ArgList;
-#else
-extern refalrts::RefalFunction ArgList;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction DoArgList;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction DoArgList;
+extern refalrts::RefalFunction& DoMapReduce;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction SwDoArgList;
+extern refalrts::RefalFunction& MapReduce_AddScanned;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction SwDoArgList;
+extern refalrts::RefalFunction& MapReduce_AddScanned;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Compare;
+extern refalrts::RefalFunction& UnBracket;
 #else
-extern refalrts::RefalFunction Compare;
+extern refalrts::RefalFunction& UnBracket;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& DelAccumulator;
+#else
+extern refalrts::RefalFunction& DelAccumulator;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& LoadFile;
+#else
+extern refalrts::RefalFunction& LoadFile;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Lexicon;
+extern refalrts::RefalFunction& DoLoadFile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Lexicon;
+extern refalrts::RefalFunction& DoLoadFile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
+extern refalrts::RefalFunction& SaveFile;
+#else
+extern refalrts::RefalFunction& SaveFile;
+#endif
+#ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Lexicon_Aux;
+extern refalrts::RefalFunction& WriteBracketLine;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Lexicon_Aux;
+extern refalrts::RefalFunction& WriteBracketLine;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Compare_T;
+extern refalrts::RefalFunction& Inc;
 #else
-extern refalrts::RefalFunction Compare_T;
+extern refalrts::RefalFunction& Inc;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Dec;
+#else
+extern refalrts::RefalFunction& Dec;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Lexicon_T;
+extern refalrts::RefalFunction& FastIntFromStr_Guard;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Lexicon_T;
+extern refalrts::RefalFunction& FastIntFromStr_Guard;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
+extern refalrts::RefalFunction& FastIntFromStr;
+#else
+extern refalrts::RefalFunction& FastIntFromStr;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& ArgList;
+#else
+extern refalrts::RefalFunction& ArgList;
+#endif
+#ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Lexicon_T_Aux;
+extern refalrts::RefalFunction& DoArgList;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Lexicon_T_Aux;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Type;
-#else
-extern refalrts::RefalFunction Type;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Type_T;
-#else
-extern refalrts::RefalFunction Type_T;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Trim;
-#else
-extern refalrts::RefalFunction Trim;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Trim_L;
-#else
-extern refalrts::RefalFunction Trim_L;
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Trim_R;
-#else
-extern refalrts::RefalFunction Trim_R;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Seq_S2L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Seq_S2L1;
+extern refalrts::RefalFunction& DoArgList;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Seq_S3L1;
+extern refalrts::RefalFunction& SwDoArgList;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Seq_S3L1;
+extern refalrts::RefalFunction& SwDoArgList;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Seq;
+extern refalrts::RefalFunction& Compare;
 #else
-extern refalrts::RefalFunction Seq;
+extern refalrts::RefalFunction& Compare;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Sort_S2L1L1;
+extern refalrts::RefalFunction& Lexicon;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Sort_S2L1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Sort_S2L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Sort_S2L1;
+extern refalrts::RefalFunction& Lexicon;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Sort_S2L2;
+extern refalrts::RefalFunction& Lexicon_Aux;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Sort_S2L2;
+extern refalrts::RefalFunction& Lexicon_Aux;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Sort;
+extern refalrts::RefalFunction& Compare_T;
 #else
-extern refalrts::RefalFunction Sort;
+extern refalrts::RefalFunction& Compare_T;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Min_S1L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Min_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-extern refalrts::RASLFunction Min;
-#else
-extern refalrts::RefalFunction Min;
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Max_S1L1;
+extern refalrts::RefalFunction& Lexicon_T;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Max_S1L1;
+extern refalrts::RefalFunction& Lexicon_T;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction Max;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Lexicon_T_Aux;
+} // unnamed namespace
+
 #else
-extern refalrts::RefalFunction Max;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Lexicon_T_Aux;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Type;
+#else
+extern refalrts::RefalFunction& Type;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Type_T;
+#else
+extern refalrts::RefalFunction& Type_T;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Trim;
+#else
+extern refalrts::RefalFunction& Trim;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Trim_L;
+#else
+extern refalrts::RefalFunction& Trim_L;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Trim_R;
+#else
+extern refalrts::RefalFunction& Trim_R;
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Seq_S2L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Seq_S2L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Seq_S3L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Seq_S3L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Seq;
+#else
+extern refalrts::RefalFunction& Seq;
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L1L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L1L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L2;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Sort_S2L2;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Sort;
+#else
+extern refalrts::RefalFunction& Sort;
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Min_S1L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Min_S1L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Min;
+#else
+extern refalrts::RefalFunction& Min;
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Max_S1L1;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Max_S1L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& Max;
+#else
+extern refalrts::RefalFunction& Max;
 #endif
 
 #ifdef INTERPRET
@@ -417,7 +417,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Apply(
+refalrts::RASLFunction descr_Apply(
   "Apply",
   scope_Apply::raa,
   scope_Apply::functions,
@@ -425,6 +425,7 @@ refalrts::RASLFunction Apply(
   scope_Apply::numbers,
   scope_Apply::strings
 );
+refalrts::RefalFunction& Apply = descr_Apply;
 
 #else
 static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -494,7 +495,8 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Apply(func_Apply, "Apply");
+refalrts::RefalFunction descr_Apply(func_Apply, "Apply");
+refalrts::RefalFunction& Apply = descr_Apply;
 
 #endif
 #ifdef INTERPRET
@@ -554,7 +556,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Map(
+refalrts::RASLFunction descr_Map(
   "Map",
   scope_Map::raa,
   scope_Map::functions,
@@ -562,6 +564,7 @@ refalrts::RASLFunction Map(
   scope_Map::numbers,
   scope_Map::strings
 );
+refalrts::RefalFunction& Map = descr_Map;
 
 #else
 static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -633,7 +636,8 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Map(func_Map, "Map");
+refalrts::RefalFunction descr_Map(func_Map, "Map");
+refalrts::RefalFunction& Map = descr_Map;
 
 #endif
 #ifdef INTERPRET
@@ -697,7 +701,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Reduce(
+refalrts::RASLFunction descr_Reduce(
   "Reduce",
   scope_Reduce::raa,
   scope_Reduce::functions,
@@ -705,6 +709,7 @@ refalrts::RASLFunction Reduce(
   scope_Reduce::numbers,
   scope_Reduce::strings
 );
+refalrts::RefalFunction& Reduce = descr_Reduce;
 
 #else
 static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -782,7 +787,8 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Reduce(func_Reduce, "Reduce");
+refalrts::RefalFunction descr_Reduce(func_Reduce, "Reduce");
+refalrts::RefalFunction& Reduce = descr_Reduce;
 
 #endif
 #ifdef INTERPRET
@@ -817,7 +823,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Fetch(
+refalrts::RASLFunction descr_Fetch(
   "Fetch",
   scope_Fetch::raa,
   scope_Fetch::functions,
@@ -825,6 +831,7 @@ refalrts::RASLFunction Fetch(
   scope_Fetch::numbers,
   scope_Fetch::strings
 );
+refalrts::RefalFunction& Fetch = descr_Fetch;
 
 #else
 static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -858,7 +865,8 @@ static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Fetch(func_Fetch, "Fetch");
+refalrts::RefalFunction descr_Fetch(func_Fetch, "Fetch");
+refalrts::RefalFunction& Fetch = descr_Fetch;
 
 #endif
 #ifdef INTERPRET
@@ -903,7 +911,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Y_L1(
+refalrts::RASLFunction descr_gen_Y_L1(
   "Y\\1",
   scope_gen_Y_L1::raa,
   scope_gen_Y_L1::functions,
@@ -911,6 +919,7 @@ refalrts::RASLFunction gen_Y_L1(
   scope_gen_Y_L1::numbers,
   scope_gen_Y_L1::strings
 );
+refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
 
 } // unnamed namespace
 
@@ -960,7 +969,8 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Y_L1(func_gen_Y_L1, "Y\\1");
+refalrts::RefalFunction descr_gen_Y_L1(func_gen_Y_L1, "Y\\1");
+refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
 
 } // unnamed namespace
 
@@ -999,7 +1009,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Y(
+refalrts::RASLFunction descr_Y(
   "Y",
   scope_Y::raa,
   scope_Y::functions,
@@ -1007,6 +1017,7 @@ refalrts::RASLFunction Y(
   scope_Y::numbers,
   scope_Y::strings
 );
+refalrts::RefalFunction& Y = descr_Y;
 
 #else
 static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1042,7 +1053,8 @@ static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_en
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Y(func_Y, "Y");
+refalrts::RefalFunction descr_Y(func_Y, "Y");
+refalrts::RefalFunction& Y = descr_Y;
 
 #endif
 #ifdef INTERPRET
@@ -1081,7 +1093,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction MapReduce(
+refalrts::RASLFunction descr_MapReduce(
   "MapReduce",
   scope_MapReduce::raa,
   scope_MapReduce::functions,
@@ -1089,6 +1101,7 @@ refalrts::RASLFunction MapReduce(
   scope_MapReduce::numbers,
   scope_MapReduce::strings
 );
+refalrts::RefalFunction& MapReduce = descr_MapReduce;
 
 #else
 static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1130,7 +1143,8 @@ static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction MapReduce(func_MapReduce, "MapReduce");
+refalrts::RefalFunction descr_MapReduce(func_MapReduce, "MapReduce");
+refalrts::RefalFunction& MapReduce = descr_MapReduce;
 
 #endif
 #ifdef INTERPRET
@@ -1208,7 +1222,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoMapReduce(
+refalrts::RASLFunction descr_DoMapReduce(
   "DoMapReduce",
   scope_DoMapReduce::raa,
   scope_DoMapReduce::functions,
@@ -1216,6 +1230,7 @@ refalrts::RASLFunction DoMapReduce(
   scope_DoMapReduce::numbers,
   scope_DoMapReduce::strings
 );
+refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
 
 } // unnamed namespace
 
@@ -1317,7 +1332,8 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoMapReduce(func_DoMapReduce, "DoMapReduce");
+refalrts::RefalFunction descr_DoMapReduce(func_DoMapReduce, "DoMapReduce");
+refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
 
 } // unnamed namespace
 
@@ -1357,7 +1373,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction MapReduce_AddScanned(
+refalrts::RASLFunction descr_MapReduce_AddScanned(
   "MapReduce-AddScanned",
   scope_MapReduce_AddScanned::raa,
   scope_MapReduce_AddScanned::functions,
@@ -1365,6 +1381,7 @@ refalrts::RASLFunction MapReduce_AddScanned(
   scope_MapReduce_AddScanned::numbers,
   scope_MapReduce_AddScanned::strings
 );
+refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
 
 } // unnamed namespace
 
@@ -1410,7 +1427,8 @@ static refalrts::FnResult func_MapReduce_AddScanned(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned");
+refalrts::RefalFunction descr_MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned");
+refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
 
 } // unnamed namespace
 
@@ -1443,7 +1461,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction UnBracket(
+refalrts::RASLFunction descr_UnBracket(
   "UnBracket",
   scope_UnBracket::raa,
   scope_UnBracket::functions,
@@ -1451,6 +1469,7 @@ refalrts::RASLFunction UnBracket(
   scope_UnBracket::numbers,
   scope_UnBracket::strings
 );
+refalrts::RefalFunction& UnBracket = descr_UnBracket;
 
 #else
 static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1486,7 +1505,8 @@ static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction UnBracket(func_UnBracket, "UnBracket");
+refalrts::RefalFunction descr_UnBracket(func_UnBracket, "UnBracket");
+refalrts::RefalFunction& UnBracket = descr_UnBracket;
 
 #endif
 #ifdef INTERPRET
@@ -1516,7 +1536,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction DelAccumulator(
+refalrts::RASLFunction descr_DelAccumulator(
   "DelAccumulator",
   scope_DelAccumulator::raa,
   scope_DelAccumulator::functions,
@@ -1524,6 +1544,7 @@ refalrts::RASLFunction DelAccumulator(
   scope_DelAccumulator::numbers,
   scope_DelAccumulator::strings
 );
+refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
 
 #else
 static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1554,7 +1575,8 @@ static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction DelAccumulator(func_DelAccumulator, "DelAccumulator");
+refalrts::RefalFunction descr_DelAccumulator(func_DelAccumulator, "DelAccumulator");
+refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
 
 #endif
 #ifdef INTERPRET
@@ -1602,7 +1624,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction LoadFile(
+refalrts::RASLFunction descr_LoadFile(
   "LoadFile",
   scope_LoadFile::raa,
   scope_LoadFile::functions,
@@ -1610,6 +1632,7 @@ refalrts::RASLFunction LoadFile(
   scope_LoadFile::numbers,
   scope_LoadFile::strings
 );
+refalrts::RefalFunction& LoadFile = descr_LoadFile;
 
 #else
 static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1659,7 +1682,8 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction LoadFile(func_LoadFile, "LoadFile");
+refalrts::RefalFunction descr_LoadFile(func_LoadFile, "LoadFile");
+refalrts::RefalFunction& LoadFile = descr_LoadFile;
 
 #endif
 #ifdef INTERPRET
@@ -1751,7 +1775,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoLoadFile(
+refalrts::RASLFunction descr_DoLoadFile(
   "DoLoadFile",
   scope_DoLoadFile::raa,
   scope_DoLoadFile::functions,
@@ -1759,6 +1783,7 @@ refalrts::RASLFunction DoLoadFile(
   scope_DoLoadFile::numbers,
   scope_DoLoadFile::strings
 );
+refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
 
 } // unnamed namespace
 
@@ -1875,7 +1900,8 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoLoadFile(func_DoLoadFile, "DoLoadFile");
+refalrts::RefalFunction descr_DoLoadFile(func_DoLoadFile, "DoLoadFile");
+refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
 
 } // unnamed namespace
 
@@ -1929,7 +1955,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction SaveFile(
+refalrts::RASLFunction descr_SaveFile(
   "SaveFile",
   scope_SaveFile::raa,
   scope_SaveFile::functions,
@@ -1937,6 +1963,7 @@ refalrts::RASLFunction SaveFile(
   scope_SaveFile::numbers,
   scope_SaveFile::strings
 );
+refalrts::RefalFunction& SaveFile = descr_SaveFile;
 
 #else
 static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1993,7 +2020,8 @@ static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction SaveFile(func_SaveFile, "SaveFile");
+refalrts::RefalFunction descr_SaveFile(func_SaveFile, "SaveFile");
+refalrts::RefalFunction& SaveFile = descr_SaveFile;
 
 #endif
 #ifdef INTERPRET
@@ -2031,7 +2059,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction WriteBracketLine(
+refalrts::RASLFunction descr_WriteBracketLine(
   "WriteBracketLine",
   scope_WriteBracketLine::raa,
   scope_WriteBracketLine::functions,
@@ -2039,6 +2067,7 @@ refalrts::RASLFunction WriteBracketLine(
   scope_WriteBracketLine::numbers,
   scope_WriteBracketLine::strings
 );
+refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
 
 } // unnamed namespace
 
@@ -2083,7 +2112,8 @@ static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction WriteBracketLine(func_WriteBracketLine, "WriteBracketLine");
+refalrts::RefalFunction descr_WriteBracketLine(func_WriteBracketLine, "WriteBracketLine");
+refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
 
 } // unnamed namespace
 
@@ -2121,7 +2151,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Inc(
+refalrts::RASLFunction descr_Inc(
   "Inc",
   scope_Inc::raa,
   scope_Inc::functions,
@@ -2129,6 +2159,7 @@ refalrts::RASLFunction Inc(
   scope_Inc::numbers,
   scope_Inc::strings
 );
+refalrts::RefalFunction& Inc = descr_Inc;
 
 #else
 static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2164,7 +2195,8 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Inc(func_Inc, "Inc");
+refalrts::RefalFunction descr_Inc(func_Inc, "Inc");
+refalrts::RefalFunction& Inc = descr_Inc;
 
 #endif
 #ifdef INTERPRET
@@ -2200,7 +2232,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Dec(
+refalrts::RASLFunction descr_Dec(
   "Dec",
   scope_Dec::raa,
   scope_Dec::functions,
@@ -2208,6 +2240,7 @@ refalrts::RASLFunction Dec(
   scope_Dec::numbers,
   scope_Dec::strings
 );
+refalrts::RefalFunction& Dec = descr_Dec;
 
 #else
 static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2243,7 +2276,8 @@ static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Dec(func_Dec, "Dec");
+refalrts::RefalFunction descr_Dec(func_Dec, "Dec");
+refalrts::RefalFunction& Dec = descr_Dec;
 
 #endif
 #ifdef INTERPRET
@@ -2277,7 +2311,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FastIntFromStr_Guard(
+refalrts::RASLFunction descr_FastIntFromStr_Guard(
   "FastIntFromStr-Guard",
   scope_FastIntFromStr_Guard::raa,
   scope_FastIntFromStr_Guard::functions,
@@ -2285,6 +2319,7 @@ refalrts::RASLFunction FastIntFromStr_Guard(
   scope_FastIntFromStr_Guard::numbers,
   scope_FastIntFromStr_Guard::strings
 );
+refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
 
 } // unnamed namespace
 
@@ -2321,7 +2356,8 @@ static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard");
+refalrts::RefalFunction descr_FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard");
+refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
 
 } // unnamed namespace
 
@@ -2364,7 +2400,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction FastIntFromStr(
+refalrts::RASLFunction descr_FastIntFromStr(
   "FastIntFromStr",
   scope_FastIntFromStr::raa,
   scope_FastIntFromStr::functions,
@@ -2372,6 +2408,7 @@ refalrts::RASLFunction FastIntFromStr(
   scope_FastIntFromStr::numbers,
   scope_FastIntFromStr::strings
 );
+refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
 
 #else
 static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2411,7 +2448,8 @@ static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction FastIntFromStr(func_FastIntFromStr, "FastIntFromStr");
+refalrts::RefalFunction descr_FastIntFromStr(func_FastIntFromStr, "FastIntFromStr");
+refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
 
 #endif
 #ifdef INTERPRET
@@ -2446,7 +2484,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction ArgList(
+refalrts::RASLFunction descr_ArgList(
   "ArgList",
   scope_ArgList::raa,
   scope_ArgList::functions,
@@ -2454,6 +2492,7 @@ refalrts::RASLFunction ArgList(
   scope_ArgList::numbers,
   scope_ArgList::strings
 );
+refalrts::RefalFunction& ArgList = descr_ArgList;
 
 #else
 static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2487,7 +2526,8 @@ static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction ArgList(func_ArgList, "ArgList");
+refalrts::RefalFunction descr_ArgList(func_ArgList, "ArgList");
+refalrts::RefalFunction& ArgList = descr_ArgList;
 
 #endif
 #ifdef INTERPRET
@@ -2537,7 +2577,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoArgList(
+refalrts::RASLFunction descr_DoArgList(
   "DoArgList",
   scope_DoArgList::raa,
   scope_DoArgList::functions,
@@ -2545,6 +2585,7 @@ refalrts::RASLFunction DoArgList(
   scope_DoArgList::numbers,
   scope_DoArgList::strings
 );
+refalrts::RefalFunction& DoArgList = descr_DoArgList;
 
 } // unnamed namespace
 
@@ -2600,7 +2641,8 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoArgList(func_DoArgList, "DoArgList");
+refalrts::RefalFunction descr_DoArgList(func_DoArgList, "DoArgList");
+refalrts::RefalFunction& DoArgList = descr_DoArgList;
 
 } // unnamed namespace
 
@@ -2660,7 +2702,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction SwDoArgList(
+refalrts::RASLFunction descr_SwDoArgList(
   "SwDoArgList",
   scope_SwDoArgList::raa,
   scope_SwDoArgList::functions,
@@ -2668,6 +2710,7 @@ refalrts::RASLFunction SwDoArgList(
   scope_SwDoArgList::numbers,
   scope_SwDoArgList::strings
 );
+refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
 
 } // unnamed namespace
 
@@ -2735,7 +2778,8 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction SwDoArgList(func_SwDoArgList, "SwDoArgList");
+refalrts::RefalFunction descr_SwDoArgList(func_SwDoArgList, "SwDoArgList");
+refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
 
 } // unnamed namespace
 
@@ -2820,7 +2864,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Compare(
+refalrts::RASLFunction descr_Compare(
   "Compare",
   scope_Compare::raa,
   scope_Compare::functions,
@@ -2828,6 +2872,7 @@ refalrts::RASLFunction Compare(
   scope_Compare::numbers,
   scope_Compare::strings
 );
+refalrts::RefalFunction& Compare = descr_Compare;
 
 #else
 static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2941,7 +2986,8 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Compare(func_Compare, "Compare");
+refalrts::RefalFunction descr_Compare(func_Compare, "Compare");
+refalrts::RefalFunction& Compare = descr_Compare;
 
 #endif
 #ifdef INTERPRET
@@ -3044,7 +3090,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Lexicon(
+refalrts::RASLFunction descr_Lexicon(
   "Lexicon",
   scope_Lexicon::raa,
   scope_Lexicon::functions,
@@ -3052,6 +3098,7 @@ refalrts::RASLFunction Lexicon(
   scope_Lexicon::numbers,
   scope_Lexicon::strings
 );
+refalrts::RefalFunction& Lexicon = descr_Lexicon;
 
 } // unnamed namespace
 
@@ -3199,7 +3246,8 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Lexicon(func_Lexicon, "Lexicon");
+refalrts::RefalFunction descr_Lexicon(func_Lexicon, "Lexicon");
+refalrts::RefalFunction& Lexicon = descr_Lexicon;
 
 } // unnamed namespace
 
@@ -3277,7 +3325,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Lexicon_Aux(
+refalrts::RASLFunction descr_Lexicon_Aux(
   "Lexicon-Aux",
   scope_Lexicon_Aux::raa,
   scope_Lexicon_Aux::functions,
@@ -3285,6 +3333,7 @@ refalrts::RASLFunction Lexicon_Aux(
   scope_Lexicon_Aux::numbers,
   scope_Lexicon_Aux::strings
 );
+refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
 
 } // unnamed namespace
 
@@ -3387,7 +3436,8 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux");
+refalrts::RefalFunction descr_Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux");
+refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
 
 } // unnamed namespace
 
@@ -3490,7 +3540,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Compare_T(
+refalrts::RASLFunction descr_Compare_T(
   "Compare-T",
   scope_Compare_T::raa,
   scope_Compare_T::functions,
@@ -3498,6 +3548,7 @@ refalrts::RASLFunction Compare_T(
   scope_Compare_T::numbers,
   scope_Compare_T::strings
 );
+refalrts::RefalFunction& Compare_T = descr_Compare_T;
 
 #else
 static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3641,7 +3692,8 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Compare_T(func_Compare_T, "Compare-T");
+refalrts::RefalFunction descr_Compare_T(func_Compare_T, "Compare-T");
+refalrts::RefalFunction& Compare_T = descr_Compare_T;
 
 #endif
 #ifdef INTERPRET
@@ -3776,7 +3828,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Lexicon_T(
+refalrts::RASLFunction descr_Lexicon_T(
   "Lexicon-T",
   scope_Lexicon_T::raa,
   scope_Lexicon_T::functions,
@@ -3784,6 +3836,7 @@ refalrts::RASLFunction Lexicon_T(
   scope_Lexicon_T::numbers,
   scope_Lexicon_T::strings
 );
+refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
 
 } // unnamed namespace
 
@@ -3973,7 +4026,8 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Lexicon_T(func_Lexicon_T, "Lexicon-T");
+refalrts::RefalFunction descr_Lexicon_T(func_Lexicon_T, "Lexicon-T");
+refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
 
 } // unnamed namespace
 
@@ -4094,7 +4148,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Lexicon_T_Aux(
+refalrts::RASLFunction descr_Lexicon_T_Aux(
   "Lexicon-T-Aux",
   scope_Lexicon_T_Aux::raa,
   scope_Lexicon_T_Aux::functions,
@@ -4102,6 +4156,7 @@ refalrts::RASLFunction Lexicon_T_Aux(
   scope_Lexicon_T_Aux::numbers,
   scope_Lexicon_T_Aux::strings
 );
+refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
 
 } // unnamed namespace
 
@@ -4261,7 +4316,8 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux");
+refalrts::RefalFunction descr_Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux");
+refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
 
 } // unnamed namespace
 
@@ -4315,7 +4371,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Type(
+refalrts::RASLFunction descr_Type(
   "Type",
   scope_Type::raa,
   scope_Type::functions,
@@ -4323,6 +4379,7 @@ refalrts::RASLFunction Type(
   scope_Type::numbers,
   scope_Type::strings
 );
+refalrts::RefalFunction& Type = descr_Type;
 
 #else
 static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4379,7 +4436,8 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Type(func_Type, "Type");
+refalrts::RefalFunction descr_Type(func_Type, "Type");
+refalrts::RefalFunction& Type = descr_Type;
 
 #endif
 #ifdef INTERPRET
@@ -4453,7 +4511,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Type_T(
+refalrts::RASLFunction descr_Type_T(
   "Type-T",
   scope_Type_T::raa,
   scope_Type_T::functions,
@@ -4461,6 +4519,7 @@ refalrts::RASLFunction Type_T(
   scope_Type_T::numbers,
   scope_Type_T::strings
 );
+refalrts::RefalFunction& Type_T = descr_Type_T;
 
 #else
 static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4552,7 +4611,8 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Type_T(func_Type_T, "Type-T");
+refalrts::RefalFunction descr_Type_T(func_Type_T, "Type-T");
+refalrts::RefalFunction& Type_T = descr_Type_T;
 
 #endif
 #ifdef INTERPRET
@@ -4593,7 +4653,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Trim(
+refalrts::RASLFunction descr_Trim(
   "Trim",
   scope_Trim::raa,
   scope_Trim::functions,
@@ -4601,6 +4661,7 @@ refalrts::RASLFunction Trim(
   scope_Trim::numbers,
   scope_Trim::strings
 );
+refalrts::RefalFunction& Trim = descr_Trim;
 
 #else
 static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4640,7 +4701,8 @@ static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Trim(func_Trim, "Trim");
+refalrts::RefalFunction descr_Trim(func_Trim, "Trim");
+refalrts::RefalFunction& Trim = descr_Trim;
 
 #endif
 #ifdef INTERPRET
@@ -4741,7 +4803,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Trim_L(
+refalrts::RASLFunction descr_Trim_L(
   "Trim-L",
   scope_Trim_L::raa,
   scope_Trim_L::functions,
@@ -4749,6 +4811,7 @@ refalrts::RASLFunction Trim_L(
   scope_Trim_L::numbers,
   scope_Trim_L::strings
 );
+refalrts::RefalFunction& Trim_L = descr_Trim_L;
 
 #else
 static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4885,7 +4948,8 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Trim_L(func_Trim_L, "Trim-L");
+refalrts::RefalFunction descr_Trim_L(func_Trim_L, "Trim-L");
+refalrts::RefalFunction& Trim_L = descr_Trim_L;
 
 #endif
 #ifdef INTERPRET
@@ -4980,7 +5044,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Trim_R(
+refalrts::RASLFunction descr_Trim_R(
   "Trim-R",
   scope_Trim_R::raa,
   scope_Trim_R::functions,
@@ -4988,6 +5052,7 @@ refalrts::RASLFunction Trim_R(
   scope_Trim_R::numbers,
   scope_Trim_R::strings
 );
+refalrts::RefalFunction& Trim_R = descr_Trim_R;
 
 #else
 static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5120,7 +5185,8 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Trim_R(func_Trim_R, "Trim-R");
+refalrts::RefalFunction descr_Trim_R(func_Trim_R, "Trim-R");
+refalrts::RefalFunction& Trim_R = descr_Trim_R;
 
 #endif
 #ifdef INTERPRET
@@ -5173,7 +5239,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Seq_S2L1(
+refalrts::RASLFunction descr_gen_Seq_S2L1(
   "Seq$2\\1",
   scope_gen_Seq_S2L1::raa,
   scope_gen_Seq_S2L1::functions,
@@ -5181,6 +5247,7 @@ refalrts::RASLFunction gen_Seq_S2L1(
   scope_gen_Seq_S2L1::numbers,
   scope_gen_Seq_S2L1::strings
 );
+refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
 
 } // unnamed namespace
 
@@ -5241,7 +5308,8 @@ static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1");
+refalrts::RefalFunction descr_gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1");
+refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
 
 } // unnamed namespace
 
@@ -5273,7 +5341,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Seq_S3L1(
+refalrts::RASLFunction descr_gen_Seq_S3L1(
   "Seq$3\\1",
   scope_gen_Seq_S3L1::raa,
   scope_gen_Seq_S3L1::functions,
@@ -5281,6 +5349,7 @@ refalrts::RASLFunction gen_Seq_S3L1(
   scope_gen_Seq_S3L1::numbers,
   scope_gen_Seq_S3L1::strings
 );
+refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
 
 } // unnamed namespace
 
@@ -5311,7 +5380,8 @@ static refalrts::FnResult func_gen_Seq_S3L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1");
+refalrts::RefalFunction descr_gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1");
+refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
 
 } // unnamed namespace
 
@@ -5388,7 +5458,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Seq(
+refalrts::RASLFunction descr_Seq(
   "Seq",
   scope_Seq::raa,
   scope_Seq::functions,
@@ -5396,6 +5466,7 @@ refalrts::RASLFunction Seq(
   scope_Seq::numbers,
   scope_Seq::strings
 );
+refalrts::RefalFunction& Seq = descr_Seq;
 
 #else
 static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5489,7 +5560,8 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Seq(func_Seq, "Seq");
+refalrts::RefalFunction descr_Seq(func_Seq, "Seq");
+refalrts::RefalFunction& Seq = descr_Seq;
 
 #endif
 #ifdef INTERPRET
@@ -5594,7 +5666,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Sort_S2L1L1(
+refalrts::RASLFunction descr_gen_Sort_S2L1L1(
   "Sort$2\\1\\1",
   scope_gen_Sort_S2L1L1::raa,
   scope_gen_Sort_S2L1L1::functions,
@@ -5602,6 +5674,7 @@ refalrts::RASLFunction gen_Sort_S2L1L1(
   scope_gen_Sort_S2L1L1::numbers,
   scope_gen_Sort_S2L1L1::strings
 );
+refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
 
 } // unnamed namespace
 
@@ -5742,7 +5815,8 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1");
+refalrts::RefalFunction descr_gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1");
+refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
 
 } // unnamed namespace
 
@@ -5812,7 +5886,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Sort_S2L1(
+refalrts::RASLFunction descr_gen_Sort_S2L1(
   "Sort$2\\1",
   scope_gen_Sort_S2L1::raa,
   scope_gen_Sort_S2L1::functions,
@@ -5820,6 +5894,7 @@ refalrts::RASLFunction gen_Sort_S2L1(
   scope_gen_Sort_S2L1::numbers,
   scope_gen_Sort_S2L1::strings
 );
+refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
 
 } // unnamed namespace
 
@@ -5915,7 +5990,8 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1");
+refalrts::RefalFunction descr_gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1");
+refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
 
 } // unnamed namespace
 
@@ -5967,7 +6043,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Sort_S2L2(
+refalrts::RASLFunction descr_gen_Sort_S2L2(
   "Sort$2\\2",
   scope_gen_Sort_S2L2::raa,
   scope_gen_Sort_S2L2::functions,
@@ -5975,6 +6051,7 @@ refalrts::RASLFunction gen_Sort_S2L2(
   scope_gen_Sort_S2L2::numbers,
   scope_gen_Sort_S2L2::strings
 );
+refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
 
 } // unnamed namespace
 
@@ -6045,7 +6122,8 @@ static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2");
+refalrts::RefalFunction descr_gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2");
+refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
 
 } // unnamed namespace
 
@@ -6135,7 +6213,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Sort(
+refalrts::RASLFunction descr_Sort(
   "Sort",
   scope_Sort::raa,
   scope_Sort::functions,
@@ -6143,6 +6221,7 @@ refalrts::RASLFunction Sort(
   scope_Sort::numbers,
   scope_Sort::strings
 );
+refalrts::RefalFunction& Sort = descr_Sort;
 
 #else
 static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6252,7 +6331,8 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Sort(func_Sort, "Sort");
+refalrts::RefalFunction descr_Sort(func_Sort, "Sort");
+refalrts::RefalFunction& Sort = descr_Sort;
 
 #endif
 #ifdef INTERPRET
@@ -6301,7 +6381,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Min_S1L1(
+refalrts::RASLFunction descr_gen_Min_S1L1(
   "Min$1\\1",
   scope_gen_Min_S1L1::raa,
   scope_gen_Min_S1L1::functions,
@@ -6309,6 +6389,7 @@ refalrts::RASLFunction gen_Min_S1L1(
   scope_gen_Min_S1L1::numbers,
   scope_gen_Min_S1L1::strings
 );
+refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
 
 } // unnamed namespace
 
@@ -6371,7 +6452,8 @@ static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1");
+refalrts::RefalFunction descr_gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1");
+refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
 
 } // unnamed namespace
 
@@ -6448,7 +6530,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Min(
+refalrts::RASLFunction descr_Min(
   "Min",
   scope_Min::raa,
   scope_Min::functions,
@@ -6456,6 +6538,7 @@ refalrts::RASLFunction Min(
   scope_Min::numbers,
   scope_Min::strings
 );
+refalrts::RefalFunction& Min = descr_Min;
 
 #else
 static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6545,7 +6628,8 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Min(func_Min, "Min");
+refalrts::RefalFunction descr_Min(func_Min, "Min");
+refalrts::RefalFunction& Min = descr_Min;
 
 #endif
 #ifdef INTERPRET
@@ -6594,7 +6678,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Max_S1L1(
+refalrts::RASLFunction descr_gen_Max_S1L1(
   "Max$1\\1",
   scope_gen_Max_S1L1::raa,
   scope_gen_Max_S1L1::functions,
@@ -6602,6 +6686,7 @@ refalrts::RASLFunction gen_Max_S1L1(
   scope_gen_Max_S1L1::numbers,
   scope_gen_Max_S1L1::strings
 );
+refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
 
 } // unnamed namespace
 
@@ -6664,7 +6749,8 @@ static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1");
+refalrts::RefalFunction descr_gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1");
+refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
 
 } // unnamed namespace
 
@@ -6741,7 +6827,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Max(
+refalrts::RASLFunction descr_Max(
   "Max",
   scope_Max::raa,
   scope_Max::functions,
@@ -6749,6 +6835,7 @@ refalrts::RASLFunction Max(
   scope_Max::numbers,
   scope_Max::strings
 );
+refalrts::RefalFunction& Max = descr_Max;
 
 #else
 static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6838,7 +6925,8 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Max(func_Max, "Max");
+refalrts::RefalFunction descr_Max(func_Max, "Max");
+refalrts::RefalFunction& Max = descr_Max;
 
 #endif
 

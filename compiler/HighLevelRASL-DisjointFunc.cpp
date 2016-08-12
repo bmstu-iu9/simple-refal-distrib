@@ -42,61 +42,61 @@ struct ident_Function {
   }
 };
 
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction MapReduce;
-extern refalrts::RefalFunction Max;
-extern refalrts::RefalFunction GenPattern;
-extern refalrts::RefalFunction GenResult;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& MapReduce;
+extern refalrts::RefalFunction& Max;
+extern refalrts::RefalFunction& GenPattern;
+extern refalrts::RefalFunction& GenResult;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L2;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L2;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L3L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L3;
+extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction HighLevelRASL_Function_Disjoint;
+extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
 #else
-extern refalrts::RefalFunction HighLevelRASL_Function_Disjoint;
+extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
 #endif
 
 #ifdef INTERPRET
@@ -161,7 +161,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L1(
+refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L1(
   "HighLevelRASL-Function-Disjoint\\1",
   scope_gen_HighLevelRASL_Function_Disjoint_L1::raa,
   scope_gen_HighLevelRASL_Function_Disjoint_L1::functions,
@@ -169,6 +169,7 @@ refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L1(
   scope_gen_HighLevelRASL_Function_Disjoint_L1::numbers,
   scope_gen_HighLevelRASL_Function_Disjoint_L1::strings
 );
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1 = descr_gen_HighLevelRASL_Function_Disjoint_L1;
 
 } // unnamed namespace
 
@@ -258,7 +259,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L1(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L1(func_gen_HighLevelRASL_Function_Disjoint_L1, "HighLevelRASL-Function-Disjoint\\1");
+refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Disjoint_L1(func_gen_HighLevelRASL_Function_Disjoint_L1, "HighLevelRASL-Function-Disjoint\\1");
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1 = descr_gen_HighLevelRASL_Function_Disjoint_L1;
 
 } // unnamed namespace
 
@@ -310,7 +312,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L2(
+refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L2(
   "HighLevelRASL-Function-Disjoint\\2",
   scope_gen_HighLevelRASL_Function_Disjoint_L2::raa,
   scope_gen_HighLevelRASL_Function_Disjoint_L2::functions,
@@ -318,6 +320,7 @@ refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L2(
   scope_gen_HighLevelRASL_Function_Disjoint_L2::numbers,
   scope_gen_HighLevelRASL_Function_Disjoint_L2::strings
 );
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2 = descr_gen_HighLevelRASL_Function_Disjoint_L2;
 
 } // unnamed namespace
 
@@ -379,7 +382,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L2(func_gen_HighLevelRASL_Function_Disjoint_L2, "HighLevelRASL-Function-Disjoint\\2");
+refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Disjoint_L2(func_gen_HighLevelRASL_Function_Disjoint_L2, "HighLevelRASL-Function-Disjoint\\2");
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2 = descr_gen_HighLevelRASL_Function_Disjoint_L2;
 
 } // unnamed namespace
 
@@ -441,7 +445,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3L1(
+refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L3L1(
   "HighLevelRASL-Function-Disjoint\\3\\1",
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::raa,
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::functions,
@@ -449,6 +453,7 @@ refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3L1(
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::numbers,
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::strings
 );
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1 = descr_gen_HighLevelRASL_Function_Disjoint_L3L1;
 
 } // unnamed namespace
 
@@ -520,7 +525,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L3L1(func_gen_HighLevelRASL_Function_Disjoint_L3L1, "HighLevelRASL-Function-Disjoint\\3\\1");
+refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Disjoint_L3L1(func_gen_HighLevelRASL_Function_Disjoint_L3L1, "HighLevelRASL-Function-Disjoint\\3\\1");
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1 = descr_gen_HighLevelRASL_Function_Disjoint_L3L1;
 
 } // unnamed namespace
 
@@ -584,7 +590,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3(
+refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L3(
   "HighLevelRASL-Function-Disjoint\\3",
   scope_gen_HighLevelRASL_Function_Disjoint_L3::raa,
   scope_gen_HighLevelRASL_Function_Disjoint_L3::functions,
@@ -592,6 +598,7 @@ refalrts::RASLFunction gen_HighLevelRASL_Function_Disjoint_L3(
   scope_gen_HighLevelRASL_Function_Disjoint_L3::numbers,
   scope_gen_HighLevelRASL_Function_Disjoint_L3::strings
 );
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3 = descr_gen_HighLevelRASL_Function_Disjoint_L3;
 
 } // unnamed namespace
 
@@ -665,7 +672,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_HighLevelRASL_Function_Disjoint_L3(func_gen_HighLevelRASL_Function_Disjoint_L3, "HighLevelRASL-Function-Disjoint\\3");
+refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Disjoint_L3(func_gen_HighLevelRASL_Function_Disjoint_L3, "HighLevelRASL-Function-Disjoint\\3");
+refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3 = descr_gen_HighLevelRASL_Function_Disjoint_L3;
 
 } // unnamed namespace
 
@@ -751,7 +759,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction HighLevelRASL_Function_Disjoint(
+refalrts::RASLFunction descr_HighLevelRASL_Function_Disjoint(
   "HighLevelRASL-Function-Disjoint",
   scope_HighLevelRASL_Function_Disjoint::raa,
   scope_HighLevelRASL_Function_Disjoint::functions,
@@ -759,6 +767,7 @@ refalrts::RASLFunction HighLevelRASL_Function_Disjoint(
   scope_HighLevelRASL_Function_Disjoint::numbers,
   scope_HighLevelRASL_Function_Disjoint::strings
 );
+refalrts::RefalFunction& HighLevelRASL_Function_Disjoint = descr_HighLevelRASL_Function_Disjoint;
 
 #else
 static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -863,7 +872,8 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction HighLevelRASL_Function_Disjoint(func_HighLevelRASL_Function_Disjoint, "HighLevelRASL-Function-Disjoint");
+refalrts::RefalFunction descr_HighLevelRASL_Function_Disjoint(func_HighLevelRASL_Function_Disjoint, "HighLevelRASL-Function-Disjoint");
+refalrts::RefalFunction& HighLevelRASL_Function_Disjoint = descr_HighLevelRASL_Function_Disjoint;
 
 #endif
 

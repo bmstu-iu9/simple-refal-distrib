@@ -90,56 +90,56 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Fetch;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Fetch;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_PreparePatternHardSent_L1S5L1;
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_PreparePatternHardSent_L1S5L1;
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_PreparePatternHardSent_L1;
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_PreparePatternHardSent_L1;
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction PreparePatternHardSent;
+extern refalrts::RefalFunction& PreparePatternHardSent;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction PreparePatternHardSent;
+extern refalrts::RefalFunction& PreparePatternHardSent;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CreateHardPattern_Aux;
+extern refalrts::RefalFunction& CreateHardPattern_Aux;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CreateHardPattern_Aux;
+extern refalrts::RefalFunction& CreateHardPattern_Aux;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction CreateHardPattern;
+extern refalrts::RefalFunction& CreateHardPattern;
 #else
-extern refalrts::RefalFunction CreateHardPattern;
+extern refalrts::RefalFunction& CreateHardPattern;
 #endif
 
 #ifdef INTERPRET
@@ -202,7 +202,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_PreparePatternHardSent_L1S5L1(
+refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1S5L1(
   "PreparePatternHardSent\\1$5\\1",
   scope_gen_PreparePatternHardSent_L1S5L1::raa,
   scope_gen_PreparePatternHardSent_L1S5L1::functions,
@@ -210,6 +210,7 @@ refalrts::RASLFunction gen_PreparePatternHardSent_L1S5L1(
   scope_gen_PreparePatternHardSent_L1S5L1::numbers,
   scope_gen_PreparePatternHardSent_L1S5L1::strings
 );
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1 = descr_gen_PreparePatternHardSent_L1S5L1;
 
 } // unnamed namespace
 
@@ -287,7 +288,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1");
+refalrts::RefalFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1");
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1 = descr_gen_PreparePatternHardSent_L1S5L1;
 
 } // unnamed namespace
 
@@ -465,7 +467,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_PreparePatternHardSent_L1(
+refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1(
   "PreparePatternHardSent\\1",
   scope_gen_PreparePatternHardSent_L1::raa,
   scope_gen_PreparePatternHardSent_L1::functions,
@@ -473,6 +475,7 @@ refalrts::RASLFunction gen_PreparePatternHardSent_L1(
   scope_gen_PreparePatternHardSent_L1::numbers,
   scope_gen_PreparePatternHardSent_L1::strings
 );
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1 = descr_gen_PreparePatternHardSent_L1;
 
 } // unnamed namespace
 
@@ -706,7 +709,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1");
+refalrts::RefalFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1");
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1 = descr_gen_PreparePatternHardSent_L1;
 
 } // unnamed namespace
 
@@ -745,7 +749,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction PreparePatternHardSent(
+refalrts::RASLFunction descr_PreparePatternHardSent(
   "PreparePatternHardSent",
   scope_PreparePatternHardSent::raa,
   scope_PreparePatternHardSent::functions,
@@ -753,6 +757,7 @@ refalrts::RASLFunction PreparePatternHardSent(
   scope_PreparePatternHardSent::numbers,
   scope_PreparePatternHardSent::strings
 );
+refalrts::RefalFunction& PreparePatternHardSent = descr_PreparePatternHardSent;
 
 } // unnamed namespace
 
@@ -788,7 +793,8 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent");
+refalrts::RefalFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent");
+refalrts::RefalFunction& PreparePatternHardSent = descr_PreparePatternHardSent;
 
 } // unnamed namespace
 
@@ -1228,7 +1234,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CreateHardPattern_Aux(
+refalrts::RASLFunction descr_CreateHardPattern_Aux(
   "CreateHardPattern-Aux",
   scope_CreateHardPattern_Aux::raa,
   scope_CreateHardPattern_Aux::functions,
@@ -1236,6 +1242,7 @@ refalrts::RASLFunction CreateHardPattern_Aux(
   scope_CreateHardPattern_Aux::numbers,
   scope_CreateHardPattern_Aux::strings
 );
+refalrts::RefalFunction& CreateHardPattern_Aux = descr_CreateHardPattern_Aux;
 
 } // unnamed namespace
 
@@ -1960,7 +1967,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux");
+refalrts::RefalFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux");
+refalrts::RefalFunction& CreateHardPattern_Aux = descr_CreateHardPattern_Aux;
 
 } // unnamed namespace
 
@@ -2003,7 +2011,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CreateHardPattern(
+refalrts::RASLFunction descr_CreateHardPattern(
   "CreateHardPattern",
   scope_CreateHardPattern::raa,
   scope_CreateHardPattern::functions,
@@ -2011,6 +2019,7 @@ refalrts::RASLFunction CreateHardPattern(
   scope_CreateHardPattern::numbers,
   scope_CreateHardPattern::strings
 );
+refalrts::RefalFunction& CreateHardPattern = descr_CreateHardPattern;
 
 #else
 static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2050,7 +2059,8 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CreateHardPattern(func_CreateHardPattern, "CreateHardPattern");
+refalrts::RefalFunction descr_CreateHardPattern(func_CreateHardPattern, "CreateHardPattern");
+refalrts::RefalFunction& CreateHardPattern = descr_CreateHardPattern;
 
 #endif
 

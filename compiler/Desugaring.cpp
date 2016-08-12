@@ -154,908 +154,908 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction MapReduce;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction DelAccumulator;
-extern refalrts::RefalFunction Reduce;
-extern refalrts::RefalFunction Sort;
-extern refalrts::RefalFunction StrFromInt;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& MapReduce;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& DelAccumulator;
+extern refalrts::RefalFunction& Reduce;
+extern refalrts::RefalFunction& Sort;
+extern refalrts::RefalFunction& StrFromInt;
 #ifdef INTERPRET
-extern refalrts::RASLFunction Desugar;
+extern refalrts::RefalFunction& Desugar;
 #else
-extern refalrts::RefalFunction Desugar;
+extern refalrts::RefalFunction& Desugar;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_RemovePos_L1;
+extern refalrts::RefalFunction& gen_Pass_RemovePos_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_RemovePos_L1;
+extern refalrts::RefalFunction& gen_Pass_RemovePos_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Pass_RemovePos;
+extern refalrts::RefalFunction& Pass_RemovePos;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Pass_RemovePos;
+extern refalrts::RefalFunction& Pass_RemovePos;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemovePos_Body_S1L1;
+extern refalrts::RefalFunction& gen_RemovePos_Body_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemovePos_Body_S1L1;
+extern refalrts::RefalFunction& gen_RemovePos_Body_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RemovePos_Body;
+extern refalrts::RefalFunction& RemovePos_Body;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RemovePos_Body;
+extern refalrts::RefalFunction& RemovePos_Body;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemovePos_Expr_L1;
+extern refalrts::RefalFunction& gen_RemovePos_Expr_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemovePos_Expr_L1;
+extern refalrts::RefalFunction& gen_RemovePos_Expr_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RemovePos_Expr;
+extern refalrts::RefalFunction& RemovePos_Expr;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RemovePos_Expr;
+extern refalrts::RefalFunction& RemovePos_Expr;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_EnumerateVariables_L1;
+extern refalrts::RefalFunction& gen_Pass_EnumerateVariables_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_EnumerateVariables_L1;
+extern refalrts::RefalFunction& gen_Pass_EnumerateVariables_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Pass_EnumerateVariables;
+extern refalrts::RefalFunction& Pass_EnumerateVariables;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Pass_EnumerateVariables;
+extern refalrts::RefalFunction& Pass_EnumerateVariables;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1L1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction EnumerateVars_Sentences;
+extern refalrts::RefalFunction& EnumerateVars_Sentences;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction EnumerateVars_Sentences;
+extern refalrts::RefalFunction& EnumerateVars_Sentences;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Expr_L1S4L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Expr_L1S4L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S4L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Expr_L1S5L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S5L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Expr_L1S5L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S5L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Expr_L1S6L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S6L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Expr_L1S6L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S6L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Expr_L1S7L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S7L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Expr_L1S7L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S7L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EnumerateVars_Expr_L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EnumerateVars_Expr_L1;
+extern refalrts::RefalFunction& gen_EnumerateVars_Expr_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction EnumerateVars_Expr;
+extern refalrts::RefalFunction& EnumerateVars_Expr;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction EnumerateVars_Expr;
+extern refalrts::RefalFunction& EnumerateVars_Expr;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_NameNestedFuncs_L1;
+extern refalrts::RefalFunction& gen_Pass_NameNestedFuncs_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_NameNestedFuncs_L1;
+extern refalrts::RefalFunction& gen_Pass_NameNestedFuncs_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Pass_NameNestedFuncs;
+extern refalrts::RefalFunction& Pass_NameNestedFuncs;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Pass_NameNestedFuncs;
+extern refalrts::RefalFunction& Pass_NameNestedFuncs;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_NameNestedBody_S2L1;
+extern refalrts::RefalFunction& gen_NameNestedBody_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_NameNestedBody_S2L1;
+extern refalrts::RefalFunction& gen_NameNestedBody_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction NameNestedBody;
+extern refalrts::RefalFunction& NameNestedBody;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction NameNestedBody;
+extern refalrts::RefalFunction& NameNestedBody;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction NameNestedResult;
+extern refalrts::RefalFunction& NameNestedResult;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction NameNestedResult;
+extern refalrts::RefalFunction& NameNestedResult;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_NameNestedResultRec_L1S1L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_NameNestedResultRec_L1S1L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_NameNestedResultRec_L1S2L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_NameNestedResultRec_L1S2L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_NameNestedResultRec_L1S3L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S3L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_NameNestedResultRec_L1S3L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1S3L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_NameNestedResultRec_L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_NameNestedResultRec_L1;
+extern refalrts::RefalFunction& gen_NameNestedResultRec_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction NameNestedResultRec;
+extern refalrts::RefalFunction& NameNestedResultRec;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction NameNestedResultRec;
+extern refalrts::RefalFunction& NameNestedResultRec;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1S1L1;
+extern refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_FlatNestedFuncs_L1S1L1;
+extern refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1;
+extern refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_FlatNestedFuncs_L1;
+extern refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Pass_FlatNestedFuncs;
+extern refalrts::RefalFunction& Pass_FlatNestedFuncs;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Pass_FlatNestedFuncs;
+extern refalrts::RefalFunction& Pass_FlatNestedFuncs;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractNested;
+extern refalrts::RefalFunction& ExtractNested;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractNested;
+extern refalrts::RefalFunction& ExtractNested;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNestedRec_S1L1L1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNestedRec_S1L1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNestedRec_S1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNestedRec_S1L1;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNestedRec_S1L2;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNestedRec_S1L2;
+extern refalrts::RefalFunction& gen_ExtractNestedRec_S1L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractNestedRec;
+extern refalrts::RefalFunction& ExtractNestedRec;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractNestedRec;
+extern refalrts::RefalFunction& ExtractNestedRec;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Pattern_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Pattern_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Pattern_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Pattern_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Pattern_L2;
+extern refalrts::RefalFunction& gen_ExtractNested_Pattern_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Pattern_L2;
+extern refalrts::RefalFunction& gen_ExtractNested_Pattern_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractNested_Pattern;
+extern refalrts::RefalFunction& ExtractNested_Pattern;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractNested_Pattern;
+extern refalrts::RefalFunction& ExtractNested_Pattern;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractAllVars;
+extern refalrts::RefalFunction& ExtractAllVars;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractAllVars;
+extern refalrts::RefalFunction& ExtractAllVars;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Uniq;
+extern refalrts::RefalFunction& Uniq;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Uniq;
+extern refalrts::RefalFunction& Uniq;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RemoveBorrowedVars;
+extern refalrts::RefalFunction& RemoveBorrowedVars;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RemoveBorrowedVars;
+extern refalrts::RefalFunction& RemoveBorrowedVars;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FindBorrowedVars;
+extern refalrts::RefalFunction& FindBorrowedVars;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FindBorrowedVars;
+extern refalrts::RefalFunction& FindBorrowedVars;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Result_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Result_L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractNested_Result;
+extern refalrts::RefalFunction& ExtractNested_Result;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractNested_Result;
+extern refalrts::RefalFunction& ExtractNested_Result;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Result_Term_S2L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Result_Term_S2L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Result_Term_S3L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S3L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Result_Term_S3L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S3L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Result_Term_S4L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Result_Term_S4L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S4L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractNested_Result_Term_S5L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S5L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractNested_Result_Term_S5L1;
+extern refalrts::RefalFunction& gen_ExtractNested_Result_Term_S5L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractNested_Result_Term;
+extern refalrts::RefalFunction& ExtractNested_Result_Term;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractNested_Result_Term;
+extern refalrts::RefalFunction& ExtractNested_Result_Term;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckBorrowed;
+extern refalrts::RefalFunction& CheckBorrowed;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckBorrowed;
+extern refalrts::RefalFunction& CheckBorrowed;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AddContextToSentence;
+extern refalrts::RefalFunction& AddContextToSentence;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AddContextToSentence;
+extern refalrts::RefalFunction& AddContextToSentence;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CreateContext_L1;
+extern refalrts::RefalFunction& gen_CreateContext_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CreateContext_L1;
+extern refalrts::RefalFunction& gen_CreateContext_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CreateContext;
+extern refalrts::RefalFunction& CreateContext;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CreateContext;
+extern refalrts::RefalFunction& CreateContext;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1S1L1;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_CreatePredeclarations_L1S1L1;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_CreatePredeclarations_L1;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Pass_CreatePredeclarations_L2;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Pass_CreatePredeclarations_L2;
+extern refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Pass_CreatePredeclarations;
+extern refalrts::RefalFunction& Pass_CreatePredeclarations;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Pass_CreatePredeclarations;
+extern refalrts::RefalFunction& Pass_CreatePredeclarations;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L2;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L2;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L3S1L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L3S1L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L3S2L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L3S2L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L3S3L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S3L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L3S3L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3S3L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L3;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L3;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L3;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L4L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L4L1;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L4L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RemoveRedudandElements_L4;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L4;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RemoveRedudandElements_L4;
+extern refalrts::RefalFunction& gen_RemoveRedudandElements_L4;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RemoveRedudandElements;
+extern refalrts::RefalFunction& RemoveRedudandElements;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RemoveRedudandElements;
+extern refalrts::RefalFunction& RemoveRedudandElements;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FoldEnums_L1;
+extern refalrts::RefalFunction& gen_FoldEnums_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FoldEnums_L1;
+extern refalrts::RefalFunction& gen_FoldEnums_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FoldEnums;
+extern refalrts::RefalFunction& FoldEnums;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FoldEnums;
+extern refalrts::RefalFunction& FoldEnums;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdents_S1L1L1;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdents_S1L1L1;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdents_S1L1;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdents_S1L1;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdents_S1L2;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdents_S1L2;
+extern refalrts::RefalFunction& gen_ExtractIdents_S1L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractIdents;
+extern refalrts::RefalFunction& ExtractIdents;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractIdents;
+extern refalrts::RefalFunction& ExtractIdents;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdent_Expr_L1S2L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdent_Expr_L1S2L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdent_Expr_L1S3L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S3L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdent_Expr_L1S3L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S3L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdent_Expr_L1S4L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdent_Expr_L1S4L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S4L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ExtractIdent_Expr_L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ExtractIdent_Expr_L1;
+extern refalrts::RefalFunction& gen_ExtractIdent_Expr_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ExtractIdent_Expr;
+extern refalrts::RefalFunction& ExtractIdent_Expr;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ExtractIdent_Expr;
+extern refalrts::RefalFunction& ExtractIdent_Expr;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction UniqSorted;
+extern refalrts::RefalFunction& UniqSorted;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction UniqSorted;
+extern refalrts::RefalFunction& UniqSorted;
 } // unnamed namespace
 
 #endif
@@ -1107,7 +1107,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Desugar(
+refalrts::RASLFunction descr_Desugar(
   "Desugar",
   scope_Desugar::raa,
   scope_Desugar::functions,
@@ -1115,6 +1115,7 @@ refalrts::RASLFunction Desugar(
   scope_Desugar::numbers,
   scope_Desugar::strings
 );
+refalrts::RefalFunction& Desugar = descr_Desugar;
 
 #else
 static refalrts::FnResult func_Desugar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1163,7 +1164,8 @@ static refalrts::FnResult func_Desugar(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Desugar(func_Desugar, "Desugar");
+refalrts::RefalFunction descr_Desugar(func_Desugar, "Desugar");
+refalrts::RefalFunction& Desugar = descr_Desugar;
 
 #endif
 #ifdef INTERPRET
@@ -1266,7 +1268,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_RemovePos_L1(
+refalrts::RASLFunction descr_gen_Pass_RemovePos_L1(
   "Pass-RemovePos\\1",
   scope_gen_Pass_RemovePos_L1::raa,
   scope_gen_Pass_RemovePos_L1::functions,
@@ -1274,6 +1276,7 @@ refalrts::RASLFunction gen_Pass_RemovePos_L1(
   scope_gen_Pass_RemovePos_L1::numbers,
   scope_gen_Pass_RemovePos_L1::strings
 );
+refalrts::RefalFunction& gen_Pass_RemovePos_L1 = descr_gen_Pass_RemovePos_L1;
 
 } // unnamed namespace
 
@@ -1411,7 +1414,8 @@ static refalrts::FnResult func_gen_Pass_RemovePos_L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_RemovePos_L1(func_gen_Pass_RemovePos_L1, "Pass-RemovePos\\1");
+refalrts::RefalFunction descr_gen_Pass_RemovePos_L1(func_gen_Pass_RemovePos_L1, "Pass-RemovePos\\1");
+refalrts::RefalFunction& gen_Pass_RemovePos_L1 = descr_gen_Pass_RemovePos_L1;
 
 } // unnamed namespace
 
@@ -1450,7 +1454,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Pass_RemovePos(
+refalrts::RASLFunction descr_Pass_RemovePos(
   "Pass-RemovePos",
   scope_Pass_RemovePos::raa,
   scope_Pass_RemovePos::functions,
@@ -1458,6 +1462,7 @@ refalrts::RASLFunction Pass_RemovePos(
   scope_Pass_RemovePos::numbers,
   scope_Pass_RemovePos::strings
 );
+refalrts::RefalFunction& Pass_RemovePos = descr_Pass_RemovePos;
 
 } // unnamed namespace
 
@@ -1493,7 +1498,8 @@ static refalrts::FnResult func_Pass_RemovePos(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Pass_RemovePos(func_Pass_RemovePos, "Pass-RemovePos");
+refalrts::RefalFunction descr_Pass_RemovePos(func_Pass_RemovePos, "Pass-RemovePos");
+refalrts::RefalFunction& Pass_RemovePos = descr_Pass_RemovePos;
 
 } // unnamed namespace
 
@@ -1551,7 +1557,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemovePos_Body_S1L1(
+refalrts::RASLFunction descr_gen_RemovePos_Body_S1L1(
   "RemovePos-Body$1\\1",
   scope_gen_RemovePos_Body_S1L1::raa,
   scope_gen_RemovePos_Body_S1L1::functions,
@@ -1559,6 +1565,7 @@ refalrts::RASLFunction gen_RemovePos_Body_S1L1(
   scope_gen_RemovePos_Body_S1L1::numbers,
   scope_gen_RemovePos_Body_S1L1::strings
 );
+refalrts::RefalFunction& gen_RemovePos_Body_S1L1 = descr_gen_RemovePos_Body_S1L1;
 
 } // unnamed namespace
 
@@ -1633,7 +1640,8 @@ static refalrts::FnResult func_gen_RemovePos_Body_S1L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemovePos_Body_S1L1(func_gen_RemovePos_Body_S1L1, "RemovePos-Body$1\\1");
+refalrts::RefalFunction descr_gen_RemovePos_Body_S1L1(func_gen_RemovePos_Body_S1L1, "RemovePos-Body$1\\1");
+refalrts::RefalFunction& gen_RemovePos_Body_S1L1 = descr_gen_RemovePos_Body_S1L1;
 
 } // unnamed namespace
 
@@ -1697,7 +1705,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RemovePos_Body(
+refalrts::RASLFunction descr_RemovePos_Body(
   "RemovePos-Body",
   scope_RemovePos_Body::raa,
   scope_RemovePos_Body::functions,
@@ -1705,6 +1713,7 @@ refalrts::RASLFunction RemovePos_Body(
   scope_RemovePos_Body::numbers,
   scope_RemovePos_Body::strings
 );
+refalrts::RefalFunction& RemovePos_Body = descr_RemovePos_Body;
 
 } // unnamed namespace
 
@@ -1773,7 +1782,8 @@ static refalrts::FnResult func_RemovePos_Body(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RemovePos_Body(func_RemovePos_Body, "RemovePos-Body");
+refalrts::RefalFunction descr_RemovePos_Body(func_RemovePos_Body, "RemovePos-Body");
+refalrts::RefalFunction& RemovePos_Body = descr_RemovePos_Body;
 
 } // unnamed namespace
 
@@ -1956,7 +1966,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemovePos_Expr_L1(
+refalrts::RASLFunction descr_gen_RemovePos_Expr_L1(
   "RemovePos-Expr\\1",
   scope_gen_RemovePos_Expr_L1::raa,
   scope_gen_RemovePos_Expr_L1::functions,
@@ -1964,6 +1974,7 @@ refalrts::RASLFunction gen_RemovePos_Expr_L1(
   scope_gen_RemovePos_Expr_L1::numbers,
   scope_gen_RemovePos_Expr_L1::strings
 );
+refalrts::RefalFunction& gen_RemovePos_Expr_L1 = descr_gen_RemovePos_Expr_L1;
 
 } // unnamed namespace
 
@@ -2226,7 +2237,8 @@ static refalrts::FnResult func_gen_RemovePos_Expr_L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemovePos_Expr_L1(func_gen_RemovePos_Expr_L1, "RemovePos-Expr\\1");
+refalrts::RefalFunction descr_gen_RemovePos_Expr_L1(func_gen_RemovePos_Expr_L1, "RemovePos-Expr\\1");
+refalrts::RefalFunction& gen_RemovePos_Expr_L1 = descr_gen_RemovePos_Expr_L1;
 
 } // unnamed namespace
 
@@ -2265,7 +2277,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RemovePos_Expr(
+refalrts::RASLFunction descr_RemovePos_Expr(
   "RemovePos-Expr",
   scope_RemovePos_Expr::raa,
   scope_RemovePos_Expr::functions,
@@ -2273,6 +2285,7 @@ refalrts::RASLFunction RemovePos_Expr(
   scope_RemovePos_Expr::numbers,
   scope_RemovePos_Expr::strings
 );
+refalrts::RefalFunction& RemovePos_Expr = descr_RemovePos_Expr;
 
 } // unnamed namespace
 
@@ -2308,7 +2321,8 @@ static refalrts::FnResult func_RemovePos_Expr(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RemovePos_Expr(func_RemovePos_Expr, "RemovePos-Expr");
+refalrts::RefalFunction descr_RemovePos_Expr(func_RemovePos_Expr, "RemovePos-Expr");
+refalrts::RefalFunction& RemovePos_Expr = descr_RemovePos_Expr;
 
 } // unnamed namespace
 
@@ -2379,7 +2393,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_EnumerateVariables_L1(
+refalrts::RASLFunction descr_gen_Pass_EnumerateVariables_L1(
   "Pass-EnumerateVariables\\1",
   scope_gen_Pass_EnumerateVariables_L1::raa,
   scope_gen_Pass_EnumerateVariables_L1::functions,
@@ -2387,6 +2401,7 @@ refalrts::RASLFunction gen_Pass_EnumerateVariables_L1(
   scope_gen_Pass_EnumerateVariables_L1::numbers,
   scope_gen_Pass_EnumerateVariables_L1::strings
 );
+refalrts::RefalFunction& gen_Pass_EnumerateVariables_L1 = descr_gen_Pass_EnumerateVariables_L1;
 
 } // unnamed namespace
 
@@ -2475,7 +2490,8 @@ static refalrts::FnResult func_gen_Pass_EnumerateVariables_L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_EnumerateVariables_L1(func_gen_Pass_EnumerateVariables_L1, "Pass-EnumerateVariables\\1");
+refalrts::RefalFunction descr_gen_Pass_EnumerateVariables_L1(func_gen_Pass_EnumerateVariables_L1, "Pass-EnumerateVariables\\1");
+refalrts::RefalFunction& gen_Pass_EnumerateVariables_L1 = descr_gen_Pass_EnumerateVariables_L1;
 
 } // unnamed namespace
 
@@ -2514,7 +2530,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Pass_EnumerateVariables(
+refalrts::RASLFunction descr_Pass_EnumerateVariables(
   "Pass-EnumerateVariables",
   scope_Pass_EnumerateVariables::raa,
   scope_Pass_EnumerateVariables::functions,
@@ -2522,6 +2538,7 @@ refalrts::RASLFunction Pass_EnumerateVariables(
   scope_Pass_EnumerateVariables::numbers,
   scope_Pass_EnumerateVariables::strings
 );
+refalrts::RefalFunction& Pass_EnumerateVariables = descr_Pass_EnumerateVariables;
 
 } // unnamed namespace
 
@@ -2557,7 +2574,8 @@ static refalrts::FnResult func_Pass_EnumerateVariables(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Pass_EnumerateVariables(func_Pass_EnumerateVariables, "Pass-EnumerateVariables");
+refalrts::RefalFunction descr_Pass_EnumerateVariables(func_Pass_EnumerateVariables, "Pass-EnumerateVariables");
+refalrts::RefalFunction& Pass_EnumerateVariables = descr_Pass_EnumerateVariables;
 
 } // unnamed namespace
 
@@ -2600,7 +2618,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Sentences_S1L1L1L1(
   "EnumerateVars-Sentences$1\\1\\1\\1",
   scope_gen_EnumerateVars_Sentences_S1L1L1L1::raa,
   scope_gen_EnumerateVars_Sentences_S1L1L1L1::functions,
@@ -2608,6 +2626,7 @@ refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1L1(
   scope_gen_EnumerateVars_Sentences_S1L1L1L1::numbers,
   scope_gen_EnumerateVars_Sentences_S1L1L1L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1L1 = descr_gen_EnumerateVars_Sentences_S1L1L1L1;
 
 } // unnamed namespace
 
@@ -2659,7 +2678,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1L1(refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1L1, "EnumerateVars-Sentences$1\\1\\1\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Sentences_S1L1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1L1, "EnumerateVars-Sentences$1\\1\\1\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1L1 = descr_gen_EnumerateVars_Sentences_S1L1L1L1;
 
 } // unnamed namespace
 
@@ -2725,7 +2745,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Sentences_S1L1L1(
   "EnumerateVars-Sentences$1\\1\\1",
   scope_gen_EnumerateVars_Sentences_S1L1L1::raa,
   scope_gen_EnumerateVars_Sentences_S1L1L1::functions,
@@ -2733,6 +2753,7 @@ refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1L1(
   scope_gen_EnumerateVars_Sentences_S1L1L1::numbers,
   scope_gen_EnumerateVars_Sentences_S1L1L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1 = descr_gen_EnumerateVars_Sentences_S1L1L1;
 
 } // unnamed namespace
 
@@ -2810,7 +2831,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1(refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1, "EnumerateVars-Sentences$1\\1\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Sentences_S1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1, "EnumerateVars-Sentences$1\\1\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1L1 = descr_gen_EnumerateVars_Sentences_S1L1L1;
 
 } // unnamed namespace
 
@@ -2875,7 +2897,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Sentences_S1L1(
   "EnumerateVars-Sentences$1\\1",
   scope_gen_EnumerateVars_Sentences_S1L1::raa,
   scope_gen_EnumerateVars_Sentences_S1L1::functions,
@@ -2883,6 +2905,7 @@ refalrts::RASLFunction gen_EnumerateVars_Sentences_S1L1(
   scope_gen_EnumerateVars_Sentences_S1L1::numbers,
   scope_gen_EnumerateVars_Sentences_S1L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1 = descr_gen_EnumerateVars_Sentences_S1L1;
 
 } // unnamed namespace
 
@@ -2968,7 +2991,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1(refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Sentences_S1L1(func_gen_EnumerateVars_Sentences_S1L1, "EnumerateVars-Sentences$1\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Sentences_S1L1(func_gen_EnumerateVars_Sentences_S1L1, "EnumerateVars-Sentences$1\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Sentences_S1L1 = descr_gen_EnumerateVars_Sentences_S1L1;
 
 } // unnamed namespace
 
@@ -3045,7 +3069,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction EnumerateVars_Sentences(
+refalrts::RASLFunction descr_EnumerateVars_Sentences(
   "EnumerateVars-Sentences",
   scope_EnumerateVars_Sentences::raa,
   scope_EnumerateVars_Sentences::functions,
@@ -3053,6 +3077,7 @@ refalrts::RASLFunction EnumerateVars_Sentences(
   scope_EnumerateVars_Sentences::numbers,
   scope_EnumerateVars_Sentences::strings
 );
+refalrts::RefalFunction& EnumerateVars_Sentences = descr_EnumerateVars_Sentences;
 
 } // unnamed namespace
 
@@ -3142,7 +3167,8 @@ static refalrts::FnResult func_EnumerateVars_Sentences(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction EnumerateVars_Sentences(func_EnumerateVars_Sentences, "EnumerateVars-Sentences");
+refalrts::RefalFunction descr_EnumerateVars_Sentences(func_EnumerateVars_Sentences, "EnumerateVars-Sentences");
+refalrts::RefalFunction& EnumerateVars_Sentences = descr_EnumerateVars_Sentences;
 
 } // unnamed namespace
 
@@ -3184,7 +3210,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Expr_L1S4L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Expr_L1S4L1(
   "EnumerateVars-Expr\\1$4\\1",
   scope_gen_EnumerateVars_Expr_L1S4L1::raa,
   scope_gen_EnumerateVars_Expr_L1S4L1::functions,
@@ -3192,6 +3218,7 @@ refalrts::RASLFunction gen_EnumerateVars_Expr_L1S4L1(
   scope_gen_EnumerateVars_Expr_L1S4L1::numbers,
   scope_gen_EnumerateVars_Expr_L1S4L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S4L1 = descr_gen_EnumerateVars_Expr_L1S4L1;
 
 } // unnamed namespace
 
@@ -3235,7 +3262,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S4L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Expr_L1S4L1(func_gen_EnumerateVars_Expr_L1S4L1, "EnumerateVars-Expr\\1$4\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Expr_L1S4L1(func_gen_EnumerateVars_Expr_L1S4L1, "EnumerateVars-Expr\\1$4\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S4L1 = descr_gen_EnumerateVars_Expr_L1S4L1;
 
 } // unnamed namespace
 
@@ -3280,7 +3308,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Expr_L1S5L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Expr_L1S5L1(
   "EnumerateVars-Expr\\1$5\\1",
   scope_gen_EnumerateVars_Expr_L1S5L1::raa,
   scope_gen_EnumerateVars_Expr_L1S5L1::functions,
@@ -3288,6 +3316,7 @@ refalrts::RASLFunction gen_EnumerateVars_Expr_L1S5L1(
   scope_gen_EnumerateVars_Expr_L1S5L1::numbers,
   scope_gen_EnumerateVars_Expr_L1S5L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S5L1 = descr_gen_EnumerateVars_Expr_L1S5L1;
 
 } // unnamed namespace
 
@@ -3339,7 +3368,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S5L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Expr_L1S5L1(func_gen_EnumerateVars_Expr_L1S5L1, "EnumerateVars-Expr\\1$5\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Expr_L1S5L1(func_gen_EnumerateVars_Expr_L1S5L1, "EnumerateVars-Expr\\1$5\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S5L1 = descr_gen_EnumerateVars_Expr_L1S5L1;
 
 } // unnamed namespace
 
@@ -3381,7 +3411,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Expr_L1S6L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Expr_L1S6L1(
   "EnumerateVars-Expr\\1$6\\1",
   scope_gen_EnumerateVars_Expr_L1S6L1::raa,
   scope_gen_EnumerateVars_Expr_L1S6L1::functions,
@@ -3389,6 +3419,7 @@ refalrts::RASLFunction gen_EnumerateVars_Expr_L1S6L1(
   scope_gen_EnumerateVars_Expr_L1S6L1::numbers,
   scope_gen_EnumerateVars_Expr_L1S6L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S6L1 = descr_gen_EnumerateVars_Expr_L1S6L1;
 
 } // unnamed namespace
 
@@ -3432,7 +3463,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S6L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Expr_L1S6L1(func_gen_EnumerateVars_Expr_L1S6L1, "EnumerateVars-Expr\\1$6\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Expr_L1S6L1(func_gen_EnumerateVars_Expr_L1S6L1, "EnumerateVars-Expr\\1$6\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S6L1 = descr_gen_EnumerateVars_Expr_L1S6L1;
 
 } // unnamed namespace
 
@@ -3474,7 +3506,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Expr_L1S7L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Expr_L1S7L1(
   "EnumerateVars-Expr\\1$7\\1",
   scope_gen_EnumerateVars_Expr_L1S7L1::raa,
   scope_gen_EnumerateVars_Expr_L1S7L1::functions,
@@ -3482,6 +3514,7 @@ refalrts::RASLFunction gen_EnumerateVars_Expr_L1S7L1(
   scope_gen_EnumerateVars_Expr_L1S7L1::numbers,
   scope_gen_EnumerateVars_Expr_L1S7L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S7L1 = descr_gen_EnumerateVars_Expr_L1S7L1;
 
 } // unnamed namespace
 
@@ -3525,7 +3558,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S7L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Expr_L1S7L1(func_gen_EnumerateVars_Expr_L1S7L1, "EnumerateVars-Expr\\1$7\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Expr_L1S7L1(func_gen_EnumerateVars_Expr_L1S7L1, "EnumerateVars-Expr\\1$7\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1S7L1 = descr_gen_EnumerateVars_Expr_L1S7L1;
 
 } // unnamed namespace
 
@@ -3795,7 +3829,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EnumerateVars_Expr_L1(
+refalrts::RASLFunction descr_gen_EnumerateVars_Expr_L1(
   "EnumerateVars-Expr\\1",
   scope_gen_EnumerateVars_Expr_L1::raa,
   scope_gen_EnumerateVars_Expr_L1::functions,
@@ -3803,6 +3837,7 @@ refalrts::RASLFunction gen_EnumerateVars_Expr_L1(
   scope_gen_EnumerateVars_Expr_L1::numbers,
   scope_gen_EnumerateVars_Expr_L1::strings
 );
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1 = descr_gen_EnumerateVars_Expr_L1;
 
 } // unnamed namespace
 
@@ -4189,7 +4224,8 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EnumerateVars_Expr_L1(func_gen_EnumerateVars_Expr_L1, "EnumerateVars-Expr\\1");
+refalrts::RefalFunction descr_gen_EnumerateVars_Expr_L1(func_gen_EnumerateVars_Expr_L1, "EnumerateVars-Expr\\1");
+refalrts::RefalFunction& gen_EnumerateVars_Expr_L1 = descr_gen_EnumerateVars_Expr_L1;
 
 } // unnamed namespace
 
@@ -4239,7 +4275,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction EnumerateVars_Expr(
+refalrts::RASLFunction descr_EnumerateVars_Expr(
   "EnumerateVars-Expr",
   scope_EnumerateVars_Expr::raa,
   scope_EnumerateVars_Expr::functions,
@@ -4247,6 +4283,7 @@ refalrts::RASLFunction EnumerateVars_Expr(
   scope_EnumerateVars_Expr::numbers,
   scope_EnumerateVars_Expr::strings
 );
+refalrts::RefalFunction& EnumerateVars_Expr = descr_EnumerateVars_Expr;
 
 } // unnamed namespace
 
@@ -4301,7 +4338,8 @@ static refalrts::FnResult func_EnumerateVars_Expr(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction EnumerateVars_Expr(func_EnumerateVars_Expr, "EnumerateVars-Expr");
+refalrts::RefalFunction descr_EnumerateVars_Expr(func_EnumerateVars_Expr, "EnumerateVars-Expr");
+refalrts::RefalFunction& EnumerateVars_Expr = descr_EnumerateVars_Expr;
 
 } // unnamed namespace
 
@@ -4374,7 +4412,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_NameNestedFuncs_L1(
+refalrts::RASLFunction descr_gen_Pass_NameNestedFuncs_L1(
   "Pass-NameNestedFuncs\\1",
   scope_gen_Pass_NameNestedFuncs_L1::raa,
   scope_gen_Pass_NameNestedFuncs_L1::functions,
@@ -4382,6 +4420,7 @@ refalrts::RASLFunction gen_Pass_NameNestedFuncs_L1(
   scope_gen_Pass_NameNestedFuncs_L1::numbers,
   scope_gen_Pass_NameNestedFuncs_L1::strings
 );
+refalrts::RefalFunction& gen_Pass_NameNestedFuncs_L1 = descr_gen_Pass_NameNestedFuncs_L1;
 
 } // unnamed namespace
 
@@ -4472,7 +4511,8 @@ static refalrts::FnResult func_gen_Pass_NameNestedFuncs_L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_NameNestedFuncs_L1(func_gen_Pass_NameNestedFuncs_L1, "Pass-NameNestedFuncs\\1");
+refalrts::RefalFunction descr_gen_Pass_NameNestedFuncs_L1(func_gen_Pass_NameNestedFuncs_L1, "Pass-NameNestedFuncs\\1");
+refalrts::RefalFunction& gen_Pass_NameNestedFuncs_L1 = descr_gen_Pass_NameNestedFuncs_L1;
 
 } // unnamed namespace
 
@@ -4511,7 +4551,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Pass_NameNestedFuncs(
+refalrts::RASLFunction descr_Pass_NameNestedFuncs(
   "Pass-NameNestedFuncs",
   scope_Pass_NameNestedFuncs::raa,
   scope_Pass_NameNestedFuncs::functions,
@@ -4519,6 +4559,7 @@ refalrts::RASLFunction Pass_NameNestedFuncs(
   scope_Pass_NameNestedFuncs::numbers,
   scope_Pass_NameNestedFuncs::strings
 );
+refalrts::RefalFunction& Pass_NameNestedFuncs = descr_Pass_NameNestedFuncs;
 
 } // unnamed namespace
 
@@ -4554,7 +4595,8 @@ static refalrts::FnResult func_Pass_NameNestedFuncs(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Pass_NameNestedFuncs(func_Pass_NameNestedFuncs, "Pass-NameNestedFuncs");
+refalrts::RefalFunction descr_Pass_NameNestedFuncs(func_Pass_NameNestedFuncs, "Pass-NameNestedFuncs");
+refalrts::RefalFunction& Pass_NameNestedFuncs = descr_Pass_NameNestedFuncs;
 
 } // unnamed namespace
 
@@ -4618,7 +4660,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_NameNestedBody_S2L1(
+refalrts::RASLFunction descr_gen_NameNestedBody_S2L1(
   "NameNestedBody$2\\1",
   scope_gen_NameNestedBody_S2L1::raa,
   scope_gen_NameNestedBody_S2L1::functions,
@@ -4626,6 +4668,7 @@ refalrts::RASLFunction gen_NameNestedBody_S2L1(
   scope_gen_NameNestedBody_S2L1::numbers,
   scope_gen_NameNestedBody_S2L1::strings
 );
+refalrts::RefalFunction& gen_NameNestedBody_S2L1 = descr_gen_NameNestedBody_S2L1;
 
 } // unnamed namespace
 
@@ -4713,7 +4756,8 @@ static refalrts::FnResult func_gen_NameNestedBody_S2L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_NameNestedBody_S2L1(func_gen_NameNestedBody_S2L1, "NameNestedBody$2\\1");
+refalrts::RefalFunction descr_gen_NameNestedBody_S2L1(func_gen_NameNestedBody_S2L1, "NameNestedBody$2\\1");
+refalrts::RefalFunction& gen_NameNestedBody_S2L1 = descr_gen_NameNestedBody_S2L1;
 
 } // unnamed namespace
 
@@ -4831,7 +4875,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction NameNestedBody(
+refalrts::RASLFunction descr_NameNestedBody(
   "NameNestedBody",
   scope_NameNestedBody::raa,
   scope_NameNestedBody::functions,
@@ -4839,6 +4883,7 @@ refalrts::RASLFunction NameNestedBody(
   scope_NameNestedBody::numbers,
   scope_NameNestedBody::strings
 );
+refalrts::RefalFunction& NameNestedBody = descr_NameNestedBody;
 
 } // unnamed namespace
 
@@ -4996,7 +5041,8 @@ static refalrts::FnResult func_NameNestedBody(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction NameNestedBody(func_NameNestedBody, "NameNestedBody");
+refalrts::RefalFunction descr_NameNestedBody(func_NameNestedBody, "NameNestedBody");
+refalrts::RefalFunction& NameNestedBody = descr_NameNestedBody;
 
 } // unnamed namespace
 
@@ -5045,7 +5091,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction NameNestedResult(
+refalrts::RASLFunction descr_NameNestedResult(
   "NameNestedResult",
   scope_NameNestedResult::raa,
   scope_NameNestedResult::functions,
@@ -5053,6 +5099,7 @@ refalrts::RASLFunction NameNestedResult(
   scope_NameNestedResult::numbers,
   scope_NameNestedResult::strings
 );
+refalrts::RefalFunction& NameNestedResult = descr_NameNestedResult;
 
 } // unnamed namespace
 
@@ -5106,7 +5153,8 @@ static refalrts::FnResult func_NameNestedResult(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction NameNestedResult(func_NameNestedResult, "NameNestedResult");
+refalrts::RefalFunction descr_NameNestedResult(func_NameNestedResult, "NameNestedResult");
+refalrts::RefalFunction& NameNestedResult = descr_NameNestedResult;
 
 } // unnamed namespace
 
@@ -5147,7 +5195,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_NameNestedResultRec_L1S1L1(
+refalrts::RASLFunction descr_gen_NameNestedResultRec_L1S1L1(
   "NameNestedResultRec\\1$1\\1",
   scope_gen_NameNestedResultRec_L1S1L1::raa,
   scope_gen_NameNestedResultRec_L1S1L1::functions,
@@ -5155,6 +5203,7 @@ refalrts::RASLFunction gen_NameNestedResultRec_L1S1L1(
   scope_gen_NameNestedResultRec_L1S1L1::numbers,
   scope_gen_NameNestedResultRec_L1S1L1::strings
 );
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S1L1 = descr_gen_NameNestedResultRec_L1S1L1;
 
 } // unnamed namespace
 
@@ -5194,7 +5243,8 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S1L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_NameNestedResultRec_L1S1L1(func_gen_NameNestedResultRec_L1S1L1, "NameNestedResultRec\\1$1\\1");
+refalrts::RefalFunction descr_gen_NameNestedResultRec_L1S1L1(func_gen_NameNestedResultRec_L1S1L1, "NameNestedResultRec\\1$1\\1");
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S1L1 = descr_gen_NameNestedResultRec_L1S1L1;
 
 } // unnamed namespace
 
@@ -5237,7 +5287,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_NameNestedResultRec_L1S2L1(
+refalrts::RASLFunction descr_gen_NameNestedResultRec_L1S2L1(
   "NameNestedResultRec\\1$2\\1",
   scope_gen_NameNestedResultRec_L1S2L1::raa,
   scope_gen_NameNestedResultRec_L1S2L1::functions,
@@ -5245,6 +5295,7 @@ refalrts::RASLFunction gen_NameNestedResultRec_L1S2L1(
   scope_gen_NameNestedResultRec_L1S2L1::numbers,
   scope_gen_NameNestedResultRec_L1S2L1::strings
 );
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S2L1 = descr_gen_NameNestedResultRec_L1S2L1;
 
 } // unnamed namespace
 
@@ -5290,7 +5341,8 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S2L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_NameNestedResultRec_L1S2L1(func_gen_NameNestedResultRec_L1S2L1, "NameNestedResultRec\\1$2\\1");
+refalrts::RefalFunction descr_gen_NameNestedResultRec_L1S2L1(func_gen_NameNestedResultRec_L1S2L1, "NameNestedResultRec\\1$2\\1");
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S2L1 = descr_gen_NameNestedResultRec_L1S2L1;
 
 } // unnamed namespace
 
@@ -5331,7 +5383,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_NameNestedResultRec_L1S3L1(
+refalrts::RASLFunction descr_gen_NameNestedResultRec_L1S3L1(
   "NameNestedResultRec\\1$3\\1",
   scope_gen_NameNestedResultRec_L1S3L1::raa,
   scope_gen_NameNestedResultRec_L1S3L1::functions,
@@ -5339,6 +5391,7 @@ refalrts::RASLFunction gen_NameNestedResultRec_L1S3L1(
   scope_gen_NameNestedResultRec_L1S3L1::numbers,
   scope_gen_NameNestedResultRec_L1S3L1::strings
 );
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S3L1 = descr_gen_NameNestedResultRec_L1S3L1;
 
 } // unnamed namespace
 
@@ -5378,7 +5431,8 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S3L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_NameNestedResultRec_L1S3L1(func_gen_NameNestedResultRec_L1S3L1, "NameNestedResultRec\\1$3\\1");
+refalrts::RefalFunction descr_gen_NameNestedResultRec_L1S3L1(func_gen_NameNestedResultRec_L1S3L1, "NameNestedResultRec\\1$3\\1");
+refalrts::RefalFunction& gen_NameNestedResultRec_L1S3L1 = descr_gen_NameNestedResultRec_L1S3L1;
 
 } // unnamed namespace
 
@@ -5571,7 +5625,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_NameNestedResultRec_L1(
+refalrts::RASLFunction descr_gen_NameNestedResultRec_L1(
   "NameNestedResultRec\\1",
   scope_gen_NameNestedResultRec_L1::raa,
   scope_gen_NameNestedResultRec_L1::functions,
@@ -5579,6 +5633,7 @@ refalrts::RASLFunction gen_NameNestedResultRec_L1(
   scope_gen_NameNestedResultRec_L1::numbers,
   scope_gen_NameNestedResultRec_L1::strings
 );
+refalrts::RefalFunction& gen_NameNestedResultRec_L1 = descr_gen_NameNestedResultRec_L1;
 
 } // unnamed namespace
 
@@ -5836,7 +5891,8 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_NameNestedResultRec_L1(func_gen_NameNestedResultRec_L1, "NameNestedResultRec\\1");
+refalrts::RefalFunction descr_gen_NameNestedResultRec_L1(func_gen_NameNestedResultRec_L1, "NameNestedResultRec\\1");
+refalrts::RefalFunction& gen_NameNestedResultRec_L1 = descr_gen_NameNestedResultRec_L1;
 
 } // unnamed namespace
 
@@ -5890,7 +5946,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction NameNestedResultRec(
+refalrts::RASLFunction descr_NameNestedResultRec(
   "NameNestedResultRec",
   scope_NameNestedResultRec::raa,
   scope_NameNestedResultRec::functions,
@@ -5898,6 +5954,7 @@ refalrts::RASLFunction NameNestedResultRec(
   scope_NameNestedResultRec::numbers,
   scope_NameNestedResultRec::strings
 );
+refalrts::RefalFunction& NameNestedResultRec = descr_NameNestedResultRec;
 
 } // unnamed namespace
 
@@ -5957,7 +6014,8 @@ static refalrts::FnResult func_NameNestedResultRec(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction NameNestedResultRec(func_NameNestedResultRec, "NameNestedResultRec");
+refalrts::RefalFunction descr_NameNestedResultRec(func_NameNestedResultRec, "NameNestedResultRec");
+refalrts::RefalFunction& NameNestedResultRec = descr_NameNestedResultRec;
 
 } // unnamed namespace
 
@@ -6003,7 +6061,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1S1L1(
+refalrts::RASLFunction descr_gen_Pass_FlatNestedFuncs_L1S1L1(
   "Pass-FlatNestedFuncs\\1$1\\1",
   scope_gen_Pass_FlatNestedFuncs_L1S1L1::raa,
   scope_gen_Pass_FlatNestedFuncs_L1S1L1::functions,
@@ -6011,6 +6069,7 @@ refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1S1L1(
   scope_gen_Pass_FlatNestedFuncs_L1S1L1::numbers,
   scope_gen_Pass_FlatNestedFuncs_L1S1L1::strings
 );
+refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1S1L1 = descr_gen_Pass_FlatNestedFuncs_L1S1L1;
 
 } // unnamed namespace
 
@@ -6064,7 +6123,8 @@ static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1S1L1(refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_FlatNestedFuncs_L1S1L1(func_gen_Pass_FlatNestedFuncs_L1S1L1, "Pass-FlatNestedFuncs\\1$1\\1");
+refalrts::RefalFunction descr_gen_Pass_FlatNestedFuncs_L1S1L1(func_gen_Pass_FlatNestedFuncs_L1S1L1, "Pass-FlatNestedFuncs\\1$1\\1");
+refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1S1L1 = descr_gen_Pass_FlatNestedFuncs_L1S1L1;
 
 } // unnamed namespace
 
@@ -6142,7 +6202,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1(
+refalrts::RASLFunction descr_gen_Pass_FlatNestedFuncs_L1(
   "Pass-FlatNestedFuncs\\1",
   scope_gen_Pass_FlatNestedFuncs_L1::raa,
   scope_gen_Pass_FlatNestedFuncs_L1::functions,
@@ -6150,6 +6210,7 @@ refalrts::RASLFunction gen_Pass_FlatNestedFuncs_L1(
   scope_gen_Pass_FlatNestedFuncs_L1::numbers,
   scope_gen_Pass_FlatNestedFuncs_L1::strings
 );
+refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1 = descr_gen_Pass_FlatNestedFuncs_L1;
 
 } // unnamed namespace
 
@@ -6243,7 +6304,8 @@ static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_FlatNestedFuncs_L1(func_gen_Pass_FlatNestedFuncs_L1, "Pass-FlatNestedFuncs\\1");
+refalrts::RefalFunction descr_gen_Pass_FlatNestedFuncs_L1(func_gen_Pass_FlatNestedFuncs_L1, "Pass-FlatNestedFuncs\\1");
+refalrts::RefalFunction& gen_Pass_FlatNestedFuncs_L1 = descr_gen_Pass_FlatNestedFuncs_L1;
 
 } // unnamed namespace
 
@@ -6282,7 +6344,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Pass_FlatNestedFuncs(
+refalrts::RASLFunction descr_Pass_FlatNestedFuncs(
   "Pass-FlatNestedFuncs",
   scope_Pass_FlatNestedFuncs::raa,
   scope_Pass_FlatNestedFuncs::functions,
@@ -6290,6 +6352,7 @@ refalrts::RASLFunction Pass_FlatNestedFuncs(
   scope_Pass_FlatNestedFuncs::numbers,
   scope_Pass_FlatNestedFuncs::strings
 );
+refalrts::RefalFunction& Pass_FlatNestedFuncs = descr_Pass_FlatNestedFuncs;
 
 } // unnamed namespace
 
@@ -6325,7 +6388,8 @@ static refalrts::FnResult func_Pass_FlatNestedFuncs(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Pass_FlatNestedFuncs(func_Pass_FlatNestedFuncs, "Pass-FlatNestedFuncs");
+refalrts::RefalFunction descr_Pass_FlatNestedFuncs(func_Pass_FlatNestedFuncs, "Pass-FlatNestedFuncs");
+refalrts::RefalFunction& Pass_FlatNestedFuncs = descr_Pass_FlatNestedFuncs;
 
 } // unnamed namespace
 
@@ -6363,7 +6427,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_L1(
+refalrts::RASLFunction descr_gen_ExtractNested_L1(
   "ExtractNested\\1",
   scope_gen_ExtractNested_L1::raa,
   scope_gen_ExtractNested_L1::functions,
@@ -6371,6 +6435,7 @@ refalrts::RASLFunction gen_ExtractNested_L1(
   scope_gen_ExtractNested_L1::numbers,
   scope_gen_ExtractNested_L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_L1 = descr_gen_ExtractNested_L1;
 
 } // unnamed namespace
 
@@ -6418,7 +6483,8 @@ static refalrts::FnResult func_gen_ExtractNested_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_L1(func_gen_ExtractNested_L1, "ExtractNested\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_L1(func_gen_ExtractNested_L1, "ExtractNested\\1");
+refalrts::RefalFunction& gen_ExtractNested_L1 = descr_gen_ExtractNested_L1;
 
 } // unnamed namespace
 
@@ -6467,7 +6533,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractNested(
+refalrts::RASLFunction descr_ExtractNested(
   "ExtractNested",
   scope_ExtractNested::raa,
   scope_ExtractNested::functions,
@@ -6475,6 +6541,7 @@ refalrts::RASLFunction ExtractNested(
   scope_ExtractNested::numbers,
   scope_ExtractNested::strings
 );
+refalrts::RefalFunction& ExtractNested = descr_ExtractNested;
 
 } // unnamed namespace
 
@@ -6524,7 +6591,8 @@ static refalrts::FnResult func_ExtractNested(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractNested(func_ExtractNested, "ExtractNested");
+refalrts::RefalFunction descr_ExtractNested(func_ExtractNested, "ExtractNested");
+refalrts::RefalFunction& ExtractNested = descr_ExtractNested;
 
 } // unnamed namespace
 
@@ -6579,7 +6647,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1L1(
+refalrts::RASLFunction descr_gen_ExtractNestedRec_S1L1L1L1(
   "ExtractNestedRec$1\\1\\1\\1",
   scope_gen_ExtractNestedRec_S1L1L1L1::raa,
   scope_gen_ExtractNestedRec_S1L1L1L1::functions,
@@ -6587,6 +6655,7 @@ refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1L1(
   scope_gen_ExtractNestedRec_S1L1L1L1::numbers,
   scope_gen_ExtractNestedRec_S1L1L1L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1L1 = descr_gen_ExtractNestedRec_S1L1L1L1;
 
 } // unnamed namespace
 
@@ -6658,7 +6727,8 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNestedRec_S1L1L1L1(func_gen_ExtractNestedRec_S1L1L1L1, "ExtractNestedRec$1\\1\\1\\1");
+refalrts::RefalFunction descr_gen_ExtractNestedRec_S1L1L1L1(func_gen_ExtractNestedRec_S1L1L1L1, "ExtractNestedRec$1\\1\\1\\1");
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1L1 = descr_gen_ExtractNestedRec_S1L1L1L1;
 
 } // unnamed namespace
 
@@ -6735,7 +6805,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1(
+refalrts::RASLFunction descr_gen_ExtractNestedRec_S1L1L1(
   "ExtractNestedRec$1\\1\\1",
   scope_gen_ExtractNestedRec_S1L1L1::raa,
   scope_gen_ExtractNestedRec_S1L1L1::functions,
@@ -6743,6 +6813,7 @@ refalrts::RASLFunction gen_ExtractNestedRec_S1L1L1(
   scope_gen_ExtractNestedRec_S1L1L1::numbers,
   scope_gen_ExtractNestedRec_S1L1L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1 = descr_gen_ExtractNestedRec_S1L1L1;
 
 } // unnamed namespace
 
@@ -6845,7 +6916,8 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNestedRec_S1L1L1(func_gen_ExtractNestedRec_S1L1L1, "ExtractNestedRec$1\\1\\1");
+refalrts::RefalFunction descr_gen_ExtractNestedRec_S1L1L1(func_gen_ExtractNestedRec_S1L1L1, "ExtractNestedRec$1\\1\\1");
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1L1 = descr_gen_ExtractNestedRec_S1L1L1;
 
 } // unnamed namespace
 
@@ -6930,7 +7002,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNestedRec_S1L1(
+refalrts::RASLFunction descr_gen_ExtractNestedRec_S1L1(
   "ExtractNestedRec$1\\1",
   scope_gen_ExtractNestedRec_S1L1::raa,
   scope_gen_ExtractNestedRec_S1L1::functions,
@@ -6938,6 +7010,7 @@ refalrts::RASLFunction gen_ExtractNestedRec_S1L1(
   scope_gen_ExtractNestedRec_S1L1::numbers,
   scope_gen_ExtractNestedRec_S1L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1 = descr_gen_ExtractNestedRec_S1L1;
 
 } // unnamed namespace
 
@@ -7061,7 +7134,8 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNestedRec_S1L1(func_gen_ExtractNestedRec_S1L1, "ExtractNestedRec$1\\1");
+refalrts::RefalFunction descr_gen_ExtractNestedRec_S1L1(func_gen_ExtractNestedRec_S1L1, "ExtractNestedRec$1\\1");
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L1 = descr_gen_ExtractNestedRec_S1L1;
 
 } // unnamed namespace
 
@@ -7108,7 +7182,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNestedRec_S1L2(
+refalrts::RASLFunction descr_gen_ExtractNestedRec_S1L2(
   "ExtractNestedRec$1\\2",
   scope_gen_ExtractNestedRec_S1L2::raa,
   scope_gen_ExtractNestedRec_S1L2::functions,
@@ -7116,6 +7190,7 @@ refalrts::RASLFunction gen_ExtractNestedRec_S1L2(
   scope_gen_ExtractNestedRec_S1L2::numbers,
   scope_gen_ExtractNestedRec_S1L2::strings
 );
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L2 = descr_gen_ExtractNestedRec_S1L2;
 
 } // unnamed namespace
 
@@ -7175,7 +7250,8 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L2(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNestedRec_S1L2(func_gen_ExtractNestedRec_S1L2, "ExtractNestedRec$1\\2");
+refalrts::RefalFunction descr_gen_ExtractNestedRec_S1L2(func_gen_ExtractNestedRec_S1L2, "ExtractNestedRec$1\\2");
+refalrts::RefalFunction& gen_ExtractNestedRec_S1L2 = descr_gen_ExtractNestedRec_S1L2;
 
 } // unnamed namespace
 
@@ -7275,7 +7351,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractNestedRec(
+refalrts::RASLFunction descr_ExtractNestedRec(
   "ExtractNestedRec",
   scope_ExtractNestedRec::raa,
   scope_ExtractNestedRec::functions,
@@ -7283,6 +7359,7 @@ refalrts::RASLFunction ExtractNestedRec(
   scope_ExtractNestedRec::numbers,
   scope_ExtractNestedRec::strings
 );
+refalrts::RefalFunction& ExtractNestedRec = descr_ExtractNestedRec;
 
 } // unnamed namespace
 
@@ -7401,7 +7478,8 @@ static refalrts::FnResult func_ExtractNestedRec(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractNestedRec(func_ExtractNestedRec, "ExtractNestedRec");
+refalrts::RefalFunction descr_ExtractNestedRec(func_ExtractNestedRec, "ExtractNestedRec");
+refalrts::RefalFunction& ExtractNestedRec = descr_ExtractNestedRec;
 
 } // unnamed namespace
 
@@ -7452,7 +7530,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Pattern_L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Pattern_L1(
   "ExtractNested-Pattern\\1",
   scope_gen_ExtractNested_Pattern_L1::raa,
   scope_gen_ExtractNested_Pattern_L1::functions,
@@ -7460,6 +7538,7 @@ refalrts::RASLFunction gen_ExtractNested_Pattern_L1(
   scope_gen_ExtractNested_Pattern_L1::numbers,
   scope_gen_ExtractNested_Pattern_L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Pattern_L1 = descr_gen_ExtractNested_Pattern_L1;
 
 } // unnamed namespace
 
@@ -7519,7 +7598,8 @@ static refalrts::FnResult func_gen_ExtractNested_Pattern_L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Pattern_L1(func_gen_ExtractNested_Pattern_L1, "ExtractNested-Pattern\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Pattern_L1(func_gen_ExtractNested_Pattern_L1, "ExtractNested-Pattern\\1");
+refalrts::RefalFunction& gen_ExtractNested_Pattern_L1 = descr_gen_ExtractNested_Pattern_L1;
 
 } // unnamed namespace
 
@@ -7559,7 +7639,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Pattern_L2(
+refalrts::RASLFunction descr_gen_ExtractNested_Pattern_L2(
   "ExtractNested-Pattern\\2",
   scope_gen_ExtractNested_Pattern_L2::raa,
   scope_gen_ExtractNested_Pattern_L2::functions,
@@ -7567,6 +7647,7 @@ refalrts::RASLFunction gen_ExtractNested_Pattern_L2(
   scope_gen_ExtractNested_Pattern_L2::numbers,
   scope_gen_ExtractNested_Pattern_L2::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Pattern_L2 = descr_gen_ExtractNested_Pattern_L2;
 
 } // unnamed namespace
 
@@ -7621,7 +7702,8 @@ static refalrts::FnResult func_gen_ExtractNested_Pattern_L2(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Pattern_L2(func_gen_ExtractNested_Pattern_L2, "ExtractNested-Pattern\\2");
+refalrts::RefalFunction descr_gen_ExtractNested_Pattern_L2(func_gen_ExtractNested_Pattern_L2, "ExtractNested-Pattern\\2");
+refalrts::RefalFunction& gen_ExtractNested_Pattern_L2 = descr_gen_ExtractNested_Pattern_L2;
 
 } // unnamed namespace
 
@@ -7700,7 +7782,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractNested_Pattern(
+refalrts::RASLFunction descr_ExtractNested_Pattern(
   "ExtractNested-Pattern",
   scope_ExtractNested_Pattern::raa,
   scope_ExtractNested_Pattern::functions,
@@ -7708,6 +7790,7 @@ refalrts::RASLFunction ExtractNested_Pattern(
   scope_ExtractNested_Pattern::numbers,
   scope_ExtractNested_Pattern::strings
 );
+refalrts::RefalFunction& ExtractNested_Pattern = descr_ExtractNested_Pattern;
 
 } // unnamed namespace
 
@@ -7799,7 +7882,8 @@ static refalrts::FnResult func_ExtractNested_Pattern(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractNested_Pattern(func_ExtractNested_Pattern, "ExtractNested-Pattern");
+refalrts::RefalFunction descr_ExtractNested_Pattern(func_ExtractNested_Pattern, "ExtractNested-Pattern");
+refalrts::RefalFunction& ExtractNested_Pattern = descr_ExtractNested_Pattern;
 
 } // unnamed namespace
 
@@ -7913,7 +7997,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractAllVars(
+refalrts::RASLFunction descr_ExtractAllVars(
   "ExtractAllVars",
   scope_ExtractAllVars::raa,
   scope_ExtractAllVars::functions,
@@ -7921,6 +8005,7 @@ refalrts::RASLFunction ExtractAllVars(
   scope_ExtractAllVars::numbers,
   scope_ExtractAllVars::strings
 );
+refalrts::RefalFunction& ExtractAllVars = descr_ExtractAllVars;
 
 } // unnamed namespace
 
@@ -8085,7 +8170,8 @@ static refalrts::FnResult func_ExtractAllVars(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractAllVars(func_ExtractAllVars, "ExtractAllVars");
+refalrts::RefalFunction descr_ExtractAllVars(func_ExtractAllVars, "ExtractAllVars");
+refalrts::RefalFunction& ExtractAllVars = descr_ExtractAllVars;
 
 } // unnamed namespace
 
@@ -8147,7 +8233,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Uniq(
+refalrts::RASLFunction descr_Uniq(
   "Uniq",
   scope_Uniq::raa,
   scope_Uniq::functions,
@@ -8155,6 +8241,7 @@ refalrts::RASLFunction Uniq(
   scope_Uniq::numbers,
   scope_Uniq::strings
 );
+refalrts::RefalFunction& Uniq = descr_Uniq;
 
 } // unnamed namespace
 
@@ -8234,7 +8321,8 @@ static refalrts::FnResult func_Uniq(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Uniq(func_Uniq, "Uniq");
+refalrts::RefalFunction descr_Uniq(func_Uniq, "Uniq");
+refalrts::RefalFunction& Uniq = descr_Uniq;
 
 } // unnamed namespace
 
@@ -8302,7 +8390,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RemoveBorrowedVars(
+refalrts::RASLFunction descr_RemoveBorrowedVars(
   "RemoveBorrowedVars",
   scope_RemoveBorrowedVars::raa,
   scope_RemoveBorrowedVars::functions,
@@ -8310,6 +8398,7 @@ refalrts::RASLFunction RemoveBorrowedVars(
   scope_RemoveBorrowedVars::numbers,
   scope_RemoveBorrowedVars::strings
 );
+refalrts::RefalFunction& RemoveBorrowedVars = descr_RemoveBorrowedVars;
 
 } // unnamed namespace
 
@@ -8407,7 +8496,8 @@ static refalrts::FnResult func_RemoveBorrowedVars(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RemoveBorrowedVars(func_RemoveBorrowedVars, "RemoveBorrowedVars");
+refalrts::RefalFunction descr_RemoveBorrowedVars(func_RemoveBorrowedVars, "RemoveBorrowedVars");
+refalrts::RefalFunction& RemoveBorrowedVars = descr_RemoveBorrowedVars;
 
 } // unnamed namespace
 
@@ -8492,7 +8582,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FindBorrowedVars(
+refalrts::RASLFunction descr_FindBorrowedVars(
   "FindBorrowedVars",
   scope_FindBorrowedVars::raa,
   scope_FindBorrowedVars::functions,
@@ -8500,6 +8590,7 @@ refalrts::RASLFunction FindBorrowedVars(
   scope_FindBorrowedVars::numbers,
   scope_FindBorrowedVars::strings
 );
+refalrts::RefalFunction& FindBorrowedVars = descr_FindBorrowedVars;
 
 } // unnamed namespace
 
@@ -8625,7 +8716,8 @@ static refalrts::FnResult func_FindBorrowedVars(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FindBorrowedVars(func_FindBorrowedVars, "FindBorrowedVars");
+refalrts::RefalFunction descr_FindBorrowedVars(func_FindBorrowedVars, "FindBorrowedVars");
+refalrts::RefalFunction& FindBorrowedVars = descr_FindBorrowedVars;
 
 } // unnamed namespace
 
@@ -8666,7 +8758,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Result_L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Result_L1(
   "ExtractNested-Result\\1",
   scope_gen_ExtractNested_Result_L1::raa,
   scope_gen_ExtractNested_Result_L1::functions,
@@ -8674,6 +8766,7 @@ refalrts::RASLFunction gen_ExtractNested_Result_L1(
   scope_gen_ExtractNested_Result_L1::numbers,
   scope_gen_ExtractNested_Result_L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Result_L1 = descr_gen_ExtractNested_Result_L1;
 
 } // unnamed namespace
 
@@ -8729,7 +8822,8 @@ static refalrts::FnResult func_gen_ExtractNested_Result_L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Result_L1(func_gen_ExtractNested_Result_L1, "ExtractNested-Result\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Result_L1(func_gen_ExtractNested_Result_L1, "ExtractNested-Result\\1");
+refalrts::RefalFunction& gen_ExtractNested_Result_L1 = descr_gen_ExtractNested_Result_L1;
 
 } // unnamed namespace
 
@@ -8800,7 +8894,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractNested_Result(
+refalrts::RASLFunction descr_ExtractNested_Result(
   "ExtractNested-Result",
   scope_ExtractNested_Result::raa,
   scope_ExtractNested_Result::functions,
@@ -8808,6 +8902,7 @@ refalrts::RASLFunction ExtractNested_Result(
   scope_ExtractNested_Result::numbers,
   scope_ExtractNested_Result::strings
 );
+refalrts::RefalFunction& ExtractNested_Result = descr_ExtractNested_Result;
 
 } // unnamed namespace
 
@@ -8901,7 +8996,8 @@ static refalrts::FnResult func_ExtractNested_Result(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractNested_Result(func_ExtractNested_Result, "ExtractNested-Result");
+refalrts::RefalFunction descr_ExtractNested_Result(func_ExtractNested_Result, "ExtractNested-Result");
+refalrts::RefalFunction& ExtractNested_Result = descr_ExtractNested_Result;
 
 } // unnamed namespace
 
@@ -8950,7 +9046,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Result_Term_S2L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Result_Term_S2L1(
   "ExtractNested-Result-Term$2\\1",
   scope_gen_ExtractNested_Result_Term_S2L1::raa,
   scope_gen_ExtractNested_Result_Term_S2L1::functions,
@@ -8958,6 +9054,7 @@ refalrts::RASLFunction gen_ExtractNested_Result_Term_S2L1(
   scope_gen_ExtractNested_Result_Term_S2L1::numbers,
   scope_gen_ExtractNested_Result_Term_S2L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S2L1 = descr_gen_ExtractNested_Result_Term_S2L1;
 
 } // unnamed namespace
 
@@ -9015,7 +9112,8 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S2L1(refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Result_Term_S2L1(func_gen_ExtractNested_Result_Term_S2L1, "ExtractNested-Result-Term$2\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Result_Term_S2L1(func_gen_ExtractNested_Result_Term_S2L1, "ExtractNested-Result-Term$2\\1");
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S2L1 = descr_gen_ExtractNested_Result_Term_S2L1;
 
 } // unnamed namespace
 
@@ -9070,7 +9168,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Result_Term_S3L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Result_Term_S3L1(
   "ExtractNested-Result-Term$3\\1",
   scope_gen_ExtractNested_Result_Term_S3L1::raa,
   scope_gen_ExtractNested_Result_Term_S3L1::functions,
@@ -9078,6 +9176,7 @@ refalrts::RASLFunction gen_ExtractNested_Result_Term_S3L1(
   scope_gen_ExtractNested_Result_Term_S3L1::numbers,
   scope_gen_ExtractNested_Result_Term_S3L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S3L1 = descr_gen_ExtractNested_Result_Term_S3L1;
 
 } // unnamed namespace
 
@@ -9146,7 +9245,8 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S3L1(refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Result_Term_S3L1(func_gen_ExtractNested_Result_Term_S3L1, "ExtractNested-Result-Term$3\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Result_Term_S3L1(func_gen_ExtractNested_Result_Term_S3L1, "ExtractNested-Result-Term$3\\1");
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S3L1 = descr_gen_ExtractNested_Result_Term_S3L1;
 
 } // unnamed namespace
 
@@ -9195,7 +9295,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Result_Term_S4L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Result_Term_S4L1(
   "ExtractNested-Result-Term$4\\1",
   scope_gen_ExtractNested_Result_Term_S4L1::raa,
   scope_gen_ExtractNested_Result_Term_S4L1::functions,
@@ -9203,6 +9303,7 @@ refalrts::RASLFunction gen_ExtractNested_Result_Term_S4L1(
   scope_gen_ExtractNested_Result_Term_S4L1::numbers,
   scope_gen_ExtractNested_Result_Term_S4L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S4L1 = descr_gen_ExtractNested_Result_Term_S4L1;
 
 } // unnamed namespace
 
@@ -9260,7 +9361,8 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S4L1(refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Result_Term_S4L1(func_gen_ExtractNested_Result_Term_S4L1, "ExtractNested-Result-Term$4\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Result_Term_S4L1(func_gen_ExtractNested_Result_Term_S4L1, "ExtractNested-Result-Term$4\\1");
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S4L1 = descr_gen_ExtractNested_Result_Term_S4L1;
 
 } // unnamed namespace
 
@@ -9481,7 +9583,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractNested_Result_Term_S5L1(
+refalrts::RASLFunction descr_gen_ExtractNested_Result_Term_S5L1(
   "ExtractNested-Result-Term$5\\1",
   scope_gen_ExtractNested_Result_Term_S5L1::raa,
   scope_gen_ExtractNested_Result_Term_S5L1::functions,
@@ -9489,6 +9591,7 @@ refalrts::RASLFunction gen_ExtractNested_Result_Term_S5L1(
   scope_gen_ExtractNested_Result_Term_S5L1::numbers,
   scope_gen_ExtractNested_Result_Term_S5L1::strings
 );
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S5L1 = descr_gen_ExtractNested_Result_Term_S5L1;
 
 } // unnamed namespace
 
@@ -9776,7 +9879,8 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S5L1(refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractNested_Result_Term_S5L1(func_gen_ExtractNested_Result_Term_S5L1, "ExtractNested-Result-Term$5\\1");
+refalrts::RefalFunction descr_gen_ExtractNested_Result_Term_S5L1(func_gen_ExtractNested_Result_Term_S5L1, "ExtractNested-Result-Term$5\\1");
+refalrts::RefalFunction& gen_ExtractNested_Result_Term_S5L1 = descr_gen_ExtractNested_Result_Term_S5L1;
 
 } // unnamed namespace
 
@@ -10061,7 +10165,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractNested_Result_Term(
+refalrts::RASLFunction descr_ExtractNested_Result_Term(
   "ExtractNested-Result-Term",
   scope_ExtractNested_Result_Term::raa,
   scope_ExtractNested_Result_Term::functions,
@@ -10069,6 +10173,7 @@ refalrts::RASLFunction ExtractNested_Result_Term(
   scope_ExtractNested_Result_Term::numbers,
   scope_ExtractNested_Result_Term::strings
 );
+refalrts::RefalFunction& ExtractNested_Result_Term = descr_ExtractNested_Result_Term;
 
 } // unnamed namespace
 
@@ -10442,7 +10547,8 @@ static refalrts::FnResult func_ExtractNested_Result_Term(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractNested_Result_Term(func_ExtractNested_Result_Term, "ExtractNested-Result-Term");
+refalrts::RefalFunction descr_ExtractNested_Result_Term(func_ExtractNested_Result_Term, "ExtractNested-Result-Term");
+refalrts::RefalFunction& ExtractNested_Result_Term = descr_ExtractNested_Result_Term;
 
 } // unnamed namespace
 
@@ -10538,7 +10644,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckBorrowed(
+refalrts::RASLFunction descr_CheckBorrowed(
   "CheckBorrowed",
   scope_CheckBorrowed::raa,
   scope_CheckBorrowed::functions,
@@ -10546,6 +10652,7 @@ refalrts::RASLFunction CheckBorrowed(
   scope_CheckBorrowed::numbers,
   scope_CheckBorrowed::strings
 );
+refalrts::RefalFunction& CheckBorrowed = descr_CheckBorrowed;
 
 } // unnamed namespace
 
@@ -10696,7 +10803,8 @@ static refalrts::FnResult func_CheckBorrowed(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckBorrowed(func_CheckBorrowed, "CheckBorrowed");
+refalrts::RefalFunction descr_CheckBorrowed(func_CheckBorrowed, "CheckBorrowed");
+refalrts::RefalFunction& CheckBorrowed = descr_CheckBorrowed;
 
 } // unnamed namespace
 
@@ -10748,7 +10856,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AddContextToSentence(
+refalrts::RASLFunction descr_AddContextToSentence(
   "AddContextToSentence",
   scope_AddContextToSentence::raa,
   scope_AddContextToSentence::functions,
@@ -10756,6 +10864,7 @@ refalrts::RASLFunction AddContextToSentence(
   scope_AddContextToSentence::numbers,
   scope_AddContextToSentence::strings
 );
+refalrts::RefalFunction& AddContextToSentence = descr_AddContextToSentence;
 
 } // unnamed namespace
 
@@ -10820,7 +10929,8 @@ static refalrts::FnResult func_AddContextToSentence(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AddContextToSentence(func_AddContextToSentence, "AddContextToSentence");
+refalrts::RefalFunction descr_AddContextToSentence(func_AddContextToSentence, "AddContextToSentence");
+refalrts::RefalFunction& AddContextToSentence = descr_AddContextToSentence;
 
 } // unnamed namespace
 
@@ -10885,7 +10995,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CreateContext_L1(
+refalrts::RASLFunction descr_gen_CreateContext_L1(
   "CreateContext\\1",
   scope_gen_CreateContext_L1::raa,
   scope_gen_CreateContext_L1::functions,
@@ -10893,6 +11003,7 @@ refalrts::RASLFunction gen_CreateContext_L1(
   scope_gen_CreateContext_L1::numbers,
   scope_gen_CreateContext_L1::strings
 );
+refalrts::RefalFunction& gen_CreateContext_L1 = descr_gen_CreateContext_L1;
 
 } // unnamed namespace
 
@@ -10968,7 +11079,8 @@ static refalrts::FnResult func_gen_CreateContext_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CreateContext_L1(func_gen_CreateContext_L1, "CreateContext\\1");
+refalrts::RefalFunction descr_gen_CreateContext_L1(func_gen_CreateContext_L1, "CreateContext\\1");
+refalrts::RefalFunction& gen_CreateContext_L1 = descr_gen_CreateContext_L1;
 
 } // unnamed namespace
 
@@ -11007,7 +11119,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CreateContext(
+refalrts::RASLFunction descr_CreateContext(
   "CreateContext",
   scope_CreateContext::raa,
   scope_CreateContext::functions,
@@ -11015,6 +11127,7 @@ refalrts::RASLFunction CreateContext(
   scope_CreateContext::numbers,
   scope_CreateContext::strings
 );
+refalrts::RefalFunction& CreateContext = descr_CreateContext;
 
 } // unnamed namespace
 
@@ -11050,7 +11163,8 @@ static refalrts::FnResult func_CreateContext(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CreateContext(func_CreateContext, "CreateContext");
+refalrts::RefalFunction descr_CreateContext(func_CreateContext, "CreateContext");
+refalrts::RefalFunction& CreateContext = descr_CreateContext;
 
 } // unnamed namespace
 
@@ -11102,7 +11216,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1S1L1(
+refalrts::RASLFunction descr_gen_Pass_CreatePredeclarations_L1S1L1(
   "Pass-CreatePredeclarations\\1$1\\1",
   scope_gen_Pass_CreatePredeclarations_L1S1L1::raa,
   scope_gen_Pass_CreatePredeclarations_L1S1L1::functions,
@@ -11110,6 +11224,7 @@ refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1S1L1(
   scope_gen_Pass_CreatePredeclarations_L1S1L1::numbers,
   scope_gen_Pass_CreatePredeclarations_L1S1L1::strings
 );
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1S1L1 = descr_gen_Pass_CreatePredeclarations_L1S1L1;
 
 } // unnamed namespace
 
@@ -11174,7 +11289,8 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1S1L1(refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_CreatePredeclarations_L1S1L1(func_gen_Pass_CreatePredeclarations_L1S1L1, "Pass-CreatePredeclarations\\1$1\\1");
+refalrts::RefalFunction descr_gen_Pass_CreatePredeclarations_L1S1L1(func_gen_Pass_CreatePredeclarations_L1S1L1, "Pass-CreatePredeclarations\\1$1\\1");
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1S1L1 = descr_gen_Pass_CreatePredeclarations_L1S1L1;
 
 } // unnamed namespace
 
@@ -11345,7 +11461,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1(
+refalrts::RASLFunction descr_gen_Pass_CreatePredeclarations_L1(
   "Pass-CreatePredeclarations\\1",
   scope_gen_Pass_CreatePredeclarations_L1::raa,
   scope_gen_Pass_CreatePredeclarations_L1::functions,
@@ -11353,6 +11469,7 @@ refalrts::RASLFunction gen_Pass_CreatePredeclarations_L1(
   scope_gen_Pass_CreatePredeclarations_L1::numbers,
   scope_gen_Pass_CreatePredeclarations_L1::strings
 );
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1 = descr_gen_Pass_CreatePredeclarations_L1;
 
 } // unnamed namespace
 
@@ -11582,7 +11699,8 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_CreatePredeclarations_L1(func_gen_Pass_CreatePredeclarations_L1, "Pass-CreatePredeclarations\\1");
+refalrts::RefalFunction descr_gen_Pass_CreatePredeclarations_L1(func_gen_Pass_CreatePredeclarations_L1, "Pass-CreatePredeclarations\\1");
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L1 = descr_gen_Pass_CreatePredeclarations_L1;
 
 } // unnamed namespace
 
@@ -11630,7 +11748,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Pass_CreatePredeclarations_L2(
+refalrts::RASLFunction descr_gen_Pass_CreatePredeclarations_L2(
   "Pass-CreatePredeclarations\\2",
   scope_gen_Pass_CreatePredeclarations_L2::raa,
   scope_gen_Pass_CreatePredeclarations_L2::functions,
@@ -11638,6 +11756,7 @@ refalrts::RASLFunction gen_Pass_CreatePredeclarations_L2(
   scope_gen_Pass_CreatePredeclarations_L2::numbers,
   scope_gen_Pass_CreatePredeclarations_L2::strings
 );
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L2 = descr_gen_Pass_CreatePredeclarations_L2;
 
 } // unnamed namespace
 
@@ -11687,7 +11806,8 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L2(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Pass_CreatePredeclarations_L2(func_gen_Pass_CreatePredeclarations_L2, "Pass-CreatePredeclarations\\2");
+refalrts::RefalFunction descr_gen_Pass_CreatePredeclarations_L2(func_gen_Pass_CreatePredeclarations_L2, "Pass-CreatePredeclarations\\2");
+refalrts::RefalFunction& gen_Pass_CreatePredeclarations_L2 = descr_gen_Pass_CreatePredeclarations_L2;
 
 } // unnamed namespace
 
@@ -11746,7 +11866,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Pass_CreatePredeclarations(
+refalrts::RASLFunction descr_Pass_CreatePredeclarations(
   "Pass-CreatePredeclarations",
   scope_Pass_CreatePredeclarations::raa,
   scope_Pass_CreatePredeclarations::functions,
@@ -11754,6 +11874,7 @@ refalrts::RASLFunction Pass_CreatePredeclarations(
   scope_Pass_CreatePredeclarations::numbers,
   scope_Pass_CreatePredeclarations::strings
 );
+refalrts::RefalFunction& Pass_CreatePredeclarations = descr_Pass_CreatePredeclarations;
 
 } // unnamed namespace
 
@@ -11815,7 +11936,8 @@ static refalrts::FnResult func_Pass_CreatePredeclarations(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Pass_CreatePredeclarations(func_Pass_CreatePredeclarations, "Pass-CreatePredeclarations");
+refalrts::RefalFunction descr_Pass_CreatePredeclarations(func_Pass_CreatePredeclarations, "Pass-CreatePredeclarations");
+refalrts::RefalFunction& Pass_CreatePredeclarations = descr_Pass_CreatePredeclarations;
 
 } // unnamed namespace
 
@@ -11980,7 +12102,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L1(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L1(
   "RemoveRedudandElements\\1",
   scope_gen_RemoveRedudandElements_L1::raa,
   scope_gen_RemoveRedudandElements_L1::functions,
@@ -11988,6 +12110,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L1(
   scope_gen_RemoveRedudandElements_L1::numbers,
   scope_gen_RemoveRedudandElements_L1::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L1 = descr_gen_RemoveRedudandElements_L1;
 
 } // unnamed namespace
 
@@ -12214,7 +12337,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L1(func_gen_RemoveRedudandElements_L1, "RemoveRedudandElements\\1");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L1(func_gen_RemoveRedudandElements_L1, "RemoveRedudandElements\\1");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L1 = descr_gen_RemoveRedudandElements_L1;
 
 } // unnamed namespace
 
@@ -12282,7 +12406,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L2(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L2(
   "RemoveRedudandElements\\2",
   scope_gen_RemoveRedudandElements_L2::raa,
   scope_gen_RemoveRedudandElements_L2::functions,
@@ -12290,6 +12414,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L2(
   scope_gen_RemoveRedudandElements_L2::numbers,
   scope_gen_RemoveRedudandElements_L2::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L2 = descr_gen_RemoveRedudandElements_L2;
 
 } // unnamed namespace
 
@@ -12386,7 +12511,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L2(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L2(func_gen_RemoveRedudandElements_L2, "RemoveRedudandElements\\2");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L2(func_gen_RemoveRedudandElements_L2, "RemoveRedudandElements\\2");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L2 = descr_gen_RemoveRedudandElements_L2;
 
 } // unnamed namespace
 
@@ -12423,7 +12549,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L3S1L1(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L3S1L1(
   "RemoveRedudandElements\\3$1\\1",
   scope_gen_RemoveRedudandElements_L3S1L1::raa,
   scope_gen_RemoveRedudandElements_L3S1L1::functions,
@@ -12431,6 +12557,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L3S1L1(
   scope_gen_RemoveRedudandElements_L3S1L1::numbers,
   scope_gen_RemoveRedudandElements_L3S1L1::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S1L1 = descr_gen_RemoveRedudandElements_L3S1L1;
 
 } // unnamed namespace
 
@@ -12466,7 +12593,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S1L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L3S1L1(func_gen_RemoveRedudandElements_L3S1L1, "RemoveRedudandElements\\3$1\\1");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L3S1L1(func_gen_RemoveRedudandElements_L3S1L1, "RemoveRedudandElements\\3$1\\1");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S1L1 = descr_gen_RemoveRedudandElements_L3S1L1;
 
 } // unnamed namespace
 
@@ -12503,7 +12631,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L3S2L1(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L3S2L1(
   "RemoveRedudandElements\\3$2\\1",
   scope_gen_RemoveRedudandElements_L3S2L1::raa,
   scope_gen_RemoveRedudandElements_L3S2L1::functions,
@@ -12511,6 +12639,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L3S2L1(
   scope_gen_RemoveRedudandElements_L3S2L1::numbers,
   scope_gen_RemoveRedudandElements_L3S2L1::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S2L1 = descr_gen_RemoveRedudandElements_L3S2L1;
 
 } // unnamed namespace
 
@@ -12546,7 +12675,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S2L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L3S2L1(func_gen_RemoveRedudandElements_L3S2L1, "RemoveRedudandElements\\3$2\\1");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L3S2L1(func_gen_RemoveRedudandElements_L3S2L1, "RemoveRedudandElements\\3$2\\1");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S2L1 = descr_gen_RemoveRedudandElements_L3S2L1;
 
 } // unnamed namespace
 
@@ -12580,7 +12710,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L3S3L1(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L3S3L1(
   "RemoveRedudandElements\\3$3\\1",
   scope_gen_RemoveRedudandElements_L3S3L1::raa,
   scope_gen_RemoveRedudandElements_L3S3L1::functions,
@@ -12588,6 +12718,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L3S3L1(
   scope_gen_RemoveRedudandElements_L3S3L1::numbers,
   scope_gen_RemoveRedudandElements_L3S3L1::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S3L1 = descr_gen_RemoveRedudandElements_L3S3L1;
 
 } // unnamed namespace
 
@@ -12620,7 +12751,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S3L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L3S3L1(func_gen_RemoveRedudandElements_L3S3L1, "RemoveRedudandElements\\3$3\\1");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L3S3L1(func_gen_RemoveRedudandElements_L3S3L1, "RemoveRedudandElements\\3$3\\1");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3S3L1 = descr_gen_RemoveRedudandElements_L3S3L1;
 
 } // unnamed namespace
 
@@ -12715,7 +12847,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L3(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L3(
   "RemoveRedudandElements\\3",
   scope_gen_RemoveRedudandElements_L3::raa,
   scope_gen_RemoveRedudandElements_L3::functions,
@@ -12723,6 +12855,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L3(
   scope_gen_RemoveRedudandElements_L3::numbers,
   scope_gen_RemoveRedudandElements_L3::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3 = descr_gen_RemoveRedudandElements_L3;
 
 } // unnamed namespace
 
@@ -12855,7 +12988,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L3(func_gen_RemoveRedudandElements_L3, "RemoveRedudandElements\\3");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L3(func_gen_RemoveRedudandElements_L3, "RemoveRedudandElements\\3");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L3 = descr_gen_RemoveRedudandElements_L3;
 
 } // unnamed namespace
 
@@ -12913,7 +13047,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L4L1(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L4L1(
   "RemoveRedudandElements\\4\\1",
   scope_gen_RemoveRedudandElements_L4L1::raa,
   scope_gen_RemoveRedudandElements_L4L1::functions,
@@ -12921,6 +13055,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L4L1(
   scope_gen_RemoveRedudandElements_L4L1::numbers,
   scope_gen_RemoveRedudandElements_L4L1::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L4L1 = descr_gen_RemoveRedudandElements_L4L1;
 
 } // unnamed namespace
 
@@ -12990,7 +13125,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L4L1(refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L4L1(func_gen_RemoveRedudandElements_L4L1, "RemoveRedudandElements\\4\\1");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L4L1(func_gen_RemoveRedudandElements_L4L1, "RemoveRedudandElements\\4\\1");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L4L1 = descr_gen_RemoveRedudandElements_L4L1;
 
 } // unnamed namespace
 
@@ -13038,7 +13174,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RemoveRedudandElements_L4(
+refalrts::RASLFunction descr_gen_RemoveRedudandElements_L4(
   "RemoveRedudandElements\\4",
   scope_gen_RemoveRedudandElements_L4::raa,
   scope_gen_RemoveRedudandElements_L4::functions,
@@ -13046,6 +13182,7 @@ refalrts::RASLFunction gen_RemoveRedudandElements_L4(
   scope_gen_RemoveRedudandElements_L4::numbers,
   scope_gen_RemoveRedudandElements_L4::strings
 );
+refalrts::RefalFunction& gen_RemoveRedudandElements_L4 = descr_gen_RemoveRedudandElements_L4;
 
 } // unnamed namespace
 
@@ -13093,7 +13230,8 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L4(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RemoveRedudandElements_L4(func_gen_RemoveRedudandElements_L4, "RemoveRedudandElements\\4");
+refalrts::RefalFunction descr_gen_RemoveRedudandElements_L4(func_gen_RemoveRedudandElements_L4, "RemoveRedudandElements\\4");
+refalrts::RefalFunction& gen_RemoveRedudandElements_L4 = descr_gen_RemoveRedudandElements_L4;
 
 } // unnamed namespace
 
@@ -13158,7 +13296,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RemoveRedudandElements(
+refalrts::RASLFunction descr_RemoveRedudandElements(
   "RemoveRedudandElements",
   scope_RemoveRedudandElements::raa,
   scope_RemoveRedudandElements::functions,
@@ -13166,6 +13304,7 @@ refalrts::RASLFunction RemoveRedudandElements(
   scope_RemoveRedudandElements::numbers,
   scope_RemoveRedudandElements::strings
 );
+refalrts::RefalFunction& RemoveRedudandElements = descr_RemoveRedudandElements;
 
 } // unnamed namespace
 
@@ -13236,7 +13375,8 @@ static refalrts::FnResult func_RemoveRedudandElements(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RemoveRedudandElements(func_RemoveRedudandElements, "RemoveRedudandElements");
+refalrts::RefalFunction descr_RemoveRedudandElements(func_RemoveRedudandElements, "RemoveRedudandElements");
+refalrts::RefalFunction& RemoveRedudandElements = descr_RemoveRedudandElements;
 
 } // unnamed namespace
 
@@ -13299,7 +13439,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FoldEnums_L1(
+refalrts::RASLFunction descr_gen_FoldEnums_L1(
   "FoldEnums\\1",
   scope_gen_FoldEnums_L1::raa,
   scope_gen_FoldEnums_L1::functions,
@@ -13307,6 +13447,7 @@ refalrts::RASLFunction gen_FoldEnums_L1(
   scope_gen_FoldEnums_L1::numbers,
   scope_gen_FoldEnums_L1::strings
 );
+refalrts::RefalFunction& gen_FoldEnums_L1 = descr_gen_FoldEnums_L1;
 
 } // unnamed namespace
 
@@ -13387,7 +13528,8 @@ static refalrts::FnResult func_gen_FoldEnums_L1(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FoldEnums_L1(func_gen_FoldEnums_L1, "FoldEnums\\1");
+refalrts::RefalFunction descr_gen_FoldEnums_L1(func_gen_FoldEnums_L1, "FoldEnums\\1");
+refalrts::RefalFunction& gen_FoldEnums_L1 = descr_gen_FoldEnums_L1;
 
 } // unnamed namespace
 
@@ -13426,7 +13568,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FoldEnums(
+refalrts::RASLFunction descr_FoldEnums(
   "FoldEnums",
   scope_FoldEnums::raa,
   scope_FoldEnums::functions,
@@ -13434,6 +13576,7 @@ refalrts::RASLFunction FoldEnums(
   scope_FoldEnums::numbers,
   scope_FoldEnums::strings
 );
+refalrts::RefalFunction& FoldEnums = descr_FoldEnums;
 
 } // unnamed namespace
 
@@ -13469,7 +13612,8 @@ static refalrts::FnResult func_FoldEnums(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FoldEnums(func_FoldEnums, "FoldEnums");
+refalrts::RefalFunction descr_FoldEnums(func_FoldEnums, "FoldEnums");
+refalrts::RefalFunction& FoldEnums = descr_FoldEnums;
 
 } // unnamed namespace
 
@@ -13523,7 +13667,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdents_S1L1L1(
+refalrts::RASLFunction descr_gen_ExtractIdents_S1L1L1(
   "ExtractIdents$1\\1\\1",
   scope_gen_ExtractIdents_S1L1L1::raa,
   scope_gen_ExtractIdents_S1L1L1::functions,
@@ -13531,6 +13675,7 @@ refalrts::RASLFunction gen_ExtractIdents_S1L1L1(
   scope_gen_ExtractIdents_S1L1L1::numbers,
   scope_gen_ExtractIdents_S1L1L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdents_S1L1L1 = descr_gen_ExtractIdents_S1L1L1;
 
 } // unnamed namespace
 
@@ -13609,7 +13754,8 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L1L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdents_S1L1L1(func_gen_ExtractIdents_S1L1L1, "ExtractIdents$1\\1\\1");
+refalrts::RefalFunction descr_gen_ExtractIdents_S1L1L1(func_gen_ExtractIdents_S1L1L1, "ExtractIdents$1\\1\\1");
+refalrts::RefalFunction& gen_ExtractIdents_S1L1L1 = descr_gen_ExtractIdents_S1L1L1;
 
 } // unnamed namespace
 
@@ -13684,7 +13830,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdents_S1L1(
+refalrts::RASLFunction descr_gen_ExtractIdents_S1L1(
   "ExtractIdents$1\\1",
   scope_gen_ExtractIdents_S1L1::raa,
   scope_gen_ExtractIdents_S1L1::functions,
@@ -13692,6 +13838,7 @@ refalrts::RASLFunction gen_ExtractIdents_S1L1(
   scope_gen_ExtractIdents_S1L1::numbers,
   scope_gen_ExtractIdents_S1L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdents_S1L1 = descr_gen_ExtractIdents_S1L1;
 
 } // unnamed namespace
 
@@ -13790,7 +13937,8 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdents_S1L1(func_gen_ExtractIdents_S1L1, "ExtractIdents$1\\1");
+refalrts::RefalFunction descr_gen_ExtractIdents_S1L1(func_gen_ExtractIdents_S1L1, "ExtractIdents$1\\1");
+refalrts::RefalFunction& gen_ExtractIdents_S1L1 = descr_gen_ExtractIdents_S1L1;
 
 } // unnamed namespace
 
@@ -13833,7 +13981,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdents_S1L2(
+refalrts::RASLFunction descr_gen_ExtractIdents_S1L2(
   "ExtractIdents$1\\2",
   scope_gen_ExtractIdents_S1L2::raa,
   scope_gen_ExtractIdents_S1L2::functions,
@@ -13841,6 +13989,7 @@ refalrts::RASLFunction gen_ExtractIdents_S1L2(
   scope_gen_ExtractIdents_S1L2::numbers,
   scope_gen_ExtractIdents_S1L2::strings
 );
+refalrts::RefalFunction& gen_ExtractIdents_S1L2 = descr_gen_ExtractIdents_S1L2;
 
 } // unnamed namespace
 
@@ -13892,7 +14041,8 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L2(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdents_S1L2(func_gen_ExtractIdents_S1L2, "ExtractIdents$1\\2");
+refalrts::RefalFunction descr_gen_ExtractIdents_S1L2(func_gen_ExtractIdents_S1L2, "ExtractIdents$1\\2");
+refalrts::RefalFunction& gen_ExtractIdents_S1L2 = descr_gen_ExtractIdents_S1L2;
 
 } // unnamed namespace
 
@@ -13986,7 +14136,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractIdents(
+refalrts::RASLFunction descr_ExtractIdents(
   "ExtractIdents",
   scope_ExtractIdents::raa,
   scope_ExtractIdents::functions,
@@ -13994,6 +14144,7 @@ refalrts::RASLFunction ExtractIdents(
   scope_ExtractIdents::numbers,
   scope_ExtractIdents::strings
 );
+refalrts::RefalFunction& ExtractIdents = descr_ExtractIdents;
 
 } // unnamed namespace
 
@@ -14102,7 +14253,8 @@ static refalrts::FnResult func_ExtractIdents(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractIdents(func_ExtractIdents, "ExtractIdents");
+refalrts::RefalFunction descr_ExtractIdents(func_ExtractIdents, "ExtractIdents");
+refalrts::RefalFunction& ExtractIdents = descr_ExtractIdents;
 
 } // unnamed namespace
 
@@ -14147,7 +14299,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdent_Expr_L1S2L1(
+refalrts::RASLFunction descr_gen_ExtractIdent_Expr_L1S2L1(
   "ExtractIdent-Expr\\1$2\\1",
   scope_gen_ExtractIdent_Expr_L1S2L1::raa,
   scope_gen_ExtractIdent_Expr_L1S2L1::functions,
@@ -14155,6 +14307,7 @@ refalrts::RASLFunction gen_ExtractIdent_Expr_L1S2L1(
   scope_gen_ExtractIdent_Expr_L1S2L1::numbers,
   scope_gen_ExtractIdent_Expr_L1S2L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S2L1 = descr_gen_ExtractIdent_Expr_L1S2L1;
 
 } // unnamed namespace
 
@@ -14206,7 +14359,8 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S2L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdent_Expr_L1S2L1(func_gen_ExtractIdent_Expr_L1S2L1, "ExtractIdent-Expr\\1$2\\1");
+refalrts::RefalFunction descr_gen_ExtractIdent_Expr_L1S2L1(func_gen_ExtractIdent_Expr_L1S2L1, "ExtractIdent-Expr\\1$2\\1");
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S2L1 = descr_gen_ExtractIdent_Expr_L1S2L1;
 
 } // unnamed namespace
 
@@ -14256,7 +14410,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdent_Expr_L1S3L1(
+refalrts::RASLFunction descr_gen_ExtractIdent_Expr_L1S3L1(
   "ExtractIdent-Expr\\1$3\\1",
   scope_gen_ExtractIdent_Expr_L1S3L1::raa,
   scope_gen_ExtractIdent_Expr_L1S3L1::functions,
@@ -14264,6 +14418,7 @@ refalrts::RASLFunction gen_ExtractIdent_Expr_L1S3L1(
   scope_gen_ExtractIdent_Expr_L1S3L1::numbers,
   scope_gen_ExtractIdent_Expr_L1S3L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S3L1 = descr_gen_ExtractIdent_Expr_L1S3L1;
 
 } // unnamed namespace
 
@@ -14325,7 +14480,8 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S3L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdent_Expr_L1S3L1(func_gen_ExtractIdent_Expr_L1S3L1, "ExtractIdent-Expr\\1$3\\1");
+refalrts::RefalFunction descr_gen_ExtractIdent_Expr_L1S3L1(func_gen_ExtractIdent_Expr_L1S3L1, "ExtractIdent-Expr\\1$3\\1");
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S3L1 = descr_gen_ExtractIdent_Expr_L1S3L1;
 
 } // unnamed namespace
 
@@ -14370,7 +14526,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdent_Expr_L1S4L1(
+refalrts::RASLFunction descr_gen_ExtractIdent_Expr_L1S4L1(
   "ExtractIdent-Expr\\1$4\\1",
   scope_gen_ExtractIdent_Expr_L1S4L1::raa,
   scope_gen_ExtractIdent_Expr_L1S4L1::functions,
@@ -14378,6 +14534,7 @@ refalrts::RASLFunction gen_ExtractIdent_Expr_L1S4L1(
   scope_gen_ExtractIdent_Expr_L1S4L1::numbers,
   scope_gen_ExtractIdent_Expr_L1S4L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S4L1 = descr_gen_ExtractIdent_Expr_L1S4L1;
 
 } // unnamed namespace
 
@@ -14429,7 +14586,8 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S4L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdent_Expr_L1S4L1(func_gen_ExtractIdent_Expr_L1S4L1, "ExtractIdent-Expr\\1$4\\1");
+refalrts::RefalFunction descr_gen_ExtractIdent_Expr_L1S4L1(func_gen_ExtractIdent_Expr_L1S4L1, "ExtractIdent-Expr\\1$4\\1");
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1S4L1 = descr_gen_ExtractIdent_Expr_L1S4L1;
 
 } // unnamed namespace
 
@@ -14617,7 +14775,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ExtractIdent_Expr_L1(
+refalrts::RASLFunction descr_gen_ExtractIdent_Expr_L1(
   "ExtractIdent-Expr\\1",
   scope_gen_ExtractIdent_Expr_L1::raa,
   scope_gen_ExtractIdent_Expr_L1::functions,
@@ -14625,6 +14783,7 @@ refalrts::RASLFunction gen_ExtractIdent_Expr_L1(
   scope_gen_ExtractIdent_Expr_L1::numbers,
   scope_gen_ExtractIdent_Expr_L1::strings
 );
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1 = descr_gen_ExtractIdent_Expr_L1;
 
 } // unnamed namespace
 
@@ -14871,7 +15030,8 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ExtractIdent_Expr_L1(func_gen_ExtractIdent_Expr_L1, "ExtractIdent-Expr\\1");
+refalrts::RefalFunction descr_gen_ExtractIdent_Expr_L1(func_gen_ExtractIdent_Expr_L1, "ExtractIdent-Expr\\1");
+refalrts::RefalFunction& gen_ExtractIdent_Expr_L1 = descr_gen_ExtractIdent_Expr_L1;
 
 } // unnamed namespace
 
@@ -14913,7 +15073,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExtractIdent_Expr(
+refalrts::RASLFunction descr_ExtractIdent_Expr(
   "ExtractIdent-Expr",
   scope_ExtractIdent_Expr::raa,
   scope_ExtractIdent_Expr::functions,
@@ -14921,6 +15081,7 @@ refalrts::RASLFunction ExtractIdent_Expr(
   scope_ExtractIdent_Expr::numbers,
   scope_ExtractIdent_Expr::strings
 );
+refalrts::RefalFunction& ExtractIdent_Expr = descr_ExtractIdent_Expr;
 
 } // unnamed namespace
 
@@ -14961,7 +15122,8 @@ static refalrts::FnResult func_ExtractIdent_Expr(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExtractIdent_Expr(func_ExtractIdent_Expr, "ExtractIdent-Expr");
+refalrts::RefalFunction descr_ExtractIdent_Expr(func_ExtractIdent_Expr, "ExtractIdent-Expr");
+refalrts::RefalFunction& ExtractIdent_Expr = descr_ExtractIdent_Expr;
 
 } // unnamed namespace
 
@@ -15019,7 +15181,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction UniqSorted(
+refalrts::RASLFunction descr_UniqSorted(
   "UniqSorted",
   scope_UniqSorted::raa,
   scope_UniqSorted::functions,
@@ -15027,6 +15189,7 @@ refalrts::RASLFunction UniqSorted(
   scope_UniqSorted::numbers,
   scope_UniqSorted::strings
 );
+refalrts::RefalFunction& UniqSorted = descr_UniqSorted;
 
 } // unnamed namespace
 
@@ -15098,7 +15261,8 @@ static refalrts::FnResult func_UniqSorted(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction UniqSorted(func_UniqSorted, "UniqSorted");
+refalrts::RefalFunction descr_UniqSorted(func_UniqSorted, "UniqSorted");
+refalrts::RefalFunction& UniqSorted = descr_UniqSorted;
 
 } // unnamed namespace
 

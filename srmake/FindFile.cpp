@@ -50,98 +50,98 @@ struct ident_True {
   }
 };
 
-extern refalrts::RefalFunction Map;
+extern refalrts::RefalFunction& Map;
 #ifdef INTERPRET
-extern refalrts::RASLFunction FindFiles;
+extern refalrts::RefalFunction& FindFiles;
 #else
-extern refalrts::RefalFunction FindFiles;
+extern refalrts::RefalFunction& FindFiles;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeFile_ByFolders;
+extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeFile_ByFolders;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeInFolder;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeInFolder;
+extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeFile_CheckNotFound;
+extern refalrts::RefalFunction& AnalyzeInFolder;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeFile_CheckNotFound;
-} // unnamed namespace
-
-#endif
-extern refalrts::RefalFunction ExistFile;
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction ExistFile_T;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction ExistFile_T;
+extern refalrts::RefalFunction& AnalyzeInFolder;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeFile;
+extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeFile;
+extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
+} // unnamed namespace
+
+#endif
+extern refalrts::RefalFunction& ExistFile;
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& ExistFile_T;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& ExistFile_T;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeSource_CheckExist;
+extern refalrts::RefalFunction& AnalyzeFile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeSource_CheckExist;
+extern refalrts::RefalFunction& AnalyzeFile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeOutput_CheckExist;
+extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeOutput_CheckExist;
+extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AnalyzeBoth_CheckExist;
+extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AnalyzeBoth_CheckExist;
+extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
 } // unnamed namespace
 
 #endif
@@ -186,7 +186,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction FindFiles(
+refalrts::RASLFunction descr_FindFiles(
   "FindFiles",
   scope_FindFiles::raa,
   scope_FindFiles::functions,
@@ -194,6 +194,7 @@ refalrts::RASLFunction FindFiles(
   scope_FindFiles::numbers,
   scope_FindFiles::strings
 );
+refalrts::RefalFunction& FindFiles = descr_FindFiles;
 
 #else
 static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -237,7 +238,8 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction FindFiles(func_FindFiles, "FindFiles");
+refalrts::RefalFunction descr_FindFiles(func_FindFiles, "FindFiles");
+refalrts::RefalFunction& FindFiles = descr_FindFiles;
 
 #endif
 #ifdef INTERPRET
@@ -290,7 +292,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeFile_ByFolders(
+refalrts::RASLFunction descr_AnalyzeFile_ByFolders(
   "AnalyzeFile-ByFolders",
   scope_AnalyzeFile_ByFolders::raa,
   scope_AnalyzeFile_ByFolders::functions,
@@ -298,6 +300,7 @@ refalrts::RASLFunction AnalyzeFile_ByFolders(
   scope_AnalyzeFile_ByFolders::numbers,
   scope_AnalyzeFile_ByFolders::strings
 );
+refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
 
 } // unnamed namespace
 
@@ -359,7 +362,8 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders");
+refalrts::RefalFunction descr_AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders");
+refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
 
 } // unnamed namespace
 
@@ -425,7 +429,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeInFolder(
+refalrts::RASLFunction descr_AnalyzeInFolder(
   "AnalyzeInFolder",
   scope_AnalyzeInFolder::raa,
   scope_AnalyzeInFolder::functions,
@@ -433,6 +437,7 @@ refalrts::RASLFunction AnalyzeInFolder(
   scope_AnalyzeInFolder::numbers,
   scope_AnalyzeInFolder::strings
 );
+refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
 
 } // unnamed namespace
 
@@ -505,7 +510,8 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder");
+refalrts::RefalFunction descr_AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder");
+refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
 
 } // unnamed namespace
 
@@ -609,7 +615,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeFile_CheckNotFound(
+refalrts::RASLFunction descr_AnalyzeFile_CheckNotFound(
   "AnalyzeFile-CheckNotFound",
   scope_AnalyzeFile_CheckNotFound::raa,
   scope_AnalyzeFile_CheckNotFound::functions,
@@ -617,6 +623,7 @@ refalrts::RASLFunction AnalyzeFile_CheckNotFound(
   scope_AnalyzeFile_CheckNotFound::numbers,
   scope_AnalyzeFile_CheckNotFound::strings
 );
+refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
 
 } // unnamed namespace
 
@@ -770,7 +777,8 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound");
+refalrts::RefalFunction descr_AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound");
+refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
 
 } // unnamed namespace
 
@@ -807,7 +815,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ExistFile_T(
+refalrts::RASLFunction descr_ExistFile_T(
   "ExistFile-T",
   scope_ExistFile_T::raa,
   scope_ExistFile_T::functions,
@@ -815,6 +823,7 @@ refalrts::RASLFunction ExistFile_T(
   scope_ExistFile_T::numbers,
   scope_ExistFile_T::strings
 );
+refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
 
 } // unnamed namespace
 
@@ -849,7 +858,8 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ExistFile_T(func_ExistFile_T, "ExistFile-T");
+refalrts::RefalFunction descr_ExistFile_T(func_ExistFile_T, "ExistFile-T");
+refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
 
 } // unnamed namespace
 
@@ -968,7 +978,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeFile(
+refalrts::RASLFunction descr_AnalyzeFile(
   "AnalyzeFile",
   scope_AnalyzeFile::raa,
   scope_AnalyzeFile::functions,
@@ -976,6 +986,7 @@ refalrts::RASLFunction AnalyzeFile(
   scope_AnalyzeFile::numbers,
   scope_AnalyzeFile::strings
 );
+refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
 
 } // unnamed namespace
 
@@ -1136,7 +1147,8 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeFile(func_AnalyzeFile, "AnalyzeFile");
+refalrts::RefalFunction descr_AnalyzeFile(func_AnalyzeFile, "AnalyzeFile");
+refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
 
 } // unnamed namespace
 
@@ -1213,7 +1225,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeSource_CheckExist(
+refalrts::RASLFunction descr_AnalyzeSource_CheckExist(
   "AnalyzeSource-CheckExist",
   scope_AnalyzeSource_CheckExist::raa,
   scope_AnalyzeSource_CheckExist::functions,
@@ -1221,6 +1233,7 @@ refalrts::RASLFunction AnalyzeSource_CheckExist(
   scope_AnalyzeSource_CheckExist::numbers,
   scope_AnalyzeSource_CheckExist::strings
 );
+refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
 
 } // unnamed namespace
 
@@ -1312,7 +1325,8 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist");
+refalrts::RefalFunction descr_AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist");
+refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
 
 } // unnamed namespace
 
@@ -1375,7 +1389,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeOutput_CheckExist(
+refalrts::RASLFunction descr_AnalyzeOutput_CheckExist(
   "AnalyzeOutput-CheckExist",
   scope_AnalyzeOutput_CheckExist::raa,
   scope_AnalyzeOutput_CheckExist::functions,
@@ -1383,6 +1397,7 @@ refalrts::RASLFunction AnalyzeOutput_CheckExist(
   scope_AnalyzeOutput_CheckExist::numbers,
   scope_AnalyzeOutput_CheckExist::strings
 );
+refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
 
 } // unnamed namespace
 
@@ -1448,7 +1463,8 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist");
+refalrts::RefalFunction descr_AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist");
+refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
 
 } // unnamed namespace
 
@@ -1550,7 +1566,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AnalyzeBoth_CheckExist(
+refalrts::RASLFunction descr_AnalyzeBoth_CheckExist(
   "AnalyzeBoth-CheckExist",
   scope_AnalyzeBoth_CheckExist::raa,
   scope_AnalyzeBoth_CheckExist::functions,
@@ -1558,6 +1574,7 @@ refalrts::RASLFunction AnalyzeBoth_CheckExist(
   scope_AnalyzeBoth_CheckExist::numbers,
   scope_AnalyzeBoth_CheckExist::strings
 );
+refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
 
 } // unnamed namespace
 
@@ -1701,7 +1718,8 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist");
+refalrts::RefalFunction descr_AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist");
+refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
 
 } // unnamed namespace
 

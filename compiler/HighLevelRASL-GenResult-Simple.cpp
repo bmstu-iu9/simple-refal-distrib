@@ -274,126 +274,126 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction Sort;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction Add;
-extern refalrts::RefalFunction IncVarOffset;
-extern refalrts::RefalFunction PrintVar;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& Sort;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& Add;
+extern refalrts::RefalFunction& IncVarOffset;
+extern refalrts::RefalFunction& PrintVar;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_GenResult_Simple_L1;
+extern refalrts::RefalFunction& gen_GenResult_Simple_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_GenResult_Simple_L1;
+extern refalrts::RefalFunction& gen_GenResult_Simple_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_GenResult_Simple_L2;
+extern refalrts::RefalFunction& gen_GenResult_Simple_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_GenResult_Simple_L2;
+extern refalrts::RefalFunction& gen_GenResult_Simple_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction GenResult_Simple;
+extern refalrts::RefalFunction& GenResult_Simple;
 #else
-extern refalrts::RefalFunction GenResult_Simple;
+extern refalrts::RefalFunction& GenResult_Simple;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CollectStrings_S1L1;
+extern refalrts::RefalFunction& gen_CollectStrings_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CollectStrings_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction CollectStrings;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction CollectStrings;
+extern refalrts::RefalFunction& gen_CollectStrings_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction BuildString;
+extern refalrts::RefalFunction& CollectStrings;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction BuildString;
+extern refalrts::RefalFunction& CollectStrings;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoGenResult;
+extern refalrts::RefalFunction& BuildString;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoGenResult;
+extern refalrts::RefalFunction& BuildString;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction MakeVariableCommentTable;
+extern refalrts::RefalFunction& DoGenResult;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction MakeVariableCommentTable;
+extern refalrts::RefalFunction& DoGenResult;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ReplicateVar_L1;
+extern refalrts::RefalFunction& MakeVariableCommentTable;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ReplicateVar_L1;
+extern refalrts::RefalFunction& MakeVariableCommentTable;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ReplicateVar;
+extern refalrts::RefalFunction& gen_ReplicateVar_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ReplicateVar;
+extern refalrts::RefalFunction& gen_ReplicateVar_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction MakeVariableComment;
+extern refalrts::RefalFunction& ReplicateVar;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction MakeVariableComment;
+extern refalrts::RefalFunction& ReplicateVar;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& MakeVariableComment;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& MakeVariableComment;
 } // unnamed namespace
 
 #endif
@@ -438,7 +438,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_GenResult_Simple_L1(
+refalrts::RASLFunction descr_gen_GenResult_Simple_L1(
   "GenResult-Simple\\1",
   scope_gen_GenResult_Simple_L1::raa,
   scope_gen_GenResult_Simple_L1::functions,
@@ -446,6 +446,7 @@ refalrts::RASLFunction gen_GenResult_Simple_L1(
   scope_gen_GenResult_Simple_L1::numbers,
   scope_gen_GenResult_Simple_L1::strings
 );
+refalrts::RefalFunction& gen_GenResult_Simple_L1 = descr_gen_GenResult_Simple_L1;
 
 } // unnamed namespace
 
@@ -501,7 +502,8 @@ static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, "GenResult-Simple\\1");
+refalrts::RefalFunction descr_gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, "GenResult-Simple\\1");
+refalrts::RefalFunction& gen_GenResult_Simple_L1 = descr_gen_GenResult_Simple_L1;
 
 } // unnamed namespace
 
@@ -559,7 +561,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_GenResult_Simple_L2(
+refalrts::RASLFunction descr_gen_GenResult_Simple_L2(
   "GenResult-Simple\\2",
   scope_gen_GenResult_Simple_L2::raa,
   scope_gen_GenResult_Simple_L2::functions,
@@ -567,6 +569,7 @@ refalrts::RASLFunction gen_GenResult_Simple_L2(
   scope_gen_GenResult_Simple_L2::numbers,
   scope_gen_GenResult_Simple_L2::strings
 );
+refalrts::RefalFunction& gen_GenResult_Simple_L2 = descr_gen_GenResult_Simple_L2;
 
 } // unnamed namespace
 
@@ -629,7 +632,8 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, "GenResult-Simple\\2");
+refalrts::RefalFunction descr_gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, "GenResult-Simple\\2");
+refalrts::RefalFunction& gen_GenResult_Simple_L2 = descr_gen_GenResult_Simple_L2;
 
 } // unnamed namespace
 
@@ -706,7 +710,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction GenResult_Simple(
+refalrts::RASLFunction descr_GenResult_Simple(
   "GenResult-Simple",
   scope_GenResult_Simple::raa,
   scope_GenResult_Simple::functions,
@@ -714,6 +718,7 @@ refalrts::RASLFunction GenResult_Simple(
   scope_GenResult_Simple::numbers,
   scope_GenResult_Simple::strings
 );
+refalrts::RefalFunction& GenResult_Simple = descr_GenResult_Simple;
 
 #else
 static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -804,7 +809,8 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction GenResult_Simple(func_GenResult_Simple, "GenResult-Simple");
+refalrts::RefalFunction descr_GenResult_Simple(func_GenResult_Simple, "GenResult-Simple");
+refalrts::RefalFunction& GenResult_Simple = descr_GenResult_Simple;
 
 #endif
 #ifdef INTERPRET
@@ -849,7 +855,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CollectStrings_S1L1(
+refalrts::RASLFunction descr_gen_CollectStrings_S1L1(
   "CollectStrings$1\\1",
   scope_gen_CollectStrings_S1L1::raa,
   scope_gen_CollectStrings_S1L1::functions,
@@ -857,6 +863,7 @@ refalrts::RASLFunction gen_CollectStrings_S1L1(
   scope_gen_CollectStrings_S1L1::numbers,
   scope_gen_CollectStrings_S1L1::strings
 );
+refalrts::RefalFunction& gen_CollectStrings_S1L1 = descr_gen_CollectStrings_S1L1;
 
 } // unnamed namespace
 
@@ -904,7 +911,8 @@ static refalrts::FnResult func_gen_CollectStrings_S1L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CollectStrings_S1L1(func_gen_CollectStrings_S1L1, "CollectStrings$1\\1");
+refalrts::RefalFunction descr_gen_CollectStrings_S1L1(func_gen_CollectStrings_S1L1, "CollectStrings$1\\1");
+refalrts::RefalFunction& gen_CollectStrings_S1L1 = descr_gen_CollectStrings_S1L1;
 
 } // unnamed namespace
 
@@ -1084,7 +1092,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CollectStrings(
+refalrts::RASLFunction descr_CollectStrings(
   "CollectStrings",
   scope_CollectStrings::raa,
   scope_CollectStrings::functions,
@@ -1092,6 +1100,7 @@ refalrts::RASLFunction CollectStrings(
   scope_CollectStrings::numbers,
   scope_CollectStrings::strings
 );
+refalrts::RefalFunction& CollectStrings = descr_CollectStrings;
 
 } // unnamed namespace
 
@@ -1351,7 +1360,8 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CollectStrings(func_CollectStrings, "CollectStrings");
+refalrts::RefalFunction descr_CollectStrings(func_CollectStrings, "CollectStrings");
+refalrts::RefalFunction& CollectStrings = descr_CollectStrings;
 
 } // unnamed namespace
 
@@ -1418,7 +1428,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction BuildString(
+refalrts::RASLFunction descr_BuildString(
   "BuildString",
   scope_BuildString::raa,
   scope_BuildString::functions,
@@ -1426,6 +1436,7 @@ refalrts::RASLFunction BuildString(
   scope_BuildString::numbers,
   scope_BuildString::strings
 );
+refalrts::RefalFunction& BuildString = descr_BuildString;
 
 } // unnamed namespace
 
@@ -1510,7 +1521,8 @@ static refalrts::FnResult func_BuildString(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction BuildString(func_BuildString, "BuildString");
+refalrts::RefalFunction descr_BuildString(func_BuildString, "BuildString");
+refalrts::RefalFunction& BuildString = descr_BuildString;
 
 } // unnamed namespace
 
@@ -2277,7 +2289,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoGenResult(
+refalrts::RASLFunction descr_DoGenResult(
   "DoGenResult",
   scope_DoGenResult::raa,
   scope_DoGenResult::functions,
@@ -2285,6 +2297,7 @@ refalrts::RASLFunction DoGenResult(
   scope_DoGenResult::numbers,
   scope_DoGenResult::strings
 );
+refalrts::RefalFunction& DoGenResult = descr_DoGenResult;
 
 } // unnamed namespace
 
@@ -3434,7 +3447,8 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoGenResult(func_DoGenResult, "DoGenResult");
+refalrts::RefalFunction descr_DoGenResult(func_DoGenResult, "DoGenResult");
+refalrts::RefalFunction& DoGenResult = descr_DoGenResult;
 
 } // unnamed namespace
 
@@ -3492,7 +3506,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction MakeVariableCommentTable(
+refalrts::RASLFunction descr_MakeVariableCommentTable(
   "MakeVariableCommentTable",
   scope_MakeVariableCommentTable::raa,
   scope_MakeVariableCommentTable::functions,
@@ -3500,6 +3514,7 @@ refalrts::RASLFunction MakeVariableCommentTable(
   scope_MakeVariableCommentTable::numbers,
   scope_MakeVariableCommentTable::strings
 );
+refalrts::RefalFunction& MakeVariableCommentTable = descr_MakeVariableCommentTable;
 
 } // unnamed namespace
 
@@ -3561,7 +3576,8 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction MakeVariableCommentTable(func_MakeVariableCommentTable, "MakeVariableCommentTable");
+refalrts::RefalFunction descr_MakeVariableCommentTable(func_MakeVariableCommentTable, "MakeVariableCommentTable");
+refalrts::RefalFunction& MakeVariableCommentTable = descr_MakeVariableCommentTable;
 
 } // unnamed namespace
 
@@ -3601,7 +3617,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ReplicateVar_L1(
+refalrts::RASLFunction descr_gen_ReplicateVar_L1(
   "ReplicateVar\\1",
   scope_gen_ReplicateVar_L1::raa,
   scope_gen_ReplicateVar_L1::functions,
@@ -3609,6 +3625,7 @@ refalrts::RASLFunction gen_ReplicateVar_L1(
   scope_gen_ReplicateVar_L1::numbers,
   scope_gen_ReplicateVar_L1::strings
 );
+refalrts::RefalFunction& gen_ReplicateVar_L1 = descr_gen_ReplicateVar_L1;
 
 } // unnamed namespace
 
@@ -3655,7 +3672,8 @@ static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, "ReplicateVar\\1");
+refalrts::RefalFunction descr_gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, "ReplicateVar\\1");
+refalrts::RefalFunction& gen_ReplicateVar_L1 = descr_gen_ReplicateVar_L1;
 
 } // unnamed namespace
 
@@ -3711,7 +3729,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ReplicateVar(
+refalrts::RASLFunction descr_ReplicateVar(
   "ReplicateVar",
   scope_ReplicateVar::raa,
   scope_ReplicateVar::functions,
@@ -3719,6 +3737,7 @@ refalrts::RASLFunction ReplicateVar(
   scope_ReplicateVar::numbers,
   scope_ReplicateVar::strings
 );
+refalrts::RefalFunction& ReplicateVar = descr_ReplicateVar;
 
 } // unnamed namespace
 
@@ -3786,7 +3805,8 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ReplicateVar(func_ReplicateVar, "ReplicateVar");
+refalrts::RefalFunction descr_ReplicateVar(func_ReplicateVar, "ReplicateVar");
+refalrts::RefalFunction& ReplicateVar = descr_ReplicateVar;
 
 } // unnamed namespace
 
@@ -3840,7 +3860,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction MakeVariableComment(
+refalrts::RASLFunction descr_MakeVariableComment(
   "MakeVariableComment",
   scope_MakeVariableComment::raa,
   scope_MakeVariableComment::functions,
@@ -3848,6 +3868,7 @@ refalrts::RASLFunction MakeVariableComment(
   scope_MakeVariableComment::numbers,
   scope_MakeVariableComment::strings
 );
+refalrts::RefalFunction& MakeVariableComment = descr_MakeVariableComment;
 
 } // unnamed namespace
 
@@ -3905,7 +3926,8 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction MakeVariableComment(func_MakeVariableComment, "MakeVariableComment");
+refalrts::RefalFunction descr_MakeVariableComment(func_MakeVariableComment, "MakeVariableComment");
+refalrts::RefalFunction& MakeVariableComment = descr_MakeVariableComment;
 
 } // unnamed namespace
 

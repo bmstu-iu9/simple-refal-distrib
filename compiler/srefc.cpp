@@ -82,353 +82,353 @@ struct ident_Success {
   }
 };
 
-extern refalrts::RefalFunction CompileFile;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction ArgList;
-extern refalrts::RefalFunction LoadFile;
-extern refalrts::RefalFunction SaveFile;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction DelAccumulator;
-extern refalrts::RefalFunction MapReduce;
-extern refalrts::RefalFunction WriteLine;
-extern refalrts::RefalFunction System;
-extern refalrts::RefalFunction Exit;
-extern refalrts::RefalFunction StrFromInt;
-extern refalrts::RefalFunction ParseCommandLine;
-extern refalrts::RefalFunction FindFiles;
+extern refalrts::RefalFunction& CompileFile;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& ArgList;
+extern refalrts::RefalFunction& LoadFile;
+extern refalrts::RefalFunction& SaveFile;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& DelAccumulator;
+extern refalrts::RefalFunction& MapReduce;
+extern refalrts::RefalFunction& WriteLine;
+extern refalrts::RefalFunction& System;
+extern refalrts::RefalFunction& Exit;
+extern refalrts::RefalFunction& StrFromInt;
+extern refalrts::RefalFunction& ParseCommandLine;
+extern refalrts::RefalFunction& FindFiles;
 #ifdef INTERPRET
-extern refalrts::RASLFunction Go;
+extern refalrts::RefalFunction& Go;
 #else
-extern refalrts::RefalFunction Go;
+extern refalrts::RefalFunction& Go;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction Main_SwValidCommandLine;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction Main_SwValidCommandLine;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ReportErrors_S1L1;
+extern refalrts::RefalFunction& Main_SwValidCommandLine;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ReportErrors_S1L1;
+extern refalrts::RefalFunction& Main_SwValidCommandLine;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ReportErrors_S2L1;
+extern refalrts::RefalFunction& gen_ReportErrors_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ReportErrors_S2L1;
+extern refalrts::RefalFunction& gen_ReportErrors_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ReportErrors;
+extern refalrts::RefalFunction& gen_ReportErrors_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ReportErrors;
+extern refalrts::RefalFunction& gen_ReportErrors_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CreateErrorFileMark;
+extern refalrts::RefalFunction& ReportErrors;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CreateErrorFileMark;
+extern refalrts::RefalFunction& ReportErrors;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Main_SwFoundFiles_S1L1;
+extern refalrts::RefalFunction& CreateErrorFileMark;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Main_SwFoundFiles_S1L1;
+extern refalrts::RefalFunction& CreateErrorFileMark;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main_SwFoundFiles;
+extern refalrts::RefalFunction& gen_Main_SwFoundFiles_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main_SwFoundFiles;
+extern refalrts::RefalFunction& gen_Main_SwFoundFiles_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Main_SwRenamedTargets_S1L1;
+extern refalrts::RefalFunction& Main_SwFoundFiles;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Main_SwRenamedTargets_S1L1;
+extern refalrts::RefalFunction& Main_SwFoundFiles;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main_SwRenamedTargets;
+extern refalrts::RefalFunction& gen_Main_SwRenamedTargets_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main_SwRenamedTargets;
+extern refalrts::RefalFunction& gen_Main_SwRenamedTargets_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main_SwCompiledFiles;
+extern refalrts::RefalFunction& Main_SwRenamedTargets;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main_SwCompiledFiles;
+extern refalrts::RefalFunction& Main_SwRenamedTargets;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_LookupSourceFiles_L1L1;
+extern refalrts::RefalFunction& Main_SwCompiledFiles;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_LookupSourceFiles_L1L1;
+extern refalrts::RefalFunction& Main_SwCompiledFiles;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_LookupSourceFiles_L1;
+extern refalrts::RefalFunction& gen_LookupSourceFiles_L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_LookupSourceFiles_L1;
+extern refalrts::RefalFunction& gen_LookupSourceFiles_L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction LookupSourceFiles;
+extern refalrts::RefalFunction& gen_LookupSourceFiles_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction LookupSourceFiles;
+extern refalrts::RefalFunction& gen_LookupSourceFiles_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RenameTargets;
+extern refalrts::RefalFunction& LookupSourceFiles;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RenameTargets;
+extern refalrts::RefalFunction& LookupSourceFiles;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction GetFileName;
+extern refalrts::RefalFunction& RenameTargets;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction GetFileName;
+extern refalrts::RefalFunction& RenameTargets;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ScanCollisions;
+extern refalrts::RefalFunction& GetFileName;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ScanCollisions;
+extern refalrts::RefalFunction& GetFileName;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RenameLocations;
+extern refalrts::RefalFunction& ScanCollisions;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RenameLocations;
+extern refalrts::RefalFunction& ScanCollisions;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RenameLocations_Aux_L1;
+extern refalrts::RefalFunction& RenameLocations;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RenameLocations_Aux_L1;
+extern refalrts::RefalFunction& RenameLocations;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RenameLocations_Aux;
+extern refalrts::RefalFunction& gen_RenameLocations_Aux_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RenameLocations_Aux;
+extern refalrts::RefalFunction& gen_RenameLocations_Aux_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CompileFiles_L1S2L1;
+extern refalrts::RefalFunction& RenameLocations_Aux;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CompileFiles_L1S2L1;
+extern refalrts::RefalFunction& RenameLocations_Aux;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CompileFiles_L1;
+extern refalrts::RefalFunction& gen_CompileFiles_L1S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CompileFiles_L1;
+extern refalrts::RefalFunction& gen_CompileFiles_L1S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CompileFiles;
+extern refalrts::RefalFunction& gen_CompileFiles_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CompileFiles;
+extern refalrts::RefalFunction& gen_CompileFiles_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Link_S2L1;
+extern refalrts::RefalFunction& CompileFiles;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Link_S2L1;
+extern refalrts::RefalFunction& CompileFiles;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Link;
+extern refalrts::RefalFunction& gen_Link_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Link;
+extern refalrts::RefalFunction& gen_Link_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction GetBaseNameLowerCase;
+extern refalrts::RefalFunction& Link;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction GetBaseNameLowerCase;
+extern refalrts::RefalFunction& Link;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoGetFileName;
+extern refalrts::RefalFunction& GetBaseNameLowerCase;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoGetFileName;
+extern refalrts::RefalFunction& GetBaseNameLowerCase;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Lower_L1S1L1;
+extern refalrts::RefalFunction& DoGetFileName;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Lower_L1S1L1;
+extern refalrts::RefalFunction& DoGetFileName;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Lower_L1;
+extern refalrts::RefalFunction& gen_Lower_L1S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Lower_L1;
+extern refalrts::RefalFunction& gen_Lower_L1S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Lower;
+extern refalrts::RefalFunction& gen_Lower_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Lower;
+extern refalrts::RefalFunction& gen_Lower_L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Lower;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Lower;
 } // unnamed namespace
 
 #endif
@@ -470,7 +470,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Go(
+refalrts::RASLFunction descr_Go(
   "Go",
   scope_Go::raa,
   scope_Go::functions,
@@ -478,6 +478,7 @@ refalrts::RASLFunction Go(
   scope_Go::numbers,
   scope_Go::strings
 );
+refalrts::RefalFunction& Go = descr_Go;
 
 #else
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -517,7 +518,8 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Go(func_Go, "Go");
+refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalFunction& Go = descr_Go;
 
 #endif
 #ifdef INTERPRET
@@ -608,7 +610,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main(
+refalrts::RASLFunction descr_Main(
   "Main",
   scope_Main::raa,
   scope_Main::functions,
@@ -616,6 +618,7 @@ refalrts::RASLFunction Main(
   scope_Main::numbers,
   scope_Main::strings
 );
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -727,7 +730,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main(func_Main, "Main");
+refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -808,7 +812,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main_SwValidCommandLine(
+refalrts::RASLFunction descr_Main_SwValidCommandLine(
   "Main-SwValidCommandLine",
   scope_Main_SwValidCommandLine::raa,
   scope_Main_SwValidCommandLine::functions,
@@ -816,6 +820,7 @@ refalrts::RASLFunction Main_SwValidCommandLine(
   scope_Main_SwValidCommandLine::numbers,
   scope_Main_SwValidCommandLine::strings
 );
+refalrts::RefalFunction& Main_SwValidCommandLine = descr_Main_SwValidCommandLine;
 
 } // unnamed namespace
 
@@ -909,7 +914,8 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main_SwValidCommandLine(func_Main_SwValidCommandLine, "Main-SwValidCommandLine");
+refalrts::RefalFunction descr_Main_SwValidCommandLine(func_Main_SwValidCommandLine, "Main-SwValidCommandLine");
+refalrts::RefalFunction& Main_SwValidCommandLine = descr_Main_SwValidCommandLine;
 
 } // unnamed namespace
 
@@ -968,7 +974,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ReportErrors_S1L1(
+refalrts::RASLFunction descr_gen_ReportErrors_S1L1(
   "ReportErrors$1\\1",
   scope_gen_ReportErrors_S1L1::raa,
   scope_gen_ReportErrors_S1L1::functions,
@@ -976,6 +982,7 @@ refalrts::RASLFunction gen_ReportErrors_S1L1(
   scope_gen_ReportErrors_S1L1::numbers,
   scope_gen_ReportErrors_S1L1::strings
 );
+refalrts::RefalFunction& gen_ReportErrors_S1L1 = descr_gen_ReportErrors_S1L1;
 
 } // unnamed namespace
 
@@ -1039,7 +1046,8 @@ static refalrts::FnResult func_gen_ReportErrors_S1L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ReportErrors_S1L1(func_gen_ReportErrors_S1L1, "ReportErrors$1\\1");
+refalrts::RefalFunction descr_gen_ReportErrors_S1L1(func_gen_ReportErrors_S1L1, "ReportErrors$1\\1");
+refalrts::RefalFunction& gen_ReportErrors_S1L1 = descr_gen_ReportErrors_S1L1;
 
 } // unnamed namespace
 
@@ -1097,7 +1105,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ReportErrors_S2L1(
+refalrts::RASLFunction descr_gen_ReportErrors_S2L1(
   "ReportErrors$2\\1",
   scope_gen_ReportErrors_S2L1::raa,
   scope_gen_ReportErrors_S2L1::functions,
@@ -1105,6 +1113,7 @@ refalrts::RASLFunction gen_ReportErrors_S2L1(
   scope_gen_ReportErrors_S2L1::numbers,
   scope_gen_ReportErrors_S2L1::strings
 );
+refalrts::RefalFunction& gen_ReportErrors_S2L1 = descr_gen_ReportErrors_S2L1;
 
 } // unnamed namespace
 
@@ -1170,7 +1179,8 @@ static refalrts::FnResult func_gen_ReportErrors_S2L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ReportErrors_S2L1(func_gen_ReportErrors_S2L1, "ReportErrors$2\\1");
+refalrts::RefalFunction descr_gen_ReportErrors_S2L1(func_gen_ReportErrors_S2L1, "ReportErrors$2\\1");
+refalrts::RefalFunction& gen_ReportErrors_S2L1 = descr_gen_ReportErrors_S2L1;
 
 } // unnamed namespace
 
@@ -1277,7 +1287,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ReportErrors(
+refalrts::RASLFunction descr_ReportErrors(
   "ReportErrors",
   scope_ReportErrors::raa,
   scope_ReportErrors::functions,
@@ -1285,6 +1295,7 @@ refalrts::RASLFunction ReportErrors(
   scope_ReportErrors::numbers,
   scope_ReportErrors::strings
 );
+refalrts::RefalFunction& ReportErrors = descr_ReportErrors;
 
 } // unnamed namespace
 
@@ -1413,7 +1424,8 @@ static refalrts::FnResult func_ReportErrors(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ReportErrors(func_ReportErrors, "ReportErrors");
+refalrts::RefalFunction descr_ReportErrors(func_ReportErrors, "ReportErrors");
+refalrts::RefalFunction& ReportErrors = descr_ReportErrors;
 
 } // unnamed namespace
 
@@ -1474,7 +1486,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CreateErrorFileMark(
+refalrts::RASLFunction descr_CreateErrorFileMark(
   "CreateErrorFileMark",
   scope_CreateErrorFileMark::raa,
   scope_CreateErrorFileMark::functions,
@@ -1482,6 +1494,7 @@ refalrts::RASLFunction CreateErrorFileMark(
   scope_CreateErrorFileMark::numbers,
   scope_CreateErrorFileMark::strings
 );
+refalrts::RefalFunction& CreateErrorFileMark = descr_CreateErrorFileMark;
 
 } // unnamed namespace
 
@@ -1551,7 +1564,8 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CreateErrorFileMark(func_CreateErrorFileMark, "CreateErrorFileMark");
+refalrts::RefalFunction descr_CreateErrorFileMark(func_CreateErrorFileMark, "CreateErrorFileMark");
+refalrts::RefalFunction& CreateErrorFileMark = descr_CreateErrorFileMark;
 
 } // unnamed namespace
 
@@ -1638,7 +1652,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Main_SwFoundFiles_S1L1(
+refalrts::RASLFunction descr_gen_Main_SwFoundFiles_S1L1(
   "Main-SwFoundFiles$1\\1",
   scope_gen_Main_SwFoundFiles_S1L1::raa,
   scope_gen_Main_SwFoundFiles_S1L1::functions,
@@ -1646,6 +1660,7 @@ refalrts::RASLFunction gen_Main_SwFoundFiles_S1L1(
   scope_gen_Main_SwFoundFiles_S1L1::numbers,
   scope_gen_Main_SwFoundFiles_S1L1::strings
 );
+refalrts::RefalFunction& gen_Main_SwFoundFiles_S1L1 = descr_gen_Main_SwFoundFiles_S1L1;
 
 } // unnamed namespace
 
@@ -1758,7 +1773,8 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Main_SwFoundFiles_S1L1(func_gen_Main_SwFoundFiles_S1L1, "Main-SwFoundFiles$1\\1");
+refalrts::RefalFunction descr_gen_Main_SwFoundFiles_S1L1(func_gen_Main_SwFoundFiles_S1L1, "Main-SwFoundFiles$1\\1");
+refalrts::RefalFunction& gen_Main_SwFoundFiles_S1L1 = descr_gen_Main_SwFoundFiles_S1L1;
 
 } // unnamed namespace
 
@@ -1851,7 +1867,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main_SwFoundFiles(
+refalrts::RASLFunction descr_Main_SwFoundFiles(
   "Main-SwFoundFiles",
   scope_Main_SwFoundFiles::raa,
   scope_Main_SwFoundFiles::functions,
@@ -1859,6 +1875,7 @@ refalrts::RASLFunction Main_SwFoundFiles(
   scope_Main_SwFoundFiles::numbers,
   scope_Main_SwFoundFiles::strings
 );
+refalrts::RefalFunction& Main_SwFoundFiles = descr_Main_SwFoundFiles;
 
 } // unnamed namespace
 
@@ -1977,7 +1994,8 @@ static refalrts::FnResult func_Main_SwFoundFiles(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main_SwFoundFiles(func_Main_SwFoundFiles, "Main-SwFoundFiles");
+refalrts::RefalFunction descr_Main_SwFoundFiles(func_Main_SwFoundFiles, "Main-SwFoundFiles");
+refalrts::RefalFunction& Main_SwFoundFiles = descr_Main_SwFoundFiles;
 
 } // unnamed namespace
 
@@ -2073,7 +2091,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Main_SwRenamedTargets_S1L1(
+refalrts::RASLFunction descr_gen_Main_SwRenamedTargets_S1L1(
   "Main-SwRenamedTargets$1\\1",
   scope_gen_Main_SwRenamedTargets_S1L1::raa,
   scope_gen_Main_SwRenamedTargets_S1L1::functions,
@@ -2081,6 +2099,7 @@ refalrts::RASLFunction gen_Main_SwRenamedTargets_S1L1(
   scope_gen_Main_SwRenamedTargets_S1L1::numbers,
   scope_gen_Main_SwRenamedTargets_S1L1::strings
 );
+refalrts::RefalFunction& gen_Main_SwRenamedTargets_S1L1 = descr_gen_Main_SwRenamedTargets_S1L1;
 
 } // unnamed namespace
 
@@ -2207,7 +2226,8 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Main_SwRenamedTargets_S1L1(func_gen_Main_SwRenamedTargets_S1L1, "Main-SwRenamedTargets$1\\1");
+refalrts::RefalFunction descr_gen_Main_SwRenamedTargets_S1L1(func_gen_Main_SwRenamedTargets_S1L1, "Main-SwRenamedTargets$1\\1");
+refalrts::RefalFunction& gen_Main_SwRenamedTargets_S1L1 = descr_gen_Main_SwRenamedTargets_S1L1;
 
 } // unnamed namespace
 
@@ -2303,7 +2323,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main_SwRenamedTargets(
+refalrts::RASLFunction descr_Main_SwRenamedTargets(
   "Main-SwRenamedTargets",
   scope_Main_SwRenamedTargets::raa,
   scope_Main_SwRenamedTargets::functions,
@@ -2311,6 +2331,7 @@ refalrts::RASLFunction Main_SwRenamedTargets(
   scope_Main_SwRenamedTargets::numbers,
   scope_Main_SwRenamedTargets::strings
 );
+refalrts::RefalFunction& Main_SwRenamedTargets = descr_Main_SwRenamedTargets;
 
 } // unnamed namespace
 
@@ -2431,7 +2452,8 @@ static refalrts::FnResult func_Main_SwRenamedTargets(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main_SwRenamedTargets(func_Main_SwRenamedTargets, "Main-SwRenamedTargets");
+refalrts::RefalFunction descr_Main_SwRenamedTargets(func_Main_SwRenamedTargets, "Main-SwRenamedTargets");
+refalrts::RefalFunction& Main_SwRenamedTargets = descr_Main_SwRenamedTargets;
 
 } // unnamed namespace
 
@@ -2518,7 +2540,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main_SwCompiledFiles(
+refalrts::RASLFunction descr_Main_SwCompiledFiles(
   "Main-SwCompiledFiles",
   scope_Main_SwCompiledFiles::raa,
   scope_Main_SwCompiledFiles::functions,
@@ -2526,6 +2548,7 @@ refalrts::RASLFunction Main_SwCompiledFiles(
   scope_Main_SwCompiledFiles::numbers,
   scope_Main_SwCompiledFiles::strings
 );
+refalrts::RefalFunction& Main_SwCompiledFiles = descr_Main_SwCompiledFiles;
 
 } // unnamed namespace
 
@@ -2626,7 +2649,8 @@ static refalrts::FnResult func_Main_SwCompiledFiles(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main_SwCompiledFiles(func_Main_SwCompiledFiles, "Main-SwCompiledFiles");
+refalrts::RefalFunction descr_Main_SwCompiledFiles(func_Main_SwCompiledFiles, "Main-SwCompiledFiles");
+refalrts::RefalFunction& Main_SwCompiledFiles = descr_Main_SwCompiledFiles;
 
 } // unnamed namespace
 
@@ -2665,7 +2689,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_LookupSourceFiles_L1L1(
+refalrts::RASLFunction descr_gen_LookupSourceFiles_L1L1(
   "LookupSourceFiles\\1\\1",
   scope_gen_LookupSourceFiles_L1L1::raa,
   scope_gen_LookupSourceFiles_L1L1::functions,
@@ -2673,6 +2697,7 @@ refalrts::RASLFunction gen_LookupSourceFiles_L1L1(
   scope_gen_LookupSourceFiles_L1L1::numbers,
   scope_gen_LookupSourceFiles_L1L1::strings
 );
+refalrts::RefalFunction& gen_LookupSourceFiles_L1L1 = descr_gen_LookupSourceFiles_L1L1;
 
 } // unnamed namespace
 
@@ -2718,7 +2743,8 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_LookupSourceFiles_L1L1(func_gen_LookupSourceFiles_L1L1, "LookupSourceFiles\\1\\1");
+refalrts::RefalFunction descr_gen_LookupSourceFiles_L1L1(func_gen_LookupSourceFiles_L1L1, "LookupSourceFiles\\1\\1");
+refalrts::RefalFunction& gen_LookupSourceFiles_L1L1 = descr_gen_LookupSourceFiles_L1L1;
 
 } // unnamed namespace
 
@@ -2780,7 +2806,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_LookupSourceFiles_L1(
+refalrts::RASLFunction descr_gen_LookupSourceFiles_L1(
   "LookupSourceFiles\\1",
   scope_gen_LookupSourceFiles_L1::raa,
   scope_gen_LookupSourceFiles_L1::functions,
@@ -2788,6 +2814,7 @@ refalrts::RASLFunction gen_LookupSourceFiles_L1(
   scope_gen_LookupSourceFiles_L1::numbers,
   scope_gen_LookupSourceFiles_L1::strings
 );
+refalrts::RefalFunction& gen_LookupSourceFiles_L1 = descr_gen_LookupSourceFiles_L1;
 
 } // unnamed namespace
 
@@ -2862,7 +2889,8 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_LookupSourceFiles_L1(func_gen_LookupSourceFiles_L1, "LookupSourceFiles\\1");
+refalrts::RefalFunction descr_gen_LookupSourceFiles_L1(func_gen_LookupSourceFiles_L1, "LookupSourceFiles\\1");
+refalrts::RefalFunction& gen_LookupSourceFiles_L1 = descr_gen_LookupSourceFiles_L1;
 
 } // unnamed namespace
 
@@ -2913,7 +2941,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction LookupSourceFiles(
+refalrts::RASLFunction descr_LookupSourceFiles(
   "LookupSourceFiles",
   scope_LookupSourceFiles::raa,
   scope_LookupSourceFiles::functions,
@@ -2921,6 +2949,7 @@ refalrts::RASLFunction LookupSourceFiles(
   scope_LookupSourceFiles::numbers,
   scope_LookupSourceFiles::strings
 );
+refalrts::RefalFunction& LookupSourceFiles = descr_LookupSourceFiles;
 
 } // unnamed namespace
 
@@ -2975,7 +3004,8 @@ static refalrts::FnResult func_LookupSourceFiles(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction LookupSourceFiles(func_LookupSourceFiles, "LookupSourceFiles");
+refalrts::RefalFunction descr_LookupSourceFiles(func_LookupSourceFiles, "LookupSourceFiles");
+refalrts::RefalFunction& LookupSourceFiles = descr_LookupSourceFiles;
 
 } // unnamed namespace
 
@@ -3045,7 +3075,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RenameTargets(
+refalrts::RASLFunction descr_RenameTargets(
   "RenameTargets",
   scope_RenameTargets::raa,
   scope_RenameTargets::functions,
@@ -3053,6 +3083,7 @@ refalrts::RASLFunction RenameTargets(
   scope_RenameTargets::numbers,
   scope_RenameTargets::strings
 );
+refalrts::RefalFunction& RenameTargets = descr_RenameTargets;
 
 } // unnamed namespace
 
@@ -3129,7 +3160,8 @@ static refalrts::FnResult func_RenameTargets(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RenameTargets(func_RenameTargets, "RenameTargets");
+refalrts::RefalFunction descr_RenameTargets(func_RenameTargets, "RenameTargets");
+refalrts::RefalFunction& RenameTargets = descr_RenameTargets;
 
 } // unnamed namespace
 
@@ -3218,7 +3250,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GetFileName(
+refalrts::RASLFunction descr_GetFileName(
   "GetFileName",
   scope_GetFileName::raa,
   scope_GetFileName::functions,
@@ -3226,6 +3258,7 @@ refalrts::RASLFunction GetFileName(
   scope_GetFileName::numbers,
   scope_GetFileName::strings
 );
+refalrts::RefalFunction& GetFileName = descr_GetFileName;
 
 } // unnamed namespace
 
@@ -3339,7 +3372,8 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GetFileName(func_GetFileName, "GetFileName");
+refalrts::RefalFunction descr_GetFileName(func_GetFileName, "GetFileName");
+refalrts::RefalFunction& GetFileName = descr_GetFileName;
 
 } // unnamed namespace
 
@@ -3435,7 +3469,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ScanCollisions(
+refalrts::RASLFunction descr_ScanCollisions(
   "ScanCollisions",
   scope_ScanCollisions::raa,
   scope_ScanCollisions::functions,
@@ -3443,6 +3477,7 @@ refalrts::RASLFunction ScanCollisions(
   scope_ScanCollisions::numbers,
   scope_ScanCollisions::strings
 );
+refalrts::RefalFunction& ScanCollisions = descr_ScanCollisions;
 
 } // unnamed namespace
 
@@ -3586,7 +3621,8 @@ static refalrts::FnResult func_ScanCollisions(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ScanCollisions(func_ScanCollisions, "ScanCollisions");
+refalrts::RefalFunction descr_ScanCollisions(func_ScanCollisions, "ScanCollisions");
+refalrts::RefalFunction& ScanCollisions = descr_ScanCollisions;
 
 } // unnamed namespace
 
@@ -3690,7 +3726,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RenameLocations(
+refalrts::RASLFunction descr_RenameLocations(
   "RenameLocations",
   scope_RenameLocations::raa,
   scope_RenameLocations::functions,
@@ -3698,6 +3734,7 @@ refalrts::RASLFunction RenameLocations(
   scope_RenameLocations::numbers,
   scope_RenameLocations::strings
 );
+refalrts::RefalFunction& RenameLocations = descr_RenameLocations;
 
 } // unnamed namespace
 
@@ -3848,7 +3885,8 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RenameLocations(func_RenameLocations, "RenameLocations");
+refalrts::RefalFunction descr_RenameLocations(func_RenameLocations, "RenameLocations");
+refalrts::RefalFunction& RenameLocations = descr_RenameLocations;
 
 } // unnamed namespace
 
@@ -3956,7 +3994,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RenameLocations_Aux_L1(
+refalrts::RASLFunction descr_gen_RenameLocations_Aux_L1(
   "RenameLocations-Aux\\1",
   scope_gen_RenameLocations_Aux_L1::raa,
   scope_gen_RenameLocations_Aux_L1::functions,
@@ -3964,6 +4002,7 @@ refalrts::RASLFunction gen_RenameLocations_Aux_L1(
   scope_gen_RenameLocations_Aux_L1::numbers,
   scope_gen_RenameLocations_Aux_L1::strings
 );
+refalrts::RefalFunction& gen_RenameLocations_Aux_L1 = descr_gen_RenameLocations_Aux_L1;
 
 } // unnamed namespace
 
@@ -4111,7 +4150,8 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RenameLocations_Aux_L1(func_gen_RenameLocations_Aux_L1, "RenameLocations-Aux\\1");
+refalrts::RefalFunction descr_gen_RenameLocations_Aux_L1(func_gen_RenameLocations_Aux_L1, "RenameLocations-Aux\\1");
+refalrts::RefalFunction& gen_RenameLocations_Aux_L1 = descr_gen_RenameLocations_Aux_L1;
 
 } // unnamed namespace
 
@@ -4159,7 +4199,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RenameLocations_Aux(
+refalrts::RASLFunction descr_RenameLocations_Aux(
   "RenameLocations-Aux",
   scope_RenameLocations_Aux::raa,
   scope_RenameLocations_Aux::functions,
@@ -4167,6 +4207,7 @@ refalrts::RASLFunction RenameLocations_Aux(
   scope_RenameLocations_Aux::numbers,
   scope_RenameLocations_Aux::strings
 );
+refalrts::RefalFunction& RenameLocations_Aux = descr_RenameLocations_Aux;
 
 } // unnamed namespace
 
@@ -4214,7 +4255,8 @@ static refalrts::FnResult func_RenameLocations_Aux(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RenameLocations_Aux(func_RenameLocations_Aux, "RenameLocations-Aux");
+refalrts::RefalFunction descr_RenameLocations_Aux(func_RenameLocations_Aux, "RenameLocations-Aux");
+refalrts::RefalFunction& RenameLocations_Aux = descr_RenameLocations_Aux;
 
 } // unnamed namespace
 
@@ -4271,7 +4313,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CompileFiles_L1S2L1(
+refalrts::RASLFunction descr_gen_CompileFiles_L1S2L1(
   "CompileFiles\\1$2\\1",
   scope_gen_CompileFiles_L1S2L1::raa,
   scope_gen_CompileFiles_L1S2L1::functions,
@@ -4279,6 +4321,7 @@ refalrts::RASLFunction gen_CompileFiles_L1S2L1(
   scope_gen_CompileFiles_L1S2L1::numbers,
   scope_gen_CompileFiles_L1S2L1::strings
 );
+refalrts::RefalFunction& gen_CompileFiles_L1S2L1 = descr_gen_CompileFiles_L1S2L1;
 
 } // unnamed namespace
 
@@ -4341,7 +4384,8 @@ static refalrts::FnResult func_gen_CompileFiles_L1S2L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CompileFiles_L1S2L1(func_gen_CompileFiles_L1S2L1, "CompileFiles\\1$2\\1");
+refalrts::RefalFunction descr_gen_CompileFiles_L1S2L1(func_gen_CompileFiles_L1S2L1, "CompileFiles\\1$2\\1");
+refalrts::RefalFunction& gen_CompileFiles_L1S2L1 = descr_gen_CompileFiles_L1S2L1;
 
 } // unnamed namespace
 
@@ -4453,7 +4497,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CompileFiles_L1(
+refalrts::RASLFunction descr_gen_CompileFiles_L1(
   "CompileFiles\\1",
   scope_gen_CompileFiles_L1::raa,
   scope_gen_CompileFiles_L1::functions,
@@ -4461,6 +4505,7 @@ refalrts::RASLFunction gen_CompileFiles_L1(
   scope_gen_CompileFiles_L1::numbers,
   scope_gen_CompileFiles_L1::strings
 );
+refalrts::RefalFunction& gen_CompileFiles_L1 = descr_gen_CompileFiles_L1;
 
 } // unnamed namespace
 
@@ -4595,7 +4640,8 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CompileFiles_L1(func_gen_CompileFiles_L1, "CompileFiles\\1");
+refalrts::RefalFunction descr_gen_CompileFiles_L1(func_gen_CompileFiles_L1, "CompileFiles\\1");
+refalrts::RefalFunction& gen_CompileFiles_L1 = descr_gen_CompileFiles_L1;
 
 } // unnamed namespace
 
@@ -4645,7 +4691,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CompileFiles(
+refalrts::RASLFunction descr_CompileFiles(
   "CompileFiles",
   scope_CompileFiles::raa,
   scope_CompileFiles::functions,
@@ -4653,6 +4699,7 @@ refalrts::RASLFunction CompileFiles(
   scope_CompileFiles::numbers,
   scope_CompileFiles::strings
 );
+refalrts::RefalFunction& CompileFiles = descr_CompileFiles;
 
 } // unnamed namespace
 
@@ -4703,7 +4750,8 @@ static refalrts::FnResult func_CompileFiles(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CompileFiles(func_CompileFiles, "CompileFiles");
+refalrts::RefalFunction descr_CompileFiles(func_CompileFiles, "CompileFiles");
+refalrts::RefalFunction& CompileFiles = descr_CompileFiles;
 
 } // unnamed namespace
 
@@ -4740,7 +4788,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Link_S2L1(
+refalrts::RASLFunction descr_gen_Link_S2L1(
   "Link$2\\1",
   scope_gen_Link_S2L1::raa,
   scope_gen_Link_S2L1::functions,
@@ -4748,6 +4796,7 @@ refalrts::RASLFunction gen_Link_S2L1(
   scope_gen_Link_S2L1::numbers,
   scope_gen_Link_S2L1::strings
 );
+refalrts::RefalFunction& gen_Link_S2L1 = descr_gen_Link_S2L1;
 
 } // unnamed namespace
 
@@ -4789,7 +4838,8 @@ static refalrts::FnResult func_gen_Link_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Link_S2L1(func_gen_Link_S2L1, "Link$2\\1");
+refalrts::RefalFunction descr_gen_Link_S2L1(func_gen_Link_S2L1, "Link$2\\1");
+refalrts::RefalFunction& gen_Link_S2L1 = descr_gen_Link_S2L1;
 
 } // unnamed namespace
 
@@ -4859,7 +4909,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Link(
+refalrts::RASLFunction descr_Link(
   "Link",
   scope_Link::raa,
   scope_Link::functions,
@@ -4867,6 +4917,7 @@ refalrts::RASLFunction Link(
   scope_Link::numbers,
   scope_Link::strings
 );
+refalrts::RefalFunction& Link = descr_Link;
 
 } // unnamed namespace
 
@@ -4943,7 +4994,8 @@ static refalrts::FnResult func_Link(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Link(func_Link, "Link");
+refalrts::RefalFunction descr_Link(func_Link, "Link");
+refalrts::RefalFunction& Link = descr_Link;
 
 } // unnamed namespace
 
@@ -4984,7 +5036,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GetBaseNameLowerCase(
+refalrts::RASLFunction descr_GetBaseNameLowerCase(
   "GetBaseNameLowerCase",
   scope_GetBaseNameLowerCase::raa,
   scope_GetBaseNameLowerCase::functions,
@@ -4992,6 +5044,7 @@ refalrts::RASLFunction GetBaseNameLowerCase(
   scope_GetBaseNameLowerCase::numbers,
   scope_GetBaseNameLowerCase::strings
 );
+refalrts::RefalFunction& GetBaseNameLowerCase = descr_GetBaseNameLowerCase;
 
 } // unnamed namespace
 
@@ -5037,7 +5090,8 @@ static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GetBaseNameLowerCase(func_GetBaseNameLowerCase, "GetBaseNameLowerCase");
+refalrts::RefalFunction descr_GetBaseNameLowerCase(func_GetBaseNameLowerCase, "GetBaseNameLowerCase");
+refalrts::RefalFunction& GetBaseNameLowerCase = descr_GetBaseNameLowerCase;
 
 } // unnamed namespace
 
@@ -5120,7 +5174,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoGetFileName(
+refalrts::RASLFunction descr_DoGetFileName(
   "DoGetFileName",
   scope_DoGetFileName::raa,
   scope_DoGetFileName::functions,
@@ -5128,6 +5182,7 @@ refalrts::RASLFunction DoGetFileName(
   scope_DoGetFileName::numbers,
   scope_DoGetFileName::strings
 );
+refalrts::RefalFunction& DoGetFileName = descr_DoGetFileName;
 
 } // unnamed namespace
 
@@ -5239,7 +5294,8 @@ static refalrts::FnResult func_DoGetFileName(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoGetFileName(func_DoGetFileName, "DoGetFileName");
+refalrts::RefalFunction descr_DoGetFileName(func_DoGetFileName, "DoGetFileName");
+refalrts::RefalFunction& DoGetFileName = descr_DoGetFileName;
 
 } // unnamed namespace
 
@@ -5279,7 +5335,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Lower_L1S1L1(
+refalrts::RASLFunction descr_gen_Lower_L1S1L1(
   "Lower\\1$1\\1",
   scope_gen_Lower_L1S1L1::raa,
   scope_gen_Lower_L1S1L1::functions,
@@ -5287,6 +5343,7 @@ refalrts::RASLFunction gen_Lower_L1S1L1(
   scope_gen_Lower_L1S1L1::numbers,
   scope_gen_Lower_L1S1L1::strings
 );
+refalrts::RefalFunction& gen_Lower_L1S1L1 = descr_gen_Lower_L1S1L1;
 
 } // unnamed namespace
 
@@ -5331,7 +5388,8 @@ static refalrts::FnResult func_gen_Lower_L1S1L1(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Lower_L1S1L1(func_gen_Lower_L1S1L1, "Lower\\1$1\\1");
+refalrts::RefalFunction descr_gen_Lower_L1S1L1(func_gen_Lower_L1S1L1, "Lower\\1$1\\1");
+refalrts::RefalFunction& gen_Lower_L1S1L1 = descr_gen_Lower_L1S1L1;
 
 } // unnamed namespace
 
@@ -5404,7 +5462,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Lower_L1(
+refalrts::RASLFunction descr_gen_Lower_L1(
   "Lower\\1",
   scope_gen_Lower_L1::raa,
   scope_gen_Lower_L1::functions,
@@ -5412,6 +5470,7 @@ refalrts::RASLFunction gen_Lower_L1(
   scope_gen_Lower_L1::numbers,
   scope_gen_Lower_L1::strings
 );
+refalrts::RefalFunction& gen_Lower_L1 = descr_gen_Lower_L1;
 
 } // unnamed namespace
 
@@ -5495,7 +5554,8 @@ static refalrts::FnResult func_gen_Lower_L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Lower_L1(func_gen_Lower_L1, "Lower\\1");
+refalrts::RefalFunction descr_gen_Lower_L1(func_gen_Lower_L1, "Lower\\1");
+refalrts::RefalFunction& gen_Lower_L1 = descr_gen_Lower_L1;
 
 } // unnamed namespace
 
@@ -5546,7 +5606,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Lower(
+refalrts::RASLFunction descr_Lower(
   "Lower",
   scope_Lower::raa,
   scope_Lower::functions,
@@ -5554,6 +5614,7 @@ refalrts::RASLFunction Lower(
   scope_Lower::numbers,
   scope_Lower::strings
 );
+refalrts::RefalFunction& Lower = descr_Lower;
 
 } // unnamed namespace
 
@@ -5604,7 +5665,8 @@ static refalrts::FnResult func_Lower(refalrts::Iter arg_begin, refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Lower(func_Lower, "Lower");
+refalrts::RefalFunction descr_Lower(func_Lower, "Lower");
+refalrts::RefalFunction& Lower = descr_Lower;
 
 } // unnamed namespace
 

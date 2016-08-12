@@ -66,184 +66,184 @@ struct ident_T {
   }
 };
 
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction Dec;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& Dec;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction UnBracketAndNum;
+extern refalrts::RefalFunction& UnBracketAndNum;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction UnBracketAndNum;
+extern refalrts::RefalFunction& UnBracketAndNum;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction UnBracketInBrackets;
+extern refalrts::RefalFunction& UnBracketInBrackets;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction UnBracketInBrackets;
+extern refalrts::RefalFunction& UnBracketInBrackets;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_PreparePatternsFastGen_Aux_L1;
+extern refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_PreparePatternsFastGen_Aux_L1;
+extern refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction PreparePatternsFastGen_Aux;
+extern refalrts::RefalFunction& PreparePatternsFastGen_Aux;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction PreparePatternsFastGen_Aux;
+extern refalrts::RefalFunction& PreparePatternsFastGen_Aux;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_PreparePatternsFastGen_L1;
+extern refalrts::RefalFunction& gen_PreparePatternsFastGen_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_PreparePatternsFastGen_L1;
+extern refalrts::RefalFunction& gen_PreparePatternsFastGen_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction PreparePatternsFastGen;
+extern refalrts::RefalFunction& PreparePatternsFastGen;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction PreparePatternsFastGen;
+extern refalrts::RefalFunction& PreparePatternsFastGen;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction SplitReps_Aux;
+extern refalrts::RefalFunction& SplitReps_Aux;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction SplitReps_Aux;
+extern refalrts::RefalFunction& SplitReps_Aux;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_SplitReps_Brackets_L1;
+extern refalrts::RefalFunction& gen_SplitReps_Brackets_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_SplitReps_Brackets_L1;
+extern refalrts::RefalFunction& gen_SplitReps_Brackets_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction SplitReps_Brackets;
+extern refalrts::RefalFunction& SplitReps_Brackets;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction SplitReps_Brackets;
+extern refalrts::RefalFunction& SplitReps_Brackets;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_SplitReps_L1;
+extern refalrts::RefalFunction& gen_SplitReps_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_SplitReps_L1;
+extern refalrts::RefalFunction& gen_SplitReps_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction SplitReps;
+extern refalrts::RefalFunction& SplitReps;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction SplitReps;
+extern refalrts::RefalFunction& SplitReps;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction FastGen_Terms;
+extern refalrts::RefalFunction& FastGen_Terms;
 #else
-extern refalrts::RefalFunction FastGen_Terms;
+extern refalrts::RefalFunction& FastGen_Terms;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FastGen_MeN;
+extern refalrts::RefalFunction& FastGen_MeN;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FastGen_MeN;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction LengthComp;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction LengthComp;
+extern refalrts::RefalFunction& FastGen_MeN;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FastGen_K;
+extern refalrts::RefalFunction& LengthComp;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FastGen_K;
+extern refalrts::RefalFunction& LengthComp;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FastGen;
+extern refalrts::RefalFunction& FastGen_K;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FastGen;
+extern refalrts::RefalFunction& FastGen_K;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction CreateFastGen;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& FastGen;
+} // unnamed namespace
+
 #else
-extern refalrts::RefalFunction CreateFastGen;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& FastGen;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& CreateFastGen;
+#else
+extern refalrts::RefalFunction& CreateFastGen;
 #endif
 
 #ifdef INTERPRET
@@ -277,7 +277,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction UnBracketAndNum(
+refalrts::RASLFunction descr_UnBracketAndNum(
   "UnBracketAndNum",
   scope_UnBracketAndNum::raa,
   scope_UnBracketAndNum::functions,
@@ -285,6 +285,7 @@ refalrts::RASLFunction UnBracketAndNum(
   scope_UnBracketAndNum::numbers,
   scope_UnBracketAndNum::strings
 );
+refalrts::RefalFunction& UnBracketAndNum = descr_UnBracketAndNum;
 
 } // unnamed namespace
 
@@ -326,7 +327,8 @@ static refalrts::FnResult func_UnBracketAndNum(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction UnBracketAndNum(func_UnBracketAndNum, "UnBracketAndNum");
+refalrts::RefalFunction descr_UnBracketAndNum(func_UnBracketAndNum, "UnBracketAndNum");
+refalrts::RefalFunction& UnBracketAndNum = descr_UnBracketAndNum;
 
 } // unnamed namespace
 
@@ -382,7 +384,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction UnBracketInBrackets(
+refalrts::RASLFunction descr_UnBracketInBrackets(
   "UnBracketInBrackets",
   scope_UnBracketInBrackets::raa,
   scope_UnBracketInBrackets::functions,
@@ -390,6 +392,7 @@ refalrts::RASLFunction UnBracketInBrackets(
   scope_UnBracketInBrackets::numbers,
   scope_UnBracketInBrackets::strings
 );
+refalrts::RefalFunction& UnBracketInBrackets = descr_UnBracketInBrackets;
 
 } // unnamed namespace
 
@@ -465,7 +468,8 @@ static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction UnBracketInBrackets(func_UnBracketInBrackets, "UnBracketInBrackets");
+refalrts::RefalFunction descr_UnBracketInBrackets(func_UnBracketInBrackets, "UnBracketInBrackets");
+refalrts::RefalFunction& UnBracketInBrackets = descr_UnBracketInBrackets;
 
 } // unnamed namespace
 
@@ -583,7 +587,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_PreparePatternsFastGen_Aux_L1(
+refalrts::RASLFunction descr_gen_PreparePatternsFastGen_Aux_L1(
   "PreparePatternsFastGen-Aux\\1",
   scope_gen_PreparePatternsFastGen_Aux_L1::raa,
   scope_gen_PreparePatternsFastGen_Aux_L1::functions,
@@ -591,6 +595,7 @@ refalrts::RASLFunction gen_PreparePatternsFastGen_Aux_L1(
   scope_gen_PreparePatternsFastGen_Aux_L1::numbers,
   scope_gen_PreparePatternsFastGen_Aux_L1::strings
 );
+refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1 = descr_gen_PreparePatternsFastGen_Aux_L1;
 
 } // unnamed namespace
 
@@ -757,7 +762,8 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_PreparePatternsFastGen_Aux_L1(func_gen_PreparePatternsFastGen_Aux_L1, "PreparePatternsFastGen-Aux\\1");
+refalrts::RefalFunction descr_gen_PreparePatternsFastGen_Aux_L1(func_gen_PreparePatternsFastGen_Aux_L1, "PreparePatternsFastGen-Aux\\1");
+refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1 = descr_gen_PreparePatternsFastGen_Aux_L1;
 
 } // unnamed namespace
 
@@ -796,7 +802,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction PreparePatternsFastGen_Aux(
+refalrts::RASLFunction descr_PreparePatternsFastGen_Aux(
   "PreparePatternsFastGen-Aux",
   scope_PreparePatternsFastGen_Aux::raa,
   scope_PreparePatternsFastGen_Aux::functions,
@@ -804,6 +810,7 @@ refalrts::RASLFunction PreparePatternsFastGen_Aux(
   scope_PreparePatternsFastGen_Aux::numbers,
   scope_PreparePatternsFastGen_Aux::strings
 );
+refalrts::RefalFunction& PreparePatternsFastGen_Aux = descr_PreparePatternsFastGen_Aux;
 
 } // unnamed namespace
 
@@ -839,7 +846,8 @@ static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction PreparePatternsFastGen_Aux(func_PreparePatternsFastGen_Aux, "PreparePatternsFastGen-Aux");
+refalrts::RefalFunction descr_PreparePatternsFastGen_Aux(func_PreparePatternsFastGen_Aux, "PreparePatternsFastGen-Aux");
+refalrts::RefalFunction& PreparePatternsFastGen_Aux = descr_PreparePatternsFastGen_Aux;
 
 } // unnamed namespace
 
@@ -880,7 +888,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_PreparePatternsFastGen_L1(
+refalrts::RASLFunction descr_gen_PreparePatternsFastGen_L1(
   "PreparePatternsFastGen\\1",
   scope_gen_PreparePatternsFastGen_L1::raa,
   scope_gen_PreparePatternsFastGen_L1::functions,
@@ -888,6 +896,7 @@ refalrts::RASLFunction gen_PreparePatternsFastGen_L1(
   scope_gen_PreparePatternsFastGen_L1::numbers,
   scope_gen_PreparePatternsFastGen_L1::strings
 );
+refalrts::RefalFunction& gen_PreparePatternsFastGen_L1 = descr_gen_PreparePatternsFastGen_L1;
 
 } // unnamed namespace
 
@@ -928,7 +937,8 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_PreparePatternsFastGen_L1(func_gen_PreparePatternsFastGen_L1, "PreparePatternsFastGen\\1");
+refalrts::RefalFunction descr_gen_PreparePatternsFastGen_L1(func_gen_PreparePatternsFastGen_L1, "PreparePatternsFastGen\\1");
+refalrts::RefalFunction& gen_PreparePatternsFastGen_L1 = descr_gen_PreparePatternsFastGen_L1;
 
 } // unnamed namespace
 
@@ -967,7 +977,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction PreparePatternsFastGen(
+refalrts::RASLFunction descr_PreparePatternsFastGen(
   "PreparePatternsFastGen",
   scope_PreparePatternsFastGen::raa,
   scope_PreparePatternsFastGen::functions,
@@ -975,6 +985,7 @@ refalrts::RASLFunction PreparePatternsFastGen(
   scope_PreparePatternsFastGen::numbers,
   scope_PreparePatternsFastGen::strings
 );
+refalrts::RefalFunction& PreparePatternsFastGen = descr_PreparePatternsFastGen;
 
 } // unnamed namespace
 
@@ -1010,7 +1021,8 @@ static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction PreparePatternsFastGen(func_PreparePatternsFastGen, "PreparePatternsFastGen");
+refalrts::RefalFunction descr_PreparePatternsFastGen(func_PreparePatternsFastGen, "PreparePatternsFastGen");
+refalrts::RefalFunction& PreparePatternsFastGen = descr_PreparePatternsFastGen;
 
 } // unnamed namespace
 
@@ -1338,7 +1350,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction SplitReps_Aux(
+refalrts::RASLFunction descr_SplitReps_Aux(
   "SplitReps-Aux",
   scope_SplitReps_Aux::raa,
   scope_SplitReps_Aux::functions,
@@ -1346,6 +1358,7 @@ refalrts::RASLFunction SplitReps_Aux(
   scope_SplitReps_Aux::numbers,
   scope_SplitReps_Aux::strings
 );
+refalrts::RefalFunction& SplitReps_Aux = descr_SplitReps_Aux;
 
 } // unnamed namespace
 
@@ -1857,7 +1870,8 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction SplitReps_Aux(func_SplitReps_Aux, "SplitReps-Aux");
+refalrts::RefalFunction descr_SplitReps_Aux(func_SplitReps_Aux, "SplitReps-Aux");
+refalrts::RefalFunction& SplitReps_Aux = descr_SplitReps_Aux;
 
 } // unnamed namespace
 
@@ -1967,7 +1981,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_SplitReps_Brackets_L1(
+refalrts::RASLFunction descr_gen_SplitReps_Brackets_L1(
   "SplitReps-Brackets\\1",
   scope_gen_SplitReps_Brackets_L1::raa,
   scope_gen_SplitReps_Brackets_L1::functions,
@@ -1975,6 +1989,7 @@ refalrts::RASLFunction gen_SplitReps_Brackets_L1(
   scope_gen_SplitReps_Brackets_L1::numbers,
   scope_gen_SplitReps_Brackets_L1::strings
 );
+refalrts::RefalFunction& gen_SplitReps_Brackets_L1 = descr_gen_SplitReps_Brackets_L1;
 
 } // unnamed namespace
 
@@ -2119,7 +2134,8 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_SplitReps_Brackets_L1(func_gen_SplitReps_Brackets_L1, "SplitReps-Brackets\\1");
+refalrts::RefalFunction descr_gen_SplitReps_Brackets_L1(func_gen_SplitReps_Brackets_L1, "SplitReps-Brackets\\1");
+refalrts::RefalFunction& gen_SplitReps_Brackets_L1 = descr_gen_SplitReps_Brackets_L1;
 
 } // unnamed namespace
 
@@ -2158,7 +2174,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction SplitReps_Brackets(
+refalrts::RASLFunction descr_SplitReps_Brackets(
   "SplitReps-Brackets",
   scope_SplitReps_Brackets::raa,
   scope_SplitReps_Brackets::functions,
@@ -2166,6 +2182,7 @@ refalrts::RASLFunction SplitReps_Brackets(
   scope_SplitReps_Brackets::numbers,
   scope_SplitReps_Brackets::strings
 );
+refalrts::RefalFunction& SplitReps_Brackets = descr_SplitReps_Brackets;
 
 } // unnamed namespace
 
@@ -2201,7 +2218,8 @@ static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction SplitReps_Brackets(func_SplitReps_Brackets, "SplitReps-Brackets");
+refalrts::RefalFunction descr_SplitReps_Brackets(func_SplitReps_Brackets, "SplitReps-Brackets");
+refalrts::RefalFunction& SplitReps_Brackets = descr_SplitReps_Brackets;
 
 } // unnamed namespace
 
@@ -2269,7 +2287,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_SplitReps_L1(
+refalrts::RASLFunction descr_gen_SplitReps_L1(
   "SplitReps\\1",
   scope_gen_SplitReps_L1::raa,
   scope_gen_SplitReps_L1::functions,
@@ -2277,6 +2295,7 @@ refalrts::RASLFunction gen_SplitReps_L1(
   scope_gen_SplitReps_L1::numbers,
   scope_gen_SplitReps_L1::strings
 );
+refalrts::RefalFunction& gen_SplitReps_L1 = descr_gen_SplitReps_L1;
 
 } // unnamed namespace
 
@@ -2353,7 +2372,8 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_SplitReps_L1(func_gen_SplitReps_L1, "SplitReps\\1");
+refalrts::RefalFunction descr_gen_SplitReps_L1(func_gen_SplitReps_L1, "SplitReps\\1");
+refalrts::RefalFunction& gen_SplitReps_L1 = descr_gen_SplitReps_L1;
 
 } // unnamed namespace
 
@@ -2400,7 +2420,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction SplitReps(
+refalrts::RASLFunction descr_SplitReps(
   "SplitReps",
   scope_SplitReps::raa,
   scope_SplitReps::functions,
@@ -2408,6 +2428,7 @@ refalrts::RASLFunction SplitReps(
   scope_SplitReps::numbers,
   scope_SplitReps::strings
 );
+refalrts::RefalFunction& SplitReps = descr_SplitReps;
 
 } // unnamed namespace
 
@@ -2454,7 +2475,8 @@ static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction SplitReps(func_SplitReps, "SplitReps");
+refalrts::RefalFunction descr_SplitReps(func_SplitReps, "SplitReps");
+refalrts::RefalFunction& SplitReps = descr_SplitReps;
 
 } // unnamed namespace
 
@@ -3354,7 +3376,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction FastGen_Terms(
+refalrts::RASLFunction descr_FastGen_Terms(
   "FastGen-Terms",
   scope_FastGen_Terms::raa,
   scope_FastGen_Terms::functions,
@@ -3362,6 +3384,7 @@ refalrts::RASLFunction FastGen_Terms(
   scope_FastGen_Terms::numbers,
   scope_FastGen_Terms::strings
 );
+refalrts::RefalFunction& FastGen_Terms = descr_FastGen_Terms;
 
 #else
 static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4765,7 +4788,8 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction FastGen_Terms(func_FastGen_Terms, "FastGen-Terms");
+refalrts::RefalFunction descr_FastGen_Terms(func_FastGen_Terms, "FastGen-Terms");
+refalrts::RefalFunction& FastGen_Terms = descr_FastGen_Terms;
 
 #endif
 #ifdef INTERPRET
@@ -5077,7 +5101,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FastGen_MeN(
+refalrts::RASLFunction descr_FastGen_MeN(
   "FastGen-MeN",
   scope_FastGen_MeN::raa,
   scope_FastGen_MeN::functions,
@@ -5085,6 +5109,7 @@ refalrts::RASLFunction FastGen_MeN(
   scope_FastGen_MeN::numbers,
   scope_FastGen_MeN::strings
 );
+refalrts::RefalFunction& FastGen_MeN = descr_FastGen_MeN;
 
 } // unnamed namespace
 
@@ -5658,7 +5683,8 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FastGen_MeN(func_FastGen_MeN, "FastGen-MeN");
+refalrts::RefalFunction descr_FastGen_MeN(func_FastGen_MeN, "FastGen-MeN");
+refalrts::RefalFunction& FastGen_MeN = descr_FastGen_MeN;
 
 } // unnamed namespace
 
@@ -5739,7 +5765,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction LengthComp(
+refalrts::RASLFunction descr_LengthComp(
   "LengthComp",
   scope_LengthComp::raa,
   scope_LengthComp::functions,
@@ -5747,6 +5773,7 @@ refalrts::RASLFunction LengthComp(
   scope_LengthComp::numbers,
   scope_LengthComp::strings
 );
+refalrts::RefalFunction& LengthComp = descr_LengthComp;
 
 } // unnamed namespace
 
@@ -5866,7 +5893,8 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction LengthComp(func_LengthComp, "LengthComp");
+refalrts::RefalFunction descr_LengthComp(func_LengthComp, "LengthComp");
+refalrts::RefalFunction& LengthComp = descr_LengthComp;
 
 } // unnamed namespace
 
@@ -5990,7 +6018,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FastGen_K(
+refalrts::RASLFunction descr_FastGen_K(
   "FastGen-K",
   scope_FastGen_K::raa,
   scope_FastGen_K::functions,
@@ -5998,6 +6026,7 @@ refalrts::RASLFunction FastGen_K(
   scope_FastGen_K::numbers,
   scope_FastGen_K::strings
 );
+refalrts::RefalFunction& FastGen_K = descr_FastGen_K;
 
 } // unnamed namespace
 
@@ -6163,7 +6192,8 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FastGen_K(func_FastGen_K, "FastGen-K");
+refalrts::RefalFunction descr_FastGen_K(func_FastGen_K, "FastGen-K");
+refalrts::RefalFunction& FastGen_K = descr_FastGen_K;
 
 } // unnamed namespace
 
@@ -6633,7 +6663,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FastGen(
+refalrts::RASLFunction descr_FastGen(
   "FastGen",
   scope_FastGen::raa,
   scope_FastGen::functions,
@@ -6641,6 +6671,7 @@ refalrts::RASLFunction FastGen(
   scope_FastGen::numbers,
   scope_FastGen::strings
 );
+refalrts::RefalFunction& FastGen = descr_FastGen;
 
 } // unnamed namespace
 
@@ -7412,7 +7443,8 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FastGen(func_FastGen, "FastGen");
+refalrts::RefalFunction descr_FastGen(func_FastGen, "FastGen");
+refalrts::RefalFunction& FastGen = descr_FastGen;
 
 } // unnamed namespace
 
@@ -7456,7 +7488,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CreateFastGen(
+refalrts::RASLFunction descr_CreateFastGen(
   "CreateFastGen",
   scope_CreateFastGen::raa,
   scope_CreateFastGen::functions,
@@ -7464,6 +7496,7 @@ refalrts::RASLFunction CreateFastGen(
   scope_CreateFastGen::numbers,
   scope_CreateFastGen::strings
 );
+refalrts::RefalFunction& CreateFastGen = descr_CreateFastGen;
 
 #else
 static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7505,7 +7538,8 @@ static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CreateFastGen(func_CreateFastGen, "CreateFastGen");
+refalrts::RefalFunction descr_CreateFastGen(func_CreateFastGen, "CreateFastGen");
+refalrts::RefalFunction& CreateFastGen = descr_CreateFastGen;
 
 #endif
 

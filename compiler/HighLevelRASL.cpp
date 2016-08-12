@@ -146,61 +146,61 @@ struct ident_Swap {
   }
 };
 
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction HighLevelRASL_Function_Disjoint;
-extern refalrts::RefalFunction HighLevelRASL_Function_Conjoint;
-extern refalrts::RefalFunction GenInitSubst_Simple;
-extern refalrts::RefalFunction GenSubst_Simple;
-extern refalrts::RefalFunction GenResult_Simple;
-extern refalrts::RefalFunction GenInitSubst_Save;
-extern refalrts::RefalFunction GenSubst_Save;
-extern refalrts::RefalFunction GenResult_Opt;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
+extern refalrts::RefalFunction& HighLevelRASL_Function_Conjoint;
+extern refalrts::RefalFunction& GenInitSubst_Simple;
+extern refalrts::RefalFunction& GenSubst_Simple;
+extern refalrts::RefalFunction& GenResult_Simple;
+extern refalrts::RefalFunction& GenInitSubst_Save;
+extern refalrts::RefalFunction& GenSubst_Save;
+extern refalrts::RefalFunction& GenResult_Opt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_HighLevelRASL_L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_HighLevelRASL_L1;
+extern refalrts::RefalFunction& gen_HighLevelRASL_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction HighLevelRASL;
+extern refalrts::RefalFunction& HighLevelRASL;
 #else
-extern refalrts::RefalFunction HighLevelRASL;
+extern refalrts::RefalFunction& HighLevelRASL;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction HighLevelRASL_Function;
+extern refalrts::RefalFunction& HighLevelRASL_Function;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction HighLevelRASL_Function;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction GenSentenceFunc;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction GenSentenceFunc;
+extern refalrts::RefalFunction& HighLevelRASL_Function;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction GenResultFuncs;
+extern refalrts::RefalFunction& GenSentenceFunc;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction GenResultFuncs;
+extern refalrts::RefalFunction& GenSentenceFunc;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& GenResultFuncs;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& GenResultFuncs;
 } // unnamed namespace
 
 #endif
@@ -388,7 +388,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_HighLevelRASL_L1(
+refalrts::RASLFunction descr_gen_HighLevelRASL_L1(
   "HighLevelRASL\\1",
   scope_gen_HighLevelRASL_L1::raa,
   scope_gen_HighLevelRASL_L1::functions,
@@ -396,6 +396,7 @@ refalrts::RASLFunction gen_HighLevelRASL_L1(
   scope_gen_HighLevelRASL_L1::numbers,
   scope_gen_HighLevelRASL_L1::strings
 );
+refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
 
 } // unnamed namespace
 
@@ -651,7 +652,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1");
+refalrts::RefalFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1");
+refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
 
 } // unnamed namespace
 
@@ -700,7 +702,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction HighLevelRASL(
+refalrts::RASLFunction descr_HighLevelRASL(
   "HighLevelRASL",
   scope_HighLevelRASL::raa,
   scope_HighLevelRASL::functions,
@@ -708,6 +710,7 @@ refalrts::RASLFunction HighLevelRASL(
   scope_HighLevelRASL::numbers,
   scope_HighLevelRASL::strings
 );
+refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
 
 #else
 static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -755,7 +758,8 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction HighLevelRASL(func_HighLevelRASL, "HighLevelRASL");
+refalrts::RefalFunction descr_HighLevelRASL(func_HighLevelRASL, "HighLevelRASL");
+refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
 
 #endif
 #ifdef INTERPRET
@@ -840,7 +844,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction HighLevelRASL_Function(
+refalrts::RASLFunction descr_HighLevelRASL_Function(
   "HighLevelRASL-Function",
   scope_HighLevelRASL_Function::raa,
   scope_HighLevelRASL_Function::functions,
@@ -848,6 +852,7 @@ refalrts::RASLFunction HighLevelRASL_Function(
   scope_HighLevelRASL_Function::numbers,
   scope_HighLevelRASL_Function::strings
 );
+refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
 
 } // unnamed namespace
 
@@ -958,7 +963,8 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function");
+refalrts::RefalFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function");
+refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
 
 } // unnamed namespace
 
@@ -1014,7 +1020,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GenSentenceFunc(
+refalrts::RASLFunction descr_GenSentenceFunc(
   "GenSentenceFunc",
   scope_GenSentenceFunc::raa,
   scope_GenSentenceFunc::functions,
@@ -1022,6 +1028,7 @@ refalrts::RASLFunction GenSentenceFunc(
   scope_GenSentenceFunc::numbers,
   scope_GenSentenceFunc::strings
 );
+refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
 
 } // unnamed namespace
 
@@ -1080,7 +1087,8 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc");
+refalrts::RefalFunction descr_GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc");
+refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
 
 } // unnamed namespace
 
@@ -1144,7 +1152,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GenResultFuncs(
+refalrts::RASLFunction descr_GenResultFuncs(
   "GenResultFuncs",
   scope_GenResultFuncs::raa,
   scope_GenResultFuncs::functions,
@@ -1152,6 +1160,7 @@ refalrts::RASLFunction GenResultFuncs(
   scope_GenResultFuncs::numbers,
   scope_GenResultFuncs::strings
 );
+refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
 
 } // unnamed namespace
 
@@ -1214,7 +1223,8 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GenResultFuncs(func_GenResultFuncs, "GenResultFuncs");
+refalrts::RefalFunction descr_GenResultFuncs(func_GenResultFuncs, "GenResultFuncs");
+refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
 
 } // unnamed namespace
 

@@ -18,42 +18,42 @@ struct ident_SUF {
   }
 };
 
-extern refalrts::RefalFunction StrFromInt;
-extern refalrts::RefalFunction EscapeString;
+extern refalrts::RefalFunction& StrFromInt;
+extern refalrts::RefalFunction& EscapeString;
 #ifdef INTERPRET
-extern refalrts::RASLFunction DisplayName;
+extern refalrts::RefalFunction& DisplayName;
 #else
-extern refalrts::RefalFunction DisplayName;
+extern refalrts::RefalFunction& DisplayName;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DisplayNameSuf;
+extern refalrts::RefalFunction& DisplayNameSuf;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DisplayNameSuf;
+extern refalrts::RefalFunction& DisplayNameSuf;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction DisplayCName;
+extern refalrts::RefalFunction& DisplayCName;
 #else
-extern refalrts::RefalFunction DisplayCName;
+extern refalrts::RefalFunction& DisplayCName;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction CName;
+extern refalrts::RefalFunction& CName;
 #else
-extern refalrts::RefalFunction CName;
+extern refalrts::RefalFunction& CName;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CNameSuf;
+extern refalrts::RefalFunction& CNameSuf;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CNameSuf;
+extern refalrts::RefalFunction& CNameSuf;
 } // unnamed namespace
 
 #endif
@@ -134,7 +134,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction DisplayName(
+refalrts::RASLFunction descr_DisplayName(
   "DisplayName",
   scope_DisplayName::raa,
   scope_DisplayName::functions,
@@ -142,6 +142,7 @@ refalrts::RASLFunction DisplayName(
   scope_DisplayName::numbers,
   scope_DisplayName::strings
 );
+refalrts::RefalFunction& DisplayName = descr_DisplayName;
 
 #else
 static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -237,7 +238,8 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction DisplayName(func_DisplayName, "DisplayName");
+refalrts::RefalFunction descr_DisplayName(func_DisplayName, "DisplayName");
+refalrts::RefalFunction& DisplayName = descr_DisplayName;
 
 #endif
 #ifdef INTERPRET
@@ -324,7 +326,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DisplayNameSuf(
+refalrts::RASLFunction descr_DisplayNameSuf(
   "DisplayNameSuf",
   scope_DisplayNameSuf::raa,
   scope_DisplayNameSuf::functions,
@@ -332,6 +334,7 @@ refalrts::RASLFunction DisplayNameSuf(
   scope_DisplayNameSuf::numbers,
   scope_DisplayNameSuf::strings
 );
+refalrts::RefalFunction& DisplayNameSuf = descr_DisplayNameSuf;
 
 } // unnamed namespace
 
@@ -443,7 +446,8 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DisplayNameSuf(func_DisplayNameSuf, "DisplayNameSuf");
+refalrts::RefalFunction descr_DisplayNameSuf(func_DisplayNameSuf, "DisplayNameSuf");
+refalrts::RefalFunction& DisplayNameSuf = descr_DisplayNameSuf;
 
 } // unnamed namespace
 
@@ -486,7 +490,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction DisplayCName(
+refalrts::RASLFunction descr_DisplayCName(
   "DisplayCName",
   scope_DisplayCName::raa,
   scope_DisplayCName::functions,
@@ -494,6 +498,7 @@ refalrts::RASLFunction DisplayCName(
   scope_DisplayCName::numbers,
   scope_DisplayCName::strings
 );
+refalrts::RefalFunction& DisplayCName = descr_DisplayCName;
 
 #else
 static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -533,7 +538,8 @@ static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction DisplayCName(func_DisplayCName, "DisplayCName");
+refalrts::RefalFunction descr_DisplayCName(func_DisplayCName, "DisplayCName");
+refalrts::RefalFunction& DisplayCName = descr_DisplayCName;
 
 #endif
 #ifdef INTERPRET
@@ -642,7 +648,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CName(
+refalrts::RASLFunction descr_CName(
   "CName",
   scope_CName::raa,
   scope_CName::functions,
@@ -650,6 +656,7 @@ refalrts::RASLFunction CName(
   scope_CName::numbers,
   scope_CName::strings
 );
+refalrts::RefalFunction& CName = descr_CName;
 
 #else
 static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -791,7 +798,8 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CName(func_CName, "CName");
+refalrts::RefalFunction descr_CName(func_CName, "CName");
+refalrts::RefalFunction& CName = descr_CName;
 
 #endif
 #ifdef INTERPRET
@@ -877,7 +885,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CNameSuf(
+refalrts::RASLFunction descr_CNameSuf(
   "CNameSuf",
   scope_CNameSuf::raa,
   scope_CNameSuf::functions,
@@ -885,6 +893,7 @@ refalrts::RASLFunction CNameSuf(
   scope_CNameSuf::numbers,
   scope_CNameSuf::strings
 );
+refalrts::RefalFunction& CNameSuf = descr_CNameSuf;
 
 } // unnamed namespace
 
@@ -996,7 +1005,8 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CNameSuf(func_CNameSuf, "CNameSuf");
+refalrts::RefalFunction descr_CNameSuf(func_CNameSuf, "CNameSuf");
+refalrts::RefalFunction& CNameSuf = descr_CNameSuf;
 
 } // unnamed namespace
 

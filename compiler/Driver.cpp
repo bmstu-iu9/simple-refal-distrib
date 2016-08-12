@@ -90,65 +90,65 @@ struct ident_Success {
   }
 };
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction SaveFile;
-extern refalrts::RefalFunction LoadSource;
-extern refalrts::RefalFunction LexFolding;
-extern refalrts::RefalFunction ParseProgram;
-extern refalrts::RefalFunction EL_Create;
-extern refalrts::RefalFunction EL_Destroy;
-extern refalrts::RefalFunction CheckProgram;
-extern refalrts::RefalFunction Desugar;
-extern refalrts::RefalFunction HighLevelRASL;
-extern refalrts::RefalFunction LowLevelRASL;
-extern refalrts::RefalFunction GenProgram;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& SaveFile;
+extern refalrts::RefalFunction& LoadSource;
+extern refalrts::RefalFunction& LexFolding;
+extern refalrts::RefalFunction& ParseProgram;
+extern refalrts::RefalFunction& EL_Create;
+extern refalrts::RefalFunction& EL_Destroy;
+extern refalrts::RefalFunction& CheckProgram;
+extern refalrts::RefalFunction& Desugar;
+extern refalrts::RefalFunction& HighLevelRASL;
+extern refalrts::RefalFunction& LowLevelRASL;
+extern refalrts::RefalFunction& GenProgram;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CompileFile_L1;
+extern refalrts::RefalFunction& gen_CompileFile_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CompileFile_L1;
+extern refalrts::RefalFunction& gen_CompileFile_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CompileFile_L2L1;
+extern refalrts::RefalFunction& gen_CompileFile_L2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CompileFile_L2L1;
+extern refalrts::RefalFunction& gen_CompileFile_L2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CompileFile_L2;
+extern refalrts::RefalFunction& gen_CompileFile_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CompileFile_L2;
+extern refalrts::RefalFunction& gen_CompileFile_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction CompileFile;
+extern refalrts::RefalFunction& CompileFile;
 #else
-extern refalrts::RefalFunction CompileFile;
+extern refalrts::RefalFunction& CompileFile;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction SelectOptFlags;
+extern refalrts::RefalFunction& SelectOptFlags;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction SelectOptFlags;
+extern refalrts::RefalFunction& SelectOptFlags;
 } // unnamed namespace
 
 #endif
@@ -186,7 +186,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CompileFile_L1(
+refalrts::RASLFunction descr_gen_CompileFile_L1(
   "CompileFile\\1",
   scope_gen_CompileFile_L1::raa,
   scope_gen_CompileFile_L1::functions,
@@ -194,6 +194,7 @@ refalrts::RASLFunction gen_CompileFile_L1(
   scope_gen_CompileFile_L1::numbers,
   scope_gen_CompileFile_L1::strings
 );
+refalrts::RefalFunction& gen_CompileFile_L1 = descr_gen_CompileFile_L1;
 
 } // unnamed namespace
 
@@ -231,7 +232,8 @@ static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CompileFile_L1(func_gen_CompileFile_L1, "CompileFile\\1");
+refalrts::RefalFunction descr_gen_CompileFile_L1(func_gen_CompileFile_L1, "CompileFile\\1");
+refalrts::RefalFunction& gen_CompileFile_L1 = descr_gen_CompileFile_L1;
 
 } // unnamed namespace
 
@@ -356,7 +358,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CompileFile_L2L1(
+refalrts::RASLFunction descr_gen_CompileFile_L2L1(
   "CompileFile\\2\\1",
   scope_gen_CompileFile_L2L1::raa,
   scope_gen_CompileFile_L2L1::functions,
@@ -364,6 +366,7 @@ refalrts::RASLFunction gen_CompileFile_L2L1(
   scope_gen_CompileFile_L2L1::numbers,
   scope_gen_CompileFile_L2L1::strings
 );
+refalrts::RefalFunction& gen_CompileFile_L2L1 = descr_gen_CompileFile_L2L1;
 
 } // unnamed namespace
 
@@ -521,7 +524,8 @@ static refalrts::FnResult func_gen_CompileFile_L2L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CompileFile_L2L1(func_gen_CompileFile_L2L1, "CompileFile\\2\\1");
+refalrts::RefalFunction descr_gen_CompileFile_L2L1(func_gen_CompileFile_L2L1, "CompileFile\\2\\1");
+refalrts::RefalFunction& gen_CompileFile_L2L1 = descr_gen_CompileFile_L2L1;
 
 } // unnamed namespace
 
@@ -588,7 +592,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CompileFile_L2(
+refalrts::RASLFunction descr_gen_CompileFile_L2(
   "CompileFile\\2",
   scope_gen_CompileFile_L2::raa,
   scope_gen_CompileFile_L2::functions,
@@ -596,6 +600,7 @@ refalrts::RASLFunction gen_CompileFile_L2(
   scope_gen_CompileFile_L2::numbers,
   scope_gen_CompileFile_L2::strings
 );
+refalrts::RefalFunction& gen_CompileFile_L2 = descr_gen_CompileFile_L2;
 
 } // unnamed namespace
 
@@ -679,7 +684,8 @@ static refalrts::FnResult func_gen_CompileFile_L2(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CompileFile_L2(func_gen_CompileFile_L2, "CompileFile\\2");
+refalrts::RefalFunction descr_gen_CompileFile_L2(func_gen_CompileFile_L2, "CompileFile\\2");
+refalrts::RefalFunction& gen_CompileFile_L2 = descr_gen_CompileFile_L2;
 
 } // unnamed namespace
 
@@ -762,7 +768,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CompileFile(
+refalrts::RASLFunction descr_CompileFile(
   "CompileFile",
   scope_CompileFile::raa,
   scope_CompileFile::functions,
@@ -770,6 +776,7 @@ refalrts::RASLFunction CompileFile(
   scope_CompileFile::numbers,
   scope_CompileFile::strings
 );
+refalrts::RefalFunction& CompileFile = descr_CompileFile;
 
 #else
 static refalrts::FnResult func_CompileFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -866,7 +873,8 @@ static refalrts::FnResult func_CompileFile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CompileFile(func_CompileFile, "CompileFile");
+refalrts::RefalFunction descr_CompileFile(func_CompileFile, "CompileFile");
+refalrts::RefalFunction& CompileFile = descr_CompileFile;
 
 #endif
 #ifdef INTERPRET
@@ -948,7 +956,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction SelectOptFlags(
+refalrts::RASLFunction descr_SelectOptFlags(
   "SelectOptFlags",
   scope_SelectOptFlags::raa,
   scope_SelectOptFlags::functions,
@@ -956,6 +964,7 @@ refalrts::RASLFunction SelectOptFlags(
   scope_SelectOptFlags::numbers,
   scope_SelectOptFlags::strings
 );
+refalrts::RefalFunction& SelectOptFlags = descr_SelectOptFlags;
 
 } // unnamed namespace
 
@@ -1056,7 +1065,8 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction SelectOptFlags(func_SelectOptFlags, "SelectOptFlags");
+refalrts::RefalFunction descr_SelectOptFlags(func_SelectOptFlags, "SelectOptFlags");
+refalrts::RefalFunction& SelectOptFlags = descr_SelectOptFlags;
 
 } // unnamed namespace
 

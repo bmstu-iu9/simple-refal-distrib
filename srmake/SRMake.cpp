@@ -58,104 +58,104 @@ struct ident_Success {
   }
 };
 
-extern refalrts::RefalFunction WriteLine;
-extern refalrts::RefalFunction System;
-extern refalrts::RefalFunction StrFromInt;
-extern refalrts::RefalFunction Exit;
-extern refalrts::RefalFunction ArgList;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction CreateFileList;
-extern refalrts::RefalFunction ParseCommandLine;
+extern refalrts::RefalFunction& WriteLine;
+extern refalrts::RefalFunction& System;
+extern refalrts::RefalFunction& StrFromInt;
+extern refalrts::RefalFunction& Exit;
+extern refalrts::RefalFunction& ArgList;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& CreateFileList;
+extern refalrts::RefalFunction& ParseCommandLine;
 #ifdef INTERPRET
-extern refalrts::RASLFunction Go;
+extern refalrts::RefalFunction& Go;
 #else
-extern refalrts::RefalFunction Go;
+extern refalrts::RefalFunction& Go;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_MakeProject_S1L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_MakeProject_S1L1;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_MakeProject_S2L1;
+extern refalrts::RefalFunction& gen_MakeProject_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_MakeProject_S2L1;
+extern refalrts::RefalFunction& gen_MakeProject_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction MakeProject;
+extern refalrts::RefalFunction& gen_MakeProject_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction MakeProject;
+extern refalrts::RefalFunction& gen_MakeProject_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Make_S1L1;
+extern refalrts::RefalFunction& MakeProject;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Make_S1L1;
+extern refalrts::RefalFunction& MakeProject;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Make_S2L1;
+extern refalrts::RefalFunction& gen_Make_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Make_S2L1;
+extern refalrts::RefalFunction& gen_Make_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Make_S2L2;
+extern refalrts::RefalFunction& gen_Make_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Make_S2L2;
+extern refalrts::RefalFunction& gen_Make_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Make;
+extern refalrts::RefalFunction& gen_Make_S2L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Make;
+extern refalrts::RefalFunction& gen_Make_S2L2;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Make;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Make;
 } // unnamed namespace
 
 #endif
@@ -197,7 +197,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Go(
+refalrts::RASLFunction descr_Go(
   "Go",
   scope_Go::raa,
   scope_Go::functions,
@@ -205,6 +205,7 @@ refalrts::RASLFunction Go(
   scope_Go::numbers,
   scope_Go::strings
 );
+refalrts::RefalFunction& Go = descr_Go;
 
 #else
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -244,7 +245,8 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Go(func_Go, "Go");
+refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalFunction& Go = descr_Go;
 
 #endif
 #ifdef INTERPRET
@@ -324,7 +326,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main(
+refalrts::RASLFunction descr_Main(
   "Main",
   scope_Main::raa,
   scope_Main::functions,
@@ -332,6 +334,7 @@ refalrts::RASLFunction Main(
   scope_Main::numbers,
   scope_Main::strings
 );
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -424,7 +427,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main(func_Main, "Main");
+refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -462,7 +466,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_MakeProject_S1L1(
+refalrts::RASLFunction descr_gen_MakeProject_S1L1(
   "MakeProject$1\\1",
   scope_gen_MakeProject_S1L1::raa,
   scope_gen_MakeProject_S1L1::functions,
@@ -470,6 +474,7 @@ refalrts::RASLFunction gen_MakeProject_S1L1(
   scope_gen_MakeProject_S1L1::numbers,
   scope_gen_MakeProject_S1L1::strings
 );
+refalrts::RefalFunction& gen_MakeProject_S1L1 = descr_gen_MakeProject_S1L1;
 
 } // unnamed namespace
 
@@ -513,7 +518,8 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1");
+refalrts::RefalFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1");
+refalrts::RefalFunction& gen_MakeProject_S1L1 = descr_gen_MakeProject_S1L1;
 
 } // unnamed namespace
 
@@ -572,7 +578,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_MakeProject_S2L1(
+refalrts::RASLFunction descr_gen_MakeProject_S2L1(
   "MakeProject$2\\1",
   scope_gen_MakeProject_S2L1::raa,
   scope_gen_MakeProject_S2L1::functions,
@@ -580,6 +586,7 @@ refalrts::RASLFunction gen_MakeProject_S2L1(
   scope_gen_MakeProject_S2L1::numbers,
   scope_gen_MakeProject_S2L1::strings
 );
+refalrts::RefalFunction& gen_MakeProject_S2L1 = descr_gen_MakeProject_S2L1;
 
 } // unnamed namespace
 
@@ -643,7 +650,8 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1");
+refalrts::RefalFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1");
+refalrts::RefalFunction& gen_MakeProject_S2L1 = descr_gen_MakeProject_S2L1;
 
 } // unnamed namespace
 
@@ -753,7 +761,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction MakeProject(
+refalrts::RASLFunction descr_MakeProject(
   "MakeProject",
   scope_MakeProject::raa,
   scope_MakeProject::functions,
@@ -761,6 +769,7 @@ refalrts::RASLFunction MakeProject(
   scope_MakeProject::numbers,
   scope_MakeProject::strings
 );
+refalrts::RefalFunction& MakeProject = descr_MakeProject;
 
 } // unnamed namespace
 
@@ -897,7 +906,8 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction MakeProject(func_MakeProject, "MakeProject");
+refalrts::RefalFunction descr_MakeProject(func_MakeProject, "MakeProject");
+refalrts::RefalFunction& MakeProject = descr_MakeProject;
 
 } // unnamed namespace
 
@@ -981,7 +991,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Make_S1L1(
+refalrts::RASLFunction descr_gen_Make_S1L1(
   "Make$1\\1",
   scope_gen_Make_S1L1::raa,
   scope_gen_Make_S1L1::functions,
@@ -989,6 +999,7 @@ refalrts::RASLFunction gen_Make_S1L1(
   scope_gen_Make_S1L1::numbers,
   scope_gen_Make_S1L1::strings
 );
+refalrts::RefalFunction& gen_Make_S1L1 = descr_gen_Make_S1L1;
 
 } // unnamed namespace
 
@@ -1092,7 +1103,8 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1");
+refalrts::RefalFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1");
+refalrts::RefalFunction& gen_Make_S1L1 = descr_gen_Make_S1L1;
 
 } // unnamed namespace
 
@@ -1161,7 +1173,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Make_S2L1(
+refalrts::RASLFunction descr_gen_Make_S2L1(
   "Make$2\\1",
   scope_gen_Make_S2L1::raa,
   scope_gen_Make_S2L1::functions,
@@ -1169,6 +1181,7 @@ refalrts::RASLFunction gen_Make_S2L1(
   scope_gen_Make_S2L1::numbers,
   scope_gen_Make_S2L1::strings
 );
+refalrts::RefalFunction& gen_Make_S2L1 = descr_gen_Make_S2L1;
 
 } // unnamed namespace
 
@@ -1248,7 +1261,8 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1");
+refalrts::RefalFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1");
+refalrts::RefalFunction& gen_Make_S2L1 = descr_gen_Make_S2L1;
 
 } // unnamed namespace
 
@@ -1313,7 +1327,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Make_S2L2(
+refalrts::RASLFunction descr_gen_Make_S2L2(
   "Make$2\\2",
   scope_gen_Make_S2L2::raa,
   scope_gen_Make_S2L2::functions,
@@ -1321,6 +1335,7 @@ refalrts::RASLFunction gen_Make_S2L2(
   scope_gen_Make_S2L2::numbers,
   scope_gen_Make_S2L2::strings
 );
+refalrts::RefalFunction& gen_Make_S2L2 = descr_gen_Make_S2L2;
 
 } // unnamed namespace
 
@@ -1401,7 +1416,8 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2");
+refalrts::RefalFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2");
+refalrts::RefalFunction& gen_Make_S2L2 = descr_gen_Make_S2L2;
 
 } // unnamed namespace
 
@@ -1520,7 +1536,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Make(
+refalrts::RASLFunction descr_Make(
   "Make",
   scope_Make::raa,
   scope_Make::functions,
@@ -1528,6 +1544,7 @@ refalrts::RASLFunction Make(
   scope_Make::numbers,
   scope_Make::strings
 );
+refalrts::RefalFunction& Make = descr_Make;
 
 } // unnamed namespace
 
@@ -1674,7 +1691,8 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Make(func_Make, "Make");
+refalrts::RefalFunction descr_Make(func_Make, "Make");
+refalrts::RefalFunction& Make = descr_Make;
 
 } // unnamed namespace
 

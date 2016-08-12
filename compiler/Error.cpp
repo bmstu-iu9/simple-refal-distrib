@@ -42,50 +42,51 @@ struct ident_TkUnexpected {
   }
 };
 
-extern refalrts::RefalFunction WriteLine;
-extern refalrts::RefalFunction StrFromInt;
-extern refalrts::RefalFunction StrFromToken;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Sort;
+extern refalrts::RefalFunction& WriteLine;
+extern refalrts::RefalFunction& StrFromInt;
+extern refalrts::RefalFunction& StrFromToken;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Sort;
 namespace /* unnamed */ {
-refalrts::RefalEmptyFunction ErrorList("ErrorList");
+refalrts::RefalEmptyFunction descr_ErrorList("ErrorList");
+refalrts::RefalFunction& ErrorList = descr_ErrorList;
 } // unnamed namespace
 
 #ifdef INTERPRET
-extern refalrts::RASLFunction EL_Create;
+extern refalrts::RefalFunction& EL_Create;
 #else
-extern refalrts::RefalFunction EL_Create;
+extern refalrts::RefalFunction& EL_Create;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EL_AddError;
+extern refalrts::RefalFunction& EL_AddError;
 #else
-extern refalrts::RefalFunction EL_AddError;
+extern refalrts::RefalFunction& EL_AddError;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EL_AddErrorAt;
+extern refalrts::RefalFunction& EL_AddErrorAt;
 #else
-extern refalrts::RefalFunction EL_AddErrorAt;
+extern refalrts::RefalFunction& EL_AddErrorAt;
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EL_AddUnexpected;
+extern refalrts::RefalFunction& EL_AddUnexpected;
 #else
-extern refalrts::RefalFunction EL_AddUnexpected;
+extern refalrts::RefalFunction& EL_AddUnexpected;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EL_Destroy_S2L1;
+extern refalrts::RefalFunction& gen_EL_Destroy_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EL_Destroy_S2L1;
+extern refalrts::RefalFunction& gen_EL_Destroy_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EL_Destroy;
+extern refalrts::RefalFunction& EL_Destroy;
 #else
-extern refalrts::RefalFunction EL_Destroy;
+extern refalrts::RefalFunction& EL_Destroy;
 #endif
 
 #ifdef INTERPRET
@@ -124,7 +125,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EL_Create(
+refalrts::RASLFunction descr_EL_Create(
   "EL-Create",
   scope_EL_Create::raa,
   scope_EL_Create::functions,
@@ -132,6 +133,7 @@ refalrts::RASLFunction EL_Create(
   scope_EL_Create::numbers,
   scope_EL_Create::strings
 );
+refalrts::RefalFunction& EL_Create = descr_EL_Create;
 
 #else
 static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -169,7 +171,8 @@ static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EL_Create(func_EL_Create, "EL-Create");
+refalrts::RefalFunction descr_EL_Create(func_EL_Create, "EL-Create");
+refalrts::RefalFunction& EL_Create = descr_EL_Create;
 
 #endif
 #ifdef INTERPRET
@@ -215,7 +218,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EL_AddError(
+refalrts::RASLFunction descr_EL_AddError(
   "EL-AddError",
   scope_EL_AddError::raa,
   scope_EL_AddError::functions,
@@ -223,6 +226,7 @@ refalrts::RASLFunction EL_AddError(
   scope_EL_AddError::numbers,
   scope_EL_AddError::strings
 );
+refalrts::RefalFunction& EL_AddError = descr_EL_AddError;
 
 #else
 static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -273,7 +277,8 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EL_AddError(func_EL_AddError, "EL-AddError");
+refalrts::RefalFunction descr_EL_AddError(func_EL_AddError, "EL-AddError");
+refalrts::RefalFunction& EL_AddError = descr_EL_AddError;
 
 #endif
 #ifdef INTERPRET
@@ -316,7 +321,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EL_AddErrorAt(
+refalrts::RASLFunction descr_EL_AddErrorAt(
   "EL-AddErrorAt",
   scope_EL_AddErrorAt::raa,
   scope_EL_AddErrorAt::functions,
@@ -324,6 +329,7 @@ refalrts::RASLFunction EL_AddErrorAt(
   scope_EL_AddErrorAt::numbers,
   scope_EL_AddErrorAt::strings
 );
+refalrts::RefalFunction& EL_AddErrorAt = descr_EL_AddErrorAt;
 
 #else
 static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -374,7 +380,8 @@ static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EL_AddErrorAt(func_EL_AddErrorAt, "EL-AddErrorAt");
+refalrts::RefalFunction descr_EL_AddErrorAt(func_EL_AddErrorAt, "EL-AddErrorAt");
+refalrts::RefalFunction& EL_AddErrorAt = descr_EL_AddErrorAt;
 
 #endif
 #ifdef INTERPRET
@@ -483,7 +490,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EL_AddUnexpected(
+refalrts::RASLFunction descr_EL_AddUnexpected(
   "EL-AddUnexpected",
   scope_EL_AddUnexpected::raa,
   scope_EL_AddUnexpected::functions,
@@ -491,6 +498,7 @@ refalrts::RASLFunction EL_AddUnexpected(
   scope_EL_AddUnexpected::numbers,
   scope_EL_AddUnexpected::strings
 );
+refalrts::RefalFunction& EL_AddUnexpected = descr_EL_AddUnexpected;
 
 #else
 static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -620,7 +628,8 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EL_AddUnexpected(func_EL_AddUnexpected, "EL-AddUnexpected");
+refalrts::RefalFunction descr_EL_AddUnexpected(func_EL_AddUnexpected, "EL-AddUnexpected");
+refalrts::RefalFunction& EL_AddUnexpected = descr_EL_AddUnexpected;
 
 #endif
 #ifdef INTERPRET
@@ -714,7 +723,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EL_Destroy_S2L1(
+refalrts::RASLFunction descr_gen_EL_Destroy_S2L1(
   "EL-Destroy$2\\1",
   scope_gen_EL_Destroy_S2L1::raa,
   scope_gen_EL_Destroy_S2L1::functions,
@@ -722,6 +731,7 @@ refalrts::RASLFunction gen_EL_Destroy_S2L1(
   scope_gen_EL_Destroy_S2L1::numbers,
   scope_gen_EL_Destroy_S2L1::strings
 );
+refalrts::RefalFunction& gen_EL_Destroy_S2L1 = descr_gen_EL_Destroy_S2L1;
 
 } // unnamed namespace
 
@@ -830,7 +840,8 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EL_Destroy_S2L1(func_gen_EL_Destroy_S2L1, "EL-Destroy$2\\1");
+refalrts::RefalFunction descr_gen_EL_Destroy_S2L1(func_gen_EL_Destroy_S2L1, "EL-Destroy$2\\1");
+refalrts::RefalFunction& gen_EL_Destroy_S2L1 = descr_gen_EL_Destroy_S2L1;
 
 } // unnamed namespace
 
@@ -915,7 +926,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EL_Destroy(
+refalrts::RASLFunction descr_EL_Destroy(
   "EL-Destroy",
   scope_EL_Destroy::raa,
   scope_EL_Destroy::functions,
@@ -923,6 +934,7 @@ refalrts::RASLFunction EL_Destroy(
   scope_EL_Destroy::numbers,
   scope_EL_Destroy::strings
 );
+refalrts::RefalFunction& EL_Destroy = descr_EL_Destroy;
 
 #else
 static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1019,7 +1031,8 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EL_Destroy(func_EL_Destroy, "EL-Destroy");
+refalrts::RefalFunction descr_EL_Destroy(func_EL_Destroy, "EL-Destroy");
+refalrts::RefalFunction& EL_Destroy = descr_EL_Destroy;
 
 #endif
 

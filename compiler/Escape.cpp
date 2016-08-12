@@ -2,43 +2,43 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction Div;
-extern refalrts::RefalFunction Mod;
-extern refalrts::RefalFunction Ord;
-extern refalrts::RefalFunction Compare;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Map;
+extern refalrts::RefalFunction& Div;
+extern refalrts::RefalFunction& Mod;
+extern refalrts::RefalFunction& Ord;
+extern refalrts::RefalFunction& Compare;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Map;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction OctDigit;
+extern refalrts::RefalFunction& OctDigit;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction OctDigit;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_EscapeChar_S7L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_EscapeChar_S7L1;
+extern refalrts::RefalFunction& OctDigit;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EscapeChar;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_EscapeChar_S7L1;
+} // unnamed namespace
+
 #else
-extern refalrts::RefalFunction EscapeChar;
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_EscapeChar_S7L1;
+} // unnamed namespace
+
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction EscapeString;
+extern refalrts::RefalFunction& EscapeChar;
 #else
-extern refalrts::RefalFunction EscapeString;
+extern refalrts::RefalFunction& EscapeChar;
+#endif
+#ifdef INTERPRET
+extern refalrts::RefalFunction& EscapeString;
+#else
+extern refalrts::RefalFunction& EscapeString;
 #endif
 
 #ifdef INTERPRET
@@ -152,7 +152,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction OctDigit(
+refalrts::RASLFunction descr_OctDigit(
   "OctDigit",
   scope_OctDigit::raa,
   scope_OctDigit::functions,
@@ -160,6 +160,7 @@ refalrts::RASLFunction OctDigit(
   scope_OctDigit::numbers,
   scope_OctDigit::strings
 );
+refalrts::RefalFunction& OctDigit = descr_OctDigit;
 
 } // unnamed namespace
 
@@ -332,7 +333,8 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction OctDigit(func_OctDigit, "OctDigit");
+refalrts::RefalFunction descr_OctDigit(func_OctDigit, "OctDigit");
+refalrts::RefalFunction& OctDigit = descr_OctDigit;
 
 } // unnamed namespace
 
@@ -431,7 +433,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_EscapeChar_S7L1(
+refalrts::RASLFunction descr_gen_EscapeChar_S7L1(
   "EscapeChar$7\\1",
   scope_gen_EscapeChar_S7L1::raa,
   scope_gen_EscapeChar_S7L1::functions,
@@ -439,6 +441,7 @@ refalrts::RASLFunction gen_EscapeChar_S7L1(
   scope_gen_EscapeChar_S7L1::numbers,
   scope_gen_EscapeChar_S7L1::strings
 );
+refalrts::RefalFunction& gen_EscapeChar_S7L1 = descr_gen_EscapeChar_S7L1;
 
 } // unnamed namespace
 
@@ -567,7 +570,8 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, "EscapeChar$7\\1");
+refalrts::RefalFunction descr_gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, "EscapeChar$7\\1");
+refalrts::RefalFunction& gen_EscapeChar_S7L1 = descr_gen_EscapeChar_S7L1;
 
 } // unnamed namespace
 
@@ -704,7 +708,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EscapeChar(
+refalrts::RASLFunction descr_EscapeChar(
   "EscapeChar",
   scope_EscapeChar::raa,
   scope_EscapeChar::functions,
@@ -712,6 +716,7 @@ refalrts::RASLFunction EscapeChar(
   scope_EscapeChar::numbers,
   scope_EscapeChar::strings
 );
+refalrts::RefalFunction& EscapeChar = descr_EscapeChar;
 
 #else
 static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -901,7 +906,8 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EscapeChar(func_EscapeChar, "EscapeChar");
+refalrts::RefalFunction descr_EscapeChar(func_EscapeChar, "EscapeChar");
+refalrts::RefalFunction& EscapeChar = descr_EscapeChar;
 
 #endif
 #ifdef INTERPRET
@@ -937,7 +943,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction EscapeString(
+refalrts::RASLFunction descr_EscapeString(
   "EscapeString",
   scope_EscapeString::raa,
   scope_EscapeString::functions,
@@ -945,6 +951,7 @@ refalrts::RASLFunction EscapeString(
   scope_EscapeString::numbers,
   scope_EscapeString::strings
 );
+refalrts::RefalFunction& EscapeString = descr_EscapeString;
 
 #else
 static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -977,7 +984,8 @@ static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction EscapeString(func_EscapeString, "EscapeString");
+refalrts::RefalFunction descr_EscapeString(func_EscapeString, "EscapeString");
+refalrts::RefalFunction& EscapeString = descr_EscapeString;
 
 #endif
 

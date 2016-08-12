@@ -26,45 +26,45 @@ struct ident_Source {
   }
 };
 
-extern refalrts::RefalFunction LoadFile;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Trim;
-extern refalrts::RefalFunction FindFiles;
+extern refalrts::RefalFunction& LoadFile;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Trim;
+extern refalrts::RefalFunction& FindFiles;
 #ifdef INTERPRET
-extern refalrts::RASLFunction CreateFileList;
+extern refalrts::RefalFunction& CreateFileList;
 #else
-extern refalrts::RefalFunction CreateFileList;
+extern refalrts::RefalFunction& CreateFileList;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoCreateFileList;
+extern refalrts::RefalFunction& DoCreateFileList;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoCreateFileList;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction FindImports;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction FindImports;
+extern refalrts::RefalFunction& DoCreateFileList;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction LoadList;
+extern refalrts::RefalFunction& FindImports;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction LoadList;
+extern refalrts::RefalFunction& FindImports;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& LoadList;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& LoadList;
 } // unnamed namespace
 
 #endif
@@ -120,7 +120,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CreateFileList(
+refalrts::RASLFunction descr_CreateFileList(
   "CreateFileList",
   scope_CreateFileList::raa,
   scope_CreateFileList::functions,
@@ -128,6 +128,7 @@ refalrts::RASLFunction CreateFileList(
   scope_CreateFileList::numbers,
   scope_CreateFileList::strings
 );
+refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
 
 #else
 static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -192,7 +193,8 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CreateFileList(func_CreateFileList, "CreateFileList");
+refalrts::RefalFunction descr_CreateFileList(func_CreateFileList, "CreateFileList");
+refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
 
 #endif
 #ifdef INTERPRET
@@ -299,7 +301,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoCreateFileList(
+refalrts::RASLFunction descr_DoCreateFileList(
   "DoCreateFileList",
   scope_DoCreateFileList::raa,
   scope_DoCreateFileList::functions,
@@ -307,6 +309,7 @@ refalrts::RASLFunction DoCreateFileList(
   scope_DoCreateFileList::numbers,
   scope_DoCreateFileList::strings
 );
+refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
 
 } // unnamed namespace
 
@@ -467,7 +470,8 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoCreateFileList(func_DoCreateFileList, "DoCreateFileList");
+refalrts::RefalFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList");
+refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
 
 } // unnamed namespace
 
@@ -545,7 +549,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FindImports(
+refalrts::RASLFunction descr_FindImports(
   "FindImports",
   scope_FindImports::raa,
   scope_FindImports::functions,
@@ -553,6 +557,7 @@ refalrts::RASLFunction FindImports(
   scope_FindImports::numbers,
   scope_FindImports::strings
 );
+refalrts::RefalFunction& FindImports = descr_FindImports;
 
 } // unnamed namespace
 
@@ -652,7 +657,8 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FindImports(func_FindImports, "FindImports");
+refalrts::RefalFunction descr_FindImports(func_FindImports, "FindImports");
+refalrts::RefalFunction& FindImports = descr_FindImports;
 
 } // unnamed namespace
 
@@ -758,7 +764,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction LoadList(
+refalrts::RASLFunction descr_LoadList(
   "LoadList",
   scope_LoadList::raa,
   scope_LoadList::functions,
@@ -766,6 +772,7 @@ refalrts::RASLFunction LoadList(
   scope_LoadList::numbers,
   scope_LoadList::strings
 );
+refalrts::RefalFunction& LoadList = descr_LoadList;
 
 } // unnamed namespace
 
@@ -894,7 +901,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction LoadList(func_LoadList, "LoadList");
+refalrts::RefalFunction descr_LoadList(func_LoadList, "LoadList");
+refalrts::RefalFunction& LoadList = descr_LoadList;
 
 } // unnamed namespace
 

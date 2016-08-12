@@ -2,33 +2,33 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction LoadFile;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& LoadFile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_LoadSource_L1;
+extern refalrts::RefalFunction& gen_LoadSource_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_LoadSource_L1;
+extern refalrts::RefalFunction& gen_LoadSource_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction LoadSource;
+extern refalrts::RefalFunction& LoadSource;
 #else
-extern refalrts::RefalFunction LoadSource;
+extern refalrts::RefalFunction& LoadSource;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction LinearizeLine;
+extern refalrts::RefalFunction& LinearizeLine;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction LinearizeLine;
+extern refalrts::RefalFunction& LinearizeLine;
 } // unnamed namespace
 
 #endif
@@ -81,7 +81,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_LoadSource_L1(
+refalrts::RASLFunction descr_gen_LoadSource_L1(
   "LoadSource\\1",
   scope_gen_LoadSource_L1::raa,
   scope_gen_LoadSource_L1::functions,
@@ -89,6 +89,7 @@ refalrts::RASLFunction gen_LoadSource_L1(
   scope_gen_LoadSource_L1::numbers,
   scope_gen_LoadSource_L1::strings
 );
+refalrts::RefalFunction& gen_LoadSource_L1 = descr_gen_LoadSource_L1;
 
 } // unnamed namespace
 
@@ -153,7 +154,8 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_LoadSource_L1(func_gen_LoadSource_L1, "LoadSource\\1");
+refalrts::RefalFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, "LoadSource\\1");
+refalrts::RefalFunction& gen_LoadSource_L1 = descr_gen_LoadSource_L1;
 
 } // unnamed namespace
 
@@ -206,7 +208,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction LoadSource(
+refalrts::RASLFunction descr_LoadSource(
   "LoadSource",
   scope_LoadSource::raa,
   scope_LoadSource::functions,
@@ -214,6 +216,7 @@ refalrts::RASLFunction LoadSource(
   scope_LoadSource::numbers,
   scope_LoadSource::strings
 );
+refalrts::RefalFunction& LoadSource = descr_LoadSource;
 
 #else
 static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -265,7 +268,8 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction LoadSource(func_LoadSource, "LoadSource");
+refalrts::RefalFunction descr_LoadSource(func_LoadSource, "LoadSource");
+refalrts::RefalFunction& LoadSource = descr_LoadSource;
 
 #endif
 #ifdef INTERPRET
@@ -298,7 +302,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction LinearizeLine(
+refalrts::RASLFunction descr_LinearizeLine(
   "LinearizeLine",
   scope_LinearizeLine::raa,
   scope_LinearizeLine::functions,
@@ -306,6 +310,7 @@ refalrts::RASLFunction LinearizeLine(
   scope_LinearizeLine::numbers,
   scope_LinearizeLine::strings
 );
+refalrts::RefalFunction& LinearizeLine = descr_LinearizeLine;
 
 } // unnamed namespace
 
@@ -345,7 +350,8 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction LinearizeLine(func_LinearizeLine, "LinearizeLine");
+refalrts::RefalFunction descr_LinearizeLine(func_LinearizeLine, "LinearizeLine");
+refalrts::RefalFunction& LinearizeLine = descr_LinearizeLine;
 
 } // unnamed namespace
 

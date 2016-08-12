@@ -354,279 +354,279 @@ struct ident_UnnamedADT {
   }
 };
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction Dec;
-extern refalrts::RefalFunction EL_AddUnexpected;
-extern refalrts::RefalFunction EL_AddErrorAt;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& Dec;
+extern refalrts::RefalFunction& EL_AddUnexpected;
+extern refalrts::RefalFunction& EL_AddErrorAt;
 #ifdef INTERPRET
-extern refalrts::RASLFunction ParseProgram;
+extern refalrts::RefalFunction& ParseProgram;
 #else
-extern refalrts::RefalFunction ParseProgram;
+extern refalrts::RefalFunction& ParseProgram;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction PrepareBracket;
+extern refalrts::RefalFunction& PrepareBracket;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction PrepareBracket;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseElements_S2L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseElements_S2L1;
+extern refalrts::RefalFunction& PrepareBracket;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseElements_S4L1;
+extern refalrts::RefalFunction& gen_ParseElements_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseElements_S4L1;
+extern refalrts::RefalFunction& gen_ParseElements_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseElements;
+extern refalrts::RefalFunction& gen_ParseElements_S4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseElements;
+extern refalrts::RefalFunction& gen_ParseElements_S4L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ASTItemFromDirective;
+extern refalrts::RefalFunction& ParseElements;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ASTItemFromDirective;
+extern refalrts::RefalFunction& ParseElements;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseElement_SwDirective;
+extern refalrts::RefalFunction& ASTItemFromDirective;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseElement_SwDirective;
+extern refalrts::RefalFunction& ASTItemFromDirective;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseNameList;
+extern refalrts::RefalFunction& ParseElement_SwDirective;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseNameList;
+extern refalrts::RefalFunction& ParseElement_SwDirective;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Wrap;
+extern refalrts::RefalFunction& ParseNameList;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Wrap;
+extern refalrts::RefalFunction& ParseNameList;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseNameList_Tail;
+extern refalrts::RefalFunction& Wrap;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseNameList_Tail;
+extern refalrts::RefalFunction& Wrap;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseFunction_S1L1;
+extern refalrts::RefalFunction& ParseNameList_Tail;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseFunction_S1L1;
+extern refalrts::RefalFunction& ParseNameList_Tail;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseFunction;
+extern refalrts::RefalFunction& gen_ParseFunction_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseFunction;
+extern refalrts::RefalFunction& gen_ParseFunction_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseBlock_S1L1;
+extern refalrts::RefalFunction& ParseFunction;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseBlock_S1L1;
+extern refalrts::RefalFunction& ParseFunction;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseBlock;
+extern refalrts::RefalFunction& gen_ParseBlock_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseBlock;
+extern refalrts::RefalFunction& gen_ParseBlock_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoParseBlock;
+extern refalrts::RefalFunction& ParseBlock;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoParseBlock;
+extern refalrts::RefalFunction& ParseBlock;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseSentence_L1;
+extern refalrts::RefalFunction& DoParseBlock;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseSentence_L1;
+extern refalrts::RefalFunction& DoParseBlock;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseSentence_L2;
+extern refalrts::RefalFunction& gen_ParseSentence_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseSentence_L2;
+extern refalrts::RefalFunction& gen_ParseSentence_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseSentence_L3;
+extern refalrts::RefalFunction& gen_ParseSentence_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseSentence_L3;
+extern refalrts::RefalFunction& gen_ParseSentence_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseSentence;
+extern refalrts::RefalFunction& gen_ParseSentence_L3;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseSentence;
+extern refalrts::RefalFunction& gen_ParseSentence_L3;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParsePattern;
+extern refalrts::RefalFunction& ParseSentence;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParsePattern;
+extern refalrts::RefalFunction& ParseSentence;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction StrFromBracket;
+extern refalrts::RefalFunction& ParsePattern;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction StrFromBracket;
+extern refalrts::RefalFunction& ParsePattern;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseResult_S9L1;
+extern refalrts::RefalFunction& StrFromBracket;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseResult_S9L1;
+extern refalrts::RefalFunction& StrFromBracket;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseResult_S9L2;
+extern refalrts::RefalFunction& gen_ParseResult_S9L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseResult_S9L2;
+extern refalrts::RefalFunction& gen_ParseResult_S9L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_ParseResult_S11L1;
+extern refalrts::RefalFunction& gen_ParseResult_S9L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_ParseResult_S11L1;
+extern refalrts::RefalFunction& gen_ParseResult_S9L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ParseResult;
+extern refalrts::RefalFunction& gen_ParseResult_S11L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ParseResult;
+extern refalrts::RefalFunction& gen_ParseResult_S11L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& ParseResult;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& ParseResult;
 } // unnamed namespace
 
 #endif
@@ -675,7 +675,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction ParseProgram(
+refalrts::RASLFunction descr_ParseProgram(
   "ParseProgram",
   scope_ParseProgram::raa,
   scope_ParseProgram::functions,
@@ -683,6 +683,7 @@ refalrts::RASLFunction ParseProgram(
   scope_ParseProgram::numbers,
   scope_ParseProgram::strings
 );
+refalrts::RefalFunction& ParseProgram = descr_ParseProgram;
 
 #else
 static refalrts::FnResult func_ParseProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -732,7 +733,8 @@ static refalrts::FnResult func_ParseProgram(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction ParseProgram(func_ParseProgram, "ParseProgram");
+refalrts::RefalFunction descr_ParseProgram(func_ParseProgram, "ParseProgram");
+refalrts::RefalFunction& ParseProgram = descr_ParseProgram;
 
 #endif
 #ifdef INTERPRET
@@ -879,7 +881,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction PrepareBracket(
+refalrts::RASLFunction descr_PrepareBracket(
   "PrepareBracket",
   scope_PrepareBracket::raa,
   scope_PrepareBracket::functions,
@@ -887,6 +889,7 @@ refalrts::RASLFunction PrepareBracket(
   scope_PrepareBracket::numbers,
   scope_PrepareBracket::strings
 );
+refalrts::RefalFunction& PrepareBracket = descr_PrepareBracket;
 
 } // unnamed namespace
 
@@ -1111,7 +1114,8 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction PrepareBracket(func_PrepareBracket, "PrepareBracket");
+refalrts::RefalFunction descr_PrepareBracket(func_PrepareBracket, "PrepareBracket");
+refalrts::RefalFunction& PrepareBracket = descr_PrepareBracket;
 
 } // unnamed namespace
 
@@ -1159,7 +1163,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseElements_S2L1(
+refalrts::RASLFunction descr_gen_ParseElements_S2L1(
   "ParseElements$2\\1",
   scope_gen_ParseElements_S2L1::raa,
   scope_gen_ParseElements_S2L1::functions,
@@ -1167,6 +1171,7 @@ refalrts::RASLFunction gen_ParseElements_S2L1(
   scope_gen_ParseElements_S2L1::numbers,
   scope_gen_ParseElements_S2L1::strings
 );
+refalrts::RefalFunction& gen_ParseElements_S2L1 = descr_gen_ParseElements_S2L1;
 
 } // unnamed namespace
 
@@ -1223,7 +1228,8 @@ static refalrts::FnResult func_gen_ParseElements_S2L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseElements_S2L1(func_gen_ParseElements_S2L1, "ParseElements$2\\1");
+refalrts::RefalFunction descr_gen_ParseElements_S2L1(func_gen_ParseElements_S2L1, "ParseElements$2\\1");
+refalrts::RefalFunction& gen_ParseElements_S2L1 = descr_gen_ParseElements_S2L1;
 
 } // unnamed namespace
 
@@ -1271,7 +1277,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseElements_S4L1(
+refalrts::RASLFunction descr_gen_ParseElements_S4L1(
   "ParseElements$4\\1",
   scope_gen_ParseElements_S4L1::raa,
   scope_gen_ParseElements_S4L1::functions,
@@ -1279,6 +1285,7 @@ refalrts::RASLFunction gen_ParseElements_S4L1(
   scope_gen_ParseElements_S4L1::numbers,
   scope_gen_ParseElements_S4L1::strings
 );
+refalrts::RefalFunction& gen_ParseElements_S4L1 = descr_gen_ParseElements_S4L1;
 
 } // unnamed namespace
 
@@ -1335,7 +1342,8 @@ static refalrts::FnResult func_gen_ParseElements_S4L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseElements_S4L1(func_gen_ParseElements_S4L1, "ParseElements$4\\1");
+refalrts::RefalFunction descr_gen_ParseElements_S4L1(func_gen_ParseElements_S4L1, "ParseElements$4\\1");
+refalrts::RefalFunction& gen_ParseElements_S4L1 = descr_gen_ParseElements_S4L1;
 
 } // unnamed namespace
 
@@ -1548,7 +1556,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseElements(
+refalrts::RASLFunction descr_ParseElements(
   "ParseElements",
   scope_ParseElements::raa,
   scope_ParseElements::functions,
@@ -1556,6 +1564,7 @@ refalrts::RASLFunction ParseElements(
   scope_ParseElements::numbers,
   scope_ParseElements::strings
 );
+refalrts::RefalFunction& ParseElements = descr_ParseElements;
 
 } // unnamed namespace
 
@@ -1845,7 +1854,8 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseElements(func_ParseElements, "ParseElements");
+refalrts::RefalFunction descr_ParseElements(func_ParseElements, "ParseElements");
+refalrts::RefalFunction& ParseElements = descr_ParseElements;
 
 } // unnamed namespace
 
@@ -1965,7 +1975,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ASTItemFromDirective(
+refalrts::RASLFunction descr_ASTItemFromDirective(
   "ASTItemFromDirective",
   scope_ASTItemFromDirective::raa,
   scope_ASTItemFromDirective::functions,
@@ -1973,6 +1983,7 @@ refalrts::RASLFunction ASTItemFromDirective(
   scope_ASTItemFromDirective::numbers,
   scope_ASTItemFromDirective::strings
 );
+refalrts::RefalFunction& ASTItemFromDirective = descr_ASTItemFromDirective;
 
 } // unnamed namespace
 
@@ -2130,7 +2141,8 @@ static refalrts::FnResult func_ASTItemFromDirective(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ASTItemFromDirective(func_ASTItemFromDirective, "ASTItemFromDirective");
+refalrts::RefalFunction descr_ASTItemFromDirective(func_ASTItemFromDirective, "ASTItemFromDirective");
+refalrts::RefalFunction& ASTItemFromDirective = descr_ASTItemFromDirective;
 
 } // unnamed namespace
 
@@ -2252,7 +2264,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseElement_SwDirective(
+refalrts::RASLFunction descr_ParseElement_SwDirective(
   "ParseElement-SwDirective",
   scope_ParseElement_SwDirective::raa,
   scope_ParseElement_SwDirective::functions,
@@ -2260,6 +2272,7 @@ refalrts::RASLFunction ParseElement_SwDirective(
   scope_ParseElement_SwDirective::numbers,
   scope_ParseElement_SwDirective::strings
 );
+refalrts::RefalFunction& ParseElement_SwDirective = descr_ParseElement_SwDirective;
 
 } // unnamed namespace
 
@@ -2409,7 +2422,8 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseElement_SwDirective(func_ParseElement_SwDirective, "ParseElement-SwDirective");
+refalrts::RefalFunction descr_ParseElement_SwDirective(func_ParseElement_SwDirective, "ParseElement-SwDirective");
+refalrts::RefalFunction& ParseElement_SwDirective = descr_ParseElement_SwDirective;
 
 } // unnamed namespace
 
@@ -2506,7 +2520,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseNameList(
+refalrts::RASLFunction descr_ParseNameList(
   "ParseNameList",
   scope_ParseNameList::raa,
   scope_ParseNameList::functions,
@@ -2514,6 +2528,7 @@ refalrts::RASLFunction ParseNameList(
   scope_ParseNameList::numbers,
   scope_ParseNameList::strings
 );
+refalrts::RefalFunction& ParseNameList = descr_ParseNameList;
 
 } // unnamed namespace
 
@@ -2628,7 +2643,8 @@ static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseNameList(func_ParseNameList, "ParseNameList");
+refalrts::RefalFunction descr_ParseNameList(func_ParseNameList, "ParseNameList");
+refalrts::RefalFunction& ParseNameList = descr_ParseNameList;
 
 } // unnamed namespace
 
@@ -2689,7 +2705,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Wrap(
+refalrts::RASLFunction descr_Wrap(
   "Wrap",
   scope_Wrap::raa,
   scope_Wrap::functions,
@@ -2697,6 +2713,7 @@ refalrts::RASLFunction Wrap(
   scope_Wrap::numbers,
   scope_Wrap::strings
 );
+refalrts::RefalFunction& Wrap = descr_Wrap;
 
 } // unnamed namespace
 
@@ -2764,7 +2781,8 @@ static refalrts::FnResult func_Wrap(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Wrap(func_Wrap, "Wrap");
+refalrts::RefalFunction descr_Wrap(func_Wrap, "Wrap");
+refalrts::RefalFunction& Wrap = descr_Wrap;
 
 } // unnamed namespace
 
@@ -2868,7 +2886,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseNameList_Tail(
+refalrts::RASLFunction descr_ParseNameList_Tail(
   "ParseNameList-Tail",
   scope_ParseNameList_Tail::raa,
   scope_ParseNameList_Tail::functions,
@@ -2876,6 +2894,7 @@ refalrts::RASLFunction ParseNameList_Tail(
   scope_ParseNameList_Tail::numbers,
   scope_ParseNameList_Tail::strings
 );
+refalrts::RefalFunction& ParseNameList_Tail = descr_ParseNameList_Tail;
 
 } // unnamed namespace
 
@@ -3010,7 +3029,8 @@ static refalrts::FnResult func_ParseNameList_Tail(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseNameList_Tail(func_ParseNameList_Tail, "ParseNameList-Tail");
+refalrts::RefalFunction descr_ParseNameList_Tail(func_ParseNameList_Tail, "ParseNameList-Tail");
+refalrts::RefalFunction& ParseNameList_Tail = descr_ParseNameList_Tail;
 
 } // unnamed namespace
 
@@ -3061,7 +3081,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseFunction_S1L1(
+refalrts::RASLFunction descr_gen_ParseFunction_S1L1(
   "ParseFunction$1\\1",
   scope_gen_ParseFunction_S1L1::raa,
   scope_gen_ParseFunction_S1L1::functions,
@@ -3069,6 +3089,7 @@ refalrts::RASLFunction gen_ParseFunction_S1L1(
   scope_gen_ParseFunction_S1L1::numbers,
   scope_gen_ParseFunction_S1L1::strings
 );
+refalrts::RefalFunction& gen_ParseFunction_S1L1 = descr_gen_ParseFunction_S1L1;
 
 } // unnamed namespace
 
@@ -3130,7 +3151,8 @@ static refalrts::FnResult func_gen_ParseFunction_S1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseFunction_S1L1(func_gen_ParseFunction_S1L1, "ParseFunction$1\\1");
+refalrts::RefalFunction descr_gen_ParseFunction_S1L1(func_gen_ParseFunction_S1L1, "ParseFunction$1\\1");
+refalrts::RefalFunction& gen_ParseFunction_S1L1 = descr_gen_ParseFunction_S1L1;
 
 } // unnamed namespace
 
@@ -3242,7 +3264,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseFunction(
+refalrts::RASLFunction descr_ParseFunction(
   "ParseFunction",
   scope_ParseFunction::raa,
   scope_ParseFunction::functions,
@@ -3250,6 +3272,7 @@ refalrts::RASLFunction ParseFunction(
   scope_ParseFunction::numbers,
   scope_ParseFunction::strings
 );
+refalrts::RefalFunction& ParseFunction = descr_ParseFunction;
 
 } // unnamed namespace
 
@@ -3382,7 +3405,8 @@ static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseFunction(func_ParseFunction, "ParseFunction");
+refalrts::RefalFunction descr_ParseFunction(func_ParseFunction, "ParseFunction");
+refalrts::RefalFunction& ParseFunction = descr_ParseFunction;
 
 } // unnamed namespace
 
@@ -3468,7 +3492,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseBlock_S1L1(
+refalrts::RASLFunction descr_gen_ParseBlock_S1L1(
   "ParseBlock$1\\1",
   scope_gen_ParseBlock_S1L1::raa,
   scope_gen_ParseBlock_S1L1::functions,
@@ -3476,6 +3500,7 @@ refalrts::RASLFunction gen_ParseBlock_S1L1(
   scope_gen_ParseBlock_S1L1::numbers,
   scope_gen_ParseBlock_S1L1::strings
 );
+refalrts::RefalFunction& gen_ParseBlock_S1L1 = descr_gen_ParseBlock_S1L1;
 
 } // unnamed namespace
 
@@ -3583,7 +3608,8 @@ static refalrts::FnResult func_gen_ParseBlock_S1L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseBlock_S1L1(func_gen_ParseBlock_S1L1, "ParseBlock$1\\1");
+refalrts::RefalFunction descr_gen_ParseBlock_S1L1(func_gen_ParseBlock_S1L1, "ParseBlock$1\\1");
+refalrts::RefalFunction& gen_ParseBlock_S1L1 = descr_gen_ParseBlock_S1L1;
 
 } // unnamed namespace
 
@@ -3668,7 +3694,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseBlock(
+refalrts::RASLFunction descr_ParseBlock(
   "ParseBlock",
   scope_ParseBlock::raa,
   scope_ParseBlock::functions,
@@ -3676,6 +3702,7 @@ refalrts::RASLFunction ParseBlock(
   scope_ParseBlock::numbers,
   scope_ParseBlock::strings
 );
+refalrts::RefalFunction& ParseBlock = descr_ParseBlock;
 
 } // unnamed namespace
 
@@ -3775,7 +3802,8 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseBlock(func_ParseBlock, "ParseBlock");
+refalrts::RefalFunction descr_ParseBlock(func_ParseBlock, "ParseBlock");
+refalrts::RefalFunction& ParseBlock = descr_ParseBlock;
 
 } // unnamed namespace
 
@@ -3896,7 +3924,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoParseBlock(
+refalrts::RASLFunction descr_DoParseBlock(
   "DoParseBlock",
   scope_DoParseBlock::raa,
   scope_DoParseBlock::functions,
@@ -3904,6 +3932,7 @@ refalrts::RASLFunction DoParseBlock(
   scope_DoParseBlock::numbers,
   scope_DoParseBlock::strings
 );
+refalrts::RefalFunction& DoParseBlock = descr_DoParseBlock;
 
 } // unnamed namespace
 
@@ -4061,7 +4090,8 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoParseBlock(func_DoParseBlock, "DoParseBlock");
+refalrts::RefalFunction descr_DoParseBlock(func_DoParseBlock, "DoParseBlock");
+refalrts::RefalFunction& DoParseBlock = descr_DoParseBlock;
 
 } // unnamed namespace
 
@@ -4134,7 +4164,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseSentence_L1(
+refalrts::RASLFunction descr_gen_ParseSentence_L1(
   "ParseSentence\\1",
   scope_gen_ParseSentence_L1::raa,
   scope_gen_ParseSentence_L1::functions,
@@ -4142,6 +4172,7 @@ refalrts::RASLFunction gen_ParseSentence_L1(
   scope_gen_ParseSentence_L1::numbers,
   scope_gen_ParseSentence_L1::strings
 );
+refalrts::RefalFunction& gen_ParseSentence_L1 = descr_gen_ParseSentence_L1;
 
 } // unnamed namespace
 
@@ -4233,7 +4264,8 @@ static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseSentence_L1(func_gen_ParseSentence_L1, "ParseSentence\\1");
+refalrts::RefalFunction descr_gen_ParseSentence_L1(func_gen_ParseSentence_L1, "ParseSentence\\1");
+refalrts::RefalFunction& gen_ParseSentence_L1 = descr_gen_ParseSentence_L1;
 
 } // unnamed namespace
 
@@ -4283,7 +4315,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseSentence_L2(
+refalrts::RASLFunction descr_gen_ParseSentence_L2(
   "ParseSentence\\2",
   scope_gen_ParseSentence_L2::raa,
   scope_gen_ParseSentence_L2::functions,
@@ -4291,6 +4323,7 @@ refalrts::RASLFunction gen_ParseSentence_L2(
   scope_gen_ParseSentence_L2::numbers,
   scope_gen_ParseSentence_L2::strings
 );
+refalrts::RefalFunction& gen_ParseSentence_L2 = descr_gen_ParseSentence_L2;
 
 } // unnamed namespace
 
@@ -4348,7 +4381,8 @@ static refalrts::FnResult func_gen_ParseSentence_L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseSentence_L2(func_gen_ParseSentence_L2, "ParseSentence\\2");
+refalrts::RefalFunction descr_gen_ParseSentence_L2(func_gen_ParseSentence_L2, "ParseSentence\\2");
+refalrts::RefalFunction& gen_ParseSentence_L2 = descr_gen_ParseSentence_L2;
 
 } // unnamed namespace
 
@@ -4551,7 +4585,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseSentence_L3(
+refalrts::RASLFunction descr_gen_ParseSentence_L3(
   "ParseSentence\\3",
   scope_gen_ParseSentence_L3::raa,
   scope_gen_ParseSentence_L3::functions,
@@ -4559,6 +4593,7 @@ refalrts::RASLFunction gen_ParseSentence_L3(
   scope_gen_ParseSentence_L3::numbers,
   scope_gen_ParseSentence_L3::strings
 );
+refalrts::RefalFunction& gen_ParseSentence_L3 = descr_gen_ParseSentence_L3;
 
 } // unnamed namespace
 
@@ -4827,7 +4862,8 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseSentence_L3(func_gen_ParseSentence_L3, "ParseSentence\\3");
+refalrts::RefalFunction descr_gen_ParseSentence_L3(func_gen_ParseSentence_L3, "ParseSentence\\3");
+refalrts::RefalFunction& gen_ParseSentence_L3 = descr_gen_ParseSentence_L3;
 
 } // unnamed namespace
 
@@ -4903,7 +4939,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseSentence(
+refalrts::RASLFunction descr_ParseSentence(
   "ParseSentence",
   scope_ParseSentence::raa,
   scope_ParseSentence::functions,
@@ -4911,6 +4947,7 @@ refalrts::RASLFunction ParseSentence(
   scope_ParseSentence::numbers,
   scope_ParseSentence::strings
 );
+refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 
 } // unnamed namespace
 
@@ -5000,7 +5037,8 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseSentence(func_ParseSentence, "ParseSentence");
+refalrts::RefalFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
+refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 
 } // unnamed namespace
 
@@ -5685,7 +5723,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParsePattern(
+refalrts::RASLFunction descr_ParsePattern(
   "ParsePattern",
   scope_ParsePattern::raa,
   scope_ParsePattern::functions,
@@ -5693,6 +5731,7 @@ refalrts::RASLFunction ParsePattern(
   scope_ParsePattern::numbers,
   scope_ParsePattern::strings
 );
+refalrts::RefalFunction& ParsePattern = descr_ParsePattern;
 
 } // unnamed namespace
 
@@ -6740,7 +6779,8 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParsePattern(func_ParsePattern, "ParsePattern");
+refalrts::RefalFunction descr_ParsePattern(func_ParsePattern, "ParsePattern");
+refalrts::RefalFunction& ParsePattern = descr_ParsePattern;
 
 } // unnamed namespace
 
@@ -6877,7 +6917,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction StrFromBracket(
+refalrts::RASLFunction descr_StrFromBracket(
   "StrFromBracket",
   scope_StrFromBracket::raa,
   scope_StrFromBracket::functions,
@@ -6885,6 +6925,7 @@ refalrts::RASLFunction StrFromBracket(
   scope_StrFromBracket::numbers,
   scope_StrFromBracket::strings
 );
+refalrts::RefalFunction& StrFromBracket = descr_StrFromBracket;
 
 } // unnamed namespace
 
@@ -7076,7 +7117,8 @@ static refalrts::FnResult func_StrFromBracket(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction StrFromBracket(func_StrFromBracket, "StrFromBracket");
+refalrts::RefalFunction descr_StrFromBracket(func_StrFromBracket, "StrFromBracket");
+refalrts::RefalFunction& StrFromBracket = descr_StrFromBracket;
 
 } // unnamed namespace
 
@@ -7131,7 +7173,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseResult_S9L1(
+refalrts::RASLFunction descr_gen_ParseResult_S9L1(
   "ParseResult$9\\1",
   scope_gen_ParseResult_S9L1::raa,
   scope_gen_ParseResult_S9L1::functions,
@@ -7139,6 +7181,7 @@ refalrts::RASLFunction gen_ParseResult_S9L1(
   scope_gen_ParseResult_S9L1::numbers,
   scope_gen_ParseResult_S9L1::strings
 );
+refalrts::RefalFunction& gen_ParseResult_S9L1 = descr_gen_ParseResult_S9L1;
 
 } // unnamed namespace
 
@@ -7197,7 +7240,8 @@ static refalrts::FnResult func_gen_ParseResult_S9L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseResult_S9L1(func_gen_ParseResult_S9L1, "ParseResult$9\\1");
+refalrts::RefalFunction descr_gen_ParseResult_S9L1(func_gen_ParseResult_S9L1, "ParseResult$9\\1");
+refalrts::RefalFunction& gen_ParseResult_S9L1 = descr_gen_ParseResult_S9L1;
 
 } // unnamed namespace
 
@@ -7252,7 +7296,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseResult_S9L2(
+refalrts::RASLFunction descr_gen_ParseResult_S9L2(
   "ParseResult$9\\2",
   scope_gen_ParseResult_S9L2::raa,
   scope_gen_ParseResult_S9L2::functions,
@@ -7260,6 +7304,7 @@ refalrts::RASLFunction gen_ParseResult_S9L2(
   scope_gen_ParseResult_S9L2::numbers,
   scope_gen_ParseResult_S9L2::strings
 );
+refalrts::RefalFunction& gen_ParseResult_S9L2 = descr_gen_ParseResult_S9L2;
 
 } // unnamed namespace
 
@@ -7318,7 +7363,8 @@ static refalrts::FnResult func_gen_ParseResult_S9L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseResult_S9L2(func_gen_ParseResult_S9L2, "ParseResult$9\\2");
+refalrts::RefalFunction descr_gen_ParseResult_S9L2(func_gen_ParseResult_S9L2, "ParseResult$9\\2");
+refalrts::RefalFunction& gen_ParseResult_S9L2 = descr_gen_ParseResult_S9L2;
 
 } // unnamed namespace
 
@@ -7372,7 +7418,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_ParseResult_S11L1(
+refalrts::RASLFunction descr_gen_ParseResult_S11L1(
   "ParseResult$11\\1",
   scope_gen_ParseResult_S11L1::raa,
   scope_gen_ParseResult_S11L1::functions,
@@ -7380,6 +7426,7 @@ refalrts::RASLFunction gen_ParseResult_S11L1(
   scope_gen_ParseResult_S11L1::numbers,
   scope_gen_ParseResult_S11L1::strings
 );
+refalrts::RefalFunction& gen_ParseResult_S11L1 = descr_gen_ParseResult_S11L1;
 
 } // unnamed namespace
 
@@ -7446,7 +7493,8 @@ static refalrts::FnResult func_gen_ParseResult_S11L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_ParseResult_S11L1(func_gen_ParseResult_S11L1, "ParseResult$11\\1");
+refalrts::RefalFunction descr_gen_ParseResult_S11L1(func_gen_ParseResult_S11L1, "ParseResult$11\\1");
+refalrts::RefalFunction& gen_ParseResult_S11L1 = descr_gen_ParseResult_S11L1;
 
 } // unnamed namespace
 
@@ -8015,7 +8063,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ParseResult(
+refalrts::RASLFunction descr_ParseResult(
   "ParseResult",
   scope_ParseResult::raa,
   scope_ParseResult::functions,
@@ -8023,6 +8071,7 @@ refalrts::RASLFunction ParseResult(
   scope_ParseResult::numbers,
   scope_ParseResult::strings
 );
+refalrts::RefalFunction& ParseResult = descr_ParseResult;
 
 } // unnamed namespace
 
@@ -8875,7 +8924,8 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ParseResult(func_ParseResult, "ParseResult");
+refalrts::RefalFunction descr_ParseResult(func_ParseResult, "ParseResult");
+refalrts::RefalFunction& ParseResult = descr_ParseResult;
 
 } // unnamed namespace
 

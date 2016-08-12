@@ -58,82 +58,82 @@ struct ident_UnknownShortOption {
   }
 };
 
-extern refalrts::RefalFunction ArgList;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction WriteLine;
-extern refalrts::RefalFunction StrFromInt;
-extern refalrts::RefalFunction Generate_SelfUpdate;
-extern refalrts::RefalFunction Generate_ToDifferent;
-extern refalrts::RefalFunction GetOpt;
+extern refalrts::RefalFunction& ArgList;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& WriteLine;
+extern refalrts::RefalFunction& StrFromInt;
+extern refalrts::RefalFunction& Generate_SelfUpdate;
+extern refalrts::RefalFunction& Generate_ToDifferent;
+extern refalrts::RefalFunction& GetOpt;
 #ifdef INTERPRET
-extern refalrts::RASLFunction Go;
+extern refalrts::RefalFunction& Go;
 #else
-extern refalrts::RefalFunction Go;
+extern refalrts::RefalFunction& Go;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Main_CheckArgs_S2L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Main_CheckArgs_S2L1;
+extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Main_CheckArgs_S5L1;
+extern refalrts::RefalFunction& gen_Main_CheckArgs_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Main_CheckArgs_S5L1;
+extern refalrts::RefalFunction& gen_Main_CheckArgs_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Main_CheckArgs;
+extern refalrts::RefalFunction& gen_Main_CheckArgs_S5L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Main_CheckArgs;
+extern refalrts::RefalFunction& gen_Main_CheckArgs_S5L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FormatError;
+extern refalrts::RefalFunction& Main_CheckArgs;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FormatError;
+extern refalrts::RefalFunction& Main_CheckArgs;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Help;
+extern refalrts::RefalFunction& FormatError;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Help;
+extern refalrts::RefalFunction& FormatError;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Help;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Help;
 } // unnamed namespace
 
 #endif
@@ -175,7 +175,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction Go(
+refalrts::RASLFunction descr_Go(
   "Go",
   scope_Go::raa,
   scope_Go::functions,
@@ -183,6 +183,7 @@ refalrts::RASLFunction Go(
   scope_Go::numbers,
   scope_Go::strings
 );
+refalrts::RefalFunction& Go = descr_Go;
 
 #else
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -222,7 +223,8 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction Go(func_Go, "Go");
+refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalFunction& Go = descr_Go;
 
 #endif
 #ifdef INTERPRET
@@ -296,7 +298,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main(
+refalrts::RASLFunction descr_Main(
   "Main",
   scope_Main::raa,
   scope_Main::functions,
@@ -304,6 +306,7 @@ refalrts::RASLFunction Main(
   scope_Main::numbers,
   scope_Main::strings
 );
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -392,7 +395,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main(func_Main, "Main");
+refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
 
@@ -475,7 +479,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Main_CheckArgs_S2L1(
+refalrts::RASLFunction descr_gen_Main_CheckArgs_S2L1(
   "Main-CheckArgs$2\\1",
   scope_gen_Main_CheckArgs_S2L1::raa,
   scope_gen_Main_CheckArgs_S2L1::functions,
@@ -483,6 +487,7 @@ refalrts::RASLFunction gen_Main_CheckArgs_S2L1(
   scope_gen_Main_CheckArgs_S2L1::numbers,
   scope_gen_Main_CheckArgs_S2L1::strings
 );
+refalrts::RefalFunction& gen_Main_CheckArgs_S2L1 = descr_gen_Main_CheckArgs_S2L1;
 
 } // unnamed namespace
 
@@ -582,7 +587,8 @@ static refalrts::FnResult func_gen_Main_CheckArgs_S2L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Main_CheckArgs_S2L1(func_gen_Main_CheckArgs_S2L1, "Main-CheckArgs$2\\1");
+refalrts::RefalFunction descr_gen_Main_CheckArgs_S2L1(func_gen_Main_CheckArgs_S2L1, "Main-CheckArgs$2\\1");
+refalrts::RefalFunction& gen_Main_CheckArgs_S2L1 = descr_gen_Main_CheckArgs_S2L1;
 
 } // unnamed namespace
 
@@ -695,7 +701,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Main_CheckArgs_S5L1(
+refalrts::RASLFunction descr_gen_Main_CheckArgs_S5L1(
   "Main-CheckArgs$5\\1",
   scope_gen_Main_CheckArgs_S5L1::raa,
   scope_gen_Main_CheckArgs_S5L1::functions,
@@ -703,6 +709,7 @@ refalrts::RASLFunction gen_Main_CheckArgs_S5L1(
   scope_gen_Main_CheckArgs_S5L1::numbers,
   scope_gen_Main_CheckArgs_S5L1::strings
 );
+refalrts::RefalFunction& gen_Main_CheckArgs_S5L1 = descr_gen_Main_CheckArgs_S5L1;
 
 } // unnamed namespace
 
@@ -836,7 +843,8 @@ static refalrts::FnResult func_gen_Main_CheckArgs_S5L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Main_CheckArgs_S5L1(func_gen_Main_CheckArgs_S5L1, "Main-CheckArgs$5\\1");
+refalrts::RefalFunction descr_gen_Main_CheckArgs_S5L1(func_gen_Main_CheckArgs_S5L1, "Main-CheckArgs$5\\1");
+refalrts::RefalFunction& gen_Main_CheckArgs_S5L1 = descr_gen_Main_CheckArgs_S5L1;
 
 } // unnamed namespace
 
@@ -1025,7 +1033,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Main_CheckArgs(
+refalrts::RASLFunction descr_Main_CheckArgs(
   "Main-CheckArgs",
   scope_Main_CheckArgs::raa,
   scope_Main_CheckArgs::functions,
@@ -1033,6 +1041,7 @@ refalrts::RASLFunction Main_CheckArgs(
   scope_Main_CheckArgs::numbers,
   scope_Main_CheckArgs::strings
 );
+refalrts::RefalFunction& Main_CheckArgs = descr_Main_CheckArgs;
 
 } // unnamed namespace
 
@@ -1291,7 +1300,8 @@ static refalrts::FnResult func_Main_CheckArgs(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Main_CheckArgs(func_Main_CheckArgs, "Main-CheckArgs");
+refalrts::RefalFunction descr_Main_CheckArgs(func_Main_CheckArgs, "Main-CheckArgs");
+refalrts::RefalFunction& Main_CheckArgs = descr_Main_CheckArgs;
 
 } // unnamed namespace
 
@@ -1342,7 +1352,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FormatError(
+refalrts::RASLFunction descr_FormatError(
   "FormatError",
   scope_FormatError::raa,
   scope_FormatError::functions,
@@ -1350,6 +1360,7 @@ refalrts::RASLFunction FormatError(
   scope_FormatError::numbers,
   scope_FormatError::strings
 );
+refalrts::RefalFunction& FormatError = descr_FormatError;
 
 } // unnamed namespace
 
@@ -1399,7 +1410,8 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FormatError(func_FormatError, "FormatError");
+refalrts::RefalFunction descr_FormatError(func_FormatError, "FormatError");
+refalrts::RefalFunction& FormatError = descr_FormatError;
 
 } // unnamed namespace
 
@@ -1468,7 +1480,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Help(
+refalrts::RASLFunction descr_Help(
   "Help",
   scope_Help::raa,
   scope_Help::functions,
@@ -1476,6 +1488,7 @@ refalrts::RASLFunction Help(
   scope_Help::numbers,
   scope_Help::strings
 );
+refalrts::RefalFunction& Help = descr_Help;
 
 } // unnamed namespace
 
@@ -1554,7 +1567,8 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Help(func_Help, "Help");
+refalrts::RefalFunction descr_Help(func_Help, "Help");
+refalrts::RefalFunction& Help = descr_Help;
 
 } // unnamed namespace
 

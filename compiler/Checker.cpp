@@ -234,256 +234,256 @@ struct ident_VariableNotFound {
   }
 };
 
-extern refalrts::RefalFunction Reduce;
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction MapReduce;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction EL_AddErrorAt;
+extern refalrts::RefalFunction& Reduce;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& MapReduce;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& EL_AddErrorAt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckProgram_L1;
+extern refalrts::RefalFunction& gen_CheckProgram_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckProgram_L1;
+extern refalrts::RefalFunction& gen_CheckProgram_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction CheckProgram;
+extern refalrts::RefalFunction& CheckProgram;
 #else
-extern refalrts::RefalFunction CheckProgram;
+extern refalrts::RefalFunction& CheckProgram;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FindErrors_L1;
+extern refalrts::RefalFunction& gen_FindErrors_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FindErrors_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FindErrors_L2;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FindErrors_L2;
+extern refalrts::RefalFunction& gen_FindErrors_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FindErrors;
+extern refalrts::RefalFunction& gen_FindErrors_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FindErrors;
+extern refalrts::RefalFunction& gen_FindErrors_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckDeclarations_L1;
+extern refalrts::RefalFunction& FindErrors;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckDeclarations_L1;
+extern refalrts::RefalFunction& FindErrors;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckDeclarations;
+extern refalrts::RefalFunction& gen_CheckDeclarations_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckDeclarations;
+extern refalrts::RefalFunction& gen_CheckDeclarations_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CleanupValidForwards;
+extern refalrts::RefalFunction& CheckDeclarations;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CleanupValidForwards;
+extern refalrts::RefalFunction& CheckDeclarations;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FindInvalidForwards;
+extern refalrts::RefalFunction& CleanupValidForwards;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FindInvalidForwards;
+extern refalrts::RefalFunction& CleanupValidForwards;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckRedefinitions;
+extern refalrts::RefalFunction& FindInvalidForwards;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckRedefinitions;
+extern refalrts::RefalFunction& FindInvalidForwards;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckFunctionBody;
+extern refalrts::RefalFunction& CheckRedefinitions;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckFunctionBody;
+extern refalrts::RefalFunction& CheckRedefinitions;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckFunctionBodyRec;
+extern refalrts::RefalFunction& CheckFunctionBody;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckFunctionBodyRec;
+extern refalrts::RefalFunction& CheckFunctionBody;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckSentence_L1;
+extern refalrts::RefalFunction& CheckFunctionBodyRec;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckSentence_L1;
+extern refalrts::RefalFunction& CheckFunctionBodyRec;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckSentence;
+extern refalrts::RefalFunction& gen_CheckSentence_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckSentence;
+extern refalrts::RefalFunction& gen_CheckSentence_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FlatExpr_L1;
+extern refalrts::RefalFunction& CheckSentence;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FlatExpr_L1;
+extern refalrts::RefalFunction& CheckSentence;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FlatExpr;
+extern refalrts::RefalFunction& gen_FlatExpr_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FlatExpr;
+extern refalrts::RefalFunction& gen_FlatExpr_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckPattern_S2L1;
+extern refalrts::RefalFunction& FlatExpr;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckPattern_S2L1;
+extern refalrts::RefalFunction& FlatExpr;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckPattern;
+extern refalrts::RefalFunction& gen_CheckPattern_S2L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckPattern;
+extern refalrts::RefalFunction& gen_CheckPattern_S2L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FixupKnownVars;
+extern refalrts::RefalFunction& CheckPattern;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FixupKnownVars;
+extern refalrts::RefalFunction& CheckPattern;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckResult_L1;
+extern refalrts::RefalFunction& FixupKnownVars;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckResult_L1;
+extern refalrts::RefalFunction& FixupKnownVars;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckResult;
+extern refalrts::RefalFunction& gen_CheckResult_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckResult;
+extern refalrts::RefalFunction& gen_CheckResult_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_CheckValidUsings_S4L1;
+extern refalrts::RefalFunction& CheckResult;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_CheckValidUsings_S4L1;
+extern refalrts::RefalFunction& CheckResult;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction CheckValidUsings;
+extern refalrts::RefalFunction& gen_CheckValidUsings_S4L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction CheckValidUsings;
+extern refalrts::RefalFunction& gen_CheckValidUsings_S4L1;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& CheckValidUsings;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& CheckValidUsings;
 } // unnamed namespace
 
 #endif
@@ -755,7 +755,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckProgram_L1(
+refalrts::RASLFunction descr_gen_CheckProgram_L1(
   "CheckProgram\\1",
   scope_gen_CheckProgram_L1::raa,
   scope_gen_CheckProgram_L1::functions,
@@ -763,6 +763,7 @@ refalrts::RASLFunction gen_CheckProgram_L1(
   scope_gen_CheckProgram_L1::numbers,
   scope_gen_CheckProgram_L1::strings
 );
+refalrts::RefalFunction& gen_CheckProgram_L1 = descr_gen_CheckProgram_L1;
 
 } // unnamed namespace
 
@@ -1106,7 +1107,8 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckProgram_L1(func_gen_CheckProgram_L1, "CheckProgram\\1");
+refalrts::RefalFunction descr_gen_CheckProgram_L1(func_gen_CheckProgram_L1, "CheckProgram\\1");
+refalrts::RefalFunction& gen_CheckProgram_L1 = descr_gen_CheckProgram_L1;
 
 } // unnamed namespace
 
@@ -1154,7 +1156,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction CheckProgram(
+refalrts::RASLFunction descr_CheckProgram(
   "CheckProgram",
   scope_CheckProgram::raa,
   scope_CheckProgram::functions,
@@ -1162,6 +1164,7 @@ refalrts::RASLFunction CheckProgram(
   scope_CheckProgram::numbers,
   scope_CheckProgram::strings
 );
+refalrts::RefalFunction& CheckProgram = descr_CheckProgram;
 
 #else
 static refalrts::FnResult func_CheckProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1208,7 +1211,8 @@ static refalrts::FnResult func_CheckProgram(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction CheckProgram(func_CheckProgram, "CheckProgram");
+refalrts::RefalFunction descr_CheckProgram(func_CheckProgram, "CheckProgram");
+refalrts::RefalFunction& CheckProgram = descr_CheckProgram;
 
 #endif
 #ifdef INTERPRET
@@ -1373,7 +1377,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FindErrors_L1(
+refalrts::RASLFunction descr_gen_FindErrors_L1(
   "FindErrors\\1",
   scope_gen_FindErrors_L1::raa,
   scope_gen_FindErrors_L1::functions,
@@ -1381,6 +1385,7 @@ refalrts::RASLFunction gen_FindErrors_L1(
   scope_gen_FindErrors_L1::numbers,
   scope_gen_FindErrors_L1::strings
 );
+refalrts::RefalFunction& gen_FindErrors_L1 = descr_gen_FindErrors_L1;
 
 } // unnamed namespace
 
@@ -1612,7 +1617,8 @@ static refalrts::FnResult func_gen_FindErrors_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FindErrors_L1(func_gen_FindErrors_L1, "FindErrors\\1");
+refalrts::RefalFunction descr_gen_FindErrors_L1(func_gen_FindErrors_L1, "FindErrors\\1");
+refalrts::RefalFunction& gen_FindErrors_L1 = descr_gen_FindErrors_L1;
 
 } // unnamed namespace
 
@@ -1670,7 +1676,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FindErrors_L2(
+refalrts::RASLFunction descr_gen_FindErrors_L2(
   "FindErrors\\2",
   scope_gen_FindErrors_L2::raa,
   scope_gen_FindErrors_L2::functions,
@@ -1678,6 +1684,7 @@ refalrts::RASLFunction gen_FindErrors_L2(
   scope_gen_FindErrors_L2::numbers,
   scope_gen_FindErrors_L2::strings
 );
+refalrts::RefalFunction& gen_FindErrors_L2 = descr_gen_FindErrors_L2;
 
 } // unnamed namespace
 
@@ -1741,7 +1748,8 @@ static refalrts::FnResult func_gen_FindErrors_L2(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FindErrors_L2(func_gen_FindErrors_L2, "FindErrors\\2");
+refalrts::RefalFunction descr_gen_FindErrors_L2(func_gen_FindErrors_L2, "FindErrors\\2");
+refalrts::RefalFunction& gen_FindErrors_L2 = descr_gen_FindErrors_L2;
 
 } // unnamed namespace
 
@@ -1796,7 +1804,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FindErrors(
+refalrts::RASLFunction descr_FindErrors(
   "FindErrors",
   scope_FindErrors::raa,
   scope_FindErrors::functions,
@@ -1804,6 +1812,7 @@ refalrts::RASLFunction FindErrors(
   scope_FindErrors::numbers,
   scope_FindErrors::strings
 );
+refalrts::RefalFunction& FindErrors = descr_FindErrors;
 
 } // unnamed namespace
 
@@ -1861,7 +1870,8 @@ static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FindErrors(func_FindErrors, "FindErrors");
+refalrts::RefalFunction descr_FindErrors(func_FindErrors, "FindErrors");
+refalrts::RefalFunction& FindErrors = descr_FindErrors;
 
 } // unnamed namespace
 
@@ -1911,7 +1921,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckDeclarations_L1(
+refalrts::RASLFunction descr_gen_CheckDeclarations_L1(
   "CheckDeclarations\\1",
   scope_gen_CheckDeclarations_L1::raa,
   scope_gen_CheckDeclarations_L1::functions,
@@ -1919,6 +1929,7 @@ refalrts::RASLFunction gen_CheckDeclarations_L1(
   scope_gen_CheckDeclarations_L1::numbers,
   scope_gen_CheckDeclarations_L1::strings
 );
+refalrts::RefalFunction& gen_CheckDeclarations_L1 = descr_gen_CheckDeclarations_L1;
 
 } // unnamed namespace
 
@@ -1975,7 +1986,8 @@ static refalrts::FnResult func_gen_CheckDeclarations_L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckDeclarations_L1(func_gen_CheckDeclarations_L1, "CheckDeclarations\\1");
+refalrts::RefalFunction descr_gen_CheckDeclarations_L1(func_gen_CheckDeclarations_L1, "CheckDeclarations\\1");
+refalrts::RefalFunction& gen_CheckDeclarations_L1 = descr_gen_CheckDeclarations_L1;
 
 } // unnamed namespace
 
@@ -2031,7 +2043,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckDeclarations(
+refalrts::RASLFunction descr_CheckDeclarations(
   "CheckDeclarations",
   scope_CheckDeclarations::raa,
   scope_CheckDeclarations::functions,
@@ -2039,6 +2051,7 @@ refalrts::RASLFunction CheckDeclarations(
   scope_CheckDeclarations::numbers,
   scope_CheckDeclarations::strings
 );
+refalrts::RefalFunction& CheckDeclarations = descr_CheckDeclarations;
 
 } // unnamed namespace
 
@@ -2095,7 +2108,8 @@ static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckDeclarations(func_CheckDeclarations, "CheckDeclarations");
+refalrts::RefalFunction descr_CheckDeclarations(func_CheckDeclarations, "CheckDeclarations");
+refalrts::RefalFunction& CheckDeclarations = descr_CheckDeclarations;
 
 } // unnamed namespace
 
@@ -2203,7 +2217,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CleanupValidForwards(
+refalrts::RASLFunction descr_CleanupValidForwards(
   "CleanupValidForwards",
   scope_CleanupValidForwards::raa,
   scope_CleanupValidForwards::functions,
@@ -2211,6 +2225,7 @@ refalrts::RASLFunction CleanupValidForwards(
   scope_CleanupValidForwards::numbers,
   scope_CleanupValidForwards::strings
 );
+refalrts::RefalFunction& CleanupValidForwards = descr_CleanupValidForwards;
 
 } // unnamed namespace
 
@@ -2392,7 +2407,8 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CleanupValidForwards(func_CleanupValidForwards, "CleanupValidForwards");
+refalrts::RefalFunction descr_CleanupValidForwards(func_CleanupValidForwards, "CleanupValidForwards");
+refalrts::RefalFunction& CleanupValidForwards = descr_CleanupValidForwards;
 
 } // unnamed namespace
 
@@ -2542,7 +2558,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FindInvalidForwards(
+refalrts::RASLFunction descr_FindInvalidForwards(
   "FindInvalidForwards",
   scope_FindInvalidForwards::raa,
   scope_FindInvalidForwards::functions,
@@ -2550,6 +2566,7 @@ refalrts::RASLFunction FindInvalidForwards(
   scope_FindInvalidForwards::numbers,
   scope_FindInvalidForwards::strings
 );
+refalrts::RefalFunction& FindInvalidForwards = descr_FindInvalidForwards;
 
 } // unnamed namespace
 
@@ -2796,7 +2813,8 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FindInvalidForwards(func_FindInvalidForwards, "FindInvalidForwards");
+refalrts::RefalFunction descr_FindInvalidForwards(func_FindInvalidForwards, "FindInvalidForwards");
+refalrts::RefalFunction& FindInvalidForwards = descr_FindInvalidForwards;
 
 } // unnamed namespace
 
@@ -2877,7 +2895,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckRedefinitions(
+refalrts::RASLFunction descr_CheckRedefinitions(
   "CheckRedefinitions",
   scope_CheckRedefinitions::raa,
   scope_CheckRedefinitions::functions,
@@ -2885,6 +2903,7 @@ refalrts::RASLFunction CheckRedefinitions(
   scope_CheckRedefinitions::numbers,
   scope_CheckRedefinitions::strings
 );
+refalrts::RefalFunction& CheckRedefinitions = descr_CheckRedefinitions;
 
 } // unnamed namespace
 
@@ -2998,7 +3017,8 @@ static refalrts::FnResult func_CheckRedefinitions(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckRedefinitions(func_CheckRedefinitions, "CheckRedefinitions");
+refalrts::RefalFunction descr_CheckRedefinitions(func_CheckRedefinitions, "CheckRedefinitions");
+refalrts::RefalFunction& CheckRedefinitions = descr_CheckRedefinitions;
 
 } // unnamed namespace
 
@@ -3038,7 +3058,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckFunctionBody(
+refalrts::RASLFunction descr_CheckFunctionBody(
   "CheckFunctionBody",
   scope_CheckFunctionBody::raa,
   scope_CheckFunctionBody::functions,
@@ -3046,6 +3066,7 @@ refalrts::RASLFunction CheckFunctionBody(
   scope_CheckFunctionBody::numbers,
   scope_CheckFunctionBody::strings
 );
+refalrts::RefalFunction& CheckFunctionBody = descr_CheckFunctionBody;
 
 } // unnamed namespace
 
@@ -3088,7 +3109,8 @@ static refalrts::FnResult func_CheckFunctionBody(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckFunctionBody(func_CheckFunctionBody, "CheckFunctionBody");
+refalrts::RefalFunction descr_CheckFunctionBody(func_CheckFunctionBody, "CheckFunctionBody");
+refalrts::RefalFunction& CheckFunctionBody = descr_CheckFunctionBody;
 
 } // unnamed namespace
 
@@ -3155,7 +3177,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckFunctionBodyRec(
+refalrts::RASLFunction descr_CheckFunctionBodyRec(
   "CheckFunctionBodyRec",
   scope_CheckFunctionBodyRec::raa,
   scope_CheckFunctionBodyRec::functions,
@@ -3163,6 +3185,7 @@ refalrts::RASLFunction CheckFunctionBodyRec(
   scope_CheckFunctionBodyRec::numbers,
   scope_CheckFunctionBodyRec::strings
 );
+refalrts::RefalFunction& CheckFunctionBodyRec = descr_CheckFunctionBodyRec;
 
 } // unnamed namespace
 
@@ -3236,7 +3259,8 @@ static refalrts::FnResult func_CheckFunctionBodyRec(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckFunctionBodyRec(func_CheckFunctionBodyRec, "CheckFunctionBodyRec");
+refalrts::RefalFunction descr_CheckFunctionBodyRec(func_CheckFunctionBodyRec, "CheckFunctionBodyRec");
+refalrts::RefalFunction& CheckFunctionBodyRec = descr_CheckFunctionBodyRec;
 
 } // unnamed namespace
 
@@ -3288,7 +3312,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckSentence_L1(
+refalrts::RASLFunction descr_gen_CheckSentence_L1(
   "CheckSentence\\1",
   scope_gen_CheckSentence_L1::raa,
   scope_gen_CheckSentence_L1::functions,
@@ -3296,6 +3320,7 @@ refalrts::RASLFunction gen_CheckSentence_L1(
   scope_gen_CheckSentence_L1::numbers,
   scope_gen_CheckSentence_L1::strings
 );
+refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
 
 } // unnamed namespace
 
@@ -3354,7 +3379,8 @@ static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckSentence_L1(func_gen_CheckSentence_L1, "CheckSentence\\1");
+refalrts::RefalFunction descr_gen_CheckSentence_L1(func_gen_CheckSentence_L1, "CheckSentence\\1");
+refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
 
 } // unnamed namespace
 
@@ -3424,7 +3450,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckSentence(
+refalrts::RASLFunction descr_CheckSentence(
   "CheckSentence",
   scope_CheckSentence::raa,
   scope_CheckSentence::functions,
@@ -3432,6 +3458,7 @@ refalrts::RASLFunction CheckSentence(
   scope_CheckSentence::numbers,
   scope_CheckSentence::strings
 );
+refalrts::RefalFunction& CheckSentence = descr_CheckSentence;
 
 } // unnamed namespace
 
@@ -3518,7 +3545,8 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckSentence(func_CheckSentence, "CheckSentence");
+refalrts::RefalFunction descr_CheckSentence(func_CheckSentence, "CheckSentence");
+refalrts::RefalFunction& CheckSentence = descr_CheckSentence;
 
 } // unnamed namespace
 
@@ -3704,7 +3732,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FlatExpr_L1(
+refalrts::RASLFunction descr_gen_FlatExpr_L1(
   "FlatExpr\\1",
   scope_gen_FlatExpr_L1::raa,
   scope_gen_FlatExpr_L1::functions,
@@ -3712,6 +3740,7 @@ refalrts::RASLFunction gen_FlatExpr_L1(
   scope_gen_FlatExpr_L1::numbers,
   scope_gen_FlatExpr_L1::strings
 );
+refalrts::RefalFunction& gen_FlatExpr_L1 = descr_gen_FlatExpr_L1;
 
 } // unnamed namespace
 
@@ -4008,7 +4037,8 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FlatExpr_L1(func_gen_FlatExpr_L1, "FlatExpr\\1");
+refalrts::RefalFunction descr_gen_FlatExpr_L1(func_gen_FlatExpr_L1, "FlatExpr\\1");
+refalrts::RefalFunction& gen_FlatExpr_L1 = descr_gen_FlatExpr_L1;
 
 } // unnamed namespace
 
@@ -4047,7 +4077,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FlatExpr(
+refalrts::RASLFunction descr_FlatExpr(
   "FlatExpr",
   scope_FlatExpr::raa,
   scope_FlatExpr::functions,
@@ -4055,6 +4085,7 @@ refalrts::RASLFunction FlatExpr(
   scope_FlatExpr::numbers,
   scope_FlatExpr::strings
 );
+refalrts::RefalFunction& FlatExpr = descr_FlatExpr;
 
 } // unnamed namespace
 
@@ -4090,7 +4121,8 @@ static refalrts::FnResult func_FlatExpr(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FlatExpr(func_FlatExpr, "FlatExpr");
+refalrts::RefalFunction descr_FlatExpr(func_FlatExpr, "FlatExpr");
+refalrts::RefalFunction& FlatExpr = descr_FlatExpr;
 
 } // unnamed namespace
 
@@ -4262,7 +4294,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckPattern_S2L1(
+refalrts::RASLFunction descr_gen_CheckPattern_S2L1(
   "CheckPattern$2\\1",
   scope_gen_CheckPattern_S2L1::raa,
   scope_gen_CheckPattern_S2L1::functions,
@@ -4270,6 +4302,7 @@ refalrts::RASLFunction gen_CheckPattern_S2L1(
   scope_gen_CheckPattern_S2L1::numbers,
   scope_gen_CheckPattern_S2L1::strings
 );
+refalrts::RefalFunction& gen_CheckPattern_S2L1 = descr_gen_CheckPattern_S2L1;
 
 } // unnamed namespace
 
@@ -4521,7 +4554,8 @@ static refalrts::FnResult func_gen_CheckPattern_S2L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckPattern_S2L1(func_gen_CheckPattern_S2L1, "CheckPattern$2\\1");
+refalrts::RefalFunction descr_gen_CheckPattern_S2L1(func_gen_CheckPattern_S2L1, "CheckPattern$2\\1");
+refalrts::RefalFunction& gen_CheckPattern_S2L1 = descr_gen_CheckPattern_S2L1;
 
 } // unnamed namespace
 
@@ -4619,7 +4653,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckPattern(
+refalrts::RASLFunction descr_CheckPattern(
   "CheckPattern",
   scope_CheckPattern::raa,
   scope_CheckPattern::functions,
@@ -4627,6 +4661,7 @@ refalrts::RASLFunction CheckPattern(
   scope_CheckPattern::numbers,
   scope_CheckPattern::strings
 );
+refalrts::RefalFunction& CheckPattern = descr_CheckPattern;
 
 } // unnamed namespace
 
@@ -4765,7 +4800,8 @@ static refalrts::FnResult func_CheckPattern(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckPattern(func_CheckPattern, "CheckPattern");
+refalrts::RefalFunction descr_CheckPattern(func_CheckPattern, "CheckPattern");
+refalrts::RefalFunction& CheckPattern = descr_CheckPattern;
 
 } // unnamed namespace
 
@@ -4832,7 +4868,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FixupKnownVars(
+refalrts::RASLFunction descr_FixupKnownVars(
   "FixupKnownVars",
   scope_FixupKnownVars::raa,
   scope_FixupKnownVars::functions,
@@ -4840,6 +4876,7 @@ refalrts::RASLFunction FixupKnownVars(
   scope_FixupKnownVars::numbers,
   scope_FixupKnownVars::strings
 );
+refalrts::RefalFunction& FixupKnownVars = descr_FixupKnownVars;
 
 } // unnamed namespace
 
@@ -4930,7 +4967,8 @@ static refalrts::FnResult func_FixupKnownVars(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FixupKnownVars(func_FixupKnownVars, "FixupKnownVars");
+refalrts::RefalFunction descr_FixupKnownVars(func_FixupKnownVars, "FixupKnownVars");
+refalrts::RefalFunction& FixupKnownVars = descr_FixupKnownVars;
 
 } // unnamed namespace
 
@@ -5094,7 +5132,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckResult_L1(
+refalrts::RASLFunction descr_gen_CheckResult_L1(
   "CheckResult\\1",
   scope_gen_CheckResult_L1::raa,
   scope_gen_CheckResult_L1::functions,
@@ -5102,6 +5140,7 @@ refalrts::RASLFunction gen_CheckResult_L1(
   scope_gen_CheckResult_L1::numbers,
   scope_gen_CheckResult_L1::strings
 );
+refalrts::RefalFunction& gen_CheckResult_L1 = descr_gen_CheckResult_L1;
 
 } // unnamed namespace
 
@@ -5345,7 +5384,8 @@ static refalrts::FnResult func_gen_CheckResult_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckResult_L1(func_gen_CheckResult_L1, "CheckResult\\1");
+refalrts::RefalFunction descr_gen_CheckResult_L1(func_gen_CheckResult_L1, "CheckResult\\1");
+refalrts::RefalFunction& gen_CheckResult_L1 = descr_gen_CheckResult_L1;
 
 } // unnamed namespace
 
@@ -5388,7 +5428,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckResult(
+refalrts::RASLFunction descr_CheckResult(
   "CheckResult",
   scope_CheckResult::raa,
   scope_CheckResult::functions,
@@ -5396,6 +5436,7 @@ refalrts::RASLFunction CheckResult(
   scope_CheckResult::numbers,
   scope_CheckResult::strings
 );
+refalrts::RefalFunction& CheckResult = descr_CheckResult;
 
 } // unnamed namespace
 
@@ -5440,7 +5481,8 @@ static refalrts::FnResult func_CheckResult(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckResult(func_CheckResult, "CheckResult");
+refalrts::RefalFunction descr_CheckResult(func_CheckResult, "CheckResult");
+refalrts::RefalFunction& CheckResult = descr_CheckResult;
 
 } // unnamed namespace
 
@@ -5495,7 +5537,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_CheckValidUsings_S4L1(
+refalrts::RASLFunction descr_gen_CheckValidUsings_S4L1(
   "CheckValidUsings$4\\1",
   scope_gen_CheckValidUsings_S4L1::raa,
   scope_gen_CheckValidUsings_S4L1::functions,
@@ -5503,6 +5545,7 @@ refalrts::RASLFunction gen_CheckValidUsings_S4L1(
   scope_gen_CheckValidUsings_S4L1::numbers,
   scope_gen_CheckValidUsings_S4L1::strings
 );
+refalrts::RefalFunction& gen_CheckValidUsings_S4L1 = descr_gen_CheckValidUsings_S4L1;
 
 } // unnamed namespace
 
@@ -5571,7 +5614,8 @@ static refalrts::FnResult func_gen_CheckValidUsings_S4L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_CheckValidUsings_S4L1(func_gen_CheckValidUsings_S4L1, "CheckValidUsings$4\\1");
+refalrts::RefalFunction descr_gen_CheckValidUsings_S4L1(func_gen_CheckValidUsings_S4L1, "CheckValidUsings$4\\1");
+refalrts::RefalFunction& gen_CheckValidUsings_S4L1 = descr_gen_CheckValidUsings_S4L1;
 
 } // unnamed namespace
 
@@ -5705,7 +5749,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction CheckValidUsings(
+refalrts::RASLFunction descr_CheckValidUsings(
   "CheckValidUsings",
   scope_CheckValidUsings::raa,
   scope_CheckValidUsings::functions,
@@ -5713,6 +5757,7 @@ refalrts::RASLFunction CheckValidUsings(
   scope_CheckValidUsings::numbers,
   scope_CheckValidUsings::strings
 );
+refalrts::RefalFunction& CheckValidUsings = descr_CheckValidUsings;
 
 } // unnamed namespace
 
@@ -5912,7 +5957,8 @@ static refalrts::FnResult func_CheckValidUsings(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction CheckValidUsings(func_CheckValidUsings, "CheckValidUsings");
+refalrts::RefalFunction descr_CheckValidUsings(func_CheckValidUsings, "CheckValidUsings");
+refalrts::RefalFunction& CheckValidUsings = descr_CheckValidUsings;
 
 } // unnamed namespace
 

@@ -90,404 +90,404 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction Fetch;
-extern refalrts::RefalFunction Compare;
-extern refalrts::RefalFunction Inc;
-extern refalrts::RefalFunction Seq;
-extern refalrts::RefalFunction Reduce;
-extern refalrts::RefalFunction Map;
-extern refalrts::RefalFunction MapReduce;
-extern refalrts::RefalFunction DelAccumulator;
-extern refalrts::RefalFunction UnBracket;
-extern refalrts::RefalFunction Add;
-extern refalrts::RefalFunction Sub;
+extern refalrts::RefalFunction& Fetch;
+extern refalrts::RefalFunction& Compare;
+extern refalrts::RefalFunction& Inc;
+extern refalrts::RefalFunction& Seq;
+extern refalrts::RefalFunction& Reduce;
+extern refalrts::RefalFunction& Map;
+extern refalrts::RefalFunction& MapReduce;
+extern refalrts::RefalFunction& DelAccumulator;
+extern refalrts::RefalFunction& UnBracket;
+extern refalrts::RefalFunction& Add;
+extern refalrts::RefalFunction& Sub;
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_GST_L1;
+extern refalrts::RefalFunction& gen_GST_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_GST_L1;
+extern refalrts::RefalFunction& gen_GST_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_GST_L2;
+extern refalrts::RefalFunction& gen_GST_L2;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_GST_L2;
+extern refalrts::RefalFunction& gen_GST_L2;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_GST_L3;
+extern refalrts::RefalFunction& gen_GST_L3;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_GST_L3;
+extern refalrts::RefalFunction& gen_GST_L3;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
-extern refalrts::RASLFunction GST;
+extern refalrts::RefalFunction& GST;
 #else
-extern refalrts::RefalFunction GST;
+extern refalrts::RefalFunction& GST;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Enum_L1;
+extern refalrts::RefalFunction& gen_Enum_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Enum_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RASLFunction Enum;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction Enum;
+extern refalrts::RefalFunction& gen_Enum_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_DeEnum_L1;
+extern refalrts::RefalFunction& Enum;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_DeEnum_L1;
+extern refalrts::RefalFunction& Enum;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DeEnum;
+extern refalrts::RefalFunction& gen_DeEnum_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DeEnum;
+extern refalrts::RefalFunction& gen_DeEnum_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_TileCandidates_L1;
+extern refalrts::RefalFunction& DeEnum;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_TileCandidates_L1;
+extern refalrts::RefalFunction& DeEnum;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction TileCandidates;
+extern refalrts::RefalFunction& gen_TileCandidates_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction TileCandidates;
+extern refalrts::RefalFunction& gen_TileCandidates_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction AlignEnumExprs;
+extern refalrts::RefalFunction& TileCandidates;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction AlignEnumExprs;
+extern refalrts::RefalFunction& TileCandidates;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoOverlapOffsets;
+extern refalrts::RefalFunction& AlignEnumExprs;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoOverlapOffsets;
+extern refalrts::RefalFunction& AlignEnumExprs;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction OverlapChain;
+extern refalrts::RefalFunction& DoOverlapOffsets;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction OverlapChain;
+extern refalrts::RefalFunction& DoOverlapOffsets;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ZipItems;
+extern refalrts::RefalFunction& OverlapChain;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ZipItems;
+extern refalrts::RefalFunction& OverlapChain;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction GlueTiles;
+extern refalrts::RefalFunction& ZipItems;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction GlueTiles;
+extern refalrts::RefalFunction& ZipItems;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction GlueNextTile;
+extern refalrts::RefalFunction& GlueTiles;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction GlueNextTile;
+extern refalrts::RefalFunction& GlueTiles;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FoldTile_EEnd;
+extern refalrts::RefalFunction& GlueNextTile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FoldTile_EEnd;
+extern refalrts::RefalFunction& GlueNextTile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FilterOverlapped_S1L1L1;
+extern refalrts::RefalFunction& FoldTile_EEnd;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FilterOverlapped_S1L1L1;
+extern refalrts::RefalFunction& FoldTile_EEnd;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FilterOverlapped_S1L1;
+extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FilterOverlapped_S1L1;
+extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FilterOverlapped;
+extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FilterOverlapped;
+extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FindHeavyTile_L1L1;
+extern refalrts::RefalFunction& FilterOverlapped;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FindHeavyTile_L1L1;
+extern refalrts::RefalFunction& FilterOverlapped;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FindHeavyTile_L1;
+extern refalrts::RefalFunction& gen_FindHeavyTile_L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FindHeavyTile_L1;
+extern refalrts::RefalFunction& gen_FindHeavyTile_L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FindHeavyTile;
+extern refalrts::RefalFunction& gen_FindHeavyTile_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FindHeavyTile;
+extern refalrts::RefalFunction& gen_FindHeavyTile_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RejectTile_L1L1;
+extern refalrts::RefalFunction& FindHeavyTile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RejectTile_L1L1;
+extern refalrts::RefalFunction& FindHeavyTile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_RejectTile_L1;
+extern refalrts::RefalFunction& gen_RejectTile_L1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_RejectTile_L1;
+extern refalrts::RefalFunction& gen_RejectTile_L1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction RejectTile;
+extern refalrts::RefalFunction& gen_RejectTile_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction RejectTile;
+extern refalrts::RefalFunction& gen_RejectTile_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FilterPatternPos;
+extern refalrts::RefalFunction& RejectTile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FilterPatternPos;
+extern refalrts::RefalFunction& RejectTile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FilterResultPos;
+extern refalrts::RefalFunction& FilterPatternPos;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FilterResultPos;
+extern refalrts::RefalFunction& FilterPatternPos;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FoldTile;
+extern refalrts::RefalFunction& FilterResultPos;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FoldTile;
+extern refalrts::RefalFunction& FilterResultPos;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_FoldTileW_S1L1;
+extern refalrts::RefalFunction& FoldTile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_FoldTileW_S1L1;
+extern refalrts::RefalFunction& FoldTile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction FoldTileW;
+extern refalrts::RefalFunction& gen_FoldTileW_S1L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction FoldTileW;
+extern refalrts::RefalFunction& gen_FoldTileW_S1L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction ReplaceTile;
+extern refalrts::RefalFunction& FoldTileW;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction ReplaceTile;
+extern refalrts::RefalFunction& FoldTileW;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction gen_Modify_L1;
+extern refalrts::RefalFunction& ReplaceTile;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction gen_Modify_L1;
+extern refalrts::RefalFunction& ReplaceTile;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction Modify;
+extern refalrts::RefalFunction& gen_Modify_L1;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction Modify;
+extern refalrts::RefalFunction& gen_Modify_L1;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction DoModify;
+extern refalrts::RefalFunction& Modify;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction DoModify;
+extern refalrts::RefalFunction& Modify;
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-extern refalrts::RASLFunction OverlapItem;
+extern refalrts::RefalFunction& DoModify;
 } // unnamed namespace
 
 #else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction OverlapItem;
+extern refalrts::RefalFunction& DoModify;
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& OverlapItem;
+} // unnamed namespace
+
+#else
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& OverlapItem;
 } // unnamed namespace
 
 #endif
@@ -548,7 +548,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_GST_L1(
+refalrts::RASLFunction descr_gen_GST_L1(
   "GST\\1",
   scope_gen_GST_L1::raa,
   scope_gen_GST_L1::functions,
@@ -556,6 +556,7 @@ refalrts::RASLFunction gen_GST_L1(
   scope_gen_GST_L1::numbers,
   scope_gen_GST_L1::strings
 );
+refalrts::RefalFunction& gen_GST_L1 = descr_gen_GST_L1;
 
 } // unnamed namespace
 
@@ -628,7 +629,8 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_GST_L1(func_gen_GST_L1, "GST\\1");
+refalrts::RefalFunction descr_gen_GST_L1(func_gen_GST_L1, "GST\\1");
+refalrts::RefalFunction& gen_GST_L1 = descr_gen_GST_L1;
 
 } // unnamed namespace
 
@@ -677,7 +679,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_GST_L2(
+refalrts::RASLFunction descr_gen_GST_L2(
   "GST\\2",
   scope_gen_GST_L2::raa,
   scope_gen_GST_L2::functions,
@@ -685,6 +687,7 @@ refalrts::RASLFunction gen_GST_L2(
   scope_gen_GST_L2::numbers,
   scope_gen_GST_L2::strings
 );
+refalrts::RefalFunction& gen_GST_L2 = descr_gen_GST_L2;
 
 } // unnamed namespace
 
@@ -749,7 +752,8 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_GST_L2(func_gen_GST_L2, "GST\\2");
+refalrts::RefalFunction descr_gen_GST_L2(func_gen_GST_L2, "GST\\2");
+refalrts::RefalFunction& gen_GST_L2 = descr_gen_GST_L2;
 
 } // unnamed namespace
 
@@ -805,7 +809,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_GST_L3(
+refalrts::RASLFunction descr_gen_GST_L3(
   "GST\\3",
   scope_gen_GST_L3::raa,
   scope_gen_GST_L3::functions,
@@ -813,6 +817,7 @@ refalrts::RASLFunction gen_GST_L3(
   scope_gen_GST_L3::numbers,
   scope_gen_GST_L3::strings
 );
+refalrts::RefalFunction& gen_GST_L3 = descr_gen_GST_L3;
 
 } // unnamed namespace
 
@@ -883,7 +888,8 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_GST_L3(func_gen_GST_L3, "GST\\3");
+refalrts::RefalFunction descr_gen_GST_L3(func_gen_GST_L3, "GST\\3");
+refalrts::RefalFunction& gen_GST_L3 = descr_gen_GST_L3;
 
 } // unnamed namespace
 
@@ -960,7 +966,7 @@ namespace /* unnamed */ {
 
 } // unnamed namespace
 
-refalrts::RASLFunction GST(
+refalrts::RASLFunction descr_GST(
   "GST",
   scope_GST::raa,
   scope_GST::functions,
@@ -968,6 +974,7 @@ refalrts::RASLFunction GST(
   scope_GST::numbers,
   scope_GST::strings
 );
+refalrts::RefalFunction& GST = descr_GST;
 
 #else
 static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1062,7 +1069,8 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction GST(func_GST, "GST");
+refalrts::RefalFunction descr_GST(func_GST, "GST");
+refalrts::RefalFunction& GST = descr_GST;
 
 #endif
 #ifdef INTERPRET
@@ -1107,7 +1115,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Enum_L1(
+refalrts::RASLFunction descr_gen_Enum_L1(
   "Enum\\1",
   scope_gen_Enum_L1::raa,
   scope_gen_Enum_L1::functions,
@@ -1115,6 +1123,7 @@ refalrts::RASLFunction gen_Enum_L1(
   scope_gen_Enum_L1::numbers,
   scope_gen_Enum_L1::strings
 );
+refalrts::RefalFunction& gen_Enum_L1 = descr_gen_Enum_L1;
 
 } // unnamed namespace
 
@@ -1164,7 +1173,8 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Enum_L1(func_gen_Enum_L1, "Enum\\1");
+refalrts::RefalFunction descr_gen_Enum_L1(func_gen_Enum_L1, "Enum\\1");
+refalrts::RefalFunction& gen_Enum_L1 = descr_gen_Enum_L1;
 
 } // unnamed namespace
 
@@ -1211,7 +1221,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Enum(
+refalrts::RASLFunction descr_Enum(
   "Enum",
   scope_Enum::raa,
   scope_Enum::functions,
@@ -1219,6 +1229,7 @@ refalrts::RASLFunction Enum(
   scope_Enum::numbers,
   scope_Enum::strings
 );
+refalrts::RefalFunction& Enum = descr_Enum;
 
 } // unnamed namespace
 
@@ -1265,7 +1276,8 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Enum(func_Enum, "Enum");
+refalrts::RefalFunction descr_Enum(func_Enum, "Enum");
+refalrts::RefalFunction& Enum = descr_Enum;
 
 } // unnamed namespace
 
@@ -1337,7 +1349,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_DeEnum_L1(
+refalrts::RASLFunction descr_gen_DeEnum_L1(
   "DeEnum\\1",
   scope_gen_DeEnum_L1::raa,
   scope_gen_DeEnum_L1::functions,
@@ -1345,6 +1357,7 @@ refalrts::RASLFunction gen_DeEnum_L1(
   scope_gen_DeEnum_L1::numbers,
   scope_gen_DeEnum_L1::strings
 );
+refalrts::RefalFunction& gen_DeEnum_L1 = descr_gen_DeEnum_L1;
 
 } // unnamed namespace
 
@@ -1442,7 +1455,8 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_DeEnum_L1(func_gen_DeEnum_L1, "DeEnum\\1");
+refalrts::RefalFunction descr_gen_DeEnum_L1(func_gen_DeEnum_L1, "DeEnum\\1");
+refalrts::RefalFunction& gen_DeEnum_L1 = descr_gen_DeEnum_L1;
 
 } // unnamed namespace
 
@@ -1481,7 +1495,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DeEnum(
+refalrts::RASLFunction descr_DeEnum(
   "DeEnum",
   scope_DeEnum::raa,
   scope_DeEnum::functions,
@@ -1489,6 +1503,7 @@ refalrts::RASLFunction DeEnum(
   scope_DeEnum::numbers,
   scope_DeEnum::strings
 );
+refalrts::RefalFunction& DeEnum = descr_DeEnum;
 
 } // unnamed namespace
 
@@ -1524,7 +1539,8 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DeEnum(func_DeEnum, "DeEnum");
+refalrts::RefalFunction descr_DeEnum(func_DeEnum, "DeEnum");
+refalrts::RefalFunction& DeEnum = descr_DeEnum;
 
 } // unnamed namespace
 
@@ -1578,7 +1594,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_TileCandidates_L1(
+refalrts::RASLFunction descr_gen_TileCandidates_L1(
   "TileCandidates\\1",
   scope_gen_TileCandidates_L1::raa,
   scope_gen_TileCandidates_L1::functions,
@@ -1586,6 +1602,7 @@ refalrts::RASLFunction gen_TileCandidates_L1(
   scope_gen_TileCandidates_L1::numbers,
   scope_gen_TileCandidates_L1::strings
 );
+refalrts::RefalFunction& gen_TileCandidates_L1 = descr_gen_TileCandidates_L1;
 
 } // unnamed namespace
 
@@ -1655,7 +1672,8 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_TileCandidates_L1(func_gen_TileCandidates_L1, "TileCandidates\\1");
+refalrts::RefalFunction descr_gen_TileCandidates_L1(func_gen_TileCandidates_L1, "TileCandidates\\1");
+refalrts::RefalFunction& gen_TileCandidates_L1 = descr_gen_TileCandidates_L1;
 
 } // unnamed namespace
 
@@ -1717,7 +1735,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction TileCandidates(
+refalrts::RASLFunction descr_TileCandidates(
   "TileCandidates",
   scope_TileCandidates::raa,
   scope_TileCandidates::functions,
@@ -1725,6 +1743,7 @@ refalrts::RASLFunction TileCandidates(
   scope_TileCandidates::numbers,
   scope_TileCandidates::strings
 );
+refalrts::RefalFunction& TileCandidates = descr_TileCandidates;
 
 } // unnamed namespace
 
@@ -1801,7 +1820,8 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction TileCandidates(func_TileCandidates, "TileCandidates");
+refalrts::RefalFunction descr_TileCandidates(func_TileCandidates, "TileCandidates");
+refalrts::RefalFunction& TileCandidates = descr_TileCandidates;
 
 } // unnamed namespace
 
@@ -2000,7 +2020,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction AlignEnumExprs(
+refalrts::RASLFunction descr_AlignEnumExprs(
   "AlignEnumExprs",
   scope_AlignEnumExprs::raa,
   scope_AlignEnumExprs::functions,
@@ -2008,6 +2028,7 @@ refalrts::RASLFunction AlignEnumExprs(
   scope_AlignEnumExprs::numbers,
   scope_AlignEnumExprs::strings
 );
+refalrts::RefalFunction& AlignEnumExprs = descr_AlignEnumExprs;
 
 } // unnamed namespace
 
@@ -2291,7 +2312,8 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction AlignEnumExprs(func_AlignEnumExprs, "AlignEnumExprs");
+refalrts::RefalFunction descr_AlignEnumExprs(func_AlignEnumExprs, "AlignEnumExprs");
+refalrts::RefalFunction& AlignEnumExprs = descr_AlignEnumExprs;
 
 } // unnamed namespace
 
@@ -2438,7 +2460,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoOverlapOffsets(
+refalrts::RASLFunction descr_DoOverlapOffsets(
   "DoOverlapOffsets",
   scope_DoOverlapOffsets::raa,
   scope_DoOverlapOffsets::functions,
@@ -2446,6 +2468,7 @@ refalrts::RASLFunction DoOverlapOffsets(
   scope_DoOverlapOffsets::numbers,
   scope_DoOverlapOffsets::strings
 );
+refalrts::RefalFunction& DoOverlapOffsets = descr_DoOverlapOffsets;
 
 } // unnamed namespace
 
@@ -2660,7 +2683,8 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoOverlapOffsets(func_DoOverlapOffsets, "DoOverlapOffsets");
+refalrts::RefalFunction descr_DoOverlapOffsets(func_DoOverlapOffsets, "DoOverlapOffsets");
+refalrts::RefalFunction& DoOverlapOffsets = descr_DoOverlapOffsets;
 
 } // unnamed namespace
 
@@ -2710,7 +2734,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction OverlapChain(
+refalrts::RASLFunction descr_OverlapChain(
   "OverlapChain",
   scope_OverlapChain::raa,
   scope_OverlapChain::functions,
@@ -2718,6 +2742,7 @@ refalrts::RASLFunction OverlapChain(
   scope_OverlapChain::numbers,
   scope_OverlapChain::strings
 );
+refalrts::RefalFunction& OverlapChain = descr_OverlapChain;
 
 } // unnamed namespace
 
@@ -2777,7 +2802,8 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction OverlapChain(func_OverlapChain, "OverlapChain");
+refalrts::RefalFunction descr_OverlapChain(func_OverlapChain, "OverlapChain");
+refalrts::RefalFunction& OverlapChain = descr_OverlapChain;
 
 } // unnamed namespace
 
@@ -2863,7 +2889,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ZipItems(
+refalrts::RASLFunction descr_ZipItems(
   "ZipItems",
   scope_ZipItems::raa,
   scope_ZipItems::functions,
@@ -2871,6 +2897,7 @@ refalrts::RASLFunction ZipItems(
   scope_ZipItems::numbers,
   scope_ZipItems::strings
 );
+refalrts::RefalFunction& ZipItems = descr_ZipItems;
 
 } // unnamed namespace
 
@@ -2994,7 +3021,8 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ZipItems(func_ZipItems, "ZipItems");
+refalrts::RefalFunction descr_ZipItems(func_ZipItems, "ZipItems");
+refalrts::RefalFunction& ZipItems = descr_ZipItems;
 
 } // unnamed namespace
 
@@ -3117,7 +3145,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GlueTiles(
+refalrts::RASLFunction descr_GlueTiles(
   "GlueTiles",
   scope_GlueTiles::raa,
   scope_GlueTiles::functions,
@@ -3125,6 +3153,7 @@ refalrts::RASLFunction GlueTiles(
   scope_GlueTiles::numbers,
   scope_GlueTiles::strings
 );
+refalrts::RefalFunction& GlueTiles = descr_GlueTiles;
 
 } // unnamed namespace
 
@@ -3303,7 +3332,8 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GlueTiles(func_GlueTiles, "GlueTiles");
+refalrts::RefalFunction descr_GlueTiles(func_GlueTiles, "GlueTiles");
+refalrts::RefalFunction& GlueTiles = descr_GlueTiles;
 
 } // unnamed namespace
 
@@ -3417,7 +3447,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction GlueNextTile(
+refalrts::RASLFunction descr_GlueNextTile(
   "GlueNextTile",
   scope_GlueNextTile::raa,
   scope_GlueNextTile::functions,
@@ -3425,6 +3455,7 @@ refalrts::RASLFunction GlueNextTile(
   scope_GlueNextTile::numbers,
   scope_GlueNextTile::strings
 );
+refalrts::RefalFunction& GlueNextTile = descr_GlueNextTile;
 
 } // unnamed namespace
 
@@ -3577,7 +3608,8 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction GlueNextTile(func_GlueNextTile, "GlueNextTile");
+refalrts::RefalFunction descr_GlueNextTile(func_GlueNextTile, "GlueNextTile");
+refalrts::RefalFunction& GlueNextTile = descr_GlueNextTile;
 
 } // unnamed namespace
 
@@ -3681,7 +3713,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FoldTile_EEnd(
+refalrts::RASLFunction descr_FoldTile_EEnd(
   "FoldTile-EEnd",
   scope_FoldTile_EEnd::raa,
   scope_FoldTile_EEnd::functions,
@@ -3689,6 +3721,7 @@ refalrts::RASLFunction FoldTile_EEnd(
   scope_FoldTile_EEnd::numbers,
   scope_FoldTile_EEnd::strings
 );
+refalrts::RefalFunction& FoldTile_EEnd = descr_FoldTile_EEnd;
 
 } // unnamed namespace
 
@@ -3837,7 +3870,8 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FoldTile_EEnd(func_FoldTile_EEnd, "FoldTile-EEnd");
+refalrts::RefalFunction descr_FoldTile_EEnd(func_FoldTile_EEnd, "FoldTile-EEnd");
+refalrts::RefalFunction& FoldTile_EEnd = descr_FoldTile_EEnd;
 
 } // unnamed namespace
 
@@ -3875,7 +3909,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FilterOverlapped_S1L1L1(
+refalrts::RASLFunction descr_gen_FilterOverlapped_S1L1L1(
   "FilterOverlapped$1\\1\\1",
   scope_gen_FilterOverlapped_S1L1L1::raa,
   scope_gen_FilterOverlapped_S1L1L1::functions,
@@ -3883,6 +3917,7 @@ refalrts::RASLFunction gen_FilterOverlapped_S1L1L1(
   scope_gen_FilterOverlapped_S1L1L1::numbers,
   scope_gen_FilterOverlapped_S1L1L1::strings
 );
+refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1 = descr_gen_FilterOverlapped_S1L1L1;
 
 } // unnamed namespace
 
@@ -3930,7 +3965,8 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, "FilterOverlapped$1\\1\\1");
+refalrts::RefalFunction descr_gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, "FilterOverlapped$1\\1\\1");
+refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1 = descr_gen_FilterOverlapped_S1L1L1;
 
 } // unnamed namespace
 
@@ -4004,7 +4040,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FilterOverlapped_S1L1(
+refalrts::RASLFunction descr_gen_FilterOverlapped_S1L1(
   "FilterOverlapped$1\\1",
   scope_gen_FilterOverlapped_S1L1::raa,
   scope_gen_FilterOverlapped_S1L1::functions,
@@ -4012,6 +4048,7 @@ refalrts::RASLFunction gen_FilterOverlapped_S1L1(
   scope_gen_FilterOverlapped_S1L1::numbers,
   scope_gen_FilterOverlapped_S1L1::strings
 );
+refalrts::RefalFunction& gen_FilterOverlapped_S1L1 = descr_gen_FilterOverlapped_S1L1;
 
 } // unnamed namespace
 
@@ -4101,7 +4138,8 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, "FilterOverlapped$1\\1");
+refalrts::RefalFunction descr_gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, "FilterOverlapped$1\\1");
+refalrts::RefalFunction& gen_FilterOverlapped_S1L1 = descr_gen_FilterOverlapped_S1L1;
 
 } // unnamed namespace
 
@@ -4165,7 +4203,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FilterOverlapped(
+refalrts::RASLFunction descr_FilterOverlapped(
   "FilterOverlapped",
   scope_FilterOverlapped::raa,
   scope_FilterOverlapped::functions,
@@ -4173,6 +4211,7 @@ refalrts::RASLFunction FilterOverlapped(
   scope_FilterOverlapped::numbers,
   scope_FilterOverlapped::strings
 );
+refalrts::RefalFunction& FilterOverlapped = descr_FilterOverlapped;
 
 } // unnamed namespace
 
@@ -4245,7 +4284,8 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FilterOverlapped(func_FilterOverlapped, "FilterOverlapped");
+refalrts::RefalFunction descr_FilterOverlapped(func_FilterOverlapped, "FilterOverlapped");
+refalrts::RefalFunction& FilterOverlapped = descr_FilterOverlapped;
 
 } // unnamed namespace
 
@@ -4326,7 +4366,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FindHeavyTile_L1L1(
+refalrts::RASLFunction descr_gen_FindHeavyTile_L1L1(
   "FindHeavyTile\\1\\1",
   scope_gen_FindHeavyTile_L1L1::raa,
   scope_gen_FindHeavyTile_L1L1::functions,
@@ -4334,6 +4374,7 @@ refalrts::RASLFunction gen_FindHeavyTile_L1L1(
   scope_gen_FindHeavyTile_L1L1::numbers,
   scope_gen_FindHeavyTile_L1L1::strings
 );
+refalrts::RefalFunction& gen_FindHeavyTile_L1L1 = descr_gen_FindHeavyTile_L1L1;
 
 } // unnamed namespace
 
@@ -4438,7 +4479,8 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, "FindHeavyTile\\1\\1");
+refalrts::RefalFunction descr_gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, "FindHeavyTile\\1\\1");
+refalrts::RefalFunction& gen_FindHeavyTile_L1L1 = descr_gen_FindHeavyTile_L1L1;
 
 } // unnamed namespace
 
@@ -4513,7 +4555,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FindHeavyTile_L1(
+refalrts::RASLFunction descr_gen_FindHeavyTile_L1(
   "FindHeavyTile\\1",
   scope_gen_FindHeavyTile_L1::raa,
   scope_gen_FindHeavyTile_L1::functions,
@@ -4521,6 +4563,7 @@ refalrts::RASLFunction gen_FindHeavyTile_L1(
   scope_gen_FindHeavyTile_L1::numbers,
   scope_gen_FindHeavyTile_L1::strings
 );
+refalrts::RefalFunction& gen_FindHeavyTile_L1 = descr_gen_FindHeavyTile_L1;
 
 } // unnamed namespace
 
@@ -4615,7 +4658,8 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, "FindHeavyTile\\1");
+refalrts::RefalFunction descr_gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, "FindHeavyTile\\1");
+refalrts::RefalFunction& gen_FindHeavyTile_L1 = descr_gen_FindHeavyTile_L1;
 
 } // unnamed namespace
 
@@ -4655,7 +4699,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FindHeavyTile(
+refalrts::RASLFunction descr_FindHeavyTile(
   "FindHeavyTile",
   scope_FindHeavyTile::raa,
   scope_FindHeavyTile::functions,
@@ -4663,6 +4707,7 @@ refalrts::RASLFunction FindHeavyTile(
   scope_FindHeavyTile::numbers,
   scope_FindHeavyTile::strings
 );
+refalrts::RefalFunction& FindHeavyTile = descr_FindHeavyTile;
 
 } // unnamed namespace
 
@@ -4701,7 +4746,8 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FindHeavyTile(func_FindHeavyTile, "FindHeavyTile");
+refalrts::RefalFunction descr_FindHeavyTile(func_FindHeavyTile, "FindHeavyTile");
+refalrts::RefalFunction& FindHeavyTile = descr_FindHeavyTile;
 
 } // unnamed namespace
 
@@ -4735,7 +4781,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RejectTile_L1L1(
+refalrts::RASLFunction descr_gen_RejectTile_L1L1(
   "RejectTile\\1\\1",
   scope_gen_RejectTile_L1L1::raa,
   scope_gen_RejectTile_L1L1::functions,
@@ -4743,6 +4789,7 @@ refalrts::RASLFunction gen_RejectTile_L1L1(
   scope_gen_RejectTile_L1L1::numbers,
   scope_gen_RejectTile_L1L1::strings
 );
+refalrts::RefalFunction& gen_RejectTile_L1L1 = descr_gen_RejectTile_L1L1;
 
 } // unnamed namespace
 
@@ -4775,7 +4822,8 @@ static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, "RejectTile\\1\\1");
+refalrts::RefalFunction descr_gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, "RejectTile\\1\\1");
+refalrts::RefalFunction& gen_RejectTile_L1L1 = descr_gen_RejectTile_L1L1;
 
 } // unnamed namespace
 
@@ -4853,7 +4901,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_RejectTile_L1(
+refalrts::RASLFunction descr_gen_RejectTile_L1(
   "RejectTile\\1",
   scope_gen_RejectTile_L1::raa,
   scope_gen_RejectTile_L1::functions,
@@ -4861,6 +4909,7 @@ refalrts::RASLFunction gen_RejectTile_L1(
   scope_gen_RejectTile_L1::numbers,
   scope_gen_RejectTile_L1::strings
 );
+refalrts::RefalFunction& gen_RejectTile_L1 = descr_gen_RejectTile_L1;
 
 } // unnamed namespace
 
@@ -4958,7 +5007,8 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_RejectTile_L1(func_gen_RejectTile_L1, "RejectTile\\1");
+refalrts::RefalFunction descr_gen_RejectTile_L1(func_gen_RejectTile_L1, "RejectTile\\1");
+refalrts::RefalFunction& gen_RejectTile_L1 = descr_gen_RejectTile_L1;
 
 } // unnamed namespace
 
@@ -5008,7 +5058,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction RejectTile(
+refalrts::RASLFunction descr_RejectTile(
   "RejectTile",
   scope_RejectTile::raa,
   scope_RejectTile::functions,
@@ -5016,6 +5066,7 @@ refalrts::RASLFunction RejectTile(
   scope_RejectTile::numbers,
   scope_RejectTile::strings
 );
+refalrts::RefalFunction& RejectTile = descr_RejectTile;
 
 } // unnamed namespace
 
@@ -5069,7 +5120,8 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction RejectTile(func_RejectTile, "RejectTile");
+refalrts::RefalFunction descr_RejectTile(func_RejectTile, "RejectTile");
+refalrts::RefalFunction& RejectTile = descr_RejectTile;
 
 } // unnamed namespace
 
@@ -5214,7 +5266,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FilterPatternPos(
+refalrts::RASLFunction descr_FilterPatternPos(
   "FilterPatternPos",
   scope_FilterPatternPos::raa,
   scope_FilterPatternPos::functions,
@@ -5222,6 +5274,7 @@ refalrts::RASLFunction FilterPatternPos(
   scope_FilterPatternPos::numbers,
   scope_FilterPatternPos::strings
 );
+refalrts::RefalFunction& FilterPatternPos = descr_FilterPatternPos;
 
 } // unnamed namespace
 
@@ -5437,7 +5490,8 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FilterPatternPos(func_FilterPatternPos, "FilterPatternPos");
+refalrts::RefalFunction descr_FilterPatternPos(func_FilterPatternPos, "FilterPatternPos");
+refalrts::RefalFunction& FilterPatternPos = descr_FilterPatternPos;
 
 } // unnamed namespace
 
@@ -5582,7 +5636,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FilterResultPos(
+refalrts::RASLFunction descr_FilterResultPos(
   "FilterResultPos",
   scope_FilterResultPos::raa,
   scope_FilterResultPos::functions,
@@ -5590,6 +5644,7 @@ refalrts::RASLFunction FilterResultPos(
   scope_FilterResultPos::numbers,
   scope_FilterResultPos::strings
 );
+refalrts::RefalFunction& FilterResultPos = descr_FilterResultPos;
 
 } // unnamed namespace
 
@@ -5805,7 +5860,8 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FilterResultPos(func_FilterResultPos, "FilterResultPos");
+refalrts::RefalFunction descr_FilterResultPos(func_FilterResultPos, "FilterResultPos");
+refalrts::RefalFunction& FilterResultPos = descr_FilterResultPos;
 
 } // unnamed namespace
 
@@ -5898,7 +5954,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FoldTile(
+refalrts::RASLFunction descr_FoldTile(
   "FoldTile",
   scope_FoldTile::raa,
   scope_FoldTile::functions,
@@ -5906,6 +5962,7 @@ refalrts::RASLFunction FoldTile(
   scope_FoldTile::numbers,
   scope_FoldTile::strings
 );
+refalrts::RefalFunction& FoldTile = descr_FoldTile;
 
 } // unnamed namespace
 
@@ -6025,7 +6082,8 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FoldTile(func_FoldTile, "FoldTile");
+refalrts::RefalFunction descr_FoldTile(func_FoldTile, "FoldTile");
+refalrts::RefalFunction& FoldTile = descr_FoldTile;
 
 } // unnamed namespace
 
@@ -6069,7 +6127,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_FoldTileW_S1L1(
+refalrts::RASLFunction descr_gen_FoldTileW_S1L1(
   "FoldTileW$1\\1",
   scope_gen_FoldTileW_S1L1::raa,
   scope_gen_FoldTileW_S1L1::functions,
@@ -6077,6 +6135,7 @@ refalrts::RASLFunction gen_FoldTileW_S1L1(
   scope_gen_FoldTileW_S1L1::numbers,
   scope_gen_FoldTileW_S1L1::strings
 );
+refalrts::RefalFunction& gen_FoldTileW_S1L1 = descr_gen_FoldTileW_S1L1;
 
 } // unnamed namespace
 
@@ -6129,7 +6188,8 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, "FoldTileW$1\\1");
+refalrts::RefalFunction descr_gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, "FoldTileW$1\\1");
+refalrts::RefalFunction& gen_FoldTileW_S1L1 = descr_gen_FoldTileW_S1L1;
 
 } // unnamed namespace
 
@@ -6200,7 +6260,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction FoldTileW(
+refalrts::RASLFunction descr_FoldTileW(
   "FoldTileW",
   scope_FoldTileW::raa,
   scope_FoldTileW::functions,
@@ -6208,6 +6268,7 @@ refalrts::RASLFunction FoldTileW(
   scope_FoldTileW::numbers,
   scope_FoldTileW::strings
 );
+refalrts::RefalFunction& FoldTileW = descr_FoldTileW;
 
 } // unnamed namespace
 
@@ -6297,7 +6358,8 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction FoldTileW(func_FoldTileW, "FoldTileW");
+refalrts::RefalFunction descr_FoldTileW(func_FoldTileW, "FoldTileW");
+refalrts::RefalFunction& FoldTileW = descr_FoldTileW;
 
 } // unnamed namespace
 
@@ -6387,7 +6449,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction ReplaceTile(
+refalrts::RASLFunction descr_ReplaceTile(
   "ReplaceTile",
   scope_ReplaceTile::raa,
   scope_ReplaceTile::functions,
@@ -6395,6 +6457,7 @@ refalrts::RASLFunction ReplaceTile(
   scope_ReplaceTile::numbers,
   scope_ReplaceTile::strings
 );
+refalrts::RefalFunction& ReplaceTile = descr_ReplaceTile;
 
 } // unnamed namespace
 
@@ -6536,7 +6599,8 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction ReplaceTile(func_ReplaceTile, "ReplaceTile");
+refalrts::RefalFunction descr_ReplaceTile(func_ReplaceTile, "ReplaceTile");
+refalrts::RefalFunction& ReplaceTile = descr_ReplaceTile;
 
 } // unnamed namespace
 
@@ -6590,7 +6654,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction gen_Modify_L1(
+refalrts::RASLFunction descr_gen_Modify_L1(
   "Modify\\1",
   scope_gen_Modify_L1::raa,
   scope_gen_Modify_L1::functions,
@@ -6598,6 +6662,7 @@ refalrts::RASLFunction gen_Modify_L1(
   scope_gen_Modify_L1::numbers,
   scope_gen_Modify_L1::strings
 );
+refalrts::RefalFunction& gen_Modify_L1 = descr_gen_Modify_L1;
 
 } // unnamed namespace
 
@@ -6677,7 +6742,8 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction gen_Modify_L1(func_gen_Modify_L1, "Modify\\1");
+refalrts::RefalFunction descr_gen_Modify_L1(func_gen_Modify_L1, "Modify\\1");
+refalrts::RefalFunction& gen_Modify_L1 = descr_gen_Modify_L1;
 
 } // unnamed namespace
 
@@ -6758,7 +6824,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction Modify(
+refalrts::RASLFunction descr_Modify(
   "Modify",
   scope_Modify::raa,
   scope_Modify::functions,
@@ -6766,6 +6832,7 @@ refalrts::RASLFunction Modify(
   scope_Modify::numbers,
   scope_Modify::strings
 );
+refalrts::RefalFunction& Modify = descr_Modify;
 
 } // unnamed namespace
 
@@ -6874,7 +6941,8 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction Modify(func_Modify, "Modify");
+refalrts::RefalFunction descr_Modify(func_Modify, "Modify");
+refalrts::RefalFunction& Modify = descr_Modify;
 
 } // unnamed namespace
 
@@ -7148,7 +7216,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction DoModify(
+refalrts::RASLFunction descr_DoModify(
   "DoModify",
   scope_DoModify::raa,
   scope_DoModify::functions,
@@ -7156,6 +7224,7 @@ refalrts::RASLFunction DoModify(
   scope_DoModify::numbers,
   scope_DoModify::strings
 );
+refalrts::RefalFunction& DoModify = descr_DoModify;
 
 } // unnamed namespace
 
@@ -7624,7 +7693,8 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction DoModify(func_DoModify, "DoModify");
+refalrts::RefalFunction descr_DoModify(func_DoModify, "DoModify");
+refalrts::RefalFunction& DoModify = descr_DoModify;
 
 } // unnamed namespace
 
@@ -7906,7 +7976,7 @@ namespace /* unnamed */ {
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction OverlapItem(
+refalrts::RASLFunction descr_OverlapItem(
   "OverlapItem",
   scope_OverlapItem::raa,
   scope_OverlapItem::functions,
@@ -7914,6 +7984,7 @@ refalrts::RASLFunction OverlapItem(
   scope_OverlapItem::numbers,
   scope_OverlapItem::strings
 );
+refalrts::RefalFunction& OverlapItem = descr_OverlapItem;
 
 } // unnamed namespace
 
@@ -8423,7 +8494,8 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction OverlapItem(func_OverlapItem, "OverlapItem");
+refalrts::RefalFunction descr_OverlapItem(func_OverlapItem, "OverlapItem");
+refalrts::RefalFunction& OverlapItem = descr_OverlapItem;
 
 } // unnamed namespace
 
