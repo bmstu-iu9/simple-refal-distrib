@@ -424,7 +424,7 @@ refalrts::Iter refalrts::adt_term(
 
   return adt_tag;
 }
-#endif
+#endif // ifndef MODULE_REFAL
 
 refalrts::Iter refalrts::adt_left(
   refalrts::Iter& res_first, refalrts::Iter& res_last,
@@ -1638,7 +1638,7 @@ void refalrts::reinit_close_call(
 ) {
   res->tag = cDataCloseCall;
 }
-#endif
+#endif // ifndef MODULE_REFAL
 
 refalrts::Iter refalrts::splice_elem(
   refalrts::Iter res, refalrts::Iter elem
@@ -1716,7 +1716,7 @@ refalrts::FnResult func_create_closure(
 refalrts::RefalFunction refalrts::create_closure(
   func_create_closure, "@create_closure@"
 );
-#endif
+#endif // ifndef MODULE_REFAL
 
 /*
   Собственно замыкание (функция + контекст) определяется как
@@ -1771,7 +1771,7 @@ refalrts::FnResult refalrts::RefalEmptyFunction::run(
 ) {
   return refalrts::cRecognitionImpossible;
 }
-#endif
+#endif // ifndef MODULE_REFAL
 
 //------------------------------------------------------------------------------
 
@@ -1867,7 +1867,7 @@ refalrts::FnResult refalrts::RefalSwap::run(
 
   return cSuccess;
 }
-#endif
+#endif // ifndef MODULE_REFAL
 
 //------------------------------------------------------------------------------
 
@@ -2033,7 +2033,7 @@ bool refalrts::allocator::create_nodes() {
     return false;
   }
 
-#endif //ifdef MEMORY_LIMIT
+#endif // ifdef MEMORY_LIMIT
 
   if( new_node == 0 ) {
     return false;
@@ -2064,7 +2064,7 @@ void refalrts::allocator::free_memory() {
     static_cast<unsigned long>(sizeof(Node)),
     static_cast<unsigned long>(g_memory_use * sizeof(Node))
   );
-#endif // DONT_PRINT_STATISTICS
+#endif // ifndef DONT_PRINT_STATISTICS
 }
 
 refalrts::NodePtr refalrts::allocator::pool::alloc_node() {
@@ -2139,7 +2139,7 @@ struct TimeItem {
 };
 
 int reverse_compare(const void *left_void, const void *right_void);
-#endif // DONT_PRINT_STATISTICS
+#endif // ifndef DONT_PRINT_STATISTICS
 
 } // namespace profiler
 
@@ -2167,7 +2167,7 @@ int refalrts::profiler::reverse_compare(
   }
 }
 
-#endif // DONT_PRINT_STATISTICS
+#endif // ifndef DONT_PRINT_STATISTICS
 
 void refalrts::profiler::end_profiler() {
   // необходимо на случай аварийного останова, если функция сфейлилась
@@ -2228,7 +2228,7 @@ void refalrts::profiler::end_profiler() {
     }
   }
 
-#endif // DONT_PRINT_STATISTICS
+#endif // ifndef DONT_PRINT_STATISTICS
 }
 
 void refalrts::profiler::start_generated_function() {
@@ -2510,6 +2510,14 @@ refalrts::FnResult refalrts::vm::main_loop() {
 
     ++ g_step_counter;
 
+#ifdef STEP_LIMIT
+
+    if (g_step_counter >= STEP_LIMIT) {
+      res = refalrts::cStepLimit;
+    }
+
+#endif // ifdef STEP_LIMIT
+
     if( res != cSuccess ) {
       switch( res ) {
         case refalrts::cRecognitionImpossible:
@@ -2522,6 +2530,10 @@ refalrts::FnResult refalrts::vm::main_loop() {
 
         case refalrts::cExit:
           return res;
+
+        case refalrts::cStepLimit:
+          fprintf(stderr, "\nSTEP LIMIT REACHED (%u)\n\n", g_step_counter);
+          break;
 
         default:
           fprintf(stderr, "\nUNKNOWN ERROR\n\n");
@@ -2547,7 +2559,7 @@ refalrts::FnResult refalrts::vm::execute_active(
     make_dump( begin, end );
   }
 
-#endif // SHOW_DEBUG
+#endif // if SHOW_DEBUG
 
   refalrts::Iter function = next( begin );
   if( cDataFunction == function->tag ) {
@@ -2855,7 +2867,7 @@ void refalrts::vm::make_dump( refalrts::Iter begin, refalrts::Iter end ) {
     & refalrts::allocator::g_last_marker
   );
 
-#endif //ifdef DUMP_FREE_LIST
+#endif // ifdef DUMP_FREE_LIST
 
   fprintf( dump_stream(),"\nEnd dump\n");
   fflush(dump_stream());
@@ -2878,11 +2890,11 @@ FILE *refalrts::vm::dump_stream() {
 
   return dump_file;
 
-#else //ifdef DUMP_FILE
+#else // ifdef DUMP_FILE
 
   return stderr;
 
-#endif //ifdef DUMP_FILE
+#endif // ifdef DUMP_FILE
 }
 
 void refalrts::vm::free_view_field() {
@@ -2900,7 +2912,7 @@ void refalrts::vm::free_view_field() {
 
 #ifndef DONT_PRINT_STATISTICS
   fprintf( stderr, "Step count %d\n", g_step_counter );
-#endif // DONT_PRINT_STATISTICS
+#endif // ifndef DONT_PRINT_STATISTICS
 }
 
 //==============================================================================
@@ -3628,7 +3640,7 @@ refalrts::FnResult refalrts::RASLFunction::run(
 
   return cSuccess;
 }
-#endif
+#endif // ifndef MODULE_REFAL
 
 
 refalrts::RefalFunction *refalrts::functions[] = { 0 };
@@ -3684,6 +3696,9 @@ int main(int argc, char **argv) {
 
     case refalrts::cExit:
       return refalrts::vm::g_ret_code;
+
+    case refalrts::cStepLimit:
+      return 103;
 
     default:
       fprintf(stderr, "INTERNAL ERROR: check switch in main (res = %d)\n", res);

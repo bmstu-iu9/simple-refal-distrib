@@ -3394,6 +3394,7 @@ namespace /* unnamed */ {
       & Fetch
     };
     static const refalrts::RefalIdentifier idents[] = {
+      & ident_FlagsForNoCompiler<int>::name,
       & ident_BadValue_Opt<int>::name,
       & ident_BadValue_GenMode<int>::name,
       & ident_RepeatOption<int>::name,
@@ -3403,6 +3404,7 @@ namespace /* unnamed */ {
     };
     using refalrts::numbers;
     static const refalrts::StringItem strings[] = {
+      {"s \'--cppflag\' (\'-f\') and \'--cppflags\' (\'-C\', \'-F\') must be appear only with option \'--cppcommand\' (\'-c\')", 104},
       {"ption -O expects \'P\', \'R\' or both, but got ", 43},
       {"ption --gen expects \'both\', \'direct\' or \'interp\', but got ", 58},
       {" must appear one time", 21},
@@ -3414,9 +3416,9 @@ namespace /* unnamed */ {
       {"ion ", 4}
     };
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icReserveBacktrackStack, 5, 0, 0},
+      {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
-      //FAST GEN: ( s.$ s.$ e.$ )
+      //FAST GEN: ( e.$ )
       //GLOBAL GEN: ( s.$ s.$ e.$ )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3429,13 +3431,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( s.idx # NoRequiredParam e.idx )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Param#3/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 5, 10},
+      {refalrts::icIdentTerm, 0, 6, 10},
       // closed e.Param#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Pos#3/9 HalfReuse: 'o'/10 } Tile{ HalfReuse: 'p'/0 HalfReuse: 't'/4 }"ion "/11 Tile{ AsIs: e.Param#3/5 }" expects paramete"/13 Tile{ HalfReuse: 'r'/8 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 8, 11},
-      {refalrts::icAllocString, 0, 7, 13},
+      {refalrts::icAllocString, 0, 9, 11},
+      {refalrts::icAllocString, 0, 8, 13},
       {refalrts::icReinitChar, 0, 'o', 10},
       {refalrts::icReinitChar, 0, 'p', 0},
       {refalrts::icReinitChar, 0, 't', 4},
@@ -3452,7 +3454,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +20, 0, 0},
       // ( s.idx # UnknownShortOption s.idx )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
-      {refalrts::icIdentTerm, 0, 4, 10},
+      {refalrts::icIdentTerm, 0, 5, 10},
       {refalrts::icSave, 0, 18, 5},
       {refalrts::icsVarLeft, 0, 11, 18},
       {refalrts::icEmpty, 0, 0, 18},
@@ -3460,7 +3462,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Pos#3/9 HalfReuse: 'u'/10 } 'n'/12 Tile{ HalfReuse: 'k'/1 } Tile{ HalfReuse: 'n'/0 HalfReuse: 'o'/4 }"wn option -"/13 Tile{ AsIs: s.Option#3/11 AsIs: )/8 } Tile{ ]] }
       {refalrts::icAllocChar, 0, 'n', 12},
-      {refalrts::icAllocString, 0, 6, 13},
+      {refalrts::icAllocString, 0, 7, 13},
       {refalrts::icReinitChar, 0, 'u', 10},
       {refalrts::icReinitChar, 0, 'k', 1},
       {refalrts::icReinitChar, 0, 'n', 0},
@@ -3477,13 +3479,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +18, 0, 0},
       // ( s.idx # UnknownLongOption e.idx )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 3, 10},
+      {refalrts::icIdentTerm, 0, 4, 10},
       // closed e.Option#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Pos#3/9 HalfReuse: 'u'/10 }"nk"/11 Tile{ HalfReuse: 'n'/0 HalfReuse: 'o'/4 } Tile{ HalfReuse: 'w'/8 }"n option --"/13 Tile{ AsIs: e.Option#3/5 } Tile{ HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 5, 11},
-      {refalrts::icAllocString, 0, 4, 13},
+      {refalrts::icAllocString, 0, 6, 11},
+      {refalrts::icAllocString, 0, 5, 13},
       {refalrts::icReinitChar, 0, 'u', 10},
       {refalrts::icReinitChar, 0, 'n', 0},
       {refalrts::icReinitChar, 0, 'o', 4},
@@ -3501,16 +3503,16 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( s.idx # RepeatOption s.idx )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # RepeatOption/10 s.Tag#3/11 )/8 >/1
-      {refalrts::icIdentTerm, 0, 2, 10},
+      {refalrts::icIdentTerm, 0, 3, 10},
       {refalrts::icSave, 0, 18, 5},
       {refalrts::icsVarLeft, 0, 11, 18},
       {refalrts::icEmpty, 0, 0, 18},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption "/12 </14 Tile{ HalfReuse: & Fetch/10 AsIs: s.Tag#3/11 HalfReuse: & ParseCommandLine\10$2\1$4\1/8 AsIs: >/1 }" must appear one time"/15 )/17 Tile{ ]] }
-      {refalrts::icAllocString, 0, 3, 12},
+      {refalrts::icAllocString, 0, 4, 12},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
-      {refalrts::icAllocString, 0, 2, 15},
+      {refalrts::icAllocString, 0, 3, 15},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 17},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
       {refalrts::icReinitSVar, 0, 9, 4},
@@ -3529,11 +3531,31 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // ( s.idx # BadValue-GenMode e.idx )
       // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-GenMode/10 e.BadValue#3/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 10},
+      {refalrts::icIdentTerm, 0, 2, 10},
       // closed e.BadValue#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption --gen expects \'both\', \'direct\' or \'interp\', but got "/11 Tile{ HalfReuse: '\''/10 AsIs: e.BadValue#3/5 HalfReuse: '\''/8 HalfReuse: )/1 ]] }
+      {refalrts::icAllocString, 0, 2, 11},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
+      {refalrts::icReinitSVar, 0, 9, 4},
+      {refalrts::icReinitChar, 0, 'o', 7},
+      {refalrts::icReinitChar, 0, '\'', 10},
+      {refalrts::icReinitChar, 0, '\'', 8},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 0, 1, 0},
+      {refalrts::icSetRes, 0, 0, 10},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icTrash, 0, 0, 7},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +14, 0, 0},
+      // ( s.idx # BadValue-Opt e.idx )
+      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
+      {refalrts::icIdentTerm, 0, 1, 10},
+      // closed e.BadValue#3 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption -O expects \'P\', \'R\' or both, but got "/11 Tile{ HalfReuse: '\''/10 AsIs: e.BadValue#3/5 HalfReuse: '\''/8 HalfReuse: )/1 ]] }
       {refalrts::icAllocString, 0, 1, 11},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
       {refalrts::icReinitSVar, 0, 9, 4},
@@ -3546,24 +3568,27 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icTrash, 0, 0, 7},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      // ( s.idx # BadValue-Opt e.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
+      // ( s.idx # FlagsForNoCompiler )
+      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
       {refalrts::icIdentTerm, 0, 0, 10},
-      // closed e.BadValue#3 as range 5
+      {refalrts::icEmpty, 0, 0, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption -O expects \'P\', \'R\' or both, but got "/11 Tile{ HalfReuse: '\''/10 AsIs: e.BadValue#3/5 HalfReuse: '\''/8 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 0, 11},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-      {refalrts::icReinitSVar, 0, 9, 4},
-      {refalrts::icReinitChar, 0, 'o', 7},
-      {refalrts::icReinitChar, 0, '\'', 10},
-      {refalrts::icReinitChar, 0, '\'', 8},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 0, 1, 0},
-      {refalrts::icSetRes, 0, 0, 10},
-      {refalrts::icSpliceTile, 11, 12, 0},
-      {refalrts::icTrash, 0, 0, 7},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Pos#3/9 HalfReuse: 'o'/10 HalfReuse: 'p'/8 HalfReuse: 't'/1 } 'i'/11 Tile{ HalfReuse: 'o'/0 HalfReuse: 'n'/4 }"s \'--cppflag\' (\'-f\') and \'--cppflags\' (\'-C\', \'-F\') must be appear only with option \'--cppcommand\' (\'-c\')"/12 )/14 Tile{ ]] }
+      {refalrts::icAllocChar, 0, 'i', 11},
+      {refalrts::icAllocString, 0, 0, 12},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
+      {refalrts::icReinitChar, 0, 'o', 10},
+      {refalrts::icReinitChar, 0, 'p', 8},
+      {refalrts::icReinitChar, 0, 't', 1},
+      {refalrts::icReinitChar, 0, 'o', 0},
+      {refalrts::icReinitChar, 0, 'n', 4},
+      {refalrts::icLinkBrackets, 7, 14, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 12, 14, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 11, 11, 0},
+      {refalrts::icSpliceTile, 7, 1, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
@@ -3590,7 +3615,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  //FAST GEN: ( s.$ s.$ e.$ )
+  //FAST GEN: ( e.$ )
   //GLOBAL GEN: ( s.$ s.$ e.$ )
   // </0 & ParseCommandLine\10$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
   context[0] = arg_begin;
@@ -3788,30 +3813,65 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
     return refalrts::cSuccess;
   } while ( 0 );
 
-  // ( s.idx # BadValue-Opt e.idx )
-  // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_BadValue_Opt<int>::name, context[10] ) )
+  do {
+    refalrts::start_sentence();
+    // ( s.idx # BadValue-Opt e.idx )
+    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_BadValue_Opt<int>::name, context[10] ) )
+      continue;
+    // closed e.BadValue#3 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption -O expects \'P\', \'R\' or both, but got "/11 Tile{ HalfReuse: '\''/10 AsIs: e.BadValue#3/5 HalfReuse: '\''/8 HalfReuse: )/1 ]] }
+    if( ! refalrts::alloc_chars( context[11], context[12], "ption -O expects \'P\', \'R\' or both, but got ", 43 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_svar( context[4], context[9] );
+    refalrts::reinit_char( context[7], 'o' );
+    refalrts::reinit_char( context[10], '\'' );
+    refalrts::reinit_char( context[8], '\'' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[10];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( context[7], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+
+  // ( s.idx # FlagsForNoCompiler )
+  // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
+  if( ! refalrts::ident_term(  & ident_FlagsForNoCompiler<int>::name, context[10] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.BadValue#3 as range 5
+  if( ! refalrts::empty_seq( context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption -O expects \'P\', \'R\' or both, but got "/11 Tile{ HalfReuse: '\''/10 AsIs: e.BadValue#3/5 HalfReuse: '\''/8 HalfReuse: )/1 ]] }
-  if( ! refalrts::alloc_chars( context[11], context[12], "ption -O expects \'P\', \'R\' or both, but got ", 43 ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Pos#3/9 HalfReuse: 'o'/10 HalfReuse: 'p'/8 HalfReuse: 't'/1 } 'i'/11 Tile{ HalfReuse: 'o'/0 HalfReuse: 'n'/4 }"s \'--cppflag\' (\'-f\') and \'--cppflags\' (\'-C\', \'-F\') must be appear only with option \'--cppcommand\' (\'-c\')"/12 )/14 Tile{ ]] }
+  if( ! refalrts::alloc_char( context[11], 'i' ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_svar( context[4], context[9] );
-  refalrts::reinit_char( context[7], 'o' );
-  refalrts::reinit_char( context[10], '\'' );
-  refalrts::reinit_char( context[8], '\'' );
-  refalrts::reinit_close_bracket( context[1] );
-  refalrts::link_brackets( context[0], context[1] );
+  if( ! refalrts::alloc_chars( context[12], context[13], "s \'--cppflag\' (\'-f\') and \'--cppflags\' (\'-C\', \'-F\') must be appear only with option \'--cppcommand\' (\'-c\')", 104 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[14] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_char( context[10], 'o' );
+  refalrts::reinit_char( context[8], 'p' );
+  refalrts::reinit_char( context[1], 't' );
+  refalrts::reinit_char( context[0], 'o' );
+  refalrts::reinit_char( context[4], 'n' );
+  refalrts::link_brackets( context[7], context[14] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[10];
-  res = refalrts::splice_evar( res, context[11], context[12] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[12], context[14] );
+  res = refalrts::splice_evar( res, context[0], context[4] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[7], context[1] );
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[7], res );
   return refalrts::cSuccess;
 }
 
