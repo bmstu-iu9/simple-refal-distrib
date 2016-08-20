@@ -108,12 +108,6 @@ extern refalrts::RefalFunction& SymbType;
 
 //FROM refalrts
 
-namespace refalrts {
-
-class UnexpectedTypeException { };
-
-} // namespace refalrts
-
 namespace {
 
 static refalrts::Iter next( refalrts::Iter current ) {
@@ -143,9 +137,9 @@ Iter free_ptr();
 } // namespace refalrts
 #define USE_IDENT(ident_name) \
   (& ident_ ## ident_name<int>::name)
-#line 147 "Library.cpp"
+#line 141 "Library.cpp"
 static refalrts::FnResult func_Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 72 "Library.sref"
+#line 66 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -182,14 +176,14 @@ static refalrts::FnResult func_Add(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 186 "Library.cpp"
+#line 180 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Add(func_Add, "Add");
 refalrts::RefalFunction& Add = descr_Add;
 
 static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 113 "Library.sref"
+#line 107 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -226,14 +220,14 @@ static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 230 "Library.cpp"
+#line 224 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Sub(func_Sub, "Sub");
 refalrts::RefalFunction& Sub = descr_Sub;
 
 static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 154 "Library.sref"
+#line 148 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -270,14 +264,14 @@ static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 274 "Library.cpp"
+#line 268 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Mul(func_Mul, "Mul");
 refalrts::RefalFunction& Mul = descr_Mul;
 
 static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 195 "Library.sref"
+#line 189 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -314,14 +308,14 @@ static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 318 "Library.cpp"
+#line 312 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Div(func_Div, "Div");
 refalrts::RefalFunction& Div = descr_Div;
 
 static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 236 "Library.sref"
+#line 230 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -358,13 +352,13 @@ static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 362 "Library.cpp"
+#line 356 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Mod(func_Mod, "Mod");
 refalrts::RefalFunction& Mod = descr_Mod;
 
-#line 278 "Library.sref"
+#line 272 "Library.sref"
 refalrts::FnResult write_to_stream(
   FILE *out, refalrts::Iter str_begin, refalrts::Iter str_end
 ) {
@@ -491,7 +485,7 @@ refalrts::FnResult write_to_stream(
       }
 
       default:
-        throw refalrts::UnexpectedTypeException();
+        refalrts_switch_default_violation(p->tag);
         // break;
     }
   }
@@ -503,9 +497,9 @@ refalrts::FnResult write_to_stream(
     return refalrts::cSuccess;
   }
 }
-#line 507 "Library.cpp"
+#line 501 "Library.cpp"
 static refalrts::FnResult func_WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 420 "Library.sref"
+#line 414 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -532,14 +526,14 @@ static refalrts::FnResult func_WriteLine(refalrts::Iter arg_begin, refalrts::Ite
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 536 "Library.cpp"
+#line 530 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_WriteLine(func_WriteLine, "WriteLine");
 refalrts::RefalFunction& WriteLine = descr_WriteLine;
 
 static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 451 "Library.sref"
+#line 445 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -576,13 +570,13 @@ static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::It
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 580 "Library.cpp"
+#line 574 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FWriteLine(func_FWriteLine, "FWriteLine");
 refalrts::RefalFunction& FWriteLine = descr_FWriteLine;
 
-#line 491 "Library.sref"
+#line 485 "Library.sref"
 refalrts::FnResult read_from_stream(
   FILE *input, refalrts::Iter& begin, refalrts::Iter& end
 ) {
@@ -623,9 +617,9 @@ refalrts::FnResult read_from_stream(
 
   return refalrts::cSuccess;
 }
-#line 627 "Library.cpp"
+#line 621 "Library.cpp"
 static refalrts::FnResult func_ReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 535 "Library.sref"
+#line 529 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -654,14 +648,14 @@ static refalrts::FnResult func_ReadLine(refalrts::Iter arg_begin, refalrts::Iter
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 658 "Library.cpp"
+#line 652 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_ReadLine(func_ReadLine, "ReadLine");
 refalrts::RefalFunction& ReadLine = descr_ReadLine;
 
 static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 568 "Library.sref"
+#line 562 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -699,13 +693,13 @@ static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Ite
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 703 "Library.cpp"
+#line 697 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FReadLine(func_FReadLine, "FReadLine");
 refalrts::RefalFunction& FReadLine = descr_FReadLine;
 
-#line 609 "Library.sref"
+#line 603 "Library.sref"
 namespace {
 
 refalrts::FnResult string_from_seq(
@@ -747,9 +741,9 @@ refalrts::FnResult string_from_seq(
 }
 
 } // unnamed namespace
-#line 751 "Library.cpp"
+#line 745 "Library.cpp"
 static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 654 "Library.sref"
+#line 648 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -808,14 +802,14 @@ static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter ar
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 812 "Library.cpp"
+#line 806 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FOpen(func_FOpen, "FOpen");
 refalrts::RefalFunction& FOpen = descr_FOpen;
 
 static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 717 "Library.sref"
+#line 711 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -849,18 +843,18 @@ static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter a
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 853 "Library.cpp"
+#line 847 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FClose(func_FClose, "FClose");
 refalrts::RefalFunction& FClose = descr_FClose;
 
-#line 759 "Library.sref"
+#line 753 "Library.sref"
 extern char **g_argv;
 extern int g_argc;
-#line 862 "Library.cpp"
+#line 856 "Library.cpp"
 static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 765 "Library.sref"
+#line 759 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -896,14 +890,14 @@ static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 900 "Library.cpp"
+#line 894 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Arg(func_Arg, "Arg");
 refalrts::RefalFunction& Arg = descr_Arg;
 
 static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 805 "Library.sref"
+#line 799 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -952,14 +946,14 @@ static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Ite
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 956 "Library.cpp"
+#line 950 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_ExistFile(func_ExistFile, "ExistFile");
 refalrts::RefalFunction& ExistFile = descr_ExistFile;
 
 static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 858 "Library.sref"
+#line 852 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1010,14 +1004,14 @@ static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter a
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1014 "Library.cpp"
+#line 1008 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_GetEnv(func_GetEnv, "GetEnv");
 refalrts::RefalFunction& GetEnv = descr_GetEnv;
 
 static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 913 "Library.sref"
+#line 907 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1042,14 +1036,14 @@ static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1046 "Library.cpp"
+#line 1040 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Exit(func_Exit, "Exit");
 refalrts::RefalFunction& Exit = descr_Exit;
 
 static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 942 "Library.sref"
+#line 936 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1086,14 +1080,14 @@ static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter a
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1090 "Library.cpp"
+#line 1084 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_System(func_System, "System");
 refalrts::RefalFunction& System = descr_System;
 
 static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 985 "Library.sref"
+#line 979 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1161,14 +1155,14 @@ static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::It
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1165 "Library.cpp"
+#line 1159 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_IntFromStr(func_IntFromStr, "IntFromStr");
 refalrts::RefalFunction& IntFromStr = descr_IntFromStr;
 
 static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1057 "Library.sref"
+#line 1051 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1227,14 +1221,14 @@ static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::It
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1231 "Library.cpp"
+#line 1225 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_StrFromInt(func_StrFromInt, "StrFromInt");
 refalrts::RefalFunction& StrFromInt = descr_StrFromInt;
 
 static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1120 "Library.sref"
+#line 1114 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1265,14 +1259,14 @@ static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1269 "Library.cpp"
+#line 1263 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Chr(func_Chr, "Chr");
 refalrts::RefalFunction& Chr = descr_Chr;
 
 static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1155 "Library.sref"
+#line 1149 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1304,13 +1298,13 @@ static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1308 "Library.cpp"
+#line 1302 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Ord(func_Ord, "Ord");
 refalrts::RefalFunction& Ord = descr_Ord;
 
-#line 1190 "Library.sref"
+#line 1184 "Library.sref"
 namespace {
 
 template <typename T>
@@ -1325,9 +1319,9 @@ char compare_char( T x, T y ) {
 }
 
 } // unnamed namespace
-#line 1329 "Library.cpp"
+#line 1323 "Library.cpp"
 static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1208 "Library.sref"
+#line 1202 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1539,14 +1533,14 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
   } while ( 0 );
 
   return refalrts::cRecognitionImpossible;
-#line 1543 "Library.cpp"
+#line 1537 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_SymbCompare(func_SymbCompare, "SymbCompare");
 refalrts::RefalFunction& SymbCompare = descr_SymbCompare;
 
 static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1424 "Library.sref"
+#line 1418 "Library.sref"
   do {
     refalrts::Iter bb_0 = arg_begin;
     refalrts::Iter be_0 = arg_end;
@@ -1603,7 +1597,7 @@ static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter
 
 
   return refalrts::cRecognitionImpossible;
-#line 1607 "Library.cpp"
+#line 1601 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_SymbType(func_SymbType, "SymbType");
