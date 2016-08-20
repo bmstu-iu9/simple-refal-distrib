@@ -66,99 +66,39 @@ extern refalrts::RefalFunction& ArgList;
 extern refalrts::RefalFunction& Map;
 extern refalrts::RefalFunction& CreateFileList;
 extern refalrts::RefalFunction& ParseCommandLine;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& Go;
-#else
-extern refalrts::RefalFunction& Go;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Main;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Main;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_MakeProject_S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_MakeProject_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_MakeProject_S2L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_MakeProject_S2L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& MakeProject;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MakeProject;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Make_S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Make_S2L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S2L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Make_S2L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S2L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Make;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Make;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

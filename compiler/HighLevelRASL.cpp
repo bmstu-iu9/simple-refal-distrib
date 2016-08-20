@@ -155,55 +155,23 @@ extern refalrts::RefalFunction& GenResult_Simple;
 extern refalrts::RefalFunction& GenInitSubst_Save;
 extern refalrts::RefalFunction& GenSubst_Save;
 extern refalrts::RefalFunction& GenResult_Opt;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_HighLevelRASL_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& HighLevelRASL;
-#else
-extern refalrts::RefalFunction& HighLevelRASL;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& HighLevelRASL_Function;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& HighLevelRASL_Function;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenSentenceFunc;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenSentenceFunc;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenResultFuncs;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenResultFuncs;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

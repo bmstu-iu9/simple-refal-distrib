@@ -146,225 +146,84 @@ extern refalrts::RefalFunction& MapReduce;
 extern refalrts::RefalFunction& Inc;
 extern refalrts::RefalFunction& IntFromStr;
 extern refalrts::RefalFunction& Chr;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& DFA_TextFromToken;
-#else
-extern refalrts::RefalFunction& DFA_TextFromToken;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_DFA_Tokens_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_DFA_Tokens_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_DFA_Tokens_L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_DFA_Tokens_L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_DFA_Tokens_L3;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_DFA_Tokens_L3;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& DFA_Tokens;
-#else
-extern refalrts::RefalFunction& DFA_Tokens;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& LoTokens;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& LoTokens;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_FilterTokens_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_FilterTokens_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FilterTokens;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FilterTokens;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Unescape_S6L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Unescape_S6L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Unescape;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Unescape;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Root;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Root;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& SetName;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& SetName;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Flush;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Flush;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Literal;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Literal;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Name;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Name;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ErrorFlush;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ErrorFlush;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FlushName;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FlushName;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Literal_Escape;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Literal_Escape;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Literal_Quote;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Literal_Quote;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FlushNameTail;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FlushNameTail;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Literal_DecCode;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Literal_DecCode;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

@@ -10,11 +10,7 @@ struct ident_RepeatOption {
   }
 };
 
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GetOpt_CheckRepeated;
-#else
-extern refalrts::RefalFunction& GetOpt_CheckRepeated;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

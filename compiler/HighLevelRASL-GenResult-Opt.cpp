@@ -402,330 +402,123 @@ extern refalrts::RefalFunction& Add;
 extern refalrts::RefalFunction& GST;
 extern refalrts::RefalFunction& TextFromExpr;
 extern refalrts::RefalFunction& Inc2;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenResult_Opt_L1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Opt_L1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenResult_Opt_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Opt_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GenResult_Opt;
-#else
-extern refalrts::RefalFunction& GenResult_Opt;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FlatResult;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FlatResult;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_CollectStrings_S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_CollectStrings_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CollectStrings;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CollectStrings;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& BuildString;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& BuildString;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenResult_Aux_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenResult_Aux_L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenResult_Aux;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenResult_Aux;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CreateElemParam;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CreateElemParam;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenPushLink_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenPushLink_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenPushLink_L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenPushLink_L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenPushLink;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenPushLink;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Reverse;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Reverse;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ModifyResult;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ModifyResult;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ModifyTile;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ModifyTile;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_GenSplices_S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenSplices_S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenSplices;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenSplices;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CalcRes;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CalcRes;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CollectTiles;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CollectTiles;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CollectTiles_Alloc;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CollectTiles_Alloc;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GenTrash;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenTrash;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& BeginOffset;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& BeginOffset;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& EndOffset;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& EndOffset;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_AddOffsets_L1S1L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_AddOffsets_L1S1L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_AddOffsets_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_AddOffsets_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AddOffsets;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AddOffsets;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& GetSampleOffset;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GetSampleOffset;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

@@ -106,116 +106,49 @@ struct ident_Word {
   }
 };
 
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GetOpt;
-#else
-extern refalrts::RefalFunction& GetOpt;
-#endif
 extern refalrts::RefalFunction& Add;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Inc;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Inc;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& MarkupArguments;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MarkupArguments;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& MarkupAllFiles;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MarkupAllFiles;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ResolveOpts;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts;
-} // unnamed namespace
-
-#endif
 namespace /* unnamed */ {
 refalrts::RefalEmptyFunction descr_Error("Error");
 refalrts::RefalFunction& Error = descr_Error;
 } // unnamed namespace
 
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ResolveOpts_LongParam;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_LongParam;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ResolveOpts_Long;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_Long;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ResolveOpts_Short;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_Short;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FoldErrors;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FoldErrors;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& DoFoldErrors;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoFoldErrors;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

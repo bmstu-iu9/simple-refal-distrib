@@ -8,38 +8,16 @@ extern refalrts::RefalFunction& Ord;
 extern refalrts::RefalFunction& Compare;
 extern refalrts::RefalFunction& Fetch;
 extern refalrts::RefalFunction& Map;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& OctDigit;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& OctDigit;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_EscapeChar_S7L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_EscapeChar_S7L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EscapeChar;
-#else
-extern refalrts::RefalFunction& EscapeChar;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EscapeString;
-#else
-extern refalrts::RefalFunction& EscapeString;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

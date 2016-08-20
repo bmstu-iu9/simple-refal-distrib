@@ -51,100 +51,40 @@ struct ident_True {
 };
 
 extern refalrts::RefalFunction& Map;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& FindFiles;
-#else
-extern refalrts::RefalFunction& FindFiles;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeInFolder;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeInFolder;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
-} // unnamed namespace
-
-#endif
 extern refalrts::RefalFunction& ExistFile;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& ExistFile_T;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExistFile_T;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeFile;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

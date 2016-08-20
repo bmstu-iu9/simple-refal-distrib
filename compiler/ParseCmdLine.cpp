@@ -90,6 +90,14 @@ struct ident_GenMode {
   }
 };
 
+// identifier #MarkupContext
+template <typename SREFAL_PARAM_INT>
+struct ident_MarkupContext {
+  static const char *name() {
+    return "MarkupContext";
+  }
+};
+
 // identifier #NoCppCompiler
 template <typename SREFAL_PARAM_INT>
 struct ident_NoCppCompiler {
@@ -106,11 +114,27 @@ struct ident_NoErrorFile {
   }
 };
 
+// identifier #NoMarkupContext
+template <typename SREFAL_PARAM_INT>
+struct ident_NoMarkupContext {
+  static const char *name() {
+    return "NoMarkupContext";
+  }
+};
+
 // identifier #NoRequiredParam
 template <typename SREFAL_PARAM_INT>
 struct ident_NoRequiredParam {
   static const char *name() {
     return "NoRequiredParam";
+  }
+};
+
+// identifier #None
+template <typename SREFAL_PARAM_INT>
+struct ident_None {
+  static const char *name() {
+    return "None";
   }
 };
 
@@ -232,165 +256,67 @@ extern refalrts::RefalFunction& Fetch;
 extern refalrts::RefalFunction& Seq;
 extern refalrts::RefalFunction& MapReduce;
 extern refalrts::RefalFunction& Map;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L3;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L3;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L4;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L4;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L5;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L5;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L6;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L6;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7S5L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7S5L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L7;
 } // unnamed namespace
 
-#else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7;
+extern refalrts::RefalFunction& gen_ParseCommandLine_L8S5L1;
 } // unnamed namespace
 
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L8;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L8;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L9L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L9L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L9;
 } // unnamed namespace
 
-#else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L9;
+extern refalrts::RefalFunction& gen_ParseCommandLine_L10L1;
 } // unnamed namespace
 
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1S4L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1S4L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1;
-} // unnamed namespace
-
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_ParseCommandLine_L10;
 } // unnamed namespace
 
-#else
 namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseCommandLine_L10;
+extern refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1S4L1;
 } // unnamed namespace
 
-#endif
-#ifdef INTERPRET
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_ParseCommandLine_L11;
+} // unnamed namespace
+
 extern refalrts::RefalFunction& ParseCommandLine;
-#else
-extern refalrts::RefalFunction& ParseCommandLine;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
@@ -399,6 +325,7 @@ namespace /* unnamed */ {
       & GetOpt_CheckRepeated
     };
     static const refalrts::RefalIdentifier idents[] = {
+      & ident_MarkupContext<int>::name,
       & ident_ErrorFile<int>::name,
       & ident_Opt<int>::name,
       & ident_GenMode<int>::name,
@@ -407,7 +334,7 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icIssueMemory, 15, 0, 0},
+      {refalrts::icIssueMemory, 16, 0, 0},
       // </0 & ParseCommandLine\1/4 (/7 e.Errors#2/5 )/8 e.Options#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -416,13 +343,14 @@ namespace /* unnamed */ {
       // closed e.Options#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </9 & GetOpt-CheckRepeated/10 (/11 # CppCompiler/12 # GenMode/13 # Opt/14 Tile{ HalfReuse: # ErrorFile/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } </9 & GetOpt-CheckRepeated/10 (/11 # CppCompiler/12 # GenMode/13 # Opt/14 # ErrorFile/15 Tile{ HalfReuse: # MarkupContext/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
       {refalrts::icAllocFunc, 0, 0, 10},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 11},
-      {refalrts::icAllocIdent, 0, 3, 12},
-      {refalrts::icAllocIdent, 0, 2, 13},
-      {refalrts::icAllocIdent, 0, 1, 14},
+      {refalrts::icAllocIdent, 0, 4, 12},
+      {refalrts::icAllocIdent, 0, 3, 13},
+      {refalrts::icAllocIdent, 0, 2, 14},
+      {refalrts::icAllocIdent, 0, 1, 15},
       {refalrts::icReinitIdent, 0, 0, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
       {refalrts::icPushStack, 0, 0, 1},
@@ -430,7 +358,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 7, 8, 0},
       {refalrts::icLinkBrackets, 11, 4, 0},
       {refalrts::icSetRes, 0, 0, 0},
-      {refalrts::icSpliceTile, 9, 14, 0},
+      {refalrts::icSpliceTile, 9, 15, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
@@ -454,9 +382,9 @@ refalrts::RefalFunction& gen_ParseCommandLine_L1 = descr_gen_ParseCommandLine_L1
 #else
 static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
+  // issue here memory for vars with 16 elems
+  refalrts::Iter context[16];
+  refalrts::zeros( context, 16 );
   // </0 & ParseCommandLine\1/4 (/7 e.Errors#2/5 )/8 e.Options#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -474,7 +402,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </9 & GetOpt-CheckRepeated/10 (/11 # CppCompiler/12 # GenMode/13 # Opt/14 Tile{ HalfReuse: # ErrorFile/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </9 & GetOpt-CheckRepeated/10 (/11 # CppCompiler/12 # GenMode/13 # Opt/14 # ErrorFile/15 Tile{ HalfReuse: # MarkupContext/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[10], & GetOpt_CheckRepeated ) )
@@ -487,7 +415,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[14], & ident_Opt<int>::name ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_ident( context[0], & ident_ErrorFile<int>::name );
+  if( ! refalrts::alloc_ident( context[15], & ident_ErrorFile<int>::name ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_ident( context[0], & ident_MarkupContext<int>::name );
   refalrts::reinit_close_bracket( context[4] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
@@ -496,7 +426,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[0];
-  res = refalrts::splice_evar( res, context[9], context[14] );
+  res = refalrts::splice_evar( res, context[9], context[15] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -1957,31 +1887,68 @@ refalrts::RefalFunction& gen_ParseCommandLine_L5 = descr_gen_ParseCommandLine_L5
 namespace /* unnamed */ {
   namespace scope_gen_ParseCommandLine_L6 {
     using refalrts::functions;
-    using refalrts::idents;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_NoMarkupContext<int>::name,
+      & ident_MarkupContext<int>::name
+    };
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icIssueMemory, 13, 0, 0},
-      // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icIssueMemory, 25, 0, 0},
+      //FAST GEN: ( e.$ ) ( e.$ ) e.$
+      //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+      // </0 & ParseCommandLine\6/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
       {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.idxB#0 as range 5
+      // closed e.idxTB#0 as range 9
+      // closed e.idxTT#0 as range 2
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( e.idx ) e.idx
+      // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options-B#2/13 (/17 # MarkupContext/19 s.Num#2/20 )/18 e.Options-E#2/2 >/1
+      // closed e.Errors#2 as range 5
+      // closed e.Bag#2 as range 9
+      {refalrts::icSave, 0, 21, 2},
+      {refalrts::icEPrepare, 0, 13, 21},
+      {refalrts::icEStart, 0, 13, 21},
+      {refalrts::icSave, 0, 23, 21},
+      {refalrts::icBracketLeftSave, 0, 15, 23},
+      {refalrts::icIdentLeftSave, 19, 1, 15},
+      // closed e.Options-E#2 as range 23(2)
+      {refalrts::icsVarLeft, 0, 20, 15},
+      {refalrts::icEmpty, 0, 0, 15},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\6/4 {REMOVED TILE} {REMOVED TILE} (/17 # MarkupContext/19 s.Num#2/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 HalfReuse: # MarkupContext/12 } Tile{ AsIs: )/18 } Tile{ AsIs: e.Options-B#2/13 } Tile{ AsIs: e.Options-E#2/23(2) } Tile{ ]] }
+      {refalrts::icReinitIdent, 0, 1, 12},
+      {refalrts::icLinkBrackets, 11, 18, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceEVar, 0, 0, 23},
+      {refalrts::icSpliceEVar, 0, 0, 13},
+      {refalrts::icSpliceTile, 18, 18, 0},
+      {refalrts::icSpliceTile, 7, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      // ( e.idx ) ( e.idx ) e.idx
+      // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
       // closed e.Errors#2 as range 5
       // closed e.Bag#2 as range 9
       // closed e.Options#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 AsIs: )/12 } Tile{ HalfReuse: )/1 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\6/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 HalfReuse: # NoMarkupContext/12 } Tile{ HalfReuse: )/1 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
+      {refalrts::icReinitIdent, 0, 0, 12},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icLinkBrackets, 11, 1, 0},
       {refalrts::icLinkBrackets, 7, 8, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 1, 1, 0},
-      {refalrts::icSpliceTile, 4, 12, 0},
+      {refalrts::icSpliceTile, 7, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
@@ -2006,10 +1973,168 @@ refalrts::RefalFunction& gen_ParseCommandLine_L6 = descr_gen_ParseCommandLine_L6
 #else
 static refalrts::FnResult func_gen_ParseCommandLine_L6(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
+  // issue here memory for vars with 25 elems
+  refalrts::Iter context[25];
+  refalrts::zeros( context, 25 );
+  //FAST GEN: ( e.$ ) ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+  // </0 & ParseCommandLine\6/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.idxB#0 as range 5
+  // closed e.idxTB#0 as range 9
+  // closed e.idxTT#0 as range 2
+  do {
+    refalrts::start_sentence();
+    // ( e.idx ) ( e.idx ) e.idx
+    // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options-B#2/13 (/17 # MarkupContext/19 s.Num#2/20 )/18 e.Options-E#2/2 >/1
+    // closed e.Errors#2 as range 5
+    // closed e.Bag#2 as range 9
+    context[21] = context[2];
+    context[22] = context[3];
+    context[13] = 0;
+    context[14] = 0;
+    refalrts::start_e_loop();
+    do {
+      context[23] = context[21];
+      context[24] = context[22];
+      context[15] = 0;
+      context[16] = 0;
+      context[17] = refalrts::brackets_left( context[15], context[16], context[23], context[24] );
+      if( ! context[17] )
+        continue;
+      refalrts::bracket_pointers(context[17], context[18]);
+      context[19] = refalrts::ident_left(  & ident_MarkupContext<int>::name, context[15], context[16] );
+      if( ! context[19] )
+        continue;
+      // closed e.Options-E#2 as range 23(2)
+      if( ! refalrts::svar_left( context[20], context[15], context[16] ) )
+        continue;
+      if( ! refalrts::empty_seq( context[15], context[16] ) )
+        continue;
+
+      refalrts::reset_allocator();
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\6/4 {REMOVED TILE} {REMOVED TILE} (/17 # MarkupContext/19 s.Num#2/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 HalfReuse: # MarkupContext/12 } Tile{ AsIs: )/18 } Tile{ AsIs: e.Options-B#2/13 } Tile{ AsIs: e.Options-E#2/23(2) } Tile{ ]] }
+      refalrts::reinit_ident( context[12], & ident_MarkupContext<int>::name );
+      refalrts::link_brackets( context[11], context[18] );
+      refalrts::link_brackets( context[7], context[8] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[23], context[24] );
+      res = refalrts::splice_evar( res, context[13], context[14] );
+      res = refalrts::splice_evar( res, context[18], context[18] );
+      res = refalrts::splice_evar( res, context[7], context[12] );
+      refalrts::use( res );
+      refalrts::splice_to_freelist_open( trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( refalrts::open_evar_advance( context[13], context[14], context[21], context[22] ) );
+  } while ( 0 );
+
+  // ( e.idx ) ( e.idx ) e.idx
+  // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+  // closed e.Errors#2 as range 5
+  // closed e.Bag#2 as range 9
+  // closed e.Options#2 as range 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\6/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 HalfReuse: # NoMarkupContext/12 } Tile{ HalfReuse: )/1 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
+  refalrts::reinit_ident( context[12], & ident_NoMarkupContext<int>::name );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[11], context[1] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_evar( res, context[7], context[12] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalFunction descr_gen_ParseCommandLine_L6(func_gen_ParseCommandLine_L6, "ParseCommandLine\\6");
+refalrts::RefalFunction& gen_ParseCommandLine_L6 = descr_gen_ParseCommandLine_L6;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_ParseCommandLine_L7 {
+    using refalrts::functions;
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 13, 0, 0},
+      // </0 & ParseCommandLine\7/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.Errors#2 as range 5
+      // closed e.Bag#2 as range 9
+      // closed e.Options#2 as range 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Bag#2/9 AsIs: )/12 } Tile{ HalfReuse: )/1 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 4, 1, 0},
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 1, 1, 0},
+      {refalrts::icSpliceTile, 4, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_ParseCommandLine_L7
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_ParseCommandLine_L7(
+  "ParseCommandLine\\7",
+  scope_gen_ParseCommandLine_L7::raa,
+  scope_gen_ParseCommandLine_L7::functions,
+  scope_gen_ParseCommandLine_L7::idents,
+  scope_gen_ParseCommandLine_L7::numbers,
+  scope_gen_ParseCommandLine_L7::strings
+);
+refalrts::RefalFunction& gen_ParseCommandLine_L7 = descr_gen_ParseCommandLine_L7;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & ParseCommandLine\6/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+  // </0 & ParseCommandLine\7/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2051,15 +2176,15 @@ static refalrts::FnResult func_gen_ParseCommandLine_L6(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L6(func_gen_ParseCommandLine_L6, "ParseCommandLine\\6");
-refalrts::RefalFunction& gen_ParseCommandLine_L6 = descr_gen_ParseCommandLine_L6;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L7(func_gen_ParseCommandLine_L7, "ParseCommandLine\\7");
+refalrts::RefalFunction& gen_ParseCommandLine_L7 = descr_gen_ParseCommandLine_L7;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L7S5L1 {
+  namespace scope_gen_ParseCommandLine_L8S5L1 {
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NoCppCompiler<int>::name
@@ -2071,7 +2196,7 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 13, 0, 0},
       //FAST GEN: ( e.$ ) t.$
       //GLOBAL GEN: ( e.$ ) t.$
-      // </0 & ParseCommandLine\7$5\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
+      // </0 & ParseCommandLine\8$5\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2080,18 +2205,18 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // ( e.idx ) # NoCppCompiler
-      // </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 >/1
+      // </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 >/1
       {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.Folder#2 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoCppCompiler/1 ]] }
       {refalrts::icReinitIdent, 0, 0, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // ( e.idx ) ( e.idx )
-      // </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 (/9 e.CppCompiler#3/11 )/10 >/1
+      // </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 (/9 e.CppCompiler#3/11 )/10 >/1
       {refalrts::icBracketTerm, 0, 11, 9},
       // closed e.Folder#2 as range 5
       // closed e.CppCompiler#3 as range 11
@@ -2112,32 +2237,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L7S5L1
+  } // namespace scope_gen_ParseCommandLine_L8S5L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L7S5L1(
-  "ParseCommandLine\\7$5\\1",
-  scope_gen_ParseCommandLine_L7S5L1::raa,
-  scope_gen_ParseCommandLine_L7S5L1::functions,
-  scope_gen_ParseCommandLine_L7S5L1::idents,
-  scope_gen_ParseCommandLine_L7S5L1::numbers,
-  scope_gen_ParseCommandLine_L7S5L1::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L8S5L1(
+  "ParseCommandLine\\8$5\\1",
+  scope_gen_ParseCommandLine_L8S5L1::raa,
+  scope_gen_ParseCommandLine_L8S5L1::functions,
+  scope_gen_ParseCommandLine_L8S5L1::idents,
+  scope_gen_ParseCommandLine_L8S5L1::numbers,
+  scope_gen_ParseCommandLine_L8S5L1::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L7S5L1 = descr_gen_ParseCommandLine_L7S5L1;
+refalrts::RefalFunction& gen_ParseCommandLine_L8S5L1 = descr_gen_ParseCommandLine_L8S5L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L7S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L8S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
   //FAST GEN: ( e.$ ) t.$
   //GLOBAL GEN: ( e.$ ) t.$
-  // </0 & ParseCommandLine\7$5\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
+  // </0 & ParseCommandLine\8$5\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2158,13 +2283,13 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7S5L1(refalrts::Iter arg_be
   do {
     refalrts::start_sentence();
     // ( e.idx ) # NoCppCompiler
-    // </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 >/1
+    // </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 >/1
     if( ! refalrts::ident_term(  & ident_NoCppCompiler<int>::name, context[9] ) )
       continue;
     // closed e.Folder#2 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 # NoCppCompiler/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoCppCompiler/1 ]] }
     refalrts::reinit_ident( context[1], & ident_NoCppCompiler<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2176,7 +2301,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7S5L1(refalrts::Iter arg_be
   } while ( 0 );
 
   // ( e.idx ) ( e.idx )
-  // </0 & ParseCommandLine\7$5\1/4 (/7 e.Folder#2/5 )/8 (/9 e.CppCompiler#3/11 )/10 >/1
+  // </0 & ParseCommandLine\8$5\1/4 (/7 e.Folder#2/5 )/8 (/9 e.CppCompiler#3/11 )/10 >/1
   context[11] = 0;
   context[12] = 0;
   if( ! refalrts::brackets_term( context[11], context[12], context[9] ) )
@@ -2205,18 +2330,18 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7S5L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L7S5L1(func_gen_ParseCommandLine_L7S5L1, "ParseCommandLine\\7$5\\1");
-refalrts::RefalFunction& gen_ParseCommandLine_L7S5L1 = descr_gen_ParseCommandLine_L7S5L1;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L8S5L1(func_gen_ParseCommandLine_L8S5L1, "ParseCommandLine\\8$5\\1");
+refalrts::RefalFunction& gen_ParseCommandLine_L8S5L1 = descr_gen_ParseCommandLine_L8S5L1;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L7 {
+  namespace scope_gen_ParseCommandLine_L8 {
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
-      & gen_ParseCommandLine_L7S5L1,
+      & gen_ParseCommandLine_L8S5L1,
       & refalrts::create_closure
     };
     static const refalrts::RefalIdentifier idents[] = {
@@ -2234,7 +2359,7 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 35, 0, 0},
       //FAST GEN: ( ( e.$ ) ( e.$ ) ) t.$
       //GLOBAL GEN: ( ( e.$ ) ( e.$ ) ) t.$
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.idxBB#0/9 )/12 (/15 e.idxBTB#0/13 )/16 )/8 t.idxT#0/17 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.idxBB#0/9 )/12 (/15 e.idxBTB#0/13 )/16 )/8 t.idxT#0/17 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2247,7 +2372,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icOnFailGoTo, +21, 0, 0},
       // ( ( e.idx ) ( # NoCppCompiler e.idx ) ) ( # CppFlags s.idx e.idx )
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/22 s.Num#2/23 e.Flags#2/19 )/18 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/22 s.Num#2/23 e.Flags#2/19 )/18 >/1
       {refalrts::icBracketTerm, 0, 19, 17},
       {refalrts::icSave, 0, 33, 13},
       {refalrts::icIdentLeftSave, 21, 5, 33},
@@ -2257,7 +2382,7 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 23, 19},
       // closed e.Flags#2 as range 19
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flags#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flags#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: (/17 HalfReuse: s.Num2 #23/22 } Tile{ HalfReuse: # FlagsForNoCompiler/1 } Tile{ AsIs: )/18 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: # NoCppCompiler/21 AsIs: e.Bag#2/33(13) AsIs: )/16 AsIs: )/8 } Tile{ ]] }
       {refalrts::icReinitSVar, 0, 23, 22},
       {refalrts::icReinitIdent, 0, 4, 1},
@@ -2276,7 +2401,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +21, 0, 0},
       // ( ( e.idx ) ( # NoCppCompiler e.idx ) ) ( # CppFlag s.idx e.idx )
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/22 s.Num#2/23 e.Flag#2/19 )/18 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/22 s.Num#2/23 e.Flag#2/19 )/18 >/1
       {refalrts::icBracketTerm, 0, 19, 17},
       {refalrts::icSave, 0, 33, 13},
       {refalrts::icIdentLeftSave, 21, 5, 33},
@@ -2286,7 +2411,7 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 23, 19},
       // closed e.Flag#2 as range 19
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flag#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flag#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: (/17 HalfReuse: s.Num2 #23/22 } Tile{ HalfReuse: # FlagsForNoCompiler/1 } Tile{ AsIs: )/18 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: # NoCppCompiler/21 AsIs: e.Bag#2/33(13) AsIs: )/16 AsIs: )/8 } Tile{ ]] }
       {refalrts::icReinitSVar, 0, 23, 22},
       {refalrts::icReinitIdent, 0, 4, 1},
@@ -2305,7 +2430,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( ( e.idx ) ( ( e.idx ) e.idx ) ) ( # CppFlags s.idx e.idx )
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/21 s.Num#2/26 e.Flags#2/19 )/18 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/21 s.Num#2/26 e.Flags#2/19 )/18 >/1
       {refalrts::icBracketTerm, 0, 19, 17},
       {refalrts::icIdentLeftSave, 21, 3, 19},
       {refalrts::icSave, 0, 33, 13},
@@ -2316,7 +2441,7 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 26, 19},
       // closed e.Flags#2 as range 19
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} (/17 # CppFlags/21 s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} (/17 # CppFlags/21 s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: (/24 AsIs: e.CppCompiler#2/22 HalfReuse: ' '/25 } Tile{ AsIs: e.Flags#2/19 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/18 HalfReuse: )/1 ]] }
       {refalrts::icReinitChar, 0, ' ', 25},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -2333,7 +2458,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( ( e.idx ) ( ( e.idx ) e.idx ) ) ( # CppFlag s.idx e.idx )
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/21 s.Num#2/26 e.Flag#2/19 )/18 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/21 s.Num#2/26 e.Flag#2/19 )/18 >/1
       {refalrts::icBracketTerm, 0, 19, 17},
       {refalrts::icIdentLeftSave, 21, 2, 19},
       {refalrts::icSave, 0, 33, 13},
@@ -2344,7 +2469,7 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 26, 19},
       // closed e.Flag#2 as range 19
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: (/24 AsIs: e.CppCompiler#2/22 HalfReuse: ' '/25 } Tile{ HalfReuse: '\"'/21 } Tile{ AsIs: e.Flag#2/19 } Tile{ HalfReuse: '\"'/16 AsIs: )/8 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/18 HalfReuse: )/1 ]] }
       {refalrts::icReinitChar, 0, ' ', 25},
       {refalrts::icReinitChar, 0, '\"', 21},
@@ -2364,7 +2489,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( ( e.idx ) ( t.idx e.idx ) ) ( # RuntimeFolder s.idx e.idx )
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 t.CppCompiler#2/23 e.Bag#2/13 )/16 )/8 (/17 # RuntimeFolder/21 s.Num#2/22 e.Folder#2/19 )/18 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 t.CppCompiler#2/23 e.Bag#2/13 )/16 )/8 (/17 # RuntimeFolder/21 s.Num#2/22 e.Folder#2/19 )/18 >/1
       {refalrts::icBracketTerm, 0, 19, 17},
       {refalrts::icIdentLeftSave, 21, 1, 19},
       // closed e.Errors#2 as range 9
@@ -2375,7 +2500,7 @@ namespace /* unnamed */ {
       // closed e.Bag#2 as range 33(13)
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: t.CppCompiler#2/23 } </25 & @create_closure@/26 & ParseCommandLine\7$5\1/27 (/28 e.Folder#2/19/29 )/31 >/32 Tile{ AsIs: >/1 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/16 AsIs: )/8 AsIs: (/17 Reuse: # SearchFolder/21 AsIs: s.Num#2/22 AsIs: e.Folder#2/19 AsIs: )/18 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: t.CppCompiler#2/23 } </25 & @create_closure@/26 & ParseCommandLine\8$5\1/27 (/28 e.Folder#2/19/29 )/31 >/32 Tile{ AsIs: >/1 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/16 AsIs: )/8 AsIs: (/17 Reuse: # SearchFolder/21 AsIs: s.Num#2/22 AsIs: e.Folder#2/19 AsIs: )/18 } Tile{ ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 2, 26},
       {refalrts::icAllocFunc, 0, 1, 27},
@@ -2404,11 +2529,11 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 15, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // ( ( e.idx ) ( e.idx ) ) t.idx
-      // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 t.OtherOption#2/17 >/1
+      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 t.OtherOption#2/17 >/1
       // closed e.Errors#2 as range 9
       // closed e.Bag#2 as range 13
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} >/1 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Bag#2/13 AsIs: )/16 AsIs: )/8 AsIs: t.OtherOption#2/17 } Tile{ ]] }
       {refalrts::icLinkBrackets, 7, 8, 0},
       {refalrts::icLinkBrackets, 15, 16, 0},
@@ -2419,32 +2544,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L7
+  } // namespace scope_gen_ParseCommandLine_L8
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L7(
-  "ParseCommandLine\\7",
-  scope_gen_ParseCommandLine_L7::raa,
-  scope_gen_ParseCommandLine_L7::functions,
-  scope_gen_ParseCommandLine_L7::idents,
-  scope_gen_ParseCommandLine_L7::numbers,
-  scope_gen_ParseCommandLine_L7::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L8(
+  "ParseCommandLine\\8",
+  scope_gen_ParseCommandLine_L8::raa,
+  scope_gen_ParseCommandLine_L8::functions,
+  scope_gen_ParseCommandLine_L8::idents,
+  scope_gen_ParseCommandLine_L8::numbers,
+  scope_gen_ParseCommandLine_L8::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L7 = descr_gen_ParseCommandLine_L7;
+refalrts::RefalFunction& gen_ParseCommandLine_L8 = descr_gen_ParseCommandLine_L8;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L8(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 35 elems
   refalrts::Iter context[35];
   refalrts::zeros( context, 35 );
   //FAST GEN: ( ( e.$ ) ( e.$ ) ) t.$
   //GLOBAL GEN: ( ( e.$ ) ( e.$ ) ) t.$
-  // </0 & ParseCommandLine\7/4 (/7 (/11 e.idxBB#0/9 )/12 (/15 e.idxBTB#0/13 )/16 )/8 t.idxT#0/17 >/1
+  // </0 & ParseCommandLine\8/4 (/7 (/11 e.idxBB#0/9 )/12 (/15 e.idxBTB#0/13 )/16 )/8 t.idxT#0/17 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2480,7 +2605,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   do {
     refalrts::start_sentence();
     // ( ( e.idx ) ( # NoCppCompiler e.idx ) ) ( # CppFlags s.idx e.idx )
-    // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/22 s.Num#2/23 e.Flags#2/19 )/18 >/1
+    // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/22 s.Num#2/23 e.Flags#2/19 )/18 >/1
     context[19] = 0;
     context[20] = 0;
     if( ! refalrts::brackets_term( context[19], context[20], context[17] ) )
@@ -2500,7 +2625,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
     // closed e.Flags#2 as range 19
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flags#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flags#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: (/17 HalfReuse: s.Num2 #23/22 } Tile{ HalfReuse: # FlagsForNoCompiler/1 } Tile{ AsIs: )/18 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: # NoCppCompiler/21 AsIs: e.Bag#2/33(13) AsIs: )/16 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_svar( context[22], context[23] );
     refalrts::reinit_ident( context[1], & ident_FlagsForNoCompiler<int>::name );
@@ -2525,7 +2650,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   do {
     refalrts::start_sentence();
     // ( ( e.idx ) ( # NoCppCompiler e.idx ) ) ( # CppFlag s.idx e.idx )
-    // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/22 s.Num#2/23 e.Flag#2/19 )/18 >/1
+    // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 # NoCppCompiler/21 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/22 s.Num#2/23 e.Flag#2/19 )/18 >/1
     context[19] = 0;
     context[20] = 0;
     if( ! refalrts::brackets_term( context[19], context[20], context[17] ) )
@@ -2545,7 +2670,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
     // closed e.Flag#2 as range 19
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flag#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#2/23 e.Flag#2/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: (/17 HalfReuse: s.Num2 #23/22 } Tile{ HalfReuse: # FlagsForNoCompiler/1 } Tile{ AsIs: )/18 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: # NoCppCompiler/21 AsIs: e.Bag#2/33(13) AsIs: )/16 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_svar( context[22], context[23] );
     refalrts::reinit_ident( context[1], & ident_FlagsForNoCompiler<int>::name );
@@ -2570,7 +2695,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   do {
     refalrts::start_sentence();
     // ( ( e.idx ) ( ( e.idx ) e.idx ) ) ( # CppFlags s.idx e.idx )
-    // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/21 s.Num#2/26 e.Flags#2/19 )/18 >/1
+    // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlags/21 s.Num#2/26 e.Flags#2/19 )/18 >/1
     context[19] = 0;
     context[20] = 0;
     if( ! refalrts::brackets_term( context[19], context[20], context[17] ) )
@@ -2594,7 +2719,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
     // closed e.Flags#2 as range 19
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} (/17 # CppFlags/21 s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} (/17 # CppFlags/21 s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: (/24 AsIs: e.CppCompiler#2/22 HalfReuse: ' '/25 } Tile{ AsIs: e.Flags#2/19 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/18 HalfReuse: )/1 ]] }
     refalrts::reinit_char( context[25], ' ' );
     refalrts::reinit_close_bracket( context[1] );
@@ -2617,7 +2742,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   do {
     refalrts::start_sentence();
     // ( ( e.idx ) ( ( e.idx ) e.idx ) ) ( # CppFlag s.idx e.idx )
-    // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/21 s.Num#2/26 e.Flag#2/19 )/18 >/1
+    // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 (/24 e.CppCompiler#2/22 )/25 e.Bag#2/13 )/16 )/8 (/17 # CppFlag/21 s.Num#2/26 e.Flag#2/19 )/18 >/1
     context[19] = 0;
     context[20] = 0;
     if( ! refalrts::brackets_term( context[19], context[20], context[17] ) )
@@ -2641,7 +2766,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
     // closed e.Flag#2 as range 19
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} s.Num#2/26 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: (/24 AsIs: e.CppCompiler#2/22 HalfReuse: ' '/25 } Tile{ HalfReuse: '\"'/21 } Tile{ AsIs: e.Flag#2/19 } Tile{ HalfReuse: '\"'/16 AsIs: )/8 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/18 HalfReuse: )/1 ]] }
     refalrts::reinit_char( context[25], ' ' );
     refalrts::reinit_char( context[21], '\"' );
@@ -2667,7 +2792,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   do {
     refalrts::start_sentence();
     // ( ( e.idx ) ( t.idx e.idx ) ) ( # RuntimeFolder s.idx e.idx )
-    // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 t.CppCompiler#2/23 e.Bag#2/13 )/16 )/8 (/17 # RuntimeFolder/21 s.Num#2/22 e.Folder#2/19 )/18 >/1
+    // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 t.CppCompiler#2/23 e.Bag#2/13 )/16 )/8 (/17 # RuntimeFolder/21 s.Num#2/22 e.Folder#2/19 )/18 >/1
     context[19] = 0;
     context[20] = 0;
     if( ! refalrts::brackets_term( context[19], context[20], context[17] ) )
@@ -2688,12 +2813,12 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: t.CppCompiler#2/23 } </25 & @create_closure@/26 & ParseCommandLine\7$5\1/27 (/28 e.Folder#2/19/29 )/31 >/32 Tile{ AsIs: >/1 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/16 AsIs: )/8 AsIs: (/17 Reuse: # SearchFolder/21 AsIs: s.Num#2/22 AsIs: e.Folder#2/19 AsIs: )/18 } Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: t.CppCompiler#2/23 } </25 & @create_closure@/26 & ParseCommandLine\8$5\1/27 (/28 e.Folder#2/19/29 )/31 >/32 Tile{ AsIs: >/1 } Tile{ AsIs: e.Bag#2/33(13) } Tile{ AsIs: )/16 AsIs: )/8 AsIs: (/17 Reuse: # SearchFolder/21 AsIs: s.Num#2/22 AsIs: e.Folder#2/19 AsIs: )/18 } Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[25] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[26], & refalrts::create_closure ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[27], & gen_ParseCommandLine_L7S5L1 ) )
+    if( ! refalrts::alloc_name( context[27], & gen_ParseCommandLine_L8S5L1 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[28] ) )
       return refalrts::cNoMemory;
@@ -2729,12 +2854,12 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   } while ( 0 );
 
   // ( ( e.idx ) ( e.idx ) ) t.idx
-  // </0 & ParseCommandLine\7/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 t.OtherOption#2/17 >/1
+  // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 t.OtherOption#2/17 >/1
   // closed e.Errors#2 as range 9
   // closed e.Bag#2 as range 13
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\7/4 {REMOVED TILE} >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Bag#2/13 AsIs: )/16 AsIs: )/8 AsIs: t.OtherOption#2/17 } Tile{ ]] }
   refalrts::link_brackets( context[7], context[8] );
   refalrts::link_brackets( context[15], context[16] );
@@ -2749,22 +2874,22 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L7(func_gen_ParseCommandLine_L7, "ParseCommandLine\\7");
-refalrts::RefalFunction& gen_ParseCommandLine_L7 = descr_gen_ParseCommandLine_L7;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L8(func_gen_ParseCommandLine_L8, "ParseCommandLine\\8");
+refalrts::RefalFunction& gen_ParseCommandLine_L8 = descr_gen_ParseCommandLine_L8;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L8 {
+  namespace scope_gen_ParseCommandLine_L9 {
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icIssueMemory, 17, 0, 0},
-      // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 e.Options#2/2 >/1
+      // </0 & ParseCommandLine\9/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 e.Options#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2775,7 +2900,7 @@ namespace /* unnamed */ {
       // closed e.Bag#2 as range 13
       // closed e.Options#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Bag#2/13 AsIs: )/16 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
       {refalrts::icLinkBrackets, 15, 16, 0},
       {refalrts::icLinkBrackets, 11, 12, 0},
@@ -2786,30 +2911,30 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L8
+  } // namespace scope_gen_ParseCommandLine_L9
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L8(
-  "ParseCommandLine\\8",
-  scope_gen_ParseCommandLine_L8::raa,
-  scope_gen_ParseCommandLine_L8::functions,
-  scope_gen_ParseCommandLine_L8::idents,
-  scope_gen_ParseCommandLine_L8::numbers,
-  scope_gen_ParseCommandLine_L8::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L9(
+  "ParseCommandLine\\9",
+  scope_gen_ParseCommandLine_L9::raa,
+  scope_gen_ParseCommandLine_L9::functions,
+  scope_gen_ParseCommandLine_L9::idents,
+  scope_gen_ParseCommandLine_L9::numbers,
+  scope_gen_ParseCommandLine_L9::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L8 = descr_gen_ParseCommandLine_L8;
+refalrts::RefalFunction& gen_ParseCommandLine_L9 = descr_gen_ParseCommandLine_L9;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L8(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  // </0 & ParseCommandLine\8/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 e.Options#2/2 >/1
+  // </0 & ParseCommandLine\9/4 (/7 (/11 e.Errors#2/9 )/12 (/15 e.Bag#2/13 )/16 )/8 e.Options#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2840,7 +2965,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L8(refalrts::Iter arg_begin,
   // closed e.Options#2 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\8/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.Errors#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Bag#2/13 AsIs: )/16 } Tile{ AsIs: e.Options#2/2 } Tile{ ]] }
   refalrts::link_brackets( context[15], context[16] );
   refalrts::link_brackets( context[11], context[12] );
@@ -2855,15 +2980,15 @@ static refalrts::FnResult func_gen_ParseCommandLine_L8(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L8(func_gen_ParseCommandLine_L8, "ParseCommandLine\\8");
-refalrts::RefalFunction& gen_ParseCommandLine_L8 = descr_gen_ParseCommandLine_L8;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L9(func_gen_ParseCommandLine_L9, "ParseCommandLine\\9");
+refalrts::RefalFunction& gen_ParseCommandLine_L9 = descr_gen_ParseCommandLine_L9;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L9L1 {
+  namespace scope_gen_ParseCommandLine_L10L1 {
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_FILE<int>::name,
@@ -2876,7 +3001,7 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 21, 0, 0},
       //FAST GEN: ( e.$ ) ( s.$ s.$ e.$ )
       //GLOBAL GEN: ( e.$ ) ( s.$ s.$ e.$ )
-      // </0 & ParseCommandLine\9\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 s.idxTBV#0/14 e.idxTBVV#0/9 )/12 >/1
+      // </0 & ParseCommandLine\10\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 s.idxTBV#0/14 e.idxTBVV#0/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -2888,7 +3013,7 @@ namespace /* unnamed */ {
       // closed e.idxTBVV#0 as range 9
       {refalrts::icOnFailGoTo, +15, 0, 0},
       // ( e.idx ( e.idx ) ) ( # SearchFolder s.idx e.idx )
-      // </0 & ParseCommandLine\9\1/4 (/7 e.Bag#3/5 (/17 e.Folders#3/15 )/18 )/8 (/11 # SearchFolder/13 s.Num#3/14 e.Folder#3/9 )/12 >/1
+      // </0 & ParseCommandLine\10\1/4 (/7 e.Bag#3/5 (/17 e.Folders#3/15 )/18 )/8 (/11 # SearchFolder/13 s.Num#3/14 e.Folder#3/9 )/12 >/1
       {refalrts::icIdentTerm, 0, 1, 13},
       {refalrts::icSave, 0, 19, 5},
       {refalrts::icBracketRightSave, 0, 15, 19},
@@ -2896,7 +3021,7 @@ namespace /* unnamed */ {
       // closed e.Folders#3 as range 15
       // closed e.Folder#3 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9\1/4 {REMOVED TILE} {REMOVED TILE} (/11 # SearchFolder/13 s.Num#3/14 {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10\1/4 {REMOVED TILE} {REMOVED TILE} (/11 # SearchFolder/13 s.Num#3/14 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Bag#3/19(5) AsIs: (/17 AsIs: e.Folders#3/15 HalfReuse: (/18 } Tile{ AsIs: e.Folder#3/9 } Tile{ AsIs: )/8 } Tile{ AsIs: )/12 HalfReuse: )/1 ]] }
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 18},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -2910,12 +3035,12 @@ namespace /* unnamed */ {
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // ( e.idx ) ( # FILE s.idx e.idx )
-      // </0 & ParseCommandLine\9\1/4 (/7 e.Bag#3/5 )/8 (/11 # FILE/13 s.Num#3/14 e.FileName#3/9 )/12 >/1
+      // </0 & ParseCommandLine\10\1/4 (/7 e.Bag#3/5 )/8 (/11 # FILE/13 s.Num#3/14 e.FileName#3/9 )/12 >/1
       {refalrts::icIdentTerm, 0, 0, 13},
       // closed e.Bag#3 as range 5
       // closed e.FileName#3 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9\1/4 {REMOVED TILE} s.Num#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10\1/4 {REMOVED TILE} s.Num#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Bag#3/5 AsIs: )/8 AsIs: (/11 HalfReuse: s.Num3 #14/13 } Tile{ AsIs: e.FileName#3/9 } Tile{ HalfReuse: )/1 ]] }
       {refalrts::icReinitSVar, 0, 14, 13},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
@@ -2928,32 +3053,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L9L1
+  } // namespace scope_gen_ParseCommandLine_L10L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L9L1(
-  "ParseCommandLine\\9\\1",
-  scope_gen_ParseCommandLine_L9L1::raa,
-  scope_gen_ParseCommandLine_L9L1::functions,
-  scope_gen_ParseCommandLine_L9L1::idents,
-  scope_gen_ParseCommandLine_L9L1::numbers,
-  scope_gen_ParseCommandLine_L9L1::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L10L1(
+  "ParseCommandLine\\10\\1",
+  scope_gen_ParseCommandLine_L10L1::raa,
+  scope_gen_ParseCommandLine_L10L1::functions,
+  scope_gen_ParseCommandLine_L10L1::idents,
+  scope_gen_ParseCommandLine_L10L1::numbers,
+  scope_gen_ParseCommandLine_L10L1::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L9L1 = descr_gen_ParseCommandLine_L9L1;
+refalrts::RefalFunction& gen_ParseCommandLine_L10L1 = descr_gen_ParseCommandLine_L10L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L9L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L10L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
   //FAST GEN: ( e.$ ) ( s.$ s.$ e.$ )
   //GLOBAL GEN: ( e.$ ) ( s.$ s.$ e.$ )
-  // </0 & ParseCommandLine\9\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 s.idxTBV#0/14 e.idxTBVV#0/9 )/12 >/1
+  // </0 & ParseCommandLine\10\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 s.idxTBV#0/14 e.idxTBVV#0/9 )/12 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2982,7 +3107,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9L1(refalrts::Iter arg_begi
   do {
     refalrts::start_sentence();
     // ( e.idx ( e.idx ) ) ( # SearchFolder s.idx e.idx )
-    // </0 & ParseCommandLine\9\1/4 (/7 e.Bag#3/5 (/17 e.Folders#3/15 )/18 )/8 (/11 # SearchFolder/13 s.Num#3/14 e.Folder#3/9 )/12 >/1
+    // </0 & ParseCommandLine\10\1/4 (/7 e.Bag#3/5 (/17 e.Folders#3/15 )/18 )/8 (/11 # SearchFolder/13 s.Num#3/14 e.Folder#3/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_SearchFolder<int>::name, context[13] ) )
       continue;
     context[19] = context[5];
@@ -2998,7 +3123,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9L1(refalrts::Iter arg_begi
     // closed e.Folder#3 as range 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9\1/4 {REMOVED TILE} {REMOVED TILE} (/11 # SearchFolder/13 s.Num#3/14 {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10\1/4 {REMOVED TILE} {REMOVED TILE} (/11 # SearchFolder/13 s.Num#3/14 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Bag#3/19(5) AsIs: (/17 AsIs: e.Folders#3/15 HalfReuse: (/18 } Tile{ AsIs: e.Folder#3/9 } Tile{ AsIs: )/8 } Tile{ AsIs: )/12 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[18] );
     refalrts::reinit_close_bracket( context[1] );
@@ -3017,14 +3142,14 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9L1(refalrts::Iter arg_begi
   } while ( 0 );
 
   // ( e.idx ) ( # FILE s.idx e.idx )
-  // </0 & ParseCommandLine\9\1/4 (/7 e.Bag#3/5 )/8 (/11 # FILE/13 s.Num#3/14 e.FileName#3/9 )/12 >/1
+  // </0 & ParseCommandLine\10\1/4 (/7 e.Bag#3/5 )/8 (/11 # FILE/13 s.Num#3/14 e.FileName#3/9 )/12 >/1
   if( ! refalrts::ident_term(  & ident_FILE<int>::name, context[13] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Bag#3 as range 5
   // closed e.FileName#3 as range 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\9\1/4 {REMOVED TILE} s.Num#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10\1/4 {REMOVED TILE} s.Num#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Bag#3/5 AsIs: )/8 AsIs: (/11 HalfReuse: s.Num3 #14/13 } Tile{ AsIs: e.FileName#3/9 } Tile{ HalfReuse: )/1 ]] }
   refalrts::reinit_svar( context[13], context[14] );
   refalrts::reinit_close_bracket( context[1] );
@@ -3041,17 +3166,17 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L9L1(func_gen_ParseCommandLine_L9L1, "ParseCommandLine\\9\\1");
-refalrts::RefalFunction& gen_ParseCommandLine_L9L1 = descr_gen_ParseCommandLine_L9L1;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L10L1(func_gen_ParseCommandLine_L10L1, "ParseCommandLine\\10\\1");
+refalrts::RefalFunction& gen_ParseCommandLine_L10L1 = descr_gen_ParseCommandLine_L10L1;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L9 {
+  namespace scope_gen_ParseCommandLine_L10 {
     static refalrts::RefalFunction *functions[] = {
-      & gen_ParseCommandLine_L9L1,
+      & gen_ParseCommandLine_L10L1,
       & MapReduce
     };
     using refalrts::idents;
@@ -3059,7 +3184,7 @@ namespace /* unnamed */ {
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icIssueMemory, 16, 0, 0},
-      // </0 & ParseCommandLine\9/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+      // </0 & ParseCommandLine\10/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -3069,7 +3194,7 @@ namespace /* unnamed */ {
       // closed e.Options#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 HalfReuse: </11 } Tile{ HalfReuse: & MapReduce/0 Reuse: & ParseCommandLine\9\1/4 } (/13 Tile{ AsIs: e.Bag#2/9 } (/14 )/15 Tile{ AsIs: )/12 AsIs: e.Options#2/2 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 HalfReuse: </11 } Tile{ HalfReuse: & MapReduce/0 Reuse: & ParseCommandLine\10\1/4 } (/13 Tile{ AsIs: e.Bag#2/9 } (/14 )/15 Tile{ AsIs: )/12 AsIs: e.Options#2/2 AsIs: >/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 13},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
@@ -3090,30 +3215,30 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L9
+  } // namespace scope_gen_ParseCommandLine_L10
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L9(
-  "ParseCommandLine\\9",
-  scope_gen_ParseCommandLine_L9::raa,
-  scope_gen_ParseCommandLine_L9::functions,
-  scope_gen_ParseCommandLine_L9::idents,
-  scope_gen_ParseCommandLine_L9::numbers,
-  scope_gen_ParseCommandLine_L9::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L10(
+  "ParseCommandLine\\10",
+  scope_gen_ParseCommandLine_L10::raa,
+  scope_gen_ParseCommandLine_L10::functions,
+  scope_gen_ParseCommandLine_L10::idents,
+  scope_gen_ParseCommandLine_L10::numbers,
+  scope_gen_ParseCommandLine_L10::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L9 = descr_gen_ParseCommandLine_L9;
+refalrts::RefalFunction& gen_ParseCommandLine_L10 = descr_gen_ParseCommandLine_L10;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  // </0 & ParseCommandLine\9/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
+  // </0 & ParseCommandLine\10/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.Options#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3137,7 +3262,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin,
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 HalfReuse: </11 } Tile{ HalfReuse: & MapReduce/0 Reuse: & ParseCommandLine\9\1/4 } (/13 Tile{ AsIs: e.Bag#2/9 } (/14 )/15 Tile{ AsIs: )/12 AsIs: e.Options#2/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#2/5 AsIs: )/8 HalfReuse: </11 } Tile{ HalfReuse: & MapReduce/0 Reuse: & ParseCommandLine\10\1/4 } (/13 Tile{ AsIs: e.Bag#2/9 } (/14 )/15 Tile{ AsIs: )/12 AsIs: e.Options#2/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[14] ) )
@@ -3146,7 +3271,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin,
     return refalrts::cNoMemory;
   refalrts::reinit_open_call( context[11] );
   refalrts::reinit_name( context[0], & MapReduce );
-  refalrts::update_name( context[4], & gen_ParseCommandLine_L9L1 );
+  refalrts::update_name( context[4], & gen_ParseCommandLine_L10L1 );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[11] );
   refalrts::link_brackets( context[13], context[12] );
@@ -3165,15 +3290,15 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L9(func_gen_ParseCommandLine_L9, "ParseCommandLine\\9");
-refalrts::RefalFunction& gen_ParseCommandLine_L9 = descr_gen_ParseCommandLine_L9;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L10(func_gen_ParseCommandLine_L10, "ParseCommandLine\\10");
+refalrts::RefalFunction& gen_ParseCommandLine_L10 = descr_gen_ParseCommandLine_L10;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L10S2L1S4L1 {
+  namespace scope_gen_ParseCommandLine_L11S2L1S4L1 {
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_ErrorFile<int>::name,
@@ -3191,14 +3316,14 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 8, 0, 0},
       //FAST GEN: s.$
       //GLOBAL GEN: s.$
-      // </0 & ParseCommandLine\10$2\1$4\1/4 s.idx#0/5 >/1
+      // </0 & ParseCommandLine\11$2\1$4\1/4 s.idx#0/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # CppCompiler
-      // </0 & ParseCommandLine\10$2\1$4\1/4 # CppCompiler/5 >/1
+      // </0 & ParseCommandLine\11$2\1$4\1/4 # CppCompiler/5 >/1
       {refalrts::icIdentTerm, 0, 3, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3213,7 +3338,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # GenMode
-      // </0 & ParseCommandLine\10$2\1$4\1/4 # GenMode/5 >/1
+      // </0 & ParseCommandLine\11$2\1$4\1/4 # GenMode/5 >/1
       {refalrts::icIdentTerm, 0, 2, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3228,10 +3353,10 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // # Opt
-      // </0 & ParseCommandLine\10$2\1$4\1/4 # Opt/5 >/1
+      // </0 & ParseCommandLine\11$2\1$4\1/4 # Opt/5 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10$2\1$4\1/4 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & ParseCommandLine\11$2\1$4\1/4 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '-'/5 HalfReuse: 'O'/1 ]] }
       {refalrts::icReinitChar, 0, '-', 5},
       {refalrts::icReinitChar, 0, 'O', 1},
@@ -3239,7 +3364,7 @@ namespace /* unnamed */ {
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // # ErrorFile
-      // </0 & ParseCommandLine\10$2\1$4\1/4 # ErrorFile/5 >/1
+      // </0 & ParseCommandLine\11$2\1$4\1/4 # ErrorFile/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3254,32 +3379,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L10S2L1S4L1
+  } // namespace scope_gen_ParseCommandLine_L11S2L1S4L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L10S2L1S4L1(
-  "ParseCommandLine\\10$2\\1$4\\1",
-  scope_gen_ParseCommandLine_L10S2L1S4L1::raa,
-  scope_gen_ParseCommandLine_L10S2L1S4L1::functions,
-  scope_gen_ParseCommandLine_L10S2L1S4L1::idents,
-  scope_gen_ParseCommandLine_L10S2L1S4L1::numbers,
-  scope_gen_ParseCommandLine_L10S2L1S4L1::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L11S2L1S4L1(
+  "ParseCommandLine\\11$2\\1$4\\1",
+  scope_gen_ParseCommandLine_L11S2L1S4L1::raa,
+  scope_gen_ParseCommandLine_L11S2L1S4L1::functions,
+  scope_gen_ParseCommandLine_L11S2L1S4L1::idents,
+  scope_gen_ParseCommandLine_L11S2L1S4L1::numbers,
+  scope_gen_ParseCommandLine_L11S2L1S4L1::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1S4L1 = descr_gen_ParseCommandLine_L10S2L1S4L1;
+refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1S4L1 = descr_gen_ParseCommandLine_L11S2L1S4L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L11S2L1S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
   //FAST GEN: s.$
   //GLOBAL GEN: s.$
-  // </0 & ParseCommandLine\10$2\1$4\1/4 s.idx#0/5 >/1
+  // </0 & ParseCommandLine\11$2\1$4\1/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3292,7 +3417,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter a
   do {
     refalrts::start_sentence();
     // # CppCompiler
-    // </0 & ParseCommandLine\10$2\1$4\1/4 # CppCompiler/5 >/1
+    // </0 & ParseCommandLine\11$2\1$4\1/4 # CppCompiler/5 >/1
     if( ! refalrts::ident_term(  & ident_CppCompiler<int>::name, context[5] ) )
       continue;
 
@@ -3316,7 +3441,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter a
   do {
     refalrts::start_sentence();
     // # GenMode
-    // </0 & ParseCommandLine\10$2\1$4\1/4 # GenMode/5 >/1
+    // </0 & ParseCommandLine\11$2\1$4\1/4 # GenMode/5 >/1
     if( ! refalrts::ident_term(  & ident_GenMode<int>::name, context[5] ) )
       continue;
 
@@ -3340,12 +3465,12 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter a
   do {
     refalrts::start_sentence();
     // # Opt
-    // </0 & ParseCommandLine\10$2\1$4\1/4 # Opt/5 >/1
+    // </0 & ParseCommandLine\11$2\1$4\1/4 # Opt/5 >/1
     if( ! refalrts::ident_term(  & ident_Opt<int>::name, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\10$2\1$4\1/4 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & ParseCommandLine\11$2\1$4\1/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '-'/5 HalfReuse: 'O'/1 ]] }
     refalrts::reinit_char( context[5], '-' );
     refalrts::reinit_char( context[1], 'O' );
@@ -3358,7 +3483,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter a
   } while ( 0 );
 
   // # ErrorFile
-  // </0 & ParseCommandLine\10$2\1$4\1/4 # ErrorFile/5 >/1
+  // </0 & ParseCommandLine\11$2\1$4\1/4 # ErrorFile/5 >/1
   if( ! refalrts::ident_term(  & ident_ErrorFile<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
@@ -3380,17 +3505,17 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1S4L1(refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L10S2L1S4L1(func_gen_ParseCommandLine_L10S2L1S4L1, "ParseCommandLine\\10$2\\1$4\\1");
-refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1S4L1 = descr_gen_ParseCommandLine_L10S2L1S4L1;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L11S2L1S4L1(func_gen_ParseCommandLine_L11S2L1S4L1, "ParseCommandLine\\11$2\\1$4\\1");
+refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1S4L1 = descr_gen_ParseCommandLine_L11S2L1S4L1;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L10S2L1 {
+  namespace scope_gen_ParseCommandLine_L11S2L1 {
     static refalrts::RefalFunction *functions[] = {
-      & gen_ParseCommandLine_L10S2L1S4L1,
+      & gen_ParseCommandLine_L11S2L1S4L1,
       & Fetch
     };
     static const refalrts::RefalIdentifier idents[] = {
@@ -3420,7 +3545,7 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 20, 0, 0},
       //FAST GEN: ( e.$ )
       //GLOBAL GEN: ( s.$ s.$ e.$ )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -3430,7 +3555,7 @@ namespace /* unnamed */ {
       // closed e.idxBVV#0 as range 5
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( s.idx # NoRequiredParam e.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Param#3/5 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Param#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 6, 10},
       // closed e.Param#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3453,7 +3578,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +20, 0, 0},
       // ( s.idx # UnknownShortOption s.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
       {refalrts::icIdentTerm, 0, 5, 10},
       {refalrts::icSave, 0, 18, 5},
       {refalrts::icsVarLeft, 0, 11, 18},
@@ -3478,7 +3603,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +18, 0, 0},
       // ( s.idx # UnknownLongOption e.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 4, 10},
       // closed e.Option#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3502,14 +3627,14 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( s.idx # RepeatOption s.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # RepeatOption/10 s.Tag#3/11 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # RepeatOption/10 s.Tag#3/11 )/8 >/1
       {refalrts::icIdentTerm, 0, 3, 10},
       {refalrts::icSave, 0, 18, 5},
       {refalrts::icsVarLeft, 0, 11, 18},
       {refalrts::icEmpty, 0, 0, 18},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption "/12 </14 Tile{ HalfReuse: & Fetch/10 AsIs: s.Tag#3/11 HalfReuse: & ParseCommandLine\10$2\1$4\1/8 AsIs: >/1 }" must appear one time"/15 )/17 Tile{ ]] }
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption "/12 </14 Tile{ HalfReuse: & Fetch/10 AsIs: s.Tag#3/11 HalfReuse: & ParseCommandLine\11$2\1$4\1/8 AsIs: >/1 }" must appear one time"/15 )/17 Tile{ ]] }
       {refalrts::icAllocString, 0, 4, 12},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
       {refalrts::icAllocString, 0, 3, 15},
@@ -3530,7 +3655,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // ( s.idx # BadValue-GenMode e.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-GenMode/10 e.BadValue#3/5 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # BadValue-GenMode/10 e.BadValue#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 2, 10},
       // closed e.BadValue#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3550,7 +3675,7 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // ( s.idx # BadValue-Opt e.idx )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 1, 10},
       // closed e.BadValue#3 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3569,7 +3694,7 @@ namespace /* unnamed */ {
       {refalrts::icTrash, 0, 0, 7},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // ( s.idx # FlagsForNoCompiler )
-      // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
+      // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
       {refalrts::icIdentTerm, 0, 0, 10},
       {refalrts::icEmpty, 0, 0, 5},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3592,32 +3717,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L10S2L1
+  } // namespace scope_gen_ParseCommandLine_L11S2L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L10S2L1(
-  "ParseCommandLine\\10$2\\1",
-  scope_gen_ParseCommandLine_L10S2L1::raa,
-  scope_gen_ParseCommandLine_L10S2L1::functions,
-  scope_gen_ParseCommandLine_L10S2L1::idents,
-  scope_gen_ParseCommandLine_L10S2L1::numbers,
-  scope_gen_ParseCommandLine_L10S2L1::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L11S2L1(
+  "ParseCommandLine\\11$2\\1",
+  scope_gen_ParseCommandLine_L11S2L1::raa,
+  scope_gen_ParseCommandLine_L11S2L1::functions,
+  scope_gen_ParseCommandLine_L11S2L1::idents,
+  scope_gen_ParseCommandLine_L11S2L1::numbers,
+  scope_gen_ParseCommandLine_L11S2L1::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1 = descr_gen_ParseCommandLine_L10S2L1;
+refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1 = descr_gen_ParseCommandLine_L11S2L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L11S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
   //FAST GEN: ( e.$ )
   //GLOBAL GEN: ( s.$ s.$ e.$ )
-  // </0 & ParseCommandLine\10$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
+  // </0 & ParseCommandLine\11$2\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3639,7 +3764,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # NoRequiredParam e.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Param#3/5 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Param#3/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_NoRequiredParam<int>::name, context[10] ) )
       continue;
     // closed e.Param#3 as range 5
@@ -3672,7 +3797,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # UnknownShortOption s.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
     if( ! refalrts::ident_term(  & ident_UnknownShortOption<int>::name, context[10] ) )
       continue;
     context[18] = context[5];
@@ -3710,7 +3835,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # UnknownLongOption e.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_UnknownLongOption<int>::name, context[10] ) )
       continue;
     // closed e.Option#3 as range 5
@@ -3744,7 +3869,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # RepeatOption s.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # RepeatOption/10 s.Tag#3/11 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # RepeatOption/10 s.Tag#3/11 )/8 >/1
     if( ! refalrts::ident_term(  & ident_RepeatOption<int>::name, context[10] ) )
       continue;
     context[18] = context[5];
@@ -3756,7 +3881,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption "/12 </14 Tile{ HalfReuse: & Fetch/10 AsIs: s.Tag#3/11 HalfReuse: & ParseCommandLine\10$2\1$4\1/8 AsIs: >/1 }" must appear one time"/15 )/17 Tile{ ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Pos3 #9/4 HalfReuse: 'o'/7 }"ption "/12 </14 Tile{ HalfReuse: & Fetch/10 AsIs: s.Tag#3/11 HalfReuse: & ParseCommandLine\11$2\1$4\1/8 AsIs: >/1 }" must appear one time"/15 )/17 Tile{ ]] }
     if( ! refalrts::alloc_chars( context[12], context[13], "ption ", 6 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[14] ) )
@@ -3769,7 +3894,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
     refalrts::reinit_svar( context[4], context[9] );
     refalrts::reinit_char( context[7], 'o' );
     refalrts::reinit_name( context[10], & Fetch );
-    refalrts::reinit_name( context[8], & gen_ParseCommandLine_L10S2L1S4L1 );
+    refalrts::reinit_name( context[8], & gen_ParseCommandLine_L11S2L1S4L1 );
     refalrts::link_brackets( context[0], context[17] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[14] );
@@ -3787,7 +3912,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # BadValue-GenMode e.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-GenMode/10 e.BadValue#3/5 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # BadValue-GenMode/10 e.BadValue#3/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_BadValue_GenMode<int>::name, context[10] ) )
       continue;
     // closed e.BadValue#3 as range 5
@@ -3816,7 +3941,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   do {
     refalrts::start_sentence();
     // ( s.idx # BadValue-Opt e.idx )
-    // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
+    // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # BadValue-Opt/10 e.BadValue#3/5 )/8 >/1
     if( ! refalrts::ident_term(  & ident_BadValue_Opt<int>::name, context[10] ) )
       continue;
     // closed e.BadValue#3 as range 5
@@ -3843,7 +3968,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
   } while ( 0 );
 
   // ( s.idx # FlagsForNoCompiler )
-  // </0 & ParseCommandLine\10$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
+  // </0 & ParseCommandLine\11$2\1/4 (/7 s.Pos#3/9 # FlagsForNoCompiler/10 )/8 >/1
   if( ! refalrts::ident_term(  & ident_FlagsForNoCompiler<int>::name, context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
@@ -3876,17 +4001,17 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10S2L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L10S2L1(func_gen_ParseCommandLine_L10S2L1, "ParseCommandLine\\10$2\\1");
-refalrts::RefalFunction& gen_ParseCommandLine_L10S2L1 = descr_gen_ParseCommandLine_L10S2L1;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L11S2L1(func_gen_ParseCommandLine_L11S2L1, "ParseCommandLine\\11$2\\1");
+refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1 = descr_gen_ParseCommandLine_L11S2L1;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_ParseCommandLine_L10 {
+  namespace scope_gen_ParseCommandLine_L11 {
     static refalrts::RefalFunction *functions[] = {
-      & gen_ParseCommandLine_L10S2L1,
+      & gen_ParseCommandLine_L11S2L1,
       & Map
     };
     static const refalrts::RefalIdentifier idents[] = {
@@ -3900,7 +4025,7 @@ namespace /* unnamed */ {
       {refalrts::icIssueMemory, 15, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
-      // </0 & ParseCommandLine\10/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+      // </0 & ParseCommandLine\11/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -3910,13 +4035,13 @@ namespace /* unnamed */ {
       // closed e.idxTT#0 as range 2
       {refalrts::icOnFailGoTo, +9, 0, 0},
       // ( ) ( e.idx ) e.idx
-      // </0 & ParseCommandLine\10/4 (/7 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
+      // </0 & ParseCommandLine\11/4 (/7 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
       {refalrts::icSave, 0, 13, 5},
       {refalrts::icEmpty, 0, 0, 13},
       // closed e.Bag#2 as range 9
       // closed e.FileNames#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} & ParseCommandLine\10/4 (/7 )/8 (/11 {REMOVED TILE} )/12 {REMOVED TILE} >/1 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} & ParseCommandLine\11/4 (/7 )/8 (/11 {REMOVED TILE} )/12 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: # Success/0 } Tile{ AsIs: e.Bag#2/9 } Tile{ AsIs: e.FileNames#2/2 } Tile{ ]] }
       {refalrts::icReinitIdent, 0, 1, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -3925,13 +4050,13 @@ namespace /* unnamed */ {
       {refalrts::icTrash, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // ( e.idx ) ( e.idx ) e.idx
-      // </0 & ParseCommandLine\10/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
+      // </0 & ParseCommandLine\11/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
       // closed e.Errors#2 as range 5
       // closed e.Bag#2 as range 9
       // closed e.FileNames#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 e.Bag#2/9 )/12 e.FileNames#2/2 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 } Tile{ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\10$2\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 } Tile{ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\11$2\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } Tile{ ]] }
       {refalrts::icReinitIdent, 0, 0, 1},
       {refalrts::icUpdateFunc, 0, 1, 4},
       {refalrts::icReinitFunc, 0, 0, 7},
@@ -3945,32 +4070,32 @@ namespace /* unnamed */ {
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseCommandLine_L10
+  } // namespace scope_gen_ParseCommandLine_L11
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseCommandLine_L10(
-  "ParseCommandLine\\10",
-  scope_gen_ParseCommandLine_L10::raa,
-  scope_gen_ParseCommandLine_L10::functions,
-  scope_gen_ParseCommandLine_L10::idents,
-  scope_gen_ParseCommandLine_L10::numbers,
-  scope_gen_ParseCommandLine_L10::strings
+refalrts::RASLFunction descr_gen_ParseCommandLine_L11(
+  "ParseCommandLine\\11",
+  scope_gen_ParseCommandLine_L11::raa,
+  scope_gen_ParseCommandLine_L11::functions,
+  scope_gen_ParseCommandLine_L11::idents,
+  scope_gen_ParseCommandLine_L11::numbers,
+  scope_gen_ParseCommandLine_L11::strings
 );
-refalrts::RefalFunction& gen_ParseCommandLine_L10 = descr_gen_ParseCommandLine_L10;
+refalrts::RefalFunction& gen_ParseCommandLine_L11 = descr_gen_ParseCommandLine_L11;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseCommandLine_L11(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
   //FAST GEN: ( e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
-  // </0 & ParseCommandLine\10/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+  // </0 & ParseCommandLine\11/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3994,7 +4119,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin
   do {
     refalrts::start_sentence();
     // ( ) ( e.idx ) e.idx
-    // </0 & ParseCommandLine\10/4 (/7 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
+    // </0 & ParseCommandLine\11/4 (/7 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
     context[13] = context[5];
     context[14] = context[6];
     if( ! refalrts::empty_seq( context[13], context[14] ) )
@@ -4003,7 +4128,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin
     // closed e.FileNames#2 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} & ParseCommandLine\10/4 (/7 )/8 (/11 {REMOVED TILE} )/12 {REMOVED TILE} >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} & ParseCommandLine\11/4 (/7 )/8 (/11 {REMOVED TILE} )/12 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: # Success/0 } Tile{ AsIs: e.Bag#2/9 } Tile{ AsIs: e.FileNames#2/2 } Tile{ ]] }
     refalrts::reinit_ident( context[0], & ident_Success<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4017,17 +4142,17 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin
   } while ( 0 );
 
   // ( e.idx ) ( e.idx ) e.idx
-  // </0 & ParseCommandLine\10/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
+  // </0 & ParseCommandLine\11/4 (/7 e.Errors#2/5 )/8 (/11 e.Bag#2/9 )/12 e.FileNames#2/2 >/1
   // closed e.Errors#2 as range 5
   // closed e.Bag#2 as range 9
   // closed e.FileNames#2 as range 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 e.Bag#2/9 )/12 e.FileNames#2/2 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 } Tile{ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\10$2\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 } Tile{ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\11$2\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } Tile{ ]] }
   refalrts::reinit_ident( context[1], & ident_Fails<int>::name );
   refalrts::update_name( context[4], & Map );
-  refalrts::reinit_name( context[7], & gen_ParseCommandLine_L10S2L1 );
+  refalrts::reinit_name( context[7], & gen_ParseCommandLine_L11S2L1 );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[0] );
@@ -4042,8 +4167,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L10(func_gen_ParseCommandLine_L10, "ParseCommandLine\\10");
-refalrts::RefalFunction& gen_ParseCommandLine_L10 = descr_gen_ParseCommandLine_L10;
+refalrts::RefalFunction descr_gen_ParseCommandLine_L11(func_gen_ParseCommandLine_L11, "ParseCommandLine\\11");
+refalrts::RefalFunction& gen_ParseCommandLine_L11 = descr_gen_ParseCommandLine_L11;
 
 } // unnamed namespace
 
@@ -4053,11 +4178,12 @@ namespace /* unnamed */ {
   namespace scope_ParseCommandLine {
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
+      & gen_ParseCommandLine_L11,
       & gen_ParseCommandLine_L10,
       & gen_ParseCommandLine_L9,
       & gen_ParseCommandLine_L8,
-      & gen_ParseCommandLine_L7,
       & MapReduce,
+      & gen_ParseCommandLine_L7,
       & gen_ParseCommandLine_L6,
       & gen_ParseCommandLine_L5,
       & gen_ParseCommandLine_L4,
@@ -4073,6 +4199,8 @@ namespace /* unnamed */ {
       & ident_CppFlag<int>::name,
       & ident_CppFlags<int>::name,
       & ident_SearchFolder<int>::name,
+      & ident_None<int>::name,
+      & ident_MarkupContext<int>::name,
       & ident_ErrorFile<int>::name,
       & ident_Opt<int>::name,
       & ident_GenMode<int>::name,
@@ -4087,125 +4215,136 @@ namespace /* unnamed */ {
       {"CF", 2},
       {"directory", 9},
       {"dir", 3},
+      {"markup-context", 14},
       {"error-file", 10},
       {"gen", 3},
       {"cpp-command", 11}
     };
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icIssueMemory, 102, 0, 0},
+      {refalrts::icIssueMemory, 111, 0, 0},
       // </0 & ParseCommandLine/4 e.Arguments#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Arguments#1 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 )/16 (/17 # GenMode/18 # Required/19 (/20"gen"/21 )/23 )/24 (/25 # Opt/26 # Required/27 'O'/28 )/29 (/30 # ErrorFile/31 # Required/32 'e'/33 (/34"error-file"/35 )/37 )/38 (/39 # SearchFolder/40 # Required/41 'd'/42 (/43"dir"/44 )/46 (/47"directory"/48 )/50 )/51 (/52 # CppFlags/53 # Required/54"CF"/55 (/57"cppflags"/58 )/60 )/61 (/62 # CppFlag/63 # Required/64 'f'/65 (/66"cppflag"/67 )/69 )/70 (/71 # RuntimeFolder/72 # Required/73 'D'/74 (/75"runtime-dir"/76 )/78 (/79"runtime-directory"/80 )/82 )/83 )/84 Tile{ AsIs: e.Arguments#1/2 } >/85 </86 & Seq/87 & ParseCommandLine\1/88 & ParseCommandLine\2/89 & ParseCommandLine\3/90 & ParseCommandLine\4/91 & ParseCommandLine\5/92 & ParseCommandLine\6/93 (/94 & MapReduce/95 & ParseCommandLine\7/96 )/97 & ParseCommandLine\8/98 & ParseCommandLine\9/99 & ParseCommandLine\10/100 >/101 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 )/16 (/17 # GenMode/18 # Required/19 (/20"gen"/21 )/23 )/24 (/25 # Opt/26 # Required/27 'O'/28 )/29 (/30 # ErrorFile/31 # Required/32 'e'/33 (/34"error-file"/35 )/37 )/38 (/39 # MarkupContext/40 # None/41 (/42"markup-context"/43 )/45 )/46 (/47 # SearchFolder/48 # Required/49 'd'/50 (/51"dir"/52 )/54 (/55"directory"/56 )/58 )/59 (/60 # CppFlags/61 # Required/62"CF"/63 (/65"cppflags"/66 )/68 )/69 (/70 # CppFlag/71 # Required/72 'f'/73 (/74"cppflag"/75 )/77 )/78 (/79 # RuntimeFolder/80 # Required/81 'D'/82 (/83"runtime-dir"/84 )/86 (/87"runtime-directory"/88 )/90 )/91 )/92 Tile{ AsIs: e.Arguments#1/2 } >/93 </94 & Seq/95 & ParseCommandLine\1/96 & ParseCommandLine\2/97 & ParseCommandLine\3/98 & ParseCommandLine\4/99 & ParseCommandLine\5/100 & ParseCommandLine\6/101 & ParseCommandLine\7/102 (/103 & MapReduce/104 & ParseCommandLine\8/105 )/106 & ParseCommandLine\9/107 & ParseCommandLine\10/108 & ParseCommandLine\11/109 >/110 Tile{ AsIs: >/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
-      {refalrts::icAllocFunc, 0, 13, 6},
+      {refalrts::icAllocFunc, 0, 14, 6},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 7},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 8},
-      {refalrts::icAllocIdent, 0, 8, 9},
+      {refalrts::icAllocIdent, 0, 10, 9},
       {refalrts::icAllocIdent, 0, 0, 10},
       {refalrts::icAllocChar, 0, 'c', 11},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 12},
-      {refalrts::icAllocString, 0, 9, 13},
+      {refalrts::icAllocString, 0, 10, 13},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 16},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 17},
-      {refalrts::icAllocIdent, 0, 7, 18},
+      {refalrts::icAllocIdent, 0, 9, 18},
       {refalrts::icAllocIdent, 0, 0, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 20},
-      {refalrts::icAllocString, 0, 8, 21},
+      {refalrts::icAllocString, 0, 9, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 25},
-      {refalrts::icAllocIdent, 0, 6, 26},
+      {refalrts::icAllocIdent, 0, 8, 26},
       {refalrts::icAllocIdent, 0, 0, 27},
       {refalrts::icAllocChar, 0, 'O', 28},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 30},
-      {refalrts::icAllocIdent, 0, 5, 31},
+      {refalrts::icAllocIdent, 0, 7, 31},
       {refalrts::icAllocIdent, 0, 0, 32},
       {refalrts::icAllocChar, 0, 'e', 33},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 34},
-      {refalrts::icAllocString, 0, 7, 35},
+      {refalrts::icAllocString, 0, 8, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 37},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 38},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 39},
-      {refalrts::icAllocIdent, 0, 4, 40},
-      {refalrts::icAllocIdent, 0, 0, 41},
-      {refalrts::icAllocChar, 0, 'd', 42},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 43},
-      {refalrts::icAllocString, 0, 6, 44},
+      {refalrts::icAllocIdent, 0, 6, 40},
+      {refalrts::icAllocIdent, 0, 5, 41},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 42},
+      {refalrts::icAllocString, 0, 7, 43},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 45},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 46},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 47},
-      {refalrts::icAllocString, 0, 5, 48},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 50},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 51},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 52},
-      {refalrts::icAllocIdent, 0, 3, 53},
-      {refalrts::icAllocIdent, 0, 0, 54},
-      {refalrts::icAllocString, 0, 4, 55},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 57},
-      {refalrts::icAllocString, 0, 3, 58},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 60},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 61},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 62},
-      {refalrts::icAllocIdent, 0, 2, 63},
-      {refalrts::icAllocIdent, 0, 0, 64},
-      {refalrts::icAllocChar, 0, 'f', 65},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 66},
-      {refalrts::icAllocString, 0, 2, 67},
+      {refalrts::icAllocIdent, 0, 4, 48},
+      {refalrts::icAllocIdent, 0, 0, 49},
+      {refalrts::icAllocChar, 0, 'd', 50},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 51},
+      {refalrts::icAllocString, 0, 6, 52},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 54},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 55},
+      {refalrts::icAllocString, 0, 5, 56},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 58},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 59},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 60},
+      {refalrts::icAllocIdent, 0, 3, 61},
+      {refalrts::icAllocIdent, 0, 0, 62},
+      {refalrts::icAllocString, 0, 4, 63},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 65},
+      {refalrts::icAllocString, 0, 3, 66},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 68},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 69},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 70},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 71},
-      {refalrts::icAllocIdent, 0, 1, 72},
-      {refalrts::icAllocIdent, 0, 0, 73},
-      {refalrts::icAllocChar, 0, 'D', 74},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 75},
-      {refalrts::icAllocString, 0, 1, 76},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 70},
+      {refalrts::icAllocIdent, 0, 2, 71},
+      {refalrts::icAllocIdent, 0, 0, 72},
+      {refalrts::icAllocChar, 0, 'f', 73},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 74},
+      {refalrts::icAllocString, 0, 2, 75},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 77},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 78},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 79},
-      {refalrts::icAllocString, 0, 0, 80},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 82},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 83},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 84},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 85},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 86},
-      {refalrts::icAllocFunc, 0, 12, 87},
-      {refalrts::icAllocFunc, 0, 11, 88},
-      {refalrts::icAllocFunc, 0, 10, 89},
-      {refalrts::icAllocFunc, 0, 9, 90},
-      {refalrts::icAllocFunc, 0, 8, 91},
-      {refalrts::icAllocFunc, 0, 7, 92},
-      {refalrts::icAllocFunc, 0, 6, 93},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 94},
-      {refalrts::icAllocFunc, 0, 5, 95},
-      {refalrts::icAllocFunc, 0, 4, 96},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 97},
-      {refalrts::icAllocFunc, 0, 3, 98},
-      {refalrts::icAllocFunc, 0, 2, 99},
-      {refalrts::icAllocFunc, 0, 1, 100},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 101},
+      {refalrts::icAllocIdent, 0, 1, 80},
+      {refalrts::icAllocIdent, 0, 0, 81},
+      {refalrts::icAllocChar, 0, 'D', 82},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 83},
+      {refalrts::icAllocString, 0, 1, 84},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 86},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 87},
+      {refalrts::icAllocString, 0, 0, 88},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 90},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 91},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 92},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 93},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 94},
+      {refalrts::icAllocFunc, 0, 13, 95},
+      {refalrts::icAllocFunc, 0, 12, 96},
+      {refalrts::icAllocFunc, 0, 11, 97},
+      {refalrts::icAllocFunc, 0, 10, 98},
+      {refalrts::icAllocFunc, 0, 9, 99},
+      {refalrts::icAllocFunc, 0, 8, 100},
+      {refalrts::icAllocFunc, 0, 7, 101},
+      {refalrts::icAllocFunc, 0, 6, 102},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 103},
+      {refalrts::icAllocFunc, 0, 5, 104},
+      {refalrts::icAllocFunc, 0, 4, 105},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 106},
+      {refalrts::icAllocFunc, 0, 3, 107},
+      {refalrts::icAllocFunc, 0, 2, 108},
+      {refalrts::icAllocFunc, 0, 1, 109},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 110},
       {refalrts::icUpdateFunc, 0, 0, 4},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icPushStack, 0, 0, 101},
-      {refalrts::icPushStack, 0, 0, 86},
-      {refalrts::icLinkBrackets, 94, 97, 0},
-      {refalrts::icPushStack, 0, 0, 85},
+      {refalrts::icPushStack, 0, 0, 110},
+      {refalrts::icPushStack, 0, 0, 94},
+      {refalrts::icLinkBrackets, 103, 106, 0},
+      {refalrts::icPushStack, 0, 0, 93},
       {refalrts::icPushStack, 0, 0, 5},
-      {refalrts::icLinkBrackets, 7, 84, 0},
-      {refalrts::icLinkBrackets, 71, 83, 0},
-      {refalrts::icLinkBrackets, 79, 82, 0},
-      {refalrts::icLinkBrackets, 75, 78, 0},
-      {refalrts::icLinkBrackets, 62, 70, 0},
-      {refalrts::icLinkBrackets, 66, 69, 0},
-      {refalrts::icLinkBrackets, 52, 61, 0},
-      {refalrts::icLinkBrackets, 57, 60, 0},
-      {refalrts::icLinkBrackets, 39, 51, 0},
-      {refalrts::icLinkBrackets, 47, 50, 0},
-      {refalrts::icLinkBrackets, 43, 46, 0},
+      {refalrts::icLinkBrackets, 7, 92, 0},
+      {refalrts::icLinkBrackets, 79, 91, 0},
+      {refalrts::icLinkBrackets, 87, 90, 0},
+      {refalrts::icLinkBrackets, 83, 86, 0},
+      {refalrts::icLinkBrackets, 70, 78, 0},
+      {refalrts::icLinkBrackets, 74, 77, 0},
+      {refalrts::icLinkBrackets, 60, 69, 0},
+      {refalrts::icLinkBrackets, 65, 68, 0},
+      {refalrts::icLinkBrackets, 47, 59, 0},
+      {refalrts::icLinkBrackets, 55, 58, 0},
+      {refalrts::icLinkBrackets, 51, 54, 0},
+      {refalrts::icLinkBrackets, 39, 46, 0},
+      {refalrts::icLinkBrackets, 42, 45, 0},
       {refalrts::icLinkBrackets, 30, 38, 0},
       {refalrts::icLinkBrackets, 34, 37, 0},
       {refalrts::icLinkBrackets, 25, 29, 0},
@@ -4214,9 +4353,9 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 8, 16, 0},
       {refalrts::icLinkBrackets, 12, 15, 0},
       {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceTile, 85, 101, 0},
+      {refalrts::icSpliceTile, 93, 110, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceTile, 5, 84, 0},
+      {refalrts::icSpliceTile, 5, 92, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
@@ -4237,9 +4376,9 @@ refalrts::RefalFunction& ParseCommandLine = descr_ParseCommandLine;
 #else
 static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 102 elems
-  refalrts::Iter context[102];
-  refalrts::zeros( context, 102 );
+  // issue here memory for vars with 111 elems
+  refalrts::Iter context[111];
+  refalrts::zeros( context, 111 );
   // </0 & ParseCommandLine/4 e.Arguments#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4250,7 +4389,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 )/16 (/17 # GenMode/18 # Required/19 (/20"gen"/21 )/23 )/24 (/25 # Opt/26 # Required/27 'O'/28 )/29 (/30 # ErrorFile/31 # Required/32 'e'/33 (/34"error-file"/35 )/37 )/38 (/39 # SearchFolder/40 # Required/41 'd'/42 (/43"dir"/44 )/46 (/47"directory"/48 )/50 )/51 (/52 # CppFlags/53 # Required/54"CF"/55 (/57"cppflags"/58 )/60 )/61 (/62 # CppFlag/63 # Required/64 'f'/65 (/66"cppflag"/67 )/69 )/70 (/71 # RuntimeFolder/72 # Required/73 'D'/74 (/75"runtime-dir"/76 )/78 (/79"runtime-directory"/80 )/82 )/83 )/84 Tile{ AsIs: e.Arguments#1/2 } >/85 </86 & Seq/87 & ParseCommandLine\1/88 & ParseCommandLine\2/89 & ParseCommandLine\3/90 & ParseCommandLine\4/91 & ParseCommandLine\5/92 & ParseCommandLine\6/93 (/94 & MapReduce/95 & ParseCommandLine\7/96 )/97 & ParseCommandLine\8/98 & ParseCommandLine\9/99 & ParseCommandLine\10/100 >/101 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 )/16 (/17 # GenMode/18 # Required/19 (/20"gen"/21 )/23 )/24 (/25 # Opt/26 # Required/27 'O'/28 )/29 (/30 # ErrorFile/31 # Required/32 'e'/33 (/34"error-file"/35 )/37 )/38 (/39 # MarkupContext/40 # None/41 (/42"markup-context"/43 )/45 )/46 (/47 # SearchFolder/48 # Required/49 'd'/50 (/51"dir"/52 )/54 (/55"directory"/56 )/58 )/59 (/60 # CppFlags/61 # Required/62"CF"/63 (/65"cppflags"/66 )/68 )/69 (/70 # CppFlag/71 # Required/72 'f'/73 (/74"cppflag"/75 )/77 )/78 (/79 # RuntimeFolder/80 # Required/81 'D'/82 (/83"runtime-dir"/84 )/86 (/87"runtime-directory"/88 )/90 )/91 )/92 Tile{ AsIs: e.Arguments#1/2 } >/93 </94 & Seq/95 & ParseCommandLine\1/96 & ParseCommandLine\2/97 & ParseCommandLine\3/98 & ParseCommandLine\4/99 & ParseCommandLine\5/100 & ParseCommandLine\6/101 & ParseCommandLine\7/102 (/103 & MapReduce/104 & ParseCommandLine\8/105 )/106 & ParseCommandLine\9/107 & ParseCommandLine\10/108 & ParseCommandLine\11/109 >/110 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], & GetOpt ) )
@@ -4315,135 +4454,153 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[39] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[40], & ident_SearchFolder<int>::name ) )
+  if( ! refalrts::alloc_ident( context[40], & ident_MarkupContext<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[41], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_ident( context[41], & ident_None<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[42], 'd' ) )
+  if( ! refalrts::alloc_open_bracket( context[42] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[43] ) )
+  if( ! refalrts::alloc_chars( context[43], context[44], "markup-context", 14 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[44], context[45], "dir", 3 ) )
+  if( ! refalrts::alloc_close_bracket( context[45] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[46] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[47] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[48], context[49], "directory", 9 ) )
+  if( ! refalrts::alloc_ident( context[48], & ident_SearchFolder<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[50] ) )
+  if( ! refalrts::alloc_ident( context[49], & ident_Required<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[51] ) )
+  if( ! refalrts::alloc_char( context[50], 'd' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[52] ) )
+  if( ! refalrts::alloc_open_bracket( context[51] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[53], & ident_CppFlags<int>::name ) )
+  if( ! refalrts::alloc_chars( context[52], context[53], "dir", 3 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[54], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_close_bracket( context[54] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[55], context[56], "CF", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[55] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[57] ) )
+  if( ! refalrts::alloc_chars( context[56], context[57], "directory", 9 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[58], context[59], "cppflags", 8 ) )
+  if( ! refalrts::alloc_close_bracket( context[58] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[60] ) )
+  if( ! refalrts::alloc_close_bracket( context[59] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[61] ) )
+  if( ! refalrts::alloc_open_bracket( context[60] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[62] ) )
+  if( ! refalrts::alloc_ident( context[61], & ident_CppFlags<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[63], & ident_CppFlag<int>::name ) )
+  if( ! refalrts::alloc_ident( context[62], & ident_Required<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[64], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_chars( context[63], context[64], "CF", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[65], 'f' ) )
+  if( ! refalrts::alloc_open_bracket( context[65] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[66] ) )
+  if( ! refalrts::alloc_chars( context[66], context[67], "cppflags", 8 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[67], context[68], "cppflag", 7 ) )
+  if( ! refalrts::alloc_close_bracket( context[68] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[69] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[70] ) )
+  if( ! refalrts::alloc_open_bracket( context[70] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[71] ) )
+  if( ! refalrts::alloc_ident( context[71], & ident_CppFlag<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[72], & ident_RuntimeFolder<int>::name ) )
+  if( ! refalrts::alloc_ident( context[72], & ident_Required<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[73], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_char( context[73], 'f' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[74], 'D' ) )
+  if( ! refalrts::alloc_open_bracket( context[74] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[75] ) )
+  if( ! refalrts::alloc_chars( context[75], context[76], "cppflag", 7 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[76], context[77], "runtime-dir", 11 ) )
+  if( ! refalrts::alloc_close_bracket( context[77] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[78] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[79] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[80], context[81], "runtime-directory", 17 ) )
+  if( ! refalrts::alloc_ident( context[80], & ident_RuntimeFolder<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[82] ) )
+  if( ! refalrts::alloc_ident( context[81], & ident_Required<int>::name ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[83] ) )
+  if( ! refalrts::alloc_char( context[82], 'D' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[84] ) )
+  if( ! refalrts::alloc_open_bracket( context[83] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[85] ) )
+  if( ! refalrts::alloc_chars( context[84], context[85], "runtime-dir", 11 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[86] ) )
+  if( ! refalrts::alloc_close_bracket( context[86] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[87], & Seq ) )
+  if( ! refalrts::alloc_open_bracket( context[87] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[88], & gen_ParseCommandLine_L1 ) )
+  if( ! refalrts::alloc_chars( context[88], context[89], "runtime-directory", 17 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[89], & gen_ParseCommandLine_L2 ) )
+  if( ! refalrts::alloc_close_bracket( context[90] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[90], & gen_ParseCommandLine_L3 ) )
+  if( ! refalrts::alloc_close_bracket( context[91] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[91], & gen_ParseCommandLine_L4 ) )
+  if( ! refalrts::alloc_close_bracket( context[92] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[92], & gen_ParseCommandLine_L5 ) )
+  if( ! refalrts::alloc_close_call( context[93] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[93], & gen_ParseCommandLine_L6 ) )
+  if( ! refalrts::alloc_open_call( context[94] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[94] ) )
+  if( ! refalrts::alloc_name( context[95], & Seq ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[95], & MapReduce ) )
+  if( ! refalrts::alloc_name( context[96], & gen_ParseCommandLine_L1 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[96], & gen_ParseCommandLine_L7 ) )
+  if( ! refalrts::alloc_name( context[97], & gen_ParseCommandLine_L2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[97] ) )
+  if( ! refalrts::alloc_name( context[98], & gen_ParseCommandLine_L3 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[98], & gen_ParseCommandLine_L8 ) )
+  if( ! refalrts::alloc_name( context[99], & gen_ParseCommandLine_L4 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[99], & gen_ParseCommandLine_L9 ) )
+  if( ! refalrts::alloc_name( context[100], & gen_ParseCommandLine_L5 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[100], & gen_ParseCommandLine_L10 ) )
+  if( ! refalrts::alloc_name( context[101], & gen_ParseCommandLine_L6 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[101] ) )
+  if( ! refalrts::alloc_name( context[102], & gen_ParseCommandLine_L7 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[103] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[104], & MapReduce ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[105], & gen_ParseCommandLine_L8 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[106] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[107], & gen_ParseCommandLine_L9 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[108], & gen_ParseCommandLine_L10 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[109], & gen_ParseCommandLine_L11 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[110] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], & Fetch );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[101] );
-  refalrts::push_stack( context[86] );
-  refalrts::link_brackets( context[94], context[97] );
-  refalrts::push_stack( context[85] );
+  refalrts::push_stack( context[110] );
+  refalrts::push_stack( context[94] );
+  refalrts::link_brackets( context[103], context[106] );
+  refalrts::push_stack( context[93] );
   refalrts::push_stack( context[5] );
-  refalrts::link_brackets( context[7], context[84] );
-  refalrts::link_brackets( context[71], context[83] );
-  refalrts::link_brackets( context[79], context[82] );
-  refalrts::link_brackets( context[75], context[78] );
-  refalrts::link_brackets( context[62], context[70] );
-  refalrts::link_brackets( context[66], context[69] );
-  refalrts::link_brackets( context[52], context[61] );
-  refalrts::link_brackets( context[57], context[60] );
-  refalrts::link_brackets( context[39], context[51] );
-  refalrts::link_brackets( context[47], context[50] );
-  refalrts::link_brackets( context[43], context[46] );
+  refalrts::link_brackets( context[7], context[92] );
+  refalrts::link_brackets( context[79], context[91] );
+  refalrts::link_brackets( context[87], context[90] );
+  refalrts::link_brackets( context[83], context[86] );
+  refalrts::link_brackets( context[70], context[78] );
+  refalrts::link_brackets( context[74], context[77] );
+  refalrts::link_brackets( context[60], context[69] );
+  refalrts::link_brackets( context[65], context[68] );
+  refalrts::link_brackets( context[47], context[59] );
+  refalrts::link_brackets( context[55], context[58] );
+  refalrts::link_brackets( context[51], context[54] );
+  refalrts::link_brackets( context[39], context[46] );
+  refalrts::link_brackets( context[42], context[45] );
   refalrts::link_brackets( context[30], context[38] );
   refalrts::link_brackets( context[34], context[37] );
   refalrts::link_brackets( context[25], context[29] );
@@ -4454,9 +4611,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[85], context[101] );
+  res = refalrts::splice_evar( res, context[93], context[110] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[84] );
+  res = refalrts::splice_evar( res, context[5], context[92] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }

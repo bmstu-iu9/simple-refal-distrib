@@ -5,16 +5,8 @@
 extern refalrts::RefalFunction& WriteLine;
 extern refalrts::RefalFunction& Exit;
 extern refalrts::RefalFunction& StrFromInt;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& ErrorAt;
-#else
-extern refalrts::RefalFunction& ErrorAt;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& WarningAt;
-#else
-extern refalrts::RefalFunction& WarningAt;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

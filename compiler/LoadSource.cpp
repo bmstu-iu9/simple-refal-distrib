@@ -5,33 +5,15 @@
 extern refalrts::RefalFunction& Fetch;
 extern refalrts::RefalFunction& Map;
 extern refalrts::RefalFunction& LoadFile;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_LoadSource_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_LoadSource_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& LoadSource;
-#else
-extern refalrts::RefalFunction& LoadSource;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& LinearizeLine;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& LinearizeLine;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

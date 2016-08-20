@@ -49,55 +49,23 @@ extern refalrts::RefalFunction& MapReduce;
 extern refalrts::RefalFunction& Max;
 extern refalrts::RefalFunction& GenPattern;
 extern refalrts::RefalFunction& GenResult;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
-#else
-extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

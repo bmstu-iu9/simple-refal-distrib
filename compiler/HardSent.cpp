@@ -92,55 +92,23 @@ struct ident_TkVariable {
 
 extern refalrts::RefalFunction& Map;
 extern refalrts::RefalFunction& Fetch;
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& PreparePatternHardSent;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& PreparePatternHardSent;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& CreateHardPattern_Aux;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CreateHardPattern_Aux;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& CreateHardPattern;
-#else
-extern refalrts::RefalFunction& CreateHardPattern;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

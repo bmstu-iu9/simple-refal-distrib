@@ -335,38 +335,16 @@ extern refalrts::RefalFunction& Add;
 extern refalrts::RefalFunction& Inc2;
 extern refalrts::RefalFunction& PrintVar;
 extern refalrts::RefalFunction& TextFromExpr;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GenInitSubst_Save;
-#else
-extern refalrts::RefalFunction& GenInitSubst_Save;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GenSubst_Save;
-#else
-extern refalrts::RefalFunction& GenSubst_Save;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& DoGenSubst;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoGenSubst;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& IncVarOffset_Saved;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& IncVarOffset_Saved;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

@@ -30,44 +30,19 @@ extern refalrts::RefalFunction& LoadFile;
 extern refalrts::RefalFunction& Map;
 extern refalrts::RefalFunction& Trim;
 extern refalrts::RefalFunction& FindFiles;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& CreateFileList;
-#else
-extern refalrts::RefalFunction& CreateFileList;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& DoCreateFileList;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoCreateFileList;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& FindImports;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FindImports;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& LoadList;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& LoadList;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

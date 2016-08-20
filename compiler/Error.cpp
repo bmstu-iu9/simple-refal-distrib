@@ -52,42 +52,15 @@ refalrts::RefalEmptyFunction descr_ErrorList("ErrorList");
 refalrts::RefalFunction& ErrorList = descr_ErrorList;
 } // unnamed namespace
 
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EL_Create;
-#else
-extern refalrts::RefalFunction& EL_Create;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EL_AddError;
-#else
-extern refalrts::RefalFunction& EL_AddError;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EL_AddErrorAt;
-#else
-extern refalrts::RefalFunction& EL_AddErrorAt;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EL_AddUnexpected;
-#else
-extern refalrts::RefalFunction& EL_AddUnexpected;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_EL_Destroy_S2L1;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_EL_Destroy_S2L1;
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& EL_Destroy;
-#else
-extern refalrts::RefalFunction& EL_Destroy;
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {

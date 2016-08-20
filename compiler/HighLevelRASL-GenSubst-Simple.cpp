@@ -256,27 +256,12 @@ extern refalrts::RefalFunction& PrintVar;
 extern refalrts::RefalFunction& FakeOffset;
 extern refalrts::RefalFunction& TextFromExpr;
 extern refalrts::RefalFunction& Inc;
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GenInitSubst_Simple;
-#else
-extern refalrts::RefalFunction& GenInitSubst_Simple;
-#endif
-#ifdef INTERPRET
 extern refalrts::RefalFunction& GenSubst_Simple;
-#else
-extern refalrts::RefalFunction& GenSubst_Simple;
-#endif
-#ifdef INTERPRET
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& DoGenSubst;
 } // unnamed namespace
 
-#else
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoGenSubst;
-} // unnamed namespace
-
-#endif
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
