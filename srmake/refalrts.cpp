@@ -1682,7 +1682,7 @@ refalrts::FnResult func_create_closure(
   refalrts::move_left( closure_b, closure_e ); // пропуск имени функции
   refalrts::move_right( closure_b, closure_e ); // пропуск >
 
-  if( empty_seq( closure_b, closure_e ) )
+  if( refalrts::empty_seq( closure_b, closure_e ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::Iter closure = 0;
@@ -1906,12 +1906,23 @@ namespace vm {
 extern int g_ret_code;
 extern void print_seq(FILE *output, refalrts::Iter begin, refalrts::Iter end);
 
+char **g_argv = 0;
+unsigned int g_argc = 0;
+
 } // namespace vm
 
 } // namespace refalrts
 
 void refalrts::set_return_code( int code ) {
   refalrts::vm::g_ret_code = code;
+}
+
+const char* refalrts::arg(unsigned int param) {
+  if (param < vm::g_argc) {
+    return vm::g_argv[param];
+  } else {
+    return "";
+  }
 }
 
 void refalrts::debug_print_expr(
@@ -2372,14 +2383,7 @@ unsigned g_step_counter = 0;
 int g_ret_code;
 
 template <typename T>
-class Stack;
-
-} // namespace vm
-
-} // namespace refalrts
-
-template <typename T>
-class refalrts::vm::Stack {
+class Stack {
 public:
   Stack()
     :m_memory(new T[1]), m_size(0), m_capacity(1)
@@ -2402,6 +2406,11 @@ private:
   size_t m_size;
   size_t m_capacity;
 };
+
+
+} // namespace vm
+
+} // namespace refalrts
 
 template <typename T>
 void refalrts::vm::Stack<T>::reserve(size_t size) {
@@ -3645,14 +3654,9 @@ void refalrts::SwitchDefaultViolation::print() {
 
 //==============================================================================
 
-// Используются в Library.cpp
-
-char **g_argv = 0;
-int g_argc = 0;
-
 int main(int argc, char **argv) {
-  g_argc = argc;
-  g_argv = argv;
+  refalrts::vm::g_argc = argc;
+  refalrts::vm::g_argv = argv;
 
   refalrts::FnResult res;
   try {

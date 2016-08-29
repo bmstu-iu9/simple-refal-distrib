@@ -98,391 +98,168 @@ extern refalrts::RefalFunction& SymbCompare;
 extern refalrts::RefalFunction& SymbType;
 
 #line 2 "Library.sref"
+#include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <vector>
-#include <ctype.h>
-#include <stdlib.h>
-
-#include "refalrts.h"
 
 //FROM refalrts
 
-namespace {
-
-static refalrts::Iter next( refalrts::Iter current ) {
-  return current->next;
-}
-
-static refalrts::Iter prev( refalrts::Iter current ) {
-  return current->prev;
-}
-
-} // unnamed namespace
-
-//------------------------------------------------------------------------------
-
-// Операции распределителя памяти
-
-namespace refalrts{
-
-namespace allocator {
-
-bool alloc_node( Iter& node );
-
-Iter free_ptr();
-
-} // namespace allocator
-
-} // namespace refalrts
 #define USE_IDENT(ident_name) \
   (& ident_ ## ident_name<int>::name)
-#line 141 "Library.cpp"
+#line 113 "Library.cpp"
+#line 37 "Library.sref"
+#define BINARY(binary) \
+  refalrts::Iter pX = 0, pY = 0; \
+  refalrts::Iter pFunc = refalrts::call_left(pX, pY, arg_begin, arg_end); \
+  \
+  if (pX->next != pY) { \
+    return refalrts::cRecognitionImpossible; \
+  } \
+  \
+  binary \
+  \
+  refalrts::splice_to_freelist(arg_begin, pFunc); \
+  refalrts::splice_to_freelist(pY, arg_end); \
+  return refalrts::cSuccess;
+
+#define ARITHM_BINARY(op, check) \
+  if ( \
+    refalrts::cDataNumber != pX->tag \
+    || refalrts::cDataNumber != pY->tag \
+  ) { \
+    return refalrts::cRecognitionImpossible; \
+  } \
+  \
+  check \
+  \
+  pX->number_info op##= pY->number_info; \
+
+#define ARITHM(op, check) \
+  BINARY(ARITHM_BINARY(op, check))
+
+#define ARITHM_NO_CHECK \
+  /* пусто */
+
+#define ARITHM_ZERODIV \
+  if (0 == pY->number_info) { \
+    /* деление на нуль */ \
+    return refalrts::cRecognitionImpossible; \
+  }
+
+#line 153 "Library.cpp"
 static refalrts::FnResult func_Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 66 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-
-    refalrts::Iter sNumber1_1;
-    refalrts::Iter sNumber2_1;
-    if( ! refalrts::svar_left( sNumber1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sNumber2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
-
-    if( sNumber1_1->tag != refalrts::cDataNumber )
-      break;
-    if( sNumber2_1->tag != refalrts::cDataNumber )
-      break;
-
-    refalrts::RefalNumber result =
-      sNumber1_1->number_info + sNumber2_1->number_info;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 180 "Library.cpp"
+#line 79 "Library.sref"
+  ARITHM(+, ARITHM_NO_CHECK);
+#line 157 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Add(func_Add, "Add");
 refalrts::RefalFunction& Add = descr_Add;
 
 static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 107 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-
-    refalrts::Iter sNumber1_1;
-    refalrts::Iter sNumber2_1;
-    if( ! refalrts::svar_left( sNumber1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sNumber2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
-
-    if( sNumber1_1->tag != refalrts::cDataNumber )
-      break;
-    if( sNumber2_1->tag != refalrts::cDataNumber )
-      break;
-
-    refalrts::RefalNumber result =
-      sNumber1_1->number_info - sNumber2_1->number_info;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 224 "Library.cpp"
+#line 85 "Library.sref"
+  ARITHM(-, ARITHM_NO_CHECK);
+#line 166 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Sub(func_Sub, "Sub");
 refalrts::RefalFunction& Sub = descr_Sub;
 
 static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 148 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-
-    refalrts::Iter sNumber1_1;
-    refalrts::Iter sNumber2_1;
-    if( ! refalrts::svar_left( sNumber1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sNumber2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
-
-    if( sNumber1_1->tag != refalrts::cDataNumber )
-      break;
-    if( sNumber2_1->tag != refalrts::cDataNumber )
-      break;
-
-    refalrts::RefalNumber result =
-      sNumber1_1->number_info * sNumber2_1->number_info;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 268 "Library.cpp"
+#line 91 "Library.sref"
+  ARITHM(*, ARITHM_NO_CHECK);
+#line 175 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Mul(func_Mul, "Mul");
 refalrts::RefalFunction& Mul = descr_Mul;
 
 static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 189 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-
-    refalrts::Iter sNumber1_1;
-    refalrts::Iter sNumber2_1;
-    if( ! refalrts::svar_left( sNumber1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sNumber2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
-
-    if( sNumber1_1->tag != refalrts::cDataNumber )
-      break;
-    if( sNumber2_1->tag != refalrts::cDataNumber )
-      break;
-
-    refalrts::RefalNumber result =
-      sNumber1_1->number_info / sNumber2_1->number_info;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 312 "Library.cpp"
+#line 97 "Library.sref"
+  ARITHM(/, ARITHM_ZERODIV);
+#line 184 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Div(func_Div, "Div");
 refalrts::RefalFunction& Div = descr_Div;
 
 static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 230 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-
-    refalrts::Iter sNumber1_1;
-    refalrts::Iter sNumber2_1;
-    if( ! refalrts::svar_left( sNumber1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sNumber2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
-
-    if( sNumber1_1->tag != refalrts::cDataNumber )
-      break;
-    if( sNumber2_1->tag != refalrts::cDataNumber )
-      break;
-
-    refalrts::RefalNumber result =
-      sNumber1_1->number_info % sNumber2_1->number_info;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 356 "Library.cpp"
+#line 103 "Library.sref"
+  ARITHM(%, ARITHM_ZERODIV);
+#line 193 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Mod(func_Mod, "Mod");
 refalrts::RefalFunction& Mod = descr_Mod;
 
-#line 272 "Library.sref"
+#line 110 "Library.sref"
 refalrts::FnResult write_to_stream(
   FILE *out, refalrts::Iter str_begin, refalrts::Iter str_end
 ) {
-  if( ferror( out ) ) {
+  if (ferror(out)) {
     return refalrts::cRecognitionImpossible;
   }
 
-  int printf_res;
+  int printf_res = 0;
 
-  for(
+  for (
     refalrts::Iter p = str_begin;
-    ! refalrts::empty_seq( p, str_end );
-    refalrts::move_left( p, str_end )
+    printf_res >= 0 && ! refalrts::empty_seq(p, str_end);
+    refalrts::move_left(p, str_end)
   ) {
-    switch( p->tag ) {
-      case refalrts::cDataChar: {
-        printf_res = fprintf( out, "%c", p->char_info );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+    switch(p->tag) {
+      case refalrts::cDataChar:
+        printf_res = fprintf(out, "%c", p->char_info);
+        break;
 
-      case refalrts::cDataNumber: {
-        printf_res = fprintf( out, "%lu ", p->number_info );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataNumber:
+        printf_res = fprintf(out, "%lu ", p->number_info);
+        break;
 
-      case refalrts::cDataFunction: {
-        printf_res = fprintf( out, "%s ", p->function_info->name );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataFunction:
+        printf_res = fprintf(out, "%s ", p->function_info->name);
+        break;
 
-      case refalrts::cDataIdentifier: {
-        printf_res = fprintf( out, "%s ", (p->ident_info)() );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataIdentifier:
+        printf_res = fprintf(out, "%s ", (p->ident_info)());
+        break;
 
-      case refalrts::cDataOpenADT: {
-        printf_res = fprintf( out, "[" );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataOpenADT:
+        printf_res = fprintf(out, "[");
+        break;
 
-      case refalrts::cDataCloseADT: {
-        printf_res = fprintf( out, "]" );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataCloseADT:
+        printf_res = fprintf(out, "]");
+        break;
 
-      case refalrts::cDataOpenBracket: {
-        printf_res = fprintf( out, "(" );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataOpenBracket:
+        printf_res = fprintf(out, "(");
+        break;
 
-      case refalrts::cDataCloseBracket: {
-        printf_res = fprintf( out, ")" );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataCloseBracket:
+        printf_res = fprintf(out, ")");
+        break;
 
-      case refalrts::cDataFile: {
-        printf_res = fprintf( out, "*%p", p->file_info );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataFile:
+        printf_res = fprintf(out, "*%p", p->file_info);
+        break;
 
-      case refalrts::cDataClosure: {
-        printf_res = fprintf( out, "{ " );
-        p = refalrts::unwrap_closure( p );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataClosure:
+        printf_res = fprintf(out, "{ ");
+        p = refalrts::unwrap_closure(p);
+        break;
 
-      case refalrts::cDataClosureHead: {
-        printf_res = fprintf( out, "[%lu] ", p->number_info );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataClosureHead:
+        printf_res = fprintf(out, "[%lu] ", p->number_info);
+        break;
 
-      case refalrts::cDataUnwrappedClosure: {
-        printf_res = fprintf( out, "} " );
-        refalrts::wrap_closure( p );
-        if( printf_res < 0 ) {
-          return refalrts::cRecognitionImpossible;
-        } else {
-          break;
-        }
-      }
+      case refalrts::cDataUnwrappedClosure:
+        printf_res = fprintf(out, "} ");
+        refalrts::wrap_closure(p);
+        break;
 
       default:
         refalrts_switch_default_violation(p->tag);
@@ -490,216 +267,168 @@ refalrts::FnResult write_to_stream(
     }
   }
 
-  printf_res = fprintf( out, "\n" );
-  if( printf_res < 0 ) {
+  if (printf_res < 0) {
+    return refalrts::cRecognitionImpossible;
+  }
+
+  printf_res = fprintf(out, "\n");
+  if (printf_res < 0) {
     return refalrts::cRecognitionImpossible;
   } else {
     return refalrts::cSuccess;
   }
 }
-#line 501 "Library.cpp"
+#line 282 "Library.cpp"
 static refalrts::FnResult func_WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 414 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 196 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter eLine_b_1;
-    refalrts::Iter eLine_e_1;
-    eLine_b_1 = bb_0;
-    refalrts::use( eLine_b_1 );
-    eLine_e_1 = be_0;
-    refalrts::use( eLine_e_1 );
-
-    refalrts::FnResult fnres =
-      write_to_stream( stdout, eLine_b_1, eLine_e_1 );
-
-    if( fnres != refalrts::cSuccess )
-      return fnres;
-
-    refalrts::reset_allocator();
-    refalrts::splice_to_freelist( arg_begin, arg_end );
+  refalrts::FnResult fnres = write_to_stream(stdout, content_b, content_e);
+  if (fnres != refalrts::cSuccess) {
     return fnres;
-  } while ( 0 );
+  }
 
-  return refalrts::cRecognitionImpossible;
-#line 530 "Library.cpp"
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 296 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_WriteLine(func_WriteLine, "WriteLine");
 refalrts::RefalFunction& WriteLine = descr_WriteLine;
 
 static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 445 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 212 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sFileHandle_1;
-    refalrts::Iter eLine_b_1;
-    refalrts::Iter eLine_e_1;
-    // s.FileHandle e.Line
-    if( ! refalrts::svar_left( sFileHandle_1, bb_0, be_0 ) )
-      break;
-    if( sFileHandle_1->tag != refalrts::cDataFile )
-      break;
-    eLine_b_1 = bb_0;
-    refalrts::use( eLine_b_1 );
-    eLine_e_1 = be_0;
-    refalrts::use( eLine_e_1 );
+  refalrts::Iter pfile_handle = 0;
 
-    refalrts::FnResult write_result =
-      write_to_stream(
-        static_cast<FILE*>( sFileHandle_1->file_info ), eLine_b_1, eLine_e_1
-      );
+  if (
+    ! refalrts::svar_left(pfile_handle, content_b, content_e)
+    || refalrts::cDataFile != pfile_handle->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    if( write_result != refalrts::cSuccess )
-      return write_result;
+  FILE *handle = static_cast<FILE*>(pfile_handle->file_info);
+  refalrts::FnResult fnres = write_to_stream(handle, content_b, content_e);
+  if (fnres != refalrts::cSuccess) {
+    return fnres;
+  }
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::splice_stvar( res, sFileHandle_1 );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 574 "Library.cpp"
+  refalrts::splice_stvar(arg_begin, pfile_handle);
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 326 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FWriteLine(func_FWriteLine, "FWriteLine");
 refalrts::RefalFunction& FWriteLine = descr_FWriteLine;
 
-#line 485 "Library.sref"
+#line 238 "Library.sref"
 refalrts::FnResult read_from_stream(
   FILE *input, refalrts::Iter& begin, refalrts::Iter& end
 ) {
-  refalrts::Iter before_begin =
-    prev( refalrts::allocator::free_ptr() );
-  refalrts::Iter cur_char_node = 0;
+  begin = 0;
+  end = 0;
 
   int cur_char;
+  while ((cur_char = getc(input)) != EOF && cur_char != '\n') {
+    /*
+      Пользуемся тем фактом, что в данной реализации размещёные в свободной
+      памяти узлы располагаются в последовательных адресах.
+    */
+    if (! refalrts::alloc_char(end, static_cast<char>(cur_char))) {
+      return refalrts::cNoMemory;
+    }
 
-  for( ;; ) {
-    cur_char = getc(input);
-    if( EOF == cur_char ) {
-      if( ! refalrts::alloc_number( cur_char_node, 0UL ) ) {
-        return refalrts::cNoMemory;
-      }
-      break;
-    } else if ( '\n' == cur_char ) {
-      break;
-    } else {
-      /*
-        Пользуемся тем фактом, что в данной реализации размещёные в свободной
-        памяти узлы располагаются в последовательных адресах, которые будут
-        начинаться с before_begin->next.
-      */
-      if( ! refalrts::alloc_char(cur_char_node, static_cast<char>(cur_char)) ) {
-        return refalrts::cNoMemory;
-      }
+    if (begin == 0) {
+      begin = end;
     }
   }
 
-  if( cur_char_node != 0 ) {
-    begin = next( before_begin );
-    end = cur_char_node;
-  } else {
-    begin = 0;
-    end = 0;
+  if (cur_char == EOF) {
+    if (! refalrts::alloc_number(end, 0UL)) {
+      return refalrts::cNoMemory;
+    }
+
+    if (begin == 0) {
+      begin = end;
+    }
   }
+
+  if (begin == 0) assert (end == 0);
+  if (begin != 0) assert (end != 0);
 
   return refalrts::cSuccess;
 }
-#line 621 "Library.cpp"
+#line 369 "Library.cpp"
 static refalrts::FnResult func_ReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 529 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 278 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  if (! refalrts::empty_seq(content_b, content_e)) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
+  refalrts::reset_allocator();
 
-    refalrts::Iter str_begin, str_end;
+  refalrts::Iter str_begin, str_end;
+  refalrts::FnResult fn_result = read_from_stream(stdin, str_begin, str_end);
+  if (fn_result != refalrts::cSuccess) {
+    return fn_result;
+  }
 
-    refalrts::FnResult fn_result =
-      read_from_stream( stdin, str_begin, str_end );
-
-    if( fn_result != refalrts::cSuccess )
-      return fn_result;
-
-    res = refalrts::splice_evar( res, str_begin, str_end );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 652 "Library.cpp"
+  refalrts::splice_evar(arg_begin, str_begin, str_end);
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 391 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_ReadLine(func_ReadLine, "ReadLine");
 refalrts::RefalFunction& ReadLine = descr_ReadLine;
 
 static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 562 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 302 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sFileHandle_1;
-    // s.FileHandle
-    if( ! refalrts::svar_left( sFileHandle_1, bb_0, be_0 ) )
-      break;
-    if( sFileHandle_1->tag != refalrts::cDataFile )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter pfile_handle = 0;
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
+  if (
+    ! refalrts::svar_left(pfile_handle, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataFile != pfile_handle->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::Iter str_begin, str_end;
+  refalrts::reset_allocator();
 
-    refalrts::FnResult fn_result =
-      read_from_stream(
-        static_cast<FILE*>( sFileHandle_1->file_info ), str_begin, str_end
-      );
+  FILE *handle = static_cast<FILE*>(pfile_handle->file_info);
+  refalrts::Iter str_begin, str_end;
+  refalrts::FnResult fn_result = read_from_stream(handle, str_begin, str_end);
+  if (fn_result != refalrts::cSuccess) {
+    return fn_result;
+  }
 
-    if( fn_result != refalrts::cSuccess )
-      return fn_result;
-
-    res = refalrts::splice_evar( res, str_begin, str_end );
-    res = refalrts::splice_stvar( res, sFileHandle_1 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 697 "Library.cpp"
+  refalrts::Iter res = refalrts::splice_evar(arg_begin, str_begin, str_end);
+  refalrts::splice_stvar(res, pfile_handle);
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 426 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FReadLine(func_FReadLine, "FReadLine");
 refalrts::RefalFunction& FReadLine = descr_FReadLine;
 
-#line 603 "Library.sref"
+#line 333 "Library.sref"
 namespace {
 
 refalrts::FnResult string_from_seq(
@@ -710,29 +439,23 @@ refalrts::FnResult string_from_seq(
   enum { cBufLen = 100 };
   char buffer[cBufLen + 1] = { 0 };
 
-  for( ; ; ) {
-    unsigned read = refalrts::read_chars(buffer, cBufLen, begin, end);
-
-    if( read == 0 ) {
-      break;
-    }
-
+  unsigned read;
+  while ((read = refalrts::read_chars(buffer, cBufLen, begin, end)) != 0) {
     // В текущей версии Open Watcom (и форка Open Watcom V2) есть ошибка
     // в функции vector::insert, которая возникает в случае,
     // если во время вставки вектор увеличивает свою ёмкость (capacity).
     // Для обхода этой ошибки предварительно резервируем место.
-    result.reserve( result.size() + read + 1 );
-
-    result.insert( result.end(), buffer, buffer + read );
+    result.reserve(result.size() + read + 1);
+    result.insert(result.end(), buffer, buffer + read);
   }
 
   /*
-    Здесь refalrts::empty_seq( begin, end ) || (begin->tag != cDataChar).
+    Здесь refalrts::empty_seq(begin, end) || (begin->tag != cDataChar).
   */
 
-  if( refalrts::empty_seq( begin, end ) ) {
-    result.push_back( '\0' );
-    string.swap( result );
+  if (refalrts::empty_seq(begin, end)) {
+    result.push_back('\0');
+    string.swap(result);
     return refalrts::cSuccess;
   } else {
     // здесь begin->tag != cDataChar
@@ -741,610 +464,414 @@ refalrts::FnResult string_from_seq(
 }
 
 } // unnamed namespace
-#line 745 "Library.cpp"
+#line 468 "Library.cpp"
 static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 648 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 372 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter eFileName_b_1;
-    refalrts::Iter eFileName_e_1;
+  const char *mode;
 
-    const char *mode;
+  if (refalrts::char_left('r', content_b, content_e)) {
+    mode = "r";
+  } else if (refalrts::char_left('w', content_b, content_e)) {
+    mode = "w";
+  } else {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    if( refalrts::char_left( 'r', bb_0, be_0 ) ) {
-      mode = "r";
-    } else if ( refalrts::char_left( 'w', bb_0, be_0 ) ) {
-      mode = "w";
-    } else {
-      break;
-    }
+  char filename[FILENAME_MAX + 1] = { '\0' };
+  unsigned len = read_chars(filename, FILENAME_MAX, content_b, content_e);
 
-    eFileName_b_1 = bb_0;
-    refalrts::use( eFileName_b_1 );
-    eFileName_e_1 = be_0;
-    refalrts::use( eFileName_e_1 );
+  if (! refalrts::empty_seq(content_b, content_e) || len == 0) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    std::vector<char> filename;
+  refalrts::Iter file_ptr = arg_begin;
+  file_ptr->tag = refalrts::cDataFile;
+  if (FILE *f = fopen(filename, mode)) {
+    file_ptr->file_info = f;
+  } else {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::FnResult fname_read =
-      string_from_seq( filename, eFileName_b_1, eFileName_e_1 );
-
-    if( refalrts::cSuccess != fname_read )
-      return fname_read;
-
-    if( filename.empty() )
-      return refalrts::cRecognitionImpossible;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-
-    refalrts::Iter file_ptr = 0;
-    if( ! refalrts::allocator::alloc_node( file_ptr ) )
-      return refalrts::cNoMemory;
-
-    file_ptr->tag = refalrts::cDataFile;
-
-    if( FILE *f = fopen( &filename[0], mode ) ) {
-      file_ptr->file_info = f;
-    } else {
-      return refalrts::cRecognitionImpossible;
-    }
-
-    res = refalrts::splice_elem( res, file_ptr );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 806 "Library.cpp"
+  refalrts::splice_to_freelist(pfunc_name, arg_end);
+  return refalrts::cSuccess;
+#line 503 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FOpen(func_FOpen, "FOpen");
 refalrts::RefalFunction& FOpen = descr_FOpen;
 
 static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 711 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 409 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sFileHandle_1;
-    // s.FileHandle
-    if( ! refalrts::svar_left( sFileHandle_1, bb_0, be_0 ) )
-      break;
-    if( sFileHandle_1->tag != refalrts::cDataFile )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter pfile_handle = 0;
+  if (
+    ! refalrts::svar_left(pfile_handle, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataFile != pfile_handle->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    int fclose_res =
-      fclose( static_cast<FILE*>( sFileHandle_1->file_info ) );
+  FILE *handle = static_cast<FILE*>(pfile_handle->file_info);
+  if (EOF == fclose(handle)) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    if( EOF == fclose_res ) {
-      return refalrts::cRecognitionImpossible;
-    } else {
-      /* Ничего не делаем */;
-    }
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 847 "Library.cpp"
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 531 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_FClose(func_FClose, "FClose");
 refalrts::RefalFunction& FClose = descr_FClose;
 
-#line 753 "Library.sref"
-extern char **g_argv;
-extern int g_argc;
-#line 856 "Library.cpp"
 static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 759 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 434 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sParamNumber_1;
-    // s.ParamNumber
-    if( ! refalrts::svar_left( sParamNumber_1, bb_0, be_0 ) )
-      break;
-    if( sParamNumber_1->tag != refalrts::cDataNumber )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter pparam_no = 0;
+  if (
+    ! refalrts::svar_left(pparam_no, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataNumber != pparam_no->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::reset_allocator();
+  unsigned int param_no = static_cast<unsigned int>(pparam_no->number_info);
 
-    int arg_number = sParamNumber_1->number_info;
+  refalrts::Iter param_begin = 0;
+  refalrts::Iter param_end = 0;
+  const char *param = refalrts::arg(param_no);
 
-    refalrts::Iter res_begin = 0;
-    refalrts::Iter res_end = 0;
+  if (! refalrts::alloc_string(param_begin, param_end, param)) {
+    return refalrts::cNoMemory;
+  }
 
-    if( arg_number < g_argc ) {
-      if( ! refalrts::alloc_string( res_begin, res_end, g_argv[arg_number] ) )
-        return refalrts::cNoMemory;
-
-      refalrts::splice_evar( arg_begin, res_begin, res_end );
-    }
-
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 894 "Library.cpp"
+  refalrts::splice_evar(arg_begin, param_begin, param_end);
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 565 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Arg(func_Arg, "Arg");
 refalrts::RefalFunction& Arg = descr_Arg;
 
 static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 799 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 465 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter eFileName_b_1;
-    refalrts::Iter eFileName_e_1;
-    // e.FileName
-    eFileName_b_1 = bb_0;
-    refalrts::use( eFileName_b_1 );
-    eFileName_e_1 = be_0;
-    refalrts::use( eFileName_e_1 );
+  char filename[FILENAME_MAX + 1] = { '\0' };
+  unsigned len = read_chars(filename, FILENAME_MAX, content_b, content_e);
 
-    std::vector<char> fname;
+  if (! refalrts::empty_seq(content_b, content_e) || len == 0) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::FnResult fname_res =
-      string_from_seq( fname, eFileName_b_1, eFileName_e_1 );
+  refalrts::Iter ans = arg_begin;
+  if (FILE *f = fopen(filename, "r")) {
+    // Файл существует
+    fclose(f);
 
-    if( fname_res != refalrts::cSuccess )
-      return fname_res;
+    refalrts::reinit_ident(ans, USE_IDENT(True));
+  } else {
+    // Файл по-видимому не существует
+    refalrts::reinit_ident(ans, USE_IDENT(False));
+  }
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-
-    refalrts::Iter ans = 0;
-    if( FILE *f = fopen( &fname[0], "r" ) ) {
-      // Файл существует
-      fclose( f );
-
-      if( ! refalrts::alloc_ident( ans, USE_IDENT(True) ) ) {
-        return refalrts::cNoMemory;
-      }
-    } else {
-      // Файл по-видимому не существует
-      if( ! refalrts::alloc_ident( ans, USE_IDENT(False) ) ) {
-        return refalrts::cNoMemory;
-      }
-    }
-
-    res = refalrts::splice_elem( res, ans );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 950 "Library.cpp"
+  refalrts::splice_to_freelist(pfunc_name, arg_end);
+  return refalrts::cSuccess;
+#line 598 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_ExistFile(func_ExistFile, "ExistFile");
 refalrts::RefalFunction& ExistFile = descr_ExistFile;
 
 static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 852 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-    refalrts::Iter eEnvName_b_1;
-    refalrts::Iter eEnvName_e_1;
-    // e.EnvName
-    eEnvName_b_1 = bb_0;
-    refalrts::use( eEnvName_b_1 );
-    eEnvName_e_1 = be_0;
-    refalrts::use( eEnvName_e_1 );
+#line 495 "Library.sref"
+  refalrts::Iter envname_b = 0;
+  refalrts::Iter envname_e = 0;
+  refalrts::call_left(envname_b, envname_e, arg_begin, arg_end);
 
-    std::vector<char> envname;
+  std::vector<char> envname;
+  refalrts::FnResult envname_res =
+    string_from_seq(envname, envname_b, envname_e);
 
-    refalrts::FnResult envname_res =
-      string_from_seq( envname, eEnvName_b_1, eEnvName_e_1 );
+  if (envname_res != refalrts::cSuccess) {
+    return envname_res;
+  }
 
-    if( envname_res != refalrts::cSuccess )
-      return envname_res;
+  refalrts::reset_allocator();
+  const char *envres = getenv(& envname[0]);
 
-    refalrts::reset_allocator();
+  if (envres != 0) {
+    refalrts::Iter env_begin;
+    refalrts::Iter env_end;
 
-    const char *envres = getenv( & envname[0] );
-
-    if( envres != 0 ) {
-      refalrts::Iter env_begin;
-      refalrts::Iter env_end;
-
-      if( ! refalrts::alloc_string( env_begin, env_end, envres ) )
-        return refalrts::cNoMemory;
-
-      refalrts::splice_evar( arg_begin, env_begin, env_end );
-
-      //refalrts::Iter char_pos;
-      //
-      //for( const char *env = envres; *env != '\0'; ++ env ) {
-      //  if( ! refalrts::alloc_char( char_pos, *env ) )
-      //    return refalrts::cNoMemory;
-      //
-      //  refalrts::splice_elem( res, char_pos );
-      //}
+    if (! refalrts::alloc_string(env_begin, env_end, envres)) {
+      return refalrts::cNoMemory;
     }
 
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
+    refalrts::splice_evar(arg_begin, env_begin, env_end);
+  }
 
-  return refalrts::cRecognitionImpossible;
-#line 1008 "Library.cpp"
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 634 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_GetEnv(func_GetEnv, "GetEnv");
 refalrts::RefalFunction& GetEnv = descr_GetEnv;
 
 static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 907 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 528 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sCode_1;
-    // s.Code
-    if( ! refalrts::svar_left( sCode_1, bb_0, be_0 ) )
-      break;
-    if( sCode_1->tag != refalrts::cDataNumber )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter pretcode = 0;
+  if (
+    ! refalrts::svar_left(pretcode, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataNumber != pretcode->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::set_return_code( sCode_1->number_info );
-
-    refalrts::reset_allocator();
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cExit;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 1040 "Library.cpp"
+  refalrts::set_return_code(pretcode->number_info);
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cExit;
+#line 658 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Exit(func_Exit, "Exit");
 refalrts::RefalFunction& Exit = descr_Exit;
 
 static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 936 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 549 "Library.sref"
+  refalrts::Iter command_b = 0;
+  refalrts::Iter command_e = 0;
+  refalrts::call_left(command_b, command_e, arg_begin, arg_end);
 
-    refalrts::Iter eCommand_b_1;
-    refalrts::Iter eCommand_e_1;
-    // e.Command
-    eCommand_b_1 = bb_0;
-    refalrts::use( eCommand_b_1 );
-    eCommand_e_1 = be_0;
-    refalrts::use( eCommand_e_1 );
+  std::vector<char> command;
+  refalrts::FnResult command_res =
+    string_from_seq(command, command_b, command_e);
 
-    std::vector<char> command;
+  if (command_res != refalrts::cSuccess) {
+    return command_res;
+  }
 
-    refalrts::FnResult read_res =
-      string_from_seq( command, eCommand_b_1, eCommand_e_1 );
+  fflush(stdout);
+  fflush(stderr);
 
-    if( read_res != refalrts::cSuccess )
-      return read_res;
+  system(&command[0]);
 
-    fflush(stdout);
-    fflush(stderr);
-
-    system( &command[0] );
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 1084 "Library.cpp"
+  refalrts::reset_allocator();
+  refalrts::splice_to_freelist(arg_begin, arg_end);
+  return refalrts::cSuccess;
+#line 686 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_System(func_System, "System");
 refalrts::RefalFunction& System = descr_System;
 
 static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 979 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 576 "Library.sref"
+  refalrts::Iter number_b = 0;
+  refalrts::Iter number_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(number_b, number_e, arg_begin, arg_end);
 
-    refalrts::Iter eNumber_b_1;
-    refalrts::Iter eNumber_e_1;
-    // e.NoNumber
-    eNumber_b_1 = bb_0;
-    refalrts::use( eNumber_b_1 );
-    eNumber_e_1 = be_0;
-    refalrts::use( eNumber_e_1 );
+  bool start_is_digit =
+    ! refalrts::empty_seq(number_b, number_e)
+    && refalrts::cDataChar == number_b->tag
+    && isdigit(number_b->char_info);
 
-    bool start_is_digit =
-      ! refalrts::empty_seq( eNumber_b_1, eNumber_e_1 )
-      && (refalrts::cDataChar == eNumber_b_1->tag)
-      && isdigit( eNumber_b_1->char_info );
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-
-    if( ! start_is_digit ) {
-      refalrts::Iter fail_pos = 0;
-      if( ! refalrts::alloc_ident( fail_pos, USE_IDENT(Fails) ) )
-        return refalrts::cNoMemory;
-
-      res = refalrts::splice_evar( res, eNumber_b_1, eNumber_e_1 );
-      res = refalrts::splice_elem( res, fail_pos );
+    if (! start_is_digit) {
+      refalrts::Iter fail_pos = pfunc_name;
+      refalrts::reinit_ident(fail_pos, USE_IDENT(Fails));
+      refalrts::splice_to_freelist(arg_begin, arg_begin);
+      refalrts::splice_to_freelist(arg_end, arg_end);
     } else {
-      refalrts::RefalNumber acc = 0;
+      refalrts::RefalNumber result = 0;
+      while (
+        ! refalrts::empty_seq(number_b, number_e)
+        && refalrts::cDataChar == number_b->tag
+        && isdigit(number_b->char_info)
+      ) {
+        result *= 10;
+        result += number_b->char_info - '0';
 
-      for( ; ; ) {
-        if( refalrts::empty_seq( eNumber_b_1, eNumber_e_1 ) ) {
-          break;
-        } else if ( eNumber_b_1->tag != refalrts::cDataChar ) {
-          break;
-        } else if ( ! isdigit( eNumber_b_1->char_info ) ) {
-          break;
-        } else {
-          (acc *= 10) += eNumber_b_1->char_info - '0';
-        }
-
-        refalrts::move_left( eNumber_b_1, eNumber_e_1 );
+        refalrts::move_left(number_b, number_e);
       }
 
-      refalrts::Iter success_pos = 0;
-      refalrts::Iter number_pos = 0;
+      refalrts::Iter success_pos = arg_begin;
+      refalrts::reinit_ident(success_pos, USE_IDENT(Success));
+      refalrts::Iter number_pos = pfunc_name;
+      refalrts::reinit_number(number_pos, result);
 
-      if( ! refalrts::alloc_ident( success_pos, USE_IDENT(Success) ) )
-        return refalrts::cNoMemory;
-
-      if( ! refalrts::alloc_number( number_pos, acc ) )
-        return refalrts::cNoMemory;
-
-      res = refalrts::splice_evar( res, eNumber_b_1, eNumber_e_1 );
-      res = refalrts::splice_elem( res, number_pos );
-      res = refalrts::splice_elem( res, success_pos );
+      refalrts::Iter res =
+        refalrts::splice_evar(arg_end->next, number_b, number_e);
+      refalrts::splice_to_freelist_open(number_pos, res);
     }
 
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
     return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 1159 "Library.cpp"
+#line 733 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_IntFromStr(func_IntFromStr, "IntFromStr");
 refalrts::RefalFunction& IntFromStr = descr_IntFromStr;
 
 static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1051 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 620 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sNumber_1;
-    // s.Number
-    if( ! refalrts::svar_left( sNumber_1, bb_0, be_0 ) )
-      break;
-    if( sNumber_1->tag != refalrts::cDataNumber )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter number = 0;
+  if (
+    ! refalrts::svar_left(number, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataNumber != number->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
+  refalrts::reset_allocator();
+  refalrts::Iter begin_splice = arg_begin;
 
-    refalrts::Iter char_pos = 0;
-    if( refalrts::RefalNumber num = sNumber_1->number_info ) {
-      // Длина десятичного числа = 0,3 * длина двоичного числа,
-      // т.к. lg(2) = 0,3. Хрен с ним, что много. Главное, что не мало.
-      enum { cMaxNumberLen = 8 * sizeof(refalrts::RefalNumber) * 3 / 10 + 2 };
+  if (refalrts::RefalNumber num = number->number_info) {
+    // Длина десятичного числа = 0,3 * длина двоичного числа,
+    // т.к. lg(2) = 0,3. Хрен с ним, что много. Главное, что не мало.
+    enum { cMaxNumberLen = 8 * sizeof(refalrts::RefalNumber) * 3 / 10 + 2 };
 
-      char buffer[cMaxNumberLen + 1] = { 0 };
-      char *lim_digit = buffer + cMaxNumberLen;
-      char *cur_digit = lim_digit;
+    char buffer[cMaxNumberLen + 1] = { 0 };
+    char *lim_digit = buffer + cMaxNumberLen;
+    char *cur_digit = lim_digit;
 
-      while( num != 0 ) {
-        -- cur_digit;
-        *cur_digit = static_cast<char>((num % 10) + '0');
-        num /= 10;
-      }
-
-      refalrts::Iter num_begin;
-      refalrts::Iter num_end;
-      bool allocated = refalrts::alloc_chars(
-        num_begin, num_end, cur_digit, unsigned(lim_digit - cur_digit)
-      );
-
-      if ( ! allocated )
-        return refalrts::cNoMemory;
-
-      refalrts::splice_evar( res, num_begin, num_end );
-    } else {
-      if( ! refalrts::alloc_char( char_pos, '0' ) )
-        return refalrts::cNoMemory;
-
-      refalrts::splice_elem( res, char_pos );
+    while (num != 0) {
+      -- cur_digit;
+      *cur_digit = static_cast<char>((num % 10) + '0');
+      num /= 10;
     }
 
-    refalrts::splice_to_freelist( arg_begin, arg_end );
+    refalrts::Iter num_begin;
+    refalrts::Iter num_end;
+    bool allocated = refalrts::alloc_chars(
+      num_begin, num_end, cur_digit, unsigned(lim_digit - cur_digit)
+    );
 
-    return refalrts::cSuccess;
-  } while ( 0 );
+    if (! allocated) {
+      return refalrts::cNoMemory;
+    }
 
-  return refalrts::cRecognitionImpossible;
-#line 1225 "Library.cpp"
+    refalrts::splice_evar(arg_begin, num_begin, num_end);
+  } else {
+    refalrts::reinit_char(arg_begin, '0');
+    begin_splice = pfunc_name;
+  }
+
+  refalrts::splice_to_freelist(begin_splice, arg_end);
+
+  return refalrts::cSuccess;
+#line 792 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_StrFromInt(func_StrFromInt, "StrFromInt");
 refalrts::RefalFunction& StrFromInt = descr_StrFromInt;
 
 static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1114 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 676 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sCode_1;
-    // s.Code
-    if( ! refalrts::svar_left( sCode_1, bb_0, be_0 ) )
-      break;
-    if( sCode_1->tag != refalrts::cDataNumber )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter number = 0;
+  if (
+    ! refalrts::svar_left(number, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataNumber != number->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    char result = static_cast<char>( sCode_1->number_info );
+  char result = static_cast<char>(number->number_info);
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_char( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 1263 "Library.cpp"
+  refalrts::reinit_char(number, result);
+  refalrts::splice_to_freelist(arg_begin, pfunc_name);
+  refalrts::splice_to_freelist(arg_end, arg_end);
+  return refalrts::cSuccess;
+#line 820 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Chr(func_Chr, "Chr");
 refalrts::RefalFunction& Chr = descr_Chr;
 
 static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1149 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
+#line 701 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::Iter sChar_1;
-    // s.Char
-    if( ! refalrts::svar_left( sChar_1, bb_0, be_0 ) )
-      break;
-    if( sChar_1->tag != refalrts::cDataChar )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+  refalrts::Iter chr = 0;
+  if (
+    ! refalrts::svar_left(chr, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+    || refalrts::cDataChar != chr->tag
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    refalrts::RefalNumber result =
-      static_cast<unsigned char>( sChar_1->char_info );
+  refalrts::RefalNumber result = static_cast<unsigned char>(chr->char_info);
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_number( n0, result ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  return refalrts::cRecognitionImpossible;
-#line 1302 "Library.cpp"
+  refalrts::reinit_number(chr, result);
+  refalrts::splice_to_freelist(arg_begin, pfunc_name);
+  refalrts::splice_to_freelist(arg_end, arg_end);
+  return refalrts::cSuccess;
+#line 848 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_Ord(func_Ord, "Ord");
 refalrts::RefalFunction& Ord = descr_Ord;
 
-#line 1184 "Library.sref"
+#line 725 "Library.sref"
 namespace {
 
 template <typename T>
-char compare_char( T x, T y ) {
-  if( x < y ) {
+char compare_char(T x, T y) {
+  if (x < y) {
     return '<';
-  } else if( x == y ) {
+  } else if (x == y) {
     return '=';
   } else {
     return '>';
   }
 }
 
-} // unnamed namespace
-#line 1323 "Library.cpp"
-static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1202 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-    refalrts::Iter sSymb1_1;
-    refalrts::Iter sSymb2_1;
-    // s.Num1 s.Num2
-    if( ! refalrts::svar_left( sSymb1_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::svar_left( sSymb2_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+bool compare(refalrts::Iter left, refalrts::Iter right) {
+  char order;
 
-    char order;
-
-    switch( sSymb1_1->tag ) {
+  switch(left->tag) {
     case refalrts::cDataNumber:
-      switch( sSymb2_1->tag ) {
+      switch(right->tag) {
         case refalrts::cDataNumber:
-          order = compare_char( sSymb1_1->number_info, sSymb2_1->number_info );
+          order = compare_char(left->number_info, right->number_info);
           break;
 
         case refalrts::cDataChar:
@@ -1370,13 +897,13 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
       break;
 
     case refalrts::cDataChar:
-      switch( sSymb2_1->tag ) {
+      switch(right->tag) {
         case refalrts::cDataNumber:
           order = '<';
           break;
 
         case refalrts::cDataChar:
-          order = compare_char( sSymb1_1->char_info, sSymb2_1->char_info );
+          order = compare_char(left->char_info, right->char_info);
           break;
 
         case refalrts::cDataFunction:
@@ -1398,7 +925,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
       break;
 
     case refalrts::cDataFunction:
-      switch( sSymb2_1->tag ) {
+      switch(right->tag) {
         case refalrts::cDataNumber:
           order = '<';
           break;
@@ -1410,20 +937,17 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
         case refalrts::cDataFunction:
           {
             int cmpres =
-              strcmp(
-                sSymb1_1->function_info->name,
-                sSymb2_1->function_info->name
-              );
+              strcmp(left->function_info->name, right->function_info->name);
 
-            if( cmpres < 0 ) {
+            if (cmpres < 0) {
               order = '<';
             } else if (cmpres > 0) {
               order = '>';
             } else {
               order =
                 compare_char(
-                  sSymb1_1->function_info->ptr,
-                  sSymb2_1->function_info->ptr
+                  left->function_info->ptr,
+                  right->function_info->ptr
                 );
             }
           }
@@ -1444,7 +968,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
       break;
 
     case refalrts::cDataIdentifier:
-      switch( sSymb2_1->tag ) {
+      switch(right->tag) {
         case refalrts::cDataNumber:
           order = '<';
           break;
@@ -1460,8 +984,8 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
         case refalrts::cDataIdentifier:
           {
             int cmpres =
-              strcmp((sSymb1_1->ident_info)(), (sSymb2_1->ident_info)());
-            if( cmpres < 0 ) {
+              strcmp((left->ident_info)(), (right->ident_info)());
+            if (cmpres < 0) {
               order = '<';
             } else if (cmpres > 0) {
               order = '>';
@@ -1482,7 +1006,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
       break;
 
     case refalrts::cDataFile:
-      switch( sSymb2_1->tag ) {
+      switch(right->tag) {
         case refalrts::cDataNumber:
           order = '<';
           break;
@@ -1500,11 +1024,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
           break;
 
         case refalrts::cDataFile:
-          order =
-            compare_char(
-              sSymb1_1->file_info,
-              sSymb2_1->file_info
-            );
+          order = compare_char(left->file_info, right->file_info);
           break;
 
         default:
@@ -1516,47 +1036,49 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
     default:
       order = '?';
       break;
-    }
+  }
 
-    if( '?' == order )
-      break;
+  if (order != '?') {
+    refalrts::reinit_char(left, order);
+    return true;
+  } else {
+    return false;
+  }
+}
 
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_char( n0, order ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
+} // unnamed namespace
 
-  return refalrts::cRecognitionImpossible;
-#line 1537 "Library.cpp"
+#define COMPARE_BINARY \
+  if (! compare(pX, pY)) { \
+    return refalrts::cRecognitionImpossible; \
+  }
+#line 1056 "Library.cpp"
+static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 930 "Library.sref"
+  BINARY(COMPARE_BINARY);
+#line 1060 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_SymbCompare(func_SymbCompare, "SymbCompare");
 refalrts::RefalFunction& SymbCompare = descr_SymbCompare;
 
 static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 1418 "Library.sref"
-  do {
-    refalrts::Iter bb_0 = arg_begin;
-    refalrts::Iter be_0 = arg_end;
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_left( bb_0, be_0 );
-    refalrts::move_right( bb_0, be_0 );
-    refalrts::Iter sSymb_1;
-    // s.Num
-    if( ! refalrts::svar_left( sSymb_1, bb_0, be_0 ) )
-      break;
-    if( ! refalrts::empty_seq( bb_0, be_0 ) )
-      break;
+#line 936 "Library.sref"
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-    refalrts::RefalIdentifier type_tag = 0;
+  refalrts::Iter atom = 0;
+  if (
+    ! refalrts::svar_left(atom, content_b, content_e)
+    || ! refalrts::empty_seq(content_b, content_e)
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
 
-    switch( sSymb_1->tag ) {
+  refalrts::RefalIdentifier type_tag;
+  switch(atom->tag) {
     case refalrts::cDataNumber:
       type_tag = USE_IDENT(TypeNumber);
       break;
@@ -1578,26 +1100,13 @@ static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter
       break;
 
     default:
-      break;
-    }
+      return refalrts::cRecognitionImpossible;
+  }
 
-    if( 0 == type_tag )
-      break;
-
-    refalrts::reset_allocator();
-    refalrts::Iter res = arg_begin;
-    refalrts::Iter n0 = 0;
-    if( ! refalrts::alloc_ident( n0, type_tag ) )
-      return refalrts::cNoMemory;
-    res = refalrts::splice_elem( res, n0 );
-    refalrts::use( res );
-    refalrts::splice_to_freelist( arg_begin, arg_end );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-
-  return refalrts::cRecognitionImpossible;
-#line 1601 "Library.cpp"
+  refalrts::reinit_ident(arg_begin, type_tag);
+  refalrts::splice_to_freelist(pfunc_name, arg_end);
+  return refalrts::cSuccess;
+#line 1110 "Library.cpp"
 }
 
 refalrts::RefalFunction descr_SymbType(func_SymbType, "SymbType");
