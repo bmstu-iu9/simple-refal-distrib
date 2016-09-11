@@ -422,6 +422,10 @@ extern refalrts::RefalFunction& DigitFromChar;
 } // unnamed namespace
 
 namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_ValidDirective_S9L1;
+} // unnamed namespace
+
+namespace /* unnamed */ {
 extern refalrts::RefalFunction& ValidDirective;
 } // unnamed namespace
 
@@ -4011,8 +4015,88 @@ refalrts::RefalFunction& DigitFromChar = descr_DigitFromChar;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_ValidDirective {
+  namespace scope_gen_ValidDirective_S9L1 {
     using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_TkChar<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icIssueMemory, 6, 0, 0},
+      // </0 & ValidDirective$9\1/4 s.Char#2/5 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icsVarLeft, 0, 5, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkChar/4 AsIs: s.Char#2/5 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
+      {refalrts::icReinitIdent, 0, 0, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 0, 1, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_ValidDirective_S9L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_ValidDirective_S9L1(
+  "ValidDirective$9\\1",
+  scope_gen_ValidDirective_S9L1::raa,
+  scope_gen_ValidDirective_S9L1::functions,
+  scope_gen_ValidDirective_S9L1::idents,
+  scope_gen_ValidDirective_S9L1::numbers,
+  scope_gen_ValidDirective_S9L1::strings
+);
+refalrts::RefalFunction& gen_ValidDirective_S9L1 = descr_gen_ValidDirective_S9L1;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 6 elems
+  refalrts::Iter context[6];
+  refalrts::zeros( context, 6 );
+  // </0 & ValidDirective$9\1/4 s.Char#2/5 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkChar/4 AsIs: s.Char#2/5 HalfReuse: )/1 ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_ident( context[4], & ident_TkChar<int>::name );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[0], context[1] );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalFunction descr_gen_ValidDirective_S9L1(func_gen_ValidDirective_S9L1, "ValidDirective$9\\1");
+refalrts::RefalFunction& gen_ValidDirective_S9L1 = descr_gen_ValidDirective_S9L1;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_ValidDirective {
+    static refalrts::RefalFunction *functions[] = {
+      & gen_ValidDirective_S9L1,
+      & Map
+    };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkError<int>::name,
       & ident_Ident<int>::name,
@@ -4027,11 +4111,12 @@ namespace /* unnamed */ {
     };
     using refalrts::numbers;
     static const refalrts::StringItem strings[] = {
-      {"Unknown directive", 17}
+      {"Unknown directive", 17},
+      {"\225\320\224! \320\223\320\263 ^Y", 12}
     };
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icReserveBacktrackStack, 8, 0, 0},
-      {refalrts::icIssueMemory, 14, 0, 0},
+      {refalrts::icReserveBacktrackStack, 10, 0, 0},
+      {refalrts::icIssueMemory, 19, 0, 0},
       //FAST GEN: e.$
       //GLOBAL GEN: e.$
       // </0 & ValidDirective/4 e.idx#0/2 >/1
@@ -4041,12 +4126,12 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +15, 0, 0},
       // 'ENUM'
       // </0 & ValidDirective/4 'E'/5 'N'/6 'U'/7 'M'/8 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('N'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('U'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('M'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('N'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('U'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('M'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/6 HalfReuse: # TkDirective/7 HalfReuse: # Enum/8 HalfReuse: )/1 ]] }
@@ -4061,13 +4146,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +16, 0, 0},
       // 'EENUM'
       // </0 & ValidDirective/4 'E'/5 'E'/6 'N'/7 'U'/8 'M'/9 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('N'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('U'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('N'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('U'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'E'/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # EEnum/9 HalfReuse: )/1 ]] }
@@ -4082,13 +4167,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +16, 0, 0},
       // 'ENTRY'
       // </0 & ValidDirective/4 'E'/5 'N'/6 'T'/7 'R'/8 'Y'/9 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('N'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('T'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('R'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('N'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('T'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('R'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'N'/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # Entry/9 HalfReuse: )/1 ]] }
@@ -4103,14 +4188,14 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // 'EXTERN'
       // </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 'E'/8 'R'/9 'N'/10 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('X'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('T'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 12},
-      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('N'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('X'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('T'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 17},
+      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('N'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 HalfReuse: # TkDirective/9 HalfReuse: # Extern/10 HalfReuse: )/1 ]] }
@@ -4125,15 +4210,15 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +18, 0, 0},
       // 'FORWARD'
       // </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 'A'/9 'R'/10 'D'/11 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('F'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('O'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('R'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('W'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 12},
-      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('R'), 12},
-      {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('D'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('F'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('O'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('R'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('W'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 17},
+      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('R'), 17},
+      {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('D'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/10 HalfReuse: # Forward/11 HalfReuse: )/1 ]] }
@@ -4148,12 +4233,12 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +15, 0, 0},
       // 'SWAP'
       // </0 & ValidDirective/4 'S'/5 'W'/6 'A'/7 'P'/8 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('S'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('W'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('A'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('P'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('S'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('W'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('A'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('P'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'S'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/6 HalfReuse: # TkDirective/7 HalfReuse: # Swap/8 HalfReuse: )/1 ]] }
@@ -4168,13 +4253,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +16, 0, 0},
       // 'ESWAP'
       // </0 & ValidDirective/4 'E'/5 'S'/6 'W'/7 'A'/8 'P'/9 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('S'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('W'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('A'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('S'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('W'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('A'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'S'/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # ESwap/9 HalfReuse: )/1 ]] }
@@ -4189,13 +4274,13 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +16, 0, 0},
       // 'LABEL'
       // </0 & ValidDirective/4 'L'/5 'A'/6 'B'/7 'E'/8 'L'/9 >/1
-      {refalrts::icSave, 0, 12, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('L'), 12},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('A'), 12},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('B'), 12},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('E'), 12},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 12},
-      {refalrts::icEmpty, 0, 0, 12},
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('L'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('A'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('B'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'L'/5 'A'/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # Ident/9 HalfReuse: )/1 ]] }
@@ -4206,6 +4291,70 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 7, 1, 0},
       {refalrts::icSetRes, 0, 0, 7},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +30, 0, 0},
+      // 'EASTEREGG'
+      // </0 & ValidDirective/4 'E'/5 'A'/6 'S'/7 'T'/8 'E'/9 'R'/10 'E'/11 'G'/12 'G'/13 >/1
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('A'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('S'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('T'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('R'), 17},
+      {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('E'), 17},
+      {refalrts::icCharLeftSave, 12, static_cast<unsigned char>('G'), 17},
+      {refalrts::icCharLeftSave, 13, static_cast<unsigned char>('G'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$9\1/5 Reuse: '\320'/6 Reuse: '\237'/7 Reuse: '\320'/8 Reuse: '\240'/9 Reuse: '\320'/10 Reuse: '\225'/11 Reuse: '\320'/12 Reuse: '\222'/13 HalfReuse: '\320'/1 }"\225\320\224! \320\223\320\263 ^Y"/14 >/16 Tile{ ]] }
+      {refalrts::icAllocString, 0, 1, 14},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
+      {refalrts::icUpdateFunc, 0, 1, 4},
+      {refalrts::icReinitFunc, 0, 0, 5},
+      {refalrts::icUpdateChar, 0, '\320', 6},
+      {refalrts::icUpdateChar, 0, '\237', 7},
+      {refalrts::icUpdateChar, 0, '\320', 8},
+      {refalrts::icUpdateChar, 0, '\240', 9},
+      {refalrts::icUpdateChar, 0, '\320', 10},
+      {refalrts::icUpdateChar, 0, '\225', 11},
+      {refalrts::icUpdateChar, 0, '\320', 12},
+      {refalrts::icUpdateChar, 0, '\222', 13},
+      {refalrts::icReinitChar, 0, '\320', 1},
+      {refalrts::icPushStack, 0, 0, 16},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 14, 16, 0},
+      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +24, 0, 0},
+      // 'easteregg'
+      // </0 & ValidDirective/4 'e'/5 'a'/6 's'/7 't'/8 'e'/9 'r'/10 'e'/11 'g'/12 'g'/13 >/1
+      {refalrts::icSave, 0, 17, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('e'), 17},
+      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('a'), 17},
+      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('s'), 17},
+      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('t'), 17},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 17},
+      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('r'), 17},
+      {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('e'), 17},
+      {refalrts::icCharLeftSave, 12, static_cast<unsigned char>('g'), 17},
+      {refalrts::icCharLeftSave, 13, static_cast<unsigned char>('g'), 17},
+      {refalrts::icEmpty, 0, 0, 17},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & ValidDirective/4 Reuse: 'E'/5 Reuse: 'A'/6 Reuse: 'S'/7 Reuse: 'T'/8 Reuse: 'E'/9 Reuse: 'R'/10 Reuse: 'E'/11 Reuse: 'G'/12 Reuse: 'G'/13 AsIs: >/1 ]] }
+      {refalrts::icUpdateChar, 0, 'E', 5},
+      {refalrts::icUpdateChar, 0, 'A', 6},
+      {refalrts::icUpdateChar, 0, 'S', 7},
+      {refalrts::icUpdateChar, 0, 'T', 8},
+      {refalrts::icUpdateChar, 0, 'E', 9},
+      {refalrts::icUpdateChar, 0, 'R', 10},
+      {refalrts::icUpdateChar, 0, 'E', 11},
+      {refalrts::icUpdateChar, 0, 'G', 12},
+      {refalrts::icUpdateChar, 0, 'G', 13},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // e.idx
       // </0 & ValidDirective/4 e.Other#1/2 >/1
@@ -4245,9 +4394,9 @@ refalrts::RefalFunction& ValidDirective = descr_ValidDirective;
 #else
 static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
   //FAST GEN: e.$
   //GLOBAL GEN: e.$
   // </0 & ValidDirective/4 e.idx#0/2 >/1
@@ -4261,21 +4410,21 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'ENUM'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'U'/7 'M'/8 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'E', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'N', context[12], context[13] );
+    context[6] = refalrts::char_left( 'N', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'U', context[12], context[13] );
+    context[7] = refalrts::char_left( 'U', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'M', context[12], context[13] );
+    context[8] = refalrts::char_left( 'M', context[17], context[18] );
     if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4298,24 +4447,24 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'EENUM'
     // </0 & ValidDirective/4 'E'/5 'E'/6 'N'/7 'U'/8 'M'/9 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'E', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'E', context[12], context[13] );
+    context[6] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'N', context[12], context[13] );
+    context[7] = refalrts::char_left( 'N', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'U', context[12], context[13] );
+    context[8] = refalrts::char_left( 'U', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'M', context[12], context[13] );
+    context[9] = refalrts::char_left( 'M', context[17], context[18] );
     if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4338,24 +4487,24 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'ENTRY'
     // </0 & ValidDirective/4 'E'/5 'N'/6 'T'/7 'R'/8 'Y'/9 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'E', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'N', context[12], context[13] );
+    context[6] = refalrts::char_left( 'N', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'T', context[12], context[13] );
+    context[7] = refalrts::char_left( 'T', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'R', context[12], context[13] );
+    context[8] = refalrts::char_left( 'R', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'Y', context[12], context[13] );
+    context[9] = refalrts::char_left( 'Y', context[17], context[18] );
     if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4378,27 +4527,27 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'EXTERN'
     // </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 'E'/8 'R'/9 'N'/10 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'E', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'X', context[12], context[13] );
+    context[6] = refalrts::char_left( 'X', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'T', context[12], context[13] );
+    context[7] = refalrts::char_left( 'T', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'E', context[12], context[13] );
+    context[8] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'R', context[12], context[13] );
+    context[9] = refalrts::char_left( 'R', context[17], context[18] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( 'N', context[12], context[13] );
+    context[10] = refalrts::char_left( 'N', context[17], context[18] );
     if( ! context[10] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4421,30 +4570,30 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'FORWARD'
     // </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 'A'/9 'R'/10 'D'/11 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'F', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'F', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'O', context[12], context[13] );
+    context[6] = refalrts::char_left( 'O', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'R', context[12], context[13] );
+    context[7] = refalrts::char_left( 'R', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'W', context[12], context[13] );
+    context[8] = refalrts::char_left( 'W', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'A', context[12], context[13] );
+    context[9] = refalrts::char_left( 'A', context[17], context[18] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_left( 'R', context[12], context[13] );
+    context[10] = refalrts::char_left( 'R', context[17], context[18] );
     if( ! context[10] )
       continue;
-    context[11] = refalrts::char_left( 'D', context[12], context[13] );
+    context[11] = refalrts::char_left( 'D', context[17], context[18] );
     if( ! context[11] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4467,21 +4616,21 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'SWAP'
     // </0 & ValidDirective/4 'S'/5 'W'/6 'A'/7 'P'/8 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'S', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'S', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'W', context[12], context[13] );
+    context[6] = refalrts::char_left( 'W', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'A', context[12], context[13] );
+    context[7] = refalrts::char_left( 'A', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'P', context[12], context[13] );
+    context[8] = refalrts::char_left( 'P', context[17], context[18] );
     if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4504,24 +4653,24 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'ESWAP'
     // </0 & ValidDirective/4 'E'/5 'S'/6 'W'/7 'A'/8 'P'/9 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'E', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'S', context[12], context[13] );
+    context[6] = refalrts::char_left( 'S', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'W', context[12], context[13] );
+    context[7] = refalrts::char_left( 'W', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'A', context[12], context[13] );
+    context[8] = refalrts::char_left( 'A', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'P', context[12], context[13] );
+    context[9] = refalrts::char_left( 'P', context[17], context[18] );
     if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4544,24 +4693,24 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::start_sentence();
     // 'LABEL'
     // </0 & ValidDirective/4 'L'/5 'A'/6 'B'/7 'E'/8 'L'/9 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[5] = refalrts::char_left( 'L', context[12], context[13] );
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'L', context[17], context[18] );
     if( ! context[5] )
       continue;
-    context[6] = refalrts::char_left( 'A', context[12], context[13] );
+    context[6] = refalrts::char_left( 'A', context[17], context[18] );
     if( ! context[6] )
       continue;
-    context[7] = refalrts::char_left( 'B', context[12], context[13] );
+    context[7] = refalrts::char_left( 'B', context[17], context[18] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::char_left( 'E', context[12], context[13] );
+    context[8] = refalrts::char_left( 'E', context[17], context[18] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_left( 'L', context[12], context[13] );
+    context[9] = refalrts::char_left( 'L', context[17], context[18] );
     if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[12], context[13] ) )
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -4577,6 +4726,123 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::Iter res = context[7];
     refalrts::use( res );
     refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    // 'EASTEREGG'
+    // </0 & ValidDirective/4 'E'/5 'A'/6 'S'/7 'T'/8 'E'/9 'R'/10 'E'/11 'G'/12 'G'/13 >/1
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'E', context[17], context[18] );
+    if( ! context[5] )
+      continue;
+    context[6] = refalrts::char_left( 'A', context[17], context[18] );
+    if( ! context[6] )
+      continue;
+    context[7] = refalrts::char_left( 'S', context[17], context[18] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_left( 'T', context[17], context[18] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_left( 'E', context[17], context[18] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_left( 'R', context[17], context[18] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_left( 'E', context[17], context[18] );
+    if( ! context[11] )
+      continue;
+    context[12] = refalrts::char_left( 'G', context[17], context[18] );
+    if( ! context[12] )
+      continue;
+    context[13] = refalrts::char_left( 'G', context[17], context[18] );
+    if( ! context[13] )
+      continue;
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$9\1/5 Reuse: '\320'/6 Reuse: '\237'/7 Reuse: '\320'/8 Reuse: '\240'/9 Reuse: '\320'/10 Reuse: '\225'/11 Reuse: '\320'/12 Reuse: '\222'/13 HalfReuse: '\320'/1 }"\225\320\224! \320\223\320\263 ^Y"/14 >/16 Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[14], context[15], "\225\320\224! \320\223\320\263 ^Y", 12 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], & Map );
+    refalrts::reinit_name( context[5], & gen_ValidDirective_S9L1 );
+    refalrts::update_char( context[6], '\320' );
+    refalrts::update_char( context[7], '\237' );
+    refalrts::update_char( context[8], '\320' );
+    refalrts::update_char( context[9], '\240' );
+    refalrts::update_char( context[10], '\320' );
+    refalrts::update_char( context[11], '\225' );
+    refalrts::update_char( context[12], '\320' );
+    refalrts::update_char( context[13], '\222' );
+    refalrts::reinit_char( context[1], '\320' );
+    refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[16] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+
+  do {
+    refalrts::start_sentence();
+    // 'easteregg'
+    // </0 & ValidDirective/4 'e'/5 'a'/6 's'/7 't'/8 'e'/9 'r'/10 'e'/11 'g'/12 'g'/13 >/1
+    context[17] = context[2];
+    context[18] = context[3];
+    context[5] = refalrts::char_left( 'e', context[17], context[18] );
+    if( ! context[5] )
+      continue;
+    context[6] = refalrts::char_left( 'a', context[17], context[18] );
+    if( ! context[6] )
+      continue;
+    context[7] = refalrts::char_left( 's', context[17], context[18] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_left( 't', context[17], context[18] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_left( 'e', context[17], context[18] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_left( 'r', context[17], context[18] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_left( 'e', context[17], context[18] );
+    if( ! context[11] )
+      continue;
+    context[12] = refalrts::char_left( 'g', context[17], context[18] );
+    if( ! context[12] )
+      continue;
+    context[13] = refalrts::char_left( 'g', context[17], context[18] );
+    if( ! context[13] )
+      continue;
+    if( ! refalrts::empty_seq( context[17], context[18] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ValidDirective/4 Reuse: 'E'/5 Reuse: 'A'/6 Reuse: 'S'/7 Reuse: 'T'/8 Reuse: 'E'/9 Reuse: 'R'/10 Reuse: 'E'/11 Reuse: 'G'/12 Reuse: 'G'/13 AsIs: >/1 ]] }
+    refalrts::update_char( context[5], 'E' );
+    refalrts::update_char( context[6], 'A' );
+    refalrts::update_char( context[7], 'S' );
+    refalrts::update_char( context[8], 'T' );
+    refalrts::update_char( context[9], 'E' );
+    refalrts::update_char( context[10], 'R' );
+    refalrts::update_char( context[11], 'E' );
+    refalrts::update_char( context[12], 'G' );
+    refalrts::update_char( context[13], 'G' );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
     return refalrts::cSuccess;
   } while ( 0 );
 
