@@ -268,7 +268,7 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GetOpt(func_GetOpt, "GetOpt");
+refalrts::RefalNativeFunction descr_GetOpt(func_GetOpt, "GetOpt");
 refalrts::RefalFunction& GetOpt = descr_GetOpt;
 
 #endif
@@ -353,7 +353,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Inc(func_Inc, "Inc");
+refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc");
 refalrts::RefalFunction& Inc = descr_Inc;
 
 } // unnamed namespace
@@ -858,7 +858,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MarkupArguments(func_MarkupArguments, "MarkupArguments");
+refalrts::RefalNativeFunction descr_MarkupArguments(func_MarkupArguments, "MarkupArguments");
 refalrts::RefalFunction& MarkupArguments = descr_MarkupArguments;
 
 } // unnamed namespace
@@ -1024,7 +1024,7 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MarkupAllFiles(func_MarkupAllFiles, "MarkupAllFiles");
+refalrts::RefalNativeFunction descr_MarkupAllFiles(func_MarkupAllFiles, "MarkupAllFiles");
 refalrts::RefalFunction& MarkupAllFiles = descr_MarkupAllFiles;
 
 } // unnamed namespace
@@ -1888,7 +1888,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ResolveOpts(func_ResolveOpts, "ResolveOpts");
+refalrts::RefalNativeFunction descr_ResolveOpts(func_ResolveOpts, "ResolveOpts");
 refalrts::RefalFunction& ResolveOpts = descr_ResolveOpts;
 
 } // unnamed namespace
@@ -2181,7 +2181,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ResolveOpts_LongParam(func_ResolveOpts_LongParam, "ResolveOpts-LongParam");
+refalrts::RefalNativeFunction descr_ResolveOpts_LongParam(func_ResolveOpts_LongParam, "ResolveOpts-LongParam");
 refalrts::RefalFunction& ResolveOpts_LongParam = descr_ResolveOpts_LongParam;
 
 } // unnamed namespace
@@ -2614,7 +2614,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ResolveOpts_Long(func_ResolveOpts_Long, "ResolveOpts-Long");
+refalrts::RefalNativeFunction descr_ResolveOpts_Long(func_ResolveOpts_Long, "ResolveOpts-Long");
 refalrts::RefalFunction& ResolveOpts_Long = descr_ResolveOpts_Long;
 
 } // unnamed namespace
@@ -3256,7 +3256,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ResolveOpts_Short(func_ResolveOpts_Short, "ResolveOpts-Short");
+refalrts::RefalNativeFunction descr_ResolveOpts_Short(func_ResolveOpts_Short, "ResolveOpts-Short");
 refalrts::RefalFunction& ResolveOpts_Short = descr_ResolveOpts_Short;
 
 } // unnamed namespace
@@ -3344,7 +3344,7 @@ static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FoldErrors(func_FoldErrors, "FoldErrors");
+refalrts::RefalNativeFunction descr_FoldErrors(func_FoldErrors, "FoldErrors");
 refalrts::RefalFunction& FoldErrors = descr_FoldErrors;
 
 } // unnamed namespace
@@ -3525,7 +3525,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoFoldErrors(func_DoFoldErrors, "DoFoldErrors");
+refalrts::RefalNativeFunction descr_DoFoldErrors(func_DoFoldErrors, "DoFoldErrors");
 refalrts::RefalFunction& DoFoldErrors = descr_DoFoldErrors;
 
 } // unnamed namespace

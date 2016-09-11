@@ -380,7 +380,7 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GST_L1(func_gen_GST_L1, "GST\\1");
+refalrts::RefalNativeFunction descr_gen_GST_L1(func_gen_GST_L1, "GST\\1");
 refalrts::RefalFunction& gen_GST_L1 = descr_gen_GST_L1;
 
 } // unnamed namespace
@@ -503,7 +503,7 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GST_L2(func_gen_GST_L2, "GST\\2");
+refalrts::RefalNativeFunction descr_gen_GST_L2(func_gen_GST_L2, "GST\\2");
 refalrts::RefalFunction& gen_GST_L2 = descr_gen_GST_L2;
 
 } // unnamed namespace
@@ -639,7 +639,7 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GST_L3(func_gen_GST_L3, "GST\\3");
+refalrts::RefalNativeFunction descr_gen_GST_L3(func_gen_GST_L3, "GST\\3");
 refalrts::RefalFunction& gen_GST_L3 = descr_gen_GST_L3;
 
 } // unnamed namespace
@@ -820,7 +820,7 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GST(func_GST, "GST");
+refalrts::RefalNativeFunction descr_GST(func_GST, "GST");
 refalrts::RefalFunction& GST = descr_GST;
 
 #endif
@@ -924,7 +924,7 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Enum_L1(func_gen_Enum_L1, "Enum\\1");
+refalrts::RefalNativeFunction descr_gen_Enum_L1(func_gen_Enum_L1, "Enum\\1");
 refalrts::RefalFunction& gen_Enum_L1 = descr_gen_Enum_L1;
 
 } // unnamed namespace
@@ -1027,7 +1027,7 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Enum(func_Enum, "Enum");
+refalrts::RefalNativeFunction descr_Enum(func_Enum, "Enum");
 refalrts::RefalFunction& Enum = descr_Enum;
 
 } // unnamed namespace
@@ -1206,7 +1206,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DeEnum_L1(func_gen_DeEnum_L1, "DeEnum\\1");
+refalrts::RefalNativeFunction descr_gen_DeEnum_L1(func_gen_DeEnum_L1, "DeEnum\\1");
 refalrts::RefalFunction& gen_DeEnum_L1 = descr_gen_DeEnum_L1;
 
 } // unnamed namespace
@@ -1290,7 +1290,7 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DeEnum(func_DeEnum, "DeEnum");
+refalrts::RefalNativeFunction descr_DeEnum(func_DeEnum, "DeEnum");
 refalrts::RefalFunction& DeEnum = descr_DeEnum;
 
 } // unnamed namespace
@@ -1423,7 +1423,7 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_TileCandidates_L1(func_gen_TileCandidates_L1, "TileCandidates\\1");
+refalrts::RefalNativeFunction descr_gen_TileCandidates_L1(func_gen_TileCandidates_L1, "TileCandidates\\1");
 refalrts::RefalFunction& gen_TileCandidates_L1 = descr_gen_TileCandidates_L1;
 
 } // unnamed namespace
@@ -1571,7 +1571,7 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_TileCandidates(func_TileCandidates, "TileCandidates");
+refalrts::RefalNativeFunction descr_TileCandidates(func_TileCandidates, "TileCandidates");
 refalrts::RefalFunction& TileCandidates = descr_TileCandidates;
 
 } // unnamed namespace
@@ -2063,7 +2063,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_AlignEnumExprs(func_AlignEnumExprs, "AlignEnumExprs");
+refalrts::RefalNativeFunction descr_AlignEnumExprs(func_AlignEnumExprs, "AlignEnumExprs");
 refalrts::RefalFunction& AlignEnumExprs = descr_AlignEnumExprs;
 
 } // unnamed namespace
@@ -2434,7 +2434,7 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoOverlapOffsets(func_DoOverlapOffsets, "DoOverlapOffsets");
+refalrts::RefalNativeFunction descr_DoOverlapOffsets(func_DoOverlapOffsets, "DoOverlapOffsets");
 refalrts::RefalFunction& DoOverlapOffsets = descr_DoOverlapOffsets;
 
 } // unnamed namespace
@@ -2553,7 +2553,7 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_OverlapChain(func_OverlapChain, "OverlapChain");
+refalrts::RefalNativeFunction descr_OverlapChain(func_OverlapChain, "OverlapChain");
 refalrts::RefalFunction& OverlapChain = descr_OverlapChain;
 
 } // unnamed namespace
@@ -2772,7 +2772,7 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ZipItems(func_ZipItems, "ZipItems");
+refalrts::RefalNativeFunction descr_ZipItems(func_ZipItems, "ZipItems");
 refalrts::RefalFunction& ZipItems = descr_ZipItems;
 
 } // unnamed namespace
@@ -3083,7 +3083,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GlueTiles(func_GlueTiles, "GlueTiles");
+refalrts::RefalNativeFunction descr_GlueTiles(func_GlueTiles, "GlueTiles");
 refalrts::RefalFunction& GlueTiles = descr_GlueTiles;
 
 } // unnamed namespace
@@ -3359,7 +3359,7 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GlueNextTile(func_GlueNextTile, "GlueNextTile");
+refalrts::RefalNativeFunction descr_GlueNextTile(func_GlueNextTile, "GlueNextTile");
 refalrts::RefalFunction& GlueNextTile = descr_GlueNextTile;
 
 } // unnamed namespace
@@ -3621,7 +3621,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FoldTile_EEnd(func_FoldTile_EEnd, "FoldTile-EEnd");
+refalrts::RefalNativeFunction descr_FoldTile_EEnd(func_FoldTile_EEnd, "FoldTile-EEnd");
 refalrts::RefalFunction& FoldTile_EEnd = descr_FoldTile_EEnd;
 
 } // unnamed namespace
@@ -3716,7 +3716,7 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, "FilterOverlapped$1\\1\\1");
+refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, "FilterOverlapped$1\\1\\1");
 refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1 = descr_gen_FilterOverlapped_S1L1L1;
 
 } // unnamed namespace
@@ -3889,7 +3889,7 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, "FilterOverlapped$1\\1");
+refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, "FilterOverlapped$1\\1");
 refalrts::RefalFunction& gen_FilterOverlapped_S1L1 = descr_gen_FilterOverlapped_S1L1;
 
 } // unnamed namespace
@@ -4035,7 +4035,7 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FilterOverlapped(func_FilterOverlapped, "FilterOverlapped");
+refalrts::RefalNativeFunction descr_FilterOverlapped(func_FilterOverlapped, "FilterOverlapped");
 refalrts::RefalFunction& FilterOverlapped = descr_FilterOverlapped;
 
 } // unnamed namespace
@@ -4230,7 +4230,7 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, "FindHeavyTile\\1\\1");
+refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, "FindHeavyTile\\1\\1");
 refalrts::RefalFunction& gen_FindHeavyTile_L1L1 = descr_gen_FindHeavyTile_L1L1;
 
 } // unnamed namespace
@@ -4409,7 +4409,7 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, "FindHeavyTile\\1");
+refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, "FindHeavyTile\\1");
 refalrts::RefalFunction& gen_FindHeavyTile_L1 = descr_gen_FindHeavyTile_L1;
 
 } // unnamed namespace
@@ -4497,7 +4497,7 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FindHeavyTile(func_FindHeavyTile, "FindHeavyTile");
+refalrts::RefalNativeFunction descr_FindHeavyTile(func_FindHeavyTile, "FindHeavyTile");
 refalrts::RefalFunction& FindHeavyTile = descr_FindHeavyTile;
 
 } // unnamed namespace
@@ -4573,7 +4573,7 @@ static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, "RejectTile\\1\\1");
+refalrts::RefalNativeFunction descr_gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, "RejectTile\\1\\1");
 refalrts::RefalFunction& gen_RejectTile_L1L1 = descr_gen_RejectTile_L1L1;
 
 } // unnamed namespace
@@ -4758,7 +4758,7 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_RejectTile_L1(func_gen_RejectTile_L1, "RejectTile\\1");
+refalrts::RefalNativeFunction descr_gen_RejectTile_L1(func_gen_RejectTile_L1, "RejectTile\\1");
 refalrts::RefalFunction& gen_RejectTile_L1 = descr_gen_RejectTile_L1;
 
 } // unnamed namespace
@@ -4871,7 +4871,7 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_RejectTile(func_RejectTile, "RejectTile");
+refalrts::RefalNativeFunction descr_RejectTile(func_RejectTile, "RejectTile");
 refalrts::RefalFunction& RejectTile = descr_RejectTile;
 
 } // unnamed namespace
@@ -5241,7 +5241,7 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FilterPatternPos(func_FilterPatternPos, "FilterPatternPos");
+refalrts::RefalNativeFunction descr_FilterPatternPos(func_FilterPatternPos, "FilterPatternPos");
 refalrts::RefalFunction& FilterPatternPos = descr_FilterPatternPos;
 
 } // unnamed namespace
@@ -5611,7 +5611,7 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FilterResultPos(func_FilterResultPos, "FilterResultPos");
+refalrts::RefalNativeFunction descr_FilterResultPos(func_FilterResultPos, "FilterResultPos");
 refalrts::RefalFunction& FilterResultPos = descr_FilterResultPos;
 
 } // unnamed namespace
@@ -5833,7 +5833,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FoldTile(func_FoldTile, "FoldTile");
+refalrts::RefalNativeFunction descr_FoldTile(func_FoldTile, "FoldTile");
 refalrts::RefalFunction& FoldTile = descr_FoldTile;
 
 } // unnamed namespace
@@ -5939,7 +5939,7 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, "FoldTileW$1\\1");
+refalrts::RefalNativeFunction descr_gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, "FoldTileW$1\\1");
 refalrts::RefalFunction& gen_FoldTileW_S1L1 = descr_gen_FoldTileW_S1L1;
 
 } // unnamed namespace
@@ -6109,7 +6109,7 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FoldTileW(func_FoldTileW, "FoldTileW");
+refalrts::RefalNativeFunction descr_FoldTileW(func_FoldTileW, "FoldTileW");
 refalrts::RefalFunction& FoldTileW = descr_FoldTileW;
 
 } // unnamed namespace
@@ -6350,7 +6350,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ReplaceTile(func_ReplaceTile, "ReplaceTile");
+refalrts::RefalNativeFunction descr_ReplaceTile(func_ReplaceTile, "ReplaceTile");
 refalrts::RefalFunction& ReplaceTile = descr_ReplaceTile;
 
 } // unnamed namespace
@@ -6493,7 +6493,7 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Modify_L1(func_gen_Modify_L1, "Modify\\1");
+refalrts::RefalNativeFunction descr_gen_Modify_L1(func_gen_Modify_L1, "Modify\\1");
 refalrts::RefalFunction& gen_Modify_L1 = descr_gen_Modify_L1;
 
 } // unnamed namespace
@@ -6692,7 +6692,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Modify(func_Modify, "Modify");
+refalrts::RefalNativeFunction descr_Modify(func_Modify, "Modify");
 refalrts::RefalFunction& Modify = descr_Modify;
 
 } // unnamed namespace
@@ -7444,7 +7444,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoModify(func_DoModify, "DoModify");
+refalrts::RefalNativeFunction descr_DoModify(func_DoModify, "DoModify");
 refalrts::RefalFunction& DoModify = descr_DoModify;
 
 } // unnamed namespace
@@ -8245,7 +8245,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_OverlapItem(func_OverlapItem, "OverlapItem");
+refalrts::RefalNativeFunction descr_OverlapItem(func_OverlapItem, "OverlapItem");
 refalrts::RefalFunction& OverlapItem = descr_OverlapItem;
 
 } // unnamed namespace

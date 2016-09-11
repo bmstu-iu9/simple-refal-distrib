@@ -668,7 +668,7 @@ static refalrts::FnResult func_LexFolding(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_LexFolding(func_LexFolding, "LexFolding");
+refalrts::RefalNativeFunction descr_LexFolding(func_LexFolding, "LexFolding");
 refalrts::RefalFunction& LexFolding = descr_LexFolding;
 
 #endif
@@ -1028,7 +1028,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StrDirective(func_StrDirective, "StrDirective");
+refalrts::RefalNativeFunction descr_StrDirective(func_StrDirective, "StrDirective");
 refalrts::RefalFunction& StrDirective = descr_StrDirective;
 
 } // unnamed namespace
@@ -2138,7 +2138,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_StrFromToken(func_StrFromToken, "StrFromToken");
+refalrts::RefalNativeFunction descr_StrFromToken(func_StrFromToken, "StrFromToken");
 refalrts::RefalFunction& StrFromToken = descr_StrFromToken;
 
 #endif
@@ -2262,7 +2262,7 @@ static refalrts::FnResult func_NormalizeName(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeName(func_NormalizeName, "NormalizeName");
+refalrts::RefalNativeFunction descr_NormalizeName(func_NormalizeName, "NormalizeName");
 refalrts::RefalFunction& NormalizeName = descr_NormalizeName;
 
 } // unnamed namespace
@@ -3307,7 +3307,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeToken(func_NormalizeToken, "NormalizeToken");
+refalrts::RefalNativeFunction descr_NormalizeToken(func_NormalizeToken, "NormalizeToken");
 refalrts::RefalFunction& NormalizeToken = descr_NormalizeToken;
 
 } // unnamed namespace
@@ -3415,7 +3415,7 @@ static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CharFromNum_L1(func_gen_CharFromNum_L1, "CharFromNum\\1");
+refalrts::RefalNativeFunction descr_gen_CharFromNum_L1(func_gen_CharFromNum_L1, "CharFromNum\\1");
 refalrts::RefalFunction& gen_CharFromNum_L1 = descr_gen_CharFromNum_L1;
 
 } // unnamed namespace
@@ -3557,7 +3557,7 @@ static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CharFromNum(func_CharFromNum, "CharFromNum");
+refalrts::RefalNativeFunction descr_CharFromNum(func_CharFromNum, "CharFromNum");
 refalrts::RefalFunction& CharFromNum = descr_CharFromNum;
 
 } // unnamed namespace
@@ -3670,7 +3670,7 @@ static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DigitFromChar_L1(func_gen_DigitFromChar_L1, "DigitFromChar\\1");
+refalrts::RefalNativeFunction descr_gen_DigitFromChar_L1(func_gen_DigitFromChar_L1, "DigitFromChar\\1");
 refalrts::RefalFunction& gen_DigitFromChar_L1 = descr_gen_DigitFromChar_L1;
 
 } // unnamed namespace
@@ -4007,7 +4007,7 @@ static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DigitFromChar(func_DigitFromChar, "DigitFromChar");
+refalrts::RefalNativeFunction descr_DigitFromChar(func_DigitFromChar, "DigitFromChar");
 refalrts::RefalFunction& DigitFromChar = descr_DigitFromChar;
 
 } // unnamed namespace
@@ -4084,7 +4084,7 @@ static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ValidDirective_S9L1(func_gen_ValidDirective_S9L1, "ValidDirective$9\\1");
+refalrts::RefalNativeFunction descr_gen_ValidDirective_S9L1(func_gen_ValidDirective_S9L1, "ValidDirective$9\\1");
 refalrts::RefalFunction& gen_ValidDirective_S9L1 = descr_gen_ValidDirective_S9L1;
 
 } // unnamed namespace
@@ -4115,7 +4115,7 @@ namespace /* unnamed */ {
       {"\225\320\224! \320\223\320\263 ^Y", 12}
     };
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icReserveBacktrackStack, 10, 0, 0},
+      {refalrts::icReserveBacktrackStack, 9, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
       //FAST GEN: e.$
       //GLOBAL GEN: e.$
@@ -4326,35 +4326,6 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 14, 16, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +24, 0, 0},
-      // 'easteregg'
-      // </0 & ValidDirective/4 'e'/5 'a'/6 's'/7 't'/8 'e'/9 'r'/10 'e'/11 'g'/12 'g'/13 >/1
-      {refalrts::icSave, 0, 17, 2},
-      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('e'), 17},
-      {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('a'), 17},
-      {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('s'), 17},
-      {refalrts::icCharLeftSave, 8, static_cast<unsigned char>('t'), 17},
-      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 17},
-      {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('r'), 17},
-      {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('e'), 17},
-      {refalrts::icCharLeftSave, 12, static_cast<unsigned char>('g'), 17},
-      {refalrts::icCharLeftSave, 13, static_cast<unsigned char>('g'), 17},
-      {refalrts::icEmpty, 0, 0, 17},
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & ValidDirective/4 Reuse: 'E'/5 Reuse: 'A'/6 Reuse: 'S'/7 Reuse: 'T'/8 Reuse: 'E'/9 Reuse: 'R'/10 Reuse: 'E'/11 Reuse: 'G'/12 Reuse: 'G'/13 AsIs: >/1 ]] }
-      {refalrts::icUpdateChar, 0, 'E', 5},
-      {refalrts::icUpdateChar, 0, 'A', 6},
-      {refalrts::icUpdateChar, 0, 'S', 7},
-      {refalrts::icUpdateChar, 0, 'T', 8},
-      {refalrts::icUpdateChar, 0, 'E', 9},
-      {refalrts::icUpdateChar, 0, 'R', 10},
-      {refalrts::icUpdateChar, 0, 'E', 11},
-      {refalrts::icUpdateChar, 0, 'G', 12},
-      {refalrts::icUpdateChar, 0, 'G', 13},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icReturnResult_NoTrash, 0, 0, 0},
       // e.idx
       // </0 & ValidDirective/4 e.Other#1/2 >/1
@@ -4793,59 +4764,6 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     return refalrts::cSuccess;
   } while ( 0 );
 
-  do {
-    refalrts::start_sentence();
-    // 'easteregg'
-    // </0 & ValidDirective/4 'e'/5 'a'/6 's'/7 't'/8 'e'/9 'r'/10 'e'/11 'g'/12 'g'/13 >/1
-    context[17] = context[2];
-    context[18] = context[3];
-    context[5] = refalrts::char_left( 'e', context[17], context[18] );
-    if( ! context[5] )
-      continue;
-    context[6] = refalrts::char_left( 'a', context[17], context[18] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_left( 's', context[17], context[18] );
-    if( ! context[7] )
-      continue;
-    context[8] = refalrts::char_left( 't', context[17], context[18] );
-    if( ! context[8] )
-      continue;
-    context[9] = refalrts::char_left( 'e', context[17], context[18] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'r', context[17], context[18] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'e', context[17], context[18] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'g', context[17], context[18] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'g', context[17], context[18] );
-    if( ! context[13] )
-      continue;
-    if( ! refalrts::empty_seq( context[17], context[18] ) )
-      continue;
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ValidDirective/4 Reuse: 'E'/5 Reuse: 'A'/6 Reuse: 'S'/7 Reuse: 'T'/8 Reuse: 'E'/9 Reuse: 'R'/10 Reuse: 'E'/11 Reuse: 'G'/12 Reuse: 'G'/13 AsIs: >/1 ]] }
-    refalrts::update_char( context[5], 'E' );
-    refalrts::update_char( context[6], 'A' );
-    refalrts::update_char( context[7], 'S' );
-    refalrts::update_char( context[8], 'T' );
-    refalrts::update_char( context[9], 'E' );
-    refalrts::update_char( context[10], 'R' );
-    refalrts::update_char( context[11], 'E' );
-    refalrts::update_char( context[12], 'G' );
-    refalrts::update_char( context[13], 'G' );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
   // e.idx
   // </0 & ValidDirective/4 e.Other#1/2 >/1
   // closed e.Other#1 as range 2
@@ -4872,7 +4790,7 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ValidDirective(func_ValidDirective, "ValidDirective");
+refalrts::RefalNativeFunction descr_ValidDirective(func_ValidDirective, "ValidDirective");
 refalrts::RefalFunction& ValidDirective = descr_ValidDirective;
 
 } // unnamed namespace
@@ -5334,7 +5252,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SwPunctuation(func_SwPunctuation, "SwPunctuation");
+refalrts::RefalNativeFunction descr_SwPunctuation(func_SwPunctuation, "SwPunctuation");
 refalrts::RefalFunction& SwPunctuation = descr_SwPunctuation;
 
 } // unnamed namespace
@@ -5543,7 +5461,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_AddLineNumber(func_AddLineNumber, "AddLineNumber");
+refalrts::RefalNativeFunction descr_AddLineNumber(func_AddLineNumber, "AddLineNumber");
 refalrts::RefalFunction& AddLineNumber = descr_AddLineNumber;
 
 } // unnamed namespace
@@ -5680,7 +5598,7 @@ static refalrts::FnResult func_NormalizeTokens(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeTokens(func_NormalizeTokens, "NormalizeTokens");
+refalrts::RefalNativeFunction descr_NormalizeTokens(func_NormalizeTokens, "NormalizeTokens");
 refalrts::RefalFunction& NormalizeTokens = descr_NormalizeTokens;
 
 } // unnamed namespace
@@ -5848,7 +5766,7 @@ static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CollectNativeLines(func_CollectNativeLines, "CollectNativeLines");
+refalrts::RefalNativeFunction descr_CollectNativeLines(func_CollectNativeLines, "CollectNativeLines");
 refalrts::RefalFunction& CollectNativeLines = descr_CollectNativeLines;
 
 } // unnamed namespace
@@ -6033,7 +5951,7 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CollectNativeLines_Aux(func_CollectNativeLines_Aux, "CollectNativeLines-Aux");
+refalrts::RefalNativeFunction descr_CollectNativeLines_Aux(func_CollectNativeLines_Aux, "CollectNativeLines-Aux");
 refalrts::RefalFunction& CollectNativeLines_Aux = descr_CollectNativeLines_Aux;
 
 } // unnamed namespace
@@ -6177,7 +6095,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Root(func_Root, "Root");
+refalrts::RefalNativeFunction descr_Root(func_Root, "Root");
 refalrts::RefalFunction& Root = descr_Root;
 
 } // unnamed namespace
@@ -6350,7 +6268,7 @@ static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StartNative_Percent(func_StartNative_Percent, "StartNative-Percent");
+refalrts::RefalNativeFunction descr_StartNative_Percent(func_StartNative_Percent, "StartNative-Percent");
 refalrts::RefalFunction& StartNative_Percent = descr_StartNative_Percent;
 
 } // unnamed namespace
@@ -9310,7 +9228,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalNativeFunction descr_Main(func_Main, "Main");
 refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
@@ -9549,7 +9467,7 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StartNative_NewLine(func_StartNative_NewLine, "StartNative-NewLine");
+refalrts::RefalNativeFunction descr_StartNative_NewLine(func_StartNative_NewLine, "StartNative-NewLine");
 refalrts::RefalFunction& StartNative_NewLine = descr_StartNative_NewLine;
 
 } // unnamed namespace
@@ -12166,7 +12084,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Name(func_Name, "Name");
+refalrts::RefalNativeFunction descr_Name(func_Name, "Name");
 refalrts::RefalFunction& Name = descr_Name;
 
 } // unnamed namespace
@@ -12332,7 +12250,7 @@ static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_VariableStart(func_VariableStart, "VariableStart");
+refalrts::RefalNativeFunction descr_VariableStart(func_VariableStart, "VariableStart");
 refalrts::RefalFunction& VariableStart = descr_VariableStart;
 
 } // unnamed namespace
@@ -12843,7 +12761,7 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Number(func_Number, "Number");
+refalrts::RefalNativeFunction descr_Number(func_Number, "Number");
 refalrts::RefalFunction& Number = descr_Number;
 
 } // unnamed namespace
@@ -14034,7 +13952,7 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Directive(func_Directive, "Directive");
+refalrts::RefalNativeFunction descr_Directive(func_Directive, "Directive");
 refalrts::RefalFunction& Directive = descr_Directive;
 
 } // unnamed namespace
@@ -14201,7 +14119,7 @@ static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Start(func_StringLiteral_Start, "StringLiteral-Start");
+refalrts::RefalNativeFunction descr_StringLiteral_Start(func_StringLiteral_Start, "StringLiteral-Start");
 refalrts::RefalFunction& StringLiteral_Start = descr_StringLiteral_Start;
 
 } // unnamed namespace
@@ -14420,7 +14338,7 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StartComment(func_StartComment, "StartComment");
+refalrts::RefalNativeFunction descr_StartComment(func_StartComment, "StartComment");
 refalrts::RefalFunction& StartComment = descr_StartComment;
 
 } // unnamed namespace
@@ -14557,7 +14475,7 @@ static refalrts::FnResult func_Native_Begin(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Native_Begin(func_Native_Begin, "Native-Begin");
+refalrts::RefalNativeFunction descr_Native_Begin(func_Native_Begin, "Native-Begin");
 refalrts::RefalFunction& Native_Begin = descr_Native_Begin;
 
 } // unnamed namespace
@@ -17306,7 +17224,7 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_VariableIndex(func_VariableIndex, "VariableIndex");
+refalrts::RefalNativeFunction descr_VariableIndex(func_VariableIndex, "VariableIndex");
 refalrts::RefalFunction& VariableIndex = descr_VariableIndex;
 
 } // unnamed namespace
@@ -18441,7 +18359,7 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DirectiveTail(func_DirectiveTail, "DirectiveTail");
+refalrts::RefalNativeFunction descr_DirectiveTail(func_DirectiveTail, "DirectiveTail");
 refalrts::RefalFunction& DirectiveTail = descr_DirectiveTail;
 
 } // unnamed namespace
@@ -18789,7 +18707,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral(func_StringLiteral, "StringLiteral");
+refalrts::RefalNativeFunction descr_StringLiteral(func_StringLiteral, "StringLiteral");
 refalrts::RefalFunction& StringLiteral = descr_StringLiteral;
 
 } // unnamed namespace
@@ -19122,7 +19040,7 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CComment(func_CComment, "CComment");
+refalrts::RefalNativeFunction descr_CComment(func_CComment, "CComment");
 refalrts::RefalFunction& CComment = descr_CComment;
 
 } // unnamed namespace
@@ -19342,7 +19260,7 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CppComment(func_CppComment, "CppComment");
+refalrts::RefalNativeFunction descr_CppComment(func_CppComment, "CppComment");
 refalrts::RefalFunction& CppComment = descr_CppComment;
 
 } // unnamed namespace
@@ -19479,7 +19397,7 @@ static refalrts::FnResult func_Native_CheckEnd(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Native_CheckEnd(func_Native_CheckEnd, "Native-CheckEnd");
+refalrts::RefalNativeFunction descr_Native_CheckEnd(func_Native_CheckEnd, "Native-CheckEnd");
 refalrts::RefalFunction& Native_CheckEnd = descr_Native_CheckEnd;
 
 } // unnamed namespace
@@ -19724,7 +19642,7 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Native(func_Native, "Native");
+refalrts::RefalNativeFunction descr_Native(func_Native, "Native");
 refalrts::RefalFunction& Native = descr_Native;
 
 } // unnamed namespace
@@ -22341,7 +22259,7 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_VariableIndexTail(func_VariableIndexTail, "VariableIndexTail");
+refalrts::RefalNativeFunction descr_VariableIndexTail(func_VariableIndexTail, "VariableIndexTail");
 refalrts::RefalFunction& VariableIndexTail = descr_VariableIndexTail;
 
 } // unnamed namespace
@@ -23756,7 +23674,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Escape(func_StringLiteral_Escape, "StringLiteral-Escape");
+refalrts::RefalNativeFunction descr_StringLiteral_Escape(func_StringLiteral_Escape, "StringLiteral-Escape");
 refalrts::RefalFunction& StringLiteral_Escape = descr_StringLiteral_Escape;
 
 } // unnamed namespace
@@ -23923,7 +23841,7 @@ static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Quote(func_StringLiteral_Quote, "StringLiteral-Quote");
+refalrts::RefalNativeFunction descr_StringLiteral_Quote(func_StringLiteral_Quote, "StringLiteral-Quote");
 refalrts::RefalFunction& StringLiteral_Quote = descr_StringLiteral_Quote;
 
 } // unnamed namespace
@@ -24090,7 +24008,7 @@ static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CComment_CheckNested(func_CComment_CheckNested, "CComment-CheckNested");
+refalrts::RefalNativeFunction descr_CComment_CheckNested(func_CComment_CheckNested, "CComment-CheckNested");
 refalrts::RefalFunction& CComment_CheckNested = descr_CComment_CheckNested;
 
 } // unnamed namespace
@@ -24234,7 +24152,7 @@ static refalrts::FnResult func_CComment_CheckEnd(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CComment_CheckEnd(func_CComment_CheckEnd, "CComment-CheckEnd");
+refalrts::RefalNativeFunction descr_CComment_CheckEnd(func_CComment_CheckEnd, "CComment-CheckEnd");
 refalrts::RefalFunction& CComment_CheckEnd = descr_CComment_CheckEnd;
 
 } // unnamed namespace
@@ -24440,7 +24358,7 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Native_CheckEnd2(func_Native_CheckEnd2, "Native-CheckEnd2");
+refalrts::RefalNativeFunction descr_Native_CheckEnd2(func_Native_CheckEnd2, "Native-CheckEnd2");
 refalrts::RefalFunction& Native_CheckEnd2 = descr_Native_CheckEnd2;
 
 } // unnamed namespace
@@ -24975,7 +24893,7 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Escape_Code(func_StringLiteral_Escape_Code, "StringLiteral-Escape-Code");
+refalrts::RefalNativeFunction descr_StringLiteral_Escape_Code(func_StringLiteral_Escape_Code, "StringLiteral-Escape-Code");
 refalrts::RefalFunction& StringLiteral_Escape_Code = descr_StringLiteral_Escape_Code;
 
 } // unnamed namespace
@@ -25425,7 +25343,7 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Escape_OCode(func_StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode");
+refalrts::RefalNativeFunction descr_StringLiteral_Escape_OCode(func_StringLiteral_Escape_OCode, "StringLiteral-Escape-OCode");
 refalrts::RefalFunction& StringLiteral_Escape_OCode = descr_StringLiteral_Escape_OCode;
 
 } // unnamed namespace
@@ -26404,7 +26322,7 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StringLiteral_Escape_XCode(func_StringLiteral_Escape_XCode, "StringLiteral-Escape-XCode");
+refalrts::RefalNativeFunction descr_StringLiteral_Escape_XCode(func_StringLiteral_Escape_XCode, "StringLiteral-Escape-XCode");
 refalrts::RefalFunction& StringLiteral_Escape_XCode = descr_StringLiteral_Escape_XCode;
 
 } // unnamed namespace
@@ -26936,7 +26854,7 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SL_E_C1(func_SL_E_C1, "SL-E-C1");
+refalrts::RefalNativeFunction descr_SL_E_C1(func_SL_E_C1, "SL-E-C1");
 refalrts::RefalFunction& SL_E_C1 = descr_SL_E_C1;
 
 } // unnamed namespace
@@ -27386,7 +27304,7 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SL_E_OC1(func_SL_E_OC1, "SL-E-OC1");
+refalrts::RefalNativeFunction descr_SL_E_OC1(func_SL_E_OC1, "SL-E-OC1");
 refalrts::RefalFunction& SL_E_OC1 = descr_SL_E_OC1;
 
 } // unnamed namespace
@@ -28197,7 +28115,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SL_E_C2(func_SL_E_C2, "SL-E-C2");
+refalrts::RefalNativeFunction descr_SL_E_C2(func_SL_E_C2, "SL-E-C2");
 refalrts::RefalFunction& SL_E_C2 = descr_SL_E_C2;
 
 } // unnamed namespace
@@ -28870,7 +28788,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SL_E_OC2(func_SL_E_OC2, "SL-E-OC2");
+refalrts::RefalNativeFunction descr_SL_E_OC2(func_SL_E_OC2, "SL-E-OC2");
 refalrts::RefalFunction& SL_E_OC2 = descr_SL_E_OC2;
 
 } // unnamed namespace

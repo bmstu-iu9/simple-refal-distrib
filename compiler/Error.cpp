@@ -144,7 +144,7 @@ static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EL_Create(func_EL_Create, "EL-Create");
+refalrts::RefalNativeFunction descr_EL_Create(func_EL_Create, "EL-Create");
 refalrts::RefalFunction& EL_Create = descr_EL_Create;
 
 #endif
@@ -250,7 +250,7 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EL_AddError(func_EL_AddError, "EL-AddError");
+refalrts::RefalNativeFunction descr_EL_AddError(func_EL_AddError, "EL-AddError");
 refalrts::RefalFunction& EL_AddError = descr_EL_AddError;
 
 #endif
@@ -353,7 +353,7 @@ static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EL_AddErrorAt(func_EL_AddErrorAt, "EL-AddErrorAt");
+refalrts::RefalNativeFunction descr_EL_AddErrorAt(func_EL_AddErrorAt, "EL-AddErrorAt");
 refalrts::RefalFunction& EL_AddErrorAt = descr_EL_AddErrorAt;
 
 #endif
@@ -601,7 +601,7 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EL_AddUnexpected(func_EL_AddUnexpected, "EL-AddUnexpected");
+refalrts::RefalNativeFunction descr_EL_AddUnexpected(func_EL_AddUnexpected, "EL-AddUnexpected");
 refalrts::RefalFunction& EL_AddUnexpected = descr_EL_AddUnexpected;
 
 #endif
@@ -813,7 +813,7 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_EL_Destroy_S2L1(func_gen_EL_Destroy_S2L1, "EL-Destroy$2\\1");
+refalrts::RefalNativeFunction descr_gen_EL_Destroy_S2L1(func_gen_EL_Destroy_S2L1, "EL-Destroy$2\\1");
 refalrts::RefalFunction& gen_EL_Destroy_S2L1 = descr_gen_EL_Destroy_S2L1;
 
 } // unnamed namespace
@@ -1004,7 +1004,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EL_Destroy(func_EL_Destroy, "EL-Destroy");
+refalrts::RefalNativeFunction descr_EL_Destroy(func_EL_Destroy, "EL-Destroy");
 refalrts::RefalFunction& EL_Destroy = descr_EL_Destroy;
 
 #endif

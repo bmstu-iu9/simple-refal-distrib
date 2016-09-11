@@ -262,7 +262,7 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Apply(func_Apply, "Apply");
+refalrts::RefalNativeFunction descr_Apply(func_Apply, "Apply");
 refalrts::RefalFunction& Apply = descr_Apply;
 
 #endif
@@ -403,7 +403,7 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Map(func_Map, "Map");
+refalrts::RefalNativeFunction descr_Map(func_Map, "Map");
 refalrts::RefalFunction& Map = descr_Map;
 
 #endif
@@ -554,7 +554,7 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Reduce(func_Reduce, "Reduce");
+refalrts::RefalNativeFunction descr_Reduce(func_Reduce, "Reduce");
 refalrts::RefalFunction& Reduce = descr_Reduce;
 
 #endif
@@ -632,7 +632,7 @@ static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Fetch(func_Fetch, "Fetch");
+refalrts::RefalNativeFunction descr_Fetch(func_Fetch, "Fetch");
 refalrts::RefalFunction& Fetch = descr_Fetch;
 
 #endif
@@ -736,7 +736,7 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Y_L1(func_gen_Y_L1, "Y\\1");
+refalrts::RefalNativeFunction descr_gen_Y_L1(func_gen_Y_L1, "Y\\1");
 refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
 
 } // unnamed namespace
@@ -820,7 +820,7 @@ static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_en
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Y(func_Y, "Y");
+refalrts::RefalNativeFunction descr_Y(func_Y, "Y");
 refalrts::RefalFunction& Y = descr_Y;
 
 #endif
@@ -910,7 +910,7 @@ static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_MapReduce(func_MapReduce, "MapReduce");
+refalrts::RefalNativeFunction descr_MapReduce(func_MapReduce, "MapReduce");
 refalrts::RefalFunction& MapReduce = descr_MapReduce;
 
 #endif
@@ -1099,7 +1099,7 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoMapReduce(func_DoMapReduce, "DoMapReduce");
+refalrts::RefalNativeFunction descr_DoMapReduce(func_DoMapReduce, "DoMapReduce");
 refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
 
 } // unnamed namespace
@@ -1194,7 +1194,7 @@ static refalrts::FnResult func_MapReduce_AddScanned(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned");
+refalrts::RefalNativeFunction descr_MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned");
 refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
 
 } // unnamed namespace
@@ -1272,7 +1272,7 @@ static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_UnBracket(func_UnBracket, "UnBracket");
+refalrts::RefalNativeFunction descr_UnBracket(func_UnBracket, "UnBracket");
 refalrts::RefalFunction& UnBracket = descr_UnBracket;
 
 #endif
@@ -1342,7 +1342,7 @@ static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DelAccumulator(func_DelAccumulator, "DelAccumulator");
+refalrts::RefalNativeFunction descr_DelAccumulator(func_DelAccumulator, "DelAccumulator");
 refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
 
 #endif
@@ -1449,7 +1449,7 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_LoadFile(func_LoadFile, "LoadFile");
+refalrts::RefalNativeFunction descr_LoadFile(func_LoadFile, "LoadFile");
 refalrts::RefalFunction& LoadFile = descr_LoadFile;
 
 #endif
@@ -1667,7 +1667,7 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoLoadFile(func_DoLoadFile, "DoLoadFile");
+refalrts::RefalNativeFunction descr_DoLoadFile(func_DoLoadFile, "DoLoadFile");
 refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
 
 } // unnamed namespace
@@ -1787,7 +1787,7 @@ static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_SaveFile(func_SaveFile, "SaveFile");
+refalrts::RefalNativeFunction descr_SaveFile(func_SaveFile, "SaveFile");
 refalrts::RefalFunction& SaveFile = descr_SaveFile;
 
 #endif
@@ -1879,7 +1879,7 @@ static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_WriteBracketLine(func_WriteBracketLine, "WriteBracketLine");
+refalrts::RefalNativeFunction descr_WriteBracketLine(func_WriteBracketLine, "WriteBracketLine");
 refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
 
 } // unnamed namespace
@@ -1962,7 +1962,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Inc(func_Inc, "Inc");
+refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc");
 refalrts::RefalFunction& Inc = descr_Inc;
 
 #endif
@@ -2043,7 +2043,7 @@ static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Dec(func_Dec, "Dec");
+refalrts::RefalNativeFunction descr_Dec(func_Dec, "Dec");
 refalrts::RefalFunction& Dec = descr_Dec;
 
 #endif
@@ -2123,7 +2123,7 @@ static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard");
+refalrts::RefalNativeFunction descr_FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard");
 refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
 
 } // unnamed namespace
@@ -2215,7 +2215,7 @@ static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_FastIntFromStr(func_FastIntFromStr, "FastIntFromStr");
+refalrts::RefalNativeFunction descr_FastIntFromStr(func_FastIntFromStr, "FastIntFromStr");
 refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
 
 #endif
@@ -2293,7 +2293,7 @@ static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_ArgList(func_ArgList, "ArgList");
+refalrts::RefalNativeFunction descr_ArgList(func_ArgList, "ArgList");
 refalrts::RefalFunction& ArgList = descr_ArgList;
 
 #endif
@@ -2408,7 +2408,7 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoArgList(func_DoArgList, "DoArgList");
+refalrts::RefalNativeFunction descr_DoArgList(func_DoArgList, "DoArgList");
 refalrts::RefalFunction& DoArgList = descr_DoArgList;
 
 } // unnamed namespace
@@ -2545,7 +2545,7 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SwDoArgList(func_SwDoArgList, "SwDoArgList");
+refalrts::RefalNativeFunction descr_SwDoArgList(func_SwDoArgList, "SwDoArgList");
 refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
 
 } // unnamed namespace
@@ -2753,7 +2753,7 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Compare(func_Compare, "Compare");
+refalrts::RefalNativeFunction descr_Compare(func_Compare, "Compare");
 refalrts::RefalFunction& Compare = descr_Compare;
 
 #endif
@@ -3013,7 +3013,7 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Lexicon(func_Lexicon, "Lexicon");
+refalrts::RefalNativeFunction descr_Lexicon(func_Lexicon, "Lexicon");
 refalrts::RefalFunction& Lexicon = descr_Lexicon;
 
 } // unnamed namespace
@@ -3203,7 +3203,7 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux");
+refalrts::RefalNativeFunction descr_Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux");
 refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
 
 } // unnamed namespace
@@ -3459,7 +3459,7 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Compare_T(func_Compare_T, "Compare-T");
+refalrts::RefalNativeFunction descr_Compare_T(func_Compare_T, "Compare-T");
 refalrts::RefalFunction& Compare_T = descr_Compare_T;
 
 #endif
@@ -3793,7 +3793,7 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Lexicon_T(func_Lexicon_T, "Lexicon-T");
+refalrts::RefalNativeFunction descr_Lexicon_T(func_Lexicon_T, "Lexicon-T");
 refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
 
 } // unnamed namespace
@@ -4083,7 +4083,7 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux");
+refalrts::RefalNativeFunction descr_Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux");
 refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
 
 } // unnamed namespace
@@ -4203,7 +4203,7 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Type(func_Type, "Type");
+refalrts::RefalNativeFunction descr_Type(func_Type, "Type");
 refalrts::RefalFunction& Type = descr_Type;
 
 #endif
@@ -4378,7 +4378,7 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Type_T(func_Type_T, "Type-T");
+refalrts::RefalNativeFunction descr_Type_T(func_Type_T, "Type-T");
 refalrts::RefalFunction& Type_T = descr_Type_T;
 
 #endif
@@ -4468,7 +4468,7 @@ static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Trim(func_Trim, "Trim");
+refalrts::RefalNativeFunction descr_Trim(func_Trim, "Trim");
 refalrts::RefalFunction& Trim = descr_Trim;
 
 #endif
@@ -4715,7 +4715,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Trim_L(func_Trim_L, "Trim-L");
+refalrts::RefalNativeFunction descr_Trim_L(func_Trim_L, "Trim-L");
 refalrts::RefalFunction& Trim_L = descr_Trim_L;
 
 #endif
@@ -4952,7 +4952,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Trim_R(func_Trim_R, "Trim-R");
+refalrts::RefalNativeFunction descr_Trim_R(func_Trim_R, "Trim-R");
 refalrts::RefalFunction& Trim_R = descr_Trim_R;
 
 #endif
@@ -5075,7 +5075,7 @@ static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1");
+refalrts::RefalNativeFunction descr_gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1");
 refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
 
 } // unnamed namespace
@@ -5147,7 +5147,7 @@ static refalrts::FnResult func_gen_Seq_S3L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1");
+refalrts::RefalNativeFunction descr_gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1");
 refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
 
 } // unnamed namespace
@@ -5327,7 +5327,7 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Seq(func_Seq, "Seq");
+refalrts::RefalNativeFunction descr_Seq(func_Seq, "Seq");
 refalrts::RefalFunction& Seq = descr_Seq;
 
 #endif
@@ -5582,7 +5582,7 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1");
+refalrts::RefalNativeFunction descr_gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1");
 refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
 
 } // unnamed namespace
@@ -5757,7 +5757,7 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1");
+refalrts::RefalNativeFunction descr_gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1");
 refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
 
 } // unnamed namespace
@@ -5889,7 +5889,7 @@ static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2");
+refalrts::RefalNativeFunction descr_gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2");
 refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
 
 } // unnamed namespace
@@ -6098,7 +6098,7 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Sort(func_Sort, "Sort");
+refalrts::RefalNativeFunction descr_Sort(func_Sort, "Sort");
 refalrts::RefalFunction& Sort = descr_Sort;
 
 #endif
@@ -6219,7 +6219,7 @@ static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1");
+refalrts::RefalNativeFunction descr_gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1");
 refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
 
 } // unnamed namespace
@@ -6395,7 +6395,7 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Min(func_Min, "Min");
+refalrts::RefalNativeFunction descr_Min(func_Min, "Min");
 refalrts::RefalFunction& Min = descr_Min;
 
 #endif
@@ -6516,7 +6516,7 @@ static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1");
+refalrts::RefalNativeFunction descr_gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1");
 refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
 
 } // unnamed namespace
@@ -6692,7 +6692,7 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Max(func_Max, "Max");
+refalrts::RefalNativeFunction descr_Max(func_Max, "Max");
 refalrts::RefalFunction& Max = descr_Max;
 
 #endif

@@ -2078,7 +2078,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_LowLevelRASL_L1(func_gen_LowLevelRASL_L1, "LowLevelRASL\\1");
+refalrts::RefalNativeFunction descr_gen_LowLevelRASL_L1(func_gen_LowLevelRASL_L1, "LowLevelRASL\\1");
 refalrts::RefalFunction& gen_LowLevelRASL_L1 = descr_gen_LowLevelRASL_L1;
 
 } // unnamed namespace
@@ -2173,7 +2173,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_L2(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_LowLevelRASL_L2(func_gen_LowLevelRASL_L2, "LowLevelRASL\\2");
+refalrts::RefalNativeFunction descr_gen_LowLevelRASL_L2(func_gen_LowLevelRASL_L2, "LowLevelRASL\\2");
 refalrts::RefalFunction& gen_LowLevelRASL_L2 = descr_gen_LowLevelRASL_L2;
 
 } // unnamed namespace
@@ -2312,7 +2312,7 @@ static refalrts::FnResult func_LowLevelRASL(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_LowLevelRASL(func_LowLevelRASL, "LowLevelRASL");
+refalrts::RefalNativeFunction descr_LowLevelRASL(func_LowLevelRASL, "LowLevelRASL");
 refalrts::RefalFunction& LowLevelRASL = descr_LowLevelRASL;
 
 #endif
@@ -2452,7 +2452,7 @@ static refalrts::FnResult func_InUnnamedNamespace(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_InUnnamedNamespace(func_InUnnamedNamespace, "InUnnamedNamespace");
+refalrts::RefalNativeFunction descr_InUnnamedNamespace(func_InUnnamedNamespace, "InUnnamedNamespace");
 refalrts::RefalFunction& InUnnamedNamespace = descr_InUnnamedNamespace;
 
 } // unnamed namespace
@@ -2573,7 +2573,7 @@ static refalrts::FnResult func_AddSavers(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_AddSavers(func_AddSavers, "AddSavers");
+refalrts::RefalNativeFunction descr_AddSavers(func_AddSavers, "AddSavers");
 refalrts::RefalFunction& AddSavers = descr_AddSavers;
 
 } // unnamed namespace
@@ -2754,7 +2754,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S3L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S3L1(func_gen_DoAddSavers_S3L1, "DoAddSavers$3\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S3L1(func_gen_DoAddSavers_S3L1, "DoAddSavers$3\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S3L1 = descr_gen_DoAddSavers_S3L1;
 
 } // unnamed namespace
@@ -2935,7 +2935,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S4L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S4L1(func_gen_DoAddSavers_S4L1, "DoAddSavers$4\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S4L1(func_gen_DoAddSavers_S4L1, "DoAddSavers$4\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S4L1 = descr_gen_DoAddSavers_S4L1;
 
 } // unnamed namespace
@@ -3116,7 +3116,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S5L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S5L1(func_gen_DoAddSavers_S5L1, "DoAddSavers$5\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S5L1(func_gen_DoAddSavers_S5L1, "DoAddSavers$5\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S5L1 = descr_gen_DoAddSavers_S5L1;
 
 } // unnamed namespace
@@ -3300,7 +3300,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S6L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S6L1(func_gen_DoAddSavers_S6L1, "DoAddSavers$6\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S6L1(func_gen_DoAddSavers_S6L1, "DoAddSavers$6\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S6L1 = descr_gen_DoAddSavers_S6L1;
 
 } // unnamed namespace
@@ -3484,7 +3484,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S7L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S7L1(func_gen_DoAddSavers_S7L1, "DoAddSavers$7\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S7L1(func_gen_DoAddSavers_S7L1, "DoAddSavers$7\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S7L1 = descr_gen_DoAddSavers_S7L1;
 
 } // unnamed namespace
@@ -3660,7 +3660,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S9L1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S9L1L1(func_gen_DoAddSavers_S9L1L1, "DoAddSavers$9\\1\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S9L1L1(func_gen_DoAddSavers_S9L1L1, "DoAddSavers$9\\1\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S9L1L1 = descr_gen_DoAddSavers_S9L1L1;
 
 } // unnamed namespace
@@ -3868,7 +3868,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S9L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S9L1(func_gen_DoAddSavers_S9L1, "DoAddSavers$9\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S9L1(func_gen_DoAddSavers_S9L1, "DoAddSavers$9\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S9L1 = descr_gen_DoAddSavers_S9L1;
 
 } // unnamed namespace
@@ -4044,7 +4044,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S10L1L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S10L1L1(func_gen_DoAddSavers_S10L1L1, "DoAddSavers$10\\1\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S10L1L1(func_gen_DoAddSavers_S10L1L1, "DoAddSavers$10\\1\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S10L1L1 = descr_gen_DoAddSavers_S10L1L1;
 
 } // unnamed namespace
@@ -4252,7 +4252,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S10L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S10L1(func_gen_DoAddSavers_S10L1, "DoAddSavers$10\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S10L1(func_gen_DoAddSavers_S10L1, "DoAddSavers$10\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S10L1 = descr_gen_DoAddSavers_S10L1;
 
 } // unnamed namespace
@@ -4385,7 +4385,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S11L1L1L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S11L1L1L1(func_gen_DoAddSavers_S11L1L1L1, "DoAddSavers$11\\1\\1\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S11L1L1L1(func_gen_DoAddSavers_S11L1L1L1, "DoAddSavers$11\\1\\1\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S11L1L1L1 = descr_gen_DoAddSavers_S11L1L1L1;
 
 } // unnamed namespace
@@ -4548,7 +4548,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S11L1L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S11L1L1(func_gen_DoAddSavers_S11L1L1, "DoAddSavers$11\\1\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S11L1L1(func_gen_DoAddSavers_S11L1L1, "DoAddSavers$11\\1\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S11L1L1 = descr_gen_DoAddSavers_S11L1L1;
 
 } // unnamed namespace
@@ -4785,7 +4785,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S11L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S11L1(func_gen_DoAddSavers_S11L1, "DoAddSavers$11\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S11L1(func_gen_DoAddSavers_S11L1, "DoAddSavers$11\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S11L1 = descr_gen_DoAddSavers_S11L1;
 
 } // unnamed namespace
@@ -4951,7 +4951,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S12L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S12L1(func_gen_DoAddSavers_S12L1, "DoAddSavers$12\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S12L1(func_gen_DoAddSavers_S12L1, "DoAddSavers$12\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S12L1 = descr_gen_DoAddSavers_S12L1;
 
 } // unnamed namespace
@@ -5117,7 +5117,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S13L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S13L1(func_gen_DoAddSavers_S13L1, "DoAddSavers$13\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S13L1(func_gen_DoAddSavers_S13L1, "DoAddSavers$13\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S13L1 = descr_gen_DoAddSavers_S13L1;
 
 } // unnamed namespace
@@ -5274,7 +5274,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S14L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S14L1(func_gen_DoAddSavers_S14L1, "DoAddSavers$14\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S14L1(func_gen_DoAddSavers_S14L1, "DoAddSavers$14\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S14L1 = descr_gen_DoAddSavers_S14L1;
 
 } // unnamed namespace
@@ -5421,7 +5421,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S15L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S15L1(func_gen_DoAddSavers_S15L1, "DoAddSavers$15\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S15L1(func_gen_DoAddSavers_S15L1, "DoAddSavers$15\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S15L1 = descr_gen_DoAddSavers_S15L1;
 
 } // unnamed namespace
@@ -5542,7 +5542,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S16L1L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S16L1L1(func_gen_DoAddSavers_S16L1L1, "DoAddSavers$16\\1\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S16L1L1(func_gen_DoAddSavers_S16L1L1, "DoAddSavers$16\\1\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S16L1L1 = descr_gen_DoAddSavers_S16L1L1;
 
 } // unnamed namespace
@@ -5737,7 +5737,7 @@ static refalrts::FnResult func_gen_DoAddSavers_S16L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoAddSavers_S16L1(func_gen_DoAddSavers_S16L1, "DoAddSavers$16\\1");
+refalrts::RefalNativeFunction descr_gen_DoAddSavers_S16L1(func_gen_DoAddSavers_S16L1, "DoAddSavers$16\\1");
 refalrts::RefalFunction& gen_DoAddSavers_S16L1 = descr_gen_DoAddSavers_S16L1;
 
 } // unnamed namespace
@@ -7964,7 +7964,7 @@ static refalrts::FnResult func_DoAddSavers(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoAddSavers(func_DoAddSavers, "DoAddSavers");
+refalrts::RefalNativeFunction descr_DoAddSavers(func_DoAddSavers, "DoAddSavers");
 refalrts::RefalFunction& DoAddSavers = descr_DoAddSavers;
 
 } // unnamed namespace
@@ -8145,7 +8145,7 @@ static refalrts::FnResult func_CheckSaved(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CheckSaved(func_CheckSaved, "CheckSaved");
+refalrts::RefalNativeFunction descr_CheckSaved(func_CheckSaved, "CheckSaved");
 refalrts::RefalFunction& CheckSaved = descr_CheckSaved;
 
 } // unnamed namespace
@@ -8486,7 +8486,7 @@ static refalrts::FnResult func_CheckSaved_Fronen(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CheckSaved_Fronen(func_CheckSaved_Fronen, "CheckSaved-Fronen");
+refalrts::RefalNativeFunction descr_CheckSaved_Fronen(func_CheckSaved_Fronen, "CheckSaved-Fronen");
 refalrts::RefalFunction& CheckSaved_Fronen = descr_CheckSaved_Fronen;
 
 } // unnamed namespace
@@ -8639,7 +8639,7 @@ static refalrts::FnResult func_gen_FixupFrozenComment_S1L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FixupFrozenComment_S1L1(func_gen_FixupFrozenComment_S1L1, "FixupFrozenComment$1\\1");
+refalrts::RefalNativeFunction descr_gen_FixupFrozenComment_S1L1(func_gen_FixupFrozenComment_S1L1, "FixupFrozenComment$1\\1");
 refalrts::RefalFunction& gen_FixupFrozenComment_S1L1 = descr_gen_FixupFrozenComment_S1L1;
 
 } // unnamed namespace
@@ -8852,7 +8852,7 @@ static refalrts::FnResult func_FixupFrozenComment(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FixupFrozenComment(func_FixupFrozenComment, "FixupFrozenComment");
+refalrts::RefalNativeFunction descr_FixupFrozenComment(func_FixupFrozenComment, "FixupFrozenComment");
 refalrts::RefalFunction& FixupFrozenComment = descr_FixupFrozenComment;
 
 } // unnamed namespace
@@ -9063,7 +9063,7 @@ static refalrts::FnResult func_CheckFrozen(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CheckFrozen(func_CheckFrozen, "CheckFrozen");
+refalrts::RefalNativeFunction descr_CheckFrozen(func_CheckFrozen, "CheckFrozen");
 refalrts::RefalFunction& CheckFrozen = descr_CheckFrozen;
 
 } // unnamed namespace
@@ -9149,7 +9149,7 @@ static refalrts::FnResult func_gen_Freeze_L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Freeze_L1(func_gen_Freeze_L1, "Freeze\\1");
+refalrts::RefalNativeFunction descr_gen_Freeze_L1(func_gen_Freeze_L1, "Freeze\\1");
 refalrts::RefalFunction& gen_Freeze_L1 = descr_gen_Freeze_L1;
 
 } // unnamed namespace
@@ -9233,7 +9233,7 @@ static refalrts::FnResult func_Freeze(refalrts::Iter arg_begin, refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Freeze(func_Freeze, "Freeze");
+refalrts::RefalNativeFunction descr_Freeze(func_Freeze, "Freeze");
 refalrts::RefalFunction& Freeze = descr_Freeze;
 
 } // unnamed namespace
@@ -9512,7 +9512,7 @@ static refalrts::FnResult func_Function(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Function(func_Function, "Function");
+refalrts::RefalNativeFunction descr_Function(func_Function, "Function");
 refalrts::RefalFunction& Function = descr_Function;
 
 } // unnamed namespace
@@ -9608,7 +9608,7 @@ static refalrts::FnResult func_gen_Function_Interpret_L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Function_Interpret_L1(func_gen_Function_Interpret_L1, "Function-Interpret\\1");
+refalrts::RefalNativeFunction descr_gen_Function_Interpret_L1(func_gen_Function_Interpret_L1, "Function-Interpret\\1");
 refalrts::RefalFunction& gen_Function_Interpret_L1 = descr_gen_Function_Interpret_L1;
 
 } // unnamed namespace
@@ -9771,7 +9771,7 @@ static refalrts::FnResult func_gen_Function_Interpret_L2(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Function_Interpret_L2(func_gen_Function_Interpret_L2, "Function-Interpret\\2");
+refalrts::RefalNativeFunction descr_gen_Function_Interpret_L2(func_gen_Function_Interpret_L2, "Function-Interpret\\2");
 refalrts::RefalFunction& gen_Function_Interpret_L2 = descr_gen_Function_Interpret_L2;
 
 } // unnamed namespace
@@ -9971,7 +9971,7 @@ static refalrts::FnResult func_Function_Interpret(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Function_Interpret(func_Function_Interpret, "Function-Interpret");
+refalrts::RefalNativeFunction descr_Function_Interpret(func_Function_Interpret, "Function-Interpret");
 refalrts::RefalFunction& Function_Interpret = descr_Function_Interpret;
 
 } // unnamed namespace
@@ -10055,7 +10055,7 @@ static refalrts::FnResult func_ConvertInterpretCommands(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ConvertInterpretCommands(func_ConvertInterpretCommands, "ConvertInterpretCommands");
+refalrts::RefalNativeFunction descr_ConvertInterpretCommands(func_ConvertInterpretCommands, "ConvertInterpretCommands");
 refalrts::RefalFunction& ConvertInterpretCommands = descr_ConvertInterpretCommands;
 
 } // unnamed namespace
@@ -10138,7 +10138,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Length_T(func_Length_T, "Length-T");
+refalrts::RefalNativeFunction descr_Length_T(func_Length_T, "Length-T");
 refalrts::RefalFunction& Length_T = descr_Length_T;
 
 } // unnamed namespace
@@ -10349,7 +10349,7 @@ static refalrts::FnResult func_DoLength(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoLength(func_DoLength, "DoLength");
+refalrts::RefalNativeFunction descr_DoLength(func_DoLength, "DoLength");
 refalrts::RefalFunction& DoLength = descr_DoLength;
 
 } // unnamed namespace
@@ -10488,7 +10488,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S8L1(refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S8L1(func_gen_ConvertOneInterpretCommand_S8L1, "ConvertOneInterpretCommand$8\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S8L1(func_gen_ConvertOneInterpretCommand_S8L1, "ConvertOneInterpretCommand$8\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S8L1 = descr_gen_ConvertOneInterpretCommand_S8L1;
 
 } // unnamed namespace
@@ -10630,7 +10630,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S9L1(refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S9L1(func_gen_ConvertOneInterpretCommand_S9L1, "ConvertOneInterpretCommand$9\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S9L1(func_gen_ConvertOneInterpretCommand_S9L1, "ConvertOneInterpretCommand$9\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S9L1 = descr_gen_ConvertOneInterpretCommand_S9L1;
 
 } // unnamed namespace
@@ -10796,7 +10796,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S33L1(refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S33L1(func_gen_ConvertOneInterpretCommand_S33L1, "ConvertOneInterpretCommand$33\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S33L1(func_gen_ConvertOneInterpretCommand_S33L1, "ConvertOneInterpretCommand$33\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S33L1 = descr_gen_ConvertOneInterpretCommand_S33L1;
 
 } // unnamed namespace
@@ -10962,7 +10962,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S35L1(refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S35L1(func_gen_ConvertOneInterpretCommand_S35L1, "ConvertOneInterpretCommand$35\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S35L1(func_gen_ConvertOneInterpretCommand_S35L1, "ConvertOneInterpretCommand$35\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S35L1 = descr_gen_ConvertOneInterpretCommand_S35L1;
 
 } // unnamed namespace
@@ -11128,7 +11128,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S37L1(refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S37L1(func_gen_ConvertOneInterpretCommand_S37L1, "ConvertOneInterpretCommand$37\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S37L1(func_gen_ConvertOneInterpretCommand_S37L1, "ConvertOneInterpretCommand$37\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S37L1 = descr_gen_ConvertOneInterpretCommand_S37L1;
 
 } // unnamed namespace
@@ -11213,7 +11213,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S50L1(refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ConvertOneInterpretCommand_S50L1(func_gen_ConvertOneInterpretCommand_S50L1, "ConvertOneInterpretCommand$50\\1");
+refalrts::RefalNativeFunction descr_gen_ConvertOneInterpretCommand_S50L1(func_gen_ConvertOneInterpretCommand_S50L1, "ConvertOneInterpretCommand$50\\1");
 refalrts::RefalFunction& gen_ConvertOneInterpretCommand_S50L1 = descr_gen_ConvertOneInterpretCommand_S50L1;
 
 } // unnamed namespace
@@ -13963,7 +13963,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ConvertOneInterpretCommand(func_ConvertOneInterpretCommand, "ConvertOneInterpretCommand");
+refalrts::RefalNativeFunction descr_ConvertOneInterpretCommand(func_ConvertOneInterpretCommand, "ConvertOneInterpretCommand");
 refalrts::RefalFunction& ConvertOneInterpretCommand = descr_ConvertOneInterpretCommand;
 
 } // unnamed namespace
@@ -14054,7 +14054,7 @@ static refalrts::FnResult func_RemoveNumber(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_RemoveNumber(func_RemoveNumber, "RemoveNumber");
+refalrts::RefalNativeFunction descr_RemoveNumber(func_RemoveNumber, "RemoveNumber");
 refalrts::RefalFunction& RemoveNumber = descr_RemoveNumber;
 
 } // unnamed namespace
@@ -14143,7 +14143,7 @@ static refalrts::FnResult func_gen_OutlineConstants_S1L1(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_OutlineConstants_S1L1(func_gen_OutlineConstants_S1L1, "OutlineConstants$1\\1");
+refalrts::RefalNativeFunction descr_gen_OutlineConstants_S1L1(func_gen_OutlineConstants_S1L1, "OutlineConstants$1\\1");
 refalrts::RefalFunction& gen_OutlineConstants_S1L1 = descr_gen_OutlineConstants_S1L1;
 
 } // unnamed namespace
@@ -17547,7 +17547,7 @@ static refalrts::FnResult func_OutlineConstants(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_OutlineConstants(func_OutlineConstants, "OutlineConstants");
+refalrts::RefalNativeFunction descr_OutlineConstants(func_OutlineConstants, "OutlineConstants");
 refalrts::RefalFunction& OutlineConstants = descr_OutlineConstants;
 
 } // unnamed namespace
@@ -17778,7 +17778,7 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_PrepareOpenEStack_L1(func_gen_PrepareOpenEStack_L1, "PrepareOpenEStack\\1");
+refalrts::RefalNativeFunction descr_gen_PrepareOpenEStack_L1(func_gen_PrepareOpenEStack_L1, "PrepareOpenEStack\\1");
 refalrts::RefalFunction& gen_PrepareOpenEStack_L1 = descr_gen_PrepareOpenEStack_L1;
 
 } // unnamed namespace
@@ -17878,7 +17878,7 @@ static refalrts::FnResult func_PrepareOpenEStack(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_PrepareOpenEStack(func_PrepareOpenEStack, "PrepareOpenEStack");
+refalrts::RefalNativeFunction descr_PrepareOpenEStack(func_PrepareOpenEStack, "PrepareOpenEStack");
 refalrts::RefalFunction& PrepareOpenEStack = descr_PrepareOpenEStack;
 
 } // unnamed namespace
@@ -18042,7 +18042,7 @@ static refalrts::FnResult func_Function_Direct(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Function_Direct(func_Function_Direct, "Function-Direct");
+refalrts::RefalNativeFunction descr_Function_Direct(func_Function_Direct, "Function-Direct");
 refalrts::RefalFunction& Function_Direct = descr_Function_Direct;
 
 } // unnamed namespace
@@ -18369,7 +18369,7 @@ static refalrts::FnResult func_Function_DirectRec(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Function_DirectRec(func_Function_DirectRec, "Function-DirectRec");
+refalrts::RefalNativeFunction descr_Function_DirectRec(func_Function_DirectRec, "Function-DirectRec");
 refalrts::RefalFunction& Function_DirectRec = descr_Function_DirectRec;
 
 } // unnamed namespace

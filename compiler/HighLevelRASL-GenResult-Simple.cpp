@@ -417,7 +417,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, "GenResult-Simple\\1");
+refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, "GenResult-Simple\\1");
 refalrts::RefalFunction& gen_GenResult_Simple_L1 = descr_gen_GenResult_Simple_L1;
 
 } // unnamed namespace
@@ -547,7 +547,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, "GenResult-Simple\\2");
+refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, "GenResult-Simple\\2");
 refalrts::RefalFunction& gen_GenResult_Simple_L2 = descr_gen_GenResult_Simple_L2;
 
 } // unnamed namespace
@@ -724,7 +724,7 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GenResult_Simple(func_GenResult_Simple, "GenResult-Simple");
+refalrts::RefalNativeFunction descr_GenResult_Simple(func_GenResult_Simple, "GenResult-Simple");
 refalrts::RefalFunction& GenResult_Simple = descr_GenResult_Simple;
 
 #endif
@@ -2648,7 +2648,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoGenResult(func_DoGenResult, "DoGenResult");
+refalrts::RefalNativeFunction descr_DoGenResult(func_DoGenResult, "DoGenResult");
 refalrts::RefalFunction& DoGenResult = descr_DoGenResult;
 
 } // unnamed namespace
@@ -2777,7 +2777,7 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MakeVariableCommentTable(func_MakeVariableCommentTable, "MakeVariableCommentTable");
+refalrts::RefalNativeFunction descr_MakeVariableCommentTable(func_MakeVariableCommentTable, "MakeVariableCommentTable");
 refalrts::RefalFunction& MakeVariableCommentTable = descr_MakeVariableCommentTable;
 
 } // unnamed namespace
@@ -2873,7 +2873,7 @@ static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, "ReplicateVar\\1");
+refalrts::RefalNativeFunction descr_gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, "ReplicateVar\\1");
 refalrts::RefalFunction& gen_ReplicateVar_L1 = descr_gen_ReplicateVar_L1;
 
 } // unnamed namespace
@@ -3006,7 +3006,7 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ReplicateVar(func_ReplicateVar, "ReplicateVar");
+refalrts::RefalNativeFunction descr_ReplicateVar(func_ReplicateVar, "ReplicateVar");
 refalrts::RefalFunction& ReplicateVar = descr_ReplicateVar;
 
 } // unnamed namespace
@@ -3127,7 +3127,7 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MakeVariableComment(func_MakeVariableComment, "MakeVariableComment");
+refalrts::RefalNativeFunction descr_MakeVariableComment(func_MakeVariableComment, "MakeVariableComment");
 refalrts::RefalFunction& MakeVariableComment = descr_MakeVariableComment;
 
 } // unnamed namespace

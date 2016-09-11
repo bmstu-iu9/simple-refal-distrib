@@ -366,7 +366,7 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, "GetOpt-CheckRepeated");
+refalrts::RefalNativeFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, "GetOpt-CheckRepeated");
 refalrts::RefalFunction& GetOpt_CheckRepeated = descr_GetOpt_CheckRepeated;
 
 #endif

@@ -168,7 +168,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_CreateFileList(func_CreateFileList, "CreateFileList");
+refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, "CreateFileList");
 refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
 
 #endif
@@ -445,7 +445,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList");
+refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList");
 refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
 
 } // unnamed namespace
@@ -632,7 +632,7 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FindImports(func_FindImports, "FindImports");
+refalrts::RefalNativeFunction descr_FindImports(func_FindImports, "FindImports");
 refalrts::RefalFunction& FindImports = descr_FindImports;
 
 } // unnamed namespace
@@ -876,7 +876,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_LoadList(func_LoadList, "LoadList");
+refalrts::RefalNativeFunction descr_LoadList(func_LoadList, "LoadList");
 refalrts::RefalFunction& LoadList = descr_LoadList;
 
 } // unnamed namespace

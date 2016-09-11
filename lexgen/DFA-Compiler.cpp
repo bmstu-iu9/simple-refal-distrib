@@ -439,7 +439,7 @@ static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DFA_Compile_L1(func_gen_DFA_Compile_L1, "DFA-Compile\\1");
+refalrts::RefalNativeFunction descr_gen_DFA_Compile_L1(func_gen_DFA_Compile_L1, "DFA-Compile\\1");
 refalrts::RefalFunction& gen_DFA_Compile_L1 = descr_gen_DFA_Compile_L1;
 
 } // unnamed namespace
@@ -560,7 +560,7 @@ static refalrts::FnResult func_gen_DFA_Compile_L2(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DFA_Compile_L2(func_gen_DFA_Compile_L2, "DFA-Compile\\2");
+refalrts::RefalNativeFunction descr_gen_DFA_Compile_L2(func_gen_DFA_Compile_L2, "DFA-Compile\\2");
 refalrts::RefalFunction& gen_DFA_Compile_L2 = descr_gen_DFA_Compile_L2;
 
 } // unnamed namespace
@@ -718,7 +718,7 @@ static refalrts::FnResult func_DFA_Compile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DFA_Compile(func_DFA_Compile, "DFA-Compile");
+refalrts::RefalNativeFunction descr_DFA_Compile(func_DFA_Compile, "DFA-Compile");
 refalrts::RefalFunction& DFA_Compile = descr_DFA_Compile;
 
 #endif
@@ -869,7 +869,7 @@ static refalrts::FnResult func_UniqueSet(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_UniqueSet(func_UniqueSet, "UniqueSet");
+refalrts::RefalNativeFunction descr_UniqueSet(func_UniqueSet, "UniqueSet");
 refalrts::RefalFunction& UniqueSet = descr_UniqueSet;
 
 } // unnamed namespace
@@ -1053,7 +1053,7 @@ static refalrts::FnResult func_gen_ResolvingSets_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ResolvingSets_L1(func_gen_ResolvingSets_L1, "ResolvingSets\\1");
+refalrts::RefalNativeFunction descr_gen_ResolvingSets_L1(func_gen_ResolvingSets_L1, "ResolvingSets\\1");
 refalrts::RefalFunction& gen_ResolvingSets_L1 = descr_gen_ResolvingSets_L1;
 
 } // unnamed namespace
@@ -1185,7 +1185,7 @@ static refalrts::FnResult func_gen_ResolvingSets_L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ResolvingSets_L2(func_gen_ResolvingSets_L2, "ResolvingSets\\2");
+refalrts::RefalNativeFunction descr_gen_ResolvingSets_L2(func_gen_ResolvingSets_L2, "ResolvingSets\\2");
 refalrts::RefalFunction& gen_ResolvingSets_L2 = descr_gen_ResolvingSets_L2;
 
 } // unnamed namespace
@@ -1307,7 +1307,7 @@ static refalrts::FnResult func_ResolvingSets(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ResolvingSets(func_ResolvingSets, "ResolvingSets");
+refalrts::RefalNativeFunction descr_ResolvingSets(func_ResolvingSets, "ResolvingSets");
 refalrts::RefalFunction& ResolvingSets = descr_ResolvingSets;
 
 } // unnamed namespace
@@ -1580,7 +1580,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeContent(func_NormalizeContent, "NormalizeContent");
+refalrts::RefalNativeFunction descr_NormalizeContent(func_NormalizeContent, "NormalizeContent");
 refalrts::RefalFunction& NormalizeContent = descr_NormalizeContent;
 
 } // unnamed namespace
@@ -1809,7 +1809,7 @@ static refalrts::FnResult func_SetCheckRecursion(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SetCheckRecursion(func_SetCheckRecursion, "SetCheckRecursion");
+refalrts::RefalNativeFunction descr_SetCheckRecursion(func_SetCheckRecursion, "SetCheckRecursion");
 refalrts::RefalFunction& SetCheckRecursion = descr_SetCheckRecursion;
 
 } // unnamed namespace
@@ -2487,7 +2487,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SetSubstitute(func_SetSubstitute, "SetSubstitute");
+refalrts::RefalNativeFunction descr_SetSubstitute(func_SetSubstitute, "SetSubstitute");
 refalrts::RefalFunction& SetSubstitute = descr_SetSubstitute;
 
 } // unnamed namespace
@@ -3464,7 +3464,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SubstituteSetsToRules(func_SubstituteSetsToRules, "SubstituteSetsToRules");
+refalrts::RefalNativeFunction descr_SubstituteSetsToRules(func_SubstituteSetsToRules, "SubstituteSetsToRules");
 refalrts::RefalFunction& SubstituteSetsToRules = descr_SubstituteSetsToRules;
 
 } // unnamed namespace
@@ -3686,7 +3686,7 @@ static refalrts::FnResult func_SetDiff(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SetDiff(func_SetDiff, "SetDiff");
+refalrts::RefalNativeFunction descr_SetDiff(func_SetDiff, "SetDiff");
 refalrts::RefalFunction& SetDiff = descr_SetDiff;
 
 } // unnamed namespace
@@ -4011,7 +4011,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeAlternative(func_NormalizeAlternative, "NormalizeAlternative");
+refalrts::RefalNativeFunction descr_NormalizeAlternative(func_NormalizeAlternative, "NormalizeAlternative");
 refalrts::RefalFunction& NormalizeAlternative = descr_NormalizeAlternative;
 
 } // unnamed namespace
@@ -4359,7 +4359,7 @@ static refalrts::FnResult func_SplitAlternatives(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SplitAlternatives(func_SplitAlternatives, "SplitAlternatives");
+refalrts::RefalNativeFunction descr_SplitAlternatives(func_SplitAlternatives, "SplitAlternatives");
 refalrts::RefalFunction& SplitAlternatives = descr_SplitAlternatives;
 
 } // unnamed namespace
@@ -4509,7 +4509,7 @@ static refalrts::FnResult func_gen_NormalizeRule_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_NormalizeRule_L1(func_gen_NormalizeRule_L1, "NormalizeRule\\1");
+refalrts::RefalNativeFunction descr_gen_NormalizeRule_L1(func_gen_NormalizeRule_L1, "NormalizeRule\\1");
 refalrts::RefalFunction& gen_NormalizeRule_L1 = descr_gen_NormalizeRule_L1;
 
 } // unnamed namespace
@@ -4600,7 +4600,7 @@ static refalrts::FnResult func_gen_NormalizeRule_L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_NormalizeRule_L2(func_gen_NormalizeRule_L2, "NormalizeRule\\2");
+refalrts::RefalNativeFunction descr_gen_NormalizeRule_L2(func_gen_NormalizeRule_L2, "NormalizeRule\\2");
 refalrts::RefalFunction& gen_NormalizeRule_L2 = descr_gen_NormalizeRule_L2;
 
 } // unnamed namespace
@@ -4839,7 +4839,7 @@ static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NormalizeRule(func_NormalizeRule, "NormalizeRule");
+refalrts::RefalNativeFunction descr_NormalizeRule(func_NormalizeRule, "NormalizeRule");
 refalrts::RefalFunction& NormalizeRule = descr_NormalizeRule;
 
 } // unnamed namespace
@@ -5146,7 +5146,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_WarningIfUncatched(func_WarningIfUncatched, "WarningIfUncatched");
+refalrts::RefalNativeFunction descr_WarningIfUncatched(func_WarningIfUncatched, "WarningIfUncatched");
 refalrts::RefalFunction& WarningIfUncatched = descr_WarningIfUncatched;
 
 } // unnamed namespace
@@ -5311,7 +5311,7 @@ static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DefaultCatchAnyChar(func_DefaultCatchAnyChar, "DefaultCatchAnyChar");
+refalrts::RefalNativeFunction descr_DefaultCatchAnyChar(func_DefaultCatchAnyChar, "DefaultCatchAnyChar");
 refalrts::RefalFunction& DefaultCatchAnyChar = descr_DefaultCatchAnyChar;
 
 } // unnamed namespace
@@ -5460,7 +5460,7 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DefaultCatchEOF(func_DefaultCatchEOF, "DefaultCatchEOF");
+refalrts::RefalNativeFunction descr_DefaultCatchEOF(func_DefaultCatchEOF, "DefaultCatchEOF");
 refalrts::RefalFunction& DefaultCatchEOF = descr_DefaultCatchEOF;
 
 } // unnamed namespace
@@ -5584,7 +5584,7 @@ static refalrts::FnResult func_PrepareFunctions(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_PrepareFunctions(func_PrepareFunctions, "PrepareFunctions");
+refalrts::RefalNativeFunction descr_PrepareFunctions(func_PrepareFunctions, "PrepareFunctions");
 refalrts::RefalFunction& PrepareFunctions = descr_PrepareFunctions;
 
 } // unnamed namespace
@@ -5731,7 +5731,7 @@ static refalrts::FnResult func_ExtractExpected(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractExpected(func_ExtractExpected, "ExtractExpected");
+refalrts::RefalNativeFunction descr_ExtractExpected(func_ExtractExpected, "ExtractExpected");
 refalrts::RefalFunction& ExtractExpected = descr_ExtractExpected;
 
 } // unnamed namespace
@@ -5857,7 +5857,7 @@ static refalrts::FnResult func_gen_DoPrepareFunctions_S2L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoPrepareFunctions_S2L1(func_gen_DoPrepareFunctions_S2L1, "DoPrepareFunctions$2\\1");
+refalrts::RefalNativeFunction descr_gen_DoPrepareFunctions_S2L1(func_gen_DoPrepareFunctions_S2L1, "DoPrepareFunctions$2\\1");
 refalrts::RefalFunction& gen_DoPrepareFunctions_S2L1 = descr_gen_DoPrepareFunctions_S2L1;
 
 } // unnamed namespace
@@ -6014,7 +6014,7 @@ static refalrts::FnResult func_gen_DoPrepareFunctions_S4L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DoPrepareFunctions_S4L1(func_gen_DoPrepareFunctions_S4L1, "DoPrepareFunctions$4\\1");
+refalrts::RefalNativeFunction descr_gen_DoPrepareFunctions_S4L1(func_gen_DoPrepareFunctions_S4L1, "DoPrepareFunctions$4\\1");
 refalrts::RefalFunction& gen_DoPrepareFunctions_S4L1 = descr_gen_DoPrepareFunctions_S4L1;
 
 } // unnamed namespace
@@ -6517,7 +6517,7 @@ static refalrts::FnResult func_DoPrepareFunctions(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoPrepareFunctions(func_DoPrepareFunctions, "DoPrepareFunctions");
+refalrts::RefalNativeFunction descr_DoPrepareFunctions(func_DoPrepareFunctions, "DoPrepareFunctions");
 refalrts::RefalFunction& DoPrepareFunctions = descr_DoPrepareFunctions;
 
 } // unnamed namespace

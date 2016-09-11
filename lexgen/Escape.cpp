@@ -311,7 +311,7 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_OctDigit(func_OctDigit, "OctDigit");
+refalrts::RefalNativeFunction descr_OctDigit(func_OctDigit, "OctDigit");
 refalrts::RefalFunction& OctDigit = descr_OctDigit;
 
 } // unnamed namespace
@@ -548,7 +548,7 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, "EscapeChar$7\\1");
+refalrts::RefalNativeFunction descr_gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, "EscapeChar$7\\1");
 refalrts::RefalFunction& gen_EscapeChar_S7L1 = descr_gen_EscapeChar_S7L1;
 
 } // unnamed namespace
@@ -884,7 +884,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EscapeChar(func_EscapeChar, "EscapeChar");
+refalrts::RefalNativeFunction descr_EscapeChar(func_EscapeChar, "EscapeChar");
 refalrts::RefalFunction& EscapeChar = descr_EscapeChar;
 
 #endif
@@ -962,7 +962,7 @@ static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_EscapeString(func_EscapeString, "EscapeString");
+refalrts::RefalNativeFunction descr_EscapeString(func_EscapeString, "EscapeString");
 refalrts::RefalFunction& EscapeString = descr_EscapeString;
 
 #endif

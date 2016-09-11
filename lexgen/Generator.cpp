@@ -169,7 +169,7 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GenerateFromDFA(func_GenerateFromDFA, "GenerateFromDFA");
+refalrts::RefalNativeFunction descr_GenerateFromDFA(func_GenerateFromDFA, "GenerateFromDFA");
 refalrts::RefalFunction& GenerateFromDFA = descr_GenerateFromDFA;
 
 #endif
@@ -307,7 +307,7 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_WriteFunction(func_WriteFunction, "WriteFunction");
+refalrts::RefalNativeFunction descr_WriteFunction(func_WriteFunction, "WriteFunction");
 refalrts::RefalFunction& WriteFunction = descr_WriteFunction;
 
 } // unnamed namespace
@@ -410,7 +410,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_WriteAlternative(func_WriteAlternative, "WriteAlternative");
+refalrts::RefalNativeFunction descr_WriteAlternative(func_WriteAlternative, "WriteAlternative");
 refalrts::RefalFunction& WriteAlternative = descr_WriteAlternative;
 
 } // unnamed namespace
@@ -526,7 +526,7 @@ static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_WriteAlternative_Aux_S2L1(func_gen_WriteAlternative_Aux_S2L1, "WriteAlternative-Aux$2\\1");
+refalrts::RefalNativeFunction descr_gen_WriteAlternative_Aux_S2L1(func_gen_WriteAlternative_Aux_S2L1, "WriteAlternative-Aux$2\\1");
 refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1 = descr_gen_WriteAlternative_Aux_S2L1;
 
 } // unnamed namespace
@@ -796,7 +796,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_WriteAlternative_Aux(func_WriteAlternative_Aux, "WriteAlternative-Aux");
+refalrts::RefalNativeFunction descr_WriteAlternative_Aux(func_WriteAlternative_Aux, "WriteAlternative-Aux");
 refalrts::RefalFunction& WriteAlternative_Aux = descr_WriteAlternative_Aux;
 
 } // unnamed namespace
@@ -970,7 +970,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Head(func_Head, "Head");
+refalrts::RefalNativeFunction descr_Head(func_Head, "Head");
 refalrts::RefalFunction& Head = descr_Head;
 
 } // unnamed namespace
@@ -1181,7 +1181,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Flush(func_Flush, "Flush");
+refalrts::RefalNativeFunction descr_Flush(func_Flush, "Flush");
 refalrts::RefalFunction& Flush = descr_Flush;
 
 } // unnamed namespace
@@ -1323,7 +1323,7 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NextState_L(func_NextState_L, "NextState-L");
+refalrts::RefalNativeFunction descr_NextState_L(func_NextState_L, "NextState-L");
 refalrts::RefalFunction& NextState_L = descr_NextState_L;
 
 } // unnamed namespace
@@ -1473,7 +1473,7 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_NextState_R(func_NextState_R, "NextState-R");
+refalrts::RefalNativeFunction descr_NextState_R(func_NextState_R, "NextState-R");
 refalrts::RefalFunction& NextState_R = descr_NextState_R;
 
 } // unnamed namespace

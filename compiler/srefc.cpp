@@ -304,7 +304,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalNativeFunction descr_Go(func_Go, "Go");
 refalrts::RefalFunction& Go = descr_Go;
 
 #endif
@@ -516,7 +516,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalNativeFunction descr_Main(func_Main, "Main");
 refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
@@ -707,7 +707,7 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main_SwValidCommandLine(func_Main_SwValidCommandLine, "Main-SwValidCommandLine");
+refalrts::RefalNativeFunction descr_Main_SwValidCommandLine(func_Main_SwValidCommandLine, "Main-SwValidCommandLine");
 refalrts::RefalFunction& Main_SwValidCommandLine = descr_Main_SwValidCommandLine;
 
 } // unnamed namespace
@@ -839,7 +839,7 @@ static refalrts::FnResult func_gen_ReportErrors_S1L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ReportErrors_S1L1(func_gen_ReportErrors_S1L1, "ReportErrors$1\\1");
+refalrts::RefalNativeFunction descr_gen_ReportErrors_S1L1(func_gen_ReportErrors_S1L1, "ReportErrors$1\\1");
 refalrts::RefalFunction& gen_ReportErrors_S1L1 = descr_gen_ReportErrors_S1L1;
 
 } // unnamed namespace
@@ -972,7 +972,7 @@ static refalrts::FnResult func_gen_ReportErrors_S2L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ReportErrors_S2L1(func_gen_ReportErrors_S2L1, "ReportErrors$2\\1");
+refalrts::RefalNativeFunction descr_gen_ReportErrors_S2L1(func_gen_ReportErrors_S2L1, "ReportErrors$2\\1");
 refalrts::RefalFunction& gen_ReportErrors_S2L1 = descr_gen_ReportErrors_S2L1;
 
 } // unnamed namespace
@@ -1217,7 +1217,7 @@ static refalrts::FnResult func_ReportErrors(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ReportErrors(func_ReportErrors, "ReportErrors");
+refalrts::RefalNativeFunction descr_ReportErrors(func_ReportErrors, "ReportErrors");
 refalrts::RefalFunction& ReportErrors = descr_ReportErrors;
 
 } // unnamed namespace
@@ -1357,7 +1357,7 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CreateErrorFileMark(func_CreateErrorFileMark, "CreateErrorFileMark");
+refalrts::RefalNativeFunction descr_CreateErrorFileMark(func_CreateErrorFileMark, "CreateErrorFileMark");
 refalrts::RefalFunction& CreateErrorFileMark = descr_CreateErrorFileMark;
 
 } // unnamed namespace
@@ -1566,7 +1566,7 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Main_SwFoundFiles_S1L1(func_gen_Main_SwFoundFiles_S1L1, "Main-SwFoundFiles$1\\1");
+refalrts::RefalNativeFunction descr_gen_Main_SwFoundFiles_S1L1(func_gen_Main_SwFoundFiles_S1L1, "Main-SwFoundFiles$1\\1");
 refalrts::RefalFunction& gen_Main_SwFoundFiles_S1L1 = descr_gen_Main_SwFoundFiles_S1L1;
 
 } // unnamed namespace
@@ -1790,7 +1790,7 @@ static refalrts::FnResult func_Main_SwFoundFiles(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main_SwFoundFiles(func_Main_SwFoundFiles, "Main-SwFoundFiles");
+refalrts::RefalNativeFunction descr_Main_SwFoundFiles(func_Main_SwFoundFiles, "Main-SwFoundFiles");
 refalrts::RefalFunction& Main_SwFoundFiles = descr_Main_SwFoundFiles;
 
 } // unnamed namespace
@@ -2022,7 +2022,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Main_SwRenamedTargets_S1L1(func_gen_Main_SwRenamedTargets_S1L1, "Main-SwRenamedTargets$1\\1");
+refalrts::RefalNativeFunction descr_gen_Main_SwRenamedTargets_S1L1(func_gen_Main_SwRenamedTargets_S1L1, "Main-SwRenamedTargets$1\\1");
 refalrts::RefalFunction& gen_Main_SwRenamedTargets_S1L1 = descr_gen_Main_SwRenamedTargets_S1L1;
 
 } // unnamed namespace
@@ -2251,7 +2251,7 @@ static refalrts::FnResult func_Main_SwRenamedTargets(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main_SwRenamedTargets(func_Main_SwRenamedTargets, "Main-SwRenamedTargets");
+refalrts::RefalNativeFunction descr_Main_SwRenamedTargets(func_Main_SwRenamedTargets, "Main-SwRenamedTargets");
 refalrts::RefalFunction& Main_SwRenamedTargets = descr_Main_SwRenamedTargets;
 
 } // unnamed namespace
@@ -2448,7 +2448,7 @@ static refalrts::FnResult func_Main_SwCompiledFiles(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main_SwCompiledFiles(func_Main_SwCompiledFiles, "Main-SwCompiledFiles");
+refalrts::RefalNativeFunction descr_Main_SwCompiledFiles(func_Main_SwCompiledFiles, "Main-SwCompiledFiles");
 refalrts::RefalFunction& Main_SwCompiledFiles = descr_Main_SwCompiledFiles;
 
 } // unnamed namespace
@@ -2542,7 +2542,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_LookupSourceFiles_L1L1(func_gen_LookupSourceFiles_L1L1, "LookupSourceFiles\\1\\1");
+refalrts::RefalNativeFunction descr_gen_LookupSourceFiles_L1L1(func_gen_LookupSourceFiles_L1L1, "LookupSourceFiles\\1\\1");
 refalrts::RefalFunction& gen_LookupSourceFiles_L1L1 = descr_gen_LookupSourceFiles_L1L1;
 
 } // unnamed namespace
@@ -2688,7 +2688,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_LookupSourceFiles_L1(func_gen_LookupSourceFiles_L1, "LookupSourceFiles\\1");
+refalrts::RefalNativeFunction descr_gen_LookupSourceFiles_L1(func_gen_LookupSourceFiles_L1, "LookupSourceFiles\\1");
 refalrts::RefalFunction& gen_LookupSourceFiles_L1 = descr_gen_LookupSourceFiles_L1;
 
 } // unnamed namespace
@@ -2803,7 +2803,7 @@ static refalrts::FnResult func_LookupSourceFiles(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_LookupSourceFiles(func_LookupSourceFiles, "LookupSourceFiles");
+refalrts::RefalNativeFunction descr_LookupSourceFiles(func_LookupSourceFiles, "LookupSourceFiles");
 refalrts::RefalFunction& LookupSourceFiles = descr_LookupSourceFiles;
 
 } // unnamed namespace
@@ -2959,7 +2959,7 @@ static refalrts::FnResult func_RenameTargets(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_RenameTargets(func_RenameTargets, "RenameTargets");
+refalrts::RefalNativeFunction descr_RenameTargets(func_RenameTargets, "RenameTargets");
 refalrts::RefalFunction& RenameTargets = descr_RenameTargets;
 
 } // unnamed namespace
@@ -3171,7 +3171,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GetFileName(func_GetFileName, "GetFileName");
+refalrts::RefalNativeFunction descr_GetFileName(func_GetFileName, "GetFileName");
 refalrts::RefalFunction& GetFileName = descr_GetFileName;
 
 } // unnamed namespace
@@ -3420,7 +3420,7 @@ static refalrts::FnResult func_ScanCollisions(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ScanCollisions(func_ScanCollisions, "ScanCollisions");
+refalrts::RefalNativeFunction descr_ScanCollisions(func_ScanCollisions, "ScanCollisions");
 refalrts::RefalFunction& ScanCollisions = descr_ScanCollisions;
 
 } // unnamed namespace
@@ -3684,7 +3684,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_RenameLocations(func_RenameLocations, "RenameLocations");
+refalrts::RefalNativeFunction descr_RenameLocations(func_RenameLocations, "RenameLocations");
 refalrts::RefalFunction& RenameLocations = descr_RenameLocations;
 
 } // unnamed namespace
@@ -3949,7 +3949,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_RenameLocations_Aux_L1(func_gen_RenameLocations_Aux_L1, "RenameLocations-Aux\\1");
+refalrts::RefalNativeFunction descr_gen_RenameLocations_Aux_L1(func_gen_RenameLocations_Aux_L1, "RenameLocations-Aux\\1");
 refalrts::RefalFunction& gen_RenameLocations_Aux_L1 = descr_gen_RenameLocations_Aux_L1;
 
 } // unnamed namespace
@@ -4054,7 +4054,7 @@ static refalrts::FnResult func_RenameLocations_Aux(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_RenameLocations_Aux(func_RenameLocations_Aux, "RenameLocations-Aux");
+refalrts::RefalNativeFunction descr_RenameLocations_Aux(func_RenameLocations_Aux, "RenameLocations-Aux");
 refalrts::RefalFunction& RenameLocations_Aux = descr_RenameLocations_Aux;
 
 } // unnamed namespace
@@ -4183,7 +4183,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1S2L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CompileFiles_L1S2L1(func_gen_CompileFiles_L1S2L1, "CompileFiles\\1$2\\1");
+refalrts::RefalNativeFunction descr_gen_CompileFiles_L1S2L1(func_gen_CompileFiles_L1S2L1, "CompileFiles\\1$2\\1");
 refalrts::RefalFunction& gen_CompileFiles_L1S2L1 = descr_gen_CompileFiles_L1S2L1;
 
 } // unnamed namespace
@@ -4447,7 +4447,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CompileFiles_L1(func_gen_CompileFiles_L1, "CompileFiles\\1");
+refalrts::RefalNativeFunction descr_gen_CompileFiles_L1(func_gen_CompileFiles_L1, "CompileFiles\\1");
 refalrts::RefalFunction& gen_CompileFiles_L1 = descr_gen_CompileFiles_L1;
 
 } // unnamed namespace
@@ -4560,7 +4560,7 @@ static refalrts::FnResult func_CompileFiles(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CompileFiles(func_CompileFiles, "CompileFiles");
+refalrts::RefalNativeFunction descr_CompileFiles(func_CompileFiles, "CompileFiles");
 refalrts::RefalFunction& CompileFiles = descr_CompileFiles;
 
 } // unnamed namespace
@@ -4648,7 +4648,7 @@ static refalrts::FnResult func_gen_Link_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Link_S2L1(func_gen_Link_S2L1, "Link$2\\1");
+refalrts::RefalNativeFunction descr_gen_Link_S2L1(func_gen_Link_S2L1, "Link$2\\1");
 refalrts::RefalFunction& gen_Link_S2L1 = descr_gen_Link_S2L1;
 
 } // unnamed namespace
@@ -4804,7 +4804,7 @@ static refalrts::FnResult func_Link(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Link(func_Link, "Link");
+refalrts::RefalNativeFunction descr_Link(func_Link, "Link");
 refalrts::RefalFunction& Link = descr_Link;
 
 } // unnamed namespace
@@ -4900,7 +4900,7 @@ static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GetBaseNameLowerCase(func_GetBaseNameLowerCase, "GetBaseNameLowerCase");
+refalrts::RefalNativeFunction descr_GetBaseNameLowerCase(func_GetBaseNameLowerCase, "GetBaseNameLowerCase");
 refalrts::RefalFunction& GetBaseNameLowerCase = descr_GetBaseNameLowerCase;
 
 } // unnamed namespace
@@ -5104,7 +5104,7 @@ static refalrts::FnResult func_DoGetFileName(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoGetFileName(func_DoGetFileName, "DoGetFileName");
+refalrts::RefalNativeFunction descr_DoGetFileName(func_DoGetFileName, "DoGetFileName");
 refalrts::RefalFunction& DoGetFileName = descr_DoGetFileName;
 
 } // unnamed namespace
@@ -5198,7 +5198,7 @@ static refalrts::FnResult func_gen_Lower_L1S1L1(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Lower_L1S1L1(func_gen_Lower_L1S1L1, "Lower\\1$1\\1");
+refalrts::RefalNativeFunction descr_gen_Lower_L1S1L1(func_gen_Lower_L1S1L1, "Lower\\1$1\\1");
 refalrts::RefalFunction& gen_Lower_L1S1L1 = descr_gen_Lower_L1S1L1;
 
 } // unnamed namespace
@@ -5364,7 +5364,7 @@ static refalrts::FnResult func_gen_Lower_L1(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Lower_L1(func_gen_Lower_L1, "Lower\\1");
+refalrts::RefalNativeFunction descr_gen_Lower_L1(func_gen_Lower_L1, "Lower\\1");
 refalrts::RefalFunction& gen_Lower_L1 = descr_gen_Lower_L1;
 
 } // unnamed namespace
@@ -5475,7 +5475,7 @@ static refalrts::FnResult func_Lower(refalrts::Iter arg_begin, refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Lower(func_Lower, "Lower");
+refalrts::RefalNativeFunction descr_Lower(func_Lower, "Lower");
 refalrts::RefalFunction& Lower = descr_Lower;
 
 } // unnamed namespace

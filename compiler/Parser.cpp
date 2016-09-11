@@ -561,7 +561,7 @@ static refalrts::FnResult func_ParseProgram(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_ParseProgram(func_ParseProgram, "ParseProgram");
+refalrts::RefalNativeFunction descr_ParseProgram(func_ParseProgram, "ParseProgram");
 refalrts::RefalFunction& ParseProgram = descr_ParseProgram;
 
 #endif
@@ -942,7 +942,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_PrepareBracket(func_PrepareBracket, "PrepareBracket");
+refalrts::RefalNativeFunction descr_PrepareBracket(func_PrepareBracket, "PrepareBracket");
 refalrts::RefalFunction& PrepareBracket = descr_PrepareBracket;
 
 } // unnamed namespace
@@ -1056,7 +1056,7 @@ static refalrts::FnResult func_gen_ParseElements_S2L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseElements_S2L1(func_gen_ParseElements_S2L1, "ParseElements$2\\1");
+refalrts::RefalNativeFunction descr_gen_ParseElements_S2L1(func_gen_ParseElements_S2L1, "ParseElements$2\\1");
 refalrts::RefalFunction& gen_ParseElements_S2L1 = descr_gen_ParseElements_S2L1;
 
 } // unnamed namespace
@@ -1170,7 +1170,7 @@ static refalrts::FnResult func_gen_ParseElements_S4L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseElements_S4L1(func_gen_ParseElements_S4L1, "ParseElements$4\\1");
+refalrts::RefalNativeFunction descr_gen_ParseElements_S4L1(func_gen_ParseElements_S4L1, "ParseElements$4\\1");
 refalrts::RefalFunction& gen_ParseElements_S4L1 = descr_gen_ParseElements_S4L1;
 
 } // unnamed namespace
@@ -1682,7 +1682,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseElements(func_ParseElements, "ParseElements");
+refalrts::RefalNativeFunction descr_ParseElements(func_ParseElements, "ParseElements");
 refalrts::RefalFunction& ParseElements = descr_ParseElements;
 
 } // unnamed namespace
@@ -1969,7 +1969,7 @@ static refalrts::FnResult func_ASTItemFromDirective(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ASTItemFromDirective(func_ASTItemFromDirective, "ASTItemFromDirective");
+refalrts::RefalNativeFunction descr_ASTItemFromDirective(func_ASTItemFromDirective, "ASTItemFromDirective");
 refalrts::RefalFunction& ASTItemFromDirective = descr_ASTItemFromDirective;
 
 } // unnamed namespace
@@ -2250,7 +2250,7 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseElement_SwDirective(func_ParseElement_SwDirective, "ParseElement-SwDirective");
+refalrts::RefalNativeFunction descr_ParseElement_SwDirective(func_ParseElement_SwDirective, "ParseElement-SwDirective");
 refalrts::RefalFunction& ParseElement_SwDirective = descr_ParseElement_SwDirective;
 
 } // unnamed namespace
@@ -2471,7 +2471,7 @@ static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseNameList(func_ParseNameList, "ParseNameList");
+refalrts::RefalNativeFunction descr_ParseNameList(func_ParseNameList, "ParseNameList");
 refalrts::RefalFunction& ParseNameList = descr_ParseNameList;
 
 } // unnamed namespace
@@ -2609,7 +2609,7 @@ static refalrts::FnResult func_Wrap(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Wrap(func_Wrap, "Wrap");
+refalrts::RefalNativeFunction descr_Wrap(func_Wrap, "Wrap");
 refalrts::RefalFunction& Wrap = descr_Wrap;
 
 } // unnamed namespace
@@ -2857,7 +2857,7 @@ static refalrts::FnResult func_ParseNameList_Tail(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseNameList_Tail(func_ParseNameList_Tail, "ParseNameList-Tail");
+refalrts::RefalNativeFunction descr_ParseNameList_Tail(func_ParseNameList_Tail, "ParseNameList-Tail");
 refalrts::RefalFunction& ParseNameList_Tail = descr_ParseNameList_Tail;
 
 } // unnamed namespace
@@ -2979,7 +2979,7 @@ static refalrts::FnResult func_gen_ParseFunction_S1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseFunction_S1L1(func_gen_ParseFunction_S1L1, "ParseFunction$1\\1");
+refalrts::RefalNativeFunction descr_gen_ParseFunction_S1L1(func_gen_ParseFunction_S1L1, "ParseFunction$1\\1");
 refalrts::RefalFunction& gen_ParseFunction_S1L1 = descr_gen_ParseFunction_S1L1;
 
 } // unnamed namespace
@@ -3233,7 +3233,7 @@ static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseFunction(func_ParseFunction, "ParseFunction");
+refalrts::RefalNativeFunction descr_ParseFunction(func_ParseFunction, "ParseFunction");
 refalrts::RefalFunction& ParseFunction = descr_ParseFunction;
 
 } // unnamed namespace
@@ -3436,7 +3436,7 @@ static refalrts::FnResult func_gen_ParseBlock_S1L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseBlock_S1L1(func_gen_ParseBlock_S1L1, "ParseBlock$1\\1");
+refalrts::RefalNativeFunction descr_gen_ParseBlock_S1L1(func_gen_ParseBlock_S1L1, "ParseBlock$1\\1");
 refalrts::RefalFunction& gen_ParseBlock_S1L1 = descr_gen_ParseBlock_S1L1;
 
 } // unnamed namespace
@@ -3630,7 +3630,7 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseBlock(func_ParseBlock, "ParseBlock");
+refalrts::RefalNativeFunction descr_ParseBlock(func_ParseBlock, "ParseBlock");
 refalrts::RefalFunction& ParseBlock = descr_ParseBlock;
 
 } // unnamed namespace
@@ -3918,7 +3918,7 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoParseBlock(func_DoParseBlock, "DoParseBlock");
+refalrts::RefalNativeFunction descr_DoParseBlock(func_DoParseBlock, "DoParseBlock");
 refalrts::RefalFunction& DoParseBlock = descr_DoParseBlock;
 
 } // unnamed namespace
@@ -4092,7 +4092,7 @@ static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseSentence_L1(func_gen_ParseSentence_L1, "ParseSentence\\1");
+refalrts::RefalNativeFunction descr_gen_ParseSentence_L1(func_gen_ParseSentence_L1, "ParseSentence\\1");
 refalrts::RefalFunction& gen_ParseSentence_L1 = descr_gen_ParseSentence_L1;
 
 } // unnamed namespace
@@ -4209,7 +4209,7 @@ static refalrts::FnResult func_gen_ParseSentence_L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseSentence_L2(func_gen_ParseSentence_L2, "ParseSentence\\2");
+refalrts::RefalNativeFunction descr_gen_ParseSentence_L2(func_gen_ParseSentence_L2, "ParseSentence\\2");
 refalrts::RefalFunction& gen_ParseSentence_L2 = descr_gen_ParseSentence_L2;
 
 } // unnamed namespace
@@ -4690,7 +4690,7 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseSentence_L3(func_gen_ParseSentence_L3, "ParseSentence\\3");
+refalrts::RefalNativeFunction descr_gen_ParseSentence_L3(func_gen_ParseSentence_L3, "ParseSentence\\3");
 refalrts::RefalFunction& gen_ParseSentence_L3 = descr_gen_ParseSentence_L3;
 
 } // unnamed namespace
@@ -4865,7 +4865,7 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
+refalrts::RefalNativeFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
 refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 
 } // unnamed namespace
@@ -6607,7 +6607,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParsePattern(func_ParsePattern, "ParsePattern");
+refalrts::RefalNativeFunction descr_ParsePattern(func_ParsePattern, "ParsePattern");
 refalrts::RefalFunction& ParsePattern = descr_ParsePattern;
 
 } // unnamed namespace
@@ -6945,7 +6945,7 @@ static refalrts::FnResult func_StrFromBracket(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_StrFromBracket(func_StrFromBracket, "StrFromBracket");
+refalrts::RefalNativeFunction descr_StrFromBracket(func_StrFromBracket, "StrFromBracket");
 refalrts::RefalFunction& StrFromBracket = descr_StrFromBracket;
 
 } // unnamed namespace
@@ -7068,7 +7068,7 @@ static refalrts::FnResult func_gen_ParseResult_S9L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseResult_S9L1(func_gen_ParseResult_S9L1, "ParseResult$9\\1");
+refalrts::RefalNativeFunction descr_gen_ParseResult_S9L1(func_gen_ParseResult_S9L1, "ParseResult$9\\1");
 refalrts::RefalFunction& gen_ParseResult_S9L1 = descr_gen_ParseResult_S9L1;
 
 } // unnamed namespace
@@ -7191,7 +7191,7 @@ static refalrts::FnResult func_gen_ParseResult_S9L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseResult_S9L2(func_gen_ParseResult_S9L2, "ParseResult$9\\2");
+refalrts::RefalNativeFunction descr_gen_ParseResult_S9L2(func_gen_ParseResult_S9L2, "ParseResult$9\\2");
 refalrts::RefalFunction& gen_ParseResult_S9L2 = descr_gen_ParseResult_S9L2;
 
 } // unnamed namespace
@@ -7321,7 +7321,7 @@ static refalrts::FnResult func_gen_ParseResult_S11L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseResult_S11L1(func_gen_ParseResult_S11L1, "ParseResult$11\\1");
+refalrts::RefalNativeFunction descr_gen_ParseResult_S11L1(func_gen_ParseResult_S11L1, "ParseResult$11\\1");
 refalrts::RefalFunction& gen_ParseResult_S11L1 = descr_gen_ParseResult_S11L1;
 
 } // unnamed namespace
@@ -8752,7 +8752,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseResult(func_ParseResult, "ParseResult");
+refalrts::RefalNativeFunction descr_ParseResult(func_ParseResult, "ParseResult");
 refalrts::RefalFunction& ParseResult = descr_ParseResult;
 
 } // unnamed namespace

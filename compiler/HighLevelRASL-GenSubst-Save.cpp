@@ -516,7 +516,7 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GenInitSubst_Save(func_GenInitSubst_Save, "GenInitSubst-Save");
+refalrts::RefalNativeFunction descr_GenInitSubst_Save(func_GenInitSubst_Save, "GenInitSubst-Save");
 refalrts::RefalFunction& GenInitSubst_Save = descr_GenInitSubst_Save;
 
 #endif
@@ -612,7 +612,7 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GenSubst_Save(func_GenSubst_Save, "GenSubst-Save");
+refalrts::RefalNativeFunction descr_GenSubst_Save(func_GenSubst_Save, "GenSubst-Save");
 refalrts::RefalFunction& GenSubst_Save = descr_GenSubst_Save;
 
 #endif
@@ -7694,7 +7694,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DoGenSubst(func_DoGenSubst, "DoGenSubst");
+refalrts::RefalNativeFunction descr_DoGenSubst(func_DoGenSubst, "DoGenSubst");
 refalrts::RefalFunction& DoGenSubst = descr_DoGenSubst;
 
 } // unnamed namespace
@@ -7866,7 +7866,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_IncVarOffset_Saved(func_IncVarOffset_Saved, "IncVarOffset-Saved");
+refalrts::RefalNativeFunction descr_IncVarOffset_Saved(func_IncVarOffset_Saved, "IncVarOffset-Saved");
 refalrts::RefalFunction& IncVarOffset_Saved = descr_IncVarOffset_Saved;
 
 } // unnamed namespace

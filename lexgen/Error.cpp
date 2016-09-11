@@ -138,7 +138,7 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_ErrorAt(func_ErrorAt, "ErrorAt");
+refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, "ErrorAt");
 refalrts::RefalFunction& ErrorAt = descr_ErrorAt;
 
 #endif
@@ -251,7 +251,7 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_WarningAt(func_WarningAt, "WarningAt");
+refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, "WarningAt");
 refalrts::RefalFunction& WarningAt = descr_WarningAt;
 
 #endif

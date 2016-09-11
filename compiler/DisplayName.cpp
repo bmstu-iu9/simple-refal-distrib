@@ -293,7 +293,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DisplayName(func_DisplayName, "DisplayName");
+refalrts::RefalNativeFunction descr_DisplayName(func_DisplayName, "DisplayName");
 refalrts::RefalFunction& DisplayName = descr_DisplayName;
 
 #endif
@@ -501,7 +501,7 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_DisplayNameSuf(func_DisplayNameSuf, "DisplayNameSuf");
+refalrts::RefalNativeFunction descr_DisplayNameSuf(func_DisplayNameSuf, "DisplayNameSuf");
 refalrts::RefalFunction& DisplayNameSuf = descr_DisplayNameSuf;
 
 } // unnamed namespace
@@ -593,7 +593,7 @@ static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DisplayCName(func_DisplayCName, "DisplayCName");
+refalrts::RefalNativeFunction descr_DisplayCName(func_DisplayCName, "DisplayCName");
 refalrts::RefalFunction& DisplayCName = descr_DisplayCName;
 
 #endif
@@ -938,7 +938,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_CName(func_CName, "CName");
+refalrts::RefalNativeFunction descr_CName(func_CName, "CName");
 refalrts::RefalFunction& CName = descr_CName;
 
 #endif
@@ -1145,7 +1145,7 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CNameSuf(func_CNameSuf, "CNameSuf");
+refalrts::RefalNativeFunction descr_CNameSuf(func_CNameSuf, "CNameSuf");
 refalrts::RefalFunction& CNameSuf = descr_CNameSuf;
 
 } // unnamed namespace

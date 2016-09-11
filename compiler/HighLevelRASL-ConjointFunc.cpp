@@ -269,7 +269,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L1L1(func_gen_HighLevelRASL_Function_Conjoint_L1L1, "HighLevelRASL-Function-Conjoint\\1\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1L1(func_gen_HighLevelRASL_Function_Conjoint_L1L1, "HighLevelRASL-Function-Conjoint\\1\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1L1 = descr_gen_HighLevelRASL_Function_Conjoint_L1L1;
 
 } // unnamed namespace
@@ -425,7 +425,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L1(func_gen_HighLevelRASL_Function_Conjoint_L1, "HighLevelRASL-Function-Conjoint\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1(func_gen_HighLevelRASL_Function_Conjoint_L1, "HighLevelRASL-Function-Conjoint\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1 = descr_gen_HighLevelRASL_Function_Conjoint_L1;
 
 } // unnamed namespace
@@ -518,7 +518,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L2(func_gen_HighLevelRASL_Function_Conjoint_L2, "HighLevelRASL-Function-Conjoint\\2");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L2(func_gen_HighLevelRASL_Function_Conjoint_L2, "HighLevelRASL-Function-Conjoint\\2");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L2 = descr_gen_HighLevelRASL_Function_Conjoint_L2;
 
 } // unnamed namespace
@@ -708,7 +708,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L3(func_gen_HighLevelRASL_Function_Conjoint_L3, "HighLevelRASL-Function-Conjoint\\3");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L3(func_gen_HighLevelRASL_Function_Conjoint_L3, "HighLevelRASL-Function-Conjoint\\3");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L3 = descr_gen_HighLevelRASL_Function_Conjoint_L3;
 
 } // unnamed namespace
@@ -847,7 +847,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4L1(refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L4L1(func_gen_HighLevelRASL_Function_Conjoint_L4L1, "HighLevelRASL-Function-Conjoint\\4\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4L1(func_gen_HighLevelRASL_Function_Conjoint_L4L1, "HighLevelRASL-Function-Conjoint\\4\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4L1 = descr_gen_HighLevelRASL_Function_Conjoint_L4L1;
 
 } // unnamed namespace
@@ -1041,7 +1041,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L4(func_gen_HighLevelRASL_Function_Conjoint_L4, "HighLevelRASL-Function-Conjoint\\4");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4(func_gen_HighLevelRASL_Function_Conjoint_L4, "HighLevelRASL-Function-Conjoint\\4");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4 = descr_gen_HighLevelRASL_Function_Conjoint_L4;
 
 } // unnamed namespace
@@ -1176,7 +1176,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1L1, "HighLevelRASL-Function-Conjoint\\5\\1\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1L1, "HighLevelRASL-Function-Conjoint\\5\\1\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1L1 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1;
 
 } // unnamed namespace
@@ -1434,7 +1434,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1, "HighLevelRASL-Function-Conjoint\\5\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1, "HighLevelRASL-Function-Conjoint\\5\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1;
 
 } // unnamed namespace
@@ -1609,7 +1609,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L5(func_gen_HighLevelRASL_Function_Conjoint_L5, "HighLevelRASL-Function-Conjoint\\5");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5(func_gen_HighLevelRASL_Function_Conjoint_L5, "HighLevelRASL-Function-Conjoint\\5");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5 = descr_gen_HighLevelRASL_Function_Conjoint_L5;
 
 } // unnamed namespace
@@ -1752,7 +1752,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L6L1(func_gen_HighLevelRASL_Function_Conjoint_L6L1, "HighLevelRASL-Function-Conjoint\\6\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6L1(func_gen_HighLevelRASL_Function_Conjoint_L6L1, "HighLevelRASL-Function-Conjoint\\6\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6L1 = descr_gen_HighLevelRASL_Function_Conjoint_L6L1;
 
 } // unnamed namespace
@@ -1904,7 +1904,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_Function_Conjoint_L6(func_gen_HighLevelRASL_Function_Conjoint_L6, "HighLevelRASL-Function-Conjoint\\6");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6(func_gen_HighLevelRASL_Function_Conjoint_L6, "HighLevelRASL-Function-Conjoint\\6");
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6 = descr_gen_HighLevelRASL_Function_Conjoint_L6;
 
 } // unnamed namespace
@@ -2131,7 +2131,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_HighLevelRASL_Function_Conjoint(func_HighLevelRASL_Function_Conjoint, "HighLevelRASL-Function-Conjoint");
+refalrts::RefalNativeFunction descr_HighLevelRASL_Function_Conjoint(func_HighLevelRASL_Function_Conjoint, "HighLevelRASL-Function-Conjoint");
 refalrts::RefalFunction& HighLevelRASL_Function_Conjoint = descr_HighLevelRASL_Function_Conjoint;
 
 #endif
@@ -2454,7 +2454,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ComposeVars(func_ComposeVars, "ComposeVars");
+refalrts::RefalNativeFunction descr_ComposeVars(func_ComposeVars, "ComposeVars");
 refalrts::RefalFunction& ComposeVars = descr_ComposeVars;
 
 } // unnamed namespace

@@ -185,7 +185,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalNativeFunction descr_Go(func_Go, "Go");
 refalrts::RefalFunction& Go = descr_Go;
 
 #endif
@@ -367,7 +367,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Main(func_Main, "Main");
+refalrts::RefalNativeFunction descr_Main(func_Main, "Main");
 refalrts::RefalFunction& Main = descr_Main;
 
 } // unnamed namespace
@@ -458,7 +458,7 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1");
+refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1");
 refalrts::RefalFunction& gen_MakeProject_S1L1 = descr_gen_MakeProject_S1L1;
 
 } // unnamed namespace
@@ -590,7 +590,7 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1");
+refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1");
 refalrts::RefalFunction& gen_MakeProject_S2L1 = descr_gen_MakeProject_S2L1;
 
 } // unnamed namespace
@@ -846,7 +846,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_MakeProject(func_MakeProject, "MakeProject");
+refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, "MakeProject");
 refalrts::RefalFunction& MakeProject = descr_MakeProject;
 
 } // unnamed namespace
@@ -1043,7 +1043,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1");
+refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1");
 refalrts::RefalFunction& gen_Make_S1L1 = descr_gen_Make_S1L1;
 
 } // unnamed namespace
@@ -1201,7 +1201,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1");
+refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1");
 refalrts::RefalFunction& gen_Make_S2L1 = descr_gen_Make_S2L1;
 
 } // unnamed namespace
@@ -1356,7 +1356,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2");
+refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2");
 refalrts::RefalFunction& gen_Make_S2L2 = descr_gen_Make_S2L2;
 
 } // unnamed namespace
@@ -1631,7 +1631,7 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Make(func_Make, "Make");
+refalrts::RefalNativeFunction descr_Make(func_Make, "Make");
 refalrts::RefalFunction& Make = descr_Make;
 
 } // unnamed namespace

@@ -256,7 +256,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1");
+refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1");
 refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1 = descr_gen_PreparePatternHardSent_L1S5L1;
 
 } // unnamed namespace
@@ -677,7 +677,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1");
+refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1");
 refalrts::RefalFunction& gen_PreparePatternHardSent_L1 = descr_gen_PreparePatternHardSent_L1;
 
 } // unnamed namespace
@@ -761,7 +761,7 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent");
+refalrts::RefalNativeFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent");
 refalrts::RefalFunction& PreparePatternHardSent = descr_PreparePatternHardSent;
 
 } // unnamed namespace
@@ -1935,7 +1935,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux");
+refalrts::RefalNativeFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux");
 refalrts::RefalFunction& CreateHardPattern_Aux = descr_CreateHardPattern_Aux;
 
 } // unnamed namespace
@@ -2027,7 +2027,7 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_CreateHardPattern(func_CreateHardPattern, "CreateHardPattern");
+refalrts::RefalNativeFunction descr_CreateHardPattern(func_CreateHardPattern, "CreateHardPattern");
 refalrts::RefalFunction& CreateHardPattern = descr_CreateHardPattern;
 
 #endif

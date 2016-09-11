@@ -626,7 +626,7 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Opt_L1L1(func_gen_GenResult_Opt_L1L1, "GenResult-Opt\\1\\1");
+refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1L1(func_gen_GenResult_Opt_L1L1, "GenResult-Opt\\1\\1");
 refalrts::RefalFunction& gen_GenResult_Opt_L1L1 = descr_gen_GenResult_Opt_L1L1;
 
 } // unnamed namespace
@@ -779,7 +779,7 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Opt_L1(func_gen_GenResult_Opt_L1, "GenResult-Opt\\1");
+refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1(func_gen_GenResult_Opt_L1, "GenResult-Opt\\1");
 refalrts::RefalFunction& gen_GenResult_Opt_L1 = descr_gen_GenResult_Opt_L1;
 
 } // unnamed namespace
@@ -997,7 +997,7 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_GenResult_Opt(func_GenResult_Opt, "GenResult-Opt");
+refalrts::RefalNativeFunction descr_GenResult_Opt(func_GenResult_Opt, "GenResult-Opt");
 refalrts::RefalFunction& GenResult_Opt = descr_GenResult_Opt;
 
 #endif
@@ -1418,7 +1418,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FlatResult(func_FlatResult, "FlatResult");
+refalrts::RefalNativeFunction descr_FlatResult(func_FlatResult, "FlatResult");
 refalrts::RefalFunction& FlatResult = descr_FlatResult;
 
 } // unnamed namespace
@@ -1737,7 +1737,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Aux_L1(func_gen_GenResult_Aux_L1, "GenResult-Aux\\1");
+refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L1(func_gen_GenResult_Aux_L1, "GenResult-Aux\\1");
 refalrts::RefalFunction& gen_GenResult_Aux_L1 = descr_gen_GenResult_Aux_L1;
 
 } // unnamed namespace
@@ -2110,7 +2110,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Aux_L2S1L1(func_gen_GenResult_Aux_L2S1L1, "GenResult-Aux\\2$1\\1");
+refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2S1L1(func_gen_GenResult_Aux_L2S1L1, "GenResult-Aux\\2$1\\1");
 refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1 = descr_gen_GenResult_Aux_L2S1L1;
 
 } // unnamed namespace
@@ -2245,7 +2245,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenResult_Aux_L2(func_gen_GenResult_Aux_L2, "GenResult-Aux\\2");
+refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2(func_gen_GenResult_Aux_L2, "GenResult-Aux\\2");
 refalrts::RefalFunction& gen_GenResult_Aux_L2 = descr_gen_GenResult_Aux_L2;
 
 } // unnamed namespace
@@ -2488,7 +2488,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenResult_Aux(func_GenResult_Aux, "GenResult-Aux");
+refalrts::RefalNativeFunction descr_GenResult_Aux(func_GenResult_Aux, "GenResult-Aux");
 refalrts::RefalFunction& GenResult_Aux = descr_GenResult_Aux;
 
 } // unnamed namespace
@@ -2943,7 +2943,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CreateElemParam(func_CreateElemParam, "CreateElemParam");
+refalrts::RefalNativeFunction descr_CreateElemParam(func_CreateElemParam, "CreateElemParam");
 refalrts::RefalFunction& CreateElemParam = descr_CreateElemParam;
 
 } // unnamed namespace
@@ -3397,7 +3397,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenPushLink_L1(func_gen_GenPushLink_L1, "GenPushLink\\1");
+refalrts::RefalNativeFunction descr_gen_GenPushLink_L1(func_gen_GenPushLink_L1, "GenPushLink\\1");
 refalrts::RefalFunction& gen_GenPushLink_L1 = descr_gen_GenPushLink_L1;
 
 } // unnamed namespace
@@ -3487,7 +3487,7 @@ static refalrts::FnResult func_gen_GenPushLink_L2(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenPushLink_L2(func_gen_GenPushLink_L2, "GenPushLink\\2");
+refalrts::RefalNativeFunction descr_gen_GenPushLink_L2(func_gen_GenPushLink_L2, "GenPushLink\\2");
 refalrts::RefalFunction& gen_GenPushLink_L2 = descr_gen_GenPushLink_L2;
 
 } // unnamed namespace
@@ -3599,7 +3599,7 @@ static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenPushLink(func_GenPushLink, "GenPushLink");
+refalrts::RefalNativeFunction descr_GenPushLink(func_GenPushLink, "GenPushLink");
 refalrts::RefalFunction& GenPushLink = descr_GenPushLink;
 
 } // unnamed namespace
@@ -3723,7 +3723,7 @@ static refalrts::FnResult func_Reverse(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Reverse(func_Reverse, "Reverse");
+refalrts::RefalNativeFunction descr_Reverse(func_Reverse, "Reverse");
 refalrts::RefalFunction& Reverse = descr_Reverse;
 
 } // unnamed namespace
@@ -3923,7 +3923,7 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ModifyResult(func_ModifyResult, "ModifyResult");
+refalrts::RefalNativeFunction descr_ModifyResult(func_ModifyResult, "ModifyResult");
 refalrts::RefalFunction& ModifyResult = descr_ModifyResult;
 
 } // unnamed namespace
@@ -4291,7 +4291,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ModifyTile(func_ModifyTile, "ModifyTile");
+refalrts::RefalNativeFunction descr_ModifyTile(func_ModifyTile, "ModifyTile");
 refalrts::RefalFunction& ModifyTile = descr_ModifyTile;
 
 } // unnamed namespace
@@ -4576,7 +4576,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_GenSplices_S1L1(func_gen_GenSplices_S1L1, "GenSplices$1\\1");
+refalrts::RefalNativeFunction descr_gen_GenSplices_S1L1(func_gen_GenSplices_S1L1, "GenSplices$1\\1");
 refalrts::RefalFunction& gen_GenSplices_S1L1 = descr_gen_GenSplices_S1L1;
 
 } // unnamed namespace
@@ -4856,7 +4856,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenSplices(func_GenSplices, "GenSplices");
+refalrts::RefalNativeFunction descr_GenSplices(func_GenSplices, "GenSplices");
 refalrts::RefalFunction& GenSplices = descr_GenSplices;
 
 } // unnamed namespace
@@ -4996,7 +4996,7 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CalcRes(func_CalcRes, "CalcRes");
+refalrts::RefalNativeFunction descr_CalcRes(func_CalcRes, "CalcRes");
 refalrts::RefalFunction& CalcRes = descr_CalcRes;
 
 } // unnamed namespace
@@ -5247,7 +5247,7 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CollectTiles(func_CollectTiles, "CollectTiles");
+refalrts::RefalNativeFunction descr_CollectTiles(func_CollectTiles, "CollectTiles");
 refalrts::RefalFunction& CollectTiles = descr_CollectTiles;
 
 } // unnamed namespace
@@ -5529,7 +5529,7 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_CollectTiles_Alloc(func_CollectTiles_Alloc, "CollectTiles-Alloc");
+refalrts::RefalNativeFunction descr_CollectTiles_Alloc(func_CollectTiles_Alloc, "CollectTiles-Alloc");
 refalrts::RefalFunction& CollectTiles_Alloc = descr_CollectTiles_Alloc;
 
 } // unnamed namespace
@@ -5796,7 +5796,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenTrash(func_GenTrash, "GenTrash");
+refalrts::RefalNativeFunction descr_GenTrash(func_GenTrash, "GenTrash");
 refalrts::RefalFunction& GenTrash = descr_GenTrash;
 
 } // unnamed namespace
@@ -6023,7 +6023,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_BeginOffset(func_BeginOffset, "BeginOffset");
+refalrts::RefalNativeFunction descr_BeginOffset(func_BeginOffset, "BeginOffset");
 refalrts::RefalFunction& BeginOffset = descr_BeginOffset;
 
 } // unnamed namespace
@@ -6498,7 +6498,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_EndOffset(func_EndOffset, "EndOffset");
+refalrts::RefalNativeFunction descr_EndOffset(func_EndOffset, "EndOffset");
 refalrts::RefalFunction& EndOffset = descr_EndOffset;
 
 } // unnamed namespace
@@ -6696,7 +6696,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_AddOffsets_L1S1L1(func_gen_AddOffsets_L1S1L1, "AddOffsets\\1$1\\1");
+refalrts::RefalNativeFunction descr_gen_AddOffsets_L1S1L1(func_gen_AddOffsets_L1S1L1, "AddOffsets\\1$1\\1");
 refalrts::RefalFunction& gen_AddOffsets_L1S1L1 = descr_gen_AddOffsets_L1S1L1;
 
 } // unnamed namespace
@@ -7224,7 +7224,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_AddOffsets_L1(func_gen_AddOffsets_L1, "AddOffsets\\1");
+refalrts::RefalNativeFunction descr_gen_AddOffsets_L1(func_gen_AddOffsets_L1, "AddOffsets\\1");
 refalrts::RefalFunction& gen_AddOffsets_L1 = descr_gen_AddOffsets_L1;
 
 } // unnamed namespace
@@ -7360,7 +7360,7 @@ static refalrts::FnResult func_AddOffsets(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_AddOffsets(func_AddOffsets, "AddOffsets");
+refalrts::RefalNativeFunction descr_AddOffsets(func_AddOffsets, "AddOffsets");
 refalrts::RefalFunction& AddOffsets = descr_AddOffsets;
 
 } // unnamed namespace
@@ -7493,7 +7493,7 @@ static refalrts::FnResult func_GetSampleOffset(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GetSampleOffset(func_GetSampleOffset, "GetSampleOffset");
+refalrts::RefalNativeFunction descr_GetSampleOffset(func_GetSampleOffset, "GetSampleOffset");
 refalrts::RefalFunction& GetSampleOffset = descr_GetSampleOffset;
 
 } // unnamed namespace

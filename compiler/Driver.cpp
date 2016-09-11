@@ -200,7 +200,7 @@ static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CompileFile_L1(func_gen_CompileFile_L1, "CompileFile\\1");
+refalrts::RefalNativeFunction descr_gen_CompileFile_L1(func_gen_CompileFile_L1, "CompileFile\\1");
 refalrts::RefalFunction& gen_CompileFile_L1 = descr_gen_CompileFile_L1;
 
 } // unnamed namespace
@@ -505,7 +505,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CompileFile_L2L1(func_gen_CompileFile_L2L1, "CompileFile\\2\\1");
+refalrts::RefalNativeFunction descr_gen_CompileFile_L2L1(func_gen_CompileFile_L2L1, "CompileFile\\2\\1");
 refalrts::RefalFunction& gen_CompileFile_L2L1 = descr_gen_CompileFile_L2L1;
 
 } // unnamed namespace
@@ -668,7 +668,7 @@ static refalrts::FnResult func_gen_CompileFile_L2(refalrts::Iter arg_begin, refa
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_CompileFile_L2(func_gen_CompileFile_L2, "CompileFile\\2");
+refalrts::RefalNativeFunction descr_gen_CompileFile_L2(func_gen_CompileFile_L2, "CompileFile\\2");
 refalrts::RefalFunction& gen_CompileFile_L2 = descr_gen_CompileFile_L2;
 
 } // unnamed namespace
@@ -862,7 +862,7 @@ static refalrts::FnResult func_CompileFile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_CompileFile(func_CompileFile, "CompileFile");
+refalrts::RefalNativeFunction descr_CompileFile(func_CompileFile, "CompileFile");
 refalrts::RefalFunction& CompileFile = descr_CompileFile;
 
 #endif
@@ -1054,7 +1054,7 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SelectOptFlags(func_SelectOptFlags, "SelectOptFlags");
+refalrts::RefalNativeFunction descr_SelectOptFlags(func_SelectOptFlags, "SelectOptFlags");
 refalrts::RefalFunction& SelectOptFlags = descr_SelectOptFlags;
 
 } // unnamed namespace

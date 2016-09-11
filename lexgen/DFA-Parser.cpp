@@ -415,7 +415,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DFA_Parse(func_DFA_Parse, "DFA-Parse");
+refalrts::RefalNativeFunction descr_DFA_Parse(func_DFA_Parse, "DFA-Parse");
 refalrts::RefalFunction& DFA_Parse = descr_DFA_Parse;
 
 #endif
@@ -1004,7 +1004,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseElements(func_ParseElements, "ParseElements");
+refalrts::RefalNativeFunction descr_ParseElements(func_ParseElements, "ParseElements");
 refalrts::RefalFunction& ParseElements = descr_ParseElements;
 
 } // unnamed namespace
@@ -1375,7 +1375,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseSetDescr_S1L1(func_gen_ParseSetDescr_S1L1, "ParseSetDescr$1\\1");
+refalrts::RefalNativeFunction descr_gen_ParseSetDescr_S1L1(func_gen_ParseSetDescr_S1L1, "ParseSetDescr$1\\1");
 refalrts::RefalFunction& gen_ParseSetDescr_S1L1 = descr_gen_ParseSetDescr_S1L1;
 
 } // unnamed namespace
@@ -1634,7 +1634,7 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseSetDescr(func_ParseSetDescr, "ParseSetDescr");
+refalrts::RefalNativeFunction descr_ParseSetDescr(func_ParseSetDescr, "ParseSetDescr");
 refalrts::RefalFunction& ParseSetDescr = descr_ParseSetDescr;
 
 } // unnamed namespace
@@ -1871,7 +1871,7 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractSets(func_ExtractSets, "ExtractSets");
+refalrts::RefalNativeFunction descr_ExtractSets(func_ExtractSets, "ExtractSets");
 refalrts::RefalFunction& ExtractSets = descr_ExtractSets;
 
 } // unnamed namespace
@@ -2132,7 +2132,7 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseSentence_S1L1(func_gen_ParseSentence_S1L1, "ParseSentence$1\\1");
+refalrts::RefalNativeFunction descr_gen_ParseSentence_S1L1(func_gen_ParseSentence_S1L1, "ParseSentence$1\\1");
 refalrts::RefalFunction& gen_ParseSentence_S1L1 = descr_gen_ParseSentence_S1L1;
 
 } // unnamed namespace
@@ -2393,7 +2393,7 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
+refalrts::RefalNativeFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
 refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 
 } // unnamed namespace
@@ -2490,7 +2490,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L1(func_gen_ExtractAlternatives_L1, "ExtractAlternatives\\1");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L1(func_gen_ExtractAlternatives_L1, "ExtractAlternatives\\1");
 refalrts::RefalFunction& gen_ExtractAlternatives_L1 = descr_gen_ExtractAlternatives_L1;
 
 } // unnamed namespace
@@ -2584,7 +2584,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L2(func_gen_ExtractAlternatives_L2, "ExtractAlternatives\\2");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L2(func_gen_ExtractAlternatives_L2, "ExtractAlternatives\\2");
 refalrts::RefalFunction& gen_ExtractAlternatives_L2 = descr_gen_ExtractAlternatives_L2;
 
 } // unnamed namespace
@@ -2682,7 +2682,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L3(func_gen_ExtractAlternatives_L3, "ExtractAlternatives\\3");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L3(func_gen_ExtractAlternatives_L3, "ExtractAlternatives\\3");
 refalrts::RefalFunction& gen_ExtractAlternatives_L3 = descr_gen_ExtractAlternatives_L3;
 
 } // unnamed namespace
@@ -2784,7 +2784,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L4(func_gen_ExtractAlternatives_L4, "ExtractAlternatives\\4");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L4(func_gen_ExtractAlternatives_L4, "ExtractAlternatives\\4");
 refalrts::RefalFunction& gen_ExtractAlternatives_L4 = descr_gen_ExtractAlternatives_L4;
 
 } // unnamed namespace
@@ -2947,7 +2947,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L5(func_gen_ExtractAlternatives_L5, "ExtractAlternatives\\5");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L5(func_gen_ExtractAlternatives_L5, "ExtractAlternatives\\5");
 refalrts::RefalFunction& gen_ExtractAlternatives_L5 = descr_gen_ExtractAlternatives_L5;
 
 } // unnamed namespace
@@ -3139,7 +3139,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ExtractAlternatives_L6(func_gen_ExtractAlternatives_L6, "ExtractAlternatives\\6");
+refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L6(func_gen_ExtractAlternatives_L6, "ExtractAlternatives\\6");
 refalrts::RefalFunction& gen_ExtractAlternatives_L6 = descr_gen_ExtractAlternatives_L6;
 
 } // unnamed namespace
@@ -3290,7 +3290,7 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractAlternatives(func_ExtractAlternatives, "ExtractAlternatives");
+refalrts::RefalNativeFunction descr_ExtractAlternatives(func_ExtractAlternatives, "ExtractAlternatives");
 refalrts::RefalFunction& ExtractAlternatives = descr_ExtractAlternatives;
 
 } // unnamed namespace
@@ -3824,7 +3824,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractAlternatives_Head(func_ExtractAlternatives_Head, "ExtractAlternatives-Head");
+refalrts::RefalNativeFunction descr_ExtractAlternatives_Head(func_ExtractAlternatives_Head, "ExtractAlternatives-Head");
 refalrts::RefalFunction& ExtractAlternatives_Head = descr_ExtractAlternatives_Head;
 
 } // unnamed namespace
@@ -4220,7 +4220,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractAlternatives_Flush(func_ExtractAlternatives_Flush, "ExtractAlternatives-Flush");
+refalrts::RefalNativeFunction descr_ExtractAlternatives_Flush(func_ExtractAlternatives_Flush, "ExtractAlternatives-Flush");
 refalrts::RefalFunction& ExtractAlternatives_Flush = descr_ExtractAlternatives_Flush;
 
 } // unnamed namespace
@@ -4467,7 +4467,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ExtractAlternatives_NextState(func_ExtractAlternatives_NextState, "ExtractAlternatives-NextState");
+refalrts::RefalNativeFunction descr_ExtractAlternatives_NextState(func_ExtractAlternatives_NextState, "ExtractAlternatives-NextState");
 refalrts::RefalFunction& ExtractAlternatives_NextState = descr_ExtractAlternatives_NextState;
 
 } // unnamed namespace
@@ -4593,7 +4593,7 @@ static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_UnexpectedToken(func_UnexpectedToken, "UnexpectedToken");
+refalrts::RefalNativeFunction descr_UnexpectedToken(func_UnexpectedToken, "UnexpectedToken");
 refalrts::RefalFunction& UnexpectedToken = descr_UnexpectedToken;
 
 } // unnamed namespace

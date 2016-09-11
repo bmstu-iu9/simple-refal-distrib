@@ -620,7 +620,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1");
+refalrts::RefalNativeFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1");
 refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
 
 } // unnamed namespace
@@ -726,7 +726,7 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_HighLevelRASL(func_HighLevelRASL, "HighLevelRASL");
+refalrts::RefalNativeFunction descr_HighLevelRASL(func_HighLevelRASL, "HighLevelRASL");
 refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
 
 #endif
@@ -931,7 +931,7 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function");
+refalrts::RefalNativeFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function");
 refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
 
 } // unnamed namespace
@@ -1055,7 +1055,7 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc");
+refalrts::RefalNativeFunction descr_GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc");
 refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
 
 } // unnamed namespace
@@ -1191,7 +1191,7 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_GenResultFuncs(func_GenResultFuncs, "GenResultFuncs");
+refalrts::RefalNativeFunction descr_GenResultFuncs(func_GenResultFuncs, "GenResultFuncs");
 refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
 
 } // unnamed namespace

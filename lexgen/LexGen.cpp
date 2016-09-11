@@ -179,7 +179,7 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Go_L1(func_gen_Go_L1, "Go\\1");
+refalrts::RefalNativeFunction descr_gen_Go_L1(func_gen_Go_L1, "Go\\1");
 refalrts::RefalFunction& gen_Go_L1 = descr_gen_Go_L1;
 
 } // unnamed namespace
@@ -517,7 +517,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Go_L2(func_gen_Go_L2, "Go\\2");
+refalrts::RefalNativeFunction descr_gen_Go_L2(func_gen_Go_L2, "Go\\2");
 refalrts::RefalFunction& gen_Go_L2 = descr_gen_Go_L2;
 
 } // unnamed namespace
@@ -630,7 +630,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_Go(func_Go, "Go");
+refalrts::RefalNativeFunction descr_Go(func_Go, "Go");
 refalrts::RefalFunction& Go = descr_Go;
 
 #endif
@@ -861,7 +861,7 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Transform_L1(func_gen_Transform_L1, "Transform\\1");
+refalrts::RefalNativeFunction descr_gen_Transform_L1(func_gen_Transform_L1, "Transform\\1");
 refalrts::RefalFunction& gen_Transform_L1 = descr_gen_Transform_L1;
 
 } // unnamed namespace
@@ -1118,7 +1118,7 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Transform_L2(func_gen_Transform_L2, "Transform\\2");
+refalrts::RefalNativeFunction descr_gen_Transform_L2(func_gen_Transform_L2, "Transform\\2");
 refalrts::RefalFunction& gen_Transform_L2 = descr_gen_Transform_L2;
 
 } // unnamed namespace
@@ -1296,7 +1296,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Transform_L3S1L1(func_gen_Transform_L3S1L1, "Transform\\3$1\\1");
+refalrts::RefalNativeFunction descr_gen_Transform_L3S1L1(func_gen_Transform_L3S1L1, "Transform\\3$1\\1");
 refalrts::RefalFunction& gen_Transform_L3S1L1 = descr_gen_Transform_L3S1L1;
 
 } // unnamed namespace
@@ -1423,7 +1423,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Transform_L3S1L2(func_gen_Transform_L3S1L2, "Transform\\3$1\\2");
+refalrts::RefalNativeFunction descr_gen_Transform_L3S1L2(func_gen_Transform_L3S1L2, "Transform\\3$1\\2");
 refalrts::RefalFunction& gen_Transform_L3S1L2 = descr_gen_Transform_L3S1L2;
 
 } // unnamed namespace
@@ -1751,7 +1751,7 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Transform_L3(func_gen_Transform_L3, "Transform\\3");
+refalrts::RefalNativeFunction descr_gen_Transform_L3(func_gen_Transform_L3, "Transform\\3");
 refalrts::RefalFunction& gen_Transform_L3 = descr_gen_Transform_L3;
 
 } // unnamed namespace
@@ -1938,7 +1938,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Transform(func_Transform, "Transform");
+refalrts::RefalNativeFunction descr_Transform(func_Transform, "Transform");
 refalrts::RefalFunction& Transform = descr_Transform;
 
 } // unnamed namespace
@@ -2039,7 +2039,7 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Length_T_L1(func_gen_Length_T_L1, "Length-T\\1");
+refalrts::RefalNativeFunction descr_gen_Length_T_L1(func_gen_Length_T_L1, "Length-T\\1");
 refalrts::RefalFunction& gen_Length_T_L1 = descr_gen_Length_T_L1;
 
 } // unnamed namespace
@@ -2126,7 +2126,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Length_T(func_Length_T, "Length-T");
+refalrts::RefalNativeFunction descr_Length_T(func_Length_T, "Length-T");
 refalrts::RefalFunction& Length_T = descr_Length_T;
 
 } // unnamed namespace

@@ -432,7 +432,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, "ParseCommandLine\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, "ParseCommandLine\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L1 = descr_gen_ParseCommandLine_L1;
 
 } // unnamed namespace
@@ -625,7 +625,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L2(func_gen_ParseCommandLine_L2, "ParseCommandLine\\2");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L2(func_gen_ParseCommandLine_L2, "ParseCommandLine\\2");
 refalrts::RefalFunction& gen_ParseCommandLine_L2 = descr_gen_ParseCommandLine_L2;
 
 } // unnamed namespace
@@ -1131,7 +1131,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L3(func_gen_ParseCommandLine_L3, "ParseCommandLine\\3");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L3(func_gen_ParseCommandLine_L3, "ParseCommandLine\\3");
 refalrts::RefalFunction& gen_ParseCommandLine_L3 = descr_gen_ParseCommandLine_L3;
 
 } // unnamed namespace
@@ -1673,7 +1673,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L4(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L4(func_gen_ParseCommandLine_L4, "ParseCommandLine\\4");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L4(func_gen_ParseCommandLine_L4, "ParseCommandLine\\4");
 refalrts::RefalFunction& gen_ParseCommandLine_L4 = descr_gen_ParseCommandLine_L4;
 
 } // unnamed namespace
@@ -1877,7 +1877,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L5(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L5(func_gen_ParseCommandLine_L5, "ParseCommandLine\\5");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L5(func_gen_ParseCommandLine_L5, "ParseCommandLine\\5");
 refalrts::RefalFunction& gen_ParseCommandLine_L5 = descr_gen_ParseCommandLine_L5;
 
 } // unnamed namespace
@@ -2072,7 +2072,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L6(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L6(func_gen_ParseCommandLine_L6, "ParseCommandLine\\6");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L6(func_gen_ParseCommandLine_L6, "ParseCommandLine\\6");
 refalrts::RefalFunction& gen_ParseCommandLine_L6 = descr_gen_ParseCommandLine_L6;
 
 } // unnamed namespace
@@ -2176,7 +2176,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L7(func_gen_ParseCommandLine_L7, "ParseCommandLine\\7");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L7(func_gen_ParseCommandLine_L7, "ParseCommandLine\\7");
 refalrts::RefalFunction& gen_ParseCommandLine_L7 = descr_gen_ParseCommandLine_L7;
 
 } // unnamed namespace
@@ -2330,7 +2330,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L8S5L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L8S5L1(func_gen_ParseCommandLine_L8S5L1, "ParseCommandLine\\8$5\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L8S5L1(func_gen_ParseCommandLine_L8S5L1, "ParseCommandLine\\8$5\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L8S5L1 = descr_gen_ParseCommandLine_L8S5L1;
 
 } // unnamed namespace
@@ -2874,7 +2874,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L8(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L8(func_gen_ParseCommandLine_L8, "ParseCommandLine\\8");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L8(func_gen_ParseCommandLine_L8, "ParseCommandLine\\8");
 refalrts::RefalFunction& gen_ParseCommandLine_L8 = descr_gen_ParseCommandLine_L8;
 
 } // unnamed namespace
@@ -2980,7 +2980,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L9(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L9(func_gen_ParseCommandLine_L9, "ParseCommandLine\\9");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L9(func_gen_ParseCommandLine_L9, "ParseCommandLine\\9");
 refalrts::RefalFunction& gen_ParseCommandLine_L9 = descr_gen_ParseCommandLine_L9;
 
 } // unnamed namespace
@@ -3166,7 +3166,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10L1(refalrts::Iter arg_beg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L10L1(func_gen_ParseCommandLine_L10L1, "ParseCommandLine\\10\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L10L1(func_gen_ParseCommandLine_L10L1, "ParseCommandLine\\10\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L10L1 = descr_gen_ParseCommandLine_L10L1;
 
 } // unnamed namespace
@@ -3290,7 +3290,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L10(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L10(func_gen_ParseCommandLine_L10, "ParseCommandLine\\10");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L10(func_gen_ParseCommandLine_L10, "ParseCommandLine\\10");
 refalrts::RefalFunction& gen_ParseCommandLine_L10 = descr_gen_ParseCommandLine_L10;
 
 } // unnamed namespace
@@ -3505,7 +3505,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L11S2L1S4L1(refalrts::Iter a
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L11S2L1S4L1(func_gen_ParseCommandLine_L11S2L1S4L1, "ParseCommandLine\\11$2\\1$4\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L11S2L1S4L1(func_gen_ParseCommandLine_L11S2L1S4L1, "ParseCommandLine\\11$2\\1$4\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1S4L1 = descr_gen_ParseCommandLine_L11S2L1S4L1;
 
 } // unnamed namespace
@@ -4001,7 +4001,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L11S2L1(refalrts::Iter arg_b
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L11S2L1(func_gen_ParseCommandLine_L11S2L1, "ParseCommandLine\\11$2\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L11S2L1(func_gen_ParseCommandLine_L11S2L1, "ParseCommandLine\\11$2\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L11S2L1 = descr_gen_ParseCommandLine_L11S2L1;
 
 } // unnamed namespace
@@ -4167,7 +4167,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L11(refalrts::Iter arg_begin
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L11(func_gen_ParseCommandLine_L11, "ParseCommandLine\\11");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L11(func_gen_ParseCommandLine_L11, "ParseCommandLine\\11");
 refalrts::RefalFunction& gen_ParseCommandLine_L11 = descr_gen_ParseCommandLine_L11;
 
 } // unnamed namespace
@@ -4618,7 +4618,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_ParseCommandLine(func_ParseCommandLine, "ParseCommandLine");
+refalrts::RefalNativeFunction descr_ParseCommandLine(func_ParseCommandLine, "ParseCommandLine");
 refalrts::RefalFunction& ParseCommandLine = descr_ParseCommandLine;
 
 #endif

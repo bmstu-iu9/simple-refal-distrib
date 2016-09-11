@@ -156,7 +156,7 @@ static refalrts::FnResult func_Add(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 157 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Add(func_Add, "Add");
+refalrts::RefalNativeFunction descr_Add(func_Add, "Add");
 refalrts::RefalFunction& Add = descr_Add;
 
 static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -165,7 +165,7 @@ static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 166 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Sub(func_Sub, "Sub");
+refalrts::RefalNativeFunction descr_Sub(func_Sub, "Sub");
 refalrts::RefalFunction& Sub = descr_Sub;
 
 static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -174,7 +174,7 @@ static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 175 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Mul(func_Mul, "Mul");
+refalrts::RefalNativeFunction descr_Mul(func_Mul, "Mul");
 refalrts::RefalFunction& Mul = descr_Mul;
 
 static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -183,7 +183,7 @@ static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 184 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Div(func_Div, "Div");
+refalrts::RefalNativeFunction descr_Div(func_Div, "Div");
 refalrts::RefalFunction& Div = descr_Div;
 
 static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -192,7 +192,7 @@ static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 193 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Mod(func_Mod, "Mod");
+refalrts::RefalNativeFunction descr_Mod(func_Mod, "Mod");
 refalrts::RefalFunction& Mod = descr_Mod;
 
 #line 110 "Library.sref"
@@ -295,7 +295,7 @@ static refalrts::FnResult func_WriteLine(refalrts::Iter arg_begin, refalrts::Ite
 #line 296 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_WriteLine(func_WriteLine, "WriteLine");
+refalrts::RefalNativeFunction descr_WriteLine(func_WriteLine, "WriteLine");
 refalrts::RefalFunction& WriteLine = descr_WriteLine;
 
 static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -325,7 +325,7 @@ static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::It
 #line 326 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_FWriteLine(func_FWriteLine, "FWriteLine");
+refalrts::RefalNativeFunction descr_FWriteLine(func_FWriteLine, "FWriteLine");
 refalrts::RefalFunction& FWriteLine = descr_FWriteLine;
 
 #line 238 "Library.sref"
@@ -390,7 +390,7 @@ static refalrts::FnResult func_ReadLine(refalrts::Iter arg_begin, refalrts::Iter
 #line 391 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_ReadLine(func_ReadLine, "ReadLine");
+refalrts::RefalNativeFunction descr_ReadLine(func_ReadLine, "ReadLine");
 refalrts::RefalFunction& ReadLine = descr_ReadLine;
 
 static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -425,7 +425,7 @@ static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Ite
 #line 426 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_FReadLine(func_FReadLine, "FReadLine");
+refalrts::RefalNativeFunction descr_FReadLine(func_FReadLine, "FReadLine");
 refalrts::RefalFunction& FReadLine = descr_FReadLine;
 
 #line 333 "Library.sref"
@@ -502,7 +502,7 @@ static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter ar
 #line 503 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_FOpen(func_FOpen, "FOpen");
+refalrts::RefalNativeFunction descr_FOpen(func_FOpen, "FOpen");
 refalrts::RefalFunction& FOpen = descr_FOpen;
 
 static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -530,7 +530,7 @@ static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter a
 #line 531 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_FClose(func_FClose, "FClose");
+refalrts::RefalNativeFunction descr_FClose(func_FClose, "FClose");
 refalrts::RefalFunction& FClose = descr_FClose;
 
 static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -564,7 +564,7 @@ static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 565 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Arg(func_Arg, "Arg");
+refalrts::RefalNativeFunction descr_Arg(func_Arg, "Arg");
 refalrts::RefalFunction& Arg = descr_Arg;
 
 static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -597,7 +597,7 @@ static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Ite
 #line 598 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_ExistFile(func_ExistFile, "ExistFile");
+refalrts::RefalNativeFunction descr_ExistFile(func_ExistFile, "ExistFile");
 refalrts::RefalFunction& ExistFile = descr_ExistFile;
 
 static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -633,7 +633,7 @@ static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter a
 #line 634 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_GetEnv(func_GetEnv, "GetEnv");
+refalrts::RefalNativeFunction descr_GetEnv(func_GetEnv, "GetEnv");
 refalrts::RefalFunction& GetEnv = descr_GetEnv;
 
 static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -657,7 +657,7 @@ static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg
 #line 658 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Exit(func_Exit, "Exit");
+refalrts::RefalNativeFunction descr_Exit(func_Exit, "Exit");
 refalrts::RefalFunction& Exit = descr_Exit;
 
 static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -685,7 +685,7 @@ static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter a
 #line 686 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_System(func_System, "System");
+refalrts::RefalNativeFunction descr_System(func_System, "System");
 refalrts::RefalFunction& System = descr_System;
 
 static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -732,7 +732,7 @@ static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::It
 #line 733 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_IntFromStr(func_IntFromStr, "IntFromStr");
+refalrts::RefalNativeFunction descr_IntFromStr(func_IntFromStr, "IntFromStr");
 refalrts::RefalFunction& IntFromStr = descr_IntFromStr;
 
 static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -791,7 +791,7 @@ static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::It
 #line 792 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_StrFromInt(func_StrFromInt, "StrFromInt");
+refalrts::RefalNativeFunction descr_StrFromInt(func_StrFromInt, "StrFromInt");
 refalrts::RefalFunction& StrFromInt = descr_StrFromInt;
 
 static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -819,7 +819,7 @@ static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 820 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Chr(func_Chr, "Chr");
+refalrts::RefalNativeFunction descr_Chr(func_Chr, "Chr");
 refalrts::RefalFunction& Chr = descr_Chr;
 
 static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -847,7 +847,7 @@ static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_
 #line 848 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_Ord(func_Ord, "Ord");
+refalrts::RefalNativeFunction descr_Ord(func_Ord, "Ord");
 refalrts::RefalFunction& Ord = descr_Ord;
 
 #line 725 "Library.sref"
@@ -1059,7 +1059,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::I
 #line 1060 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_SymbCompare(func_SymbCompare, "SymbCompare");
+refalrts::RefalNativeFunction descr_SymbCompare(func_SymbCompare, "SymbCompare");
 refalrts::RefalFunction& SymbCompare = descr_SymbCompare;
 
 static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1109,7 +1109,7 @@ static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter
 #line 1110 "Library.cpp"
 }
 
-refalrts::RefalFunction descr_SymbType(func_SymbType, "SymbType");
+refalrts::RefalNativeFunction descr_SymbType(func_SymbType, "SymbType");
 refalrts::RefalFunction& SymbType = descr_SymbType;
 
 

@@ -293,7 +293,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L1S2L1(func_gen_ParseCommandLine_L1S2L1, "ParseCommandLine\\1$2\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S2L1(func_gen_ParseCommandLine_L1S2L1, "ParseCommandLine\\1$2\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1 = descr_gen_ParseCommandLine_L1S2L1;
 
 } // unnamed namespace
@@ -549,7 +549,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L1S5L1(func_gen_ParseCommandLine_L1S5L1, "ParseCommandLine\\1$5\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S5L1(func_gen_ParseCommandLine_L1S5L1, "ParseCommandLine\\1$5\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1 = descr_gen_ParseCommandLine_L1S5L1;
 
 } // unnamed namespace
@@ -1002,7 +1002,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, "ParseCommandLine\\1");
+refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, "ParseCommandLine\\1");
 refalrts::RefalFunction& gen_ParseCommandLine_L1 = descr_gen_ParseCommandLine_L1;
 
 } // unnamed namespace
@@ -1169,7 +1169,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_ParseCommandLine(func_ParseCommandLine, "ParseCommandLine");
+refalrts::RefalNativeFunction descr_ParseCommandLine(func_ParseCommandLine, "ParseCommandLine");
 refalrts::RefalFunction& ParseCommandLine = descr_ParseCommandLine;
 
 #endif
@@ -1277,7 +1277,7 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FormatError(func_FormatError, "FormatError");
+refalrts::RefalNativeFunction descr_FormatError(func_FormatError, "FormatError");
 refalrts::RefalFunction& FormatError = descr_FormatError;
 
 } // unnamed namespace
@@ -1442,7 +1442,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Help(func_Help, "Help");
+refalrts::RefalNativeFunction descr_Help(func_Help, "Help");
 refalrts::RefalFunction& Help = descr_Help;
 
 } // unnamed namespace

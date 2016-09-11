@@ -736,7 +736,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DFA_TextFromToken(func_DFA_TextFromToken, "DFA-TextFromToken");
+refalrts::RefalNativeFunction descr_DFA_TextFromToken(func_DFA_TextFromToken, "DFA-TextFromToken");
 refalrts::RefalFunction& DFA_TextFromToken = descr_DFA_TextFromToken;
 
 #endif
@@ -818,7 +818,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DFA_Tokens_L1(func_gen_DFA_Tokens_L1, "DFA-Tokens\\1");
+refalrts::RefalNativeFunction descr_gen_DFA_Tokens_L1(func_gen_DFA_Tokens_L1, "DFA-Tokens\\1");
 refalrts::RefalFunction& gen_DFA_Tokens_L1 = descr_gen_DFA_Tokens_L1;
 
 } // unnamed namespace
@@ -973,7 +973,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L2(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DFA_Tokens_L2(func_gen_DFA_Tokens_L2, "DFA-Tokens\\2");
+refalrts::RefalNativeFunction descr_gen_DFA_Tokens_L2(func_gen_DFA_Tokens_L2, "DFA-Tokens\\2");
 refalrts::RefalFunction& gen_DFA_Tokens_L2 = descr_gen_DFA_Tokens_L2;
 
 } // unnamed namespace
@@ -1125,7 +1125,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_DFA_Tokens_L3(func_gen_DFA_Tokens_L3, "DFA-Tokens\\3");
+refalrts::RefalNativeFunction descr_gen_DFA_Tokens_L3(func_gen_DFA_Tokens_L3, "DFA-Tokens\\3");
 refalrts::RefalFunction& gen_DFA_Tokens_L3 = descr_gen_DFA_Tokens_L3;
 
 } // unnamed namespace
@@ -1276,7 +1276,7 @@ static refalrts::FnResult func_DFA_Tokens(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_DFA_Tokens(func_DFA_Tokens, "DFA-Tokens");
+refalrts::RefalNativeFunction descr_DFA_Tokens(func_DFA_Tokens, "DFA-Tokens");
 refalrts::RefalFunction& DFA_Tokens = descr_DFA_Tokens;
 
 #endif
@@ -1378,7 +1378,7 @@ static refalrts::FnResult func_LoTokens(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_LoTokens(func_LoTokens, "LoTokens");
+refalrts::RefalNativeFunction descr_LoTokens(func_LoTokens, "LoTokens");
 refalrts::RefalFunction& LoTokens = descr_LoTokens;
 
 } // unnamed namespace
@@ -2036,7 +2036,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_FilterTokens_L1(func_gen_FilterTokens_L1, "FilterTokens\\1");
+refalrts::RefalNativeFunction descr_gen_FilterTokens_L1(func_gen_FilterTokens_L1, "FilterTokens\\1");
 refalrts::RefalFunction& gen_FilterTokens_L1 = descr_gen_FilterTokens_L1;
 
 } // unnamed namespace
@@ -2120,7 +2120,7 @@ static refalrts::FnResult func_FilterTokens(refalrts::Iter arg_begin, refalrts::
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FilterTokens(func_FilterTokens, "FilterTokens");
+refalrts::RefalNativeFunction descr_FilterTokens(func_FilterTokens, "FilterTokens");
 refalrts::RefalFunction& FilterTokens = descr_FilterTokens;
 
 } // unnamed namespace
@@ -2227,7 +2227,7 @@ static refalrts::FnResult func_gen_Unescape_S6L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_Unescape_S6L1(func_gen_Unescape_S6L1, "Unescape$6\\1");
+refalrts::RefalNativeFunction descr_gen_Unescape_S6L1(func_gen_Unescape_S6L1, "Unescape$6\\1");
 refalrts::RefalFunction& gen_Unescape_S6L1 = descr_gen_Unescape_S6L1;
 
 } // unnamed namespace
@@ -2701,7 +2701,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Unescape(func_Unescape, "Unescape");
+refalrts::RefalNativeFunction descr_Unescape(func_Unescape, "Unescape");
 refalrts::RefalFunction& Unescape = descr_Unescape;
 
 } // unnamed namespace
@@ -4478,7 +4478,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Root(func_Root, "Root");
+refalrts::RefalNativeFunction descr_Root(func_Root, "Root");
 refalrts::RefalFunction& Root = descr_Root;
 
 } // unnamed namespace
@@ -7219,7 +7219,7 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_SetName(func_SetName, "SetName");
+refalrts::RefalNativeFunction descr_SetName(func_SetName, "SetName");
 refalrts::RefalFunction& SetName = descr_SetName;
 
 } // unnamed namespace
@@ -7476,7 +7476,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Flush(func_Flush, "Flush");
+refalrts::RefalNativeFunction descr_Flush(func_Flush, "Flush");
 refalrts::RefalFunction& Flush = descr_Flush;
 
 } // unnamed namespace
@@ -7795,7 +7795,7 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Literal(func_Literal, "Literal");
+refalrts::RefalNativeFunction descr_Literal(func_Literal, "Literal");
 refalrts::RefalFunction& Literal = descr_Literal;
 
 } // unnamed namespace
@@ -10412,7 +10412,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Name(func_Name, "Name");
+refalrts::RefalNativeFunction descr_Name(func_Name, "Name");
 refalrts::RefalFunction& Name = descr_Name;
 
 } // unnamed namespace
@@ -13999,7 +13999,7 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_ErrorFlush(func_ErrorFlush, "ErrorFlush");
+refalrts::RefalNativeFunction descr_ErrorFlush(func_ErrorFlush, "ErrorFlush");
 refalrts::RefalFunction& ErrorFlush = descr_ErrorFlush;
 
 } // unnamed namespace
@@ -15190,7 +15190,7 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FlushName(func_FlushName, "FlushName");
+refalrts::RefalNativeFunction descr_FlushName(func_FlushName, "FlushName");
 refalrts::RefalFunction& FlushName = descr_FlushName;
 
 } // unnamed namespace
@@ -15562,7 +15562,7 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Literal_Escape(func_Literal_Escape, "Literal-Escape");
+refalrts::RefalNativeFunction descr_Literal_Escape(func_Literal_Escape, "Literal-Escape");
 refalrts::RefalFunction& Literal_Escape = descr_Literal_Escape;
 
 } // unnamed namespace
@@ -15725,7 +15725,7 @@ static refalrts::FnResult func_Literal_Quote(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Literal_Quote(func_Literal_Quote, "Literal-Quote");
+refalrts::RefalNativeFunction descr_Literal_Quote(func_Literal_Quote, "Literal-Quote");
 refalrts::RefalFunction& Literal_Quote = descr_Literal_Quote;
 
 } // unnamed namespace
@@ -18342,7 +18342,7 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_FlushNameTail(func_FlushNameTail, "FlushNameTail");
+refalrts::RefalNativeFunction descr_FlushNameTail(func_FlushNameTail, "FlushNameTail");
 refalrts::RefalFunction& FlushNameTail = descr_FlushNameTail;
 
 } // unnamed namespace
@@ -18925,7 +18925,7 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_Literal_DecCode(func_Literal_DecCode, "Literal-DecCode");
+refalrts::RefalNativeFunction descr_Literal_DecCode(func_Literal_DecCode, "Literal-DecCode");
 refalrts::RefalFunction& Literal_DecCode = descr_Literal_DecCode;
 
 } // unnamed namespace

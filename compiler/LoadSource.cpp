@@ -136,7 +136,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, "LoadSource\\1");
+refalrts::RefalNativeFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, "LoadSource\\1");
 refalrts::RefalFunction& gen_LoadSource_L1 = descr_gen_LoadSource_L1;
 
 } // unnamed namespace
@@ -250,7 +250,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-refalrts::RefalFunction descr_LoadSource(func_LoadSource, "LoadSource");
+refalrts::RefalNativeFunction descr_LoadSource(func_LoadSource, "LoadSource");
 refalrts::RefalFunction& LoadSource = descr_LoadSource;
 
 #endif
@@ -332,7 +332,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
 }
 
 namespace /* unnamed */ {
-refalrts::RefalFunction descr_LinearizeLine(func_LinearizeLine, "LinearizeLine");
+refalrts::RefalNativeFunction descr_LinearizeLine(func_LinearizeLine, "LinearizeLine");
 refalrts::RefalFunction& LinearizeLine = descr_LinearizeLine;
 
 } // unnamed namespace
