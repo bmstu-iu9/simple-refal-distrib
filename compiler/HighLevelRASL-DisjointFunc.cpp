@@ -78,6 +78,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 26, 0, 0},
       // </0 & HighLevelRASL-Function-Disjoint\1/4 s.FnGenResult#1/21 s.FnGenInitSubst#1/22 s.FnGenSubst#1/23 (/19 e.Name#1/17 )/20 (/7 (/11 e.Pattern#2/9 )/12 (/15 e.Result#2/13 )/16 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -121,7 +123,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 1, 0},
       {refalrts::icSpliceTile, 24, 24, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Disjoint_L1
@@ -246,6 +248,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
       // </0 & HighLevelRASL-Function-Disjoint\2/4 s.MaxMemory#2/14 (/7 (/11 # CmdIssueMem/13 s.Memory#2/15 )/12 e.Sentence#2/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -272,7 +276,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 12, 8, 0},
       {refalrts::icTrash, 0, 0, 13},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Disjoint_L2
@@ -367,6 +371,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
@@ -395,7 +401,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 10},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.LastSentence#3/2 >/1
       // closed e.LastSentence#3 as range 2
@@ -405,7 +412,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Disjoint_L3L1
@@ -441,7 +448,6 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // e.idx ( # CmdOpenELoop e.idx )
     // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.Commands#3/2 (/7 # CmdOpenELoop/9 e.OpenELoop#3/5 )/8 >/1
     context[10] = context[2];
@@ -475,6 +481,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.LastSentence#3/2 >/1
@@ -514,6 +521,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       // </0 & HighLevelRASL-Function-Disjoint\3/4 s.ScopeClass#1/10 (/13 e.Name#1/11 )/14 s.MaxMemory#2/15 e.Sentences#2/2 (/7 # CmdSentence/9 e.LastSentence#2/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -550,7 +559,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 18, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Disjoint_L3
@@ -663,6 +672,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 36, 0, 0},
       // </0 & HighLevelRASL-Function-Disjoint/4 s.FnGenInitSubst#1/5 s.FnGenSubst#1/6 s.FnGenResult#1/7 s.ScopeClass#1/8 (/11 e.Name#1/9 )/12 e.Sentences#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -720,7 +731,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 7, 0},
       {refalrts::icSpliceTile, 13, 19, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_HighLevelRASL_Function_Disjoint

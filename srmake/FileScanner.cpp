@@ -55,6 +55,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       // </0 & CreateFileList/4 (/7 e.Folders#1/5 )/8 e.Unit#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -88,7 +90,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 9, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_CreateFileList
@@ -182,6 +184,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 32, 0, 0},
       //FAST GEN: e.$
@@ -207,7 +211,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceEVar, 0, 0, 9},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
       // </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 e.Modules-B#1/17 (/21 e.NextModule#1/23 )/22 e.Modules-E#1/9 )/12 (/15 e.NextModule#1/13 )/16 e.NotScanned#1/2 >/1
@@ -235,7 +240,8 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 26},
       {refalrts::icTrash, 0, 0, 12},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
       // </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 e.Modules#1/9 )/12 (/15 e.NextModule#1/13 )/16 e.NotScanned#1/2 >/1
       {refalrts::icBracketLeftSave, 0, 13, 2},
@@ -268,7 +274,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 24, 25, 0},
       {refalrts::icSpliceTile, 19, 23, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_DoCreateFileList
@@ -318,7 +324,6 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   // closed e.idxTB#0 as range 9
   // closed e.idxTT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx )
     // </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 e.Modules#1/9 )/12 >/1
     context[26] = context[2];
@@ -339,9 +344,9 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
     // </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 e.Modules-B#1/17 (/21 e.NextModule#1/23 )/22 e.Modules-E#1/9 )/12 (/15 e.NextModule#1/13 )/16 e.NotScanned#1/2 >/1
     context[26] = context[2];
@@ -392,6 +397,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[17], context[18], context[28], context[29] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
   // </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 e.Modules#1/9 )/12 (/15 e.NextModule#1/13 )/16 e.NotScanned#1/2 >/1
@@ -462,6 +468,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       //FAST GEN: e.$
@@ -507,7 +515,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 16},
       {refalrts::icSpliceTile, 7, 7, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & FindImports/4 e.OtherLine#1/2 >/1
       // closed e.OtherLine#1 as range 2
@@ -516,7 +525,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ ]] }
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_FindImports
@@ -552,7 +561,6 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // e.idx ( '//FROM ' e.idx )
     // </0 & FindImports/4 e.Folders#1/2 (/7 '/'/9 '/'/10 'F'/11 'R'/12 'O'/13 'M'/14 ' '/15 e.Name#1/5 )/8 >/1
     context[16] = context[2];
@@ -615,6 +623,7 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
     refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & FindImports/4 e.OtherLine#1/2 >/1
@@ -654,6 +663,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
       //FAST GEN: ( e.$ ) s.$ e.$
@@ -693,7 +704,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 14, 14, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +20, 0, 0},
       // ( e.idx ) # Output e.idx
       // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # Output/9 e.Output#1/2 >/1
@@ -720,7 +732,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
       {refalrts::icSpliceTile, 10, 10, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) # NotFound e.idx
       // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1
       {refalrts::icIdentTerm, 0, 0, 9},
@@ -731,7 +744,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ ]] }
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_LoadList
@@ -776,7 +789,6 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   // closed e.idxTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # Source ( e.idx ) e.idx
     // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # Source/9 (/12 e.NextModule#1/10 )/13 e.Output#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
@@ -818,9 +830,9 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # Output e.idx
     // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # Output/9 e.Output#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
@@ -856,6 +868,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) # NotFound e.idx
   // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1

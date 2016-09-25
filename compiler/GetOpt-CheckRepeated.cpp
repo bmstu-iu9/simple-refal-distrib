@@ -22,6 +22,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 8, 0, 0},
       {refalrts::icIssueMemory, 44, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) e.$
@@ -73,7 +75,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 42},
       {refalrts::icSpliceEVar, 0, 0, 24},
       {refalrts::icTrash, 0, 0, 21},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // ( e.idx ) ( e.idx ) e.idx
       // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts-E#1/2 >/1
@@ -122,7 +125,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 30, 0},
       {refalrts::icSpliceTile, 31, 31, 0},
       {refalrts::icTrash, 0, 0, 12},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) e.idx
       // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1
       // closed e.CheckedTags#1 as range 5
@@ -136,7 +140,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GetOpt_CheckRepeated
@@ -183,7 +187,6 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   // closed e.idxTB#0 as range 9
   // closed e.idxTT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) e.idx
     // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
@@ -259,9 +262,9 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
       } while ( refalrts::open_evar_advance( context[16], context[17], context[38], context[39] ) );
     } while ( refalrts::open_evar_advance( context[13], context[14], context[34], context[35] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) e.idx
     // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags-B#1/13 s.Tag#1/15 e.CheckedTags-E#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Opts-B#1/16 (/20 s.Tag#1/22 s.Num1#1/23 e.Value1#1/18 )/21 e.Opts-M#1/24 (/28 s.Tag#1/30 s.Num2#1/31 e.Value2#1/26 )/29 e.Opts-E#1/2 >/1
     // closed e.Errors#1 as range 9
@@ -345,6 +348,7 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
       } while ( refalrts::open_evar_advance( context[16], context[17], context[38], context[39] ) );
     } while ( refalrts::open_evar_advance( context[13], context[14], context[34], context[35] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) e.idx
   // </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 (/11 e.Errors#1/9 )/12 e.Options#1/2 >/1

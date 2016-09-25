@@ -27,6 +27,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 7, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       //FAST GEN: s.$
@@ -46,7 +48,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '0', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 1
       // </0 & OctDigit/4 1/5 >/1
@@ -57,7 +60,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '1', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 2
       // </0 & OctDigit/4 2/5 >/1
@@ -68,7 +72,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '2', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 3
       // </0 & OctDigit/4 3/5 >/1
@@ -79,7 +84,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '3', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 4
       // </0 & OctDigit/4 4/5 >/1
@@ -90,7 +96,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '4', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 5
       // </0 & OctDigit/4 5/5 >/1
@@ -101,7 +108,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '5', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // 6
       // </0 & OctDigit/4 6/5 >/1
@@ -112,7 +120,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '6', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // 7
       // </0 & OctDigit/4 7/5 >/1
       {refalrts::icNumTerm, 0, 7, 5},
@@ -122,7 +131,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '7', 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_OctDigit
@@ -161,7 +170,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // 0
     // </0 & OctDigit/4 0/5 >/1
     if( ! refalrts::number_term( 0UL, context[5] ) )
@@ -178,9 +186,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 1
     // </0 & OctDigit/4 1/5 >/1
     if( ! refalrts::number_term( 1UL, context[5] ) )
@@ -197,9 +205,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 2
     // </0 & OctDigit/4 2/5 >/1
     if( ! refalrts::number_term( 2UL, context[5] ) )
@@ -216,9 +224,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 3
     // </0 & OctDigit/4 3/5 >/1
     if( ! refalrts::number_term( 3UL, context[5] ) )
@@ -235,9 +243,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 4
     // </0 & OctDigit/4 4/5 >/1
     if( ! refalrts::number_term( 4UL, context[5] ) )
@@ -254,9 +262,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 5
     // </0 & OctDigit/4 5/5 >/1
     if( ! refalrts::number_term( 5UL, context[5] ) )
@@ -273,9 +281,9 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // 6
     // </0 & OctDigit/4 6/5 >/1
     if( ! refalrts::number_term( 6UL, context[5] ) )
@@ -292,6 +300,7 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // 7
   // </0 & OctDigit/4 7/5 >/1
@@ -329,6 +338,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 32, 0, 0},
       //FAST GEN: s.$ s.$ s.$
@@ -394,7 +405,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 8, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx s.idx s.idx
       // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -403,7 +415,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitSVar, 0, 5, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_EscapeChar_S7L1
@@ -446,7 +458,6 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // s.idx '<' s.idx
     // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     if( ! refalrts::char_term( '<', context[6] ) )
@@ -531,6 +542,7 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx s.idx s.idx
   // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
@@ -568,6 +580,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
       //FAST GEN: s.$
@@ -588,7 +602,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // '\t'
       // </0 & EscapeChar/4 '\t'/5 >/1
@@ -600,7 +615,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 't', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // '\r'
       // </0 & EscapeChar/4 '\r'/5 >/1
@@ -612,7 +628,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'r', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // '\''
       // </0 & EscapeChar/4 '\''/5 >/1
@@ -624,7 +641,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '\'', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // '\"'
       // </0 & EscapeChar/4 '\"'/5 >/1
@@ -636,7 +654,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '\"', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +6, 0, 0},
       // '\\'
       // </0 & EscapeChar/4 '\\'/5 >/1
@@ -647,7 +666,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, '\\', 1},
       {refalrts::icSetRes, 0, 0, 5},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & EscapeChar/4 s.Other#1/5 >/1
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -679,7 +699,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 18, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 6, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EscapeChar
@@ -715,7 +735,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // '\n'
     // </0 & EscapeChar/4 '\n'/5 >/1
     if( ! refalrts::char_term( '\n', context[5] ) )
@@ -733,9 +752,9 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // '\t'
     // </0 & EscapeChar/4 '\t'/5 >/1
     if( ! refalrts::char_term( '\t', context[5] ) )
@@ -753,9 +772,9 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // '\r'
     // </0 & EscapeChar/4 '\r'/5 >/1
     if( ! refalrts::char_term( '\r', context[5] ) )
@@ -773,9 +792,9 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // '\''
     // </0 & EscapeChar/4 '\''/5 >/1
     if( ! refalrts::char_term( '\'', context[5] ) )
@@ -793,9 +812,9 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // '\"'
     // </0 & EscapeChar/4 '\"'/5 >/1
     if( ! refalrts::char_term( '\"', context[5] ) )
@@ -813,9 +832,9 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // '\\'
     // </0 & EscapeChar/4 '\\'/5 >/1
     if( ! refalrts::char_term( '\\', context[5] ) )
@@ -832,6 +851,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx
   // </0 & EscapeChar/4 s.Other#1/5 >/1
@@ -899,6 +919,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       // </0 & EscapeString/4 e.String#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -914,7 +936,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 5},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 5, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EscapeString

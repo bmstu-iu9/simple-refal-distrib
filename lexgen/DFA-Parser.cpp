@@ -244,6 +244,8 @@ namespace /* unnamed */ {
       {"egal empty descriptio", 21}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
       //FAST GEN: e.$
@@ -277,7 +279,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 9, 0},
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & DFA-Parse/4 e.Tokens#1/2 >/1
       // closed e.Tokens#1 as range 2
@@ -300,7 +303,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 8, 11, 0},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_DFA_Parse
@@ -333,7 +336,6 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( # TEOF t.idx )
     // </0 & DFA-Parse/4 (/7 # TEOF/9 t.SrcPos#1/10 )/8 >/1
     context[15] = context[2];
@@ -378,6 +380,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & DFA-Parse/4 e.Tokens#1/2 >/1
@@ -441,6 +444,8 @@ namespace /* unnamed */ {
       {"e ", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 7, 0, 0},
       {refalrts::icIssueMemory, 36, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) t.$ e.$
@@ -498,7 +503,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 11, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +24, 0, 0},
       // ( e.idx ) ( e.idx ) ( # TSetName t.idx e.idx ) e.idx
       // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TSetName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
@@ -531,7 +537,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 20, 0},
       {refalrts::icSpliceTile, 17, 17, 0},
       {refalrts::icSpliceEVar, 0, 0, 15},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +36, 0, 0},
       // ( e.idx ) ( e.idx ) ( # TName t.idx e.idx ) e.idx
       // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames-B#1/20 (/24 e.Name#1/26 )/25 e.RuleNames-E#1/9 )/12 (/13 # TName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
@@ -576,7 +583,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 11, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( e.idx ) ( # TName t.idx e.idx ) e.idx
       // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
@@ -607,7 +615,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 22, 22, 0},
       {refalrts::icSpliceTile, 13, 19, 0},
       {refalrts::icSpliceTile, 20, 21, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +8, 0, 0},
       // ( e.idx ) ( e.idx ) ( # TEOF t.idx ) e.idx
       // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TEOF/17 t.SrcPos#1/18 )/14 e.Tail#1/2 >/1
@@ -623,7 +632,8 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ ]] }
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) t.idx e.idx
       // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.Unexpected#1/13 e.Tail#1/2 >/1
       // closed e.SetNames#1 as range 5
@@ -647,7 +657,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 7, 0},
       {refalrts::icSpliceTile, 13, 14, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ParseElements
@@ -700,7 +710,6 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.idxTTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( # TSetName t.idx e.idx ) e.idx
     // </0 & ParseElements/4 (/7 e.SetNames-B#1/20 (/24 e.Name#1/26 )/25 e.SetNames-E#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TSetName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
     context[15] = 0;
@@ -771,9 +780,9 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[20], context[21], context[32], context[33] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( # TSetName t.idx e.idx ) e.idx
     // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TSetName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
     context[15] = 0;
@@ -820,9 +829,9 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( # TName t.idx e.idx ) e.idx
     // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames-B#1/20 (/24 e.Name#1/26 )/25 e.RuleNames-E#1/9 )/12 (/13 # TName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
     context[15] = 0;
@@ -893,9 +902,9 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[20], context[21], context[32], context[33] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( # TName t.idx e.idx ) e.idx
     // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TName/17 t.SrcPos#1/18 e.Name#1/15 )/14 e.Tail#1/2 >/1
     context[15] = 0;
@@ -940,9 +949,9 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( # TEOF t.idx ) e.idx
     // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TEOF/17 t.SrcPos#1/18 )/14 e.Tail#1/2 >/1
     context[15] = 0;
@@ -971,6 +980,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) t.idx e.idx
   // </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.Unexpected#1/13 e.Tail#1/2 >/1
@@ -1028,6 +1038,8 @@ namespace /* unnamed */ {
       {"have content", 12}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 34, 0, 0},
       //FAST GEN: ( e.$ ) t.$ ( e.$ ) ( e.$ ) ( e.$ ) t.$ e.$
@@ -1087,7 +1099,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 28, 24, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) t.idx ( e.idx ) ( e.idx ) ( e.idx ) ( # TDot t.idx ) e.idx
       // </0 & ParseSetDescr$1\1/4 (/7 e.Name#1/5 )/8 t.SetNamePos#1/9 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 (/23 # TDot/27 t.SrcPos#2/28 )/24 e.Tail#2/2 >/1
@@ -1122,7 +1135,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 7, 0},
       {refalrts::icSpliceTile, 9, 10, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) t.idx ( e.idx ) ( e.idx ) ( e.idx ) t.idx e.idx
       // </0 & ParseSetDescr$1\1/4 (/7 e.Name#1/5 )/8 t.SetNamePos#1/9 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 t.Unexpected#2/23 e.Tail#2/2 >/1
       // closed e.Name#1 as range 5
@@ -1155,7 +1169,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 17, 0},
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ParseSetDescr_S1L1
@@ -1225,7 +1239,6 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
   // closed e.idxTVTTTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) t.idx ( e.idx ) ( e.idx ) ( ) ( # TDot t.idx ) e.idx
     // </0 & ParseSetDescr$1\1/4 (/7 e.Name#1/5 )/8 t.SetNamePos#1/9 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 )/22 (/23 # TDot/27 t.SrcPos#2/28 )/24 e.Tail#2/2 >/1
     context[25] = 0;
@@ -1283,9 +1296,9 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
     refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) t.idx ( e.idx ) ( e.idx ) ( e.idx ) ( # TDot t.idx ) e.idx
     // </0 & ParseSetDescr$1\1/4 (/7 e.Name#1/5 )/8 t.SetNamePos#1/9 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 (/23 # TDot/27 t.SrcPos#2/28 )/24 e.Tail#2/2 >/1
     context[25] = 0;
@@ -1333,6 +1346,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
     refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) t.idx ( e.idx ) ( e.idx ) ( e.idx ) t.idx e.idx
   // </0 & ParseSetDescr$1\1/4 (/7 e.Name#1/5 )/8 t.SetNamePos#1/9 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 t.Unexpected#2/23 e.Tail#2/2 >/1
@@ -1397,6 +1411,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 32, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) t.$ ( e.$ ) t.$ e.$
@@ -1457,7 +1473,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 19, 0},
       {refalrts::icSpliceTile, 26, 27, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) t.idx ( e.idx ) t.idx e.idx
       // </0 & ParseSetDescr/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 )/18 t.Unexpected#1/19 e.Tail#1/2 >/1
       // closed e.SetNames#1 as range 5
@@ -1478,7 +1495,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 11, 0},
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ParseSetDescr
@@ -1541,7 +1558,6 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.idxTTVTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TEquals t.idx ) e.idx
     // </0 & ParseSetDescr/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 )/18 (/19 # TEquals/23 t.SrcPos#1/24 )/20 e.Tail#1/2 >/1
     context[21] = 0;
@@ -1605,6 +1621,7 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
     refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) t.idx ( e.idx ) t.idx e.idx
   // </0 & ParseSetDescr/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 )/18 t.Unexpected#1/19 e.Tail#1/2 >/1
@@ -1653,6 +1670,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       //FAST GEN: e.$
@@ -1687,7 +1706,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceEVar, 0, 0, 9},
       {refalrts::icTrash, 0, 0, 11},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( e.idx ) ( # TSetName t.idx e.idx ) e.idx
       // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 (/11 # TSetName/13 t.SrcPos#1/14 e.Name#1/9 )/12 e.Tail#1/2 >/1
@@ -1712,7 +1732,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceEVar, 0, 0, 9},
       {refalrts::icSpliceTile, 14, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) e.idx
       // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 e.OtherTail#1/2 >/1
       // closed e.Found#1 as range 5
@@ -1725,7 +1746,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExtractSets
@@ -1768,7 +1789,6 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
   // closed e.idxB#0 as range 5
   // closed e.idxT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # TLiteral t.idx e.idx ) e.idx
     // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 (/11 # TLiteral/13 t.SrcPos#1/14 e.Content#1/9 )/12 e.Tail#1/2 >/1
     context[16] = context[2];
@@ -1808,9 +1828,9 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     refalrts::splice_to_freelist_open( context[11], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # TSetName t.idx e.idx ) e.idx
     // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 (/11 # TSetName/13 t.SrcPos#1/14 e.Name#1/9 )/12 e.Tail#1/2 >/1
     context[16] = context[2];
@@ -1850,6 +1870,7 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) e.idx
   // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 e.OtherTail#1/2 >/1
@@ -1893,6 +1914,8 @@ namespace /* unnamed */ {
       {"entence", 7}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 30, 0, 0},
       //FAST GEN: t.$ ( e.$ ) ( e.$ ) ( e.$ ) ( e.$ ) t.$ e.$
@@ -1943,7 +1966,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 21, 23, 0},
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icTrash, 0, 0, 9},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx ( e.idx ) ( e.idx ) ( e.idx ) ( e.idx ) t.idx e.idx
       // </0 & ParseSentence$1\1/4 t.SentNamePos#1/5 (/9 e.Name#1/7 )/10 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 t.Unexpected#2/23 e.Tail#2/2 >/1
       // closed e.Name#1 as range 7
@@ -1975,7 +1999,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 17, 0},
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ParseSentence_S1L1
@@ -2045,7 +2069,6 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
   // closed e.idxVTTTTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // t.idx ( e.idx ) ( e.idx ) ( e.idx ) ( e.idx ) ( # TDot t.idx ) e.idx
     // </0 & ParseSentence$1\1/4 t.SentNamePos#1/5 (/9 e.Name#1/7 )/10 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 (/23 # TDot/27 t.SrcPos#2/28 )/24 e.Tail#2/2 >/1
     context[25] = 0;
@@ -2091,6 +2114,7 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
     refalrts::splice_to_freelist_open( context[9], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx ( e.idx ) ( e.idx ) ( e.idx ) ( e.idx ) t.idx e.idx
   // </0 & ParseSentence$1\1/4 t.SentNamePos#1/5 (/9 e.Name#1/7 )/10 (/13 e.SetNames#1/11 )/14 (/17 e.RuleNames#1/15 )/18 (/21 e.Body#2/19 )/22 t.Unexpected#2/23 e.Tail#2/2 >/1
@@ -2154,6 +2178,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 32, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) t.$ ( e.$ ) t.$ e.$
@@ -2215,7 +2241,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 26, 27, 0},
       {refalrts::icTrash, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) t.idx ( e.idx ) t.idx e.idx
       // </0 & ParseSentence/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 )/18 t.Unexpected#1/19 e.Tail#1/2 >/1
       // closed e.SetNames#1 as range 5
@@ -2236,7 +2263,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 11, 0},
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ParseSentence
@@ -2299,7 +2326,6 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.idxTTVTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TEquals t.idx ) e.idx
     // </0 & ParseSentence/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 )/18 (/19 # TEquals/23 t.SrcPos#1/24 )/20 e.Tail#1/2 >/1
     context[21] = 0;
@@ -2364,6 +2390,7 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
     refalrts::splice_to_freelist_open( context[0], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) t.idx ( e.idx ) t.idx e.idx
   // </0 & ParseSentence/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 )/18 t.Unexpected#1/19 e.Tail#1/2 >/1
@@ -2407,6 +2434,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
       // </0 & ExtractAlternatives\1/4 (/7 s.TokType#2/9 t.SrcPos#2/10 e.Info#2/5 )/8 e.Tail#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2426,7 +2455,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icSpliceTile, 12, 13, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L1
@@ -2506,6 +2535,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 9, 0, 0},
       // </0 & ExtractAlternatives\2/4 t.BeginSrcPos#2/5 t.NextToken#2/7 e.Tail#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2525,7 +2556,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 5, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L2
@@ -2600,6 +2631,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 11, 0, 0},
       // </0 & ExtractAlternatives\3/4 t.BeginSrcPos#2/5 t.Head#2/7 t.NextToken#2/9 e.Tail#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2620,7 +2653,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 10, 0},
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 5, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L3
@@ -2698,6 +2731,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 13, 0, 0},
       // </0 & ExtractAlternatives\4/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextToken#2/11 e.Tail#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2719,7 +2754,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 5, 10, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L4
@@ -2805,6 +2840,8 @@ namespace /* unnamed */ {
       {" alternative must have flush", 28}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
       //FAST GEN: t.$ t.$ t.$ t.$ e.$
@@ -2838,7 +2875,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 11, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icTrash, 0, 0, 6},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx t.idx t.idx t.idx e.idx
       // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextState#2/11 e.Tail#2/2 >/1
       // closed e.Tail#2 as range 2
@@ -2849,7 +2887,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 7, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L5
@@ -2897,7 +2935,6 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
     return refalrts::cRecognitionImpossible;
   // closed e.idxVVVV#0 as range 2
   do {
-    refalrts::start_sentence();
     // t.idx t.idx # None # Finitive e.idx
     // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 # None/9 # Finitive/11 e.Tail#2/2 >/1
     if( ! refalrts::ident_term(  & ident_None<int>::name, context[9] ) )
@@ -2928,6 +2965,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
     refalrts::splice_to_freelist_open( context[6], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx t.idx t.idx t.idx e.idx
   // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextState#2/11 e.Tail#2/2 >/1
@@ -2965,6 +3003,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
       //FAST GEN: ( e.$ ) t.$ t.$ t.$ e.$
@@ -3002,7 +3042,8 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 22},
       {refalrts::icTrash, 0, 0, 19},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) t.idx t.idx t.idx e.idx
       // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 e.Tail#2/2 >/1
       // closed e.Found#1 as range 5
@@ -3020,7 +3061,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 7, 14, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_ExtractAlternatives_L6
@@ -3072,7 +3113,6 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
     return refalrts::cRecognitionImpossible;
   // closed e.idxTVVV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) t.idx t.idx t.idx ( # TAlternative t.idx ) e.idx
     // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 (/17 # TAlternative/19 t.SrcPos#2/20 )/18 e.Tail#2/2 >/1
     context[22] = context[2];
@@ -3113,6 +3153,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
     refalrts::splice_to_freelist_open( context[19], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) t.idx t.idx t.idx e.idx
   // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 e.Tail#2/2 >/1
@@ -3163,6 +3204,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & ExtractAlternatives/4 (/7 e.Found#1/5 )/8 e.Tail#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3200,7 +3243,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 18, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 9, 10, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExtractAlternatives
@@ -3320,6 +3363,8 @@ namespace /* unnamed */ {
       {" definition of state", 20}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 8, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
       //FAST GEN: e.$
@@ -3348,7 +3393,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icSpliceTile, 5, 9, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TSetName t.idx e.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TSetName/9 t.SrcPos#1/10 e.Content#1/7 )/6 >/1
@@ -3366,7 +3412,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +13, 0, 0},
       // ( # TFlush t.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 >/1
@@ -3384,7 +3431,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TNamedFlush t.idx e.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TNamedFlush/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
@@ -3402,7 +3450,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TErrorFlush t.idx e.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TErrorFlush/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
@@ -3420,7 +3469,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TName t.idx e.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TName/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
@@ -3438,7 +3488,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TAlternative t.idx e.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TAlternative/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
@@ -3456,7 +3507,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +13, 0, 0},
       // ( # TDot t.idx )
       // </0 & ExtractAlternatives-Head/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
@@ -3474,7 +3526,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx e.idx
       // </0 & ExtractAlternatives-Head/4 t.Unexpected#1/5 e.Tail#1/2 >/1
       // closed e.Tail#1 as range 2
@@ -3488,7 +3541,7 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icTrash, 0, 0, 6},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExtractAlternatives_Head
@@ -3527,7 +3580,6 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( # TLiteral t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TLiteral/9 t.SrcPos#1/10 e.Content#1/7 )/6 >/1
     context[7] = 0;
@@ -3561,9 +3613,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TSetName t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TSetName/9 t.SrcPos#1/10 e.Content#1/7 )/6 >/1
     context[7] = 0;
@@ -3595,9 +3647,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TFlush t.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -3630,9 +3682,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TNamedFlush t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TNamedFlush/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
     context[7] = 0;
@@ -3664,9 +3716,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TErrorFlush t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TErrorFlush/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
     context[7] = 0;
@@ -3698,9 +3750,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TName t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TName/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
     context[7] = 0;
@@ -3732,9 +3784,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TAlternative t.idx e.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TAlternative/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
     context[7] = 0;
@@ -3766,9 +3818,9 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TDot t.idx )
     // </0 & ExtractAlternatives-Head/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -3801,6 +3853,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx e.idx
   // </0 & ExtractAlternatives-Head/4 t.Unexpected#1/5 e.Tail#1/2 >/1
@@ -3853,6 +3906,8 @@ namespace /* unnamed */ {
       {"lush or next state name", 23}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: t.$
@@ -3875,7 +3930,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitIdent, 0, 8, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TNamedFlush t.idx e.idx )
       // </0 & ExtractAlternatives-Flush/4 (/5 # TNamedFlush/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
@@ -3893,7 +3949,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icSpliceTile, 5, 9, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // ( # TErrorFlush t.idx e.idx )
       // </0 & ExtractAlternatives-Flush/4 (/5 # TErrorFlush/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
@@ -3911,7 +3968,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icSpliceTile, 5, 9, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // ( # TName t.idx e.idx )
       // </0 & ExtractAlternatives-Flush/4 (/5 # TName/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
@@ -3927,7 +3985,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( # TAlternative t.idx )
       // </0 & ExtractAlternatives-Flush/4 (/5 # TAlternative/9 t.SrcPos#1/10 )/6 >/1
@@ -3943,7 +4002,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( # TDot t.idx )
       // </0 & ExtractAlternatives-Flush/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
@@ -3959,7 +4019,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx
       // </0 & ExtractAlternatives-Flush/4 t.Unexpected#1/5 >/1
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -3973,7 +4034,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 9, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExtractAlternatives_Flush
@@ -4013,7 +4074,6 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( # TFlush t.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -4040,9 +4100,9 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TNamedFlush t.idx e.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TNamedFlush/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
     context[7] = 0;
@@ -4072,9 +4132,9 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TErrorFlush t.idx e.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TErrorFlush/9 t.SrcPos#1/10 e.Message#1/7 )/6 >/1
     context[7] = 0;
@@ -4104,9 +4164,9 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TName t.idx e.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TName/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
     context[7] = 0;
@@ -4134,9 +4194,9 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TAlternative t.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TAlternative/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -4165,9 +4225,9 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TDot t.idx )
     // </0 & ExtractAlternatives-Flush/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -4196,6 +4256,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx
   // </0 & ExtractAlternatives-Flush/4 t.Unexpected#1/5 >/1
@@ -4243,6 +4304,8 @@ namespace /* unnamed */ {
       {"ext state name or next alternative", 34}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: t.$
@@ -4267,7 +4330,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 9, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( # TAlternative t.idx )
       // </0 & ExtractAlternatives-NextState/4 (/5 # TAlternative/9 t.SrcPos#1/10 )/6 >/1
@@ -4283,7 +4347,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( # TDot t.idx )
       // </0 & ExtractAlternatives-NextState/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
@@ -4299,7 +4364,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 6, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx
       // </0 & ExtractAlternatives-NextState/4 t.Unexpected#1/5 >/1
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -4313,7 +4379,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 9, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExtractAlternatives_NextState
@@ -4353,7 +4419,6 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( # TName t.idx e.idx )
     // </0 & ExtractAlternatives-NextState/4 (/5 # TName/9 t.SrcPos#1/10 e.Name#1/7 )/6 >/1
     context[7] = 0;
@@ -4381,9 +4446,9 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TAlternative t.idx )
     // </0 & ExtractAlternatives-NextState/4 (/5 # TAlternative/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -4412,9 +4477,9 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # TDot t.idx )
     // </0 & ExtractAlternatives-NextState/4 (/5 # TDot/9 t.SrcPos#1/10 )/6 >/1
     context[7] = 0;
@@ -4443,6 +4508,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx
   // </0 & ExtractAlternatives-NextState/4 t.Unexpected#1/5 >/1
@@ -4487,6 +4553,8 @@ namespace /* unnamed */ {
       {"Unexpected ", 11}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       // </0 & UnexpectedToken/4 (/7 s.Type#1/9 t.SrcPos#1/10 e.Unexpected#1/5 )/8 e.Message#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -4516,7 +4584,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 9, 0},
       {refalrts::icSpliceTile, 12, 14, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_UnexpectedToken

@@ -99,6 +99,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 11, 0, 0},
       // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -119,7 +121,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 0, 8, 0},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 9, 10, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_FindFiles
@@ -194,6 +196,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
       // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -224,7 +228,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 9, 14, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeFile_ByFolders
@@ -320,6 +324,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 9, 0, 0},
       //FAST GEN: e.$ t.$
@@ -343,7 +349,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrash, 0, 0, 5},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx ( e.idx )
       // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
       {refalrts::icBracketTerm, 0, 7, 5},
@@ -361,7 +368,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 5, 5, 0},
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeInFolder
@@ -400,7 +407,6 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // e.idx # Current
     // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
     if( ! refalrts::ident_term(  & ident_Current<int>::name, context[5] ) )
@@ -421,6 +427,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     refalrts::splice_to_freelist_open( context[5], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx ( e.idx )
   // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
@@ -468,6 +475,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       //FAST GEN: e.$
@@ -497,7 +506,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +9, 0, 0},
       // ( e.idx ) ( # Output e.idx ) e.idx
       // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
@@ -514,7 +524,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( e.idx ) ( # NotFound e.idx ) e.idx
       // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
@@ -533,7 +544,8 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 18},
       {refalrts::icTrash, 0, 0, 8},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx )
       // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
@@ -547,7 +559,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeFile_CheckNotFound
@@ -590,7 +602,6 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   // closed e.idxB#0 as range 5
   // closed e.idxT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # Source ( e.idx ) e.idx ) e.idx
     // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Source/13 (/16 e.Source#1/14 )/17 e.Output#1/9 )/12 e.Variants#1/2 >/1
     context[18] = context[2];
@@ -628,9 +639,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # Output e.idx ) e.idx
     // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
     context[18] = context[2];
@@ -660,9 +671,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # NotFound e.idx ) e.idx
     // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
     context[18] = context[2];
@@ -694,6 +705,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     refalrts::splice_to_freelist_open( context[8], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx )
   // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
@@ -733,6 +745,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       // </0 & ExistFile-T/4 e.FileName#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -747,7 +761,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ExistFile_T
@@ -820,6 +834,8 @@ namespace /* unnamed */ {
       {"sref", 4}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 22, 0, 0},
       //FAST GEN: e.$
@@ -853,7 +869,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // e.idx '.cpp'
       // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
@@ -878,7 +895,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 9, 10, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
       // closed e.FileName#1 as range 2
@@ -910,7 +928,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 19, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 5, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeFile
@@ -946,7 +964,6 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // e.idx '.sref'
     // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/9 's'/8 'r'/7 'e'/6 'f'/5 >/1
     context[20] = context[2];
@@ -991,9 +1008,9 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // e.idx '.cpp'
     // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
     context[20] = context[2];
@@ -1035,6 +1052,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
@@ -1108,6 +1126,8 @@ namespace /* unnamed */ {
       {".cpp", 4}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       //FAST GEN: s.$ e.$
@@ -1143,7 +1163,8 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 13, 15, 0},
       {refalrts::icSpliceTile, 11, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # False e.idx
       // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
@@ -1157,7 +1178,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 4, 1, 0},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeSource_CheckExist
@@ -1195,7 +1216,6 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // # True e.idx '.sref'
     // </0 & AnalyzeSource-CheckExist/4 # True/5 e.UnitName#1/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
     if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
@@ -1242,6 +1262,7 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # False e.idx
   // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
@@ -1284,6 +1305,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       //FAST GEN: s.$ e.$
@@ -1307,7 +1330,8 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 4, 1, 0},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # False e.idx
       // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
@@ -1321,7 +1345,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 4, 1, 0},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeOutput_CheckExist
@@ -1359,7 +1383,6 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // # True e.idx
     // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
     if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
@@ -1380,6 +1403,7 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # False e.idx
   // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
@@ -1423,6 +1447,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
       //FAST GEN: e.$
@@ -1454,7 +1480,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 4, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( # False e.idx ) # True e.idx
       // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
@@ -1472,7 +1499,8 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 8, 1, 0},
       {refalrts::icSetRes, 0, 0, 8},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( # False e.idx '.sref' ) # False e.idx '.cpp'
       // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
       {refalrts::icIdentTerm, 0, 1, 9},
@@ -1498,7 +1526,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 15, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AnalyzeBoth_CheckExist
@@ -1543,7 +1571,6 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
   // closed e.idxTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( # True e.idx ) s.idx e.idx
     // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/10 e.SourceName#1/5 )/8 s.Res#1/9 e.OutName#1/2 >/1
     context[22] = context[5];
@@ -1572,9 +1599,9 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( # False e.idx ) # True e.idx
     // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
     if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
@@ -1601,6 +1628,7 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( # False e.idx '.sref' ) # False e.idx '.cpp'
   // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1

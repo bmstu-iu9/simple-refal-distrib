@@ -138,6 +138,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\1\1/4 (/7 e.HardGens#2/5 )/8 (/11 e.Result#2/9 )/12 e.HardGen#3/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -177,7 +179,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 14, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
       {refalrts::icSpliceTile, 13, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L1L1
@@ -288,6 +290,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\1/4 (/7 e.HardGens#2/5 )/8 (/11 (/15 e.Pattern#2/13 )/16 (/19 e.Result#2/17 )/20 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -326,7 +330,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 22, 23, 0},
       {refalrts::icSpliceEVar, 0, 0, 13},
       {refalrts::icSpliceTile, 21, 21, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L1
@@ -441,6 +445,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 9, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\2/4 (/7 e.HardPatterns#2/5 )/8 e.SentenceTails#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -459,7 +465,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L2
@@ -540,6 +546,8 @@ namespace /* unnamed */ {
       {"FAST GEN:", 9}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 35, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\3/4 (/7 e.FastGen#2/5 )/8 (/11 e.GlobalGen#2/9 )/12 e.SentenceTails#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -592,7 +600,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 31, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
       {refalrts::icSpliceTile, 13, 16, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L3
@@ -722,6 +730,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 25, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\4\1/4 (/7 (/11 e.Substitute#3/9 )/12 e.Substs#3/5 )/8 (/15 (/19 e.HardGenComment#3/17 )/20 (/23 e.Result#3/21 )/24 )/16 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -753,7 +763,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icSpliceTile, 12, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L4L1
@@ -867,6 +877,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 33, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\4/4 s.FnGenInitSubst#1/5 s.FnGenSubst#1/6 (/9 e.Name#1/7 )/10 (/13 e.Comments#2/11 )/14 (/17 (/21 e.CommonPattern#2/19 )/22 e.SentSubsts#2/15 )/18 e.SentenceTails#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -920,7 +932,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 17, 0},
       {refalrts::icSpliceEVar, 0, 0, 11},
       {refalrts::icSpliceTile, 21, 21, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L4
@@ -1061,6 +1073,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\5\1\1/4 s.MaxMemory#3/5 (/8 e.HardGenComment#3/6 )/9 (/12 # CmdIssueMem/14 s.Memory#4/15 )/13 e.Commands#4/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1092,7 +1106,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 14, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icTrash, 0, 0, 8},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1
@@ -1196,6 +1210,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 47, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\5\1/4 s.FnGenResult#1/21 s.FnGenSubst#1/22 s.ContextSize#2/23 (/26 e.MarkedPattern#2/24 )/27 (/30 e.Vars#2/28 )/31 s.MaxMemory#3/32 (/7 (/11 e.Substitute#3/9 )/12 (/15 e.HardGenComment#3/13 )/16 (/19 e.Result#3/17 )/20 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1272,7 +1288,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 1, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L5L1
@@ -1452,6 +1468,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 28, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\5/4 s.FnGenResult#1/5 s.FnGenSubst#1/6 (/9 e.Comments#2/7 )/10 (/13 s.ContextSize#2/15 (/18 e.Vars#2/16 )/19 (/22 e.MarkedPattern#2/20 )/23 e.CommonMatchCommands#2/11 )/14 e.SentencesWithSubst#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1499,7 +1517,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icSpliceTile, 9, 9, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L5
@@ -1626,6 +1644,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
@@ -1654,7 +1674,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 10},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.LastSentence#3/2 >/1
       // closed e.LastSentence#3 as range 2
@@ -1664,7 +1685,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L6L1
@@ -1700,7 +1721,6 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // e.idx ( # CmdOpenELoop e.idx )
     // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.Commands#3/2 (/7 # CmdOpenELoop/9 e.OpenELoop#3/5 )/8 >/1
     context[10] = context[2];
@@ -1734,6 +1754,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.LastSentence#3/2 >/1
@@ -1773,6 +1794,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 22, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint\6/4 s.ScopeClass#1/10 (/13 e.Name#1/11 )/14 (/17 e.Prefix#2/15 )/18 s.MaxMemory#2/19 e.Sentences#2/2 (/7 # CmdSentence/9 e.LastSentence#2/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1810,7 +1833,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 15},
       {refalrts::icSpliceTile, 20, 20, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_HighLevelRASL_Function_Conjoint_L6
@@ -1929,6 +1952,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 41, 0, 0},
       // </0 & HighLevelRASL-Function-Conjoint/4 s.FnGenInitSubst#1/5 s.FnGenSubst#1/6 s.FnGenResult#1/7 s.ScopeClass#1/8 (/11 e.Name#1/9 )/12 e.Sentences#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1996,7 +2021,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 15, 25, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 13, 14, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_HighLevelRASL_Function_Conjoint
@@ -2148,6 +2173,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 4, 0, 0},
       {refalrts::icIssueMemory, 66, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ )
@@ -2229,7 +2256,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 36, 31, 0},
       {refalrts::icSpliceTile, 4, 23, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( ) ( )
       // </0 & ComposeVars/4 (/7 e.MarkedPattern#1/5 )/8 (/11 )/12 (/15 )/16 >/1
       {refalrts::icEmpty, 0, 0, 9},
@@ -2244,7 +2272,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ComposeVars
@@ -2302,7 +2330,6 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
   // closed e.idxTB#0 as range 9
   // closed e.idxTTB#0 as range 13
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) ( e.idx )
     // </0 & ComposeVars/4 (/7 e.MarkedPattern-B#1/17 (/21 # TkVariable/23 s.Mode#1/24 e.Name#1/19 s.Offset#1/25 )/22 e.MarkedPattern-E#1/5 )/8 (/11 e.Substitute-B#1/26 (/30 s.Tag#1/32 (/35 e.Name#1/38 )/36 '$'/37 e.Subst#1/28 )/31 e.Substitute-E#1/9 )/12 (/15 e.Vars-B#1/40 (/44 s.Mode#1/46 (/49 e.Name#1/51 )/50 s.Offset#1/53 )/45 e.Vars-E#1/13 )/16 >/1
     context[54] = context[5];
@@ -2429,6 +2456,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
       } while ( refalrts::open_evar_advance( context[26], context[27], context[58], context[59] ) );
     } while ( refalrts::open_evar_advance( context[17], context[18], context[54], context[55] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( ) ( )
   // </0 & ComposeVars/4 (/7 e.MarkedPattern#1/5 )/8 (/11 )/12 (/15 )/16 >/1

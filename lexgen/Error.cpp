@@ -22,6 +22,8 @@ namespace /* unnamed */ {
       {":ERROR:", 7}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
       // </0 & ErrorAt/4 (/7 s.Number#1/9 e.File#1/5 )/8 e.Text#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -57,7 +59,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 9, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ErrorAt
@@ -155,6 +157,8 @@ namespace /* unnamed */ {
       {":WARNING:", 9}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       // </0 & WarningAt/4 (/7 s.Number#1/9 e.File#1/5 )/8 e.Message#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -182,7 +186,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 7, 9, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_WarningAt

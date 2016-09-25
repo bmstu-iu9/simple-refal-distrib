@@ -72,6 +72,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       // </0 & EL-Create/4 e.FileName#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -91,7 +93,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 6, 6, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 5, 5, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EL_Create
@@ -160,6 +162,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
       // </0 & EL-AddError/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 e.Message#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -184,7 +188,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 9, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EL_AddError
@@ -264,6 +268,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       // </0 & EL-AddErrorAt/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 s.LineNumber#1/14 e.Message#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -287,7 +293,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EL_AddErrorAt
@@ -375,6 +381,8 @@ namespace /* unnamed */ {
       {"nown characters \"", 17}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       //FAST GEN: t.$ ( s.$ s.$ e.$ ) e.$
@@ -404,7 +412,8 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 7},
       {refalrts::icTrash, 0, 0, 9},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // t.idx ( # TkUnexpected s.idx e.idx ) e.idx
       // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
@@ -430,7 +439,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icTrash, 0, 0, 11},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx ( s.idx s.idx e.idx ) e.idx
       // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
       // closed e.Info#1 as range 7
@@ -456,7 +466,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceTile, 13, 16, 0},
       {refalrts::icTrash, 0, 0, 9},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EL_AddUnexpected
@@ -503,7 +513,6 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
     return refalrts::cRecognitionImpossible;
   // closed e.idxVBVV#0 as range 7
   do {
-    refalrts::start_sentence();
     // t.idx ( # TkError s.idx e.idx ) e.idx
     // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkError<int>::name, context[11] ) )
@@ -526,9 +535,9 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
     refalrts::splice_to_freelist_open( context[9], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // t.idx ( # TkUnexpected s.idx e.idx ) e.idx
     // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
     if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[11] ) )
@@ -563,6 +572,7 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
     refalrts::splice_to_freelist_open( context[11], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // t.idx ( s.idx s.idx e.idx ) e.idx
   // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
@@ -622,6 +632,8 @@ namespace /* unnamed */ {
       {" E", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       //FAST GEN: ( e.$ ) ( s.$ e.$ )
@@ -661,7 +673,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icTrash, 0, 0, 7},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( s.idx e.idx )
       // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
       // closed e.FileName#1 as range 5
@@ -688,7 +701,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 13, 0},
       {refalrts::icSpliceTile, 7, 7, 0},
       {refalrts::icSpliceEVar, 0, 0, 5},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_EL_Destroy_S2L1
@@ -741,7 +754,6 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
     return refalrts::cRecognitionImpossible;
   // closed e.idxTBV#0 as range 9
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # NoLine e.idx )
     // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_NoLine<int>::name, context[13] ) )
@@ -776,6 +788,7 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
     refalrts::splice_to_freelist_open( context[7], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( s.idx e.idx )
   // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
@@ -836,6 +849,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       //FAST GEN: [ErrorList e.$ ]
@@ -860,7 +875,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitIdent, 0, 1, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // [ErrorList ( e.idx ) e.idx ]
       // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
       // closed e.FileName#1 as range 10
@@ -892,7 +908,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 15, 17, 0},
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 14, 14, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_EL_Destroy
@@ -940,7 +956,6 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   // closed e.idxDB#0 as range 10
   // closed e.idxDT#0 as range 5
   do {
-    refalrts::start_sentence();
     // [ErrorList ( e.idx ) ]
     // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 >/1
     context[19] = context[5];
@@ -960,6 +975,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // [ErrorList ( e.idx ) e.idx ]
   // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1

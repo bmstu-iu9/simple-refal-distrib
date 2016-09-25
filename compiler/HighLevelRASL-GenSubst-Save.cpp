@@ -362,6 +362,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 31, 0, 0},
       // </0 & GenInitSubst-Save/4 e.FuncName#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -410,7 +412,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 30, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 5, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenInitSubst_Save
@@ -530,6 +532,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       // </0 & GenSubst-Save/4 s.ContextTop#1/9 e.Substitutes#1/2 (/7 e.PrefixCommands#1/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -551,7 +555,7 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 8},
       {refalrts::icSpliceEVar, 0, 0, 5},
       {refalrts::icSpliceTile, 10, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenSubst_Save
@@ -672,6 +676,8 @@ namespace /* unnamed */ {
       {" closed ", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 76, 0, 0},
       {refalrts::icIssueMemory, 83, 0, 0},
       //FAST GEN: s.$ e.$ ( e.$ ) ( e.$ )
@@ -733,7 +739,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 30, 30, 0},
       {refalrts::icSpliceTile, 29, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 26},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkName/35 e.Name#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -783,7 +790,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 1, 0},
       {refalrts::icSpliceTile, 37, 38, 0},
       {refalrts::icTrash, 0, 0, 23},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkIdentifier/35 e.Ident#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -833,7 +841,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 1, 0},
       {refalrts::icSpliceTile, 37, 38, 0},
       {refalrts::icTrash, 0, 0, 23},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkNumber/35 s.Value#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -882,7 +891,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 30, 30, 0},
       {refalrts::icSpliceTile, 29, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 26},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +72, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # Brackets/35 e.SubRange#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -965,7 +975,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 39, 39, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 37, 38, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +85, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/40 (/33 # ADT-Brackets/35 (/38 e.Name#1/36 )/39 e.SubRange#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1062,7 +1073,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 43, 44, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 41, 42, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +60, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkVariable/35 s.Mode#1/37 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars-B#1/38 (/42 s.Mode#1/44 (/47 e.Index#1/49 )/48 e.Offsets#1/40 s.SampleOffset#1/51 )/43 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1134,7 +1146,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 52, 52, 0},
       {refalrts::icSpliceTile, 28, 43, 0},
       {refalrts::icSpliceEVar, 0, 0, 31},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/37 (/33 # TkVariable/35 't'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1191,7 +1204,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 7, 0},
       {refalrts::icSpliceTile, 38, 39, 0},
       {refalrts::icTrash, 0, 0, 25},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +54, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/37 (/33 # TkVariable/35 's'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1256,7 +1270,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 36, 24, 0},
       {refalrts::icSpliceTile, 28, 7, 0},
       {refalrts::icSpliceTile, 38, 39, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkChar/35 s.Char#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1305,7 +1320,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 30, 30, 0},
       {refalrts::icSpliceTile, 29, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 26},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkName/35 e.Name#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1355,7 +1371,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 1, 0},
       {refalrts::icSpliceTile, 37, 38, 0},
       {refalrts::icTrash, 0, 0, 23},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkIdentifier/35 e.Ident#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1405,7 +1422,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 1, 0},
       {refalrts::icSpliceTile, 37, 38, 0},
       {refalrts::icTrash, 0, 0, 23},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkNumber/35 s.Value#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1454,7 +1472,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 30, 30, 0},
       {refalrts::icSpliceTile, 29, 1, 0},
       {refalrts::icSpliceEVar, 0, 0, 26},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +60, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkVariable/35 s.Mode#1/37 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars-B#1/38 (/42 s.Mode#1/44 (/47 e.Index#1/49 )/48 e.Offsets#1/40 s.SampleOffset#1/51 )/43 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1526,7 +1545,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 52, 52, 0},
       {refalrts::icSpliceTile, 28, 43, 0},
       {refalrts::icSpliceEVar, 0, 0, 31},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/37 (/33 # TkVariable/35 's'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1583,7 +1603,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 7, 0},
       {refalrts::icSpliceTile, 38, 39, 0},
       {refalrts::icTrash, 0, 0, 25},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +57, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkChar/31 s.Char#1/32 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1650,7 +1671,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +57, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkNumber/31 s.Number#1/32 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1717,7 +1739,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkName/31 e.Name#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1783,7 +1806,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 34, 34, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 32, 33, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkIdentifier/31 e.Name#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1849,7 +1873,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 34, 34, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 32, 33, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkChar/30 s.Char#1/32 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1914,7 +1939,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkNumber/30 s.Number#1/32 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -1979,7 +2005,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +53, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkName/30 e.Name#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2043,7 +2070,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 34, 34, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 32, 33, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +53, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkIdentifier/30 e.Name#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2107,7 +2135,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 34, 34, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 32, 33, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +82, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # Brackets/31 e.SubRange#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2200,7 +2229,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 25, 0},
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 32, 36, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +79, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # Brackets/30 e.SubRange#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2290,7 +2320,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 30, 0},
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 32, 36, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +94, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # ADT-Brackets/31 (/34 e.Name#1/32 )/35 e.SubRange#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2396,7 +2427,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 36, 40, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +95, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/35 e.Range#1/16 (/28 # ADT-Brackets/30 (/33 e.Name#1/31 )/34 e.SubRange#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2503,7 +2535,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 33, 0},
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 36, 40, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +31, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # E/25 s.Num#1/31 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2544,7 +2577,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 26},
       {refalrts::icSpliceEVar, 0, 0, 16},
       {refalrts::icTrash, 0, 0, 20},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +75, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 s.Mode#1/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars-B#1/33 (/37 s.Mode#1/39 (/42 e.Index#1/44 )/43 e.Offsets#1/35 s.SampleOffset#1/46 )/38 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2631,7 +2665,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 48, 48, 0},
       {refalrts::icSpliceTile, 29, 32, 0},
       {refalrts::icSpliceTile, 47, 47, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +73, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkVariable/30 s.Mode#1/32 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars-B#1/33 (/37 s.Mode#1/39 (/42 e.Index#1/44 )/43 e.Offsets#1/35 s.SampleOffset#1/46 )/38 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2716,7 +2751,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 32, 32, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 47, 48, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +63, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # E/25 s.Num#1/37 (/33 # TkVariable/35 'e'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2790,7 +2826,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 40, 43, 0},
       {refalrts::icSpliceTile, 28, 7, 0},
       {refalrts::icSpliceTile, 38, 39, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +66, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 's'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2867,7 +2904,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +66, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 't'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -2944,7 +2982,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +65, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/32 e.Range#1/16 (/28 # TkVariable/30 's'/31 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -3020,7 +3059,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +65, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/32 e.Range#1/16 (/28 # TkVariable/30 't'/31 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -3096,7 +3136,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +65, 0, 0},
       // s.idx e.idx ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 'e'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -3172,7 +3213,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 35, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 33, 34, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx ( # Junk e.idx ) ( e.idx ) ( e.idx )
       // </0 & DoGenSubst/4 s.ContextOffset#1/13 (/16 # Junk/18 e.MarkedPattern#1/14 )/17 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
       {refalrts::icBracketLeftSave, 0, 14, 2},
@@ -3205,7 +3247,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 17, 7, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_DoGenSubst
@@ -3257,7 +3299,6 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkChar/35 s.Char#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3348,9 +3389,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkName/35 e.Name#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3441,9 +3482,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkIdentifier/35 e.Ident#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3534,9 +3575,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkNumber/35 s.Value#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3627,9 +3668,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # Brackets/35 e.SubRange#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3769,9 +3810,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/40 (/33 # ADT-Brackets/35 (/38 e.Name#1/36 )/39 e.SubRange#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -3938,9 +3979,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/36 (/33 # TkVariable/35 s.Mode#1/37 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars-B#1/38 (/42 s.Mode#1/44 (/47 e.Index#1/49 )/48 e.Offsets#1/40 s.SampleOffset#1/51 )/43 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Commands#1 as range 5
@@ -4075,9 +4116,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       } while ( refalrts::open_evar_advance( context[38], context[39], context[79], context[80] ) );
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/37 (/33 # TkVariable/35 't'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4178,9 +4219,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # T/25 s.Num#1/37 (/33 # TkVariable/35 's'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4295,9 +4336,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkChar/35 s.Char#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4388,9 +4429,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkName/35 e.Name#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4481,9 +4522,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkIdentifier/35 e.Ident#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4574,9 +4615,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkNumber/35 s.Value#1/37 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4667,9 +4708,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/36 (/33 # TkVariable/35 s.Mode#1/37 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars-B#1/38 (/42 s.Mode#1/44 (/47 e.Index#1/49 )/48 e.Offsets#1/40 s.SampleOffset#1/51 )/43 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Commands#1 as range 5
@@ -4804,9 +4845,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       } while ( refalrts::open_evar_advance( context[38], context[39], context[79], context[80] ) );
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # S/25 s.Num#1/37 (/33 # TkVariable/35 's'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -4907,9 +4948,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkChar/31 s.Char#1/32 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5021,9 +5062,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkNumber/31 s.Number#1/32 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5135,9 +5176,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkName/31 e.Name#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5246,9 +5287,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkIdentifier/31 e.Name#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5357,9 +5398,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkChar/30 s.Char#1/32 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5469,9 +5510,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkNumber/30 s.Number#1/32 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5581,9 +5622,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkName/30 e.Name#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5690,9 +5731,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkIdentifier/30 e.Name#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5799,9 +5840,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # Brackets/31 e.SubRange#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -5956,9 +5997,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # Brackets/30 e.SubRange#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -6110,9 +6151,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # ADT-Brackets/31 (/34 e.Name#1/32 )/35 e.SubRange#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -6293,9 +6334,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/35 e.Range#1/16 (/28 # ADT-Brackets/30 (/33 e.Name#1/31 )/34 e.SubRange#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -6476,9 +6517,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # E/25 s.Num#1/31 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -6552,9 +6593,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 s.Mode#1/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars-B#1/33 (/37 s.Mode#1/39 (/42 e.Index#1/44 )/43 e.Offsets#1/35 s.SampleOffset#1/46 )/38 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Commands#1 as range 5
@@ -6707,9 +6748,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       } while ( refalrts::open_evar_advance( context[33], context[34], context[79], context[80] ) );
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/31 e.Range#1/16 (/28 # TkVariable/30 s.Mode#1/32 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars-B#1/33 (/37 s.Mode#1/39 (/42 e.Index#1/44 )/43 e.Offsets#1/35 s.SampleOffset#1/46 )/38 e.Vars-E#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Commands#1 as range 5
@@ -6860,9 +6901,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       } while ( refalrts::open_evar_advance( context[33], context[34], context[79], context[80] ) );
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk1#1/16 )/19 (/23 # E/25 s.Num#1/37 (/33 # TkVariable/35 'e'/36 e.Index#1/31 )/34 )/24 (/28 # Junk/30 e.Junk2#1/26 )/29 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -6992,9 +7033,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 's'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -7123,9 +7164,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 't'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -7254,9 +7295,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/32 e.Range#1/16 (/28 # TkVariable/30 's'/31 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -7384,9 +7425,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # E/20 s.Num#1/32 e.Range#1/16 (/28 # TkVariable/30 't'/31 e.Index#1/26 )/29 )/19 (/23 # Junk/25 e.Junk#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -7514,9 +7555,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx e.idx ( e.idx ) ( e.idx )
     // </0 & DoGenSubst/4 s.ContextOffset#1/13 e.Substs-B#1/14 (/18 # Junk/20 e.Junk#1/16 )/19 (/23 # E/25 s.Num#1/26 (/29 # TkVariable/31 'e'/32 e.Index#1/27 )/30 e.Range#1/21 )/24 e.Substs-E#1/2 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
     // closed e.Vars#1 as range 9
@@ -7643,6 +7684,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[14], context[15], context[75], context[76] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx ( # Junk e.idx ) ( e.idx ) ( e.idx )
   // </0 & DoGenSubst/4 s.ContextOffset#1/13 (/16 # Junk/18 e.MarkedPattern#1/14 )/17 (/11 e.Vars#1/9 )/12 (/7 e.Commands#1/5 )/8 >/1
@@ -7711,6 +7753,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       //FAST GEN: s.$ s.$
@@ -7734,7 +7778,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrash, 0, 0, 6},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +9, 0, 0},
       // s.idx 't'
       // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 't'/6 >/1
@@ -7748,7 +7793,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrash, 0, 0, 6},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx 's'
       // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 's'/6 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('s'), 6},
@@ -7761,7 +7807,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrash, 0, 0, 6},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_IncVarOffset_Saved
@@ -7802,7 +7848,6 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // s.idx 'e'
     // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 'e'/6 >/1
     if( ! refalrts::char_term( 'e', context[6] ) )
@@ -7822,9 +7867,9 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     refalrts::splice_to_freelist_open( context[6], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // s.idx 't'
     // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 't'/6 >/1
     if( ! refalrts::char_term( 't', context[6] ) )
@@ -7844,6 +7889,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     refalrts::splice_to_freelist_open( context[6], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx 's'
   // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 's'/6 >/1

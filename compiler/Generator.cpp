@@ -370,6 +370,14 @@ struct ident_CmdNativeForward {
   }
 };
 
+// identifier #CmdNextStep
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdNextStep {
+  static const char *name() {
+    return "CmdNextStep";
+  }
+};
+
 // identifier #CmdNumber
 template <typename SREFAL_PARAM_INT>
 struct ident_CmdNumber {
@@ -458,22 +466,6 @@ struct ident_CmdResetAllocator {
   }
 };
 
-// identifier #CmdReturnResult
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdReturnResult {
-  static const char *name() {
-    return "CmdReturnResult";
-  }
-};
-
-// identifier #CmdReturnResult-NoTrash
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdReturnResult_NoTrash {
-  static const char *name() {
-    return "CmdReturnResult-NoTrash";
-  }
-};
-
 // identifier #CmdSave
 template <typename SREFAL_PARAM_INT>
 struct ident_CmdSave {
@@ -495,6 +487,14 @@ template <typename SREFAL_PARAM_INT>
 struct ident_CmdSetRes {
   static const char *name() {
     return "CmdSetRes";
+  }
+};
+
+// identifier #CmdSpliceToFreeList
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdSpliceToFreeList {
+  static const char *name() {
+    return "CmdSpliceToFreeList";
   }
 };
 
@@ -778,6 +778,14 @@ struct ident_CmdiLinkBrackets {
   }
 };
 
+// identifier #CmdiLoadConstants
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdiLoadConstants {
+  static const char *name() {
+    return "CmdiLoadConstants";
+  }
+};
+
 // identifier #CmdiName
 template <typename SREFAL_PARAM_INT>
 struct ident_CmdiName {
@@ -791,6 +799,14 @@ template <typename SREFAL_PARAM_INT>
 struct ident_CmdiNameSave {
   static const char *name() {
     return "CmdiNameSave";
+  }
+};
+
+// identifier #CmdiNextStep
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdiNextStep {
+  static const char *name() {
+    return "CmdiNextStep";
   }
 };
 
@@ -823,6 +839,22 @@ template <typename SREFAL_PARAM_INT>
 struct ident_CmdiOnFailGoTo {
   static const char *name() {
     return "CmdiOnFailGoTo";
+  }
+};
+
+// identifier #CmdiProfileFunction
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdiProfileFunction {
+  static const char *name() {
+    return "CmdiProfileFunction";
+  }
+};
+
+// identifier #CmdiProfilerStopSentence
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdiProfilerStopSentence {
+  static const char *name() {
+    return "CmdiProfilerStopSentence";
   }
 };
 
@@ -866,22 +898,6 @@ struct ident_CmdiReserveStack {
   }
 };
 
-// identifier #CmdiReturnResult
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdiReturnResult {
-  static const char *name() {
-    return "CmdiReturnResult";
-  }
-};
-
-// identifier #CmdiReturnResult-NoTrash
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdiReturnResult_NoTrash {
-  static const char *name() {
-    return "CmdiReturnResult-NoTrash";
-  }
-};
-
 // identifier #CmdiSave
 template <typename SREFAL_PARAM_INT>
 struct ident_CmdiSave {
@@ -895,6 +911,14 @@ template <typename SREFAL_PARAM_INT>
 struct ident_CmdiSetRes {
   static const char *name() {
     return "CmdiSetRes";
+  }
+};
+
+// identifier #CmdiSpliceToFreeList
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdiSpliceToFreeList {
+  static const char *name() {
+    return "CmdiSpliceToFreeList";
   }
 };
 
@@ -1184,11 +1208,11 @@ extern refalrts::RefalFunction& gen_GenCommand_S76L1;
 } // unnamed namespace
 
 namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenCommand_S109L1;
+extern refalrts::RefalFunction& gen_GenCommand_S112L1;
 } // unnamed namespace
 
 namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenCommand_S123L1;
+extern refalrts::RefalFunction& gen_GenCommand_S126L1;
 } // unnamed namespace
 
 namespace /* unnamed */ {
@@ -1338,6 +1362,8 @@ namespace /* unnamed */ {
       {"falrts::Iter arg_begin, refalrts::Iter arg_end)", 47}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       // </0 & FuncArguments/4 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1352,7 +1378,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'e', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_FuncArguments
@@ -1423,6 +1449,8 @@ namespace /* unnamed */ {
       {"refalrts::RefalFunction& ", 25}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
       // </0 & FuncReference/4 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1450,7 +1478,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 16, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 5, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_FuncReference
@@ -1542,6 +1570,8 @@ namespace /* unnamed */ {
       {"rn refalrts::cSuccess;", 22}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 10, 0, 0},
       //FAST GEN: s.$ e.$
@@ -1572,7 +1602,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
       {refalrts::icSpliceTile, 5, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # Fail e.idx
       // </0 & GenReturn/4 # Fail/5 e.Indent#1/2 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -1593,7 +1624,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
       {refalrts::icSpliceTile, 5, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenReturn
@@ -1631,7 +1662,6 @@ static refalrts::FnResult func_GenReturn(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // # Success e.idx
     // </0 & GenReturn/4 # Success/5 e.Indent#1/2 >/1
     if( ! refalrts::ident_term(  & ident_Success<int>::name, context[5] ) )
@@ -1662,6 +1692,7 @@ static refalrts::FnResult func_GenReturn(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # Fail e.idx
   // </0 & GenReturn/4 # Fail/5 e.Indent#1/2 >/1
@@ -1712,6 +1743,8 @@ namespace /* unnamed */ {
       {" Automatically generated file. Don\'t edit!", 42}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
       // </0 & GenCommonHeaders/4 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1738,7 +1771,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 0, 7, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenCommonHeaders
@@ -1826,6 +1859,8 @@ namespace /* unnamed */ {
       {"//End of file", 13}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 8, 0, 0},
       // </0 & GenCommonTailer/4 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1843,7 +1878,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 0, 4, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenCommonTailer
@@ -1916,6 +1951,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 10, 0, 0},
       // </0 & GenProgram\1/4 (/7 )/8 e.Generated#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1938,7 +1975,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 9, 0},
       {refalrts::icSpliceTile, 8, 8, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenProgram_L1
@@ -2021,6 +2058,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 26, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) e.$
@@ -2060,7 +2099,8 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 17},
       {refalrts::icSpliceEVar, 0, 0, 13},
       {refalrts::icSpliceTile, 21, 21, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) e.idx
       // </0 & GenProgram\2/4 (/7 e.SourceFileName#1/5 )/8 (/11 e.TargetFileName#1/9 )/12 e.Lines#2/2 >/1
       // closed e.SourceFileName#1 as range 5
@@ -2072,7 +2112,7 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenProgram_L2
@@ -2122,7 +2162,6 @@ static refalrts::FnResult func_gen_GenProgram_L2(refalrts::Iter arg_begin, refal
   // closed e.idxTB#0 as range 9
   // closed e.idxTT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) e.idx
     // </0 & GenProgram\2/4 (/7 e.SourceFileName#1/5 )/8 (/11 e.TargetFileName#1/9 )/12 e.Lines-B#2/13 (/17 # NativeInsertBegin/19 s.SrcLineNum#2/20 )/18 e.Lines-E#2/2 >/1
     // closed e.SourceFileName#1 as range 5
@@ -2170,6 +2209,7 @@ static refalrts::FnResult func_gen_GenProgram_L2(refalrts::Iter arg_begin, refal
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[13], context[14], context[22], context[23] ) );
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) e.idx
   // </0 & GenProgram\2/4 (/7 e.SourceFileName#1/5 )/8 (/11 e.TargetFileName#1/9 )/12 e.Lines#2/2 >/1
@@ -2212,6 +2252,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 27, 0, 0},
       // </0 & GenProgram/4 (/7 e.SourceFileName#1/5 )/8 (/11 e.TargetFileName#1/9 )/12 e.RASL#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2256,7 +2298,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 15, 24, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 13, 14, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenProgram
@@ -2378,6 +2420,8 @@ namespace /* unnamed */ {
       {"#line ", 6}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 40, 0, 0},
       //FAST GEN: e.$
@@ -2438,7 +2482,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 23, 32, 0},
       {refalrts::icSpliceTile, 16, 19, 0},
       {refalrts::icSpliceTile, 20, 22, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +44, 0, 0},
       // ( e.idx ) ( e.idx ) s.idx ( # NativeInsertEnd ) e.idx
       // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 (/16 # NativeInsertEnd/18 )/17 e.Lines#1/2 >/1
@@ -2490,7 +2535,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 26, 36, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 19, 25, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( e.idx ) s.idx ( e.idx ) e.idx
       // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 (/16 e.OtherLine#1/14 )/17 e.Lines#1/2 >/1
@@ -2521,7 +2567,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 18, 0},
       {refalrts::icSpliceEVar, 0, 0, 14},
       {refalrts::icSpliceTile, 16, 16, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) s.idx
       // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 >/1
       {refalrts::icEmpty, 0, 0, 2},
@@ -2532,7 +2579,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ ]] }
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_SetLineNumbers
@@ -2584,7 +2631,6 @@ static refalrts::FnResult func_SetLineNumbers(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.idxTTV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) s.idx ( # NativeInsertBegin s.idx ) e.idx
     // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 (/16 # NativeInsertBegin/18 s.SrcLineNum#1/19 )/17 e.Lines#1/2 >/1
     context[38] = context[2];
@@ -2659,9 +2705,9 @@ static refalrts::FnResult func_SetLineNumbers(refalrts::Iter arg_begin, refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) s.idx ( # NativeInsertEnd ) e.idx
     // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 (/16 # NativeInsertEnd/18 )/17 e.Lines#1/2 >/1
     context[38] = context[2];
@@ -2743,9 +2789,9 @@ static refalrts::FnResult func_SetLineNumbers(refalrts::Iter arg_begin, refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( e.idx ) s.idx ( e.idx ) e.idx
     // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 (/16 e.OtherLine#1/14 )/17 e.Lines#1/2 >/1
     context[38] = context[2];
@@ -2790,6 +2836,7 @@ static refalrts::FnResult func_SetLineNumbers(refalrts::Iter arg_begin, refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) s.idx
   // </0 & SetLineNumbers/4 (/7 e.Source#1/5 )/8 (/11 e.Target#1/9 )/12 s.LineNum#1/13 >/1
@@ -2828,6 +2875,8 @@ namespace /* unnamed */ {
       {"context[", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 9, 0, 0},
       // </0 & ContextRange-B/4 s.RangeOffset#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2846,7 +2895,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 8, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ContextRange_B
@@ -2923,6 +2972,8 @@ namespace /* unnamed */ {
       {"context[", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       // </0 & ContextRange-E/4 s.RangeOffset#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2946,7 +2997,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 6, 9, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ContextRange_E
@@ -3031,6 +3082,8 @@ namespace /* unnamed */ {
       {", ", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       // </0 & ContextRange/4 s.RangeOffset#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3052,7 +3105,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ContextRange
@@ -3134,6 +3187,8 @@ namespace /* unnamed */ {
       {"context[", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 9, 0, 0},
       // </0 & ContextItem/4 s.ItemNumber#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3152,7 +3207,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 8, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_ContextItem
@@ -3229,6 +3284,8 @@ namespace /* unnamed */ {
       {" = 0;", 5}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       // </0 & PrintBracketsVarInit/4 e.Indent#1/2 s.InnerBrackets#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3262,7 +3319,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintBracketsVarInit
@@ -3361,6 +3418,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       //FAST GEN: s.$
@@ -3381,7 +3440,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'e', 4},
       {refalrts::icReinitChar, 0, 'f', 5},
       {refalrts::icReinitChar, 0, 't', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # AlgRight
       // </0 & PrintDirection/4 # AlgRight/5 >/1
@@ -3396,7 +3456,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'h', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # AlgTerm
       // </0 & PrintDirection/4 # AlgTerm/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -3407,7 +3468,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'e', 4},
       {refalrts::icReinitChar, 0, 'r', 5},
       {refalrts::icReinitChar, 0, 'm', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintDirection
@@ -3446,7 +3507,6 @@ static refalrts::FnResult func_PrintDirection(refalrts::Iter arg_begin, refalrts
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // # AlgLeft
     // </0 & PrintDirection/4 # AlgLeft/5 >/1
     if( ! refalrts::ident_term(  & ident_AlgLeft<int>::name, context[5] ) )
@@ -3461,9 +3521,9 @@ static refalrts::FnResult func_PrintDirection(refalrts::Iter arg_begin, refalrts
     refalrts::reinit_char( context[1], 't' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # AlgRight
     // </0 & PrintDirection/4 # AlgRight/5 >/1
     if( ! refalrts::ident_term(  & ident_AlgRight<int>::name, context[5] ) )
@@ -3485,6 +3545,7 @@ static refalrts::FnResult func_PrintDirection(refalrts::Iter arg_begin, refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # AlgTerm
   // </0 & PrintDirection/4 # AlgTerm/5 >/1
@@ -3523,6 +3584,8 @@ namespace /* unnamed */ {
       {"ts::Iter res = arg_end->next;", 29}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
       //FAST GEN: ( e.$ ) s.$
@@ -3556,7 +3619,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx
       // </0 & GenCommand$49\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
       // closed e.Indent#1 as range 5
@@ -3577,7 +3641,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S49L1
@@ -3623,7 +3687,6 @@ static refalrts::FnResult func_gen_GenCommand_S49L1(refalrts::Iter arg_begin, re
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # RIGHT-EDGE
     // </0 & GenCommand$49\1/4 (/7 e.Indent#1/5 )/8 # RIGHT-EDGE/9 >/1
     if( ! refalrts::ident_term(  & ident_RIGHT_EDGE<int>::name, context[9] ) )
@@ -3655,6 +3718,7 @@ static refalrts::FnResult func_gen_GenCommand_S49L1(refalrts::Iter arg_begin, re
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx
   // </0 & GenCommand$49\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
@@ -3709,6 +3773,8 @@ namespace /* unnamed */ {
       {"ts::splice_to_freelist_open( trash_prev, res );", 47}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       //FAST GEN: ( e.$ ) s.$
@@ -3742,7 +3808,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx
       // </0 & GenCommand$67\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
       // closed e.Indent#1 as range 5
@@ -3763,7 +3830,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S67L1
@@ -3809,7 +3876,6 @@ static refalrts::FnResult func_gen_GenCommand_S67L1(refalrts::Iter arg_begin, re
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # LEFT-EDGE
     // </0 & GenCommand$67\1/4 (/7 e.Indent#1/5 )/8 # LEFT-EDGE/9 >/1
     if( ! refalrts::ident_term(  & ident_LEFT_EDGE<int>::name, context[9] ) )
@@ -3841,6 +3907,7 @@ static refalrts::FnResult func_gen_GenCommand_S67L1(refalrts::Iter arg_begin, re
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx
   // </0 & GenCommand$67\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
@@ -3891,6 +3958,8 @@ namespace /* unnamed */ {
       {"& ", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
       // </0 & GenCommand$70\1/4 (/7 e.Indent#1/5 )/8 (/11 e.Name#2/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3919,7 +3988,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 13, 14, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S70L1
@@ -4015,6 +4084,8 @@ namespace /* unnamed */ {
       {"& ident_", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
       // </0 & GenCommand$72\1/4 (/7 e.Indent#1/5 )/8 (/11 e.Name#2/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -4044,7 +4115,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 13, 14, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S72L1
@@ -4141,6 +4212,8 @@ namespace /* unnamed */ {
       {"UL,", 3}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
       // </0 & GenCommand$74\1/4 (/7 e.Indent#1/5 )/8 s.Number#2/9 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -4166,7 +4239,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S74L1
@@ -4253,6 +4326,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
       // </0 & GenCommand$76\1/4 (/7 e.Indent#1/5 )/8 (/11 e.String#2/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -4282,7 +4357,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_gen_GenCommand_S76L1
@@ -4369,7 +4444,7 @@ refalrts::RefalFunction& gen_GenCommand_S76L1 = descr_gen_GenCommand_S76L1;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_GenCommand_S109L1 {
+  namespace scope_gen_GenCommand_S112L1 {
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt
     };
@@ -4383,11 +4458,13 @@ namespace /* unnamed */ {
       {"rts::icSetResRightEdge, 0, 0, 0},", 33}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       //FAST GEN: ( e.$ ) s.$
       //GLOBAL GEN: ( e.$ ) s.$
-      // </0 & GenCommand$109\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
+      // </0 & GenCommand$112\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -4396,7 +4473,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( e.idx ) # RIGHT-EDGE
-      // </0 & GenCommand$109\1/4 (/7 e.Indent#1/5 )/8 # RIGHT-EDGE/9 >/1
+      // </0 & GenCommand$112\1/4 (/7 e.Indent#1/5 )/8 # RIGHT-EDGE/9 >/1
       {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -4416,9 +4493,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx
-      // </0 & GenCommand$109\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
+      // </0 & GenCommand$112\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4437,35 +4515,35 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenCommand_S109L1
+  } // namespace scope_gen_GenCommand_S112L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenCommand_S109L1(
-  "GenCommand$109\\1",
-  scope_gen_GenCommand_S109L1::raa,
-  scope_gen_GenCommand_S109L1::functions,
-  scope_gen_GenCommand_S109L1::idents,
-  scope_gen_GenCommand_S109L1::numbers,
-  scope_gen_GenCommand_S109L1::strings
+refalrts::RASLFunction descr_gen_GenCommand_S112L1(
+  "GenCommand$112\\1",
+  scope_gen_GenCommand_S112L1::raa,
+  scope_gen_GenCommand_S112L1::functions,
+  scope_gen_GenCommand_S112L1::idents,
+  scope_gen_GenCommand_S112L1::numbers,
+  scope_gen_GenCommand_S112L1::strings
 );
-refalrts::RefalFunction& gen_GenCommand_S109L1 = descr_gen_GenCommand_S109L1;
+refalrts::RefalFunction& gen_GenCommand_S112L1 = descr_gen_GenCommand_S112L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_GenCommand_S109L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_GenCommand_S112L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
   //FAST GEN: ( e.$ ) s.$
   //GLOBAL GEN: ( e.$ ) s.$
-  // </0 & GenCommand$109\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
+  // </0 & GenCommand$112\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4483,9 +4561,8 @@ static refalrts::FnResult func_gen_GenCommand_S109L1(refalrts::Iter arg_begin, r
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # RIGHT-EDGE
-    // </0 & GenCommand$109\1/4 (/7 e.Indent#1/5 )/8 # RIGHT-EDGE/9 >/1
+    // </0 & GenCommand$112\1/4 (/7 e.Indent#1/5 )/8 # RIGHT-EDGE/9 >/1
     if( ! refalrts::ident_term(  & ident_RIGHT_EDGE<int>::name, context[9] ) )
       continue;
     // closed e.Indent#1 as range 5
@@ -4515,9 +4592,10 @@ static refalrts::FnResult func_gen_GenCommand_S109L1(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx
-  // </0 & GenCommand$109\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
+  // </0 & GenCommand$112\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
   // closed e.Indent#1 as range 5
 
   refalrts::reset_allocator();
@@ -4547,15 +4625,15 @@ static refalrts::FnResult func_gen_GenCommand_S109L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenCommand_S109L1(func_gen_GenCommand_S109L1, "GenCommand$109\\1");
-refalrts::RefalFunction& gen_GenCommand_S109L1 = descr_gen_GenCommand_S109L1;
+refalrts::RefalNativeFunction descr_gen_GenCommand_S112L1(func_gen_GenCommand_S112L1, "GenCommand$112\\1");
+refalrts::RefalFunction& gen_GenCommand_S112L1 = descr_gen_GenCommand_S112L1;
 
 } // unnamed namespace
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
-  namespace scope_gen_GenCommand_S123L1 {
+  namespace scope_gen_GenCommand_S126L1 {
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt
     };
@@ -4569,11 +4647,13 @@ namespace /* unnamed */ {
       {"rts::icTrashLeftEdge, 0, 0, 0},", 31}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       //FAST GEN: ( e.$ ) s.$
       //GLOBAL GEN: ( e.$ ) s.$
-      // </0 & GenCommand$123\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
+      // </0 & GenCommand$126\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -4582,7 +4662,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( e.idx ) # LEFT-EDGE
-      // </0 & GenCommand$123\1/4 (/7 e.Indent#1/5 )/8 # LEFT-EDGE/9 >/1
+      // </0 & GenCommand$126\1/4 (/7 e.Indent#1/5 )/8 # LEFT-EDGE/9 >/1
       {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -4602,9 +4682,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 10, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx
-      // </0 & GenCommand$123\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
+      // </0 & GenCommand$126\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4623,35 +4704,35 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 10, 11, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenCommand_S123L1
+  } // namespace scope_gen_GenCommand_S126L1
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenCommand_S123L1(
-  "GenCommand$123\\1",
-  scope_gen_GenCommand_S123L1::raa,
-  scope_gen_GenCommand_S123L1::functions,
-  scope_gen_GenCommand_S123L1::idents,
-  scope_gen_GenCommand_S123L1::numbers,
-  scope_gen_GenCommand_S123L1::strings
+refalrts::RASLFunction descr_gen_GenCommand_S126L1(
+  "GenCommand$126\\1",
+  scope_gen_GenCommand_S126L1::raa,
+  scope_gen_GenCommand_S126L1::functions,
+  scope_gen_GenCommand_S126L1::idents,
+  scope_gen_GenCommand_S126L1::numbers,
+  scope_gen_GenCommand_S126L1::strings
 );
-refalrts::RefalFunction& gen_GenCommand_S123L1 = descr_gen_GenCommand_S123L1;
+refalrts::RefalFunction& gen_GenCommand_S126L1 = descr_gen_GenCommand_S126L1;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_GenCommand_S123L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_GenCommand_S126L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
   //FAST GEN: ( e.$ ) s.$
   //GLOBAL GEN: ( e.$ ) s.$
-  // </0 & GenCommand$123\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
+  // </0 & GenCommand$126\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4669,9 +4750,8 @@ static refalrts::FnResult func_gen_GenCommand_S123L1(refalrts::Iter arg_begin, r
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # LEFT-EDGE
-    // </0 & GenCommand$123\1/4 (/7 e.Indent#1/5 )/8 # LEFT-EDGE/9 >/1
+    // </0 & GenCommand$126\1/4 (/7 e.Indent#1/5 )/8 # LEFT-EDGE/9 >/1
     if( ! refalrts::ident_term(  & ident_LEFT_EDGE<int>::name, context[9] ) )
       continue;
     // closed e.Indent#1 as range 5
@@ -4701,9 +4781,10 @@ static refalrts::FnResult func_gen_GenCommand_S123L1(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx
-  // </0 & GenCommand$123\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
+  // </0 & GenCommand$126\1/4 (/7 e.Indent#1/5 )/8 s.Offset#2/9 >/1
   // closed e.Indent#1 as range 5
 
   refalrts::reset_allocator();
@@ -4733,8 +4814,8 @@ static refalrts::FnResult func_gen_GenCommand_S123L1(refalrts::Iter arg_begin, r
 }
 
 namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenCommand_S123L1(func_gen_GenCommand_S123L1, "GenCommand$123\\1");
-refalrts::RefalFunction& gen_GenCommand_S123L1 = descr_gen_GenCommand_S123L1;
+refalrts::RefalNativeFunction descr_gen_GenCommand_S126L1(func_gen_GenCommand_S126L1, "GenCommand$126\\1");
+refalrts::RefalFunction& gen_GenCommand_S126L1 = descr_gen_GenCommand_S126L1;
 
 } // unnamed namespace
 
@@ -4743,12 +4824,12 @@ refalrts::RefalFunction& gen_GenCommand_S123L1 = descr_gen_GenCommand_S123L1;
 namespace /* unnamed */ {
   namespace scope_GenCommand {
     static refalrts::RefalFunction *functions[] = {
-      & gen_GenCommand_S123L1,
+      & gen_GenCommand_S126L1,
       & refalrts::create_closure,
       & Fetch,
       & StrFromInt,
       & PrintInterpretCreateElem,
-      & gen_GenCommand_S109L1,
+      & gen_GenCommand_S112L1,
       & PrintDirection,
       & Escape,
       & PrintString,
@@ -4795,8 +4876,8 @@ namespace /* unnamed */ {
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdiFail<int>::name,
       & ident_CmdiTrash<int>::name,
-      & ident_CmdiReturnResult_NoTrash<int>::name,
-      & ident_CmdiReturnResult<int>::name,
+      & ident_CmdiNextStep<int>::name,
+      & ident_CmdiSpliceToFreeList<int>::name,
       & ident_CmdiInsertTile<int>::name,
       & ident_CmdiInsertRange<int>::name,
       & ident_CmdiInsertVar<int>::name,
@@ -4833,9 +4914,12 @@ namespace /* unnamed */ {
       & ident_CmdiChar<int>::name,
       & ident_CmdiInitB0_Lite<int>::name,
       & ident_CmdiInitB0<int>::name,
+      & ident_CmdiProfilerStopSentence<int>::name,
       & ident_CmdiOnFailGoTo<int>::name,
       & ident_CmdiReserveStack<int>::name,
       & ident_CmdiIssueMem<int>::name,
+      & ident_CmdiLoadConstants<int>::name,
+      & ident_CmdiProfileFunction<int>::name,
       & ident_CmdFinRAA<int>::name,
       & ident_CmdInitRAA<int>::name,
       & ident_CmdiStringArray<int>::name,
@@ -4846,9 +4930,9 @@ namespace /* unnamed */ {
       & ident_CmdFail<int>::name,
       & ident_CmdTrash<int>::name,
       & ident_Success<int>::name,
-      & ident_CmdReturnResult_NoTrash<int>::name,
+      & ident_CmdNextStep<int>::name,
+      & ident_CmdSpliceToFreeList<int>::name,
       & ident_CmdUseRes<int>::name,
-      & ident_CmdReturnResult<int>::name,
       & ident_CmdInsertTile<int>::name,
       & ident_CmdInsertRange<int>::name,
       & ident_CmdInsertVar<int>::name,
@@ -4890,10 +4974,11 @@ namespace /* unnamed */ {
       & ident_CmdInitB0<int>::name,
       & ident_CmdEndSentence<int>::name,
       & ident_CmdStartSentence<int>::name,
+      & ident_CmdIssueMem<int>::name,
+      & ident_CmdProfileFunction<int>::name,
       & ident_CmdEndIf<int>::name,
       & ident_CmdElse<int>::name,
       & ident_CmdIfDef<int>::name,
-      & ident_CmdIssueMem<int>::name,
       & ident_CmdNamespaceEnd<int>::name,
       & ident_CmdNamespaceStart<int>::name,
       & ident_CmdNativeForward<int>::name,
@@ -4902,7 +4987,6 @@ namespace /* unnamed */ {
       & ident_CmdEmitNativeCode<int>::name,
       & ident_CmdFnEnd<int>::name,
       & ident_CmdSeparator<int>::name,
-      & ident_CmdProfileFunction<int>::name,
       & ident_CmdFnStart<int>::name,
       & ident_CmdDefineIdent<int>::name,
       & ident_CmdSwapDescr<int>::name,
@@ -4915,8 +4999,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     static const refalrts::StringItem strings[] = {
       {"efalrts::icFail, 0, 0, 0", 24},
-      {"efalrts::icReturnResult_NoTrash, 0, 0, 0", 40},
-      {"efalrts::icReturnResult, 0, 0, 0", 32},
+      {"efalrts::icNextStep, 0, 0, 0", 28},
+      {"efalrts::icSpliceToFreeList, 0, 0, 0", 36},
       {" 0},", 4},
       {", ", 2},
       {"alrts::icSpliceTile, ", 21},
@@ -4966,10 +5050,13 @@ namespace /* unnamed */ {
       {"lrts::icChar", 12},
       {"efalrts::icInitB0_Lite, 0, 0, 0", 31},
       {"efalrts::icInitB0, 0, 0, 0", 26},
+      {"efalrts::icProfilerStopSentence, 0, 0, 0", 40},
       {" 0, 0},", 7},
       {"alrts::icOnFailGoTo, +", 22},
       {"alrts::icReserveBacktrackStack, ", 32},
       {"alrts::icIssueMemory, ", 22},
+      {"efalrts::icLoadConstants, 0, 0, 0", 33},
+      {"efalrts::icThisIsGeneratedFunction, 0, 0, 0", 43},
       {"};", 2},
       {"lrts::icEnd, 0, 0, 0}", 21},
       {"c const refalrts::RASLCommand raa[] = {", 39},
@@ -4986,9 +5073,8 @@ namespace /* unnamed */ {
       {"  & ", 4},
       {"tatic refalrts::RefalFunction *functions[] = {", 46},
       {"ing refalrts::function", 22},
+      {"falrts::splice_to_freelist( arg_begin, arg_end ", 47},
       {"falrts::use( res ", 17},
-      {"rts::splice_to_freelist( arg_begin, arg_end );", 46},
-      {"refalrts::use( res )", 20},
       {");", 2},
       {"= refalrts::splice_evar( res, ", 30},
       {"res", 3},
@@ -5029,20 +5115,20 @@ namespace /* unnamed */ {
       {" = arg_begin", 12},
       {"refalrts::move_right( ", 22},
       {"refalrts::move_left( ", 21},
+      {"refalrts::stop_sentence();", 26},
       {" ( 0 );", 7},
-      {"  refalrts::start_sentence();", 29},
-      {"f ", 2},
       {"refalrts::zeros( context, ", 26},
       {"];", 2},
       {"refalrts::Iter context[", 23},
       {"elems", 5},
       {"// issue here memory for vars with ", 35},
+      {"falrts::this_is_generated_function(", 35},
+      {"f ", 2},
       {"namespace scope_", 16},
       {"named namespace", 15},
       {"espace scope_", 13},
       {"pace /* unnamed */ {", 20},
       {"tatic refalrts::FnResult func_", 30},
-      {"falrts::this_is_generated_function(", 35},
       {"static refalrts::FnResult func_", 31},
       {"  }", 3},
       {"\";", 2},
@@ -5071,7 +5157,9 @@ namespace /* unnamed */ {
       {"efalrts::RefalEmptyFunction descr_", 34}
     };
     static const refalrts::RASLCommand raa[] = {
-      {refalrts::icReserveBacktrackStack, 123, 0, 0},
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icReserveBacktrackStack, 126, 0, 0},
       {refalrts::icIssueMemory, 98, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ )
       //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
@@ -5087,7 +5175,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // ( e.idx ) ( # CmdComment e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdComment/13 e.Text#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 117, 13},
+      {refalrts::icIdentTerm, 0, 120, 13},
       // closed e.Indent#1 as range 5
       // closed e.Text#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -5104,24 +5192,25 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdEnumDescr e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEnumDescr/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 116, 13},
+      {refalrts::icIdentTerm, 0, 119, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'r'/13 }"efalrts::RefalEmptyFunction descr_"/14 </16 & CName/17 e.Name#1/9/18 >/20"(\""/21 Tile{ AsIs: </0 Reuse: & DisplayCName/4 } Tile{ AsIs: e.Name#1/9 } >/23"\");"/24 Tile{ AsIs: )/12 } </26 & FuncReference/27 e.Name#1/9/28 Tile{ AsIs: >/1 ]] }
-      {refalrts::icAllocString, 0, 154, 14},
+      {refalrts::icAllocString, 0, 156, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 16},
       {refalrts::icAllocFunc, 0, 12, 17},
       {refalrts::icCopyEVar, 18, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
-      {refalrts::icAllocString, 0, 139, 21},
+      {refalrts::icAllocString, 0, 141, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
-      {refalrts::icAllocString, 0, 138, 24},
+      {refalrts::icAllocString, 0, 140, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
       {refalrts::icAllocFunc, 0, 47, 27},
       {refalrts::icCopyEVar, 28, 9, 0},
@@ -5144,17 +5233,18 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 22, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdExtern e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdExtern/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 115, 13},
+      {refalrts::icIdentTerm, 0, 118, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'e'/13 }"xtern refalrts::RefalFunction& "/14 Tile{ AsIs: </0 Reuse: & CName/4 } Tile{ AsIs: e.Name#1/9 } >/16 Tile{ HalfReuse: ';'/12 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 153, 14},
+      {refalrts::icAllocString, 0, 155, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
       {refalrts::icReinitChar, 0, 'e', 13},
       {refalrts::icUpdateFunc, 0, 12, 4},
@@ -5170,29 +5260,30 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +42, 0, 0},
       // ( e.idx ) ( # CmdFuncDescr e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFuncDescr/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 114, 13},
+      {refalrts::icIdentTerm, 0, 117, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'r'/13 }"efalrts::RefalNativeFunction descr_"/14 Tile{ AsIs: </0 Reuse: & CName/4 } Tile{ AsIs: e.Name#1/9 } >/16"(func_"/17 </19 & CName/20 e.Name#1/9/21 >/23", \""/24 </26 & DisplayCName/27 e.Name#1/9/28 >/30"\");"/31 )/33 </34 & FuncReference/35 e.Name#1/9/36 >/38 Tile{ HalfReuse: (/12 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 152, 14},
+      {refalrts::icAllocString, 0, 154, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
-      {refalrts::icAllocString, 0, 151, 17},
+      {refalrts::icAllocString, 0, 153, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
       {refalrts::icAllocFunc, 0, 12, 20},
       {refalrts::icCopyEVar, 21, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
-      {refalrts::icAllocString, 0, 150, 24},
+      {refalrts::icAllocString, 0, 152, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
       {refalrts::icAllocFunc, 0, 46, 27},
       {refalrts::icCopyEVar, 28, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 30},
-      {refalrts::icAllocString, 0, 138, 31},
+      {refalrts::icAllocString, 0, 140, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 33},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 34},
       {refalrts::icAllocFunc, 0, 47, 35},
@@ -5219,70 +5310,71 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +98, 0, 0},
       // ( e.idx ) ( # CmdInterpretFuncDescr e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInterpretFuncDescr/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 113, 13},
+      {refalrts::icIdentTerm, 0, 116, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'r'/13 }"efalrts::RASLFunction descr_"/14 Tile{ AsIs: </0 Reuse: & CName/4 } Tile{ AsIs: e.Name#1/9 } >/16 '('/17 )/18 (/19"  \""/20 </22 & DisplayCName/23 e.Name#1/9/24 >/26"\","/27 )/29 (/30"  scope_"/31 </33 & CName/34 e.Name#1/9/35 >/37"::raa,"/38 )/40 (/41"  scope_"/42 </44 & CName/45 e.Name#1/9/46 >/48"::functions,"/49 )/51 (/52"  scope_"/53 </55 & CName/56 e.Name#1/9/57 >/59"::idents,"/60 )/62 (/63"  scope_"/64 </66 & CName/67 e.Name#1/9/68 >/70"::numbers,"/71 )/73 (/74"  scope_"/75 </77 & CName/78 e.Name#1/9/79 >/81"::strings"/82 )/84 (/85");"/86 )/88 </89 & FuncReference/90 e.Name#1/9/91 >/93 Tile{ HalfReuse: (/12 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 149, 14},
+      {refalrts::icAllocString, 0, 151, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
       {refalrts::icAllocChar, 0, '(', 17},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 19},
-      {refalrts::icAllocString, 0, 148, 20},
+      {refalrts::icAllocString, 0, 150, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 22},
       {refalrts::icAllocFunc, 0, 46, 23},
       {refalrts::icCopyEVar, 24, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 26},
-      {refalrts::icAllocString, 0, 147, 27},
+      {refalrts::icAllocString, 0, 149, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 30},
-      {refalrts::icAllocString, 0, 142, 31},
+      {refalrts::icAllocString, 0, 144, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 33},
       {refalrts::icAllocFunc, 0, 12, 34},
       {refalrts::icCopyEVar, 35, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 37},
-      {refalrts::icAllocString, 0, 146, 38},
+      {refalrts::icAllocString, 0, 148, 38},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 40},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 41},
-      {refalrts::icAllocString, 0, 142, 42},
+      {refalrts::icAllocString, 0, 144, 42},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 44},
       {refalrts::icAllocFunc, 0, 12, 45},
       {refalrts::icCopyEVar, 46, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 48},
-      {refalrts::icAllocString, 0, 145, 49},
+      {refalrts::icAllocString, 0, 147, 49},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 51},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 52},
-      {refalrts::icAllocString, 0, 142, 53},
+      {refalrts::icAllocString, 0, 144, 53},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 55},
       {refalrts::icAllocFunc, 0, 12, 56},
       {refalrts::icCopyEVar, 57, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 59},
-      {refalrts::icAllocString, 0, 144, 60},
+      {refalrts::icAllocString, 0, 146, 60},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 62},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 63},
-      {refalrts::icAllocString, 0, 142, 64},
+      {refalrts::icAllocString, 0, 144, 64},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 66},
       {refalrts::icAllocFunc, 0, 12, 67},
       {refalrts::icCopyEVar, 68, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 70},
-      {refalrts::icAllocString, 0, 143, 71},
+      {refalrts::icAllocString, 0, 145, 71},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 73},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 74},
-      {refalrts::icAllocString, 0, 142, 75},
+      {refalrts::icAllocString, 0, 144, 75},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 77},
       {refalrts::icAllocFunc, 0, 12, 78},
       {refalrts::icCopyEVar, 79, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 81},
-      {refalrts::icAllocString, 0, 141, 82},
+      {refalrts::icAllocString, 0, 143, 82},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 84},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 85},
-      {refalrts::icAllocString, 0, 75, 86},
+      {refalrts::icAllocString, 0, 77, 86},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 88},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 89},
       {refalrts::icAllocFunc, 0, 47, 90},
@@ -5324,24 +5416,25 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdSwapDescr e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSwapDescr/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 112, 13},
+      {refalrts::icIdentTerm, 0, 115, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'r'/13 }"efalrts::RefalSwap descr_"/14 </16 & CName/17 e.Name#1/9/18 >/20"(\""/21 Tile{ AsIs: </0 Reuse: & DisplayCName/4 } Tile{ AsIs: e.Name#1/9 } >/23"\");"/24 Tile{ AsIs: )/12 } </26 & FuncReference/27 e.Name#1/9/28 Tile{ AsIs: >/1 ]] }
-      {refalrts::icAllocString, 0, 140, 14},
+      {refalrts::icAllocString, 0, 142, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 16},
       {refalrts::icAllocFunc, 0, 12, 17},
       {refalrts::icCopyEVar, 18, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
-      {refalrts::icAllocString, 0, 139, 21},
+      {refalrts::icAllocString, 0, 141, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
-      {refalrts::icAllocString, 0, 138, 24},
+      {refalrts::icAllocString, 0, 140, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
       {refalrts::icAllocFunc, 0, 47, 27},
       {refalrts::icCopyEVar, 28, 9, 0},
@@ -5364,46 +5457,47 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 22, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +59, 0, 0},
       // ( e.idx ) ( # CmdDefineIdent e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdDefineIdent/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 111, 13},
+      {refalrts::icIdentTerm, 0, 114, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '/'/13 }"/ identifier #"/14 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/9 } >/16 )/17 (/18"template <typename SREFAL_PARAM_INT>"/19 )/21 (/22"struct ident_"/23 </25 & CName/26 e.Name#1/9/27 >/29" {"/30 )/32 (/33"  static const char *name() {"/34 )/36 (/37"    return \""/38 </40 & DisplayCName/41 e.Name#1/9/42 >/44"\";"/45 )/47 (/48"  }"/49 )/51 (/52"};"/53 )/55 Tile{ HalfReuse: (/12 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 137, 14},
+      {refalrts::icAllocString, 0, 139, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 18},
-      {refalrts::icAllocString, 0, 136, 19},
+      {refalrts::icAllocString, 0, 138, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 22},
-      {refalrts::icAllocString, 0, 135, 23},
+      {refalrts::icAllocString, 0, 137, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 12, 26},
       {refalrts::icCopyEVar, 27, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 29},
-      {refalrts::icAllocString, 0, 134, 30},
+      {refalrts::icAllocString, 0, 136, 30},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 33},
-      {refalrts::icAllocString, 0, 133, 34},
+      {refalrts::icAllocString, 0, 135, 34},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 36},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 37},
-      {refalrts::icAllocString, 0, 132, 38},
+      {refalrts::icAllocString, 0, 134, 38},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 40},
       {refalrts::icAllocFunc, 0, 46, 41},
       {refalrts::icCopyEVar, 42, 9, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 44},
-      {refalrts::icAllocString, 0, 131, 45},
+      {refalrts::icAllocString, 0, 133, 45},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 47},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 48},
-      {refalrts::icAllocString, 0, 130, 49},
+      {refalrts::icAllocString, 0, 132, 49},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 51},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 52},
-      {refalrts::icAllocString, 0, 56, 53},
+      {refalrts::icAllocString, 0, 59, 53},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 55},
       {refalrts::icReinitChar, 0, '/', 13},
       {refalrts::icUpdateFunc, 0, 45, 4},
@@ -5430,18 +5524,19 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdFnStart e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFnStart/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 110, 13},
+      {refalrts::icIdentTerm, 0, 113, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: ' '/8 HalfReuse: ' '/11 HalfReuse: )/13 } (/14"static refalrts::FnResult func_"/15 Tile{ AsIs: </0 Reuse: & CName/4 } Tile{ AsIs: e.Name#1/9 } >/17 </18 & FuncArguments/19 >/20 ' '/21 Tile{ HalfReuse: '{'/12 HalfReuse: )/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
-      {refalrts::icAllocString, 0, 129, 15},
+      {refalrts::icAllocString, 0, 131, 15},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 18},
       {refalrts::icAllocFunc, 0, 44, 19},
@@ -5465,36 +5560,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 16, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +19, 0, 0},
-      // ( e.idx ) ( # CmdProfileFunction )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdProfileFunction/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 109, 13},
-      {refalrts::icSave, 0, 94, 9},
-      {refalrts::icEmpty, 0, 0, 94},
-      // closed e.Indent#1 as range 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::this_is_generated_function("/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
-      {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 128, 16},
-      {refalrts::icReinitChar, 0, 'r', 0},
-      {refalrts::icReinitChar, 0, 'e', 4},
-      {refalrts::icReinitChar, 0, ')', 13},
-      {refalrts::icReinitChar, 0, ';', 12},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 11, 1, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetRes, 0, 0, 13},
-      {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icSpliceTile, 0, 4, 0},
-      {refalrts::icSpliceTile, 14, 15, 0},
-      {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // ( e.idx ) ( # CmdSeparator )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSeparator/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 108, 13},
+      {refalrts::icIdentTerm, 0, 112, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -5507,11 +5578,12 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx '  ' ) ( # CmdFnEnd )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdFnEnd/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 107, 13},
+      {refalrts::icIdentTerm, 0, 111, 13},
       {refalrts::icSave, 0, 94, 5},
       {refalrts::icCharRightSave, 14, static_cast<unsigned char>(' '), 94},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 94},
@@ -5532,11 +5604,12 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +18, 0, 0},
       // ( e.idx ) ( # CmdEmitNativeCode s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmitNativeCode/13 s.LineNumber#1/14 e.Code#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 106, 13},
+      {refalrts::icIdentTerm, 0, 110, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -5544,10 +5617,10 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 Reuse: # NativeInsertBegin/13 AsIs: s.LineNumber#1/14 } Tile{ HalfReuse: )/4 } Tile{ AsIs: e.Code#1/94(9) } Tile{ HalfReuse: (/0 } Tile{ HalfReuse: # NativeInsertEnd/12 HalfReuse: )/1 ]] }
-      {refalrts::icUpdateIdent, 0, 105, 13},
+      {refalrts::icUpdateIdent, 0, 109, 13},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-      {refalrts::icReinitIdent, 0, 104, 12},
+      {refalrts::icReinitIdent, 0, 108, 12},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icLinkBrackets, 0, 1, 0},
       {refalrts::icLinkBrackets, 11, 4, 0},
@@ -5557,17 +5630,18 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 94},
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 14, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +24, 0, 0},
       // ( e.idx ) ( # CmdNativeForward e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNativeForward/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 103, 13},
+      {refalrts::icIdentTerm, 0, 107, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 's'/13 }"tatic refalrts::FnResult func_"/14 Tile{ AsIs: </0 Reuse: & CName/4 } Tile{ AsIs: e.Name#1/9 } >/16 </17 & FuncArguments/18 >/19 Tile{ HalfReuse: ';'/12 HalfReuse: )/1 ]] }
-      {refalrts::icAllocString, 0, 127, 14},
+      {refalrts::icAllocString, 0, 130, 14},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
       {refalrts::icAllocFunc, 0, 44, 18},
@@ -5588,11 +5662,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( e.idx ) ( # CmdNamespaceStart )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNamespaceStart/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 102, 13},
+      {refalrts::icIdentTerm, 0, 106, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -5602,7 +5677,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocChar, 0, ' ', 17},
-      {refalrts::icAllocString, 0, 126, 18},
+      {refalrts::icAllocString, 0, 129, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icReinitChar, 0, ' ', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -5617,11 +5692,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 20, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 14, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdNamespaceStart e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNamespaceStart/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 102, 13},
+      {refalrts::icIdentTerm, 0, 106, 13},
       // closed e.Indent#1 as range 5
       // closed e.Name#1 as range 9
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -5630,7 +5706,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocChar, 0, ' ', 17},
-      {refalrts::icAllocString, 0, 125, 18},
+      {refalrts::icAllocString, 0, 128, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 20},
       {refalrts::icAllocFunc, 0, 12, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
@@ -5652,11 +5728,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 14, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx '  ' ) ( # CmdNamespaceEnd )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdNamespaceEnd/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 101, 13},
+      {refalrts::icIdentTerm, 0, 105, 13},
       {refalrts::icSave, 0, 94, 5},
       {refalrts::icCharRightSave, 14, static_cast<unsigned char>(' '), 94},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 94},
@@ -5667,7 +5744,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: '/'/8 HalfReuse: '/'/11 HalfReuse: ' '/13 HalfReuse: 'u'/12 HalfReuse: 'n'/1 }"named namespace"/18 )/20 (/21 )/22 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 94, 0},
-      {refalrts::icAllocString, 0, 124, 18},
+      {refalrts::icAllocString, 0, 127, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 22},
@@ -5686,11 +5763,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 22, 0},
       {refalrts::icSpliceTile, 4, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +31, 0, 0},
       // ( e.idx '  ' ) ( # CmdNamespaceEnd e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdNamespaceEnd/13 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 101, 13},
+      {refalrts::icIdentTerm, 0, 105, 13},
       {refalrts::icSave, 0, 94, 5},
       {refalrts::icCharRightSave, 14, static_cast<unsigned char>(' '), 94},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 94},
@@ -5700,7 +5778,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: '/'/8 HalfReuse: '/'/11 HalfReuse: ' '/13 }"namespace scope_"/18 </20 & CName/21 Tile{ AsIs: e.Name#1/9 } >/22 )/23 Tile{ HalfReuse: (/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 16, 94, 0},
-      {refalrts::icAllocString, 0, 123, 18},
+      {refalrts::icAllocString, 0, 126, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 20},
       {refalrts::icAllocFunc, 0, 12, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
@@ -5724,7 +5802,110 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icSpliceTile, 4, 13, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdIfDef e.idx )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIfDef/13 e.Macros#1/9 )/12 >/1
+      {refalrts::icIdentTerm, 0, 104, 13},
+      // closed e.Indent#1 as range 5
+      // closed e.Macros#1 as range 9
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 } Tile{ HalfReuse: 'i'/0 HalfReuse: 'f'/4 } 'd'/14 Tile{ HalfReuse: 'e'/12 }"f "/15 Tile{ AsIs: e.Macros#1/9 } Tile{ HalfReuse: )/1 ]] }
+      {refalrts::icAllocChar, 0, 'd', 14},
+      {refalrts::icAllocString, 0, 125, 15},
+      {refalrts::icReinitChar, 0, '#', 13},
+      {refalrts::icReinitChar, 0, 'i', 0},
+      {refalrts::icReinitChar, 0, 'f', 4},
+      {refalrts::icReinitChar, 0, 'e', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 9},
+      {refalrts::icSpliceTile, 15, 16, 0},
+      {refalrts::icSpliceTile, 12, 12, 0},
+      {refalrts::icSpliceTile, 14, 14, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 7, 13, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +17, 0, 0},
+      // ( e.idx ) ( # CmdElse )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdElse/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 103, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'l'/1 } Tile{ HalfReuse: 's'/0 HalfReuse: 'e'/4 } )/14 Tile{ ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
+      {refalrts::icReinitChar, 0, '#', 13},
+      {refalrts::icReinitChar, 0, 'e', 12},
+      {refalrts::icReinitChar, 0, 'l', 1},
+      {refalrts::icReinitChar, 0, 's', 0},
+      {refalrts::icReinitChar, 0, 'e', 4},
+      {refalrts::icLinkBrackets, 11, 14, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 14, 14, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 7, 1, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +18, 0, 0},
+      // ( e.idx ) ( # CmdEndIf )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEndIf/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 102, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'n'/1 } Tile{ HalfReuse: 'd'/0 HalfReuse: 'i'/4 } 'f'/14 )/15 Tile{ ]] }
+      {refalrts::icAllocChar, 0, 'f', 14},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
+      {refalrts::icReinitChar, 0, '#', 13},
+      {refalrts::icReinitChar, 0, 'e', 12},
+      {refalrts::icReinitChar, 0, 'n', 1},
+      {refalrts::icReinitChar, 0, 'd', 0},
+      {refalrts::icReinitChar, 0, 'i', 4},
+      {refalrts::icLinkBrackets, 11, 15, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 7, 1, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdProfileFunction )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdProfileFunction/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 101, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::this_is_generated_function("/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
+      {refalrts::icCopyEVar, 14, 5, 0},
+      {refalrts::icAllocString, 0, 124, 16},
+      {refalrts::icReinitChar, 0, 'r', 0},
+      {refalrts::icReinitChar, 0, 'e', 4},
+      {refalrts::icReinitChar, 0, ')', 13},
+      {refalrts::icReinitChar, 0, ';', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 13},
+      {refalrts::icSpliceTile, 16, 17, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 7, 11, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +49, 0, 0},
       // ( e.idx ) ( # CmdIssueMem s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIssueMem/13 s.Number#1/14 )/12 >/1
@@ -5737,25 +5918,25 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15"// issue here memory for vars with "/17 </19 Tile{ HalfReuse: & StrFromInt/13 AsIs: s.Number#1/14 HalfReuse: >/12 HalfReuse: ' '/1 }"elems"/20 )/22 (/23 e.Indent#1/5/24"refalrts::Iter context["/26 Tile{ AsIs: </0 Reuse: & StrFromInt/4 } s.Number#1/14/28 >/29"];"/30 )/32 (/33 e.Indent#1/5/34"refalrts::zeros( context, "/36 </38 & StrFromInt/39 s.Number#1/14/40 >/41" );"/42 )/44 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
-      {refalrts::icAllocString, 0, 122, 17},
+      {refalrts::icAllocString, 0, 123, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
-      {refalrts::icAllocString, 0, 121, 20},
+      {refalrts::icAllocString, 0, 122, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 22},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 23},
       {refalrts::icCopyEVar, 24, 5, 0},
-      {refalrts::icAllocString, 0, 120, 26},
+      {refalrts::icAllocString, 0, 121, 26},
       {refalrts::icCopySTVar, 28, 14, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 29},
-      {refalrts::icAllocString, 0, 119, 30},
+      {refalrts::icAllocString, 0, 120, 30},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 33},
       {refalrts::icCopyEVar, 34, 5, 0},
-      {refalrts::icAllocString, 0, 118, 36},
+      {refalrts::icAllocString, 0, 119, 36},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 38},
       {refalrts::icAllocFunc, 0, 3, 39},
       {refalrts::icCopySTVar, 40, 14, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 41},
-      {refalrts::icAllocString, 0, 78, 42},
+      {refalrts::icAllocString, 0, 80, 42},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 44},
       {refalrts::icReinitFunc, 0, 3, 13},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 12},
@@ -5779,97 +5960,21 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 19, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
-      // ( e.idx ) ( # CmdIfDef e.idx )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIfDef/13 e.Macros#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 99, 13},
-      // closed e.Indent#1 as range 5
-      // closed e.Macros#1 as range 9
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 } Tile{ HalfReuse: 'i'/0 HalfReuse: 'f'/4 } 'd'/14 Tile{ HalfReuse: 'e'/12 }"f "/15 Tile{ AsIs: e.Macros#1/9 } Tile{ HalfReuse: )/1 ]] }
-      {refalrts::icAllocChar, 0, 'd', 14},
-      {refalrts::icAllocString, 0, 117, 15},
-      {refalrts::icReinitChar, 0, '#', 13},
-      {refalrts::icReinitChar, 0, 'i', 0},
-      {refalrts::icReinitChar, 0, 'f', 4},
-      {refalrts::icReinitChar, 0, 'e', 12},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 11, 1, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceEVar, 0, 0, 9},
-      {refalrts::icSpliceTile, 15, 16, 0},
-      {refalrts::icSpliceTile, 12, 12, 0},
-      {refalrts::icSpliceTile, 14, 14, 0},
-      {refalrts::icSpliceTile, 0, 4, 0},
-      {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +17, 0, 0},
-      // ( e.idx ) ( # CmdElse )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdElse/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 98, 13},
-      {refalrts::icSave, 0, 94, 9},
-      {refalrts::icEmpty, 0, 0, 94},
-      // closed e.Indent#1 as range 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'l'/1 } Tile{ HalfReuse: 's'/0 HalfReuse: 'e'/4 } )/14 Tile{ ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
-      {refalrts::icReinitChar, 0, '#', 13},
-      {refalrts::icReinitChar, 0, 'e', 12},
-      {refalrts::icReinitChar, 0, 'l', 1},
-      {refalrts::icReinitChar, 0, 's', 0},
-      {refalrts::icReinitChar, 0, 'e', 4},
-      {refalrts::icLinkBrackets, 11, 14, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 14, 14, 0},
-      {refalrts::icSpliceTile, 0, 4, 0},
-      {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +18, 0, 0},
-      // ( e.idx ) ( # CmdEndIf )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEndIf/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 97, 13},
-      {refalrts::icSave, 0, 94, 9},
-      {refalrts::icEmpty, 0, 0, 94},
-      // closed e.Indent#1 as range 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'n'/1 } Tile{ HalfReuse: 'd'/0 HalfReuse: 'i'/4 } 'f'/14 )/15 Tile{ ]] }
-      {refalrts::icAllocChar, 0, 'f', 14},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
-      {refalrts::icReinitChar, 0, '#', 13},
-      {refalrts::icReinitChar, 0, 'e', 12},
-      {refalrts::icReinitChar, 0, 'n', 1},
-      {refalrts::icReinitChar, 0, 'd', 0},
-      {refalrts::icReinitChar, 0, 'i', 4},
-      {refalrts::icLinkBrackets, 11, 15, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 14, 15, 0},
-      {refalrts::icSpliceTile, 0, 4, 0},
-      {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdStartSentence )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdStartSentence/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 96, 13},
+      {refalrts::icIdentTerm, 0, 99, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 ' '/17 Tile{ HalfReuse: ' '/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'd'/8 HalfReuse: 'o'/11 HalfReuse: ' '/13 HalfReuse: '{'/12 HalfReuse: )/1 } (/18 e.Indent#1/5/19"  refalrts::start_sentence();"/21 )/23 Tile{ ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 ' '/17 Tile{ HalfReuse: ' '/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'd'/8 HalfReuse: 'o'/11 HalfReuse: ' '/13 HalfReuse: '{'/12 HalfReuse: )/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocChar, 0, ' ', 17},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 18},
-      {refalrts::icCopyEVar, 19, 5, 0},
-      {refalrts::icAllocString, 0, 116, 21},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icReinitChar, 0, ' ', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
       {refalrts::icReinitChar, 0, 'd', 8},
@@ -5877,18 +5982,16 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, ' ', 13},
       {refalrts::icReinitChar, 0, '{', 12},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 18, 23, 0},
       {refalrts::icLinkBrackets, 7, 1, 0},
       {refalrts::icLinkBrackets, 14, 4, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 18, 23, 0},
-      {refalrts::icSpliceTile, 0, 1, 0},
+      {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 14, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +28, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx '  ' ) ( # CmdEndSentence )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdEndSentence/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 95, 13},
+      {refalrts::icIdentTerm, 0, 98, 13},
       {refalrts::icSave, 0, 94, 5},
       {refalrts::icCharRightSave, 14, static_cast<unsigned char>(' '), 94},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 94},
@@ -5897,12 +6000,16 @@ namespace /* unnamed */ {
       // closed e.Indent#1 as range 94(5)
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: 'w'/8 HalfReuse: 'h'/11 HalfReuse: 'i'/13 HalfReuse: 'l'/12 HalfReuse: 'e'/1 }" ( 0 );"/18 )/20 (/21 )/22 Tile{ ]] }
+      //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: 'w'/8 HalfReuse: 'h'/11 HalfReuse: 'i'/13 HalfReuse: 'l'/12 HalfReuse: 'e'/1 }" ( 0 );"/18 )/20 (/21 e.Indent#1/94(5)/22"refalrts::stop_sentence();"/24 )/26 (/27 )/28 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 94, 0},
-      {refalrts::icAllocString, 0, 115, 18},
+      {refalrts::icAllocString, 0, 118, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 21},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 22},
+      {refalrts::icCopyEVar, 22, 94, 0},
+      {refalrts::icAllocString, 0, 117, 24},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 26},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 27},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 28},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
       {refalrts::icUpdateChar, 0, '}', 15},
@@ -5911,18 +6018,20 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'i', 13},
       {refalrts::icReinitChar, 0, 'l', 12},
       {refalrts::icReinitChar, 0, 'e', 1},
-      {refalrts::icLinkBrackets, 21, 22, 0},
+      {refalrts::icLinkBrackets, 27, 28, 0},
+      {refalrts::icLinkBrackets, 21, 26, 0},
       {refalrts::icLinkBrackets, 7, 20, 0},
       {refalrts::icLinkBrackets, 0, 4, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 18, 22, 0},
+      {refalrts::icSpliceTile, 18, 28, 0},
       {refalrts::icSpliceTile, 4, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +71, 0, 0},
       // ( e.idx ) ( # CmdInitB0 )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitB0/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 94, 13},
+      {refalrts::icIdentTerm, 0, 97, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -5938,35 +6047,35 @@ namespace /* unnamed */ {
       {refalrts::icAllocFunc, 0, 22, 22},
       {refalrts::icAllocInt, 0, 0, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 24},
-      {refalrts::icAllocString, 0, 112, 25},
-      {refalrts::icAllocString, 0, 111, 27},
+      {refalrts::icAllocString, 0, 114, 25},
+      {refalrts::icAllocString, 0, 113, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 30},
       {refalrts::icCopyEVar, 31, 5, 0},
-      {refalrts::icAllocString, 0, 114, 33},
+      {refalrts::icAllocString, 0, 116, 33},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 35},
       {refalrts::icAllocFunc, 0, 19, 36},
       {refalrts::icAllocInt, 0, 0, 37},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 38},
-      {refalrts::icAllocString, 0, 78, 39},
+      {refalrts::icAllocString, 0, 80, 39},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 41},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 42},
       {refalrts::icCopyEVar, 43, 5, 0},
-      {refalrts::icAllocString, 0, 114, 45},
+      {refalrts::icAllocString, 0, 116, 45},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 47},
       {refalrts::icAllocFunc, 0, 19, 48},
       {refalrts::icAllocInt, 0, 0, 49},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 50},
-      {refalrts::icAllocString, 0, 78, 51},
+      {refalrts::icAllocString, 0, 80, 51},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 53},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 54},
       {refalrts::icCopyEVar, 55, 5, 0},
-      {refalrts::icAllocString, 0, 113, 57},
+      {refalrts::icAllocString, 0, 115, 57},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 59},
       {refalrts::icAllocFunc, 0, 19, 60},
       {refalrts::icAllocInt, 0, 0, 61},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 62},
-      {refalrts::icAllocString, 0, 78, 63},
+      {refalrts::icAllocString, 0, 80, 63},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 65},
       {refalrts::icReinitChar, 0, ';', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -5995,11 +6104,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 27, 65, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 14, 26, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +35, 0, 0},
       // ( e.idx ) ( # CmdInitB0-Lite )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitB0-Lite/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 93, 13},
+      {refalrts::icIdentTerm, 0, 96, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -6015,8 +6125,8 @@ namespace /* unnamed */ {
       {refalrts::icAllocFunc, 0, 22, 22},
       {refalrts::icAllocInt, 0, 0, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 24},
-      {refalrts::icAllocString, 0, 112, 25},
-      {refalrts::icAllocString, 0, 111, 27},
+      {refalrts::icAllocString, 0, 114, 25},
+      {refalrts::icAllocString, 0, 113, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icReinitChar, 0, ';', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -6036,11 +6146,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 27, 29, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 14, 26, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( e.idx ) ( # CmdChar s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdChar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Char#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 92, 13},
+      {refalrts::icIdentTerm, 0, 95, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6065,11 +6176,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 17, 20, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdCharSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCharSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 s.Char#1/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 91, 13},
+      {refalrts::icIdentTerm, 0, 94, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6096,11 +6208,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( e.idx ) ( # CmdNumber s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNumber/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 90, 13},
+      {refalrts::icIdentTerm, 0, 93, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6125,11 +6238,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 17, 20, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdNumberSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNumberSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 s.Number#1/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 89, 13},
+      {refalrts::icIdentTerm, 0, 92, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6156,11 +6270,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( # CmdName s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdName/13 s.Direction#1/14 s.BracketNumber#1/15 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 88, 13},
+      {refalrts::icIdentTerm, 0, 91, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6185,11 +6300,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 16, 16, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +24, 0, 0},
       // ( e.idx ) ( # CmdNameSave s.idx s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNameSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 87, 13},
+      {refalrts::icIdentTerm, 0, 90, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6216,11 +6332,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 17, 17, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( # CmdIdent s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIdent/13 s.Direction#1/14 s.BracketNumber#1/15 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 86, 13},
+      {refalrts::icIdentTerm, 0, 89, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6245,11 +6362,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 16, 16, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +24, 0, 0},
       // ( e.idx ) ( # CmdIdentSave s.idx s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIdentSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 85, 13},
+      {refalrts::icIdentTerm, 0, 88, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6276,11 +6394,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 17, 17, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +32, 0, 0},
       // ( e.idx ) ( # CmdBrackets s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdBrackets/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 84, 13},
+      {refalrts::icIdentTerm, 0, 87, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6314,11 +6433,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icSpliceTile, 17, 22, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +32, 0, 0},
       // ( e.idx ) ( # CmdBracketsSave s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdBracketsSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 83, 13},
+      {refalrts::icIdentTerm, 0, 86, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6352,11 +6472,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icSpliceTile, 17, 22, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdADT s.idx s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdADT/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 82, 13},
+      {refalrts::icIdentTerm, 0, 85, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6389,11 +6510,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 17, 25, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdADTSave s.idx s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdADTSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 e.Name#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 81, 13},
+      {refalrts::icIdentTerm, 0, 84, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6426,11 +6548,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 17, 25, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +62, 0, 0},
       // ( e.idx ) ( # CmdCallSave s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCallSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 80, 13},
+      {refalrts::icIdentTerm, 0, 83, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6448,11 +6571,11 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 24},
       {refalrts::icAllocFunc, 0, 31, 25},
       {refalrts::icAllocInt, 0, 2, 26},
-      {refalrts::icAllocString, 0, 110, 27},
+      {refalrts::icAllocString, 0, 112, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 29},
       {refalrts::icAllocFunc, 0, 30, 30},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
-      {refalrts::icAllocString, 0, 109, 32},
+      {refalrts::icAllocString, 0, 111, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 34},
       {refalrts::icAllocFunc, 0, 19, 35},
       {refalrts::icCopySTVar, 36, 16, 0},
@@ -6461,7 +6584,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 40},
       {refalrts::icAllocFunc, 0, 19, 41},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 42},
-      {refalrts::icAllocString, 0, 78, 43},
+      {refalrts::icAllocString, 0, 80, 43},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 45},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 11},
       {refalrts::icReinitFunc, 0, 29, 13},
@@ -6494,11 +6617,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 21, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( # CmdEmpty s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmpty/13 s.Direction#1/14 s.BracketNumber#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 79, 13},
+      {refalrts::icIdentTerm, 0, 82, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6522,11 +6646,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdVar s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdVar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 78, 13},
+      {refalrts::icIdentTerm, 0, 81, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6553,11 +6678,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdVarSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdVarSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 77, 13},
+      {refalrts::icIdentTerm, 0, 80, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6584,11 +6710,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 13, 0},
       {refalrts::icSpliceTile, 18, 21, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +27, 0, 0},
       // ( e.idx ) ( # CmdRepeated s.idx s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdRepeated/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.Var#1/17 s.Sample#1/18 )/12 >/1
-      {refalrts::icIdentTerm, 0, 76, 13},
+      {refalrts::icIdentTerm, 0, 79, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6617,11 +6744,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +27, 0, 0},
       // ( e.idx ) ( # CmdRepeatedSave s.idx s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdRepeatedSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.Var#1/17 s.Sample#1/18 )/12 >/1
-      {refalrts::icIdentTerm, 0, 75, 13},
+      {refalrts::icIdentTerm, 0, 78, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6650,13 +6778,14 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +51, 0, 0},
       // ( e.idx ) ( # CmdOpenedE-Start # AlgLeft s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdOpenedE-Start/13 # AlgLeft/14 s.BracketNumber#1/15 s.VarNumber#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 74, 13},
+      {refalrts::icIdentTerm, 0, 77, 13},
       {refalrts::icSave, 0, 94, 9},
-      {refalrts::icIdentLeftSave, 14, 72, 94},
+      {refalrts::icIdentLeftSave, 14, 75, 94},
       // closed e.Indent#1 as range 5
       {refalrts::icsVarLeft, 0, 15, 94},
       {refalrts::icsVarLeft, 0, 16, 94},
@@ -6667,21 +6796,21 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 17},
       {refalrts::icCopyEVar, 18, 5, 0},
       {refalrts::icAllocChar, 0, ' ', 20},
-      {refalrts::icAllocString, 0, 108, 21},
+      {refalrts::icAllocString, 0, 110, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 24},
       {refalrts::icCopyEVar, 25, 5, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 27},
       {refalrts::icAllocFunc, 0, 23, 28},
-      {refalrts::icAllocString, 0, 107, 29},
+      {refalrts::icAllocString, 0, 109, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 32},
       {refalrts::icCopyEVar, 33, 5, 0},
-      {refalrts::icAllocString, 0, 106, 35},
+      {refalrts::icAllocString, 0, 108, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 37},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 38},
       {refalrts::icCopyEVar, 39, 5, 0},
-      {refalrts::icAllocString, 0, 105, 41},
+      {refalrts::icAllocString, 0, 107, 41},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 43},
       {refalrts::icReinitChar, 0, ' ', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -6707,13 +6836,14 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 14, 0},
       {refalrts::icSpliceTile, 17, 20, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +44, 0, 0},
       // ( e.idx '  ' ) ( # CmdOpenedE-End # AlgLeft s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/16 ' '/15 )/8 (/11 # CmdOpenedE-End/13 # AlgLeft/14 s.BracketNumber#1/17 s.VarNumber#1/18 )/12 >/1
-      {refalrts::icIdentTerm, 0, 73, 13},
+      {refalrts::icIdentTerm, 0, 76, 13},
       {refalrts::icSave, 0, 94, 9},
-      {refalrts::icIdentLeftSave, 14, 72, 94},
+      {refalrts::icIdentLeftSave, 14, 75, 94},
       {refalrts::icSave, 0, 96, 5},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 96},
       {refalrts::icCharRightSave, 16, static_cast<unsigned char>(' '), 96},
@@ -6725,14 +6855,14 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/96(5)/19 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/96(5) Reuse: '}'/16 AsIs: ' '/15 HalfReuse: 'w'/8 HalfReuse: 'h'/11 HalfReuse: 'i'/13 HalfReuse: 'l'/14 }"e ( refalrts::open_evar_advance( "/21 </23 & ContextRange/24 Tile{ AsIs: s.VarNumber#1/18 HalfReuse: >/12 HalfReuse: ','/1 } ' '/25 </26 & ContextRange/27 Tile{ AsIs: s.BracketNumber#1/17 } >/28" ) );"/29 )/31 Tile{ ]] }
       {refalrts::icCopyEVar, 19, 96, 0},
-      {refalrts::icAllocString, 0, 104, 21},
+      {refalrts::icAllocString, 0, 106, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 23},
       {refalrts::icAllocFunc, 0, 19, 24},
       {refalrts::icAllocChar, 0, ' ', 25},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
       {refalrts::icAllocFunc, 0, 19, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 28},
-      {refalrts::icAllocString, 0, 103, 29},
+      {refalrts::icAllocString, 0, 105, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 31},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -6757,11 +6887,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 21, 24, 0},
       {refalrts::icSpliceTile, 4, 14, 0},
       {refalrts::icSpliceTile, 19, 20, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +49, 0, 0},
       // ( e.idx ) ( # CmdSave s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSave/13 s.OldBracketNumber#1/14 s.NewBracketNumber#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 71, 13},
+      {refalrts::icIdentTerm, 0, 74, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6771,7 +6902,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16 Tile{ AsIs: </0 Reuse: & ContextRange-B/4 } Tile{ AsIs: s.NewBracketNumber#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }"= "/18 </20 Tile{ HalfReuse: & ContextRange-B/13 AsIs: s.OldBracketNumber#1/14 } >/21 ';'/22 )/23 (/24 e.Indent#1/5/25 </27 & ContextRange-E/28 s.NewBracketNumber#1/15/29 >/30" = "/31 </33 & ContextRange-E/34 s.OldBracketNumber#1/14/35 >/36 ';'/37 )/38 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 102, 18},
+      {refalrts::icAllocString, 0, 104, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 21},
       {refalrts::icAllocChar, 0, ';', 22},
@@ -6782,7 +6913,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocFunc, 0, 23, 28},
       {refalrts::icCopySTVar, 29, 15, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 30},
-      {refalrts::icAllocString, 0, 101, 31},
+      {refalrts::icAllocString, 0, 103, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 33},
       {refalrts::icAllocFunc, 0, 23, 34},
       {refalrts::icCopySTVar, 35, 14, 0},
@@ -6812,11 +6943,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +27, 0, 0},
       // ( e.idx ) ( # CmdEmptyResult )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmptyResult/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 70, 13},
+      {refalrts::icIdentTerm, 0, 73, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -6825,11 +6957,11 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: )/13 HalfReuse: (/12 } e.Indent#1/5/14 'r'/16 Tile{ HalfReuse: 'e'/0 HalfReuse: 'f'/4 }"alrts::reset_allocator();"/17 )/19 (/20 e.Indent#1/5/21"refalrts::Iter res = arg_begin;"/23 Tile{ HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icAllocChar, 0, 'r', 16},
-      {refalrts::icAllocString, 0, 99, 17},
+      {refalrts::icAllocString, 0, 101, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 20},
       {refalrts::icCopyEVar, 21, 5, 0},
-      {refalrts::icAllocString, 0, 100, 23},
+      {refalrts::icAllocString, 0, 102, 23},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 13},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 12},
       {refalrts::icReinitChar, 0, 'e', 0},
@@ -6845,11 +6977,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 16, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +22, 0, 0},
       // ( e.idx ) ( # CmdResetAllocator )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdResetAllocator/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 69, 13},
+      {refalrts::icIdentTerm, 0, 72, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -6858,7 +6991,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: )/13 HalfReuse: (/12 } e.Indent#1/5/14 'r'/16 Tile{ HalfReuse: 'e'/0 HalfReuse: 'f'/4 }"alrts::reset_allocator();"/17 Tile{ HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icAllocChar, 0, 'r', 16},
-      {refalrts::icAllocString, 0, 99, 17},
+      {refalrts::icAllocString, 0, 101, 17},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 13},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 12},
       {refalrts::icReinitChar, 0, 'e', 0},
@@ -6873,11 +7006,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 16, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +40, 0, 0},
       // ( e.idx ) ( # CmdSetRes s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSetRes/13 s.Offset#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 68, 13},
+      {refalrts::icIdentTerm, 0, 71, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6888,11 +7022,11 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 15},
       {refalrts::icCopyEVar, 16, 5, 0},
       {refalrts::icCopyEVar, 18, 5, 0},
-      {refalrts::icAllocString, 0, 98, 20},
+      {refalrts::icAllocString, 0, 100, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 22},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 23},
       {refalrts::icCopyEVar, 24, 5, 0},
-      {refalrts::icAllocString, 0, 97, 26},
+      {refalrts::icAllocString, 0, 99, 26},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 28},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 29},
       {refalrts::icAllocFunc, 0, 2, 30},
@@ -6919,11 +7053,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +43, 0, 0},
       // ( e.idx ) ( # CmdCopyVar 'e' s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCopyVar/13 'e'/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 67, 13},
+      {refalrts::icIdentTerm, 0, 70, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icCharLeftSave, 14, static_cast<unsigned char>('e'), 94},
       // closed e.Indent#1 as range 5
@@ -6938,14 +7073,14 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 21},
       {refalrts::icCopyEVar, 22, 5, 0},
-      {refalrts::icAllocString, 0, 96, 24},
+      {refalrts::icAllocString, 0, 98, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
       {refalrts::icAllocFunc, 0, 19, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 28},
       {refalrts::icAllocString, 0, 4, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 31},
       {refalrts::icAllocFunc, 0, 19, 32},
-      {refalrts::icAllocString, 0, 95, 33},
+      {refalrts::icAllocString, 0, 97, 33},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 35},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 12},
       {refalrts::icReinitChar, 0, ')', 1},
@@ -6968,11 +7103,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 28, 32, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
       {refalrts::icSpliceTile, 17, 27, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +44, 0, 0},
       // ( e.idx ) ( # CmdCopyVar s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCopyVar/13 s.Mode#1/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
-      {refalrts::icIdentTerm, 0, 67, 13},
+      {refalrts::icIdentTerm, 0, 70, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -6983,8 +7119,8 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/17"if ("/19 Tile{ HalfReuse: '!'/13 }" refalrts::copy_stvar("/21 Tile{ AsIs: </0 Reuse: & ContextItem/4 } Tile{ AsIs: s.Target#1/15 } >/23", "/24 </26 & ContextItem/27 Tile{ AsIs: s.Sample#1/16 HalfReuse: >/12 HalfReuse: ')'/1 } ')'/28 )/29 (/30 e.Indent#1/5/31"  return refalrts::cNoMemory;"/33 )/35 Tile{ ]] }
       {refalrts::icCopyEVar, 17, 5, 0},
-      {refalrts::icAllocString, 0, 94, 19},
-      {refalrts::icAllocString, 0, 93, 21},
+      {refalrts::icAllocString, 0, 96, 19},
+      {refalrts::icAllocString, 0, 95, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 23},
       {refalrts::icAllocString, 0, 4, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
@@ -6993,7 +7129,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 30},
       {refalrts::icCopyEVar, 31, 5, 0},
-      {refalrts::icAllocString, 0, 89, 33},
+      {refalrts::icAllocString, 0, 91, 33},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 35},
       {refalrts::icReinitChar, 0, '!', 13},
       {refalrts::icUpdateFunc, 0, 17, 4},
@@ -7018,11 +7154,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +37, 0, 0},
       // ( e.idx ) ( # CmdReinitSVar s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReinitSVar/13 s.Offset#1/14 s.Sample#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 66, 13},
+      {refalrts::icIdentTerm, 0, 69, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7032,13 +7169,13 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16"ref"/18 Tile{ HalfReuse: 'a'/13 }"lrts::reinit_svar( "/20 Tile{ AsIs: </0 Reuse: & ContextItem/4 } Tile{ AsIs: s.Offset#1/14 } >/22", "/23 </25 & ContextItem/26 Tile{ AsIs: s.Sample#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }");"/27 )/29 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 85, 18},
-      {refalrts::icAllocString, 0, 92, 20},
+      {refalrts::icAllocString, 0, 87, 18},
+      {refalrts::icAllocString, 0, 94, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
       {refalrts::icAllocString, 0, 4, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 17, 26},
-      {refalrts::icAllocString, 0, 75, 27},
+      {refalrts::icAllocString, 0, 77, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icReinitChar, 0, 'a', 13},
       {refalrts::icUpdateFunc, 0, 17, 4},
@@ -7061,21 +7198,22 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +50, 0, 0},
       // ( e.idx ) ( # CmdAllocateElem s.idx # ElString e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdAllocateElem/13 s.ElemNumber#1/14 # ElString/15 e.String#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 64, 13},
+      {refalrts::icIdentTerm, 0, 67, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
-      {refalrts::icIdentLeftSave, 15, 65, 94},
+      {refalrts::icIdentLeftSave, 15, 68, 94},
       // closed e.String#1 as range 94(9)
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16"if( ! refalrts::alloc_chars( "/18 Tile{ AsIs: </0 Reuse: & ContextItem/4 } s.ElemNumber#1/14/20 >/21", "/22 </24 & ContextItem/25 </26 Tile{ HalfReuse: & Inc/13 AsIs: s.ElemNumber#1/14 } >/27 >/28", "/29 </31 Tile{ HalfReuse: & PrintString/15 AsIs: e.String#1/94(9) HalfReuse: >/12 HalfReuse: ' '/1 }") )"/32 )/34 (/35 e.Indent#1/5/36"  return refalrts::cNoMemory;"/38 )/40 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 91, 18},
+      {refalrts::icAllocString, 0, 93, 18},
       {refalrts::icCopySTVar, 20, 14, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 21},
       {refalrts::icAllocString, 0, 4, 22},
@@ -7086,11 +7224,11 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 28},
       {refalrts::icAllocString, 0, 4, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 31},
-      {refalrts::icAllocString, 0, 90, 32},
+      {refalrts::icAllocString, 0, 92, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 34},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 35},
       {refalrts::icCopyEVar, 36, 5, 0},
-      {refalrts::icAllocString, 0, 89, 38},
+      {refalrts::icAllocString, 0, 91, 38},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 40},
       {refalrts::icUpdateFunc, 0, 17, 4},
       {refalrts::icReinitFunc, 0, 18, 13},
@@ -7118,11 +7256,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdAllocateElem s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdAllocateElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 64, 13},
+      {refalrts::icIdentTerm, 0, 67, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7132,7 +7271,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } (/15 e.Indent#1/5/16 Tile{ HalfReuse: )/1 } Tile{ AsIs: </0 Reuse: & PrintCreateElem/4 AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'a'/13 }"lloc"/18 )/20 Tile{ AsIs: s.ElemNumber#1/14 AsIs: e.ElemInfo#1/94(9) HalfReuse: >/12 } Tile{ ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 15},
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 88, 18},
+      {refalrts::icAllocString, 0, 90, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icUpdateFunc, 0, 20, 4},
@@ -7150,11 +7289,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdReinitElem s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReinitElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 63, 13},
+      {refalrts::icIdentTerm, 0, 66, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7164,7 +7304,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } (/15 e.Indent#1/5/16 Tile{ HalfReuse: )/1 } Tile{ AsIs: </0 Reuse: & PrintCreateElem/4 AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'r'/13 }"einit"/18 )/20 Tile{ AsIs: s.ElemNumber#1/14 AsIs: e.ElemInfo#1/94(9) HalfReuse: >/12 } Tile{ ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 15},
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 87, 18},
+      {refalrts::icAllocString, 0, 89, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icUpdateFunc, 0, 20, 4},
@@ -7182,11 +7322,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdUpdateElem s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdUpdateElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 62, 13},
+      {refalrts::icIdentTerm, 0, 65, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7196,7 +7337,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } (/15 e.Indent#1/5/16 Tile{ HalfReuse: )/1 } Tile{ AsIs: </0 Reuse: & PrintCreateElem/4 AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: 'u'/13 }"pdate"/18 )/20 Tile{ AsIs: s.ElemNumber#1/14 AsIs: e.ElemInfo#1/94(9) HalfReuse: >/12 } Tile{ ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 15},
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 86, 18},
+      {refalrts::icAllocString, 0, 88, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icUpdateFunc, 0, 20, 4},
@@ -7214,11 +7355,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 15, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +37, 0, 0},
       // ( e.idx ) ( # CmdLinkBrackets s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdLinkBrackets/13 s.Left#1/14 s.Right#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 61, 13},
+      {refalrts::icIdentTerm, 0, 64, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7228,13 +7370,13 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16"ref"/18 Tile{ HalfReuse: 'a'/13 }"lrts::link_brackets( "/20 Tile{ AsIs: </0 Reuse: & ContextItem/4 } Tile{ AsIs: s.Left#1/14 } >/22", "/23 </25 & ContextItem/26 Tile{ AsIs: s.Right#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }");"/27 )/29 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 85, 18},
-      {refalrts::icAllocString, 0, 84, 20},
+      {refalrts::icAllocString, 0, 87, 18},
+      {refalrts::icAllocString, 0, 86, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
       {refalrts::icAllocString, 0, 4, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 17, 26},
-      {refalrts::icAllocString, 0, 75, 27},
+      {refalrts::icAllocString, 0, 77, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icReinitChar, 0, 'a', 13},
       {refalrts::icUpdateFunc, 0, 17, 4},
@@ -7257,11 +7399,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdPushStack s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdPushStack/13 s.ElemNumber#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 60, 13},
+      {refalrts::icIdentTerm, 0, 63, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7270,8 +7413,8 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15 Tile{ HalfReuse: 'r'/4 }"efalrts::push_stack( "/17 Tile{ AsIs: </0 } Tile{ HalfReuse: & ContextItem/13 AsIs: s.ElemNumber#1/14 HalfReuse: >/12 HalfReuse: ' '/1 }");"/19 )/21 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
-      {refalrts::icAllocString, 0, 83, 17},
-      {refalrts::icAllocString, 0, 75, 19},
+      {refalrts::icAllocString, 0, 85, 17},
+      {refalrts::icAllocString, 0, 77, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icReinitChar, 0, 'r', 4},
       {refalrts::icReinitFunc, 0, 17, 13},
@@ -7289,11 +7432,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdInsertElem s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertElem/13 s.ElemNumber#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 59, 13},
+      {refalrts::icIdentTerm, 0, 62, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7302,8 +7446,8 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15 Tile{ HalfReuse: 'r'/4 }"es = refalrts::splice_elem( res, "/17 Tile{ AsIs: </0 } Tile{ HalfReuse: & ContextItem/13 AsIs: s.ElemNumber#1/14 HalfReuse: >/12 HalfReuse: ' '/1 }");"/19 )/21 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
-      {refalrts::icAllocString, 0, 82, 17},
-      {refalrts::icAllocString, 0, 75, 19},
+      {refalrts::icAllocString, 0, 84, 17},
+      {refalrts::icAllocString, 0, 77, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icReinitChar, 0, 'r', 4},
       {refalrts::icReinitFunc, 0, 17, 13},
@@ -7321,11 +7465,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdInsertVar 'e' s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertVar/13 'e'/14 s.Number#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 58, 13},
+      {refalrts::icIdentTerm, 0, 61, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icCharLeftSave, 14, static_cast<unsigned char>('e'), 94},
       // closed e.Indent#1 as range 5
@@ -7336,8 +7481,8 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16 'r'/18 Tile{ HalfReuse: 'e'/0 HalfReuse: 's'/4 }" = refalrts::splice_evar( res, "/19 Tile{ HalfReuse: </13 HalfReuse: & ContextRange/14 AsIs: s.Number#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }");"/21 )/23 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
       {refalrts::icAllocChar, 0, 'r', 18},
-      {refalrts::icAllocString, 0, 81, 19},
-      {refalrts::icAllocString, 0, 75, 21},
+      {refalrts::icAllocString, 0, 83, 19},
+      {refalrts::icAllocString, 0, 77, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icReinitChar, 0, 'e', 0},
       {refalrts::icReinitChar, 0, 's', 4},
@@ -7357,11 +7502,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 18, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdInsertVar s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertVar/13 s.Mode#1/14 s.Number#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 58, 13},
+      {refalrts::icIdentTerm, 0, 61, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7371,9 +7517,9 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/14 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16"res"/18 Tile{ HalfReuse: ' '/13 }"= refalrts::splice_stvar( res, "/20 Tile{ AsIs: </0 Reuse: & ContextItem/4 } Tile{ AsIs: s.Number#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }");"/22 )/24 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 77, 18},
-      {refalrts::icAllocString, 0, 80, 20},
-      {refalrts::icAllocString, 0, 75, 22},
+      {refalrts::icAllocString, 0, 79, 18},
+      {refalrts::icAllocString, 0, 82, 20},
+      {refalrts::icAllocString, 0, 77, 22},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 24},
       {refalrts::icReinitChar, 0, ' ', 13},
       {refalrts::icUpdateFunc, 0, 17, 4},
@@ -7393,11 +7539,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +35, 0, 0},
       // ( e.idx ) ( # CmdInsertRange s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertRange/13 s.Number#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 57, 13},
+      {refalrts::icIdentTerm, 0, 60, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7406,14 +7553,14 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15"res = refalrts::splice_evar( res, "/17 Tile{ AsIs: </0 Reuse: & ContextItem/4 } s.Number#1/14/19 >/20", "/21 </23 & ContextItem/24 </25 Tile{ HalfReuse: & Inc/13 AsIs: s.Number#1/14 HalfReuse: >/12 AsIs: >/1 }" );"/26 )/28 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
-      {refalrts::icAllocString, 0, 79, 17},
+      {refalrts::icAllocString, 0, 81, 17},
       {refalrts::icCopySTVar, 19, 14, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
       {refalrts::icAllocString, 0, 4, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 23},
       {refalrts::icAllocFunc, 0, 17, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
-      {refalrts::icAllocString, 0, 78, 26},
+      {refalrts::icAllocString, 0, 80, 26},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 28},
       {refalrts::icUpdateFunc, 0, 17, 4},
       {refalrts::icReinitFunc, 0, 18, 13},
@@ -7434,11 +7581,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +37, 0, 0},
       // ( e.idx ) ( # CmdInsertTile s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertTile/13 s.BeginOffset#1/14 s.EndOffset#1/15 )/12 >/1
-      {refalrts::icIdentTerm, 0, 56, 13},
+      {refalrts::icIdentTerm, 0, 59, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7448,13 +7596,13 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/16"res"/18 Tile{ HalfReuse: ' '/13 }"= refalrts::splice_evar( res, "/20 Tile{ AsIs: </0 Reuse: & ContextItem/4 } Tile{ AsIs: s.BeginOffset#1/14 } >/22", "/23 </25 & ContextItem/26 Tile{ AsIs: s.EndOffset#1/15 HalfReuse: >/12 HalfReuse: ' '/1 }");"/27 )/29 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 5, 0},
-      {refalrts::icAllocString, 0, 77, 18},
-      {refalrts::icAllocString, 0, 76, 20},
+      {refalrts::icAllocString, 0, 79, 18},
+      {refalrts::icAllocString, 0, 78, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
       {refalrts::icAllocString, 0, 4, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 17, 26},
-      {refalrts::icAllocString, 0, 75, 27},
+      {refalrts::icAllocString, 0, 77, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 29},
       {refalrts::icReinitChar, 0, ' ', 13},
       {refalrts::icUpdateFunc, 0, 17, 4},
@@ -7477,51 +7625,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +34, 0, 0},
-      // ( e.idx ) ( # CmdReturnResult )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReturnResult/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 55, 13},
-      {refalrts::icSave, 0, 94, 9},
-      {refalrts::icEmpty, 0, 0, 94},
-      // closed e.Indent#1 as range 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 )/17 (/18 e.Indent#1/5/19"refalrts::use( res )"/21 Tile{ HalfReuse: ';'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'r'/8 HalfReuse: 'e'/11 HalfReuse: 'f'/13 HalfReuse: 'a'/12 HalfReuse: 'l'/1 }"rts::splice_to_freelist( arg_begin, arg_end );"/23 )/25 </26 & GenReturn/27 # Success/28 e.Indent#1/5/29 >/31 Tile{ ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
-      {refalrts::icCopyEVar, 15, 5, 0},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 17},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 18},
-      {refalrts::icCopyEVar, 19, 5, 0},
-      {refalrts::icAllocString, 0, 74, 21},
-      {refalrts::icAllocString, 0, 73, 23},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 25},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
-      {refalrts::icAllocFunc, 0, 15, 27},
-      {refalrts::icAllocIdent, 0, 52, 28},
-      {refalrts::icCopyEVar, 29, 5, 0},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
-      {refalrts::icReinitChar, 0, ';', 0},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
-      {refalrts::icReinitChar, 0, 'r', 8},
-      {refalrts::icReinitChar, 0, 'e', 11},
-      {refalrts::icReinitChar, 0, 'f', 13},
-      {refalrts::icReinitChar, 0, 'a', 12},
-      {refalrts::icReinitChar, 0, 'l', 1},
-      {refalrts::icPushStack, 0, 0, 31},
-      {refalrts::icPushStack, 0, 0, 26},
-      {refalrts::icLinkBrackets, 7, 25, 0},
-      {refalrts::icLinkBrackets, 18, 4, 0},
-      {refalrts::icLinkBrackets, 14, 17, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 23, 31, 0},
-      {refalrts::icSpliceTile, 0, 1, 0},
-      {refalrts::icSpliceTile, 14, 22, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdUseRes )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdUseRes/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 54, 13},
+      {refalrts::icIdentTerm, 0, 58, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7529,7 +7638,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::use( res "/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 72, 16},
+      {refalrts::icAllocString, 0, 76, 16},
       {refalrts::icReinitChar, 0, 'r', 0},
       {refalrts::icReinitChar, 0, 'e', 4},
       {refalrts::icReinitChar, 0, ')', 13},
@@ -7542,11 +7651,38 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdSpliceToFreeList )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSpliceToFreeList/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 57, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::splice_to_freelist( arg_begin, arg_end "/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
+      {refalrts::icCopyEVar, 14, 5, 0},
+      {refalrts::icAllocString, 0, 75, 16},
+      {refalrts::icReinitChar, 0, 'r', 0},
+      {refalrts::icReinitChar, 0, 'e', 4},
+      {refalrts::icReinitChar, 0, ')', 13},
+      {refalrts::icReinitChar, 0, ';', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 13},
+      {refalrts::icSpliceTile, 16, 17, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 7, 11, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +16, 0, 0},
-      // ( e.idx ) ( # CmdReturnResult-NoTrash )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReturnResult-NoTrash/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 53, 13},
+      // ( e.idx ) ( # CmdNextStep )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNextStep/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 56, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7556,7 +7692,7 @@ namespace /* unnamed */ {
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 11},
       {refalrts::icReinitFunc, 0, 15, 13},
-      {refalrts::icReinitIdent, 0, 52, 12},
+      {refalrts::icReinitIdent, 0, 55, 12},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 11},
       {refalrts::icLinkBrackets, 7, 8, 0},
@@ -7564,11 +7700,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdTrash s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdTrash/13 s.Offset#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 51, 13},
+      {refalrts::icIdentTerm, 0, 54, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -7598,11 +7735,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +16, 0, 0},
       // ( e.idx ) ( # CmdFail )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFail/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 50, 13},
+      {refalrts::icIdentTerm, 0, 53, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7612,7 +7750,7 @@ namespace /* unnamed */ {
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 11},
       {refalrts::icReinitFunc, 0, 15, 13},
-      {refalrts::icReinitIdent, 0, 49, 12},
+      {refalrts::icReinitIdent, 0, 52, 12},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 11},
       {refalrts::icLinkBrackets, 7, 8, 0},
@@ -7620,11 +7758,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 12, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiFuncArray )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFuncArray/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 48, 13},
+      {refalrts::icIdentTerm, 0, 51, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7632,7 +7771,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'u'/0 HalfReuse: 's'/4 }"ing refalrts::function"/16 Tile{ HalfReuse: 's'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 71, 16},
+      {refalrts::icAllocString, 0, 74, 16},
       {refalrts::icReinitChar, 0, 'u', 0},
       {refalrts::icReinitChar, 0, 's', 4},
       {refalrts::icReinitChar, 0, 's', 13},
@@ -7645,11 +7784,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +52, 0, 0},
       // ( e.idx ) ( # CmdiFuncArray e.idx ( e.idx ) )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFuncArray/13 e.FuncNames#1/9 (/16 e.LastName#1/14 )/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 48, 13},
+      {refalrts::icIdentTerm, 0, 51, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icBracketRightSave, 0, 14, 94},
       // closed e.Indent#1 as range 5
@@ -7663,7 +7803,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 22},
       {refalrts::icCopyEVar, 23, 5, 0},
-      {refalrts::icAllocString, 0, 70, 25},
+      {refalrts::icAllocString, 0, 73, 25},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
       {refalrts::icAllocFunc, 0, 10, 29},
@@ -7671,10 +7811,10 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 32},
       {refalrts::icCopyEVar, 33, 5, 0},
-      {refalrts::icAllocString, 0, 69, 35},
+      {refalrts::icAllocString, 0, 72, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 37},
       {refalrts::icCopyEVar, 38, 5, 0},
-      {refalrts::icAllocString, 0, 56, 40},
+      {refalrts::icAllocString, 0, 59, 40},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 42},
       {refalrts::icReinitChar, 0, 's', 13},
       {refalrts::icReinitFunc, 0, 1, 0},
@@ -7705,11 +7845,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icSpliceTile, 18, 22, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiLabelArray )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLabelArray/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 47, 13},
+      {refalrts::icIdentTerm, 0, 50, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7717,7 +7858,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'u'/0 HalfReuse: 's'/4 }"ing refalrts::ident"/16 Tile{ HalfReuse: 's'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 68, 16},
+      {refalrts::icAllocString, 0, 71, 16},
       {refalrts::icReinitChar, 0, 'u', 0},
       {refalrts::icReinitChar, 0, 's', 4},
       {refalrts::icReinitChar, 0, 's', 13},
@@ -7730,11 +7871,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiLabelArray e.idx ( e.idx ) )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLabelArray/13 e.LabelNames#1/9 (/16 e.LastName#1/14 )/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 47, 13},
+      {refalrts::icIdentTerm, 0, 50, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icBracketRightSave, 0, 14, 94},
       // closed e.Indent#1 as range 5
@@ -7748,7 +7890,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 22},
       {refalrts::icCopyEVar, 23, 5, 0},
-      {refalrts::icAllocString, 0, 67, 25},
+      {refalrts::icAllocString, 0, 70, 25},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
       {refalrts::icAllocFunc, 0, 10, 29},
@@ -7756,13 +7898,13 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 32},
       {refalrts::icCopyEVar, 33, 5, 0},
-      {refalrts::icAllocString, 0, 66, 35},
+      {refalrts::icAllocString, 0, 69, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 37},
-      {refalrts::icAllocString, 0, 65, 38},
+      {refalrts::icAllocString, 0, 68, 38},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 40},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 41},
       {refalrts::icCopyEVar, 42, 5, 0},
-      {refalrts::icAllocString, 0, 56, 44},
+      {refalrts::icAllocString, 0, 59, 44},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 46},
       {refalrts::icReinitChar, 0, 's', 13},
       {refalrts::icReinitFunc, 0, 1, 0},
@@ -7793,11 +7935,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icSpliceTile, 18, 22, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiNumberArray )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumberArray/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 46, 13},
+      {refalrts::icIdentTerm, 0, 49, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7805,7 +7948,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'u'/0 HalfReuse: 's'/4 }"ing refalrts::number"/16 Tile{ HalfReuse: 's'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 64, 16},
+      {refalrts::icAllocString, 0, 67, 16},
       {refalrts::icReinitChar, 0, 'u', 0},
       {refalrts::icReinitChar, 0, 's', 4},
       {refalrts::icReinitChar, 0, 's', 13},
@@ -7818,11 +7961,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +54, 0, 0},
       // ( e.idx ) ( # CmdiNumberArray e.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumberArray/13 e.Numbers#1/9 s.LastNumber#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 46, 13},
+      {refalrts::icIdentTerm, 0, 49, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarRight, 0, 14, 94},
@@ -7835,7 +7979,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 19},
       {refalrts::icCopyEVar, 20, 5, 0},
-      {refalrts::icAllocString, 0, 63, 22},
+      {refalrts::icAllocString, 0, 66, 22},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 25},
       {refalrts::icAllocFunc, 0, 10, 26},
@@ -7843,14 +7987,14 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 28},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 29},
       {refalrts::icCopyEVar, 30, 5, 0},
-      {refalrts::icAllocString, 0, 62, 32},
+      {refalrts::icAllocString, 0, 65, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 34},
       {refalrts::icAllocFunc, 0, 3, 35},
       {refalrts::icAllocChar, 0, 'L', 36},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 37},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 38},
       {refalrts::icCopyEVar, 39, 5, 0},
-      {refalrts::icAllocString, 0, 56, 41},
+      {refalrts::icAllocString, 0, 59, 41},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 43},
       {refalrts::icReinitChar, 0, 's', 13},
       {refalrts::icReinitFunc, 0, 1, 0},
@@ -7879,11 +8023,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 15, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiStringArray )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiStringArray/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 45, 13},
+      {refalrts::icIdentTerm, 0, 48, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7891,7 +8036,7 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'u'/0 HalfReuse: 's'/4 }"ing refalrts::string"/16 Tile{ HalfReuse: 's'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
-      {refalrts::icAllocString, 0, 61, 16},
+      {refalrts::icAllocString, 0, 64, 16},
       {refalrts::icReinitChar, 0, 'u', 0},
       {refalrts::icReinitChar, 0, 's', 4},
       {refalrts::icReinitChar, 0, 's', 13},
@@ -7904,11 +8049,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +53, 0, 0},
       // ( e.idx ) ( # CmdiStringArray e.idx ( e.idx ) )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiStringArray/13 e.Strings#1/9 (/16 e.LastString#1/14 )/17 )/12 >/1
-      {refalrts::icIdentTerm, 0, 45, 13},
+      {refalrts::icIdentTerm, 0, 48, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icBracketRightSave, 0, 14, 94},
       // closed e.Indent#1 as range 5
@@ -7922,7 +8068,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 22},
       {refalrts::icCopyEVar, 23, 5, 0},
-      {refalrts::icAllocString, 0, 60, 25},
+      {refalrts::icAllocString, 0, 63, 25},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
       {refalrts::icAllocFunc, 0, 10, 29},
@@ -7930,11 +8076,11 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 32},
       {refalrts::icCopyEVar, 33, 5, 0},
-      {refalrts::icAllocString, 0, 59, 35},
+      {refalrts::icAllocString, 0, 62, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 37},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 38},
       {refalrts::icCopyEVar, 39, 5, 0},
-      {refalrts::icAllocString, 0, 56, 41},
+      {refalrts::icAllocString, 0, 59, 41},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 43},
       {refalrts::icReinitChar, 0, 's', 13},
       {refalrts::icReinitFunc, 0, 1, 0},
@@ -7965,11 +8111,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 23, 24, 0},
       {refalrts::icSpliceTile, 18, 22, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( e.idx ) ( # CmdInitRAA )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitRAA/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 44, 13},
+      {refalrts::icIdentTerm, 0, 47, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
@@ -7979,7 +8126,7 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocChar, 0, ' ', 17},
-      {refalrts::icAllocString, 0, 58, 18},
+      {refalrts::icAllocString, 0, 61, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icReinitChar, 0, ' ', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -7994,11 +8141,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 20, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 14, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +29, 0, 0},
       // ( e.idx '  ' ) ( # CmdFinRAA )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdFinRAA/13 )/12 >/1
-      {refalrts::icIdentTerm, 0, 43, 13},
+      {refalrts::icIdentTerm, 0, 46, 13},
       {refalrts::icSave, 0, 94, 5},
       {refalrts::icCharRightSave, 14, static_cast<unsigned char>(' '), 94},
       {refalrts::icCharRightSave, 15, static_cast<unsigned char>(' '), 94},
@@ -8009,11 +8157,11 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) AsIs: ' '/15 AsIs: ' '/14 HalfReuse: '{'/8 HalfReuse: 'r'/11 HalfReuse: 'e'/13 HalfReuse: 'f'/12 HalfReuse: 'a'/1 }"lrts::icEnd, 0, 0, 0}"/18 )/20 (/21 e.Indent#1/94(5)/22"};"/24 )/26 Tile{ ]] }
       {refalrts::icCopyEVar, 16, 94, 0},
-      {refalrts::icAllocString, 0, 57, 18},
+      {refalrts::icAllocString, 0, 60, 18},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 21},
       {refalrts::icCopyEVar, 22, 94, 0},
-      {refalrts::icAllocString, 0, 56, 24},
+      {refalrts::icAllocString, 0, 59, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 26},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 4},
@@ -8029,11 +8177,64 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 26, 0},
       {refalrts::icSpliceTile, 4, 1, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdiProfileFunction )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiProfileFunction/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 45, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icThisIsGeneratedFunction, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+      {refalrts::icCopyEVar, 14, 5, 0},
+      {refalrts::icAllocString, 0, 58, 16},
+      {refalrts::icReinitChar, 0, '{', 0},
+      {refalrts::icReinitChar, 0, 'r', 4},
+      {refalrts::icReinitChar, 0, '}', 13},
+      {refalrts::icReinitChar, 0, ',', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 13},
+      {refalrts::icSpliceTile, 16, 17, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 7, 11, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdiLoadConstants )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLoadConstants/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 44, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icLoadConstants, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+      {refalrts::icCopyEVar, 14, 5, 0},
+      {refalrts::icAllocString, 0, 57, 16},
+      {refalrts::icReinitChar, 0, '{', 0},
+      {refalrts::icReinitChar, 0, 'r', 4},
+      {refalrts::icReinitChar, 0, '}', 13},
+      {refalrts::icReinitChar, 0, ',', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 13},
+      {refalrts::icSpliceTile, 16, 17, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 7, 11, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdiIssueMem s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIssueMem/13 s.Memory#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 42, 13},
+      {refalrts::icIdentTerm, 0, 43, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -8043,8 +8244,8 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15"{re"/17 Tile{ HalfReuse: 'f'/4 }"alrts::icIssueMemory, "/19 Tile{ AsIs: </0 } Tile{ HalfReuse: & StrFromInt/13 AsIs: s.Memory#1/14 HalfReuse: >/12 HalfReuse: ','/1 }" 0, 0},"/21 )/23 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocString, 0, 6, 17},
-      {refalrts::icAllocString, 0, 55, 19},
-      {refalrts::icAllocString, 0, 52, 21},
+      {refalrts::icAllocString, 0, 56, 19},
+      {refalrts::icAllocString, 0, 53, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icReinitChar, 0, 'f', 4},
       {refalrts::icReinitFunc, 0, 3, 13},
@@ -8063,11 +8264,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // ( e.idx ) ( # CmdiReserveStack 0 )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReserveStack/13 0/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 41, 13},
+      {refalrts::icIdentTerm, 0, 42, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icNumLeftSave, 14, 0, 94},
       {refalrts::icEmpty, 0, 0, 94},
@@ -8079,11 +8281,12 @@ namespace /* unnamed */ {
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdiReserveStack s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReserveStack/13 s.Depth#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 41, 13},
+      {refalrts::icIdentTerm, 0, 42, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -8093,8 +8296,8 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15"{re"/17 Tile{ HalfReuse: 'f'/4 }"alrts::icReserveBacktrackStack, "/19 Tile{ AsIs: </0 } Tile{ HalfReuse: & StrFromInt/13 AsIs: s.Depth#1/14 HalfReuse: >/12 HalfReuse: ','/1 }" 0, 0},"/21 )/23 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocString, 0, 6, 17},
-      {refalrts::icAllocString, 0, 54, 19},
-      {refalrts::icAllocString, 0, 52, 21},
+      {refalrts::icAllocString, 0, 55, 19},
+      {refalrts::icAllocString, 0, 53, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icReinitChar, 0, 'f', 4},
       {refalrts::icReinitFunc, 0, 3, 13},
@@ -8113,11 +8316,12 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdiOnFailGoTo s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiOnFailGoTo/13 s.Offset#1/14 )/12 >/1
-      {refalrts::icIdentTerm, 0, 40, 13},
+      {refalrts::icIdentTerm, 0, 41, 13},
       // closed e.Indent#1 as range 5
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icsVarLeft, 0, 14, 94},
@@ -8127,8 +8331,8 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/15"{re"/17 Tile{ HalfReuse: 'f'/4 }"alrts::icOnFailGoTo, +"/19 Tile{ AsIs: </0 } Tile{ HalfReuse: & StrFromInt/13 AsIs: s.Offset#1/14 HalfReuse: >/12 HalfReuse: ','/1 }" 0, 0},"/21 )/23 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocString, 0, 6, 17},
-      {refalrts::icAllocString, 0, 53, 19},
-      {refalrts::icAllocString, 0, 52, 21},
+      {refalrts::icAllocString, 0, 54, 19},
+      {refalrts::icAllocString, 0, 53, 21},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 23},
       {refalrts::icReinitChar, 0, 'f', 4},
       {refalrts::icReinitFunc, 0, 3, 13},
@@ -8147,7 +8351,34 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ( # CmdiProfilerStopSentence )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiProfilerStopSentence/13 )/12 >/1
+      {refalrts::icIdentTerm, 0, 40, 13},
+      {refalrts::icSave, 0, 94, 9},
+      {refalrts::icEmpty, 0, 0, 94},
+      // closed e.Indent#1 as range 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icProfilerStopSentence, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+      {refalrts::icCopyEVar, 14, 5, 0},
+      {refalrts::icAllocString, 0, 52, 16},
+      {refalrts::icReinitChar, 0, '{', 0},
+      {refalrts::icReinitChar, 0, 'r', 4},
+      {refalrts::icReinitChar, 0, '}', 13},
+      {refalrts::icReinitChar, 0, ',', 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 11, 1, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 13},
+      {refalrts::icSpliceTile, 16, 17, 0},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 14, 15, 0},
+      {refalrts::icSpliceTile, 7, 11, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiInitB0 )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInitB0/13 )/12 >/1
@@ -8172,7 +8403,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiInitB0-Lite )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInitB0-Lite/13 )/12 >/1
@@ -8197,7 +8429,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiChar s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiChar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Char#1/16 )/12 >/1
@@ -8249,7 +8482,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiCharSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCharSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Char#1/17 )/12 >/1
@@ -8310,7 +8544,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiNum s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNum/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
@@ -8362,7 +8597,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiNumSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Number#1/17 )/12 >/1
@@ -8423,7 +8659,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiHugeNum s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiHugeNum/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
@@ -8475,7 +8712,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiHugeNumSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiHugeNumSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Number#1/17 )/12 >/1
@@ -8536,7 +8774,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiName s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiName/13 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/16 )/12 >/1
@@ -8588,7 +8827,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiNameSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNameSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.NameId#1/17 )/12 >/1
@@ -8649,7 +8889,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiIdent s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIdent/13 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/16 )/12 >/1
@@ -8701,7 +8942,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiIdentSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIdentSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.NameId#1/17 )/12 >/1
@@ -8762,7 +9004,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiBracket s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiBracket/13 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/16 )/12 >/1
@@ -8814,7 +9057,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiBracketsSave s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiBracketsSave/13 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/16 )/12 >/1
@@ -8866,7 +9110,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +53, 0, 0},
       // ( e.idx ) ( # CmdiADT s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiADT/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 s.NameId#1/17 )/12 >/1
@@ -8925,7 +9170,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +55, 0, 0},
       // ( e.idx ) ( # CmdiADTSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiADTSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 s.NameId#1/17 )/12 >/1
@@ -8986,7 +9232,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +46, 0, 0},
       // ( e.idx ) ( # CmdiCallSave s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCallSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
@@ -9038,7 +9285,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdiEmpty s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEmpty/13 s.Num#1/14 )/12 >/1
@@ -9070,7 +9318,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +50, 0, 0},
       // ( e.idx ) ( # CmdiVar s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiVar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
@@ -9126,7 +9375,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +50, 0, 0},
       // ( e.idx ) ( # CmdiVarSave s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiVarSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
@@ -9182,7 +9432,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +59, 0, 0},
       // ( e.idx ) ( # CmdiRepeat s.idx s.idx s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiRepeat/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 s.SampleNumber#1/18 )/12 >/1
@@ -9247,7 +9498,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 21, 22, 0},
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +56, 0, 0},
       // ( e.idx ) ( # CmdiRepeatedSave s.idx s.idx 't' s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiRepeatedSave/13 s.Direction#1/14 s.BracketNumber#1/15 't'/16 s.VarNumber#1/17 s.SampleNumber#1/18 )/12 >/1
@@ -9309,7 +9561,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 21, 22, 0},
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdiEPrepare s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEPrepare/13 s.BracketNumber#1/14 s.VarNumber#1/15 )/12 >/1
@@ -9348,7 +9601,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdiEStart s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEStart/13 s.BracketNumber#1/14 s.VarNumber#1/15 )/12 >/1
@@ -9387,7 +9641,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdiSave s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSave/13 s.OldBracketNumber#1/14 s.NewBracketNumber#1/15 )/12 >/1
@@ -9426,7 +9681,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
       // ( e.idx ) ( # CmdiEmptyResult )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEmptyResult/13 )/12 >/1
@@ -9451,7 +9707,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdiSetRes s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSetRes/13 s.Offset#1/14 )/12 >/1
@@ -9462,7 +9719,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 94},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$109\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$112\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
@@ -9485,7 +9742,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +34, 0, 0},
       // ( e.idx ) ( # CmdiCopyVar 'e' s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCopyVar/13 'e'/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
@@ -9525,7 +9783,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // ( e.idx ) ( # CmdiCopyVar s.idx s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCopyVar/13 s.Mode#1/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
@@ -9570,7 +9829,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +33, 0, 0},
       // ( e.idx ) ( # CmdiReinitSVar s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReinitSVar/13 s.Offset#1/14 s.Sample#1/15 )/12 >/1
@@ -9609,7 +9869,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( e.idx ) ( # CmdiCreateElem s.idx s.idx s.idx e.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCreateElem/13 s.CreateMode#1/14 s.ElemNumber#1/15 s.Type#1/16 e.Info#1/9 )/12 >/1
@@ -9641,7 +9902,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 17, 17, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +37, 0, 0},
       // ( e.idx ) ( # CmdiLinkBrackets s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLinkBrackets/13 s.Left#1/14 s.Right#1/15 )/12 >/1
@@ -9684,7 +9946,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdiPushStack s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiPushStack/13 s.ElemNumber#1/14 )/12 >/1
@@ -9716,7 +9979,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdiInsertElem s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertElem/13 s.ElemNumber#1/14 )/12 >/1
@@ -9748,7 +10012,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdiInsertVar 'e' s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertVar/13 'e'/14 s.Offset#1/15 )/12 >/1
@@ -9784,7 +10049,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 18, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +30, 0, 0},
       // ( e.idx ) ( # CmdiInsertVar s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertVar/13 s.Mode#1/14 s.Offset#1/15 )/12 >/1
@@ -9820,7 +10086,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( e.idx ) ( # CmdiInsertRange s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertRange/13 s.ElemNumber#1/14 )/12 >/1
@@ -9852,7 +10119,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +37, 0, 0},
       // ( e.idx ) ( # CmdiInsertTile s.idx s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertTile/13 s.BeginOffset#1/14 s.EndOffset#1/15 )/12 >/1
@@ -9895,17 +10163,18 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 19, 0},
       {refalrts::icSpliceTile, 16, 17, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
-      // ( e.idx ) ( # CmdiReturnResult )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReturnResult/13 )/12 >/1
+      // ( e.idx ) ( # CmdiSpliceToFreeList )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSpliceToFreeList/13 )/12 >/1
       {refalrts::icIdentTerm, 0, 3, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icReturnResult, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icSpliceToFreeList, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icAllocString, 0, 2, 16},
       {refalrts::icReinitChar, 0, '{', 0},
@@ -9920,17 +10189,18 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +19, 0, 0},
-      // ( e.idx ) ( # CmdiReturnResult-NoTrash )
-      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReturnResult-NoTrash/13 )/12 >/1
+      // ( e.idx ) ( # CmdiNextStep )
+      // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNextStep/13 )/12 >/1
       {refalrts::icIdentTerm, 0, 2, 13},
       {refalrts::icSave, 0, 94, 9},
       {refalrts::icEmpty, 0, 0, 94},
       // closed e.Indent#1 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icReturnResult_NoTrash, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icNextStep, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
       {refalrts::icCopyEVar, 14, 5, 0},
       {refalrts::icAllocString, 0, 1, 16},
       {refalrts::icReinitChar, 0, '{', 0},
@@ -9945,7 +10215,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +28, 0, 0},
       // ( e.idx ) ( # CmdiTrash s.idx )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiTrash/13 s.Offset#1/14 )/12 >/1
@@ -9956,7 +10227,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 94},
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$123\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$126\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
       {refalrts::icCopyEVar, 15, 5, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 17},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
@@ -9979,7 +10250,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 0, 0},
       {refalrts::icSpliceTile, 4, 4, 0},
       {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( # CmdiFail )
       // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFail/13 )/12 >/1
       {refalrts::icIdentTerm, 0, 0, 13},
@@ -10002,7 +10274,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 0, 4, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_GenCommand
@@ -10055,7 +10327,6 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   // closed e.idxTBV#0 as range 9
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdComment e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdComment/13 e.Text#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdComment<int>::name, context[13] ) )
@@ -10083,9 +10354,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdEnumDescr e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEnumDescr/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdEnumDescr<int>::name, context[13] ) )
@@ -10142,9 +10413,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdExtern e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdExtern/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdExtern<int>::name, context[13] ) )
@@ -10178,9 +10449,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdFuncDescr e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFuncDescr/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdFuncDescr<int>::name, context[13] ) )
@@ -10253,9 +10524,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInterpretFuncDescr e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInterpretFuncDescr/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInterpretFuncDescr<int>::name, context[13] ) )
@@ -10425,9 +10696,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdSwapDescr e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSwapDescr/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdSwapDescr<int>::name, context[13] ) )
@@ -10484,9 +10755,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdDefineIdent e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdDefineIdent/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdDefineIdent<int>::name, context[13] ) )
@@ -10589,9 +10860,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdFnStart e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFnStart/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdFnStart<int>::name, context[13] ) )
@@ -10639,46 +10910,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdProfileFunction )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdProfileFunction/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdProfileFunction<int>::name, context[13] ) )
-      continue;
-    context[94] = context[9];
-    context[95] = context[10];
-    if( ! refalrts::empty_seq( context[94], context[95] ) )
-      continue;
-    // closed e.Indent#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::this_is_generated_function("/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
-    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[16], context[17], "falrts::this_is_generated_function(", 35 ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_char( context[0], 'r' );
-    refalrts::reinit_char( context[4], 'e' );
-    refalrts::reinit_char( context[13], ')' );
-    refalrts::reinit_char( context[12], ';' );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[11], context[1] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[13];
-    res = refalrts::splice_evar( res, context[16], context[17] );
-    res = refalrts::splice_evar( res, context[0], context[4] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
-    res = refalrts::splice_evar( res, context[7], context[11] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdSeparator )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSeparator/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdSeparator<int>::name, context[13] ) )
@@ -10703,9 +10937,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdFnEnd )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdFnEnd/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdFnEnd<int>::name, context[13] ) )
@@ -10743,9 +10977,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdEmitNativeCode s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmitNativeCode/13 s.LineNumber#1/14 e.Code#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdEmitNativeCode<int>::name, context[13] ) )
@@ -10778,9 +11012,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNativeForward e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNativeForward/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNativeForward<int>::name, context[13] ) )
@@ -10822,9 +11056,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNamespaceStart )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNamespaceStart/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNamespaceStart<int>::name, context[13] ) )
@@ -10866,9 +11100,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNamespaceStart e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNamespaceStart/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNamespaceStart<int>::name, context[13] ) )
@@ -10917,9 +11151,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdNamespaceEnd )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdNamespaceEnd/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNamespaceEnd<int>::name, context[13] ) )
@@ -10971,9 +11205,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdNamespaceEnd e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdNamespaceEnd/13 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNamespaceEnd<int>::name, context[13] ) )
@@ -11028,9 +11262,152 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
+    // ( e.idx ) ( # CmdIfDef e.idx )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIfDef/13 e.Macros#1/9 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdIfDef<int>::name, context[13] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+    // closed e.Macros#1 as range 9
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 } Tile{ HalfReuse: 'i'/0 HalfReuse: 'f'/4 } 'd'/14 Tile{ HalfReuse: 'e'/12 }"f "/15 Tile{ AsIs: e.Macros#1/9 } Tile{ HalfReuse: )/1 ]] }
+    if( ! refalrts::alloc_char( context[14], 'd' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[15], context[16], "f ", 2 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[13], '#' );
+    refalrts::reinit_char( context[0], 'i' );
+    refalrts::reinit_char( context[4], 'f' );
+    refalrts::reinit_char( context[12], 'e' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
+    res = refalrts::splice_evar( res, context[14], context[14] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[7], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdElse )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdElse/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdElse<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'l'/1 } Tile{ HalfReuse: 's'/0 HalfReuse: 'e'/4 } )/14 Tile{ ]] }
+    if( ! refalrts::alloc_close_bracket( context[14] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[13], '#' );
+    refalrts::reinit_char( context[12], 'e' );
+    refalrts::reinit_char( context[1], 'l' );
+    refalrts::reinit_char( context[0], 's' );
+    refalrts::reinit_char( context[4], 'e' );
+    refalrts::link_brackets( context[11], context[14] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[14] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[7], context[1] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdEndIf )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEndIf/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdEndIf<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'n'/1 } Tile{ HalfReuse: 'd'/0 HalfReuse: 'i'/4 } 'f'/14 )/15 Tile{ ]] }
+    if( ! refalrts::alloc_char( context[14], 'f' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[13], '#' );
+    refalrts::reinit_char( context[12], 'e' );
+    refalrts::reinit_char( context[1], 'n' );
+    refalrts::reinit_char( context[0], 'd' );
+    refalrts::reinit_char( context[4], 'i' );
+    refalrts::link_brackets( context[11], context[15] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[7], context[1] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdProfileFunction )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdProfileFunction/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdProfileFunction<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::this_is_generated_function("/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
+    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "falrts::this_is_generated_function(", 35 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'r' );
+    refalrts::reinit_char( context[4], 'e' );
+    refalrts::reinit_char( context[13], ')' );
+    refalrts::reinit_char( context[12], ';' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[13];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // ( e.idx ) ( # CmdIssueMem s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIssueMem/13 s.Number#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdIssueMem<int>::name, context[13] ) )
@@ -11115,115 +11492,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdIfDef e.idx )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIfDef/13 e.Macros#1/9 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdIfDef<int>::name, context[13] ) )
-      continue;
-    // closed e.Indent#1 as range 5
-    // closed e.Macros#1 as range 9
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 } Tile{ HalfReuse: 'i'/0 HalfReuse: 'f'/4 } 'd'/14 Tile{ HalfReuse: 'e'/12 }"f "/15 Tile{ AsIs: e.Macros#1/9 } Tile{ HalfReuse: )/1 ]] }
-    if( ! refalrts::alloc_char( context[14], 'd' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[15], context[16], "f ", 2 ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_char( context[13], '#' );
-    refalrts::reinit_char( context[0], 'i' );
-    refalrts::reinit_char( context[4], 'f' );
-    refalrts::reinit_char( context[12], 'e' );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[11], context[1] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[9], context[10] );
-    res = refalrts::splice_evar( res, context[15], context[16] );
-    res = refalrts::splice_evar( res, context[12], context[12] );
-    res = refalrts::splice_evar( res, context[14], context[14] );
-    res = refalrts::splice_evar( res, context[0], context[4] );
-    res = refalrts::splice_evar( res, context[7], context[13] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdElse )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdElse/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdElse<int>::name, context[13] ) )
-      continue;
-    context[94] = context[9];
-    context[95] = context[10];
-    if( ! refalrts::empty_seq( context[94], context[95] ) )
-      continue;
-    // closed e.Indent#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'l'/1 } Tile{ HalfReuse: 's'/0 HalfReuse: 'e'/4 } )/14 Tile{ ]] }
-    if( ! refalrts::alloc_close_bracket( context[14] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_char( context[13], '#' );
-    refalrts::reinit_char( context[12], 'e' );
-    refalrts::reinit_char( context[1], 'l' );
-    refalrts::reinit_char( context[0], 's' );
-    refalrts::reinit_char( context[4], 'e' );
-    refalrts::link_brackets( context[11], context[14] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[14], context[14] );
-    res = refalrts::splice_evar( res, context[0], context[4] );
-    res = refalrts::splice_evar( res, context[7], context[1] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdEndIf )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEndIf/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdEndIf<int>::name, context[13] ) )
-      continue;
-    context[94] = context[9];
-    context[95] = context[10];
-    if( ! refalrts::empty_seq( context[94], context[95] ) )
-      continue;
-    // closed e.Indent#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 HalfReuse: '#'/13 HalfReuse: 'e'/12 HalfReuse: 'n'/1 } Tile{ HalfReuse: 'd'/0 HalfReuse: 'i'/4 } 'f'/14 )/15 Tile{ ]] }
-    if( ! refalrts::alloc_char( context[14], 'f' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[15] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_char( context[13], '#' );
-    refalrts::reinit_char( context[12], 'e' );
-    refalrts::reinit_char( context[1], 'n' );
-    refalrts::reinit_char( context[0], 'd' );
-    refalrts::reinit_char( context[4], 'i' );
-    refalrts::link_brackets( context[11], context[15] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[14], context[15] );
-    res = refalrts::splice_evar( res, context[0], context[4] );
-    res = refalrts::splice_evar( res, context[7], context[1] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdStartSentence )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdStartSentence/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdStartSentence<int>::name, context[13] ) )
@@ -11235,21 +11506,13 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     // closed e.Indent#1 as range 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 ' '/17 Tile{ HalfReuse: ' '/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'd'/8 HalfReuse: 'o'/11 HalfReuse: ' '/13 HalfReuse: '{'/12 HalfReuse: )/1 } (/18 e.Indent#1/5/19"  refalrts::start_sentence();"/21 )/23 Tile{ ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 ' '/17 Tile{ HalfReuse: ' '/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'd'/8 HalfReuse: 'o'/11 HalfReuse: ' '/13 HalfReuse: '{'/12 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[17], ' ' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_evar(context[19], context[20], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[21], context[22], "  refalrts::start_sentence();", 29 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], ' ' );
     refalrts::reinit_close_bracket( context[4] );
@@ -11258,21 +11521,18 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::reinit_char( context[13], ' ' );
     refalrts::reinit_char( context[12], '{' );
     refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[18], context[23] );
     refalrts::link_brackets( context[7], context[1] );
     refalrts::link_brackets( context[14], context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[18], context[23] );
-    res = refalrts::splice_evar( res, context[0], context[1] );
+    refalrts::Iter res = context[0];
     res = refalrts::splice_evar( res, context[14], context[17] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdEndSentence )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdEndSentence/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdEndSentence<int>::name, context[13] ) )
@@ -11293,7 +11553,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: 'w'/8 HalfReuse: 'h'/11 HalfReuse: 'i'/13 HalfReuse: 'l'/12 HalfReuse: 'e'/1 }" ( 0 );"/18 )/20 (/21 )/22 Tile{ ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } e.Indent#1/94(5)/16 Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/94(5) Reuse: '}'/15 AsIs: ' '/14 HalfReuse: 'w'/8 HalfReuse: 'h'/11 HalfReuse: 'i'/13 HalfReuse: 'l'/12 HalfReuse: 'e'/1 }" ( 0 );"/18 )/20 (/21 e.Indent#1/94(5)/22"refalrts::stop_sentence();"/24 )/26 (/27 )/28 Tile{ ]] }
     if (! refalrts::copy_evar(context[16], context[17], context[94], context[95]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " ( 0 );", 7 ) )
@@ -11302,7 +11562,15 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[21] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[22] ) )
+    if (! refalrts::copy_evar(context[22], context[23], context[94], context[95]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[24], context[25], "refalrts::stop_sentence();", 26 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[26] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[27] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[28] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[4] );
@@ -11312,21 +11580,22 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::reinit_char( context[13], 'i' );
     refalrts::reinit_char( context[12], 'l' );
     refalrts::reinit_char( context[1], 'e' );
-    refalrts::link_brackets( context[21], context[22] );
+    refalrts::link_brackets( context[27], context[28] );
+    refalrts::link_brackets( context[21], context[26] );
     refalrts::link_brackets( context[7], context[20] );
     refalrts::link_brackets( context[0], context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[18], context[22] );
+    res = refalrts::splice_evar( res, context[18], context[28] );
     res = refalrts::splice_evar( res, context[4], context[1] );
     res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInitB0 )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitB0/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInitB0<int>::name, context[13] ) )
@@ -11450,9 +11719,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInitB0-Lite )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitB0-Lite/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInitB0_Lite<int>::name, context[13] ) )
@@ -11513,9 +11782,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdChar s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdChar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Char#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdChar<int>::name, context[13] ) )
@@ -11558,9 +11827,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdCharSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCharSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 s.Char#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdCharSave<int>::name, context[13] ) )
@@ -11606,9 +11875,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNumber s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNumber/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNumber<int>::name, context[13] ) )
@@ -11651,9 +11920,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNumberSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNumberSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 s.Number#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNumberSave<int>::name, context[13] ) )
@@ -11699,9 +11968,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdName s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdName/13 s.Direction#1/14 s.BracketNumber#1/15 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdName<int>::name, context[13] ) )
@@ -11741,9 +12010,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdNameSave s.idx s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNameSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdNameSave<int>::name, context[13] ) )
@@ -11786,9 +12055,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdIdent s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIdent/13 s.Direction#1/14 s.BracketNumber#1/15 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdIdent<int>::name, context[13] ) )
@@ -11828,9 +12097,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdIdentSave s.idx s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdIdentSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Offset#1/16 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdIdentSave<int>::name, context[13] ) )
@@ -11873,9 +12142,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdBrackets s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdBrackets/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdBrackets<int>::name, context[13] ) )
@@ -11931,9 +12200,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdBracketsSave s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdBracketsSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdBracketsSave<int>::name, context[13] ) )
@@ -11989,9 +12258,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdADT s.idx s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdADT/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdADT<int>::name, context[13] ) )
@@ -12045,9 +12314,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdADTSave s.idx s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdADTSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 e.Name#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdADTSave<int>::name, context[13] ) )
@@ -12101,9 +12370,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdCallSave s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCallSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdCallSave<int>::name, context[13] ) )
@@ -12205,9 +12474,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdEmpty s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmpty/13 s.Direction#1/14 s.BracketNumber#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdEmpty<int>::name, context[13] ) )
@@ -12246,9 +12515,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdVar s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdVar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdVar<int>::name, context[13] ) )
@@ -12294,9 +12563,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdVarSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdVarSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdVarSave<int>::name, context[13] ) )
@@ -12342,9 +12611,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdRepeated s.idx s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdRepeated/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.Var#1/17 s.Sample#1/18 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdRepeated<int>::name, context[13] ) )
@@ -12391,9 +12660,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdRepeatedSave s.idx s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdRepeatedSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.Var#1/17 s.Sample#1/18 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdRepeatedSave<int>::name, context[13] ) )
@@ -12440,9 +12709,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdOpenedE-Start # AlgLeft s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdOpenedE-Start/13 # AlgLeft/14 s.BracketNumber#1/15 s.VarNumber#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdOpenedE_Start<int>::name, context[13] ) )
@@ -12530,9 +12799,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdOpenedE-End # AlgLeft s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/16 ' '/15 )/8 (/11 # CmdOpenedE-End/13 # AlgLeft/14 s.BracketNumber#1/17 s.VarNumber#1/18 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdOpenedE_End<int>::name, context[13] ) )
@@ -12609,9 +12878,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdSave s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSave/13 s.OldBracketNumber#1/14 s.NewBracketNumber#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdSave<int>::name, context[13] ) )
@@ -12695,9 +12964,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdEmptyResult )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdEmptyResult/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdEmptyResult<int>::name, context[13] ) )
@@ -12745,9 +13014,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdResetAllocator )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdResetAllocator/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdResetAllocator<int>::name, context[13] ) )
@@ -12786,9 +13055,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdSetRes s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSetRes/13 s.Offset#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdSetRes<int>::name, context[13] ) )
@@ -12855,9 +13124,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdCopyVar 'e' s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCopyVar/13 'e'/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdCopyVar<int>::name, context[13] ) )
@@ -12932,9 +13201,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdCopyVar s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdCopyVar/13 s.Mode#1/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdCopyVar<int>::name, context[13] ) )
@@ -13008,9 +13277,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdReinitSVar s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReinitSVar/13 s.Offset#1/14 s.Sample#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdReinitSVar<int>::name, context[13] ) )
@@ -13072,9 +13341,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdAllocateElem s.idx # ElString e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdAllocateElem/13 s.ElemNumber#1/14 # ElString/15 e.String#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdAllocateElem<int>::name, context[13] ) )
@@ -13159,9 +13428,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdAllocateElem s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdAllocateElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdAllocateElem<int>::name, context[13] ) )
@@ -13205,9 +13474,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdReinitElem s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReinitElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdReinitElem<int>::name, context[13] ) )
@@ -13251,9 +13520,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdUpdateElem s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdUpdateElem/13 s.ElemNumber#1/14 e.ElemInfo#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdUpdateElem<int>::name, context[13] ) )
@@ -13297,9 +13566,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdLinkBrackets s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdLinkBrackets/13 s.Left#1/14 s.Right#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdLinkBrackets<int>::name, context[13] ) )
@@ -13361,9 +13630,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdPushStack s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdPushStack/13 s.ElemNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdPushStack<int>::name, context[13] ) )
@@ -13408,9 +13677,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInsertElem s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertElem/13 s.ElemNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInsertElem<int>::name, context[13] ) )
@@ -13455,9 +13724,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInsertVar 'e' s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertVar/13 'e'/14 s.Number#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInsertVar<int>::name, context[13] ) )
@@ -13509,9 +13778,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInsertVar s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertVar/13 s.Mode#1/14 s.Number#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInsertVar<int>::name, context[13] ) )
@@ -13562,9 +13831,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInsertRange s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertRange/13 s.Number#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInsertRange<int>::name, context[13] ) )
@@ -13624,9 +13893,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInsertTile s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInsertTile/13 s.BeginOffset#1/14 s.EndOffset#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInsertTile<int>::name, context[13] ) )
@@ -13688,72 +13957,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdReturnResult )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReturnResult/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdReturnResult<int>::name, context[13] ) )
-      continue;
-    context[94] = context[9];
-    context[95] = context[10];
-    if( ! refalrts::empty_seq( context[94], context[95] ) )
-      continue;
-    // closed e.Indent#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } (/14 e.Indent#1/5/15 )/17 (/18 e.Indent#1/5/19"refalrts::use( res )"/21 Tile{ HalfReuse: ';'/0 HalfReuse: )/4 AsIs: (/7 AsIs: e.Indent#1/5 HalfReuse: 'r'/8 HalfReuse: 'e'/11 HalfReuse: 'f'/13 HalfReuse: 'a'/12 HalfReuse: 'l'/1 }"rts::splice_to_freelist( arg_begin, arg_end );"/23 )/25 </26 & GenReturn/27 # Success/28 e.Indent#1/5/29 >/31 Tile{ ]] }
-    if( ! refalrts::alloc_open_bracket( context[14] ) )
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[17] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_evar(context[19], context[20], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[21], context[22], "refalrts::use( res )", 20 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[23], context[24], "rts::splice_to_freelist( arg_begin, arg_end );", 46 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[25] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[26] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[27], & GenReturn ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[28], & ident_Success<int>::name ) )
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_evar(context[29], context[30], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[31] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_char( context[0], ';' );
-    refalrts::reinit_close_bracket( context[4] );
-    refalrts::reinit_char( context[8], 'r' );
-    refalrts::reinit_char( context[11], 'e' );
-    refalrts::reinit_char( context[13], 'f' );
-    refalrts::reinit_char( context[12], 'a' );
-    refalrts::reinit_char( context[1], 'l' );
-    refalrts::push_stack( context[31] );
-    refalrts::push_stack( context[26] );
-    refalrts::link_brackets( context[7], context[25] );
-    refalrts::link_brackets( context[18], context[4] );
-    refalrts::link_brackets( context[14], context[17] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[23], context[31] );
-    res = refalrts::splice_evar( res, context[0], context[1] );
-    res = refalrts::splice_evar( res, context[14], context[22] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-
-  do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdUseRes )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdUseRes/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdUseRes<int>::name, context[13] ) )
@@ -13788,12 +13994,49 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdReturnResult-NoTrash )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdReturnResult-NoTrash/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdReturnResult_NoTrash<int>::name, context[13] ) )
+    // ( e.idx ) ( # CmdSpliceToFreeList )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdSpliceToFreeList/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdSpliceToFreeList<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'e'/4 }"falrts::splice_to_freelist( arg_begin, arg_end "/16 Tile{ HalfReuse: ')'/13 HalfReuse: ';'/12 HalfReuse: )/1 ]] }
+    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "falrts::splice_to_freelist( arg_begin, arg_end ", 47 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'r' );
+    refalrts::reinit_char( context[4], 'e' );
+    refalrts::reinit_char( context[13], ')' );
+    refalrts::reinit_char( context[12], ';' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[13];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdNextStep )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdNextStep/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdNextStep<int>::name, context[13] ) )
       continue;
     context[94] = context[9];
     context[95] = context[10];
@@ -13821,9 +14064,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdTrash s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdTrash/13 s.Offset#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdTrash<int>::name, context[13] ) )
@@ -13870,9 +14113,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdFail )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdFail/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdFail<int>::name, context[13] ) )
@@ -13903,9 +14146,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiFuncArray )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFuncArray/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiFuncArray<int>::name, context[13] ) )
@@ -13940,9 +14183,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiFuncArray e.idx ( e.idx ) )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFuncArray/13 e.FuncNames#1/9 (/16 e.LastName#1/14 )/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiFuncArray<int>::name, context[13] ) )
@@ -14032,9 +14275,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiLabelArray )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLabelArray/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiLabelArray<int>::name, context[13] ) )
@@ -14069,9 +14312,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiLabelArray e.idx ( e.idx ) )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLabelArray/13 e.LabelNames#1/9 (/16 e.LastName#1/14 )/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiLabelArray<int>::name, context[13] ) )
@@ -14167,9 +14410,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiNumberArray )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumberArray/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiNumberArray<int>::name, context[13] ) )
@@ -14204,9 +14447,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiNumberArray e.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumberArray/13 e.Numbers#1/9 s.LastNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiNumberArray<int>::name, context[13] ) )
@@ -14297,9 +14540,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiStringArray )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiStringArray/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiStringArray<int>::name, context[13] ) )
@@ -14334,9 +14577,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiStringArray e.idx ( e.idx ) )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiStringArray/13 e.Strings#1/9 (/16 e.LastString#1/14 )/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiStringArray<int>::name, context[13] ) )
@@ -14428,9 +14671,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdInitRAA )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdInitRAA/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdInitRAA<int>::name, context[13] ) )
@@ -14472,9 +14715,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx '  ' ) ( # CmdFinRAA )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 ' '/15 ' '/14 )/8 (/11 # CmdFinRAA/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdFinRAA<int>::name, context[13] ) )
@@ -14529,9 +14772,83 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
+    // ( e.idx ) ( # CmdiProfileFunction )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiProfileFunction/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdiProfileFunction<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icThisIsGeneratedFunction, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icThisIsGeneratedFunction, 0, 0, 0", 43 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], '{' );
+    refalrts::reinit_char( context[4], 'r' );
+    refalrts::reinit_char( context[13], '}' );
+    refalrts::reinit_char( context[12], ',' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[13];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdiLoadConstants )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLoadConstants/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdiLoadConstants<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icLoadConstants, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icLoadConstants, 0, 0, 0", 33 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], '{' );
+    refalrts::reinit_char( context[4], 'r' );
+    refalrts::reinit_char( context[13], '}' );
+    refalrts::reinit_char( context[12], ',' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[13];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // ( e.idx ) ( # CmdiIssueMem s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIssueMem/13 s.Memory#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiIssueMem<int>::name, context[13] ) )
@@ -14579,9 +14896,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiReserveStack 0 )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReserveStack/13 0/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiReserveStack<int>::name, context[13] ) )
@@ -14607,9 +14924,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiReserveStack s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReserveStack/13 s.Depth#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiReserveStack<int>::name, context[13] ) )
@@ -14657,9 +14974,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiOnFailGoTo s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiOnFailGoTo/13 s.Offset#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiOnFailGoTo<int>::name, context[13] ) )
@@ -14707,9 +15024,46 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
+    // ( e.idx ) ( # CmdiProfilerStopSentence )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiProfilerStopSentence/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdiProfilerStopSentence<int>::name, context[13] ) )
+      continue;
+    context[94] = context[9];
+    context[95] = context[10];
+    if( ! refalrts::empty_seq( context[94], context[95] ) )
+      continue;
+    // closed e.Indent#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icProfilerStopSentence, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+    if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icProfilerStopSentence, 0, 0, 0", 40 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], '{' );
+    refalrts::reinit_char( context[4], 'r' );
+    refalrts::reinit_char( context[13], '}' );
+    refalrts::reinit_char( context[12], ',' );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[13];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[7], context[11] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // ( e.idx ) ( # CmdiInitB0 )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInitB0/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInitB0<int>::name, context[13] ) )
@@ -14744,9 +15098,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInitB0-Lite )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInitB0-Lite/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInitB0_Lite<int>::name, context[13] ) )
@@ -14781,9 +15135,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiChar s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiChar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Char#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiChar<int>::name, context[13] ) )
@@ -14859,9 +15213,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiCharSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCharSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Char#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiCharSave<int>::name, context[13] ) )
@@ -14951,9 +15305,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiNum s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNum/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiNum<int>::name, context[13] ) )
@@ -15029,9 +15383,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiNumSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNumSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Number#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiNumSave<int>::name, context[13] ) )
@@ -15121,9 +15475,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiHugeNum s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiHugeNum/13 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiHugeNum<int>::name, context[13] ) )
@@ -15199,9 +15553,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiHugeNumSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiHugeNumSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.Number#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiHugeNumSave<int>::name, context[13] ) )
@@ -15291,9 +15645,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiName s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiName/13 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiName<int>::name, context[13] ) )
@@ -15369,9 +15723,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiNameSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNameSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.NameId#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiNameSave<int>::name, context[13] ) )
@@ -15461,9 +15815,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiIdent s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIdent/13 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiIdent<int>::name, context[13] ) )
@@ -15539,9 +15893,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiIdentSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiIdentSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/16 s.NameId#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiIdentSave<int>::name, context[13] ) )
@@ -15631,9 +15985,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiBracket s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiBracket/13 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiBracket<int>::name, context[13] ) )
@@ -15709,9 +16063,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiBracketsSave s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiBracketsSave/13 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiBracketsSave<int>::name, context[13] ) )
@@ -15787,9 +16141,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiADT s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiADT/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 s.NameId#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiADT<int>::name, context[13] ) )
@@ -15876,9 +16230,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiADTSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiADTSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 s.NameId#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiADTSave<int>::name, context[13] ) )
@@ -15968,9 +16322,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiCallSave s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCallSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiCallSave<int>::name, context[13] ) )
@@ -16046,9 +16400,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiEmpty s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEmpty/13 s.Num#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiEmpty<int>::name, context[13] ) )
@@ -16093,9 +16447,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiVar s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiVar/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiVar<int>::name, context[13] ) )
@@ -16177,9 +16531,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiVarSave s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiVarSave/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiVarSave<int>::name, context[13] ) )
@@ -16261,9 +16615,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiRepeat s.idx s.idx s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiRepeat/13 s.Direction#1/14 s.BracketNumber#1/15 s.Mode#1/16 s.VarNumber#1/17 s.SampleNumber#1/18 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiRepeat<int>::name, context[13] ) )
@@ -16359,9 +16713,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiRepeatedSave s.idx s.idx 't' s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiRepeatedSave/13 s.Direction#1/14 s.BracketNumber#1/15 't'/16 s.VarNumber#1/17 s.SampleNumber#1/18 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiRepeatedSave<int>::name, context[13] ) )
@@ -16453,9 +16807,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiEPrepare s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEPrepare/13 s.BracketNumber#1/14 s.VarNumber#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiEPrepare<int>::name, context[13] ) )
@@ -16511,9 +16865,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiEStart s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEStart/13 s.BracketNumber#1/14 s.VarNumber#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiEStart<int>::name, context[13] ) )
@@ -16569,9 +16923,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiSave s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSave/13 s.OldBracketNumber#1/14 s.NewBracketNumber#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiSave<int>::name, context[13] ) )
@@ -16627,9 +16981,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiEmptyResult )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiEmptyResult/13 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiEmptyResult<int>::name, context[13] ) )
@@ -16664,9 +17018,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiSetRes s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSetRes/13 s.Offset#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiSetRes<int>::name, context[13] ) )
@@ -16681,7 +17035,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$109\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$112\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
     if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[17] ) )
@@ -16694,7 +17048,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::reinit_name( context[13], & Fetch );
     refalrts::reinit_open_call( context[12] );
     refalrts::reinit_name( context[1], & refalrts::create_closure );
-    refalrts::update_name( context[4], & gen_GenCommand_S109L1 );
+    refalrts::update_name( context[4], & gen_GenCommand_S112L1 );
     refalrts::reinit_open_bracket( context[0] );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[11] );
@@ -16713,9 +17067,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiCopyVar 'e' s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCopyVar/13 'e'/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiCopyVar<int>::name, context[13] ) )
@@ -16773,9 +17127,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiCopyVar s.idx s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCopyVar/13 s.Mode#1/14 s.Target#1/15 s.Sample#1/16 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiCopyVar<int>::name, context[13] ) )
@@ -16840,9 +17194,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiReinitSVar s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReinitSVar/13 s.Offset#1/14 s.Sample#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiReinitSVar<int>::name, context[13] ) )
@@ -16898,9 +17252,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiCreateElem s.idx s.idx s.idx e.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiCreateElem/13 s.CreateMode#1/14 s.ElemNumber#1/15 s.Type#1/16 e.Info#1/9 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiCreateElem<int>::name, context[13] ) )
@@ -16944,9 +17298,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiLinkBrackets s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiLinkBrackets/13 s.Left#1/14 s.Right#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiLinkBrackets<int>::name, context[13] ) )
@@ -17008,9 +17362,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiPushStack s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiPushStack/13 s.ElemNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiPushStack<int>::name, context[13] ) )
@@ -17055,9 +17409,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInsertElem s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertElem/13 s.ElemNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInsertElem<int>::name, context[13] ) )
@@ -17102,9 +17456,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInsertVar 'e' s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertVar/13 'e'/14 s.Offset#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInsertVar<int>::name, context[13] ) )
@@ -17156,9 +17510,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInsertVar s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertVar/13 s.Mode#1/14 s.Offset#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInsertVar<int>::name, context[13] ) )
@@ -17209,9 +17563,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInsertRange s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertRange/13 s.ElemNumber#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInsertRange<int>::name, context[13] ) )
@@ -17256,9 +17610,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiInsertTile s.idx s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiInsertTile/13 s.BeginOffset#1/14 s.EndOffset#1/15 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiInsertTile<int>::name, context[13] ) )
@@ -17320,12 +17674,12 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdiReturnResult )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReturnResult/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdiReturnResult<int>::name, context[13] ) )
+    // ( e.idx ) ( # CmdiSpliceToFreeList )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiSpliceToFreeList/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdiSpliceToFreeList<int>::name, context[13] ) )
       continue;
     context[94] = context[9];
     context[95] = context[10];
@@ -17335,10 +17689,10 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icReturnResult, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icSpliceToFreeList, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
     if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icReturnResult, 0, 0, 0", 32 ) )
+    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icSpliceToFreeList, 0, 0, 0", 36 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], '{' );
     refalrts::reinit_char( context[4], 'r' );
@@ -17357,12 +17711,12 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
-    // ( e.idx ) ( # CmdiReturnResult-NoTrash )
-    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiReturnResult-NoTrash/13 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_CmdiReturnResult_NoTrash<int>::name, context[13] ) )
+    // ( e.idx ) ( # CmdiNextStep )
+    // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiNextStep/13 )/12 >/1
+    if( ! refalrts::ident_term(  & ident_CmdiNextStep<int>::name, context[13] ) )
       continue;
     context[94] = context[9];
     context[95] = context[10];
@@ -17372,10 +17726,10 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icReturnResult_NoTrash, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 AsIs: (/11 } e.Indent#1/5/14 Tile{ HalfReuse: '{'/0 HalfReuse: 'r'/4 }"efalrts::icNextStep, 0, 0, 0"/16 Tile{ HalfReuse: '}'/13 HalfReuse: ','/12 HalfReuse: )/1 ]] }
     if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icReturnResult_NoTrash, 0, 0, 0", 40 ) )
+    if( ! refalrts::alloc_chars( context[16], context[17], "efalrts::icNextStep, 0, 0, 0", 28 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], '{' );
     refalrts::reinit_char( context[4], 'r' );
@@ -17394,9 +17748,9 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( # CmdiTrash s.idx )
     // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiTrash/13 s.Offset#1/14 )/12 >/1
     if( ! refalrts::ident_term(  & ident_CmdiTrash<int>::name, context[13] ) )
@@ -17411,7 +17765,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$123\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Indent#1/5 AsIs: )/8 HalfReuse: </11 HalfReuse: & Fetch/13 AsIs: s.Offset#1/14 HalfReuse: </12 HalfReuse: & @create_closure@/1 } Tile{ Reuse: & GenCommand$126\1/4 } Tile{ HalfReuse: (/0 } e.Indent#1/5/15 )/17 >/18 >/19 Tile{ ]] }
     if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[17] ) )
@@ -17424,7 +17778,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::reinit_name( context[13], & Fetch );
     refalrts::reinit_open_call( context[12] );
     refalrts::reinit_name( context[1], & refalrts::create_closure );
-    refalrts::update_name( context[4], & gen_GenCommand_S123L1 );
+    refalrts::update_name( context[4], & gen_GenCommand_S126L1 );
     refalrts::reinit_open_bracket( context[0] );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[11] );
@@ -17443,6 +17797,7 @@ static refalrts::FnResult func_GenCommand(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( # CmdiFail )
   // </0 & GenCommand/4 (/7 e.Indent#1/5 )/8 (/11 # CmdiFail/13 )/12 >/1
@@ -17494,6 +17849,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       // </0 & Escape/4 s.Char#1/5 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -17506,7 +17863,7 @@ namespace /* unnamed */ {
       {refalrts::icUpdateFunc, 0, 0, 4},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_Escape
@@ -17569,6 +17926,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       // </0 & PrintLength/4 e.String#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -17584,7 +17943,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 5},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 5, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintLength
@@ -17653,6 +18012,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
@@ -17684,7 +18045,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 5, 5, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & DoPrintLength/4 s.Length#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
@@ -17694,7 +18056,7 @@ namespace /* unnamed */ {
       {refalrts::icUpdateFunc, 0, 0, 4},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_DoPrintLength
@@ -17732,7 +18094,6 @@ static refalrts::FnResult func_DoPrintLength(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // s.idx s.idx e.idx
     // </0 & DoPrintLength/4 s.Length#1/5 s.Char#1/6 e.Tail#1/2 >/1
     context[10] = context[2];
@@ -17765,6 +18126,7 @@ static refalrts::FnResult func_DoPrintLength(refalrts::Iter arg_begin, refalrts:
     refalrts::splice_to_freelist_open( context[4], res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx
   // </0 & DoPrintLength/4 s.Length#1/5 >/1
@@ -17800,6 +18162,8 @@ namespace /* unnamed */ {
       {"\", ", 3}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 13, 0, 0},
       // </0 & PrintString/4 e.String#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -17821,7 +18185,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 6},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 5, 12, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintString
@@ -17903,6 +18267,8 @@ namespace /* unnamed */ {
       {"char", 4}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & PrintMatchChar/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Char#1/11 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -17935,7 +18301,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 20, 0},
       {refalrts::icSpliceTile, 11, 1, 0},
       {refalrts::icSpliceTile, 12, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchChar
@@ -18039,6 +18405,8 @@ namespace /* unnamed */ {
       {"char", 4}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 22, 0, 0},
       // </0 & PrintMatchCharSave/4 (/7 e.Indent#1/5 )/8 s.Offset#1/9 s.Direction#1/10 s.BracketNumber#1/11 s.Char#1/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18072,7 +18440,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 12, 1, 0},
       {refalrts::icSpliceTile, 13, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchCharSave
@@ -18179,6 +18547,8 @@ namespace /* unnamed */ {
       {"number", 6}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & PrintMatchNumber/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Number#1/11 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18210,7 +18580,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 20, 0},
       {refalrts::icSpliceTile, 11, 1, 0},
       {refalrts::icSpliceTile, 12, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchNumber
@@ -18313,6 +18683,8 @@ namespace /* unnamed */ {
       {"number", 6}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 22, 0, 0},
       // </0 & PrintMatchNumberSave/4 (/7 e.Indent#1/5 )/8 s.Offset#1/9 s.Direction#1/10 s.BracketNumber#1/11 s.Number#1/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18345,7 +18717,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 21, 0},
       {refalrts::icSpliceTile, 12, 1, 0},
       {refalrts::icSpliceTile, 13, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchNumberSave
@@ -18450,6 +18822,8 @@ namespace /* unnamed */ {
       {"function", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 20, 0, 0},
       // </0 & PrintMatchName/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18480,7 +18854,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 19, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 11, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchName
@@ -18580,6 +18954,8 @@ namespace /* unnamed */ {
       {"function", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & PrintMatchNameSave/4 (/7 e.Indent#1/5 )/8 s.Offset#1/9 s.Direction#1/10 s.BracketNumber#1/11 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18611,7 +18987,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 20, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 12, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchNameSave
@@ -18714,6 +19090,8 @@ namespace /* unnamed */ {
       {"ident", 5}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 22, 0, 0},
       // </0 & PrintMatchIdent/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18745,7 +19123,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 21, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 11, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchIdent
@@ -18848,6 +19226,8 @@ namespace /* unnamed */ {
       {"ident", 5}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 23, 0, 0},
       // </0 & PrintMatchIdentSave/4 (/7 e.Indent#1/5 )/8 s.Offset#1/9 s.Direction#1/10 s.BracketNumber#1/11 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18880,7 +19260,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 22, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 12, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchIdentSave
@@ -18983,6 +19363,8 @@ namespace /* unnamed */ {
       {"brackets", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
       // </0 & PrintMatchBrackets/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.InnerNum#1/11 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -19013,7 +19395,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 18, 0},
       {refalrts::icSpliceTile, 11, 1, 0},
       {refalrts::icSpliceTile, 12, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchBrackets
@@ -19118,6 +19500,8 @@ namespace /* unnamed */ {
       {"brackets", 8}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 50, 0, 0},
       // </0 & PrintMatchBracketsSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.InnerNum#1/11 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -19187,7 +19571,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 10, 0},
       {refalrts::icSpliceTile, 11, 1, 0},
       {refalrts::icSpliceTile, 12, 14, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchBracketsSave
@@ -19355,6 +19739,8 @@ namespace /* unnamed */ {
       {"adt", 3}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
       // </0 & PrintMatchADT/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.InnerNum#1/11 e.Name#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -19393,7 +19779,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 18, 22, 0},
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceTile, 12, 17, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchADT
@@ -19518,6 +19904,8 @@ namespace /* unnamed */ {
       {" = refalrts::adt_term(", 22}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 65, 0, 0},
       //FAST GEN: ( e.$ ) s.$ s.$ s.$ e.$
@@ -19615,7 +20003,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 27, 31, 0},
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceTile, 12, 26, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx s.idx s.idx e.idx
       // </0 & PrintMatchADTSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.InnerNum#1/11 e.Name#1/2 >/1
       // closed e.Indent#1 as range 5
@@ -19702,7 +20091,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 22, 0},
       {refalrts::icSpliceTile, 9, 10, 0},
       {refalrts::icSpliceTile, 12, 16, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchADTSave
@@ -19751,7 +20140,6 @@ static refalrts::FnResult func_PrintMatchADTSave(refalrts::Iter arg_begin, refal
     return refalrts::cRecognitionImpossible;
   // closed e.idxTVVV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # AlgTerm s.idx s.idx e.idx
     // </0 & PrintMatchADTSave/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.Offset#1/10 s.InnerNum#1/11 e.Name#1/2 >/1
     if( ! refalrts::ident_term(  & ident_AlgTerm<int>::name, context[9] ) )
@@ -19883,6 +20271,7 @@ static refalrts::FnResult func_PrintMatchADTSave(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx s.idx s.idx e.idx
   // </0 & PrintMatchADTSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.InnerNum#1/11 e.Name#1/2 >/1
@@ -20041,6 +20430,8 @@ namespace /* unnamed */ {
       {"n refalrts::cRecognitionImpossible;", 35}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 11, 0, 0},
       //FAST GEN: e.$
@@ -20067,7 +20458,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'r', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // e.idx
       // </0 & BreakerFromIndent/4 e.OtherIndent#1/2 >/1
       // closed e.OtherIndent#1 as range 2
@@ -20081,7 +20473,7 @@ namespace /* unnamed */ {
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceTile, 5, 6, 0},
       {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_BreakerFromIndent
@@ -20117,7 +20509,6 @@ static refalrts::FnResult func_BreakerFromIndent(refalrts::Iter arg_begin, refal
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.idx#0 as range 2
   do {
-    refalrts::start_sentence();
     // '  '
     // </0 & BreakerFromIndent/4 ' '/5 ' '/6 >/1
     context[9] = context[2];
@@ -20148,6 +20539,7 @@ static refalrts::FnResult func_BreakerFromIndent(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // e.idx
   // </0 & BreakerFromIndent/4 e.OtherIndent#1/2 >/1
@@ -20191,6 +20583,8 @@ namespace /* unnamed */ {
       {"if( ! refalrts::empty_seq( ", 27}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 26, 0, 0},
       // </0 & PrintMatchEmpty/4 (/7 e.Indent#1/5 )/8 s.BracketNumber#1/9 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -20229,7 +20623,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 17, 18, 0},
       {refalrts::icSpliceTile, 9, 1, 0},
       {refalrts::icSpliceTile, 10, 16, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchEmpty
@@ -20339,6 +20733,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 7, 0, 0},
       //FAST GEN: s.$
@@ -20359,7 +20755,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'e', 4},
       {refalrts::icReinitChar, 0, 'f', 5},
       {refalrts::icReinitChar, 0, 't', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # AlgRight
       // </0 & StrFromDirection/4 # AlgRight/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -20373,7 +20770,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'h', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_StrFromDirection
@@ -20412,7 +20809,6 @@ static refalrts::FnResult func_StrFromDirection(refalrts::Iter arg_begin, refalr
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // # AlgLeft
     // </0 & StrFromDirection/4 # AlgLeft/5 >/1
     if( ! refalrts::ident_term(  & ident_AlgLeft<int>::name, context[5] ) )
@@ -20427,6 +20823,7 @@ static refalrts::FnResult func_StrFromDirection(refalrts::Iter arg_begin, refalr
     refalrts::reinit_char( context[1], 't' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # AlgRight
   // </0 & StrFromDirection/4 # AlgRight/5 >/1
@@ -20465,6 +20862,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       //FAST GEN: s.$
@@ -20485,7 +20884,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'v', 4},
       {refalrts::icUpdateChar, 0, 'a', 5},
       {refalrts::icReinitChar, 0, 'r', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // 't'
       // </0 & VarMatchFunction/4 't'/5 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('t'), 5},
@@ -20496,7 +20896,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'v', 4},
       {refalrts::icUpdateChar, 0, 'a', 5},
       {refalrts::icReinitChar, 0, 'r', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_VarMatchFunction
@@ -20535,7 +20935,6 @@ static refalrts::FnResult func_VarMatchFunction(refalrts::Iter arg_begin, refalr
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // 's'
     // </0 & VarMatchFunction/4 's'/5 >/1
     if( ! refalrts::char_term( 's', context[5] ) )
@@ -20550,6 +20949,7 @@ static refalrts::FnResult func_VarMatchFunction(refalrts::Iter arg_begin, refalr
     refalrts::reinit_char( context[1], 'r' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // 't'
   // </0 & VarMatchFunction/4 't'/5 >/1
@@ -20585,6 +20985,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 21, 0, 0},
       // </0 & PrintMatchSTVar/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -20622,7 +21024,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 19, 0},
       {refalrts::icSpliceTile, 11, 11, 0},
       {refalrts::icSpliceTile, 13, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchSTVar
@@ -20732,6 +21134,8 @@ namespace /* unnamed */ {
     using refalrts::numbers;
     using refalrts::strings;
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 25, 0, 0},
       // </0 & PrintMatchSTVarSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 't'/11 s.VarNumber#1/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -20775,7 +21179,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 10, 0},
       {refalrts::icSpliceTile, 11, 1, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchSTVarSave
@@ -20904,6 +21308,8 @@ namespace /* unnamed */ {
       {"repeated_evar", 13}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 34, 0, 0},
       //FAST GEN: ( e.$ ) s.$ s.$ s.$ s.$ s.$
@@ -20952,7 +21358,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 19, 23, 0},
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 14, 18, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +39, 0, 0},
       // ( e.idx ) # AlgTerm s.idx s.idx s.idx s.idx
       // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
@@ -20997,7 +21404,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 14, 20, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx s.idx s.idx s.idx s.idx
       // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
       // closed e.Indent#1 as range 5
@@ -21030,7 +21438,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 14, 19, 0},
       {refalrts::icTrash, 0, 0, 10},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchRepeated
@@ -21084,7 +21492,6 @@ static refalrts::FnResult func_PrintMatchRepeated(refalrts::Iter arg_begin, refa
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) s.idx s.idx 'e' s.idx s.idx
     // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 'e'/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
     if( ! refalrts::char_term( 'e', context[11] ) )
@@ -21133,9 +21540,9 @@ static refalrts::FnResult func_PrintMatchRepeated(refalrts::Iter arg_begin, refa
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # AlgTerm s.idx s.idx s.idx s.idx
     // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
     if( ! refalrts::ident_term(  & ident_AlgTerm<int>::name, context[9] ) )
@@ -21201,6 +21608,7 @@ static refalrts::FnResult func_PrintMatchRepeated(refalrts::Iter arg_begin, refa
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx s.idx s.idx s.idx s.idx
   // </0 & PrintMatchRepeated/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
@@ -21274,6 +21682,8 @@ namespace /* unnamed */ {
       {"repeated_stvar", 14}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 29, 0, 0},
       //FAST GEN: ( e.$ ) s.$ s.$ s.$ s.$ s.$
@@ -21330,7 +21740,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 16, 16, 0},
       {refalrts::icSpliceTile, 12, 12, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx s.idx s.idx s.idx s.idx
       // </0 & PrintMatchRepeatedSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
       // closed e.Indent#1 as range 5
@@ -21341,7 +21752,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
       {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchRepeatedSave
@@ -21395,7 +21806,6 @@ static refalrts::FnResult func_PrintMatchRepeatedSave(refalrts::Iter arg_begin, 
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // ( e.idx ) s.idx s.idx 't' s.idx s.idx
     // </0 & PrintMatchRepeatedSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 't'/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
     if( ! refalrts::char_term( 't', context[11] ) )
@@ -21456,6 +21866,7 @@ static refalrts::FnResult func_PrintMatchRepeatedSave(refalrts::Iter arg_begin, 
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx s.idx s.idx s.idx s.idx
   // </0 & PrintMatchRepeatedSave/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 s.Mode#1/11 s.VarNumber#1/12 s.SampleNumber#1/13 >/1
@@ -21499,6 +21910,8 @@ namespace /* unnamed */ {
       {"term( ", 6}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 38, 0, 0},
       //FAST GEN: ( e.$ ) s.$ s.$ ( e.$ ) e.$
@@ -21559,7 +21972,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 13, 14, 0},
       {refalrts::icSpliceTile, 15, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) s.idx s.idx ( e.idx ) e.idx
       // </0 & PrintMatch/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 (/13 e.Function#1/11 )/14 e.TextRep#1/2 >/1
       // closed e.Indent#1 as range 5
@@ -21611,7 +22025,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 20, 21, 0},
       {refalrts::icSpliceTile, 13, 14, 0},
       {refalrts::icSpliceTile, 15, 19, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatch
@@ -21665,7 +22079,6 @@ static refalrts::FnResult func_PrintMatch(refalrts::Iter arg_begin, refalrts::It
   // closed e.idxTVVB#0 as range 11
   // closed e.idxTVVT#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) # AlgTerm s.idx ( e.idx ) e.idx
     // </0 & PrintMatch/4 (/7 e.Indent#1/5 )/8 # AlgTerm/9 s.Offset#1/10 (/13 e.Function#1/11 )/14 e.TextRep#1/2 >/1
     if( ! refalrts::ident_term(  & ident_AlgTerm<int>::name, context[9] ) )
@@ -21731,6 +22144,7 @@ static refalrts::FnResult func_PrintMatch(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) s.idx s.idx ( e.idx ) e.idx
   // </0 & PrintMatch/4 (/7 e.Indent#1/5 )/8 s.Direction#1/9 s.BracketNumber#1/10 (/13 e.Function#1/11 )/14 e.TextRep#1/2 >/1
@@ -21834,6 +22248,8 @@ namespace /* unnamed */ {
       {" = refalrts:", 12}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 55, 0, 0},
       // </0 & PrintMatchSave/4 (/7 e.Indent#1/5 )/8 s.Offset#1/9 s.Direction#1/10 s.BracketNumber#1/11 (/14 e.Function#1/12 )/15 e.TextRep#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -21911,7 +22327,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 25, 26, 0},
       {refalrts::icSpliceTile, 14, 15, 0},
       {refalrts::icSpliceTile, 16, 24, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintMatchSave
@@ -22091,6 +22507,8 @@ namespace /* unnamed */ {
       {"if( ! refalrts::alloc_", 22}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 43, 0, 0},
       //FAST GEN: ( e.$ ) ( e.$ ) s.$ s.$ e.$
@@ -22162,7 +22580,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 33, 35, 0},
       {refalrts::icSpliceTile, 13, 13, 0},
       {refalrts::icSpliceTile, 20, 32, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( e.idx ) s.idx s.idx e.idx
       // </0 & PrintCreateElem/4 (/7 e.Indent#1/5 )/8 (/11 e.Action#1/9 )/12 s.ElemNumber#1/13 s.ElementType#1/14 e.Info#1/2 >/1
       // closed e.Indent#1 as range 5
@@ -22204,7 +22623,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceEVar, 0, 0, 9},
       {refalrts::icSpliceTile, 15, 16, 0},
       {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintCreateElem
@@ -22258,7 +22677,6 @@ static refalrts::FnResult func_PrintCreateElem(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   // closed e.idxTTVV#0 as range 2
   do {
-    refalrts::start_sentence();
     // ( e.idx ) ( 'alloc' ) s.idx s.idx e.idx
     // </0 & PrintCreateElem/4 (/7 e.Indent#1/5 )/8 (/11 'a'/15 'l'/16 'l'/17 'o'/18 'c'/19 )/12 s.ElemNumber#1/13 s.ElementType#1/14 e.Info#1/2 >/1
     context[41] = context[9];
@@ -22349,6 +22767,7 @@ static refalrts::FnResult func_PrintCreateElem(refalrts::Iter arg_begin, refalrt
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) s.idx s.idx e.idx
   // </0 & PrintCreateElem/4 (/7 e.Indent#1/5 )/8 (/11 e.Action#1/9 )/12 s.ElemNumber#1/13 s.ElementType#1/14 e.Info#1/2 >/1
@@ -22443,6 +22862,8 @@ namespace /* unnamed */ {
       {"er", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 9, 0, 0},
       {refalrts::icIssueMemory, 8, 0, 0},
       //FAST GEN: s.$
@@ -22463,7 +22884,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'h', 4},
       {refalrts::icReinitChar, 0, 'a', 5},
       {refalrts::icReinitChar, 0, 'r', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // # ElName
       // </0 & AllocatorFuncName/4 # ElName/5 >/1
@@ -22475,7 +22897,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 4},
       {refalrts::icReinitChar, 0, 'm', 5},
       {refalrts::icReinitChar, 0, 'e', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElNumber
       // </0 & AllocatorFuncName/4 # ElNumber/5 >/1
@@ -22490,7 +22913,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'b', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElIdent
       // </0 & AllocatorFuncName/4 # ElIdent/5 >/1
@@ -22505,7 +22929,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenADT
       // </0 & AllocatorFuncName/4 # ElOpenADT/5 >/1
@@ -22520,7 +22945,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElCloseADT
       // </0 & AllocatorFuncName/4 # ElCloseADT/5 >/1
@@ -22535,7 +22961,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 's', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenBracket
       // </0 & AllocatorFuncName/4 # ElOpenBracket/5 >/1
@@ -22550,7 +22977,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElCloseBracket
       // </0 & AllocatorFuncName/4 # ElCloseBracket/5 >/1
@@ -22565,7 +22993,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 's', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenCall
       // </0 & AllocatorFuncName/4 # ElOpenCall/5 >/1
@@ -22580,7 +23009,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # ElCloseCall
       // </0 & AllocatorFuncName/4 # ElCloseCall/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -22594,7 +23024,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 's', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AllocatorFuncName
@@ -22633,7 +23063,6 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // # ElChar
     // </0 & AllocatorFuncName/4 # ElChar/5 >/1
     if( ! refalrts::ident_term(  & ident_ElChar<int>::name, context[5] ) )
@@ -22648,9 +23077,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::reinit_char( context[1], 'r' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElName
     // </0 & AllocatorFuncName/4 # ElName/5 >/1
     if( ! refalrts::ident_term(  & ident_ElName<int>::name, context[5] ) )
@@ -22665,9 +23094,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::reinit_char( context[1], 'e' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElNumber
     // </0 & AllocatorFuncName/4 # ElNumber/5 >/1
     if( ! refalrts::ident_term(  & ident_ElNumber<int>::name, context[5] ) )
@@ -22689,9 +23118,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElIdent
     // </0 & AllocatorFuncName/4 # ElIdent/5 >/1
     if( ! refalrts::ident_term(  & ident_ElIdent<int>::name, context[5] ) )
@@ -22713,9 +23142,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenADT
     // </0 & AllocatorFuncName/4 # ElOpenADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenADT<int>::name, context[5] ) )
@@ -22737,9 +23166,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseADT
     // </0 & AllocatorFuncName/4 # ElCloseADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseADT<int>::name, context[5] ) )
@@ -22761,9 +23190,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenBracket
     // </0 & AllocatorFuncName/4 # ElOpenBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenBracket<int>::name, context[5] ) )
@@ -22785,9 +23214,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseBracket
     // </0 & AllocatorFuncName/4 # ElCloseBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseBracket<int>::name, context[5] ) )
@@ -22809,9 +23238,9 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenCall
     // </0 & AllocatorFuncName/4 # ElOpenCall/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenCall<int>::name, context[5] ) )
@@ -22833,6 +23262,7 @@ static refalrts::FnResult func_AllocatorFuncName(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # ElCloseCall
   // </0 & AllocatorFuncName/4 # ElCloseCall/5 >/1
@@ -22886,6 +23316,8 @@ namespace /* unnamed */ {
       {", ", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 4, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
@@ -22916,7 +23348,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 9, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +11, 0, 0},
       // # ElName e.idx
       // </0 & AllocatorFuncArgument/4 # ElName/5 e.Name#1/2 >/1
@@ -22933,7 +23366,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // # ElNumber s.idx
       // </0 & AllocatorFuncArgument/4 # ElNumber/5 s.Number#1/6 >/1
@@ -22955,7 +23389,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 9, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 7, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // # ElIdent e.idx
       // </0 & AllocatorFuncArgument/4 # ElIdent/5 e.Name#1/2 >/1
@@ -22975,7 +23410,8 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 8, 9, 0},
       {refalrts::icSpliceTile, 0, 1, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & AllocatorFuncArgument/4 s.Other#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
@@ -22984,7 +23420,7 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ ]] }
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_AllocatorFuncArgument
@@ -23022,7 +23458,6 @@ static refalrts::FnResult func_AllocatorFuncArgument(refalrts::Iter arg_begin, r
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // # ElChar s.idx
     // </0 & AllocatorFuncArgument/4 # ElChar/5 s.Char#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElChar<int>::name, context[5] ) )
@@ -23055,9 +23490,9 @@ static refalrts::FnResult func_AllocatorFuncArgument(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElName e.idx
     // </0 & AllocatorFuncArgument/4 # ElName/5 e.Name#1/2 >/1
     if( ! refalrts::ident_term(  & ident_ElName<int>::name, context[5] ) )
@@ -23081,9 +23516,9 @@ static refalrts::FnResult func_AllocatorFuncArgument(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElNumber s.idx
     // </0 & AllocatorFuncArgument/4 # ElNumber/5 s.Number#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElNumber<int>::name, context[5] ) )
@@ -23116,9 +23551,9 @@ static refalrts::FnResult func_AllocatorFuncArgument(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElIdent e.idx
     // </0 & AllocatorFuncArgument/4 # ElIdent/5 e.Name#1/2 >/1
     if( ! refalrts::ident_term(  & ident_ElIdent<int>::name, context[5] ) )
@@ -23146,6 +23581,7 @@ static refalrts::FnResult func_AllocatorFuncArgument(refalrts::Iter arg_begin, r
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // s.idx
   // </0 & AllocatorFuncArgument/4 s.Other#1/5 >/1
@@ -23188,6 +23624,8 @@ namespace /* unnamed */ {
       {"refalrts::ic", 12}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 31, 0, 0},
       // </0 & PrintInterpretCreateElem/4 (/7 e.Indent#1/5 )/8 s.Mode#1/9 s.ElemNumber#1/10 s.ElementType#1/11 e.Info#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -23238,7 +23676,7 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 9, 9, 0},
       {refalrts::icSpliceTile, 12, 15, 0},
       {refalrts::icSpliceTile, 7, 8, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_PrintInterpretCreateElem
@@ -23368,6 +23806,8 @@ namespace /* unnamed */ {
       {"it", 2}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 8, 0, 0},
       //FAST GEN: s.$
@@ -23391,7 +23831,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'o', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # Reinit
       // </0 & CreateMode/4 # Reinit/5 >/1
@@ -23406,7 +23847,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # Update
       // </0 & CreateMode/4 # Update/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -23420,7 +23862,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_CreateMode
@@ -23459,7 +23901,6 @@ static refalrts::FnResult func_CreateMode(refalrts::Iter arg_begin, refalrts::It
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // # Allocate
     // </0 & CreateMode/4 # Allocate/5 >/1
     if( ! refalrts::ident_term(  & ident_Allocate<int>::name, context[5] ) )
@@ -23481,9 +23922,9 @@ static refalrts::FnResult func_CreateMode(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # Reinit
     // </0 & CreateMode/4 # Reinit/5 >/1
     if( ! refalrts::ident_term(  & ident_Reinit<int>::name, context[5] ) )
@@ -23505,6 +23946,7 @@ static refalrts::FnResult func_CreateMode(refalrts::Iter arg_begin, refalrts::It
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # Update
   // </0 & CreateMode/4 # Update/5 >/1
@@ -23560,6 +24002,8 @@ namespace /* unnamed */ {
       {"Int", 3}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 11, 0, 0},
       {refalrts::icIssueMemory, 8, 0, 0},
       //FAST GEN: s.$
@@ -23580,7 +24024,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'h', 4},
       {refalrts::icReinitChar, 0, 'a', 5},
       {refalrts::icReinitChar, 0, 'r', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +7, 0, 0},
       // # ElName
       // </0 & CreateCommandTag/4 # ElName/5 >/1
@@ -23592,7 +24037,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'u', 4},
       {refalrts::icReinitChar, 0, 'n', 5},
       {refalrts::icReinitChar, 0, 'c', 1},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +8, 0, 0},
       // # ElNumber
       // </0 & CreateCommandTag/4 # ElNumber/5 >/1
@@ -23605,7 +24051,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 't', 1},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElHugeNumber
       // </0 & CreateCommandTag/4 # ElHugeNumber/5 >/1
@@ -23620,7 +24067,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'e', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElIdent
       // </0 & CreateCommandTag/4 # ElIdent/5 >/1
@@ -23635,7 +24083,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'n', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 6, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenBracket
       // </0 & CreateCommandTag/4 # ElOpenBracket/5 >/1
@@ -23650,7 +24099,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenADT
       // </0 & CreateCommandTag/4 # ElOpenADT/5 >/1
@@ -23665,7 +24115,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElOpenCall
       // </0 & CreateCommandTag/4 # ElOpenCall/5 >/1
@@ -23680,7 +24131,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElCloseBracket
       // </0 & CreateCommandTag/4 # ElCloseBracket/5 >/1
@@ -23695,7 +24147,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElCloseADT
       // </0 & CreateCommandTag/4 # ElCloseADT/5 >/1
@@ -23710,7 +24163,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # ElCloseCall
       // </0 & CreateCommandTag/4 # ElCloseCall/5 >/1
@@ -23725,7 +24179,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'c', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # ElString
       // </0 & CreateCommandTag/4 # ElString/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -23739,7 +24194,7 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'i', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_CreateCommandTag
@@ -23778,7 +24233,6 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    refalrts::start_sentence();
     // # ElChar
     // </0 & CreateCommandTag/4 # ElChar/5 >/1
     if( ! refalrts::ident_term(  & ident_ElChar<int>::name, context[5] ) )
@@ -23793,9 +24247,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::reinit_char( context[1], 'r' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElName
     // </0 & CreateCommandTag/4 # ElName/5 >/1
     if( ! refalrts::ident_term(  & ident_ElName<int>::name, context[5] ) )
@@ -23810,9 +24264,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::reinit_char( context[1], 'c' );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElNumber
     // </0 & CreateCommandTag/4 # ElNumber/5 >/1
     if( ! refalrts::ident_term(  & ident_ElNumber<int>::name, context[5] ) )
@@ -23831,9 +24285,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElHugeNumber
     // </0 & CreateCommandTag/4 # ElHugeNumber/5 >/1
     if( ! refalrts::ident_term(  & ident_ElHugeNumber<int>::name, context[5] ) )
@@ -23855,9 +24309,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElIdent
     // </0 & CreateCommandTag/4 # ElIdent/5 >/1
     if( ! refalrts::ident_term(  & ident_ElIdent<int>::name, context[5] ) )
@@ -23879,9 +24333,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenBracket
     // </0 & CreateCommandTag/4 # ElOpenBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenBracket<int>::name, context[5] ) )
@@ -23903,9 +24357,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenADT
     // </0 & CreateCommandTag/4 # ElOpenADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenADT<int>::name, context[5] ) )
@@ -23927,9 +24381,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenCall
     // </0 & CreateCommandTag/4 # ElOpenCall/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenCall<int>::name, context[5] ) )
@@ -23951,9 +24405,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseBracket
     // </0 & CreateCommandTag/4 # ElCloseBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseBracket<int>::name, context[5] ) )
@@ -23975,9 +24429,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseADT
     // </0 & CreateCommandTag/4 # ElCloseADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseADT<int>::name, context[5] ) )
@@ -23999,9 +24453,9 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseCall
     // </0 & CreateCommandTag/4 # ElCloseCall/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseCall<int>::name, context[5] ) )
@@ -24023,6 +24477,7 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::Iter arg_begin, refalr
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # ElString
   // </0 & CreateCommandTag/4 # ElString/5 >/1
@@ -24084,6 +24539,8 @@ namespace /* unnamed */ {
       {"lrts::ibOpenBracket", 19}
     };
     static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 11, 0, 0},
       {refalrts::icIssueMemory, 10, 0, 0},
       //FAST GEN: e.$
@@ -24111,7 +24568,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 7, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElName s.idx
       // </0 & CreateCommandInfo/4 # ElName/5 s.NameId#1/6 >/1
@@ -24128,7 +24586,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElNumber s.idx
       // </0 & CreateCommandInfo/4 # ElNumber/5 s.Number#1/6 >/1
@@ -24145,7 +24604,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElHugeNumber s.idx
       // </0 & CreateCommandInfo/4 # ElHugeNumber/5 s.NumberId#1/6 >/1
@@ -24162,7 +24622,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElIdent s.idx
       // </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId#1/6 >/1
@@ -24179,7 +24640,8 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElOpenBracket
       // </0 & CreateCommandInfo/4 # ElOpenBracket/5 >/1
@@ -24196,7 +24658,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElOpenADT
       // </0 & CreateCommandInfo/4 # ElOpenADT/5 >/1
@@ -24213,7 +24676,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElOpenCall
       // </0 & CreateCommandInfo/4 # ElOpenCall/5 >/1
@@ -24230,7 +24694,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElCloseBracket
       // </0 & CreateCommandInfo/4 # ElCloseBracket/5 >/1
@@ -24247,7 +24712,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElCloseADT
       // </0 & CreateCommandInfo/4 # ElCloseADT/5 >/1
@@ -24264,7 +24730,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # ElCloseCall
       // </0 & CreateCommandInfo/4 # ElCloseCall/5 >/1
@@ -24281,7 +24748,8 @@ namespace /* unnamed */ {
       {refalrts::icReinitChar, 0, 'a', 1},
       {refalrts::icSetResRightEdge, 0, 0, 0},
       {refalrts::icSpliceTile, 6, 7, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
       // # ElString s.idx
       // </0 & CreateCommandInfo/4 # ElString/5 s.StringId#1/6 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
@@ -24296,7 +24764,7 @@ namespace /* unnamed */ {
       {refalrts::icPushStack, 0, 0, 4},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icReturnResult_NoTrash, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
   } // namespace scope_CreateCommandInfo
@@ -24334,7 +24802,6 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     return refalrts::cRecognitionImpossible;
   // closed e.idxV#0 as range 2
   do {
-    refalrts::start_sentence();
     // # ElChar s.idx
     // </0 & CreateCommandInfo/4 # ElChar/5 s.Char#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElChar<int>::name, context[5] ) )
@@ -24363,9 +24830,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElName s.idx
     // </0 & CreateCommandInfo/4 # ElName/5 s.NameId#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElName<int>::name, context[5] ) )
@@ -24391,9 +24858,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElNumber s.idx
     // </0 & CreateCommandInfo/4 # ElNumber/5 s.Number#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElNumber<int>::name, context[5] ) )
@@ -24419,9 +24886,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElHugeNumber s.idx
     // </0 & CreateCommandInfo/4 # ElHugeNumber/5 s.NumberId#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElHugeNumber<int>::name, context[5] ) )
@@ -24447,9 +24914,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElIdent s.idx
     // </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId#1/6 >/1
     if( ! refalrts::ident_term(  & ident_ElIdent<int>::name, context[5] ) )
@@ -24475,9 +24942,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenBracket
     // </0 & CreateCommandInfo/4 # ElOpenBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenBracket<int>::name, context[5] ) )
@@ -24503,9 +24970,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenADT
     // </0 & CreateCommandInfo/4 # ElOpenADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenADT<int>::name, context[5] ) )
@@ -24531,9 +24998,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElOpenCall
     // </0 & CreateCommandInfo/4 # ElOpenCall/5 >/1
     if( ! refalrts::ident_term(  & ident_ElOpenCall<int>::name, context[5] ) )
@@ -24559,9 +25026,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseBracket
     // </0 & CreateCommandInfo/4 # ElCloseBracket/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseBracket<int>::name, context[5] ) )
@@ -24587,9 +25054,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseADT
     // </0 & CreateCommandInfo/4 # ElCloseADT/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseADT<int>::name, context[5] ) )
@@ -24615,9 +25082,9 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   do {
-    refalrts::start_sentence();
     // # ElCloseCall
     // </0 & CreateCommandInfo/4 # ElCloseCall/5 >/1
     if( ! refalrts::ident_term(  & ident_ElCloseCall<int>::name, context[5] ) )
@@ -24643,6 +25110,7 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::Iter arg_begin, refal
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
+  refalrts::stop_sentence();
 
   // # ElString s.idx
   // </0 & CreateCommandInfo/4 # ElString/5 s.StringId#1/6 >/1

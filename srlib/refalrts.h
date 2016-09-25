@@ -39,12 +39,14 @@ typedef const char *(*RefalIdentifier) ();
 
 typedef const char * RefalFuncName;
 
+struct RASLCommand;
+
 struct RefalFunction {
-  RefalFunctionPtr ptr;
+  const RASLCommand *raa;
   RefalFuncName name;
 
-  RefalFunction(RefalFunctionPtr ptr, RefalFuncName name)
-    : ptr(ptr), name(name)
+  RefalFunction(const RASLCommand raa[], RefalFuncName name)
+    : raa(raa), name(name)
   {
     /* пусто */
   }
@@ -54,11 +56,15 @@ typedef unsigned long RefalNumber;
 
 
 struct RefalNativeFunction: public RefalFunction {
+  RefalFunctionPtr ptr;
+
   RefalNativeFunction(RefalFunctionPtr ptr, RefalFuncName name)
-    : RefalFunction(ptr, name)
+    : RefalFunction(run, name), ptr(ptr)
   {
     /* пусто */
   }
+
+  static const RASLCommand run[];
 };
 
 struct RefalSwap: public RefalFunction {
@@ -71,7 +77,7 @@ struct RefalSwap: public RefalFunction {
     /* пусто */
   }
 
-  static FnResult run(Iter arg_begin, Iter arg_end);
+  static const RASLCommand run[];
 };
 
 struct RefalEmptyFunction: public RefalFunction {
@@ -81,7 +87,7 @@ struct RefalEmptyFunction: public RefalFunction {
     /* пусто */
   }
 
-  static FnResult run(Iter, Iter);
+  static const RASLCommand run[];
 };
 
 
@@ -100,9 +106,12 @@ struct Node {
 };
 
 enum iCmd {
+  icThisIsGeneratedFunction,
+  icLoadConstants,
   icIssueMemory,
   icReserveBacktrackStack,
   icOnFailGoTo,
+  icProfilerStopSentence,
   icInitB0,
   icInitB0_Lite,
   icCharLeft,
@@ -194,11 +203,14 @@ enum iCmd {
   icSpliceSTVar,
   icSpliceRange,
   icSpliceTile,
-  icReturnResult,
-  icReturnResult_NoTrash,
+  icSpliceToFreeList,
+  icNextStep,
   icTrashLeftEdge,
   icTrash,
   icFail,
+  icPerformSwap,
+  icPerformNative,
+  icPerformCreateClosure,
   icEnd
 };
 
@@ -408,11 +420,12 @@ Iter wrap_closure(Iter closure); // Свернуть замыкание
 extern Iter initialize_swap_head(Iter head);
 extern void swap_info_bounds(Iter& first, Iter& last, Iter head);
 extern void swap_save(Iter head, Iter first, Iter last);
+extern FnResult perform_swap(Iter arg_begin, Iter arg_end);
 
 // Профилирование
 
 extern void this_is_generated_function();
-extern void start_sentence();
+extern void stop_sentence();
 extern void start_e_loop();
 
 enum PerformanceCounters {
@@ -467,7 +480,6 @@ void debug_print_expr(void *file, Iter first, Iter last);
 // Интерпретатор
 
 struct RASLFunction: public RefalFunction {
-  const RASLCommand *raa;
   RefalFunction **functions;
   const RefalIdentifier *idents;
   const RefalNumber *numbers;
@@ -481,8 +493,7 @@ struct RASLFunction: public RefalFunction {
     const RefalNumber numbers[],
     const StringItem strings[]
   )
-    : RefalFunction(run, name)
-    , raa(raa)
+    : RefalFunction(raa, name)
     , functions(functions)
     , idents(idents)
     , numbers(numbers)
@@ -490,8 +501,6 @@ struct RASLFunction: public RefalFunction {
   {
     /* пусто */
   }
-
-  static FnResult run(Iter begin, Iter end);
 };
 
 extern RefalFunction *functions[];

@@ -682,7 +682,7 @@ namespace refalrts {
 namespace profiler {
 
 void start_generated_function();
-void start_sentence();
+void stop_sentence();
 void start_e_loop();
 void start_repeated_evar();
 void start_repeated_tvar();
@@ -1611,10 +1611,14 @@ refalrts::FnResult func_create_closure(
   return refalrts::cSuccess;
 }
 
+const refalrts::RASLCommand rasl_create_closure[] = {
+  { refalrts::icPerformCreateClosure, 0, 0, 0 }
+};
+
 }
 
 refalrts::RefalFunction refalrts::create_closure(
-  func_create_closure, "@create_closure@"
+  rasl_create_closure, "@create_closure@"
 );
 
 /*
@@ -1664,11 +1668,15 @@ refalrts::Iter refalrts::wrap_closure(refalrts::Iter closure) {
 
 //------------------------------------------------------------------------------
 
-refalrts::FnResult refalrts::RefalEmptyFunction::run(
-  refalrts::Iter /* begin */, refalrts::Iter /* end */
-) {
-  return refalrts::cRecognitionImpossible;
-}
+const refalrts::RASLCommand refalrts::RefalNativeFunction::run[] = {
+  { refalrts::icPerformNative, 0, 0, 0 }
+};
+
+//------------------------------------------------------------------------------
+
+const refalrts::RASLCommand refalrts::RefalEmptyFunction::run[] = {
+  { refalrts::icFail, 0, 0, 0 }
+};
 
 //------------------------------------------------------------------------------
 
@@ -1686,7 +1694,7 @@ extern NodePtr g_left_swap_ptr;
 
 refalrts::Iter refalrts::initialize_swap_head(refalrts::Iter head) {
   assert(cDataFunction == head->tag);
-  assert(RefalSwap::run == head->function_info->ptr);
+  assert(RefalSwap::run == head->function_info->raa);
 
   RefalSwap *swap = static_cast<RefalSwap*>(head->function_info);
   splice_elem(vm::g_left_swap_ptr, head);
@@ -1718,15 +1726,14 @@ void refalrts::swap_save(
   list_splice(swap->next_head, first, last);
 }
 
-refalrts::FnResult refalrts::RefalSwap::run(
+refalrts::FnResult refalrts::perform_swap(
   refalrts::Iter arg_begin, refalrts::Iter arg_end
 ) {
-  this_is_generated_function();
   Iter info_b = 0;
   Iter info_e = 0;
   Iter func_name = call_left(info_b, info_e, arg_begin, arg_end);
 
-  assert(RefalSwap::run == func_name->function_info->ptr);
+  assert(RefalSwap::run == func_name->function_info->raa);
   RefalSwap *swap = static_cast<RefalSwap*>(func_name->function_info);
 
   Iter& head = swap->head;
@@ -1745,6 +1752,11 @@ refalrts::FnResult refalrts::RefalSwap::run(
 
   return cSuccess;
 }
+
+const refalrts::RASLCommand refalrts::RefalSwap::run[] = {
+  { refalrts::icThisIsGeneratedFunction, 0, 0, 0 },
+  { refalrts::icPerformSwap, 0, 0, 0 }
+};
 
 //------------------------------------------------------------------------------
 
@@ -1773,8 +1785,8 @@ void refalrts::read_performance_counters(unsigned long counters[]) {
   refalrts::profiler::read_counters(counters);
 }
 
-void refalrts::start_sentence() {
-  profiler::start_sentence();
+void refalrts::stop_sentence() {
+  profiler::stop_sentence();
 }
 
 void refalrts::start_e_loop() {
@@ -2033,7 +2045,7 @@ enum BaseCounter {
 };
 
 void start_generated_function();
-void start_sentence();
+void stop_sentence();
 void start_e_loop();
 void start_repeated_evar();
 void start_repeated_tvar();
@@ -2091,7 +2103,7 @@ void refalrts::profiler::start_generated_function() {
   g_current_state = cInPatternLinear;
 }
 
-void refalrts::profiler::start_sentence() {
+void refalrts::profiler::stop_sentence() {
   clock_t now = clock();
   BaseCounter counter;
 
@@ -2496,10 +2508,8 @@ void push_stack(refalrts::Iter call_bracket);
 refalrts::Iter pop_stack();
 bool empty_stack();
 
-bool init_view_field();
-
 refalrts::FnResult main_loop();
-refalrts::FnResult execute_active(refalrts::Iter begin, refalrts::Iter end);
+refalrts::FnResult rasl_run(RefalFunction *callee, Iter begin, Iter end);
 void make_dump(refalrts::Iter begin, refalrts::Iter end);
 FILE* dump_stream();
 
@@ -2514,10 +2524,7 @@ refalrts::Node g_first_marker =
 refalrts::Node g_last_marker =
   { & g_first_marker, 0, refalrts::cDataIllegal, { '\0' } };
 
-refalrts::Iter g_begin_view_field = & g_last_marker;
-const refalrts::Iter g_end_view_field = & g_last_marker;
-
-refalrts::NodePtr g_left_swap_ptr = g_end_view_field;
+refalrts::NodePtr g_left_swap_ptr = & g_last_marker;
 
 unsigned g_step_counter = 0;
 
@@ -2596,132 +2603,123 @@ bool refalrts::vm::empty_stack() {
 
 extern refalrts::RefalFunction& Go;
 
-bool refalrts::vm::init_view_field() {
-  // refalrts::reset_allocator();
-  refalrts::allocator::reset_allocator();
-  refalrts::Iter res = g_begin_view_field;
-  refalrts::Iter open_call = 0;
-  if (! refalrts::alloc_open_call(open_call)) {
-    return false;
+refalrts::FnResult refalrts::vm::main_loop() {
+  profiler::start_profiler();
+
+  refalrts::Iter active_begin;
+  refalrts::Iter active_end;
+
+  refalrts::reset_allocator();
+  if (! refalrts::alloc_open_call(active_begin)) {
+    return cNoMemory;
   }
   refalrts::Iter go_name = 0;
   if (! refalrts::alloc_name(go_name, & Go)) {
-    return false;
+    return cNoMemory;
   }
-  refalrts::Iter close_call = 0;
-  if (! refalrts::alloc_close_call(close_call)) {
-    return false;
+  if (! refalrts::alloc_close_call(active_end)) {
+    return cNoMemory;
   }
-  refalrts::push_stack(close_call);
-  refalrts::push_stack(open_call);
-  res = refalrts::splice_elem(res, close_call);
-  res = refalrts::splice_elem(res, go_name);
-  res = refalrts::splice_elem(res, open_call);
-  g_begin_view_field = res;
+  active_begin->link_info = active_end;
+  active_end->link_info = 0;
+  refalrts::splice_evar(& g_last_marker, active_begin, active_end);
 
-  return true;
-}
+  refalrts::RefalFunction *callee = &Go;
 
-refalrts::FnResult refalrts::vm::main_loop() {
-  FnResult res = cSuccess;
-  while (! empty_stack()) {
-    refalrts::Iter active_begin = pop_stack();
-    assert(! empty_stack());
-    refalrts::Iter active_end = pop_stack();
-
-    res = execute_active(active_begin, active_end);
-
+  FnResult res;
+  do {
+    res = rasl_run(callee, active_begin, active_end);
+    profiler::stop_function();
     ++ g_step_counter;
 
 #ifdef STEP_LIMIT
-
     if (g_step_counter >= STEP_LIMIT) {
       res = refalrts::cStepLimit;
     }
-
 #endif // ifdef STEP_LIMIT
 
-    if (res != cSuccess) {
-      switch(res) {
-        case refalrts::cRecognitionImpossible:
-          fprintf(stderr, "\nRECOGNITION IMPOSSIBLE\n\n");
-          break;
+    callee = 0;
+    if (res == cSuccess && ! empty_stack()) {
+      active_begin = pop_stack();
+      assert(! empty_stack());
+      active_end = pop_stack();
 
-        case refalrts::cNoMemory:
-          fprintf(stderr, "\nNO MEMORY\n\n");
-          break;
-
-        case refalrts::cExit:
-          return res;
-
-        case refalrts::cStepLimit:
-          fprintf(stderr, "\nSTEP LIMIT REACHED (%u)\n\n", g_step_counter);
-          break;
-
-        default:
-          fprintf(stderr, "\nUNKNOWN ERROR\n\n");
-          break;
+#if SHOW_DEBUG
+      if (g_step_counter >= (unsigned) SHOW_DEBUG) {
+        make_dump(active_begin, active_end);
       }
-      make_dump(active_begin, active_end);
-      return res;
-    }
+#endif // if SHOW_DEBUG
 
-    profiler::stop_function();
+      refalrts::Iter function = next(active_begin);
+      if (cDataFunction == function->tag) {
+        callee = function->function_info;
+      } else if (cDataClosure == function->tag) {
+        refalrts::Iter head = function->link_info;
+
+        if (1 == head->number_info) {
+          /*
+            Пользуемся тем, что при развёртке содержимое замыкания оказывается
+            в поле зрения между головой и (развёрнутым!) узлом замыкания.
+            Во избежание проблем, связанным с помещением развёрнутого замыкания
+            в список свободных блоков, проинициализируем его как голову замыкания.
+          */
+          unwrap_closure(function);
+          function->tag = cDataClosureHead;
+          function->number_info = 73501505; // :-)
+          splice_to_freelist(function, function);
+          splice_to_freelist(head, head);
+          res = cSuccess;
+        } else {
+          refalrts::Iter begin_argument = next(function);
+          refalrts::Iter closure_b = 0;
+          refalrts::Iter closure_e = 0;
+
+          if (! copy_evar(closure_b, closure_e, next(head), prev(head))) {
+            res = cNoMemory;
+          } else {
+            list_splice(begin_argument, closure_b, closure_e);
+            splice_to_freelist(function, function);
+            res = cSuccess;
+          }
+        }
+
+        if (res == cSuccess) {
+          ++ g_step_counter;
+          function = next(active_begin);
+          assert(cDataFunction == function->tag);
+          callee = function->function_info;
+        }
+      } else {
+        res = cRecognitionImpossible;
+      }
+    }
+  } while (res == cSuccess && callee);
+
+  if (res != cSuccess) {
+    switch(res) {
+      case refalrts::cRecognitionImpossible:
+        fprintf(stderr, "\nRECOGNITION IMPOSSIBLE\n\n");
+        break;
+
+      case refalrts::cNoMemory:
+        fprintf(stderr, "\nNO MEMORY\n\n");
+        break;
+
+      case refalrts::cExit:
+        return res;
+
+      case refalrts::cStepLimit:
+        fprintf(stderr, "\nSTEP LIMIT REACHED (%u)\n\n", g_step_counter);
+        break;
+
+      default:
+        fprintf(stderr, "\nUNKNOWN ERROR\n\n");
+        break;
+    }
+    make_dump(active_begin, active_end);
   }
 
   return res;
-}
-
-refalrts::FnResult refalrts::vm::execute_active(
-  refalrts::Iter begin, refalrts::Iter end
-) {
-
-#if SHOW_DEBUG
-
-  if (g_step_counter >= (unsigned) SHOW_DEBUG) {
-    make_dump(begin, end);
-  }
-
-#endif // if SHOW_DEBUG
-
-  refalrts::Iter function = next(begin);
-  if (cDataFunction == function->tag) {
-    return (function->function_info->ptr)(begin, end);
-  } else if (cDataClosure == function->tag) {
-    refalrts::Iter head = function->link_info;
-
-    if (1 == head->number_info) {
-      /*
-        Пользуемся тем, что при развёртке содержимое замыкания оказывается
-        в поле зрения между головой и (развёрнутым!) узлом замыкания.
-        Во избежание проблем, связанным с помещением развёрнутого замыкания
-        в список свободных блоков, проинициализируем его как голову замыкания.
-      */
-      unwrap_closure(function);
-      function->tag = cDataClosureHead;
-      function->number_info = 73501505; // :-)
-      splice_to_freelist(function, function);
-      splice_to_freelist(head, head);
-    } else {
-      refalrts::Iter begin_argument = next(function);
-      refalrts::Iter closure_b = 0;
-      refalrts::Iter closure_e = 0;
-
-      if (! copy_evar(closure_b, closure_e, next(head), prev(head))) {
-        return cNoMemory;
-      }
-
-      list_splice(begin_argument, closure_b, closure_e);
-      splice_to_freelist(function, function);
-    }
-
-    refalrts::vm::push_stack(end);
-    refalrts::vm::push_stack(begin);
-
-    return cSuccess;
-  } else {
-    return cRecognitionImpossible;
-  }
 }
 
 namespace {
@@ -3022,29 +3020,23 @@ void refalrts::vm::free_view_field() {
 // Интерпретатор
 //==============================================================================
 
-refalrts::FnResult refalrts::RASLFunction::run(
-  refalrts::Iter begin, refalrts::Iter end
+refalrts::FnResult refalrts::vm::rasl_run(
+  refalrts::RefalFunction *callee, refalrts::Iter begin, refalrts::Iter end
 ) {
-  this_is_generated_function();
-  Iter info_b = 0;
-  Iter info_e = 0;
-  Iter func_name = call_left(info_b, info_e, begin, end);
+  const RASLCommand *raa;
+  RefalFunction **functions = 0;
+  const RefalIdentifier *idents = 0;
+  const RefalNumber *numbers = 0;
+  const StringItem *strings = 0;
 
-  assert(RASLFunction::run == func_name->function_info->ptr);
-  RASLFunction *descr = static_cast<RASLFunction*>(func_name->function_info);
-
-  const RASLCommand *raa = descr->raa;
-  RefalFunction **functions = descr->functions;
-  const RefalIdentifier *idents = descr->idents;
-  const RefalNumber *numbers = descr->numbers;
-  const StringItem *strings = descr->strings;
+  raa = callee->raa;
 
   vm::Stack<int>& open_e_stack = vm::g_open_e_stack;
   vm::Stack<Iter>& context = vm::g_context;
 
   int i = 0;
-  Iter res = begin;
-  Iter trash_prev = begin->prev;
+  Iter res;
+  Iter trash_prev;
   unsigned int index;
   int stack_top = 0;
 
@@ -3056,7 +3048,6 @@ refalrts::FnResult refalrts::RASLFunction::run(
     continue; \
   }
 
-  start_sentence();
   while (raa[i].cmd != icEnd) {
     // Интерпретация команд
     // Для ряда команд эти переменные могут не иметь смысла
@@ -3071,6 +3062,20 @@ refalrts::FnResult refalrts::RASLFunction::run(
 
     switch(raa[i].cmd)
     {
+      case icThisIsGeneratedFunction:
+        this_is_generated_function();
+        break;
+
+      case icLoadConstants:
+        {
+          RASLFunction *descr = static_cast<RASLFunction*>(callee);
+          functions = descr->functions;
+          idents = descr->idents;
+          numbers = descr->numbers;
+          strings = descr->strings;
+        }
+        break;
+
       case icIssueMemory:
         context.reserve(raa[i].val1);
         break;
@@ -3081,6 +3086,10 @@ refalrts::FnResult refalrts::RASLFunction::run(
 
       case icOnFailGoTo:
         open_e_stack[stack_top++] = i + raa[i].val1 + 1;
+        break;
+
+      case icProfilerStopSentence:
+        stop_sentence();
         break;
 
       case icInitB0:
@@ -3534,13 +3543,16 @@ refalrts::FnResult refalrts::RASLFunction::run(
 
       case icEmptyResult:
         reset_allocator();
+        res = begin;
         break;
 
       case icSetResRightEdge:
+        trash_prev = begin->prev;
         res = end->next;
         break;
 
       case icSetRes:
+        trash_prev = begin->prev;
         res = context[raa[i].bracket];
         break;
 
@@ -3734,7 +3746,7 @@ refalrts::FnResult refalrts::RASLFunction::run(
         break;
 
       case icPushStack:
-        push_stack(elem);
+        ::refalrts::vm::push_stack(elem);
         break;
 
       case icSpliceElem:
@@ -3757,11 +3769,11 @@ refalrts::FnResult refalrts::RASLFunction::run(
         res = splice_evar(res, context[raa[i].val1], context[raa[i].val2]);
         break;
 
-      case icReturnResult:
+      case icSpliceToFreeList:
         splice_to_freelist(begin, end);
-        return cSuccess;
+        break;
 
-      case icReturnResult_NoTrash:
+      case icNextStep:
         return cSuccess;
 
       case icTrashLeftEdge:
@@ -3774,6 +3786,19 @@ refalrts::FnResult refalrts::RASLFunction::run(
 
       case icFail:
         MATCH_FAIL;
+
+      case icPerformSwap:
+        return perform_swap(begin, end);
+
+      case icPerformNative:
+        {
+          RefalNativeFunction *native_callee =
+            static_cast<RefalNativeFunction*>(callee);
+          return (native_callee->ptr)(begin, end);
+        }
+
+      case icPerformCreateClosure:
+        return func_create_closure(begin, end);
 
       default:
         refalrts_switch_default_violation(raa[i].cmd);
@@ -3808,14 +3833,9 @@ int main(int argc, char **argv) {
 
   refalrts::FnResult res;
   try {
-    if (refalrts::vm::init_view_field()) {
-      refalrts::profiler::start_profiler();
-      res = refalrts::vm::main_loop();
-      fflush(stderr);
-      fflush(stdout);
-    } else {
-      res = refalrts::cNoMemory;
-    }
+    res = refalrts::vm::main_loop();
+    fflush(stderr);
+    fflush(stdout);
   } catch (refalrts::SwitchDefaultViolation& error) {
     error.print();
     return 151;
