@@ -42,11 +42,11 @@ typedef const char * RefalFuncName;
 struct RASLCommand;
 
 struct RefalFunction {
-  const RASLCommand *raa;
+  const RASLCommand *rasl;
   RefalFuncName name;
 
-  RefalFunction(const RASLCommand raa[], RefalFuncName name)
-    : raa(raa), name(name)
+  RefalFunction(const RASLCommand rasl[], RefalFuncName name)
+    : rasl(rasl), name(name)
   {
     /* пусто */
   }
@@ -152,6 +152,7 @@ enum iCmd {
   icADTTermSave,
   icCallSaveLeft,
   icEmpty,
+  icNotEmpty,
   icsVarLeft,
   icsVarRight,
   icsVarTerm,
@@ -191,6 +192,8 @@ enum iCmd {
   icReinitHugeInt,
   icReinitIdent,
   icReinitBracket,
+  icReinitClosureHead,
+  icReinitUnwrappedClosure,
   icUpdateChar,
   icUpdateFunc,
   icUpdateInt,
@@ -208,9 +211,11 @@ enum iCmd {
   icTrashLeftEdge,
   icTrash,
   icFail,
-  icPerformSwap,
+  icFetchSwapHead,
+  icFetchSwapInfoBounds,
+  icSwapSave,
   icPerformNative,
-  icPerformCreateClosure,
+  icWrapClosure,
   icEnd
 };
 
@@ -415,13 +420,6 @@ extern RefalFunction create_closure;
 Iter unwrap_closure(Iter closure); // Развернуть замыкание
 Iter wrap_closure(Iter closure); // Свернуть замыкание
 
-// Работа со статическими ящиками
-
-extern Iter initialize_swap_head(Iter head);
-extern void swap_info_bounds(Iter& first, Iter& last, Iter head);
-extern void swap_save(Iter head, Iter first, Iter last);
-extern FnResult perform_swap(Iter arg_begin, Iter arg_end);
-
 // Профилирование
 
 extern void this_is_generated_function();
@@ -487,13 +485,13 @@ struct RASLFunction: public RefalFunction {
 
   RASLFunction(
     RefalFuncName name,
-    const RASLCommand raa[],
+    const RASLCommand rasl[],
     RefalFunction *functions[],
     const RefalIdentifier idents[],
     const RefalNumber numbers[],
     const StringItem strings[]
   )
-    : RefalFunction(raa, name)
+    : RefalFunction(rasl, name)
     , functions(functions)
     , idents(idents)
     , numbers(numbers)

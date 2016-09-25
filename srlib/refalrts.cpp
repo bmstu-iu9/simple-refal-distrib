@@ -1251,33 +1251,6 @@ void link_adjacent(refalrts::Iter left, refalrts::Iter right) {
   }
 }
 
-bool alloc_closure(refalrts::Iter& res) {
-  bool allocated = refalrts::allocator::alloc_node(res);
-  if (allocated) {
-    refalrts::Iter head = 0;
-    allocated = refalrts::allocator::alloc_node(head);
-    if (allocated) {
-      refalrts::Iter prev_head = prev(head);
-      refalrts::Iter next_head = next(head);
-
-      link_adjacent(prev_head, next_head);
-      link_adjacent(head, head);
-
-      res->tag = refalrts::cDataClosure;
-      res->link_info = head;
-
-      head->tag = refalrts::cDataClosureHead;
-      head->number_info = 1;
-
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-}
-
 } // unnamed namespace
 
 bool refalrts::alloc_open_adt(refalrts::Iter& res) {
@@ -1582,37 +1555,17 @@ void refalrts::splice_from_freelist(refalrts::Iter pos) {
 
 namespace {
 
-refalrts::FnResult func_create_closure(
-  refalrts::Iter begin, refalrts::Iter end
-) {
-  refalrts::Iter closure_b = begin;
-  refalrts::Iter closure_e = end;
-
-  refalrts::move_left(closure_b, closure_e); // пропуск <
-  refalrts::move_left(closure_b, closure_e); // пропуск имени функции
-  refalrts::move_right(closure_b, closure_e); // пропуск >
-
-  if (refalrts::empty_seq(closure_b, closure_e)) {
-    return refalrts::cRecognitionImpossible;
-  }
-
-  refalrts::Iter closure = 0;
-
-  if (! alloc_closure(closure)) {
-    return refalrts::cNoMemory;
-  }
-
-  refalrts::Iter head = closure->link_info;
-
-  list_splice(head, closure_b, closure_e);
-  list_splice(begin, closure, closure);
-  refalrts::splice_to_freelist(begin, end);
-
-  return refalrts::cSuccess;
-}
-
 const refalrts::RASLCommand rasl_create_closure[] = {
-  { refalrts::icPerformCreateClosure, 0, 0, 0 }
+  { refalrts::icIssueMemory, 5, 0, 0 },
+  { refalrts::icInitB0_Lite, 0, 0, 0 },
+  { refalrts::icCallSaveLeft, 0, 2, 0 },
+  { refalrts::icNotEmpty, 0, 0, 2 },
+  { refalrts::icReinitClosureHead, 0, 0, 4 },
+  { refalrts::icReinitUnwrappedClosure, 4, 0, 1 },
+  { refalrts::icWrapClosure, 0, 0, 1 },
+  { refalrts::icSetRes, 0, 0, 1 },
+  { refalrts::icTrashLeftEdge, 0, 0, 0 },
+  { refalrts::icNextStep, 0, 0, 0 },
 };
 
 }
@@ -1669,7 +1622,8 @@ refalrts::Iter refalrts::wrap_closure(refalrts::Iter closure) {
 //------------------------------------------------------------------------------
 
 const refalrts::RASLCommand refalrts::RefalNativeFunction::run[] = {
-  { refalrts::icPerformNative, 0, 0, 0 }
+  { refalrts::icPerformNative, 0, 0, 0 },
+  { refalrts::icNextStep, 0, 0, 0 }
 };
 
 //------------------------------------------------------------------------------
@@ -1687,14 +1641,15 @@ namespace refalrts {
 namespace vm {
 
 extern NodePtr g_left_swap_ptr;
+Iter initialize_swap_head(refalrts::Iter head);
 
 } // namespace vm
 
 } // namespace refalrts
 
-refalrts::Iter refalrts::initialize_swap_head(refalrts::Iter head) {
+refalrts::Iter refalrts::vm::initialize_swap_head(refalrts::Iter head) {
   assert(cDataFunction == head->tag);
-  assert(RefalSwap::run == head->function_info->raa);
+  assert(RefalSwap::run == head->function_info->rasl);
 
   RefalSwap *swap = static_cast<RefalSwap*>(head->function_info);
   splice_elem(vm::g_left_swap_ptr, head);
@@ -1705,57 +1660,18 @@ refalrts::Iter refalrts::initialize_swap_head(refalrts::Iter head) {
   return vm::g_left_swap_ptr;
 }
 
-void refalrts::swap_info_bounds(
-  refalrts::Iter& first, refalrts::Iter& last, refalrts::Iter head
-) {
-  assert(cDataSwapHead == head->tag);
-
-  RefalSwap *swap = static_cast<RefalSwap*>(head->function_info);
-  first = head;
-  last = swap->next_head;
-  move_left(first, last);
-  move_right(first, last);
-}
-
-void refalrts::swap_save(
-  refalrts::Iter head, refalrts::Iter first, refalrts::Iter last
-) {
-  assert(cDataSwapHead == head->tag);
-
-  RefalSwap *swap = static_cast<RefalSwap*>(head->function_info);
-  list_splice(swap->next_head, first, last);
-}
-
-refalrts::FnResult refalrts::perform_swap(
-  refalrts::Iter arg_begin, refalrts::Iter arg_end
-) {
-  Iter info_b = 0;
-  Iter info_e = 0;
-  Iter func_name = call_left(info_b, info_e, arg_begin, arg_end);
-
-  assert(RefalSwap::run == func_name->function_info->raa);
-  RefalSwap *swap = static_cast<RefalSwap*>(func_name->function_info);
-
-  Iter& head = swap->head;
-
-  if (! head) {
-    head = initialize_swap_head(func_name);
-  }
-
-  Iter saved_b;
-  Iter saved_e;
-
-  swap_info_bounds(saved_b, saved_e, head);
-  splice_evar(arg_begin, saved_b, saved_e);
-  swap_save(head, info_b, info_e);
-  splice_to_freelist(arg_begin, arg_end);
-
-  return cSuccess;
-}
-
 const refalrts::RASLCommand refalrts::RefalSwap::run[] = {
   { refalrts::icThisIsGeneratedFunction, 0, 0, 0 },
-  { refalrts::icPerformSwap, 0, 0, 0 }
+  { refalrts::icIssueMemory, 8, 0, 0 },
+  { refalrts::icInitB0_Lite, 0, 0, 0 },
+  { refalrts::icCallSaveLeft, 0, 2, 0 },
+  { refalrts::icFetchSwapHead, 5, 0, 4 },
+  { refalrts::icFetchSwapInfoBounds, 5, 6, 0 },
+  { refalrts::icEmptyResult, 0, 0, 0 },
+  { refalrts::icSpliceEVar, 0, 0, 6 },
+  { refalrts::icSwapSave, 5, 0, 2 },
+  { refalrts::icSpliceToFreeList, 0, 0, 0 },
+  { refalrts::icNextStep, 0, 0, 0 }
 };
 
 //------------------------------------------------------------------------------
@@ -2508,8 +2424,8 @@ void push_stack(refalrts::Iter call_bracket);
 refalrts::Iter pop_stack();
 bool empty_stack();
 
+refalrts::FnResult run();
 refalrts::FnResult main_loop();
-refalrts::FnResult rasl_run(RefalFunction *callee, Iter begin, Iter end);
 void make_dump(refalrts::Iter begin, refalrts::Iter end);
 FILE* dump_stream();
 
@@ -2525,6 +2441,9 @@ refalrts::Node g_last_marker =
   { & g_first_marker, 0, refalrts::cDataIllegal, { '\0' } };
 
 refalrts::NodePtr g_left_swap_ptr = & g_last_marker;
+
+Iter g_error_begin = & g_first_marker;
+Iter g_error_end = & g_last_marker;
 
 unsigned g_step_counter = 0;
 
@@ -2579,7 +2498,7 @@ namespace refalrts {
 
 namespace vm {
 
-Stack<int> g_open_e_stack;
+Stack<const RASLCommand*> g_open_e_stack;
 Stack<Iter> g_context;
 
 } // namespace vm
@@ -2603,97 +2522,8 @@ bool refalrts::vm::empty_stack() {
 
 extern refalrts::RefalFunction& Go;
 
-refalrts::FnResult refalrts::vm::main_loop() {
-  profiler::start_profiler();
-
-  refalrts::Iter active_begin;
-  refalrts::Iter active_end;
-
-  refalrts::reset_allocator();
-  if (! refalrts::alloc_open_call(active_begin)) {
-    return cNoMemory;
-  }
-  refalrts::Iter go_name = 0;
-  if (! refalrts::alloc_name(go_name, & Go)) {
-    return cNoMemory;
-  }
-  if (! refalrts::alloc_close_call(active_end)) {
-    return cNoMemory;
-  }
-  active_begin->link_info = active_end;
-  active_end->link_info = 0;
-  refalrts::splice_evar(& g_last_marker, active_begin, active_end);
-
-  refalrts::RefalFunction *callee = &Go;
-
-  FnResult res;
-  do {
-    res = rasl_run(callee, active_begin, active_end);
-    profiler::stop_function();
-    ++ g_step_counter;
-
-#ifdef STEP_LIMIT
-    if (g_step_counter >= STEP_LIMIT) {
-      res = refalrts::cStepLimit;
-    }
-#endif // ifdef STEP_LIMIT
-
-    callee = 0;
-    if (res == cSuccess && ! empty_stack()) {
-      active_begin = pop_stack();
-      assert(! empty_stack());
-      active_end = pop_stack();
-
-#if SHOW_DEBUG
-      if (g_step_counter >= (unsigned) SHOW_DEBUG) {
-        make_dump(active_begin, active_end);
-      }
-#endif // if SHOW_DEBUG
-
-      refalrts::Iter function = next(active_begin);
-      if (cDataFunction == function->tag) {
-        callee = function->function_info;
-      } else if (cDataClosure == function->tag) {
-        refalrts::Iter head = function->link_info;
-
-        if (1 == head->number_info) {
-          /*
-            Пользуемся тем, что при развёртке содержимое замыкания оказывается
-            в поле зрения между головой и (развёрнутым!) узлом замыкания.
-            Во избежание проблем, связанным с помещением развёрнутого замыкания
-            в список свободных блоков, проинициализируем его как голову замыкания.
-          */
-          unwrap_closure(function);
-          function->tag = cDataClosureHead;
-          function->number_info = 73501505; // :-)
-          splice_to_freelist(function, function);
-          splice_to_freelist(head, head);
-          res = cSuccess;
-        } else {
-          refalrts::Iter begin_argument = next(function);
-          refalrts::Iter closure_b = 0;
-          refalrts::Iter closure_e = 0;
-
-          if (! copy_evar(closure_b, closure_e, next(head), prev(head))) {
-            res = cNoMemory;
-          } else {
-            list_splice(begin_argument, closure_b, closure_e);
-            splice_to_freelist(function, function);
-            res = cSuccess;
-          }
-        }
-
-        if (res == cSuccess) {
-          ++ g_step_counter;
-          function = next(active_begin);
-          assert(cDataFunction == function->tag);
-          callee = function->function_info;
-        }
-      } else {
-        res = cRecognitionImpossible;
-      }
-    }
-  } while (res == cSuccess && callee);
+refalrts::FnResult refalrts::vm::run() {
+  FnResult res = main_loop();
 
   if (res != cSuccess) {
     switch(res) {
@@ -2716,7 +2546,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         fprintf(stderr, "\nUNKNOWN ERROR\n\n");
         break;
     }
-    make_dump(active_begin, active_end);
+    make_dump(g_error_begin, g_error_end);
   }
 
   return res;
@@ -3020,21 +2850,35 @@ void refalrts::vm::free_view_field() {
 // Интерпретатор
 //==============================================================================
 
-refalrts::FnResult refalrts::vm::rasl_run(
-  refalrts::RefalFunction *callee, refalrts::Iter begin, refalrts::Iter end
-) {
-  const RASLCommand *raa;
-  RefalFunction **functions = 0;
+refalrts::FnResult refalrts::vm::main_loop() {
+  static const RASLCommand startup_rasl[] = {
+    { icIssueMemory, 3, 0, 0 },
+    { icEmptyResult, 0, 0, 0 },
+    { icAllocBracket, 0, ibOpenCall, 0 },
+    { icAllocFunc, 0, 0, 1 },
+    { icAllocBracket, 0, ibCloseCall, 2 },
+    { icSpliceTile, 0, 2, 0 },
+    { icPushStack, 0, 0, 2 },
+    { icPushStack, 0, 0, 0 },
+    { icNextStep, 0, 0, 0 }
+  };
+
+  static RefalFunction *startup_func[] = {
+    & Go
+  };
+
+  RefalFunction *callee = 0;
+  Iter begin = & g_last_marker; /* нужно для icEmptyResult в startup_rasl */
+  Iter end = 0;
+  const RASLCommand *rasl = startup_rasl;
+  RefalFunction **functions = startup_func;
   const RefalIdentifier *idents = 0;
   const RefalNumber *numbers = 0;
   const StringItem *strings = 0;
 
-  raa = callee->raa;
-
-  vm::Stack<int>& open_e_stack = vm::g_open_e_stack;
+  vm::Stack<const RASLCommand*>& open_e_stack = vm::g_open_e_stack;
   vm::Stack<Iter>& context = vm::g_context;
 
-  int i = 0;
   Iter res;
   Iter trash_prev;
   unsigned int index;
@@ -3044,23 +2888,24 @@ refalrts::FnResult refalrts::vm::rasl_run(
   if (stack_top == 0) { \
     return cRecognitionImpossible; \
   } else { \
-    i = open_e_stack[--stack_top]; \
+    rasl = open_e_stack[--stack_top]; \
     continue; \
   }
 
-  while (raa[i].cmd != icEnd) {
+  while (true) {
     // Интерпретация команд
     // Для ряда команд эти переменные могут не иметь смысла
-    Iter &bb = context[raa[i].bracket];
-    Iter &be = context[raa[i].bracket + 1];
-    Iter &elem = context[raa[i].bracket];
-    Iter &save_pos = context[raa[i].val1];
+    Iter &bb = context[rasl->bracket];
+    Iter &be = context[rasl->bracket + 1];
+    Iter &elem = context[rasl->bracket];
+    Iter &save_pos = context[rasl->val1];
+    Iter &swap_head = save_pos;
 
     // Содержимое скобок
-    Iter &res_b = context[raa[i].val2];
-    Iter &res_e = context[raa[i].val2 + 1];
+    Iter &res_b = context[rasl->val2];
+    Iter &res_e = context[rasl->val2 + 1];
 
-    switch(raa[i].cmd)
+    switch(rasl->cmd)
     {
       case icThisIsGeneratedFunction:
         this_is_generated_function();
@@ -3077,15 +2922,15 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icIssueMemory:
-        context.reserve(raa[i].val1);
+        context.reserve(rasl->val1);
         break;
 
       case icReserveBacktrackStack:
-        open_e_stack.reserve(raa[i].val1);
+        open_e_stack.reserve(rasl->val1);
         break;
 
       case icOnFailGoTo:
-        open_e_stack[stack_top++] = i + raa[i].val1 + 1;
+        open_e_stack[stack_top++] = rasl + rasl->val1 + 1;
         break;
 
       case icProfilerStopSentence:
@@ -3106,57 +2951,57 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icCharLeft:
-        if (! char_left(static_cast<char>(raa[i].val2), bb, be)) {
+        if (! char_left(static_cast<char>(rasl->val2), bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icCharRight:
-        if (! char_right(static_cast<char>(raa[i].val2), bb, be)) {
+        if (! char_right(static_cast<char>(rasl->val2), bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icCharTerm:
-        if (! char_term(static_cast<char>(raa[i].val2), bb)) {
+        if (! char_term(static_cast<char>(rasl->val2), bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icCharLeftSave:
-        save_pos = char_left(static_cast<char>(raa[i].val2), bb, be);
+        save_pos = char_left(static_cast<char>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icCharRightSave:
-        save_pos = char_right(static_cast<char>(raa[i].val2), bb, be);
+        save_pos = char_right(static_cast<char>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icNumLeft:
-        if (! number_left(static_cast<RefalNumber>(raa[i].val2), bb, be)) {
+        if (! number_left(static_cast<RefalNumber>(rasl->val2), bb, be)) {
           MATCH_FAIL;
         }
        break;
 
       case icNumRight:
-        if (! number_right(static_cast<RefalNumber>(raa[i].val2), bb, be)) {
+        if (! number_right(static_cast<RefalNumber>(rasl->val2), bb, be)) {
           MATCH_FAIL;
         }
        break;
 
       case icNumTerm:
-        if (! number_term(static_cast<RefalNumber>(raa[i].val2), bb)) {
+        if (! number_term(static_cast<RefalNumber>(rasl->val2), bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icNumLeftSave:
-        save_pos = number_left(static_cast<RefalNumber>(raa[i].val2), bb, be);
+        save_pos = number_left(static_cast<RefalNumber>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
@@ -3164,103 +3009,103 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icNumRightSave:
         save_pos =
-          number_right(static_cast<RefalNumber>(raa[i].val2), bb, be);
+          number_right(static_cast<RefalNumber>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icHugeNumLeft:
-        if (! number_left(numbers[raa[i].val2], bb, be)) {
+        if (! number_left(numbers[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icHugeNumRight:
-        if (! number_right(numbers[raa[i].val2], bb, be)) {
+        if (! number_right(numbers[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
        break;
 
       case icHugeNumTerm:
-        if (! number_term(numbers[raa[i].val2], bb)) {
+        if (! number_term(numbers[rasl->val2], bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icHugeNumLeftSave:
-        save_pos = number_left(numbers[raa[i].val2], bb, be);
+        save_pos = number_left(numbers[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icHugeNumRightSave:
-        save_pos = number_right(numbers[raa[i].val2], bb, be);
+        save_pos = number_right(numbers[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncLeft:
-        if (! function_left(functions[raa[i].val2], bb, be)) {
+        if (! function_left(functions[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncRight:
-        if (! function_right(functions[raa[i].val2], bb, be)) {
+        if (! function_right(functions[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncTerm:
-        if (! function_term(functions[raa[i].val2], bb)) {
+        if (! function_term(functions[rasl->val2], bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncLeftSave:
-        save_pos = function_left(functions[raa[i].val2], bb, be);
+        save_pos = function_left(functions[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncRightSave:
-        save_pos = function_right(functions[raa[i].val2], bb, be);
+        save_pos = function_right(functions[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icIdentLeft:
-        if (! ident_left(idents[raa[i].val2], bb, be)) {
+        if (! ident_left(idents[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icIdentRight:
-        if (! ident_right(idents[raa[i].val2], bb, be)) {
+        if (! ident_right(idents[rasl->val2], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icIdentTerm:
-        if (! ident_term(idents[raa[i].val2], bb)) {
+        if (! ident_term(idents[rasl->val2], bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icIdentLeftSave:
-        save_pos = ident_left(idents[raa[i].val2], bb, be);
+        save_pos = ident_left(idents[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icIdentRightSave:
-        save_pos = ident_right(idents[raa[i].val2], bb, be);
+        save_pos = ident_right(idents[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
@@ -3286,7 +3131,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icBracketLeftSave:
         {
-          int inner = raa[i].val2;
+          int inner = rasl->val2;
           context[inner + 2] =
             brackets_left(context[inner], context[inner + 1], bb, be);
           if (! context[inner + 2]) {
@@ -3298,7 +3143,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icBracketRightSave:
         {
-          int inner = raa[i].val2;
+          int inner = rasl->val2;
           context[inner + 2] =
             brackets_right(context[inner], context[inner + 1], bb, be);
           if (! context[inner + 2]) {
@@ -3309,27 +3154,27 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icADTLeft:
-        if (! adt_left(res_b, res_e, functions[raa[i].val1], bb, be)) {
+        if (! adt_left(res_b, res_e, functions[rasl->val1], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icADTRight:
-        if (! adt_right(res_b, res_e, functions[raa[i].val1], bb, be)) {
+        if (! adt_right(res_b, res_e, functions[rasl->val1], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icADTTerm:
-        if (! adt_term(res_b, res_e, functions[raa[i].val1], bb)) {
+        if (! adt_term(res_b, res_e, functions[rasl->val1], bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icADTLeftSave:
         {
-          int inner = raa[i].val2;
-          const RefalFunction *tag = functions[raa[i].val1];
+          int inner = rasl->val2;
+          const RefalFunction *tag = functions[rasl->val1];
           context[inner + 2] =
             adt_left(context[inner], context[inner + 1], tag, bb, be);
           if (! context[inner + 2]) {
@@ -3343,8 +3188,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icADTRightSave:
         {
-          int inner = raa[i].val2;
-          const RefalFunction *tag = functions[raa[i].val1];
+          int inner = rasl->val2;
+          const RefalFunction *tag = functions[rasl->val1];
           context[inner + 2] =
             adt_right(context[inner], context[inner + 1], tag, bb, be);
           if (! context[inner + 2]) {
@@ -3358,8 +3203,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icADTTermSave:
         {
-          int inner = raa[i].val2;
-          const RefalFunction *tag = functions[raa[i].val1];
+          int inner = rasl->val2;
+          const RefalFunction *tag = functions[rasl->val1];
           context[inner + 2] =
             adt_term(context[inner], context[inner + 1], tag, bb);
           if (! context[inner + 2]) {
@@ -3369,8 +3214,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icCallSaveLeft:
-        context[raa[i].val2 + 2] =
-          call_left(res_b, context[raa[i].val2 + 1], bb, be);
+        context[rasl->val2 + 2] = call_left(res_b, res_e, bb, be);
         break;
 
       case icEmpty:
@@ -3379,15 +3223,21 @@ refalrts::FnResult refalrts::vm::rasl_run(
         }
         break;
 
+      case icNotEmpty:
+        if (empty_seq(bb, be)) {
+          MATCH_FAIL;
+        }
+        break;
+
       case icsVarLeft:
-        index = raa[i].val2;
+        index = rasl->val2;
         if (! svar_left(context[index], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icsVarRight:
-        index = raa[i].val2;
+        index = rasl->val2;
         if (! svar_right(context[index], bb, be)) {
           MATCH_FAIL;
         }
@@ -3400,21 +3250,21 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case ictVarLeft:
-        index = raa[i].val2;
+        index = rasl->val2;
         if (! tvar_left(context[index], bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case ictVarRight:
-        index = raa[i].val2;
+        index = rasl->val2;
         if (! tvar_right(context[index], bb, be)) {
           MATCH_FAIL;
         }
        break;
 
       case ictVarLeftSave:
-        index = raa[i].val2;
+        index = rasl->val2;
         context[index + 1] = tvar_left(context[index], bb, be);
         if (! context[index + 1]) {
           MATCH_FAIL;
@@ -3422,7 +3272,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case ictVarRightSave:
-        index = raa[i].val2;
+        index = rasl->val2;
         context[index + 1] = tvar_right(context[index], bb, be);
         if (! context[index + 1]) {
           MATCH_FAIL;
@@ -3431,8 +3281,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case iceRepeatLeft:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
           Iter &evar_b = context[index];
           Iter &evar_e = context[index + 1];
           Iter &sample_b = context[sample];
@@ -3447,8 +3297,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case iceRepeatRight:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
           Iter &evar_b = context[index];
           Iter &evar_e = context[index + 1];
           Iter &sample_b = context[sample];
@@ -3464,8 +3314,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
       case icsRepeatLeft:
       case ictRepeatLeft:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
           if (! repeated_stvar_left(context[index], context[sample], bb, be)) {
             MATCH_FAIL;
           }
@@ -3475,8 +3325,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
       case icsRepeatRight:
       case ictRepeatRight:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
           if (! repeated_stvar_right(context[index], context[sample], bb, be)) {
             MATCH_FAIL;
           }
@@ -3485,16 +3335,16 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icsRepeatTerm:
       case ictRepeatTerm:
-        assert(raa[i].bracket == raa[i].val1);
-        if (! repeated_stvar_term(context[raa[i].val2], bb)) {
+        assert(rasl->bracket == rasl->val1);
+        if (! repeated_stvar_term(context[rasl->val2], bb)) {
           MATCH_FAIL;
         }
         break;
 
       case ictRepeatLeftSave:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
 
           context[index + 1] =
             repeated_stvar_left(context[index], context[sample], bb, be);
@@ -3506,8 +3356,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case ictRepeatRightSave:
         {
-          int index = raa[i].val1;
-          int sample = raa[i].val2;
+          int index = rasl->val1;
+          int sample = rasl->val2;
 
           context[index + 1] =
             repeated_stvar_right(context[index], context[sample], bb, be);
@@ -3518,27 +3368,24 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icEPrepare:
-        context[raa[i].val2] = 0;
-        context[raa[i].val2 + 1] = 0;
-        open_e_stack[stack_top++] = ++i;
+        res_b = 0;
+        res_e = 0;
+        open_e_stack[stack_top++] = ++rasl;
         start_e_loop();
         break;
 
       case icEStart:
         {
-          bool advance = open_evar_advance(
-            context[raa[i].val2], context[raa[i].val2 + 1], bb, be
-          );
-          if (! advance) {
+          if (! open_evar_advance(res_b, res_e, bb, be)) {
             MATCH_FAIL;
           }
-          open_e_stack[stack_top++] = i;
+          open_e_stack[stack_top++] = rasl;
         }
         break;
 
       case icSave:
-        context[raa[i].val2] = bb;
-        context[raa[i].val2 + 1] = be;
+        res_b = bb;
+        res_e = be;
         break;
 
       case icEmptyResult:
@@ -3553,13 +3400,13 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icSetRes:
         trash_prev = begin->prev;
-        res = context[raa[i].bracket];
+        res = context[rasl->bracket];
         break;
 
       case icCopyEVar:
         {
-          unsigned int target = raa[i].val1;
-          unsigned int sample = raa[i].val2;
+          unsigned int target = rasl->val1;
+          unsigned int sample = rasl->val2;
           if (
             ! copy_evar(
               context[target], context[target + 1],
@@ -3572,8 +3419,8 @@ refalrts::FnResult refalrts::vm::rasl_run(
 
       case icCopySTVar:
         {
-          unsigned int target = raa[i].val1;
-          unsigned int sample = raa[i].val2;
+          unsigned int target = rasl->val1;
+          unsigned int sample = rasl->val2;
           if (! copy_stvar(context[target], context[sample])) {
             return cNoMemory;
           }
@@ -3581,80 +3428,54 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icReinitSVar:
-        reinit_svar(elem, context[raa[i].val2]);
+        reinit_svar(elem, context[rasl->val2]);
         break;
 
       case icAllocChar:
-        if (! alloc_char(elem, static_cast<char>(raa[i].val2))) {
+        if (! alloc_char(elem, static_cast<char>(rasl->val2))) {
           return cNoMemory;
         }
         break;
 
       case icAllocFunc:
-        if (! alloc_name(elem, functions[raa[i].val2])) {
+        if (! alloc_name(elem, functions[rasl->val2])) {
           return cNoMemory;
         }
         break;
 
       case icAllocInt:
-        if (! alloc_number(elem, static_cast<RefalNumber>(raa[i].val2))) {
+        if (! alloc_number(elem, static_cast<RefalNumber>(rasl->val2))) {
           return cNoMemory;
         }
         break;
 
       case icAllocHugeInt:
-        if (! alloc_number(elem, numbers[raa[i].val2])) {
+        if (! alloc_number(elem, numbers[rasl->val2])) {
           return cNoMemory;
         }
         break;
 
       case icAllocIdent:
-        if (! alloc_ident(elem, idents[raa[i].val2])) {
+        if (! alloc_ident(elem, idents[rasl->val2])) {
           return cNoMemory;
         }
         break;
 
       case icAllocBracket:
-        switch(raa[i].val2)
         {
-          case ibOpenADT:
-            if (! alloc_open_adt(elem)) {
-              return cNoMemory;
-            }
-            break;
+          static bool (*const allocator[])(Iter& res) = {
+            alloc_open_adt,
+            alloc_open_bracket,
+            alloc_open_call,
+            alloc_close_adt,
+            alloc_close_bracket,
+            alloc_close_call
+          };
 
-          case ibOpenBracket:
-            if (! alloc_open_bracket(elem)) {
-              return cNoMemory;
-            }
-            break;
-
-          case ibOpenCall:
-            if (! alloc_open_call(elem)) {
-              return cNoMemory;
-            }
-            break;
-
-          case ibCloseADT:
-            if (! alloc_close_adt(elem)) {
-              return cNoMemory;
-            }
-            break;
-
-          case ibCloseBracket:
-            if (! alloc_close_bracket(elem)) {
-              return cNoMemory;
-            }
-            break;
-
-          case ibCloseCall:
-            if (! alloc_close_call(elem)) {
-              return cNoMemory;
-            }
-            break;
-
-          default:
-            refalrts_switch_default_violation(raa[i].val2);
+          assert(rasl->val2 <= ibCloseCall);
+          if (! allocator[rasl->val2](elem)) {
+            return cNoMemory;
+          }
         }
         break;
 
@@ -3663,7 +3484,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
           if (
             ! alloc_chars(
               bb, be,
-              strings[raa[i].val2].string, strings[raa[i].val2].string_len
+              strings[rasl->val2].string, strings[rasl->val2].string_len
             )
           )
             return cNoMemory;
@@ -3671,78 +3492,72 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icReinitChar:
-        reinit_char(elem, static_cast<char>(raa[i].val2));
+        reinit_char(elem, static_cast<char>(rasl->val2));
         break;
 
       case icReinitFunc:
-        reinit_name(elem, functions[raa[i].val2]);
+        reinit_name(elem, functions[rasl->val2]);
         break;
 
       case icReinitInt:
-        reinit_number(elem, static_cast<RefalNumber>(raa[i].val2));
+        reinit_number(elem, static_cast<RefalNumber>(rasl->val2));
         break;
 
       case icReinitHugeInt:
-        reinit_number(elem, numbers[raa[i].val2]);
+        reinit_number(elem, numbers[rasl->val2]);
         break;
 
       case icReinitIdent:
-        reinit_ident(elem, idents[raa[i].val2]);
+        reinit_ident(elem, idents[rasl->val2]);
         break;
 
       case icReinitBracket:
-        switch (raa[i].val2) {
-          case ibOpenADT:
-            reinit_open_adt(elem);
-            break;
-
-          case ibOpenBracket:
-            reinit_open_bracket(elem);
-            break;
-
-          case ibOpenCall:
-            reinit_open_call(elem);
-            break;
-
-          case ibCloseADT:
-            reinit_close_adt(elem);
-            break;
-
-          case ibCloseBracket:
-            reinit_close_bracket(elem);
-            break;
-
-          case ibCloseCall:
-            reinit_close_call(elem);
-            break;
-
-          default:
-            refalrts_switch_default_violation(raa[i].val2);
+        {
+          static void (*const reiniter[])(Iter res) = {
+            reinit_open_adt,
+            reinit_open_bracket,
+            reinit_open_call,
+            reinit_close_adt,
+            reinit_close_bracket,
+            reinit_close_call
+          };
+          assert(rasl->val2 <= ibCloseCall);
+          reiniter[rasl->val2](elem);
         }
         break;
 
+      case icReinitClosureHead:
+        elem->tag = refalrts::cDataClosureHead;
+        elem->number_info = 1;
+        break;
+
+      case icReinitUnwrappedClosure:
+        elem->tag = cDataUnwrappedClosure;
+        elem->link_info = context[rasl->val1];
+        break;
+
       case icUpdateChar:
-        update_char(elem, static_cast<char>(raa[i].val2));
+        update_char(elem, static_cast<char>(rasl->val2));
         break;
 
       case icUpdateFunc:
-        update_name(elem, functions[raa[i].val2]);
+        update_name(elem, functions[rasl->val2]);
         break;
 
       case icUpdateInt:
-        update_number(elem, static_cast<RefalNumber>(raa[i].val2));
+        update_number(elem, static_cast<RefalNumber>(rasl->val2));
         break;
 
       case icUpdateHugeInt:
-        update_number(elem, numbers[raa[i].val2]);
+        update_number(elem, numbers[rasl->val2]);
         break;
 
       case icUpdateIdent:
-        update_ident(elem, idents[raa[i].val2]);
+        update_ident(elem, idents[rasl->val2]);
         break;
 
       case icLinkBrackets:
-        link_brackets(context[raa[i].val1], context[raa[i].val2]);
+        link_brackets(context[rasl->val1], context[rasl->val2]);
         break;
 
       case icPushStack:
@@ -3766,7 +3581,7 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icSpliceTile:
-        res = splice_evar(res, context[raa[i].val1], context[raa[i].val2]);
+        res = splice_evar(res, context[rasl->val1], context[rasl->val2]);
         break;
 
       case icSpliceToFreeList:
@@ -3774,39 +3589,154 @@ refalrts::FnResult refalrts::vm::rasl_run(
         break;
 
       case icNextStep:
-        return cSuccess;
+        {
+          profiler::stop_function();
+          ++ g_step_counter;
+
+#ifdef STEP_LIMIT
+          if (g_step_counter >= STEP_LIMIT) {
+            return cStepLimit;
+          }
+#endif // ifdef STEP_LIMIT
+
+          if (empty_stack()) {
+            return cSuccess;    // УСПЕШНОЕ ЗАВЕРШЕНИЕ ГЛАВНОГО ЦИКЛА
+          }
+
+          begin = pop_stack();
+          assert(! empty_stack());
+          end = pop_stack();
+
+          g_error_begin = begin;
+          g_error_end = end;
+
+#if SHOW_DEBUG
+          if (g_step_counter >= (unsigned) SHOW_DEBUG) {
+            make_dump(begin, end);
+          }
+#endif // if SHOW_DEBUG
+
+          refalrts::Iter function = next(begin);
+          FnResult res;
+          if (cDataFunction == function->tag) {
+            callee = function->function_info;
+            res = cSuccess;
+          } else if (cDataClosure == function->tag) {
+            refalrts::Iter head = function->link_info;
+
+            if (1 == head->number_info) {
+              /*
+                Пользуемся тем, что при развёртке содержимое замыкания
+                оказывается в поле зрения между головой и (развёрнутым!) узлом
+                замыкания.
+                Во избежание проблем, связанным с помещением развёрнутого
+                замыкания в список свободных блоков, проинициализируем его
+                как голову замыкания.
+              */
+              unwrap_closure(function);
+              function->tag = cDataClosureHead;
+              function->number_info = 73501505; // :-)
+              splice_to_freelist(function, function);
+              splice_to_freelist(head, head);
+              res = cSuccess;
+            } else {
+              refalrts::Iter begin_argument = next(function);
+              refalrts::Iter closure_b = 0;
+              refalrts::Iter closure_e = 0;
+
+              if (! copy_evar(closure_b, closure_e, next(head), prev(head))) {
+                res = cNoMemory;
+              } else {
+                list_splice(begin_argument, closure_b, closure_e);
+                splice_to_freelist(function, function);
+                res = cSuccess;
+              }
+            }
+
+            if (res == cSuccess) {
+              ++ g_step_counter;
+              function = next(begin);
+              assert(cDataFunction == function->tag);
+              callee = function->function_info;
+            }
+          } else {
+            res = cRecognitionImpossible;
+          }
+
+          if (res != cSuccess) {
+            return res;
+          }
+          rasl = callee->rasl;
+          stack_top = 0;
+        }
+        continue;       // избегаем ++rasl в конце цикла
 
       case icTrashLeftEdge:
         splice_to_freelist_open(trash_prev, res);
         break;
 
       case icTrash:
-        splice_to_freelist_open(context[raa[i].bracket], res);
+        splice_to_freelist_open(context[rasl->bracket], res);
         break;
 
       case icFail:
         MATCH_FAIL;
 
-      case icPerformSwap:
-        return perform_swap(begin, end);
+      case icFetchSwapHead:
+        {
+          assert(RefalSwap::run == elem->function_info->rasl);
+          assert(elem->function_info == callee);
+          RefalSwap *swap = static_cast<RefalSwap*>(callee);
+
+          if (! swap->head) {
+            swap->head = initialize_swap_head(elem);
+          }
+          swap_head = swap->head;
+        }
+        break;
+
+      case icFetchSwapInfoBounds:
+        {
+          assert(cDataSwapHead == swap_head->tag);
+
+          RefalSwap *swap = static_cast<RefalSwap*>(swap_head->function_info);
+          res_b = swap_head;
+          res_e = swap->next_head;
+          move_left(res_b, res_e);
+          move_right(res_b, res_e);
+        }
+        break;
+
+      case icSwapSave:
+        {
+          assert(cDataSwapHead == swap_head->tag);
+
+          RefalSwap *swap = static_cast<RefalSwap*>(swap_head->function_info);
+          list_splice(swap->next_head, bb, be);
+        }
+        break;
 
       case icPerformNative:
         {
           RefalNativeFunction *native_callee =
             static_cast<RefalNativeFunction*>(callee);
-          return (native_callee->ptr)(begin, end);
+          FnResult res = (native_callee->ptr)(begin, end);
+          if (res != cSuccess) {
+            return res;
+          }
         }
+        break;
 
-      case icPerformCreateClosure:
-        return func_create_closure(begin, end);
+      case icWrapClosure:
+        wrap_closure(elem);
+        break;
 
+      case icEnd:
       default:
-        refalrts_switch_default_violation(raa[i].cmd);
+        refalrts_switch_default_violation(rasl->cmd);
     }
-    i++;
+    ++rasl;
   }
-
-  return cSuccess;
 }
 
 
@@ -3833,7 +3763,8 @@ int main(int argc, char **argv) {
 
   refalrts::FnResult res;
   try {
-    res = refalrts::vm::main_loop();
+    refalrts::profiler::start_profiler();
+    res = refalrts::vm::run();
     fflush(stderr);
     fflush(stdout);
   } catch (refalrts::SwitchDefaultViolation& error) {
