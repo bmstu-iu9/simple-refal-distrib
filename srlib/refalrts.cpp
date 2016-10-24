@@ -2624,7 +2624,7 @@ void refalrts::vm::print_seq(
             continue;
 
           case refalrts::cDataNumber:
-            fprintf(output, "%ld ", begin->number_info);
+            fprintf(output, "%lu ", begin->number_info);
             refalrts::move_left(begin, end);
             continue;
 
@@ -2879,8 +2879,8 @@ refalrts::FnResult refalrts::vm::main_loop() {
   vm::Stack<const RASLCommand*>& open_e_stack = vm::g_open_e_stack;
   vm::Stack<Iter>& context = vm::g_context;
 
-  Iter res;
-  Iter trash_prev;
+  Iter res = 0;
+  Iter trash_prev = 0;
   unsigned int index;
   int stack_top = 0;
 
