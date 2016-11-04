@@ -2,19 +2,32 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& WriteLine;
-extern refalrts::RefalFunction& Exit;
-extern refalrts::RefalFunction& StrFromInt;
-extern refalrts::RefalFunction& ErrorAt;
-extern refalrts::RefalFunction& WarningAt;
+extern refalrts::RefalFunction& WriteLine_0_0;
+#define WriteLine_alias WriteLine_0_0
+#define WriteLine_str "WriteLine#0:0"
+
+extern refalrts::RefalFunction& Exit_0_0;
+#define Exit_alias Exit_0_0
+#define Exit_str "Exit#0:0"
+
+extern refalrts::RefalFunction& StrFromInt_0_0;
+#define StrFromInt_alias StrFromInt_0_0
+#define StrFromInt_str "StrFromInt#0:0"
+
+extern refalrts::RefalFunction& ErrorAt_0_0;
+#define ErrorAt_alias ErrorAt_0_0
+
+extern refalrts::RefalFunction& WarningAt_0_0;
+#define WarningAt_alias WarningAt_0_0
+
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ErrorAt {
     static refalrts::RefalFunction *functions[] = {
-      & StrFromInt,
-      & WriteLine,
-      & Exit
+      & StrFromInt_alias,
+      & WriteLine_alias,
+      & Exit_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -62,19 +75,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ErrorAt
+  } // namespace scope_ErrorAt_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_ErrorAt(
-  "ErrorAt",
+static refalrts::RASLFunction descr_ErrorAt(
+  "ErrorAt#0:0",
   scope_ErrorAt::raa,
   scope_ErrorAt::functions,
   scope_ErrorAt::idents,
   scope_ErrorAt::numbers,
   scope_ErrorAt::strings
 );
-refalrts::RefalFunction& ErrorAt = descr_ErrorAt;
+refalrts::RefalFunction& ErrorAt_0_0 = descr_ErrorAt;
 
 #else
 static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -112,14 +125,14 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & Exit ) )
+  if( ! refalrts::alloc_name( context[16], & Exit_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[17], 1UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine );
-  refalrts::reinit_name( context[7], & StrFromInt );
+  refalrts::update_name( context[4], & WriteLine_alias );
+  refalrts::reinit_name( context[7], & StrFromInt_alias );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::push_stack( context[18] );
   refalrts::push_stack( context[15] );
@@ -140,16 +153,16 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, "ErrorAt");
-refalrts::RefalFunction& ErrorAt = descr_ErrorAt;
+static refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, "ErrorAt#0:0");
+refalrts::RefalFunction& ErrorAt_0_0 = descr_ErrorAt;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WarningAt {
     static refalrts::RefalFunction *functions[] = {
-      & StrFromInt,
-      & WriteLine
+      & StrFromInt_alias,
+      & WriteLine_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -189,19 +202,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_WarningAt
+  } // namespace scope_WarningAt_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_WarningAt(
-  "WarningAt",
+static refalrts::RASLFunction descr_WarningAt(
+  "WarningAt#0:0",
   scope_WarningAt::raa,
   scope_WarningAt::functions,
   scope_WarningAt::idents,
   scope_WarningAt::numbers,
   scope_WarningAt::strings
 );
-refalrts::RefalFunction& WarningAt = descr_WarningAt;
+refalrts::RefalFunction& WarningAt_0_0 = descr_WarningAt;
 
 #else
 static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -237,8 +250,8 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[13], context[14], ":WARNING:", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine );
-  refalrts::reinit_name( context[7], & StrFromInt );
+  refalrts::update_name( context[4], & WriteLine_alias );
+  refalrts::reinit_name( context[7], & StrFromInt_alias );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -255,8 +268,8 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, "WarningAt");
-refalrts::RefalFunction& WarningAt = descr_WarningAt;
+static refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, "WarningAt#0:0");
+refalrts::RefalFunction& WarningAt_0_0 = descr_WarningAt;
 
 #endif
 

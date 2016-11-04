@@ -146,40 +146,65 @@ struct ident_Swap {
   }
 };
 
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
-extern refalrts::RefalFunction& HighLevelRASL_Function_Conjoint;
-extern refalrts::RefalFunction& GenInitSubst_Simple;
-extern refalrts::RefalFunction& GenSubst_Simple;
-extern refalrts::RefalFunction& GenResult_Simple;
-extern refalrts::RefalFunction& GenInitSubst_Save;
-extern refalrts::RefalFunction& GenSubst_Save;
-extern refalrts::RefalFunction& GenResult_Opt;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_HighLevelRASL_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-extern refalrts::RefalFunction& HighLevelRASL;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& HighLevelRASL_Function;
-} // unnamed namespace
+extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint_0_0;
+#define HighLevelRASL_Function_Disjoint_alias HighLevelRASL_Function_Disjoint_0_0
+#define HighLevelRASL_Function_Disjoint_str "HighLevelRASL-Function-Disjoint#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenSentenceFunc;
-} // unnamed namespace
+extern refalrts::RefalFunction& HighLevelRASL_Function_Conjoint_0_0;
+#define HighLevelRASL_Function_Conjoint_alias HighLevelRASL_Function_Conjoint_0_0
+#define HighLevelRASL_Function_Conjoint_str "HighLevelRASL-Function-Conjoint#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenResultFuncs;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenInitSubst_Simple_0_0;
+#define GenInitSubst_Simple_alias GenInitSubst_Simple_0_0
+#define GenInitSubst_Simple_str "GenInitSubst-Simple#0:0"
+
+extern refalrts::RefalFunction& GenSubst_Simple_0_0;
+#define GenSubst_Simple_alias GenSubst_Simple_0_0
+#define GenSubst_Simple_str "GenSubst-Simple#0:0"
+
+extern refalrts::RefalFunction& GenResult_Simple_0_0;
+#define GenResult_Simple_alias GenResult_Simple_0_0
+#define GenResult_Simple_str "GenResult-Simple#0:0"
+
+extern refalrts::RefalFunction& GenInitSubst_Save_0_0;
+#define GenInitSubst_Save_alias GenInitSubst_Save_0_0
+#define GenInitSubst_Save_str "GenInitSubst-Save#0:0"
+
+extern refalrts::RefalFunction& GenSubst_Save_0_0;
+#define GenSubst_Save_alias GenSubst_Save_0_0
+#define GenSubst_Save_str "GenSubst-Save#0:0"
+
+extern refalrts::RefalFunction& GenResult_Opt_0_0;
+#define GenResult_Opt_alias GenResult_Opt_0_0
+#define GenResult_Opt_str "GenResult-Opt#0:0"
+
+extern refalrts::RefalFunction& gen_HighLevelRASL_L1_656936134_33269278;
+#define gen_HighLevelRASL_L1_alias gen_HighLevelRASL_L1_656936134_33269278
+
+extern refalrts::RefalFunction& HighLevelRASL_0_0;
+#define HighLevelRASL_alias HighLevelRASL_0_0
+
+extern refalrts::RefalFunction& HighLevelRASL_Function_656936134_33269278;
+#define HighLevelRASL_Function_alias HighLevelRASL_Function_656936134_33269278
+
+extern refalrts::RefalFunction& GenSentenceFunc_656936134_33269278;
+#define GenSentenceFunc_alias GenSentenceFunc_656936134_33269278
+
+extern refalrts::RefalFunction& GenResultFuncs_656936134_33269278;
+#define GenResultFuncs_alias GenResultFuncs_656936134_33269278
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & GenSentenceFunc,
-      & GenResultFuncs,
-      & HighLevelRASL_Function
+      & GenSentenceFunc_alias,
+      & GenResultFuncs_alias,
+      & HighLevelRASL_Function_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdEmitNativeCode<int>::name,
@@ -359,22 +384,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_HighLevelRASL_L1
+  } // namespace scope_gen_HighLevelRASL_L1_656936134_33269278
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_HighLevelRASL_L1(
-  "HighLevelRASL\\1",
+static refalrts::RASLFunction descr_gen_HighLevelRASL_L1(
+  "HighLevelRASL\\1#656936134:33269278",
   scope_gen_HighLevelRASL_L1::raa,
   scope_gen_HighLevelRASL_L1::functions,
   scope_gen_HighLevelRASL_L1::idents,
   scope_gen_HighLevelRASL_L1::numbers,
   scope_gen_HighLevelRASL_L1::strings
 );
-refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_HighLevelRASL_L1_656936134_33269278 = descr_gen_HighLevelRASL_L1;
 
 #else
 static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -431,11 +453,11 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     //RESULT: Tile{ [[ } </18 & HighLevelRASL-Function/19 Tile{ AsIs: </0 Reuse: & GenSentenceFunc/4 AsIs: s.Joint#1/9 } Tile{ HalfReuse: >/8 } Tile{ HalfReuse: </17 } & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 } Tile{ AsIs: e.Sentences#2/21(5) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[19], & HighLevelRASL_Function ) )
+    if( ! refalrts::alloc_name( context[19], & HighLevelRASL_Function_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], & GenResultFuncs ) )
+    if( ! refalrts::alloc_name( context[20], & GenResultFuncs_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & GenSentenceFunc );
+    refalrts::update_name( context[4], & GenSentenceFunc_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_open_call( context[17] );
     refalrts::reinit_svar( context[7], context[10] );
@@ -627,20 +649,17 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1");
-refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, "HighLevelRASL\\1#656936134:33269278");
+refalrts::RefalFunction& gen_HighLevelRASL_L1_656936134_33269278 = descr_gen_HighLevelRASL_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL {
     static refalrts::RefalFunction *functions[] = {
-      & gen_HighLevelRASL_L1,
+      & gen_HighLevelRASL_L1_alias,
       & refalrts::create_closure,
-      & Map
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -676,19 +695,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_HighLevelRASL
+  } // namespace scope_HighLevelRASL_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_HighLevelRASL(
-  "HighLevelRASL",
+static refalrts::RASLFunction descr_HighLevelRASL(
+  "HighLevelRASL#0:0",
   scope_HighLevelRASL::raa,
   scope_HighLevelRASL::functions,
   scope_HighLevelRASL::idents,
   scope_HighLevelRASL::numbers,
   scope_HighLevelRASL::strings
 );
-refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
+refalrts::RefalFunction& HighLevelRASL_0_0 = descr_HighLevelRASL;
 
 #else
 static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -713,14 +732,14 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } </7 & Map/8 </9 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL\1/4 AsIs: s.Joint#1/5 AsIs: s.OptResult#1/6 } >/10 Tile{ AsIs: e.ProgramElements#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & Map ) )
+  if( ! refalrts::alloc_name( context[8], & Map_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_HighLevelRASL_L1 );
+  refalrts::update_name( context[4], & gen_HighLevelRASL_L1_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[10] );
@@ -736,15 +755,15 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_HighLevelRASL(func_HighLevelRASL, "HighLevelRASL");
-refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
+static refalrts::RefalNativeFunction descr_HighLevelRASL(func_HighLevelRASL, "HighLevelRASL#0:0");
+refalrts::RefalFunction& HighLevelRASL_0_0 = descr_HighLevelRASL;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL_Function {
     static refalrts::RefalFunction *functions[] = {
-      & HighLevelRASL_Function_Disjoint
+      & HighLevelRASL_Function_Disjoint_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdEnum<int>::name
@@ -821,22 +840,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_HighLevelRASL_Function
+  } // namespace scope_HighLevelRASL_Function_656936134_33269278
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_HighLevelRASL_Function(
-  "HighLevelRASL-Function",
+static refalrts::RASLFunction descr_HighLevelRASL_Function(
+  "HighLevelRASL-Function#656936134:33269278",
   scope_HighLevelRASL_Function::raa,
   scope_HighLevelRASL_Function::functions,
   scope_HighLevelRASL_Function::idents,
   scope_HighLevelRASL_Function::numbers,
   scope_HighLevelRASL_Function::strings
 );
-refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
-
-} // unnamed namespace
+refalrts::RefalFunction& HighLevelRASL_Function_656936134_33269278 = descr_HighLevelRASL_Function;
 
 #else
 static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -911,7 +927,7 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL-Function-Disjoint/4 } Tile{ AsIs: s.FnGenInitSubst#1/6 AsIs: s.FnGenSubst#1/7 AsIs: s.FnGenResult#1/8 AsIs: s.ScopeClass#1/9 AsIs: (/12 AsIs: e.Name#1/10 AsIs: )/13 AsIs: t.OneSentence#1/14 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & HighLevelRASL_Function_Disjoint );
+    refalrts::update_name( context[4], & HighLevelRASL_Function_Disjoint_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[12], context[13] );
@@ -944,19 +960,16 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function");
-refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, "HighLevelRASL-Function#656936134:33269278");
+refalrts::RefalFunction& HighLevelRASL_Function_656936134_33269278 = descr_HighLevelRASL_Function;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenSentenceFunc {
     static refalrts::RefalFunction *functions[] = {
-      & HighLevelRASL_Function_Disjoint,
-      & HighLevelRASL_Function_Conjoint
+      & HighLevelRASL_Function_Disjoint_alias,
+      & HighLevelRASL_Function_Conjoint_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Disjoint<int>::name,
@@ -1000,22 +1013,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenSentenceFunc
+  } // namespace scope_GenSentenceFunc_656936134_33269278
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenSentenceFunc(
-  "GenSentenceFunc",
+static refalrts::RASLFunction descr_GenSentenceFunc(
+  "GenSentenceFunc#656936134:33269278",
   scope_GenSentenceFunc::raa,
   scope_GenSentenceFunc::functions,
   scope_GenSentenceFunc::idents,
   scope_GenSentenceFunc::numbers,
   scope_GenSentenceFunc::strings
 );
-refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenSentenceFunc_656936134_33269278 = descr_GenSentenceFunc;
 
 #else
 static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1044,7 +1054,7 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenSentenceFunc/4 # Conjoint/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL-Function-Conjoint/1 ]] }
-    refalrts::reinit_name( context[1], & HighLevelRASL_Function_Conjoint );
+    refalrts::reinit_name( context[1], & HighLevelRASL_Function_Conjoint_alias );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1062,7 +1072,7 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenSentenceFunc/4 # Disjoint/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: & HighLevelRASL-Function-Disjoint/1 ]] }
-  refalrts::reinit_name( context[1], & HighLevelRASL_Function_Disjoint );
+  refalrts::reinit_name( context[1], & HighLevelRASL_Function_Disjoint_alias );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -1071,23 +1081,20 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc");
-refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenSentenceFunc(func_GenSentenceFunc, "GenSentenceFunc#656936134:33269278");
+refalrts::RefalFunction& GenSentenceFunc_656936134_33269278 = descr_GenSentenceFunc;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenResultFuncs {
     static refalrts::RefalFunction *functions[] = {
-      & GenResult_Opt,
-      & GenSubst_Save,
-      & GenInitSubst_Save,
-      & GenResult_Simple,
-      & GenSubst_Simple,
-      & GenInitSubst_Simple
+      & GenResult_Opt_alias,
+      & GenSubst_Save_alias,
+      & GenInitSubst_Save_alias,
+      & GenResult_Simple_alias,
+      & GenSubst_Simple_alias,
+      & GenInitSubst_Simple_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_OptResult<int>::name,
@@ -1135,22 +1142,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenResultFuncs
+  } // namespace scope_GenResultFuncs_656936134_33269278
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenResultFuncs(
-  "GenResultFuncs",
+static refalrts::RASLFunction descr_GenResultFuncs(
+  "GenResultFuncs#656936134:33269278",
   scope_GenResultFuncs::raa,
   scope_GenResultFuncs::functions,
   scope_GenResultFuncs::idents,
   scope_GenResultFuncs::numbers,
   scope_GenResultFuncs::strings
 );
-refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenResultFuncs_656936134_33269278 = descr_GenResultFuncs;
 
 #else
 static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1179,9 +1183,9 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst-Simple/4 HalfReuse: & GenSubst-Simple/5 HalfReuse: & GenResult-Simple/1 ]] }
-    refalrts::update_name( context[4], & GenInitSubst_Simple );
-    refalrts::reinit_name( context[5], & GenSubst_Simple );
-    refalrts::reinit_name( context[1], & GenResult_Simple );
+    refalrts::update_name( context[4], & GenInitSubst_Simple_alias );
+    refalrts::reinit_name( context[5], & GenSubst_Simple_alias );
+    refalrts::reinit_name( context[1], & GenResult_Simple_alias );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[4];
@@ -1199,9 +1203,9 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ Reuse: & GenInitSubst-Save/4 HalfReuse: & GenSubst-Save/5 HalfReuse: & GenResult-Opt/1 ]] }
-  refalrts::update_name( context[4], & GenInitSubst_Save );
-  refalrts::reinit_name( context[5], & GenSubst_Save );
-  refalrts::reinit_name( context[1], & GenResult_Opt );
+  refalrts::update_name( context[4], & GenInitSubst_Save_alias );
+  refalrts::reinit_name( context[5], & GenSubst_Save_alias );
+  refalrts::reinit_name( context[1], & GenResult_Opt_alias );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[4];
@@ -1210,11 +1214,8 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenResultFuncs(func_GenResultFuncs, "GenResultFuncs");
-refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenResultFuncs(func_GenResultFuncs, "GenResultFuncs#656936134:33269278");
+refalrts::RefalFunction& GenResultFuncs_656936134_33269278 = descr_GenResultFuncs;
 
 #endif
 

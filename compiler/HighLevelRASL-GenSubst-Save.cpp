@@ -330,20 +330,37 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction& Inc;
-extern refalrts::RefalFunction& Add;
-extern refalrts::RefalFunction& Inc2;
-extern refalrts::RefalFunction& PrintVar;
-extern refalrts::RefalFunction& TextFromExpr;
-extern refalrts::RefalFunction& GenInitSubst_Save;
-extern refalrts::RefalFunction& GenSubst_Save;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoGenSubst;
-} // unnamed namespace
+extern refalrts::RefalFunction& Inc_0_0;
+#define Inc_alias Inc_0_0
+#define Inc_str "Inc#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& IncVarOffset_Saved;
-} // unnamed namespace
+extern refalrts::RefalFunction& Add_0_0;
+#define Add_alias Add_0_0
+#define Add_str "Add#0:0"
+
+extern refalrts::RefalFunction& Inc2_0_0;
+#define Inc2_alias Inc2_0_0
+#define Inc2_str "Inc2#0:0"
+
+extern refalrts::RefalFunction& PrintVar_0_0;
+#define PrintVar_alias PrintVar_0_0
+#define PrintVar_str "PrintVar#0:0"
+
+extern refalrts::RefalFunction& TextFromExpr_0_0;
+#define TextFromExpr_alias TextFromExpr_0_0
+#define TextFromExpr_str "TextFromExpr#0:0"
+
+extern refalrts::RefalFunction& GenInitSubst_Save_0_0;
+#define GenInitSubst_Save_alias GenInitSubst_Save_0_0
+
+extern refalrts::RefalFunction& GenSubst_Save_0_0;
+#define GenSubst_Save_alias GenSubst_Save_0_0
+
+extern refalrts::RefalFunction& DoGenSubst_1248691929_3513581870;
+#define DoGenSubst_alias DoGenSubst_1248691929_3513581870
+
+extern refalrts::RefalFunction& IncVarOffset_Saved_1248691929_3513581870;
+#define IncVarOffset_Saved_alias IncVarOffset_Saved_1248691929_3513581870
 
 
 #ifdef INTERPRET
@@ -415,19 +432,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenInitSubst_Save
+  } // namespace scope_GenInitSubst_Save_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GenInitSubst_Save(
-  "GenInitSubst-Save",
+static refalrts::RASLFunction descr_GenInitSubst_Save(
+  "GenInitSubst-Save#0:0",
   scope_GenInitSubst_Save::raa,
   scope_GenInitSubst_Save::functions,
   scope_GenInitSubst_Save::idents,
   scope_GenInitSubst_Save::numbers,
   scope_GenInitSubst_Save::strings
 );
-refalrts::RefalFunction& GenInitSubst_Save = descr_GenInitSubst_Save;
+refalrts::RefalFunction& GenInitSubst_Save_0_0 = descr_GenInitSubst_Save;
 
 #else
 static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -518,15 +535,15 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GenInitSubst_Save(func_GenInitSubst_Save, "GenInitSubst-Save");
-refalrts::RefalFunction& GenInitSubst_Save = descr_GenInitSubst_Save;
+static refalrts::RefalNativeFunction descr_GenInitSubst_Save(func_GenInitSubst_Save, "GenInitSubst-Save#0:0");
+refalrts::RefalFunction& GenInitSubst_Save_0_0 = descr_GenInitSubst_Save;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenSubst_Save {
     static refalrts::RefalFunction *functions[] = {
-      & DoGenSubst
+      & DoGenSubst_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -558,19 +575,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenSubst_Save
+  } // namespace scope_GenSubst_Save_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GenSubst_Save(
-  "GenSubst-Save",
+static refalrts::RASLFunction descr_GenSubst_Save(
+  "GenSubst-Save#0:0",
   scope_GenSubst_Save::raa,
   scope_GenSubst_Save::functions,
   scope_GenSubst_Save::idents,
   scope_GenSubst_Save::numbers,
   scope_GenSubst_Save::strings
 );
-refalrts::RefalFunction& GenSubst_Save = descr_GenSubst_Save;
+refalrts::RefalFunction& GenSubst_Save_0_0 = descr_GenSubst_Save;
 
 #else
 static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -602,7 +619,7 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoGenSubst );
+  refalrts::update_name( context[4], & DoGenSubst_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[11], context[8] );
@@ -616,20 +633,20 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GenSubst_Save(func_GenSubst_Save, "GenSubst-Save");
-refalrts::RefalFunction& GenSubst_Save = descr_GenSubst_Save;
+static refalrts::RefalNativeFunction descr_GenSubst_Save(func_GenSubst_Save, "GenSubst-Save#0:0");
+refalrts::RefalFunction& GenSubst_Save_0_0 = descr_GenSubst_Save;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoGenSubst {
     static refalrts::RefalFunction *functions[] = {
-      & TextFromExpr,
-      & Inc2,
-      & Inc,
-      & PrintVar,
-      & IncVarOffset_Saved,
-      & Add
+      & TextFromExpr_alias,
+      & Inc2_alias,
+      & Inc_alias,
+      & PrintVar_alias,
+      & IncVarOffset_Saved_alias,
+      & Add_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdComment<int>::name,
@@ -3250,22 +3267,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoGenSubst
+  } // namespace scope_DoGenSubst_1248691929_3513581870
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoGenSubst(
-  "DoGenSubst",
+static refalrts::RASLFunction descr_DoGenSubst(
+  "DoGenSubst#1248691929:3513581870",
   scope_DoGenSubst::raa,
   scope_DoGenSubst::functions,
   scope_DoGenSubst::idents,
   scope_DoGenSubst::numbers,
   scope_DoGenSubst::strings
 );
-refalrts::RefalFunction& DoGenSubst = descr_DoGenSubst;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoGenSubst_1248691929_3513581870 = descr_DoGenSubst;
 
 #else
 static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3733,7 +3747,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc2/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkOpenBracket/23 HalfReuse: s.Num1 #36/25 } )/40 )/41 Tile{ AsIs: (/33 Reuse: # E/35 } s.ContextOffset#1/13/42 Tile{ AsIs: e.SubRange#1/31 } )/43 (/44 # Junk/45 (/46 # TkCloseBracket/47 </48 Tile{ HalfReuse: & Inc/34 HalfReuse: s.Num1 #36/24 HalfReuse: >/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgTerm/49 Tile{ AsIs: s.Num#1/36 } s.ContextOffset#1/13/50 )/51 )/52 >/53 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[38], & Inc2 ) )
+      if( ! refalrts::alloc_name( context[38], & Inc2_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[39] ) )
         return refalrts::cNoMemory;
@@ -3769,7 +3783,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       refalrts::reinit_ident( context[23], & ident_TkOpenBracket<int>::name );
       refalrts::reinit_svar( context[25], context[36] );
       refalrts::update_ident( context[35], & ident_E<int>::name );
-      refalrts::reinit_name( context[34], & Inc );
+      refalrts::reinit_name( context[34], & Inc_alias );
       refalrts::reinit_svar( context[24], context[36] );
       refalrts::reinit_close_call( context[28] );
       refalrts::reinit_close_bracket( context[30] );
@@ -3882,13 +3896,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </41 & Add/42 Tile{ AsIs: s.ContextOffset#1/13 } 3/43 >/44 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ AsIs: (/23 Reuse: # TkOpenADT/25 AsIs: s.Num#1/40 HalfReuse: )/33 HalfReuse: (/35 HalfReuse: # TkName/38 AsIs: e.Name#1/36 HalfReuse: </39 } & Add/45 s.ContextOffset#1/13/46 2/47 >/48 Tile{ AsIs: )/19 } )/49 (/50 # E/51 s.ContextOffset#1/13/52 Tile{ AsIs: e.SubRange#1/31 } )/53 (/54 # Junk/55 (/56 # TkCloseADT/57 </58 Tile{ HalfReuse: & Inc/34 HalfReuse: s.Num1 #40/24 HalfReuse: >/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADTSave/1 } # AlgTerm/59 s.Num#1/40/60 s.ContextOffset#1/13/61 e.Name#1/36/62 )/64 )/65 >/66 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[41] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[42], & Add ) )
+      if( ! refalrts::alloc_name( context[42], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_number( context[43], 3UL ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[44] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[45], & Add ) )
+      if( ! refalrts::alloc_name( context[45], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[46], context[13]))
         return refalrts::cNoMemory;
@@ -3935,7 +3949,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       refalrts::reinit_open_bracket( context[35] );
       refalrts::reinit_ident( context[38], & ident_TkName<int>::name );
       refalrts::reinit_open_call( context[39] );
-      refalrts::reinit_name( context[34], & Inc );
+      refalrts::reinit_name( context[34], & Inc_alias );
       refalrts::reinit_svar( context[24], context[40] );
       refalrts::reinit_close_call( context[28] );
       refalrts::reinit_close_bracket( context[30] );
@@ -5005,7 +5019,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkChar/23 HalfReuse: s.Char1 #32/25 } s.ContextOffset#1/13/36 )/37 )/38 Tile{ AsIs: (/29 Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdCharSave/1 } # AlgLeft/39 Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/40 Tile{ AsIs: s.Char#1/32 } )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -5119,7 +5133,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkNumber/23 HalfReuse: s.Number1 #32/25 } s.ContextOffset#1/13/36 )/37 )/38 Tile{ AsIs: (/29 Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumberSave/1 } # AlgLeft/39 Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/40 Tile{ AsIs: s.Number#1/32 } )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -5230,7 +5244,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkName/23 } Tile{ AsIs: e.Name#1/27 } s.ContextOffset#1/13/35 )/36 )/37 (/38 Tile{ Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNameSave/1 } Tile{ Reuse: # AlgLeft/25 AsIs: s.Num#1/26 HalfReuse: s.ContextOffset1 #13/29 } e.Name#1/27/39 )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Inc ) )
+      if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[34] ) )
         return refalrts::cNoMemory;
@@ -5341,7 +5355,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkIdentifier/23 } Tile{ AsIs: e.Name#1/27 } s.ContextOffset#1/13/35 )/36 )/37 (/38 Tile{ Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdentSave/1 } Tile{ Reuse: # AlgLeft/25 AsIs: s.Num#1/26 HalfReuse: s.ContextOffset1 #13/29 } e.Name#1/27/39 )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Inc ) )
+      if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[34] ) )
         return refalrts::cNoMemory;
@@ -5455,7 +5469,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/36 (/37 Tile{ HalfReuse: # TkChar/29 HalfReuse: s.Char1 #32/19 HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdCharSave/1 } # AlgRight/38 s.Num#1/31/39 s.ContextOffset#1/13/40 Tile{ AsIs: s.Char#1/32 } )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -5567,7 +5581,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/36 (/37 Tile{ HalfReuse: # TkNumber/29 HalfReuse: s.Number1 #32/19 HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumberSave/1 } # AlgRight/38 s.Num#1/31/39 s.ContextOffset#1/13/40 Tile{ AsIs: s.Number#1/32 } )/41 )/42 >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -5676,7 +5690,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/35 (/36 # TkName/37 Tile{ AsIs: e.Name#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNameSave/1 } # AlgRight/38 s.Num#1/31/39 s.ContextOffset#1/13/40 e.Name#1/26/41 Tile{ AsIs: )/29 AsIs: )/19 } >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Inc ) )
+      if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[34] ) )
         return refalrts::cNoMemory;
@@ -5785,7 +5799,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/35 (/36 # TkIdentifier/37 Tile{ AsIs: e.Name#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdentSave/1 } # AlgRight/38 s.Num#1/31/39 s.ContextOffset#1/13/40 e.Name#1/26/41 Tile{ AsIs: )/29 AsIs: )/19 } >/43 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Inc ) )
+      if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[34] ) )
         return refalrts::cNoMemory;
@@ -5894,7 +5908,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Add/33 s.ContextOffset#1/13/34 4/35 >/36 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkOpenBracket/23 HalfReuse: </25 } & Add/37 Tile{ AsIs: s.ContextOffset#1/13 } 2/38 >/39 )/40 )/41 Tile{ AsIs: (/29 Reuse: # E/31 } s.ContextOffset#1/13/42 Tile{ AsIs: e.SubRange#1/27 } )/43 (/44 # Junk/45 (/46 # TkCloseBracket/47 </48 & Add/49 s.ContextOffset#1/13/50 3/51 >/52 )/53 )/54 (/55 # E/56 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBracketsSave/1 } # AlgLeft/57 Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/58 )/59 )/60 >/61 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Add ) )
+      if( ! refalrts::alloc_name( context[33], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[34], context[13]))
         return refalrts::cNoMemory;
@@ -5902,7 +5916,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[36] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[37], & Add ) )
+      if( ! refalrts::alloc_name( context[37], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_number( context[38], 2UL ) )
         return refalrts::cNoMemory;
@@ -5926,7 +5940,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[48] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[49], & Add ) )
+      if( ! refalrts::alloc_name( context[49], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[50], context[13]))
         return refalrts::cNoMemory;
@@ -6051,7 +6065,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Add/33 s.ContextOffset#1/13/34 4/35 >/36 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/37 (/38 # TkOpenBracket/39 </40 & Add/41 Tile{ AsIs: s.ContextOffset#1/13 } 2/42 >/43 )/44 )/45 (/46 # E/47 s.ContextOffset#1/13/48 Tile{ AsIs: e.SubRange#1/26 } )/49 (/50 # Junk/51 (/52 # TkCloseBracket/53 </54 & Add/55 Tile{ HalfReuse: s.ContextOffset1 #13/29 HalfReuse: 3/19 HalfReuse: >/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBracketsSave/1 } # AlgRight/56 s.Num#1/31/57 s.ContextOffset#1/13/58 )/59 )/60 >/61 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[32] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[33], & Add ) )
+      if( ! refalrts::alloc_name( context[33], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[34], context[13]))
         return refalrts::cNoMemory;
@@ -6067,7 +6081,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[41], & Add ) )
+      if( ! refalrts::alloc_name( context[41], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_number( context[42], 2UL ) )
         return refalrts::cNoMemory;
@@ -6095,7 +6109,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[54] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[55], & Add ) )
+      if( ! refalrts::alloc_name( context[55], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_ident( context[56], & ident_AlgRight<int>::name ) )
         return refalrts::cNoMemory;
@@ -6212,7 +6226,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Add/37 s.ContextOffset#1/13/38 5/39 >/40 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkOpenADT/23 HalfReuse: </25 } & Add/41 Tile{ AsIs: s.ContextOffset#1/13 } 2/42 >/43 )/44 (/45 # TkName/46 e.Name#1/32/47 </49 & Add/50 s.ContextOffset#1/13/51 3/52 >/53 )/54 )/55 (/56 # E/57 s.ContextOffset#1/13/58 Tile{ AsIs: e.SubRange#1/27 } )/59 (/60 # Junk/61 (/62 # TkCloseADT/63 </64 & Add/65 s.ContextOffset#1/13/66 4/67 >/68 )/69 )/70 (/71 # E/72 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADTSave/1 } Tile{ HalfReuse: # AlgLeft/29 HalfReuse: s.Num1 #26/31 HalfReuse: s.ContextOffset1 #13/34 AsIs: e.Name#1/32 AsIs: )/35 } )/73 >/74 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[36] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[37], & Add ) )
+      if( ! refalrts::alloc_name( context[37], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[38], context[13]))
         return refalrts::cNoMemory;
@@ -6220,7 +6234,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[41], & Add ) )
+      if( ! refalrts::alloc_name( context[41], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_number( context[42], 2UL ) )
         return refalrts::cNoMemory;
@@ -6236,7 +6250,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[49] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[50], & Add ) )
+      if( ! refalrts::alloc_name( context[50], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[51], context[13]))
         return refalrts::cNoMemory;
@@ -6266,7 +6280,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[64] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[65], & Add ) )
+      if( ! refalrts::alloc_name( context[65], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[66], context[13]))
         return refalrts::cNoMemory;
@@ -6395,7 +6409,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Add/37 s.ContextOffset#1/13/38 5/39 >/40 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/35 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/33 } (/41 # TkOpenADT/42 </43 & Add/44 Tile{ AsIs: s.ContextOffset#1/13 } 2/45 >/46 Tile{ AsIs: )/34 } (/47 # TkName/48 Tile{ AsIs: e.Name#1/31 } </49 & Add/50 s.ContextOffset#1/13/51 3/52 >/53 )/54 )/55 (/56 # E/57 s.ContextOffset#1/13/58 Tile{ AsIs: e.SubRange#1/26 } )/59 (/60 # Junk/61 (/62 # TkCloseADT/63 </64 & Add/65 Tile{ HalfReuse: s.ContextOffset1 #13/29 HalfReuse: 4/19 HalfReuse: >/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADTSave/1 } # AlgRight/66 s.Num#1/35/67 s.ContextOffset#1/13/68 e.Name#1/31/69 )/71 )/72 >/73 Tile{ ]] }
       if( ! refalrts::alloc_open_call( context[36] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[37], & Add ) )
+      if( ! refalrts::alloc_name( context[37], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[38], context[13]))
         return refalrts::cNoMemory;
@@ -6409,7 +6423,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[43] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[44], & Add ) )
+      if( ! refalrts::alloc_name( context[44], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_number( context[45], 2UL ) )
         return refalrts::cNoMemory;
@@ -6421,7 +6435,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[49] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[50], & Add ) )
+      if( ! refalrts::alloc_name( context[50], & Add_alias ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[51], context[13]))
         return refalrts::cNoMemory;
@@ -6451,7 +6465,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[64] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[65], & Add ) )
+      if( ! refalrts::alloc_name( context[65], & Add_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_ident( context[66], & ident_AlgRight<int>::name ) )
         return refalrts::cNoMemory;
@@ -6704,7 +6718,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( context[60] ) )
           return refalrts::cNoMemory;
-        refalrts::reinit_name( context[29], & IncVarOffset_Saved );
+        refalrts::reinit_name( context[29], & IncVarOffset_Saved_alias );
         refalrts::reinit_svar( context[31], context[13] );
         refalrts::reinit_open_bracket( context[19] );
         refalrts::reinit_ident( context[23], & ident_TkVariable<int>::name );
@@ -6833,7 +6847,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </47 & IncVarOffset-Saved/48 Tile{ AsIs: s.ContextOffset#1/13 } Tile{ AsIs: s.Mode#1/32 } >/49 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/50 (/51 # TkVariable/52 s.Mode#1/39/53 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars-B#1/33 AsIs: (/37 AsIs: s.Mode#1/39 AsIs: (/42 AsIs: e.Index#1/44 AsIs: )/43 AsIs: e.Offsets#1/35 AsIs: s.SampleOffset#1/46 HalfReuse: s.ContextOffset1 #13/38 } )/54 Tile{ AsIs: e.Vars-E#1/81(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeatedSave/1 } # AlgRight/55 s.Num#1/31/56 s.Mode#1/39/57 s.ContextOffset#1/13/58 s.SampleOffset#1/46/59 Tile{ AsIs: )/29 AsIs: )/19 } >/60 Tile{ ]] }
         if( ! refalrts::alloc_open_call( context[47] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[48], & IncVarOffset_Saved ) )
+        if( ! refalrts::alloc_name( context[48], & IncVarOffset_Saved_alias ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( context[49] ) )
           return refalrts::cNoMemory;
@@ -7003,7 +7017,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       refalrts::reinit_open_bracket( context[12] );
       refalrts::reinit_char( context[7], 'e' );
       refalrts::reinit_open_call( context[33] );
-      refalrts::reinit_name( context[35], & PrintVar );
+      refalrts::reinit_name( context[35], & PrintVar_alias );
       refalrts::reinit_close_call( context[34] );
       refalrts::reinit_char( context[24], ' ' );
       refalrts::push_stack( context[1] );
@@ -7090,7 +7104,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 's'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdVar/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } 's'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -7221,7 +7235,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc2/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 't'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdVarSave/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } 't'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc2 ) )
+      if( ! refalrts::alloc_name( context[34], & Inc2_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -7352,7 +7366,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/32 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/31 } (/36 # TkVariable/37 's'/38 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/39 e.Index#1/26/40 )/42 s.ContextOffset#1/13/43 Tile{ AsIs: )/29 AsIs: )/19 } (/44 Tile{ AsIs: e.Commands#1/5 } (/45 # CmdVar/46 # AlgRight/47 s.Num#1/32/48 's'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc ) )
+      if( ! refalrts::alloc_name( context[34], & Inc_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -7482,7 +7496,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc2/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/32 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/31 } (/36 # TkVariable/37 't'/38 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/39 e.Index#1/26/40 )/42 s.ContextOffset#1/13/43 Tile{ AsIs: )/29 AsIs: )/19 } (/44 Tile{ AsIs: e.Commands#1/5 } (/45 # CmdVarSave/46 # AlgRight/47 s.Num#1/32/48 't'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc2 ) )
+      if( ! refalrts::alloc_name( context[34], & Inc2_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -7612,7 +7626,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc2/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 'e'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 'e'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdOpenedE/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/49 )/50 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[33] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[34], & Inc2 ) )
+      if( ! refalrts::alloc_name( context[34], & Inc2_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[35] ) )
         return refalrts::cNoMemory;
@@ -7712,7 +7726,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   refalrts::reinit_svar( context[17], context[13] );
   refalrts::update_ident( context[18], & ident_CmdComment<int>::name );
-  refalrts::update_name( context[4], & TextFromExpr );
+  refalrts::update_name( context[4], & TextFromExpr_alias );
   refalrts::link_brackets( context[16], context[8] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -7735,19 +7749,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoGenSubst(func_DoGenSubst, "DoGenSubst");
-refalrts::RefalFunction& DoGenSubst = descr_DoGenSubst;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoGenSubst(func_DoGenSubst, "DoGenSubst#1248691929:3513581870");
+refalrts::RefalFunction& DoGenSubst_1248691929_3513581870 = descr_DoGenSubst;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_IncVarOffset_Saved {
     static refalrts::RefalFunction *functions[] = {
-      & Inc,
-      & Inc2
+      & Inc_alias,
+      & Inc2_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -7810,22 +7821,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_IncVarOffset_Saved
+  } // namespace scope_IncVarOffset_Saved_1248691929_3513581870
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_IncVarOffset_Saved(
-  "IncVarOffset-Saved",
+static refalrts::RASLFunction descr_IncVarOffset_Saved(
+  "IncVarOffset-Saved#1248691929:3513581870",
   scope_IncVarOffset_Saved::raa,
   scope_IncVarOffset_Saved::functions,
   scope_IncVarOffset_Saved::idents,
   scope_IncVarOffset_Saved::numbers,
   scope_IncVarOffset_Saved::strings
 );
-refalrts::RefalFunction& IncVarOffset_Saved = descr_IncVarOffset_Saved;
-
-} // unnamed namespace
+refalrts::RefalFunction& IncVarOffset_Saved_1248691929_3513581870 = descr_IncVarOffset_Saved;
 
 #else
 static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7856,7 +7864,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
-    refalrts::update_name( context[4], & Inc2 );
+    refalrts::update_name( context[4], & Inc2_alias );
     refalrts::reinit_close_call( context[6] );
     refalrts::push_stack( context[6] );
     refalrts::push_stack( context[0] );
@@ -7878,7 +7886,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
-    refalrts::update_name( context[4], & Inc2 );
+    refalrts::update_name( context[4], & Inc2_alias );
     refalrts::reinit_close_call( context[6] );
     refalrts::push_stack( context[6] );
     refalrts::push_stack( context[0] );
@@ -7899,7 +7907,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
-  refalrts::update_name( context[4], & Inc );
+  refalrts::update_name( context[4], & Inc_alias );
   refalrts::reinit_close_call( context[6] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[0] );
@@ -7911,11 +7919,8 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_IncVarOffset_Saved(func_IncVarOffset_Saved, "IncVarOffset-Saved");
-refalrts::RefalFunction& IncVarOffset_Saved = descr_IncVarOffset_Saved;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_IncVarOffset_Saved(func_IncVarOffset_Saved, "IncVarOffset-Saved#1248691929:3513581870");
+refalrts::RefalFunction& IncVarOffset_Saved_1248691929_3513581870 = descr_IncVarOffset_Saved;
 
 #endif
 

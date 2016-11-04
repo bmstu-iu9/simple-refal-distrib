@@ -18,117 +18,178 @@ struct ident_TypeBracket {
   }
 };
 
-extern refalrts::RefalFunction& FOpen;
-extern refalrts::RefalFunction& FClose;
-extern refalrts::RefalFunction& FReadLine;
-extern refalrts::RefalFunction& FWriteLine;
-extern refalrts::RefalFunction& Add;
-extern refalrts::RefalFunction& Sub;
-extern refalrts::RefalFunction& IntFromStr;
-extern refalrts::RefalFunction& Arg;
-extern refalrts::RefalFunction& SymbCompare;
-extern refalrts::RefalFunction& SymbType;
-extern refalrts::RefalFunction& Apply;
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& Reduce;
-extern refalrts::RefalFunction& Fetch;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Y_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& FOpen_0_0;
+#define FOpen_alias FOpen_0_0
+#define FOpen_str "FOpen#0:0"
 
-extern refalrts::RefalFunction& Y;
-extern refalrts::RefalFunction& MapReduce;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoMapReduce;
-} // unnamed namespace
+extern refalrts::RefalFunction& FClose_0_0;
+#define FClose_alias FClose_0_0
+#define FClose_str "FClose#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MapReduce_AddScanned;
-} // unnamed namespace
+extern refalrts::RefalFunction& FReadLine_0_0;
+#define FReadLine_alias FReadLine_0_0
+#define FReadLine_str "FReadLine#0:0"
 
-extern refalrts::RefalFunction& UnBracket;
-extern refalrts::RefalFunction& DelAccumulator;
-extern refalrts::RefalFunction& LoadFile;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoLoadFile;
-} // unnamed namespace
+extern refalrts::RefalFunction& FWriteLine_0_0;
+#define FWriteLine_alias FWriteLine_0_0
+#define FWriteLine_str "FWriteLine#0:0"
 
-extern refalrts::RefalFunction& SaveFile;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& WriteBracketLine;
-} // unnamed namespace
+extern refalrts::RefalFunction& Add_0_0;
+#define Add_alias Add_0_0
+#define Add_str "Add#0:0"
 
-extern refalrts::RefalFunction& Inc;
-extern refalrts::RefalFunction& Dec;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FastIntFromStr_Guard;
-} // unnamed namespace
+extern refalrts::RefalFunction& Sub_0_0;
+#define Sub_alias Sub_0_0
+#define Sub_str "Sub#0:0"
 
-extern refalrts::RefalFunction& FastIntFromStr;
-extern refalrts::RefalFunction& ArgList;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoArgList;
-} // unnamed namespace
+extern refalrts::RefalFunction& IntFromStr_0_0;
+#define IntFromStr_alias IntFromStr_0_0
+#define IntFromStr_str "IntFromStr#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& SwDoArgList;
-} // unnamed namespace
+extern refalrts::RefalFunction& Arg_0_0;
+#define Arg_alias Arg_0_0
+#define Arg_str "Arg#0:0"
 
-extern refalrts::RefalFunction& Compare;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Lexicon;
-} // unnamed namespace
+extern refalrts::RefalFunction& SymbCompare_0_0;
+#define SymbCompare_alias SymbCompare_0_0
+#define SymbCompare_str "SymbCompare#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Lexicon_Aux;
-} // unnamed namespace
+extern refalrts::RefalFunction& SymbType_0_0;
+#define SymbType_alias SymbType_0_0
+#define SymbType_str "SymbType#0:0"
 
-extern refalrts::RefalFunction& Compare_T;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Lexicon_T;
-} // unnamed namespace
+extern refalrts::RefalFunction& Apply_0_0;
+#define Apply_alias Apply_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Lexicon_T_Aux;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
 
-extern refalrts::RefalFunction& Type;
-extern refalrts::RefalFunction& Type_T;
-extern refalrts::RefalFunction& Trim;
-extern refalrts::RefalFunction& Trim_L;
-extern refalrts::RefalFunction& Trim_R;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Seq_S2L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Reduce_0_0;
+#define Reduce_alias Reduce_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Seq_S3L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Fetch_0_0;
+#define Fetch_alias Fetch_0_0
 
-extern refalrts::RefalFunction& Seq;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Sort_S2L1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_Y_L1_2456355933_3308197303;
+#define gen_Y_L1_alias gen_Y_L1_2456355933_3308197303
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Sort_S2L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Y_0_0;
+#define Y_alias Y_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Sort_S2L2;
-} // unnamed namespace
+extern refalrts::RefalFunction& MapReduce_0_0;
+#define MapReduce_alias MapReduce_0_0
 
-extern refalrts::RefalFunction& Sort;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Min_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& DoMapReduce_2456355933_3308197303;
+#define DoMapReduce_alias DoMapReduce_2456355933_3308197303
 
-extern refalrts::RefalFunction& Min;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Max_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& MapReduce_AddScanned_2456355933_3308197303;
+#define MapReduce_AddScanned_alias MapReduce_AddScanned_2456355933_3308197303
 
-extern refalrts::RefalFunction& Max;
+extern refalrts::RefalFunction& UnBracket_0_0;
+#define UnBracket_alias UnBracket_0_0
+
+extern refalrts::RefalFunction& DelAccumulator_0_0;
+#define DelAccumulator_alias DelAccumulator_0_0
+
+extern refalrts::RefalFunction& LoadFile_0_0;
+#define LoadFile_alias LoadFile_0_0
+
+extern refalrts::RefalFunction& DoLoadFile_2456355933_3308197303;
+#define DoLoadFile_alias DoLoadFile_2456355933_3308197303
+
+extern refalrts::RefalFunction& SaveFile_0_0;
+#define SaveFile_alias SaveFile_0_0
+
+extern refalrts::RefalFunction& WriteBracketLine_2456355933_3308197303;
+#define WriteBracketLine_alias WriteBracketLine_2456355933_3308197303
+
+extern refalrts::RefalFunction& Inc_0_0;
+#define Inc_alias Inc_0_0
+
+extern refalrts::RefalFunction& Dec_0_0;
+#define Dec_alias Dec_0_0
+
+extern refalrts::RefalFunction& FastIntFromStr_Guard_2456355933_3308197303;
+#define FastIntFromStr_Guard_alias FastIntFromStr_Guard_2456355933_3308197303
+
+extern refalrts::RefalFunction& FastIntFromStr_0_0;
+#define FastIntFromStr_alias FastIntFromStr_0_0
+
+extern refalrts::RefalFunction& ArgList_0_0;
+#define ArgList_alias ArgList_0_0
+
+extern refalrts::RefalFunction& DoArgList_2456355933_3308197303;
+#define DoArgList_alias DoArgList_2456355933_3308197303
+
+extern refalrts::RefalFunction& SwDoArgList_2456355933_3308197303;
+#define SwDoArgList_alias SwDoArgList_2456355933_3308197303
+
+extern refalrts::RefalFunction& Compare_0_0;
+#define Compare_alias Compare_0_0
+
+extern refalrts::RefalFunction& Lexicon_2456355933_3308197303;
+#define Lexicon_alias Lexicon_2456355933_3308197303
+
+extern refalrts::RefalFunction& Lexicon_Aux_2456355933_3308197303;
+#define Lexicon_Aux_alias Lexicon_Aux_2456355933_3308197303
+
+extern refalrts::RefalFunction& Compare_T_0_0;
+#define Compare_T_alias Compare_T_0_0
+
+extern refalrts::RefalFunction& Lexicon_T_2456355933_3308197303;
+#define Lexicon_T_alias Lexicon_T_2456355933_3308197303
+
+extern refalrts::RefalFunction& Lexicon_T_Aux_2456355933_3308197303;
+#define Lexicon_T_Aux_alias Lexicon_T_Aux_2456355933_3308197303
+
+extern refalrts::RefalFunction& Type_0_0;
+#define Type_alias Type_0_0
+
+extern refalrts::RefalFunction& Type_T_0_0;
+#define Type_T_alias Type_T_0_0
+
+extern refalrts::RefalFunction& Trim_0_0;
+#define Trim_alias Trim_0_0
+
+extern refalrts::RefalFunction& Trim_L_0_0;
+#define Trim_L_alias Trim_L_0_0
+
+extern refalrts::RefalFunction& Trim_R_0_0;
+#define Trim_R_alias Trim_R_0_0
+
+extern refalrts::RefalFunction& gen_Seq_S2L1_2456355933_3308197303;
+#define gen_Seq_S2L1_alias gen_Seq_S2L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& gen_Seq_S3L1_2456355933_3308197303;
+#define gen_Seq_S3L1_alias gen_Seq_S3L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& Seq_0_0;
+#define Seq_alias Seq_0_0
+
+extern refalrts::RefalFunction& gen_Sort_S2L1L1_2456355933_3308197303;
+#define gen_Sort_S2L1L1_alias gen_Sort_S2L1L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& gen_Sort_S2L1_2456355933_3308197303;
+#define gen_Sort_S2L1_alias gen_Sort_S2L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& gen_Sort_S2L2_2456355933_3308197303;
+#define gen_Sort_S2L2_alias gen_Sort_S2L2_2456355933_3308197303
+
+extern refalrts::RefalFunction& Sort_0_0;
+#define Sort_alias Sort_0_0
+
+extern refalrts::RefalFunction& gen_Min_S1L1_2456355933_3308197303;
+#define gen_Min_S1L1_alias gen_Min_S1L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& Min_0_0;
+#define Min_alias Min_0_0
+
+extern refalrts::RefalFunction& gen_Max_S1L1_2456355933_3308197303;
+#define gen_Max_S1L1_alias gen_Max_S1L1_2456355933_3308197303
+
+extern refalrts::RefalFunction& Max_0_0;
+#define Max_alias Max_0_0
+
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
@@ -183,19 +244,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Apply
+  } // namespace scope_Apply_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Apply(
-  "Apply",
+static refalrts::RASLFunction descr_Apply(
+  "Apply#0:0",
   scope_Apply::raa,
   scope_Apply::functions,
   scope_Apply::idents,
   scope_Apply::numbers,
   scope_Apply::strings
 );
-refalrts::RefalFunction& Apply = descr_Apply;
+refalrts::RefalFunction& Apply_0_0 = descr_Apply;
 
 #else
 static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -265,16 +326,16 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Apply(func_Apply, "Apply");
-refalrts::RefalFunction& Apply = descr_Apply;
+static refalrts::RefalNativeFunction descr_Apply(func_Apply, "Apply#0:0");
+refalrts::RefalFunction& Apply_0_0 = descr_Apply;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Map {
     static refalrts::RefalFunction *functions[] = {
-      & Apply,
-      & Map
+      & Apply_alias,
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -325,19 +386,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Map
+  } // namespace scope_Map_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Map(
-  "Map",
+static refalrts::RASLFunction descr_Map(
+  "Map#0:0",
   scope_Map::raa,
   scope_Map::functions,
   scope_Map::idents,
   scope_Map::numbers,
   scope_Map::strings
 );
-refalrts::RefalFunction& Map = descr_Map;
+refalrts::RefalFunction& Map_0_0 = descr_Map;
 
 #else
 static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -374,11 +435,11 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], & Map ) )
+    if( ! refalrts::alloc_name( context[11], & Map_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[12], context[13], context[5], context[6]))
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Apply );
+    refalrts::update_name( context[4], & Apply_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[10] );
     refalrts::push_stack( context[9] );
@@ -409,16 +470,16 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Map(func_Map, "Map");
-refalrts::RefalFunction& Map = descr_Map;
+static refalrts::RefalNativeFunction descr_Map(func_Map, "Map#0:0");
+refalrts::RefalFunction& Map_0_0 = descr_Map;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Reduce {
     static refalrts::RefalFunction *functions[] = {
-      & Apply,
-      & Reduce
+      & Apply_alias,
+      & Reduce_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -473,19 +534,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Reduce
+  } // namespace scope_Reduce_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Reduce(
-  "Reduce",
+static refalrts::RASLFunction descr_Reduce(
+  "Reduce#0:0",
   scope_Reduce::raa,
   scope_Reduce::functions,
   scope_Reduce::idents,
   scope_Reduce::numbers,
   scope_Reduce::strings
 );
-refalrts::RefalFunction& Reduce = descr_Reduce;
+refalrts::RefalFunction& Reduce_0_0 = descr_Reduce;
 
 #else
 static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -523,13 +584,13 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
     //RESULT: Tile{ [[ } </11 & Reduce/12 t.Fn#1/5/13 Tile{ AsIs: </0 Reuse: & Apply/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 AsIs: t.Next#1/9 } >/15 Tile{ AsIs: e.Tail#1/16(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], & Reduce ) )
+    if( ! refalrts::alloc_name( context[12], & Reduce_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[13], context[14], context[5], context[6]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[15] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Apply );
+    refalrts::update_name( context[4], & Apply_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[15] );
@@ -563,15 +624,15 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Reduce(func_Reduce, "Reduce");
-refalrts::RefalFunction& Reduce = descr_Reduce;
+static refalrts::RefalNativeFunction descr_Reduce(func_Reduce, "Reduce#0:0");
+refalrts::RefalFunction& Reduce_0_0 = descr_Reduce;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Fetch {
     static refalrts::RefalFunction *functions[] = {
-      & Apply
+      & Apply_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -597,19 +658,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Fetch
+  } // namespace scope_Fetch_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Fetch(
-  "Fetch",
+static refalrts::RASLFunction descr_Fetch(
+  "Fetch#0:0",
   scope_Fetch::raa,
   scope_Fetch::functions,
   scope_Fetch::idents,
   scope_Fetch::numbers,
   scope_Fetch::strings
 );
-refalrts::RefalFunction& Fetch = descr_Fetch;
+refalrts::RefalFunction& Fetch_0_0 = descr_Fetch;
 
 #else
 static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -631,7 +692,7 @@ static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter ar
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply/4 } Tile{ AsIs: t.Function#1/5 } Tile{ AsIs: e.Argument#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & Apply );
+  refalrts::update_name( context[4], & Apply_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -643,15 +704,15 @@ static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Fetch(func_Fetch, "Fetch");
-refalrts::RefalFunction& Fetch = descr_Fetch;
+static refalrts::RefalNativeFunction descr_Fetch(func_Fetch, "Fetch#0:0");
+refalrts::RefalFunction& Fetch_0_0 = descr_Fetch;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Y_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & Y
+      & Y_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -686,22 +747,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Y_L1
+  } // namespace scope_gen_Y_L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Y_L1(
-  "Y\\1",
+static refalrts::RASLFunction descr_gen_Y_L1(
+  "Y\\1#2456355933:3308197303",
   scope_gen_Y_L1::raa,
   scope_gen_Y_L1::functions,
   scope_gen_Y_L1::idents,
   scope_gen_Y_L1::numbers,
   scope_gen_Y_L1::strings
 );
-refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Y_L1_2456355933_3308197303 = descr_gen_Y_L1;
 
 #else
 static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -724,7 +782,7 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ AsIs: </0 HalfReuse: </4 AsIs: s.Y-Func#1/5 } </6 & Y/7 s.Y-Func#1/5/8 >/9 >/10 Tile{ AsIs: e.Arg#2/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & Y ) )
+  if( ! refalrts::alloc_name( context[7], & Y_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[8], context[5]))
     return refalrts::cNoMemory;
@@ -748,18 +806,15 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Y_L1(func_gen_Y_L1, "Y\\1");
-refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Y_L1(func_gen_Y_L1, "Y\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Y_L1_2456355933_3308197303 = descr_gen_Y_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Y {
     static refalrts::RefalFunction *functions[] = {
-      & gen_Y_L1,
+      & gen_Y_L1_alias,
       & refalrts::create_closure
     };
     using refalrts::idents;
@@ -787,19 +842,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Y
+  } // namespace scope_Y_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Y(
-  "Y",
+static refalrts::RASLFunction descr_Y(
+  "Y#0:0",
   scope_Y::raa,
   scope_Y::functions,
   scope_Y::idents,
   scope_Y::numbers,
   scope_Y::strings
 );
-refalrts::RefalFunction& Y = descr_Y;
+refalrts::RefalFunction& Y_0_0 = descr_Y;
 
 #else
 static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -824,7 +879,7 @@ static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_en
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_Y_L1 );
+  refalrts::update_name( context[4], & gen_Y_L1_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[6] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -835,15 +890,15 @@ static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_en
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Y(func_Y, "Y");
-refalrts::RefalFunction& Y = descr_Y;
+static refalrts::RefalNativeFunction descr_Y(func_Y, "Y#0:0");
+refalrts::RefalFunction& Y_0_0 = descr_Y;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MapReduce {
     static refalrts::RefalFunction *functions[] = {
-      & DoMapReduce
+      & DoMapReduce_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -873,19 +928,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_MapReduce
+  } // namespace scope_MapReduce_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_MapReduce(
-  "MapReduce",
+static refalrts::RASLFunction descr_MapReduce(
+  "MapReduce#0:0",
   scope_MapReduce::raa,
   scope_MapReduce::functions,
   scope_MapReduce::idents,
   scope_MapReduce::numbers,
   scope_MapReduce::strings
 );
-refalrts::RefalFunction& MapReduce = descr_MapReduce;
+refalrts::RefalFunction& MapReduce_0_0 = descr_MapReduce;
 
 #else
 static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -914,7 +969,7 @@ static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoMapReduce );
+  refalrts::update_name( context[4], & DoMapReduce_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[9], context[10] );
@@ -927,16 +982,16 @@ static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_MapReduce(func_MapReduce, "MapReduce");
-refalrts::RefalFunction& MapReduce = descr_MapReduce;
+static refalrts::RefalNativeFunction descr_MapReduce(func_MapReduce, "MapReduce#0:0");
+refalrts::RefalFunction& MapReduce_0_0 = descr_MapReduce;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoMapReduce {
     static refalrts::RefalFunction *functions[] = {
-      & Apply,
-      & MapReduce_AddScanned
+      & Apply_alias,
+      & MapReduce_AddScanned_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1004,22 +1059,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoMapReduce
+  } // namespace scope_DoMapReduce_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoMapReduce(
-  "DoMapReduce",
+static refalrts::RASLFunction descr_DoMapReduce(
+  "DoMapReduce#2456355933:3308197303",
   scope_DoMapReduce::raa,
   scope_DoMapReduce::functions,
   scope_DoMapReduce::idents,
   scope_DoMapReduce::numbers,
   scope_DoMapReduce::strings
 );
-refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoMapReduce_2456355933_3308197303 = descr_DoMapReduce;
 
 #else
 static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1065,11 +1117,11 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoMapReduce/4 AsIs: t.Fn#1/5 } </15 & MapReduce-AddScanned/16 </17 & Apply/18 t.Fn#1/5/19 Tile{ AsIs: t.Acc#1/7 } Tile{ AsIs: t.Next#1/13 } >/21 Tile{ AsIs: (/11 AsIs: e.Scanned#1/9 AsIs: )/12 } >/22 Tile{ AsIs: e.Tail#1/23(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & MapReduce_AddScanned ) )
+    if( ! refalrts::alloc_name( context[16], & MapReduce_AddScanned_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[18], & Apply ) )
+    if( ! refalrts::alloc_name( context[18], & Apply_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[19], context[20], context[5], context[6]))
       return refalrts::cNoMemory;
@@ -1118,11 +1170,8 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoMapReduce(func_DoMapReduce, "DoMapReduce");
-refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoMapReduce(func_DoMapReduce, "DoMapReduce#2456355933:3308197303");
+refalrts::RefalFunction& DoMapReduce_2456355933_3308197303 = descr_DoMapReduce;
 
 #endif
 #ifdef INTERPRET
@@ -1157,22 +1206,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_MapReduce_AddScanned
+  } // namespace scope_MapReduce_AddScanned_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_MapReduce_AddScanned(
-  "MapReduce-AddScanned",
+static refalrts::RASLFunction descr_MapReduce_AddScanned(
+  "MapReduce-AddScanned#2456355933:3308197303",
   scope_MapReduce_AddScanned::raa,
   scope_MapReduce_AddScanned::functions,
   scope_MapReduce_AddScanned::idents,
   scope_MapReduce_AddScanned::numbers,
   scope_MapReduce_AddScanned::strings
 );
-refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
-
-} // unnamed namespace
+refalrts::RefalFunction& MapReduce_AddScanned_2456355933_3308197303 = descr_MapReduce_AddScanned;
 
 #else
 static refalrts::FnResult func_MapReduce_AddScanned(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1215,11 +1261,8 @@ static refalrts::FnResult func_MapReduce_AddScanned(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned");
-refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_MapReduce_AddScanned(func_MapReduce_AddScanned, "MapReduce-AddScanned#2456355933:3308197303");
+refalrts::RefalFunction& MapReduce_AddScanned_2456355933_3308197303 = descr_MapReduce_AddScanned;
 
 #endif
 #ifdef INTERPRET
@@ -1248,19 +1291,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_UnBracket
+  } // namespace scope_UnBracket_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_UnBracket(
-  "UnBracket",
+static refalrts::RASLFunction descr_UnBracket(
+  "UnBracket#0:0",
   scope_UnBracket::raa,
   scope_UnBracket::functions,
   scope_UnBracket::idents,
   scope_UnBracket::numbers,
   scope_UnBracket::strings
 );
-refalrts::RefalFunction& UnBracket = descr_UnBracket;
+refalrts::RefalFunction& UnBracket_0_0 = descr_UnBracket;
 
 #else
 static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1296,8 +1339,8 @@ static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_UnBracket(func_UnBracket, "UnBracket");
-refalrts::RefalFunction& UnBracket = descr_UnBracket;
+static refalrts::RefalNativeFunction descr_UnBracket(func_UnBracket, "UnBracket#0:0");
+refalrts::RefalFunction& UnBracket_0_0 = descr_UnBracket;
 
 #endif
 #ifdef INTERPRET
@@ -1325,19 +1368,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DelAccumulator
+  } // namespace scope_DelAccumulator_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_DelAccumulator(
-  "DelAccumulator",
+static refalrts::RASLFunction descr_DelAccumulator(
+  "DelAccumulator#0:0",
   scope_DelAccumulator::raa,
   scope_DelAccumulator::functions,
   scope_DelAccumulator::idents,
   scope_DelAccumulator::numbers,
   scope_DelAccumulator::strings
 );
-refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
+refalrts::RefalFunction& DelAccumulator_0_0 = descr_DelAccumulator;
 
 #else
 static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1368,17 +1411,17 @@ static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_DelAccumulator(func_DelAccumulator, "DelAccumulator");
-refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
+static refalrts::RefalNativeFunction descr_DelAccumulator(func_DelAccumulator, "DelAccumulator#0:0");
+refalrts::RefalFunction& DelAccumulator_0_0 = descr_DelAccumulator;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LoadFile {
     static refalrts::RefalFunction *functions[] = {
-      & DoLoadFile,
-      & FOpen,
-      & FReadLine
+      & DoLoadFile_alias,
+      & FOpen_alias,
+      & FReadLine_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1415,19 +1458,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_LoadFile
+  } // namespace scope_LoadFile_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_LoadFile(
-  "LoadFile",
+static refalrts::RASLFunction descr_LoadFile(
+  "LoadFile#0:0",
   scope_LoadFile::raa,
   scope_LoadFile::functions,
   scope_LoadFile::idents,
   scope_LoadFile::numbers,
   scope_LoadFile::strings
 );
-refalrts::RefalFunction& LoadFile = descr_LoadFile;
+refalrts::RefalFunction& LoadFile_0_0 = descr_LoadFile;
 
 #else
 static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1448,11 +1491,11 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoLoadFile/4 } </5 & FReadLine/6 </7 & FOpen/8 'r'/9 Tile{ AsIs: e.FileName#1/2 } >/10 >/11 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & FReadLine ) )
+  if( ! refalrts::alloc_name( context[6], & FReadLine_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & FOpen ) )
+  if( ! refalrts::alloc_name( context[8], & FOpen_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[9], 'r' ) )
     return refalrts::cNoMemory;
@@ -1460,7 +1503,7 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoLoadFile );
+  refalrts::update_name( context[4], & DoLoadFile_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[11] );
@@ -1477,17 +1520,17 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_LoadFile(func_LoadFile, "LoadFile");
-refalrts::RefalFunction& LoadFile = descr_LoadFile;
+static refalrts::RefalNativeFunction descr_LoadFile(func_LoadFile, "LoadFile#0:0");
+refalrts::RefalFunction& LoadFile_0_0 = descr_LoadFile;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoLoadFile {
     static refalrts::RefalFunction *functions[] = {
-      & FReadLine,
-      & DoLoadFile,
-      & FClose
+      & FReadLine_alias,
+      & DoLoadFile_alias,
+      & FClose_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1569,22 +1612,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoLoadFile
+  } // namespace scope_DoLoadFile_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoLoadFile(
-  "DoLoadFile",
+static refalrts::RASLFunction descr_DoLoadFile(
+  "DoLoadFile#2456355933:3308197303",
   scope_DoLoadFile::raa,
   scope_DoLoadFile::functions,
   scope_DoLoadFile::idents,
   scope_DoLoadFile::numbers,
   scope_DoLoadFile::strings
 );
-refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoLoadFile_2456355933_3308197303 = descr_DoLoadFile;
 
 #else
 static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1618,7 +1658,7 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FClose/4 AsIs: t.File#1/5 HalfReuse: >/7 } Tile{ ]] }
-    refalrts::update_name( context[4], & FClose );
+    refalrts::update_name( context[4], & FClose_alias );
     refalrts::reinit_close_call( context[7] );
     refalrts::push_stack( context[7] );
     refalrts::push_stack( context[0] );
@@ -1647,7 +1687,7 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::alloc_open_bracket( context[8] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_close_bracket( context[7] );
-    refalrts::update_name( context[4], & FClose );
+    refalrts::update_name( context[4], & FClose_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[8], context[7] );
@@ -1676,11 +1716,11 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & DoLoadFile ) )
+  if( ! refalrts::alloc_name( context[10], & DoLoadFile_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & FReadLine );
+  refalrts::update_name( context[4], & FReadLine_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[11] );
@@ -1698,21 +1738,18 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoLoadFile(func_DoLoadFile, "DoLoadFile");
-refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoLoadFile(func_DoLoadFile, "DoLoadFile#2456355933:3308197303");
+refalrts::RefalFunction& DoLoadFile_2456355933_3308197303 = descr_DoLoadFile;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SaveFile {
     static refalrts::RefalFunction *functions[] = {
-      & FOpen,
-      & WriteBracketLine,
-      & Reduce,
-      & FClose
+      & FOpen_alias,
+      & WriteBracketLine_alias,
+      & Reduce_alias,
+      & FClose_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1752,19 +1789,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_SaveFile
+  } // namespace scope_SaveFile_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_SaveFile(
-  "SaveFile",
+static refalrts::RASLFunction descr_SaveFile(
+  "SaveFile#0:0",
   scope_SaveFile::raa,
   scope_SaveFile::functions,
   scope_SaveFile::idents,
   scope_SaveFile::numbers,
   scope_SaveFile::strings
 );
-refalrts::RefalFunction& SaveFile = descr_SaveFile;
+refalrts::RefalFunction& SaveFile_0_0 = descr_SaveFile;
 
 #else
 static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1792,17 +1829,17 @@ static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } </9 & FClose/10 </11 & Reduce/12 & WriteBracketLine/13 Tile{ AsIs: </0 Reuse: & FOpen/4 HalfReuse: 'w'/7 AsIs: e.FileName#1/5 HalfReuse: >/8 AsIs: e.Lines#1/2 AsIs: >/1 } >/14 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & FClose ) )
+  if( ! refalrts::alloc_name( context[10], & FClose_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & Reduce ) )
+  if( ! refalrts::alloc_name( context[12], & Reduce_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & WriteBracketLine ) )
+  if( ! refalrts::alloc_name( context[13], & WriteBracketLine_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & FOpen );
+  refalrts::update_name( context[4], & FOpen_alias );
   refalrts::reinit_char( context[7], 'w' );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[14] );
@@ -1821,15 +1858,15 @@ static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_SaveFile(func_SaveFile, "SaveFile");
-refalrts::RefalFunction& SaveFile = descr_SaveFile;
+static refalrts::RefalNativeFunction descr_SaveFile(func_SaveFile, "SaveFile#0:0");
+refalrts::RefalFunction& SaveFile_0_0 = descr_SaveFile;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteBracketLine {
     static refalrts::RefalFunction *functions[] = {
-      & FWriteLine
+      & FWriteLine_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1857,22 +1894,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_WriteBracketLine
+  } // namespace scope_WriteBracketLine_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_WriteBracketLine(
-  "WriteBracketLine",
+static refalrts::RASLFunction descr_WriteBracketLine(
+  "WriteBracketLine#2456355933:3308197303",
   scope_WriteBracketLine::raa,
   scope_WriteBracketLine::functions,
   scope_WriteBracketLine::idents,
   scope_WriteBracketLine::numbers,
   scope_WriteBracketLine::strings
 );
-refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
-
-} // unnamed namespace
+refalrts::RefalFunction& WriteBracketLine_2456355933_3308197303 = descr_WriteBracketLine;
 
 #else
 static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1902,7 +1936,7 @@ static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalr
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & FWriteLine/4 AsIs: t.File#1/9 } Tile{ AsIs: e.Line#1/5 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & FWriteLine );
+  refalrts::update_name( context[4], & FWriteLine_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -1914,18 +1948,15 @@ static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_WriteBracketLine(func_WriteBracketLine, "WriteBracketLine");
-refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_WriteBracketLine(func_WriteBracketLine, "WriteBracketLine#2456355933:3308197303");
+refalrts::RefalFunction& WriteBracketLine_2456355933_3308197303 = descr_WriteBracketLine;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Inc {
     static refalrts::RefalFunction *functions[] = {
-      & Add
+      & Add_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1952,19 +1983,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Inc
+  } // namespace scope_Inc_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Inc(
-  "Inc",
+static refalrts::RASLFunction descr_Inc(
+  "Inc#0:0",
   scope_Inc::raa,
   scope_Inc::functions,
   scope_Inc::idents,
   scope_Inc::numbers,
   scope_Inc::strings
 );
-refalrts::RefalFunction& Inc = descr_Inc;
+refalrts::RefalFunction& Inc_0_0 = descr_Inc;
 
 #else
 static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1988,7 +2019,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Add );
+  refalrts::update_name( context[4], & Add_alias );
   refalrts::reinit_number( context[1], 1UL );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[0] );
@@ -2000,15 +2031,15 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc");
-refalrts::RefalFunction& Inc = descr_Inc;
+static refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc#0:0");
+refalrts::RefalFunction& Inc_0_0 = descr_Inc;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Dec {
     static refalrts::RefalFunction *functions[] = {
-      & Sub
+      & Sub_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2035,19 +2066,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Dec
+  } // namespace scope_Dec_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Dec(
-  "Dec",
+static refalrts::RASLFunction descr_Dec(
+  "Dec#0:0",
   scope_Dec::raa,
   scope_Dec::functions,
   scope_Dec::idents,
   scope_Dec::numbers,
   scope_Dec::strings
 );
-refalrts::RefalFunction& Dec = descr_Dec;
+refalrts::RefalFunction& Dec_0_0 = descr_Dec;
 
 #else
 static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2071,7 +2102,7 @@ static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Sub );
+  refalrts::update_name( context[4], & Sub_alias );
   refalrts::reinit_number( context[1], 1UL );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[0] );
@@ -2083,8 +2114,8 @@ static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Dec(func_Dec, "Dec");
-refalrts::RefalFunction& Dec = descr_Dec;
+static refalrts::RefalNativeFunction descr_Dec(func_Dec, "Dec#0:0");
+refalrts::RefalFunction& Dec_0_0 = descr_Dec;
 
 #endif
 #ifdef INTERPRET
@@ -2115,22 +2146,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FastIntFromStr_Guard
+  } // namespace scope_FastIntFromStr_Guard_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_FastIntFromStr_Guard(
-  "FastIntFromStr-Guard",
+static refalrts::RASLFunction descr_FastIntFromStr_Guard(
+  "FastIntFromStr-Guard#2456355933:3308197303",
   scope_FastIntFromStr_Guard::raa,
   scope_FastIntFromStr_Guard::functions,
   scope_FastIntFromStr_Guard::idents,
   scope_FastIntFromStr_Guard::numbers,
   scope_FastIntFromStr_Guard::strings
 );
-refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
-
-} // unnamed namespace
+refalrts::RefalFunction& FastIntFromStr_Guard_2456355933_3308197303 = descr_FastIntFromStr_Guard;
 
 #else
 static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2164,19 +2192,16 @@ static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard");
-refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_FastIntFromStr_Guard(func_FastIntFromStr_Guard, "FastIntFromStr-Guard#2456355933:3308197303");
+refalrts::RefalFunction& FastIntFromStr_Guard_2456355933_3308197303 = descr_FastIntFromStr_Guard;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastIntFromStr {
     static refalrts::RefalFunction *functions[] = {
-      & IntFromStr,
-      & FastIntFromStr_Guard
+      & IntFromStr_alias,
+      & FastIntFromStr_Guard_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2207,19 +2232,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FastIntFromStr
+  } // namespace scope_FastIntFromStr_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_FastIntFromStr(
-  "FastIntFromStr",
+static refalrts::RASLFunction descr_FastIntFromStr(
+  "FastIntFromStr#0:0",
   scope_FastIntFromStr::raa,
   scope_FastIntFromStr::functions,
   scope_FastIntFromStr::idents,
   scope_FastIntFromStr::numbers,
   scope_FastIntFromStr::strings
 );
-refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
+refalrts::RefalFunction& FastIntFromStr_0_0 = descr_FastIntFromStr;
 
 #else
 static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2240,11 +2265,11 @@ static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts
   //RESULT: Tile{ [[ } </5 & FastIntFromStr-Guard/6 Tile{ AsIs: </0 Reuse: & IntFromStr/4 AsIs: e.Digits#1/2 AsIs: >/1 } >/7 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & FastIntFromStr_Guard ) )
+  if( ! refalrts::alloc_name( context[6], & FastIntFromStr_Guard_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & IntFromStr );
+  refalrts::update_name( context[4], & IntFromStr_alias );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[1] );
@@ -2259,15 +2284,15 @@ static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_FastIntFromStr(func_FastIntFromStr, "FastIntFromStr");
-refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
+static refalrts::RefalNativeFunction descr_FastIntFromStr(func_FastIntFromStr, "FastIntFromStr#0:0");
+refalrts::RefalFunction& FastIntFromStr_0_0 = descr_FastIntFromStr;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ArgList {
     static refalrts::RefalFunction *functions[] = {
-      & DoArgList
+      & DoArgList_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2293,19 +2318,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ArgList
+  } // namespace scope_ArgList_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_ArgList(
-  "ArgList",
+static refalrts::RASLFunction descr_ArgList(
+  "ArgList#0:0",
   scope_ArgList::raa,
   scope_ArgList::functions,
   scope_ArgList::idents,
   scope_ArgList::numbers,
   scope_ArgList::strings
 );
-refalrts::RefalFunction& ArgList = descr_ArgList;
+refalrts::RefalFunction& ArgList_0_0 = descr_ArgList;
 
 #else
 static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2327,7 +2352,7 @@ static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter 
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoArgList/4 HalfReuse: 0/1 } >/5 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoArgList );
+  refalrts::update_name( context[4], & DoArgList_alias );
   refalrts::reinit_number( context[1], 0UL );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[0] );
@@ -2339,17 +2364,17 @@ static refalrts::FnResult func_ArgList(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_ArgList(func_ArgList, "ArgList");
-refalrts::RefalFunction& ArgList = descr_ArgList;
+static refalrts::RefalNativeFunction descr_ArgList(func_ArgList, "ArgList#0:0");
+refalrts::RefalFunction& ArgList_0_0 = descr_ArgList;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoArgList {
     static refalrts::RefalFunction *functions[] = {
-      & Inc,
-      & Arg,
-      & SwDoArgList
+      & Inc_alias,
+      & Arg_alias,
+      & SwDoArgList_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2387,22 +2412,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoArgList
+  } // namespace scope_DoArgList_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoArgList(
-  "DoArgList",
+static refalrts::RASLFunction descr_DoArgList(
+  "DoArgList#2456355933:3308197303",
   scope_DoArgList::raa,
   scope_DoArgList::functions,
   scope_DoArgList::idents,
   scope_DoArgList::numbers,
   scope_DoArgList::strings
 );
-refalrts::RefalFunction& DoArgList = descr_DoArgList;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoArgList_2456355933_3308197303 = descr_DoArgList;
 
 #else
 static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2426,11 +2448,11 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } </6 & SwDoArgList/7 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Next#1/5 AsIs: >/1 } </8 & Arg/9 s.Next#1/5/10 >/11 >/12 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & SwDoArgList ) )
+  if( ! refalrts::alloc_name( context[7], & SwDoArgList_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & Arg ) )
+  if( ! refalrts::alloc_name( context[9], & Arg_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[10], context[5]))
     return refalrts::cNoMemory;
@@ -2438,7 +2460,7 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Inc );
+  refalrts::update_name( context[4], & Inc_alias );
   refalrts::push_stack( context[12] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[11] );
@@ -2455,18 +2477,15 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoArgList(func_DoArgList, "DoArgList");
-refalrts::RefalFunction& DoArgList = descr_DoArgList;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoArgList(func_DoArgList, "DoArgList#2456355933:3308197303");
+refalrts::RefalFunction& DoArgList_2456355933_3308197303 = descr_DoArgList;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SwDoArgList {
     static refalrts::RefalFunction *functions[] = {
-      & DoArgList
+      & DoArgList_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2515,22 +2534,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_SwDoArgList
+  } // namespace scope_SwDoArgList_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_SwDoArgList(
-  "SwDoArgList",
+static refalrts::RASLFunction descr_SwDoArgList(
+  "SwDoArgList#2456355933:3308197303",
   scope_SwDoArgList::raa,
   scope_SwDoArgList::functions,
   scope_SwDoArgList::idents,
   scope_SwDoArgList::numbers,
   scope_SwDoArgList::strings
 );
-refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
-
-} // unnamed namespace
+refalrts::RefalFunction& SwDoArgList_2456355933_3308197303 = descr_SwDoArgList;
 
 #else
 static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2580,7 +2596,7 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoArgList );
+  refalrts::update_name( context[4], & DoArgList_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[6], context[7] );
@@ -2595,19 +2611,16 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_SwDoArgList(func_SwDoArgList, "SwDoArgList");
-refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_SwDoArgList(func_SwDoArgList, "SwDoArgList#2456355933:3308197303");
+refalrts::RefalFunction& SwDoArgList_2456355933_3308197303 = descr_SwDoArgList;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Compare {
     static refalrts::RefalFunction *functions[] = {
-      & SymbCompare,
-      & Lexicon
+      & SymbCompare_alias,
+      & Lexicon_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2683,19 +2696,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Compare
+  } // namespace scope_Compare_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Compare(
-  "Compare",
+static refalrts::RASLFunction descr_Compare(
+  "Compare#0:0",
   scope_Compare::raa,
   scope_Compare::functions,
   scope_Compare::idents,
   scope_Compare::numbers,
   scope_Compare::strings
 );
-refalrts::RefalFunction& Compare = descr_Compare;
+refalrts::RefalFunction& Compare_0_0 = descr_Compare;
 
 #else
 static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2736,7 +2749,7 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon/4 AsIs: (/5 AsIs: e.Left#1/9 AsIs: )/6 AsIs: (/7 AsIs: e.Right#1/11 AsIs: )/8 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & Lexicon );
+    refalrts::update_name( context[4], & Lexicon_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2803,22 +2816,22 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbCompare/4 AsIs: s.Left#1/5 AsIs: s.Right#1/7 AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & SymbCompare );
+  refalrts::update_name( context[4], & SymbCompare_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Compare(func_Compare, "Compare");
-refalrts::RefalFunction& Compare = descr_Compare;
+static refalrts::RefalNativeFunction descr_Compare(func_Compare, "Compare#0:0");
+refalrts::RefalFunction& Compare_0_0 = descr_Compare;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon {
     static refalrts::RefalFunction *functions[] = {
-      & Lexicon_Aux,
-      & Compare
+      & Lexicon_Aux_alias,
+      & Compare_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2913,22 +2926,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Lexicon
+  } // namespace scope_Lexicon_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Lexicon(
-  "Lexicon",
+static refalrts::RASLFunction descr_Lexicon(
+  "Lexicon#2456355933:3308197303",
   scope_Lexicon::raa,
   scope_Lexicon::functions,
   scope_Lexicon::idents,
   scope_Lexicon::numbers,
   scope_Lexicon::strings
 );
-refalrts::RefalFunction& Lexicon = descr_Lexicon;
-
-} // unnamed namespace
+refalrts::RefalFunction& Lexicon_2456355933_3308197303 = descr_Lexicon;
 
 #else
 static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2979,13 +2989,13 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-Aux/4 HalfReuse: </7 } & Compare/17 Tile{ AsIs: t.FirstLeft#1/13 } Tile{ AsIs: t.FirstRight#1/15 } >/18 (/19 Tile{ AsIs: e.Left#1/20(5) } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Right#1/22(9) } Tile{ AsIs: )/12 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[17], & Compare ) )
+    if( ! refalrts::alloc_name( context[17], & Compare_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[19] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Lexicon_Aux );
+    refalrts::update_name( context[4], & Lexicon_Aux_alias );
     refalrts::reinit_open_call( context[7] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -3073,18 +3083,15 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Lexicon(func_Lexicon, "Lexicon");
-refalrts::RefalFunction& Lexicon = descr_Lexicon;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Lexicon(func_Lexicon, "Lexicon#2456355933:3308197303");
+refalrts::RefalFunction& Lexicon_2456355933_3308197303 = descr_Lexicon;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_Aux {
     static refalrts::RefalFunction *functions[] = {
-      & Lexicon
+      & Lexicon_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3152,22 +3159,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Lexicon_Aux
+  } // namespace scope_Lexicon_Aux_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Lexicon_Aux(
-  "Lexicon-Aux",
+static refalrts::RASLFunction descr_Lexicon_Aux(
+  "Lexicon-Aux#2456355933:3308197303",
   scope_Lexicon_Aux::raa,
   scope_Lexicon_Aux::functions,
   scope_Lexicon_Aux::idents,
   scope_Lexicon_Aux::numbers,
   scope_Lexicon_Aux::strings
 );
-refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
-
-} // unnamed namespace
+refalrts::RefalFunction& Lexicon_Aux_2456355933_3308197303 = descr_Lexicon_Aux;
 
 #else
 static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3234,7 +3238,7 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Lexicon/13 AsIs: (/11 AsIs: e.Left#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Right#1/5 AsIs: )/8 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[13], & Lexicon );
+    refalrts::reinit_name( context[13], & Lexicon_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3267,19 +3271,16 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux");
-refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Lexicon_Aux(func_Lexicon_Aux, "Lexicon-Aux#2456355933:3308197303");
+refalrts::RefalFunction& Lexicon_Aux_2456355933_3308197303 = descr_Lexicon_Aux;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Compare_T {
     static refalrts::RefalFunction *functions[] = {
-      & SymbCompare,
-      & Lexicon_T
+      & SymbCompare_alias,
+      & Lexicon_T_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3373,19 +3374,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Compare_T
+  } // namespace scope_Compare_T_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Compare_T(
-  "Compare-T",
+static refalrts::RASLFunction descr_Compare_T(
+  "Compare-T#0:0",
   scope_Compare_T::raa,
   scope_Compare_T::functions,
   scope_Compare_T::idents,
   scope_Compare_T::numbers,
   scope_Compare_T::strings
 );
-refalrts::RefalFunction& Compare_T = descr_Compare_T;
+refalrts::RefalFunction& Compare_T_0_0 = descr_Compare_T;
 
 #else
 static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3434,7 +3435,7 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Lexicon_T );
+    refalrts::update_name( context[4], & Lexicon_T_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3518,7 +3519,7 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[10], context[7]))
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & SymbCompare );
+  refalrts::update_name( context[4], & SymbCompare_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -3529,16 +3530,16 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Compare_T(func_Compare_T, "Compare-T");
-refalrts::RefalFunction& Compare_T = descr_Compare_T;
+static refalrts::RefalNativeFunction descr_Compare_T(func_Compare_T, "Compare-T#0:0");
+refalrts::RefalFunction& Compare_T_0_0 = descr_Compare_T;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_T {
     static refalrts::RefalFunction *functions[] = {
-      & Lexicon_T_Aux,
-      & Compare_T
+      & Lexicon_T_Aux_alias,
+      & Compare_T_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3665,22 +3666,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Lexicon_T
+  } // namespace scope_Lexicon_T_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Lexicon_T(
-  "Lexicon-T",
+static refalrts::RASLFunction descr_Lexicon_T(
+  "Lexicon-T#2456355933:3308197303",
   scope_Lexicon_T::raa,
   scope_Lexicon_T::functions,
   scope_Lexicon_T::idents,
   scope_Lexicon_T::numbers,
   scope_Lexicon_T::strings
 );
-refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
-
-} // unnamed namespace
+refalrts::RefalFunction& Lexicon_T_2456355933_3308197303 = descr_Lexicon_T;
 
 #else
 static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3751,9 +3749,9 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[26] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[27], & Compare_T ) )
+    if( ! refalrts::alloc_name( context[27], & Compare_T_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Lexicon_T_Aux );
+    refalrts::update_name( context[4], & Lexicon_T_Aux_alias );
     refalrts::reinit_close_call( context[12] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -3867,18 +3865,15 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Lexicon_T(func_Lexicon_T, "Lexicon-T");
-refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Lexicon_T(func_Lexicon_T, "Lexicon-T#2456355933:3308197303");
+refalrts::RefalFunction& Lexicon_T_2456355933_3308197303 = descr_Lexicon_T;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_T_Aux {
     static refalrts::RefalFunction *functions[] = {
-      & Lexicon_T
+      & Lexicon_T_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3989,22 +3984,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Lexicon_T_Aux
+  } // namespace scope_Lexicon_T_Aux_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Lexicon_T_Aux(
-  "Lexicon-T-Aux",
+static refalrts::RASLFunction descr_Lexicon_T_Aux(
+  "Lexicon-T-Aux#2456355933:3308197303",
   scope_Lexicon_T_Aux::raa,
   scope_Lexicon_T_Aux::functions,
   scope_Lexicon_T_Aux::idents,
   scope_Lexicon_T_Aux::numbers,
   scope_Lexicon_T_Aux::strings
 );
-refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
-
-} // unnamed namespace
+refalrts::RefalFunction& Lexicon_T_Aux_2456355933_3308197303 = descr_Lexicon_T_Aux;
 
 #else
 static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4105,7 +4097,7 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-T/4 AsIs: (/7 } Tile{ AsIs: e.ScannedLeft#1/5 } Tile{ AsIs: t.NextLeft#1/22 } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Left#1/17 } Tile{ AsIs: )/12 HalfReuse: (/21 } Tile{ AsIs: e.ScannedRight#1/9 } Tile{ AsIs: t.NextRight#1/24 } Tile{ AsIs: )/20 AsIs: (/15 AsIs: e.Right#1/13 AsIs: )/16 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & Lexicon_T );
+    refalrts::update_name( context[4], & Lexicon_T_alias );
     refalrts::reinit_open_bracket( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -4161,18 +4153,15 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux");
-refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Lexicon_T_Aux(func_Lexicon_T_Aux, "Lexicon-T-Aux#2456355933:3308197303");
+refalrts::RefalFunction& Lexicon_T_Aux_2456355933_3308197303 = descr_Lexicon_T_Aux;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Type {
     static refalrts::RefalFunction *functions[] = {
-      & SymbType
+      & SymbType_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TypeBracket<int>::name
@@ -4216,19 +4205,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Type
+  } // namespace scope_Type_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Type(
-  "Type",
+static refalrts::RASLFunction descr_Type(
+  "Type#0:0",
   scope_Type::raa,
   scope_Type::functions,
   scope_Type::idents,
   scope_Type::numbers,
   scope_Type::strings
 );
-refalrts::RefalFunction& Type = descr_Type;
+refalrts::RefalFunction& Type_0_0 = descr_Type;
 
 #else
 static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4279,21 +4268,21 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbType/4 AsIs: s.Symbol#1/5 AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & SymbType );
+  refalrts::update_name( context[4], & SymbType_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Type(func_Type, "Type");
-refalrts::RefalFunction& Type = descr_Type;
+static refalrts::RefalNativeFunction descr_Type(func_Type, "Type#0:0");
+refalrts::RefalFunction& Type_0_0 = descr_Type;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Type_T {
     static refalrts::RefalFunction *functions[] = {
-      & SymbType
+      & SymbType_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TypeBracket<int>::name
@@ -4360,19 +4349,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Type_T
+  } // namespace scope_Type_T_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Type_T(
-  "Type-T",
+static refalrts::RASLFunction descr_Type_T(
+  "Type-T#0:0",
   scope_Type_T::raa,
   scope_Type_T::functions,
   scope_Type_T::idents,
   scope_Type_T::numbers,
   scope_Type_T::strings
 );
-refalrts::RefalFunction& Type_T = descr_Type_T;
+refalrts::RefalFunction& Type_T_0_0 = descr_Type_T;
 
 #else
 static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4433,7 +4422,7 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbType/4 AsIs: s.Symbol#1/5 } Tile{ AsIs: >/1 } s.Symbol#1/5/6 Tile{ AsIs: e.Tail#1/9(2) } Tile{ ]] }
     if (! refalrts::copy_stvar(context[6], context[5]))
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SymbType );
+    refalrts::update_name( context[4], & SymbType_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4464,16 +4453,16 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Type_T(func_Type_T, "Type-T");
-refalrts::RefalFunction& Type_T = descr_Type_T;
+static refalrts::RefalNativeFunction descr_Type_T(func_Type_T, "Type-T#0:0");
+refalrts::RefalFunction& Type_T_0_0 = descr_Type_T;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Trim {
     static refalrts::RefalFunction *functions[] = {
-      & Trim_R,
-      & Trim_L
+      & Trim_R_alias,
+      & Trim_L_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -4504,19 +4493,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Trim
+  } // namespace scope_Trim_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Trim(
-  "Trim",
+static refalrts::RASLFunction descr_Trim(
+  "Trim#0:0",
   scope_Trim::raa,
   scope_Trim::functions,
   scope_Trim::idents,
   scope_Trim::numbers,
   scope_Trim::strings
 );
-refalrts::RefalFunction& Trim = descr_Trim;
+refalrts::RefalFunction& Trim_0_0 = descr_Trim;
 
 #else
 static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4537,11 +4526,11 @@ static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ } </5 & Trim-L/6 Tile{ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 } >/7 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & Trim_L ) )
+  if( ! refalrts::alloc_name( context[6], & Trim_L_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Trim_R );
+  refalrts::update_name( context[4], & Trim_R_alias );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[1] );
@@ -4556,15 +4545,15 @@ static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Trim(func_Trim, "Trim");
-refalrts::RefalFunction& Trim = descr_Trim;
+static refalrts::RefalNativeFunction descr_Trim(func_Trim, "Trim#0:0");
+refalrts::RefalFunction& Trim_0_0 = descr_Trim;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Trim_L {
     static refalrts::RefalFunction *functions[] = {
-      & Trim_L
+      & Trim_L_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -4660,19 +4649,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Trim_L
+  } // namespace scope_Trim_L_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Trim_L(
-  "Trim-L",
+static refalrts::RASLFunction descr_Trim_L(
+  "Trim-L#0:0",
   scope_Trim_L::raa,
   scope_Trim_L::functions,
   scope_Trim_L::idents,
   scope_Trim_L::numbers,
   scope_Trim_L::strings
 );
-refalrts::RefalFunction& Trim_L = descr_Trim_L;
+refalrts::RefalFunction& Trim_L_0_0 = descr_Trim_L;
 
 #else
 static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4703,7 +4692,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], & Trim_L );
+    refalrts::reinit_name( context[5], & Trim_L_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4729,7 +4718,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], & Trim_L );
+    refalrts::reinit_name( context[5], & Trim_L_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4755,7 +4744,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], & Trim_L );
+    refalrts::reinit_name( context[5], & Trim_L_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4781,7 +4770,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], & Trim_L );
+    refalrts::reinit_name( context[5], & Trim_L_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4809,8 +4798,8 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Trim_L(func_Trim_L, "Trim-L");
-refalrts::RefalFunction& Trim_L = descr_Trim_L;
+static refalrts::RefalNativeFunction descr_Trim_L(func_Trim_L, "Trim-L#0:0");
+refalrts::RefalFunction& Trim_L_0_0 = descr_Trim_L;
 
 #endif
 #ifdef INTERPRET
@@ -4907,19 +4896,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Trim_R
+  } // namespace scope_Trim_R_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Trim_R(
-  "Trim-R",
+static refalrts::RASLFunction descr_Trim_R(
+  "Trim-R#0:0",
   scope_Trim_R::raa,
   scope_Trim_R::functions,
   scope_Trim_R::idents,
   scope_Trim_R::numbers,
   scope_Trim_R::strings
 );
-refalrts::RefalFunction& Trim_R = descr_Trim_R;
+refalrts::RefalFunction& Trim_R_0_0 = descr_Trim_R;
 
 #else
 static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5052,17 +5041,17 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Trim_R(func_Trim_R, "Trim-R");
-refalrts::RefalFunction& Trim_R = descr_Trim_R;
+static refalrts::RefalNativeFunction descr_Trim_R(func_Trim_R, "Trim-R#0:0");
+refalrts::RefalFunction& Trim_R_0_0 = descr_Trim_R;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Seq_S2L1 {
     static refalrts::RefalFunction *functions[] = {
-      & Seq,
-      & Fetch,
-      & Apply
+      & Seq_alias,
+      & Fetch_alias,
+      & Apply_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -5103,22 +5092,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Seq_S2L1
+  } // namespace scope_gen_Seq_S2L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Seq_S2L1(
-  "Seq$2\\1",
+static refalrts::RASLFunction descr_gen_Seq_S2L1(
+  "Seq$2\\1#2456355933:3308197303",
   scope_gen_Seq_S2L1::raa,
   scope_gen_Seq_S2L1::functions,
   scope_gen_Seq_S2L1::idents,
   scope_gen_Seq_S2L1::numbers,
   scope_gen_Seq_S2L1::strings
 );
-refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Seq_S2L1_2456355933_3308197303 = descr_gen_Seq_S2L1;
 
 #else
 static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5149,14 +5135,14 @@ static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 & Apply/12 Tile{ AsIs: t.Func#1/5 } Tile{ AsIs: e.Arg#2/2 } >/13 </14 Tile{ HalfReuse: & Seq/9 AsIs: e.Funcs#1/7 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & Apply ) )
+  if( ! refalrts::alloc_name( context[12], & Apply_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch );
-  refalrts::reinit_name( context[9], & Seq );
+  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::reinit_name( context[9], & Seq_alias );
   refalrts::reinit_close_call( context[10] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -5176,11 +5162,8 @@ static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1");
-refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Seq_S2L1(func_gen_Seq_S2L1, "Seq$2\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Seq_S2L1_2456355933_3308197303 = descr_gen_Seq_S2L1;
 
 #endif
 #ifdef INTERPRET
@@ -5207,22 +5190,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Seq_S3L1
+  } // namespace scope_gen_Seq_S3L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Seq_S3L1(
-  "Seq$3\\1",
+static refalrts::RASLFunction descr_gen_Seq_S3L1(
+  "Seq$3\\1#2456355933:3308197303",
   scope_gen_Seq_S3L1::raa,
   scope_gen_Seq_S3L1::functions,
   scope_gen_Seq_S3L1::idents,
   scope_gen_Seq_S3L1::numbers,
   scope_gen_Seq_S3L1::strings
 );
-refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Seq_S3L1_2456355933_3308197303 = descr_gen_Seq_S3L1;
 
 #else
 static refalrts::FnResult func_gen_Seq_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5250,20 +5230,17 @@ static refalrts::FnResult func_gen_Seq_S3L1(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1");
-refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Seq_S3L1(func_gen_Seq_S3L1, "Seq$3\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Seq_S3L1_2456355933_3308197303 = descr_gen_Seq_S3L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Seq {
     static refalrts::RefalFunction *functions[] = {
-      & gen_Seq_S3L1,
+      & gen_Seq_S3L1_alias,
       & refalrts::create_closure,
-      & gen_Seq_S2L1
+      & gen_Seq_S2L1_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -5329,19 +5306,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Seq
+  } // namespace scope_Seq_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Seq(
-  "Seq",
+static refalrts::RASLFunction descr_Seq(
+  "Seq#0:0",
   scope_Seq::raa,
   scope_Seq::functions,
   scope_Seq::idents,
   scope_Seq::numbers,
   scope_Seq::strings
 );
-refalrts::RefalFunction& Seq = descr_Seq;
+refalrts::RefalFunction& Seq_0_0 = descr_Seq;
 
 #else
 static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5395,7 +5372,7 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & @create_closure@/4 } & Seq$2\1/7 Tile{ AsIs: t.Func#1/5 } (/8 Tile{ AsIs: e.Funcs#1/10(2) } )/9 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[7], & gen_Seq_S2L1 ) )
+    if( ! refalrts::alloc_name( context[7], & gen_Seq_S2L1_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[8] ) )
       return refalrts::cNoMemory;
@@ -5426,7 +5403,7 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Seq/4 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: & Seq$3\1/1 ]] }
-  refalrts::reinit_name( context[1], & gen_Seq_S3L1 );
+  refalrts::reinit_name( context[1], & gen_Seq_S3L1_alias );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -5435,8 +5412,8 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Seq(func_Seq, "Seq");
-refalrts::RefalFunction& Seq = descr_Seq;
+static refalrts::RefalNativeFunction descr_Seq(func_Seq, "Seq#0:0");
+refalrts::RefalFunction& Seq_0_0 = descr_Seq;
 
 #endif
 #ifdef INTERPRET
@@ -5540,22 +5517,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Sort_S2L1L1
+  } // namespace scope_gen_Sort_S2L1L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Sort_S2L1L1(
-  "Sort$2\\1\\1",
+static refalrts::RASLFunction descr_gen_Sort_S2L1L1(
+  "Sort$2\\1\\1#2456355933:3308197303",
   scope_gen_Sort_S2L1L1::raa,
   scope_gen_Sort_S2L1L1::functions,
   scope_gen_Sort_S2L1L1::idents,
   scope_gen_Sort_S2L1L1::numbers,
   scope_gen_Sort_S2L1L1::strings
 );
-refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Sort_S2L1L1_2456355933_3308197303 = descr_gen_Sort_S2L1L1;
 
 #else
 static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5693,21 +5667,18 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1");
-refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Sort_S2L1L1(func_gen_Sort_S2L1L1, "Sort$2\\1\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Sort_S2L1L1_2456355933_3308197303 = descr_gen_Sort_S2L1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Sort_S2L1 {
     static refalrts::RefalFunction *functions[] = {
-      & gen_Sort_S2L1L1,
-      & Fetch,
+      & gen_Sort_S2L1L1_alias,
+      & Fetch_alias,
       & refalrts::create_closure,
-      & Compare
+      & Compare_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -5762,22 +5733,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Sort_S2L1
+  } // namespace scope_gen_Sort_S2L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Sort_S2L1(
-  "Sort$2\\1",
+static refalrts::RASLFunction descr_gen_Sort_S2L1(
+  "Sort$2\\1#2456355933:3308197303",
   scope_gen_Sort_S2L1::raa,
   scope_gen_Sort_S2L1::functions,
   scope_gen_Sort_S2L1::idents,
   scope_gen_Sort_S2L1::numbers,
   scope_gen_Sort_S2L1::strings
 );
-refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Sort_S2L1_2456355933_3308197303 = descr_gen_Sort_S2L1;
 
 #else
 static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5834,7 +5802,7 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </25 & Compare/26 Tile{ AsIs: t.Next#2/23 } Tile{ AsIs: t.Pivot#1/5 } >/27 </28 & @create_closure@/29 Tile{ HalfReuse: & Sort$2\1\1/9 AsIs: (/13 AsIs: e.Less#2/11 AsIs: )/14 } t.Next#2/23/30 Tile{ AsIs: (/17 AsIs: e.Equal#2/15 AsIs: )/18 AsIs: (/21 AsIs: e.Greater#2/19 AsIs: )/22 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[26], & Compare ) )
+  if( ! refalrts::alloc_name( context[26], & Compare_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[27] ) )
     return refalrts::cNoMemory;
@@ -5844,8 +5812,8 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[30], context[31], context[23], context[24]))
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch );
-  refalrts::reinit_name( context[9], & gen_Sort_S2L1L1 );
+  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::reinit_name( context[9], & gen_Sort_S2L1L1_alias );
   refalrts::reinit_close_call( context[10] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -5870,18 +5838,15 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1");
-refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Sort_S2L1(func_gen_Sort_S2L1, "Sort$2\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Sort_S2L1_2456355933_3308197303 = descr_gen_Sort_S2L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Sort_S2L2 {
     static refalrts::RefalFunction *functions[] = {
-      & Sort
+      & Sort_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -5921,22 +5886,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Sort_S2L2
+  } // namespace scope_gen_Sort_S2L2_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Sort_S2L2(
-  "Sort$2\\2",
+static refalrts::RASLFunction descr_gen_Sort_S2L2(
+  "Sort$2\\2#2456355933:3308197303",
   scope_gen_Sort_S2L2::raa,
   scope_gen_Sort_S2L2::functions,
   scope_gen_Sort_S2L2::idents,
   scope_gen_Sort_S2L2::numbers,
   scope_gen_Sort_S2L2::strings
 );
-refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Sort_S2L2_2456355933_3308197303 = descr_gen_Sort_S2L2;
 
 #else
 static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5985,10 +5947,10 @@ static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts:
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 (/11 {REMOVED TILE} )/12 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sort/4 } Tile{ AsIs: e.Less#2/9 } Tile{ HalfReuse: >/15 AsIs: e.Equal#2/13 HalfReuse: </16 HalfReuse: & Sort/19 AsIs: e.Greater#2/17 HalfReuse: >/20 } Tile{ ]] }
-  refalrts::update_name( context[4], & Sort );
+  refalrts::update_name( context[4], & Sort_alias );
   refalrts::reinit_close_call( context[15] );
   refalrts::reinit_open_call( context[16] );
-  refalrts::reinit_name( context[19], & Sort );
+  refalrts::reinit_name( context[19], & Sort_alias );
   refalrts::reinit_close_call( context[20] );
   refalrts::push_stack( context[20] );
   refalrts::push_stack( context[16] );
@@ -6004,23 +5966,20 @@ static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2");
-refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Sort_S2L2(func_gen_Sort_S2L2, "Sort$2\\2#2456355933:3308197303");
+refalrts::RefalFunction& gen_Sort_S2L2_2456355933_3308197303 = descr_gen_Sort_S2L2;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Sort {
     static refalrts::RefalFunction *functions[] = {
-      & Fetch,
-      & gen_Sort_S2L2,
-      & gen_Sort_S2L1,
+      & Fetch_alias,
+      & gen_Sort_S2L2_alias,
+      & gen_Sort_S2L1_alias,
       & refalrts::create_closure,
-      & Reduce,
-      & Seq
+      & Reduce_alias,
+      & Seq_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -6095,19 +6054,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Sort
+  } // namespace scope_Sort_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Sort(
-  "Sort",
+static refalrts::RASLFunction descr_Sort(
+  "Sort#0:0",
   scope_Sort::raa,
   scope_Sort::functions,
   scope_Sort::idents,
   scope_Sort::numbers,
   scope_Sort::strings
 );
-refalrts::RefalFunction& Sort = descr_Sort;
+refalrts::RefalFunction& Sort_0_0 = descr_Sort;
 
 #else
 static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6156,17 +6115,17 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Items#1/2 } </7 & Seq/8 (/9 & Reduce/10 </11 & @create_closure@/12 & Sort$2\1/13 Tile{ AsIs: t.Pivot#1/5 } >/14 (/15 (/16 )/17 (/18 t.Pivot#1/5/19 )/21 (/22 )/23 )/24 )/25 & Sort$2\2/26 >/27 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & Seq ) )
+  if( ! refalrts::alloc_name( context[8], & Seq_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Reduce ) )
+  if( ! refalrts::alloc_name( context[10], & Reduce_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[12], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & gen_Sort_S2L1 ) )
+  if( ! refalrts::alloc_name( context[13], & gen_Sort_S2L1_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[14] ) )
     return refalrts::cNoMemory;
@@ -6190,11 +6149,11 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[26], & gen_Sort_S2L2 ) )
+  if( ! refalrts::alloc_name( context[26], & gen_Sort_S2L2_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[27] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch );
+  refalrts::update_name( context[4], & Fetch_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[27] );
@@ -6217,8 +6176,8 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Sort(func_Sort, "Sort");
-refalrts::RefalFunction& Sort = descr_Sort;
+static refalrts::RefalNativeFunction descr_Sort(func_Sort, "Sort#0:0");
+refalrts::RefalFunction& Sort_0_0 = descr_Sort;
 
 #endif
 #ifdef INTERPRET
@@ -6265,22 +6224,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Min_S1L1
+  } // namespace scope_gen_Min_S1L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Min_S1L1(
-  "Min$1\\1",
+static refalrts::RASLFunction descr_gen_Min_S1L1(
+  "Min$1\\1#2456355933:3308197303",
   scope_gen_Min_S1L1::raa,
   scope_gen_Min_S1L1::functions,
   scope_gen_Min_S1L1::idents,
   scope_gen_Min_S1L1::numbers,
   scope_gen_Min_S1L1::strings
 );
-refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Min_S1L1_2456355933_3308197303 = descr_gen_Min_S1L1;
 
 #else
 static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6340,22 +6296,19 @@ static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1");
-refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Min_S1L1(func_gen_Min_S1L1, "Min$1\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Min_S1L1_2456355933_3308197303 = descr_gen_Min_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Min {
     static refalrts::RefalFunction *functions[] = {
-      & Reduce,
-      & Compare,
-      & gen_Min_S1L1,
+      & Reduce_alias,
+      & Compare_alias,
+      & gen_Min_S1L1_alias,
       & refalrts::create_closure,
-      & Fetch
+      & Fetch_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -6418,19 +6371,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Min
+  } // namespace scope_Min_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Min(
-  "Min",
+static refalrts::RASLFunction descr_Min(
+  "Min#0:0",
   scope_Min::raa,
   scope_Min::functions,
   scope_Min::idents,
   scope_Min::numbers,
   scope_Min::strings
 );
-refalrts::RefalFunction& Min = descr_Min;
+refalrts::RefalFunction& Min_0_0 = descr_Min;
 
 #else
 static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6466,13 +6419,13 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
     //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: </0 Reuse: & Compare/4 AsIs: t.X#1/5 AsIs: t.Y#1/7 AsIs: >/1 } </11 & @create_closure@/12 & Min$1\1/13 t.X#1/5/14 t.Y#1/7/16 >/18 >/19 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[10], & Fetch ) )
+    if( ! refalrts::alloc_name( context[10], & Fetch_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[12], & refalrts::create_closure ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & gen_Min_S1L1 ) )
+    if( ! refalrts::alloc_name( context[13], & gen_Min_S1L1_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
       return refalrts::cNoMemory;
@@ -6482,7 +6435,7 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[19] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Compare );
+    refalrts::update_name( context[4], & Compare_alias );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[9] );
     refalrts::push_stack( context[18] );
@@ -6509,7 +6462,7 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & Reduce/0 AsIs: & Min/4 AsIs: t.First#1/5 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Reduce );
+  refalrts::reinit_name( context[0], & Reduce_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6520,8 +6473,8 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Min(func_Min, "Min");
-refalrts::RefalFunction& Min = descr_Min;
+static refalrts::RefalNativeFunction descr_Min(func_Min, "Min#0:0");
+refalrts::RefalFunction& Min_0_0 = descr_Min;
 
 #endif
 #ifdef INTERPRET
@@ -6568,22 +6521,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Max_S1L1
+  } // namespace scope_gen_Max_S1L1_2456355933_3308197303
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Max_S1L1(
-  "Max$1\\1",
+static refalrts::RASLFunction descr_gen_Max_S1L1(
+  "Max$1\\1#2456355933:3308197303",
   scope_gen_Max_S1L1::raa,
   scope_gen_Max_S1L1::functions,
   scope_gen_Max_S1L1::idents,
   scope_gen_Max_S1L1::numbers,
   scope_gen_Max_S1L1::strings
 );
-refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Max_S1L1_2456355933_3308197303 = descr_gen_Max_S1L1;
 
 #else
 static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6643,22 +6593,19 @@ static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1");
-refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Max_S1L1(func_gen_Max_S1L1, "Max$1\\1#2456355933:3308197303");
+refalrts::RefalFunction& gen_Max_S1L1_2456355933_3308197303 = descr_gen_Max_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Max {
     static refalrts::RefalFunction *functions[] = {
-      & Reduce,
-      & Compare,
-      & gen_Max_S1L1,
+      & Reduce_alias,
+      & Compare_alias,
+      & gen_Max_S1L1_alias,
       & refalrts::create_closure,
-      & Fetch
+      & Fetch_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -6721,19 +6668,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Max
+  } // namespace scope_Max_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Max(
-  "Max",
+static refalrts::RASLFunction descr_Max(
+  "Max#0:0",
   scope_Max::raa,
   scope_Max::functions,
   scope_Max::idents,
   scope_Max::numbers,
   scope_Max::strings
 );
-refalrts::RefalFunction& Max = descr_Max;
+refalrts::RefalFunction& Max_0_0 = descr_Max;
 
 #else
 static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6769,13 +6716,13 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
     //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: </0 Reuse: & Compare/4 AsIs: t.X#1/5 AsIs: t.Y#1/7 AsIs: >/1 } </11 & @create_closure@/12 & Max$1\1/13 t.X#1/5/14 t.Y#1/7/16 >/18 >/19 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[10], & Fetch ) )
+    if( ! refalrts::alloc_name( context[10], & Fetch_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[12], & refalrts::create_closure ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & gen_Max_S1L1 ) )
+    if( ! refalrts::alloc_name( context[13], & gen_Max_S1L1_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[14], context[15], context[5], context[6]))
       return refalrts::cNoMemory;
@@ -6785,7 +6732,7 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[19] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Compare );
+    refalrts::update_name( context[4], & Compare_alias );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[9] );
     refalrts::push_stack( context[18] );
@@ -6812,7 +6759,7 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & Reduce/0 AsIs: & Max/4 AsIs: t.First#1/5 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Reduce );
+  refalrts::reinit_name( context[0], & Reduce_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6823,8 +6770,8 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Max(func_Max, "Max");
-refalrts::RefalFunction& Max = descr_Max;
+static refalrts::RefalNativeFunction descr_Max(func_Max, "Max#0:0");
+refalrts::RefalFunction& Max_0_0 = descr_Max;
 
 #endif
 

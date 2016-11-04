@@ -26,30 +26,41 @@ struct ident_Source {
   }
 };
 
-extern refalrts::RefalFunction& LoadFile;
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& Trim;
-extern refalrts::RefalFunction& FindFiles;
-extern refalrts::RefalFunction& CreateFileList;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoCreateFileList;
-} // unnamed namespace
+extern refalrts::RefalFunction& LoadFile_0_0;
+#define LoadFile_alias LoadFile_0_0
+#define LoadFile_str "LoadFile#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FindImports;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& LoadList;
-} // unnamed namespace
+extern refalrts::RefalFunction& Trim_0_0;
+#define Trim_alias Trim_0_0
+#define Trim_str "Trim#0:0"
+
+extern refalrts::RefalFunction& FindFiles_0_0;
+#define FindFiles_alias FindFiles_0_0
+#define FindFiles_str "FindFiles#0:0"
+
+extern refalrts::RefalFunction& CreateFileList_0_0;
+#define CreateFileList_alias CreateFileList_0_0
+
+extern refalrts::RefalFunction& DoCreateFileList_45697312_547554160;
+#define DoCreateFileList_alias DoCreateFileList_45697312_547554160
+
+extern refalrts::RefalFunction& FindImports_45697312_547554160;
+#define FindImports_alias FindImports_45697312_547554160
+
+extern refalrts::RefalFunction& LoadList_45697312_547554160;
+#define LoadList_alias LoadList_45697312_547554160
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CreateFileList {
     static refalrts::RefalFunction *functions[] = {
-      & DoCreateFileList,
-      & FindFiles
+      & DoCreateFileList_alias,
+      & FindFiles_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -93,19 +104,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CreateFileList
+  } // namespace scope_CreateFileList_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_CreateFileList(
-  "CreateFileList",
+static refalrts::RASLFunction descr_CreateFileList(
+  "CreateFileList#0:0",
   scope_CreateFileList::raa,
   scope_CreateFileList::functions,
   scope_CreateFileList::idents,
   scope_CreateFileList::numbers,
   scope_CreateFileList::strings
 );
-refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
+refalrts::RefalFunction& CreateFileList_0_0 = descr_CreateFileList;
 
 #else
 static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -137,7 +148,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & FindFiles ) )
+  if( ! refalrts::alloc_name( context[12], & FindFiles_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
@@ -151,7 +162,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoCreateFileList );
+  refalrts::update_name( context[4], & DoCreateFileList_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[19] );
@@ -170,15 +181,15 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, "CreateFileList");
-refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
+static refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, "CreateFileList#0:0");
+refalrts::RefalFunction& CreateFileList_0_0 = descr_CreateFileList;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoCreateFileList {
     static refalrts::RefalFunction *functions[] = {
-      & LoadList
+      & LoadList_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -277,22 +288,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoCreateFileList
+  } // namespace scope_DoCreateFileList_45697312_547554160
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoCreateFileList(
-  "DoCreateFileList",
+static refalrts::RASLFunction descr_DoCreateFileList(
+  "DoCreateFileList#45697312:547554160",
   scope_DoCreateFileList::raa,
   scope_DoCreateFileList::functions,
   scope_DoCreateFileList::idents,
   scope_DoCreateFileList::numbers,
   scope_DoCreateFileList::strings
 );
-refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoCreateFileList_45697312_547554160 = descr_DoCreateFileList;
 
 #else
 static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -423,7 +431,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[22], & LoadList ) )
+  if( ! refalrts::alloc_name( context[22], & LoadList_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[23] ) )
     return refalrts::cNoMemory;
@@ -450,19 +458,16 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList");
-refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList#45697312:547554160");
+refalrts::RefalFunction& DoCreateFileList_45697312_547554160 = descr_DoCreateFileList;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FindImports {
     static refalrts::RefalFunction *functions[] = {
-      & Trim,
-      & FindFiles
+      & Trim_alias,
+      & FindFiles_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -528,22 +533,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FindImports
+  } // namespace scope_FindImports_45697312_547554160
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_FindImports(
-  "FindImports",
+static refalrts::RASLFunction descr_FindImports(
+  "FindImports#45697312:547554160",
   scope_FindImports::raa,
   scope_FindImports::functions,
   scope_FindImports::idents,
   scope_FindImports::numbers,
   scope_FindImports::strings
 );
-refalrts::RefalFunction& FindImports = descr_FindImports;
-
-} // unnamed namespace
+refalrts::RefalFunction& FindImports_45697312_547554160 = descr_FindImports;
 
 #else
 static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -598,11 +600,11 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
-    refalrts::update_name( context[4], & FindFiles );
+    refalrts::update_name( context[4], & FindFiles_alias );
     refalrts::reinit_close_bracket( context[12] );
     refalrts::reinit_open_bracket( context[13] );
     refalrts::reinit_open_call( context[14] );
-    refalrts::reinit_name( context[15], & Trim );
+    refalrts::reinit_name( context[15], & Trim_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_close_call( context[11] );
@@ -640,20 +642,17 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_FindImports(func_FindImports, "FindImports");
-refalrts::RefalFunction& FindImports = descr_FindImports;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_FindImports(func_FindImports, "FindImports#45697312:547554160");
+refalrts::RefalFunction& FindImports_45697312_547554160 = descr_FindImports;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LoadList {
     static refalrts::RefalFunction *functions[] = {
-      & LoadFile,
-      & Map,
-      & FindImports
+      & LoadFile_alias,
+      & Map_alias,
+      & FindImports_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name,
@@ -747,22 +746,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_LoadList
+  } // namespace scope_LoadList_45697312_547554160
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_LoadList(
-  "LoadList",
+static refalrts::RASLFunction descr_LoadList(
+  "LoadList#45697312:547554160",
   scope_LoadList::raa,
   scope_LoadList::functions,
   scope_LoadList::idents,
   scope_LoadList::numbers,
   scope_LoadList::strings
 );
-refalrts::RefalFunction& LoadList = descr_LoadList;
-
-} // unnamed namespace
+refalrts::RefalFunction& LoadList_45697312_547554160 = descr_LoadList;
 
 #else
 static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -810,11 +806,11 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & FindImports/7 AsIs: e.Folders#1/5 AsIs: )/8 HalfReuse: </9 HalfReuse: & LoadFile/12 AsIs: e.NextModule#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & Map );
+    refalrts::reinit_name( context[0], & Map_alias );
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_name( context[7], & FindImports );
+    refalrts::reinit_name( context[7], & FindImports_alias );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[12], & LoadFile );
+    refalrts::reinit_name( context[12], & LoadFile_alias );
     refalrts::reinit_close_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[14] );
@@ -843,15 +839,15 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } & FindImports/10 Tile{ AsIs: e.Folders#1/5 } )/11 Tile{ HalfReuse: </8 HalfReuse: & LoadFile/9 AsIs: e.Output#1/2 AsIs: >/1 } >/12 Tile{ ]] }
-    if( ! refalrts::alloc_name( context[10], & FindImports ) )
+    if( ! refalrts::alloc_name( context[10], & FindImports_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[12] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Map );
+    refalrts::update_name( context[4], & Map_alias );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[9], & LoadFile );
+    refalrts::reinit_name( context[9], & LoadFile_alias );
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[0] );
     refalrts::push_stack( context[1] );
@@ -888,11 +884,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_LoadList(func_LoadList, "LoadList");
-refalrts::RefalFunction& LoadList = descr_LoadList;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_LoadList(func_LoadList, "LoadList#45697312:547554160");
+refalrts::RefalFunction& LoadList_45697312_547554160 = descr_LoadList;
 
 #endif
 

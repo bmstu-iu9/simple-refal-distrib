@@ -90,25 +90,29 @@ struct ident_TkVariable {
   }
 };
 
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& Fetch;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Fetch_0_0;
+#define Fetch_alias Fetch_0_0
+#define Fetch_str "Fetch#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& PreparePatternHardSent;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1_4049383299_2111946739;
+#define gen_PreparePatternHardSent_L1S5L1_alias gen_PreparePatternHardSent_L1S5L1_4049383299_2111946739
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CreateHardPattern_Aux;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_PreparePatternHardSent_L1_4049383299_2111946739;
+#define gen_PreparePatternHardSent_L1_alias gen_PreparePatternHardSent_L1_4049383299_2111946739
 
-extern refalrts::RefalFunction& CreateHardPattern;
+extern refalrts::RefalFunction& PreparePatternHardSent_4049383299_2111946739;
+#define PreparePatternHardSent_alias PreparePatternHardSent_4049383299_2111946739
+
+extern refalrts::RefalFunction& CreateHardPattern_Aux_4049383299_2111946739;
+#define CreateHardPattern_Aux_alias CreateHardPattern_Aux_4049383299_2111946739
+
+extern refalrts::RefalFunction& CreateHardPattern_0_0;
+#define CreateHardPattern_alias CreateHardPattern_0_0
+
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
@@ -169,22 +173,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_PreparePatternHardSent_L1S5L1
+  } // namespace scope_gen_PreparePatternHardSent_L1S5L1_4049383299_2111946739
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1S5L1(
-  "PreparePatternHardSent\\1$5\\1",
+static refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1S5L1(
+  "PreparePatternHardSent\\1$5\\1#4049383299:2111946739",
   scope_gen_PreparePatternHardSent_L1S5L1::raa,
   scope_gen_PreparePatternHardSent_L1S5L1::functions,
   scope_gen_PreparePatternHardSent_L1S5L1::idents,
   scope_gen_PreparePatternHardSent_L1S5L1::numbers,
   scope_gen_PreparePatternHardSent_L1S5L1::strings
 );
-refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1 = descr_gen_PreparePatternHardSent_L1S5L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1_4049383299_2111946739 = descr_gen_PreparePatternHardSent_L1S5L1;
 
 #else
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -259,20 +260,17 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1");
-refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1 = descr_gen_PreparePatternHardSent_L1S5L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, "PreparePatternHardSent\\1$5\\1#4049383299:2111946739");
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1S5L1_4049383299_2111946739 = descr_gen_PreparePatternHardSent_L1S5L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_PreparePatternHardSent_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & PreparePatternHardSent,
-      & Fetch,
-      & gen_PreparePatternHardSent_L1S5L1
+      & PreparePatternHardSent_alias,
+      & Fetch_alias,
+      & gen_PreparePatternHardSent_L1S5L1_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_ADT_Brackets<int>::name,
@@ -442,22 +440,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_PreparePatternHardSent_L1
+  } // namespace scope_gen_PreparePatternHardSent_L1_4049383299_2111946739
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1(
-  "PreparePatternHardSent\\1",
+static refalrts::RASLFunction descr_gen_PreparePatternHardSent_L1(
+  "PreparePatternHardSent\\1#4049383299:2111946739",
   scope_gen_PreparePatternHardSent_L1::raa,
   scope_gen_PreparePatternHardSent_L1::functions,
   scope_gen_PreparePatternHardSent_L1::idents,
   scope_gen_PreparePatternHardSent_L1::numbers,
   scope_gen_PreparePatternHardSent_L1::strings
 );
-refalrts::RefalFunction& gen_PreparePatternHardSent_L1 = descr_gen_PreparePatternHardSent_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1_4049383299_2111946739 = descr_gen_PreparePatternHardSent_L1;
 
 #else
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -600,7 +595,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#2/10 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Fetch/7 HalfReuse: s.Mode2 #10/9 } & PreparePatternHardSent\1$5\1/11 >/12 (/13 Tile{ AsIs: e.Index#2/16(5) } )/14 (/15 Tile{ AsIs: )/8 HalfReuse: )/1 ]] }
-    if( ! refalrts::alloc_name( context[11], & gen_PreparePatternHardSent_L1S5L1 ) )
+    if( ! refalrts::alloc_name( context[11], & gen_PreparePatternHardSent_L1S5L1_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[12] ) )
       return refalrts::cNoMemory;
@@ -612,7 +607,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & Fetch );
+    refalrts::reinit_name( context[7], & Fetch_alias );
     refalrts::reinit_svar( context[9], context[10] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[1] );
@@ -645,7 +640,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[9], & PreparePatternHardSent );
+    refalrts::reinit_name( context[9], & PreparePatternHardSent_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[1] );
@@ -671,7 +666,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # ADT-Brackets/9 AsIs: (/12 AsIs: e.Name#2/10 AsIs: )/13 } Tile{ AsIs: </0 Reuse: & PreparePatternHardSent/4 } Tile{ AsIs: e.inBrackets#2/5 } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
-  refalrts::update_name( context[4], & PreparePatternHardSent );
+  refalrts::update_name( context[4], & PreparePatternHardSent_alias );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[7], context[1] );
@@ -688,19 +683,16 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1");
-refalrts::RefalFunction& gen_PreparePatternHardSent_L1 = descr_gen_PreparePatternHardSent_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, "PreparePatternHardSent\\1#4049383299:2111946739");
+refalrts::RefalFunction& gen_PreparePatternHardSent_L1_4049383299_2111946739 = descr_gen_PreparePatternHardSent_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_PreparePatternHardSent {
     static refalrts::RefalFunction *functions[] = {
-      & gen_PreparePatternHardSent_L1,
-      & Map
+      & gen_PreparePatternHardSent_L1_alias,
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -726,22 +718,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_PreparePatternHardSent
+  } // namespace scope_PreparePatternHardSent_4049383299_2111946739
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_PreparePatternHardSent(
-  "PreparePatternHardSent",
+static refalrts::RASLFunction descr_PreparePatternHardSent(
+  "PreparePatternHardSent#4049383299:2111946739",
   scope_PreparePatternHardSent::raa,
   scope_PreparePatternHardSent::functions,
   scope_PreparePatternHardSent::idents,
   scope_PreparePatternHardSent::numbers,
   scope_PreparePatternHardSent::strings
 );
-refalrts::RefalFunction& PreparePatternHardSent = descr_PreparePatternHardSent;
-
-} // unnamed namespace
+refalrts::RefalFunction& PreparePatternHardSent_4049383299_2111946739 = descr_PreparePatternHardSent;
 
 #else
 static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -762,8 +751,8 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PreparePatternHardSent\1/4 AsIs: e.Pattern#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map );
-  refalrts::update_name( context[4], & gen_PreparePatternHardSent_L1 );
+  refalrts::reinit_name( context[0], & Map_alias );
+  refalrts::update_name( context[4], & gen_PreparePatternHardSent_L1_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -774,18 +763,15 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent");
-refalrts::RefalFunction& PreparePatternHardSent = descr_PreparePatternHardSent;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, "PreparePatternHardSent#4049383299:2111946739");
+refalrts::RefalFunction& PreparePatternHardSent_4049383299_2111946739 = descr_PreparePatternHardSent;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CreateHardPattern_Aux {
     static refalrts::RefalFunction *functions[] = {
-      & CreateHardPattern_Aux
+      & CreateHardPattern_Aux_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_E<int>::name,
@@ -1226,22 +1212,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CreateHardPattern_Aux
+  } // namespace scope_CreateHardPattern_Aux_4049383299_2111946739
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_CreateHardPattern_Aux(
-  "CreateHardPattern-Aux",
+static refalrts::RASLFunction descr_CreateHardPattern_Aux(
+  "CreateHardPattern-Aux#4049383299:2111946739",
   scope_CreateHardPattern_Aux::raa,
   scope_CreateHardPattern_Aux::functions,
   scope_CreateHardPattern_Aux::idents,
   scope_CreateHardPattern_Aux::numbers,
   scope_CreateHardPattern_Aux::strings
 );
-refalrts::RefalFunction& CreateHardPattern_Aux = descr_CreateHardPattern_Aux;
-
-} // unnamed namespace
+refalrts::RefalFunction& CreateHardPattern_Aux_4049383299_2111946739 = descr_CreateHardPattern_Aux;
 
 #else
 static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1336,7 +1319,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[8], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[8], & CreateHardPattern_Aux_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[16] );
     refalrts::link_brackets( context[7], context[15] );
@@ -1391,7 +1374,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_bracket( context[9] );
     refalrts::reinit_ident( context[12], & ident_ADT_Brackets<int>::name );
-    refalrts::reinit_name( context[13], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[13], & CreateHardPattern_Aux_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
@@ -1435,7 +1418,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[9], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[9], & CreateHardPattern_Aux_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[1] );
@@ -1469,12 +1452,12 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], & CreateHardPattern_Aux ) )
+    if( ! refalrts::alloc_name( context[12], & CreateHardPattern_Aux_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[9], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[9], & CreateHardPattern_Aux_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[11] );
@@ -1515,7 +1498,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], & CreateHardPattern_Aux ) )
+    if( ! refalrts::alloc_name( context[12], & CreateHardPattern_Aux_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_bracket( context[9] );
@@ -1591,7 +1574,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_close_bracket( context[16] );
     refalrts::reinit_open_call( context[17] );
-    refalrts::reinit_name( context[8], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[8], & CreateHardPattern_Aux_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[17] );
     refalrts::link_brackets( context[18], context[26] );
@@ -1740,7 +1723,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_close_bracket( context[16] );
     refalrts::reinit_open_call( context[17] );
-    refalrts::reinit_name( context[8], & CreateHardPattern_Aux );
+    refalrts::reinit_name( context[8], & CreateHardPattern_Aux_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[17] );
     refalrts::link_brackets( context[18], context[26] );
@@ -1963,19 +1946,16 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux");
-refalrts::RefalFunction& CreateHardPattern_Aux = descr_CreateHardPattern_Aux;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, "CreateHardPattern-Aux#4049383299:2111946739");
+refalrts::RefalFunction& CreateHardPattern_Aux_4049383299_2111946739 = descr_CreateHardPattern_Aux;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CreateHardPattern {
     static refalrts::RefalFunction *functions[] = {
-      & PreparePatternHardSent,
-      & CreateHardPattern_Aux
+      & PreparePatternHardSent_alias,
+      & CreateHardPattern_Aux_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2006,19 +1986,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CreateHardPattern
+  } // namespace scope_CreateHardPattern_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_CreateHardPattern(
-  "CreateHardPattern",
+static refalrts::RASLFunction descr_CreateHardPattern(
+  "CreateHardPattern#0:0",
   scope_CreateHardPattern::raa,
   scope_CreateHardPattern::functions,
   scope_CreateHardPattern::idents,
   scope_CreateHardPattern::numbers,
   scope_CreateHardPattern::strings
 );
-refalrts::RefalFunction& CreateHardPattern = descr_CreateHardPattern;
+refalrts::RefalFunction& CreateHardPattern_0_0 = descr_CreateHardPattern;
 
 #else
 static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2039,11 +2019,11 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   //RESULT: Tile{ [[ } </5 & CreateHardPattern-Aux/6 Tile{ AsIs: </0 Reuse: & PreparePatternHardSent/4 AsIs: e.pattern#1/2 AsIs: >/1 } >/7 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & CreateHardPattern_Aux ) )
+  if( ! refalrts::alloc_name( context[6], & CreateHardPattern_Aux_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & PreparePatternHardSent );
+  refalrts::update_name( context[4], & PreparePatternHardSent_alias );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[1] );
@@ -2058,8 +2038,8 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_CreateHardPattern(func_CreateHardPattern, "CreateHardPattern");
-refalrts::RefalFunction& CreateHardPattern = descr_CreateHardPattern;
+static refalrts::RefalNativeFunction descr_CreateHardPattern(func_CreateHardPattern, "CreateHardPattern#0:0");
+refalrts::RefalFunction& CreateHardPattern_0_0 = descr_CreateHardPattern;
 
 #endif
 

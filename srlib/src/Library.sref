@@ -131,7 +131,12 @@ refalrts::FnResult write_to_stream(
         break;
 
       case refalrts::cDataFunction:
-        printf_res = fprintf(out, "%s ", p->function_info->name);
+        {
+          const char *name = p->function_info->name;
+          const char *hash_pos = strchr(name, '#');
+          size_t len = hash_pos ? hash_pos - name : strlen(name);
+          printf_res = fprintf(out, "%.*s ", static_cast<int>(len), name);
+        }
         break;
 
       case refalrts::cDataIdentifier:
@@ -385,7 +390,8 @@ $ENTRY FOpen {
   }
 
   char filename[FILENAME_MAX + 1] = { '\0' };
-  unsigned len = read_chars(filename, FILENAME_MAX, content_b, content_e);
+  unsigned len =
+    refalrts::read_chars(filename, FILENAME_MAX, content_b, content_e);
 
   if (! refalrts::empty_seq(content_b, content_e) || len == 0) {
     return refalrts::cRecognitionImpossible;
@@ -468,7 +474,8 @@ $ENTRY ExistFile {
     refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
   char filename[FILENAME_MAX + 1] = { '\0' };
-  unsigned len = read_chars(filename, FILENAME_MAX, content_b, content_e);
+  unsigned len =
+    refalrts::read_chars(filename, FILENAME_MAX, content_b, content_e);
 
   if (! refalrts::empty_seq(content_b, content_e) || len == 0) {
     return refalrts::cRecognitionImpossible;

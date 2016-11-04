@@ -154,86 +154,83 @@ struct ident_Unnamed {
   }
 };
 
-extern refalrts::RefalFunction& ErrorAt;
-extern refalrts::RefalFunction& Fetch;
-extern refalrts::RefalFunction& Seq;
-extern refalrts::RefalFunction& DFA_TextFromToken;
-extern refalrts::RefalFunction& DFA_Parse;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ParseElements;
-} // unnamed namespace
+extern refalrts::RefalFunction& ErrorAt_0_0;
+#define ErrorAt_alias ErrorAt_0_0
+#define ErrorAt_str "ErrorAt#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseSetDescr_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Fetch_0_0;
+#define Fetch_alias Fetch_0_0
+#define Fetch_str "Fetch#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ParseSetDescr;
-} // unnamed namespace
+extern refalrts::RefalFunction& Seq_0_0;
+#define Seq_alias Seq_0_0
+#define Seq_str "Seq#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExtractSets;
-} // unnamed namespace
+extern refalrts::RefalFunction& DFA_TextFromToken_0_0;
+#define DFA_TextFromToken_alias DFA_TextFromToken_0_0
+#define DFA_TextFromToken_str "DFA-TextFromToken#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ParseSentence_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& DFA_Parse_0_0;
+#define DFA_Parse_alias DFA_Parse_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ParseSentence;
-} // unnamed namespace
+extern refalrts::RefalFunction& ParseElements_452973408_3382509061;
+#define ParseElements_alias ParseElements_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ParseSetDescr_S1L1_452973408_3382509061;
+#define gen_ParseSetDescr_S1L1_alias gen_ParseSetDescr_S1L1_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L2;
-} // unnamed namespace
+extern refalrts::RefalFunction& ParseSetDescr_452973408_3382509061;
+#define ParseSetDescr_alias ParseSetDescr_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L3;
-} // unnamed namespace
+extern refalrts::RefalFunction& ExtractSets_452973408_3382509061;
+#define ExtractSets_alias ExtractSets_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L4;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ParseSentence_S1L1_452973408_3382509061;
+#define gen_ParseSentence_S1L1_alias gen_ParseSentence_S1L1_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L5;
-} // unnamed namespace
+extern refalrts::RefalFunction& ParseSentence_452973408_3382509061;
+#define ParseSentence_alias ParseSentence_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L6;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L1_452973408_3382509061;
+#define gen_ExtractAlternatives_L1_alias gen_ExtractAlternatives_L1_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExtractAlternatives;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L2_452973408_3382509061;
+#define gen_ExtractAlternatives_L2_alias gen_ExtractAlternatives_L2_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExtractAlternatives_Head;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L3_452973408_3382509061;
+#define gen_ExtractAlternatives_L3_alias gen_ExtractAlternatives_L3_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExtractAlternatives_Flush;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L4_452973408_3382509061;
+#define gen_ExtractAlternatives_L4_alias gen_ExtractAlternatives_L4_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExtractAlternatives_NextState;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L5_452973408_3382509061;
+#define gen_ExtractAlternatives_L5_alias gen_ExtractAlternatives_L5_452973408_3382509061
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& UnexpectedToken;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_ExtractAlternatives_L6_452973408_3382509061;
+#define gen_ExtractAlternatives_L6_alias gen_ExtractAlternatives_L6_452973408_3382509061
+
+extern refalrts::RefalFunction& ExtractAlternatives_452973408_3382509061;
+#define ExtractAlternatives_alias ExtractAlternatives_452973408_3382509061
+
+extern refalrts::RefalFunction& ExtractAlternatives_Head_452973408_3382509061;
+#define ExtractAlternatives_Head_alias ExtractAlternatives_Head_452973408_3382509061
+
+extern refalrts::RefalFunction& ExtractAlternatives_Flush_452973408_3382509061;
+#define ExtractAlternatives_Flush_alias ExtractAlternatives_Flush_452973408_3382509061
+
+extern refalrts::RefalFunction& ExtractAlternatives_NextState_452973408_3382509061;
+#define ExtractAlternatives_NextState_alias ExtractAlternatives_NextState_452973408_3382509061
+
+extern refalrts::RefalFunction& UnexpectedToken_452973408_3382509061;
+#define UnexpectedToken_alias UnexpectedToken_452973408_3382509061
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DFA_Parse {
     static refalrts::RefalFunction *functions[] = {
-      & ParseElements,
-      & ErrorAt
+      & ParseElements_alias,
+      & ErrorAt_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TEOF<int>::name
@@ -306,19 +303,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DFA_Parse
+  } // namespace scope_DFA_Parse_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_DFA_Parse(
-  "DFA-Parse",
+static refalrts::RASLFunction descr_DFA_Parse(
+  "DFA-Parse#0:0",
   scope_DFA_Parse::raa,
   scope_DFA_Parse::functions,
   scope_DFA_Parse::idents,
   scope_DFA_Parse::numbers,
   scope_DFA_Parse::strings
 );
-refalrts::RefalFunction& DFA_Parse = descr_DFA_Parse;
+refalrts::RefalFunction& DFA_Parse_0_0 = descr_DFA_Parse;
 
 #else
 static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -364,7 +361,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[13], context[14], "egal empty descriptio", 21 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ErrorAt );
+    refalrts::update_name( context[4], & ErrorAt_alias );
     refalrts::reinit_char( context[7], 'l' );
     refalrts::reinit_char( context[9], 'l' );
     refalrts::reinit_char( context[8], 'n' );
@@ -391,7 +388,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } </5 & ParseElements/6 (/7 (/8"Any"/9 )/11 )/12 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.Tokens#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & ParseElements ) )
+  if( ! refalrts::alloc_name( context[6], & ParseElements_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
@@ -418,18 +415,18 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_DFA_Parse(func_DFA_Parse, "DFA-Parse");
-refalrts::RefalFunction& DFA_Parse = descr_DFA_Parse;
+static refalrts::RefalNativeFunction descr_DFA_Parse(func_DFA_Parse, "DFA-Parse#0:0");
+refalrts::RefalFunction& DFA_Parse_0_0 = descr_DFA_Parse;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseElements {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken,
-      & ParseSentence,
-      & ErrorAt,
-      & ParseSetDescr
+      & UnexpectedToken_alias,
+      & ParseSentence_alias,
+      & ErrorAt_alias,
+      & ParseSetDescr_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TEOF<int>::name,
@@ -660,22 +657,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ParseElements
+  } // namespace scope_ParseElements_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ParseElements(
-  "ParseElements",
+static refalrts::RASLFunction descr_ParseElements(
+  "ParseElements#452973408:3382509061",
   scope_ParseElements::raa,
   scope_ParseElements::functions,
   scope_ParseElements::idents,
   scope_ParseElements::numbers,
   scope_ParseElements::strings
 );
-refalrts::RefalFunction& ParseElements = descr_ParseElements;
-
-} // unnamed namespace
+refalrts::RefalFunction& ParseElements_452973408_3382509061 = descr_ParseElements;
 
 #else
 static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -752,7 +746,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_chars( context[30], context[31], " redeclared", 11 ) )
         return refalrts::cNoMemory;
-      refalrts::update_name( context[4], & ErrorAt );
+      refalrts::update_name( context[4], & ErrorAt_alias );
       refalrts::reinit_char( context[8], 'S' );
       refalrts::reinit_char( context[11], 'e' );
       refalrts::reinit_char( context[12], 't' );
@@ -807,7 +801,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[21], context[22], context[15], context[16]))
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ParseSetDescr );
+    refalrts::update_name( context[4], & ParseSetDescr_alias );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[17] );
     refalrts::push_stack( context[1] );
@@ -874,7 +868,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_chars( context[29], context[30], "clared", 6 ) )
         return refalrts::cNoMemory;
-      refalrts::update_name( context[4], & ErrorAt );
+      refalrts::update_name( context[4], & ErrorAt_alias );
       refalrts::reinit_char( context[8], 'N' );
       refalrts::reinit_char( context[11], 'a' );
       refalrts::reinit_char( context[7], 'm' );
@@ -929,7 +923,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[22] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ParseSentence );
+    refalrts::update_name( context[4], & ParseSentence_alias );
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_close_bracket( context[13] );
     refalrts::reinit_close_bracket( context[17] );
@@ -993,7 +987,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/13 } Tile{ HalfReuse: 'n'/7 } Tile{ HalfReuse: 'a'/8 HalfReuse: 'm'/11 } Tile{ HalfReuse: 'e'/12 }" or set name"/15 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[15], context[16], " or set name", 12 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[7], 'n' );
   refalrts::reinit_char( context[8], 'a' );
   refalrts::reinit_char( context[11], 'm' );
@@ -1013,20 +1007,17 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ParseElements(func_ParseElements, "ParseElements");
-refalrts::RefalFunction& ParseElements = descr_ParseElements;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ParseElements(func_ParseElements, "ParseElements#452973408:3382509061");
+refalrts::RefalFunction& ParseElements_452973408_3382509061 = descr_ParseElements;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseSetDescr_S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken,
-      & ParseElements,
-      & ErrorAt
+      & UnexpectedToken_alias,
+      & ParseElements_alias,
+      & ErrorAt_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Set<int>::name,
@@ -1172,22 +1163,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseSetDescr_S1L1
+  } // namespace scope_gen_ParseSetDescr_S1L1_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseSetDescr_S1L1(
-  "ParseSetDescr$1\\1",
+static refalrts::RASLFunction descr_gen_ParseSetDescr_S1L1(
+  "ParseSetDescr$1\\1#452973408:3382509061",
   scope_gen_ParseSetDescr_S1L1::raa,
   scope_gen_ParseSetDescr_S1L1::functions,
   scope_gen_ParseSetDescr_S1L1::idents,
   scope_gen_ParseSetDescr_S1L1::numbers,
   scope_gen_ParseSetDescr_S1L1::strings
 );
-refalrts::RefalFunction& gen_ParseSetDescr_S1L1 = descr_gen_ParseSetDescr_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ParseSetDescr_S1L1_452973408_3382509061 = descr_gen_ParseSetDescr_S1L1;
 
 #else
 static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1267,7 +1255,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#2/28 HalfReuse: 'S'/24 } Tile{ HalfReuse: 'e'/13 } Tile{ HalfReuse: 't'/14 HalfReuse: ' '/17 } Tile{ HalfReuse: ':'/8 } Tile{ AsIs: e.Name#1/5 } Tile{ HalfReuse: ':'/18 HalfReuse: ' '/21 HalfReuse: 'n'/22 HalfReuse: 'o'/23 HalfReuse: 't'/27 } Tile{ HalfReuse: ' '/7 }"have content"/30 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_chars( context[30], context[31], "have content", 12 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ErrorAt );
+    refalrts::update_name( context[4], & ErrorAt_alias );
     refalrts::reinit_char( context[24], 'S' );
     refalrts::reinit_char( context[13], 'e' );
     refalrts::reinit_char( context[14], 't' );
@@ -1326,7 +1314,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
     refalrts::reinit_ident( context[4], & ident_Set<int>::name );
     refalrts::reinit_close_bracket( context[21] );
     refalrts::reinit_open_call( context[23] );
-    refalrts::reinit_name( context[27], & ParseElements );
+    refalrts::reinit_name( context[27], & ParseElements_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[23] );
     refalrts::link_brackets( context[17], context[18] );
@@ -1361,7 +1349,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#2/23 } Tile{ HalfReuse: 'd'/14 HalfReuse: 'o'/17 } Tile{ HalfReuse: 't'/18 HalfReuse: ' '/21 } Tile{ HalfReuse: 'a'/22 } Tile{ HalfReuse: 't'/13 } Tile{ HalfReuse: ' '/8 } Tile{ HalfReuse: 'e'/7 }"nd of set"/25 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[25], context[26], "nd of set", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[14], 'd' );
   refalrts::reinit_char( context[17], 'o' );
   refalrts::reinit_char( context[18], 't' );
@@ -1388,22 +1376,19 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ParseSetDescr_S1L1(func_gen_ParseSetDescr_S1L1, "ParseSetDescr$1\\1");
-refalrts::RefalFunction& gen_ParseSetDescr_S1L1 = descr_gen_ParseSetDescr_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ParseSetDescr_S1L1(func_gen_ParseSetDescr_S1L1, "ParseSetDescr$1\\1#452973408:3382509061");
+refalrts::RefalFunction& gen_ParseSetDescr_S1L1_452973408_3382509061 = descr_gen_ParseSetDescr_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseSetDescr {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken,
+      & UnexpectedToken_alias,
       & refalrts::create_closure,
-      & Fetch,
-      & gen_ParseSetDescr_S1L1,
-      & ExtractSets
+      & Fetch_alias,
+      & gen_ParseSetDescr_S1L1_alias,
+      & ExtractSets_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TEquals<int>::name
@@ -1498,22 +1483,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ParseSetDescr
+  } // namespace scope_ParseSetDescr_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ParseSetDescr(
-  "ParseSetDescr",
+static refalrts::RASLFunction descr_ParseSetDescr(
+  "ParseSetDescr#452973408:3382509061",
   scope_ParseSetDescr::raa,
   scope_ParseSetDescr::functions,
   scope_ParseSetDescr::idents,
   scope_ParseSetDescr::numbers,
   scope_ParseSetDescr::strings
 );
-refalrts::RefalFunction& ParseSetDescr = descr_ParseSetDescr;
-
-} // unnamed namespace
+refalrts::RefalFunction& ParseSetDescr_452973408_3382509061 = descr_ParseSetDescr;
 
 #else
 static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1582,17 +1564,17 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </26 & ExtractSets/27 Tile{ AsIs: (/19 } Tile{ AsIs: )/20 AsIs: e.Tail#1/2 AsIs: >/1 } </28 Tile{ HalfReuse: & @create_closure@/23 } & ParseSetDescr$1\1/29 Tile{ AsIs: (/17 AsIs: e.Name#1/15 AsIs: )/18 } Tile{ AsIs: t.SetNamePos#1/13 } Tile{ AsIs: (/7 AsIs: e.SetNames#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.RuleNames#1/9 AsIs: )/12 } >/30 >/31 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[26] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[27], & ExtractSets ) )
+    if( ! refalrts::alloc_name( context[27], & ExtractSets_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[28] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[29], & gen_ParseSetDescr_S1L1 ) )
+    if( ! refalrts::alloc_name( context[29], & gen_ParseSetDescr_S1L1_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[30] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[31] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Fetch );
+    refalrts::update_name( context[4], & Fetch_alias );
     refalrts::reinit_name( context[23], & refalrts::create_closure );
     refalrts::push_stack( context[31] );
     refalrts::push_stack( context[0] );
@@ -1633,7 +1615,7 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/19 } Tile{ HalfReuse: '\"'/8 HalfReuse: '='/11 } Tile{ HalfReuse: '\"'/18 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[8], '\"' );
   refalrts::reinit_char( context[11], '=' );
   refalrts::reinit_char( context[18], '\"' );
@@ -1650,11 +1632,8 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ParseSetDescr(func_ParseSetDescr, "ParseSetDescr");
-refalrts::RefalFunction& ParseSetDescr = descr_ParseSetDescr;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ParseSetDescr(func_ParseSetDescr, "ParseSetDescr#452973408:3382509061");
+refalrts::RefalFunction& ParseSetDescr_452973408_3382509061 = descr_ParseSetDescr;
 
 #endif
 #ifdef INTERPRET
@@ -1749,22 +1728,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExtractSets
+  } // namespace scope_ExtractSets_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExtractSets(
-  "ExtractSets",
+static refalrts::RASLFunction descr_ExtractSets(
+  "ExtractSets#452973408:3382509061",
   scope_ExtractSets::raa,
   scope_ExtractSets::functions,
   scope_ExtractSets::idents,
   scope_ExtractSets::numbers,
   scope_ExtractSets::strings
 );
-refalrts::RefalFunction& ExtractSets = descr_ExtractSets;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExtractSets_452973408_3382509061 = descr_ExtractSets;
 
 #else
 static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1891,19 +1867,16 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExtractSets(func_ExtractSets, "ExtractSets");
-refalrts::RefalFunction& ExtractSets = descr_ExtractSets;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExtractSets(func_ExtractSets, "ExtractSets#452973408:3382509061");
+refalrts::RefalFunction& ExtractSets_452973408_3382509061 = descr_ExtractSets;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseSentence_S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken,
-      & ParseElements
+      & UnexpectedToken_alias,
+      & ParseElements_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Sentence<int>::name,
@@ -2002,22 +1975,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ParseSentence_S1L1
+  } // namespace scope_gen_ParseSentence_S1L1_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ParseSentence_S1L1(
-  "ParseSentence$1\\1",
+static refalrts::RASLFunction descr_gen_ParseSentence_S1L1(
+  "ParseSentence$1\\1#452973408:3382509061",
   scope_gen_ParseSentence_S1L1::raa,
   scope_gen_ParseSentence_S1L1::functions,
   scope_gen_ParseSentence_S1L1::idents,
   scope_gen_ParseSentence_S1L1::numbers,
   scope_gen_ParseSentence_S1L1::strings
 );
-refalrts::RefalFunction& gen_ParseSentence_S1L1 = descr_gen_ParseSentence_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ParseSentence_S1L1_452973408_3382509061 = descr_gen_ParseSentence_S1L1;
 
 #else
 static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2096,7 +2066,7 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
     refalrts::reinit_ident( context[4], & ident_Sentence<int>::name );
     refalrts::reinit_close_bracket( context[21] );
     refalrts::reinit_open_call( context[23] );
-    refalrts::reinit_name( context[10], & ParseElements );
+    refalrts::reinit_name( context[10], & ParseElements_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[23] );
     refalrts::link_brackets( context[17], context[18] );
@@ -2129,7 +2099,7 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#2/23 } Tile{ HalfReuse: 'e'/14 HalfReuse: 'n'/17 } Tile{ HalfReuse: 'd'/18 HalfReuse: ' '/21 } Tile{ HalfReuse: 'o'/10 HalfReuse: 'f'/13 } Tile{ HalfReuse: ' '/22 } Tile{ HalfReuse: 's'/9 }"entence"/25 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[25], context[26], "entence", 7 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[14], 'e' );
   refalrts::reinit_char( context[17], 'n' );
   refalrts::reinit_char( context[18], 'd' );
@@ -2155,22 +2125,19 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ParseSentence_S1L1(func_gen_ParseSentence_S1L1, "ParseSentence$1\\1");
-refalrts::RefalFunction& gen_ParseSentence_S1L1 = descr_gen_ParseSentence_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ParseSentence_S1L1(func_gen_ParseSentence_S1L1, "ParseSentence$1\\1#452973408:3382509061");
+refalrts::RefalFunction& gen_ParseSentence_S1L1_452973408_3382509061 = descr_gen_ParseSentence_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseSentence {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken,
+      & UnexpectedToken_alias,
       & refalrts::create_closure,
-      & ExtractAlternatives,
-      & gen_ParseSentence_S1L1,
-      & Fetch
+      & ExtractAlternatives_alias,
+      & gen_ParseSentence_S1L1_alias,
+      & Fetch_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TEquals<int>::name
@@ -2266,22 +2233,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ParseSentence
+  } // namespace scope_ParseSentence_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ParseSentence(
-  "ParseSentence",
+static refalrts::RASLFunction descr_ParseSentence(
+  "ParseSentence#452973408:3382509061",
   scope_ParseSentence::raa,
   scope_ParseSentence::functions,
   scope_ParseSentence::idents,
   scope_ParseSentence::numbers,
   scope_ParseSentence::strings
 );
-refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
-
-} // unnamed namespace
+refalrts::RefalFunction& ParseSentence_452973408_3382509061 = descr_ParseSentence;
 
 #else
 static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2348,19 +2312,19 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 } & Fetch/26 </27 Tile{ HalfReuse: & ExtractAlternatives/18 AsIs: (/19 } Tile{ AsIs: )/20 AsIs: e.Tail#1/2 AsIs: >/1 } </28 Tile{ HalfReuse: & @create_closure@/23 } & ParseSentence$1\1/29 Tile{ AsIs: t.SentNamePos#1/13 AsIs: (/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.SetNames#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.RuleNames#1/9 AsIs: )/12 } >/30 >/31 Tile{ ]] }
-    if( ! refalrts::alloc_name( context[26], & Fetch ) )
+    if( ! refalrts::alloc_name( context[26], & Fetch_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[27] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[28] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[29], & gen_ParseSentence_S1L1 ) )
+    if( ! refalrts::alloc_name( context[29], & gen_ParseSentence_S1L1_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[30] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[31] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[18], & ExtractAlternatives );
+    refalrts::reinit_name( context[18], & ExtractAlternatives_alias );
     refalrts::reinit_name( context[23], & refalrts::create_closure );
     refalrts::reinit_close_bracket( context[4] );
     refalrts::push_stack( context[31] );
@@ -2402,7 +2366,7 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/19 } Tile{ HalfReuse: '\"'/8 HalfReuse: '='/11 } Tile{ HalfReuse: '\"'/18 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[8], '\"' );
   refalrts::reinit_char( context[11], '=' );
   refalrts::reinit_char( context[18], '\"' );
@@ -2419,11 +2383,8 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ParseSentence(func_ParseSentence, "ParseSentence");
-refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ParseSentence(func_ParseSentence, "ParseSentence#452973408:3382509061");
+refalrts::RefalFunction& ParseSentence_452973408_3382509061 = descr_ParseSentence;
 
 #endif
 #ifdef INTERPRET
@@ -2458,22 +2419,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L1
+  } // namespace scope_gen_ExtractAlternatives_L1_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L1(
-  "ExtractAlternatives\\1",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L1(
+  "ExtractAlternatives\\1#452973408:3382509061",
   scope_gen_ExtractAlternatives_L1::raa,
   scope_gen_ExtractAlternatives_L1::functions,
   scope_gen_ExtractAlternatives_L1::idents,
   scope_gen_ExtractAlternatives_L1::numbers,
   scope_gen_ExtractAlternatives_L1::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L1 = descr_gen_ExtractAlternatives_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L1_452973408_3382509061 = descr_gen_ExtractAlternatives_L1;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2518,18 +2476,15 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L1(func_gen_ExtractAlternatives_L1, "ExtractAlternatives\\1");
-refalrts::RefalFunction& gen_ExtractAlternatives_L1 = descr_gen_ExtractAlternatives_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L1(func_gen_ExtractAlternatives_L1, "ExtractAlternatives\\1#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L1_452973408_3382509061 = descr_gen_ExtractAlternatives_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L2 {
     static refalrts::RefalFunction *functions[] = {
-      & ExtractAlternatives_Head
+      & ExtractAlternatives_Head_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2559,22 +2514,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L2
+  } // namespace scope_gen_ExtractAlternatives_L2_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L2(
-  "ExtractAlternatives\\2",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L2(
+  "ExtractAlternatives\\2#452973408:3382509061",
   scope_gen_ExtractAlternatives_L2::raa,
   scope_gen_ExtractAlternatives_L2::functions,
   scope_gen_ExtractAlternatives_L2::idents,
   scope_gen_ExtractAlternatives_L2::numbers,
   scope_gen_ExtractAlternatives_L2::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L2 = descr_gen_ExtractAlternatives_L2;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L2_452973408_3382509061 = descr_gen_ExtractAlternatives_L2;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2599,7 +2551,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_beg
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-Head/4 } Tile{ AsIs: t.NextToken#2/7 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
-  refalrts::update_name( context[4], & ExtractAlternatives_Head );
+  refalrts::update_name( context[4], & ExtractAlternatives_Head_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2614,18 +2566,15 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L2(func_gen_ExtractAlternatives_L2, "ExtractAlternatives\\2");
-refalrts::RefalFunction& gen_ExtractAlternatives_L2 = descr_gen_ExtractAlternatives_L2;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L2(func_gen_ExtractAlternatives_L2, "ExtractAlternatives\\2#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L2_452973408_3382509061 = descr_gen_ExtractAlternatives_L2;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L3 {
     static refalrts::RefalFunction *functions[] = {
-      & ExtractAlternatives_Flush
+      & ExtractAlternatives_Flush_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2656,22 +2605,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L3
+  } // namespace scope_gen_ExtractAlternatives_L3_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L3(
-  "ExtractAlternatives\\3",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L3(
+  "ExtractAlternatives\\3#452973408:3382509061",
   scope_gen_ExtractAlternatives_L3::raa,
   scope_gen_ExtractAlternatives_L3::functions,
   scope_gen_ExtractAlternatives_L3::idents,
   scope_gen_ExtractAlternatives_L3::numbers,
   scope_gen_ExtractAlternatives_L3::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L3 = descr_gen_ExtractAlternatives_L3;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L3_452973408_3382509061 = descr_gen_ExtractAlternatives_L3;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2699,7 +2645,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_beg
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 AsIs: t.Head#2/7 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-Flush/4 } Tile{ AsIs: t.NextToken#2/9 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
-  refalrts::update_name( context[4], & ExtractAlternatives_Flush );
+  refalrts::update_name( context[4], & ExtractAlternatives_Flush_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2714,18 +2660,15 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L3(func_gen_ExtractAlternatives_L3, "ExtractAlternatives\\3");
-refalrts::RefalFunction& gen_ExtractAlternatives_L3 = descr_gen_ExtractAlternatives_L3;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L3(func_gen_ExtractAlternatives_L3, "ExtractAlternatives\\3#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L3_452973408_3382509061 = descr_gen_ExtractAlternatives_L3;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L4 {
     static refalrts::RefalFunction *functions[] = {
-      & ExtractAlternatives_NextState
+      & ExtractAlternatives_NextState_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -2757,22 +2700,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L4
+  } // namespace scope_gen_ExtractAlternatives_L4_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L4(
-  "ExtractAlternatives\\4",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L4(
+  "ExtractAlternatives\\4#452973408:3382509061",
   scope_gen_ExtractAlternatives_L4::raa,
   scope_gen_ExtractAlternatives_L4::functions,
   scope_gen_ExtractAlternatives_L4::idents,
   scope_gen_ExtractAlternatives_L4::numbers,
   scope_gen_ExtractAlternatives_L4::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L4 = descr_gen_ExtractAlternatives_L4;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L4_452973408_3382509061 = descr_gen_ExtractAlternatives_L4;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2803,7 +2743,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_beg
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 AsIs: t.Head#2/7 AsIs: t.Flush#2/9 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-NextState/4 } Tile{ AsIs: t.NextToken#2/11 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
-  refalrts::update_name( context[4], & ExtractAlternatives_NextState );
+  refalrts::update_name( context[4], & ExtractAlternatives_NextState_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2818,18 +2758,15 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L4(func_gen_ExtractAlternatives_L4, "ExtractAlternatives\\4");
-refalrts::RefalFunction& gen_ExtractAlternatives_L4 = descr_gen_ExtractAlternatives_L4;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L4(func_gen_ExtractAlternatives_L4, "ExtractAlternatives\\4#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L4_452973408_3382509061 = descr_gen_ExtractAlternatives_L4;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L5 {
     static refalrts::RefalFunction *functions[] = {
-      & ErrorAt
+      & ErrorAt_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Finitive<int>::name,
@@ -2890,22 +2827,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L5
+  } // namespace scope_gen_ExtractAlternatives_L5_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L5(
-  "ExtractAlternatives\\5",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L5(
+  "ExtractAlternatives\\5#452973408:3382509061",
   scope_gen_ExtractAlternatives_L5::raa,
   scope_gen_ExtractAlternatives_L5::functions,
   scope_gen_ExtractAlternatives_L5::idents,
   scope_gen_ExtractAlternatives_L5::numbers,
   scope_gen_ExtractAlternatives_L5::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L5 = descr_gen_ExtractAlternatives_L5;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L5_452973408_3382509061 = descr_gen_ExtractAlternatives_L5;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2950,7 +2884,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[14], context[15], " alternative must have flush", 28 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ErrorAt );
+    refalrts::update_name( context[4], & ErrorAt_alias );
     refalrts::reinit_char( context[9], 'O' );
     refalrts::reinit_char( context[11], 'F' );
     refalrts::push_stack( context[1] );
@@ -2984,18 +2918,15 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L5(func_gen_ExtractAlternatives_L5, "ExtractAlternatives\\5");
-refalrts::RefalFunction& gen_ExtractAlternatives_L5 = descr_gen_ExtractAlternatives_L5;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L5(func_gen_ExtractAlternatives_L5, "ExtractAlternatives\\5#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L5_452973408_3382509061 = descr_gen_ExtractAlternatives_L5;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L6 {
     static refalrts::RefalFunction *functions[] = {
-      & ExtractAlternatives
+      & ExtractAlternatives_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TAlternative<int>::name
@@ -3064,22 +2995,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_ExtractAlternatives_L6
+  } // namespace scope_gen_ExtractAlternatives_L6_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_ExtractAlternatives_L6(
-  "ExtractAlternatives\\6",
+static refalrts::RASLFunction descr_gen_ExtractAlternatives_L6(
+  "ExtractAlternatives\\6#452973408:3382509061",
   scope_gen_ExtractAlternatives_L6::raa,
   scope_gen_ExtractAlternatives_L6::functions,
   scope_gen_ExtractAlternatives_L6::idents,
   scope_gen_ExtractAlternatives_L6::numbers,
   scope_gen_ExtractAlternatives_L6::strings
 );
-refalrts::RefalFunction& gen_ExtractAlternatives_L6 = descr_gen_ExtractAlternatives_L6;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_ExtractAlternatives_L6_452973408_3382509061 = descr_gen_ExtractAlternatives_L6;
 
 #else
 static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3137,7 +3065,7 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.SrcPos#2/20 )/18 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExtractAlternatives/4 AsIs: (/7 AsIs: e.Found#1/5 HalfReuse: (/8 AsIs: t.Head#2/9 AsIs: t.Flush#2/11 AsIs: t.NextState#2/13 HalfReuse: )/17 HalfReuse: )/19 } Tile{ AsIs: e.Tail#2/22(2) } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & ExtractAlternatives );
+    refalrts::update_name( context[4], & ExtractAlternatives_alias );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[17] );
     refalrts::reinit_close_bracket( context[19] );
@@ -3179,26 +3107,23 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L6(func_gen_ExtractAlternatives_L6, "ExtractAlternatives\\6");
-refalrts::RefalFunction& gen_ExtractAlternatives_L6 = descr_gen_ExtractAlternatives_L6;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_ExtractAlternatives_L6(func_gen_ExtractAlternatives_L6, "ExtractAlternatives\\6#452973408:3382509061");
+refalrts::RefalFunction& gen_ExtractAlternatives_L6_452973408_3382509061 = descr_gen_ExtractAlternatives_L6;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives {
     static refalrts::RefalFunction *functions[] = {
-      & gen_ExtractAlternatives_L6,
+      & gen_ExtractAlternatives_L6_alias,
       & refalrts::create_closure,
-      & gen_ExtractAlternatives_L5,
-      & gen_ExtractAlternatives_L4,
-      & gen_ExtractAlternatives_L3,
-      & gen_ExtractAlternatives_L2,
-      & gen_ExtractAlternatives_L1,
-      & Seq,
-      & Fetch
+      & gen_ExtractAlternatives_L5_alias,
+      & gen_ExtractAlternatives_L4_alias,
+      & gen_ExtractAlternatives_L3_alias,
+      & gen_ExtractAlternatives_L2_alias,
+      & gen_ExtractAlternatives_L1_alias,
+      & Seq_alias,
+      & Fetch_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3246,22 +3171,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExtractAlternatives
+  } // namespace scope_ExtractAlternatives_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExtractAlternatives(
-  "ExtractAlternatives",
+static refalrts::RASLFunction descr_ExtractAlternatives(
+  "ExtractAlternatives#452973408:3382509061",
   scope_ExtractAlternatives::raa,
   scope_ExtractAlternatives::functions,
   scope_ExtractAlternatives::idents,
   scope_ExtractAlternatives::numbers,
   scope_ExtractAlternatives::strings
 );
-refalrts::RefalFunction& ExtractAlternatives = descr_ExtractAlternatives;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExtractAlternatives_452973408_3382509061 = descr_ExtractAlternatives;
 
 #else
 static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3289,21 +3211,21 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
   //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Tail#1/2 } </11 & Seq/12 & ExtractAlternatives\1/13 & ExtractAlternatives\2/14 & ExtractAlternatives\3/15 & ExtractAlternatives\4/16 & ExtractAlternatives\5/17 </18 Tile{ HalfReuse: & @create_closure@/0 Reuse: & ExtractAlternatives\6/4 AsIs: (/7 AsIs: e.Found#1/5 AsIs: )/8 } >/19 >/20 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Fetch ) )
+  if( ! refalrts::alloc_name( context[10], & Fetch_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & Seq ) )
+  if( ! refalrts::alloc_name( context[12], & Seq_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & gen_ExtractAlternatives_L1 ) )
+  if( ! refalrts::alloc_name( context[13], & gen_ExtractAlternatives_L1_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & gen_ExtractAlternatives_L2 ) )
+  if( ! refalrts::alloc_name( context[14], & gen_ExtractAlternatives_L2_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & gen_ExtractAlternatives_L3 ) )
+  if( ! refalrts::alloc_name( context[15], & gen_ExtractAlternatives_L3_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & gen_ExtractAlternatives_L4 ) )
+  if( ! refalrts::alloc_name( context[16], & gen_ExtractAlternatives_L4_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], & gen_ExtractAlternatives_L5 ) )
+  if( ! refalrts::alloc_name( context[17], & gen_ExtractAlternatives_L5_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[18] ) )
     return refalrts::cNoMemory;
@@ -3312,7 +3234,7 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
   if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_ExtractAlternatives_L6 );
+  refalrts::update_name( context[4], & gen_ExtractAlternatives_L6_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[20] );
@@ -3332,18 +3254,15 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExtractAlternatives(func_ExtractAlternatives, "ExtractAlternatives");
-refalrts::RefalFunction& ExtractAlternatives = descr_ExtractAlternatives;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExtractAlternatives(func_ExtractAlternatives, "ExtractAlternatives#452973408:3382509061");
+refalrts::RefalFunction& ExtractAlternatives_452973408_3382509061 = descr_ExtractAlternatives;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_Head {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken
+      & UnexpectedToken_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Empty<int>::name,
@@ -3544,22 +3463,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExtractAlternatives_Head
+  } // namespace scope_ExtractAlternatives_Head_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExtractAlternatives_Head(
-  "ExtractAlternatives-Head",
+static refalrts::RASLFunction descr_ExtractAlternatives_Head(
+  "ExtractAlternatives-Head#452973408:3382509061",
   scope_ExtractAlternatives_Head::raa,
   scope_ExtractAlternatives_Head::functions,
   scope_ExtractAlternatives_Head::idents,
   scope_ExtractAlternatives_Head::numbers,
   scope_ExtractAlternatives_Head::strings
 );
-refalrts::RefalFunction& ExtractAlternatives_Head = descr_ExtractAlternatives_Head;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExtractAlternatives_Head_452973408_3382509061 = descr_ExtractAlternatives_Head;
 
 #else
 static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3864,7 +3780,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 AsIs: t.Unexpected#1/5 }" definition of state"/7 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[7], context[8], " definition of state", 20 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -3876,18 +3792,15 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExtractAlternatives_Head(func_ExtractAlternatives_Head, "ExtractAlternatives-Head");
-refalrts::RefalFunction& ExtractAlternatives_Head = descr_ExtractAlternatives_Head;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExtractAlternatives_Head(func_ExtractAlternatives_Head, "ExtractAlternatives-Head#452973408:3382509061");
+refalrts::RefalFunction& ExtractAlternatives_Head_452973408_3382509061 = descr_ExtractAlternatives_Head;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_Flush {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken
+      & UnexpectedToken_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_None<int>::name,
@@ -4037,22 +3950,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExtractAlternatives_Flush
+  } // namespace scope_ExtractAlternatives_Flush_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExtractAlternatives_Flush(
-  "ExtractAlternatives-Flush",
+static refalrts::RASLFunction descr_ExtractAlternatives_Flush(
+  "ExtractAlternatives-Flush#452973408:3382509061",
   scope_ExtractAlternatives_Flush::raa,
   scope_ExtractAlternatives_Flush::functions,
   scope_ExtractAlternatives_Flush::idents,
   scope_ExtractAlternatives_Flush::numbers,
   scope_ExtractAlternatives_Flush::strings
 );
-refalrts::RefalFunction& ExtractAlternatives_Flush = descr_ExtractAlternatives_Flush;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExtractAlternatives_Flush_452973408_3382509061 = descr_ExtractAlternatives_Flush;
 
 #else
 static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4268,7 +4178,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[1], 'f' );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[0] );
@@ -4280,18 +4190,15 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExtractAlternatives_Flush(func_ExtractAlternatives_Flush, "ExtractAlternatives-Flush");
-refalrts::RefalFunction& ExtractAlternatives_Flush = descr_ExtractAlternatives_Flush;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExtractAlternatives_Flush(func_ExtractAlternatives_Flush, "ExtractAlternatives-Flush#452973408:3382509061");
+refalrts::RefalFunction& ExtractAlternatives_Flush_452973408_3382509061 = descr_ExtractAlternatives_Flush;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_NextState {
     static refalrts::RefalFunction *functions[] = {
-      & UnexpectedToken
+      & UnexpectedToken_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Finitive<int>::name,
@@ -4382,22 +4289,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExtractAlternatives_NextState
+  } // namespace scope_ExtractAlternatives_NextState_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExtractAlternatives_NextState(
-  "ExtractAlternatives-NextState",
+static refalrts::RASLFunction descr_ExtractAlternatives_NextState(
+  "ExtractAlternatives-NextState#452973408:3382509061",
   scope_ExtractAlternatives_NextState::raa,
   scope_ExtractAlternatives_NextState::functions,
   scope_ExtractAlternatives_NextState::idents,
   scope_ExtractAlternatives_NextState::numbers,
   scope_ExtractAlternatives_NextState::strings
 );
-refalrts::RefalFunction& ExtractAlternatives_NextState = descr_ExtractAlternatives_NextState;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExtractAlternatives_NextState_452973408_3382509061 = descr_ExtractAlternatives_NextState;
 
 #else
 static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4520,7 +4424,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & UnexpectedToken );
+  refalrts::update_name( context[4], & UnexpectedToken_alias );
   refalrts::reinit_char( context[1], 'n' );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[0] );
@@ -4532,19 +4436,16 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExtractAlternatives_NextState(func_ExtractAlternatives_NextState, "ExtractAlternatives-NextState");
-refalrts::RefalFunction& ExtractAlternatives_NextState = descr_ExtractAlternatives_NextState;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExtractAlternatives_NextState(func_ExtractAlternatives_NextState, "ExtractAlternatives-NextState#452973408:3382509061");
+refalrts::RefalFunction& ExtractAlternatives_NextState_452973408_3382509061 = descr_ExtractAlternatives_NextState;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_UnexpectedToken {
     static refalrts::RefalFunction *functions[] = {
-      & DFA_TextFromToken,
-      & ErrorAt
+      & DFA_TextFromToken_alias,
+      & ErrorAt_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -4587,22 +4488,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_UnexpectedToken
+  } // namespace scope_UnexpectedToken_452973408_3382509061
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_UnexpectedToken(
-  "UnexpectedToken",
+static refalrts::RASLFunction descr_UnexpectedToken(
+  "UnexpectedToken#452973408:3382509061",
   scope_UnexpectedToken::raa,
   scope_UnexpectedToken::functions,
   scope_UnexpectedToken::idents,
   scope_UnexpectedToken::numbers,
   scope_UnexpectedToken::strings
 );
-refalrts::RefalFunction& UnexpectedToken = descr_UnexpectedToken;
-
-} // unnamed namespace
+refalrts::RefalFunction& UnexpectedToken_452973408_3382509061 = descr_UnexpectedToken;
 
 #else
 static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4641,8 +4539,8 @@ static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrt
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[16], context[17], " expected", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ErrorAt );
-  refalrts::reinit_name( context[7], & DFA_TextFromToken );
+  refalrts::update_name( context[4], & ErrorAt_alias );
+  refalrts::reinit_name( context[7], & DFA_TextFromToken_alias );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -4660,11 +4558,8 @@ static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_UnexpectedToken(func_UnexpectedToken, "UnexpectedToken");
-refalrts::RefalFunction& UnexpectedToken = descr_UnexpectedToken;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_UnexpectedToken(func_UnexpectedToken, "UnexpectedToken#452973408:3382509061");
+refalrts::RefalFunction& UnexpectedToken_452973408_3382509061 = descr_UnexpectedToken;
 
 #endif
 

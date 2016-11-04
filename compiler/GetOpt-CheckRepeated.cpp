@@ -10,7 +10,9 @@ struct ident_RepeatOption {
   }
 };
 
-extern refalrts::RefalFunction& GetOpt_CheckRepeated;
+extern refalrts::RefalFunction& GetOpt_CheckRepeated_0_0;
+#define GetOpt_CheckRepeated_alias GetOpt_CheckRepeated_0_0
+
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
@@ -143,19 +145,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GetOpt_CheckRepeated
+  } // namespace scope_GetOpt_CheckRepeated_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GetOpt_CheckRepeated(
-  "GetOpt-CheckRepeated",
+static refalrts::RASLFunction descr_GetOpt_CheckRepeated(
+  "GetOpt-CheckRepeated#0:0",
   scope_GetOpt_CheckRepeated::raa,
   scope_GetOpt_CheckRepeated::functions,
   scope_GetOpt_CheckRepeated::idents,
   scope_GetOpt_CheckRepeated::numbers,
   scope_GetOpt_CheckRepeated::strings
 );
-refalrts::RefalFunction& GetOpt_CheckRepeated = descr_GetOpt_CheckRepeated;
+refalrts::RefalFunction& GetOpt_CheckRepeated_0_0 = descr_GetOpt_CheckRepeated;
 
 #else
 static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -370,8 +372,8 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, "GetOpt-CheckRepeated");
-refalrts::RefalFunction& GetOpt_CheckRepeated = descr_GetOpt_CheckRepeated;
+static refalrts::RefalNativeFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, "GetOpt-CheckRepeated#0:0");
+refalrts::RefalFunction& GetOpt_CheckRepeated_0_0 = descr_GetOpt_CheckRepeated;
 
 #endif
 

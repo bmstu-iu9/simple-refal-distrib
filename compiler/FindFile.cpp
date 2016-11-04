@@ -50,48 +50,48 @@ struct ident_True {
   }
 };
 
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& FindFiles;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeInFolder;
-} // unnamed namespace
+extern refalrts::RefalFunction& FindFiles_0_0;
+#define FindFiles_alias FindFiles_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
-} // unnamed namespace
+extern refalrts::RefalFunction& AnalyzeFile_ByFolders_2490140914_439242415;
+#define AnalyzeFile_ByFolders_alias AnalyzeFile_ByFolders_2490140914_439242415
 
-extern refalrts::RefalFunction& ExistFile;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExistFile_T;
-} // unnamed namespace
+extern refalrts::RefalFunction& AnalyzeInFolder_2490140914_439242415;
+#define AnalyzeInFolder_alias AnalyzeInFolder_2490140914_439242415
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile;
-} // unnamed namespace
+extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound_2490140914_439242415;
+#define AnalyzeFile_CheckNotFound_alias AnalyzeFile_CheckNotFound_2490140914_439242415
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
-} // unnamed namespace
+extern refalrts::RefalFunction& ExistFile_0_0;
+#define ExistFile_alias ExistFile_0_0
+#define ExistFile_str "ExistFile#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
-} // unnamed namespace
+extern refalrts::RefalFunction& ExistFile_T_2490140914_439242415;
+#define ExistFile_T_alias ExistFile_T_2490140914_439242415
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
-} // unnamed namespace
+extern refalrts::RefalFunction& AnalyzeFile_2490140914_439242415;
+#define AnalyzeFile_alias AnalyzeFile_2490140914_439242415
+
+extern refalrts::RefalFunction& AnalyzeSource_CheckExist_2490140914_439242415;
+#define AnalyzeSource_CheckExist_alias AnalyzeSource_CheckExist_2490140914_439242415
+
+extern refalrts::RefalFunction& AnalyzeOutput_CheckExist_2490140914_439242415;
+#define AnalyzeOutput_CheckExist_alias AnalyzeOutput_CheckExist_2490140914_439242415
+
+extern refalrts::RefalFunction& AnalyzeBoth_CheckExist_2490140914_439242415;
+#define AnalyzeBoth_CheckExist_alias AnalyzeBoth_CheckExist_2490140914_439242415
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FindFiles {
     static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile_ByFolders,
-      & Map
+      & AnalyzeFile_ByFolders_alias,
+      & Map_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Current<int>::name
@@ -124,19 +124,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FindFiles
+  } // namespace scope_FindFiles_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_FindFiles(
-  "FindFiles",
+static refalrts::RASLFunction descr_FindFiles(
+  "FindFiles#0:0",
   scope_FindFiles::raa,
   scope_FindFiles::functions,
   scope_FindFiles::idents,
   scope_FindFiles::numbers,
   scope_FindFiles::strings
 );
-refalrts::RefalFunction& FindFiles = descr_FindFiles;
+refalrts::RefalFunction& FindFiles_0_0 = descr_FindFiles;
 
 #else
 static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -164,10 +164,10 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Map ) )
+  if( ! refalrts::alloc_name( context[10], & Map_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::update_name( context[4], & AnalyzeFile_ByFolders );
+  refalrts::update_name( context[4], & AnalyzeFile_ByFolders_alias );
   refalrts::reinit_ident( context[7], & ident_Current<int>::name );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
@@ -180,17 +180,17 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_FindFiles(func_FindFiles, "FindFiles");
-refalrts::RefalFunction& FindFiles = descr_FindFiles;
+static refalrts::RefalNativeFunction descr_FindFiles(func_FindFiles, "FindFiles#0:0");
+refalrts::RefalFunction& FindFiles_0_0 = descr_FindFiles;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeFile_ByFolders {
     static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile_CheckNotFound,
-      & AnalyzeInFolder,
-      & Map
+      & AnalyzeFile_CheckNotFound_alias,
+      & AnalyzeInFolder_alias,
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -231,22 +231,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeFile_ByFolders
+  } // namespace scope_AnalyzeFile_ByFolders_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile_ByFolders(
-  "AnalyzeFile-ByFolders",
+static refalrts::RASLFunction descr_AnalyzeFile_ByFolders(
+  "AnalyzeFile-ByFolders#2490140914:439242415",
   scope_AnalyzeFile_ByFolders::raa,
   scope_AnalyzeFile_ByFolders::functions,
   scope_AnalyzeFile_ByFolders::idents,
   scope_AnalyzeFile_ByFolders::numbers,
   scope_AnalyzeFile_ByFolders::strings
 );
-refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeFile_ByFolders_2490140914_439242415 = descr_AnalyzeFile_ByFolders;
 
 #else
 static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -272,11 +269,11 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[9], & Map ) )
+  if( ! refalrts::alloc_name( context[9], & Map_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & AnalyzeInFolder ) )
+  if( ! refalrts::alloc_name( context[11], & AnalyzeInFolder_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[12], context[13], context[5], context[6]))
     return refalrts::cNoMemory;
@@ -286,7 +283,7 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & AnalyzeFile_CheckNotFound );
+  refalrts::update_name( context[4], & AnalyzeFile_CheckNotFound_alias );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[16] );
   refalrts::push_stack( context[0] );
@@ -305,18 +302,15 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders");
-refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeFile_ByFolders_2490140914_439242415 = descr_AnalyzeFile_ByFolders;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeInFolder {
     static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile
+      & AnalyzeFile_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Current<int>::name
@@ -371,22 +365,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeInFolder
+  } // namespace scope_AnalyzeInFolder_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeInFolder(
-  "AnalyzeInFolder",
+static refalrts::RASLFunction descr_AnalyzeInFolder(
+  "AnalyzeInFolder#2490140914:439242415",
   scope_AnalyzeInFolder::raa,
   scope_AnalyzeInFolder::functions,
   scope_AnalyzeInFolder::idents,
   scope_AnalyzeInFolder::numbers,
   scope_AnalyzeInFolder::strings
 );
-refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeInFolder_2490140914_439242415 = descr_AnalyzeInFolder;
 
 #else
 static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -416,7 +407,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
-    refalrts::update_name( context[4], & AnalyzeFile );
+    refalrts::update_name( context[4], & AnalyzeFile_alias );
     refalrts::reinit_close_call( context[5] );
     refalrts::push_stack( context[5] );
     refalrts::push_stack( context[0] );
@@ -441,7 +432,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & AnalyzeFile );
+  refalrts::update_name( context[4], & AnalyzeFile_alias );
   refalrts::reinit_char( context[5], '/' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -456,11 +447,8 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder");
-refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeInFolder_2490140914_439242415 = descr_AnalyzeInFolder;
 
 #endif
 #ifdef INTERPRET
@@ -562,22 +550,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeFile_CheckNotFound
+  } // namespace scope_AnalyzeFile_CheckNotFound_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile_CheckNotFound(
-  "AnalyzeFile-CheckNotFound",
+static refalrts::RASLFunction descr_AnalyzeFile_CheckNotFound(
+  "AnalyzeFile-CheckNotFound#2490140914:439242415",
   scope_AnalyzeFile_CheckNotFound::raa,
   scope_AnalyzeFile_CheckNotFound::functions,
   scope_AnalyzeFile_CheckNotFound::idents,
   scope_AnalyzeFile_CheckNotFound::numbers,
   scope_AnalyzeFile_CheckNotFound::strings
 );
-refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeFile_CheckNotFound_2490140914_439242415 = descr_AnalyzeFile_CheckNotFound;
 
 #else
 static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -728,18 +713,15 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound");
-refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeFile_CheckNotFound_2490140914_439242415 = descr_AnalyzeFile_CheckNotFound;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExistFile_T {
     static refalrts::RefalFunction *functions[] = {
-      & ExistFile
+      & ExistFile_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -764,22 +746,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ExistFile_T
+  } // namespace scope_ExistFile_T_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExistFile_T(
-  "ExistFile-T",
+static refalrts::RASLFunction descr_ExistFile_T(
+  "ExistFile-T#2490140914:439242415",
   scope_ExistFile_T::raa,
   scope_ExistFile_T::functions,
   scope_ExistFile_T::idents,
   scope_ExistFile_T::numbers,
   scope_ExistFile_T::strings
 );
-refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
-
-} // unnamed namespace
+refalrts::RefalFunction& ExistFile_T_2490140914_439242415 = descr_ExistFile_T;
 
 #else
 static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -800,7 +779,7 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
   if (! refalrts::copy_evar(context[5], context[6], context[2], context[3]))
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ExistFile );
+  refalrts::update_name( context[4], & ExistFile_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -811,21 +790,18 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExistFile_T(func_ExistFile_T, "ExistFile-T");
-refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ExistFile_T(func_ExistFile_T, "ExistFile-T#2490140914:439242415");
+refalrts::RefalFunction& ExistFile_T_2490140914_439242415 = descr_ExistFile_T;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeFile {
     static refalrts::RefalFunction *functions[] = {
-      & ExistFile_T,
-      & AnalyzeBoth_CheckExist,
-      & AnalyzeOutput_CheckExist,
-      & AnalyzeSource_CheckExist
+      & ExistFile_T_alias,
+      & AnalyzeBoth_CheckExist_alias,
+      & AnalyzeOutput_CheckExist_alias,
+      & AnalyzeSource_CheckExist_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -931,22 +907,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeFile
+  } // namespace scope_AnalyzeFile_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile(
-  "AnalyzeFile",
+static refalrts::RASLFunction descr_AnalyzeFile(
+  "AnalyzeFile#2490140914:439242415",
   scope_AnalyzeFile::raa,
   scope_AnalyzeFile::functions,
   scope_AnalyzeFile::idents,
   scope_AnalyzeFile::numbers,
   scope_AnalyzeFile::strings
 );
-refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeFile_2490140914_439242415 = descr_AnalyzeFile;
 
 #else
 static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -990,11 +963,11 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], & AnalyzeSource_CheckExist ) )
+    if( ! refalrts::alloc_name( context[11], & AnalyzeSource_CheckExist_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[12] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ExistFile_T );
+    refalrts::update_name( context[4], & ExistFile_T_alias );
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[10] );
     refalrts::push_stack( context[1] );
@@ -1034,11 +1007,11 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[10], & AnalyzeOutput_CheckExist ) )
+    if( ! refalrts::alloc_name( context[10], & AnalyzeOutput_CheckExist_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[11] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ExistFile_T );
+    refalrts::update_name( context[4], & ExistFile_T_alias );
     refalrts::push_stack( context[11] );
     refalrts::push_stack( context[9] );
     refalrts::push_stack( context[1] );
@@ -1063,7 +1036,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & AnalyzeBoth_CheckExist ) )
+  if( ! refalrts::alloc_name( context[6], & AnalyzeBoth_CheckExist_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
@@ -1075,7 +1048,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & ExistFile_T ) )
+  if( ! refalrts::alloc_name( context[13], & ExistFile_T_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
     return refalrts::cNoMemory;
@@ -1085,7 +1058,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ExistFile_T );
+  refalrts::update_name( context[4], & ExistFile_T_alias );
   refalrts::reinit_char( context[1], '.' );
   refalrts::push_stack( context[19] );
   refalrts::push_stack( context[5] );
@@ -1104,11 +1077,8 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile(func_AnalyzeFile, "AnalyzeFile");
-refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeFile(func_AnalyzeFile, "AnalyzeFile#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeFile_2490140914_439242415 = descr_AnalyzeFile;
 
 #endif
 #ifdef INTERPRET
@@ -1181,22 +1151,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeSource_CheckExist
+  } // namespace scope_AnalyzeSource_CheckExist_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeSource_CheckExist(
-  "AnalyzeSource-CheckExist",
+static refalrts::RASLFunction descr_AnalyzeSource_CheckExist(
+  "AnalyzeSource-CheckExist#2490140914:439242415",
   scope_AnalyzeSource_CheckExist::raa,
   scope_AnalyzeSource_CheckExist::functions,
   scope_AnalyzeSource_CheckExist::idents,
   scope_AnalyzeSource_CheckExist::numbers,
   scope_AnalyzeSource_CheckExist::strings
 );
-refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeSource_CheckExist_2490140914_439242415 = descr_AnalyzeSource_CheckExist;
 
 #else
 static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1285,11 +1252,8 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist");
-refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeSource_CheckExist_2490140914_439242415 = descr_AnalyzeSource_CheckExist;
 
 #endif
 #ifdef INTERPRET
@@ -1348,22 +1312,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeOutput_CheckExist
+  } // namespace scope_AnalyzeOutput_CheckExist_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeOutput_CheckExist(
-  "AnalyzeOutput-CheckExist",
+static refalrts::RASLFunction descr_AnalyzeOutput_CheckExist(
+  "AnalyzeOutput-CheckExist#2490140914:439242415",
   scope_AnalyzeOutput_CheckExist::raa,
   scope_AnalyzeOutput_CheckExist::functions,
   scope_AnalyzeOutput_CheckExist::idents,
   scope_AnalyzeOutput_CheckExist::numbers,
   scope_AnalyzeOutput_CheckExist::strings
 );
-refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeOutput_CheckExist_2490140914_439242415 = descr_AnalyzeOutput_CheckExist;
 
 #else
 static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1426,11 +1387,8 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist");
-refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeOutput_CheckExist_2490140914_439242415 = descr_AnalyzeOutput_CheckExist;
 
 #endif
 #ifdef INTERPRET
@@ -1529,22 +1487,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AnalyzeBoth_CheckExist
+  } // namespace scope_AnalyzeBoth_CheckExist_2490140914_439242415
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeBoth_CheckExist(
-  "AnalyzeBoth-CheckExist",
+static refalrts::RASLFunction descr_AnalyzeBoth_CheckExist(
+  "AnalyzeBoth-CheckExist#2490140914:439242415",
   scope_AnalyzeBoth_CheckExist::raa,
   scope_AnalyzeBoth_CheckExist::functions,
   scope_AnalyzeBoth_CheckExist::idents,
   scope_AnalyzeBoth_CheckExist::numbers,
   scope_AnalyzeBoth_CheckExist::strings
 );
-refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
-
-} // unnamed namespace
+refalrts::RefalFunction& AnalyzeBoth_CheckExist_2490140914_439242415 = descr_AnalyzeBoth_CheckExist;
 
 #else
 static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1685,11 +1640,8 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist");
-refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist#2490140914:439242415");
+refalrts::RefalFunction& AnalyzeBoth_CheckExist_2490140914_439242415 = descr_AnalyzeBoth_CheckExist;
 
 #endif
 

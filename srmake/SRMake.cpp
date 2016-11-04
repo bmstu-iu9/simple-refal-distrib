@@ -58,54 +58,72 @@ struct ident_Success {
   }
 };
 
-extern refalrts::RefalFunction& WriteLine;
-extern refalrts::RefalFunction& System;
-extern refalrts::RefalFunction& StrFromInt;
-extern refalrts::RefalFunction& Exit;
-extern refalrts::RefalFunction& ArgList;
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& CreateFileList;
-extern refalrts::RefalFunction& ParseCommandLine;
-extern refalrts::RefalFunction& Go;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Main;
-} // unnamed namespace
+extern refalrts::RefalFunction& WriteLine_0_0;
+#define WriteLine_alias WriteLine_0_0
+#define WriteLine_str "WriteLine#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_MakeProject_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& System_0_0;
+#define System_alias System_0_0
+#define System_str "System#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_MakeProject_S2L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& StrFromInt_0_0;
+#define StrFromInt_alias StrFromInt_0_0
+#define StrFromInt_str "StrFromInt#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MakeProject;
-} // unnamed namespace
+extern refalrts::RefalFunction& Exit_0_0;
+#define Exit_alias Exit_0_0
+#define Exit_str "Exit#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& ArgList_0_0;
+#define ArgList_alias ArgList_0_0
+#define ArgList_str "ArgList#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S2L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_Make_S2L2;
-} // unnamed namespace
+extern refalrts::RefalFunction& CreateFileList_0_0;
+#define CreateFileList_alias CreateFileList_0_0
+#define CreateFileList_str "CreateFileList#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Make;
-} // unnamed namespace
+extern refalrts::RefalFunction& ParseCommandLine_0_0;
+#define ParseCommandLine_alias ParseCommandLine_0_0
+#define ParseCommandLine_str "ParseCommandLine#0:0"
+
+extern refalrts::RefalFunction& Go_0_0;
+#define Go_alias Go_0_0
+
+extern refalrts::RefalFunction& Main_1598433284_870988702;
+#define Main_alias Main_1598433284_870988702
+
+extern refalrts::RefalFunction& gen_MakeProject_S1L1_1598433284_870988702;
+#define gen_MakeProject_S1L1_alias gen_MakeProject_S1L1_1598433284_870988702
+
+extern refalrts::RefalFunction& gen_MakeProject_S2L1_1598433284_870988702;
+#define gen_MakeProject_S2L1_alias gen_MakeProject_S2L1_1598433284_870988702
+
+extern refalrts::RefalFunction& MakeProject_1598433284_870988702;
+#define MakeProject_alias MakeProject_1598433284_870988702
+
+extern refalrts::RefalFunction& gen_Make_S1L1_1598433284_870988702;
+#define gen_Make_S1L1_alias gen_Make_S1L1_1598433284_870988702
+
+extern refalrts::RefalFunction& gen_Make_S2L1_1598433284_870988702;
+#define gen_Make_S2L1_alias gen_Make_S2L1_1598433284_870988702
+
+extern refalrts::RefalFunction& gen_Make_S2L2_1598433284_870988702;
+#define gen_Make_S2L2_alias gen_Make_S2L2_1598433284_870988702
+
+extern refalrts::RefalFunction& Make_1598433284_870988702;
+#define Make_alias Make_1598433284_870988702
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Go {
     static refalrts::RefalFunction *functions[] = {
-      & Main,
-      & ArgList
+      & Main_alias,
+      & ArgList_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -135,19 +153,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Go
+  } // namespace scope_Go_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_Go(
-  "Go",
+static refalrts::RASLFunction descr_Go(
+  "Go#0:0",
   scope_Go::raa,
   scope_Go::functions,
   scope_Go::idents,
   scope_Go::numbers,
   scope_Go::strings
 );
-refalrts::RefalFunction& Go = descr_Go;
+refalrts::RefalFunction& Go_0_0 = descr_Go;
 
 #else
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -167,13 +185,13 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main/4 HalfReuse: </1 } & ArgList/5 >/6 >/7 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & ArgList ) )
+  if( ! refalrts::alloc_name( context[5], & ArgList_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Main );
+  refalrts::update_name( context[4], & Main_alias );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[0] );
@@ -187,17 +205,17 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_Go(func_Go, "Go");
-refalrts::RefalFunction& Go = descr_Go;
+static refalrts::RefalNativeFunction descr_Go(func_Go, "Go#0:0");
+refalrts::RefalFunction& Go_0_0 = descr_Go;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Main {
     static refalrts::RefalFunction *functions[] = {
-      & ParseCommandLine,
-      & MakeProject,
-      & WriteLine
+      & ParseCommandLine_alias,
+      & MakeProject_alias,
+      & WriteLine_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -266,22 +284,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Main
+  } // namespace scope_Main_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Main(
-  "Main",
+static refalrts::RASLFunction descr_Main(
+  "Main#1598433284:870988702",
   scope_Main::raa,
   scope_Main::functions,
   scope_Main::idents,
   scope_Main::numbers,
   scope_Main::strings
 );
-refalrts::RefalFunction& Main = descr_Main;
-
-} // unnamed namespace
+refalrts::RefalFunction& Main_1598433284_870988702 = descr_Main;
 
 #else
 static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -323,11 +338,11 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & WriteLine ) )
+    if( ! refalrts::alloc_name( context[13], & WriteLine_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[14], context[15], "  srmake [-s path\\to\\srefc.exe] -c c++compiler {-d search-dir} MainFileName[.sref", 81 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & WriteLine );
+    refalrts::update_name( context[4], & WriteLine_alias );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_char( context[8], ']' );
     refalrts::push_stack( context[1] );
@@ -354,9 +369,9 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & MakeProject/4 HalfReuse: </7 } Tile{ HalfReuse: & ParseCommandLine/8 AsIs: e.Arguments#1/2 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & MakeProject );
+  refalrts::update_name( context[4], & MakeProject_alias );
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[8], & ParseCommandLine );
+  refalrts::reinit_name( context[8], & ParseCommandLine_alias );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );
@@ -371,11 +386,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Main(func_Main, "Main");
-refalrts::RefalFunction& Main = descr_Main;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Main(func_Main, "Main#1598433284:870988702");
+refalrts::RefalFunction& Main_1598433284_870988702 = descr_Main;
 
 #endif
 #ifdef INTERPRET
@@ -408,22 +420,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_MakeProject_S1L1
+  } // namespace scope_gen_MakeProject_S1L1_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_MakeProject_S1L1(
-  "MakeProject$1\\1",
+static refalrts::RASLFunction descr_gen_MakeProject_S1L1(
+  "MakeProject$1\\1#1598433284:870988702",
   scope_gen_MakeProject_S1L1::raa,
   scope_gen_MakeProject_S1L1::functions,
   scope_gen_MakeProject_S1L1::idents,
   scope_gen_MakeProject_S1L1::numbers,
   scope_gen_MakeProject_S1L1::strings
 );
-refalrts::RefalFunction& gen_MakeProject_S1L1 = descr_gen_MakeProject_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_MakeProject_S1L1_1598433284_870988702 = descr_gen_MakeProject_S1L1;
 
 #else
 static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -464,19 +473,16 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1");
-refalrts::RefalFunction& gen_MakeProject_S1L1 = descr_gen_MakeProject_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1#1598433284:870988702");
+refalrts::RefalFunction& gen_MakeProject_S1L1_1598433284_870988702 = descr_gen_MakeProject_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_MakeProject_S2L1 {
     static refalrts::RefalFunction *functions[] = {
-      & WriteLine,
-      & StrFromInt
+      & WriteLine_alias,
+      & StrFromInt_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -522,22 +528,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_MakeProject_S2L1
+  } // namespace scope_gen_MakeProject_S2L1_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_MakeProject_S2L1(
-  "MakeProject$2\\1",
+static refalrts::RASLFunction descr_gen_MakeProject_S2L1(
+  "MakeProject$2\\1#1598433284:870988702",
   scope_gen_MakeProject_S2L1::raa,
   scope_gen_MakeProject_S2L1::functions,
   scope_gen_MakeProject_S2L1::idents,
   scope_gen_MakeProject_S2L1::numbers,
   scope_gen_MakeProject_S2L1::strings
 );
-refalrts::RefalFunction& gen_MakeProject_S2L1 = descr_gen_MakeProject_S2L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_MakeProject_S2L1_1598433284_870988702 = descr_gen_MakeProject_S2L1;
 
 #else
 static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -572,13 +575,13 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & StrFromInt ) )
+  if( ! refalrts::alloc_name( context[15], & StrFromInt_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[17], context[18], ": ", 2 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine );
+  refalrts::update_name( context[4], & WriteLine_alias );
   refalrts::reinit_char( context[7], 'C' );
   refalrts::reinit_char( context[8], 'a' );
   refalrts::push_stack( context[1] );
@@ -598,23 +601,20 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1");
-refalrts::RefalFunction& gen_MakeProject_S2L1 = descr_gen_MakeProject_S2L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1#1598433284:870988702");
+refalrts::RefalFunction& gen_MakeProject_S2L1_1598433284_870988702 = descr_gen_MakeProject_S2L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MakeProject {
     static refalrts::RefalFunction *functions[] = {
-      & gen_MakeProject_S2L1,
-      & Map,
-      & Exit,
-      & gen_MakeProject_S1L1,
-      & CreateFileList,
-      & Make
+      & gen_MakeProject_S2L1_alias,
+      & Map_alias,
+      & Exit_alias,
+      & gen_MakeProject_S1L1_alias,
+      & CreateFileList_alias,
+      & Make_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Fails<int>::name,
@@ -708,22 +708,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_MakeProject
+  } // namespace scope_MakeProject_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_MakeProject(
-  "MakeProject",
+static refalrts::RASLFunction descr_MakeProject(
+  "MakeProject#1598433284:870988702",
   scope_MakeProject::raa,
   scope_MakeProject::functions,
   scope_MakeProject::idents,
   scope_MakeProject::numbers,
   scope_MakeProject::strings
 );
-refalrts::RefalFunction& MakeProject = descr_MakeProject;
-
-} // unnamed namespace
+refalrts::RefalFunction& MakeProject_1598433284_870988702 = descr_MakeProject;
 
 #else
 static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -785,7 +782,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[24], & Map ) )
+    if( ! refalrts::alloc_name( context[24], & Map_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[25] ) )
       return refalrts::cNoMemory;
@@ -793,11 +790,11 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[27] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[9], & Make );
-    refalrts::update_name( context[4], & CreateFileList );
+    refalrts::reinit_name( context[9], & Make_alias );
+    refalrts::update_name( context[4], & CreateFileList_alias );
     refalrts::reinit_open_bracket( context[5] );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[17], & gen_MakeProject_S1L1 );
+    refalrts::reinit_name( context[17], & gen_MakeProject_S1L1_alias );
     refalrts::push_stack( context[27] );
     refalrts::push_stack( context[18] );
     refalrts::push_stack( context[26] );
@@ -837,14 +834,14 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & MakeProject$2\1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & Exit ) )
+  if( ! refalrts::alloc_name( context[7], & Exit_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[8], 1UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Map );
-  refalrts::reinit_name( context[5], & gen_MakeProject_S2L1 );
+  refalrts::update_name( context[4], & Map_alias );
+  refalrts::reinit_name( context[5], & gen_MakeProject_S2L1_alias );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[1] );
@@ -857,18 +854,15 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, "MakeProject");
-refalrts::RefalFunction& MakeProject = descr_MakeProject;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, "MakeProject#1598433284:870988702");
+refalrts::RefalFunction& MakeProject_1598433284_870988702 = descr_MakeProject;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Make_S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & WriteLine
+      & WriteLine_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Source<int>::name,
@@ -942,22 +936,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Make_S1L1
+  } // namespace scope_gen_Make_S1L1_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Make_S1L1(
-  "Make$1\\1",
+static refalrts::RASLFunction descr_gen_Make_S1L1(
+  "Make$1\\1#1598433284:870988702",
   scope_gen_Make_S1L1::raa,
   scope_gen_Make_S1L1::functions,
   scope_gen_Make_S1L1::idents,
   scope_gen_Make_S1L1::numbers,
   scope_gen_Make_S1L1::strings
 );
-refalrts::RefalFunction& gen_Make_S1L1 = descr_gen_Make_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Make_S1L1_1598433284_870988702 = descr_gen_Make_S1L1;
 
 #else
 static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -998,7 +989,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[12], context[13], " not foun", 9 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & WriteLine );
+    refalrts::update_name( context[4], & WriteLine_alias );
     refalrts::reinit_char( context[7], 'C' );
     refalrts::reinit_char( context[9], 'O' );
     refalrts::reinit_char( context[8], 'd' );
@@ -1058,11 +1049,8 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1");
-refalrts::RefalFunction& gen_Make_S1L1 = descr_gen_Make_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1#1598433284:870988702");
+refalrts::RefalFunction& gen_Make_S1L1_1598433284_870988702 = descr_gen_Make_S1L1;
 
 #endif
 #ifdef INTERPRET
@@ -1127,22 +1115,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Make_S2L1
+  } // namespace scope_gen_Make_S2L1_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Make_S2L1(
-  "Make$2\\1",
+static refalrts::RASLFunction descr_gen_Make_S2L1(
+  "Make$2\\1#1598433284:870988702",
   scope_gen_Make_S2L1::raa,
   scope_gen_Make_S2L1::functions,
   scope_gen_Make_S2L1::idents,
   scope_gen_Make_S2L1::numbers,
   scope_gen_Make_S2L1::strings
 );
-refalrts::RefalFunction& gen_Make_S2L1 = descr_gen_Make_S2L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Make_S2L1_1598433284_870988702 = descr_gen_Make_S2L1;
 
 #else
 static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1219,11 +1204,8 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1");
-refalrts::RefalFunction& gen_Make_S2L1 = descr_gen_Make_S2L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1#1598433284:870988702");
+refalrts::RefalFunction& gen_Make_S2L1_1598433284_870988702 = descr_gen_Make_S2L1;
 
 #endif
 #ifdef INTERPRET
@@ -1284,22 +1266,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_Make_S2L2
+  } // namespace scope_gen_Make_S2L2_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_Make_S2L2(
-  "Make$2\\2",
+static refalrts::RASLFunction descr_gen_Make_S2L2(
+  "Make$2\\2#1598433284:870988702",
   scope_gen_Make_S2L2::raa,
   scope_gen_Make_S2L2::functions,
   scope_gen_Make_S2L2::idents,
   scope_gen_Make_S2L2::numbers,
   scope_gen_Make_S2L2::strings
 );
-refalrts::RefalFunction& gen_Make_S2L2 = descr_gen_Make_S2L2;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_Make_S2L2_1598433284_870988702 = descr_gen_Make_S2L2;
 
 #else
 static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1377,23 +1356,20 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2");
-refalrts::RefalFunction& gen_Make_S2L2 = descr_gen_Make_S2L2;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2#1598433284:870988702");
+refalrts::RefalFunction& gen_Make_S2L2_1598433284_870988702 = descr_gen_Make_S2L2;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Make {
     static refalrts::RefalFunction *functions[] = {
-      & gen_Make_S2L2,
-      & System,
-      & Map,
-      & gen_Make_S2L1,
-      & Exit,
-      & gen_Make_S1L1
+      & gen_Make_S2L2_alias,
+      & System_alias,
+      & Map_alias,
+      & gen_Make_S2L1_alias,
+      & Exit_alias,
+      & gen_Make_S1L1_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name
@@ -1496,22 +1472,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Make
+  } // namespace scope_Make_1598433284_870988702
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Make(
-  "Make",
+static refalrts::RASLFunction descr_Make(
+  "Make#1598433284:870988702",
   scope_Make::raa,
   scope_Make::functions,
   scope_Make::idents,
   scope_Make::numbers,
   scope_Make::strings
 );
-refalrts::RefalFunction& Make = descr_Make;
-
-} // unnamed namespace
+refalrts::RefalFunction& Make_1598433284_870988702 = descr_Make;
 
 #else
 static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1578,10 +1551,10 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.SrefC#1/5 {REMOVED TILE} e.CompilerCommand#1/9 {REMOVED TILE} e.Directories#1/13 )/16 e.Units-B#1/17 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Make$1\1/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units-E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
-      refalrts::update_name( context[4], & Map );
-      refalrts::reinit_name( context[7], & gen_Make_S1L1 );
+      refalrts::update_name( context[4], & Map_alias );
+      refalrts::reinit_name( context[7], & gen_Make_S1L1_alias );
       refalrts::reinit_open_call( context[12] );
-      refalrts::reinit_name( context[15], & Exit );
+      refalrts::reinit_name( context[15], & Exit_alias );
       refalrts::reinit_number( context[8], 1UL );
       refalrts::reinit_close_call( context[11] );
       refalrts::push_stack( context[11] );
@@ -1614,25 +1587,25 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & Make$2\1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & Make$2\2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[17], context[18], "-c", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & Map ) )
+  if( ! refalrts::alloc_name( context[19], & Map_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & gen_Make_S2L1 ) )
+  if( ! refalrts::alloc_name( context[20], & gen_Make_S2L1_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[23], & Map ) )
+  if( ! refalrts::alloc_name( context[23], & Map_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & System );
+  refalrts::update_name( context[4], & System_alias );
   refalrts::reinit_char( context[7], ' ' );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::reinit_char( context[11], '\"' );
   refalrts::reinit_char( context[12], '\"' );
   refalrts::reinit_open_call( context[15] );
-  refalrts::reinit_name( context[16], & gen_Make_S2L2 );
+  refalrts::reinit_name( context[16], & gen_Make_S2L2_alias );
   refalrts::push_stack( context[24] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );
@@ -1655,11 +1628,8 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Make(func_Make, "Make");
-refalrts::RefalFunction& Make = descr_Make;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Make(func_Make, "Make#1598433284:870988702");
+refalrts::RefalFunction& Make_1598433284_870988702 = descr_Make;
 
 #endif
 

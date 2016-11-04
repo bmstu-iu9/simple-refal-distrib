@@ -58,49 +58,52 @@ struct ident_Unnamed {
   }
 };
 
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& Fetch;
-extern refalrts::RefalFunction& EscapeChar;
-extern refalrts::RefalFunction& GenerateFromDFA;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& WriteFunction;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& WriteAlternative;
-} // unnamed namespace
+extern refalrts::RefalFunction& Fetch_0_0;
+#define Fetch_alias Fetch_0_0
+#define Fetch_str "Fetch#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& EscapeChar_0_0;
+#define EscapeChar_alias EscapeChar_0_0
+#define EscapeChar_str "EscapeChar#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& WriteAlternative_Aux;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenerateFromDFA_0_0;
+#define GenerateFromDFA_alias GenerateFromDFA_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Head;
-} // unnamed namespace
+extern refalrts::RefalFunction& WriteFunction_3016463358_4232659796;
+#define WriteFunction_alias WriteFunction_3016463358_4232659796
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Flush;
-} // unnamed namespace
+extern refalrts::RefalFunction& WriteAlternative_3016463358_4232659796;
+#define WriteAlternative_alias WriteAlternative_3016463358_4232659796
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& NextState_L;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1_3016463358_4232659796;
+#define gen_WriteAlternative_Aux_S2L1_alias gen_WriteAlternative_Aux_S2L1_3016463358_4232659796
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& NextState_R;
-} // unnamed namespace
+extern refalrts::RefalFunction& WriteAlternative_Aux_3016463358_4232659796;
+#define WriteAlternative_Aux_alias WriteAlternative_Aux_3016463358_4232659796
+
+extern refalrts::RefalFunction& Head_3016463358_4232659796;
+#define Head_alias Head_3016463358_4232659796
+
+extern refalrts::RefalFunction& Flush_3016463358_4232659796;
+#define Flush_alias Flush_3016463358_4232659796
+
+extern refalrts::RefalFunction& NextState_L_3016463358_4232659796;
+#define NextState_L_alias NextState_L_3016463358_4232659796
+
+extern refalrts::RefalFunction& NextState_R_3016463358_4232659796;
+#define NextState_R_alias NextState_R_3016463358_4232659796
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenerateFromDFA {
     static refalrts::RefalFunction *functions[] = {
-      & WriteFunction,
-      & Map
+      & WriteFunction_alias,
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -126,19 +129,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenerateFromDFA
+  } // namespace scope_GenerateFromDFA_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GenerateFromDFA(
-  "GenerateFromDFA",
+static refalrts::RASLFunction descr_GenerateFromDFA(
+  "GenerateFromDFA#0:0",
   scope_GenerateFromDFA::raa,
   scope_GenerateFromDFA::functions,
   scope_GenerateFromDFA::idents,
   scope_GenerateFromDFA::numbers,
   scope_GenerateFromDFA::strings
 );
-refalrts::RefalFunction& GenerateFromDFA = descr_GenerateFromDFA;
+refalrts::RefalFunction& GenerateFromDFA_0_0 = descr_GenerateFromDFA;
 
 #else
 static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -159,8 +162,8 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & WriteFunction/4 AsIs: e.Rules#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map );
-  refalrts::update_name( context[4], & WriteFunction );
+  refalrts::reinit_name( context[0], & Map_alias );
+  refalrts::update_name( context[4], & WriteFunction_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -171,16 +174,16 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GenerateFromDFA(func_GenerateFromDFA, "GenerateFromDFA");
-refalrts::RefalFunction& GenerateFromDFA = descr_GenerateFromDFA;
+static refalrts::RefalNativeFunction descr_GenerateFromDFA(func_GenerateFromDFA, "GenerateFromDFA#0:0");
+refalrts::RefalFunction& GenerateFromDFA_0_0 = descr_GenerateFromDFA;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteFunction {
     static refalrts::RefalFunction *functions[] = {
-      & WriteAlternative,
-      & Map
+      & WriteAlternative_alias,
+      & Map_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -226,22 +229,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_WriteFunction
+  } // namespace scope_WriteFunction_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_WriteFunction(
-  "WriteFunction",
+static refalrts::RASLFunction descr_WriteFunction(
+  "WriteFunction#3016463358:4232659796",
   scope_WriteFunction::raa,
   scope_WriteFunction::functions,
   scope_WriteFunction::idents,
   scope_WriteFunction::numbers,
   scope_WriteFunction::strings
 );
-refalrts::RefalFunction& WriteFunction = descr_WriteFunction;
-
-} // unnamed namespace
+refalrts::RefalFunction& WriteFunction_3016463358_4232659796 = descr_WriteFunction;
 
 #else
 static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -279,9 +279,9 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & Map ) )
+  if( ! refalrts::alloc_name( context[15], & Map_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & WriteAlternative ) )
+  if( ! refalrts::alloc_name( context[16], & WriteAlternative_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[17] ) )
     return refalrts::cNoMemory;
@@ -310,18 +310,15 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_WriteFunction(func_WriteFunction, "WriteFunction");
-refalrts::RefalFunction& WriteFunction = descr_WriteFunction;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_WriteFunction(func_WriteFunction, "WriteFunction#3016463358:4232659796");
+refalrts::RefalFunction& WriteFunction_3016463358_4232659796 = descr_WriteFunction;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteAlternative {
     static refalrts::RefalFunction *functions[] = {
-      & WriteAlternative_Aux
+      & WriteAlternative_Aux_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -355,22 +352,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_WriteAlternative
+  } // namespace scope_WriteAlternative_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_WriteAlternative(
-  "WriteAlternative",
+static refalrts::RASLFunction descr_WriteAlternative(
+  "WriteAlternative#3016463358:4232659796",
   scope_WriteAlternative::raa,
   scope_WriteAlternative::functions,
   scope_WriteAlternative::idents,
   scope_WriteAlternative::numbers,
   scope_WriteAlternative::strings
 );
-refalrts::RefalFunction& WriteAlternative = descr_WriteAlternative;
-
-} // unnamed namespace
+refalrts::RefalFunction& WriteAlternative_3016463358_4232659796 = descr_WriteAlternative;
 
 #else
 static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -401,7 +395,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteAlternative_Aux );
+  refalrts::update_name( context[4], & WriteAlternative_Aux_alias );
   refalrts::link_brackets( context[7], context[11] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -415,11 +409,8 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_WriteAlternative(func_WriteAlternative, "WriteAlternative");
-refalrts::RefalFunction& WriteAlternative = descr_WriteAlternative;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_WriteAlternative(func_WriteAlternative, "WriteAlternative#3016463358:4232659796");
+refalrts::RefalFunction& WriteAlternative_3016463358_4232659796 = descr_WriteAlternative;
 
 #endif
 #ifdef INTERPRET
@@ -465,22 +456,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_WriteAlternative_Aux_S2L1
+  } // namespace scope_gen_WriteAlternative_Aux_S2L1_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_WriteAlternative_Aux_S2L1(
-  "WriteAlternative-Aux$2\\1",
+static refalrts::RASLFunction descr_gen_WriteAlternative_Aux_S2L1(
+  "WriteAlternative-Aux$2\\1#3016463358:4232659796",
   scope_gen_WriteAlternative_Aux_S2L1::raa,
   scope_gen_WriteAlternative_Aux_S2L1::functions,
   scope_gen_WriteAlternative_Aux_S2L1::idents,
   scope_gen_WriteAlternative_Aux_S2L1::numbers,
   scope_gen_WriteAlternative_Aux_S2L1::strings
 );
-refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1 = descr_gen_WriteAlternative_Aux_S2L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1_3016463358_4232659796 = descr_gen_WriteAlternative_Aux_S2L1;
 
 #else
 static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -534,23 +522,20 @@ static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_WriteAlternative_Aux_S2L1(func_gen_WriteAlternative_Aux_S2L1, "WriteAlternative-Aux$2\\1");
-refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1 = descr_gen_WriteAlternative_Aux_S2L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_WriteAlternative_Aux_S2L1(func_gen_WriteAlternative_Aux_S2L1, "WriteAlternative-Aux$2\\1#3016463358:4232659796");
+refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1_3016463358_4232659796 = descr_gen_WriteAlternative_Aux_S2L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteAlternative_Aux {
     static refalrts::RefalFunction *functions[] = {
-      & gen_WriteAlternative_Aux_S2L1,
-      & Head,
-      & NextState_R,
-      & Flush,
-      & Fetch,
-      & NextState_L
+      & gen_WriteAlternative_Aux_S2L1_alias,
+      & Head_alias,
+      & NextState_R_alias,
+      & Flush_alias,
+      & Fetch_alias,
+      & NextState_L_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_None<int>::name
@@ -650,22 +635,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_WriteAlternative_Aux
+  } // namespace scope_WriteAlternative_Aux_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_WriteAlternative_Aux(
-  "WriteAlternative-Aux",
+static refalrts::RASLFunction descr_WriteAlternative_Aux(
+  "WriteAlternative-Aux#3016463358:4232659796",
   scope_WriteAlternative_Aux::raa,
   scope_WriteAlternative_Aux::functions,
   scope_WriteAlternative_Aux::idents,
   scope_WriteAlternative_Aux::numbers,
   scope_WriteAlternative_Aux::strings
 );
-refalrts::RefalFunction& WriteAlternative_Aux = descr_WriteAlternative_Aux;
-
-} // unnamed namespace
+refalrts::RefalFunction& WriteAlternative_Aux_3016463358_4232659796 = descr_WriteAlternative_Aux;
 
 #else
 static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -712,7 +694,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & NextState_L ) )
+    if( ! refalrts::alloc_name( context[16], & NextState_L_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[17], context[18], context[12], context[13]))
       return refalrts::cNoMemory;
@@ -724,11 +706,11 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[23] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[24], & Head ) )
+    if( ! refalrts::alloc_name( context[24], & Head_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Head );
+    refalrts::update_name( context[4], & Head_alias );
     refalrts::reinit_svar( context[7], context[9] );
-    refalrts::reinit_name( context[10], & NextState_R );
+    refalrts::reinit_name( context[10], & NextState_R_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[20] );
@@ -760,7 +742,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & NextState_L ) )
+  if( ! refalrts::alloc_name( context[16], & NextState_L_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[17], context[18], context[12], context[13]))
     return refalrts::cNoMemory;
@@ -768,23 +750,23 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], & Fetch ) )
+  if( ! refalrts::alloc_name( context[21], & Fetch_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[23], & Flush ) )
+  if( ! refalrts::alloc_name( context[23], & Flush_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[26], & NextState_R ) )
+  if( ! refalrts::alloc_name( context[26], & NextState_R_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[27] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Head );
+  refalrts::update_name( context[4], & Head_alias );
   refalrts::reinit_svar( context[7], context[9] );
-  refalrts::reinit_name( context[8], & gen_WriteAlternative_Aux_S2L1 );
+  refalrts::reinit_name( context[8], & gen_WriteAlternative_Aux_S2L1_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[20] );
   refalrts::push_stack( context[27] );
@@ -807,18 +789,15 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_WriteAlternative_Aux(func_WriteAlternative_Aux, "WriteAlternative-Aux");
-refalrts::RefalFunction& WriteAlternative_Aux = descr_WriteAlternative_Aux;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_WriteAlternative_Aux(func_WriteAlternative_Aux, "WriteAlternative-Aux#3016463358:4232659796");
+refalrts::RefalFunction& WriteAlternative_Aux_3016463358_4232659796 = descr_WriteAlternative_Aux;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Head {
     static refalrts::RefalFunction *functions[] = {
-      & EscapeChar
+      & EscapeChar_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Any<int>::name,
@@ -885,22 +864,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Head
+  } // namespace scope_Head_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Head(
-  "Head",
+static refalrts::RASLFunction descr_Head(
+  "Head#3016463358:4232659796",
   scope_Head::raa,
   scope_Head::functions,
   scope_Head::idents,
   scope_Head::numbers,
   scope_Head::strings
 );
-refalrts::RefalFunction& Head = descr_Head;
-
-} // unnamed namespace
+refalrts::RefalFunction& Head_3016463358_4232659796 = descr_Head;
 
 #else
 static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -972,7 +948,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[8], '\'' ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & EscapeChar );
+  refalrts::update_name( context[4], & EscapeChar_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -985,18 +961,15 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Head(func_Head, "Head");
-refalrts::RefalFunction& Head = descr_Head;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Head(func_Head, "Head#3016463358:4232659796");
+refalrts::RefalFunction& Head_3016463358_4232659796 = descr_Head;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Flush {
     static refalrts::RefalFunction *functions[] = {
-      & Head
+      & Head_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_FlushError<int>::name,
@@ -1077,22 +1050,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Flush
+  } // namespace scope_Flush_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Flush(
-  "Flush",
+static refalrts::RASLFunction descr_Flush(
+  "Flush#3016463358:4232659796",
   scope_Flush::raa,
   scope_Flush::functions,
   scope_Flush::idents,
   scope_Flush::numbers,
   scope_Flush::strings
 );
-refalrts::RefalFunction& Flush = descr_Flush;
-
-} // unnamed namespace
+refalrts::RefalFunction& Flush_3016463358_4232659796 = descr_Flush;
 
 #else
 static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1152,7 +1122,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[7], ' ' );
     refalrts::reinit_char( context[1], '(' );
-    refalrts::update_name( context[4], & Head );
+    refalrts::update_name( context[4], & Head_alias );
     refalrts::reinit_close_call( context[6] );
     refalrts::reinit_char( context[10], ')' );
     refalrts::push_stack( context[6] );
@@ -1200,11 +1170,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Flush(func_Flush, "Flush");
-refalrts::RefalFunction& Flush = descr_Flush;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Flush(func_Flush, "Flush#3016463358:4232659796");
+refalrts::RefalFunction& Flush_3016463358_4232659796 = descr_Flush;
 
 #endif
 #ifdef INTERPRET
@@ -1262,22 +1229,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_NextState_L
+  } // namespace scope_NextState_L_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_NextState_L(
-  "NextState-L",
+static refalrts::RASLFunction descr_NextState_L(
+  "NextState-L#3016463358:4232659796",
   scope_NextState_L::raa,
   scope_NextState_L::functions,
   scope_NextState_L::idents,
   scope_NextState_L::numbers,
   scope_NextState_L::strings
 );
-refalrts::RefalFunction& NextState_L = descr_NextState_L;
-
-} // unnamed namespace
+refalrts::RefalFunction& NextState_L_3016463358_4232659796 = descr_NextState_L;
 
 #else
 static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1345,11 +1309,8 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_NextState_L(func_NextState_L, "NextState-L");
-refalrts::RefalFunction& NextState_L = descr_NextState_L;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_NextState_L(func_NextState_L, "NextState-L#3016463358:4232659796");
+refalrts::RefalFunction& NextState_L_3016463358_4232659796 = descr_NextState_L;
 
 #endif
 #ifdef INTERPRET
@@ -1411,22 +1372,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_NextState_R
+  } // namespace scope_NextState_R_3016463358_4232659796
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_NextState_R(
-  "NextState-R",
+static refalrts::RASLFunction descr_NextState_R(
+  "NextState-R#3016463358:4232659796",
   scope_NextState_R::raa,
   scope_NextState_R::functions,
   scope_NextState_R::idents,
   scope_NextState_R::numbers,
   scope_NextState_R::strings
 );
-refalrts::RefalFunction& NextState_R = descr_NextState_R;
-
-} // unnamed namespace
+refalrts::RefalFunction& NextState_R_3016463358_4232659796 = descr_NextState_R;
 
 #else
 static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1498,11 +1456,8 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_NextState_R(func_NextState_R, "NextState-R");
-refalrts::RefalFunction& NextState_R = descr_NextState_R;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_NextState_R(func_NextState_R, "NextState-R#3016463358:4232659796");
+refalrts::RefalFunction& NextState_R_3016463358_4232659796 = descr_NextState_R;
 
 #endif
 

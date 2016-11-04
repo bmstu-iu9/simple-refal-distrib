@@ -394,126 +394,129 @@ struct ident_TkVariableCopy {
   }
 };
 
-extern refalrts::RefalFunction& Fetch;
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& MapReduce;
-extern refalrts::RefalFunction& Inc;
-extern refalrts::RefalFunction& Add;
-extern refalrts::RefalFunction& GST;
-extern refalrts::RefalFunction& TextFromExpr;
-extern refalrts::RefalFunction& Inc2;
-extern refalrts::RefalFunction& CollectStrings;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Opt_L1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Fetch_0_0;
+#define Fetch_alias Fetch_0_0
+#define Fetch_str "Fetch#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Opt_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Map_0_0;
+#define Map_alias Map_0_0
+#define Map_str "Map#0:0"
 
-extern refalrts::RefalFunction& GenResult_Opt;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FlatResult;
-} // unnamed namespace
+extern refalrts::RefalFunction& MapReduce_0_0;
+#define MapReduce_alias MapReduce_0_0
+#define MapReduce_str "MapReduce#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Inc_0_0;
+#define Inc_alias Inc_0_0
+#define Inc_str "Inc#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& Add_0_0;
+#define Add_alias Add_0_0
+#define Add_str "Add#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenResult_Aux_L2;
-} // unnamed namespace
+extern refalrts::RefalFunction& GST_0_0;
+#define GST_alias GST_0_0
+#define GST_str "GST#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenResult_Aux;
-} // unnamed namespace
+extern refalrts::RefalFunction& TextFromExpr_0_0;
+#define TextFromExpr_alias TextFromExpr_0_0
+#define TextFromExpr_str "TextFromExpr#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CreateElemParam;
-} // unnamed namespace
+extern refalrts::RefalFunction& Inc2_0_0;
+#define Inc2_alias Inc2_0_0
+#define Inc2_str "Inc2#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenPushLink_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& CollectStrings_0_0;
+#define CollectStrings_alias CollectStrings_0_0
+#define CollectStrings_str "CollectStrings#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenPushLink_L2;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenResult_Opt_L1L1_2121180517_27111078;
+#define gen_GenResult_Opt_L1L1_alias gen_GenResult_Opt_L1L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenPushLink;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenResult_Opt_L1_2121180517_27111078;
+#define gen_GenResult_Opt_L1_alias gen_GenResult_Opt_L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Reverse;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenResult_Opt_0_0;
+#define GenResult_Opt_alias GenResult_Opt_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ModifyResult;
-} // unnamed namespace
+extern refalrts::RefalFunction& FlatResult_2121180517_27111078;
+#define FlatResult_alias FlatResult_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ModifyTile;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenResult_Aux_L1_2121180517_27111078;
+#define gen_GenResult_Aux_L1_alias gen_GenResult_Aux_L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_GenSplices_S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1_2121180517_27111078;
+#define gen_GenResult_Aux_L2S1L1_alias gen_GenResult_Aux_L2S1L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenSplices;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenResult_Aux_L2_2121180517_27111078;
+#define gen_GenResult_Aux_L2_alias gen_GenResult_Aux_L2_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CalcRes;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenResult_Aux_2121180517_27111078;
+#define GenResult_Aux_alias GenResult_Aux_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CollectTiles;
-} // unnamed namespace
+extern refalrts::RefalFunction& CreateElemParam_2121180517_27111078;
+#define CreateElemParam_alias CreateElemParam_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& CollectTiles_Alloc;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenPushLink_L1_2121180517_27111078;
+#define gen_GenPushLink_L1_alias gen_GenPushLink_L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GenTrash;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenPushLink_L2_2121180517_27111078;
+#define gen_GenPushLink_L2_alias gen_GenPushLink_L2_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& BeginOffset;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenPushLink_2121180517_27111078;
+#define GenPushLink_alias GenPushLink_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& EndOffset;
-} // unnamed namespace
+extern refalrts::RefalFunction& Reverse_2121180517_27111078;
+#define Reverse_alias Reverse_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_AddOffsets_L1S1L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& ModifyResult_2121180517_27111078;
+#define ModifyResult_alias ModifyResult_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& gen_AddOffsets_L1;
-} // unnamed namespace
+extern refalrts::RefalFunction& ModifyTile_2121180517_27111078;
+#define ModifyTile_alias ModifyTile_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AddOffsets;
-} // unnamed namespace
+extern refalrts::RefalFunction& gen_GenSplices_S1L1_2121180517_27111078;
+#define gen_GenSplices_S1L1_alias gen_GenSplices_S1L1_2121180517_27111078
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& GetSampleOffset;
-} // unnamed namespace
+extern refalrts::RefalFunction& GenSplices_2121180517_27111078;
+#define GenSplices_alias GenSplices_2121180517_27111078
+
+extern refalrts::RefalFunction& CalcRes_2121180517_27111078;
+#define CalcRes_alias CalcRes_2121180517_27111078
+
+extern refalrts::RefalFunction& CollectTiles_2121180517_27111078;
+#define CollectTiles_alias CollectTiles_2121180517_27111078
+
+extern refalrts::RefalFunction& CollectTiles_Alloc_2121180517_27111078;
+#define CollectTiles_Alloc_alias CollectTiles_Alloc_2121180517_27111078
+
+extern refalrts::RefalFunction& GenTrash_2121180517_27111078;
+#define GenTrash_alias GenTrash_2121180517_27111078
+
+extern refalrts::RefalFunction& BeginOffset_2121180517_27111078;
+#define BeginOffset_alias BeginOffset_2121180517_27111078
+
+extern refalrts::RefalFunction& EndOffset_2121180517_27111078;
+#define EndOffset_alias EndOffset_2121180517_27111078
+
+extern refalrts::RefalFunction& gen_AddOffsets_L1S1L1_2121180517_27111078;
+#define gen_AddOffsets_L1S1L1_alias gen_AddOffsets_L1S1L1_2121180517_27111078
+
+extern refalrts::RefalFunction& gen_AddOffsets_L1_2121180517_27111078;
+#define gen_AddOffsets_L1_alias gen_AddOffsets_L1_2121180517_27111078
+
+extern refalrts::RefalFunction& AddOffsets_2121180517_27111078;
+#define AddOffsets_alias AddOffsets_2121180517_27111078
+
+extern refalrts::RefalFunction& GetSampleOffset_2121180517_27111078;
+#define GetSampleOffset_alias GetSampleOffset_2121180517_27111078
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_Opt_L1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & GenResult_Aux
+      & GenResult_Aux_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdResetAllocator<int>::name
@@ -555,22 +558,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenResult_Opt_L1L1
+  } // namespace scope_gen_GenResult_Opt_L1L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenResult_Opt_L1L1(
-  "GenResult-Opt\\1\\1",
+static refalrts::RASLFunction descr_gen_GenResult_Opt_L1L1(
+  "GenResult-Opt\\1\\1#2121180517:27111078",
   scope_gen_GenResult_Opt_L1L1::raa,
   scope_gen_GenResult_Opt_L1L1::functions,
   scope_gen_GenResult_Opt_L1L1::idents,
   scope_gen_GenResult_Opt_L1L1::numbers,
   scope_gen_GenResult_Opt_L1L1::strings
 );
-refalrts::RefalFunction& gen_GenResult_Opt_L1L1 = descr_gen_GenResult_Opt_L1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenResult_Opt_L1L1_2121180517_27111078 = descr_gen_GenResult_Opt_L1L1;
 
 #else
 static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -608,7 +608,7 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & GenResult_Aux );
+  refalrts::update_name( context[4], & GenResult_Aux_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[13], context[14] );
@@ -627,21 +627,18 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1L1(func_gen_GenResult_Opt_L1L1, "GenResult-Opt\\1\\1");
-refalrts::RefalFunction& gen_GenResult_Opt_L1L1 = descr_gen_GenResult_Opt_L1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1L1(func_gen_GenResult_Opt_L1L1, "GenResult-Opt\\1\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenResult_Opt_L1L1_2121180517_27111078 = descr_gen_GenResult_Opt_L1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_Opt_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & AddOffsets,
-      & gen_GenResult_Opt_L1L1,
+      & AddOffsets_alias,
+      & gen_GenResult_Opt_L1L1_alias,
       & refalrts::create_closure,
-      & Fetch
+      & Fetch_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -690,22 +687,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenResult_Opt_L1
+  } // namespace scope_gen_GenResult_Opt_L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenResult_Opt_L1(
-  "GenResult-Opt\\1",
+static refalrts::RASLFunction descr_gen_GenResult_Opt_L1(
+  "GenResult-Opt\\1#2121180517:27111078",
   scope_gen_GenResult_Opt_L1::raa,
   scope_gen_GenResult_Opt_L1::functions,
   scope_gen_GenResult_Opt_L1::idents,
   scope_gen_GenResult_Opt_L1::numbers,
   scope_gen_GenResult_Opt_L1::strings
 );
-refalrts::RefalFunction& gen_GenResult_Opt_L1 = descr_gen_GenResult_Opt_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenResult_Opt_L1_2121180517_27111078 = descr_gen_GenResult_Opt_L1;
 
 #else
 static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -748,7 +742,7 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, re
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } & Fetch/18 Tile{ AsIs: </0 Reuse: & AddOffsets/4 AsIs: s.ContextOffset#1/17 AsIs: (/15 AsIs: e.PatternVars#1/13 AsIs: )/16 } Tile{ AsIs: e.MarkedResult#2/5 } >/19 </20 & @create_closure@/21 & GenResult-Opt\1\1/22 Tile{ AsIs: (/11 AsIs: e.Trash#2/9 AsIs: )/12 HalfReuse: >/7 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[18], & Fetch ) )
+  if( ! refalrts::alloc_name( context[18], & Fetch_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
@@ -756,10 +750,10 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[21], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[22], & gen_GenResult_Opt_L1L1 ) )
+  if( ! refalrts::alloc_name( context[22], & gen_GenResult_Opt_L1L1_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_call( context[8] );
-  refalrts::update_name( context[4], & AddOffsets );
+  refalrts::update_name( context[4], & AddOffsets_alias );
   refalrts::reinit_close_call( context[7] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[8] );
@@ -782,22 +776,19 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1(func_gen_GenResult_Opt_L1, "GenResult-Opt\\1");
-refalrts::RefalFunction& gen_GenResult_Opt_L1 = descr_gen_GenResult_Opt_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenResult_Opt_L1(func_gen_GenResult_Opt_L1, "GenResult-Opt\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenResult_Opt_L1_2121180517_27111078 = descr_gen_GenResult_Opt_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenResult_Opt {
     static refalrts::RefalFunction *functions[] = {
-      & gen_GenResult_Opt_L1,
+      & gen_GenResult_Opt_L1_alias,
       & refalrts::create_closure,
-      & FlatResult,
-      & GST,
-      & Fetch
+      & FlatResult_alias,
+      & GST_alias,
+      & Fetch_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_RIGHT_EDGE<int>::name,
@@ -875,19 +866,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenResult_Opt
+  } // namespace scope_GenResult_Opt_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GenResult_Opt(
-  "GenResult-Opt",
+static refalrts::RASLFunction descr_GenResult_Opt(
+  "GenResult-Opt#0:0",
   scope_GenResult_Opt::raa,
   scope_GenResult_Opt::functions,
   scope_GenResult_Opt::idents,
   scope_GenResult_Opt::numbers,
   scope_GenResult_Opt::strings
 );
-refalrts::RefalFunction& GenResult_Opt = descr_GenResult_Opt;
+refalrts::RefalFunction& GenResult_Opt_0_0 = descr_GenResult_Opt;
 
 #else
 static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -924,11 +915,11 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } </14 & Fetch/15 </16 & GST/17 (/18 (/19 # LEFT-EDGE/20 )/21 Tile{ AsIs: e.MarkedPattern#1/10 } (/22 # RIGHT-EDGE/23 )/24 )/25 (/26 (/27 # LEFT-EDGE/28 )/29 </30 Tile{ HalfReuse: & FlatResult/13 AsIs: e.Result#1/2 AsIs: >/1 } (/31 # RIGHT-EDGE/32 )/33 )/34 >/35 </36 Tile{ HalfReuse: & @create_closure@/0 Reuse: & GenResult-Opt\1/4 AsIs: s.ContextOffset#1/5 AsIs: (/8 AsIs: e.PatternVars#1/6 AsIs: )/9 HalfReuse: >/12 } >/37 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & Fetch ) )
+  if( ! refalrts::alloc_name( context[15], & Fetch_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], & GST ) )
+  if( ! refalrts::alloc_name( context[17], & GST_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[18] ) )
     return refalrts::cNoMemory;
@@ -970,9 +961,9 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[37] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[13], & FlatResult );
+  refalrts::reinit_name( context[13], & FlatResult_alias );
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_GenResult_Opt_L1 );
+  refalrts::update_name( context[4], & gen_GenResult_Opt_L1_alias );
   refalrts::reinit_close_call( context[12] );
   refalrts::push_stack( context[37] );
   refalrts::push_stack( context[14] );
@@ -1003,15 +994,15 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GenResult_Opt(func_GenResult_Opt, "GenResult-Opt");
-refalrts::RefalFunction& GenResult_Opt = descr_GenResult_Opt;
+static refalrts::RefalNativeFunction descr_GenResult_Opt(func_GenResult_Opt, "GenResult-Opt#0:0");
+refalrts::RefalFunction& GenResult_Opt_0_0 = descr_GenResult_Opt;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FlatResult {
     static refalrts::RefalFunction *functions[] = {
-      & FlatResult
+      & FlatResult_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkName<int>::name,
@@ -1173,22 +1164,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FlatResult
+  } // namespace scope_FlatResult_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_FlatResult(
-  "FlatResult",
+static refalrts::RASLFunction descr_FlatResult(
+  "FlatResult#2121180517:27111078",
   scope_FlatResult::raa,
   scope_FlatResult::functions,
   scope_FlatResult::idents,
   scope_FlatResult::numbers,
   scope_FlatResult::strings
 );
-refalrts::RefalFunction& FlatResult = descr_FlatResult;
-
-} // unnamed namespace
+refalrts::RefalFunction& FlatResult_2121180517_27111078 = descr_FlatResult;
 
 #else
 static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1237,7 +1225,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[14] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[15], & FlatResult ) )
+      if( ! refalrts::alloc_name( context[15], & FlatResult_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[16] ) )
         return refalrts::cNoMemory;
@@ -1251,7 +1239,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       refalrts::reinit_close_call( context[9] );
       refalrts::reinit_open_bracket( context[11] );
-      refalrts::reinit_name( context[10], & FlatResult );
+      refalrts::reinit_name( context[10], & FlatResult_alias );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[20] );
       refalrts::link_brackets( context[17], context[19] );
@@ -1304,7 +1292,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[14] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[15], & FlatResult ) )
+      if( ! refalrts::alloc_name( context[15], & FlatResult_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[16] ) )
         return refalrts::cNoMemory;
@@ -1318,7 +1306,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       refalrts::reinit_close_call( context[9] );
       refalrts::reinit_open_bracket( context[11] );
-      refalrts::reinit_name( context[10], & FlatResult );
+      refalrts::reinit_name( context[10], & FlatResult_alias );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[20] );
       refalrts::link_brackets( context[17], context[19] );
@@ -1389,7 +1377,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       refalrts::reinit_close_bracket( context[9] );
       refalrts::reinit_open_bracket( context[11] );
       refalrts::reinit_ident( context[14], & ident_TkName<int>::name );
-      refalrts::reinit_name( context[10], & FlatResult );
+      refalrts::reinit_name( context[10], & FlatResult_alias );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[22] );
       refalrts::link_brackets( context[19], context[21] );
@@ -1428,18 +1416,15 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_FlatResult(func_FlatResult, "FlatResult");
-refalrts::RefalFunction& FlatResult = descr_FlatResult;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_FlatResult(func_FlatResult, "FlatResult#2121180517:27111078");
+refalrts::RefalFunction& FlatResult_2121180517_27111078 = descr_FlatResult;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_Aux_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & CreateElemParam
+      & CreateElemParam_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdAllocateElem<int>::name,
@@ -1563,22 +1548,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenResult_Aux_L1
+  } // namespace scope_gen_GenResult_Aux_L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenResult_Aux_L1(
-  "GenResult-Aux\\1",
+static refalrts::RASLFunction descr_gen_GenResult_Aux_L1(
+  "GenResult-Aux\\1#2121180517:27111078",
   scope_gen_GenResult_Aux_L1::raa,
   scope_gen_GenResult_Aux_L1::functions,
   scope_gen_GenResult_Aux_L1::idents,
   scope_gen_GenResult_Aux_L1::numbers,
   scope_gen_GenResult_Aux_L1::strings
 );
-refalrts::RefalFunction& gen_GenResult_Aux_L1 = descr_gen_GenResult_Aux_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenResult_Aux_L1_2121180517_27111078 = descr_gen_GenResult_Aux_L1;
 
 #else
 static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1739,7 +1721,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   refalrts::reinit_ident( context[0], & ident_CmdAllocateElem<int>::name );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & CreateElemParam );
+  refalrts::reinit_name( context[7], & CreateElemParam_alias );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[9], context[1] );
@@ -1753,18 +1735,15 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L1(func_gen_GenResult_Aux_L1, "GenResult-Aux\\1");
-refalrts::RefalFunction& gen_GenResult_Aux_L1 = descr_gen_GenResult_Aux_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L1(func_gen_GenResult_Aux_L1, "GenResult-Aux\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenResult_Aux_L1_2121180517_27111078 = descr_gen_GenResult_Aux_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_Aux_L2S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & CreateElemParam
+      & CreateElemParam_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_RIGHT_EDGE<int>::name,
@@ -1905,22 +1884,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenResult_Aux_L2S1L1
+  } // namespace scope_gen_GenResult_Aux_L2S1L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenResult_Aux_L2S1L1(
-  "GenResult-Aux\\2$1\\1",
+static refalrts::RASLFunction descr_gen_GenResult_Aux_L2S1L1(
+  "GenResult-Aux\\2$1\\1#2121180517:27111078",
   scope_gen_GenResult_Aux_L2S1L1::raa,
   scope_gen_GenResult_Aux_L2S1L1::functions,
   scope_gen_GenResult_Aux_L2S1L1::idents,
   scope_gen_GenResult_Aux_L2S1L1::numbers,
   scope_gen_GenResult_Aux_L2S1L1::strings
 );
-refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1 = descr_gen_GenResult_Aux_L2S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1_2121180517_27111078 = descr_gen_GenResult_Aux_L2S1L1;
 
 #else
 static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2040,7 +2016,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_ident( context[7], & ident_CmdReinitElem<int>::name );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[12], & CreateElemParam );
+    refalrts::reinit_name( context[12], & CreateElemParam_alias );
     refalrts::reinit_close_call( context[13] );
     refalrts::link_brackets( context[4], context[8] );
     refalrts::push_stack( context[13] );
@@ -2078,7 +2054,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_ident( context[7], & ident_CmdUpdateElem<int>::name );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[12], & CreateElemParam );
+    refalrts::reinit_name( context[12], & CreateElemParam_alias );
     refalrts::reinit_close_call( context[13] );
     refalrts::link_brackets( context[4], context[8] );
     refalrts::push_stack( context[13] );
@@ -2133,19 +2109,16 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2S1L1(func_gen_GenResult_Aux_L2S1L1, "GenResult-Aux\\2$1\\1");
-refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1 = descr_gen_GenResult_Aux_L2S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2S1L1(func_gen_GenResult_Aux_L2S1L1, "GenResult-Aux\\2$1\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenResult_Aux_L2S1L1_2121180517_27111078 = descr_gen_GenResult_Aux_L2S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_Aux_L2 {
     static refalrts::RefalFunction *functions[] = {
-      & gen_GenResult_Aux_L2S1L1,
-      & Map
+      & gen_GenResult_Aux_L2S1L1_alias,
+      & Map_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Tile<int>::name
@@ -2192,22 +2165,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenResult_Aux_L2
+  } // namespace scope_gen_GenResult_Aux_L2_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenResult_Aux_L2(
-  "GenResult-Aux\\2",
+static refalrts::RASLFunction descr_gen_GenResult_Aux_L2(
+  "GenResult-Aux\\2#2121180517:27111078",
   scope_gen_GenResult_Aux_L2::raa,
   scope_gen_GenResult_Aux_L2::functions,
   scope_gen_GenResult_Aux_L2::idents,
   scope_gen_GenResult_Aux_L2::numbers,
   scope_gen_GenResult_Aux_L2::strings
 );
-refalrts::RefalFunction& gen_GenResult_Aux_L2 = descr_gen_GenResult_Aux_L2;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenResult_Aux_L2_2121180517_27111078 = descr_gen_GenResult_Aux_L2;
 
 #else
 static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2243,8 +2213,8 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # Tile/9 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & GenResult-Aux\2$1\1/5 } Tile{ AsIs: e.Tile#2/7 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & Map );
-    refalrts::reinit_name( context[5], & gen_GenResult_Aux_L2S1L1 );
+    refalrts::update_name( context[4], & Map_alias );
+    refalrts::reinit_name( context[5], & gen_GenResult_Aux_L2S1L1_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2271,24 +2241,21 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2(func_gen_GenResult_Aux_L2, "GenResult-Aux\\2");
-refalrts::RefalFunction& gen_GenResult_Aux_L2 = descr_gen_GenResult_Aux_L2;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenResult_Aux_L2(func_gen_GenResult_Aux_L2, "GenResult-Aux\\2#2121180517:27111078");
+refalrts::RefalFunction& gen_GenResult_Aux_L2_2121180517_27111078 = descr_gen_GenResult_Aux_L2;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenResult_Aux {
     static refalrts::RefalFunction *functions[] = {
-      & GenSplices,
-      & ModifyResult,
-      & GenPushLink,
-      & gen_GenResult_Aux_L2,
-      & Map,
-      & gen_GenResult_Aux_L1,
-      & TextFromExpr
+      & GenSplices_alias,
+      & ModifyResult_alias,
+      & GenPushLink_alias,
+      & gen_GenResult_Aux_L2_alias,
+      & Map_alias,
+      & gen_GenResult_Aux_L1_alias,
+      & TextFromExpr_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdComment<int>::name
@@ -2373,22 +2340,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenResult_Aux
+  } // namespace scope_GenResult_Aux_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenResult_Aux(
-  "GenResult-Aux",
+static refalrts::RASLFunction descr_GenResult_Aux(
+  "GenResult-Aux#2121180517:27111078",
   scope_GenResult_Aux::raa,
   scope_GenResult_Aux::functions,
   scope_GenResult_Aux::idents,
   scope_GenResult_Aux::numbers,
   scope_GenResult_Aux::strings
 );
-refalrts::RefalFunction& GenResult_Aux = descr_GenResult_Aux;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenResult_Aux_2121180517_27111078 = descr_GenResult_Aux;
 
 #else
 static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2430,7 +2394,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & TextFromExpr ) )
+  if( ! refalrts::alloc_name( context[18], & TextFromExpr_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[19], context[20], context[5], context[6]))
     return refalrts::cNoMemory;
@@ -2446,7 +2410,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[28], & TextFromExpr ) )
+  if( ! refalrts::alloc_name( context[28], & TextFromExpr_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[29], context[30], context[9], context[10]))
     return refalrts::cNoMemory;
@@ -2456,9 +2420,9 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[33] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[34], & Map ) )
+  if( ! refalrts::alloc_name( context[34], & Map_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[35], & gen_GenResult_Aux_L1 ) )
+  if( ! refalrts::alloc_name( context[35], & gen_GenResult_Aux_L1_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[36], context[37], context[9], context[10]))
     return refalrts::cNoMemory;
@@ -2466,9 +2430,9 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[39] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[40], & Map ) )
+  if( ! refalrts::alloc_name( context[40], & Map_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[41], & gen_GenResult_Aux_L2 ) )
+  if( ! refalrts::alloc_name( context[41], & gen_GenResult_Aux_L2_alias ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[42], context[43], context[9], context[10]))
     return refalrts::cNoMemory;
@@ -2476,7 +2440,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[45] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[46], & GenPushLink ) )
+  if( ! refalrts::alloc_name( context[46], & GenPushLink_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[47] ) )
     return refalrts::cNoMemory;
@@ -2484,9 +2448,9 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[50] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[11], & ModifyResult );
+  refalrts::reinit_name( context[11], & ModifyResult_alias );
   refalrts::reinit_close_call( context[12] );
-  refalrts::update_name( context[4], & GenSplices );
+  refalrts::update_name( context[4], & GenSplices_alias );
   refalrts::push_stack( context[50] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -2516,11 +2480,8 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenResult_Aux(func_GenResult_Aux, "GenResult-Aux");
-refalrts::RefalFunction& GenResult_Aux = descr_GenResult_Aux;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenResult_Aux(func_GenResult_Aux, "GenResult-Aux#2121180517:27111078");
+refalrts::RefalFunction& GenResult_Aux_2121180517_27111078 = descr_GenResult_Aux;
 
 #endif
 #ifdef INTERPRET
@@ -2712,22 +2673,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CreateElemParam
+  } // namespace scope_CreateElemParam_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_CreateElemParam(
-  "CreateElemParam",
+static refalrts::RASLFunction descr_CreateElemParam(
+  "CreateElemParam#2121180517:27111078",
   scope_CreateElemParam::raa,
   scope_CreateElemParam::functions,
   scope_CreateElemParam::idents,
   scope_CreateElemParam::numbers,
   scope_CreateElemParam::strings
 );
-refalrts::RefalFunction& CreateElemParam = descr_CreateElemParam;
-
-} // unnamed namespace
+refalrts::RefalFunction& CreateElemParam_2121180517_27111078 = descr_CreateElemParam;
 
 #else
 static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2982,11 +2940,8 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_CreateElemParam(func_CreateElemParam, "CreateElemParam");
-refalrts::RefalFunction& CreateElemParam = descr_CreateElemParam;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_CreateElemParam(func_CreateElemParam, "CreateElemParam#2121180517:27111078");
+refalrts::RefalFunction& CreateElemParam_2121180517_27111078 = descr_CreateElemParam;
 
 #endif
 #ifdef INTERPRET
@@ -3173,22 +3128,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenPushLink_L1
+  } // namespace scope_gen_GenPushLink_L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenPushLink_L1(
-  "GenPushLink\\1",
+static refalrts::RASLFunction descr_gen_GenPushLink_L1(
+  "GenPushLink\\1#2121180517:27111078",
   scope_gen_GenPushLink_L1::raa,
   scope_gen_GenPushLink_L1::functions,
   scope_gen_GenPushLink_L1::idents,
   scope_gen_GenPushLink_L1::numbers,
   scope_gen_GenPushLink_L1::strings
 );
-refalrts::RefalFunction& gen_GenPushLink_L1 = descr_gen_GenPushLink_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenPushLink_L1_2121180517_27111078 = descr_gen_GenPushLink_L1;
 
 #else
 static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3444,18 +3396,15 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenPushLink_L1(func_gen_GenPushLink_L1, "GenPushLink\\1");
-refalrts::RefalFunction& gen_GenPushLink_L1 = descr_gen_GenPushLink_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenPushLink_L1(func_gen_GenPushLink_L1, "GenPushLink\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenPushLink_L1_2121180517_27111078 = descr_gen_GenPushLink_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenPushLink_L2 {
     static refalrts::RefalFunction *functions[] = {
-      & Reverse
+      & Reverse_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3482,22 +3431,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenPushLink_L2
+  } // namespace scope_gen_GenPushLink_L2_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenPushLink_L2(
-  "GenPushLink\\2",
+static refalrts::RASLFunction descr_gen_GenPushLink_L2(
+  "GenPushLink\\2#2121180517:27111078",
   scope_gen_GenPushLink_L2::raa,
   scope_gen_GenPushLink_L2::functions,
   scope_gen_GenPushLink_L2::idents,
   scope_gen_GenPushLink_L2::numbers,
   scope_gen_GenPushLink_L2::strings
 );
-refalrts::RefalFunction& gen_GenPushLink_L2 = descr_gen_GenPushLink_L2;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenPushLink_L2_2121180517_27111078 = descr_gen_GenPushLink_L2;
 
 #else
 static refalrts::FnResult func_gen_GenPushLink_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3525,7 +3471,7 @@ static refalrts::FnResult func_gen_GenPushLink_L2(refalrts::Iter arg_begin, refa
   //TRASH: {REMOVED TILE} </0 & GenPushLink\2/4 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & Reverse/8 AsIs: e.Commands#2/2 AsIs: >/1 ]] }
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[8], & Reverse );
+  refalrts::reinit_name( context[8], & Reverse_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -3536,21 +3482,18 @@ static refalrts::FnResult func_gen_GenPushLink_L2(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenPushLink_L2(func_gen_GenPushLink_L2, "GenPushLink\\2");
-refalrts::RefalFunction& gen_GenPushLink_L2 = descr_gen_GenPushLink_L2;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenPushLink_L2(func_gen_GenPushLink_L2, "GenPushLink\\2#2121180517:27111078");
+refalrts::RefalFunction& gen_GenPushLink_L2_2121180517_27111078 = descr_gen_GenPushLink_L2;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenPushLink {
     static refalrts::RefalFunction *functions[] = {
-      & Fetch,
-      & gen_GenPushLink_L2,
-      & gen_GenPushLink_L1,
-      & MapReduce
+      & Fetch_alias,
+      & gen_GenPushLink_L2_alias,
+      & gen_GenPushLink_L1_alias,
+      & MapReduce_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3586,22 +3529,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenPushLink
+  } // namespace scope_GenPushLink_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenPushLink(
-  "GenPushLink",
+static refalrts::RASLFunction descr_GenPushLink(
+  "GenPushLink#2121180517:27111078",
   scope_GenPushLink::raa,
   scope_GenPushLink::functions,
   scope_GenPushLink::idents,
   scope_GenPushLink::numbers,
   scope_GenPushLink::strings
 );
-refalrts::RefalFunction& GenPushLink = descr_GenPushLink;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenPushLink_2121180517_27111078 = descr_GenPushLink;
 
 #else
 static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3622,9 +3562,9 @@ static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & MapReduce/6 & GenPushLink\1/7 (/8 )/9 Tile{ AsIs: e.MarkedResult#1/2 } >/10 & GenPushLink\2/11 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & MapReduce ) )
+  if( ! refalrts::alloc_name( context[6], & MapReduce_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & gen_GenPushLink_L1 ) )
+  if( ! refalrts::alloc_name( context[7], & gen_GenPushLink_L1_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[8] ) )
     return refalrts::cNoMemory;
@@ -3632,9 +3572,9 @@ static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & gen_GenPushLink_L2 ) )
+  if( ! refalrts::alloc_name( context[11], & gen_GenPushLink_L2_alias ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch );
+  refalrts::update_name( context[4], & Fetch_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[10] );
@@ -3650,11 +3590,8 @@ static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenPushLink(func_GenPushLink, "GenPushLink");
-refalrts::RefalFunction& GenPushLink = descr_GenPushLink;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenPushLink(func_GenPushLink, "GenPushLink#2121180517:27111078");
+refalrts::RefalFunction& GenPushLink_2121180517_27111078 = descr_GenPushLink;
 
 #endif
 #ifdef INTERPRET
@@ -3703,22 +3640,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Reverse
+  } // namespace scope_Reverse_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Reverse(
-  "Reverse",
+static refalrts::RASLFunction descr_Reverse(
+  "Reverse#2121180517:27111078",
   scope_Reverse::raa,
   scope_Reverse::functions,
   scope_Reverse::idents,
   scope_Reverse::numbers,
   scope_Reverse::strings
 );
-refalrts::RefalFunction& Reverse = descr_Reverse;
-
-} // unnamed namespace
+refalrts::RefalFunction& Reverse_2121180517_27111078 = descr_Reverse;
 
 #else
 static refalrts::FnResult func_Reverse(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3777,19 +3711,16 @@ static refalrts::FnResult func_Reverse(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Reverse(func_Reverse, "Reverse");
-refalrts::RefalFunction& Reverse = descr_Reverse;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Reverse(func_Reverse, "Reverse#2121180517:27111078");
+refalrts::RefalFunction& Reverse_2121180517_27111078 = descr_Reverse;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ModifyResult {
     static refalrts::RefalFunction *functions[] = {
-      & ModifyResult,
-      & ModifyTile
+      & ModifyResult_alias,
+      & ModifyTile_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Tile<int>::name
@@ -3862,22 +3793,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ModifyResult
+  } // namespace scope_ModifyResult_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ModifyResult(
-  "ModifyResult",
+static refalrts::RASLFunction descr_ModifyResult(
+  "ModifyResult#2121180517:27111078",
   scope_ModifyResult::raa,
   scope_ModifyResult::functions,
   scope_ModifyResult::idents,
   scope_ModifyResult::numbers,
   scope_ModifyResult::strings
 );
-refalrts::RefalFunction& ModifyResult = descr_ModifyResult;
-
-} // unnamed namespace
+refalrts::RefalFunction& ModifyResult_2121180517_27111078 = descr_ModifyResult;
 
 #else
 static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3914,10 +3842,10 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ModifyTile/4 } Tile{ AsIs: e.Tile#1/5 } Tile{ HalfReuse: >/7 HalfReuse: </9 } Tile{ HalfReuse: & ModifyResult/8 AsIs: e.Result#1/10(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & ModifyTile );
+    refalrts::update_name( context[4], & ModifyTile_alias );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[8], & ModifyResult );
+    refalrts::reinit_name( context[8], & ModifyResult_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[9] );
     refalrts::push_stack( context[7] );
@@ -3981,18 +3909,15 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ModifyResult(func_ModifyResult, "ModifyResult");
-refalrts::RefalFunction& ModifyResult = descr_ModifyResult;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ModifyResult(func_ModifyResult, "ModifyResult#2121180517:27111078");
+refalrts::RefalFunction& ModifyResult_2121180517_27111078 = descr_ModifyResult;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ModifyTile {
     static refalrts::RefalFunction *functions[] = {
-      & ModifyTile
+      & ModifyTile_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Reuse<int>::name,
@@ -4126,22 +4051,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ModifyTile
+  } // namespace scope_ModifyTile_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ModifyTile(
-  "ModifyTile",
+static refalrts::RASLFunction descr_ModifyTile(
+  "ModifyTile#2121180517:27111078",
   scope_ModifyTile::raa,
   scope_ModifyTile::functions,
   scope_ModifyTile::idents,
   scope_ModifyTile::numbers,
   scope_ModifyTile::strings
 );
-refalrts::RefalFunction& ModifyTile = descr_ModifyTile;
-
-} // unnamed namespace
+refalrts::RefalFunction& ModifyTile_2121180517_27111078 = descr_ModifyTile;
 
 #else
 static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4180,7 +4102,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[8], & ModifyTile );
+    refalrts::reinit_name( context[8], & ModifyTile_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[9] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4214,7 +4136,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[8], & ModifyTile );
+    refalrts::reinit_name( context[8], & ModifyTile_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[9] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4250,7 +4172,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
-    refalrts::reinit_name( context[8], & ModifyTile );
+    refalrts::reinit_name( context[8], & ModifyTile_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4288,7 +4210,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
-    refalrts::reinit_name( context[8], & ModifyTile );
+    refalrts::reinit_name( context[8], & ModifyTile_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4326,7 +4248,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#1/10 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ModifyTile/8 AsIs: e.Range#1/12(2) AsIs: >/1 ]] }
-    refalrts::reinit_name( context[8], & ModifyTile );
+    refalrts::reinit_name( context[8], & ModifyTile_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4356,19 +4278,16 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ModifyTile(func_ModifyTile, "ModifyTile");
-refalrts::RefalFunction& ModifyTile = descr_ModifyTile;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ModifyTile(func_ModifyTile, "ModifyTile#2121180517:27111078");
+refalrts::RefalFunction& ModifyTile_2121180517_27111078 = descr_ModifyTile;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenSplices_S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & BeginOffset,
-      & EndOffset
+      & BeginOffset_alias,
+      & EndOffset_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdInsertTile<int>::name,
@@ -4473,22 +4392,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_GenSplices_S1L1
+  } // namespace scope_gen_GenSplices_S1L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_GenSplices_S1L1(
-  "GenSplices$1\\1",
+static refalrts::RASLFunction descr_gen_GenSplices_S1L1(
+  "GenSplices$1\\1#2121180517:27111078",
   scope_gen_GenSplices_S1L1::raa,
   scope_gen_GenSplices_S1L1::functions,
   scope_gen_GenSplices_S1L1::idents,
   scope_gen_GenSplices_S1L1::numbers,
   scope_gen_GenSplices_S1L1::strings
 );
-refalrts::RefalFunction& gen_GenSplices_S1L1 = descr_gen_GenSplices_S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_GenSplices_S1L1_2121180517_27111078 = descr_gen_GenSplices_S1L1;
 
 #else
 static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4583,13 +4499,13 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], & BeginOffset ) )
+    if( ! refalrts::alloc_name( context[14], & BeginOffset_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[15], context[16], context[9], context[10]))
       return refalrts::cNoMemory;
     refalrts::reinit_close_call( context[0] );
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & EndOffset );
+    refalrts::reinit_name( context[7], & EndOffset_alias );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[11], context[1] );
@@ -4622,11 +4538,11 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & EndOffset ) )
+  if( ! refalrts::alloc_name( context[16], & EndOffset_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_ident( context[0], & ident_CmdInsertTile<int>::name );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & BeginOffset );
+  refalrts::reinit_name( context[7], & BeginOffset_alias );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[13], context[1] );
@@ -4645,22 +4561,19 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_GenSplices_S1L1(func_gen_GenSplices_S1L1, "GenSplices$1\\1");
-refalrts::RefalFunction& gen_GenSplices_S1L1 = descr_gen_GenSplices_S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_GenSplices_S1L1(func_gen_GenSplices_S1L1, "GenSplices$1\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_GenSplices_S1L1_2121180517_27111078 = descr_gen_GenSplices_S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenSplices {
     static refalrts::RefalFunction *functions[] = {
-      & CalcRes,
-      & GenTrash,
-      & CollectTiles,
-      & gen_GenSplices_S1L1,
-      & Map
+      & CalcRes_alias,
+      & GenTrash_alias,
+      & CollectTiles_alias,
+      & gen_GenSplices_S1L1_alias,
+      & Map_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdNextStep<int>::name,
@@ -4765,22 +4678,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenSplices
+  } // namespace scope_GenSplices_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenSplices(
-  "GenSplices",
+static refalrts::RASLFunction descr_GenSplices(
+  "GenSplices#2121180517:27111078",
   scope_GenSplices::raa,
   scope_GenSplices::functions,
   scope_GenSplices::idents,
   scope_GenSplices::numbers,
   scope_GenSplices::strings
 );
-refalrts::RefalFunction& GenSplices = descr_GenSplices;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenSplices_2121180517_27111078 = descr_GenSplices;
 
 #else
 static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4839,13 +4749,13 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdSetRes/4 } Tile{ HalfReuse: </16 HalfReuse: & CalcRes/18 AsIs: e.RightTile#1/14 HalfReuse: >/17 HalfReuse: )/1 } </19 & Map/20 & GenSplices$1\1/21 </22 & CollectTiles/23 Tile{ AsIs: e.Result#1/32(2) } >/24 >/25 (/26 # CmdUseRes/27 Tile{ AsIs: )/12 } </28 & GenTrash/29 (/30 Tile{ AsIs: e.LeftTile#1/9 } Tile{ HalfReuse: )/7 AsIs: e.Trash#1/5 HalfReuse: >/8 AsIs: (/11 Reuse: # CmdNextStep/13 } )/31 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], & Map ) )
+    if( ! refalrts::alloc_name( context[20], & Map_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & gen_GenSplices_S1L1 ) )
+    if( ! refalrts::alloc_name( context[21], & gen_GenSplices_S1L1_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], & CollectTiles ) )
+    if( ! refalrts::alloc_name( context[23], & CollectTiles_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[24] ) )
       return refalrts::cNoMemory;
@@ -4857,7 +4767,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[28] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[29], & GenTrash ) )
+    if( ! refalrts::alloc_name( context[29], & GenTrash_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[30] ) )
       return refalrts::cNoMemory;
@@ -4866,7 +4776,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_ident( context[4], & ident_CmdSetRes<int>::name );
     refalrts::reinit_open_call( context[16] );
-    refalrts::reinit_name( context[18], & CalcRes );
+    refalrts::reinit_name( context[18], & CalcRes_alias );
     refalrts::reinit_close_call( context[17] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_close_bracket( context[7] );
@@ -4928,18 +4838,15 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenSplices(func_GenSplices, "GenSplices");
-refalrts::RefalFunction& GenSplices = descr_GenSplices;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenSplices(func_GenSplices, "GenSplices#2121180517:27111078");
+refalrts::RefalFunction& GenSplices_2121180517_27111078 = descr_GenSplices;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CalcRes {
     static refalrts::RefalFunction *functions[] = {
-      & BeginOffset
+      & BeginOffset_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_RIGHT_EDGE<int>::name
@@ -4988,22 +4895,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CalcRes
+  } // namespace scope_CalcRes_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_CalcRes(
-  "CalcRes",
+static refalrts::RASLFunction descr_CalcRes(
+  "CalcRes#2121180517:27111078",
   scope_CalcRes::raa,
   scope_CalcRes::functions,
   scope_CalcRes::idents,
   scope_CalcRes::numbers,
   scope_CalcRes::strings
 );
-refalrts::RefalFunction& CalcRes = descr_CalcRes;
-
-} // unnamed namespace
+refalrts::RefalFunction& CalcRes_2121180517_27111078 = descr_CalcRes;
 
 #else
 static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5060,7 +4964,7 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Tile#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & BeginOffset/4 AsIs: t.First#1/5 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & BeginOffset );
+  refalrts::update_name( context[4], & BeginOffset_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -5071,18 +4975,15 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_CalcRes(func_CalcRes, "CalcRes");
-refalrts::RefalFunction& CalcRes = descr_CalcRes;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_CalcRes(func_CalcRes, "CalcRes#2121180517:27111078");
+refalrts::RefalFunction& CalcRes_2121180517_27111078 = descr_CalcRes;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CollectTiles {
     static refalrts::RefalFunction *functions[] = {
-      & CollectTiles_Alloc
+      & CollectTiles_Alloc_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Tile<int>::name
@@ -5176,22 +5077,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CollectTiles
+  } // namespace scope_CollectTiles_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_CollectTiles(
-  "CollectTiles",
+static refalrts::RASLFunction descr_CollectTiles(
+  "CollectTiles#2121180517:27111078",
   scope_CollectTiles::raa,
   scope_CollectTiles::functions,
   scope_CollectTiles::idents,
   scope_CollectTiles::numbers,
   scope_CollectTiles::strings
 );
-refalrts::RefalFunction& CollectTiles = descr_CollectTiles;
-
-} // unnamed namespace
+refalrts::RefalFunction& CollectTiles_2121180517_27111078 = descr_CollectTiles;
 
 #else
 static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5272,7 +5170,7 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & CollectTiles/4 } Tile{ AsIs: e.Other#1/16(2) } Tile{ HalfReuse: >/9 HalfReuse: (/11 AsIs: e.Tile#1/7 AsIs: )/10 } </12 & CollectTiles-Alloc/13 Tile{ AsIs: e.Allocated#1/5 } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( context[12] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[13], & CollectTiles_Alloc ) )
+      if( ! refalrts::alloc_name( context[13], & CollectTiles_Alloc_alias ) )
         return refalrts::cNoMemory;
       refalrts::reinit_close_call( context[9] );
       refalrts::reinit_open_bracket( context[11] );
@@ -5321,24 +5219,21 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & CollectTiles-Alloc/4 AsIs: e.Allocated#1/2 AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & CollectTiles_Alloc );
+  refalrts::update_name( context[4], & CollectTiles_Alloc_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_CollectTiles(func_CollectTiles, "CollectTiles");
-refalrts::RefalFunction& CollectTiles = descr_CollectTiles;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_CollectTiles(func_CollectTiles, "CollectTiles#2121180517:27111078");
+refalrts::RefalFunction& CollectTiles_2121180517_27111078 = descr_CollectTiles;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CollectTiles_Alloc {
     static refalrts::RefalFunction *functions[] = {
-      & CollectTiles_Alloc
+      & CollectTiles_Alloc_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkVariableCopy<int>::name
@@ -5442,22 +5337,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_CollectTiles_Alloc
+  } // namespace scope_CollectTiles_Alloc_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_CollectTiles_Alloc(
-  "CollectTiles-Alloc",
+static refalrts::RASLFunction descr_CollectTiles_Alloc(
+  "CollectTiles-Alloc#2121180517:27111078",
   scope_CollectTiles_Alloc::raa,
   scope_CollectTiles_Alloc::functions,
   scope_CollectTiles_Alloc::idents,
   scope_CollectTiles_Alloc::numbers,
   scope_CollectTiles_Alloc::strings
 );
-refalrts::RefalFunction& CollectTiles_Alloc = descr_CollectTiles_Alloc;
-
-} // unnamed namespace
+refalrts::RefalFunction& CollectTiles_Alloc_2121180517_27111078 = descr_CollectTiles_Alloc;
 
 #else
 static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5505,7 +5397,7 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
     //RESULT: Tile{ [[ } </14 & CollectTiles-Alloc/15 Tile{ AsIs: e.Alloc#1/16(2) } Tile{ HalfReuse: >/0 HalfReuse: (/4 AsIs: (/7 AsIs: # TkVariableCopy/9 AsIs: 'e'/10 AsIs: e.Index#1/5 AsIs: s.Level#1/13 AsIs: s.Sample#1/12 AsIs: s.Offset#1/11 AsIs: )/8 } Tile{ HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & CollectTiles_Alloc ) )
+    if( ! refalrts::alloc_name( context[15], & CollectTiles_Alloc_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_close_call( context[0] );
     refalrts::reinit_open_bracket( context[4] );
@@ -5614,18 +5506,15 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_CollectTiles_Alloc(func_CollectTiles_Alloc, "CollectTiles-Alloc");
-refalrts::RefalFunction& CollectTiles_Alloc = descr_CollectTiles_Alloc;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_CollectTiles_Alloc(func_CollectTiles_Alloc, "CollectTiles-Alloc#2121180517:27111078");
+refalrts::RefalFunction& CollectTiles_Alloc_2121180517_27111078 = descr_CollectTiles_Alloc;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenTrash {
     static refalrts::RefalFunction *functions[] = {
-      & EndOffset
+      & EndOffset_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdTrash<int>::name,
@@ -5725,22 +5614,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GenTrash
+  } // namespace scope_GenTrash_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GenTrash(
-  "GenTrash",
+static refalrts::RASLFunction descr_GenTrash(
+  "GenTrash#2121180517:27111078",
   scope_GenTrash::raa,
   scope_GenTrash::functions,
   scope_GenTrash::idents,
   scope_GenTrash::numbers,
   scope_GenTrash::strings
 );
-refalrts::RefalFunction& GenTrash = descr_GenTrash;
-
-} // unnamed namespace
+refalrts::RefalFunction& GenTrash_2121180517_27111078 = descr_GenTrash;
 
 #else
 static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5866,7 +5752,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.LeftTile#1/5 {REMOVED TILE} e.Trash#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdTrash/4 HalfReuse: </7 } & EndOffset/11 Tile{ AsIs: t.Last#1/9 HalfReuse: >/8 } Tile{ HalfReuse: )/1 ]] }
-  if( ! refalrts::alloc_name( context[11], & EndOffset ) )
+  if( ! refalrts::alloc_name( context[11], & EndOffset_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_ident( context[4], & ident_CmdTrash<int>::name );
@@ -5886,11 +5772,8 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GenTrash(func_GenTrash, "GenTrash");
-refalrts::RefalFunction& GenTrash = descr_GenTrash;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GenTrash(func_GenTrash, "GenTrash#2121180517:27111078");
+refalrts::RefalFunction& GenTrash_2121180517_27111078 = descr_GenTrash;
 
 #endif
 #ifdef INTERPRET
@@ -5980,22 +5863,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_BeginOffset
+  } // namespace scope_BeginOffset_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_BeginOffset(
-  "BeginOffset",
+static refalrts::RASLFunction descr_BeginOffset(
+  "BeginOffset#2121180517:27111078",
   scope_BeginOffset::raa,
   scope_BeginOffset::functions,
   scope_BeginOffset::idents,
   scope_BeginOffset::numbers,
   scope_BeginOffset::strings
 );
-refalrts::RefalFunction& BeginOffset = descr_BeginOffset;
-
-} // unnamed namespace
+refalrts::RefalFunction& BeginOffset_2121180517_27111078 = descr_BeginOffset;
 
 #else
 static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6118,18 +5998,15 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_BeginOffset(func_BeginOffset, "BeginOffset");
-refalrts::RefalFunction& BeginOffset = descr_BeginOffset;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_BeginOffset(func_BeginOffset, "BeginOffset#2121180517:27111078");
+refalrts::RefalFunction& BeginOffset_2121180517_27111078 = descr_BeginOffset;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EndOffset {
     static refalrts::RefalFunction *functions[] = {
-      & Inc
+      & Inc_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkString<int>::name,
@@ -6313,22 +6190,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_EndOffset
+  } // namespace scope_EndOffset_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_EndOffset(
-  "EndOffset",
+static refalrts::RASLFunction descr_EndOffset(
+  "EndOffset#2121180517:27111078",
   scope_EndOffset::raa,
   scope_EndOffset::functions,
   scope_EndOffset::idents,
   scope_EndOffset::numbers,
   scope_EndOffset::strings
 );
-refalrts::RefalFunction& EndOffset = descr_EndOffset;
-
-} // unnamed namespace
+refalrts::RefalFunction& EndOffset_2121180517_27111078 = descr_EndOffset;
 
 #else
 static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6511,7 +6385,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
-    refalrts::update_name( context[4], & Inc );
+    refalrts::update_name( context[4], & Inc_alias );
     refalrts::reinit_svar( context[7], context[10] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[9] );
@@ -6545,7 +6419,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
-    refalrts::update_name( context[4], & Inc );
+    refalrts::update_name( context[4], & Inc_alias );
     refalrts::reinit_svar( context[7], context[10] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[9] );
@@ -6571,7 +6445,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset1 #10/7 HalfReuse: >/9 } Tile{ ]] }
-    refalrts::update_name( context[4], & Inc );
+    refalrts::update_name( context[4], & Inc_alias );
     refalrts::reinit_svar( context[7], context[10] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[9] );
@@ -6603,18 +6477,15 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_EndOffset(func_EndOffset, "EndOffset");
-refalrts::RefalFunction& EndOffset = descr_EndOffset;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_EndOffset(func_EndOffset, "EndOffset#2121180517:27111078");
+refalrts::RefalFunction& EndOffset_2121180517_27111078 = descr_EndOffset;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_AddOffsets_L1S1L1 {
     static refalrts::RefalFunction *functions[] = {
-      & GetSampleOffset
+      & GetSampleOffset_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkVariable<int>::name,
@@ -6685,22 +6556,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_AddOffsets_L1S1L1
+  } // namespace scope_gen_AddOffsets_L1S1L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_AddOffsets_L1S1L1(
-  "AddOffsets\\1$1\\1",
+static refalrts::RASLFunction descr_gen_AddOffsets_L1S1L1(
+  "AddOffsets\\1$1\\1#2121180517:27111078",
   scope_gen_AddOffsets_L1S1L1::raa,
   scope_gen_AddOffsets_L1S1L1::functions,
   scope_gen_AddOffsets_L1S1L1::idents,
   scope_gen_AddOffsets_L1S1L1::numbers,
   scope_gen_AddOffsets_L1S1L1::strings
 );
-refalrts::RefalFunction& gen_AddOffsets_L1S1L1 = descr_gen_AddOffsets_L1S1L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_AddOffsets_L1S1L1_2121180517_27111078 = descr_gen_AddOffsets_L1S1L1;
 
 #else
 static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6763,7 +6631,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # HalfReuse/13 AsIs: (/16 AsIs: # TkVariable/18 HalfReuse: </19 } Tile{ HalfReuse: & GetSampleOffset/7 AsIs: e.PatternVars#1/5 HalfReuse: (/8 } Tile{ HalfReuse: 's'/4 } Tile{ AsIs: e.Index#3/14 } Tile{ AsIs: s.Level#3/21 } Tile{ HalfReuse: )/0 } Tile{ AsIs: >/1 } Tile{ AsIs: s.Offset#3/20 AsIs: )/17 AsIs: )/10 } Tile{ ]] }
     refalrts::reinit_open_call( context[19] );
-    refalrts::reinit_name( context[7], & GetSampleOffset );
+    refalrts::reinit_name( context[7], & GetSampleOffset_alias );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_char( context[4], 's' );
     refalrts::reinit_close_bracket( context[0] );
@@ -6804,24 +6672,21 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_AddOffsets_L1S1L1(func_gen_AddOffsets_L1S1L1, "AddOffsets\\1$1\\1");
-refalrts::RefalFunction& gen_AddOffsets_L1S1L1 = descr_gen_AddOffsets_L1S1L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_AddOffsets_L1S1L1(func_gen_AddOffsets_L1S1L1, "AddOffsets\\1$1\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_AddOffsets_L1S1L1_2121180517_27111078 = descr_gen_AddOffsets_L1S1L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_AddOffsets_L1 {
     static refalrts::RefalFunction *functions[] = {
-      & Inc,
-      & Inc2,
-      & Add,
-      & GetSampleOffset,
-      & gen_AddOffsets_L1S1L1,
+      & Inc_alias,
+      & Inc2_alias,
+      & Add_alias,
+      & GetSampleOffset_alias,
+      & gen_AddOffsets_L1S1L1_alias,
       & refalrts::create_closure,
-      & Map
+      & Map_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkString<int>::name,
@@ -7033,22 +6898,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_AddOffsets_L1
+  } // namespace scope_gen_AddOffsets_L1_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_AddOffsets_L1(
-  "AddOffsets\\1",
+static refalrts::RASLFunction descr_gen_AddOffsets_L1(
+  "AddOffsets\\1#2121180517:27111078",
   scope_gen_AddOffsets_L1::raa,
   scope_gen_AddOffsets_L1::functions,
   scope_gen_AddOffsets_L1::idents,
   scope_gen_AddOffsets_L1::numbers,
   scope_gen_AddOffsets_L1::strings
 );
-refalrts::RefalFunction& gen_AddOffsets_L1 = descr_gen_AddOffsets_L1;
-
-} // unnamed namespace
+refalrts::RefalFunction& gen_AddOffsets_L1_2121180517_27111078 = descr_gen_AddOffsets_L1;
 
 #else
 static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7097,14 +6959,14 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#2/13 AsIs: (/11 AsIs: # Tile/14 } </15 & Map/16 </17 Tile{ HalfReuse: & @create_closure@/0 Reuse: & AddOffsets\1$1\1/4 AsIs: (/7 AsIs: e.PatternVars#1/5 AsIs: )/8 } >/18 Tile{ AsIs: e.Tile#2/9 } Tile{ HalfReuse: >/12 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & Map ) )
+    if( ! refalrts::alloc_name( context[16], & Map_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[0], & refalrts::create_closure );
-    refalrts::update_name( context[4], & gen_AddOffsets_L1S1L1 );
+    refalrts::update_name( context[4], & gen_AddOffsets_L1S1L1_alias );
     refalrts::reinit_close_call( context[12] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[11], context[1] );
@@ -7152,9 +7014,9 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & GetSampleOffset ) )
+    if( ! refalrts::alloc_name( context[21], & GetSampleOffset_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Add );
+    refalrts::update_name( context[4], & Add_alias );
     refalrts::reinit_svar( context[7], context[13] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_open_bracket( context[14] );
@@ -7205,9 +7067,9 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & GetSampleOffset ) )
+    if( ! refalrts::alloc_name( context[21], & GetSampleOffset_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Add );
+    refalrts::update_name( context[4], & Add_alias );
     refalrts::reinit_svar( context[7], context[13] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_open_bracket( context[14] );
@@ -7258,9 +7120,9 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & GetSampleOffset ) )
+    if( ! refalrts::alloc_name( context[21], & GetSampleOffset_alias ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Add );
+    refalrts::update_name( context[4], & Add_alias );
     refalrts::reinit_svar( context[7], context[13] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_open_bracket( context[14] );
@@ -7296,7 +7158,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: # TkString/14 AsIs: e.String#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
-    refalrts::update_name( context[4], & Inc2 );
+    refalrts::update_name( context[4], & Inc2_alias );
     refalrts::reinit_svar( context[7], context[13] );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_svar( context[12], context[13] );
@@ -7322,7 +7184,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 HalfReuse: s.Offset2 #13/7 } Tile{ HalfReuse: >/8 } Tile{ AsIs: (/11 AsIs: s.Tag#2/14 AsIs: e.Info#2/9 HalfReuse: s.Offset2 #13/12 HalfReuse: )/1 ]] }
-  refalrts::update_name( context[4], & Inc );
+  refalrts::update_name( context[4], & Inc_alias );
   refalrts::reinit_svar( context[7], context[13] );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_svar( context[12], context[13] );
@@ -7339,20 +7201,17 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_AddOffsets_L1(func_gen_AddOffsets_L1, "AddOffsets\\1");
-refalrts::RefalFunction& gen_AddOffsets_L1 = descr_gen_AddOffsets_L1;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_gen_AddOffsets_L1(func_gen_AddOffsets_L1, "AddOffsets\\1#2121180517:27111078");
+refalrts::RefalFunction& gen_AddOffsets_L1_2121180517_27111078 = descr_gen_AddOffsets_L1;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AddOffsets {
     static refalrts::RefalFunction *functions[] = {
-      & MapReduce,
-      & CollectStrings,
-      & gen_AddOffsets_L1,
+      & MapReduce_alias,
+      & CollectStrings_alias,
+      & gen_AddOffsets_L1_alias,
       & refalrts::create_closure
     };
     using refalrts::idents;
@@ -7398,22 +7257,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_AddOffsets
+  } // namespace scope_AddOffsets_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AddOffsets(
-  "AddOffsets",
+static refalrts::RASLFunction descr_AddOffsets(
+  "AddOffsets#2121180517:27111078",
   scope_AddOffsets::raa,
   scope_AddOffsets::functions,
   scope_AddOffsets::idents,
   scope_AddOffsets::numbers,
   scope_AddOffsets::strings
 );
-refalrts::RefalFunction& AddOffsets = descr_AddOffsets;
-
-} // unnamed namespace
+refalrts::RefalFunction& AddOffsets_2121180517_27111078 = descr_AddOffsets;
 
 #else
 static refalrts::FnResult func_AddOffsets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7445,17 +7301,17 @@ static refalrts::FnResult func_AddOffsets(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[11], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & gen_AddOffsets_L1 ) )
+  if( ! refalrts::alloc_name( context[12], & gen_AddOffsets_L1_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & CollectStrings ) )
+  if( ! refalrts::alloc_name( context[15], & CollectStrings_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & MapReduce );
+  refalrts::update_name( context[4], & MapReduce_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[16] );
@@ -7477,11 +7333,8 @@ static refalrts::FnResult func_AddOffsets(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AddOffsets(func_AddOffsets, "AddOffsets");
-refalrts::RefalFunction& AddOffsets = descr_AddOffsets;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_AddOffsets(func_AddOffsets, "AddOffsets#2121180517:27111078");
+refalrts::RefalFunction& AddOffsets_2121180517_27111078 = descr_AddOffsets;
 
 #endif
 #ifdef INTERPRET
@@ -7526,22 +7379,19 @@ namespace /* unnamed */ {
       {refalrts::icFail, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GetSampleOffset
+  } // namespace scope_GetSampleOffset_2121180517_27111078
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_GetSampleOffset(
-  "GetSampleOffset",
+static refalrts::RASLFunction descr_GetSampleOffset(
+  "GetSampleOffset#2121180517:27111078",
   scope_GetSampleOffset::raa,
   scope_GetSampleOffset::functions,
   scope_GetSampleOffset::idents,
   scope_GetSampleOffset::numbers,
   scope_GetSampleOffset::strings
 );
-refalrts::RefalFunction& GetSampleOffset = descr_GetSampleOffset;
-
-} // unnamed namespace
+refalrts::RefalFunction& GetSampleOffset_2121180517_27111078 = descr_GetSampleOffset;
 
 #else
 static refalrts::FnResult func_GetSampleOffset(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7612,11 +7462,8 @@ static refalrts::FnResult func_GetSampleOffset(refalrts::Iter arg_begin, refalrt
   return refalrts::cRecognitionImpossible;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_GetSampleOffset(func_GetSampleOffset, "GetSampleOffset");
-refalrts::RefalFunction& GetSampleOffset = descr_GetSampleOffset;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_GetSampleOffset(func_GetSampleOffset, "GetSampleOffset#2121180517:27111078");
+refalrts::RefalFunction& GetSampleOffset_2121180517_27111078 = descr_GetSampleOffset;
 
 #endif
 

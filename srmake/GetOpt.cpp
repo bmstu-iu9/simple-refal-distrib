@@ -106,57 +106,52 @@ struct ident_Word {
   }
 };
 
-extern refalrts::RefalFunction& GetOpt;
-extern refalrts::RefalFunction& Add;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& Inc;
-} // unnamed namespace
+extern refalrts::RefalFunction& GetOpt_0_0;
+#define GetOpt_alias GetOpt_0_0
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MarkupArguments;
-} // unnamed namespace
+extern refalrts::RefalFunction& Add_0_0;
+#define Add_alias Add_0_0
+#define Add_str "Add#0:0"
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& MarkupAllFiles;
-} // unnamed namespace
+extern refalrts::RefalFunction& Inc_1591052355_3146445571;
+#define Inc_alias Inc_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts;
-} // unnamed namespace
+extern refalrts::RefalFunction& MarkupArguments_1591052355_3146445571;
+#define MarkupArguments_alias MarkupArguments_1591052355_3146445571
 
-namespace /* unnamed */ {
-refalrts::RefalEmptyFunction descr_Error("Error");
-refalrts::RefalFunction& Error = descr_Error;
-} // unnamed namespace
+extern refalrts::RefalFunction& MarkupAllFiles_1591052355_3146445571;
+#define MarkupAllFiles_alias MarkupAllFiles_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_LongParam;
-} // unnamed namespace
+extern refalrts::RefalFunction& ResolveOpts_1591052355_3146445571;
+#define ResolveOpts_alias ResolveOpts_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_Long;
-} // unnamed namespace
+static refalrts::RefalEmptyFunction descr_Error("Error#1591052355:3146445571");
+refalrts::RefalFunction& Error_1591052355_3146445571 = descr_Error;
+#define Error_alias Error_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ResolveOpts_Short;
-} // unnamed namespace
+extern refalrts::RefalFunction& ResolveOpts_LongParam_1591052355_3146445571;
+#define ResolveOpts_LongParam_alias ResolveOpts_LongParam_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& FoldErrors;
-} // unnamed namespace
+extern refalrts::RefalFunction& ResolveOpts_Long_1591052355_3146445571;
+#define ResolveOpts_Long_alias ResolveOpts_Long_1591052355_3146445571
 
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& DoFoldErrors;
-} // unnamed namespace
+extern refalrts::RefalFunction& ResolveOpts_Short_1591052355_3146445571;
+#define ResolveOpts_Short_alias ResolveOpts_Short_1591052355_3146445571
+
+extern refalrts::RefalFunction& FoldErrors_1591052355_3146445571;
+#define FoldErrors_alias FoldErrors_1591052355_3146445571
+
+extern refalrts::RefalFunction& DoFoldErrors_1591052355_3146445571;
+#define DoFoldErrors_alias DoFoldErrors_1591052355_3146445571
 
 
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GetOpt {
     static refalrts::RefalFunction *functions[] = {
-      & ResolveOpts,
-      & MarkupArguments,
-      & FoldErrors
+      & ResolveOpts_alias,
+      & MarkupArguments_alias,
+      & FoldErrors_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -198,19 +193,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_GetOpt
+  } // namespace scope_GetOpt_0_0
 
 } // unnamed namespace
 
-refalrts::RASLFunction descr_GetOpt(
-  "GetOpt",
+static refalrts::RASLFunction descr_GetOpt(
+  "GetOpt#0:0",
   scope_GetOpt::raa,
   scope_GetOpt::functions,
   scope_GetOpt::idents,
   scope_GetOpt::numbers,
   scope_GetOpt::strings
 );
-refalrts::RefalFunction& GetOpt = descr_GetOpt;
+refalrts::RefalFunction& GetOpt_0_0 = descr_GetOpt;
 
 #else
 static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -238,11 +233,11 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } </9 & FoldErrors/10 Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } </11 & MarkupArguments/12 1/13 Tile{ AsIs: e.Arguments#1/2 } >/14 >/15 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & FoldErrors ) )
+  if( ! refalrts::alloc_name( context[10], & FoldErrors_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & MarkupArguments ) )
+  if( ! refalrts::alloc_name( context[12], & MarkupArguments_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[13], 1UL ) )
     return refalrts::cNoMemory;
@@ -250,7 +245,7 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ResolveOpts );
+  refalrts::update_name( context[4], & ResolveOpts_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[15] );
@@ -270,15 +265,15 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-refalrts::RefalNativeFunction descr_GetOpt(func_GetOpt, "GetOpt");
-refalrts::RefalFunction& GetOpt = descr_GetOpt;
+static refalrts::RefalNativeFunction descr_GetOpt(func_GetOpt, "GetOpt#0:0");
+refalrts::RefalFunction& GetOpt_0_0 = descr_GetOpt;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Inc {
     static refalrts::RefalFunction *functions[] = {
-      & Add
+      & Add_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -305,22 +300,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_Inc
+  } // namespace scope_Inc_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_Inc(
-  "Inc",
+static refalrts::RASLFunction descr_Inc(
+  "Inc#1591052355:3146445571",
   scope_Inc::raa,
   scope_Inc::functions,
   scope_Inc::idents,
   scope_Inc::numbers,
   scope_Inc::strings
 );
-refalrts::RefalFunction& Inc = descr_Inc;
-
-} // unnamed namespace
+refalrts::RefalFunction& Inc_1591052355_3146445571 = descr_Inc;
 
 #else
 static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -344,7 +336,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Add );
+  refalrts::update_name( context[4], & Add_alias );
   refalrts::reinit_number( context[1], 1UL );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[0] );
@@ -356,20 +348,17 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc");
-refalrts::RefalFunction& Inc = descr_Inc;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_Inc(func_Inc, "Inc#1591052355:3146445571");
+refalrts::RefalFunction& Inc_1591052355_3146445571 = descr_Inc;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MarkupArguments {
     static refalrts::RefalFunction *functions[] = {
-      & Inc,
-      & MarkupArguments,
-      & MarkupAllFiles
+      & Inc_alias,
+      & MarkupArguments_alias,
+      & MarkupAllFiles_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Word<int>::name,
@@ -561,22 +550,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_MarkupArguments
+  } // namespace scope_MarkupArguments_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_MarkupArguments(
-  "MarkupArguments",
+static refalrts::RASLFunction descr_MarkupArguments(
+  "MarkupArguments#1591052355:3146445571",
   scope_MarkupArguments::raa,
   scope_MarkupArguments::functions,
   scope_MarkupArguments::idents,
   scope_MarkupArguments::numbers,
   scope_MarkupArguments::strings
 );
-refalrts::RefalFunction& MarkupArguments = descr_MarkupArguments;
-
-} // unnamed namespace
+refalrts::RefalFunction& MarkupArguments_1591052355_3146445571 = descr_MarkupArguments;
 
 #else
 static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -619,9 +605,9 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & MarkupAllFiles/4 } Tile{ HalfReuse: </8 HalfReuse: & Inc/10 HalfReuse: s.Num1 #5/11 HalfReuse: >/9 AsIs: e.Tail#1/19(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & MarkupAllFiles );
+    refalrts::update_name( context[4], & MarkupAllFiles_alias );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[10], & Inc );
+    refalrts::reinit_name( context[10], & Inc_alias );
     refalrts::reinit_svar( context[11], context[5] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[1] );
@@ -673,7 +659,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[16] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[17], & MarkupArguments ) )
+      if( ! refalrts::alloc_name( context[17], & MarkupArguments_alias ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[18] ) )
         return refalrts::cNoMemory;
@@ -681,7 +667,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       refalrts::reinit_svar( context[10], context[5] );
       refalrts::reinit_open_bracket( context[11] );
       refalrts::reinit_close_bracket( context[14] );
-      refalrts::update_name( context[4], & Inc );
+      refalrts::update_name( context[4], & Inc_alias );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[16] );
       refalrts::push_stack( context[18] );
@@ -728,13 +714,13 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     //RESULT: Tile{ [[ } Tile{ AsIs: (/8 HalfReuse: # Long/10 HalfReuse: s.Num1 #5/11 AsIs: e.Arg#1/6 AsIs: )/9 } </12 & MarkupArguments/13 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/14 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & MarkupArguments ) )
+    if( ! refalrts::alloc_name( context[13], & MarkupArguments_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[14] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_ident( context[10], & ident_Long<int>::name );
     refalrts::reinit_svar( context[11], context[5] );
-    refalrts::update_name( context[4], & Inc );
+    refalrts::update_name( context[4], & Inc_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[14] );
@@ -779,13 +765,13 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], & MarkupArguments ) )
+    if( ! refalrts::alloc_name( context[14], & MarkupArguments_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[15] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_ident( context[8], & ident_Short<int>::name );
     refalrts::reinit_svar( context[10], context[5] );
-    refalrts::update_name( context[4], & Inc );
+    refalrts::update_name( context[4], & Inc_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[13] );
     refalrts::push_stack( context[15] );
@@ -824,11 +810,11 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Word/4 AsIs: s.Num#1/5 } Tile{ AsIs: e.Arg#1/6 } Tile{ HalfReuse: )/8 } </10 & MarkupArguments/11 </12 & Inc/13 s.Num#1/5/14 Tile{ HalfReuse: >/9 AsIs: e.Tail#1/19(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], & MarkupArguments ) )
+    if( ! refalrts::alloc_name( context[11], & MarkupArguments_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & Inc ) )
+    if( ! refalrts::alloc_name( context[13], & Inc_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[14], context[5]))
       return refalrts::cNoMemory;
@@ -868,19 +854,16 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_MarkupArguments(func_MarkupArguments, "MarkupArguments");
-refalrts::RefalFunction& MarkupArguments = descr_MarkupArguments;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_MarkupArguments(func_MarkupArguments, "MarkupArguments#1591052355:3146445571");
+refalrts::RefalFunction& MarkupArguments_1591052355_3146445571 = descr_MarkupArguments;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MarkupAllFiles {
     static refalrts::RefalFunction *functions[] = {
-      & Inc,
-      & MarkupAllFiles
+      & Inc_alias,
+      & MarkupAllFiles_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Word<int>::name
@@ -940,22 +923,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_MarkupAllFiles
+  } // namespace scope_MarkupAllFiles_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_MarkupAllFiles(
-  "MarkupAllFiles",
+static refalrts::RASLFunction descr_MarkupAllFiles(
+  "MarkupAllFiles#1591052355:3146445571",
   scope_MarkupAllFiles::raa,
   scope_MarkupAllFiles::functions,
   scope_MarkupAllFiles::idents,
   scope_MarkupAllFiles::numbers,
   scope_MarkupAllFiles::strings
 );
-refalrts::RefalFunction& MarkupAllFiles = descr_MarkupAllFiles;
-
-} // unnamed namespace
+refalrts::RefalFunction& MarkupAllFiles_1591052355_3146445571 = descr_MarkupAllFiles;
 
 #else
 static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -993,11 +973,11 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Word/4 AsIs: s.Num#1/5 } Tile{ AsIs: e.Arg#1/6 } Tile{ HalfReuse: )/8 } </10 & MarkupAllFiles/11 </12 & Inc/13 s.Num#1/5/14 Tile{ HalfReuse: >/9 AsIs: e.Tail#1/15(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], & MarkupAllFiles ) )
+    if( ! refalrts::alloc_name( context[11], & MarkupAllFiles_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & Inc ) )
+    if( ! refalrts::alloc_name( context[13], & Inc_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[14], context[5]))
       return refalrts::cNoMemory;
@@ -1037,21 +1017,18 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_MarkupAllFiles(func_MarkupAllFiles, "MarkupAllFiles");
-refalrts::RefalFunction& MarkupAllFiles = descr_MarkupAllFiles;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_MarkupAllFiles(func_MarkupAllFiles, "MarkupAllFiles#1591052355:3146445571");
+refalrts::RefalFunction& MarkupAllFiles_1591052355_3146445571 = descr_MarkupAllFiles;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts {
     static refalrts::RefalFunction *functions[] = {
-      & Error,
-      & ResolveOpts_Short,
-      & ResolveOpts_Long,
-      & ResolveOpts_LongParam
+      & Error_alias,
+      & ResolveOpts_Short_alias,
+      & ResolveOpts_Long_alias,
+      & ResolveOpts_LongParam_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_FILE<int>::name,
@@ -1367,22 +1344,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ResolveOpts
+  } // namespace scope_ResolveOpts_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ResolveOpts(
-  "ResolveOpts",
+static refalrts::RASLFunction descr_ResolveOpts(
+  "ResolveOpts#1591052355:3146445571",
   scope_ResolveOpts::raa,
   scope_ResolveOpts::functions,
   scope_ResolveOpts::idents,
   scope_ResolveOpts::numbers,
   scope_ResolveOpts::strings
 );
-refalrts::RefalFunction& ResolveOpts = descr_ResolveOpts;
-
-} // unnamed namespace
+refalrts::RefalFunction& ResolveOpts_1591052355_3146445571 = descr_ResolveOpts;
 
 #else
 static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1475,7 +1449,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( context[36] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], & ResolveOpts_LongParam );
+        refalrts::update_name( context[4], & ResolveOpts_LongParam_alias );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[25] );
         refalrts::reinit_open_bracket( context[18] );
@@ -1531,7 +1505,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Param#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 HalfReuse: # UnknownLongOption/17 AsIs: e.Long#1/15 AsIs: )/18 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
-    refalrts::reinit_name( context[13], & Error );
+    refalrts::reinit_name( context[13], & Error_alias );
     refalrts::reinit_ident( context[17], & ident_UnknownLongOption<int>::name );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1611,7 +1585,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[32] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], & ResolveOpts_Long );
+        refalrts::update_name( context[4], & ResolveOpts_Long_alias );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[21] );
         refalrts::push_stack( context[1] );
@@ -1658,7 +1632,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownLongOption/15 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_ident( context[15], & ident_UnknownLongOption<int>::name ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[13], & Error );
+    refalrts::reinit_name( context[13], & Error_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1733,7 +1707,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[28] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], & ResolveOpts_Short );
+        refalrts::update_name( context[4], & ResolveOpts_Short_alias );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[22] );
         refalrts::push_stack( context[1] );
@@ -1784,7 +1758,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownShortOption/16 Tile{ AsIs: s.Short#1/15 AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_ident( context[16], & ident_UnknownShortOption<int>::name ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[13], & Error );
+    refalrts::reinit_name( context[13], & Error_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1829,7 +1803,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     //RESULT: Tile{ [[ } (/16 & Error/17 s.Num#1/14/18 # UnknownShortOption/19 Tile{ AsIs: s.Short#1/15 } )/20 Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 AsIs: (/11 AsIs: # Short/13 AsIs: s.Num#1/14 } Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], & Error ) )
+    if( ! refalrts::alloc_name( context[17], & Error_alias ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[18], context[14]))
       return refalrts::cNoMemory;
@@ -1911,19 +1885,16 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ResolveOpts(func_ResolveOpts, "ResolveOpts");
-refalrts::RefalFunction& ResolveOpts = descr_ResolveOpts;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ResolveOpts(func_ResolveOpts, "ResolveOpts#1591052355:3146445571");
+refalrts::RefalFunction& ResolveOpts_1591052355_3146445571 = descr_ResolveOpts;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_LongParam {
     static refalrts::RefalFunction *functions[] = {
-      & ResolveOpts,
-      & Error
+      & ResolveOpts_alias,
+      & Error_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_UnexpectedLongOptionParam<int>::name,
@@ -2040,22 +2011,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ResolveOpts_LongParam
+  } // namespace scope_ResolveOpts_LongParam_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ResolveOpts_LongParam(
-  "ResolveOpts-LongParam",
+static refalrts::RASLFunction descr_ResolveOpts_LongParam(
+  "ResolveOpts-LongParam#1591052355:3146445571",
   scope_ResolveOpts_LongParam::raa,
   scope_ResolveOpts_LongParam::functions,
   scope_ResolveOpts_LongParam::idents,
   scope_ResolveOpts_LongParam::numbers,
   scope_ResolveOpts_LongParam::strings
 );
-refalrts::RefalFunction& ResolveOpts_LongParam = descr_ResolveOpts_LongParam;
-
-} // unnamed namespace
+refalrts::RefalFunction& ResolveOpts_LongParam_1591052355_3146445571 = descr_ResolveOpts_LongParam;
 
 #else
 static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2114,7 +2082,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
     //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ HalfReuse: s.Tag1 #10/15 HalfReuse: s.Num1 #9/18 AsIs: e.Param#1/16 AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[15], context[10] );
     refalrts::reinit_svar( context[18], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2147,7 +2115,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
     //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ HalfReuse: s.Tag1 #10/15 HalfReuse: s.Num1 #9/18 AsIs: e.Param#1/16 AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[15], context[10] );
     refalrts::reinit_svar( context[18], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2179,13 +2147,13 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   //RESULT: Tile{ [[ } (/20 & Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], & Error ) )
+  if( ! refalrts::alloc_name( context[21], & Error_alias ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[22], & ident_UnexpectedLongOptionParam<int>::name ) )
     return refalrts::cNoMemory;
   refalrts::reinit_char( context[11], '-' );
   refalrts::reinit_char( context[14], '-' );
-  refalrts::update_name( context[4], & ResolveOpts );
+  refalrts::update_name( context[4], & ResolveOpts_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -2208,19 +2176,16 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ResolveOpts_LongParam(func_ResolveOpts_LongParam, "ResolveOpts-LongParam");
-refalrts::RefalFunction& ResolveOpts_LongParam = descr_ResolveOpts_LongParam;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ResolveOpts_LongParam(func_ResolveOpts_LongParam, "ResolveOpts-LongParam#1591052355:3146445571");
+refalrts::RefalFunction& ResolveOpts_LongParam_1591052355_3146445571 = descr_ResolveOpts_LongParam;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_Long {
     static refalrts::RefalFunction *functions[] = {
-      & ResolveOpts,
-      & Error
+      & ResolveOpts_alias,
+      & Error_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_None<int>::name,
@@ -2395,22 +2360,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ResolveOpts_Long
+  } // namespace scope_ResolveOpts_Long_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ResolveOpts_Long(
-  "ResolveOpts-Long",
+static refalrts::RASLFunction descr_ResolveOpts_Long(
+  "ResolveOpts-Long#1591052355:3146445571",
   scope_ResolveOpts_Long::raa,
   scope_ResolveOpts_Long::functions,
   scope_ResolveOpts_Long::idents,
   scope_ResolveOpts_Long::numbers,
   scope_ResolveOpts_Long::strings
 );
-refalrts::RefalFunction& ResolveOpts_Long = descr_ResolveOpts_Long;
-
-} // unnamed namespace
+refalrts::RefalFunction& ResolveOpts_Long_1591052355_3146445571 = descr_ResolveOpts_Long;
 
 #else
 static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2474,7 +2436,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/22(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[11], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2508,13 +2470,13 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     //RESULT: Tile{ [[ } (/16 & Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], & Error ) )
+    if( ! refalrts::alloc_name( context[17], & Error_alias ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[18], & ident_NoRequiredParam<int>::name ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[11], '-' );
     refalrts::reinit_char( context[14], '-' );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2561,7 +2523,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/22(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[11], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2597,7 +2559,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[11], context[9] );
     refalrts::reinit_ident( context[14], & ident_NoParam<int>::name );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2630,7 +2592,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   refalrts::reinit_open_bracket( context[15] );
   refalrts::reinit_svar( context[11], context[9] );
   refalrts::reinit_close_bracket( context[14] );
-  refalrts::update_name( context[4], & ResolveOpts );
+  refalrts::update_name( context[4], & ResolveOpts_alias );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -2647,19 +2609,16 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ResolveOpts_Long(func_ResolveOpts_Long, "ResolveOpts-Long");
-refalrts::RefalFunction& ResolveOpts_Long = descr_ResolveOpts_Long;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ResolveOpts_Long(func_ResolveOpts_Long, "ResolveOpts-Long#1591052355:3146445571");
+refalrts::RefalFunction& ResolveOpts_Long_1591052355_3146445571 = descr_ResolveOpts_Long;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_Short {
     static refalrts::RefalFunction *functions[] = {
-      & ResolveOpts,
-      & Error
+      & ResolveOpts_alias,
+      & Error_alias
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Short<int>::name,
@@ -2923,22 +2882,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_ResolveOpts_Short
+  } // namespace scope_ResolveOpts_Short_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ResolveOpts_Short(
-  "ResolveOpts-Short",
+static refalrts::RASLFunction descr_ResolveOpts_Short(
+  "ResolveOpts-Short#1591052355:3146445571",
   scope_ResolveOpts_Short::raa,
   scope_ResolveOpts_Short::functions,
   scope_ResolveOpts_Short::idents,
   scope_ResolveOpts_Short::numbers,
   scope_ResolveOpts_Short::strings
 );
-refalrts::RefalFunction& ResolveOpts_Short = descr_ResolveOpts_Short;
-
-} // unnamed namespace
+refalrts::RefalFunction& ResolveOpts_Short_1591052355_3146445571 = descr_ResolveOpts_Short;
 
 #else
 static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3008,7 +2964,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } Tile{ AsIs: (/15 HalfReuse: s.Tag1 #10/16 HalfReuse: s.Num1 #9/19 } Tile{ AsIs: e.Param#1/17 } Tile{ AsIs: )/20 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/23(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[16], context[10] );
     refalrts::reinit_svar( context[19], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3044,12 +3000,12 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } (/17 & Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[18], & Error ) )
+    if( ! refalrts::alloc_name( context[18], & Error_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_ident( context[16], & ident_NoRequiredParam<int>::name );
     refalrts::reinit_char( context[11], '-' );
     refalrts::reinit_close_bracket( context[15] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3083,7 +3039,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/11 } Tile{ AsIs: s.Tag#1/10 } Tile{ HalfReuse: s.Num1 #9/15 AsIs: e.Param#1/13 AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[11] );
     refalrts::reinit_svar( context[15], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3133,7 +3089,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } Tile{ AsIs: (/15 HalfReuse: s.Tag1 #10/16 HalfReuse: s.Num1 #9/19 } Tile{ AsIs: e.Param#1/17 } Tile{ AsIs: )/20 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/23(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[16], context[10] );
     refalrts::reinit_svar( context[19], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3171,7 +3127,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[11], context[9] );
     refalrts::reinit_ident( context[15], & ident_NoParam<int>::name );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3204,7 +3160,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/11 } Tile{ AsIs: s.Tag#1/10 } Tile{ HalfReuse: s.Num1 #9/15 AsIs: e.Param#1/13 AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[11] );
     refalrts::reinit_svar( context[15], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3239,7 +3195,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/15 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_svar( context[11], context[9] );
-    refalrts::update_name( context[4], & ResolveOpts );
+    refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -3278,7 +3234,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   if( ! refalrts::alloc_ident( context[20], & ident_Short<int>::name ) )
     return refalrts::cNoMemory;
   refalrts::reinit_svar( context[11], context[9] );
-  refalrts::update_name( context[4], & ResolveOpts );
+  refalrts::update_name( context[4], & ResolveOpts_alias );
   refalrts::reinit_svar( context[15], context[9] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -3298,18 +3254,15 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ResolveOpts_Short(func_ResolveOpts_Short, "ResolveOpts-Short");
-refalrts::RefalFunction& ResolveOpts_Short = descr_ResolveOpts_Short;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_ResolveOpts_Short(func_ResolveOpts_Short, "ResolveOpts-Short#1591052355:3146445571");
+refalrts::RefalFunction& ResolveOpts_Short_1591052355_3146445571 = descr_ResolveOpts_Short;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldErrors {
     static refalrts::RefalFunction *functions[] = {
-      & DoFoldErrors
+      & DoFoldErrors_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3337,22 +3290,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_FoldErrors
+  } // namespace scope_FoldErrors_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_FoldErrors(
-  "FoldErrors",
+static refalrts::RASLFunction descr_FoldErrors(
+  "FoldErrors#1591052355:3146445571",
   scope_FoldErrors::raa,
   scope_FoldErrors::functions,
   scope_FoldErrors::idents,
   scope_FoldErrors::numbers,
   scope_FoldErrors::strings
 );
-refalrts::RefalFunction& FoldErrors = descr_FoldErrors;
-
-} // unnamed namespace
+refalrts::RefalFunction& FoldErrors_1591052355_3146445571 = descr_FoldErrors;
 
 #else
 static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3373,7 +3323,7 @@ static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::It
   //RESULT: Tile{ [[ } </5 & DoFoldErrors/6 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.OptionsAndErrors#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & DoFoldErrors ) )
+  if( ! refalrts::alloc_name( context[6], & DoFoldErrors_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_close_bracket( context[4] );
@@ -3388,18 +3338,15 @@ static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_FoldErrors(func_FoldErrors, "FoldErrors");
-refalrts::RefalFunction& FoldErrors = descr_FoldErrors;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_FoldErrors(func_FoldErrors, "FoldErrors#1591052355:3146445571");
+refalrts::RefalFunction& FoldErrors_1591052355_3146445571 = descr_FoldErrors;
 
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoFoldErrors {
     static refalrts::RefalFunction *functions[] = {
-      & Error
+      & Error_alias
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3463,22 +3410,19 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_DoFoldErrors
+  } // namespace scope_DoFoldErrors_1591052355_3146445571
 
 } // unnamed namespace
 
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_DoFoldErrors(
-  "DoFoldErrors",
+static refalrts::RASLFunction descr_DoFoldErrors(
+  "DoFoldErrors#1591052355:3146445571",
   scope_DoFoldErrors::raa,
   scope_DoFoldErrors::functions,
   scope_DoFoldErrors::idents,
   scope_DoFoldErrors::numbers,
   scope_DoFoldErrors::strings
 );
-refalrts::RefalFunction& DoFoldErrors = descr_DoFoldErrors;
-
-} // unnamed namespace
+refalrts::RefalFunction& DoFoldErrors_1591052355_3146445571 = descr_DoFoldErrors;
 
 #else
 static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3520,7 +3464,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
-      context[15] = refalrts::function_left( & Error, context[11], context[12] );
+      context[15] = refalrts::function_left( & Error_alias, context[11], context[12] );
       if( ! context[15] )
         continue;
       // closed e.OptionsAndErrors#1 as range 20(2)
@@ -3572,11 +3516,8 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_DoFoldErrors(func_DoFoldErrors, "DoFoldErrors");
-refalrts::RefalFunction& DoFoldErrors = descr_DoFoldErrors;
-
-} // unnamed namespace
+static refalrts::RefalNativeFunction descr_DoFoldErrors(func_DoFoldErrors, "DoFoldErrors#1591052355:3146445571");
+refalrts::RefalFunction& DoFoldErrors_1591052355_3146445571 = descr_DoFoldErrors;
 
 #endif
 

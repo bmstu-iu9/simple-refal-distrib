@@ -2,7 +2,9 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& HashLittle2_Chars;
+extern refalrts::RefalFunction& HashLittle2_Chars_0_0;
+#define HashLittle2_Chars_alias HashLittle2_Chars_0_0
+
 
 #line 2 "Hash.sref"
 /*
@@ -35,7 +37,7 @@ typedef If<
     NotAInteger
   >::Result
 >::Result UInt32;
-#line 39 "Hash.cpp"
+#line 41 "Hash.cpp"
 static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #line 36 "Hash.sref"
   refalrts::Iter content_b = 0;
@@ -195,11 +197,11 @@ static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refal
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 199 "Hash.cpp"
+#line 201 "Hash.cpp"
 }
 
-refalrts::RefalNativeFunction descr_HashLittle2_Chars(func_HashLittle2_Chars, "HashLittle2-Chars");
-refalrts::RefalFunction& HashLittle2_Chars = descr_HashLittle2_Chars;
+static refalrts::RefalNativeFunction descr_HashLittle2_Chars(func_HashLittle2_Chars, "HashLittle2-Chars#0:0");
+refalrts::RefalFunction& HashLittle2_Chars_0_0 = descr_HashLittle2_Chars;
 
 
 //End of file
