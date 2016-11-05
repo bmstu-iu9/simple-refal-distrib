@@ -4930,7 +4930,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 5, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: t.$ e.$
       //GLOBAL GEN: t.$ e.$
       // </0 & WarningIfUncatched/4 t.idx#0/5 e.idxV#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -5053,7 +5053,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  //FAST GEN: e.$
+  //FAST GEN: t.$ e.$
   //GLOBAL GEN: t.$ e.$
   // </0 & WarningIfUncatched/4 t.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;

@@ -2237,7 +2237,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 4, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
       // </0 & ResolveOpts-Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2418,7 +2418,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ ( e.$ ) e.$
   // </0 & ResolveOpts-Long/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 (/14 e.idxTVVVB#0/12 )/15 e.idxTVVVT#0/2 >/1
   context[0] = arg_begin;
@@ -2677,7 +2677,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 7, 0, 0},
       {refalrts::icIssueMemory, 27, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
       // </0 & ResolveOpts-Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2946,7 +2946,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
   refalrts::zeros( context, 27 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) s.$ s.$ s.$ s.$ ( e.$ ) e.$
   // </0 & ResolveOpts-Short/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 s.idxTV#0/10 s.idxTVV#0/11 s.idxTVVV#0/12 (/15 e.idxTVVVVB#0/13 )/16 e.idxTVVVVT#0/2 >/1
   context[0] = arg_begin;

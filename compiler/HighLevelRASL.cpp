@@ -204,7 +204,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 23, 0, 0},
-      //FAST GEN: s.$ s.$ ( e.$ )
+      //FAST GEN: s.$ s.$ ( s.$ e.$ )
       //GLOBAL GEN: s.$ s.$ ( s.$ e.$ )
       // </0 & HighLevelRASL\1/4 s.idx#0/9 s.idxV#0/10 (/7 s.idxVVB#0/11 e.idxVVBV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -382,7 +382,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  //FAST GEN: s.$ s.$ ( e.$ )
+  //FAST GEN: s.$ s.$ ( s.$ e.$ )
   //GLOBAL GEN: s.$ s.$ ( s.$ e.$ )
   // </0 & HighLevelRASL\1/4 s.idx#0/9 s.idxV#0/10 (/7 s.idxVVB#0/11 e.idxVVBV#0/5 )/8 >/1
   context[0] = arg_begin;

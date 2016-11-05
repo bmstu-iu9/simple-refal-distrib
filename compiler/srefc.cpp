@@ -1841,7 +1841,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
-      //FAST GEN: ( e.$ )
+      //FAST GEN: ( s.$ s.$ e.$ )
       //GLOBAL GEN: ( s.$ s.$ e.$ )
       // </0 & Main-SwRenamedTargets$1\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1934,7 +1934,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  //FAST GEN: ( e.$ )
+  //FAST GEN: ( s.$ s.$ e.$ )
   //GLOBAL GEN: ( s.$ s.$ e.$ )
   // </0 & Main-SwRenamedTargets$1\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
   context[0] = arg_begin;
@@ -3765,7 +3765,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 26, 0, 0},
-      //FAST GEN: s.$ ( e.$ )
+      //FAST GEN: s.$ ( s.$ s.$ e.$ )
       //GLOBAL GEN: s.$ ( s.$ s.$ e.$ )
       // </0 & RenameLocations-Aux\1/4 s.idx#0/9 (/7 s.idxVB#0/10 s.idxVBV#0/11 e.idxVBVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3870,7 +3870,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
-  //FAST GEN: s.$ ( e.$ )
+  //FAST GEN: s.$ ( s.$ s.$ e.$ )
   //GLOBAL GEN: s.$ ( s.$ s.$ e.$ )
   // </0 & RenameLocations-Aux\1/4 s.idx#0/9 (/7 s.idxVB#0/10 s.idxVBV#0/11 e.idxVBVV#0/5 )/8 >/1
   context[0] = arg_begin;

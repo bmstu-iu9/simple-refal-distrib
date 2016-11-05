@@ -6836,7 +6836,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 5, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
-      //FAST GEN: ( e.$ ) s.$ ( e.$ )
+      //FAST GEN: ( e.$ ) s.$ ( s.$ e.$ )
       //GLOBAL GEN: ( e.$ ) s.$ ( s.$ e.$ )
       // </0 & AddOffsets\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/13 (/11 s.idxTVB#0/14 e.idxTVBV#0/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -7056,7 +7056,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  //FAST GEN: ( e.$ ) s.$ ( e.$ )
+  //FAST GEN: ( e.$ ) s.$ ( s.$ e.$ )
   //GLOBAL GEN: ( e.$ ) s.$ ( s.$ e.$ )
   // </0 & AddOffsets\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/13 (/11 s.idxTVB#0/14 e.idxTVBV#0/9 )/12 >/1
   context[0] = arg_begin;

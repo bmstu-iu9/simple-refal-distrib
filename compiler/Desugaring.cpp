@@ -648,7 +648,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
-      //FAST GEN: ( e.$ )
+      //FAST GEN: ( s.$ t.$ e.$ )
       //GLOBAL GEN: ( s.$ t.$ e.$ )
       // </0 & Pass-RemovePos\1/4 (/7 s.idxB#0/9 t.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -753,7 +753,7 @@ static refalrts::FnResult func_gen_Pass_RemovePos_L1(refalrts::Iter arg_begin, r
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  //FAST GEN: ( e.$ )
+  //FAST GEN: ( s.$ t.$ e.$ )
   //GLOBAL GEN: ( s.$ t.$ e.$ )
   // </0 & Pass-RemovePos\1/4 (/7 s.idxB#0/9 t.idxBV#0/10 e.idxBVV#0/5 )/8 >/1
   context[0] = arg_begin;
@@ -4308,7 +4308,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 24, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) s.$ e.$
       //GLOBAL GEN: ( e.$ ) s.$ e.$
       // </0 & NameNestedBody/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -4422,7 +4422,7 @@ static refalrts::FnResult func_NameNestedBody(refalrts::Iter arg_begin, refalrts
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) s.$ e.$
   //GLOBAL GEN: ( e.$ ) s.$ e.$
   // </0 & NameNestedBody/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
   context[0] = arg_begin;
@@ -8644,7 +8644,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 64, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$
       //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$
       // </0 & ExtractNested-Result-Term$5\1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 s.idxTTT#0/17 (/20 e.idxTTTVB#0/18 )/21 (/24 e.idxTTTVTB#0/22 )/25 (/28 e.idxTTTVTTB#0/26 )/29 s.idxTTTVTTT#0/30 e.idxTTTVTTTV#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -8859,7 +8859,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S5L1(refalrts::Iter
   // issue here memory for vars with 64 elems
   refalrts::Iter context[64];
   refalrts::zeros( context, 64 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$
   //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$
   // </0 & ExtractNested-Result-Term$5\1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 s.idxTTT#0/17 (/20 e.idxTTTVB#0/18 )/21 (/24 e.idxTTTVTB#0/22 )/25 (/28 e.idxTTTVTTB#0/26 )/29 s.idxTTTVTTT#0/30 e.idxTTTVTTTV#0/2 >/1
   context[0] = arg_begin;
@@ -10864,7 +10864,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 5, 0, 0},
       {refalrts::icIssueMemory, 26, 0, 0},
-      //FAST GEN: ( e.$ ) ( e.$ )
+      //FAST GEN: ( e.$ ) ( s.$ e.$ )
       //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
       // </0 & Pass-CreatePredeclarations\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -11031,7 +11031,7 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1(refalrts::Iter 
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
-  //FAST GEN: ( e.$ ) ( e.$ )
+  //FAST GEN: ( e.$ ) ( s.$ e.$ )
   //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
   // </0 & Pass-CreatePredeclarations\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
   context[0] = arg_begin;
@@ -11517,7 +11517,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 5, 0, 0},
       {refalrts::icIssueMemory, 23, 0, 0},
-      //FAST GEN: ( e.$ ) ( e.$ )
+      //FAST GEN: ( e.$ ) ( s.$ e.$ )
       //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
       // </0 & RemoveRedudandElements\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -11683,7 +11683,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L1(refalrts::Iter arg_
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  //FAST GEN: ( e.$ ) ( e.$ )
+  //FAST GEN: ( e.$ ) ( s.$ e.$ )
   //GLOBAL GEN: ( e.$ ) ( s.$ e.$ )
   // </0 & RemoveRedudandElements\1/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 >/1
   context[0] = arg_begin;

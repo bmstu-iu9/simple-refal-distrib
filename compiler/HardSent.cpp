@@ -291,7 +291,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
-      //FAST GEN: ( e.$ )
+      //FAST GEN: ( s.$ e.$ )
       //GLOBAL GEN: ( s.$ e.$ )
       // </0 & PreparePatternHardSent\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -465,7 +465,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  //FAST GEN: ( e.$ )
+  //FAST GEN: ( s.$ e.$ )
   //GLOBAL GEN: ( s.$ e.$ )
   // </0 & PreparePatternHardSent\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 >/1
   context[0] = arg_begin;

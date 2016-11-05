@@ -9430,7 +9430,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StartNative-NewLine/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -9531,7 +9531,7 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StartNative-NewLine/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -9669,7 +9669,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 64, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & Name/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -10811,7 +10811,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Name/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -12521,7 +12521,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 10, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & Number/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -12745,7 +12745,7 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Number/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -13047,7 +13047,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 26, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & Directive/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -13569,7 +13569,7 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Directive/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -14435,7 +14435,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StartComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -14529,7 +14529,7 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StartComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -14799,7 +14799,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 64, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & VariableIndex/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -16005,7 +16005,7 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & VariableIndex/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -17611,7 +17611,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 26, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & DirectiveTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -18107,7 +18107,7 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & DirectiveTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -19133,7 +19133,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 4, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & CComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -19273,7 +19273,7 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & CComment/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -19835,7 +19835,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & Native/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -19939,7 +19939,7 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Native/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -20080,7 +20080,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 64, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & VariableIndexTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -21222,7 +21222,7 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & VariableIndexTail/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -22778,7 +22778,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 23, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StringLiteral-Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -23374,7 +23374,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StringLiteral-Escape/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -24691,7 +24691,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & Native-CheckEnd2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -24782,7 +24782,7 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & Native-CheckEnd2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -24903,7 +24903,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 10, 0, 0},
       {refalrts::icIssueMemory, 16, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StringLiteral-Escape-Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -25137,7 +25137,7 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StringLiteral-Escape-Code/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -25448,7 +25448,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 8, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StringLiteral-Escape-OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -25646,7 +25646,7 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StringLiteral-Escape-OCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -25907,7 +25907,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 22, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & StringLiteral-Escape-XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -26335,7 +26335,7 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & StringLiteral-Escape-XCode/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -26911,7 +26911,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 10, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & SL-E-C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -27145,7 +27145,7 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & SL-E-C1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -27455,7 +27455,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 8, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & SL-E-OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -27653,7 +27653,7 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & SL-E-OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -27914,7 +27914,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 10, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & SL-E-C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -28258,7 +28258,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & SL-E-C2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
@@ -28737,7 +28737,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 8, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & SL-E-OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -29023,7 +29023,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & SL-E-OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;

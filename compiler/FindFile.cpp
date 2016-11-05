@@ -1450,51 +1450,50 @@ namespace /* unnamed */ {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
-      {refalrts::icIssueMemory, 24, 0, 0},
-      //FAST GEN: e.$
-      //GLOBAL GEN: ( e.$ ) s.$ e.$
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
+      {refalrts::icIssueMemory, 22, 0, 0},
+      //FAST GEN: ( s.$ e.$ ) s.$ e.$
+      //GLOBAL GEN: ( s.$ e.$ ) s.$ e.$
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 s.idxT#0/10 e.idxTV#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
-      // closed e.idxB#0 as range 5
-      {refalrts::icsVarLeft, 0, 9, 2},
+      {refalrts::icsVarLeft, 0, 9, 5},
+      // closed e.idxBV#0 as range 5
+      {refalrts::icsVarLeft, 0, 10, 2},
       // closed e.idxTV#0 as range 2
-      {refalrts::icOnFailGoTo, +14, 0, 0},
+      {refalrts::icOnFailGoTo, +13, 0, 0},
       // ( # True e.idx ) s.idx e.idx
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/10 e.SourceName#1/5 )/8 s.Res#1/9 e.OutName#1/2 >/1
-      {refalrts::icSave, 0, 22, 5},
-      {refalrts::icIdentLeftSave, 10, 3, 22},
-      // closed e.SourceName#1 as range 22(5)
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/9 e.SourceName#1/5 )/8 s.Res#1/10 e.OutName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 3, 9},
+      // closed e.SourceName#1 as range 5
       // closed e.OutName#1 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/9 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/10 AsIs: e.SourceName#1/22(5) AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#1/5 AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
       {refalrts::icReinitIdent, 0, 4, 7},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 10},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icLinkBrackets, 10, 8, 0},
+      {refalrts::icLinkBrackets, 9, 8, 0},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 4, 8, 0},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +11, 0, 0},
+      {refalrts::icOnFailGoTo, +10, 0, 0},
       // ( # False e.idx ) # True e.idx
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 3, 9},
-      {refalrts::icSave, 0, 22, 5},
-      {refalrts::icIdentLeftSave, 10, 1, 22},
-      // closed e.SourceName#1 as range 22(5)
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 )/8 # True/10 e.OutName#1/2 >/1
+      {refalrts::icIdentTerm, 0, 1, 9},
+      {refalrts::icIdentTerm, 0, 3, 10},
+      // closed e.SourceName#1 as range 5
       // closed e.OutName#1 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/22(5) {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/9 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
-      {refalrts::icUpdateIdent, 0, 2, 9},
+      {refalrts::icUpdateIdent, 0, 2, 10},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
       {refalrts::icLinkBrackets, 8, 1, 0},
       {refalrts::icSetRes, 0, 0, 8},
@@ -1502,9 +1501,9 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( # False e.idx '.sref' ) # False e.idx '.cpp'
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
+      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
       {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentLeftSave, 10, 1, 5},
+      {refalrts::icIdentTerm, 0, 1, 10},
       {refalrts::icCharRightSave, 11, static_cast<unsigned char>('f'), 5},
       {refalrts::icCharRightSave, 12, static_cast<unsigned char>('e'), 5},
       {refalrts::icCharRightSave, 13, static_cast<unsigned char>('r'), 5},
@@ -1518,9 +1517,9 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 20, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/10 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
-      {refalrts::icUpdateIdent, 0, 0, 10},
+      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
+      {refalrts::icUpdateIdent, 0, 0, 9},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
       {refalrts::icLinkBrackets, 7, 15, 0},
       {refalrts::icSetResRightEdge, 0, 0, 0},
@@ -1549,12 +1548,12 @@ refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
 #else
 static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 24 elems
-  refalrts::Iter context[24];
-  refalrts::zeros( context, 24 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) s.$ e.$
-  // </0 & AnalyzeBoth-CheckExist/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
+  // issue here memory for vars with 22 elems
+  refalrts::Iter context[22];
+  refalrts::zeros( context, 22 );
+  //FAST GEN: ( s.$ e.$ ) s.$ e.$
+  //GLOBAL GEN: ( s.$ e.$ ) s.$ e.$
+  // </0 & AnalyzeBoth-CheckExist/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 s.idxT#0/10 e.idxTV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1566,30 +1565,29 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
+  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxBV#0 as range 5
+  if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.idxTV#0 as range 2
   do {
     // ( # True e.idx ) s.idx e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/10 e.SourceName#1/5 )/8 s.Res#1/9 e.OutName#1/2 >/1
-    context[22] = context[5];
-    context[23] = context[6];
-    context[10] = refalrts::ident_left(  & ident_True<int>::name, context[22], context[23] );
-    if( ! context[10] )
+    // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/9 e.SourceName#1/5 )/8 s.Res#1/10 e.OutName#1/2 >/1
+    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
       continue;
-    // closed e.SourceName#1 as range 22(5)
+    // closed e.SourceName#1 as range 5
     // closed e.OutName#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/9 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/10 AsIs: e.SourceName#1/22(5) AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#1/5 AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_ident( context[7], & ident_Source<int>::name );
-    refalrts::reinit_open_bracket( context[10] );
+    refalrts::reinit_open_bracket( context[9] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[4], context[1] );
-    refalrts::link_brackets( context[10], context[8] );
+    refalrts::link_brackets( context[9], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1603,22 +1601,19 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
 
   do {
     // ( # False e.idx ) # True e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/5 )/8 # True/9 e.OutName#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
+    // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 )/8 # True/10 e.OutName#1/2 >/1
+    if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
       continue;
-    context[22] = context[5];
-    context[23] = context[6];
-    context[10] = refalrts::ident_left(  & ident_False<int>::name, context[22], context[23] );
-    if( ! context[10] )
+    if( ! refalrts::ident_term(  & ident_True<int>::name, context[10] ) )
       continue;
-    // closed e.SourceName#1 as range 22(5)
+    // closed e.SourceName#1 as range 5
     // closed e.OutName#1 as range 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.SourceName#1/22(5) {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/9 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::update_ident( context[9], & ident_Output<int>::name );
+    refalrts::update_ident( context[10], & ident_Output<int>::name );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[8], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1631,11 +1626,10 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   // ( # False e.idx '.sref' ) # False e.idx '.cpp'
-  // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/10 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
+  // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
   if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
-  context[10] = refalrts::ident_left(  & ident_False<int>::name, context[5], context[6] );
-  if( ! context[10] )
+  if( ! refalrts::ident_term(  & ident_False<int>::name, context[10] ) )
     return refalrts::cRecognitionImpossible;
   context[11] = refalrts::char_right( 'f', context[5], context[6] );
   if( ! context[11] )
@@ -1671,9 +1665,9 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/9 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/10 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
-  refalrts::update_ident( context[10], & ident_NotFound<int>::name );
+  //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
+  refalrts::update_ident( context[9], & ident_NotFound<int>::name );
   refalrts::reinit_close_bracket( context[15] );
   refalrts::link_brackets( context[7], context[15] );
   refalrts::Iter trash_prev = arg_begin->prev;

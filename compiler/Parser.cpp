@@ -2027,7 +2027,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 19, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: t.$ s.$ e.$
       //GLOBAL GEN: t.$ s.$ e.$
       // </0 & ParseElement-SwDirective/4 t.idx#0/5 s.idxV#0/7 e.idxVV#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -2143,7 +2143,7 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  //FAST GEN: e.$
+  //FAST GEN: t.$ s.$ e.$
   //GLOBAL GEN: t.$ s.$ e.$
   // </0 & ParseElement-SwDirective/4 t.idx#0/5 s.idxV#0/7 e.idxVV#0/2 >/1
   context[0] = arg_begin;
@@ -3712,7 +3712,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 25, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: t.$ ( e.$ ) e.$
       //GLOBAL GEN: t.$ ( e.$ ) e.$
       // </0 & DoParseBlock/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 e.idxVT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -3828,7 +3828,7 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
   // issue here memory for vars with 25 elems
   refalrts::Iter context[25];
   refalrts::zeros( context, 25 );
-  //FAST GEN: e.$
+  //FAST GEN: t.$ ( e.$ ) e.$
   //GLOBAL GEN: t.$ ( e.$ ) e.$
   // </0 & DoParseBlock/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 e.idxVT#0/2 >/1
   context[0] = arg_begin;
@@ -4987,7 +4987,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 16, 0, 0},
       {refalrts::icIssueMemory, 44, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
       //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
       // </0 & ParsePattern/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -5657,7 +5657,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
   // issue here memory for vars with 44 elems
   refalrts::Iter context[44];
   refalrts::zeros( context, 44 );
-  //FAST GEN: e.$
+  //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
   // </0 & ParsePattern/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
   context[0] = arg_begin;
@@ -7476,7 +7476,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 13, 0, 0},
       {refalrts::icIssueMemory, 37, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
       //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
       // </0 & ParseResult/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -8030,7 +8030,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
-  //FAST GEN: e.$
+  //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
   // </0 & ParseResult/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
   context[0] = arg_begin;

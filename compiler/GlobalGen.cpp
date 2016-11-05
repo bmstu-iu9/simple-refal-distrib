@@ -9444,18 +9444,19 @@ namespace /* unnamed */ {
       {refalrts::icReserveBacktrackStack, 9, 0, 0},
       {refalrts::icIssueMemory, 23, 0, 0},
       //FAST GEN: e.$
-      //GLOBAL GEN: ( e.$ ) e.$
-      // </0 & PatternCommentRec\1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+      //GLOBAL GEN: ( s.$ e.$ ) e.$
+      // </0 & PatternCommentRec\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
-      // closed e.idxB#0 as range 5
       // closed e.idxT#0 as range 2
+      {refalrts::icsVarLeft, 0, 9, 5},
+      // closed e.idxBV#0 as range 5
       {refalrts::icOnFailGoTo, +15, 0, 0},
       // ( # Atom # TkChar s.idx )
       // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkChar/10 s.Char#2/11 )/8 >/1
+      {refalrts::icIdentTerm, 0, 10, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 10, 19},
       {refalrts::icIdentLeftSave, 10, 13, 19},
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEmpty, 0, 0, 21},
@@ -9475,8 +9476,8 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +15, 0, 0},
       // ( # Atom # TkNumber s.idx )
       // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkNumber/10 s.Value#2/11 )/8 >/1
+      {refalrts::icIdentTerm, 0, 10, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 10, 19},
       {refalrts::icIdentLeftSave, 10, 12, 19},
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEmpty, 0, 0, 21},
@@ -9496,8 +9497,8 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +13, 0, 0},
       // ( # Atom # TkName e.idx )
       // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkName/10 e.Name#2/5 )/8 >/1
+      {refalrts::icIdentTerm, 0, 10, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 10, 19},
       {refalrts::icIdentLeftSave, 10, 11, 19},
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEmpty, 0, 0, 21},
@@ -9516,8 +9517,8 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +13, 0, 0},
       // ( # Atom # TkIdentifier e.idx )
       // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkIdentifier/10 e.Ident#2/5 )/8 >/1
+      {refalrts::icIdentTerm, 0, 10, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 10, 19},
       {refalrts::icIdentLeftSave, 10, 9, 19},
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEmpty, 0, 0, 21},
@@ -9536,15 +9537,15 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +27, 0, 0},
       // ( # Brackets s.idx e.idx )
       // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 s.Num#2/10 e.InBrackets#2/5 )/8 >/1
-      {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 8, 19},
-      {refalrts::icSave, 0, 21, 2},
-      {refalrts::icEmpty, 0, 0, 21},
-      {refalrts::icsVarLeft, 0, 10, 19},
-      // closed e.InBrackets#2 as range 19(5)
+      {refalrts::icIdentTerm, 0, 8, 9},
+      {refalrts::icSave, 0, 19, 2},
+      {refalrts::icEmpty, 0, 0, 19},
+      {refalrts::icSave, 0, 21, 5},
+      {refalrts::icsVarLeft, 0, 10, 21},
+      // closed e.InBrackets#2 as range 21(5)
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#2/10 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkOpenBracket/4 HalfReuse: # NoOffset/7 HalfReuse: )/9 } </11 & PatternCommentRec/12 Tile{ AsIs: e.InBrackets#2/19(5) } >/13 (/14 # TkCloseBracket/15 Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkOpenBracket/4 HalfReuse: # NoOffset/7 HalfReuse: )/9 } </11 & PatternCommentRec/12 Tile{ AsIs: e.InBrackets#2/21(5) } >/13 (/14 # TkCloseBracket/15 Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 11},
       {refalrts::icAllocFunc, 0, 1, 12},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 13},
@@ -9562,7 +9563,7 @@ namespace /* unnamed */ {
       {refalrts::icLinkBrackets, 0, 9, 0},
       {refalrts::icSetRes, 0, 0, 8},
       {refalrts::icSpliceTile, 13, 15, 0},
-      {refalrts::icSpliceEVar, 0, 0, 19},
+      {refalrts::icSpliceEVar, 0, 0, 21},
       {refalrts::icSpliceTile, 11, 12, 0},
       {refalrts::icTrash, 0, 0, 9},
       {refalrts::icNextStep, 0, 0, 0},
@@ -9570,8 +9571,8 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +29, 0, 0},
       // ( # ADT-Brackets ( e.idx ) s.idx e.idx )
       // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 s.Num#2/14 e.InBrackets#2/5 )/8 >/1
+      {refalrts::icIdentTerm, 0, 5, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 5, 19},
       {refalrts::icBracketLeftSave, 0, 10, 19},
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEmpty, 0, 0, 21},
@@ -9604,16 +9605,15 @@ namespace /* unnamed */ {
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +24, 0, 0},
+      {refalrts::icOnFailGoTo, +23, 0, 0},
       // ( # Brackets e.idx ) e.idx
       // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
-      {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 8, 19},
-      // closed e.InBrackets#2 as range 19(5)
+      {refalrts::icIdentTerm, 0, 8, 9},
+      // closed e.InBrackets#2 as range 5
       // closed e.Tail#2 as range 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/10 # TkOpenBracket/11 Tile{ HalfReuse: # NoOffset/0 HalfReuse: )/4 HalfReuse: </7 HalfReuse: & PatternCommentRec/9 AsIs: e.InBrackets#2/19(5) HalfReuse: >/8 } (/12 # TkCloseBracket/13 # NoOffset/14 Tile{ HalfReuse: )/1 ]] }
+      //RESULT: Tile{ [[ } (/10 # TkOpenBracket/11 Tile{ HalfReuse: # NoOffset/0 HalfReuse: )/4 HalfReuse: </7 HalfReuse: & PatternCommentRec/9 AsIs: e.InBrackets#2/5 HalfReuse: >/8 } (/12 # TkCloseBracket/13 # NoOffset/14 Tile{ HalfReuse: )/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
       {refalrts::icAllocIdent, 0, 7, 11},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 12},
@@ -9639,8 +9639,8 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +25, 0, 0},
       // ( # ADT-Brackets ( e.idx ) e.idx ) e.idx
       // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
+      {refalrts::icIdentTerm, 0, 5, 9},
       {refalrts::icSave, 0, 19, 5},
-      {refalrts::icIdentLeftSave, 9, 5, 19},
       {refalrts::icBracketLeftSave, 0, 10, 19},
       // closed e.Name#2 as range 10
       // closed e.InBrackets#2 as range 19(5)
@@ -9670,18 +9670,17 @@ namespace /* unnamed */ {
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +22, 0, 0},
+      {refalrts::icOnFailGoTo, +21, 0, 0},
       // ( s.idx ( e.idx ) e.idx )
       // </0 & PatternCommentRec\1/4 (/7 s.Tag#2/9 (/12 e.Index#2/10 )/13 e.Any#2/5 )/8 >/1
-      {refalrts::icSave, 0, 19, 2},
-      {refalrts::icEmpty, 0, 0, 19},
-      {refalrts::icSave, 0, 21, 5},
-      {refalrts::icsVarLeft, 0, 9, 21},
-      {refalrts::icBracketLeftSave, 0, 10, 21},
+      {refalrts::icSave, 0, 19, 5},
+      {refalrts::icBracketLeftSave, 0, 10, 19},
+      {refalrts::icSave, 0, 21, 2},
+      {refalrts::icEmpty, 0, 0, 21},
       // closed e.Index#2 as range 10
-      // closed e.Any#2 as range 21(5)
+      // closed e.Any#2 as range 19(5)
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} e.Any#2/21(5) {REMOVED TILE}
+      //TRASH: {REMOVED TILE} {REMOVED TILE} e.Any#2/19(5) {REMOVED TILE}
       //RESULT: Tile{ [[ } (/14 Tile{ HalfReuse: # TkVariable/0 HalfReuse: </4 HalfReuse: & ModeFromTag/7 AsIs: s.Tag#2/9 HalfReuse: >/12 AsIs: e.Index#2/10 HalfReuse: # NoDepth/13 } Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 14},
       {refalrts::icReinitIdent, 0, 1, 0},
@@ -9702,9 +9701,8 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( s.idx '$' e.idx )
       // </0 & PatternCommentRec\1/4 (/7 s.Tag#2/9 '$'/10 e.Any#2/5 )/8 >/1
-      {refalrts::icEmpty, 0, 0, 2},
-      {refalrts::icsVarLeft, 0, 9, 5},
       {refalrts::icCharLeftSave, 10, static_cast<unsigned char>('$'), 5},
+      {refalrts::icEmpty, 0, 0, 2},
       // closed e.Any#2 as range 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Any#2/5 {REMOVED TILE}
@@ -9753,8 +9751,8 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
   //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) e.$
-  // </0 & PatternCommentRec\1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  //GLOBAL GEN: ( s.$ e.$ ) e.$
+  // </0 & PatternCommentRec\1/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9766,16 +9764,17 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
   // closed e.idxT#0 as range 2
+  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxBV#0 as range 5
   do {
     // ( # Atom # TkChar s.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkChar/10 s.Char#2/11 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = refalrts::ident_left(  & ident_TkChar<int>::name, context[19], context[20] );
     if( ! context[10] )
       continue;
@@ -9807,11 +9806,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkNumber s.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkNumber/10 s.Value#2/11 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = refalrts::ident_left(  & ident_TkNumber<int>::name, context[19], context[20] );
     if( ! context[10] )
       continue;
@@ -9843,11 +9841,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkName e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkName/10 e.Name#2/5 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = refalrts::ident_left(  & ident_TkName<int>::name, context[19], context[20] );
     if( ! context[10] )
       continue;
@@ -9876,11 +9873,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkIdentifier e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkIdentifier/10 e.Ident#2/5 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = refalrts::ident_left(  & ident_TkIdentifier<int>::name, context[19], context[20] );
     if( ! context[10] )
       continue;
@@ -9909,22 +9905,21 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Brackets s.idx e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 s.Num#2/10 e.InBrackets#2/5 )/8 >/1
-    context[19] = context[5];
-    context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[19], context[20] );
-    if( ! context[9] )
+    if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
       continue;
-    context[21] = context[2];
-    context[22] = context[3];
-    if( ! refalrts::empty_seq( context[21], context[22] ) )
+    context[19] = context[2];
+    context[20] = context[3];
+    if( ! refalrts::empty_seq( context[19], context[20] ) )
       continue;
-    if( ! refalrts::svar_left( context[10], context[19], context[20] ) )
+    context[21] = context[5];
+    context[22] = context[6];
+    if( ! refalrts::svar_left( context[10], context[21], context[22] ) )
       continue;
-    // closed e.InBrackets#2 as range 19(5)
+    // closed e.InBrackets#2 as range 21(5)
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#2/10 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkOpenBracket/4 HalfReuse: # NoOffset/7 HalfReuse: )/9 } </11 & PatternCommentRec/12 Tile{ AsIs: e.InBrackets#2/19(5) } >/13 (/14 # TkCloseBracket/15 Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkOpenBracket/4 HalfReuse: # NoOffset/7 HalfReuse: )/9 } </11 & PatternCommentRec/12 Tile{ AsIs: e.InBrackets#2/21(5) } >/13 (/14 # TkCloseBracket/15 Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[12], & PatternCommentRec ) )
@@ -9949,7 +9944,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
     res = refalrts::splice_evar( res, context[13], context[15] );
-    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[21], context[22] );
     res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::use( res );
     refalrts::splice_to_freelist_open( context[9], res );
@@ -9960,11 +9955,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # ADT-Brackets ( e.idx ) s.idx e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 s.Num#2/14 e.InBrackets#2/5 )/8 >/1
+    if( ! refalrts::ident_term(  & ident_ADT_Brackets<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = 0;
     context[11] = 0;
     context[12] = refalrts::brackets_left( context[10], context[11], context[19], context[20] );
@@ -10018,17 +10012,14 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Brackets e.idx ) e.idx
     // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
-    context[19] = context[5];
-    context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[19], context[20] );
-    if( ! context[9] )
+    if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
       continue;
-    // closed e.InBrackets#2 as range 19(5)
+    // closed e.InBrackets#2 as range 5
     // closed e.Tail#2 as range 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
-    //RESULT: Tile{ [[ } (/10 # TkOpenBracket/11 Tile{ HalfReuse: # NoOffset/0 HalfReuse: )/4 HalfReuse: </7 HalfReuse: & PatternCommentRec/9 AsIs: e.InBrackets#2/19(5) HalfReuse: >/8 } (/12 # TkCloseBracket/13 # NoOffset/14 Tile{ HalfReuse: )/1 ]] }
+    //RESULT: Tile{ [[ } (/10 # TkOpenBracket/11 Tile{ HalfReuse: # NoOffset/0 HalfReuse: )/4 HalfReuse: </7 HalfReuse: & PatternCommentRec/9 AsIs: e.InBrackets#2/5 HalfReuse: >/8 } (/12 # TkCloseBracket/13 # NoOffset/14 Tile{ HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( context[11], & ident_TkOpenBracket<int>::name ) )
@@ -10064,11 +10055,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # ADT-Brackets ( e.idx ) e.idx ) e.idx
     // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
+    if( ! refalrts::ident_term(  & ident_ADT_Brackets<int>::name, context[9] ) )
+      continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[19], context[20] );
-    if( ! context[9] )
-      continue;
     context[10] = 0;
     context[11] = 0;
     context[12] = refalrts::brackets_left( context[10], context[11], context[19], context[20] );
@@ -10116,25 +10106,23 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( s.idx ( e.idx ) e.idx )
     // </0 & PatternCommentRec\1/4 (/7 s.Tag#2/9 (/12 e.Index#2/10 )/13 e.Any#2/5 )/8 >/1
-    context[19] = context[2];
-    context[20] = context[3];
-    if( ! refalrts::empty_seq( context[19], context[20] ) )
-      continue;
-    context[21] = context[5];
-    context[22] = context[6];
-    if( ! refalrts::svar_left( context[9], context[21], context[22] ) )
-      continue;
+    context[19] = context[5];
+    context[20] = context[6];
     context[10] = 0;
     context[11] = 0;
-    context[12] = refalrts::brackets_left( context[10], context[11], context[21], context[22] );
+    context[12] = refalrts::brackets_left( context[10], context[11], context[19], context[20] );
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
+    context[21] = context[2];
+    context[22] = context[3];
+    if( ! refalrts::empty_seq( context[21], context[22] ) )
+      continue;
     // closed e.Index#2 as range 10
-    // closed e.Any#2 as range 21(5)
+    // closed e.Any#2 as range 19(5)
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Any#2/21(5) {REMOVED TILE}
+    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Any#2/19(5) {REMOVED TILE}
     //RESULT: Tile{ [[ } (/14 Tile{ HalfReuse: # TkVariable/0 HalfReuse: </4 HalfReuse: & ModeFromTag/7 AsIs: s.Tag#2/9 HalfReuse: >/12 AsIs: e.Index#2/10 HalfReuse: # NoDepth/13 } Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
@@ -10161,12 +10149,10 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
 
   // ( s.idx '$' e.idx )
   // </0 & PatternCommentRec\1/4 (/7 s.Tag#2/9 '$'/10 e.Any#2/5 )/8 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
   context[10] = refalrts::char_left( '$', context[5], context[6] );
   if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Any#2 as range 5
 
@@ -13742,7 +13728,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 39, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & GetReplacement-Aux/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -13964,7 +13950,7 @@ static refalrts::FnResult func_GetReplacement_Aux(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 39 elems
   refalrts::Iter context[39];
   refalrts::zeros( context, 39 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & GetReplacement-Aux/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;

@@ -1674,7 +1674,7 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 18, 0, 0},
-      //FAST GEN: e.$
+      //FAST GEN: ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) e.$
       // </0 & ExtractSets/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
@@ -1772,7 +1772,7 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  //FAST GEN: e.$
+  //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & ExtractSets/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
