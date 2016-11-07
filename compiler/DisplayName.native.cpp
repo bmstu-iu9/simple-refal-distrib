@@ -2,38 +2,10 @@
 #include "refalrts.h"
 
 
-// identifier #CreateClosure
-template <typename SREFAL_PARAM_INT>
-struct ident_CreateClosure {
-  static const char *name() {
-    return "CreateClosure";
-  }
-};
-
-// identifier #Hash
-template <typename SREFAL_PARAM_INT>
-struct ident_Hash {
-  static const char *name() {
-    return "Hash";
-  }
-};
-
-// identifier #SUF
-template <typename SREFAL_PARAM_INT>
-struct ident_SUF {
-  static const char *name() {
-    return "SUF";
-  }
-};
-
-// identifier #VAR
-template <typename SREFAL_PARAM_INT>
-struct ident_VAR {
-  static const char *name() {
-    return "VAR";
-  }
-};
-
+const refalrts::RefalIdentifier ident_CreateClosure = refalrts::ident_from_static("CreateClosure");
+const refalrts::RefalIdentifier ident_Hash = refalrts::ident_from_static("Hash");
+const refalrts::RefalIdentifier ident_SUF = refalrts::ident_from_static("SUF");
+const refalrts::RefalIdentifier ident_VAR = refalrts::ident_from_static("VAR");
 extern refalrts::RefalFunction& StrFromInt_0_0;
 #define StrFromInt_alias StrFromInt_0_0
 #define StrFromInt_str "StrFromInt#0:0"
@@ -81,7 +53,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::svar_right( context[6], context[15], context[16] ) )
       continue;
-    context[7] = refalrts::ident_right(  & ident_Hash<int>::name, context[15], context[16] );
+    context[7] = refalrts::ident_right(  ident_Hash, context[15], context[16] );
     if( ! context[7] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -126,7 +98,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     // </0 & DisplayName/4 # CreateClosure/5 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[5] = refalrts::ident_left(  & ident_CreateClosure<int>::name, context[15], context[16] );
+    context[5] = refalrts::ident_left(  ident_CreateClosure, context[15], context[16] );
     if( ! context[5] )
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
@@ -155,7 +127,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     // </0 & DisplayName/4 # VAR/5 s.Mode#1/6 e.Index#1/2 s.Depth#1/7 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[5] = refalrts::ident_left(  & ident_VAR<int>::name, context[15], context[16] );
+    context[5] = refalrts::ident_left(  ident_VAR, context[15], context[16] );
     if( ! context[5] )
       continue;
     if( ! refalrts::svar_left( context[6], context[15], context[16] ) )
@@ -203,7 +175,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     do {
       context[17] = context[15];
       context[18] = context[16];
-      context[7] = refalrts::ident_left(  & ident_SUF<int>::name, context[17], context[18] );
+      context[7] = refalrts::ident_left(  ident_SUF, context[17], context[18] );
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 17(2)
@@ -414,7 +386,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
     if( ! refalrts::svar_right( context[6], context[15], context[16] ) )
       continue;
-    context[7] = refalrts::ident_right(  & ident_Hash<int>::name, context[15], context[16] );
+    context[7] = refalrts::ident_right(  ident_Hash, context[15], context[16] );
     if( ! context[7] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -459,7 +431,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & CName/4 # CreateClosure/5 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[5] = refalrts::ident_left(  & ident_CreateClosure<int>::name, context[15], context[16] );
+    context[5] = refalrts::ident_left(  ident_CreateClosure, context[15], context[16] );
     if( ! context[5] )
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
@@ -488,7 +460,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & CName/4 # VAR/5 s.Mode#1/6 e.Index#1/2 s.Depth#1/7 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[5] = refalrts::ident_left(  & ident_VAR<int>::name, context[15], context[16] );
+    context[5] = refalrts::ident_left(  ident_VAR, context[15], context[16] );
     if( ! context[5] )
       continue;
     if( ! refalrts::svar_left( context[6], context[15], context[16] ) )
@@ -545,7 +517,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     do {
       context[17] = context[15];
       context[18] = context[16];
-      context[7] = refalrts::ident_left(  & ident_SUF<int>::name, context[17], context[18] );
+      context[7] = refalrts::ident_left(  ident_SUF, context[17], context[18] );
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 17(2)

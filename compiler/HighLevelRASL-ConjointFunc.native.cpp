@@ -2,70 +2,14 @@
 #include "refalrts.h"
 
 
-// identifier #CmdComment
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdComment {
-  static const char *name() {
-    return "CmdComment";
-  }
-};
-
-// identifier #CmdFail
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdFail {
-  static const char *name() {
-    return "CmdFail";
-  }
-};
-
-// identifier #CmdIssueMem
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdIssueMem {
-  static const char *name() {
-    return "CmdIssueMem";
-  }
-};
-
-// identifier #CmdOpenELoop
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdOpenELoop {
-  static const char *name() {
-    return "CmdOpenELoop";
-  }
-};
-
-// identifier #CmdSentence
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdSentence {
-  static const char *name() {
-    return "CmdSentence";
-  }
-};
-
-// identifier #Function
-template <typename SREFAL_PARAM_INT>
-struct ident_Function {
-  static const char *name() {
-    return "Function";
-  }
-};
-
-// identifier #Junk
-template <typename SREFAL_PARAM_INT>
-struct ident_Junk {
-  static const char *name() {
-    return "Junk";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
+const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+const refalrts::RefalIdentifier ident_CmdFail = refalrts::ident_from_static("CmdFail");
+const refalrts::RefalIdentifier ident_CmdIssueMem = refalrts::ident_from_static("CmdIssueMem");
+const refalrts::RefalIdentifier ident_CmdOpenELoop = refalrts::ident_from_static("CmdOpenELoop");
+const refalrts::RefalIdentifier ident_CmdSentence = refalrts::ident_from_static("CmdSentence");
+const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
+const refalrts::RefalIdentifier ident_Junk = refalrts::ident_from_static("Junk");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -388,7 +332,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[20], & ident_CmdComment<int>::name ) )
+  if( ! refalrts::alloc_ident( context[20], ident_CmdComment ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[21], context[22], "GLOBAL GEN:", 11 ) )
     return refalrts::cNoMemory;
@@ -414,7 +358,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_CmdComment<int>::name );
+  refalrts::reinit_ident( context[7], ident_CmdComment );
   refalrts::reinit_name( context[8], & SplitGen_alias );
   refalrts::link_brackets( context[30], context[32] );
   refalrts::push_stack( context[1] );
@@ -644,7 +588,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[12], context[13]);
-  context[14] = refalrts::ident_left(  & ident_CmdIssueMem<int>::name, context[10], context[11] );
+  context[14] = refalrts::ident_left(  ident_CmdIssueMem, context[10], context[11] );
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;
   // closed e.HardGenComment#3 as range 6
@@ -663,8 +607,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], & Max_alias );
   refalrts::reinit_svar( context[8], context[15] );
-  refalrts::reinit_ident( context[9], & ident_CmdSentence<int>::name );
-  refalrts::update_ident( context[14], & ident_CmdComment<int>::name );
+  refalrts::reinit_ident( context[9], ident_CmdSentence );
+  refalrts::update_ident( context[14], ident_CmdComment );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[17], context[1] );
   refalrts::link_brackets( context[12], context[13] );
@@ -940,7 +884,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_CmdOpenELoop<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_CmdOpenELoop, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Commands#3 as range 10(2)
@@ -950,7 +894,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands#3/10(2) } Tile{ AsIs: (/7 AsIs: # CmdOpenELoop/9 AsIs: e.OpenELoop#3/5 AsIs: )/8 HalfReuse: (/1 } Tile{ HalfReuse: # CmdFail/0 HalfReuse: )/4 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[1] );
-    refalrts::reinit_ident( context[0], & ident_CmdFail<int>::name );
+    refalrts::reinit_ident( context[0], ident_CmdFail );
     refalrts::reinit_close_bracket( context[4] );
     refalrts::link_brackets( context[1], context[4] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1000,7 +944,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  context[9] = refalrts::ident_left(  & ident_CmdSentence<int>::name, context[5], context[6] );
+  context[9] = refalrts::ident_left(  ident_CmdSentence, context[5], context[6] );
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   // closed e.LastSentence#2 as range 5
@@ -1032,8 +976,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   if( ! refalrts::alloc_close_bracket( context[21] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_Function<int>::name );
-  refalrts::reinit_ident( context[18], & ident_CmdIssueMem<int>::name );
+  refalrts::reinit_ident( context[4], ident_Function );
+  refalrts::reinit_ident( context[18], ident_CmdIssueMem );
   refalrts::reinit_open_call( context[7] );
   refalrts::reinit_name( context[9], & Fetch_alias );
   refalrts::reinit_name( context[8], & gen_HighLevelRASL_Function_Conjoint_L6L1_alias );
@@ -1231,7 +1175,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
       if( ! context[21] )
         continue;
       refalrts::bracket_pointers(context[21], context[22]);
-      context[23] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[19], context[20] );
+      context[23] = refalrts::ident_left(  ident_TkVariable, context[19], context[20] );
       if( ! context[23] )
         continue;
       // closed e.MarkedPattern-E#1 as range 56(5)
@@ -1307,7 +1251,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/24 e.Name#1/19 s.Offset#1/25 {REMOVED TILE} {REMOVED TILE} (/30 s.Tag#1/32 (/35 e.Name#1/38 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/46 (/49 e.Name#1/51 )/50 s.Offset#1/53 )/45 {REMOVED TILE} {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Junk/7 AsIs: e.MarkedPattern-B#1/17 HalfReuse: )/21 HalfReuse: (/23 } Tile{ HalfReuse: s.Tag1 #32/36 HalfReuse: s.Offset1 #53/37 AsIs: e.Subst#1/28 AsIs: )/31 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ComposeVars/44 } Tile{ HalfReuse: (/22 AsIs: e.MarkedPattern-E#1/56(5) AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Substitute-B#1/26 } Tile{ AsIs: e.Substitute-E#1/60(9) } Tile{ AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars-B#1/40 } Tile{ AsIs: e.Vars-E#1/64(13) } Tile{ AsIs: )/16 AsIs: >/1 ]] }
           refalrts::reinit_open_bracket( context[4] );
-          refalrts::reinit_ident( context[7], & ident_Junk<int>::name );
+          refalrts::reinit_ident( context[7], ident_Junk );
           refalrts::reinit_close_bracket( context[21] );
           refalrts::reinit_open_bracket( context[23] );
           refalrts::reinit_svar( context[36], context[32] );
@@ -1354,7 +1298,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 )/12 (/15 )/16 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Junk/7 AsIs: e.MarkedPattern#1/5 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_Junk<int>::name );
+  refalrts::reinit_ident( context[7], ident_Junk );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);

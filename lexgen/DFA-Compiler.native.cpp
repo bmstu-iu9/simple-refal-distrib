@@ -2,110 +2,19 @@
 #include "refalrts.h"
 
 
-// identifier #Any
-template <typename SREFAL_PARAM_INT>
-struct ident_Any {
-  static const char *name() {
-    return "Any";
-  }
-};
-
-// identifier #Changed
-template <typename SREFAL_PARAM_INT>
-struct ident_Changed {
-  static const char *name() {
-    return "Changed";
-  }
-};
-
-// identifier #Chars
-template <typename SREFAL_PARAM_INT>
-struct ident_Chars {
-  static const char *name() {
-    return "Chars";
-  }
-};
-
-// identifier #EOF-Catched
-template <typename SREFAL_PARAM_INT>
-struct ident_EOF_Catched {
-  static const char *name() {
-    return "EOF-Catched";
-  }
-};
-
-// identifier #EOF-NotCatched
-template <typename SREFAL_PARAM_INT>
-struct ident_EOF_NotCatched {
-  static const char *name() {
-    return "EOF-NotCatched";
-  }
-};
-
-// identifier #Empty
-template <typename SREFAL_PARAM_INT>
-struct ident_Empty {
-  static const char *name() {
-    return "Empty";
-  }
-};
-
-// identifier #Finitive
-template <typename SREFAL_PARAM_INT>
-struct ident_Finitive {
-  static const char *name() {
-    return "Finitive";
-  }
-};
-
-// identifier #Flush
-template <typename SREFAL_PARAM_INT>
-struct ident_Flush {
-  static const char *name() {
-    return "Flush";
-  }
-};
-
-// identifier #NotChanged
-template <typename SREFAL_PARAM_INT>
-struct ident_NotChanged {
-  static const char *name() {
-    return "NotChanged";
-  }
-};
-
-// identifier #NotUsed
-template <typename SREFAL_PARAM_INT>
-struct ident_NotUsed {
-  static const char *name() {
-    return "NotUsed";
-  }
-};
-
-// identifier #Sentence
-template <typename SREFAL_PARAM_INT>
-struct ident_Sentence {
-  static const char *name() {
-    return "Sentence";
-  }
-};
-
-// identifier #Set
-template <typename SREFAL_PARAM_INT>
-struct ident_Set {
-  static const char *name() {
-    return "Set";
-  }
-};
-
-// identifier #Used
-template <typename SREFAL_PARAM_INT>
-struct ident_Used {
-  static const char *name() {
-    return "Used";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
+const refalrts::RefalIdentifier ident_Changed = refalrts::ident_from_static("Changed");
+const refalrts::RefalIdentifier ident_Chars = refalrts::ident_from_static("Chars");
+const refalrts::RefalIdentifier ident_EOF_Catched = refalrts::ident_from_static("EOF-Catched");
+const refalrts::RefalIdentifier ident_EOF_NotCatched = refalrts::ident_from_static("EOF-NotCatched");
+const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
+const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
+const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
+const refalrts::RefalIdentifier ident_NotChanged = refalrts::ident_from_static("NotChanged");
+const refalrts::RefalIdentifier ident_NotUsed = refalrts::ident_from_static("NotUsed");
+const refalrts::RefalIdentifier ident_Sentence = refalrts::ident_from_static("Sentence");
+const refalrts::RefalIdentifier ident_Set = refalrts::ident_from_static("Set");
+const refalrts::RefalIdentifier ident_Used = refalrts::ident_from_static("Used");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -269,7 +178,7 @@ static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refa
   do {
     // ( ( e.idx ) ( e.idx ) ) ( # Set t.idx ( e.idx ) e.idx )
     // </0 & DFA-Compile\1/4 (/7 (/11 e.Sets#2/9 )/12 (/15 e.Rules#2/13 )/16 )/8 (/19 # Set/21 t.SrcPos#2/22 (/26 e.Name#2/24 )/27 e.Content#2/17 )/20 >/1
-    if( ! refalrts::ident_term(  & ident_Set<int>::name, context[21] ) )
+    if( ! refalrts::ident_term(  ident_Set, context[21] ) )
       continue;
     // closed e.Sets#2 as range 9
     // closed e.Rules#2 as range 13
@@ -280,7 +189,7 @@ static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refa
     //TRASH: {REMOVED TILE} </0 & DFA-Compile\1/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Sets#2/9 } Tile{ HalfReuse: (/21 AsIs: t.SrcPos#2/22 AsIs: (/26 AsIs: e.Name#2/24 AsIs: )/27 } Tile{ HalfReuse: # NotUsed/19 } Tile{ AsIs: e.Content#2/17 } Tile{ AsIs: )/20 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: e.Rules#2/13 AsIs: )/16 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[21] );
-    refalrts::reinit_ident( context[19], & ident_NotUsed<int>::name );
+    refalrts::reinit_ident( context[19], ident_NotUsed );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::link_brackets( context[15], context[16] );
     refalrts::link_brackets( context[11], context[12] );
@@ -303,7 +212,7 @@ static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refa
 
   // ( ( e.idx ) ( e.idx ) ) ( # Sentence t.idx ( e.idx ) e.idx )
   // </0 & DFA-Compile\1/4 (/7 (/11 e.Sets#2/9 )/12 (/15 e.Rules#2/13 )/16 )/8 (/19 # Sentence/21 t.SrcPos#2/22 (/26 e.Name#2/24 )/27 e.Content#2/17 )/20 >/1
-  if( ! refalrts::ident_term(  & ident_Sentence<int>::name, context[21] ) )
+  if( ! refalrts::ident_term(  ident_Sentence, context[21] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sets#2 as range 9
   // closed e.Rules#2 as range 13
@@ -585,7 +494,7 @@ static refalrts::FnResult func_gen_ResolvingSets_L1(refalrts::Iter arg_begin, re
     // </0 & ResolvingSets\1/4 (/7 t.SrcPos#2/9 (/13 e.Name#2/11 )/14 s.Used#2/15 # Any/16 )/8 >/1
     context[18] = context[5];
     context[19] = context[6];
-    context[16] = refalrts::ident_left(  & ident_Any<int>::name, context[18], context[19] );
+    context[16] = refalrts::ident_left(  ident_Any, context[18], context[19] );
     if( ! context[16] )
       continue;
     if( ! refalrts::empty_seq( context[18], context[19] ) )
@@ -659,7 +568,7 @@ static refalrts::FnResult func_gen_ResolvingSets_L2(refalrts::Iter arg_begin, re
   do {
     // # Changed e.idx
     // </0 & ResolvingSets\2/4 # Changed/5 e.Sets#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_Changed<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Changed, context[5] ) )
       continue;
     // closed e.Sets#2 as range 2
 
@@ -680,7 +589,7 @@ static refalrts::FnResult func_gen_ResolvingSets_L2(refalrts::Iter arg_begin, re
 
   // # NotChanged e.idx
   // </0 & ResolvingSets\2/4 # NotChanged/5 e.Sets#2/2 >/1
-  if( ! refalrts::ident_term(  & ident_NotChanged<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_NotChanged, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sets#2 as range 2
 
@@ -784,7 +693,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Chars<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Chars, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Chars#1 as range 5
@@ -825,7 +734,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Set<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Set, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Chars#1 as range 5
@@ -858,7 +767,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
     // </0 & NormalizeContent/4 (/7 e.Chars#1/5 )/8 # Any/9 e.Tail#1/2 >/1
     context[16] = context[2];
     context[17] = context[3];
-    context[9] = refalrts::ident_left(  & ident_Any<int>::name, context[16], context[17] );
+    context[9] = refalrts::ident_left(  ident_Any, context[16], context[17] );
     if( ! context[9] )
       continue;
     // closed e.Chars#1 as range 5
@@ -867,7 +776,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeContent/4 (/7 e.Chars#1/5 )/8 # Any/9 e.Tail#1/16(2) {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Any/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_Any<int>::name );
+    refalrts::reinit_ident( context[1], ident_Any );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -886,7 +795,7 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Chars/7 AsIs: e.Chars#1/5 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_Chars<int>::name );
+  refalrts::reinit_ident( context[7], ident_Chars );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -955,7 +864,7 @@ static refalrts::FnResult func_SetCheckRecursion(refalrts::Iter arg_begin, refal
         if( ! context[22] )
           continue;
         refalrts::bracket_pointers(context[22], context[23]);
-        context[24] = refalrts::ident_left(  & ident_Set<int>::name, context[20], context[21] );
+        context[24] = refalrts::ident_left(  ident_Set, context[20], context[21] );
         if( ! context[24] )
           continue;
         if( ! refalrts::repeated_evar_right( context[25], context[26], context[13], context[14], context[20], context[21] ) )
@@ -1078,7 +987,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
         if( ! context[22] )
           continue;
         refalrts::bracket_pointers(context[22], context[23]);
-        context[24] = refalrts::ident_left(  & ident_Set<int>::name, context[20], context[21] );
+        context[24] = refalrts::ident_left(  ident_Set, context[20], context[21] );
         if( ! context[24] )
           continue;
         context[25] = refalrts::char_right( 'y', context[20], context[21] );
@@ -1100,8 +1009,8 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.Content-B#1/18 (/22 # Set/24 t.SrcPos#1/28 'A'/27 'n'/26 {REMOVED TILE} e.Content-E#1/48(7) )/10 {REMOVED TILE} >/1 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: # Changed/4 AsIs: e.Sets-B#1/5 AsIs: (/9 AsIs: t.SetNamePos#1/11 AsIs: (/15 AsIs: e.Name#1/13 AsIs: )/16 AsIs: s.Used#1/17 } Tile{ HalfReuse: # Any/25 AsIs: )/23 } Tile{ AsIs: e.Sets-E#1/46(2) } Tile{ ]] }
-        refalrts::reinit_ident( context[4], & ident_Changed<int>::name );
-        refalrts::reinit_ident( context[25], & ident_Any<int>::name );
+        refalrts::reinit_ident( context[4], ident_Changed );
+        refalrts::reinit_ident( context[25], ident_Any );
         refalrts::link_brackets( context[9], context[23] );
         refalrts::link_brackets( context[15], context[16] );
         refalrts::Iter trash_prev = arg_begin->prev;
@@ -1158,7 +1067,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
         if( ! context[22] )
           continue;
         refalrts::bracket_pointers(context[22], context[23]);
-        context[24] = refalrts::ident_left(  & ident_Set<int>::name, context[20], context[21] );
+        context[24] = refalrts::ident_left(  ident_Set, context[20], context[21] );
         if( ! context[24] )
           continue;
         // closed e.Content-E#1 as range 48(7)
@@ -1203,8 +1112,8 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
           //RESULT: Tile{ [[ } Tile{ HalfReuse: # Changed/4 AsIs: e.Sets-B#1/5 AsIs: (/9 AsIs: t.SetNamePos#1/11 AsIs: (/15 AsIs: e.Name#1/13 AsIs: )/16 AsIs: s.UsedOuter#1/17 } Tile{ AsIs: e.Content-B#1/18 } e.IncContent#1/29/42 Tile{ AsIs: e.Content-E#1/48(7) } Tile{ AsIs: )/10 AsIs: e.Sets-M#1/27 AsIs: (/31 AsIs: t.IncNamePos#1/33 AsIs: (/37 AsIs: e.IncName#1/39 AsIs: )/38 } Tile{ Reuse: # Used/24 } Tile{ AsIs: e.IncContent#1/29 } Tile{ AsIs: )/32 } Tile{ AsIs: e.Sets-E#1/52(2) } Tile{ ]] }
           if (! refalrts::copy_evar(context[42], context[43], context[29], context[30]))
             return refalrts::cNoMemory;
-          refalrts::reinit_ident( context[4], & ident_Changed<int>::name );
-          refalrts::update_ident( context[24], & ident_Used<int>::name );
+          refalrts::reinit_ident( context[4], ident_Changed );
+          refalrts::update_ident( context[24], ident_Used );
           refalrts::link_brackets( context[31], context[32] );
           refalrts::link_brackets( context[37], context[38] );
           refalrts::link_brackets( context[9], context[10] );
@@ -1296,7 +1205,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
           if( ! context[35] )
             continue;
           refalrts::bracket_pointers(context[35], context[36]);
-          context[37] = refalrts::ident_left(  & ident_Set<int>::name, context[33], context[34] );
+          context[37] = refalrts::ident_left(  ident_Set, context[33], context[34] );
           if( ! context[37] )
             continue;
           if( ! refalrts::repeated_evar_right( context[38], context[39], context[13], context[14], context[33], context[34] ) )
@@ -1313,8 +1222,8 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
           //RESULT: Tile{ [[ } Tile{ HalfReuse: # Changed/4 AsIs: e.Sets-B#1/5 AsIs: (/9 AsIs: t.IncNamePos#1/11 AsIs: (/15 AsIs: e.IncName#1/13 AsIs: )/16 } Tile{ Reuse: # Used/37 } Tile{ AsIs: e.IncContent#1/7 } Tile{ AsIs: )/10 AsIs: e.Sets-M#1/18 AsIs: (/22 AsIs: t.SetNamePos#1/24 AsIs: (/28 AsIs: e.Name#1/26 AsIs: )/29 AsIs: s.UsedOuter#1/30 } Tile{ AsIs: e.Content-B#1/31 } e.IncContent#1/7/42 Tile{ AsIs: e.Content-E#1/50(20) } Tile{ AsIs: )/23 } Tile{ AsIs: e.Sets-E#1/48(2) } Tile{ ]] }
           if (! refalrts::copy_evar(context[42], context[43], context[7], context[8]))
             return refalrts::cNoMemory;
-          refalrts::reinit_ident( context[4], & ident_Changed<int>::name );
-          refalrts::update_ident( context[37], & ident_Used<int>::name );
+          refalrts::reinit_ident( context[4], ident_Changed );
+          refalrts::update_ident( context[37], ident_Used );
           refalrts::link_brackets( context[22], context[23] );
           refalrts::link_brackets( context[28], context[29] );
           refalrts::link_brackets( context[9], context[10] );
@@ -1381,7 +1290,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
         if( ! context[22] )
           continue;
         refalrts::bracket_pointers(context[22], context[23]);
-        context[24] = refalrts::ident_left(  & ident_Set<int>::name, context[20], context[21] );
+        context[24] = refalrts::ident_left(  ident_Set, context[20], context[21] );
         if( ! context[24] )
           continue;
         // closed e.Content-E#1 as range 48(7)
@@ -1431,7 +1340,7 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & SetSubstitute/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: # NotChanged/0 } Tile{ AsIs: e.Sets#1/2 } Tile{ ]] }
-  refalrts::reinit_ident( context[0], & ident_NotChanged<int>::name );
+  refalrts::reinit_ident( context[0], ident_NotChanged );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1489,7 +1398,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
     if( ! context[19] )
       continue;
     refalrts::bracket_pointers(context[19], context[20]);
-    context[21] = refalrts::ident_left(  & ident_Chars<int>::name, context[17], context[18] );
+    context[21] = refalrts::ident_left(  ident_Chars, context[17], context[18] );
     if( ! context[21] )
       continue;
     // closed e.Content#1 as range 17
@@ -1551,7 +1460,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         if( ! context[49] )
           continue;
         refalrts::bracket_pointers(context[49], context[50]);
-        context[51] = refalrts::ident_left(  & ident_Set<int>::name, context[47], context[48] );
+        context[51] = refalrts::ident_left(  ident_Set, context[47], context[48] );
         if( ! context[51] )
           continue;
         if( ! refalrts::repeated_evar_right( context[52], context[53], context[24], context[25], context[47], context[48] ) )
@@ -1574,11 +1483,11 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} s.Used#1/28 {REMOVED TILE} t.SrcPos#1/54 e.Name#1/52 {REMOVED TILE}
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & SubstituteSetsToRules/4 AsIs: (/7 AsIs: (/15 AsIs: t.SetNamePos#1/22 AsIs: (/26 AsIs: e.Name#1/24 AsIs: )/27 } # Used/60 Tile{ AsIs: (/19 AsIs: # Chars/21 AsIs: e.Content#1/17 AsIs: )/20 AsIs: )/16 AsIs: e.Sets#1/63(5) AsIs: )/8 AsIs: (/11 AsIs: e.Rules-B#1/29 AsIs: (/33 AsIs: t.SentNamePos#1/35 AsIs: (/39 AsIs: e.RuleName#1/37 AsIs: )/40 AsIs: e.Alternatives-B#1/41 AsIs: (/45 AsIs: (/49 Reuse: # Chars/51 } e.Content#1/17/61 Tile{ AsIs: )/50 AsIs: t.Flush#1/56 AsIs: t.NextState#1/58 AsIs: )/46 AsIs: e.Alternatives-E#1/69(31) AsIs: )/34 AsIs: e.Rules-E#1/67(9) AsIs: )/12 AsIs: >/1 ]] }
-        if( ! refalrts::alloc_ident( context[60], & ident_Used<int>::name ) )
+        if( ! refalrts::alloc_ident( context[60], ident_Used ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_evar(context[61], context[62], context[17], context[18]))
           return refalrts::cNoMemory;
-        refalrts::update_ident( context[51], & ident_Chars<int>::name );
+        refalrts::update_ident( context[51], ident_Chars );
         refalrts::push_stack( context[1] );
         refalrts::push_stack( context[0] );
         refalrts::link_brackets( context[11], context[12] );
@@ -1614,7 +1523,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
     if( ! context[15] )
       continue;
     refalrts::bracket_pointers(context[15], context[16]);
-    context[17] = refalrts::ident_right(  & ident_Any<int>::name, context[13], context[14] );
+    context[17] = refalrts::ident_right(  ident_Any, context[13], context[14] );
     if( ! context[17] )
       continue;
     // closed e.Sets#1 as range 63(5)
@@ -1675,7 +1584,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         if( ! context[45] )
           continue;
         refalrts::bracket_pointers(context[45], context[46]);
-        context[47] = refalrts::ident_left(  & ident_Set<int>::name, context[43], context[44] );
+        context[47] = refalrts::ident_left(  ident_Set, context[43], context[44] );
         if( ! context[47] )
           continue;
         if( ! refalrts::repeated_evar_right( context[48], context[49], context[20], context[21], context[43], context[44] ) )
@@ -1698,8 +1607,8 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} s.Used#1/24 {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/50 e.Name#1/48 )/46 {REMOVED TILE}
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & SubstituteSetsToRules/4 AsIs: (/7 AsIs: (/15 AsIs: t.SetNamePos#1/18 AsIs: (/22 AsIs: e.Name#1/20 AsIs: )/23 } Tile{ Reuse: # Used/47 } Tile{ AsIs: # Any/17 AsIs: )/16 AsIs: e.Sets#1/63(5) AsIs: )/8 AsIs: (/11 AsIs: e.Rules-B#1/25 AsIs: (/29 AsIs: t.SentNamePos#1/31 AsIs: (/35 AsIs: e.RuleName#1/33 AsIs: )/36 AsIs: e.Alternatives-B#1/37 AsIs: (/41 HalfReuse: # Any/45 } Tile{ AsIs: t.Flush#1/52 AsIs: t.NextState#1/54 AsIs: )/42 AsIs: e.Alternatives-E#1/69(27) AsIs: )/30 AsIs: e.Rules-E#1/67(9) AsIs: )/12 AsIs: >/1 ]] }
-        refalrts::update_ident( context[47], & ident_Used<int>::name );
-        refalrts::reinit_ident( context[45], & ident_Any<int>::name );
+        refalrts::update_ident( context[47], ident_Used );
+        refalrts::reinit_ident( context[45], ident_Any );
         refalrts::push_stack( context[1] );
         refalrts::push_stack( context[0] );
         refalrts::link_brackets( context[11], context[12] );
@@ -1743,7 +1652,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    context[23] = refalrts::ident_left(  & ident_NotUsed<int>::name, context[13], context[14] );
+    context[23] = refalrts::ident_left(  ident_NotUsed, context[13], context[14] );
     if( ! context[23] )
       continue;
     // closed e.Name#1 as range 19
@@ -1813,7 +1722,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    context[23] = refalrts::ident_left(  & ident_Used<int>::name, context[13], context[14] );
+    context[23] = refalrts::ident_left(  ident_Used, context[13], context[14] );
     if( ! context[23] )
       continue;
     // closed e.Name#1 as range 19
@@ -1885,7 +1794,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         if( ! context[33] )
           continue;
         refalrts::bracket_pointers(context[33], context[34]);
-        context[35] = refalrts::ident_left(  & ident_Set<int>::name, context[31], context[32] );
+        context[35] = refalrts::ident_left(  ident_Set, context[31], context[32] );
         if( ! context[35] )
           continue;
         context[36] = refalrts::char_right( 'y', context[31], context[32] );
@@ -1915,7 +1824,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} # Set/35 t.SrcPos#1/39 'A'/38 'n'/37 'y'/36 )/34 {REMOVED TILE}
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & SubstituteSetsToRules/4 AsIs: (/7 AsIs: )/8 AsIs: (/11 AsIs: e.Rules-B#1/13 AsIs: (/17 AsIs: t.SentNamePos#1/19 AsIs: (/23 AsIs: e.RuleName#1/21 AsIs: )/24 AsIs: e.Alternatives-B#1/25 AsIs: (/29 HalfReuse: # Any/33 } Tile{ AsIs: t.Flush#1/41 AsIs: t.NextState#1/43 AsIs: )/30 AsIs: e.Alternatives-E#1/69(15) AsIs: )/18 AsIs: e.Rules-E#1/67(9) AsIs: )/12 AsIs: >/1 ]] }
-        refalrts::reinit_ident( context[33], & ident_Any<int>::name );
+        refalrts::reinit_ident( context[33], ident_Any );
         refalrts::push_stack( context[1] );
         refalrts::push_stack( context[0] );
         refalrts::link_brackets( context[11], context[12] );
@@ -1983,7 +1892,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
         if( ! context[33] )
           continue;
         refalrts::bracket_pointers(context[33], context[34]);
-        context[35] = refalrts::ident_left(  & ident_Set<int>::name, context[31], context[32] );
+        context[35] = refalrts::ident_left(  ident_Set, context[31], context[32] );
         if( ! context[35] )
           continue;
         // closed e.Alternatives-E#1 as range 69(15)
@@ -2097,7 +2006,7 @@ static refalrts::FnResult func_SetDiff(refalrts::Iter arg_begin, refalrts::Iter 
     // </0 & SetDiff/4 (/7 e.Set#1/5 )/8 (/11 # Any/13 )/12 >/1
     context[19] = context[9];
     context[20] = context[10];
-    context[13] = refalrts::ident_left(  & ident_Any<int>::name, context[19], context[20] );
+    context[13] = refalrts::ident_left(  ident_Any, context[19], context[20] );
     if( ! context[13] )
       continue;
     if( ! refalrts::empty_seq( context[19], context[20] ) )
@@ -2230,7 +2139,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
     context[21] = 0;
     if( ! refalrts::brackets_term( context[20], context[21], context[14] ) )
       continue;
-    context[22] = refalrts::ident_left(  & ident_Chars<int>::name, context[20], context[21] );
+    context[22] = refalrts::ident_left(  ident_Chars, context[20], context[21] );
     if( ! context[22] )
       continue;
     // closed e.CatchedChars#1 as range 5
@@ -2285,14 +2194,14 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
   do {
     // ( s.idx e.idx ) ( # Any t.idx t.idx )
     // </0 & NormalizeAlternative/4 (/7 s.CatchedEOF#1/13 e.CatchedChars#1/5 )/8 (/11 # Any/14 t.Flush#1/16 t.Next#1/18 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_Any<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_Any, context[14] ) )
       continue;
     // closed e.CatchedChars#1 as range 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeAlternative/4 {REMOVED TILE} e.CatchedChars#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.CatchedEOF#1/13 } Tile{ HalfReuse: # Any/1 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Any/14 AsIs: t.Flush#1/16 AsIs: t.Next#1/18 AsIs: )/12 } Tile{ ]] }
-    refalrts::reinit_ident( context[1], & ident_Any<int>::name );
+    refalrts::reinit_ident( context[1], ident_Any );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2309,9 +2218,9 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
   do {
     // ( s.idx e.idx ) ( # Empty t.idx # Finitive )
     // </0 & NormalizeAlternative/4 (/7 s.CatchedEOF#1/13 e.CatchedChars#1/5 )/8 (/11 # Empty/14 t.Flush#1/16 # Finitive/18 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_Empty<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_Empty, context[14] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[18] ) )
+    if( ! refalrts::ident_term(  ident_Finitive, context[18] ) )
       continue;
     // closed e.CatchedChars#1 as range 5
 
@@ -2319,7 +2228,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
     //TRASH: {REMOVED TILE} (/7 s.CatchedEOF#1/13 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # EOF-Catched/4 } Tile{ AsIs: e.CatchedChars#1/5 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Empty/14 AsIs: t.Flush#1/16 AsIs: # Finitive/18 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_EOF_Catched<int>::name );
+    refalrts::reinit_ident( context[4], ident_EOF_Catched );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::link_brackets( context[0], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2334,7 +2243,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
 
   // ( s.idx e.idx ) ( # Empty t.idx t.idx )
   // </0 & NormalizeAlternative/4 (/7 s.CatchedEOF#1/13 e.CatchedChars#1/5 )/8 (/11 # Empty/14 t.Flush#1/16 t.NextRule#1/18 )/12 >/1
-  if( ! refalrts::ident_term(  & ident_Empty<int>::name, context[14] ) )
+  if( ! refalrts::ident_term(  ident_Empty, context[14] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.CatchedChars#1 as range 5
 
@@ -2342,8 +2251,8 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
   //TRASH: {REMOVED TILE} s.CatchedEOF#1/13 e.CatchedChars#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # EOF-Catched/4 HalfReuse: # Any/7 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Empty/14 AsIs: t.Flush#1/16 AsIs: t.NextRule#1/18 AsIs: )/12 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_EOF_Catched<int>::name );
-  refalrts::reinit_ident( context[7], & ident_Any<int>::name );
+  refalrts::reinit_ident( context[4], ident_EOF_Catched );
+  refalrts::reinit_ident( context[7], ident_Any );
   refalrts::link_brackets( context[11], context[12] );
   refalrts::link_brackets( context[0], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2402,7 +2311,7 @@ static refalrts::FnResult func_SplitAlternatives(refalrts::Iter arg_begin, refal
   do {
     // t.idx ( e.idx ) ( # Empty t.idx t.idx )
     // </0 & SplitAlternatives/4 t.SentNamePos#1/13 (/11 e.Name#1/9 )/12 (/7 # Empty/15 t.Flush#1/17 t.Next#1/19 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Empty<int>::name, context[15] ) )
+    if( ! refalrts::ident_term(  ident_Empty, context[15] ) )
       continue;
     // closed e.Name#1 as range 9
 
@@ -2422,7 +2331,7 @@ static refalrts::FnResult func_SplitAlternatives(refalrts::Iter arg_begin, refal
   do {
     // t.idx ( e.idx ) ( # Any t.idx t.idx )
     // </0 & SplitAlternatives/4 t.SentNamePos#1/13 (/11 e.Name#1/9 )/12 (/7 # Any/15 t.Flush#1/17 t.Next#1/19 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Any<int>::name, context[15] ) )
+    if( ! refalrts::ident_term(  ident_Any, context[15] ) )
       continue;
     // closed e.Name#1 as range 9
 
@@ -2713,7 +2622,7 @@ static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[23], & ident_EOF_NotCatched<int>::name ) )
+  if( ! refalrts::alloc_ident( context[23], ident_EOF_NotCatched ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
@@ -2812,10 +2721,10 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     // </0 & WarningIfUncatched/4 t.SentNamePos#1/5 e.Name#1/2 # EOF-Catched/8 # Any/7 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[7] = refalrts::ident_right(  & ident_Any<int>::name, context[15], context[16] );
+    context[7] = refalrts::ident_right(  ident_Any, context[15], context[16] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::ident_right(  & ident_EOF_Catched<int>::name, context[15], context[16] );
+    context[8] = refalrts::ident_right(  ident_EOF_Catched, context[15], context[16] );
     if( ! context[8] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -2842,7 +2751,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     do {
       context[17] = context[15];
       context[18] = context[16];
-      context[9] = refalrts::ident_left(  & ident_EOF_Catched<int>::name, context[17], context[18] );
+      context[9] = refalrts::ident_left(  ident_EOF_Catched, context[17], context[18] );
       if( ! context[9] )
         continue;
       // closed e.CharSet#1 as range 17(2)
@@ -2879,10 +2788,10 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     // </0 & WarningIfUncatched/4 t.SentNamePos#1/5 e.Name#1/2 # EOF-NotCatched/8 # Any/7 >/1
     context[15] = context[2];
     context[16] = context[3];
-    context[7] = refalrts::ident_right(  & ident_Any<int>::name, context[15], context[16] );
+    context[7] = refalrts::ident_right(  ident_Any, context[15], context[16] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::ident_right(  & ident_EOF_NotCatched<int>::name, context[15], context[16] );
+    context[8] = refalrts::ident_right(  ident_EOF_NotCatched, context[15], context[16] );
     if( ! context[8] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -2918,7 +2827,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
   do {
     context[15] = context[2];
     context[16] = context[3];
-    context[9] = refalrts::ident_left(  & ident_EOF_NotCatched<int>::name, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_EOF_NotCatched, context[15], context[16] );
     if( ! context[9] )
       continue;
     // closed e.CharSet#1 as range 15(2)
@@ -2975,7 +2884,7 @@ static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, ref
     // </0 & DefaultCatchAnyChar/4 t.SentNamePos#1/5 # Any/7 >/1
     context[16] = context[2];
     context[17] = context[3];
-    context[7] = refalrts::ident_left(  & ident_Any<int>::name, context[16], context[17] );
+    context[7] = refalrts::ident_left(  ident_Any, context[16], context[17] );
     if( ! context[7] )
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
@@ -3001,7 +2910,7 @@ static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, ref
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Any/4 } (/7 # Flush/8"#TokenLexerInternalError-Unexpected"/9 )/11 (/12 Tile{ AsIs: t.SentNamePos#1/5 }"Root"/13 )/15 Tile{ HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[8], & ident_Flush<int>::name ) )
+  if( ! refalrts::alloc_ident( context[8], ident_Flush ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[9], context[10], "#TokenLexerInternalError-Unexpected", 35 ) )
     return refalrts::cNoMemory;
@@ -3014,7 +2923,7 @@ static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, ref
   if( ! refalrts::alloc_close_bracket( context[15] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_Any<int>::name );
+  refalrts::reinit_ident( context[4], ident_Any );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
   refalrts::link_brackets( context[12], context[15] );
@@ -3052,7 +2961,7 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
   do {
     // # EOF-Catched
     // </0 & DefaultCatchEOF/4 # EOF-Catched/5 >/1
-    if( ! refalrts::ident_term(  & ident_EOF_Catched<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_EOF_Catched, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -3068,7 +2977,7 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
 
   // # EOF-NotCatched
   // </0 & DefaultCatchEOF/4 # EOF-NotCatched/5 >/1
-  if( ! refalrts::ident_term(  & ident_EOF_NotCatched<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_EOF_NotCatched, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
@@ -3076,17 +2985,17 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
   //RESULT: Tile{ [[ } (/6 # Empty/7 (/8 # Flush/9"#TokenLexerInternalError-UnexpectedEO"/10 Tile{ HalfReuse: 'F'/0 HalfReuse: )/4 Reuse: # Finitive/5 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[7], & ident_Empty<int>::name ) )
+  if( ! refalrts::alloc_ident( context[7], ident_Empty ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[9], & ident_Flush<int>::name ) )
+  if( ! refalrts::alloc_ident( context[9], ident_Flush ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[10], context[11], "#TokenLexerInternalError-UnexpectedEO", 37 ) )
     return refalrts::cNoMemory;
   refalrts::reinit_char( context[0], 'F' );
   refalrts::reinit_close_bracket( context[4] );
-  refalrts::update_ident( context[5], & ident_Finitive<int>::name );
+  refalrts::update_ident( context[5], ident_Finitive );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[6], context[1] );
   refalrts::link_brackets( context[8], context[4] );
@@ -3193,7 +3102,7 @@ static refalrts::FnResult func_ExtractExpected(refalrts::Iter arg_begin, refalrt
   do {
     // ( t.idx t.idx # Finitive )
     // </0 & ExtractExpected/4 (/7 t.Head#1/9 t.Flush#1/11 # Finitive/13 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_Finitive, context[13] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -3327,7 +3236,7 @@ static refalrts::FnResult func_gen_DoPrepareFunctions_S4L1(refalrts::Iter arg_be
   do {
     // ( t.idx t.idx # Finitive )
     // </0 & DoPrepareFunctions$4\1/4 (/7 t.Head#2/9 t.Flush#2/11 # Finitive/13 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_Finitive, context[13] ) )
       continue;
 
     refalrts::reset_allocator();

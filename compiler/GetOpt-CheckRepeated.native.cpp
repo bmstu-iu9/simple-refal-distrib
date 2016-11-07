@@ -2,14 +2,7 @@
 #include "refalrts.h"
 
 
-// identifier #RepeatOption
-template <typename SREFAL_PARAM_INT>
-struct ident_RepeatOption {
-  static const char *name() {
-    return "RepeatOption";
-  }
-};
-
+const refalrts::RefalIdentifier ident_RepeatOption = refalrts::ident_from_static("RepeatOption");
 extern refalrts::RefalFunction& GetOpt_CheckRepeated_0_0;
 #define GetOpt_CheckRepeated_alias GetOpt_CheckRepeated_0_0
 
@@ -178,7 +171,7 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
           if( ! refalrts::alloc_close_bracket( context[32] ) )
             return refalrts::cNoMemory;
           refalrts::reinit_open_bracket( context[12] );
-          refalrts::reinit_ident( context[28], & ident_RepeatOption<int>::name );
+          refalrts::reinit_ident( context[28], ident_RepeatOption );
           refalrts::push_stack( context[1] );
           refalrts::push_stack( context[0] );
           refalrts::link_brackets( context[20], context[21] );

@@ -2,142 +2,23 @@
 #include "refalrts.h"
 
 
-// identifier #EOF
-template <typename SREFAL_PARAM_INT>
-struct ident_EOF {
-  static const char *name() {
-    return "EOF";
-  }
-};
-
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
-// identifier #TAlternative
-template <typename SREFAL_PARAM_INT>
-struct ident_TAlternative {
-  static const char *name() {
-    return "TAlternative";
-  }
-};
-
-// identifier #TDot
-template <typename SREFAL_PARAM_INT>
-struct ident_TDot {
-  static const char *name() {
-    return "TDot";
-  }
-};
-
-// identifier #TEOF
-template <typename SREFAL_PARAM_INT>
-struct ident_TEOF {
-  static const char *name() {
-    return "TEOF";
-  }
-};
-
-// identifier #TEquals
-template <typename SREFAL_PARAM_INT>
-struct ident_TEquals {
-  static const char *name() {
-    return "TEquals";
-  }
-};
-
-// identifier #TError
-template <typename SREFAL_PARAM_INT>
-struct ident_TError {
-  static const char *name() {
-    return "TError";
-  }
-};
-
-// identifier #TErrorFlush
-template <typename SREFAL_PARAM_INT>
-struct ident_TErrorFlush {
-  static const char *name() {
-    return "TErrorFlush";
-  }
-};
-
-// identifier #TFlush
-template <typename SREFAL_PARAM_INT>
-struct ident_TFlush {
-  static const char *name() {
-    return "TFlush";
-  }
-};
-
-// identifier #TLiteral
-template <typename SREFAL_PARAM_INT>
-struct ident_TLiteral {
-  static const char *name() {
-    return "TLiteral";
-  }
-};
-
-// identifier #TName
-template <typename SREFAL_PARAM_INT>
-struct ident_TName {
-  static const char *name() {
-    return "TName";
-  }
-};
-
-// identifier #TNamedFlush
-template <typename SREFAL_PARAM_INT>
-struct ident_TNamedFlush {
-  static const char *name() {
-    return "TNamedFlush";
-  }
-};
-
-// identifier #TNewLine
-template <typename SREFAL_PARAM_INT>
-struct ident_TNewLine {
-  static const char *name() {
-    return "TNewLine";
-  }
-};
-
-// identifier #TPunctuation
-template <typename SREFAL_PARAM_INT>
-struct ident_TPunctuation {
-  static const char *name() {
-    return "TPunctuation";
-  }
-};
-
-// identifier #TSetName
-template <typename SREFAL_PARAM_INT>
-struct ident_TSetName {
-  static const char *name() {
-    return "TSetName";
-  }
-};
-
-// identifier #TUnexpectedChar
-template <typename SREFAL_PARAM_INT>
-struct ident_TUnexpectedChar {
-  static const char *name() {
-    return "TUnexpectedChar";
-  }
-};
-
-// identifier #TokenError
-template <typename SREFAL_PARAM_INT>
-struct ident_TokenError {
-  static const char *name() {
-    return "TokenError";
-  }
-};
-
+const refalrts::RefalIdentifier ident_EOF = refalrts::ident_from_static("EOF");
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
+const refalrts::RefalIdentifier ident_TAlternative = refalrts::ident_from_static("TAlternative");
+const refalrts::RefalIdentifier ident_TDot = refalrts::ident_from_static("TDot");
+const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
+const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
+const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
+const refalrts::RefalIdentifier ident_TErrorFlush = refalrts::ident_from_static("TErrorFlush");
+const refalrts::RefalIdentifier ident_TFlush = refalrts::ident_from_static("TFlush");
+const refalrts::RefalIdentifier ident_TLiteral = refalrts::ident_from_static("TLiteral");
+const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
+const refalrts::RefalIdentifier ident_TNamedFlush = refalrts::ident_from_static("TNamedFlush");
+const refalrts::RefalIdentifier ident_TNewLine = refalrts::ident_from_static("TNewLine");
+const refalrts::RefalIdentifier ident_TPunctuation = refalrts::ident_from_static("TPunctuation");
+const refalrts::RefalIdentifier ident_TSetName = refalrts::ident_from_static("TSetName");
+const refalrts::RefalIdentifier ident_TUnexpectedChar = refalrts::ident_from_static("TUnexpectedChar");
+const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
 extern refalrts::RefalFunction& EscapeString_0_0;
 #define EscapeString_alias EscapeString_0_0
 #define EscapeString_str "EscapeString#0:0"
@@ -253,7 +134,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TSetName e.idx
     // </0 & DFA-TextFromToken/4 # TSetName/5 e.Name#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TSetName<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TSetName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
 
@@ -283,7 +164,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TLiteral e.idx
     // </0 & DFA-TextFromToken/4 # TLiteral/5 e.Text#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TLiteral<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TLiteral, context[5] ) )
       continue;
     // closed e.Text#1 as range 2
 
@@ -313,7 +194,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TName e.idx
     // </0 & DFA-TextFromToken/4 # TName/5 e.Name#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TName<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
 
@@ -340,7 +221,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TNamedFlush e.idx
     // </0 & DFA-TextFromToken/4 # TNamedFlush/5 e.Name#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TNamedFlush<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TNamedFlush, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
 
@@ -370,7 +251,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TEquals
     // </0 & DFA-TextFromToken/4 # TEquals/5 >/1
-    if( ! refalrts::ident_term(  & ident_TEquals<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TEquals, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -394,7 +275,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TDot
     // </0 & DFA-TextFromToken/4 # TDot/5 >/1
-    if( ! refalrts::ident_term(  & ident_TDot<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TDot, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -418,7 +299,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TAlternative
     // </0 & DFA-TextFromToken/4 # TAlternative/5 >/1
-    if( ! refalrts::ident_term(  & ident_TAlternative<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TAlternative, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -442,7 +323,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TFlush
     // </0 & DFA-TextFromToken/4 # TFlush/5 >/1
-    if( ! refalrts::ident_term(  & ident_TFlush<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TFlush, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -470,7 +351,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
   do {
     // # TErrorFlush e.idx
     // </0 & DFA-TextFromToken/4 # TErrorFlush/5 e.Text#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TErrorFlush<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TErrorFlush, context[5] ) )
       continue;
     // closed e.Text#1 as range 2
 
@@ -494,7 +375,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
 
   // # TEOF
   // </0 & DFA-TextFromToken/4 # TEOF/5 >/1
-  if( ! refalrts::ident_term(  & ident_TEOF<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_TEOF, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -584,7 +465,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L2(refalrts::Iter arg_begin, refal
   do {
     // s.idx ( # TNewLine )
     // </0 & DFA-Tokens\2/4 s.LineNumber#2/9 (/7 # TNewLine/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TNewLine<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_TNewLine, context[10] ) )
       continue;
     context[11] = context[5];
     context[12] = context[6];
@@ -656,7 +537,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_EOF<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_EOF, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Tokens#2 as range 12(2)
@@ -668,7 +549,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DFA-Tokens\3/4 s.LineNumber#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Tokens#2/12(2) } Tile{ AsIs: (/8 Reuse: # TEOF/10 AsIs: s.EOFLineNumber#2/11 AsIs: )/9 } Tile{ ]] }
-    refalrts::update_ident( context[10], & ident_TEOF<int>::name );
+    refalrts::update_ident( context[10], ident_TEOF );
     refalrts::link_brackets( context[8], context[9] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -688,7 +569,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.Tokens#2/2 } Tile{ HalfReuse: (/0 HalfReuse: # TEOF/4 AsIs: s.LineNumber#2/5 } Tile{ HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_TEOF<int>::name );
+  refalrts::reinit_ident( context[4], ident_TEOF );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -848,7 +729,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TNewLine '\n' )
     // </0 & FilterTokens\1/4 (/7 # TNewLine/9 '\n'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TNewLine<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TNewLine, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -875,7 +756,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TSetName e.idx ':' )
     // </0 & FilterTokens\1/4 (/7 # TSetName/9 e.SetName#2/5 ':'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TSetName<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TSetName, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -901,7 +782,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TFlush '-' )
     // </0 & FilterTokens\1/4 (/7 # TFlush/9 '-'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TFlush<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TFlush, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -928,7 +809,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TErrorFlush e.idx '\"' )
     // </0 & FilterTokens\1/4 (/7 # TErrorFlush/9 e.Message#2/5 '\"'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TErrorFlush<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TErrorFlush, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -954,7 +835,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TNamedFlush e.idx )
     // </0 & FilterTokens\1/4 (/7 # TNamedFlush/9 e.FlushName#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TNamedFlush<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TNamedFlush, context[9] ) )
       continue;
     // closed e.FlushName#2 as range 5
 
@@ -974,7 +855,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TLiteral e.idx '\'' )
     // </0 & FilterTokens\1/4 (/7 # TLiteral/9 e.Content#2/5 '\''/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TLiteral<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TLiteral, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -987,7 +868,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TLiteral/4 HalfReuse: </7 HalfReuse: & Unescape/9 AsIs: e.Content#2/16(5) HalfReuse: >/10 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TLiteral<int>::name );
+    refalrts::reinit_ident( context[4], ident_TLiteral );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & Unescape_alias );
     refalrts::reinit_close_call( context[10] );
@@ -1005,14 +886,14 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TokenError e.idx )
     // </0 & FilterTokens\1/4 (/7 # TokenError/9 e.Message#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TokenError<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TokenError, context[9] ) )
       continue;
     // closed e.Message#2 as range 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TError/9 AsIs: e.Message#2/5 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TError<int>::name );
+    refalrts::update_ident( context[9], ident_TError );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1026,7 +907,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TPunctuation '=' )
     // </0 & FilterTokens\1/4 (/7 # TPunctuation/9 '='/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TPunctuation<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TPunctuation, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -1040,7 +921,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 (/7 # TPunctuation/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/10 HalfReuse: # TEquals/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[10] );
-    refalrts::reinit_ident( context[8], & ident_TEquals<int>::name );
+    refalrts::reinit_ident( context[8], ident_TEquals );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[10], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1054,7 +935,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TPunctuation '.' )
     // </0 & FilterTokens\1/4 (/7 # TPunctuation/9 '.'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TPunctuation<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TPunctuation, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -1068,7 +949,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 (/7 # TPunctuation/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/10 HalfReuse: # TDot/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[10] );
-    refalrts::reinit_ident( context[8], & ident_TDot<int>::name );
+    refalrts::reinit_ident( context[8], ident_TDot );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[10], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1082,7 +963,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TPunctuation '|' )
     // </0 & FilterTokens\1/4 (/7 # TPunctuation/9 '|'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TPunctuation<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TPunctuation, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -1096,7 +977,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 (/7 # TPunctuation/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/10 HalfReuse: # TAlternative/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[10] );
-    refalrts::reinit_ident( context[8], & ident_TAlternative<int>::name );
+    refalrts::reinit_ident( context[8], ident_TAlternative );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[10], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1110,7 +991,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TName e.idx )
     // </0 & FilterTokens\1/4 (/7 # TName/9 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TName<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TName, context[9] ) )
       continue;
     // closed e.Name#2 as range 5
 
@@ -1130,7 +1011,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   do {
     // ( # TUnexpectedChar s.idx )
     // </0 & FilterTokens\1/4 (/7 # TUnexpectedChar/9 s.Char#2/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TUnexpectedChar<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TUnexpectedChar, context[9] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -1144,7 +1025,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     //RESULT: Tile{ [[ } (/11 # TError/12 'U'/13 Tile{ HalfReuse: 'n'/1 }"expected charac"/14 Tile{ HalfReuse: 't'/0 HalfReuse: 'e'/4 HalfReuse: 'r'/7 HalfReuse: ' '/9 AsIs: s.Char#2/10 AsIs: )/8 } Tile{ ]] }
     if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[12], & ident_TError<int>::name ) )
+    if( ! refalrts::alloc_ident( context[12], ident_TError ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[13], 'U' ) )
       return refalrts::cNoMemory;
@@ -1170,7 +1051,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
 
   // ( # TEOF )
   // </0 & FilterTokens\1/4 (/7 # TEOF/9 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_TEOF<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_TEOF, context[9] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
@@ -1234,7 +1115,7 @@ static refalrts::FnResult func_gen_Unescape_S6L1(refalrts::Iter arg_begin, refal
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = refalrts::ident_left(  & ident_Success<int>::name, context[2], context[3] );
+  context[5] = refalrts::ident_left(  ident_Success, context[2], context[3] );
   if( ! context[5] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
@@ -1648,7 +1529,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TNewLine/10 Tile{ AsIs: e.Accum#1/5 } '\n'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TNewLine<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TNewLine ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '\n' ) )
       return refalrts::cNoMemory;
@@ -1771,7 +1652,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '='/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '=' ) )
       return refalrts::cNoMemory;
@@ -1810,7 +1691,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '.'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '.' ) )
       return refalrts::cNoMemory;
@@ -1849,7 +1730,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '|'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '|' ) )
       return refalrts::cNoMemory;
@@ -2513,7 +2394,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     //RESULT: Tile{ [[ } (/10 # TUnexpectedChar/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & Root/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/13(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[11], & ident_TUnexpectedChar<int>::name ) )
+    if( ! refalrts::alloc_ident( context[11], ident_TUnexpectedChar ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;
@@ -2546,7 +2427,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # TEOF/7 AsIs: e.Accum#1/5 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_TEOF<int>::name );
+  refalrts::reinit_ident( context[7], ident_TEOF );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -2601,7 +2482,7 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & Root_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TSetName<int>::name );
+    refalrts::reinit_ident( context[4], ident_TSetName );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -4108,7 +3989,7 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_chars( context[9], context[10], "xpected end of set name, got EO", 31 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'e' );
     refalrts::reinit_char( context[8], 'F' );
     refalrts::reinit_close_bracket( context[1] );
@@ -4132,7 +4013,7 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
   //RESULT: Tile{ [[ } (/9 # TokenError/10"expected end of set name"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "expected end of set name", 24 ) )
     return refalrts::cNoMemory;
@@ -4197,7 +4078,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! refalrts::alloc_name( context[12], & Root_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TFlush<int>::name );
+    refalrts::reinit_ident( context[4], ident_TFlush );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -4379,7 +4260,7 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[14], & Root_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -4411,7 +4292,7 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_chars( context[9], context[10], "nexpected end of file at litera", 31 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_char( context[8], 'l' );
     refalrts::reinit_close_bracket( context[1] );
@@ -5956,7 +5837,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ } (/9 # TName/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TName<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TName ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -8022,7 +7903,7 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::alloc_name( context[12], & Root_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TErrorFlush<int>::name );
+    refalrts::reinit_ident( context[4], ident_TErrorFlush );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -8052,7 +7933,7 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected error text or double quote"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected error text or double quote", 35 ) )
     return refalrts::cNoMemory;
@@ -8730,7 +8611,7 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected flush name"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected flush name", 19 ) )
     return refalrts::cNoMemory;
@@ -8928,7 +8809,7 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Unexpected escaped character"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Unexpected escaped character", 28 ) )
     return refalrts::cNoMemory;
@@ -9006,7 +8887,7 @@ static refalrts::FnResult func_Literal_Quote(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/9 # TLiteral/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TLiteral<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TLiteral ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -10532,7 +10413,7 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/9 # TNamedFlush/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TNamedFlush<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TNamedFlush ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -10827,7 +10708,7 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
     //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected digits"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[11], context[12], "Expected digits", 15 ) )
       return refalrts::cNoMemory;
@@ -10860,7 +10741,7 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
   if( ! refalrts::alloc_chars( context[9], context[10], "nexpected end of fil", 20 ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+  refalrts::reinit_ident( context[4], ident_TokenError );
   refalrts::reinit_char( context[7], 'U' );
   refalrts::reinit_char( context[8], 'e' );
   refalrts::reinit_close_bracket( context[1] );

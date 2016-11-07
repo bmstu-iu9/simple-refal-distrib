@@ -2,78 +2,15 @@
 #include "refalrts.h"
 
 
-// identifier #BadCommandLine
-template <typename SREFAL_PARAM_INT>
-struct ident_BadCommandLine {
-  static const char *name() {
-    return "BadCommandLine";
-  }
-};
-
-// identifier #FILE
-template <typename SREFAL_PARAM_INT>
-struct ident_FILE {
-  static const char *name() {
-    return "FILE";
-  }
-};
-
-// identifier #From
-template <typename SREFAL_PARAM_INT>
-struct ident_From {
-  static const char *name() {
-    return "From";
-  }
-};
-
-// identifier #InPlace
-template <typename SREFAL_PARAM_INT>
-struct ident_InPlace {
-  static const char *name() {
-    return "InPlace";
-  }
-};
-
-// identifier #NoRequiredParam
-template <typename SREFAL_PARAM_INT>
-struct ident_NoRequiredParam {
-  static const char *name() {
-    return "NoRequiredParam";
-  }
-};
-
-// identifier #Required
-template <typename SREFAL_PARAM_INT>
-struct ident_Required {
-  static const char *name() {
-    return "Required";
-  }
-};
-
-// identifier #To
-template <typename SREFAL_PARAM_INT>
-struct ident_To {
-  static const char *name() {
-    return "To";
-  }
-};
-
-// identifier #UnknownLongOption
-template <typename SREFAL_PARAM_INT>
-struct ident_UnknownLongOption {
-  static const char *name() {
-    return "UnknownLongOption";
-  }
-};
-
-// identifier #UnknownShortOption
-template <typename SREFAL_PARAM_INT>
-struct ident_UnknownShortOption {
-  static const char *name() {
-    return "UnknownShortOption";
-  }
-};
-
+const refalrts::RefalIdentifier ident_BadCommandLine = refalrts::ident_from_static("BadCommandLine");
+const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
+const refalrts::RefalIdentifier ident_From = refalrts::ident_from_static("From");
+const refalrts::RefalIdentifier ident_InPlace = refalrts::ident_from_static("InPlace");
+const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
+const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Required");
+const refalrts::RefalIdentifier ident_To = refalrts::ident_from_static("To");
+const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
+const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -147,7 +84,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_left(  & ident_To<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_left(  ident_To, context[10], context[11] );
     if( ! context[14] )
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
@@ -160,7 +97,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.PosFrom#2/9 {REMOVED TILE} {REMOVED TILE} s.PosTo#3/15 {REMOVED TILE} )/13 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # From/4 AsIs: (/7 AsIs: e.From#2/5 AsIs: )/8 } Tile{ AsIs: # To/14 } Tile{ AsIs: (/12 } Tile{ AsIs: e.To#3/10 } Tile{ HalfReuse: )/1 ]] }
-    refalrts::reinit_ident( context[4], & ident_From<int>::name );
+    refalrts::reinit_ident( context[4], ident_From );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[12], context[1] );
     refalrts::link_brackets( context[7], context[8] );
@@ -240,7 +177,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
   do {
     // ( s.idx # NoRequiredParam e.idx )
     // </0 & ParseCommandLine\1$5\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Opt#3/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_NoRequiredParam<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_NoRequiredParam, context[10] ) )
       continue;
     // closed e.Opt#3 as range 5
 
@@ -275,7 +212,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
   do {
     // ( s.idx # UnknownShortOption s.idx )
     // </0 & ParseCommandLine\1$5\1/4 (/7 s.Pos#3/9 # UnknownShortOption/10 s.Option#3/11 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_UnknownShortOption<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_UnknownShortOption, context[10] ) )
       continue;
     context[16] = context[5];
     context[17] = context[6];
@@ -307,7 +244,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
 
   // ( s.idx # UnknownLongOption e.idx )
   // </0 & ParseCommandLine\1$5\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_UnknownLongOption<int>::name, context[10] ) )
+  if( ! refalrts::ident_term(  ident_UnknownLongOption, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Option#3 as range 5
 
@@ -371,7 +308,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_FILE<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_FILE, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[25] = context[5];
@@ -387,7 +324,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & ParseCommandLine\1/4 (/7 )/8 (/11 # FILE/13 s.Pos#2/14 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: # InPlace/0 } Tile{ AsIs: e.FileName#2/9 } Tile{ ]] }
-    refalrts::reinit_ident( context[0], & ident_InPlace<int>::name );
+    refalrts::reinit_ident( context[0], ident_InPlace );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -418,7 +355,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
-      context[15] = refalrts::ident_left(  & ident_From<int>::name, context[11], context[12] );
+      context[15] = refalrts::ident_left(  ident_From, context[11], context[12] );
       if( ! context[15] )
         continue;
       // closed e.End#2 as range 27(2)
@@ -479,7 +416,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
-      context[15] = refalrts::ident_left(  & ident_To<int>::name, context[11], context[12] );
+      context[15] = refalrts::ident_left(  ident_To, context[11], context[12] );
       if( ! context[15] )
         continue;
       // closed e.End#2 as range 27(2)
@@ -613,9 +550,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[9], & ident_From<int>::name ) )
+  if( ! refalrts::alloc_ident( context[9], ident_From ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_Required ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[11], 'f' ) )
     return refalrts::cNoMemory;
@@ -629,9 +566,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[18], & ident_To<int>::name ) )
+  if( ! refalrts::alloc_ident( context[18], ident_To ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[19], & ident_Required<int>::name ) )
+  if( ! refalrts::alloc_ident( context[19], ident_Required ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[20], 'o' ) )
     return refalrts::cNoMemory;
@@ -736,7 +673,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } # BadCommandLine/5 </6 & WriteLine/7"Use:"/8 >/10 </11 & WriteLine/12"    lexgen filename.sref - for rewritting file\n"/13 >/15 </16 & WriteLine/17"    lexgen --from=file1.sref --to=file2.sref - for writting to other target\n"/18 >/20 </21 & WriteLine/22"    --from, -f - source file"/23 >/25 </26 & WriteLine/27"    --to, -o - target fi"/28 Tile{ HalfReuse: 'l'/0 HalfReuse: 'e'/4 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_ident( context[5], & ident_BadCommandLine<int>::name ) )
+  if( ! refalrts::alloc_ident( context[5], ident_BadCommandLine ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;

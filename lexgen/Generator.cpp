@@ -2,62 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #Any
-template <typename SREFAL_PARAM_INT>
-struct ident_Any {
-  static const char *name() {
-    return "Any";
-  }
-};
-
-// identifier #Empty
-template <typename SREFAL_PARAM_INT>
-struct ident_Empty {
-  static const char *name() {
-    return "Empty";
-  }
-};
-
-// identifier #Finitive
-template <typename SREFAL_PARAM_INT>
-struct ident_Finitive {
-  static const char *name() {
-    return "Finitive";
-  }
-};
-
-// identifier #Flush
-template <typename SREFAL_PARAM_INT>
-struct ident_Flush {
-  static const char *name() {
-    return "Flush";
-  }
-};
-
-// identifier #FlushError
-template <typename SREFAL_PARAM_INT>
-struct ident_FlushError {
-  static const char *name() {
-    return "FlushError";
-  }
-};
-
-// identifier #None
-template <typename SREFAL_PARAM_INT>
-struct ident_None {
-  static const char *name() {
-    return "None";
-  }
-};
-
-// identifier #Unnamed
-template <typename SREFAL_PARAM_INT>
-struct ident_Unnamed {
-  static const char *name() {
-    return "Unnamed";
-  }
-};
-
 extern refalrts::RefalFunction& Map_0_0;
 extern refalrts::RefalFunction& Fetch_0_0;
 extern refalrts::RefalFunction& EscapeChar_0_0;

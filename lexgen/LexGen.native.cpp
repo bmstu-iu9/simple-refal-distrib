@@ -2,46 +2,11 @@
 #include "refalrts.h"
 
 
-// identifier #BadCommandLine
-template <typename SREFAL_PARAM_INT>
-struct ident_BadCommandLine {
-  static const char *name() {
-    return "BadCommandLine";
-  }
-};
-
-// identifier #From
-template <typename SREFAL_PARAM_INT>
-struct ident_From {
-  static const char *name() {
-    return "From";
-  }
-};
-
-// identifier #InPlace
-template <typename SREFAL_PARAM_INT>
-struct ident_InPlace {
-  static const char *name() {
-    return "InPlace";
-  }
-};
-
-// identifier #TError
-template <typename SREFAL_PARAM_INT>
-struct ident_TError {
-  static const char *name() {
-    return "TError";
-  }
-};
-
-// identifier #To
-template <typename SREFAL_PARAM_INT>
-struct ident_To {
-  static const char *name() {
-    return "To";
-  }
-};
-
+const refalrts::RefalIdentifier ident_BadCommandLine = refalrts::ident_from_static("BadCommandLine");
+const refalrts::RefalIdentifier ident_From = refalrts::ident_from_static("From");
+const refalrts::RefalIdentifier ident_InPlace = refalrts::ident_from_static("InPlace");
+const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
+const refalrts::RefalIdentifier ident_To = refalrts::ident_from_static("To");
 extern refalrts::RefalFunction& ArgList_0_0;
 #define ArgList_alias ArgList_0_0
 #define ArgList_str "ArgList#0:0"
@@ -187,7 +152,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // # InPlace e.idx
     // </0 & Go\2/4 # InPlace/5 e.FileName#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_InPlace<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_InPlace, context[5] ) )
       continue;
     // closed e.FileName#2 as range 2
 
@@ -239,7 +204,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // # From ( e.idx ) # To ( e.idx )
     // </0 & Go\2/4 # From/5 (/8 e.From#2/6 )/9 # To/10 (/13 e.To#2/11 )/14 >/1
-    if( ! refalrts::ident_term(  & ident_From<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_From, context[5] ) )
       continue;
     context[36] = context[2];
     context[37] = context[3];
@@ -249,7 +214,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_To<int>::name, context[36], context[37] );
+    context[10] = refalrts::ident_left(  ident_To, context[36], context[37] );
     if( ! context[10] )
       continue;
     context[11] = 0;
@@ -334,7 +299,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
 
   // # BadCommandLine
   // </0 & Go\2/4 # BadCommandLine/5 >/1
-  if( ! refalrts::ident_term(  & ident_BadCommandLine<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_BadCommandLine, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -706,7 +671,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
   do {
     // ( e.idx ) ( # TError s.idx e.idx )
     // </0 & Transform\3$1\1/4 (/7 e.Source#1/5 )/8 (/11 # TError/13 s.LineNumber#3/14 e.Text#3/9 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TError<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TError, context[13] ) )
       continue;
     // closed e.Source#1 as range 5
     // closed e.Text#3 as range 9

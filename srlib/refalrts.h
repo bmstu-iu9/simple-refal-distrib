@@ -8,7 +8,8 @@ enum FnResult {
   cNoMemory = 1,
   cSuccess = 2,
   cExit = 3,
-  cStepLimit = 4
+  cStepLimit = 4,
+  cIdentTableLimit = 5
 };
 
 struct Node;
@@ -34,8 +35,6 @@ enum DataTag {
 };
 
 typedef FnResult (*RefalFunctionPtr) (Iter begin, Iter end);
-
-typedef const char *(*RefalIdentifier) ();
 
 typedef const char * RefalFuncName;
 
@@ -90,6 +89,38 @@ struct RefalEmptyFunction: public RefalFunction {
   static const RASLCommand run[];
 };
 
+class RefalIdentDescr;
+typedef const RefalIdentDescr *RefalIdentifier;
+
+class RefalIdentDescr {
+  // Запрет копирования
+  RefalIdentDescr(const RefalIdentDescr&);
+  RefalIdentDescr& operator=(const RefalIdentDescr&);
+public:
+  RefalIdentDescr()
+    : m_name(0)
+  {
+    /* пусто */
+  }
+
+  const char *name() const {
+    return m_name;
+  }
+
+  static RefalIdentifier from_static(const char *name);
+  static RefalIdentifier implode(const char *name);
+
+private:
+  const char *m_name;
+};
+
+inline RefalIdentifier ident_from_static(const char *name) {
+  return RefalIdentDescr::from_static(name);
+}
+
+inline RefalIdentifier ident_implode(const char *name) {
+  return RefalIdentDescr::implode(name);
+}
 
 struct Node {
   NodePtr prev;
@@ -448,6 +479,7 @@ enum PerformanceCounters {
   cPerformanceCounter_LinearRefalTime,
   cPerformanceCounter_LinearPatternTime,
   cPerformanceCounter_LinearResultTime,
+  cPerformanceCounter_IdentsAllocated,
   cPerformanceCounter_COUNTERS_NUMBER
 };
 

@@ -2,46 +2,11 @@
 #include "refalrts.h"
 
 
-// identifier #EL-HasErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_HasErrors {
-  static const char *name() {
-    return "EL-HasErrors";
-  }
-};
-
-// identifier #EL-NoErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_NoErrors {
-  static const char *name() {
-    return "EL-NoErrors";
-  }
-};
-
-// identifier #NoLine
-template <typename SREFAL_PARAM_INT>
-struct ident_NoLine {
-  static const char *name() {
-    return "NoLine";
-  }
-};
-
-// identifier #TkError
-template <typename SREFAL_PARAM_INT>
-struct ident_TkError {
-  static const char *name() {
-    return "TkError";
-  }
-};
-
-// identifier #TkUnexpected
-template <typename SREFAL_PARAM_INT>
-struct ident_TkUnexpected {
-  static const char *name() {
-    return "TkUnexpected";
-  }
-};
-
+const refalrts::RefalIdentifier ident_EL_HasErrors = refalrts::ident_from_static("EL-HasErrors");
+const refalrts::RefalIdentifier ident_EL_NoErrors = refalrts::ident_from_static("EL-NoErrors");
+const refalrts::RefalIdentifier ident_NoLine = refalrts::ident_from_static("NoLine");
+const refalrts::RefalIdentifier ident_TkError = refalrts::ident_from_static("TkError");
+const refalrts::RefalIdentifier ident_TkUnexpected = refalrts::ident_from_static("TkUnexpected");
 extern refalrts::RefalFunction& WriteLine_0_0;
 #define WriteLine_alias WriteLine_0_0
 #define WriteLine_str "WriteLine#0:0"
@@ -153,7 +118,7 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/4 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/0 } Tile{ HalfReuse: ]/1 ]] }
   refalrts::reinit_open_bracket( context[9] );
-  refalrts::reinit_ident( context[4], & ident_NoLine<int>::name );
+  refalrts::reinit_ident( context[4], ident_NoLine );
   refalrts::reinit_close_bracket( context[0] );
   refalrts::reinit_close_adt( context[1] );
   refalrts::link_brackets( context[7], context[1] );
@@ -254,7 +219,7 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   do {
     // t.idx ( # TkError s.idx e.idx ) e.idx
     // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkError/11 s.LineNumber#1/12 e.Message#1/7 )/10 e.Expected#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkError<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_TkError, context[11] ) )
       continue;
     // closed e.Message#1 as range 7
     // closed e.Expected#1 as range 2
@@ -278,7 +243,7 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   do {
     // t.idx ( # TkUnexpected s.idx e.idx ) e.idx
     // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 # TkUnexpected/11 s.LineNumber#1/12 e.Unexpected#1/7 )/10 e.Expected#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_TkUnexpected, context[11] ) )
       continue;
     // closed e.Unexpected#1 as range 7
     // closed e.Expected#1 as range 2
@@ -384,7 +349,7 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
   do {
     // ( e.idx ) ( # NoLine e.idx )
     // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 # NoLine/13 e.Message#2/9 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_NoLine<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_NoLine, context[13] ) )
       continue;
     // closed e.FileName#1 as range 5
     // closed e.Message#2 as range 9
@@ -496,7 +461,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL-NoErrors/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_EL_NoErrors<int>::name );
+    refalrts::reinit_ident( context[1], ident_EL_NoErrors );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -528,7 +493,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   refalrts::reinit_name( context[7], & refalrts::create_closure );
   refalrts::update_name( context[8], & gen_EL_Destroy_S2L1_alias );
   refalrts::reinit_close_call( context[9] );
-  refalrts::reinit_ident( context[1], & ident_EL_HasErrors<int>::name );
+  refalrts::reinit_ident( context[1], ident_EL_HasErrors );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[14] );
   refalrts::push_stack( context[18] );

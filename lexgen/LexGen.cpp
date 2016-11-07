@@ -2,46 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #BadCommandLine
-template <typename SREFAL_PARAM_INT>
-struct ident_BadCommandLine {
-  static const char *name() {
-    return "BadCommandLine";
-  }
-};
-
-// identifier #From
-template <typename SREFAL_PARAM_INT>
-struct ident_From {
-  static const char *name() {
-    return "From";
-  }
-};
-
-// identifier #InPlace
-template <typename SREFAL_PARAM_INT>
-struct ident_InPlace {
-  static const char *name() {
-    return "InPlace";
-  }
-};
-
-// identifier #TError
-template <typename SREFAL_PARAM_INT>
-struct ident_TError {
-  static const char *name() {
-    return "TError";
-  }
-};
-
-// identifier #To
-template <typename SREFAL_PARAM_INT>
-struct ident_To {
-  static const char *name() {
-    return "To";
-  }
-};
-
 extern refalrts::RefalFunction& ArgList_0_0;
 extern refalrts::RefalFunction& Fetch_0_0;
 extern refalrts::RefalFunction& Seq_0_0;

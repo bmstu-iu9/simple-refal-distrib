@@ -2,38 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #CreateClosure
-template <typename SREFAL_PARAM_INT>
-struct ident_CreateClosure {
-  static const char *name() {
-    return "CreateClosure";
-  }
-};
-
-// identifier #Hash
-template <typename SREFAL_PARAM_INT>
-struct ident_Hash {
-  static const char *name() {
-    return "Hash";
-  }
-};
-
-// identifier #SUF
-template <typename SREFAL_PARAM_INT>
-struct ident_SUF {
-  static const char *name() {
-    return "SUF";
-  }
-};
-
-// identifier #VAR
-template <typename SREFAL_PARAM_INT>
-struct ident_VAR {
-  static const char *name() {
-    return "VAR";
-  }
-};
-
 extern refalrts::RefalFunction& StrFromInt_0_0;
 extern refalrts::RefalFunction& EscapeString_0_0;
 extern refalrts::RefalFunction& DisplayName_0_0;

@@ -2,70 +2,14 @@
 #include "refalrts.h"
 
 
-// identifier #ADT-Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_ADT_Brackets {
-  static const char *name() {
-    return "ADT-Brackets";
-  }
-};
-
-// identifier #Atom
-template <typename SREFAL_PARAM_INT>
-struct ident_Atom {
-  static const char *name() {
-    return "Atom";
-  }
-};
-
-// identifier #Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_Brackets {
-  static const char *name() {
-    return "Brackets";
-  }
-};
-
-// identifier #E
-template <typename SREFAL_PARAM_INT>
-struct ident_E {
-  static const char *name() {
-    return "E";
-  }
-};
-
-// identifier #Eq
-template <typename SREFAL_PARAM_INT>
-struct ident_Eq {
-  static const char *name() {
-    return "Eq";
-  }
-};
-
-// identifier #NotEq
-template <typename SREFAL_PARAM_INT>
-struct ident_NotEq {
-  static const char *name() {
-    return "NotEq";
-  }
-};
-
-// identifier #S
-template <typename SREFAL_PARAM_INT>
-struct ident_S {
-  static const char *name() {
-    return "S";
-  }
-};
-
-// identifier #T
-template <typename SREFAL_PARAM_INT>
-struct ident_T {
-  static const char *name() {
-    return "T";
-  }
-};
-
+const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_Atom = refalrts::ident_from_static("Atom");
+const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+const refalrts::RefalIdentifier ident_E = refalrts::ident_from_static("E");
+const refalrts::RefalIdentifier ident_Eq = refalrts::ident_from_static("Eq");
+const refalrts::RefalIdentifier ident_NotEq = refalrts::ident_from_static("NotEq");
+const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
+const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
 extern refalrts::RefalFunction& Map_0_0;
 #define Map_alias Map_0_0
 #define Map_str "Map#0:0"
@@ -317,7 +261,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
   do {
     // ( # Brackets e.idx )
     // </0 & PreparePatternsFastGen-Aux\1/4 (/7 # Brackets/9 e.inBrackets#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Brackets, context[9] ) )
       continue;
     // closed e.inBrackets#2 as range 5
 
@@ -326,7 +270,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
     //RESULT: Tile{ [[ } (/10 Tile{ HalfReuse: # Brackets/0 HalfReuse: 1/4 HalfReuse: </7 HalfReuse: & PreparePatternsFastGen-Aux/9 AsIs: e.inBrackets#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[0], ident_Brackets );
     refalrts::reinit_number( context[4], 1UL );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & PreparePatternsFastGen_Aux_alias );
@@ -347,7 +291,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
   do {
     // ( # ADT-Brackets ( e.idx ) e.idx )
     // </0 & PreparePatternsFastGen-Aux\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 e.inBrackets#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_ADT_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_ADT_Brackets, context[9] ) )
       continue;
     context[22] = context[5];
     context[23] = context[6];
@@ -386,7 +330,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
 
   // ( # Atom e.idx )
   // </0 & PreparePatternsFastGen-Aux\1/4 (/7 # Atom/9 e.any#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_Atom, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.any#2 as range 5
 
@@ -570,7 +514,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_Brackets<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_Brackets, context[14], context[15] );
     if( ! context[18] )
       continue;
     // closed e.Tail#1 as range 36(2)
@@ -596,7 +540,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[17], context[13] );
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[7], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[7], ident_Brackets );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[23], context[8] );
@@ -627,7 +571,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_Brackets<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_Brackets, context[14], context[15] );
     if( ! context[18] )
       continue;
     // closed e.Tail#1 as range 36(2)
@@ -659,7 +603,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[17], context[13] );
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[7], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[7], ident_Brackets );
     refalrts::reinit_svar( context[26], context[19] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -693,7 +637,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_ADT_Brackets, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = 0;
@@ -729,7 +673,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_close_call( context[31] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[1], & ident_ADT_Brackets<int>::name );
+    refalrts::reinit_ident( context[1], ident_ADT_Brackets );
     refalrts::push_stack( context[31] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[30] );
@@ -763,7 +707,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_ADT_Brackets, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = 0;
@@ -806,7 +750,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     refalrts::reinit_close_bracket( context[30] );
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[1], & ident_ADT_Brackets<int>::name );
+    refalrts::reinit_ident( context[1], ident_ADT_Brackets );
     refalrts::reinit_svar( context[27], context[23] );
     refalrts::push_stack( context[35] );
     refalrts::push_stack( context[0] );
@@ -1042,7 +986,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
     // </0 & SplitReps-Brackets\1/4 (/7 # Brackets/9 s.Num#2/10 e.inBrackets#2/5 )/8 >/1
     context[20] = context[5];
     context[21] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[20], context[21] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[20], context[21] );
     if( ! context[9] )
       continue;
     if( ! refalrts::svar_left( context[10], context[20], context[21] ) )
@@ -1054,7 +998,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
     //RESULT: Tile{ [[ } (/11 # Brackets/12 1/13 </14 Tile{ HalfReuse: & UnBracketInBrackets/0 HalfReuse: s.Num2 #10/4 HalfReuse: </7 HalfReuse: & SplitReps/9 AsIs: s.Num#2/10 AsIs: e.inBrackets#2/20(5) HalfReuse: >/8 AsIs: >/1 } )/15 Tile{ ]] }
     if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[12], & ident_Brackets<int>::name ) )
+    if( ! refalrts::alloc_ident( context[12], ident_Brackets ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_number( context[13], 1UL ) )
       return refalrts::cNoMemory;
@@ -1088,7 +1032,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
     // </0 & SplitReps-Brackets\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 s.Num#2/14 e.inBrackets#2/5 )/8 >/1
     context[20] = context[5];
     context[21] = context[6];
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[20], context[21] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[20], context[21] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -1359,7 +1303,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # E/22 '$'/23 e.Pattern1#1/17 )/20 )/16 (/7 (/11 # E/24 '$'/25 e.Pattern2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_E<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_E, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -1367,7 +1311,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_E<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_E, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[41], context[42] );
@@ -1397,7 +1341,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # E/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 e.any#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_E<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_E, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -1432,7 +1376,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 e.any#1/17 )/20 )/16 (/7 (/11 # E/22 '$'/23 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[9];
     context[40] = context[10];
-    context[22] = refalrts::ident_left(  & ident_E<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_E, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -1469,12 +1413,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # ADT-Brackets/22 (/26 e.Name#1/24 )/27 s.NumB#1/28 e.1#1/17 )/20 )/16 (/7 (/11 # Atom/23 e.val#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_Atom<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_Atom, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = 0;
@@ -1494,11 +1438,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } (/29 # T/30 '$'/31 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/26 AsIs: e.Name#1/24 AsIs: )/27 AsIs: s.NumB#1/28 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 } # Atom/32 Tile{ AsIs: e.val#1/41(9) } )/33 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[29] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[30], & ident_T<int>::name ) )
+    if( ! refalrts::alloc_ident( context[30], ident_T ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[31], '$' ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[32], & ident_Atom<int>::name ) )
+    if( ! refalrts::alloc_ident( context[32], ident_Atom ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[33] ) )
       return refalrts::cNoMemory;
@@ -1534,12 +1478,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Atom/22 e.val#1/17 )/20 )/16 (/7 (/11 # ADT-Brackets/23 (/26 e.Name#1/24 )/27 s.NumB#1/28 e.1#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Atom<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Atom, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_ADT_Brackets, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = 0;
@@ -1568,7 +1512,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_close_bracket( context[33] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_T<int>::name );
+    refalrts::reinit_ident( context[4], ident_T );
     refalrts::reinit_open_bracket( context[16] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[33] );
@@ -1598,12 +1542,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Brackets/22 s.NumB#1/24 e.1#1/17 )/20 )/16 (/7 (/11 # Atom/23 e.val#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_Atom<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_Atom, context[41], context[42] );
     if( ! context[23] )
       continue;
     // closed e.val#1 as range 41(9)
@@ -1616,11 +1560,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } (/25 # T/26 '$'/27 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/24 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 } # Atom/28 Tile{ AsIs: e.val#1/41(9) } )/29 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[25] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[26], & ident_T<int>::name ) )
+    if( ! refalrts::alloc_ident( context[26], ident_T ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[27], '$' ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[28], & ident_Atom<int>::name ) )
+    if( ! refalrts::alloc_ident( context[28], ident_Atom ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[29] ) )
       return refalrts::cNoMemory;
@@ -1655,12 +1599,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Atom/22 e.val#1/17 )/20 )/16 (/7 (/11 # Brackets/23 s.NumB#1/24 e.1#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Atom<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Atom, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_Brackets<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_Brackets, context[41], context[42] );
     if( ! context[23] )
       continue;
     // closed e.val#1 as range 39(17)
@@ -1682,7 +1626,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_close_bracket( context[29] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_T<int>::name );
+    refalrts::reinit_ident( context[4], ident_T );
     refalrts::reinit_open_bracket( context[16] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[29] );
@@ -1711,7 +1655,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # ADT-Brackets/24 (/27 e.Name#1/25 )/28 s.NumB#1/29 e.inBr#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_S<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_S, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -1719,7 +1663,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_ADT_Brackets, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = 0;
@@ -1737,7 +1681,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/19 Reuse: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # ADT-Brackets/24 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
-    refalrts::update_ident( context[22], & ident_T<int>::name );
+    refalrts::update_ident( context[22], ident_T );
     refalrts::reinit_open_bracket( context[16] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[19], context[20] );
@@ -1762,12 +1706,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # ADT-Brackets/22 (/27 e.Name#1/25 )/28 s.NumB#1/29 e.inBr#1/17 )/20 )/16 (/7 (/11 # S/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_S<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_S, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -1790,7 +1734,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } (/30 # T/31 '$'/32 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # S/24 } '$'/33 Tile{ AsIs: e.Pattern#1/41(9) } )/34 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[31], & ident_T<int>::name ) )
+    if( ! refalrts::alloc_ident( context[31], ident_T ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[32], '$' ) )
       return refalrts::cNoMemory;
@@ -1802,7 +1746,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
-    refalrts::reinit_ident( context[24], & ident_S<int>::name );
+    refalrts::reinit_ident( context[24], ident_S );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[30], context[1] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1831,7 +1775,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # Brackets/24 s.NumB#1/25 e.inBr#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_S<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_S, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -1839,7 +1783,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_Brackets<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_Brackets, context[41], context[42] );
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 39(17)
@@ -1850,7 +1794,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/19 Reuse: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Brackets/24 AsIs: s.NumB#1/25 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
-    refalrts::update_ident( context[22], & ident_T<int>::name );
+    refalrts::update_ident( context[22], ident_T );
     refalrts::reinit_open_bracket( context[16] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[19], context[20] );
@@ -1874,12 +1818,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Brackets/22 s.NumB#1/25 e.inBr#1/17 )/20 )/16 (/7 (/11 # S/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_S<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_S, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -1895,7 +1839,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } (/26 # T/27 '$'/28 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/25 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # S/24 } '$'/29 Tile{ AsIs: e.Pattern#1/41(9) } )/30 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[27], & ident_T<int>::name ) )
+    if( ! refalrts::alloc_ident( context[27], ident_T ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[28], '$' ) )
       return refalrts::cNoMemory;
@@ -1907,7 +1851,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
-    refalrts::reinit_ident( context[24], & ident_S<int>::name );
+    refalrts::reinit_ident( context[24], ident_S );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[26], context[1] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1935,12 +1879,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Brackets/22 s.Num1#1/24 e.1#1/17 )/20 )/16 (/7 (/11 # Brackets/23 s.Num2#1/25 e.2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_Brackets<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_Brackets, context[41], context[42] );
     if( ! context[23] )
       continue;
     if( ! refalrts::svar_left( context[24], context[39], context[40] ) )
@@ -1990,12 +1934,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # ADT-Brackets/22 (/26 e.Name#1/24 )/27 s.Num1#1/34 e.1#1/17 )/20 )/16 (/7 (/11 # ADT-Brackets/23 (/30 e.Name#1/32 )/31 s.Num2#1/35 e.2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_ADT_Brackets, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = 0;
@@ -2059,12 +2003,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # ADT-Brackets/22 (/26 e.Name1#1/24 )/27 s.Num1#1/32 e.1#1/17 )/20 )/16 (/7 (/11 # ADT-Brackets/23 (/30 e.Name2#1/28 )/31 s.Num2#1/33 e.2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_ADT_Brackets, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = 0;
@@ -2093,7 +2037,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } (/34 # T/35 '$'/36 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/26 AsIs: e.Name1#1/24 AsIs: )/27 AsIs: s.Num1#1/32 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # ADT-Brackets/30 } (/37 Tile{ AsIs: e.Name2#1/28 } Tile{ AsIs: )/31 AsIs: s.Num2#1/33 AsIs: e.2#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } )/38 Tile{ ]] }
     if( ! refalrts::alloc_open_bracket( context[34] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[35], & ident_T<int>::name ) )
+    if( ! refalrts::alloc_ident( context[35], ident_T ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[36], '$' ) )
       return refalrts::cNoMemory;
@@ -2105,7 +2049,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
-    refalrts::reinit_ident( context[30], & ident_ADT_Brackets<int>::name );
+    refalrts::reinit_ident( context[30], ident_ADT_Brackets );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[34], context[38] );
     refalrts::link_brackets( context[7], context[1] );
@@ -2136,7 +2080,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # Brackets/24 s.NumB#1/25 e.inBr#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_T<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_T, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2144,7 +2088,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_Brackets<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_Brackets, context[41], context[42] );
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 39(17)
@@ -2178,12 +2122,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Brackets/22 s.NumB#1/25 e.inBr#1/17 )/20 )/16 (/7 (/11 # T/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_T<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_T, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -2222,7 +2166,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # ADT-Brackets/24 (/27 e.Name#1/25 )/28 s.NumB#1/29 e.inBr#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_T<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_T, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2230,7 +2174,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_ADT_Brackets, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = 0;
@@ -2272,12 +2216,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # ADT-Brackets/22 (/27 e.Name#1/25 )/28 s.NumB#1/29 e.inBr#1/17 )/20 )/16 (/7 (/11 # T/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_T<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_T, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -2324,12 +2268,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Atom/22 e.val1#1/17 )/20 )/16 (/7 (/11 # Atom/23 e.val2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Atom<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Atom, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_Atom<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_Atom, context[41], context[42] );
     if( ! context[23] )
       continue;
     // closed e.val1#1 as range 39(17)
@@ -2344,12 +2288,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[27], & ident_Atom<int>::name ) )
+    if( ! refalrts::alloc_ident( context[27], ident_Atom ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[28] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_S<int>::name );
+    refalrts::reinit_ident( context[4], ident_S );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[23] );
     refalrts::reinit_close_bracket( context[1] );
@@ -2378,12 +2322,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Atom/22 e.val#1/17 )/20 )/16 (/7 (/11 # S/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Atom<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Atom, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_S<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_S, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -2419,7 +2363,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # Atom/24 e.val#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_S<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_S, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2427,7 +2371,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_Atom<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_Atom, context[41], context[42] );
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 39(17)
@@ -2459,12 +2403,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # Atom/22 e.val#1/17 )/20 )/16 (/7 (/11 # T/23 '$'/24 e.Pattern#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_Atom<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_Atom, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[23] = refalrts::ident_left(  & ident_T<int>::name, context[41], context[42] );
+    context[23] = refalrts::ident_left(  ident_T, context[41], context[42] );
     if( ! context[23] )
       continue;
     context[24] = refalrts::char_left( '$', context[41], context[42] );
@@ -2500,7 +2444,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 e.Pattern#1/17 )/20 )/16 (/7 (/11 # Atom/24 e.val#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_T<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_T, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2508,7 +2452,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_Atom<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_Atom, context[41], context[42] );
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 39(17)
@@ -2540,7 +2484,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 e.Pattern1#1/17 )/20 )/16 (/7 (/11 # T/24 '$'/25 e.Pattern2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_T<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_T, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2548,7 +2492,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_T<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_T, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[41], context[42] );
@@ -2578,7 +2522,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 e.Pattern1#1/17 )/20 )/16 (/7 (/11 # S/24 '$'/25 e.Pattern2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_T<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_T, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2586,7 +2530,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_S<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_S, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[41], context[42] );
@@ -2616,7 +2560,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 e.Pattern1#1/17 )/20 )/16 (/7 (/11 # T/24 '$'/25 e.Pattern2#1/9 )/12 )/8 >/1
     context[39] = context[17];
     context[40] = context[18];
-    context[22] = refalrts::ident_left(  & ident_S<int>::name, context[39], context[40] );
+    context[22] = refalrts::ident_left(  ident_S, context[39], context[40] );
     if( ! context[22] )
       continue;
     context[23] = refalrts::char_left( '$', context[39], context[40] );
@@ -2624,7 +2568,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     context[41] = context[9];
     context[42] = context[10];
-    context[24] = refalrts::ident_left(  & ident_T<int>::name, context[41], context[42] );
+    context[24] = refalrts::ident_left(  ident_T, context[41], context[42] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[41], context[42] );
@@ -2651,13 +2595,13 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
 
   // s.idx ( ( # S '$' e.idx ) ) ( ( # S '$' e.idx ) )
   // </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 e.Pattern1#1/17 )/20 )/16 (/7 (/11 # S/24 '$'/25 e.Pattern2#1/9 )/12 )/8 >/1
-  context[22] = refalrts::ident_left(  & ident_S<int>::name, context[17], context[18] );
+  context[22] = refalrts::ident_left(  ident_S, context[17], context[18] );
   if( ! context[22] )
     return refalrts::cRecognitionImpossible;
   context[23] = refalrts::char_left( '$', context[17], context[18] );
   if( ! context[23] )
     return refalrts::cRecognitionImpossible;
-  context[24] = refalrts::ident_left(  & ident_S<int>::name, context[9], context[10] );
+  context[24] = refalrts::ident_left(  ident_S, context[9], context[10] );
   if( ! context[24] )
     return refalrts::cRecognitionImpossible;
   context[25] = refalrts::char_left( '$', context[9], context[10] );
@@ -2740,7 +2684,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  & ident_E<int>::name, context[20], context[21] );
+      context[24] = refalrts::ident_left(  ident_E, context[20], context[21] );
       if( ! context[24] )
         continue;
       // closed e.inE1#1 as range 20
@@ -2759,7 +2703,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
         if( ! context[29] )
           continue;
         refalrts::bracket_pointers(context[29], context[30]);
-        context[31] = refalrts::ident_left(  & ident_E<int>::name, context[27], context[28] );
+        context[31] = refalrts::ident_left(  ident_E, context[27], context[28] );
         if( ! context[31] )
           continue;
         // closed e.inE2#1 as range 27
@@ -2836,7 +2780,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  & ident_E<int>::name, context[20], context[21] );
+      context[24] = refalrts::ident_left(  ident_E, context[20], context[21] );
       if( ! context[24] )
         continue;
       // closed e.inE1#1 as range 20
@@ -2855,7 +2799,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
         if( ! context[29] )
           continue;
         refalrts::bracket_pointers(context[29], context[30]);
-        context[31] = refalrts::ident_left(  & ident_E<int>::name, context[27], context[28] );
+        context[31] = refalrts::ident_left(  ident_E, context[27], context[28] );
         if( ! context[31] )
           continue;
         // closed e.inE2#1 as range 27
@@ -2917,7 +2861,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_E<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_E, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = refalrts::char_left( '$', context[14], context[15] );
@@ -2931,7 +2875,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
     if( ! context[22] )
       continue;
     refalrts::bracket_pointers(context[22], context[23]);
-    context[24] = refalrts::ident_left(  & ident_E<int>::name, context[20], context[21] );
+    context[24] = refalrts::ident_left(  ident_E, context[20], context[21] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[20], context[21] );
@@ -2985,7 +2929,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/11 } # E/14 '$'/15 Tile{ AsIs: </0 Reuse: & SplitReps/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.in1#1/9 } >/16 Tile{ HalfReuse: (/12 AsIs: (/7 AsIs: e.in2#1/5 AsIs: )/8 HalfReuse: )/1 } )/17 Tile{ ]] }
-  if( ! refalrts::alloc_ident( context[14], & ident_E<int>::name ) )
+  if( ! refalrts::alloc_ident( context[14], ident_E ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[15], '$' ) )
     return refalrts::cNoMemory;
@@ -3105,7 +3049,7 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & LengthComp/4 (/7 )/8 (/11 )/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Eq/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_Eq<int>::name );
+    refalrts::reinit_ident( context[1], ident_Eq );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3121,7 +3065,7 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LengthComp/4 e.1#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # NotEq/1 ]] }
-  refalrts::reinit_ident( context[1], & ident_NotEq<int>::name );
+  refalrts::reinit_ident( context[1], ident_NotEq );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -3168,7 +3112,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // s.idx # Eq ( t.idx e.idx ) ( t.idx e.idx )
     // </0 & FastGen-K/4 s.Num#1/13 # Eq/14 (/11 t.1#1/15 e.tail1#1/9 )/12 (/7 t.2#1/17 e.tail2#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Eq<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_Eq, context[14] ) )
       continue;
     context[27] = context[9];
     context[28] = context[10];
@@ -3229,7 +3173,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // s.idx # Eq ( ) ( )
     // </0 & FastGen-K/4 s.Num#1/13 # Eq/14 (/11 )/12 (/7 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Eq<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_Eq, context[14] ) )
       continue;
     context[27] = context[9];
     context[28] = context[10];
@@ -3253,7 +3197,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
 
   // s.idx # NotEq ( e.idx ) ( e.idx )
   // </0 & FastGen-K/4 s.Num#1/13 # NotEq/14 (/11 e.1#1/9 )/12 (/7 e.2#1/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_NotEq<int>::name, context[14] ) )
+  if( ! refalrts::ident_term(  ident_NotEq, context[14] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.1#1 as range 9
   // closed e.2#1 as range 5
@@ -3267,7 +3211,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  refalrts::update_ident( context[14], & ident_E<int>::name );
+  refalrts::update_ident( context[14], ident_E );
   refalrts::reinit_char( context[11], '$' );
   refalrts::update_name( context[4], & SplitReps_alias );
   refalrts::reinit_open_bracket( context[12] );
@@ -3392,7 +3336,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_left(  & ident_E<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_left(  ident_E, context[10], context[11] );
     if( ! context[14] )
       continue;
     context[15] = refalrts::char_left( '$', context[10], context[11] );
@@ -3467,7 +3411,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_E<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_E, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = refalrts::char_left( '$', context[14], context[15] );
@@ -3544,7 +3488,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[18], & ident_E<int>::name ) )
+    if( ! refalrts::alloc_ident( context[18], ident_E ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[19], '$' ) )
       return refalrts::cNoMemory;
@@ -3625,7 +3569,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[21] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[22], & ident_E<int>::name ) )
+    if( ! refalrts::alloc_ident( context[22], ident_E ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[23], '$' ) )
       return refalrts::cNoMemory;
@@ -3671,7 +3615,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_left(  & ident_E<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_left(  ident_E, context[10], context[11] );
     if( ! context[14] )
       continue;
     context[15] = refalrts::char_left( '$', context[10], context[11] );
@@ -3691,7 +3635,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[22] )
       continue;
     refalrts::bracket_pointers(context[22], context[23]);
-    context[24] = refalrts::ident_left(  & ident_E<int>::name, context[20], context[21] );
+    context[24] = refalrts::ident_left(  ident_E, context[20], context[21] );
     if( ! context[24] )
       continue;
     context[25] = refalrts::char_left( '$', context[20], context[21] );
@@ -3824,7 +3768,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       if( ! context[18] )
         continue;
       refalrts::bracket_pointers(context[18], context[19]);
-      context[20] = refalrts::ident_left(  & ident_E<int>::name, context[16], context[17] );
+      context[20] = refalrts::ident_left(  ident_E, context[16], context[17] );
       if( ! context[20] )
         continue;
       context[21] = refalrts::char_left( '$', context[16], context[17] );
@@ -3846,7 +3790,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
         if( ! context[26] )
           continue;
         refalrts::bracket_pointers(context[26], context[27]);
-        context[28] = refalrts::ident_left(  & ident_E<int>::name, context[24], context[25] );
+        context[28] = refalrts::ident_left(  ident_E, context[24], context[25] );
         if( ! context[28] )
           continue;
         context[29] = refalrts::char_left( '$', context[24], context[25] );
@@ -3999,7 +3943,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 } # E/14 '$'/15 Tile{ AsIs: (/8 } (/16 Tile{ AsIs: e.1#1/6 } )/17 )/18 Tile{ HalfReuse: (/9 AsIs: (/12 AsIs: e.2#1/10 AsIs: )/13 HalfReuse: )/1 } )/19 )/20 Tile{ ]] }
-  if( ! refalrts::alloc_ident( context[14], & ident_E<int>::name ) )
+  if( ! refalrts::alloc_ident( context[14], ident_E ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[15], '$' ) )
     return refalrts::cNoMemory;

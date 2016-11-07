@@ -2,22 +2,8 @@
 #include "refalrts.h"
 
 
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
-// identifier #TypeBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TypeBracket {
-  static const char *name() {
-    return "TypeBracket";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
+const refalrts::RefalIdentifier ident_TypeBracket = refalrts::ident_from_static("TypeBracket");
 extern refalrts::RefalFunction& FOpen_0_0;
 #define FOpen_alias FOpen_0_0
 #define FOpen_str "FOpen#0:0"
@@ -1115,7 +1101,7 @@ static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, re
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = refalrts::ident_left(  & ident_Success<int>::name, context[2], context[3] );
+  context[5] = refalrts::ident_left(  ident_Success, context[2], context[3] );
   if( ! context[5] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
@@ -2189,7 +2175,7 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Type/4 (/5 e.InBracket#1/7 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TypeBracket/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TypeBracket<int>::name );
+    refalrts::reinit_ident( context[1], ident_TypeBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2246,7 +2232,7 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TypeBracket/4 AsIs: (/7 AsIs: e.InBrackets#1/5 AsIs: )/8 } Tile{ AsIs: e.Tail#1/9(2) } Tile{ ]] }
-    refalrts::reinit_ident( context[4], & ident_TypeBracket<int>::name );
+    refalrts::reinit_ident( context[4], ident_TypeBracket );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);

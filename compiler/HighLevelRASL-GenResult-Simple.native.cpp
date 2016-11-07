@@ -2,318 +2,45 @@
 #include "refalrts.h"
 
 
-// identifier #ADT-Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_ADT_Brackets {
-  static const char *name() {
-    return "ADT-Brackets";
-  }
-};
-
-// identifier #ARG-BEGIN
-template <typename SREFAL_PARAM_INT>
-struct ident_ARG_BEGIN {
-  static const char *name() {
-    return "ARG-BEGIN";
-  }
-};
-
-// identifier #Allocate
-template <typename SREFAL_PARAM_INT>
-struct ident_Allocate {
-  static const char *name() {
-    return "Allocate";
-  }
-};
-
-// identifier #Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_Brackets {
-  static const char *name() {
-    return "Brackets";
-  }
-};
-
-// identifier #CallBrackets
-template <typename SREFAL_PARAM_INT>
-struct ident_CallBrackets {
-  static const char *name() {
-    return "CallBrackets";
-  }
-};
-
-// identifier #CloseCall
-template <typename SREFAL_PARAM_INT>
-struct ident_CloseCall {
-  static const char *name() {
-    return "CloseCall";
-  }
-};
-
-// identifier #CmdComment
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdComment {
-  static const char *name() {
-    return "CmdComment";
-  }
-};
-
-// identifier #CmdCopyVar
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdCopyVar {
-  static const char *name() {
-    return "CmdCopyVar";
-  }
-};
-
-// identifier #CmdCreateElem
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdCreateElem {
-  static const char *name() {
-    return "CmdCreateElem";
-  }
-};
-
-// identifier #CmdInsertElem
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdInsertElem {
-  static const char *name() {
-    return "CmdInsertElem";
-  }
-};
-
-// identifier #CmdInsertRange
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdInsertRange {
-  static const char *name() {
-    return "CmdInsertRange";
-  }
-};
-
-// identifier #CmdInsertVar
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdInsertVar {
-  static const char *name() {
-    return "CmdInsertVar";
-  }
-};
-
-// identifier #CmdLinkBrackets
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdLinkBrackets {
-  static const char *name() {
-    return "CmdLinkBrackets";
-  }
-};
-
-// identifier #CmdNextStep
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdNextStep {
-  static const char *name() {
-    return "CmdNextStep";
-  }
-};
-
-// identifier #CmdPushStack
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdPushStack {
-  static const char *name() {
-    return "CmdPushStack";
-  }
-};
-
-// identifier #CmdResetAllocator
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdResetAllocator {
-  static const char *name() {
-    return "CmdResetAllocator";
-  }
-};
-
-// identifier #CmdSetRes
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdSetRes {
-  static const char *name() {
-    return "CmdSetRes";
-  }
-};
-
-// identifier #CmdSpliceToFreeList
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdSpliceToFreeList {
-  static const char *name() {
-    return "CmdSpliceToFreeList";
-  }
-};
-
-// identifier #CmdUseRes
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdUseRes {
-  static const char *name() {
-    return "CmdUseRes";
-  }
-};
-
-// identifier #ElChar
-template <typename SREFAL_PARAM_INT>
-struct ident_ElChar {
-  static const char *name() {
-    return "ElChar";
-  }
-};
-
-// identifier #ElCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseADT {
-  static const char *name() {
-    return "ElCloseADT";
-  }
-};
-
-// identifier #ElCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseBracket {
-  static const char *name() {
-    return "ElCloseBracket";
-  }
-};
-
-// identifier #ElCloseCall
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseCall {
-  static const char *name() {
-    return "ElCloseCall";
-  }
-};
-
-// identifier #ElIdent
-template <typename SREFAL_PARAM_INT>
-struct ident_ElIdent {
-  static const char *name() {
-    return "ElIdent";
-  }
-};
-
-// identifier #ElName
-template <typename SREFAL_PARAM_INT>
-struct ident_ElName {
-  static const char *name() {
-    return "ElName";
-  }
-};
-
-// identifier #ElNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_ElNumber {
-  static const char *name() {
-    return "ElNumber";
-  }
-};
-
-// identifier #ElOpenADT
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenADT {
-  static const char *name() {
-    return "ElOpenADT";
-  }
-};
-
-// identifier #ElOpenBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenBracket {
-  static const char *name() {
-    return "ElOpenBracket";
-  }
-};
-
-// identifier #ElOpenCall
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenCall {
-  static const char *name() {
-    return "ElOpenCall";
-  }
-};
-
-// identifier #ElString
-template <typename SREFAL_PARAM_INT>
-struct ident_ElString {
-  static const char *name() {
-    return "ElString";
-  }
-};
-
-// identifier #Offset
-template <typename SREFAL_PARAM_INT>
-struct ident_Offset {
-  static const char *name() {
-    return "Offset";
-  }
-};
-
-// identifier #TkChar
-template <typename SREFAL_PARAM_INT>
-struct ident_TkChar {
-  static const char *name() {
-    return "TkChar";
-  }
-};
-
-// identifier #TkCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseADT {
-  static const char *name() {
-    return "TkCloseADT";
-  }
-};
-
-// identifier #TkCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseBracket {
-  static const char *name() {
-    return "TkCloseBracket";
-  }
-};
-
-// identifier #TkIdentifier
-template <typename SREFAL_PARAM_INT>
-struct ident_TkIdentifier {
-  static const char *name() {
-    return "TkIdentifier";
-  }
-};
-
-// identifier #TkName
-template <typename SREFAL_PARAM_INT>
-struct ident_TkName {
-  static const char *name() {
-    return "TkName";
-  }
-};
-
-// identifier #TkNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNumber {
-  static const char *name() {
-    return "TkNumber";
-  }
-};
-
-// identifier #TkString
-template <typename SREFAL_PARAM_INT>
-struct ident_TkString {
-  static const char *name() {
-    return "TkString";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
+const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_ARG_BEGIN = refalrts::ident_from_static("ARG-BEGIN");
+const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
+const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+const refalrts::RefalIdentifier ident_CallBrackets = refalrts::ident_from_static("CallBrackets");
+const refalrts::RefalIdentifier ident_CloseCall = refalrts::ident_from_static("CloseCall");
+const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+const refalrts::RefalIdentifier ident_CmdCopyVar = refalrts::ident_from_static("CmdCopyVar");
+const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
+const refalrts::RefalIdentifier ident_CmdInsertElem = refalrts::ident_from_static("CmdInsertElem");
+const refalrts::RefalIdentifier ident_CmdInsertRange = refalrts::ident_from_static("CmdInsertRange");
+const refalrts::RefalIdentifier ident_CmdInsertVar = refalrts::ident_from_static("CmdInsertVar");
+const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
+const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
+const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
+const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
+const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
+const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
+const refalrts::RefalIdentifier ident_CmdUseRes = refalrts::ident_from_static("CmdUseRes");
+const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
+const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
+const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
+const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
+const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
+const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
+const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
+const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
+const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
+const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
+const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
+const refalrts::RefalIdentifier ident_Offset = refalrts::ident_from_static("Offset");
+const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
+const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
+const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
+const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+const refalrts::RefalIdentifier ident_TkString = refalrts::ident_from_static("TkString");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -462,13 +189,13 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.ContextOffset#2/5 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: s.ContextOffset2 #5/0 HalfReuse: </4 } Tile{ HalfReuse: & MakeVariableCommentTable/8 AsIs: e.CommonVars#2/6 HalfReuse: >/9 HalfReuse: (/1 } # CmdSpliceToFreeList/10 )/11 (/12 # CmdNextStep/13 )/14 Tile{ ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_CmdSpliceToFreeList<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_CmdSpliceToFreeList ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[13], & ident_CmdNextStep<int>::name ) )
+    if( ! refalrts::alloc_ident( context[13], ident_CmdNextStep ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[14] ) )
       return refalrts::cNoMemory;
@@ -503,29 +230,29 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[12], & ident_CmdResetAllocator<int>::name ) )
+  if( ! refalrts::alloc_ident( context[12], ident_CmdResetAllocator ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[15], & ident_CmdSetRes<int>::name ) )
+  if( ! refalrts::alloc_ident( context[15], ident_CmdSetRes ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[16], & ident_ARG_BEGIN<int>::name ) )
+  if( ! refalrts::alloc_ident( context[16], ident_ARG_BEGIN ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[17], & ident_CmdUseRes<int>::name ) )
+  if( ! refalrts::alloc_ident( context[17], ident_CmdUseRes ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[18] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[20], & ident_CmdSpliceToFreeList<int>::name ) )
+  if( ! refalrts::alloc_ident( context[20], ident_CmdSpliceToFreeList ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[21] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[23], & ident_CmdNextStep<int>::name ) )
+  if( ! refalrts::alloc_ident( context[23], ident_CmdNextStep ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
@@ -694,7 +421,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkChar<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkChar, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -717,7 +444,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[27] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[28], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[28], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[29], context[17]))
       return refalrts::cNoMemory;
@@ -732,9 +459,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[34], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElChar<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElChar );
     refalrts::reinit_svar( context[22], context[23] );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
@@ -769,7 +496,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkName<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkName, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -802,10 +529,10 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElName<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdInsertElem<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElName );
+    refalrts::update_ident( context[22], ident_CmdInsertElem );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -842,7 +569,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkNumber<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkNumber, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -865,7 +592,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[27] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[28], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[28], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[29], context[17]))
       return refalrts::cNoMemory;
@@ -880,9 +607,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[34], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElNumber<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElNumber );
     refalrts::reinit_svar( context[22], context[23] );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
@@ -917,7 +644,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkIdentifier<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkIdentifier, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -950,10 +677,10 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElIdent<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdInsertElem<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElIdent );
+    refalrts::update_ident( context[22], ident_CmdInsertElem );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -990,7 +717,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkString<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkString, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1025,10 +752,10 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::alloc_number( context[33], 2UL ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElString<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdInsertRange<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElString );
+    refalrts::update_ident( context[22], ident_CmdInsertRange );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1065,7 +792,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_Brackets<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_Brackets, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1083,7 +810,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[25] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[26], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[26], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[27], context[17]))
       return refalrts::cNoMemory;
@@ -1101,14 +828,14 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[34] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[35], & ident_TkCloseBracket<int>::name ) )
+    if( ! refalrts::alloc_ident( context[35], ident_TkCloseBracket ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[36], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElOpenBracket<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElOpenBracket );
     refalrts::reinit_close_bracket( context[22] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1145,7 +872,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_CallBrackets<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_CallBrackets, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1163,7 +890,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[25] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[26], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[26], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[27], context[17]))
       return refalrts::cNoMemory;
@@ -1181,14 +908,14 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[34] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[35], & ident_CloseCall<int>::name ) )
+    if( ! refalrts::alloc_ident( context[35], ident_CloseCall ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[36], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::reinit_ident( context[20], & ident_ElOpenCall<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[20], ident_ElOpenCall );
     refalrts::reinit_close_bracket( context[22] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1225,7 +952,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[18], context[19] );
     if( ! context[22] )
       continue;
     context[23] = 0;
@@ -1244,11 +971,11 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/9 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } # Allocate/27 s.Counter#1/17/28 # ElOpenADT/29 )/30 )/31 (/32 (/33 # CmdInsertElem/34 s.Counter#1/17/35 )/36 Tile{ AsIs: e.Commands#1/13 } )/37 </38 Tile{ HalfReuse: & Inc/16 AsIs: s.Counter#1/17 HalfReuse: >/20 HalfReuse: (/22 HalfReuse: # TkName/25 AsIs: e.Name#1/23 AsIs: )/26 AsIs: e.InBrackets#1/18 HalfReuse: (/21 } # TkCloseADT/39 s.Counter#1/17/40 )/41 Tile{ AsIs: e.Result#1/54(2) } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[27], & ident_Allocate<int>::name ) )
+    if( ! refalrts::alloc_ident( context[27], ident_Allocate ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[28], context[17]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[29], & ident_ElOpenADT<int>::name ) )
+    if( ! refalrts::alloc_ident( context[29], ident_ElOpenADT ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[30] ) )
       return refalrts::cNoMemory;
@@ -1258,7 +985,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[33] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[34], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[34], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[35], context[17]))
       return refalrts::cNoMemory;
@@ -1268,18 +995,18 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[38] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[39], & ident_TkCloseADT<int>::name ) )
+    if( ! refalrts::alloc_ident( context[39], ident_TkCloseADT ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[40], context[17]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[41] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
     refalrts::reinit_name( context[16], & Inc_alias );
     refalrts::reinit_close_call( context[20] );
     refalrts::reinit_open_bracket( context[22] );
-    refalrts::reinit_ident( context[25], & ident_TkName<int>::name );
+    refalrts::reinit_ident( context[25], ident_TkName );
     refalrts::reinit_open_bracket( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1317,7 +1044,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkCloseBracket<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkCloseBracket, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1332,11 +1059,11 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/9 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } # Allocate/24 s.Counter#1/17/25 # ElCloseBracket/26 )/27 )/28 (/29 Tile{ AsIs: (/20 Reuse: # CmdLinkBrackets/22 AsIs: s.OpenCounter#1/23 } s.Counter#1/17/30 )/31 (/32 Tile{ HalfReuse: # CmdInsertElem/16 AsIs: s.Counter#1/17 } )/33 Tile{ AsIs: e.Commands#1/13 } )/34 </35 & Inc/36 s.Counter#1/17/37 Tile{ HalfReuse: >/21 AsIs: e.Result#1/54(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[24], & ident_Allocate<int>::name ) )
+    if( ! refalrts::alloc_ident( context[24], ident_Allocate ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[25], context[17]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[26], & ident_ElCloseBracket<int>::name ) )
+    if( ! refalrts::alloc_ident( context[26], ident_ElCloseBracket ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[27] ) )
       return refalrts::cNoMemory;
@@ -1361,9 +1088,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[37], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdLinkBrackets<int>::name );
-    refalrts::reinit_ident( context[16], & ident_CmdInsertElem<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::update_ident( context[22], ident_CmdLinkBrackets );
+    refalrts::reinit_ident( context[16], ident_CmdInsertElem );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1401,7 +1128,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkCloseADT<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkCloseADT, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1416,11 +1143,11 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/9 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } # Allocate/24 s.Counter#1/17/25 # ElCloseADT/26 )/27 )/28 (/29 Tile{ AsIs: (/20 Reuse: # CmdLinkBrackets/22 AsIs: s.OpenCounter#1/23 } s.Counter#1/17/30 )/31 (/32 Tile{ HalfReuse: # CmdInsertElem/16 AsIs: s.Counter#1/17 } )/33 Tile{ AsIs: e.Commands#1/13 } )/34 </35 & Inc/36 s.Counter#1/17/37 Tile{ HalfReuse: >/21 AsIs: e.Result#1/54(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[24], & ident_Allocate<int>::name ) )
+    if( ! refalrts::alloc_ident( context[24], ident_Allocate ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[25], context[17]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[26], & ident_ElCloseADT<int>::name ) )
+    if( ! refalrts::alloc_ident( context[26], ident_ElCloseADT ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[27] ) )
       return refalrts::cNoMemory;
@@ -1445,9 +1172,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if (! refalrts::copy_stvar(context[37], context[17]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdLinkBrackets<int>::name );
-    refalrts::reinit_ident( context[16], & ident_CmdInsertElem<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::update_ident( context[22], ident_CmdLinkBrackets );
+    refalrts::reinit_ident( context[16], ident_CmdInsertElem );
     refalrts::reinit_close_call( context[21] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1485,7 +1212,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_CloseCall<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_CloseCall, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.Vars#1 as range 5
@@ -1500,7 +1227,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/9 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } Tile{ HalfReuse: # Allocate/16 AsIs: s.Counter#1/17 } # ElCloseCall/24 )/25 )/26 (/27 (/28 # CmdPushStack/29 s.Counter#1/17/30 )/31 Tile{ AsIs: (/20 Reuse: # CmdPushStack/22 AsIs: s.OpenCounter#1/23 AsIs: )/21 } (/32 # CmdInsertElem/33 s.Counter#1/17/34 )/35 Tile{ AsIs: e.Commands#1/13 } )/36 </37 & Inc/38 s.Counter#1/17/39 >/40 Tile{ AsIs: e.Result#1/54(2) } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[24], & ident_ElCloseCall<int>::name ) )
+    if( ! refalrts::alloc_ident( context[24], ident_ElCloseCall ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[25] ) )
       return refalrts::cNoMemory;
@@ -1510,7 +1237,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[28] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[29], & ident_CmdPushStack<int>::name ) )
+    if( ! refalrts::alloc_ident( context[29], ident_CmdPushStack ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[30], context[17]))
       return refalrts::cNoMemory;
@@ -1518,7 +1245,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[32] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[33], & ident_CmdInsertElem<int>::name ) )
+    if( ! refalrts::alloc_ident( context[33], ident_CmdInsertElem ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[34], context[17]))
       return refalrts::cNoMemory;
@@ -1535,9 +1262,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::alloc_close_call( context[40] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[16], & ident_Allocate<int>::name );
-    refalrts::update_ident( context[22], & ident_CmdPushStack<int>::name );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::update_ident( context[22], ident_CmdPushStack );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::push_stack( context[40] );
@@ -1575,7 +1302,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkVariable, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.AllocCommands#1 as range 9
@@ -1630,7 +1357,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       if( ! refalrts::alloc_close_bracket( context[43] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_svar( context[38], context[41] );
-      refalrts::update_ident( context[22], & ident_CmdInsertVar<int>::name );
+      refalrts::update_ident( context[22], ident_CmdInsertVar );
       refalrts::reinit_svar( context[21], context[17] );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
@@ -1669,7 +1396,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_TkVariable, context[18], context[19] );
     if( ! context[22] )
       continue;
     // closed e.AllocCommands#1 as range 9
@@ -1746,9 +1473,9 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
         return refalrts::cNoMemory;
       refalrts::reinit_svar( context[33], context[17] );
       refalrts::reinit_open_bracket( context[12] );
-      refalrts::reinit_ident( context[15], & ident_CmdCopyVar<int>::name );
+      refalrts::reinit_ident( context[15], ident_CmdCopyVar );
       refalrts::reinit_svar( context[16], context[38] );
-      refalrts::update_ident( context[22], & ident_CmdInsertVar<int>::name );
+      refalrts::update_ident( context[22], ident_CmdInsertVar );
       refalrts::reinit_close_call( context[21] );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
@@ -2010,8 +1737,8 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
   if( ! refalrts::alloc_name( context[15], & PrintVar_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_CmdComment<int>::name );
-  refalrts::reinit_ident( context[7], & ident_Offset<int>::name );
+  refalrts::reinit_ident( context[4], ident_CmdComment );
+  refalrts::reinit_ident( context[7], ident_Offset );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );

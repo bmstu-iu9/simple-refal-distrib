@@ -2,62 +2,13 @@
 #include "refalrts.h"
 
 
-// identifier #Current
-template <typename SREFAL_PARAM_INT>
-struct ident_Current {
-  static const char *name() {
-    return "Current";
-  }
-};
-
-// identifier #False
-template <typename SREFAL_PARAM_INT>
-struct ident_False {
-  static const char *name() {
-    return "False";
-  }
-};
-
-// identifier #NotFound
-template <typename SREFAL_PARAM_INT>
-struct ident_NotFound {
-  static const char *name() {
-    return "NotFound";
-  }
-};
-
-// identifier #Output
-template <typename SREFAL_PARAM_INT>
-struct ident_Output {
-  static const char *name() {
-    return "Output";
-  }
-};
-
-// identifier #OutputWithNative
-template <typename SREFAL_PARAM_INT>
-struct ident_OutputWithNative {
-  static const char *name() {
-    return "OutputWithNative";
-  }
-};
-
-// identifier #Source
-template <typename SREFAL_PARAM_INT>
-struct ident_Source {
-  static const char *name() {
-    return "Source";
-  }
-};
-
-// identifier #True
-template <typename SREFAL_PARAM_INT>
-struct ident_True {
-  static const char *name() {
-    return "True";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Current = refalrts::ident_from_static("Current");
+const refalrts::RefalIdentifier ident_False = refalrts::ident_from_static("False");
+const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("NotFound");
+const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
+const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
+const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
+const refalrts::RefalIdentifier ident_True = refalrts::ident_from_static("True");
 extern refalrts::RefalFunction& Map_0_0;
 #define Map_alias Map_0_0
 #define Map_str "Map#0:0"
@@ -130,7 +81,7 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::update_name( context[4], & AnalyzeFile_ByFolders_alias );
-  refalrts::reinit_ident( context[7], & ident_Current<int>::name );
+  refalrts::reinit_ident( context[7], ident_Current );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::link_brackets( context[0], context[8] );
@@ -224,7 +175,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
   do {
     // e.idx # Current
     // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
-    if( ! refalrts::ident_term(  & ident_Current<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Current, context[5] ) )
       continue;
     // closed e.FileName#1 as range 2
 
@@ -304,7 +255,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Source<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Source, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -343,7 +294,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Output<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Output, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.FileName#1 as range 5
@@ -374,7 +325,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_OutputWithNative<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_OutputWithNative, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -413,7 +364,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_NotFound<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_NotFound, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.FileName#1 as range 5
@@ -445,7 +396,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_NotFound<int>::name );
+  refalrts::reinit_ident( context[7], ident_NotFound );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -509,7 +460,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
   do {
     // # True e.idx '.sref'
     // </0 & AnalyzeFile$1\1/4 # True/5 e.UnitName#2/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_True, context[5] ) )
       continue;
     context[16] = context[2];
     context[17] = context[3];
@@ -540,7 +491,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_close_bracket( context[15] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Source<int>::name );
+    refalrts::reinit_ident( context[4], ident_Source );
     refalrts::reinit_open_bracket( context[5] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[15] );
@@ -557,7 +508,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
 
   // # False e.idx
   // </0 & AnalyzeFile$1\1/4 # False/5 e.SourceName#2/2 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_False, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.SourceName#2 as range 2
 
@@ -565,7 +516,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#2/2 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::update_ident( context[5], & ident_NotFound<int>::name );
+  refalrts::update_ident( context[5], ident_NotFound );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[4], context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -604,7 +555,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
   do {
     // ( e.idx ) # True e.idx
     // </0 & AnalyzeFile$2\1$1\1/4 (/7 e.OutName#2/5 )/8 # True/9 e.NativeName#3/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_True, context[9] ) )
       continue;
     // closed e.OutName#2 as range 5
     // closed e.NativeName#3 as range 2
@@ -613,7 +564,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} # True/9 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # OutputWithNative/4 AsIs: (/7 AsIs: e.OutName#2/5 AsIs: )/8 } Tile{ AsIs: e.NativeName#3/2 } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_OutputWithNative<int>::name );
+    refalrts::reinit_ident( context[4], ident_OutputWithNative );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[1] );
     refalrts::link_brackets( context[7], context[8] );
@@ -628,7 +579,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
 
   // ( e.idx ) # False e.idx
   // </0 & AnalyzeFile$2\1$1\1/4 (/7 e.OutName#2/5 )/8 # False/9 e.NativeName#3/2 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_False, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.OutName#2 as range 5
   // closed e.NativeName#3 as range 2
@@ -637,7 +588,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} # False/9 e.NativeName#3/2 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Output/7 AsIs: e.OutName#2/5 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_Output<int>::name );
+  refalrts::reinit_ident( context[7], ident_Output );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -676,7 +627,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
   do {
     // ( e.idx ) # True e.idx
     // </0 & AnalyzeFile$2\1/4 (/7 e.FileName#1/5 )/8 # True/9 e.OutName#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_True, context[9] ) )
       continue;
     // closed e.FileName#1 as range 5
     // closed e.OutName#2 as range 2
@@ -725,7 +676,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
 
   // ( e.idx ) # False e.idx
   // </0 & AnalyzeFile$2\1/4 (/7 e.FileName#1/5 )/8 # False/9 e.OutName#2/2 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_False, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 5
   // closed e.OutName#2 as range 2
@@ -734,7 +685,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
   //TRASH: {REMOVED TILE} </0 & AnalyzeFile$2\1/4 (/7 e.FileName#1/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # NotFound/9 AsIs: e.OutName#2/2 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[8] );
-  refalrts::update_ident( context[9], & ident_NotFound<int>::name );
+  refalrts::update_ident( context[9], ident_NotFound );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[8], context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -775,7 +726,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
   do {
     // ( # True e.idx ) s.idx e.idx
     // </0 & AnalyzeFile$3\1/4 (/7 # True/9 e.SourceName#2/5 )/8 s.Res#2/10 e.OutName#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_True, context[9] ) )
       continue;
     // closed e.SourceName#2 as range 5
     // closed e.OutName#2 as range 2
@@ -784,7 +735,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#2/10 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#2/5 AsIs: )/8 } Tile{ AsIs: e.OutName#2/2 } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_ident( context[7], & ident_Source<int>::name );
+    refalrts::reinit_ident( context[7], ident_Source );
     refalrts::reinit_open_bracket( context[9] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[4], context[1] );
@@ -802,9 +753,9 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
   do {
     // ( # False e.idx ) # True e.idx
     // </0 & AnalyzeFile$3\1/4 (/7 # False/9 e.SourceName#2/5 )/8 # True/10 e.OutName#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_False, context[9] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_True, context[10] ) )
       continue;
     // closed e.SourceName#2 as range 5
     // closed e.OutName#2 as range 2
@@ -813,7 +764,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 (/7 # False/9 e.SourceName#2/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#2/2 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::update_ident( context[10], & ident_Output<int>::name );
+    refalrts::update_ident( context[10], ident_Output );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[8], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -826,9 +777,9 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
 
   // ( # False e.idx '.sref' ) # False e.idx '.cpp'
   // </0 & AnalyzeFile$3\1/4 (/7 # False/9 e.UnitName#2/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#2/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_False, context[9] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[10] ) )
+  if( ! refalrts::ident_term(  ident_False, context[10] ) )
     return refalrts::cRecognitionImpossible;
   context[11] = refalrts::char_right( 'f', context[5], context[6] );
   if( ! context[11] )
@@ -866,7 +817,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#2/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#2/5 HalfReuse: )/15 } Tile{ ]] }
-  refalrts::update_ident( context[9], & ident_NotFound<int>::name );
+  refalrts::update_ident( context[9], ident_NotFound );
   refalrts::reinit_close_bracket( context[15] );
   refalrts::link_brackets( context[7], context[15] );
   refalrts::Iter trash_prev = arg_begin->prev;

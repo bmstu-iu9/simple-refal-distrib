@@ -2,62 +2,13 @@
 #include "refalrts.h"
 
 
-// identifier #Any
-template <typename SREFAL_PARAM_INT>
-struct ident_Any {
-  static const char *name() {
-    return "Any";
-  }
-};
-
-// identifier #Empty
-template <typename SREFAL_PARAM_INT>
-struct ident_Empty {
-  static const char *name() {
-    return "Empty";
-  }
-};
-
-// identifier #Finitive
-template <typename SREFAL_PARAM_INT>
-struct ident_Finitive {
-  static const char *name() {
-    return "Finitive";
-  }
-};
-
-// identifier #Flush
-template <typename SREFAL_PARAM_INT>
-struct ident_Flush {
-  static const char *name() {
-    return "Flush";
-  }
-};
-
-// identifier #FlushError
-template <typename SREFAL_PARAM_INT>
-struct ident_FlushError {
-  static const char *name() {
-    return "FlushError";
-  }
-};
-
-// identifier #None
-template <typename SREFAL_PARAM_INT>
-struct ident_None {
-  static const char *name() {
-    return "None";
-  }
-};
-
-// identifier #Unnamed
-template <typename SREFAL_PARAM_INT>
-struct ident_Unnamed {
-  static const char *name() {
-    return "Unnamed";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
+const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
+const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
+const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
+const refalrts::RefalIdentifier ident_FlushError = refalrts::ident_from_static("FlushError");
+const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
+const refalrts::RefalIdentifier ident_Unnamed = refalrts::ident_from_static("Unnamed");
 extern refalrts::RefalFunction& Map_0_0;
 #define Map_alias Map_0_0
 #define Map_str "Map#0:0"
@@ -331,7 +282,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
   do {
     // ( s.idx # None t.idx )
     // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 # None/10 t.NextState#1/12 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_None<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_None, context[10] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -459,7 +410,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
   do {
     // # Empty
     // </0 & Head/4 # Empty/5 >/1
-    if( ! refalrts::ident_term(  & ident_Empty<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Empty, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -476,7 +427,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
   do {
     // # Any
     // </0 & Head/4 # Any/5 >/1
-    if( ! refalrts::ident_term(  & ident_Any<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Any, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -546,7 +497,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   do {
     // s.idx # Unnamed
     // </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1
-    if( ! refalrts::ident_term(  & ident_Unnamed<int>::name, context[6] ) )
+    if( ! refalrts::ident_term(  ident_Unnamed, context[6] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -567,7 +518,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     context[9] = 0;
     if( ! refalrts::brackets_term( context[8], context[9], context[6] ) )
       continue;
-    context[10] = refalrts::ident_left(  & ident_Flush<int>::name, context[8], context[9] );
+    context[10] = refalrts::ident_left(  ident_Flush, context[8], context[9] );
     if( ! context[10] )
       continue;
     // closed e.FlushName#1 as range 8
@@ -602,7 +553,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   context[9] = 0;
   if( ! refalrts::brackets_term( context[8], context[9], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  context[10] = refalrts::ident_left(  & ident_FlushError<int>::name, context[8], context[9] );
+  context[10] = refalrts::ident_left(  ident_FlushError, context[8], context[9] );
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 8
@@ -650,7 +601,7 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
   do {
     // # Finitive
     // </0 & NextState-L/4 # Finitive/5 >/1
-    if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Finitive, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -715,7 +666,7 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
   do {
     // # Finitive e.idx
     // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Finitive, context[5] ) )
       continue;
     // closed e.NextStateAccum#1 as range 2
 

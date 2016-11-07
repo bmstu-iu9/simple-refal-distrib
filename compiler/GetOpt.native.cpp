@@ -2,110 +2,19 @@
 #include "refalrts.h"
 
 
-// identifier #FILE
-template <typename SREFAL_PARAM_INT>
-struct ident_FILE {
-  static const char *name() {
-    return "FILE";
-  }
-};
-
-// identifier #Long
-template <typename SREFAL_PARAM_INT>
-struct ident_Long {
-  static const char *name() {
-    return "Long";
-  }
-};
-
-// identifier #Long-Param
-template <typename SREFAL_PARAM_INT>
-struct ident_Long_Param {
-  static const char *name() {
-    return "Long-Param";
-  }
-};
-
-// identifier #NoParam
-template <typename SREFAL_PARAM_INT>
-struct ident_NoParam {
-  static const char *name() {
-    return "NoParam";
-  }
-};
-
-// identifier #NoRequiredParam
-template <typename SREFAL_PARAM_INT>
-struct ident_NoRequiredParam {
-  static const char *name() {
-    return "NoRequiredParam";
-  }
-};
-
-// identifier #None
-template <typename SREFAL_PARAM_INT>
-struct ident_None {
-  static const char *name() {
-    return "None";
-  }
-};
-
-// identifier #Optional
-template <typename SREFAL_PARAM_INT>
-struct ident_Optional {
-  static const char *name() {
-    return "Optional";
-  }
-};
-
-// identifier #Required
-template <typename SREFAL_PARAM_INT>
-struct ident_Required {
-  static const char *name() {
-    return "Required";
-  }
-};
-
-// identifier #Short
-template <typename SREFAL_PARAM_INT>
-struct ident_Short {
-  static const char *name() {
-    return "Short";
-  }
-};
-
-// identifier #UnexpectedLongOptionParam
-template <typename SREFAL_PARAM_INT>
-struct ident_UnexpectedLongOptionParam {
-  static const char *name() {
-    return "UnexpectedLongOptionParam";
-  }
-};
-
-// identifier #UnknownLongOption
-template <typename SREFAL_PARAM_INT>
-struct ident_UnknownLongOption {
-  static const char *name() {
-    return "UnknownLongOption";
-  }
-};
-
-// identifier #UnknownShortOption
-template <typename SREFAL_PARAM_INT>
-struct ident_UnknownShortOption {
-  static const char *name() {
-    return "UnknownShortOption";
-  }
-};
-
-// identifier #Word
-template <typename SREFAL_PARAM_INT>
-struct ident_Word {
-  static const char *name() {
-    return "Word";
-  }
-};
-
+const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
+const refalrts::RefalIdentifier ident_Long = refalrts::ident_from_static("Long");
+const refalrts::RefalIdentifier ident_Long_Param = refalrts::ident_from_static("Long-Param");
+const refalrts::RefalIdentifier ident_NoParam = refalrts::ident_from_static("NoParam");
+const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
+const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
+const refalrts::RefalIdentifier ident_Optional = refalrts::ident_from_static("Optional");
+const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Required");
+const refalrts::RefalIdentifier ident_Short = refalrts::ident_from_static("Short");
+const refalrts::RefalIdentifier ident_UnexpectedLongOptionParam = refalrts::ident_from_static("UnexpectedLongOptionParam");
+const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
+const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
+const refalrts::RefalIdentifier ident_Word = refalrts::ident_from_static("Word");
 extern refalrts::RefalFunction& GetOpt_0_0;
 #define GetOpt_alias GetOpt_0_0
 
@@ -337,7 +246,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[18] ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_ident( context[8], & ident_Long_Param<int>::name );
+      refalrts::reinit_ident( context[8], ident_Long_Param );
       refalrts::reinit_svar( context[10], context[5] );
       refalrts::reinit_open_bracket( context[11] );
       refalrts::reinit_close_bracket( context[14] );
@@ -392,7 +301,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[10], & ident_Long<int>::name );
+    refalrts::reinit_ident( context[10], ident_Long );
     refalrts::reinit_svar( context[11], context[5] );
     refalrts::update_name( context[4], & Inc_alias );
     refalrts::push_stack( context[1] );
@@ -443,7 +352,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[15] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[8], & ident_Short<int>::name );
+    refalrts::reinit_ident( context[8], ident_Short );
     refalrts::reinit_svar( context[10], context[5] );
     refalrts::update_name( context[4], & Inc_alias );
     refalrts::push_stack( context[1] );
@@ -493,7 +402,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     if (! refalrts::copy_stvar(context[14], context[5]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Word<int>::name );
+    refalrts::reinit_ident( context[4], ident_Word );
     refalrts::reinit_close_bracket( context[8] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[1] );
@@ -574,7 +483,7 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
     if (! refalrts::copy_stvar(context[14], context[5]))
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Word<int>::name );
+    refalrts::reinit_ident( context[4], ident_Word );
     refalrts::reinit_close_bracket( context[8] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[1] );
@@ -643,7 +552,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Long_Param<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Long_Param, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.ArgsTail#1 as range 37(2)
@@ -737,7 +646,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Long_Param<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Long_Param, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -757,7 +666,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Param#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 HalfReuse: # UnknownLongOption/17 AsIs: e.Long#1/15 AsIs: )/18 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_name( context[13], & Error_alias );
-    refalrts::reinit_ident( context[17], & ident_UnknownLongOption<int>::name );
+    refalrts::reinit_ident( context[17], ident_UnknownLongOption );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -784,7 +693,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Long<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Long, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.ArgsTail#1 as range 37(2)
@@ -867,7 +776,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Long<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Long, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -879,7 +788,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownLongOption/15 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[15], & ident_UnknownLongOption<int>::name ) )
+    if( ! refalrts::alloc_ident( context[15], ident_UnknownLongOption ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[13], & Error_alias );
     refalrts::push_stack( context[1] );
@@ -911,7 +820,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Short<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Short, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.ArgsTail#1 as range 37(2)
@@ -989,7 +898,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Short<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Short, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -1004,7 +913,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownShortOption/16 Tile{ AsIs: s.Short#1/15 AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[16], & ident_UnknownShortOption<int>::name ) )
+    if( ! refalrts::alloc_ident( context[16], ident_UnknownShortOption ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[13], & Error_alias );
     refalrts::push_stack( context[1] );
@@ -1035,7 +944,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Short<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Short, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -1055,7 +964,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[18], context[14]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[19], & ident_UnknownShortOption<int>::name ) )
+    if( ! refalrts::alloc_ident( context[19], ident_UnknownShortOption ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[20] ) )
       return refalrts::cNoMemory;
@@ -1088,7 +997,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Word<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Word, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -1100,7 +1009,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 Reuse: # FILE/13 AsIs: s.Num#1/14 AsIs: e.File#1/9 AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
-    refalrts::update_ident( context[13], & ident_FILE<int>::name );
+    refalrts::update_ident( context[13], ident_FILE );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -1179,7 +1088,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   do {
     // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( e.idx ) e.idx
     // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1211,7 +1120,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   do {
     // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( e.idx ) e.idx
     // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1242,7 +1151,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
 
   // ( e.idx ) s.idx s.idx # None ( e.idx ) ( e.idx ) e.idx
   // </0 & ResolveOpts-LongParam/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 (/18 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
+  if( ! refalrts::ident_term(  ident_None, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
   // closed e.Long#1 as range 12
@@ -1256,7 +1165,7 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[21], & Error_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[22], & ident_UnexpectedLongOptionParam<int>::name ) )
+  if( ! refalrts::alloc_ident( context[22], ident_UnexpectedLongOptionParam ) )
     return refalrts::cNoMemory;
   refalrts::reinit_char( context[11], '-' );
   refalrts::reinit_char( context[14], '-' );
@@ -1322,7 +1231,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   do {
     // ( e.idx ) s.idx s.idx # Required ( e.idx ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     context[22] = context[2];
     context[23] = context[3];
@@ -1332,7 +1241,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     if( ! context[18] )
       continue;
     refalrts::bracket_pointers(context[18], context[19]);
-    context[20] = refalrts::ident_left(  & ident_Word<int>::name, context[16], context[17] );
+    context[20] = refalrts::ident_left(  ident_Word, context[16], context[17] );
     if( ! context[20] )
       continue;
     // closed e.Description#1 as range 5
@@ -1368,7 +1277,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   do {
     // ( e.idx ) s.idx s.idx # Required ( e.idx ) e.idx
     // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1381,7 +1290,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[17], & Error_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[18], & ident_NoRequiredParam<int>::name ) )
+    if( ! refalrts::alloc_ident( context[18], ident_NoRequiredParam ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[11], '-' );
     refalrts::reinit_char( context[14], '-' );
@@ -1407,7 +1316,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   do {
     // ( e.idx ) s.idx s.idx # Optional ( e.idx ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 (/18 # Word/20 s.WordNum#1/21 e.Param#1/16 )/19 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     context[22] = context[2];
     context[23] = context[3];
@@ -1417,7 +1326,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     if( ! context[18] )
       continue;
     refalrts::bracket_pointers(context[18], context[19]);
-    context[20] = refalrts::ident_left(  & ident_Word<int>::name, context[16], context[17] );
+    context[20] = refalrts::ident_left(  ident_Word, context[16], context[17] );
     if( ! context[20] )
       continue;
     // closed e.Description#1 as range 5
@@ -1453,7 +1362,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   do {
     // ( e.idx ) s.idx s.idx # Optional ( e.idx ) e.idx
     // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
@@ -1465,7 +1374,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[11], context[9] );
-    refalrts::reinit_ident( context[14], & ident_NoParam<int>::name );
+    refalrts::reinit_ident( context[14], ident_NoParam );
     refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1486,7 +1395,7 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
 
   // ( e.idx ) s.idx s.idx # None ( e.idx ) e.idx
   // </0 & ResolveOpts-Long/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 (/14 e.Long#1/12 )/15 e.ArgsTail#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
+  if( ! refalrts::ident_term(  ident_None, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
   // closed e.Long#1 as range 12
@@ -1556,7 +1465,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Required s.idx ( ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     context[23] = context[2];
     context[24] = context[3];
@@ -1566,7 +1475,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     if( ! context[19] )
       continue;
     refalrts::bracket_pointers(context[19], context[20]);
-    context[21] = refalrts::ident_left(  & ident_Word<int>::name, context[17], context[18] );
+    context[21] = refalrts::ident_left(  ident_Word, context[17], context[18] );
     if( ! context[21] )
       continue;
     context[25] = context[13];
@@ -1605,7 +1514,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Required s.idx ( ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     context[23] = context[13];
     context[24] = context[14];
@@ -1621,7 +1530,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[18], & Error_alias ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[16], & ident_NoRequiredParam<int>::name );
+    refalrts::reinit_ident( context[16], ident_NoRequiredParam );
     refalrts::reinit_char( context[11], '-' );
     refalrts::reinit_close_bracket( context[15] );
     refalrts::update_name( context[4], & ResolveOpts_alias );
@@ -1646,7 +1555,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Required s.idx ( e.idx ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Required<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Required, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
@@ -1678,7 +1587,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Optional s.idx ( ) ( # Word s.idx e.idx ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/19 # Word/21 s.WordNum#1/22 e.Param#1/17 )/20 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     context[23] = context[2];
     context[24] = context[3];
@@ -1688,7 +1597,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     if( ! context[19] )
       continue;
     refalrts::bracket_pointers(context[19], context[20]);
-    context[21] = refalrts::ident_left(  & ident_Word<int>::name, context[17], context[18] );
+    context[21] = refalrts::ident_left(  ident_Word, context[17], context[18] );
     if( ! context[21] )
       continue;
     context[25] = context[13];
@@ -1727,7 +1636,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Optional s.idx ( ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     context[23] = context[13];
     context[24] = context[14];
@@ -1742,7 +1651,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[11], context[9] );
-    refalrts::reinit_ident( context[15], & ident_NoParam<int>::name );
+    refalrts::reinit_ident( context[15], ident_NoParam );
     refalrts::update_name( context[4], & ResolveOpts_alias );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1764,7 +1673,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # Optional s.idx ( e.idx ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 e.Param#1/13 )/16 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Optional<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Optional, context[11] ) )
       continue;
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
@@ -1796,7 +1705,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx s.idx # None s.idx ( ) e.idx
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_None, context[11] ) )
       continue;
     context[23] = context[13];
     context[24] = context[14];
@@ -1829,7 +1738,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
 
   // ( e.idx ) s.idx s.idx # None s.idx ( e.idx ) e.idx
   // </0 & ResolveOpts-Short/4 (/7 e.Description#1/5 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 e.OptTail#1/13 )/16 e.ArgsTail#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_None<int>::name, context[11] ) )
+  if( ! refalrts::ident_term(  ident_None, context[11] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
   // closed e.OptTail#1 as range 13
@@ -1844,7 +1753,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[20], & ident_Short<int>::name ) )
+  if( ! refalrts::alloc_ident( context[20], ident_Short ) )
     return refalrts::cNoMemory;
   refalrts::reinit_svar( context[11], context[9] );
   refalrts::update_name( context[4], & ResolveOpts_alias );

@@ -2,70 +2,14 @@
 #include "refalrts.h"
 
 
-// identifier #Fails
-template <typename SREFAL_PARAM_INT>
-struct ident_Fails {
-  static const char *name() {
-    return "Fails";
-  }
-};
-
-// identifier #NotFound
-template <typename SREFAL_PARAM_INT>
-struct ident_NotFound {
-  static const char *name() {
-    return "NotFound";
-  }
-};
-
-// identifier #Output
-template <typename SREFAL_PARAM_INT>
-struct ident_Output {
-  static const char *name() {
-    return "Output";
-  }
-};
-
-// identifier #OutputWithNative
-template <typename SREFAL_PARAM_INT>
-struct ident_OutputWithNative {
-  static const char *name() {
-    return "OutputWithNative";
-  }
-};
-
-// identifier #Runtime
-template <typename SREFAL_PARAM_INT>
-struct ident_Runtime {
-  static const char *name() {
-    return "Runtime";
-  }
-};
-
-// identifier #Search
-template <typename SREFAL_PARAM_INT>
-struct ident_Search {
-  static const char *name() {
-    return "Search";
-  }
-};
-
-// identifier #Source
-template <typename SREFAL_PARAM_INT>
-struct ident_Source {
-  static const char *name() {
-    return "Source";
-  }
-};
-
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("NotFound");
+const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
+const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
+const refalrts::RefalIdentifier ident_Runtime = refalrts::ident_from_static("Runtime");
+const refalrts::RefalIdentifier ident_Search = refalrts::ident_from_static("Search");
+const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
 extern refalrts::RefalFunction& WriteLine_0_0;
 #define WriteLine_alias WriteLine_0_0
 #define WriteLine_str "WriteLine#0:0"
@@ -374,7 +318,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   do {
     // # Success ( e.idx ) ( e.idx ) ( e.idx ) e.idx
     // </0 & MakeProject/4 # Success/5 (/8 e.CppCompiler#1/6 )/9 (/12 e.SrefCompiler#1/10 )/13 (/16 e.SourceFile#1/14 )/17 e.Folders#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Success<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Success, context[5] ) )
       continue;
     context[28] = context[2];
     context[29] = context[3];
@@ -457,7 +401,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
 
   // # Fails e.idx
   // </0 & MakeProject/4 # Fails/5 e.Errors#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_Fails<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_Fails, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Errors#1 as range 2
 
@@ -516,7 +460,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   do {
     // ( # NotFound e.idx )
     // </0 & Make$1\1/4 (/7 # NotFound/9 e.UnitName#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_NotFound<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_NotFound, context[9] ) )
       continue;
     // closed e.UnitName#2 as range 5
 
@@ -547,7 +491,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   do {
     // ( # Output e.idx )
     // </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
 
@@ -565,7 +509,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   do {
     // ( # OutputWithNative ( e.idx ) e.idx )
     // </0 & Make$1\1/4 (/7 # OutputWithNative/9 (/12 e.Output#2/10 )/13 e.Native#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_OutputWithNative<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_OutputWithNative, context[9] ) )
       continue;
     context[14] = context[5];
     context[15] = context[6];
@@ -591,7 +535,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
 
   // ( # Source ( e.idx ) e.idx )
   // </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_Source, context[9] ) )
     return refalrts::cRecognitionImpossible;
   context[10] = 0;
   context[11] = 0;
@@ -642,7 +586,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
   do {
     // ( # Search e.idx )
     // </0 & Make$2\1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Search<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Search, context[9] ) )
       continue;
     // closed e.Folder#2 as range 5
 
@@ -667,7 +611,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
 
   // ( # Runtime e.idx )
   // </0 & Make$2\1/4 (/7 # Runtime/9 e.Folder#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Runtime<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_Runtime, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Folder#2 as range 5
 
@@ -719,7 +663,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
   do {
     // ( # Output e.idx )
     // </0 & Make$2\2/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
 
@@ -740,7 +684,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
 
   // ( # Source ( e.idx ) e.idx )
   // </0 & Make$2\2/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_Source, context[9] ) )
     return refalrts::cRecognitionImpossible;
   context[10] = 0;
   context[11] = 0;
@@ -823,7 +767,7 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
       if( ! context[21] )
         continue;
       refalrts::bracket_pointers(context[21], context[22]);
-      context[23] = refalrts::ident_left(  & ident_NotFound<int>::name, context[19], context[20] );
+      context[23] = refalrts::ident_left(  ident_NotFound, context[19], context[20] );
       if( ! context[23] )
         continue;
       // closed e.UnitName#1 as range 19

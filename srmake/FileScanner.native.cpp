@@ -2,38 +2,10 @@
 #include "refalrts.h"
 
 
-// identifier #NotFound
-template <typename SREFAL_PARAM_INT>
-struct ident_NotFound {
-  static const char *name() {
-    return "NotFound";
-  }
-};
-
-// identifier #Output
-template <typename SREFAL_PARAM_INT>
-struct ident_Output {
-  static const char *name() {
-    return "Output";
-  }
-};
-
-// identifier #OutputWithNative
-template <typename SREFAL_PARAM_INT>
-struct ident_OutputWithNative {
-  static const char *name() {
-    return "OutputWithNative";
-  }
-};
-
-// identifier #Source
-template <typename SREFAL_PARAM_INT>
-struct ident_Source {
-  static const char *name() {
-    return "Source";
-  }
-};
-
+const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("NotFound");
+const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
+const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
+const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
 extern refalrts::RefalFunction& LoadFile_0_0;
 #define LoadFile_alias LoadFile_0_0
 #define LoadFile_str "LoadFile#0:0"
@@ -407,7 +379,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) # Source ( e.idx ) e.idx
     // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # Source/9 (/12 e.NextModule#1/10 )/13 e.Output#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Source<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Source, context[9] ) )
       continue;
     context[18] = context[2];
     context[19] = context[3];
@@ -450,7 +422,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) # Output e.idx
     // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # Output/9 e.Output#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[9] ) )
       continue;
     // closed e.Folders#1 as range 5
     // closed e.Output#1 as range 2
@@ -488,7 +460,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) # OutputWithNative ( e.idx ) e.idx
     // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # OutputWithNative/9 (/12 e.Output#1/10 )/13 e.Native#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_OutputWithNative<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_OutputWithNative, context[9] ) )
       continue;
     context[18] = context[2];
     context[19] = context[3];
@@ -541,7 +513,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
 
   // ( e.idx ) # NotFound e.idx
   // </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_NotFound<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_NotFound, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Folders#1 as range 5
   // closed e.Unit#1 as range 2

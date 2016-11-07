@@ -2,158 +2,25 @@
 #include "refalrts.h"
 
 
-// identifier #ADT-Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_ADT_Brackets {
-  static const char *name() {
-    return "ADT-Brackets";
-  }
-};
-
-// identifier #Atom
-template <typename SREFAL_PARAM_INT>
-struct ident_Atom {
-  static const char *name() {
-    return "Atom";
-  }
-};
-
-// identifier #Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_Brackets {
-  static const char *name() {
-    return "Brackets";
-  }
-};
-
-// identifier #E
-template <typename SREFAL_PARAM_INT>
-struct ident_E {
-  static const char *name() {
-    return "E";
-  }
-};
-
-// identifier #K
-template <typename SREFAL_PARAM_INT>
-struct ident_K {
-  static const char *name() {
-    return "K";
-  }
-};
-
-// identifier #MN
-template <typename SREFAL_PARAM_INT>
-struct ident_MN {
-  static const char *name() {
-    return "MN";
-  }
-};
-
-// identifier #NoDepth
-template <typename SREFAL_PARAM_INT>
-struct ident_NoDepth {
-  static const char *name() {
-    return "NoDepth";
-  }
-};
-
-// identifier #NoOffset
-template <typename SREFAL_PARAM_INT>
-struct ident_NoOffset {
-  static const char *name() {
-    return "NoOffset";
-  }
-};
-
-// identifier #S
-template <typename SREFAL_PARAM_INT>
-struct ident_S {
-  static const char *name() {
-    return "S";
-  }
-};
-
-// identifier #T
-template <typename SREFAL_PARAM_INT>
-struct ident_T {
-  static const char *name() {
-    return "T";
-  }
-};
-
-// identifier #TkChar
-template <typename SREFAL_PARAM_INT>
-struct ident_TkChar {
-  static const char *name() {
-    return "TkChar";
-  }
-};
-
-// identifier #TkCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseADT {
-  static const char *name() {
-    return "TkCloseADT";
-  }
-};
-
-// identifier #TkCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseBracket {
-  static const char *name() {
-    return "TkCloseBracket";
-  }
-};
-
-// identifier #TkIdentifier
-template <typename SREFAL_PARAM_INT>
-struct ident_TkIdentifier {
-  static const char *name() {
-    return "TkIdentifier";
-  }
-};
-
-// identifier #TkName
-template <typename SREFAL_PARAM_INT>
-struct ident_TkName {
-  static const char *name() {
-    return "TkName";
-  }
-};
-
-// identifier #TkNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNumber {
-  static const char *name() {
-    return "TkNumber";
-  }
-};
-
-// identifier #TkOpenADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenADT {
-  static const char *name() {
-    return "TkOpenADT";
-  }
-};
-
-// identifier #TkOpenBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenBracket {
-  static const char *name() {
-    return "TkOpenBracket";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
+const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_Atom = refalrts::ident_from_static("Atom");
+const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+const refalrts::RefalIdentifier ident_E = refalrts::ident_from_static("E");
+const refalrts::RefalIdentifier ident_K = refalrts::ident_from_static("K");
+const refalrts::RefalIdentifier ident_MN = refalrts::ident_from_static("MN");
+const refalrts::RefalIdentifier ident_NoDepth = refalrts::ident_from_static("NoDepth");
+const refalrts::RefalIdentifier ident_NoOffset = refalrts::ident_from_static("NoOffset");
+const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
+const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
+const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
+const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
+const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
+const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+const refalrts::RefalIdentifier ident_TkOpenADT = refalrts::ident_from_static("TkOpenADT");
+const refalrts::RefalIdentifier ident_TkOpenBracket = refalrts::ident_from_static("TkOpenBracket");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 extern refalrts::RefalFunction& UnBracket_0_0;
 #define UnBracket_alias UnBracket_0_0
 #define UnBracket_str "UnBracket#0:0"
@@ -603,7 +470,7 @@ static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_E<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_E, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::char_left( '$', context[5], context[6] );
@@ -617,7 +484,7 @@ static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ } (/11 # E/12 </13 & Fetch/14 Tile{ AsIs: </0 Reuse: & ReplacmentsCounter/4 HalfReuse: 0/7 HalfReuse: (/9 HalfReuse: )/10 AsIs: e.EReplacements#1/5 HalfReuse: >/8 } & InspectFastGen$1\1/15 >/16 '$'/17 e.EReplacements#1/5/18 )/20 </21 & InspectFastGen/22 Tile{ AsIs: e.Tail#1/23(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[12], & ident_E<int>::name ) )
+    if( ! refalrts::alloc_ident( context[12], ident_E ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
@@ -673,7 +540,7 @@ static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 23(2)
@@ -719,7 +586,7 @@ static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -1069,7 +936,7 @@ static refalrts::FnResult func_PrepRep(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Atom, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Body#1 as range 5
@@ -1103,7 +970,7 @@ static refalrts::FnResult func_PrepRep(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 18(2)
@@ -1149,7 +1016,7 @@ static refalrts::FnResult func_PrepRep(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -1499,7 +1366,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     // </0 & GlobalGen$2\1/4 (/7 # E/9 0/10 '$'/11 e.Body#2/5 )/8 >/1
     context[15] = context[5];
     context[16] = context[6];
-    context[9] = refalrts::ident_left(  & ident_E<int>::name, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_E, context[15], context[16] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::number_left( 0UL, context[15], context[16] );
@@ -1530,7 +1397,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     // </0 & GlobalGen$2\1/4 (/7 # E/9 1/10 '$'/11 e.Body#2/5 )/8 >/1
     context[15] = context[5];
     context[16] = context[6];
-    context[9] = refalrts::ident_left(  & ident_E<int>::name, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_E, context[15], context[16] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::number_left( 1UL, context[15], context[16] );
@@ -1545,7 +1412,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     //TRASH: {REMOVED TILE} </0 & GlobalGen$2\1/4 (/7 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # E/10 AsIs: '$'/11 AsIs: e.Body#2/15(5) AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[10], & ident_E<int>::name );
+    refalrts::reinit_ident( context[10], ident_E );
     refalrts::link_brackets( context[9], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1561,7 +1428,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     // </0 & GlobalGen$2\1/4 (/7 # Brackets/9 s.Num#2/10 e.inBrackets#2/5 )/8 >/1
     context[15] = context[5];
     context[16] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[15], context[16] );
     if( ! context[9] )
       continue;
     if( ! refalrts::svar_left( context[10], context[15], context[16] ) )
@@ -1572,7 +1439,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     //TRASH: {REMOVED TILE} s.Num#2/10 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Brackets/4 HalfReuse: </7 HalfReuse: & GlobalGen/9 } Tile{ AsIs: e.inBrackets#2/15(5) } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[4], ident_Brackets );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & GlobalGen_alias );
     refalrts::reinit_close_call( context[8] );
@@ -1594,7 +1461,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
     // </0 & GlobalGen$2\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 s.Num#2/14 e.inBrackets#2/5 )/8 >/1
     context[15] = context[5];
     context[16] = context[6];
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[15], context[16] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -2051,7 +1918,7 @@ static refalrts::FnResult func_gen_ComputeClasses_L1(refalrts::Iter arg_begin, r
       if( ! context[13] )
         continue;
       refalrts::bracket_pointers(context[13], context[14]);
-      context[15] = refalrts::ident_left(  & ident_E<int>::name, context[11], context[12] );
+      context[15] = refalrts::ident_left(  ident_E, context[11], context[12] );
       if( ! context[15] )
         continue;
       // closed e.Body#2 as range 11
@@ -2066,7 +1933,7 @@ static refalrts::FnResult func_gen_ComputeClasses_L1(refalrts::Iter arg_begin, r
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[18] ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_ident( context[0], & ident_MN<int>::name );
+      refalrts::reinit_ident( context[0], ident_MN );
       refalrts::reinit_open_call( context[4] );
       refalrts::reinit_name( context[7], & ComputeClassMN_alias );
       refalrts::reinit_number( context[8], 0UL );
@@ -2098,7 +1965,7 @@ static refalrts::FnResult func_gen_ComputeClasses_L1(refalrts::Iter arg_begin, r
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_ident( context[0], & ident_K<int>::name );
+  refalrts::reinit_ident( context[0], ident_K );
   refalrts::reinit_open_call( context[4] );
   refalrts::reinit_name( context[7], & ComputeClassK_alias );
   refalrts::reinit_number( context[8], 0UL );
@@ -2190,7 +2057,7 @@ static refalrts::FnResult func_GetMinKMN(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[14] )
       continue;
     refalrts::bracket_pointers(context[14], context[15]);
-    context[16] = refalrts::ident_left(  & ident_K<int>::name, context[12], context[13] );
+    context[16] = refalrts::ident_left(  ident_K, context[12], context[13] );
     if( ! context[16] )
       continue;
     // closed e.OtherClasses#1 as range 23(2)
@@ -2234,7 +2101,7 @@ static refalrts::FnResult func_GetMinKMN(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[14] )
       continue;
     refalrts::bracket_pointers(context[14], context[15]);
-    context[16] = refalrts::ident_left(  & ident_MN<int>::name, context[12], context[13] );
+    context[16] = refalrts::ident_left(  ident_MN, context[12], context[13] );
     if( ! context[16] )
       continue;
     // closed e.OtherClasses#1 as range 23(2)
@@ -3126,7 +2993,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_E<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_E, context[9], context[10] );
     if( ! context[11] )
       continue;
     context[17] = context[2];
@@ -3154,7 +3021,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_E<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_E, context[9], context[10] );
     if( ! context[11] )
       continue;
     context[17] = context[2];
@@ -3165,7 +3032,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
     if( ! context[14] )
       continue;
     refalrts::bracket_pointers(context[14], context[15]);
-    context[16] = refalrts::ident_left(  & ident_E<int>::name, context[12], context[13] );
+    context[16] = refalrts::ident_left(  ident_E, context[12], context[13] );
     if( ! context[16] )
       continue;
     // closed e.Body1#1 as range 9
@@ -3191,7 +3058,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_E<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_E, context[9], context[10] );
     if( ! context[11] )
       continue;
     // closed e.Body#1 as range 9
@@ -3240,7 +3107,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_E<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_E, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Any#1 as range 17(2)
@@ -3365,7 +3232,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_close_bracket( context[15] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_E<int>::name );
+    refalrts::reinit_ident( context[4], ident_E );
     refalrts::reinit_char( context[7], '$' );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[1] );
@@ -3394,7 +3261,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     //TRASH: {REMOVED TILE} {REMOVED TILE} 0/14 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 HalfReuse: # E/1 } Tile{ HalfReuse: '$'/0 HalfReuse: (/4 AsIs: (/7 AsIs: e.Any#1/5 AsIs: )/8 HalfReuse: )/11 HalfReuse: )/13 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[1], & ident_E<int>::name );
+    refalrts::reinit_ident( context[1], ident_E );
     refalrts::reinit_char( context[0], '$' );
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_close_bracket( context[11] );
@@ -3425,7 +3292,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_Brackets<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_Brackets, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.inBrackets#1 as range 15
@@ -3475,7 +3342,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_ADT_Brackets, context[15], context[16] );
     if( ! context[19] )
       continue;
     context[20] = 0;
@@ -3533,7 +3400,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_Atom<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_Atom, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Body#1 as range 15
@@ -3583,7 +3450,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_S<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_S, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Body#1 as range 15
@@ -3633,7 +3500,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_T<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_T, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Body#1 as range 15
@@ -3681,7 +3548,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_Brackets<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_Brackets, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Head#1 as range 27(5)
@@ -3694,7 +3561,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[21], & Dec_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[22], & ident_Brackets<int>::name ) )
+    if( ! refalrts::alloc_ident( context[22], ident_Brackets ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
@@ -3735,7 +3602,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_ADT_Brackets, context[15], context[16] );
     if( ! context[19] )
       continue;
     context[20] = 0;
@@ -3791,7 +3658,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_Atom<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_Atom, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Head#1 as range 27(5)
@@ -3804,7 +3671,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[21], & Dec_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[22], & ident_Atom<int>::name ) )
+    if( ! refalrts::alloc_ident( context[22], ident_Atom ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
@@ -3845,7 +3712,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     refalrts::bracket_pointers(context[17], context[18]);
-    context[19] = refalrts::ident_left(  & ident_S<int>::name, context[15], context[16] );
+    context[19] = refalrts::ident_left(  ident_S, context[15], context[16] );
     if( ! context[19] )
       continue;
     // closed e.Head#1 as range 27(5)
@@ -3858,7 +3725,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[21], & Dec_alias ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[22], & ident_S<int>::name ) )
+    if( ! refalrts::alloc_ident( context[22], ident_S ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
@@ -3896,7 +3763,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
   if( ! context[17] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[17], context[18]);
-  context[19] = refalrts::ident_left(  & ident_T<int>::name, context[15], context[16] );
+  context[19] = refalrts::ident_left(  ident_T, context[15], context[16] );
   if( ! context[19] )
     return refalrts::cRecognitionImpossible;
   // closed e.Head#1 as range 5
@@ -3909,7 +3776,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[21], & Dec_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[22], & ident_T<int>::name ) )
+  if( ! refalrts::alloc_ident( context[22], ident_T ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[23] ) )
     return refalrts::cNoMemory;
@@ -4256,7 +4123,7 @@ static refalrts::FnResult func_Generalization_Aux(refalrts::Iter arg_begin, refa
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_E<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_E, context[14], context[15] );
     if( ! context[18] )
       continue;
     if( ! refalrts::empty_seq( context[26], context[27] ) )
@@ -4271,7 +4138,7 @@ static refalrts::FnResult func_Generalization_Aux(refalrts::Iter arg_begin, refa
     //TRASH: {REMOVED TILE} & Generalization-Aux/4 s.Num#1/13 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ HalfReuse: # E/11 HalfReuse: '$'/16 HalfReuse: (/18 AsIs: e.Pattern#1/14 AsIs: )/17 HalfReuse: (/12 HalfReuse: )/7 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[11], & ident_E<int>::name );
+    refalrts::reinit_ident( context[11], ident_E );
     refalrts::reinit_char( context[16], '$' );
     refalrts::reinit_open_bracket( context[18] );
     refalrts::reinit_open_bracket( context[12] );
@@ -4299,7 +4166,7 @@ static refalrts::FnResult func_Generalization_Aux(refalrts::Iter arg_begin, refa
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_E<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_E, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[28] = context[9];
@@ -4314,7 +4181,7 @@ static refalrts::FnResult func_Generalization_Aux(refalrts::Iter arg_begin, refa
     //TRASH: {REMOVED TILE} & Generalization-Aux/4 s.Num#1/13 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ HalfReuse: # E/11 HalfReuse: '$'/12 AsIs: (/7 HalfReuse: )/16 HalfReuse: (/18 AsIs: e.Pattern#1/14 AsIs: )/17 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[11], & ident_E<int>::name );
+    refalrts::reinit_ident( context[11], ident_E );
     refalrts::reinit_char( context[12], '$' );
     refalrts::reinit_close_bracket( context[16] );
     refalrts::reinit_open_bracket( context[18] );
@@ -4479,7 +4346,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_S<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_S, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Body#1 as range 6
@@ -4519,7 +4386,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_E<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_E, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Body#1 as range 6
@@ -4559,7 +4426,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_T<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_T, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Body#1 as range 6
@@ -4599,7 +4466,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_Atom<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_Atom, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Body#1 as range 6
@@ -4639,7 +4506,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_Brackets<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_Brackets, context[6], context[7] );
     if( ! context[10] )
       continue;
     // closed e.Tail#1 as range 16(2)
@@ -4684,7 +4551,7 @@ static refalrts::FnResult func_CalcComplexity_aux(refalrts::Iter arg_begin, refa
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_left(  ident_ADT_Brackets, context[6], context[7] );
     if( ! context[10] )
       continue;
     context[11] = 0;
@@ -5133,11 +5000,11 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkChar s.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkChar/10 s.Char#2/11 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Atom, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[10] = refalrts::ident_left(  & ident_TkChar<int>::name, context[19], context[20] );
+    context[10] = refalrts::ident_left(  ident_TkChar, context[19], context[20] );
     if( ! context[10] )
       continue;
     context[21] = context[2];
@@ -5153,7 +5020,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} </0 & PatternCommentRec\1/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: # TkChar/10 AsIs: s.Char#2/11 HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5167,11 +5034,11 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkNumber s.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkNumber/10 s.Value#2/11 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Atom, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[10] = refalrts::ident_left(  & ident_TkNumber<int>::name, context[19], context[20] );
+    context[10] = refalrts::ident_left(  ident_TkNumber, context[19], context[20] );
     if( ! context[10] )
       continue;
     context[21] = context[2];
@@ -5187,7 +5054,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} </0 & PatternCommentRec\1/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: # TkNumber/10 AsIs: s.Value#2/11 HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5201,11 +5068,11 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkName e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkName/10 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Atom, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[10] = refalrts::ident_left(  & ident_TkName<int>::name, context[19], context[20] );
+    context[10] = refalrts::ident_left(  ident_TkName, context[19], context[20] );
     if( ! context[10] )
       continue;
     context[21] = context[2];
@@ -5218,7 +5085,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} </0 & PatternCommentRec\1/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: # TkName/10 AsIs: e.Name#2/19(5) HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5232,11 +5099,11 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Atom # TkIdentifier e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Atom/9 # TkIdentifier/10 e.Ident#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Atom, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
-    context[10] = refalrts::ident_left(  & ident_TkIdentifier<int>::name, context[19], context[20] );
+    context[10] = refalrts::ident_left(  ident_TkIdentifier, context[19], context[20] );
     if( ! context[10] )
       continue;
     context[21] = context[2];
@@ -5249,7 +5116,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} </0 & PatternCommentRec\1/4 (/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: # TkIdentifier/10 AsIs: e.Ident#2/19(5) HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5263,7 +5130,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Brackets s.idx e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 s.Num#2/10 e.InBrackets#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Brackets, context[9] ) )
       continue;
     context[19] = context[2];
     context[20] = context[3];
@@ -5286,13 +5153,13 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[15], & ident_TkCloseBracket<int>::name ) )
+    if( ! refalrts::alloc_ident( context[15], ident_TkCloseBracket ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkOpenBracket<int>::name );
-    refalrts::reinit_ident( context[7], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkOpenBracket );
+    refalrts::reinit_ident( context[7], ident_NoOffset );
     refalrts::reinit_close_bracket( context[9] );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[14], context[1] );
     refalrts::push_stack( context[13] );
@@ -5312,7 +5179,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # ADT-Brackets ( e.idx ) s.idx e.idx )
     // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 s.Num#2/14 e.InBrackets#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_ADT_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_ADT_Brackets, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
@@ -5340,13 +5207,13 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[18], & ident_TkCloseADT<int>::name ) )
+    if( ! refalrts::alloc_ident( context[18], ident_TkCloseADT ) )
       return refalrts::cNoMemory;
-    refalrts::update_ident( context[9], & ident_TkOpenADT<int>::name );
-    refalrts::reinit_ident( context[12], & ident_NoOffset<int>::name );
-    refalrts::reinit_ident( context[13], & ident_NoOffset<int>::name );
+    refalrts::update_ident( context[9], ident_TkOpenADT );
+    refalrts::reinit_ident( context[12], ident_NoOffset );
+    refalrts::reinit_ident( context[13], ident_NoOffset );
     refalrts::update_name( context[4], & PatternCommentRec_alias );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[17], context[1] );
     refalrts::push_stack( context[16] );
@@ -5368,7 +5235,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # Brackets e.idx ) e.idx
     // </0 & PatternCommentRec\1/4 (/7 # Brackets/9 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Brackets, context[9] ) )
       continue;
     // closed e.InBrackets#2 as range 5
     // closed e.Tail#2 as range 2
@@ -5378,15 +5245,15 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //RESULT: Tile{ [[ } (/10 # TkOpenBracket/11 Tile{ HalfReuse: # NoOffset/0 HalfReuse: )/4 HalfReuse: </7 HalfReuse: & PatternCommentRec/9 AsIs: e.InBrackets#2/5 HalfReuse: >/8 } (/12 # TkCloseBracket/13 # NoOffset/14 Tile{ HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[11], & ident_TkOpenBracket<int>::name ) )
+    if( ! refalrts::alloc_ident( context[11], ident_TkOpenBracket ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[13], & ident_TkCloseBracket<int>::name ) )
+    if( ! refalrts::alloc_ident( context[13], ident_TkCloseBracket ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[14], & ident_NoOffset<int>::name ) )
+    if( ! refalrts::alloc_ident( context[14], ident_NoOffset ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[0], ident_NoOffset );
     refalrts::reinit_close_bracket( context[4] );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & PatternCommentRec_alias );
@@ -5410,7 +5277,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   do {
     // ( # ADT-Brackets ( e.idx ) e.idx ) e.idx
     // </0 & PatternCommentRec\1/4 (/7 # ADT-Brackets/9 (/12 e.Name#2/10 )/13 e.InBrackets#2/5 )/8 e.Tail#2/2 >/1
-    if( ! refalrts::ident_term(  & ident_ADT_Brackets<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_ADT_Brackets, context[9] ) )
       continue;
     context[19] = context[5];
     context[20] = context[6];
@@ -5431,13 +5298,13 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[16], & ident_TkCloseADT<int>::name ) )
+    if( ! refalrts::alloc_ident( context[16], ident_TkCloseADT ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[17], & ident_NoOffset<int>::name ) )
+    if( ! refalrts::alloc_ident( context[17], ident_NoOffset ) )
       return refalrts::cNoMemory;
-    refalrts::update_ident( context[9], & ident_TkOpenADT<int>::name );
-    refalrts::reinit_ident( context[12], & ident_NoOffset<int>::name );
-    refalrts::reinit_ident( context[13], & ident_NoOffset<int>::name );
+    refalrts::update_ident( context[9], ident_TkOpenADT );
+    refalrts::reinit_ident( context[12], ident_NoOffset );
+    refalrts::reinit_ident( context[13], ident_NoOffset );
     refalrts::update_name( context[4], & PatternCommentRec_alias );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[15], context[1] );
@@ -5480,12 +5347,12 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     //RESULT: Tile{ [[ } (/14 Tile{ HalfReuse: # TkVariable/0 HalfReuse: </4 HalfReuse: & ModeFromTag/7 AsIs: s.Tag#2/9 HalfReuse: >/12 AsIs: e.Index#2/10 HalfReuse: # NoDepth/13 } Tile{ HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_TkVariable<int>::name );
+    refalrts::reinit_ident( context[0], ident_TkVariable );
     refalrts::reinit_open_call( context[4] );
     refalrts::reinit_name( context[7], & ModeFromTag_alias );
     refalrts::reinit_close_call( context[12] );
-    refalrts::reinit_ident( context[13], & ident_NoDepth<int>::name );
-    refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+    refalrts::reinit_ident( context[13], ident_NoDepth );
+    refalrts::reinit_ident( context[8], ident_NoOffset );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[14], context[1] );
     refalrts::push_stack( context[12] );
@@ -5516,13 +5383,13 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[12], '$' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[13], & ident_NoDepth<int>::name ) )
+  if( ! refalrts::alloc_ident( context[13], ident_NoDepth ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_ident( context[0], & ident_TkVariable<int>::name );
+  refalrts::reinit_ident( context[0], ident_TkVariable );
   refalrts::reinit_open_call( context[4] );
   refalrts::reinit_name( context[7], & ModeFromTag_alias );
   refalrts::reinit_close_call( context[10] );
-  refalrts::reinit_ident( context[8], & ident_NoOffset<int>::name );
+  refalrts::reinit_ident( context[8], ident_NoOffset );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[11], context[1] );
   refalrts::push_stack( context[10] );
@@ -5593,7 +5460,7 @@ static refalrts::FnResult func_ModeFromTag(refalrts::Iter arg_begin, refalrts::I
   do {
     // # E
     // </0 & ModeFromTag/4 # E/5 >/1
-    if( ! refalrts::ident_term(  & ident_E<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_E, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -5611,7 +5478,7 @@ static refalrts::FnResult func_ModeFromTag(refalrts::Iter arg_begin, refalrts::I
   do {
     // # T
     // </0 & ModeFromTag/4 # T/5 >/1
-    if( ! refalrts::ident_term(  & ident_T<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_T, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -5628,7 +5495,7 @@ static refalrts::FnResult func_ModeFromTag(refalrts::Iter arg_begin, refalrts::I
 
   // # S
   // </0 & ModeFromTag/4 # S/5 >/1
-  if( ! refalrts::ident_term(  & ident_S<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_S, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
@@ -5670,7 +5537,7 @@ static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.inBrackets#1 as range 5
@@ -5686,7 +5553,7 @@ static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::alloc_name( context[12], & ReverseGen_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[4], ident_Brackets );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & ReverseGen_alias );
     refalrts::reinit_close_call( context[8] );
@@ -5716,7 +5583,7 @@ static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -5768,7 +5635,7 @@ static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Atom, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 17(2)
@@ -5824,7 +5691,7 @@ static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::It
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_TkVariable<int>::name );
+    refalrts::reinit_ident( context[0], ident_TkVariable );
     refalrts::reinit_open_call( context[4] );
     refalrts::reinit_name( context[7], & ModeFromTag_alias );
     refalrts::reinit_close_call( context[12] );
@@ -6004,7 +5871,7 @@ static refalrts::FnResult func_gen_ReversePattern_Aux_S6L1(refalrts::Iter arg_be
   do {
     // # E
     // </0 & ReversePattern-Aux$6\1/4 # E/5 >/1
-    if( ! refalrts::ident_term(  & ident_E<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_E, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -6022,7 +5889,7 @@ static refalrts::FnResult func_gen_ReversePattern_Aux_S6L1(refalrts::Iter arg_be
   do {
     // # T
     // </0 & ReversePattern-Aux$6\1/4 # T/5 >/1
-    if( ! refalrts::ident_term(  & ident_T<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_T, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -6039,7 +5906,7 @@ static refalrts::FnResult func_gen_ReversePattern_Aux_S6L1(refalrts::Iter arg_be
 
   // # S
   // </0 & ReversePattern-Aux$6\1/4 # S/5 >/1
-  if( ! refalrts::ident_term(  & ident_S<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_S, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
@@ -6081,7 +5948,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Atom<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Atom, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 19(2)
@@ -6118,7 +5985,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 19(2)
@@ -6136,7 +6003,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[4], ident_Brackets );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & ReversePattern_Aux_alias );
     refalrts::reinit_name( context[8], & ReversePattern_Aux_alias );
@@ -6166,7 +6033,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -6220,7 +6087,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.inBrackets#1 as range 5
@@ -6236,7 +6103,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! refalrts::alloc_name( context[12], & ReversePattern_Aux_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[4], ident_Brackets );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & ReversePattern_Aux_alias );
     refalrts::reinit_close_call( context[8] );
@@ -6266,7 +6133,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = 0;
@@ -6335,7 +6202,7 @@ static refalrts::FnResult func_ReversePattern_Aux(refalrts::Iter arg_begin, refa
     //RESULT: Tile{ [[ } (/14 # TkVariable/15 Tile{ AsIs: </0 Reuse: & Fetch/4 HalfReuse: s.Mode1 #9/7 } & ReversePattern-Aux$6\1/16 Tile{ HalfReuse: >/12 AsIs: e.Name#1/10 AsIs: )/13 } </17 Tile{ HalfReuse: & ReversePattern-Aux/8 AsIs: e.Tail#1/19(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[15], & ident_TkVariable<int>::name ) )
+    if( ! refalrts::alloc_ident( context[15], ident_TkVariable ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[16], & gen_ReversePattern_Aux_S6L1_alias ) )
       return refalrts::cNoMemory;
@@ -6839,7 +6706,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Idx#1 as range 5
@@ -6900,7 +6767,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_ADT_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -6968,7 +6835,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Idx#1 as range 5
@@ -7027,7 +6894,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_ADT_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -7093,7 +6960,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Atom<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Atom, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Idx#1 as range 5
@@ -7270,7 +7137,7 @@ static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refal
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Scanned#1 as range 5
@@ -7297,7 +7164,7 @@ static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refal
     if( ! refalrts::alloc_close_bracket( context[21] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[11], & ident_Brackets<int>::name );
+    refalrts::reinit_ident( context[11], ident_Brackets );
     refalrts::reinit_open_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -7330,7 +7197,7 @@ static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refal
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_ADT_Brackets, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -7364,7 +7231,7 @@ static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refal
     if( ! refalrts::alloc_close_bracket( context[25] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[11], & ident_ADT_Brackets<int>::name );
+    refalrts::reinit_ident( context[11], ident_ADT_Brackets );
     refalrts::reinit_open_bracket( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -7504,7 +7371,7 @@ static refalrts::FnResult func_GetReplacement_Aux(refalrts::Iter arg_begin, refa
     // </0 & GetReplacement-Aux/4 (/7 # Brackets/9 e.Replacements#1/5 )/8 e.Tail#1/2 (/16 e.Scanned#1/14 )/17 (/12 e.Else#1/10 )/13 >/1
     context[35] = context[5];
     context[36] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Brackets<int>::name, context[35], context[36] );
+    context[9] = refalrts::ident_left(  ident_Brackets, context[35], context[36] );
     if( ! context[9] )
       continue;
     context[37] = context[2];
@@ -7548,7 +7415,7 @@ static refalrts::FnResult func_GetReplacement_Aux(refalrts::Iter arg_begin, refa
     // </0 & GetReplacement-Aux/4 (/7 # ADT-Brackets/9 (/12 e.Name#1/10 )/13 e.Replacements#1/5 )/8 e.Tail#1/2 (/20 e.Scanned#1/18 )/21 (/16 e.Else#1/14 )/17 >/1
     context[35] = context[5];
     context[36] = context[6];
-    context[9] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[35], context[36] );
+    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[35], context[36] );
     if( ! context[9] )
       continue;
     context[10] = 0;

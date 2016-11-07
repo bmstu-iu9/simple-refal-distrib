@@ -2,102 +2,18 @@
 #include "refalrts.h"
 
 
-// identifier #Conjoint
-template <typename SREFAL_PARAM_INT>
-struct ident_Conjoint {
-  static const char *name() {
-    return "Conjoint";
-  }
-};
-
-// identifier #Disjoint
-template <typename SREFAL_PARAM_INT>
-struct ident_Disjoint {
-  static const char *name() {
-    return "Disjoint";
-  }
-};
-
-// identifier #EL-HasErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_HasErrors {
-  static const char *name() {
-    return "EL-HasErrors";
-  }
-};
-
-// identifier #EL-NoErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_NoErrors {
-  static const char *name() {
-    return "EL-NoErrors";
-  }
-};
-
-// identifier #Fails
-template <typename SREFAL_PARAM_INT>
-struct ident_Fails {
-  static const char *name() {
-    return "Fails";
-  }
-};
-
-// identifier #NoNative
-template <typename SREFAL_PARAM_INT>
-struct ident_NoNative {
-  static const char *name() {
-    return "NoNative";
-  }
-};
-
-// identifier #NoOpt
-template <typename SREFAL_PARAM_INT>
-struct ident_NoOpt {
-  static const char *name() {
-    return "NoOpt";
-  }
-};
-
-// identifier #OptBoth
-template <typename SREFAL_PARAM_INT>
-struct ident_OptBoth {
-  static const char *name() {
-    return "OptBoth";
-  }
-};
-
-// identifier #OptNone
-template <typename SREFAL_PARAM_INT>
-struct ident_OptNone {
-  static const char *name() {
-    return "OptNone";
-  }
-};
-
-// identifier #OptPattern
-template <typename SREFAL_PARAM_INT>
-struct ident_OptPattern {
-  static const char *name() {
-    return "OptPattern";
-  }
-};
-
-// identifier #OptResult
-template <typename SREFAL_PARAM_INT>
-struct ident_OptResult {
-  static const char *name() {
-    return "OptResult";
-  }
-};
-
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Conjoint = refalrts::ident_from_static("Conjoint");
+const refalrts::RefalIdentifier ident_Disjoint = refalrts::ident_from_static("Disjoint");
+const refalrts::RefalIdentifier ident_EL_HasErrors = refalrts::ident_from_static("EL-HasErrors");
+const refalrts::RefalIdentifier ident_EL_NoErrors = refalrts::ident_from_static("EL-NoErrors");
+const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+const refalrts::RefalIdentifier ident_NoNative = refalrts::ident_from_static("NoNative");
+const refalrts::RefalIdentifier ident_NoOpt = refalrts::ident_from_static("NoOpt");
+const refalrts::RefalIdentifier ident_OptBoth = refalrts::ident_from_static("OptBoth");
+const refalrts::RefalIdentifier ident_OptNone = refalrts::ident_from_static("OptNone");
+const refalrts::RefalIdentifier ident_OptPattern = refalrts::ident_from_static("OptPattern");
+const refalrts::RefalIdentifier ident_OptResult = refalrts::ident_from_static("OptResult");
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -260,7 +176,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1S1L1L1(refalrts::Iter arg_beg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CompileFile\2\1$1\1\1/4 (/7 e.SrcName#1/5 )/8 (/11 e.OutputName#1/9 )/12 (/15 )/16 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoNative/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoNative<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoNative );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -400,7 +316,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1S1L1(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[27], & ident_Success<int>::name ) )
+  if( ! refalrts::alloc_ident( context[27], ident_Success ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[28], context[29], context[5], context[6]))
     return refalrts::cNoMemory;
@@ -514,7 +430,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1(refalrts::Iter arg_begin, re
   do {
     // ( e.idx ) s.idx s.idx s.idx ( e.idx ) ( e.idx ) # EL-NoErrors
     // </0 & CompileFile\2\1/4 (/7 e.AST#2/5 )/8 s.MarkupContext#1/9 s.Opt#1/10 s.GenMode#1/11 (/14 e.SrcName#1/12 )/15 (/18 e.OutputName#1/16 )/19 # EL-NoErrors/20 >/1
-    if( ! refalrts::ident_term(  & ident_EL_NoErrors<int>::name, context[20] ) )
+    if( ! refalrts::ident_term(  ident_EL_NoErrors, context[20] ) )
       continue;
     // closed e.AST#2 as range 5
     // closed e.SrcName#1 as range 12
@@ -601,7 +517,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1(refalrts::Iter arg_begin, re
 
   // ( e.idx ) s.idx s.idx s.idx ( e.idx ) ( e.idx ) # EL-HasErrors
   // </0 & CompileFile\2\1/4 (/7 e.AST#2/5 )/8 s.MarkupContext#1/9 s.Opt#1/10 s.GenMode#1/11 (/14 e.SrcName#1/12 )/15 (/18 e.OutputName#1/16 )/19 # EL-HasErrors/20 >/1
-  if( ! refalrts::ident_term(  & ident_EL_HasErrors<int>::name, context[20] ) )
+  if( ! refalrts::ident_term(  ident_EL_HasErrors, context[20] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.AST#2 as range 5
   // closed e.SrcName#1 as range 12
@@ -610,7 +526,7 @@ static refalrts::FnResult func_gen_CompileFile_L2L1(refalrts::Iter arg_begin, re
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & CompileFile\2\1/4 (/7 e.AST#2/5 )/8 s.MarkupContext#1/9 s.Opt#1/10 s.GenMode#1/11 (/14 e.SrcName#1/12 )/15 (/18 e.OutputName#1/16 )/19 # EL-HasErrors/20 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
-  refalrts::reinit_ident( context[1], & ident_Fails<int>::name );
+  refalrts::reinit_ident( context[1], ident_Fails );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -832,14 +748,14 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
   do {
     // # OptNone
     // </0 & SelectOptFlags/4 # OptNone/5 >/1
-    if( ! refalrts::ident_term(  & ident_OptNone<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_OptNone, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SelectOptFlags/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: # Disjoint/5 HalfReuse: # NoOpt/1 ]] }
-    refalrts::update_ident( context[5], & ident_Disjoint<int>::name );
-    refalrts::reinit_ident( context[1], & ident_NoOpt<int>::name );
+    refalrts::update_ident( context[5], ident_Disjoint );
+    refalrts::reinit_ident( context[1], ident_NoOpt );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[5];
@@ -851,14 +767,14 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
   do {
     // # OptPattern
     // </0 & SelectOptFlags/4 # OptPattern/5 >/1
-    if( ! refalrts::ident_term(  & ident_OptPattern<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_OptPattern, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SelectOptFlags/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: # Conjoint/5 HalfReuse: # NoOpt/1 ]] }
-    refalrts::update_ident( context[5], & ident_Conjoint<int>::name );
-    refalrts::reinit_ident( context[1], & ident_NoOpt<int>::name );
+    refalrts::update_ident( context[5], ident_Conjoint );
+    refalrts::reinit_ident( context[1], ident_NoOpt );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[5];
@@ -870,14 +786,14 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
   do {
     // # OptResult
     // </0 & SelectOptFlags/4 # OptResult/5 >/1
-    if( ! refalrts::ident_term(  & ident_OptResult<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_OptResult, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SelectOptFlags/4 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ Reuse: # Disjoint/5 HalfReuse: # OptResult/1 ]] }
-    refalrts::update_ident( context[5], & ident_Disjoint<int>::name );
-    refalrts::reinit_ident( context[1], & ident_OptResult<int>::name );
+    refalrts::update_ident( context[5], ident_Disjoint );
+    refalrts::reinit_ident( context[1], ident_OptResult );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[5];
@@ -888,14 +804,14 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
 
   // # OptBoth
   // </0 & SelectOptFlags/4 # OptBoth/5 >/1
-  if( ! refalrts::ident_term(  & ident_OptBoth<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_OptBoth, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & SelectOptFlags/4 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ Reuse: # Conjoint/5 HalfReuse: # OptResult/1 ]] }
-  refalrts::update_ident( context[5], & ident_Conjoint<int>::name );
-  refalrts::reinit_ident( context[1], & ident_OptResult<int>::name );
+  refalrts::update_ident( context[5], ident_Conjoint );
+  refalrts::reinit_ident( context[1], ident_OptResult );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[5];

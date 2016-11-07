@@ -2,382 +2,53 @@
 #include "refalrts.h"
 
 
-// identifier #Close
-template <typename SREFAL_PARAM_INT>
-struct ident_Close {
-  static const char *name() {
-    return "Close";
-  }
-};
-
-// identifier #EEnum
-template <typename SREFAL_PARAM_INT>
-struct ident_EEnum {
-  static const char *name() {
-    return "EEnum";
-  }
-};
-
-// identifier #ESwap
-template <typename SREFAL_PARAM_INT>
-struct ident_ESwap {
-  static const char *name() {
-    return "ESwap";
-  }
-};
-
-// identifier #Entry
-template <typename SREFAL_PARAM_INT>
-struct ident_Entry {
-  static const char *name() {
-    return "Entry";
-  }
-};
-
-// identifier #Enum
-template <typename SREFAL_PARAM_INT>
-struct ident_Enum {
-  static const char *name() {
-    return "Enum";
-  }
-};
-
-// identifier #Extern
-template <typename SREFAL_PARAM_INT>
-struct ident_Extern {
-  static const char *name() {
-    return "Extern";
-  }
-};
-
-// identifier #Forward
-template <typename SREFAL_PARAM_INT>
-struct ident_Forward {
-  static const char *name() {
-    return "Forward";
-  }
-};
-
-// identifier #Ident
-template <typename SREFAL_PARAM_INT>
-struct ident_Ident {
-  static const char *name() {
-    return "Ident";
-  }
-};
-
-// identifier #Open
-template <typename SREFAL_PARAM_INT>
-struct ident_Open {
-  static const char *name() {
-    return "Open";
-  }
-};
-
-// identifier #Swap
-template <typename SREFAL_PARAM_INT>
-struct ident_Swap {
-  static const char *name() {
-    return "Swap";
-  }
-};
-
-// identifier #TkChar
-template <typename SREFAL_PARAM_INT>
-struct ident_TkChar {
-  static const char *name() {
-    return "TkChar";
-  }
-};
-
-// identifier #TkCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseADT {
-  static const char *name() {
-    return "TkCloseADT";
-  }
-};
-
-// identifier #TkCloseBlock
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseBlock {
-  static const char *name() {
-    return "TkCloseBlock";
-  }
-};
-
-// identifier #TkCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseBracket {
-  static const char *name() {
-    return "TkCloseBracket";
-  }
-};
-
-// identifier #TkCloseCall
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseCall {
-  static const char *name() {
-    return "TkCloseCall";
-  }
-};
-
-// identifier #TkComma
-template <typename SREFAL_PARAM_INT>
-struct ident_TkComma {
-  static const char *name() {
-    return "TkComma";
-  }
-};
-
-// identifier #TkDirective
-template <typename SREFAL_PARAM_INT>
-struct ident_TkDirective {
-  static const char *name() {
-    return "TkDirective";
-  }
-};
-
-// identifier #TkEOF
-template <typename SREFAL_PARAM_INT>
-struct ident_TkEOF {
-  static const char *name() {
-    return "TkEOF";
-  }
-};
-
-// identifier #TkError
-template <typename SREFAL_PARAM_INT>
-struct ident_TkError {
-  static const char *name() {
-    return "TkError";
-  }
-};
-
-// identifier #TkIdentMarker
-template <typename SREFAL_PARAM_INT>
-struct ident_TkIdentMarker {
-  static const char *name() {
-    return "TkIdentMarker";
-  }
-};
-
-// identifier #TkLiteral-BS
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_BS {
-  static const char *name() {
-    return "TkLiteral-BS";
-  }
-};
-
-// identifier #TkLiteral-Bell
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_Bell {
-  static const char *name() {
-    return "TkLiteral-Bell";
-  }
-};
-
-// identifier #TkLiteral-CarriageReturn
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_CarriageReturn {
-  static const char *name() {
-    return "TkLiteral-CarriageReturn";
-  }
-};
-
-// identifier #TkLiteral-Char
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_Char {
-  static const char *name() {
-    return "TkLiteral-Char";
-  }
-};
-
-// identifier #TkLiteral-Code
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_Code {
-  static const char *name() {
-    return "TkLiteral-Code";
-  }
-};
-
-// identifier #TkLiteral-FF
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_FF {
-  static const char *name() {
-    return "TkLiteral-FF";
-  }
-};
-
-// identifier #TkLiteral-NewLine
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_NewLine {
-  static const char *name() {
-    return "TkLiteral-NewLine";
-  }
-};
-
-// identifier #TkLiteral-OCode
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_OCode {
-  static const char *name() {
-    return "TkLiteral-OCode";
-  }
-};
-
-// identifier #TkLiteral-Tab
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_Tab {
-  static const char *name() {
-    return "TkLiteral-Tab";
-  }
-};
-
-// identifier #TkLiteral-VT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_VT {
-  static const char *name() {
-    return "TkLiteral-VT";
-  }
-};
-
-// identifier #TkLiteral-XCode
-template <typename SREFAL_PARAM_INT>
-struct ident_TkLiteral_XCode {
-  static const char *name() {
-    return "TkLiteral-XCode";
-  }
-};
-
-// identifier #TkName
-template <typename SREFAL_PARAM_INT>
-struct ident_TkName {
-  static const char *name() {
-    return "TkName";
-  }
-};
-
-// identifier #TkNativeBlock
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNativeBlock {
-  static const char *name() {
-    return "TkNativeBlock";
-  }
-};
-
-// identifier #TkNativeLine
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNativeLine {
-  static const char *name() {
-    return "TkNativeLine";
-  }
-};
-
-// identifier #TkNewLine
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNewLine {
-  static const char *name() {
-    return "TkNewLine";
-  }
-};
-
-// identifier #TkNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNumber {
-  static const char *name() {
-    return "TkNumber";
-  }
-};
-
-// identifier #TkOpenADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenADT {
-  static const char *name() {
-    return "TkOpenADT";
-  }
-};
-
-// identifier #TkOpenBlock
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenBlock {
-  static const char *name() {
-    return "TkOpenBlock";
-  }
-};
-
-// identifier #TkOpenBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenBracket {
-  static const char *name() {
-    return "TkOpenBracket";
-  }
-};
-
-// identifier #TkOpenCall
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenCall {
-  static const char *name() {
-    return "TkOpenCall";
-  }
-};
-
-// identifier #TkPunctuation
-template <typename SREFAL_PARAM_INT>
-struct ident_TkPunctuation {
-  static const char *name() {
-    return "TkPunctuation";
-  }
-};
-
-// identifier #TkRedefinition
-template <typename SREFAL_PARAM_INT>
-struct ident_TkRedefinition {
-  static const char *name() {
-    return "TkRedefinition";
-  }
-};
-
-// identifier #TkReplace
-template <typename SREFAL_PARAM_INT>
-struct ident_TkReplace {
-  static const char *name() {
-    return "TkReplace";
-  }
-};
-
-// identifier #TkSemicolon
-template <typename SREFAL_PARAM_INT>
-struct ident_TkSemicolon {
-  static const char *name() {
-    return "TkSemicolon";
-  }
-};
-
-// identifier #TkUnexpected
-template <typename SREFAL_PARAM_INT>
-struct ident_TkUnexpected {
-  static const char *name() {
-    return "TkUnexpected";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
-// identifier #TokenError
-template <typename SREFAL_PARAM_INT>
-struct ident_TokenError {
-  static const char *name() {
-    return "TokenError";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Close = refalrts::ident_from_static("Close");
+const refalrts::RefalIdentifier ident_EEnum = refalrts::ident_from_static("EEnum");
+const refalrts::RefalIdentifier ident_ESwap = refalrts::ident_from_static("ESwap");
+const refalrts::RefalIdentifier ident_Entry = refalrts::ident_from_static("Entry");
+const refalrts::RefalIdentifier ident_Enum = refalrts::ident_from_static("Enum");
+const refalrts::RefalIdentifier ident_Extern = refalrts::ident_from_static("Extern");
+const refalrts::RefalIdentifier ident_Forward = refalrts::ident_from_static("Forward");
+const refalrts::RefalIdentifier ident_Ident = refalrts::ident_from_static("Ident");
+const refalrts::RefalIdentifier ident_Open = refalrts::ident_from_static("Open");
+const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
+const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
+const refalrts::RefalIdentifier ident_TkCloseBlock = refalrts::ident_from_static("TkCloseBlock");
+const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
+const refalrts::RefalIdentifier ident_TkCloseCall = refalrts::ident_from_static("TkCloseCall");
+const refalrts::RefalIdentifier ident_TkComma = refalrts::ident_from_static("TkComma");
+const refalrts::RefalIdentifier ident_TkDirective = refalrts::ident_from_static("TkDirective");
+const refalrts::RefalIdentifier ident_TkEOF = refalrts::ident_from_static("TkEOF");
+const refalrts::RefalIdentifier ident_TkError = refalrts::ident_from_static("TkError");
+const refalrts::RefalIdentifier ident_TkIdentMarker = refalrts::ident_from_static("TkIdentMarker");
+const refalrts::RefalIdentifier ident_TkLiteral_BS = refalrts::ident_from_static("TkLiteral-BS");
+const refalrts::RefalIdentifier ident_TkLiteral_Bell = refalrts::ident_from_static("TkLiteral-Bell");
+const refalrts::RefalIdentifier ident_TkLiteral_CarriageReturn = refalrts::ident_from_static("TkLiteral-CarriageReturn");
+const refalrts::RefalIdentifier ident_TkLiteral_Char = refalrts::ident_from_static("TkLiteral-Char");
+const refalrts::RefalIdentifier ident_TkLiteral_Code = refalrts::ident_from_static("TkLiteral-Code");
+const refalrts::RefalIdentifier ident_TkLiteral_FF = refalrts::ident_from_static("TkLiteral-FF");
+const refalrts::RefalIdentifier ident_TkLiteral_NewLine = refalrts::ident_from_static("TkLiteral-NewLine");
+const refalrts::RefalIdentifier ident_TkLiteral_OCode = refalrts::ident_from_static("TkLiteral-OCode");
+const refalrts::RefalIdentifier ident_TkLiteral_Tab = refalrts::ident_from_static("TkLiteral-Tab");
+const refalrts::RefalIdentifier ident_TkLiteral_VT = refalrts::ident_from_static("TkLiteral-VT");
+const refalrts::RefalIdentifier ident_TkLiteral_XCode = refalrts::ident_from_static("TkLiteral-XCode");
+const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+const refalrts::RefalIdentifier ident_TkNativeBlock = refalrts::ident_from_static("TkNativeBlock");
+const refalrts::RefalIdentifier ident_TkNativeLine = refalrts::ident_from_static("TkNativeLine");
+const refalrts::RefalIdentifier ident_TkNewLine = refalrts::ident_from_static("TkNewLine");
+const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+const refalrts::RefalIdentifier ident_TkOpenADT = refalrts::ident_from_static("TkOpenADT");
+const refalrts::RefalIdentifier ident_TkOpenBlock = refalrts::ident_from_static("TkOpenBlock");
+const refalrts::RefalIdentifier ident_TkOpenBracket = refalrts::ident_from_static("TkOpenBracket");
+const refalrts::RefalIdentifier ident_TkOpenCall = refalrts::ident_from_static("TkOpenCall");
+const refalrts::RefalIdentifier ident_TkPunctuation = refalrts::ident_from_static("TkPunctuation");
+const refalrts::RefalIdentifier ident_TkRedefinition = refalrts::ident_from_static("TkRedefinition");
+const refalrts::RefalIdentifier ident_TkReplace = refalrts::ident_from_static("TkReplace");
+const refalrts::RefalIdentifier ident_TkSemicolon = refalrts::ident_from_static("TkSemicolon");
+const refalrts::RefalIdentifier ident_TkUnexpected = refalrts::ident_from_static("TkUnexpected");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
+const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
 extern refalrts::RefalFunction& FastIntFromStr_0_0;
 #define FastIntFromStr_alias FastIntFromStr_0_0
 #define FastIntFromStr_str "FastIntFromStr#0:0"
@@ -637,7 +308,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # EEnum
     // </0 & StrDirective/4 # EEnum/5 >/1
-    if( ! refalrts::ident_term(  & ident_EEnum<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_EEnum, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -661,7 +332,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # Entry
     // </0 & StrDirective/4 # Entry/5 >/1
-    if( ! refalrts::ident_term(  & ident_Entry<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Entry, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -685,7 +356,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # Enum
     // </0 & StrDirective/4 # Enum/5 >/1
-    if( ! refalrts::ident_term(  & ident_Enum<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Enum, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -702,7 +373,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # Extern
     // </0 & StrDirective/4 # Extern/5 >/1
-    if( ! refalrts::ident_term(  & ident_Extern<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Extern, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -726,7 +397,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # Forward
     // </0 & StrDirective/4 # Forward/5 >/1
-    if( ! refalrts::ident_term(  & ident_Forward<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Forward, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -750,7 +421,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # Swap
     // </0 & StrDirective/4 # Swap/5 >/1
-    if( ! refalrts::ident_term(  & ident_Swap<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Swap, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -767,7 +438,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   do {
     // # ESwap
     // </0 & StrDirective/4 # ESwap/5 >/1
-    if( ! refalrts::ident_term(  & ident_ESwap<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_ESwap, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -790,7 +461,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
 
   // # Ident
   // </0 & StrDirective/4 # Ident/5 >/1
-  if( ! refalrts::ident_term(  & ident_Ident<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_Ident, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
@@ -832,7 +503,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkChar s.idx
     // </0 & StrFromToken/4 # TkChar/5 s.Char#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkChar<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkChar, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -857,7 +528,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkCloseADT
     // </0 & StrFromToken/4 # TkCloseADT/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseADT<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseADT, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -881,7 +552,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkCloseCall
     // </0 & StrFromToken/4 # TkCloseCall/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseCall<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseCall, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -905,7 +576,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkCloseBlock
     // </0 & StrFromToken/4 # TkCloseBlock/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseBlock<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseBlock, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -929,7 +600,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkCloseBracket
     // </0 & StrFromToken/4 # TkCloseBracket/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseBracket<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseBracket, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -953,7 +624,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkComma
     // </0 & StrFromToken/4 # TkComma/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkComma<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkComma, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -977,7 +648,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkDirective s.idx
     // </0 & StrFromToken/4 # TkDirective/5 s.Directive#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkDirective<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkDirective, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1012,7 +683,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkEOF
     // </0 & StrFromToken/4 # TkEOF/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkEOF<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkEOF, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1040,7 +711,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkError e.idx
     // </0 & StrFromToken/4 # TkError/5 e.Message#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkError<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkError, context[5] ) )
       continue;
     // closed e.Message#1 as range 2
 
@@ -1070,7 +741,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkIdentMarker
     // </0 & StrFromToken/4 # TkIdentMarker/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkIdentMarker<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkIdentMarker, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1094,7 +765,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkName e.idx
     // </0 & StrFromToken/4 # TkName/5 e.Name#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkName<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
 
@@ -1121,7 +792,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkNumber s.idx
     // </0 & StrFromToken/4 # TkNumber/5 s.Number#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkNumber<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkNumber, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1152,7 +823,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkOpenADT
     // </0 & StrFromToken/4 # TkOpenADT/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenADT<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenADT, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1176,7 +847,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkOpenCall
     // </0 & StrFromToken/4 # TkOpenCall/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenCall<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenCall, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1200,7 +871,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkOpenBlock
     // </0 & StrFromToken/4 # TkOpenBlock/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenBlock<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenBlock, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1224,7 +895,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkOpenBracket
     // </0 & StrFromToken/4 # TkOpenBracket/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenBracket<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenBracket, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1248,7 +919,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkReplace
     // </0 & StrFromToken/4 # TkReplace/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkReplace<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkReplace, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1272,7 +943,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkSemicolon
     // </0 & StrFromToken/4 # TkSemicolon/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkSemicolon<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkSemicolon, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1296,7 +967,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkUnexpected e.idx
     // </0 & StrFromToken/4 # TkUnexpected/5 e.Unexpected#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkUnexpected, context[5] ) )
       continue;
     // closed e.Unexpected#1 as range 2
 
@@ -1321,7 +992,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkVariable s.idx e.idx
     // </0 & StrFromToken/4 # TkVariable/5 s.Mode#1/6 e.Index#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1346,7 +1017,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkRedefinition
     // </0 & StrFromToken/4 # TkRedefinition/5 >/1
-    if( ! refalrts::ident_term(  & ident_TkRedefinition<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkRedefinition, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1370,7 +1041,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # TkNativeBlock e.idx
     // </0 & StrFromToken/4 # TkNativeBlock/5 e.Block#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TkNativeBlock<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkNativeBlock, context[5] ) )
       continue;
     // closed e.Block#1 as range 2
 
@@ -1395,7 +1066,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
   do {
     // # Open s.idx
     // </0 & StrFromToken/4 # Open/5 s.OpenBracket#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_Open<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Open, context[5] ) )
       continue;
     context[10] = context[2];
     context[11] = context[3];
@@ -1421,7 +1092,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
 
   // # Close s.idx
   // </0 & StrFromToken/4 # Close/5 s.CloseBracket#1/6 >/1
-  if( ! refalrts::ident_term(  & ident_Close<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_Close, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -1531,7 +1202,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkDirective e.idx )
     // </0 & NormalizeToken/4 (/7 # TkDirective/9 e.Directive#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkDirective<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkDirective, context[9] ) )
       continue;
     // closed e.Directive#1 as range 5
 
@@ -1553,7 +1224,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkEOF )
     // </0 & NormalizeToken/4 (/7 # TkEOF/9 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkEOF<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkEOF, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1576,7 +1247,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-Char s.idx )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-Char/9 s.Char#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_Char<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_Char, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1588,7 +1259,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 AsIs: s.Char#1/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1602,7 +1273,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-Code e.idx )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-Code/9 e.DecCode#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_Code<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_Code, context[9] ) )
       continue;
     // closed e.DecCode#1 as range 5
 
@@ -1611,7 +1282,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ } (/10 # TkChar/11 Tile{ AsIs: </0 Reuse: & Chr/4 HalfReuse: </7 HalfReuse: & FastIntFromStr/9 AsIs: e.DecCode#1/5 HalfReuse: >/8 AsIs: >/1 } )/12 Tile{ ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[11], & ident_TkChar<int>::name ) )
+    if( ! refalrts::alloc_ident( context[11], ident_TkChar ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;
@@ -1638,7 +1309,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-OCode e.idx )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-OCode/9 e.OctCode#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_OCode<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_OCode, context[9] ) )
       continue;
     // closed e.OctCode#1 as range 5
 
@@ -1647,7 +1318,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ } (/10 Tile{ HalfReuse: # TkChar/0 HalfReuse: </4 HalfReuse: & CharFromNum/7 HalfReuse: 8/9 AsIs: e.OctCode#1/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_TkChar<int>::name );
+    refalrts::reinit_ident( context[0], ident_TkChar );
     refalrts::reinit_open_call( context[4] );
     refalrts::reinit_name( context[7], & CharFromNum_alias );
     refalrts::reinit_number( context[9], 8UL );
@@ -1668,7 +1339,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-XCode e.idx )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-XCode/9 e.HexCode#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_XCode<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_XCode, context[9] ) )
       continue;
     // closed e.HexCode#1 as range 5
 
@@ -1677,7 +1348,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ } (/10 Tile{ HalfReuse: # TkChar/0 HalfReuse: </4 HalfReuse: & CharFromNum/7 HalfReuse: 16/9 AsIs: e.HexCode#1/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[10] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_ident( context[0], & ident_TkChar<int>::name );
+    refalrts::reinit_ident( context[0], ident_TkChar );
     refalrts::reinit_open_call( context[4] );
     refalrts::reinit_name( context[7], & CharFromNum_alias );
     refalrts::reinit_number( context[9], 16UL );
@@ -1698,7 +1369,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-NewLine 'n' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-NewLine/9 'n'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_NewLine<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_NewLine, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1711,7 +1382,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\n'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\n' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1726,7 +1397,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-CarriageReturn 'r' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-CarriageReturn/9 'r'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_CarriageReturn<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_CarriageReturn, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1739,7 +1410,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\r'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\r' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1754,7 +1425,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-Tab 't' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-Tab/9 't'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_Tab<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_Tab, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1767,7 +1438,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\t'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\t' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1782,7 +1453,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-Bell 'a' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-Bell/9 'a'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_Bell<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_Bell, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1795,7 +1466,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\007'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\007' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1810,7 +1481,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-BS 'b' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-BS/9 'b'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_BS<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_BS, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1823,7 +1494,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\010'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\010' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1838,7 +1509,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-FF 'f' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-FF/9 'f'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_FF<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_FF, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1851,7 +1522,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\014'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\014' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1866,7 +1537,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkLiteral-VT 'v' )
     // </0 & NormalizeToken/4 (/7 # TkLiteral-VT/9 'v'/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkLiteral_VT<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkLiteral_VT, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1879,7 +1550,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkChar/9 Reuse: '\013'/10 AsIs: )/8 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_TkChar<int>::name );
+    refalrts::update_ident( context[9], ident_TkChar );
     refalrts::update_char( context[10], '\013' );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1894,7 +1565,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkName e.idx )
     // </0 & NormalizeToken/4 (/7 # TkName/9 e.Name#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkName<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkName, context[9] ) )
       continue;
     // closed e.Name#1 as range 5
 
@@ -1902,7 +1573,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkName/4 HalfReuse: </7 HalfReuse: & NormalizeName/9 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkName<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkName );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & NormalizeName_alias );
     refalrts::reinit_close_call( context[8] );
@@ -1917,7 +1588,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkNewLine e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNewLine/9 e.Accumulated#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkNewLine<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkNewLine, context[9] ) )
       continue;
     // closed e.Accumulated#1 as range 5
 
@@ -1938,7 +1609,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkNumber e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNumber/9 e.Digits#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkNumber<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkNumber, context[9] ) )
       continue;
     // closed e.Digits#1 as range 5
 
@@ -1946,7 +1617,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkNumber/4 HalfReuse: </7 HalfReuse: & FastIntFromStr/9 AsIs: e.Digits#1/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNumber<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNumber );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & FastIntFromStr_alias );
     refalrts::reinit_close_call( context[8] );
@@ -1961,7 +1632,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkPunctuation s.idx )
     // </0 & NormalizeToken/4 (/7 # TkPunctuation/9 s.Punctuation#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkPunctuation<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkPunctuation, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -1992,7 +1663,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkVariable s.idx '.' e.idx )
     // </0 & NormalizeToken/4 (/7 # TkVariable/9 s.Type#1/10 '.'/11 e.Index#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[9] ) )
       continue;
     context[13] = context[5];
     context[14] = context[6];
@@ -2027,7 +1698,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkNativeLine e.idx )
     // </0 & NormalizeToken/4 (/7 # TkNativeLine/9 e.Line#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkNativeLine<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkNativeLine, context[9] ) )
       continue;
     // closed e.Line#1 as range 5
 
@@ -2035,7 +1706,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkNativeLine/4 HalfReuse: </7 HalfReuse: & Trim-R/9 AsIs: e.Line#1/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNativeLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNativeLine );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_name( context[9], & Trim_R_alias );
     refalrts::reinit_close_call( context[8] );
@@ -2050,7 +1721,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   do {
     // ( # TkUnexpected e.idx )
     // </0 & NormalizeToken/4 (/7 # TkUnexpected/9 e.Unexpected#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkUnexpected<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkUnexpected, context[9] ) )
       continue;
     // closed e.Unexpected#1 as range 5
 
@@ -2069,14 +1740,14 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
 
   // ( # TokenError e.idx )
   // </0 & NormalizeToken/4 (/7 # TokenError/9 e.Message#1/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_TokenError<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_TokenError, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TkError/9 AsIs: e.Message#1/5 AsIs: )/8 } Tile{ ]] }
-  refalrts::update_ident( context[9], & ident_TkError<int>::name );
+  refalrts::update_ident( context[9], ident_TkError );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -2468,7 +2139,7 @@ static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin,
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkChar/4 AsIs: s.Char#2/5 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_TkChar<int>::name );
+  refalrts::reinit_ident( context[4], ident_TkChar );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
   return refalrts::cSuccess;
@@ -2515,8 +2186,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/6 HalfReuse: # TkDirective/7 HalfReuse: # Enum/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[6] );
-    refalrts::reinit_ident( context[7], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[8], & ident_Enum<int>::name );
+    refalrts::reinit_ident( context[7], ident_TkDirective );
+    refalrts::reinit_ident( context[8], ident_Enum );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[6], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2554,8 +2225,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'E'/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # EEnum/9 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[7] );
-    refalrts::reinit_ident( context[8], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[9], & ident_EEnum<int>::name );
+    refalrts::reinit_ident( context[8], ident_TkDirective );
+    refalrts::reinit_ident( context[9], ident_EEnum );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2593,8 +2264,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'N'/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # Entry/9 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[7] );
-    refalrts::reinit_ident( context[8], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[9], & ident_Entry<int>::name );
+    refalrts::reinit_ident( context[8], ident_TkDirective );
+    refalrts::reinit_ident( context[9], ident_Entry );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2635,8 +2306,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'X'/6 'T'/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 HalfReuse: # TkDirective/9 HalfReuse: # Extern/10 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[9], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[10], & ident_Extern<int>::name );
+    refalrts::reinit_ident( context[9], ident_TkDirective );
+    refalrts::reinit_ident( context[10], ident_Extern );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[8], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2680,8 +2351,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'F'/5 'O'/6 'R'/7 'W'/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/10 HalfReuse: # Forward/11 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[10], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[11], & ident_Forward<int>::name );
+    refalrts::reinit_ident( context[10], ident_TkDirective );
+    refalrts::reinit_ident( context[11], ident_Forward );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2716,8 +2387,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'S'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/6 HalfReuse: # TkDirective/7 HalfReuse: # Swap/8 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[6] );
-    refalrts::reinit_ident( context[7], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[8], & ident_Swap<int>::name );
+    refalrts::reinit_ident( context[7], ident_TkDirective );
+    refalrts::reinit_ident( context[8], ident_Swap );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[6], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2755,8 +2426,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'E'/5 'S'/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # ESwap/9 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[7] );
-    refalrts::reinit_ident( context[8], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[9], & ident_ESwap<int>::name );
+    refalrts::reinit_ident( context[8], ident_TkDirective );
+    refalrts::reinit_ident( context[9], ident_ESwap );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2794,8 +2465,8 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'L'/5 'A'/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkDirective/8 HalfReuse: # Ident/9 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[7] );
-    refalrts::reinit_ident( context[8], & ident_TkDirective<int>::name );
-    refalrts::reinit_ident( context[9], & ident_Ident<int>::name );
+    refalrts::reinit_ident( context[8], ident_TkDirective );
+    refalrts::reinit_ident( context[9], ident_Ident );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2879,7 +2550,7 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
   //RESULT: Tile{ [[ } (/5 # TkError/6"Unknown directive"/7 Tile{ HalfReuse: ' '/0 HalfReuse: '$'/4 AsIs: e.Other#1/2 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[6], & ident_TkError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[6], ident_TkError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[7], context[8], "Unknown directive", 17 ) )
     return refalrts::cNoMemory;
@@ -2924,7 +2595,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '<'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenCall/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkOpenCall<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkOpenCall );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2942,7 +2613,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '>'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseCall/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkCloseCall<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkCloseCall );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2960,7 +2631,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '{'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenBlock/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkOpenBlock<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkOpenBlock );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2978,7 +2649,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '}'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseBlock/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkCloseBlock<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkCloseBlock );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2996,7 +2667,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '('/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenBracket/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkOpenBracket<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkOpenBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3014,7 +2685,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ')'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseBracket/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkCloseBracket<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkCloseBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3032,7 +2703,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '='/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkReplace/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkReplace<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkReplace );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3050,7 +2721,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ','/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkComma/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkComma<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkComma );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3068,7 +2739,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ';'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkSemicolon/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkSemicolon<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkSemicolon );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3086,7 +2757,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '['/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenADT/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkOpenADT<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkOpenADT );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3104,7 +2775,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ']'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseADT/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkCloseADT<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkCloseADT );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3122,7 +2793,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '#'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkIdentMarker/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_TkIdentMarker<int>::name );
+    refalrts::reinit_ident( context[1], ident_TkIdentMarker );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3139,7 +2810,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '^'/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkRedefinition/1 ]] }
-  refalrts::reinit_ident( context[1], & ident_TkRedefinition<int>::name );
+  refalrts::reinit_ident( context[1], ident_TkRedefinition );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -3179,7 +2850,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
   do {
     // s.idx ( # TkNewLine )
     // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 # TkNewLine/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkNewLine<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_TkNewLine, context[10] ) )
       continue;
     context[12] = context[5];
     context[13] = context[6];
@@ -3204,7 +2875,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
   do {
     // s.idx ( # TkNativeLine e.idx )
     // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 # TkNativeLine/10 e.Line#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_TkNativeLine<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_TkNativeLine, context[10] ) )
       continue;
     // closed e.Line#1 as range 5
 
@@ -3216,7 +2887,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
     refalrts::update_name( context[4], & Inc_alias );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_bracket( context[10] );
-    refalrts::reinit_ident( context[8], & ident_TkNativeLine<int>::name );
+    refalrts::reinit_ident( context[8], ident_TkNativeLine );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[10], context[1] );
     refalrts::push_stack( context[7] );
@@ -3349,7 +3020,7 @@ static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refa
       if( ! context[9] )
         continue;
       refalrts::bracket_pointers(context[9], context[10]);
-      context[11] = refalrts::ident_left(  & ident_TkNativeLine<int>::name, context[7], context[8] );
+      context[11] = refalrts::ident_left(  ident_TkNativeLine, context[7], context[8] );
       if( ! context[11] )
         continue;
       // closed e.Tail#1 as range 16(2)
@@ -3435,7 +3106,7 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_left(  & ident_TkNativeLine<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_left(  ident_TkNativeLine, context[10], context[11] );
     if( ! context[14] )
       continue;
     // closed e.Block#1 as range 6
@@ -3474,7 +3145,7 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
   if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_TkNativeBlock<int>::name );
+  refalrts::reinit_ident( context[4], ident_TkNativeBlock );
   refalrts::reinit_close_bracket( context[8] );
   refalrts::reinit_name( context[9], & CollectNativeLines_alias );
   refalrts::push_stack( context[1] );
@@ -3619,7 +3290,7 @@ static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, ref
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Native inlines expects two percents"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Native inlines expects two percents", 35 ) )
     return refalrts::cNoMemory;
@@ -3755,7 +3426,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '<'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '<' ) )
       return refalrts::cNoMemory;
@@ -3794,7 +3465,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '>'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '>' ) )
       return refalrts::cNoMemory;
@@ -3833,7 +3504,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '('/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '(' ) )
       return refalrts::cNoMemory;
@@ -3872,7 +3543,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ')'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], ')' ) )
       return refalrts::cNoMemory;
@@ -3911,7 +3582,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '{'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '{' ) )
       return refalrts::cNoMemory;
@@ -3950,7 +3621,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '}'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '}' ) )
       return refalrts::cNoMemory;
@@ -3989,7 +3660,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '['/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '[' ) )
       return refalrts::cNoMemory;
@@ -4028,7 +3699,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ']'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], ']' ) )
       return refalrts::cNoMemory;
@@ -4067,7 +3738,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '='/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '=' ) )
       return refalrts::cNoMemory;
@@ -4106,7 +3777,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ';'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], ';' ) )
       return refalrts::cNoMemory;
@@ -4145,7 +3816,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ','/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], ',' ) )
       return refalrts::cNoMemory;
@@ -4184,7 +3855,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '#'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '#' ) )
       return refalrts::cNoMemory;
@@ -4223,7 +3894,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '^'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkPunctuation ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '^' ) )
       return refalrts::cNoMemory;
@@ -5285,7 +4956,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::alloc_name( context[12], & Root_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNewLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNewLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -5318,7 +4989,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # TkEOF/7 AsIs: e.Accum#1/5 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_ident( context[7], & ident_TkEOF<int>::name );
+    refalrts::reinit_ident( context[7], ident_TkEOF );
     refalrts::link_brackets( context[4], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -5341,7 +5012,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ } (/10 # TkUnexpected/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & Main/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[11], & ident_TkUnexpected<int>::name ) )
+  if( ! refalrts::alloc_ident( context[11], ident_TkUnexpected ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
@@ -5434,7 +5105,7 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
     if( ! refalrts::alloc_name( context[12], & Native_Begin_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNewLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNewLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -5464,7 +5135,7 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Native inlines expects new line after two percents"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Native inlines expects new line after two percents", 50 ) )
     return refalrts::cNoMemory;
@@ -6990,7 +6661,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ } (/9 # TkName/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkName<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkName ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -7068,7 +6739,7 @@ static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected dot"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected dot", 12 ) )
     return refalrts::cNoMemory;
@@ -7352,7 +7023,7 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } (/9 # TkNumber/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkNumber<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkNumber ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -8030,7 +7701,7 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected directive name"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected directive name", 23 ) )
     return refalrts::cNoMemory;
@@ -8095,7 +7766,7 @@ static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, ref
     if( ! refalrts::alloc_name( context[12], & Main_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Char<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Char );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -8220,7 +7891,7 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
   //RESULT: Tile{ [[ } (/9 # TkUnexpected/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkUnexpected<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkUnexpected ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -9873,7 +9544,7 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected variable name"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected variable name", 22 ) )
     return refalrts::cNoMemory;
@@ -10525,7 +10196,7 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/9 # TkDirective/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkDirective<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkDirective ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -10648,7 +10319,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_name( context[14], & Main_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -10680,7 +10351,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::alloc_chars( context[9], context[10], "nexpected EOF in string litera", 30 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_char( context[8], 'l' );
     refalrts::reinit_close_bracket( context[1] );
@@ -10706,7 +10377,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/10 # TkLiteral-Char/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & StringLiteral/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[11], & ident_TkLiteral_Char<int>::name ) )
+  if( ! refalrts::alloc_ident( context[11], ident_TkLiteral_Char ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
@@ -10822,7 +10493,7 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkNewLine/10 Tile{ AsIs: e.Accum#1/5 } '\n'/11 )/12 Tile{ AsIs: </0 AsIs: & CComment/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_ident( context[10], & ident_TkNewLine<int>::name ) )
+    if( ! refalrts::alloc_ident( context[10], ident_TkNewLine ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], '\n' ) )
       return refalrts::cNoMemory;
@@ -10883,7 +10554,7 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Unexpected EOF: unclosed comment"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Unexpected EOF: unclosed comment", 32 ) )
     return refalrts::cNoMemory;
@@ -10948,7 +10619,7 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::alloc_name( context[12], & Main_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNewLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNewLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -10981,7 +10652,7 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # TkEOF/7 AsIs: e.Accum#1/5 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_ident( context[7], & ident_TkEOF<int>::name );
+    refalrts::reinit_ident( context[7], ident_TkEOF );
     refalrts::link_brackets( context[4], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -11122,7 +10793,7 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! refalrts::alloc_name( context[12], & Native_Begin_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNativeLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNativeLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -11181,7 +10852,7 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Unexpected EOF: unclosed native insertion"/11 )/13 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Unexpected EOF: unclosed native insertion", 41 ) )
     return refalrts::cNoMemory;
@@ -12707,7 +12378,7 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
   //RESULT: Tile{ [[ } (/9 # TkVariable/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Main/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkVariable<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkVariable ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -12772,7 +12443,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_NewLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_NewLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -12813,7 +12484,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_CarriageReturn<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_CarriageReturn );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -12854,7 +12525,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Tab<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Tab );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -12895,7 +12566,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Bell<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Bell );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -12936,7 +12607,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_BS<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_BS );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -12977,7 +12648,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_FF<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_FF );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13018,7 +12689,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_VT<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_VT );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13059,7 +12730,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Char<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Char );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13100,7 +12771,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Char<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Char );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13141,7 +12812,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Char<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Char );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13488,7 +13159,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[14], & Main_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13515,7 +13186,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Unexpected escape sequence"/11 )/13 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Unexpected escape sequence", 26 ) )
     return refalrts::cNoMemory;
@@ -13580,7 +13251,7 @@ static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, ref
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Char<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Char );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13662,7 +13333,7 @@ static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, re
     if( ! refalrts::alloc_name( context[14], & CComment_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TokenError<int>::name );
+    refalrts::reinit_ident( context[4], ident_TokenError );
     refalrts::reinit_char( context[7], 'N' );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -13829,7 +13500,7 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
     if( ! refalrts::alloc_name( context[12], & Main_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkNewLine<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkNewLine );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -14138,7 +13809,7 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
   //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected decimal digit"/11 )/13 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TokenError<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TokenError ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], "Expected decimal digit", 22 ) )
     return refalrts::cNoMemory;
@@ -14384,7 +14055,7 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
   //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_OCode ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -14944,7 +14615,7 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
   //RESULT: Tile{ [[ } (/9 # TkLiteral-XCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_XCode<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_XCode ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -15238,7 +14909,7 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
   //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_Code<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_Code ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -15484,7 +15155,7 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_OCode ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -15549,7 +15220,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15590,7 +15261,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15631,7 +15302,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15672,7 +15343,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15713,7 +15384,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15754,7 +15425,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15795,7 +15466,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15836,7 +15507,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15877,7 +15548,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15918,7 +15589,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_Code<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_Code );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -15948,7 +15619,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
   //RESULT: Tile{ [[ } (/9 # TkLiteral-Code/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_Code<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_Code ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
@@ -16013,7 +15684,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16054,7 +15725,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16095,7 +15766,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16136,7 +15807,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16177,7 +15848,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16218,7 +15889,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16259,7 +15930,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16300,7 +15971,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[12], & StringLiteral_alias ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_TkLiteral_OCode<int>::name );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
@@ -16330,7 +16001,7 @@ static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_TkLiteral_OCode<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_OCode ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;

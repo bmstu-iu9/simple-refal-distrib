@@ -2,46 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #EL-HasErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_HasErrors {
-  static const char *name() {
-    return "EL-HasErrors";
-  }
-};
-
-// identifier #EL-NoErrors
-template <typename SREFAL_PARAM_INT>
-struct ident_EL_NoErrors {
-  static const char *name() {
-    return "EL-NoErrors";
-  }
-};
-
-// identifier #NoLine
-template <typename SREFAL_PARAM_INT>
-struct ident_NoLine {
-  static const char *name() {
-    return "NoLine";
-  }
-};
-
-// identifier #TkError
-template <typename SREFAL_PARAM_INT>
-struct ident_TkError {
-  static const char *name() {
-    return "TkError";
-  }
-};
-
-// identifier #TkUnexpected
-template <typename SREFAL_PARAM_INT>
-struct ident_TkUnexpected {
-  static const char *name() {
-    return "TkUnexpected";
-  }
-};
-
 extern refalrts::RefalFunction& WriteLine_0_0;
 extern refalrts::RefalFunction& StrFromInt_0_0;
 extern refalrts::RefalFunction& StrFromToken_0_0;

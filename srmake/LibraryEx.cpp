@@ -2,22 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
-// identifier #TypeBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TypeBracket {
-  static const char *name() {
-    return "TypeBracket";
-  }
-};
-
 extern refalrts::RefalFunction& FOpen_0_0;
 extern refalrts::RefalFunction& FClose_0_0;
 extern refalrts::RefalFunction& FReadLine_0_0;

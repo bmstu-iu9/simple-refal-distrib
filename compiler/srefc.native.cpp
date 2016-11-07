@@ -2,102 +2,18 @@
 #include "refalrts.h"
 
 
-// identifier #Collision
-template <typename SREFAL_PARAM_INT>
-struct ident_Collision {
-  static const char *name() {
-    return "Collision";
-  }
-};
-
-// identifier #CommandLine
-template <typename SREFAL_PARAM_INT>
-struct ident_CommandLine {
-  static const char *name() {
-    return "CommandLine";
-  }
-};
-
-// identifier #ErrorFile
-template <typename SREFAL_PARAM_INT>
-struct ident_ErrorFile {
-  static const char *name() {
-    return "ErrorFile";
-  }
-};
-
-// identifier #Fails
-template <typename SREFAL_PARAM_INT>
-struct ident_Fails {
-  static const char *name() {
-    return "Fails";
-  }
-};
-
-// identifier #NoCppCompiler
-template <typename SREFAL_PARAM_INT>
-struct ident_NoCppCompiler {
-  static const char *name() {
-    return "NoCppCompiler";
-  }
-};
-
-// identifier #NoErrorFile
-template <typename SREFAL_PARAM_INT>
-struct ident_NoErrorFile {
-  static const char *name() {
-    return "NoErrorFile";
-  }
-};
-
-// identifier #NoNative
-template <typename SREFAL_PARAM_INT>
-struct ident_NoNative {
-  static const char *name() {
-    return "NoNative";
-  }
-};
-
-// identifier #NotFound
-template <typename SREFAL_PARAM_INT>
-struct ident_NotFound {
-  static const char *name() {
-    return "NotFound";
-  }
-};
-
-// identifier #Output
-template <typename SREFAL_PARAM_INT>
-struct ident_Output {
-  static const char *name() {
-    return "Output";
-  }
-};
-
-// identifier #OutputWithNative
-template <typename SREFAL_PARAM_INT>
-struct ident_OutputWithNative {
-  static const char *name() {
-    return "OutputWithNative";
-  }
-};
-
-// identifier #Source
-template <typename SREFAL_PARAM_INT>
-struct ident_Source {
-  static const char *name() {
-    return "Source";
-  }
-};
-
-// identifier #Success
-template <typename SREFAL_PARAM_INT>
-struct ident_Success {
-  static const char *name() {
-    return "Success";
-  }
-};
-
+const refalrts::RefalIdentifier ident_Collision = refalrts::ident_from_static("Collision");
+const refalrts::RefalIdentifier ident_CommandLine = refalrts::ident_from_static("CommandLine");
+const refalrts::RefalIdentifier ident_ErrorFile = refalrts::ident_from_static("ErrorFile");
+const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+const refalrts::RefalIdentifier ident_NoCppCompiler = refalrts::ident_from_static("NoCppCompiler");
+const refalrts::RefalIdentifier ident_NoErrorFile = refalrts::ident_from_static("NoErrorFile");
+const refalrts::RefalIdentifier ident_NoNative = refalrts::ident_from_static("NoNative");
+const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("NotFound");
+const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
+const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
+const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
 extern refalrts::RefalFunction& CompileFile_0_0;
 #define CompileFile_alias CompileFile_0_0
 #define CompileFile_str "CompileFile#0:0"
@@ -380,7 +296,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], & Main_SwValidCommandLine_alias );
-  refalrts::reinit_ident( context[7], & ident_CommandLine<int>::name );
+  refalrts::reinit_ident( context[7], ident_CommandLine );
   refalrts::reinit_name( context[8], & ParseCommandLine_alias );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[0] );
@@ -421,7 +337,7 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
   do {
     // t.idx # Success t.idx s.idx s.idx t.idx s.idx ( e.idx ) e.idx
     // </0 & Main-SwValidCommandLine/4 t.CommandLineSource#1/5 # Success/7 t.CppCompiler#1/8 s.GenMode#1/10 s.Opt#1/11 t.ErrorFile#1/12 s.MarkupContext#1/14 (/17 e.Folders#1/15 )/18 e.Files#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_Success<int>::name, context[7] ) )
+    if( ! refalrts::ident_term(  ident_Success, context[7] ) )
       continue;
     context[21] = context[2];
     context[22] = context[3];
@@ -477,7 +393,7 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
 
   // t.idx # Fails e.idx
   // </0 & Main-SwValidCommandLine/4 t.CommandLineSource#1/5 # Fails/7 e.Errors#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_Fails<int>::name, context[7] ) )
+  if( ! refalrts::ident_term(  ident_Fails, context[7] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Errors#1 as range 2
 
@@ -485,7 +401,7 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & ReportErrors/4 AsIs: t.CommandLineSource#1/5 Reuse: # NoErrorFile/7 AsIs: e.Errors#1/2 AsIs: >/1 ]] }
   refalrts::update_name( context[4], & ReportErrors_alias );
-  refalrts::update_ident( context[7], & ident_NoErrorFile<int>::name );
+  refalrts::update_ident( context[7], ident_NoErrorFile );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   return refalrts::cSuccess;
@@ -641,7 +557,7 @@ static refalrts::FnResult func_ReportErrors(refalrts::Iter arg_begin, refalrts::
   do {
     // # CommandLine t.idx e.idx
     // </0 & ReportErrors/4 # CommandLine/5 t.ErrorFile#1/7 e.Errors#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_CommandLine<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CommandLine, context[5] ) )
       continue;
     // closed e.Errors#1 as range 2
 
@@ -765,7 +681,7 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, ref
   do {
     // # NoErrorFile
     // </0 & CreateErrorFileMark/4 # NoErrorFile/5 >/1
-    if( ! refalrts::ident_term(  & ident_NoErrorFile<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_NoErrorFile, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -785,7 +701,7 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, ref
   context[8] = 0;
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  context[9] = refalrts::ident_left(  & ident_ErrorFile<int>::name, context[7], context[8] );
+  context[9] = refalrts::ident_left(  ident_ErrorFile, context[7], context[8] );
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 7
@@ -838,7 +754,7 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
   do {
     // ( s.idx # NotFound e.idx )
     // </0 & Main-SwFoundFiles$1\1/4 (/7 s.Pos#2/9 # NotFound/10 e.FileName#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_NotFound<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_NotFound, context[10] ) )
       continue;
     // closed e.FileName#2 as range 5
 
@@ -874,7 +790,7 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
   do {
     // ( s.idx # Source ( e.idx ) e.idx )
     // </0 & Main-SwFoundFiles$1\1/4 (/7 s.Pos#2/9 # Source/10 (/13 e.Source#2/11 )/14 e.Output#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Source<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_Source, context[10] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -900,7 +816,7 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
 
   // ( s.idx # Output e.idx )
   // </0 & Main-SwFoundFiles$1\1/4 (/7 s.Pos#2/9 # Output/10 e.Output#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Output<int>::name, context[10] ) )
+  if( ! refalrts::ident_term(  ident_Output, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Output#2 as range 5
 
@@ -966,7 +882,7 @@ static refalrts::FnResult func_Main_SwFoundFiles(refalrts::Iter arg_begin, refal
       // closed e.Files-E#1 as range 28(2)
       if( ! refalrts::svar_left( context[20], context[16], context[17] ) )
         continue;
-      context[21] = refalrts::ident_left(  & ident_NotFound<int>::name, context[16], context[17] );
+      context[21] = refalrts::ident_left(  ident_NotFound, context[16], context[17] );
       if( ! context[21] )
         continue;
       // closed e.FileName#1 as range 16
@@ -1063,7 +979,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
   do {
     // ( s.idx # Collision ( e.idx ) e.idx )
     // </0 & Main-SwRenamedTargets$1\1/4 (/7 s.Pos#2/9 # Collision/10 (/13 e.FirstTarget#2/11 )/14 e.SecondTarget#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Collision<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_Collision, context[10] ) )
       continue;
     context[22] = context[5];
     context[23] = context[6];
@@ -1113,7 +1029,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
   do {
     // ( s.idx # Source ( e.idx ) e.idx )
     // </0 & Main-SwRenamedTargets$1\1/4 (/7 s.Pos#2/9 # Source/10 (/13 e.Source#2/11 )/14 e.Output#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Source<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_Source, context[10] ) )
       continue;
     context[22] = context[5];
     context[23] = context[6];
@@ -1139,7 +1055,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
 
   // ( s.idx # Output e.idx )
   // </0 & Main-SwRenamedTargets$1\1/4 (/7 s.Pos#2/9 # Output/10 e.Output#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Output<int>::name, context[10] ) )
+  if( ! refalrts::ident_term(  ident_Output, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Output#2 as range 5
 
@@ -1205,7 +1121,7 @@ static refalrts::FnResult func_Main_SwRenamedTargets(refalrts::Iter arg_begin, r
       // closed e.Files-E#1 as range 28(2)
       if( ! refalrts::svar_left( context[20], context[16], context[17] ) )
         continue;
-      context[21] = refalrts::ident_left(  & ident_Collision<int>::name, context[16], context[17] );
+      context[21] = refalrts::ident_left(  ident_Collision, context[16], context[17] );
       if( ! context[21] )
         continue;
       // closed e.Collision#1 as range 16
@@ -1305,7 +1221,7 @@ static refalrts::FnResult func_Main_SwCompiledFiles(refalrts::Iter arg_begin, re
     do {
       context[17] = context[15];
       context[18] = context[16];
-      context[11] = refalrts::ident_left(  & ident_Fails<int>::name, context[17], context[18] );
+      context[11] = refalrts::ident_left(  ident_Fails, context[17], context[18] );
       if( ! context[11] )
         continue;
       // closed e.OutputsErrors-E#1 as range 17(2)
@@ -1556,7 +1472,7 @@ static refalrts::FnResult func_RenameTargets(refalrts::Iter arg_begin, refalrts:
   do {
     // # NoCppCompiler e.idx
     // </0 & RenameTargets/4 # NoCppCompiler/5 e.Files#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_NoCppCompiler<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_NoCppCompiler, context[5] ) )
       continue;
     // closed e.Files#1 as range 2
 
@@ -1637,7 +1553,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
   do {
     // ( s.idx # Output e.idx )
     // </0 & GetFileName/4 (/7 s.Pos#1/9 # Output/10 e.FileName#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[10] ) )
       continue;
     // closed e.FileName#1 as range 5
 
@@ -1658,7 +1574,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     refalrts::reinit_close_call( context[0] );
     refalrts::reinit_close_bracket( context[4] );
-    refalrts::reinit_ident( context[8], & ident_NoNative<int>::name );
+    refalrts::reinit_ident( context[8], ident_NoNative );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[11], context[17] );
     refalrts::link_brackets( context[7], context[1] );
@@ -1680,7 +1596,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
   do {
     // ( s.idx # OutputWithNative ( e.idx ) e.idx )
     // </0 & GetFileName/4 (/7 s.Pos#1/9 # OutputWithNative/10 (/13 e.FileName#1/11 )/14 e.NativeFileName#1/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_OutputWithNative<int>::name, context[10] ) )
+    if( ! refalrts::ident_term(  ident_OutputWithNative, context[10] ) )
       continue;
     context[22] = context[5];
     context[23] = context[6];
@@ -1712,7 +1628,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
     refalrts::reinit_open_bracket( context[4] );
     refalrts::reinit_open_call( context[7] );
     refalrts::reinit_svar( context[10], context[9] );
-    refalrts::reinit_ident( context[13], & ident_Output<int>::name );
+    refalrts::reinit_ident( context[13], ident_Output );
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[21] );
@@ -1734,7 +1650,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
 
   // ( s.idx # Source ( e.idx ) e.idx )
   // </0 & GetFileName/4 (/7 s.Pos#1/9 # Source/10 (/13 e.Source#1/11 )/14 e.Output#1/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Source<int>::name, context[10] ) )
+  if( ! refalrts::ident_term(  ident_Source, context[10] ) )
     return refalrts::cRecognitionImpossible;
   context[11] = 0;
   context[12] = 0;
@@ -1950,7 +1866,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
       refalrts::bracket_pointers(context[9], context[10]);
       if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
         continue;
-      context[12] = refalrts::ident_left(  & ident_Output<int>::name, context[7], context[8] );
+      context[12] = refalrts::ident_left(  ident_Output, context[7], context[8] );
       if( ! context[12] )
         continue;
       context[14] = refalrts::tvar_right( context[13], context[7], context[8] );
@@ -1972,7 +1888,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
         // closed e.Locations-E#1 as range 29(2)
         if( ! refalrts::svar_left( context[21], context[17], context[18] ) )
           continue;
-        context[22] = refalrts::ident_left(  & ident_Output<int>::name, context[17], context[18] );
+        context[22] = refalrts::ident_left(  ident_Output, context[17], context[18] );
         if( ! context[22] )
           continue;
         context[24] = refalrts::tvar_right( context[23], context[17], context[18] );
@@ -1983,7 +1899,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} </0 & RenameLocations/4 e.Locations-B#1/5 {REMOVED TILE} s.Pos1#1/11 # Output/12 {REMOVED TILE} t.FirstNative#1/13 )/10 e.Locations-M#1/15 {REMOVED TILE} {REMOVED TILE} t.SecondNative#1/23 {REMOVED TILE} e.Locations-E#1/29(2) {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: s.Pos2#1/21 Reuse: # Collision/22 } Tile{ AsIs: (/9 } Tile{ AsIs: e.FirstTarget#1/7 } Tile{ AsIs: )/20 } Tile{ AsIs: e.SecondTarget#1/17 } Tile{ HalfReuse: )/1 ]] }
-        refalrts::update_ident( context[22], & ident_Collision<int>::name );
+        refalrts::update_ident( context[22], ident_Collision );
         refalrts::reinit_close_bracket( context[1] );
         refalrts::link_brackets( context[19], context[1] );
         refalrts::link_brackets( context[9], context[20] );
@@ -2022,7 +1938,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
       // closed e.Locations-E#1 as range 27(2)
       if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
         continue;
-      context[12] = refalrts::ident_left(  & ident_Output<int>::name, context[7], context[8] );
+      context[12] = refalrts::ident_left(  ident_Output, context[7], context[8] );
       if( ! context[12] )
         continue;
       context[14] = refalrts::tvar_right( context[13], context[7], context[8] );
@@ -2105,7 +2021,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
   do {
     // 0 ( s.idx # Source ( e.idx ) e.idx )
     // </0 & RenameLocations-Aux\1/4 0/9 (/7 s.Pos#2/10 # Source/11 (/14 e.Source#2/12 )/15 e.Output#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Source<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Source, context[11] ) )
       continue;
     if( ! refalrts::number_term( 0UL, context[9] ) )
       continue;
@@ -2138,7 +2054,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
   do {
     // s.idx ( s.idx # Source ( e.idx ) e.idx '.cpp' )
     // </0 & RenameLocations-Aux\1/4 s.Num#2/9 (/7 s.Pos#2/10 # Source/11 (/18 e.Source#2/16 )/19 e.Output#2/5 '.'/15 'c'/14 'p'/13 'p'/12 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Source<int>::name, context[11] ) )
+    if( ! refalrts::ident_term(  ident_Source, context[11] ) )
       continue;
     context[24] = context[5];
     context[25] = context[6];
@@ -2198,7 +2114,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
 
   // s.idx ( s.idx # Output e.idx t.idx )
   // </0 & RenameLocations-Aux\1/4 s.Num#2/9 (/7 s.Pos#2/10 # Output/11 e.Output#2/5 t.Native#2/12 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Output<int>::name, context[11] ) )
+  if( ! refalrts::ident_term(  ident_Output, context[11] ) )
     return refalrts::cRecognitionImpossible;
   context[13] = refalrts::tvar_right( context[12], context[5], context[6] );
   if( ! context[13] )
@@ -2284,11 +2200,11 @@ static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin,
   do {
     // # Success e.idx # NoNative
     // </0 & CompileFiles\1$3\1/4 # Success/5 e.OutputName#3/2 # NoNative/6 >/1
-    if( ! refalrts::ident_term(  & ident_Success<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Success, context[5] ) )
       continue;
     context[14] = context[2];
     context[15] = context[3];
-    context[6] = refalrts::ident_right(  & ident_NoNative<int>::name, context[14], context[15] );
+    context[6] = refalrts::ident_right(  ident_NoNative, context[14], context[15] );
     if( ! context[6] )
       continue;
     // closed e.OutputName#3 as range 14(2)
@@ -2311,7 +2227,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin,
   do {
     // # Success e.idx ( e.idx )
     // </0 & CompileFiles\1$3\1/4 # Success/5 e.OutputName#3/2 (/8 e.NativeOutputName#3/6 )/9 >/1
-    if( ! refalrts::ident_term(  & ident_Success<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_Success, context[5] ) )
       continue;
     context[14] = context[2];
     context[15] = context[3];
@@ -2355,7 +2271,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin,
 
   // # Fails
   // </0 & CompileFiles\1$3\1/4 # Fails/5 >/1
-  if( ! refalrts::ident_term(  & ident_Fails<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_Fails, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -2363,7 +2279,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin,
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & CompileFiles\1$3\1/4 # Fails/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
-  refalrts::reinit_ident( context[1], & ident_Fails<int>::name );
+  refalrts::reinit_ident( context[1], ident_Fails );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -2409,11 +2325,11 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
   do {
     // s.idx s.idx s.idx ( s.idx # Output e.idx # NoNative )
     // </0 & CompileFiles\1/4 s.GenMode#1/9 s.Opt#1/10 s.MarkupContext#1/11 (/7 s.Pos#2/12 # Output/13 e.OutputName#2/5 # NoNative/14 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[13] ) )
       continue;
     context[30] = context[5];
     context[31] = context[6];
-    context[14] = refalrts::ident_right(  & ident_NoNative<int>::name, context[30], context[31] );
+    context[14] = refalrts::ident_right(  ident_NoNative, context[30], context[31] );
     if( ! context[14] )
       continue;
     // closed e.OutputName#2 as range 30(5)
@@ -2449,7 +2365,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
   do {
     // s.idx s.idx s.idx ( s.idx # Output e.idx ( e.idx ) )
     // </0 & CompileFiles\1/4 s.GenMode#1/9 s.Opt#1/10 s.MarkupContext#1/11 (/7 s.Pos#2/12 # Output/13 e.OutputName#2/5 (/16 e.NativeName#2/14 )/17 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Output<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_Output, context[13] ) )
       continue;
     context[30] = context[5];
     context[31] = context[6];
@@ -2496,7 +2412,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
 
   // s.idx s.idx s.idx ( s.idx # Source ( e.idx ) e.idx )
   // </0 & CompileFiles\1/4 s.GenMode#1/9 s.Opt#1/10 s.MarkupContext#1/11 (/7 s.Pos#2/12 # Source/13 (/16 e.Source#2/14 )/17 e.OutputName#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Source<int>::name, context[13] ) )
+  if( ! refalrts::ident_term(  ident_Source, context[13] ) )
     return refalrts::cRecognitionImpossible;
   context[14] = 0;
   context[15] = 0;
@@ -2669,7 +2585,7 @@ static refalrts::FnResult func_Link(refalrts::Iter arg_begin, refalrts::Iter arg
   do {
     // # NoCppCompiler e.idx
     // </0 & Link/4 # NoCppCompiler/5 e.Files#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_NoCppCompiler<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_NoCppCompiler, context[5] ) )
       continue;
     // closed e.Files#1 as range 2
 

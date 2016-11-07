@@ -2,46 +2,6 @@
 #include "refalrts.h"
 
 
-// identifier #CmdFail
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdFail {
-  static const char *name() {
-    return "CmdFail";
-  }
-};
-
-// identifier #CmdIssueMem
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdIssueMem {
-  static const char *name() {
-    return "CmdIssueMem";
-  }
-};
-
-// identifier #CmdOpenELoop
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdOpenELoop {
-  static const char *name() {
-    return "CmdOpenELoop";
-  }
-};
-
-// identifier #CmdSentence
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdSentence {
-  static const char *name() {
-    return "CmdSentence";
-  }
-};
-
-// identifier #Function
-template <typename SREFAL_PARAM_INT>
-struct ident_Function {
-  static const char *name() {
-    return "Function";
-  }
-};
-
 extern refalrts::RefalFunction& Map_0_0;
 extern refalrts::RefalFunction& Fetch_0_0;
 extern refalrts::RefalFunction& Seq_0_0;

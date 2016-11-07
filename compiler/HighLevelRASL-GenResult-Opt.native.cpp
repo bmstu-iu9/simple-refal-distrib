@@ -2,406 +2,56 @@
 #include "refalrts.h"
 
 
-// identifier #ADT-Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_ADT_Brackets {
-  static const char *name() {
-    return "ADT-Brackets";
-  }
-};
-
-// identifier #Allocate
-template <typename SREFAL_PARAM_INT>
-struct ident_Allocate {
-  static const char *name() {
-    return "Allocate";
-  }
-};
-
-// identifier #AsIs
-template <typename SREFAL_PARAM_INT>
-struct ident_AsIs {
-  static const char *name() {
-    return "AsIs";
-  }
-};
-
-// identifier #Brackets
-template <typename SREFAL_PARAM_INT>
-struct ident_Brackets {
-  static const char *name() {
-    return "Brackets";
-  }
-};
-
-// identifier #CallBrackets
-template <typename SREFAL_PARAM_INT>
-struct ident_CallBrackets {
-  static const char *name() {
-    return "CallBrackets";
-  }
-};
-
-// identifier #CmdComment
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdComment {
-  static const char *name() {
-    return "CmdComment";
-  }
-};
-
-// identifier #CmdCopyVar
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdCopyVar {
-  static const char *name() {
-    return "CmdCopyVar";
-  }
-};
-
-// identifier #CmdCreateElem
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdCreateElem {
-  static const char *name() {
-    return "CmdCreateElem";
-  }
-};
-
-// identifier #CmdInsertTile
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdInsertTile {
-  static const char *name() {
-    return "CmdInsertTile";
-  }
-};
-
-// identifier #CmdInsertVar
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdInsertVar {
-  static const char *name() {
-    return "CmdInsertVar";
-  }
-};
-
-// identifier #CmdLinkBrackets
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdLinkBrackets {
-  static const char *name() {
-    return "CmdLinkBrackets";
-  }
-};
-
-// identifier #CmdNextStep
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdNextStep {
-  static const char *name() {
-    return "CmdNextStep";
-  }
-};
-
-// identifier #CmdPushStack
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdPushStack {
-  static const char *name() {
-    return "CmdPushStack";
-  }
-};
-
-// identifier #CmdReinitSVar
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdReinitSVar {
-  static const char *name() {
-    return "CmdReinitSVar";
-  }
-};
-
-// identifier #CmdResetAllocator
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdResetAllocator {
-  static const char *name() {
-    return "CmdResetAllocator";
-  }
-};
-
-// identifier #CmdSetRes
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdSetRes {
-  static const char *name() {
-    return "CmdSetRes";
-  }
-};
-
-// identifier #CmdTrash
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdTrash {
-  static const char *name() {
-    return "CmdTrash";
-  }
-};
-
-// identifier #CmdUseRes
-template <typename SREFAL_PARAM_INT>
-struct ident_CmdUseRes {
-  static const char *name() {
-    return "CmdUseRes";
-  }
-};
-
-// identifier #ElChar
-template <typename SREFAL_PARAM_INT>
-struct ident_ElChar {
-  static const char *name() {
-    return "ElChar";
-  }
-};
-
-// identifier #ElCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseADT {
-  static const char *name() {
-    return "ElCloseADT";
-  }
-};
-
-// identifier #ElCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseBracket {
-  static const char *name() {
-    return "ElCloseBracket";
-  }
-};
-
-// identifier #ElCloseCall
-template <typename SREFAL_PARAM_INT>
-struct ident_ElCloseCall {
-  static const char *name() {
-    return "ElCloseCall";
-  }
-};
-
-// identifier #ElIdent
-template <typename SREFAL_PARAM_INT>
-struct ident_ElIdent {
-  static const char *name() {
-    return "ElIdent";
-  }
-};
-
-// identifier #ElName
-template <typename SREFAL_PARAM_INT>
-struct ident_ElName {
-  static const char *name() {
-    return "ElName";
-  }
-};
-
-// identifier #ElNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_ElNumber {
-  static const char *name() {
-    return "ElNumber";
-  }
-};
-
-// identifier #ElOpenADT
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenADT {
-  static const char *name() {
-    return "ElOpenADT";
-  }
-};
-
-// identifier #ElOpenBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenBracket {
-  static const char *name() {
-    return "ElOpenBracket";
-  }
-};
-
-// identifier #ElOpenCall
-template <typename SREFAL_PARAM_INT>
-struct ident_ElOpenCall {
-  static const char *name() {
-    return "ElOpenCall";
-  }
-};
-
-// identifier #ElString
-template <typename SREFAL_PARAM_INT>
-struct ident_ElString {
-  static const char *name() {
-    return "ElString";
-  }
-};
-
-// identifier #HalfReuse
-template <typename SREFAL_PARAM_INT>
-struct ident_HalfReuse {
-  static const char *name() {
-    return "HalfReuse";
-  }
-};
-
-// identifier #LEFT-EDGE
-template <typename SREFAL_PARAM_INT>
-struct ident_LEFT_EDGE {
-  static const char *name() {
-    return "LEFT-EDGE";
-  }
-};
-
-// identifier #RIGHT-EDGE
-template <typename SREFAL_PARAM_INT>
-struct ident_RIGHT_EDGE {
-  static const char *name() {
-    return "RIGHT-EDGE";
-  }
-};
-
-// identifier #Reinit
-template <typename SREFAL_PARAM_INT>
-struct ident_Reinit {
-  static const char *name() {
-    return "Reinit";
-  }
-};
-
-// identifier #RemovedTile
-template <typename SREFAL_PARAM_INT>
-struct ident_RemovedTile {
-  static const char *name() {
-    return "RemovedTile";
-  }
-};
-
-// identifier #Reuse
-template <typename SREFAL_PARAM_INT>
-struct ident_Reuse {
-  static const char *name() {
-    return "Reuse";
-  }
-};
-
-// identifier #Tile
-template <typename SREFAL_PARAM_INT>
-struct ident_Tile {
-  static const char *name() {
-    return "Tile";
-  }
-};
-
-// identifier #TkChar
-template <typename SREFAL_PARAM_INT>
-struct ident_TkChar {
-  static const char *name() {
-    return "TkChar";
-  }
-};
-
-// identifier #TkCloseADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseADT {
-  static const char *name() {
-    return "TkCloseADT";
-  }
-};
-
-// identifier #TkCloseBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseBracket {
-  static const char *name() {
-    return "TkCloseBracket";
-  }
-};
-
-// identifier #TkCloseCall
-template <typename SREFAL_PARAM_INT>
-struct ident_TkCloseCall {
-  static const char *name() {
-    return "TkCloseCall";
-  }
-};
-
-// identifier #TkIdentifier
-template <typename SREFAL_PARAM_INT>
-struct ident_TkIdentifier {
-  static const char *name() {
-    return "TkIdentifier";
-  }
-};
-
-// identifier #TkName
-template <typename SREFAL_PARAM_INT>
-struct ident_TkName {
-  static const char *name() {
-    return "TkName";
-  }
-};
-
-// identifier #TkNumber
-template <typename SREFAL_PARAM_INT>
-struct ident_TkNumber {
-  static const char *name() {
-    return "TkNumber";
-  }
-};
-
-// identifier #TkOpenADT
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenADT {
-  static const char *name() {
-    return "TkOpenADT";
-  }
-};
-
-// identifier #TkOpenBracket
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenBracket {
-  static const char *name() {
-    return "TkOpenBracket";
-  }
-};
-
-// identifier #TkOpenCall
-template <typename SREFAL_PARAM_INT>
-struct ident_TkOpenCall {
-  static const char *name() {
-    return "TkOpenCall";
-  }
-};
-
-// identifier #TkString
-template <typename SREFAL_PARAM_INT>
-struct ident_TkString {
-  static const char *name() {
-    return "TkString";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
-// identifier #TkVariableCopy
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariableCopy {
-  static const char *name() {
-    return "TkVariableCopy";
-  }
-};
-
-// identifier #Update
-template <typename SREFAL_PARAM_INT>
-struct ident_Update {
-  static const char *name() {
-    return "Update";
-  }
-};
-
+const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
+const refalrts::RefalIdentifier ident_AsIs = refalrts::ident_from_static("AsIs");
+const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+const refalrts::RefalIdentifier ident_CallBrackets = refalrts::ident_from_static("CallBrackets");
+const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+const refalrts::RefalIdentifier ident_CmdCopyVar = refalrts::ident_from_static("CmdCopyVar");
+const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
+const refalrts::RefalIdentifier ident_CmdInsertTile = refalrts::ident_from_static("CmdInsertTile");
+const refalrts::RefalIdentifier ident_CmdInsertVar = refalrts::ident_from_static("CmdInsertVar");
+const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
+const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
+const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
+const refalrts::RefalIdentifier ident_CmdReinitSVar = refalrts::ident_from_static("CmdReinitSVar");
+const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
+const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
+const refalrts::RefalIdentifier ident_CmdTrash = refalrts::ident_from_static("CmdTrash");
+const refalrts::RefalIdentifier ident_CmdUseRes = refalrts::ident_from_static("CmdUseRes");
+const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
+const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
+const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
+const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
+const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
+const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
+const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
+const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
+const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
+const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
+const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
+const refalrts::RefalIdentifier ident_HalfReuse = refalrts::ident_from_static("HalfReuse");
+const refalrts::RefalIdentifier ident_LEFT_EDGE = refalrts::ident_from_static("LEFT-EDGE");
+const refalrts::RefalIdentifier ident_RIGHT_EDGE = refalrts::ident_from_static("RIGHT-EDGE");
+const refalrts::RefalIdentifier ident_Reinit = refalrts::ident_from_static("Reinit");
+const refalrts::RefalIdentifier ident_RemovedTile = refalrts::ident_from_static("RemovedTile");
+const refalrts::RefalIdentifier ident_Reuse = refalrts::ident_from_static("Reuse");
+const refalrts::RefalIdentifier ident_Tile = refalrts::ident_from_static("Tile");
+const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
+const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
+const refalrts::RefalIdentifier ident_TkCloseCall = refalrts::ident_from_static("TkCloseCall");
+const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
+const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+const refalrts::RefalIdentifier ident_TkOpenADT = refalrts::ident_from_static("TkOpenADT");
+const refalrts::RefalIdentifier ident_TkOpenBracket = refalrts::ident_from_static("TkOpenBracket");
+const refalrts::RefalIdentifier ident_TkOpenCall = refalrts::ident_from_static("TkOpenCall");
+const refalrts::RefalIdentifier ident_TkString = refalrts::ident_from_static("TkString");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
+const refalrts::RefalIdentifier ident_TkVariableCopy = refalrts::ident_from_static("TkVariableCopy");
+const refalrts::RefalIdentifier ident_Update = refalrts::ident_from_static("Update");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -547,7 +197,7 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, 
   //RESULT: Tile{ [[ } Tile{ AsIs: s.ContextOffset#3/9 } (/10 # CmdResetAllocator/11 )/12 Tile{ AsIs: </0 Reuse: & GenResult-Aux/4 AsIs: (/7 AsIs: e.Trash#2/5 AsIs: )/8 } (/13 Tile{ AsIs: e.MarkedResult#3/2 } )/14 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[11], & ident_CmdResetAllocator<int>::name ) )
+  if( ! refalrts::alloc_ident( context[11], ident_CmdResetAllocator ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
@@ -698,13 +348,13 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[20], & ident_LEFT_EDGE<int>::name ) )
+  if( ! refalrts::alloc_ident( context[20], ident_LEFT_EDGE ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[21] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[23], & ident_RIGHT_EDGE<int>::name ) )
+  if( ! refalrts::alloc_ident( context[23], ident_RIGHT_EDGE ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
@@ -714,7 +364,7 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[28], & ident_LEFT_EDGE<int>::name ) )
+  if( ! refalrts::alloc_ident( context[28], ident_LEFT_EDGE ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[29] ) )
     return refalrts::cNoMemory;
@@ -722,7 +372,7 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[31] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[32], & ident_RIGHT_EDGE<int>::name ) )
+  if( ! refalrts::alloc_ident( context[32], ident_RIGHT_EDGE ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[33] ) )
     return refalrts::cNoMemory;
@@ -801,7 +451,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       if( ! context[9] )
         continue;
       refalrts::bracket_pointers(context[9], context[10]);
-      context[11] = refalrts::ident_left(  & ident_CallBrackets<int>::name, context[7], context[8] );
+      context[11] = refalrts::ident_left(  ident_CallBrackets, context[7], context[8] );
       if( ! context[11] )
         continue;
       // closed e.SubRange-E#1 as range 7
@@ -810,7 +460,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenCall/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseCall/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
-      if( ! refalrts::alloc_ident( context[12], & ident_TkOpenCall<int>::name ) )
+      if( ! refalrts::alloc_ident( context[12], ident_TkOpenCall ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[13] ) )
         return refalrts::cNoMemory;
@@ -822,7 +472,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( context[17] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( context[18], & ident_TkCloseCall<int>::name ) )
+      if( ! refalrts::alloc_ident( context[18], ident_TkCloseCall ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[19] ) )
         return refalrts::cNoMemory;
@@ -868,7 +518,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       if( ! context[9] )
         continue;
       refalrts::bracket_pointers(context[9], context[10]);
-      context[11] = refalrts::ident_left(  & ident_Brackets<int>::name, context[7], context[8] );
+      context[11] = refalrts::ident_left(  ident_Brackets, context[7], context[8] );
       if( ! context[11] )
         continue;
       // closed e.SubRange-E#1 as range 7
@@ -877,7 +527,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlatResult/4 AsIs: e.Range-B#1/5 HalfReuse: >/9 HalfReuse: (/11 } # TkOpenBracket/12 )/13 </14 & FlatResult/15 Tile{ AsIs: e.SubRange-E#1/7 } >/16 (/17 # TkCloseBracket/18 )/19 </20 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
-      if( ! refalrts::alloc_ident( context[12], & ident_TkOpenBracket<int>::name ) )
+      if( ! refalrts::alloc_ident( context[12], ident_TkOpenBracket ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[13] ) )
         return refalrts::cNoMemory;
@@ -889,7 +539,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( context[17] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( context[18], & ident_TkCloseBracket<int>::name ) )
+      if( ! refalrts::alloc_ident( context[18], ident_TkCloseBracket ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[19] ) )
         return refalrts::cNoMemory;
@@ -935,7 +585,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       if( ! context[9] )
         continue;
       refalrts::bracket_pointers(context[9], context[10]);
-      context[11] = refalrts::ident_left(  & ident_ADT_Brackets<int>::name, context[7], context[8] );
+      context[11] = refalrts::ident_left(  ident_ADT_Brackets, context[7], context[8] );
       if( ! context[11] )
         continue;
       context[12] = 0;
@@ -953,13 +603,13 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Range-B#1/5 } (/16 # TkOpenADT/17 Tile{ HalfReuse: )/9 HalfReuse: (/11 HalfReuse: # TkName/14 AsIs: e.Name#1/12 AsIs: )/15 } Tile{ AsIs: </0 AsIs: & FlatResult/4 } Tile{ AsIs: e.SubRange-E#1/7 } >/18 (/19 # TkCloseADT/20 )/21 </22 Tile{ HalfReuse: & FlatResult/10 AsIs: e.Range-E#1/25(2) AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_bracket( context[16] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( context[17], & ident_TkOpenADT<int>::name ) )
+      if( ! refalrts::alloc_ident( context[17], ident_TkOpenADT ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[18] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( context[19] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( context[20], & ident_TkCloseADT<int>::name ) )
+      if( ! refalrts::alloc_ident( context[20], ident_TkCloseADT ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[21] ) )
         return refalrts::cNoMemory;
@@ -967,7 +617,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[9] );
       refalrts::reinit_open_bracket( context[11] );
-      refalrts::reinit_ident( context[14], & ident_TkName<int>::name );
+      refalrts::reinit_ident( context[14], ident_TkName );
       refalrts::reinit_name( context[10], & FlatResult_alias );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[22] );
@@ -1036,7 +686,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     // </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/5 )/8 >/1
     context[14] = context[5];
     context[15] = context[6];
-    context[9] = refalrts::ident_left(  & ident_Tile<int>::name, context[14], context[15] );
+    context[9] = refalrts::ident_left(  ident_Tile, context[14], context[15] );
     if( ! context[9] )
       continue;
     // closed e.Tile#2 as range 14(5)
@@ -1057,7 +707,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     // </0 & GenResult-Aux\1/4 (/7 # TkVariableCopy/9 't'/10 e.Index#2/5 s.Level#2/13 s.SampleOffset#2/12 s.Offset#2/11 )/8 >/1
     context[14] = context[5];
     context[15] = context[6];
-    context[9] = refalrts::ident_left(  & ident_TkVariableCopy<int>::name, context[14], context[15] );
+    context[9] = refalrts::ident_left(  ident_TkVariableCopy, context[14], context[15] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::char_left( 't', context[14], context[15] );
@@ -1074,7 +724,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 Reuse: 'e'/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
-    refalrts::update_ident( context[9], & ident_CmdCopyVar<int>::name );
+    refalrts::update_ident( context[9], ident_CmdCopyVar );
     refalrts::update_char( context[10], 'e' );
     refalrts::reinit_svar( context[8], context[12] );
     refalrts::reinit_close_bracket( context[1] );
@@ -1093,7 +743,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     // </0 & GenResult-Aux\1/4 (/7 # TkVariableCopy/9 s.Mode#2/10 e.Index#2/5 s.Level#2/13 s.SampleOffset#2/12 s.Offset#2/11 )/8 >/1
     context[14] = context[5];
     context[15] = context[6];
-    context[9] = refalrts::ident_left(  & ident_TkVariableCopy<int>::name, context[14], context[15] );
+    context[9] = refalrts::ident_left(  ident_TkVariableCopy, context[14], context[15] );
     if( ! context[9] )
       continue;
     if( ! refalrts::svar_left( context[10], context[14], context[15] ) )
@@ -1109,7 +759,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdCopyVar/9 AsIs: s.Mode#2/10 } Tile{ AsIs: s.Offset#2/11 HalfReuse: s.SampleOffset2 #12/8 HalfReuse: )/1 ]] }
-    refalrts::update_ident( context[9], & ident_CmdCopyVar<int>::name );
+    refalrts::update_ident( context[9], ident_CmdCopyVar );
     refalrts::reinit_svar( context[8], context[12] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
@@ -1127,7 +777,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     // </0 & GenResult-Aux\1/4 (/7 # TkString/9 e.String#2/5 s.Offset#2/10 )/8 >/1
     context[14] = context[5];
     context[15] = context[6];
-    context[9] = refalrts::ident_left(  & ident_TkString<int>::name, context[14], context[15] );
+    context[9] = refalrts::ident_left(  ident_TkString, context[14], context[15] );
     if( ! context[9] )
       continue;
     if( ! refalrts::svar_right( context[10], context[14], context[15] ) )
@@ -1138,10 +788,10 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdCreateElem/4 HalfReuse: # Allocate/7 HalfReuse: s.Offset2 #10/9 } Tile{ HalfReuse: # ElString/8 } Tile{ AsIs: e.String#2/14(5) } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[7], & ident_Allocate<int>::name );
+    refalrts::reinit_ident( context[4], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[7], ident_Allocate );
     refalrts::reinit_svar( context[9], context[10] );
-    refalrts::reinit_ident( context[8], & ident_ElString<int>::name );
+    refalrts::reinit_ident( context[8], ident_ElString );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[0], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1163,9 +813,9 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
   //RESULT: Tile{ [[ } (/9 # CmdCreateElem/10 Tile{ HalfReuse: # Allocate/0 HalfReuse: </4 HalfReuse: & CreateElemParam/7 AsIs: e.Elem#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], & ident_CmdCreateElem<int>::name ) )
+  if( ! refalrts::alloc_ident( context[10], ident_CmdCreateElem ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_ident( context[0], & ident_Allocate<int>::name );
+  refalrts::reinit_ident( context[0], ident_Allocate );
   refalrts::reinit_open_call( context[4] );
   refalrts::reinit_name( context[7], & CreateElemParam_alias );
   refalrts::reinit_close_call( context[8] );
@@ -1211,7 +861,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   do {
     // ( # AsIs t.idx )
     // </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_AsIs<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_AsIs, context[9] ) )
       continue;
     context[18] = context[5];
     context[19] = context[6];
@@ -1235,7 +885,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   do {
     // ( # HalfReuse ( # TkVariable 's' e.idx s.idx s.idx ) )
     // </0 & GenResult-Aux\2$1\1/4 (/7 # HalfReuse/9 (/12 # TkVariable/14 's'/15 e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_HalfReuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_HalfReuse, context[9] ) )
       continue;
     context[18] = context[5];
     context[19] = context[6];
@@ -1245,7 +895,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_left(  ident_TkVariable, context[10], context[11] );
     if( ! context[14] )
       continue;
     context[15] = refalrts::char_left( 's', context[10], context[11] );
@@ -1262,7 +912,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE} e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdReinitSVar/9 HalfReuse: s.Offset3 #16/12 HalfReuse: s.SampleOffset3 #17/14 HalfReuse: )/15 } Tile{ ]] }
-    refalrts::update_ident( context[9], & ident_CmdReinitSVar<int>::name );
+    refalrts::update_ident( context[9], ident_CmdReinitSVar );
     refalrts::reinit_svar( context[12], context[16] );
     refalrts::reinit_svar( context[14], context[17] );
     refalrts::reinit_close_bracket( context[15] );
@@ -1279,7 +929,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   do {
     // ( # HalfReuse ( e.idx ) )
     // </0 & GenResult-Aux\2$1\1/4 (/7 # HalfReuse/9 (/12 e.Elem#3/10 )/13 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_HalfReuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_HalfReuse, context[9] ) )
       continue;
     context[18] = context[5];
     context[19] = context[6];
@@ -1297,8 +947,8 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdCreateElem/4 HalfReuse: # Reinit/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[7], & ident_Reinit<int>::name );
+    refalrts::reinit_ident( context[4], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[7], ident_Reinit );
     refalrts::reinit_open_call( context[9] );
     refalrts::reinit_name( context[12], & CreateElemParam_alias );
     refalrts::reinit_close_call( context[13] );
@@ -1316,7 +966,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   do {
     // ( # Reuse ( e.idx ) )
     // </0 & GenResult-Aux\2$1\1/4 (/7 # Reuse/9 (/12 e.Elem#3/10 )/13 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Reuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Reuse, context[9] ) )
       continue;
     context[18] = context[5];
     context[19] = context[6];
@@ -1334,8 +984,8 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdCreateElem/4 HalfReuse: # Update/7 HalfReuse: </9 HalfReuse: & CreateElemParam/12 AsIs: e.Elem#3/10 HalfReuse: >/13 AsIs: )/8 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_CmdCreateElem<int>::name );
-    refalrts::reinit_ident( context[7], & ident_Update<int>::name );
+    refalrts::reinit_ident( context[4], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[7], ident_Update );
     refalrts::reinit_open_call( context[9] );
     refalrts::reinit_name( context[12], & CreateElemParam_alias );
     refalrts::reinit_close_call( context[13] );
@@ -1353,7 +1003,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
   do {
     // ( # LEFT-EDGE )
     // </0 & GenResult-Aux\2$1\1/4 (/7 # LEFT-EDGE/9 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_LEFT_EDGE<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_LEFT_EDGE, context[9] ) )
       continue;
     context[18] = context[5];
     context[19] = context[6];
@@ -1373,7 +1023,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
 
   // ( # RIGHT-EDGE )
   // </0 & GenResult-Aux\2$1\1/4 (/7 # RIGHT-EDGE/9 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_RIGHT_EDGE<int>::name, context[9] ) )
+  if( ! refalrts::ident_term(  ident_RIGHT_EDGE, context[9] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
@@ -1416,7 +1066,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  & ident_Tile<int>::name, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_Tile, context[7], context[8] );
     if( ! context[9] )
       continue;
     // closed e.Tile#2 as range 7
@@ -1486,7 +1136,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } (/13 # CmdComment/14"TRASH:"/15 </17 & TextFromExpr/18 e.Trash#1/5/19 >/21 )/22 (/23 # CmdComment/24"RESULT:"/25 </27 & TextFromExpr/28 e.MarkedResult#1/9/29 >/31 )/32 </33 & Map/34 & GenResult-Aux\1/35 e.MarkedResult#1/9/36 >/38 </39 & Map/40 & GenResult-Aux\2/41 e.MarkedResult#1/9/42 >/44 </45 & GenPushLink/46 </47 Tile{ HalfReuse: & ModifyResult/11 AsIs: e.MarkedResult#1/9 HalfReuse: >/12 AsIs: >/1 } Tile{ AsIs: </0 Reuse: & GenSplices/4 AsIs: (/7 AsIs: e.Trash#1/5 AsIs: )/8 } e.MarkedResult#1/9/48 >/50 Tile{ ]] }
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[14], & ident_CmdComment<int>::name ) )
+  if( ! refalrts::alloc_ident( context[14], ident_CmdComment ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[15], context[16], "TRASH:", 6 ) )
     return refalrts::cNoMemory;
@@ -1502,7 +1152,7 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[24], & ident_CmdComment<int>::name ) )
+  if( ! refalrts::alloc_ident( context[24], ident_CmdComment ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[25], context[26], "RESULT:", 7 ) )
     return refalrts::cNoMemory;
@@ -1602,7 +1252,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkChar s.idx s.idx
     // </0 & CreateElemParam/4 # TkChar/5 s.Char#1/7 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkChar<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkChar, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1615,7 +1265,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElChar/5 AsIs: s.Char#1/7 } Tile{ ]] }
     refalrts::reinit_svar( context[4], context[6] );
-    refalrts::update_ident( context[5], & ident_ElChar<int>::name );
+    refalrts::update_ident( context[5], ident_ElChar );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1628,7 +1278,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkNumber s.idx s.idx
     // </0 & CreateElemParam/4 # TkNumber/5 s.Number#1/7 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkNumber<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkNumber, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1641,7 +1291,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Offset1 #6/4 Reuse: # ElNumber/5 AsIs: s.Number#1/7 } Tile{ ]] }
     refalrts::reinit_svar( context[4], context[6] );
-    refalrts::update_ident( context[5], & ident_ElNumber<int>::name );
+    refalrts::update_ident( context[5], ident_ElNumber );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1654,7 +1304,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkOpenBracket s.idx
     // </0 & CreateElemParam/4 # TkOpenBracket/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenBracket<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenBracket, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1664,7 +1314,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenBracket/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElOpenBracket<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElOpenBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1676,7 +1326,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkCloseBracket s.idx
     // </0 & CreateElemParam/4 # TkCloseBracket/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseBracket<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseBracket, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1686,7 +1336,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseBracket/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElCloseBracket<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElCloseBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1698,7 +1348,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkOpenADT s.idx
     // </0 & CreateElemParam/4 # TkOpenADT/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenADT<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenADT, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1708,7 +1358,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenADT/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElOpenADT<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElOpenADT );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1720,7 +1370,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkCloseADT s.idx
     // </0 & CreateElemParam/4 # TkCloseADT/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseADT<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseADT, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1730,7 +1380,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseADT/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElCloseADT<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElCloseADT );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1742,7 +1392,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkOpenCall s.idx
     // </0 & CreateElemParam/4 # TkOpenCall/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenCall<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenCall, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1752,7 +1402,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElOpenCall/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElOpenCall<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElOpenCall );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1764,7 +1414,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkCloseCall s.idx
     // </0 & CreateElemParam/4 # TkCloseCall/5 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseCall<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseCall, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];
@@ -1774,7 +1424,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: s.Offset#1/6 HalfReuse: # ElCloseCall/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_ElCloseCall<int>::name );
+    refalrts::reinit_ident( context[1], ident_ElCloseCall );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[6];
@@ -1786,7 +1436,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   do {
     // # TkName e.idx s.idx
     // </0 & CreateElemParam/4 # TkName/5 e.Name#1/2 s.Offset#1/6 >/1
-    if( ! refalrts::ident_term(  & ident_TkName<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_TkName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
 
@@ -1794,7 +1444,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     //TRASH: {REMOVED TILE} # TkName/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElName/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
     refalrts::reinit_svar( context[0], context[6] );
-    refalrts::reinit_ident( context[4], & ident_ElName<int>::name );
+    refalrts::reinit_ident( context[4], ident_ElName );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1806,7 +1456,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
 
   // # TkIdentifier e.idx s.idx
   // </0 & CreateElemParam/4 # TkIdentifier/5 e.Name#1/2 s.Offset#1/6 >/1
-  if( ! refalrts::ident_term(  & ident_TkIdentifier<int>::name, context[5] ) )
+  if( ! refalrts::ident_term(  ident_TkIdentifier, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Name#1 as range 2
 
@@ -1814,7 +1464,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   //TRASH: {REMOVED TILE} # TkIdentifier/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: s.Offset1 #6/0 HalfReuse: # ElIdent/4 } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
   refalrts::reinit_svar( context[0], context[6] );
-  refalrts::reinit_ident( context[4], & ident_ElIdent<int>::name );
+  refalrts::reinit_ident( context[4], ident_ElIdent );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1860,7 +1510,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx ) ( # TkOpenCall s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 )/8 (/11 # TkOpenCall/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenCall<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenCall, context[13] ) )
       continue;
     // closed e.Stack#2 as range 5
     context[16] = context[9];
@@ -1888,7 +1538,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx ) ( # TkOpenADT s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 )/8 (/11 # TkOpenADT/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenADT<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenADT, context[13] ) )
       continue;
     // closed e.Stack#2 as range 5
     context[16] = context[9];
@@ -1916,7 +1566,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx ) ( # TkOpenBracket s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 )/8 (/11 # TkOpenBracket/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkOpenBracket<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkOpenBracket, context[13] ) )
       continue;
     // closed e.Stack#2 as range 5
     context[16] = context[9];
@@ -1944,7 +1594,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx s.idx ) ( # TkCloseCall s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 s.OpenOffset#2/15 )/8 (/11 # TkCloseCall/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseCall<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseCall, context[13] ) )
       continue;
     context[16] = context[9];
     context[17] = context[10];
@@ -1963,8 +1613,8 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Stack#2/18(5) } Tile{ HalfReuse: )/4 AsIs: (/7 } Tile{ HalfReuse: # CmdPushStack/1 } Tile{ AsIs: s.OpenOffset#2/15 AsIs: )/8 AsIs: (/11 Reuse: # CmdPushStack/13 AsIs: s.Offset#2/14 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[4] );
-    refalrts::reinit_ident( context[1], & ident_CmdPushStack<int>::name );
-    refalrts::update_ident( context[13], & ident_CmdPushStack<int>::name );
+    refalrts::reinit_ident( context[1], ident_CmdPushStack );
+    refalrts::update_ident( context[13], ident_CmdPushStack );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::link_brackets( context[0], context[4] );
@@ -1983,7 +1633,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx s.idx ) ( # TkCloseADT s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 s.OpenOffset#2/15 )/8 (/11 # TkCloseADT/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseADT<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseADT, context[13] ) )
       continue;
     context[16] = context[9];
     context[17] = context[10];
@@ -2003,7 +1653,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[11], & ident_CmdLinkBrackets<int>::name );
+    refalrts::reinit_ident( context[11], ident_CmdLinkBrackets );
     refalrts::reinit_svar( context[13], context[15] );
     refalrts::link_brackets( context[8], context[12] );
     refalrts::link_brackets( context[0], context[1] );
@@ -2021,7 +1671,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   do {
     // ( e.idx s.idx ) ( # TkCloseBracket s.idx )
     // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 s.OpenOffset#2/15 )/8 (/11 # TkCloseBracket/13 s.Offset#2/14 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkCloseBracket<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_TkCloseBracket, context[13] ) )
       continue;
     context[16] = context[9];
     context[17] = context[10];
@@ -2041,7 +1691,7 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_ident( context[11], & ident_CmdLinkBrackets<int>::name );
+    refalrts::reinit_ident( context[11], ident_CmdLinkBrackets );
     refalrts::reinit_svar( context[13], context[15] );
     refalrts::link_brackets( context[8], context[12] );
     refalrts::link_brackets( context[0], context[1] );
@@ -2246,7 +1896,7 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Tile<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Tile, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tile#1 as range 5
@@ -2349,7 +1999,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_RIGHT_EDGE, context[5], context[6] );
     if( ! context[9] )
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
@@ -2382,7 +2032,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_LEFT_EDGE, context[5], context[6] );
     if( ! context[9] )
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
@@ -2415,7 +2065,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_AsIs<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_AsIs, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Range#1 as range 12(2)
@@ -2452,7 +2102,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_HalfReuse<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_HalfReuse, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Range#1 as range 12(2)
@@ -2489,7 +2139,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Reuse<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Reuse, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Range#1 as range 12(2)
@@ -2565,7 +2215,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[9] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_AsIs<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_AsIs, context[11], context[12] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -2574,7 +2224,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_TkVariable, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = refalrts::char_left( 'e', context[14], context[15] );
@@ -2595,7 +2245,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE} e.Index#2/14 s.Depth#2/21 {REMOVED TILE} )/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/16 Reuse: # CmdInsertVar/18 AsIs: 'e'/19 } Tile{ AsIs: s.Offset#2/20 AsIs: )/17 } Tile{ ]] }
-    refalrts::update_ident( context[18], & ident_CmdInsertVar<int>::name );
+    refalrts::update_ident( context[18], ident_CmdInsertVar );
     refalrts::link_brackets( context[16], context[17] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2620,7 +2270,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     //RESULT: Tile{ [[ } (/11 # CmdInsertTile/12 </13 & BeginOffset/14 t.OneItem#2/9/15 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & EndOffset/7 AsIs: t.OneItem#2/9 HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[12], & ident_CmdInsertTile<int>::name ) )
+    if( ! refalrts::alloc_ident( context[12], ident_CmdInsertTile ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
@@ -2665,7 +2315,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[16], & EndOffset_alias ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_ident( context[0], & ident_CmdInsertTile<int>::name );
+  refalrts::reinit_ident( context[0], ident_CmdInsertTile );
   refalrts::reinit_open_call( context[4] );
   refalrts::reinit_name( context[7], & BeginOffset_alias );
   refalrts::reinit_close_call( context[8] );
@@ -2721,7 +2371,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   do {
     // ( e.idx ) ( # Tile e.idx ) e.idx ( # Tile e.idx )
     // </0 & GenSplices/4 (/7 e.Trash#1/5 )/8 (/11 # Tile/13 e.LeftTile#1/9 )/12 e.Result#1/2 (/16 # Tile/18 e.RightTile#1/14 )/17 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[13] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[13] ) )
       continue;
     context[29] = context[2];
     context[30] = context[3];
@@ -2731,7 +2381,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_Tile<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_Tile, context[14], context[15] );
     if( ! context[18] )
       continue;
     // closed e.Trash#1 as range 5
@@ -2763,14 +2413,14 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::alloc_open_bracket( context[28] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_CmdSetRes<int>::name );
+    refalrts::reinit_ident( context[4], ident_CmdSetRes );
     refalrts::reinit_open_call( context[16] );
     refalrts::reinit_name( context[18], & CalcRes_alias );
     refalrts::reinit_close_call( context[17] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::reinit_close_call( context[8] );
-    refalrts::update_ident( context[13], & ident_CmdNextStep<int>::name );
+    refalrts::update_ident( context[13], ident_CmdNextStep );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::push_stack( context[8] );
     refalrts::push_stack( context[26] );
@@ -2799,9 +2449,9 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
 
   // ( # RemovedTile ) ( # Tile e.idx )
   // </0 & GenSplices/4 (/7 # RemovedTile/14 )/8 (/11 # Tile/13 e.OneTile#1/9 )/12 >/1
-  if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[13] ) )
+  if( ! refalrts::ident_term(  ident_Tile, context[13] ) )
     return refalrts::cRecognitionImpossible;
-  context[14] = refalrts::ident_left(  & ident_RemovedTile<int>::name, context[5], context[6] );
+  context[14] = refalrts::ident_left(  ident_RemovedTile, context[5], context[6] );
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
@@ -2813,7 +2463,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenSplices/4 {REMOVED TILE} (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdNextStep/14 AsIs: )/8 } Tile{ ]] }
-  refalrts::update_ident( context[14], & ident_CmdNextStep<int>::name );
+  refalrts::update_ident( context[14], ident_CmdNextStep );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -2850,7 +2500,7 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_RIGHT_EDGE, context[7], context[8] );
     if( ! context[9] )
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
@@ -2863,7 +2513,7 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CalcRes/4 (/5 # RIGHT-EDGE/9 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # RIGHT-EDGE/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_RIGHT_EDGE<int>::name );
+    refalrts::reinit_ident( context[1], ident_RIGHT_EDGE );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2917,7 +2567,7 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_Tile<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_Tile, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tile#1 as range 5
@@ -2958,7 +2608,7 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
       if( ! context[9] )
         continue;
       refalrts::bracket_pointers(context[9], context[10]);
-      context[11] = refalrts::ident_left(  & ident_Tile<int>::name, context[7], context[8] );
+      context[11] = refalrts::ident_left(  ident_Tile, context[7], context[8] );
       if( ! context[11] )
         continue;
       // closed e.Tile#1 as range 7
@@ -3051,7 +2701,7 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_TkVariableCopy<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_TkVariableCopy, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::char_left( 'e', context[5], context[6] );
@@ -3102,7 +2752,7 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_left(  & ident_TkVariableCopy<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_left(  ident_TkVariableCopy, context[5], context[6] );
     if( ! context[9] )
       continue;
     context[10] = refalrts::char_left( 'e', context[5], context[6] );
@@ -3214,7 +2864,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     do {
       context[16] = context[14];
       context[17] = context[15];
-      context[11] = refalrts::ident_left(  & ident_RemovedTile<int>::name, context[16], context[17] );
+      context[11] = refalrts::ident_left(  ident_RemovedTile, context[16], context[17] );
       if( ! context[11] )
         continue;
       // closed e.Trash-E#1 as range 16(2)
@@ -3249,7 +2899,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     //TRASH: {REMOVED TILE} e.LeftTile#1/5 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdUseRes/4 HalfReuse: )/7 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_CmdUseRes<int>::name );
+    refalrts::reinit_ident( context[4], ident_CmdUseRes );
     refalrts::reinit_close_bracket( context[7] );
     refalrts::link_brackets( context[0], context[7] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -3271,7 +2921,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_LEFT_EDGE, context[9], context[10] );
     if( ! context[13] )
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -3283,7 +2933,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenTrash/4 {REMOVED TILE} )/8 e.Trash#1/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 HalfReuse: # CmdTrash/11 AsIs: # LEFT-EDGE/13 AsIs: )/12 } Tile{ ]] }
-    refalrts::reinit_ident( context[11], & ident_CmdTrash<int>::name );
+    refalrts::reinit_ident( context[11], ident_CmdTrash );
     refalrts::link_brackets( context[7], context[12] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -3308,7 +2958,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
   if( ! refalrts::alloc_name( context[11], & EndOffset_alias ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_CmdTrash<int>::name );
+  refalrts::reinit_ident( context[4], ident_CmdTrash );
   refalrts::reinit_open_call( context[7] );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
@@ -3357,7 +3007,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   do {
     // ( # AsIs t.idx )
     // </0 & BeginOffset/4 (/7 # AsIs/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_AsIs<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_AsIs, context[9] ) )
       continue;
     context[12] = context[5];
     context[13] = context[6];
@@ -3381,7 +3031,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   do {
     // ( # HalfReuse t.idx )
     // </0 & BeginOffset/4 (/7 # HalfReuse/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_HalfReuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_HalfReuse, context[9] ) )
       continue;
     context[12] = context[5];
     context[13] = context[6];
@@ -3405,7 +3055,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   do {
     // ( # Reuse t.idx )
     // </0 & BeginOffset/4 (/7 # Reuse/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Reuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Reuse, context[9] ) )
       continue;
     context[12] = context[5];
     context[13] = context[6];
@@ -3476,7 +3126,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // ( # AsIs t.idx )
     // </0 & EndOffset/4 (/7 # AsIs/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_AsIs<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_AsIs, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3500,7 +3150,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // ( # HalfReuse t.idx )
     // </0 & EndOffset/4 (/7 # HalfReuse/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_HalfReuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_HalfReuse, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3524,7 +3174,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   do {
     // ( # Reuse t.idx )
     // </0 & EndOffset/4 (/7 # Reuse/9 t.Item#1/10 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Reuse<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_Reuse, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3550,7 +3200,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/5 s.Depth#1/13 s.Offset#1/10 )/8 >/1
     if( ! refalrts::svar_term( context[12], context[10] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3578,7 +3228,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/5 s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1
     if( ! refalrts::svar_term( context[12], context[10] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_TkVariableCopy<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkVariableCopy, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3608,7 +3258,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariable/9 s.Mode#1/12 e.Index#1/5 s.Depth#1/13 s.Offset#1/10 )/8 >/1
     if( ! refalrts::svar_term( context[12], context[10] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3639,7 +3289,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariableCopy/9 s.Mode#1/12 e.Index#1/5 s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1
     if( ! refalrts::svar_term( context[12], context[10] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_TkVariableCopy<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkVariableCopy, context[9] ) )
       continue;
     context[15] = context[5];
     context[16] = context[6];
@@ -3672,7 +3322,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkString/9 e.String#1/5 s.Offset#1/10 )/8 >/1
     if( ! refalrts::svar_term( context[12], context[10] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_TkString<int>::name, context[9] ) )
+    if( ! refalrts::ident_term(  ident_TkString, context[9] ) )
       continue;
     // closed e.String#1 as range 5
 
@@ -3744,7 +3394,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[9] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_HalfReuse<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_HalfReuse, context[11], context[12] );
     if( ! context[13] )
       continue;
     context[14] = 0;
@@ -3753,7 +3403,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
     if( ! context[16] )
       continue;
     refalrts::bracket_pointers(context[16], context[17]);
-    context[18] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[14], context[15] );
+    context[18] = refalrts::ident_left(  ident_TkVariable, context[14], context[15] );
     if( ! context[18] )
       continue;
     context[19] = refalrts::char_left( 's', context[14], context[15] );
@@ -3851,7 +3501,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx ( # Tile e.idx )
     // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 # Tile/14 e.Tile#2/9 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[14] ) )
       continue;
     // closed e.PatternVars#1 as range 5
     // closed e.Tile#2 as range 9
@@ -3893,7 +3543,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx ( # TkVariable 's' e.idx s.idx )
     // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 # TkVariable/14 's'/15 e.Index#2/9 s.Level#2/16 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[14] ) )
       continue;
     context[22] = context[9];
     context[23] = context[10];
@@ -3912,7 +3562,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[19], & ident_TkVariableCopy<int>::name ) )
+    if( ! refalrts::alloc_ident( context[19], ident_TkVariableCopy ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
@@ -3946,7 +3596,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx ( # TkVariable 't' e.idx s.idx )
     // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 # TkVariable/14 't'/15 e.Index#2/9 s.Level#2/16 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[14] ) )
       continue;
     context[22] = context[9];
     context[23] = context[10];
@@ -3965,7 +3615,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[19], & ident_TkVariableCopy<int>::name ) )
+    if( ! refalrts::alloc_ident( context[19], ident_TkVariableCopy ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
@@ -3999,7 +3649,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx ( # TkVariable 'e' e.idx s.idx )
     // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 # TkVariable/14 'e'/15 e.Index#2/9 s.Level#2/16 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkVariable<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_TkVariable, context[14] ) )
       continue;
     context[22] = context[9];
     context[23] = context[10];
@@ -4018,7 +3668,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[19], & ident_TkVariableCopy<int>::name ) )
+    if( ! refalrts::alloc_ident( context[19], ident_TkVariableCopy ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
@@ -4052,7 +3702,7 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   do {
     // ( e.idx ) s.idx ( # TkString e.idx )
     // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 # TkString/14 e.String#2/9 )/12 >/1
-    if( ! refalrts::ident_term(  & ident_TkString<int>::name, context[14] ) )
+    if( ! refalrts::ident_term(  ident_TkString, context[14] ) )
       continue;
     // closed e.PatternVars#1 as range 5
     // closed e.String#2 as range 9

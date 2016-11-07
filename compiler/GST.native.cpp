@@ -2,94 +2,17 @@
 #include "refalrts.h"
 
 
-// identifier #AsIs
-template <typename SREFAL_PARAM_INT>
-struct ident_AsIs {
-  static const char *name() {
-    return "AsIs";
-  }
-};
-
-// identifier #AsIsE
-template <typename SREFAL_PARAM_INT>
-struct ident_AsIsE {
-  static const char *name() {
-    return "AsIsE";
-  }
-};
-
-// identifier #HalfReuse
-template <typename SREFAL_PARAM_INT>
-struct ident_HalfReuse {
-  static const char *name() {
-    return "HalfReuse";
-  }
-};
-
-// identifier #LEFT-EDGE
-template <typename SREFAL_PARAM_INT>
-struct ident_LEFT_EDGE {
-  static const char *name() {
-    return "LEFT-EDGE";
-  }
-};
-
-// identifier #NoOverlap
-template <typename SREFAL_PARAM_INT>
-struct ident_NoOverlap {
-  static const char *name() {
-    return "NoOverlap";
-  }
-};
-
-// identifier #Num
-template <typename SREFAL_PARAM_INT>
-struct ident_Num {
-  static const char *name() {
-    return "Num";
-  }
-};
-
-// identifier #RIGHT-EDGE
-template <typename SREFAL_PARAM_INT>
-struct ident_RIGHT_EDGE {
-  static const char *name() {
-    return "RIGHT-EDGE";
-  }
-};
-
-// identifier #RemovedTile
-template <typename SREFAL_PARAM_INT>
-struct ident_RemovedTile {
-  static const char *name() {
-    return "RemovedTile";
-  }
-};
-
-// identifier #Reuse
-template <typename SREFAL_PARAM_INT>
-struct ident_Reuse {
-  static const char *name() {
-    return "Reuse";
-  }
-};
-
-// identifier #Tile
-template <typename SREFAL_PARAM_INT>
-struct ident_Tile {
-  static const char *name() {
-    return "Tile";
-  }
-};
-
-// identifier #TkVariable
-template <typename SREFAL_PARAM_INT>
-struct ident_TkVariable {
-  static const char *name() {
-    return "TkVariable";
-  }
-};
-
+const refalrts::RefalIdentifier ident_AsIs = refalrts::ident_from_static("AsIs");
+const refalrts::RefalIdentifier ident_AsIsE = refalrts::ident_from_static("AsIsE");
+const refalrts::RefalIdentifier ident_HalfReuse = refalrts::ident_from_static("HalfReuse");
+const refalrts::RefalIdentifier ident_LEFT_EDGE = refalrts::ident_from_static("LEFT-EDGE");
+const refalrts::RefalIdentifier ident_NoOverlap = refalrts::ident_from_static("NoOverlap");
+const refalrts::RefalIdentifier ident_Num = refalrts::ident_from_static("Num");
+const refalrts::RefalIdentifier ident_RIGHT_EDGE = refalrts::ident_from_static("RIGHT-EDGE");
+const refalrts::RefalIdentifier ident_RemovedTile = refalrts::ident_from_static("RemovedTile");
+const refalrts::RefalIdentifier ident_Reuse = refalrts::ident_from_static("Reuse");
+const refalrts::RefalIdentifier ident_Tile = refalrts::ident_from_static("Tile");
+const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 extern refalrts::RefalFunction& Fetch_0_0;
 #define Fetch_alias Fetch_0_0
 #define Fetch_str "Fetch#0:0"
@@ -569,7 +492,7 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_Num<int>::name );
+  refalrts::reinit_ident( context[4], ident_Num );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
   refalrts::push_stack( context[11] );
@@ -654,7 +577,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  & ident_Num<int>::name, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_Num, context[7], context[8] );
     if( ! context[9] )
       continue;
     if( ! refalrts::svar_left( context[10], context[7], context[8] ) )
@@ -680,13 +603,13 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
   do {
     // # RemovedTile
     // </0 & DeEnum\1/4 # RemovedTile/5 >/1
-    if( ! refalrts::ident_term(  & ident_RemovedTile<int>::name, context[5] ) )
+    if( ! refalrts::ident_term(  ident_RemovedTile, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 # RemovedTile/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # RemovedTile/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_RemovedTile<int>::name );
+    refalrts::reinit_ident( context[1], ident_RemovedTile );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -701,7 +624,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
   context[8] = 0;
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  context[9] = refalrts::ident_left(  & ident_Tile<int>::name, context[7], context[8] );
+  context[9] = refalrts::ident_left(  ident_Tile, context[7], context[8] );
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tile#2 as range 7
@@ -1587,7 +1510,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_right(  & ident_NoOverlap<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_right(  ident_NoOverlap, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 18(2)
@@ -1624,7 +1547,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[7] )
       continue;
     refalrts::bracket_pointers(context[7], context[8]);
-    context[9] = refalrts::ident_right(  & ident_AsIsE<int>::name, context[5], context[6] );
+    context[9] = refalrts::ident_right(  ident_AsIsE, context[5], context[6] );
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 18(2)
@@ -1770,7 +1693,7 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
     if( ! context[12] )
       continue;
     refalrts::bracket_pointers(context[12], context[13]);
-    context[14] = refalrts::ident_right(  & ident_NoOverlap<int>::name, context[10], context[11] );
+    context[14] = refalrts::ident_right(  ident_NoOverlap, context[10], context[11] );
     if( ! context[14] )
       continue;
     // closed e.Items#1 as range 5
@@ -1911,7 +1834,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_right(  & ident_AsIsE<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_right(  ident_AsIsE, context[6], context[7] );
     if( ! context[10] )
       continue;
     context[11] = refalrts::number_right( 3UL, context[6], context[7] );
@@ -3074,7 +2997,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[8] )
       continue;
     refalrts::bracket_pointers(context[8], context[9]);
-    context[10] = refalrts::ident_right(  & ident_AsIsE<int>::name, context[6], context[7] );
+    context[10] = refalrts::ident_right(  ident_AsIsE, context[6], context[7] );
     if( ! context[10] )
       continue;
     context[11] = refalrts::number_right( 3UL, context[6], context[7] );
@@ -3356,7 +3279,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
     if( ! context[28] )
       continue;
     refalrts::bracket_pointers(context[28], context[29]);
-    context[30] = refalrts::ident_left(  & ident_Num<int>::name, context[26], context[27] );
+    context[30] = refalrts::ident_left(  ident_Num, context[26], context[27] );
     if( ! context[30] )
       continue;
     if( ! refalrts::repeated_stvar_left( context[31], context[21], context[26], context[27] ) )
@@ -3381,7 +3304,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
       if( ! context[38] )
         continue;
       refalrts::bracket_pointers(context[38], context[39]);
-      context[40] = refalrts::ident_left(  & ident_Num<int>::name, context[36], context[37] );
+      context[40] = refalrts::ident_left(  ident_Num, context[36], context[37] );
       if( ! context[40] )
         continue;
       if( ! refalrts::repeated_stvar_left( context[41], context[22], context[36], context[37] ) )
@@ -3398,7 +3321,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Modify/4 AsIs: (/7 } Tile{ AsIs: e.Idents#1/17 } Tile{ HalfReuse: )/1 } Tile{ AsIs: (/19 } Tile{ AsIs: e.Pattern-B#1/24 } Tile{ AsIs: )/20 HalfReuse: (/16 } Tile{ AsIs: (/28 AsIs: # Num/30 AsIs: s.IndexP#1/31 AsIs: t.PatternItem#1/32 AsIs: )/29 AsIs: e.Pattern-E#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: e.Result-B#1/34 HalfReuse: )/38 HalfReuse: (/40 } (/44 # Num/45 Tile{ AsIs: s.IndexR#1/41 AsIs: t.ResultItem#1/42 AsIs: )/39 AsIs: e.Result-E#1/50(9) AsIs: )/12 HalfReuse: >/15 } Tile{ ]] }
       if( ! refalrts::alloc_open_bracket( context[44] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( context[45], & ident_Num<int>::name ) )
+      if( ! refalrts::alloc_ident( context[45], ident_Num ) )
         return refalrts::cNoMemory;
       refalrts::update_name( context[4], & Modify_alias );
       refalrts::reinit_close_bracket( context[1] );
@@ -3465,7 +3388,7 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[15], context[16]);
-  context[17] = refalrts::ident_left(  & ident_RemovedTile<int>::name, context[13], context[14] );
+  context[17] = refalrts::ident_left(  ident_RemovedTile, context[13], context[14] );
   if( ! context[17] )
     return refalrts::cRecognitionImpossible;
   context[18] = 0;
@@ -3480,7 +3403,7 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
   if( ! context[24] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[24], context[25]);
-  context[26] = refalrts::ident_left(  & ident_Tile<int>::name, context[22], context[23] );
+  context[26] = refalrts::ident_left(  ident_Tile, context[22], context[23] );
   if( ! context[26] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -3568,7 +3491,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[26], & Fetch_alias ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[27], & ident_Tile<int>::name ) )
+  if( ! refalrts::alloc_ident( context[27], ident_Tile ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[28] ) )
     return refalrts::cNoMemory;
@@ -3666,11 +3589,11 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( # AsIsE e.idx ) ( # Tile e.idx ) ( ( # Num s.idx ( s.idx e.idx s.idx ) ) e.idx ) ( ( # Num s.idx ( s.idx e.idx ) ) e.idx )
     // </0 & DoModify/4 (/7 # AsIsE/22 e.Idents#1/5 )/8 (/11 # Tile/21 e.Tile#1/9 )/12 (/15 (/25 # Num/27 s.NumP#1/41 (/35 s.TypeFromPat#1/42 e.InfoFromPat#1/33 s.Offset#1/45 )/36 )/26 e.PatSecond#1/13 )/16 (/19 (/30 # Num/32 s.NumR#1/43 (/39 s.TypeFromRes#1/44 e.InfoFromRes#1/37 )/40 )/31 e.ResSecond#1/17 )/20 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[21] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[21] ) )
       continue;
     context[46] = context[5];
     context[47] = context[6];
-    context[22] = refalrts::ident_left(  & ident_AsIsE<int>::name, context[46], context[47] );
+    context[22] = refalrts::ident_left(  ident_AsIsE, context[46], context[47] );
     if( ! context[22] )
       continue;
     context[48] = context[13];
@@ -3681,7 +3604,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[25] )
       continue;
     refalrts::bracket_pointers(context[25], context[26]);
-    context[27] = refalrts::ident_left(  & ident_Num<int>::name, context[23], context[24] );
+    context[27] = refalrts::ident_left(  ident_Num, context[23], context[24] );
     if( ! context[27] )
       continue;
     context[50] = context[17];
@@ -3692,7 +3615,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[30] )
       continue;
     refalrts::bracket_pointers(context[30], context[31]);
-    context[32] = refalrts::ident_left(  & ident_Num<int>::name, context[28], context[29] );
+    context[32] = refalrts::ident_left(  ident_Num, context[28], context[29] );
     if( ! context[32] )
       continue;
     context[33] = 0;
@@ -3735,7 +3658,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reinit_name( context[7], & DoModify_alias );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_AsIs<int>::name );
+    refalrts::reinit_ident( context[15], ident_AsIs );
     refalrts::reinit_svar( context[27], context[44] );
     refalrts::reinit_open_bracket( context[31] );
     refalrts::push_stack( context[1] );
@@ -3762,11 +3685,11 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( # AsIs e.idx ) ( # Tile e.idx ) ( ( # Num s.idx ( # LEFT-EDGE ) ) e.idx ) ( ( # Num s.idx ( # LEFT-EDGE ) ) e.idx )
     // </0 & DoModify/4 (/7 # AsIs/22 e.Idents#1/5 )/8 (/11 # Tile/21 e.Tile#1/9 )/12 (/15 (/25 # Num/27 s.NumP#1/43 (/35 # LEFT-EDGE/37 )/36 )/26 e.PatSecond#1/13 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 # LEFT-EDGE/42 )/41 )/31 e.ResSecond#1/17 )/20 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[21] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[21] ) )
       continue;
     context[46] = context[5];
     context[47] = context[6];
-    context[22] = refalrts::ident_left(  & ident_AsIs<int>::name, context[46], context[47] );
+    context[22] = refalrts::ident_left(  ident_AsIs, context[46], context[47] );
     if( ! context[22] )
       continue;
     context[48] = context[13];
@@ -3777,7 +3700,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[25] )
       continue;
     refalrts::bracket_pointers(context[25], context[26]);
-    context[27] = refalrts::ident_left(  & ident_Num<int>::name, context[23], context[24] );
+    context[27] = refalrts::ident_left(  ident_Num, context[23], context[24] );
     if( ! context[27] )
       continue;
     context[50] = context[17];
@@ -3788,7 +3711,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[30] )
       continue;
     refalrts::bracket_pointers(context[30], context[31]);
-    context[32] = refalrts::ident_left(  & ident_Num<int>::name, context[28], context[29] );
+    context[32] = refalrts::ident_left(  ident_Num, context[28], context[29] );
     if( ! context[32] )
       continue;
     context[33] = 0;
@@ -3797,7 +3720,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[35] )
       continue;
     refalrts::bracket_pointers(context[35], context[36]);
-    context[37] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[33], context[34] );
+    context[37] = refalrts::ident_left(  ident_LEFT_EDGE, context[33], context[34] );
     if( ! context[37] )
       continue;
     context[38] = 0;
@@ -3806,7 +3729,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[40] )
       continue;
     refalrts::bracket_pointers(context[40], context[41]);
-    context[42] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[38], context[39] );
+    context[42] = refalrts::ident_left(  ident_LEFT_EDGE, context[38], context[39] );
     if( ! context[42] )
       continue;
     if( ! refalrts::empty_seq( context[33], context[34] ) )
@@ -3833,7 +3756,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reinit_name( context[7], & DoModify_alias );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_LEFT_EDGE<int>::name );
+    refalrts::reinit_ident( context[15], ident_LEFT_EDGE );
     refalrts::reinit_close_bracket( context[25] );
     refalrts::reinit_close_bracket( context[27] );
     refalrts::reinit_open_bracket( context[31] );
@@ -3858,11 +3781,11 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( # AsIs e.idx ) ( # Tile e.idx ) ( ( # Num s.idx ( # RIGHT-EDGE ) ) ) ( ( # Num s.idx ( # RIGHT-EDGE ) ) )
     // </0 & DoModify/4 (/7 # AsIs/22 e.Idents#1/5 )/8 (/11 # Tile/21 e.Tile#1/9 )/12 (/15 (/25 # Num/27 s.NumP#1/43 (/35 # RIGHT-EDGE/37 )/36 )/26 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 # RIGHT-EDGE/42 )/41 )/31 )/20 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[21] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[21] ) )
       continue;
     context[46] = context[5];
     context[47] = context[6];
-    context[22] = refalrts::ident_left(  & ident_AsIs<int>::name, context[46], context[47] );
+    context[22] = refalrts::ident_left(  ident_AsIs, context[46], context[47] );
     if( ! context[22] )
       continue;
     context[48] = context[13];
@@ -3873,7 +3796,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[25] )
       continue;
     refalrts::bracket_pointers(context[25], context[26]);
-    context[27] = refalrts::ident_left(  & ident_Num<int>::name, context[23], context[24] );
+    context[27] = refalrts::ident_left(  ident_Num, context[23], context[24] );
     if( ! context[27] )
       continue;
     context[50] = context[17];
@@ -3884,7 +3807,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[30] )
       continue;
     refalrts::bracket_pointers(context[30], context[31]);
-    context[32] = refalrts::ident_left(  & ident_Num<int>::name, context[28], context[29] );
+    context[32] = refalrts::ident_left(  ident_Num, context[28], context[29] );
     if( ! context[32] )
       continue;
     context[33] = 0;
@@ -3893,7 +3816,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[35] )
       continue;
     refalrts::bracket_pointers(context[35], context[36]);
-    context[37] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[33], context[34] );
+    context[37] = refalrts::ident_left(  ident_RIGHT_EDGE, context[33], context[34] );
     if( ! context[37] )
       continue;
     context[38] = 0;
@@ -3902,7 +3825,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[40] )
       continue;
     refalrts::bracket_pointers(context[40], context[41]);
-    context[42] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[38], context[39] );
+    context[42] = refalrts::ident_left(  ident_RIGHT_EDGE, context[38], context[39] );
     if( ! context[42] )
       continue;
     if( ! refalrts::empty_seq( context[33], context[34] ) )
@@ -3931,7 +3854,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reinit_name( context[7], & DoModify_alias );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
-    refalrts::reinit_ident( context[15], & ident_RIGHT_EDGE<int>::name );
+    refalrts::reinit_ident( context[15], ident_RIGHT_EDGE );
     refalrts::reinit_close_bracket( context[25] );
     refalrts::reinit_close_bracket( context[27] );
     refalrts::reinit_open_bracket( context[42] );
@@ -3955,7 +3878,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( s.idx e.idx ) ( # Tile e.idx ) ( ( # Num s.idx ( s.idx e.idx s.idx ) ) e.idx ) ( ( # Num s.idx ( s.idx e.idx ) ) e.idx )
     // </0 & DoModify/4 (/7 s.Ident#1/40 e.Idents#1/5 )/8 (/11 # Tile/21 e.Tile#1/9 )/12 (/15 (/24 # Num/26 s.NumP#1/41 (/34 s.TypeFromPat#1/42 e.InfoFromPat#1/32 s.Offset#1/45 )/35 )/25 e.PatSecond#1/13 )/16 (/19 (/29 # Num/31 s.NumR#1/43 (/38 s.TypeFromRes#1/44 e.InfoFromRes#1/36 )/39 )/30 e.ResSecond#1/17 )/20 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[21] ) )
+    if( ! refalrts::ident_term(  ident_Tile, context[21] ) )
       continue;
     context[46] = context[13];
     context[47] = context[14];
@@ -3965,7 +3888,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[24] )
       continue;
     refalrts::bracket_pointers(context[24], context[25]);
-    context[26] = refalrts::ident_left(  & ident_Num<int>::name, context[22], context[23] );
+    context[26] = refalrts::ident_left(  ident_Num, context[22], context[23] );
     if( ! context[26] )
       continue;
     context[48] = context[17];
@@ -3976,7 +3899,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[29] )
       continue;
     refalrts::bracket_pointers(context[29], context[30]);
-    context[31] = refalrts::ident_left(  & ident_Num<int>::name, context[27], context[28] );
+    context[31] = refalrts::ident_left(  ident_Num, context[27], context[28] );
     if( ! context[31] )
       continue;
     context[32] = 0;
@@ -4047,7 +3970,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
 
   // ( ) ( # Tile e.idx ) ( e.idx ) ( e.idx )
   // </0 & DoModify/4 (/7 )/8 (/11 # Tile/21 e.Tile#1/9 )/12 (/15 e.PatSecond#1/13 )/16 (/19 e.ResSecond#1/17 )/20 >/1
-  if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[21] ) )
+  if( ! refalrts::ident_term(  ident_Tile, context[21] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
@@ -4059,7 +3982,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # RemovedTile/4 } Tile{ AsIs: e.PatSecond#1/13 } Tile{ HalfReuse: )/7 HalfReuse: (/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 AsIs: )/12 } Tile{ AsIs: e.ResSecond#1/17 } Tile{ HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], & ident_RemovedTile<int>::name );
+  refalrts::reinit_ident( context[4], ident_RemovedTile );
   refalrts::reinit_close_bracket( context[7] );
   refalrts::reinit_open_bracket( context[8] );
   refalrts::reinit_close_bracket( context[1] );
@@ -4111,13 +4034,13 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_TkVariable, context[9], context[10] );
     if( ! context[13] )
       continue;
     context[14] = refalrts::char_left( 'e', context[9], context[10] );
     if( ! context[14] )
       continue;
-    context[15] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[11], context[12] );
+    context[15] = refalrts::ident_left(  ident_TkVariable, context[11], context[12] );
     if( ! context[15] )
       continue;
     context[16] = refalrts::char_left( 'e', context[11], context[12] );
@@ -4135,7 +4058,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/13 'e'/14 e.Index#1/17 s.Offset#1/19 )/6 (/7 # TkVariable/15 'e'/16 e.Index#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIsE/1 ]] }
     refalrts::reinit_number( context[8], 3UL );
-    refalrts::reinit_ident( context[1], & ident_AsIsE<int>::name );
+    refalrts::reinit_ident( context[1], ident_AsIsE );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4171,7 +4094,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/13 e.Info#1/15 s.Offset#1/17 )/6 (/7 s.AnyType#1/14 e.Info#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
     refalrts::reinit_number( context[8], 3UL );
-    refalrts::reinit_ident( context[1], & ident_AsIs<int>::name );
+    refalrts::reinit_ident( context[1], ident_AsIs );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4187,7 +4110,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_TkVariable, context[9], context[10] );
     if( ! context[11] )
       continue;
     if( ! refalrts::svar_left( context[12], context[9], context[10] ) )
@@ -4199,7 +4122,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/11 s.Mode#1/12 e.Index#1/9 s.Offset#1/13 )/6 t.AnyItem#1/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4219,7 +4142,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_TkVariable, context[11], context[12] );
     if( ! context[13] )
       continue;
     context[14] = refalrts::char_left( 's', context[11], context[12] );
@@ -4236,7 +4159,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/15 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 's'/14 e.Index#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
     refalrts::reinit_number( context[8], 1UL );
-    refalrts::reinit_ident( context[1], & ident_HalfReuse<int>::name );
+    refalrts::reinit_ident( context[1], ident_HalfReuse );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4256,7 +4179,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_TkVariable<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_TkVariable, context[11], context[12] );
     if( ! context[13] )
       continue;
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
@@ -4271,7 +4194,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 s.Mode#1/15 e.Index#1/11 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4291,7 +4214,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_LEFT_EDGE, context[11], context[12] );
     if( ! context[13] )
       continue;
     if( ! refalrts::empty_seq( context[11], context[12] ) )
@@ -4305,7 +4228,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # LEFT-EDGE/13 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4325,7 +4248,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[11], context[12] );
+    context[13] = refalrts::ident_left(  ident_RIGHT_EDGE, context[11], context[12] );
     if( ! context[13] )
       continue;
     if( ! refalrts::empty_seq( context[11], context[12] ) )
@@ -4339,7 +4262,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # RIGHT-EDGE/13 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4372,7 +4295,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type#1/14 e.Info2#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/8 HalfReuse: # Reuse/1 ]] }
     refalrts::reinit_number( context[8], 2UL );
-    refalrts::reinit_ident( context[1], & ident_Reuse<int>::name );
+    refalrts::reinit_ident( context[1], ident_Reuse );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4405,7 +4328,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type2#1/14 e.Info2#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
     refalrts::reinit_number( context[8], 1UL );
-    refalrts::reinit_ident( context[1], & ident_HalfReuse<int>::name );
+    refalrts::reinit_ident( context[1], ident_HalfReuse );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4425,10 +4348,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_LEFT_EDGE, context[9], context[10] );
     if( ! context[13] )
       continue;
-    context[14] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[11], context[12] );
+    context[14] = refalrts::ident_left(  ident_LEFT_EDGE, context[11], context[12] );
     if( ! context[14] )
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -4440,7 +4363,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/13 )/6 (/7 # LEFT-EDGE/14 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
     refalrts::reinit_number( context[8], 3UL );
-    refalrts::reinit_ident( context[1], & ident_AsIs<int>::name );
+    refalrts::reinit_ident( context[1], ident_AsIs );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4460,10 +4383,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
       continue;
-    context[13] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_RIGHT_EDGE, context[9], context[10] );
     if( ! context[13] )
       continue;
-    context[14] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[11], context[12] );
+    context[14] = refalrts::ident_left(  ident_RIGHT_EDGE, context[11], context[12] );
     if( ! context[14] )
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -4475,7 +4398,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/13 )/6 (/7 # RIGHT-EDGE/14 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
     refalrts::reinit_number( context[8], 3UL );
-    refalrts::reinit_ident( context[1], & ident_AsIs<int>::name );
+    refalrts::reinit_ident( context[1], ident_AsIs );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
@@ -4491,7 +4414,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_LEFT_EDGE<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_LEFT_EDGE, context[9], context[10] );
     if( ! context[11] )
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -4500,7 +4423,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4516,7 +4439,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     context[10] = 0;
     if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
       continue;
-    context[11] = refalrts::ident_left(  & ident_RIGHT_EDGE<int>::name, context[9], context[10] );
+    context[11] = refalrts::ident_left(  ident_RIGHT_EDGE, context[9], context[10] );
     if( ! context[11] )
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -4525,7 +4448,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4543,7 +4466,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+    refalrts::reinit_ident( context[1], ident_NoOverlap );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -4560,7 +4483,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-  refalrts::reinit_ident( context[1], & ident_NoOverlap<int>::name );
+  refalrts::reinit_ident( context[1], ident_NoOverlap );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
