@@ -2,16 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& LoadFile_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& Trim_0_0;
-extern refalrts::RefalFunction& FindFiles_0_0;
-extern refalrts::RefalFunction& CreateFileList_0_0;
-extern refalrts::RefalFunction& DoCreateFileList_45697312_547554160;
-extern refalrts::RefalFunction& FindImports_45697312_547554160;
-extern refalrts::RefalFunction& LoadList_45697312_547554160;
+static refalrts::UInt32 COOKIE1 = 45697312U;
+static refalrts::UInt32 COOKIE2 = 547554160U;
+#define rasl rasl_45697312_547554160
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -19,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

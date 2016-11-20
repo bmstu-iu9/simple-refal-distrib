@@ -2,27 +2,15 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& LoadFile_0_0;
-#define LoadFile_alias LoadFile_0_0
-#define LoadFile_str "LoadFile#0:0"
-
-extern refalrts::RefalFunction& gen_LoadSource_L1_2935148884_199067485;
-#define gen_LoadSource_L1_alias gen_LoadSource_L1_2935148884_199067485
-
-extern refalrts::RefalFunction& LoadSource_0_0;
-#define LoadSource_alias LoadSource_0_0
-
-extern refalrts::RefalFunction& LinearizeLine_2935148884_199067485;
-#define LinearizeLine_alias LinearizeLine_2935148884_199067485
-
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
+#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
+static refalrts::ExternalReference ref_gen_LoadSource_L1("LoadSource\\1", 2935148884U, 199067485U);
+static refalrts::ExternalReference ref_LoadSource("LoadSource", 0U, 0U);
+static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 2935148884U, 199067485U);
 
 static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -81,8 +69,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, "LoadSource\\1#2935148884:199067485");
-refalrts::RefalFunction& gen_LoadSource_L1_2935148884_199067485 = descr_gen_LoadSource_L1;
+static refalrts::RefalNativeFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, refalrts::RefalFuncName("LoadSource\\1", 2935148884U, 199067485U));
 
 static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -102,21 +89,21 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   //RESULT: Tile{ [[ } </5 & Fetch/6 </7 & Map/8 & LinearizeLine/9 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/10 & LoadSource\1/11 >/12 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & Fetch_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[8], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & LinearizeLine_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_LinearizeLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & gen_LoadSource_L1_alias ) )
+  if( ! refalrts::alloc_name( context[11], ref_gen_LoadSource_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & LoadFile_alias );
+  refalrts::update_name( context[4], ref_LoadFile.ref.function );
   refalrts::push_stack( context[12] );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[10] );
@@ -133,8 +120,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LoadSource(func_LoadSource, "LoadSource#0:0");
-refalrts::RefalFunction& LoadSource_0_0 = descr_LoadSource;
+static refalrts::RefalNativeFunction descr_LoadSource(func_LoadSource, refalrts::RefalFuncName("LoadSource", 0U, 0U));
 
 static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -169,8 +155,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LinearizeLine(func_LinearizeLine, "LinearizeLine#2935148884:199067485");
-refalrts::RefalFunction& LinearizeLine_2935148884_199067485 = descr_LinearizeLine;
+static refalrts::RefalNativeFunction descr_LinearizeLine(func_LinearizeLine, refalrts::RefalFuncName("LinearizeLine", 2935148884U, 199067485U));
 
 
 //End of file

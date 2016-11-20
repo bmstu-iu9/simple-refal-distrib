@@ -6,34 +6,18 @@ const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("No
 const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
 const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
 const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
-extern refalrts::RefalFunction& LoadFile_0_0;
-#define LoadFile_alias LoadFile_0_0
-#define LoadFile_str "LoadFile#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& Trim_0_0;
-#define Trim_alias Trim_0_0
-#define Trim_str "Trim#0:0"
-
-extern refalrts::RefalFunction& FindFiles_0_0;
-#define FindFiles_alias FindFiles_0_0
-#define FindFiles_str "FindFiles#0:0"
-
-extern refalrts::RefalFunction& CreateFileList_0_0;
-#define CreateFileList_alias CreateFileList_0_0
-
-extern refalrts::RefalFunction& DoCreateFileList_45697312_547554160;
-#define DoCreateFileList_alias DoCreateFileList_45697312_547554160
-
-extern refalrts::RefalFunction& FindImports_45697312_547554160;
-#define FindImports_alias FindImports_45697312_547554160
-
-extern refalrts::RefalFunction& LoadList_45697312_547554160;
-#define LoadList_alias LoadList_45697312_547554160
-
+static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
+#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_Trim("Trim", 0U, 0U);
+#define str_Trim refalrts::RefalFuncName("Trim", 0U, 0U)
+static refalrts::ExternalReference ref_FindFiles("FindFiles", 0U, 0U);
+#define str_FindFiles refalrts::RefalFuncName("FindFiles", 0U, 0U)
+static refalrts::ExternalReference ref_CreateFileList("CreateFileList", 0U, 0U);
+static refalrts::ExternalReference ref_DoCreateFileList("DoCreateFileList", 45697312U, 547554160U);
+static refalrts::ExternalReference ref_FindImports("FindImports", 45697312U, 547554160U);
+static refalrts::ExternalReference ref_LoadList("LoadList", 45697312U, 547554160U);
 
 static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -64,7 +48,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & FindFiles_alias ) )
+  if( ! refalrts::alloc_name( context[12], ref_FindFiles.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
@@ -78,7 +62,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoCreateFileList_alias );
+  refalrts::update_name( context[4], ref_DoCreateFileList.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[19] );
@@ -97,8 +81,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, "CreateFileList#0:0");
-refalrts::RefalFunction& CreateFileList_0_0 = descr_CreateFileList;
+static refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, refalrts::RefalFuncName("CreateFileList", 0U, 0U));
 
 static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -226,7 +209,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[22], & LoadList_alias ) )
+  if( ! refalrts::alloc_name( context[22], ref_LoadList.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[23] ) )
     return refalrts::cNoMemory;
@@ -253,8 +236,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, "DoCreateFileList#45697312:547554160");
-refalrts::RefalFunction& DoCreateFileList_45697312_547554160 = descr_DoCreateFileList;
+static refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, refalrts::RefalFuncName("DoCreateFileList", 45697312U, 547554160U));
 
 static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -309,11 +291,11 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/2 } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/16(5) HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
-    refalrts::update_name( context[4], & FindFiles_alias );
+    refalrts::update_name( context[4], ref_FindFiles.ref.function );
     refalrts::reinit_close_bracket( context[12] );
     refalrts::reinit_open_bracket( context[13] );
     refalrts::reinit_open_call( context[14] );
-    refalrts::reinit_name( context[15], & Trim_alias );
+    refalrts::reinit_name( context[15], ref_Trim.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::reinit_close_call( context[11] );
@@ -350,8 +332,7 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindImports(func_FindImports, "FindImports#45697312:547554160");
-refalrts::RefalFunction& FindImports_45697312_547554160 = descr_FindImports;
+static refalrts::RefalNativeFunction descr_FindImports(func_FindImports, refalrts::RefalFuncName("FindImports", 45697312U, 547554160U));
 
 static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -398,11 +379,11 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & FindImports/7 AsIs: e.Folders#1/5 AsIs: )/8 HalfReuse: </9 HalfReuse: & LoadFile/12 AsIs: e.NextModule#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & Map_alias );
+    refalrts::reinit_name( context[0], ref_Map.ref.function );
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_name( context[7], & FindImports_alias );
+    refalrts::reinit_name( context[7], ref_FindImports.ref.function );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[12], & LoadFile_alias );
+    refalrts::reinit_name( context[12], ref_LoadFile.ref.function );
     refalrts::reinit_close_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[14] );
@@ -430,15 +411,15 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } & FindImports/10 Tile{ AsIs: e.Folders#1/5 } )/11 Tile{ HalfReuse: </8 HalfReuse: & LoadFile/9 AsIs: e.Output#1/2 AsIs: >/1 } >/12 Tile{ ]] }
-    if( ! refalrts::alloc_name( context[10], & FindImports_alias ) )
+    if( ! refalrts::alloc_name( context[10], ref_FindImports.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[12] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Map_alias );
+    refalrts::update_name( context[4], ref_Map.ref.function );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[9], & LoadFile_alias );
+    refalrts::reinit_name( context[9], ref_LoadFile.ref.function );
     refalrts::push_stack( context[12] );
     refalrts::push_stack( context[0] );
     refalrts::push_stack( context[1] );
@@ -481,15 +462,15 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & LoadFile_alias ) )
+    if( ! refalrts::alloc_name( context[16], ref_LoadFile.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[17] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & Map_alias );
+    refalrts::reinit_name( context[0], ref_Map.ref.function );
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_name( context[7], & FindImports_alias );
+    refalrts::reinit_name( context[7], ref_FindImports.ref.function );
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[12], & LoadFile_alias );
+    refalrts::reinit_name( context[12], ref_LoadFile.ref.function );
     refalrts::reinit_close_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[14] );
@@ -528,8 +509,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LoadList(func_LoadList, "LoadList#45697312:547554160");
-refalrts::RefalFunction& LoadList_45697312_547554160 = descr_LoadList;
+static refalrts::RefalNativeFunction descr_LoadList(func_LoadList, refalrts::RefalFuncName("LoadList", 45697312U, 547554160U));
 
 
 //End of file

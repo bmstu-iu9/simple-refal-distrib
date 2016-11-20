@@ -2,37 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Reduce_0_0;
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& MapReduce_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& EL_AddErrorAt_0_0;
-extern refalrts::RefalFunction& gen_CheckProgram_L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckProgram_0_0;
-extern refalrts::RefalFunction& gen_FindErrors_L1_3280841751_205519715;
-extern refalrts::RefalFunction& gen_FindErrors_L2_3280841751_205519715;
-extern refalrts::RefalFunction& FindErrors_3280841751_205519715;
-extern refalrts::RefalFunction& gen_CheckDeclarations_L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckDeclarations_3280841751_205519715;
-extern refalrts::RefalFunction& CleanupValidForwards_3280841751_205519715;
-extern refalrts::RefalFunction& FindInvalidForwards_3280841751_205519715;
-extern refalrts::RefalFunction& CheckRedefinitions_3280841751_205519715;
-extern refalrts::RefalFunction& CheckFunctionBody_3280841751_205519715;
-extern refalrts::RefalFunction& CheckFunctionBodyRec_3280841751_205519715;
-extern refalrts::RefalFunction& gen_CheckSentence_L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckSentence_3280841751_205519715;
-extern refalrts::RefalFunction& gen_FlatExpr_L1_3280841751_205519715;
-extern refalrts::RefalFunction& FlatExpr_3280841751_205519715;
-extern refalrts::RefalFunction& gen_CheckPattern_S2L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckPattern_3280841751_205519715;
-extern refalrts::RefalFunction& FixupKnownVars_3280841751_205519715;
-extern refalrts::RefalFunction& gen_CheckResult_L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckResult_3280841751_205519715;
-extern refalrts::RefalFunction& gen_CheckValidUsings_S4L1_3280841751_205519715;
-extern refalrts::RefalFunction& CheckValidUsings_3280841751_205519715;
+static refalrts::UInt32 COOKIE1 = 3280841751U;
+static refalrts::UInt32 COOKIE2 = 205519715U;
+#define rasl rasl_3280841751_205519715
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -40,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

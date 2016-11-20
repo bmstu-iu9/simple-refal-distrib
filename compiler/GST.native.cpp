@@ -13,158 +13,64 @@ const refalrts::RefalIdentifier ident_RemovedTile = refalrts::ident_from_static(
 const refalrts::RefalIdentifier ident_Reuse = refalrts::ident_from_static("Reuse");
 const refalrts::RefalIdentifier ident_Tile = refalrts::ident_from_static("Tile");
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Compare_0_0;
-#define Compare_alias Compare_0_0
-#define Compare_str "Compare#0:0"
-
-extern refalrts::RefalFunction& Inc_0_0;
-#define Inc_alias Inc_0_0
-#define Inc_str "Inc#0:0"
-
-extern refalrts::RefalFunction& Seq_0_0;
-#define Seq_alias Seq_0_0
-#define Seq_str "Seq#0:0"
-
-extern refalrts::RefalFunction& Reduce_0_0;
-#define Reduce_alias Reduce_0_0
-#define Reduce_str "Reduce#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& MapReduce_0_0;
-#define MapReduce_alias MapReduce_0_0
-#define MapReduce_str "MapReduce#0:0"
-
-extern refalrts::RefalFunction& DelAccumulator_0_0;
-#define DelAccumulator_alias DelAccumulator_0_0
-#define DelAccumulator_str "DelAccumulator#0:0"
-
-extern refalrts::RefalFunction& UnBracket_0_0;
-#define UnBracket_alias UnBracket_0_0
-#define UnBracket_str "UnBracket#0:0"
-
-extern refalrts::RefalFunction& Add_0_0;
-#define Add_alias Add_0_0
-#define Add_str "Add#0:0"
-
-extern refalrts::RefalFunction& Sub_0_0;
-#define Sub_alias Sub_0_0
-#define Sub_str "Sub#0:0"
-
-extern refalrts::RefalFunction& gen_GST_L1_173228079_4275985821;
-#define gen_GST_L1_alias gen_GST_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_GST_L2_173228079_4275985821;
-#define gen_GST_L2_alias gen_GST_L2_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_GST_L3_173228079_4275985821;
-#define gen_GST_L3_alias gen_GST_L3_173228079_4275985821
-
-extern refalrts::RefalFunction& GST_0_0;
-#define GST_alias GST_0_0
-
-extern refalrts::RefalFunction& gen_Enum_L1_173228079_4275985821;
-#define gen_Enum_L1_alias gen_Enum_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& Enum_173228079_4275985821;
-#define Enum_alias Enum_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_DeEnum_L1_173228079_4275985821;
-#define gen_DeEnum_L1_alias gen_DeEnum_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& DeEnum_173228079_4275985821;
-#define DeEnum_alias DeEnum_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_TileCandidates_L1_173228079_4275985821;
-#define gen_TileCandidates_L1_alias gen_TileCandidates_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& TileCandidates_173228079_4275985821;
-#define TileCandidates_alias TileCandidates_173228079_4275985821
-
-extern refalrts::RefalFunction& AlignEnumExprs_173228079_4275985821;
-#define AlignEnumExprs_alias AlignEnumExprs_173228079_4275985821
-
-extern refalrts::RefalFunction& DoOverlapOffsets_173228079_4275985821;
-#define DoOverlapOffsets_alias DoOverlapOffsets_173228079_4275985821
-
-extern refalrts::RefalFunction& OverlapChain_173228079_4275985821;
-#define OverlapChain_alias OverlapChain_173228079_4275985821
-
-extern refalrts::RefalFunction& ZipItems_173228079_4275985821;
-#define ZipItems_alias ZipItems_173228079_4275985821
-
-extern refalrts::RefalFunction& GlueTiles_173228079_4275985821;
-#define GlueTiles_alias GlueTiles_173228079_4275985821
-
-extern refalrts::RefalFunction& GlueNextTile_173228079_4275985821;
-#define GlueNextTile_alias GlueNextTile_173228079_4275985821
-
-extern refalrts::RefalFunction& FoldTile_EEnd_173228079_4275985821;
-#define FoldTile_EEnd_alias FoldTile_EEnd_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1_173228079_4275985821;
-#define gen_FilterOverlapped_S1L1L1_alias gen_FilterOverlapped_S1L1L1_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_FilterOverlapped_S1L1_173228079_4275985821;
-#define gen_FilterOverlapped_S1L1_alias gen_FilterOverlapped_S1L1_173228079_4275985821
-
-extern refalrts::RefalFunction& FilterOverlapped_173228079_4275985821;
-#define FilterOverlapped_alias FilterOverlapped_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_FindHeavyTile_L1L1_173228079_4275985821;
-#define gen_FindHeavyTile_L1L1_alias gen_FindHeavyTile_L1L1_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_FindHeavyTile_L1_173228079_4275985821;
-#define gen_FindHeavyTile_L1_alias gen_FindHeavyTile_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& FindHeavyTile_173228079_4275985821;
-#define FindHeavyTile_alias FindHeavyTile_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_RejectTile_L1L1_173228079_4275985821;
-#define gen_RejectTile_L1L1_alias gen_RejectTile_L1L1_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_RejectTile_L1_173228079_4275985821;
-#define gen_RejectTile_L1_alias gen_RejectTile_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& RejectTile_173228079_4275985821;
-#define RejectTile_alias RejectTile_173228079_4275985821
-
-extern refalrts::RefalFunction& FilterPatternPos_173228079_4275985821;
-#define FilterPatternPos_alias FilterPatternPos_173228079_4275985821
-
-extern refalrts::RefalFunction& FilterResultPos_173228079_4275985821;
-#define FilterResultPos_alias FilterResultPos_173228079_4275985821
-
-extern refalrts::RefalFunction& FoldTile_173228079_4275985821;
-#define FoldTile_alias FoldTile_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_FoldTileW_S1L1_173228079_4275985821;
-#define gen_FoldTileW_S1L1_alias gen_FoldTileW_S1L1_173228079_4275985821
-
-extern refalrts::RefalFunction& FoldTileW_173228079_4275985821;
-#define FoldTileW_alias FoldTileW_173228079_4275985821
-
-extern refalrts::RefalFunction& ReplaceTile_173228079_4275985821;
-#define ReplaceTile_alias ReplaceTile_173228079_4275985821
-
-extern refalrts::RefalFunction& gen_Modify_L1_173228079_4275985821;
-#define gen_Modify_L1_alias gen_Modify_L1_173228079_4275985821
-
-extern refalrts::RefalFunction& Modify_173228079_4275985821;
-#define Modify_alias Modify_173228079_4275985821
-
-extern refalrts::RefalFunction& DoModify_173228079_4275985821;
-#define DoModify_alias DoModify_173228079_4275985821
-
-extern refalrts::RefalFunction& OverlapItem_173228079_4275985821;
-#define OverlapItem_alias OverlapItem_173228079_4275985821
-
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
+#define str_Compare refalrts::RefalFuncName("Compare", 0U, 0U)
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
+static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
+#define str_Reduce refalrts::RefalFuncName("Reduce", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
+static refalrts::ExternalReference ref_DelAccumulator("DelAccumulator", 0U, 0U);
+#define str_DelAccumulator refalrts::RefalFuncName("DelAccumulator", 0U, 0U)
+static refalrts::ExternalReference ref_UnBracket("UnBracket", 0U, 0U);
+#define str_UnBracket refalrts::RefalFuncName("UnBracket", 0U, 0U)
+static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
+#define str_Add refalrts::RefalFuncName("Add", 0U, 0U)
+static refalrts::ExternalReference ref_Sub("Sub", 0U, 0U);
+#define str_Sub refalrts::RefalFuncName("Sub", 0U, 0U)
+static refalrts::ExternalReference ref_gen_GST_L1("GST\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_GST_L2("GST\\2", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_GST_L3("GST\\3", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_GST("GST", 0U, 0U);
+static refalrts::ExternalReference ref_gen_Enum_L1("Enum\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_Enum("Enum", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_DeEnum_L1("DeEnum\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_DeEnum("DeEnum", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_TileCandidates_L1("TileCandidates\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_TileCandidates("TileCandidates", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_AlignEnumExprs("AlignEnumExprs", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_DoOverlapOffsets("DoOverlapOffsets", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_OverlapChain("OverlapChain", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_ZipItems("ZipItems", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_GlueTiles("GlueTiles", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_GlueNextTile("GlueNextTile", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FoldTile_EEnd("FoldTile-EEnd", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_FilterOverlapped_S1L1L1("FilterOverlapped$1\\1\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_FilterOverlapped_S1L1("FilterOverlapped$1\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FilterOverlapped("FilterOverlapped", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_FindHeavyTile_L1L1("FindHeavyTile\\1\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_FindHeavyTile_L1("FindHeavyTile\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FindHeavyTile("FindHeavyTile", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_RejectTile_L1L1("RejectTile\\1\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_RejectTile_L1("RejectTile\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_RejectTile("RejectTile", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FilterPatternPos("FilterPatternPos", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FilterResultPos("FilterResultPos", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FoldTile("FoldTile", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_FoldTileW_S1L1("FoldTileW$1\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_FoldTileW("FoldTileW", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_ReplaceTile("ReplaceTile", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_gen_Modify_L1("Modify\\1", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_Modify("Modify", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_DoModify("DoModify", 173228079U, 4275985821U);
+static refalrts::ExternalReference ref_OverlapItem("OverlapItem", 173228079U, 4275985821U);
 
 static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -202,13 +108,13 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & Enum_alias ) )
+  if( ! refalrts::alloc_name( context[16], ref_Enum.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[17] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & Enum_alias );
+  refalrts::reinit_name( context[7], ref_Enum.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[11] );
   refalrts::link_brackets( context[13], context[17] );
@@ -233,8 +139,7 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_GST_L1(func_gen_GST_L1, "GST\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_GST_L1_173228079_4275985821 = descr_gen_GST_L1;
+static refalrts::RefalNativeFunction descr_gen_GST_L1(func_gen_GST_L1, refalrts::RefalFuncName("GST\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -280,7 +185,7 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & ReplaceTile/7 AsIs: (/11 AsIs: e.Pattern#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 } Tile{ AsIs: t.Tile#2/17 AsIs: >/1 } Tile{ AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & ReplaceTile_alias );
+  refalrts::reinit_name( context[7], ref_ReplaceTile.ref.function );
   refalrts::link_brackets( context[0], context[8] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[4] );
@@ -295,8 +200,7 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_GST_L2(func_gen_GST_L2, "GST\\2#173228079:4275985821");
-refalrts::RefalFunction& gen_GST_L2_173228079_4275985821 = descr_gen_GST_L2;
+static refalrts::RefalNativeFunction descr_gen_GST_L2(func_gen_GST_L2, refalrts::RefalFuncName("GST\\2", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -341,9 +245,9 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & DeEnum_alias );
+  refalrts::reinit_name( context[7], ref_DeEnum.ref.function );
   refalrts::reinit_open_call( context[12] );
-  refalrts::reinit_name( context[15], & DeEnum_alias );
+  refalrts::reinit_name( context[15], ref_DeEnum.ref.function );
   refalrts::reinit_close_call( context[16] );
   refalrts::link_brackets( context[11], context[8] );
   refalrts::push_stack( context[16] );
@@ -363,8 +267,7 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_GST_L3(func_gen_GST_L3, "GST\\3#173228079:4275985821");
-refalrts::RefalFunction& gen_GST_L3_173228079_4275985821 = descr_gen_GST_L3;
+static refalrts::RefalNativeFunction descr_gen_GST_L3(func_gen_GST_L3, refalrts::RefalFuncName("GST\\3", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -397,17 +300,17 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 HalfReuse: </1 } & Seq/13 & TileCandidates/14 & FilterOverlapped/15 </16 & @create_closure@/17 & GST\1/18 (/19 e.Pattern#1/5/20 )/22 (/23 e.Result#1/9/24 )/26 >/27 (/28 & Reduce/29 & GST\2/30 )/31 & GST\3/32 >/33 >/34 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[13], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[13], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & TileCandidates_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_TileCandidates.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & FilterOverlapped_alias ) )
+  if( ! refalrts::alloc_name( context[15], ref_FilterOverlapped.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[17], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & gen_GST_L1_alias ) )
+  if( ! refalrts::alloc_name( context[18], ref_gen_GST_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
@@ -425,19 +328,19 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[28] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[29], & Reduce_alias ) )
+  if( ! refalrts::alloc_name( context[29], ref_Reduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[30], & gen_GST_L2_alias ) )
+  if( ! refalrts::alloc_name( context[30], ref_gen_GST_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[31] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[32], & gen_GST_L3_alias ) )
+  if( ! refalrts::alloc_name( context[32], ref_gen_GST_L3.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[33] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[34] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[34] );
   refalrts::push_stack( context[0] );
@@ -458,8 +361,7 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GST(func_GST, "GST#0:0");
-refalrts::RefalFunction& GST_0_0 = descr_GST;
+static refalrts::RefalNativeFunction descr_GST(func_GST, refalrts::RefalFuncName("GST", 0U, 0U));
 
 static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -485,7 +387,7 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ } </8 & Inc/9 s.Num#2/5/10 >/11 Tile{ HalfReuse: (/0 HalfReuse: # Num/4 AsIs: s.Num#2/5 AsIs: t.Item#2/6 HalfReuse: )/1 ]] }
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & Inc_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_Inc.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[10], context[5]))
     return refalrts::cNoMemory;
@@ -505,8 +407,7 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Enum_L1(func_gen_Enum_L1, "Enum\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_Enum_L1_173228079_4275985821 = descr_gen_Enum_L1;
+static refalrts::RefalNativeFunction descr_gen_Enum_L1(func_gen_Enum_L1, refalrts::RefalFuncName("Enum\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -526,15 +427,15 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & DelAccumulator/4 } </5 & MapReduce/6 & Enum\1/7 0/8 Tile{ AsIs: e.Items#1/2 } >/9 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & gen_Enum_L1_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_gen_Enum_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[8], 0UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DelAccumulator_alias );
+  refalrts::update_name( context[4], ref_DelAccumulator.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[9] );
@@ -549,8 +450,7 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Enum(func_Enum, "Enum#173228079:4275985821");
-refalrts::RefalFunction& Enum_173228079_4275985821 = descr_Enum;
+static refalrts::RefalNativeFunction descr_Enum(func_Enum, refalrts::RefalFuncName("Enum", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -641,8 +541,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_DeEnum_L1(func_gen_DeEnum_L1, "DeEnum\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_DeEnum_L1_173228079_4275985821 = descr_gen_DeEnum_L1;
+static refalrts::RefalNativeFunction descr_gen_DeEnum_L1(func_gen_DeEnum_L1, refalrts::RefalFuncName("DeEnum\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -662,8 +561,8 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & DeEnum\1/4 AsIs: e.Items#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
-  refalrts::update_name( context[4], & gen_DeEnum_L1_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::update_name( context[4], ref_gen_DeEnum_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -674,8 +573,7 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DeEnum(func_DeEnum, "DeEnum#173228079:4275985821");
-refalrts::RefalFunction& DeEnum_173228079_4275985821 = descr_DeEnum;
+static refalrts::RefalNativeFunction descr_DeEnum(func_DeEnum, refalrts::RefalFuncName("DeEnum", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -722,7 +620,7 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoOverlapOffsets_alias );
+  refalrts::update_name( context[4], ref_DoOverlapOffsets.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[20], context[12] );
@@ -741,8 +639,7 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_TileCandidates_L1(func_gen_TileCandidates_L1, "TileCandidates\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_TileCandidates_L1_173228079_4275985821 = descr_gen_TileCandidates_L1;
+static refalrts::RefalNativeFunction descr_gen_TileCandidates_L1(func_gen_TileCandidates_L1, refalrts::RefalFuncName("TileCandidates\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -775,7 +672,7 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & AlignEnumExprs/13 0/14 (/15 )/16 (/17 Tile{ AsIs: e.Pattern#1/5 } )/18 (/19 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } & TileCandidates\1/20 >/21 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[13], & AlignEnumExprs_alias ) )
+  if( ! refalrts::alloc_name( context[13], ref_AlignEnumExprs.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[14], 0UL ) )
     return refalrts::cNoMemory;
@@ -789,11 +686,11 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & gen_TileCandidates_L1_alias ) )
+  if( ! refalrts::alloc_name( context[20], ref_gen_TileCandidates_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[7] );
   refalrts::push_stack( context[21] );
   refalrts::push_stack( context[0] );
@@ -815,8 +712,7 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_TileCandidates(func_TileCandidates, "TileCandidates#173228079:4275985821");
-refalrts::RefalFunction& TileCandidates_173228079_4275985821 = descr_TileCandidates;
+static refalrts::RefalNativeFunction descr_TileCandidates(func_TileCandidates, refalrts::RefalFuncName("TileCandidates", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -886,7 +782,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </26 & Inc/27 Tile{ AsIs: s.Num#1/21 } >/28 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/17 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/22 } )/29 )/30 (/31 Tile{ AsIs: e.Pattern#1/35(13) } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/24 } )/32 )/33 (/34 Tile{ AsIs: e.Result#1/37(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[26] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[27], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[27], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[28] ) )
       return refalrts::cNoMemory;
@@ -954,7 +850,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ } </24 & AlignEnumExprs/25 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/21 HalfReuse: >/19 } (/26 Tile{ AsIs: e.ScannedPattern#1/17 } (/27 s.Num#1/21/28 '*'/29 )/30 Tile{ AsIs: )/20 AsIs: (/15 AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/22 } )/31 )/32 (/33 Tile{ AsIs: e.Result#1/37(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[24] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[25], & AlignEnumExprs_alias ) )
+    if( ! refalrts::alloc_name( context[25], ref_AlignEnumExprs.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[26] ) )
       return refalrts::cNoMemory;
@@ -972,7 +868,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[33] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Inc_alias );
+    refalrts::update_name( context[4], ref_Inc.ref.function );
     refalrts::reinit_close_call( context[19] );
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_svar( context[7], context[21] );
@@ -1023,7 +919,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </24 & Inc/25 Tile{ AsIs: s.Num#1/21 } >/26 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/17 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/22 } )/27 Tile{ AsIs: )/16 AsIs: (/11 } Tile{ AsIs: e.Pattern#1/37(13) } )/28 (/29 Tile{ AsIs: e.ScannedResult#1/9 } (/30 s.Num#1/21/31 '*'/32 )/33 Tile{ AsIs: )/12 AsIs: (/7 AsIs: )/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[24] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[25], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[25], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[26] ) )
       return refalrts::cNoMemory;
@@ -1095,8 +991,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AlignEnumExprs(func_AlignEnumExprs, "AlignEnumExprs#173228079:4275985821");
-refalrts::RefalFunction& AlignEnumExprs_173228079_4275985821 = descr_AlignEnumExprs;
+static refalrts::RefalNativeFunction descr_AlignEnumExprs(func_AlignEnumExprs, refalrts::RefalFuncName("AlignEnumExprs", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1180,7 +1075,7 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[35] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[8], & OverlapChain_alias );
+    refalrts::reinit_name( context[8], ref_OverlapChain.ref.function );
     refalrts::reinit_close_call( context[19] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1258,10 +1153,10 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
     if( ! refalrts::alloc_close_call( context[35] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[8], & OverlapChain_alias );
+    refalrts::reinit_name( context[8], ref_OverlapChain.ref.function );
     refalrts::reinit_close_call( context[19] );
     refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[1], & DoOverlapOffsets_alias );
+    refalrts::reinit_name( context[1], ref_DoOverlapOffsets.ref.function );
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_close_bracket( context[4] );
     refalrts::push_stack( context[35] );
@@ -1306,8 +1201,7 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoOverlapOffsets(func_DoOverlapOffsets, "DoOverlapOffsets#173228079:4275985821");
-refalrts::RefalFunction& DoOverlapOffsets_173228079_4275985821 = descr_DoOverlapOffsets;
+static refalrts::RefalNativeFunction descr_DoOverlapOffsets(func_DoOverlapOffsets, refalrts::RefalFuncName("DoOverlapOffsets", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1342,11 +1236,11 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
   //RESULT: Tile{ [[ } </13 & GlueTiles/14 Tile{ AsIs: </0 Reuse: & ZipItems/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } >/15 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & GlueTiles_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_GlueTiles.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ZipItems_alias );
+  refalrts::update_name( context[4], ref_ZipItems.ref.function );
   refalrts::push_stack( context[15] );
   refalrts::push_stack( context[13] );
   refalrts::push_stack( context[1] );
@@ -1363,8 +1257,7 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_OverlapChain(func_OverlapChain, "OverlapChain#173228079:4275985821");
-refalrts::RefalFunction& OverlapChain_173228079_4275985821 = descr_OverlapChain;
+static refalrts::RefalNativeFunction descr_OverlapChain(func_OverlapChain, refalrts::RefalFuncName("OverlapChain", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1436,7 +1329,7 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: s.CurIndexP1 #21/19 AsIs: s.CurIndexR#1/22 } </27 & OverlapItem/28 Tile{ AsIs: t.PatternItem#1/23 } Tile{ AsIs: t.ResultItem#1/25 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & ZipItems/4 AsIs: (/7 } Tile{ AsIs: e.Pattern#1/29(5) } Tile{ AsIs: )/16 } Tile{ HalfReuse: (/20 AsIs: e.Result#1/31(9) AsIs: )/12 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[27] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[28], & OverlapItem_alias ) )
+    if( ! refalrts::alloc_name( context[28], ref_OverlapItem.ref.function ) )
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[19], context[21] );
     refalrts::reinit_close_call( context[15] );
@@ -1482,8 +1375,7 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ZipItems(func_ZipItems, "ZipItems#173228079:4275985821");
-refalrts::RefalFunction& ZipItems_173228079_4275985821 = descr_ZipItems;
+static refalrts::RefalNativeFunction descr_ZipItems(func_ZipItems, refalrts::RefalFuncName("ZipItems", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1525,7 +1417,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
     //TRASH: {REMOVED TILE} </0 & GlueTiles/4 (/7 s.CurIndexP#1/10 s.CurIndexR#1/11 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & GlueTiles/8 AsIs: e.Tail#1/18(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
-    refalrts::reinit_name( context[8], & GlueTiles_alias );
+    refalrts::reinit_name( context[8], ref_GlueTiles.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[9] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1571,7 +1463,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], & GlueTiles_alias ) )
+    if( ! refalrts::alloc_name( context[17], ref_GlueTiles.ref.function ) )
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[0], context[10] );
     refalrts::reinit_svar( context[4], context[11] );
@@ -1619,7 +1511,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
     //RESULT: Tile{ [[ } </13 & GlueNextTile/14 Tile{ HalfReuse: (/0 HalfReuse: s.Weight1 #11/4 AsIs: (/7 AsIs: s.CurIndexP#1/9 AsIs: s.CurIndexR#1/10 AsIs: s.Weight#1/11 AsIs: s.Ident#1/12 AsIs: )/8 } )/15 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], & GlueNextTile_alias ) )
+    if( ! refalrts::alloc_name( context[14], ref_GlueNextTile.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[15] ) )
       return refalrts::cNoMemory;
@@ -1656,8 +1548,7 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GlueTiles(func_GlueTiles, "GlueTiles#173228079:4275985821");
-refalrts::RefalFunction& GlueTiles_173228079_4275985821 = descr_GlueTiles;
+static refalrts::RefalNativeFunction descr_GlueTiles(func_GlueTiles, refalrts::RefalFuncName("GlueTiles", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1709,10 +1600,10 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/12 s.CurIndexP#1/15 s.CurIndexR#1/16 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & FoldTile-EEnd/7 AsIs: s.Weight#1/9 AsIs: e.Items#1/5 HalfReuse: >/8 } Tile{ HalfReuse: </14 HalfReuse: & GlueTiles/13 AsIs: e.Tail#1/22(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & FoldTile_EEnd_alias );
+    refalrts::reinit_name( context[7], ref_FoldTile_EEnd.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_open_call( context[14] );
-    refalrts::reinit_name( context[13], & GlueTiles_alias );
+    refalrts::reinit_name( context[13], ref_GlueTiles.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[14] );
     refalrts::push_stack( context[8] );
@@ -1755,7 +1646,7 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & GlueNextTile/4 AsIs: (/7 } </18 & Add/19 Tile{ AsIs: s.Weight#1/9 } s.ItemWeight#1/16/20 >/21 Tile{ AsIs: e.Items#1/5 } Tile{ AsIs: (/12 AsIs: s.CurIndexP#1/14 AsIs: s.CurIndexR#1/15 AsIs: s.ItemWeight#1/16 AsIs: s.Ident#1/17 AsIs: )/13 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Tail#1/22(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[19], & Add_alias ) )
+    if( ! refalrts::alloc_name( context[19], ref_Add.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[20], context[16]))
       return refalrts::cNoMemory;
@@ -1792,7 +1683,7 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & FoldTile-EEnd/7 AsIs: s.Weight#1/9 AsIs: e.Items#1/5 HalfReuse: >/8 } Tile{ ]] }
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & FoldTile_EEnd_alias );
+  refalrts::reinit_name( context[7], ref_FoldTile_EEnd.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[4] );
@@ -1804,8 +1695,7 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GlueNextTile(func_GlueNextTile, "GlueNextTile#173228079:4275985821");
-refalrts::RefalFunction& GlueNextTile_173228079_4275985821 = descr_GlueNextTile;
+static refalrts::RefalNativeFunction descr_GlueNextTile(func_GlueNextTile, refalrts::RefalFuncName("GlueNextTile", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1853,7 +1743,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FoldTile-EEnd/4 } </14 & Sub/15 Tile{ AsIs: s.Weight#1/5 } 3/16 >/17 Tile{ AsIs: e.Items#1/23(2) } >/18 (/19 3/20 s.CurIndexP#1/12/21 s.CurIndexR#1/13/22 Tile{ AsIs: (/8 AsIs: s.CurIndexP#1/12 AsIs: s.CurIndexR#1/13 AsIs: 3/11 AsIs: # AsIsE/10 AsIs: )/9 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & Sub_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_Sub.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_number( context[16], 3UL ) )
       return refalrts::cNoMemory;
@@ -1948,8 +1838,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FoldTile_EEnd(func_FoldTile_EEnd, "FoldTile-EEnd#173228079:4275985821");
-refalrts::RefalFunction& FoldTile_EEnd_173228079_4275985821 = descr_FoldTile_EEnd;
+static refalrts::RefalNativeFunction descr_FoldTile_EEnd(func_FoldTile_EEnd, refalrts::RefalFuncName("FoldTile-EEnd", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1992,8 +1881,7 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, "FilterOverlapped$1\\1\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1_173228079_4275985821 = descr_gen_FilterOverlapped_S1L1L1;
+static refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1L1(func_gen_FilterOverlapped_S1L1L1, refalrts::RefalFuncName("FilterOverlapped$1\\1\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2028,9 +1916,9 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & gen_FilterOverlapped_S1L1L1_alias ) )
+  if( ! refalrts::alloc_name( context[15], ref_gen_FilterOverlapped_S1L1L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
@@ -2038,11 +1926,11 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & FilterOverlapped_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_FilterOverlapped.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], & RejectTile_alias ) )
+  if( ! refalrts::alloc_name( context[21], ref_RejectTile.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
@@ -2078,8 +1966,7 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, "FilterOverlapped$1\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_FilterOverlapped_S1L1_173228079_4275985821 = descr_gen_FilterOverlapped_S1L1;
+static refalrts::RefalNativeFunction descr_gen_FilterOverlapped_S1L1(func_gen_FilterOverlapped_S1L1, refalrts::RefalFuncName("FilterOverlapped$1\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2110,13 +1997,13 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
     //RESULT: Tile{ [[ } </7 & Fetch/8 Tile{ AsIs: </0 Reuse: & FindHeavyTile/4 AsIs: t.NextTile#1/5 AsIs: e.Tiles#1/11(2) AsIs: >/1 } & FilterOverlapped$1\1/9 >/10 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[7] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[8], & Fetch_alias ) )
+    if( ! refalrts::alloc_name( context[8], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[9], & gen_FilterOverlapped_S1L1_alias ) )
+    if( ! refalrts::alloc_name( context[9], ref_gen_FilterOverlapped_S1L1.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[10] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & FindHeavyTile_alias );
+    refalrts::update_name( context[4], ref_FindHeavyTile.ref.function );
     refalrts::push_stack( context[10] );
     refalrts::push_stack( context[7] );
     refalrts::push_stack( context[1] );
@@ -2147,8 +2034,7 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FilterOverlapped(func_FilterOverlapped, "FilterOverlapped#173228079:4275985821");
-refalrts::RefalFunction& FilterOverlapped_173228079_4275985821 = descr_FilterOverlapped;
+static refalrts::RefalNativeFunction descr_FilterOverlapped(func_FilterOverlapped, refalrts::RefalFuncName("FilterOverlapped", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2247,8 +2133,7 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, "FindHeavyTile\\1\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_FindHeavyTile_L1L1_173228079_4275985821 = descr_gen_FindHeavyTile_L1L1;
+static refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1L1(func_gen_FindHeavyTile_L1L1, refalrts::RefalFuncName("FindHeavyTile\\1\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2295,7 +2180,7 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 & Compare/20 s.MaxWeight#2/13/21 s.Weight#2/16/22 >/23 </24 Tile{ HalfReuse: & @create_closure@/8 HalfReuse: & FindHeavyTile\1\1/11 AsIs: s.Weight#2/16 AsIs: s.CurIndexP#2/17 AsIs: s.CurIndexR#2/18 } (/25 Tile{ AsIs: e.Items#2/9 } Tile{ HalfReuse: )/7 AsIs: s.MaxWeight#2/13 AsIs: s.IndexP#2/14 AsIs: s.IndexR#2/15 } (/26 Tile{ AsIs: e.MaxItems#2/5 } )/27 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & Compare_alias ) )
+  if( ! refalrts::alloc_name( context[20], ref_Compare.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[21], context[13]))
     return refalrts::cNoMemory;
@@ -2311,9 +2196,9 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[27] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_name( context[8], & refalrts::create_closure );
-  refalrts::reinit_name( context[11], & gen_FindHeavyTile_L1L1_alias );
+  refalrts::reinit_name( context[11], ref_gen_FindHeavyTile_L1L1.ref.function );
   refalrts::reinit_close_bracket( context[7] );
   refalrts::reinit_close_call( context[12] );
   refalrts::push_stack( context[1] );
@@ -2339,8 +2224,7 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, "FindHeavyTile\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_FindHeavyTile_L1_173228079_4275985821 = descr_gen_FindHeavyTile_L1;
+static refalrts::RefalNativeFunction descr_gen_FindHeavyTile_L1(func_gen_FindHeavyTile_L1, refalrts::RefalFuncName("FindHeavyTile\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2363,8 +2247,8 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & MapReduce/0 Reuse: & FindHeavyTile\1/4 AsIs: t.NextTile#1/5 AsIs: e.Tiles#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & MapReduce_alias );
-  refalrts::update_name( context[4], & gen_FindHeavyTile_L1_alias );
+  refalrts::reinit_name( context[0], ref_MapReduce.ref.function );
+  refalrts::update_name( context[4], ref_gen_FindHeavyTile_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2375,8 +2259,7 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindHeavyTile(func_FindHeavyTile, "FindHeavyTile#173228079:4275985821");
-refalrts::RefalFunction& FindHeavyTile_173228079_4275985821 = descr_FindHeavyTile;
+static refalrts::RefalNativeFunction descr_FindHeavyTile(func_FindHeavyTile, refalrts::RefalFuncName("FindHeavyTile", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2404,8 +2287,7 @@ static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, "RejectTile\\1\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_RejectTile_L1L1_173228079_4275985821 = descr_gen_RejectTile_L1L1;
+static refalrts::RefalNativeFunction descr_gen_RejectTile_L1L1(func_gen_RejectTile_L1L1, refalrts::RefalFuncName("RejectTile\\1\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2449,29 +2331,29 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Tiles#2/5 } </17 & Seq/18 Tile{ AsIs: (/7 } & Map/19 (/20 & FilterPatternPos/21 Tile{ AsIs: s.CurIndexP#2/13 } )/22 Tile{ AsIs: )/8 AsIs: (/11 } & Map/23 (/24 & FilterResultPos/25 Tile{ AsIs: s.CurIndexR#2/14 } )/26 )/27 & RejectTile\1\1/28 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[18], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], & FilterPatternPos_alias ) )
+  if( ! refalrts::alloc_name( context[21], ref_FilterPatternPos.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[23], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[23], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[25], & FilterResultPos_alias ) )
+  if( ! refalrts::alloc_name( context[25], ref_FilterResultPos.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[26] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[28], & gen_RejectTile_L1L1_alias ) )
+  if( ! refalrts::alloc_name( context[28], ref_gen_RejectTile_L1L1.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_close_call( context[12] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -2498,8 +2380,7 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RejectTile_L1(func_gen_RejectTile_L1, "RejectTile\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_RejectTile_L1_173228079_4275985821 = descr_gen_RejectTile_L1;
+static refalrts::RefalNativeFunction descr_gen_RejectTile_L1(func_gen_RejectTile_L1, refalrts::RefalFuncName("RejectTile\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2526,14 +2407,14 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
   //RESULT: Tile{ [[ } </9 & UnBracket/10 </11 Tile{ HalfReuse: & Reduce/0 Reuse: & RejectTile\1/4 AsIs: (/7 AsIs: e.Tiles#1/5 AsIs: )/8 AsIs: e.HeavyTileItems#1/2 AsIs: >/1 } >/12 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & UnBracket_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_UnBracket.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Reduce_alias );
-  refalrts::update_name( context[4], & gen_RejectTile_L1_alias );
+  refalrts::reinit_name( context[0], ref_Reduce.ref.function );
+  refalrts::update_name( context[4], ref_gen_RejectTile_L1.ref.function );
   refalrts::push_stack( context[12] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[1] );
@@ -2549,8 +2430,7 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_RejectTile(func_RejectTile, "RejectTile#173228079:4275985821");
-refalrts::RefalFunction& RejectTile_173228079_4275985821 = descr_RejectTile;
+static refalrts::RefalNativeFunction descr_RejectTile(func_RejectTile, refalrts::RefalFuncName("RejectTile", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2606,9 +2486,9 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </7 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/10 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/15 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FoldTile_alias );
+    refalrts::update_name( context[4], ref_FoldTile.ref.function );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[6], & Sub_alias );
+    refalrts::reinit_name( context[6], ref_Sub.ref.function );
     refalrts::reinit_close_call( context[15] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -2661,9 +2541,9 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.IndexP#1/16 s.IndexR#1/17 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/14 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/15 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/13 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FoldTile_alias );
+    refalrts::update_name( context[4], ref_FoldTile.ref.function );
     refalrts::reinit_open_call( context[12] );
-    refalrts::reinit_name( context[6], & Sub_alias );
+    refalrts::reinit_name( context[6], ref_Sub.ref.function );
     refalrts::reinit_close_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -2722,10 +2602,10 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTileW/4 } Tile{ AsIs: e.Items-B#1/13 } Tile{ HalfReuse: >/17 } Tile{ HalfReuse: </18 } Tile{ HalfReuse: & FoldTileW/7 } Tile{ AsIs: e.Items-E#1/23(8) } Tile{ AsIs: >/1 ]] }
-      refalrts::update_name( context[4], & FoldTileW_alias );
+      refalrts::update_name( context[4], ref_FoldTileW.ref.function );
       refalrts::reinit_close_call( context[17] );
       refalrts::reinit_open_call( context[18] );
-      refalrts::reinit_name( context[7], & FoldTileW_alias );
+      refalrts::reinit_name( context[7], ref_FoldTileW.ref.function );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[18] );
       refalrts::push_stack( context[17] );
@@ -2758,8 +2638,7 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FilterPatternPos(func_FilterPatternPos, "FilterPatternPos#173228079:4275985821");
-refalrts::RefalFunction& FilterPatternPos_173228079_4275985821 = descr_FilterPatternPos;
+static refalrts::RefalNativeFunction descr_FilterPatternPos(func_FilterPatternPos, refalrts::RefalFuncName("FilterPatternPos", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2815,9 +2694,9 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </7 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/10 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/15 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FoldTile_alias );
+    refalrts::update_name( context[4], ref_FoldTile.ref.function );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[6], & Sub_alias );
+    refalrts::reinit_name( context[6], ref_Sub.ref.function );
     refalrts::reinit_close_call( context[15] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -2870,9 +2749,9 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.IndexP#1/15 s.IndexR#1/16 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/14 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/13 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FoldTile_alias );
+    refalrts::update_name( context[4], ref_FoldTile.ref.function );
     refalrts::reinit_open_call( context[12] );
-    refalrts::reinit_name( context[6], & Sub_alias );
+    refalrts::reinit_name( context[6], ref_Sub.ref.function );
     refalrts::reinit_close_call( context[13] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -2931,10 +2810,10 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTileW/4 } Tile{ AsIs: e.Items-B#1/13 } Tile{ HalfReuse: >/17 } Tile{ HalfReuse: </18 } Tile{ HalfReuse: & FoldTileW/7 } Tile{ AsIs: e.Items-E#1/23(8) } Tile{ AsIs: >/1 ]] }
-      refalrts::update_name( context[4], & FoldTileW_alias );
+      refalrts::update_name( context[4], ref_FoldTileW.ref.function );
       refalrts::reinit_close_call( context[17] );
       refalrts::reinit_open_call( context[18] );
-      refalrts::reinit_name( context[7], & FoldTileW_alias );
+      refalrts::reinit_name( context[7], ref_FoldTileW.ref.function );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[18] );
       refalrts::push_stack( context[17] );
@@ -2967,8 +2846,7 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FilterResultPos(func_FilterResultPos, "FilterResultPos#173228079:4275985821");
-refalrts::RefalFunction& FilterResultPos_173228079_4275985821 = descr_FilterResultPos;
+static refalrts::RefalNativeFunction descr_FilterResultPos(func_FilterResultPos, refalrts::RefalFuncName("FilterResultPos", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3026,13 +2904,13 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], & FoldTile_alias ) )
+    if( ! refalrts::alloc_name( context[20], ref_FoldTile.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_number( context[21], 3UL ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[22] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Sub_alias );
+    refalrts::update_name( context[4], ref_Sub.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[19] );
     refalrts::push_stack( context[22] );
@@ -3061,7 +2939,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile-EEnd/4 AsIs: s.Weight#1/5 AsIs: e.Items#1/2 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FoldTile_EEnd_alias );
+    refalrts::update_name( context[4], ref_FoldTile_EEnd.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     return refalrts::cSuccess;
@@ -3083,8 +2961,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FoldTile(func_FoldTile, "FoldTile#173228079:4275985821");
-refalrts::RefalFunction& FoldTile_173228079_4275985821 = descr_FoldTile;
+static refalrts::RefalNativeFunction descr_FoldTile(func_FoldTile, refalrts::RefalFuncName("FoldTile", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3121,7 +2998,7 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 s.ItemWeight#2/12 s.Ident#2/13 )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Weight#2/9 HalfReuse: s.ItemWeight2 #12/7 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & Add_alias );
+  refalrts::update_name( context[4], ref_Add.ref.function );
   refalrts::reinit_svar( context[7], context[12] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -3132,8 +3009,7 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, "FoldTileW$1\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_FoldTileW_S1L1_173228079_4275985821 = descr_gen_FoldTileW_S1L1;
+static refalrts::RefalNativeFunction descr_gen_FoldTileW_S1L1(func_gen_FoldTileW_S1L1, refalrts::RefalFuncName("FoldTileW$1\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3175,13 +3051,13 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 } & FoldTile/13 </14 & Reduce/15 & FoldTileW$1\1/16 s.ItemWeight#1/11/17 e.Items#1/20(2)/18 Tile{ HalfReuse: >/4 AsIs: (/7 AsIs: s.CurIndexP#1/9 AsIs: s.CurIndexR#1/10 AsIs: s.ItemWeight#1/11 AsIs: s.Ident#1/12 AsIs: )/8 AsIs: e.Items#1/20(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[13], & FoldTile_alias ) )
+    if( ! refalrts::alloc_name( context[13], ref_FoldTile.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & Reduce_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_Reduce.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & gen_FoldTileW_S1L1_alias ) )
+    if( ! refalrts::alloc_name( context[16], ref_gen_FoldTileW_S1L1.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[17], context[11]))
       return refalrts::cNoMemory;
@@ -3218,8 +3094,7 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FoldTileW(func_FoldTileW, "FoldTileW#173228079:4275985821");
-refalrts::RefalFunction& FoldTileW_173228079_4275985821 = descr_FoldTileW;
+static refalrts::RefalNativeFunction descr_FoldTileW(func_FoldTileW, refalrts::RefalFuncName("FoldTileW", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3323,7 +3198,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_ident( context[45], ident_Num ) )
         return refalrts::cNoMemory;
-      refalrts::update_name( context[4], & Modify_alias );
+      refalrts::update_name( context[4], ref_Modify.ref.function );
       refalrts::reinit_close_bracket( context[1] );
       refalrts::reinit_open_bracket( context[16] );
       refalrts::reinit_close_bracket( context[38] );
@@ -3356,8 +3231,7 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::RefalNativeFunction descr_ReplaceTile(func_ReplaceTile, "ReplaceTile#173228079:4275985821");
-refalrts::RefalFunction& ReplaceTile_173228079_4275985821 = descr_ReplaceTile;
+static refalrts::RefalNativeFunction descr_ReplaceTile(func_ReplaceTile, refalrts::RefalFuncName("ReplaceTile", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3432,8 +3306,7 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Modify_L1(func_gen_Modify_L1, "Modify\\1#173228079:4275985821");
-refalrts::RefalFunction& gen_Modify_L1_173228079_4275985821 = descr_gen_Modify_L1;
+static refalrts::RefalNativeFunction descr_gen_Modify_L1(func_gen_Modify_L1, refalrts::RefalFuncName("Modify\\1", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3489,7 +3362,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
   //RESULT: Tile{ [[ } </25 & Fetch/26 Tile{ AsIs: </0 Reuse: & DoModify/4 AsIs: (/7 AsIs: e.Idents#1/5 AsIs: )/8 AsIs: (/11 } # Tile/27 Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.PatSecond#1/13 } Tile{ AsIs: )/20 AsIs: (/23 AsIs: e.ResSecond#1/21 AsIs: )/24 AsIs: >/1 } </28 & @create_closure@/29 & Modify\1/30 (/31 Tile{ AsIs: e.PatFirst#1/9 } Tile{ AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.ResFirst#1/17 } )/32 >/33 >/34 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[26], & Fetch_alias ) )
+  if( ! refalrts::alloc_name( context[26], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[27], ident_Tile ) )
     return refalrts::cNoMemory;
@@ -3497,7 +3370,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[29], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[30], & gen_Modify_L1_alias ) )
+  if( ! refalrts::alloc_name( context[30], ref_gen_Modify_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[31] ) )
     return refalrts::cNoMemory;
@@ -3507,7 +3380,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[34] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & DoModify_alias );
+  refalrts::update_name( context[4], ref_DoModify.ref.function );
   refalrts::push_stack( context[34] );
   refalrts::push_stack( context[25] );
   refalrts::push_stack( context[33] );
@@ -3538,8 +3411,7 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Modify(func_Modify, "Modify#173228079:4275985821");
-refalrts::RefalFunction& Modify_173228079_4275985821 = descr_Modify;
+static refalrts::RefalNativeFunction descr_Modify(func_Modify, refalrts::RefalFuncName("Modify", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3655,7 +3527,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/41 (/35 s.TypeFromPat#1/42 e.InfoFromPat#1/33 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/30 # Num/32 s.NumR#1/43 (/39 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # AsIs/15 AsIs: (/25 HalfReuse: s.TypeFromRes1 #44/27 } Tile{ AsIs: e.InfoFromRes#1/37 } Tile{ AsIs: s.Offset#1/45 AsIs: )/36 AsIs: )/26 } Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.PatSecond#1/48(13) } Tile{ AsIs: )/40 HalfReuse: (/31 AsIs: e.ResSecond#1/50(17) AsIs: )/20 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & DoModify_alias );
+    refalrts::reinit_name( context[7], ref_DoModify.ref.function );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_ident( context[15], ident_AsIs );
@@ -3753,7 +3625,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # LEFT-EDGE/37 )/36 )/26 {REMOVED TILE} )/16 (/19 (/30 # Num/32 s.NumR#1/44 {REMOVED TILE} # LEFT-EDGE/42 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # LEFT-EDGE/15 HalfReuse: )/25 HalfReuse: )/27 } Tile{ AsIs: (/40 } Tile{ AsIs: e.PatSecond#1/48(13) } Tile{ AsIs: )/41 HalfReuse: (/31 AsIs: e.ResSecond#1/50(17) AsIs: )/20 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & DoModify_alias );
+    refalrts::reinit_name( context[7], ref_DoModify.ref.function );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_ident( context[15], ident_LEFT_EDGE );
@@ -3851,7 +3723,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # RIGHT-EDGE/37 )/36 )/26 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # RIGHT-EDGE/15 HalfReuse: )/25 HalfReuse: )/27 } Tile{ HalfReuse: (/42 AsIs: )/41 HalfReuse: (/31 AsIs: )/20 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & DoModify_alias );
+    refalrts::reinit_name( context[7], ref_DoModify.ref.function );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_ident( context[15], ident_RIGHT_EDGE );
@@ -3999,8 +3871,7 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoModify(func_DoModify, "DoModify#173228079:4275985821");
-refalrts::RefalFunction& DoModify_173228079_4275985821 = descr_DoModify;
+static refalrts::RefalNativeFunction descr_DoModify(func_DoModify, refalrts::RefalFuncName("DoModify", 173228079U, 4275985821U));
 
 static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4491,8 +4362,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_OverlapItem(func_OverlapItem, "OverlapItem#173228079:4275985821");
-refalrts::RefalFunction& OverlapItem_173228079_4275985821 = descr_OverlapItem;
+static refalrts::RefalNativeFunction descr_OverlapItem(func_OverlapItem, refalrts::RefalFuncName("OverlapItem", 173228079U, 4275985821U));
 
 
 //End of file

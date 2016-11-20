@@ -2,9 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& HashLittle2_Chars_0_0;
+static refalrts::UInt32 COOKIE1 = 1683294634U;
+static refalrts::UInt32 COOKIE2 = 2084243894U;
+#define rasl rasl_1683294634_2084243894
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -12,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

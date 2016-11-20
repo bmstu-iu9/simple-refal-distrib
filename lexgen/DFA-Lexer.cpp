@@ -2,37 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& EscapeString_0_0;
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& MapReduce_0_0;
-extern refalrts::RefalFunction& Inc_0_0;
-extern refalrts::RefalFunction& IntFromStr_0_0;
-extern refalrts::RefalFunction& Chr_0_0;
-extern refalrts::RefalFunction& DFA_TextFromToken_0_0;
-extern refalrts::RefalFunction& gen_DFA_Tokens_L1_2065463025_228192413;
-extern refalrts::RefalFunction& gen_DFA_Tokens_L2_2065463025_228192413;
-extern refalrts::RefalFunction& gen_DFA_Tokens_L3_2065463025_228192413;
-extern refalrts::RefalFunction& DFA_Tokens_0_0;
-extern refalrts::RefalFunction& LoTokens_2065463025_228192413;
-extern refalrts::RefalFunction& gen_FilterTokens_L1_2065463025_228192413;
-extern refalrts::RefalFunction& FilterTokens_2065463025_228192413;
-extern refalrts::RefalFunction& gen_Unescape_S6L1_2065463025_228192413;
-extern refalrts::RefalFunction& Unescape_2065463025_228192413;
-extern refalrts::RefalFunction& Root_2065463025_228192413;
-extern refalrts::RefalFunction& SetName_2065463025_228192413;
-extern refalrts::RefalFunction& Flush_2065463025_228192413;
-extern refalrts::RefalFunction& Literal_2065463025_228192413;
-extern refalrts::RefalFunction& Name_2065463025_228192413;
-extern refalrts::RefalFunction& ErrorFlush_2065463025_228192413;
-extern refalrts::RefalFunction& FlushName_2065463025_228192413;
-extern refalrts::RefalFunction& Literal_Escape_2065463025_228192413;
-extern refalrts::RefalFunction& Literal_Quote_2065463025_228192413;
-extern refalrts::RefalFunction& FlushNameTail_2065463025_228192413;
-extern refalrts::RefalFunction& Literal_DecCode_2065463025_228192413;
+static refalrts::UInt32 COOKIE1 = 2065463025U;
+static refalrts::UInt32 COOKIE2 = 228192413U;
+#define rasl rasl_2065463025_228192413
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -40,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

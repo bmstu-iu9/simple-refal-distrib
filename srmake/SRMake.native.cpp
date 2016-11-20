@@ -10,65 +10,31 @@ const refalrts::RefalIdentifier ident_Runtime = refalrts::ident_from_static("Run
 const refalrts::RefalIdentifier ident_Search = refalrts::ident_from_static("Search");
 const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
 const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
-extern refalrts::RefalFunction& WriteLine_0_0;
-#define WriteLine_alias WriteLine_0_0
-#define WriteLine_str "WriteLine#0:0"
-
-extern refalrts::RefalFunction& System_0_0;
-#define System_alias System_0_0
-#define System_str "System#0:0"
-
-extern refalrts::RefalFunction& StrFromInt_0_0;
-#define StrFromInt_alias StrFromInt_0_0
-#define StrFromInt_str "StrFromInt#0:0"
-
-extern refalrts::RefalFunction& Exit_0_0;
-#define Exit_alias Exit_0_0
-#define Exit_str "Exit#0:0"
-
-extern refalrts::RefalFunction& ArgList_0_0;
-#define ArgList_alias ArgList_0_0
-#define ArgList_str "ArgList#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& CreateFileList_0_0;
-#define CreateFileList_alias CreateFileList_0_0
-#define CreateFileList_str "CreateFileList#0:0"
-
-extern refalrts::RefalFunction& ParseCommandLine_0_0;
-#define ParseCommandLine_alias ParseCommandLine_0_0
-#define ParseCommandLine_str "ParseCommandLine#0:0"
-
-extern refalrts::RefalFunction& Go_0_0;
-#define Go_alias Go_0_0
-
-extern refalrts::RefalFunction& Main_1598433284_870988702;
-#define Main_alias Main_1598433284_870988702
-
-extern refalrts::RefalFunction& gen_MakeProject_S1L1_1598433284_870988702;
-#define gen_MakeProject_S1L1_alias gen_MakeProject_S1L1_1598433284_870988702
-
-extern refalrts::RefalFunction& gen_MakeProject_S2L1_1598433284_870988702;
-#define gen_MakeProject_S2L1_alias gen_MakeProject_S2L1_1598433284_870988702
-
-extern refalrts::RefalFunction& MakeProject_1598433284_870988702;
-#define MakeProject_alias MakeProject_1598433284_870988702
-
-extern refalrts::RefalFunction& gen_Make_S1L1_1598433284_870988702;
-#define gen_Make_S1L1_alias gen_Make_S1L1_1598433284_870988702
-
-extern refalrts::RefalFunction& gen_Make_S2L1_1598433284_870988702;
-#define gen_Make_S2L1_alias gen_Make_S2L1_1598433284_870988702
-
-extern refalrts::RefalFunction& gen_Make_S2L2_1598433284_870988702;
-#define gen_Make_S2L2_alias gen_Make_S2L2_1598433284_870988702
-
-extern refalrts::RefalFunction& Make_1598433284_870988702;
-#define Make_alias Make_1598433284_870988702
-
+static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
+#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
+static refalrts::ExternalReference ref_System("System", 0U, 0U);
+#define str_System refalrts::RefalFuncName("System", 0U, 0U)
+static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
+#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
+static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
+#define str_Exit refalrts::RefalFuncName("Exit", 0U, 0U)
+static refalrts::ExternalReference ref_ArgList("ArgList", 0U, 0U);
+#define str_ArgList refalrts::RefalFuncName("ArgList", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_CreateFileList("CreateFileList", 0U, 0U);
+#define str_CreateFileList refalrts::RefalFuncName("CreateFileList", 0U, 0U)
+static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
+#define str_ParseCommandLine refalrts::RefalFuncName("ParseCommandLine", 0U, 0U)
+static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
+static refalrts::ExternalReference ref_Main("Main", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_gen_MakeProject_S1L1("MakeProject$1\\1", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_gen_MakeProject_S2L1("MakeProject$2\\1", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_MakeProject("MakeProject", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_gen_Make_S1L1("Make$1\\1", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_gen_Make_S2L1("Make$2\\1", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_gen_Make_S2L2("Make$2\\2", 1598433284U, 870988702U);
+static refalrts::ExternalReference ref_Make("Make", 1598433284U, 870988702U);
 
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -87,13 +53,13 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main/4 HalfReuse: </1 } & ArgList/5 >/6 >/7 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & ArgList_alias ) )
+  if( ! refalrts::alloc_name( context[5], ref_ArgList.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Main_alias );
+  refalrts::update_name( context[4], ref_Main.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[0] );
@@ -107,8 +73,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Go(func_Go, "Go#0:0");
-refalrts::RefalFunction& Go_0_0 = descr_Go;
+static refalrts::RefalNativeFunction descr_Go(func_Go, refalrts::RefalFuncName("Go", 0U, 0U));
 
 static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -149,11 +114,11 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & WriteLine_alias ) )
+    if( ! refalrts::alloc_name( context[13], ref_WriteLine.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[14], context[15], "  srmake [-s path\\to\\srefc.exe] -c c++compiler {-d search-dir} MainFileName[.sref", 81 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & WriteLine_alias );
+    refalrts::update_name( context[4], ref_WriteLine.ref.function );
     refalrts::reinit_char( context[7], 'U' );
     refalrts::reinit_char( context[8], ']' );
     refalrts::push_stack( context[1] );
@@ -179,9 +144,9 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & MakeProject/4 HalfReuse: </7 } Tile{ HalfReuse: & ParseCommandLine/8 AsIs: e.Arguments#1/2 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & MakeProject_alias );
+  refalrts::update_name( context[4], ref_MakeProject.ref.function );
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[8], & ParseCommandLine_alias );
+  refalrts::reinit_name( context[8], ref_ParseCommandLine.ref.function );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );
@@ -195,8 +160,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Main(func_Main, "Main#1598433284:870988702");
-refalrts::RefalFunction& Main_1598433284_870988702 = descr_Main;
+static refalrts::RefalNativeFunction descr_Main(func_Main, refalrts::RefalFuncName("Main", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -235,8 +199,7 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, "MakeProject$1\\1#1598433284:870988702");
-refalrts::RefalFunction& gen_MakeProject_S1L1_1598433284_870988702 = descr_gen_MakeProject_S1L1;
+static refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, refalrts::RefalFuncName("MakeProject$1\\1", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -270,13 +233,13 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & StrFromInt_alias ) )
+  if( ! refalrts::alloc_name( context[15], ref_StrFromInt.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[17], context[18], ": ", 2 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine_alias );
+  refalrts::update_name( context[4], ref_WriteLine.ref.function );
   refalrts::reinit_char( context[7], 'C' );
   refalrts::reinit_char( context[8], 'a' );
   refalrts::push_stack( context[1] );
@@ -296,8 +259,7 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, "MakeProject$2\\1#1598433284:870988702");
-refalrts::RefalFunction& gen_MakeProject_S2L1_1598433284_870988702 = descr_gen_MakeProject_S2L1;
+static refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, refalrts::RefalFuncName("MakeProject$2\\1", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -358,7 +320,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[23] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[24], & Map_alias ) )
+    if( ! refalrts::alloc_name( context[24], ref_Map.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[25] ) )
       return refalrts::cNoMemory;
@@ -366,11 +328,11 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[27] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[9], & Make_alias );
-    refalrts::update_name( context[4], & CreateFileList_alias );
+    refalrts::reinit_name( context[9], ref_Make.ref.function );
+    refalrts::update_name( context[4], ref_CreateFileList.ref.function );
     refalrts::reinit_open_bracket( context[5] );
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[17], & gen_MakeProject_S1L1_alias );
+    refalrts::reinit_name( context[17], ref_gen_MakeProject_S1L1.ref.function );
     refalrts::push_stack( context[27] );
     refalrts::push_stack( context[18] );
     refalrts::push_stack( context[26] );
@@ -410,14 +372,14 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & MakeProject$2\1/5 AsIs: e.Errors#1/2 AsIs: >/1 } </6 & Exit/7 1/8 >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & Exit_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_Exit.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[8], 1UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Map_alias );
-  refalrts::reinit_name( context[5], & gen_MakeProject_S2L1_alias );
+  refalrts::update_name( context[4], ref_Map.ref.function );
+  refalrts::reinit_name( context[5], ref_gen_MakeProject_S2L1.ref.function );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[6] );
   refalrts::push_stack( context[1] );
@@ -430,8 +392,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, "MakeProject#1598433284:870988702");
-refalrts::RefalFunction& MakeProject_1598433284_870988702 = descr_MakeProject;
+static refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, refalrts::RefalFuncName("MakeProject", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -471,7 +432,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[12], context[13], " not foun", 9 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & WriteLine_alias );
+    refalrts::update_name( context[4], ref_WriteLine.ref.function );
     refalrts::reinit_char( context[7], 'C' );
     refalrts::reinit_char( context[9], 'O' );
     refalrts::reinit_char( context[8], 'd' );
@@ -556,8 +517,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, "Make$1\\1#1598433284:870988702");
-refalrts::RefalFunction& gen_Make_S1L1_1598433284_870988702 = descr_gen_Make_S1L1;
+static refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, refalrts::RefalFuncName("Make$1\\1", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -633,8 +593,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, "Make$2\\1#1598433284:870988702");
-refalrts::RefalFunction& gen_Make_S2L1_1598433284_870988702 = descr_gen_Make_S2L1;
+static refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, refalrts::RefalFuncName("Make$2\\1", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -709,8 +668,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, "Make$2\\2#1598433284:870988702");
-refalrts::RefalFunction& gen_Make_S2L2_1598433284_870988702 = descr_gen_Make_S2L2;
+static refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, refalrts::RefalFuncName("Make$2\\2", 1598433284U, 870988702U));
 
 static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -776,10 +734,10 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.SrefC#1/5 {REMOVED TILE} e.CompilerCommand#1/9 {REMOVED TILE} e.Directories#1/13 )/16 e.Units-B#1/17 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & Make$1\1/7 } Tile{ AsIs: (/21 AsIs: # NotFound/23 AsIs: e.UnitName#1/19 AsIs: )/22 AsIs: e.Units-E#1/27(2) AsIs: >/1 } Tile{ HalfReuse: </12 HalfReuse: & Exit/15 } Tile{ HalfReuse: 1/8 HalfReuse: >/11 } Tile{ ]] }
-      refalrts::update_name( context[4], & Map_alias );
-      refalrts::reinit_name( context[7], & gen_Make_S1L1_alias );
+      refalrts::update_name( context[4], ref_Map.ref.function );
+      refalrts::reinit_name( context[7], ref_gen_Make_S1L1.ref.function );
       refalrts::reinit_open_call( context[12] );
-      refalrts::reinit_name( context[15], & Exit_alias );
+      refalrts::reinit_name( context[15], ref_Exit.ref.function );
       refalrts::reinit_number( context[8], 1UL );
       refalrts::reinit_close_call( context[11] );
       refalrts::push_stack( context[11] );
@@ -811,25 +769,25 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & System/4 } Tile{ AsIs: e.SrefC#1/5 } Tile{ HalfReuse: ' '/7 }"-c"/17 Tile{ HalfReuse: ' '/8 HalfReuse: '\"'/11 AsIs: e.CompilerCommand#1/9 HalfReuse: '\"'/12 HalfReuse: </15 } & Map/19 & Make$2\1/20 Tile{ AsIs: e.Directories#1/13 } >/21 </22 & Map/23 Tile{ HalfReuse: & Make$2\2/16 AsIs: e.Units#1/2 AsIs: >/1 } >/24 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[17], context[18], "-c", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & gen_Make_S2L1_alias ) )
+  if( ! refalrts::alloc_name( context[20], ref_gen_Make_S2L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[23], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[23], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & System_alias );
+  refalrts::update_name( context[4], ref_System.ref.function );
   refalrts::reinit_char( context[7], ' ' );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::reinit_char( context[11], '\"' );
   refalrts::reinit_char( context[12], '\"' );
   refalrts::reinit_open_call( context[15] );
-  refalrts::reinit_name( context[16], & gen_Make_S2L2_alias );
+  refalrts::reinit_name( context[16], ref_gen_Make_S2L2.ref.function );
   refalrts::push_stack( context[24] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );
@@ -852,8 +810,7 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Make(func_Make, "Make#1598433284:870988702");
-refalrts::RefalFunction& Make_1598433284_870988702 = descr_Make;
+static refalrts::RefalNativeFunction descr_Make(func_Make, refalrts::RefalFuncName("Make", 1598433284U, 870988702U));
 
 
 //End of file

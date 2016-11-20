@@ -3,9 +3,7 @@
 
 
 const refalrts::RefalIdentifier ident_RepeatOption = refalrts::ident_from_static("RepeatOption");
-extern refalrts::RefalFunction& GetOpt_CheckRepeated_0_0;
-#define GetOpt_CheckRepeated_alias GetOpt_CheckRepeated_0_0
-
+static refalrts::ExternalReference ref_GetOpt_CheckRepeated("GetOpt-CheckRepeated", 0U, 0U);
 
 static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -216,8 +214,7 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, "GetOpt-CheckRepeated#0:0");
-refalrts::RefalFunction& GetOpt_CheckRepeated_0_0 = descr_GetOpt_CheckRepeated;
+static refalrts::RefalNativeFunction descr_GetOpt_CheckRepeated(func_GetOpt_CheckRepeated, refalrts::RefalFuncName("GetOpt-CheckRepeated", 0U, 0U));
 
 
 //End of file

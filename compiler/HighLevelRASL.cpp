@@ -2,22 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint_0_0;
-extern refalrts::RefalFunction& HighLevelRASL_Function_Conjoint_0_0;
-extern refalrts::RefalFunction& GenInitSubst_Simple_0_0;
-extern refalrts::RefalFunction& GenSubst_Simple_0_0;
-extern refalrts::RefalFunction& GenResult_Simple_0_0;
-extern refalrts::RefalFunction& GenInitSubst_Save_0_0;
-extern refalrts::RefalFunction& GenSubst_Save_0_0;
-extern refalrts::RefalFunction& GenResult_Opt_0_0;
-extern refalrts::RefalFunction& gen_HighLevelRASL_L1_656936134_33269278;
-extern refalrts::RefalFunction& HighLevelRASL_0_0;
-extern refalrts::RefalFunction& HighLevelRASL_Function_656936134_33269278;
-extern refalrts::RefalFunction& GenSentenceFunc_656936134_33269278;
-extern refalrts::RefalFunction& GenResultFuncs_656936134_33269278;
+static refalrts::UInt32 COOKIE1 = 656936134U;
+static refalrts::UInt32 COOKIE2 = 33269278U;
+#define rasl rasl_656936134_33269278
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -25,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

@@ -2,24 +2,14 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& WriteLine_0_0;
-#define WriteLine_alias WriteLine_0_0
-#define WriteLine_str "WriteLine#0:0"
-
-extern refalrts::RefalFunction& Exit_0_0;
-#define Exit_alias Exit_0_0
-#define Exit_str "Exit#0:0"
-
-extern refalrts::RefalFunction& StrFromInt_0_0;
-#define StrFromInt_alias StrFromInt_0_0
-#define StrFromInt_str "StrFromInt#0:0"
-
-extern refalrts::RefalFunction& ErrorAt_0_0;
-#define ErrorAt_alias ErrorAt_0_0
-
-extern refalrts::RefalFunction& WarningAt_0_0;
-#define WarningAt_alias WarningAt_0_0
-
+static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
+#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
+static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
+#define str_Exit refalrts::RefalFuncName("Exit", 0U, 0U)
+static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
+#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
+static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
+static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
 
 static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -56,14 +46,14 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & Exit_alias ) )
+  if( ! refalrts::alloc_name( context[16], ref_Exit.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[17], 1UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine_alias );
-  refalrts::reinit_name( context[7], & StrFromInt_alias );
+  refalrts::update_name( context[4], ref_WriteLine.ref.function );
+  refalrts::reinit_name( context[7], ref_StrFromInt.ref.function );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::push_stack( context[18] );
   refalrts::push_stack( context[15] );
@@ -84,8 +74,7 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, "ErrorAt#0:0");
-refalrts::RefalFunction& ErrorAt_0_0 = descr_ErrorAt;
+static refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, refalrts::RefalFuncName("ErrorAt", 0U, 0U));
 
 static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -120,8 +109,8 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[13], context[14], ":WARNING:", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine_alias );
-  refalrts::reinit_name( context[7], & StrFromInt_alias );
+  refalrts::update_name( context[4], ref_WriteLine.ref.function );
+  refalrts::reinit_name( context[7], ref_StrFromInt.ref.function );
   refalrts::reinit_char( context[8], ' ' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -138,8 +127,7 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, "WarningAt#0:0");
-refalrts::RefalFunction& WarningAt_0_0 = descr_WarningAt;
+static refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, refalrts::RefalFuncName("WarningAt", 0U, 0U));
 
 
 //End of file

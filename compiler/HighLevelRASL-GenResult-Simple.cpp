@@ -2,25 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& Inc_0_0;
-extern refalrts::RefalFunction& Sort_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& Add_0_0;
-extern refalrts::RefalFunction& CollectStrings_0_0;
-extern refalrts::RefalFunction& IncVarOffset_0_0;
-extern refalrts::RefalFunction& PrintVar_0_0;
-extern refalrts::RefalFunction& gen_GenResult_Simple_L1_2528518871_2573030195;
-extern refalrts::RefalFunction& gen_GenResult_Simple_L2_2528518871_2573030195;
-extern refalrts::RefalFunction& GenResult_Simple_0_0;
-extern refalrts::RefalFunction& DoGenResult_2528518871_2573030195;
-extern refalrts::RefalFunction& MakeVariableCommentTable_2528518871_2573030195;
-extern refalrts::RefalFunction& gen_ReplicateVar_L1_2528518871_2573030195;
-extern refalrts::RefalFunction& ReplicateVar_2528518871_2573030195;
-extern refalrts::RefalFunction& MakeVariableComment_2528518871_2573030195;
+static refalrts::UInt32 COOKIE1 = 2528518871U;
+static refalrts::UInt32 COOKIE2 = 2573030195U;
+#define rasl rasl_2528518871_2573030195
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -28,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

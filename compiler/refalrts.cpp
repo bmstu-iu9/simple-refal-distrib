@@ -33,6 +33,12 @@ void valid_linked_aux(const char *text, refalrts::Iter i) {
   }
 }
 
+namespace refalrts {
+
+char unsigned_int_is_uint32[sizeof(refalrts::UInt32) == 4 ? +1 : -1];
+
+} // namespace refalrts
+
 //==============================================================================
 // Примитивные операции
 //==============================================================================
@@ -1572,7 +1578,7 @@ const refalrts::RASLCommand rasl_create_closure[] = {
 }
 
 refalrts::RefalFunction refalrts::create_closure(
-  rasl_create_closure, "@create_closure@"
+  rasl_create_closure, refalrts::RefalFuncName("@create_closure@", 0, 0)
 );
 
 /*
@@ -2331,7 +2337,7 @@ extern unsigned g_step_counter;
 
 namespace dynamic {
 
-extern size_t g_idents_count;
+size_t idents_count();
 
 } // namespace dynamic
 
@@ -2420,131 +2426,110 @@ void refalrts::profiler::read_counters(unsigned long counters[]) {
   counters[cPerformanceCounter_ContextCopyTime] = basic_context_copy_time;
 
   counters[cPerformanceCounter_IdentsAllocated] =
-    static_cast<unsigned long>(::refalrts::dynamic::g_idents_count);
+    static_cast<unsigned long>(::refalrts::dynamic::idents_count());
 }
 
 //==============================================================================
-// Динамические идентификаторы
+// Динамическое связывание
 //==============================================================================
+
+//------------------------------------------------------------------------------
+
+// Хеш-таблица
 
 namespace refalrts {
 
 namespace dynamic {
 
-typedef unsigned int UInt32;
-char unsigned_int_is_uint32[sizeof(UInt32) == 4 ? +1 : -1];
+UInt32 one_at_a_time(UInt32 init, const char *bytes, size_t length);
 
-struct IdentHashNode {
-  UInt32 hash;
-  RefalIdentDescr ident;
-  const char *nonstatic_origin;
-  IdentHashNode *next;
-
-  IdentHashNode(UInt32 hash, IdentHashNode *next)
-    : hash(hash)
-    , ident()
-    , nonstatic_origin(0)
-    , next(next)
-  {
-    /* пусто */
-  }
+template <typename Key>
+struct HashKeyTraits {
+  /* ничего */
 };
 
-IdentHashNode **g_idents_table = 0;
-unsigned int g_idents_table_power = 5;
-size_t g_idents_count = 0;
+template <typename Key, typename Value>
+class DynamicHash {
+  // Копирование запрещено
+  DynamicHash(const DynamicHash&);
+  DynamicHash& operator=(const DynamicHash&);
+public:
+  DynamicHash();
+  ~DynamicHash();
 
-const size_t cResizeThreshold = 4;
+  size_t count() const {
+    return m_count;
+  }
 
-void free_idents_table();
-UInt32 one_at_a_time(const char *bytes, size_t length);
-void idents_table_rehash();
-IdentHashNode *alloc_ident_node(const char *name);
+  Value *alloc(Key key);
+
+private:
+  struct Node {
+    UInt32 hash;
+    Value value;
+    typename DynamicHash<Key, Value>::Node *next;
+
+    Node(UInt32 hash, Node *next)
+      : hash(hash)
+      , value()
+      , next(next)
+    {
+      /* пусто */
+    }
+  };
+
+  typedef typename DynamicHash<Key, Value>::Node *NodePtr;
+  enum { cResizeThreshold = 4 };
+
+  void rehash();
+
+  Node **m_table;
+  unsigned int m_table_power;
+  size_t m_count;
+};
 
 } // namespace dynamic
 
 } // namespace refalrts
 
-refalrts::RefalIdentifier refalrts::RefalIdentDescr::from_static(
-  const char * name
-) {
-  dynamic::IdentHashNode *node = dynamic::alloc_ident_node(name);
-#ifdef IDENTS_LIMIT
-  if (! node) {
-    fprintf(
-      stderr, "INTERNAL ERROR: Identifiers table overflows (max %ld)\n",
-      static_cast<unsigned long>(IDENTS_LIMIT)
-    );
-    exit(154);
-  }
-#else
-  assert(node != 0);
-#endif // ifdef IDENTS_LIMIT
+template <typename Key, typename Value>
+refalrts::dynamic::DynamicHash<Key, Value>::DynamicHash()
+  : m_table()
+  , m_table_power(5)
+  , m_count(0)
+{
+  size_t table_size = size_t(1) << m_table_power;
+  m_table = new DynamicHash<Key, Value>::NodePtr[table_size];
 
-  if (node->ident.m_name == 0) {
-    node->ident.m_name = name;
-  } else if (node->nonstatic_origin != 0) {
-    node->ident.m_name = name;
-    delete[] node->nonstatic_origin;
-    node->nonstatic_origin = 0;
-  }
-
-  return &node->ident;
-}
-
-refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
-  const char *name
-) {
-  dynamic::IdentHashNode *node = dynamic::alloc_ident_node(name);
-
-#ifdef IDENTS_LIMIT
-  if (! node) {
-    return 0;
-  }
-#else
-  assert(node != 0);
-#endif // ifdef IDENTS_LIMIT
-
-  if (node->ident.m_name == 0) {
-    size_t length = name ? strlen(name) : 0;
-    char *new_name = new char[length + 1];
-    memcpy(new_name, name, length + 1);
-
-    node->ident.m_name = new_name;
-    node->nonstatic_origin = new_name;
-  }
-
-  return &node->ident;
-}
-
-void refalrts::dynamic::free_idents_table() {
-#ifndef DONT_PRINT_STATISTICS
-  fprintf(
-    stderr, "Identifiers allocated: %lu\n",
-    static_cast<unsigned long>(g_idents_count)
-  );
-#endif // ifndef DONT_PRINT_STATISTICS
-
-  size_t table_size = g_idents_table ? 1UL << g_idents_table_power : 0;
   for (size_t i = 0; i < table_size; ++i) {
-    IdentHashNode *node = g_idents_table[i];
+    m_table[i] = 0;
+  }
+}
+
+template <typename Key, typename Value>
+refalrts::dynamic::DynamicHash<Key, Value>::~DynamicHash()
+{
+  size_t table_size = size_t(1) << m_table_power;
+  for (size_t i = 0; i < table_size; ++i) {
+    Node *node = m_table[i];
     while (node != 0) {
-      if (node->nonstatic_origin != 0) {
-        delete[] node->nonstatic_origin;
-      }
-      IdentHashNode *next = node->next;
+      node->value.cleanup();
+      Node *next = node->next;
       delete node;
       node = next;
     }
   }
+
+  delete[] m_table;
+  m_table = 0;
 }
 
-refalrts::dynamic::UInt32 refalrts::dynamic::one_at_a_time(
-  const char *bytes, size_t length
+refalrts::UInt32 refalrts::dynamic::one_at_a_time(
+  UInt32 init, const char *bytes, size_t length
 ) {
   // Хеш-функция Дженкинса one_at_a_time.
   // Исходный код: http://www.burtleburtle.net/bob/hash/doobs.html
-  UInt32 hash = 0;
+  UInt32 hash = init;
   for (size_t i = 0; i < length; ++i)
   {
     unsigned char byte = static_cast<unsigned char>(bytes[i]);
@@ -2558,72 +2543,361 @@ refalrts::dynamic::UInt32 refalrts::dynamic::one_at_a_time(
   return hash;
 }
 
-void refalrts::dynamic::idents_table_rehash() {
-  size_t table_size = 1UL << g_idents_table_power;
+template <typename Key, typename Value>
+void refalrts::dynamic::DynamicHash<Key, Value>::rehash() {
+  // Хаки для Watcom
+  using refalrts::UInt32;
 
-  if (g_idents_table != 0 && g_idents_count / table_size < cResizeThreshold) {
+  size_t table_size = size_t(1) << m_table_power;
+
+  if (m_count / table_size < cResizeThreshold) {
     return;
   }
 
-  unsigned int new_table_power = g_idents_table_power + 1;
-  size_t new_table_size = 1UL << new_table_power;
-  UInt32 hash_mask = (1U << new_table_power) - 1;
-  typedef IdentHashNode *IdentHashNodePtr;
-  IdentHashNode **new_table = new IdentHashNodePtr[new_table_size];
+  unsigned int new_table_power = m_table_power + 1;
+  size_t new_table_size = size_t(1) << new_table_power;
+  UInt32 hash_mask = (UInt32(1) << new_table_power) - 1;
+  Node **new_table = new DynamicHash<Key, Value>::NodePtr[new_table_size];
 
   for (size_t i = 0; i < new_table_size; ++i) {
     new_table[i] = 0;
   }
 
-  if (g_idents_table != 0) {
-    for (size_t i = 0; i < table_size; ++i) {
-      IdentHashNode *node = g_idents_table[i];
-      while (node != 0) {
-        IdentHashNode *next_in_old_table = node->next;
-        IdentHashNode **pnext_in_new_table = &new_table[node->hash & hash_mask];
-        node->next = *pnext_in_new_table;
-        *pnext_in_new_table = node;
-        node = next_in_old_table;
-      }
+  for (size_t i = 0; i < table_size; ++i) {
+    Node *node = m_table[i];
+    while (node != 0) {
+      Node *next_in_old_table = node->next;
+      Node **pnext_in_new_table = &new_table[node->hash & hash_mask];
+      node->next = *pnext_in_new_table;
+      *pnext_in_new_table = node;
+      node = next_in_old_table;
     }
   }
 
-  g_idents_table_power = new_table_power;
-  g_idents_table = new_table;
+  m_table_power = new_table_power;
+  m_table = new_table;
+}
+
+template <typename Key, typename Value>
+Value * refalrts::dynamic::DynamicHash<Key, Value>::alloc(Key key) {
+  // Хаки для Watcom
+  using refalrts::UInt32;
+  using refalrts::dynamic::HashKeyTraits;
+
+  rehash();
+
+  UInt32 hash = HashKeyTraits<Key>::hash(key);
+  UInt32 hash_mask = (UInt32(1) << m_table_power) - 1;
+
+  Node **pstart_node = &m_table[hash & hash_mask];
+  Node *return_node = *pstart_node;
+  while (
+    return_node != 0
+    && (
+      return_node->hash != hash
+      || ! HashKeyTraits<Key>::equal(return_node->value.key(), key)
+    )
+  ) {
+    return_node = return_node->next;
+  }
+
+  if (return_node == 0) {
+    return_node = new Node(hash, *pstart_node);
+    *pstart_node = return_node;
+    ++m_count;
+  }
+
+  return &return_node->value;
+}
+
+//------------------------------------------------------------------------------
+
+// Идентификаторы
+
+namespace refalrts {
+
+namespace dynamic {
+
+struct IdentHashNode {
+  RefalIdentDescr ident;
+  const char *nonstatic_origin;
+
+  IdentHashNode()
+    : ident()
+    , nonstatic_origin(0)
+  {
+    /* пусто */
+  }
+
+  void cleanup() {
+    if (nonstatic_origin) {
+      delete [] nonstatic_origin;
+    }
+  };
+
+  const char *key() const {
+    return ident.name();
+  }
+};
+
+template <>
+struct HashKeyTraits<const char*> {
+  static UInt32 hash(const char *name) {
+    size_t length = name ? strlen(name) : 0;
+    return one_at_a_time(0, name, length);
+  }
+
+  static bool equal(const char *left, const char *right) {
+    return strcmp(left, right) == 0;
+  }
+};
+
+DynamicHash<const char *, IdentHashNode> *g_idents_table = 0;
+
+DynamicHash<const char *, IdentHashNode>& idents_table() {
+  if (g_idents_table == 0) {
+    g_idents_table = new DynamicHash<const char *, IdentHashNode>;
+  }
+
+  return *g_idents_table;
+}
+
+size_t idents_count() {
+  return idents_table().count();
+}
+
+void free_idents_table();
+IdentHashNode *alloc_ident_node(const char *name);
+
+} // namespace dynamic
+
+} // namespace refalrts
+
+refalrts::RefalIdentifier refalrts::RefalIdentDescr::from_static(
+  const char * name
+) {
+  dynamic::IdentHashNode *value = dynamic::alloc_ident_node(name);
+#ifdef IDENTS_LIMIT
+  if (! value) {
+    fprintf(
+      stderr, "INTERNAL ERROR: Identifiers table overflows (max %ld)\n",
+      static_cast<unsigned long>(IDENTS_LIMIT)
+    );
+    exit(154);
+  }
+#else
+  assert(value != 0);
+#endif // ifdef IDENTS_LIMIT
+
+  if (value->ident.m_name == 0) {
+    value->ident.m_name = name;
+  } else if (value->nonstatic_origin != 0) {
+    value->ident.m_name = name;
+    delete[] value->nonstatic_origin;
+    value->nonstatic_origin = 0;
+  }
+
+  return &value->ident;
+}
+
+refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
+  const char *name
+) {
+  dynamic::IdentHashNode *value = dynamic::alloc_ident_node(name);
+
+#ifdef IDENTS_LIMIT
+  if (! value) {
+    return 0;
+  }
+#else
+  assert(value != 0);
+#endif // ifdef IDENTS_LIMIT
+
+  if (value->ident.m_name == 0) {
+    size_t length = name ? strlen(name) : 0;
+    char *new_name = new char[length + 1];
+    memcpy(new_name, name, length + 1);
+
+    value->ident.m_name = new_name;
+    value->nonstatic_origin = new_name;
+  }
+
+  return &value->ident;
+}
+
+void refalrts::dynamic::free_idents_table() {
+#ifndef DONT_PRINT_STATISTICS
+  fprintf(
+    stderr, "Identifiers allocated: %lu\n",
+    static_cast<unsigned long>(idents_count())
+  );
+#endif // ifndef DONT_PRINT_STATISTICS
+
+  delete g_idents_table;
 }
 
 refalrts::dynamic::IdentHashNode *refalrts::dynamic::alloc_ident_node(
   const char *name
 ) {
 #ifdef IDENTS_LIMIT
-  if (g_idents_count >= IDENTS_LIMIT) {
+  if (idents_count() >= IDENTS_LIMIT) {
     return 0;
   }
 #endif // ifdef IDENTS_LIMIT
-  idents_table_rehash();
+  return idents_table().alloc(name);
+}
 
-  size_t length = name ? strlen(name) : 0;
+//------------------------------------------------------------------------------
 
-  UInt32 hash = one_at_a_time(name, length);
-  UInt32 hash_mask = (1U << g_idents_table_power) - 1;
+// Функции
 
-  IdentHashNode **pstart_node = &g_idents_table[hash & hash_mask];
-  IdentHashNode *return_node = *pstart_node;
-  while (
-    return_node != 0
-    && return_node->hash != hash
-    && strcmp(return_node->ident.name(), name) != 0
-  ) {
-    return_node = return_node->next;
+namespace refalrts {
+
+namespace dynamic {
+
+struct FuncHashNode {
+  RefalFunction *function;
+
+  FuncHashNode()
+    : function(0)
+  {
+    /* пусто */
   }
 
-  if (return_node == 0) {
-    return_node = new IdentHashNode(hash, *pstart_node);
-    *pstart_node = return_node;
-    ++g_idents_count;
+  void cleanup() {
+    /* пусто */
   }
 
-  return return_node;
+  RefalFuncName key() const {
+    return function->name;
+  }
+};
+
+template <>
+struct HashKeyTraits<RefalFuncName> {
+  static UInt32 hash(const RefalFuncName& name) {
+    size_t length = name.name ? strlen(name.name) : 0;
+    return one_at_a_time(name.cookie1 ^ name.cookie2, name.name, length);
+  }
+
+  static bool equal(const RefalFuncName& left, const RefalFuncName& right) {
+    return left.cookie1 == right.cookie1
+      && left.cookie2 == right.cookie2
+      && strcmp(left.name, right.name) == 0;
+  }
+};
+
+struct FunctionTable *g_unresolved_func_tables = 0;
+struct ExternalReference *g_unresolved_external_references = 0;
+
+DynamicHash<RefalFuncName, FuncHashNode> *g_funcs_table = 0;
+DynamicHash<RefalFuncName, FuncHashNode>& funcs_table() {
+  if (g_funcs_table == 0) {
+    g_funcs_table = new DynamicHash<RefalFuncName, FuncHashNode>;
+  }
+
+  return *g_funcs_table;
+}
+
+unsigned find_unresolved_externals();
+void free_funcs_table();
+
+} // namespace dynamic
+
+} // namespace refalrts
+
+void refalrts::RefalFunction::register_me() {
+  dynamic::FuncHashNode *node = dynamic::funcs_table().alloc(name);
+
+  if (node->function != 0) {
+    fprintf(
+      stderr, "INTERNAL ERROR: function redeclared: %s#%u:%u\n",
+      name.name, name.cookie1, name.cookie2);
+    exit(156);
+  }
+
+  node->function = this;
+}
+
+refalrts::FunctionTable::FunctionTable(
+  refalrts::UInt32 cookie1, refalrts::UInt32 cookie2,
+  refalrts::FunctionTableItem items[]
+)
+  : cookie1(cookie1)
+  , cookie2(cookie2)
+  , items(items)
+  , next(dynamic::g_unresolved_func_tables)
+{
+  dynamic::g_unresolved_func_tables = this;
+}
+
+refalrts::ExternalReference::ExternalReference(
+  const char *name, refalrts::UInt32 cookie1, refalrts::UInt32 cookie2
+)
+  : ref(name)
+  , cookie1(cookie1)
+  , cookie2(cookie2)
+  , next(dynamic::g_unresolved_external_references)
+{
+  dynamic::g_unresolved_external_references = this;
+}
+
+unsigned refalrts::dynamic::find_unresolved_externals() {
+  unsigned unresolved = 0;
+
+  while (g_unresolved_func_tables != 0) {
+    FunctionTable *table = g_unresolved_func_tables;
+    FunctionTableItem *items = table->items;
+    for (size_t i = 0; items[i].func_name != 0; ++i) {
+      const char *str_name = items[i].func_name;
+      char ch = *str_name;
+      assert(ch == '*' || ch == '#');
+
+      UInt32 cookie1 = 0;
+      UInt32 cookie2 = 0;
+      if (ch == '#') {
+        cookie1 = table->cookie1;
+        cookie2 = table->cookie2;
+      }
+
+      RefalFuncName name(str_name + 1, cookie1, cookie2);
+      FuncHashNode *node = funcs_table().alloc(name);
+      if (node->function != 0) {
+        items[i].function = node->function;
+      } else {
+        fprintf(
+          stderr, "INTERNAL ERROR: unresolved external %s#%u:%u\n",
+          str_name + 1, cookie1, cookie2
+        );
+        ++unresolved;
+      }
+    }
+
+    g_unresolved_func_tables = g_unresolved_func_tables->next;
+  }
+
+  while (g_unresolved_external_references != 0) {
+    ExternalReference *er = g_unresolved_external_references;
+    RefalFuncName name(er->ref.func_name, er->cookie1, er->cookie2);
+    FuncHashNode *node = funcs_table().alloc(name);
+    if (node->function != 0) {
+      er->ref.function = node->function;
+    } else {
+      fprintf(
+        stderr, "INTERNAL ERROR: unresolved external %s#%u:%u\n",
+        er->ref.func_name, er->cookie1, er->cookie2
+      );
+      ++unresolved;
+    }
+
+    g_unresolved_external_references = g_unresolved_external_references->next;
+  }
+
+  return unresolved;
+}
+
+void refalrts::dynamic::free_funcs_table() {
+  delete g_funcs_table;
 }
 
 //==============================================================================
@@ -2734,7 +3008,11 @@ bool refalrts::vm::empty_stack() {
   return (g_stack_ptr == 0);
 }
 
-extern refalrts::RefalFunction& Go_0_0;
+namespace {
+
+refalrts::ExternalReference go("Go", 0, 0);
+
+}
 
 refalrts::FnResult refalrts::vm::run() {
   FnResult res = main_loop();
@@ -2759,7 +3037,7 @@ refalrts::FnResult refalrts::vm::run() {
       case refalrts::cIdentTableLimit:
         fprintf(
           stderr, "\nIDENTS TABLE OVERFLOW (max %lu)\n\n",
-          static_cast<unsigned long>(refalrts::dynamic::g_idents_count)
+          static_cast<unsigned long>(refalrts::dynamic::idents_count())
         );
         break;
 
@@ -2835,8 +3113,14 @@ void refalrts::vm::print_seq(
             continue;
 
           case refalrts::cDataSwapHead:
-            fprintf(output, "\n\n*Swap %s:\n", begin->function_info->name);
-            refalrts::move_left(begin, end);
+            {
+              const RefalFuncName& name = begin->function_info->name;
+              fprintf(
+                output, "\n\n*Swap %s#%u:%u:\n",
+                name.name, name.cookie1, name.cookie2
+              );
+              refalrts::move_left(begin, end);
+            }
             continue;
 
           case refalrts::cDataChar:
@@ -2850,8 +3134,13 @@ void refalrts::vm::print_seq(
             continue;
 
           case refalrts::cDataFunction:
-            fprintf(output, "&%s ", begin->function_info->name);
-            refalrts::move_left(begin, end);
+            {
+              const RefalFuncName& name = begin->function_info->name;
+              fprintf(
+                output, "&%s#%u:%u ", name.name, name.cookie1, name.cookie2
+              );
+              refalrts::move_left(begin, end);
+            }
             continue;
 
           case refalrts::cDataIdentifier:
@@ -3085,15 +3374,11 @@ refalrts::FnResult refalrts::vm::main_loop() {
     { icNextStep, 0, 0, 0 }
   };
 
-  static RefalFunction *startup_func[] = {
-    & Go_0_0
-  };
-
   RefalFunction *callee = 0;
   Iter begin = & g_last_marker; /* нужно для icSetResArgBegin в startup_rasl */
   Iter end = 0;
   const RASLCommand *rasl = startup_rasl;
-  RefalFunction **functions = startup_func;
+  FunctionTableItem *functions = &go.ref;
   const RefalIdentifier *idents = 0;
   const RefalNumber *numbers = 0;
   const StringItem *strings = 0;
@@ -3136,7 +3421,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
       case icLoadConstants:
         {
           RASLFunction *descr = static_cast<RASLFunction*>(callee);
-          functions = descr->functions;
+          functions = descr->functions->items;
           idents = descr->idents;
           numbers = descr->numbers;
           strings = descr->strings;
@@ -3270,32 +3555,32 @@ refalrts::FnResult refalrts::vm::main_loop() {
         break;
 
       case icFuncLeft:
-        if (! function_left(functions[rasl->val2], bb, be)) {
+        if (! function_left(functions[rasl->val2].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncRight:
-        if (! function_right(functions[rasl->val2], bb, be)) {
+        if (! function_right(functions[rasl->val2].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncTerm:
-        if (! function_term(functions[rasl->val2], bb)) {
+        if (! function_term(functions[rasl->val2].function, bb)) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncLeftSave:
-        save_pos = function_left(functions[rasl->val2], bb, be);
+        save_pos = function_left(functions[rasl->val2].function, bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
       case icFuncRightSave:
-        save_pos = function_right(functions[rasl->val2], bb, be);
+        save_pos = function_right(functions[rasl->val2].function, bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
@@ -3376,19 +3661,19 @@ refalrts::FnResult refalrts::vm::main_loop() {
         break;
 
       case icADTLeft:
-        if (! adt_left(res_b, res_e, functions[rasl->val1], bb, be)) {
+        if (! adt_left(res_b, res_e, functions[rasl->val1].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icADTRight:
-        if (! adt_right(res_b, res_e, functions[rasl->val1], bb, be)) {
+        if (! adt_right(res_b, res_e, functions[rasl->val1].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
       case icADTTerm:
-        if (! adt_term(res_b, res_e, functions[rasl->val1], bb)) {
+        if (! adt_term(res_b, res_e, functions[rasl->val1].function, bb)) {
           MATCH_FAIL;
         }
         break;
@@ -3396,7 +3681,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
       case icADTLeftSave:
         {
           int inner = rasl->val2;
-          const RefalFunction *tag = functions[rasl->val1];
+          const RefalFunction *tag = functions[rasl->val1].function;
           context[inner + 2] =
             adt_left(context[inner], context[inner + 1], tag, bb, be);
           if (! context[inner + 2]) {
@@ -3411,7 +3696,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
       case icADTRightSave:
         {
           int inner = rasl->val2;
-          const RefalFunction *tag = functions[rasl->val1];
+          const RefalFunction *tag = functions[rasl->val1].function;
           context[inner + 2] =
             adt_right(context[inner], context[inner + 1], tag, bb, be);
           if (! context[inner + 2]) {
@@ -3426,7 +3711,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
       case icADTTermSave:
         {
           int inner = rasl->val2;
-          const RefalFunction *tag = functions[rasl->val1];
+          const RefalFunction *tag = functions[rasl->val1].function;
           context[inner + 2] =
             adt_term(context[inner], context[inner + 1], tag, bb);
           if (! context[inner + 2]) {
@@ -3663,7 +3948,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         break;
 
       case icAllocFunc:
-        if (! alloc_name(elem, functions[rasl->val2])) {
+        if (! alloc_name(elem, functions[rasl->val2].function)) {
           return cNoMemory;
         }
         break;
@@ -3721,7 +4006,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         break;
 
       case icReinitFunc:
-        reinit_name(elem, functions[rasl->val2]);
+        reinit_name(elem, functions[rasl->val2].function);
         break;
 
       case icReinitInt:
@@ -3766,7 +4051,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         break;
 
       case icUpdateFunc:
-        update_name(elem, functions[rasl->val2]);
+        update_name(elem, functions[rasl->val2].function);
         break;
 
       case icUpdateInt:
@@ -3965,7 +4250,6 @@ refalrts::FnResult refalrts::vm::main_loop() {
 }
 
 
-refalrts::RefalFunction *refalrts::functions[] = { 0 };
 const refalrts::RefalIdentifier refalrts::idents[] = { 0 };
 const refalrts::RefalNumber refalrts::numbers[] = { 0 };
 const refalrts::StringItem refalrts::strings[] = { { "", 0 } };
@@ -3985,6 +4269,12 @@ void refalrts::SwitchDefaultViolation::print() {
 int main(int argc, char **argv) {
   refalrts::vm::g_argc = argc;
   refalrts::vm::g_argv = argv;
+
+  unsigned unresolved = refalrts::dynamic::find_unresolved_externals();
+  if (unresolved > 0) {
+    fprintf(stderr, "Found %u unresolved externals\n", unresolved);
+    return 157;
+  }
 
   refalrts::FnResult res;
   try {
@@ -4007,6 +4297,7 @@ int main(int argc, char **argv) {
   refalrts::vm::free_view_field();
   refalrts::allocator::free_memory();
   refalrts::dynamic::free_idents_table();
+  refalrts::dynamic::free_funcs_table();
 
   fflush(stdout);
 

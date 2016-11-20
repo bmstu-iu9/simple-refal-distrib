@@ -31,99 +31,41 @@ const refalrts::RefalIdentifier ident_TkNewVariable = refalrts::ident_from_stati
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 const refalrts::RefalIdentifier ident_UnnamedADT = refalrts::ident_from_static("UnnamedADT");
 const refalrts::RefalIdentifier ident_VariableNotFound = refalrts::ident_from_static("VariableNotFound");
-extern refalrts::RefalFunction& Reduce_0_0;
-#define Reduce_alias Reduce_0_0
-#define Reduce_str "Reduce#0:0"
-
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Seq_0_0;
-#define Seq_alias Seq_0_0
-#define Seq_str "Seq#0:0"
-
-extern refalrts::RefalFunction& MapReduce_0_0;
-#define MapReduce_alias MapReduce_0_0
-#define MapReduce_str "MapReduce#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& EL_AddErrorAt_0_0;
-#define EL_AddErrorAt_alias EL_AddErrorAt_0_0
-#define EL_AddErrorAt_str "EL-AddErrorAt#0:0"
-
-extern refalrts::RefalFunction& gen_CheckProgram_L1_3280841751_205519715;
-#define gen_CheckProgram_L1_alias gen_CheckProgram_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckProgram_0_0;
-#define CheckProgram_alias CheckProgram_0_0
-
-extern refalrts::RefalFunction& gen_FindErrors_L1_3280841751_205519715;
-#define gen_FindErrors_L1_alias gen_FindErrors_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_FindErrors_L2_3280841751_205519715;
-#define gen_FindErrors_L2_alias gen_FindErrors_L2_3280841751_205519715
-
-extern refalrts::RefalFunction& FindErrors_3280841751_205519715;
-#define FindErrors_alias FindErrors_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_CheckDeclarations_L1_3280841751_205519715;
-#define gen_CheckDeclarations_L1_alias gen_CheckDeclarations_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckDeclarations_3280841751_205519715;
-#define CheckDeclarations_alias CheckDeclarations_3280841751_205519715
-
-extern refalrts::RefalFunction& CleanupValidForwards_3280841751_205519715;
-#define CleanupValidForwards_alias CleanupValidForwards_3280841751_205519715
-
-extern refalrts::RefalFunction& FindInvalidForwards_3280841751_205519715;
-#define FindInvalidForwards_alias FindInvalidForwards_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckRedefinitions_3280841751_205519715;
-#define CheckRedefinitions_alias CheckRedefinitions_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckFunctionBody_3280841751_205519715;
-#define CheckFunctionBody_alias CheckFunctionBody_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckFunctionBodyRec_3280841751_205519715;
-#define CheckFunctionBodyRec_alias CheckFunctionBodyRec_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_CheckSentence_L1_3280841751_205519715;
-#define gen_CheckSentence_L1_alias gen_CheckSentence_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckSentence_3280841751_205519715;
-#define CheckSentence_alias CheckSentence_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_FlatExpr_L1_3280841751_205519715;
-#define gen_FlatExpr_L1_alias gen_FlatExpr_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& FlatExpr_3280841751_205519715;
-#define FlatExpr_alias FlatExpr_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_CheckPattern_S2L1_3280841751_205519715;
-#define gen_CheckPattern_S2L1_alias gen_CheckPattern_S2L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckPattern_3280841751_205519715;
-#define CheckPattern_alias CheckPattern_3280841751_205519715
-
-extern refalrts::RefalFunction& FixupKnownVars_3280841751_205519715;
-#define FixupKnownVars_alias FixupKnownVars_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_CheckResult_L1_3280841751_205519715;
-#define gen_CheckResult_L1_alias gen_CheckResult_L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckResult_3280841751_205519715;
-#define CheckResult_alias CheckResult_3280841751_205519715
-
-extern refalrts::RefalFunction& gen_CheckValidUsings_S4L1_3280841751_205519715;
-#define gen_CheckValidUsings_S4L1_alias gen_CheckValidUsings_S4L1_3280841751_205519715
-
-extern refalrts::RefalFunction& CheckValidUsings_3280841751_205519715;
-#define CheckValidUsings_alias CheckValidUsings_3280841751_205519715
-
+static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
+#define str_Reduce refalrts::RefalFuncName("Reduce", 0U, 0U)
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_EL_AddErrorAt("EL-AddErrorAt", 0U, 0U);
+#define str_EL_AddErrorAt refalrts::RefalFuncName("EL-AddErrorAt", 0U, 0U)
+static refalrts::ExternalReference ref_gen_CheckProgram_L1("CheckProgram\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckProgram("CheckProgram", 0U, 0U);
+static refalrts::ExternalReference ref_gen_FindErrors_L1("FindErrors\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_FindErrors_L2("FindErrors\\2", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_FindErrors("FindErrors", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_CheckDeclarations_L1("CheckDeclarations\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckDeclarations("CheckDeclarations", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CleanupValidForwards("CleanupValidForwards", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_FindInvalidForwards("FindInvalidForwards", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckRedefinitions("CheckRedefinitions", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckFunctionBody("CheckFunctionBody", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckFunctionBodyRec("CheckFunctionBodyRec", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_CheckSentence_L1("CheckSentence\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckSentence("CheckSentence", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_FlatExpr_L1("FlatExpr\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_FlatExpr("FlatExpr", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_CheckPattern_S2L1("CheckPattern$2\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckPattern("CheckPattern", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_FixupKnownVars("FixupKnownVars", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_CheckResult_L1("CheckResult\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckResult("CheckResult", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_gen_CheckValidUsings_S4L1("CheckValidUsings$4\\1", 3280841751U, 205519715U);
+static refalrts::ExternalReference ref_CheckValidUsings("CheckValidUsings", 3280841751U, 205519715U);
 
 static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -175,7 +117,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " already define", 15 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -218,7 +160,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[23] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[7], 'O' );
     refalrts::reinit_char( context[9], 'R' );
     refalrts::reinit_char( context[14], ' ' );
@@ -258,7 +200,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " is not define", 14 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -297,7 +239,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " is not define", 14 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -340,7 +282,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[20], '.' ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[8], 'V' );
     refalrts::reinit_char( context[7], 'i' );
     refalrts::reinit_char( context[9], 'a' );
@@ -395,7 +337,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[27], context[28], " has different mode", 19 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
     refalrts::reinit_char( context[7], 'a' );
     refalrts::reinit_char( context[9], 'b' );
     refalrts::reinit_char( context[14], ' ' );
@@ -441,7 +383,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[21], context[22], " not foun", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & EL_AddErrorAt_alias );
+  refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
   refalrts::reinit_char( context[7], 'i' );
   refalrts::reinit_char( context[9], 'a' );
   refalrts::reinit_char( context[14], ' ' );
@@ -463,8 +405,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckProgram_L1(func_gen_CheckProgram_L1, "CheckProgram\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckProgram_L1_3280841751_205519715 = descr_gen_CheckProgram_L1;
+static refalrts::RefalNativeFunction descr_gen_CheckProgram_L1(func_gen_CheckProgram_L1, refalrts::RefalFuncName("CheckProgram\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -485,15 +426,15 @@ static refalrts::FnResult func_CheckProgram(refalrts::Iter arg_begin, refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Reduce/4 } & CheckProgram\1/7 Tile{ AsIs: t.ErrorList#1/5 } </8 & FindErrors/9 Tile{ AsIs: e.AST#1/2 } >/10 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[7], & gen_CheckProgram_L1_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_gen_CheckProgram_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & FindErrors_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_FindErrors.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Reduce_alias );
+  refalrts::update_name( context[4], ref_Reduce.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[10] );
@@ -510,8 +451,7 @@ static refalrts::FnResult func_CheckProgram(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckProgram(func_CheckProgram, "CheckProgram#0:0");
-refalrts::RefalFunction& CheckProgram_0_0 = descr_CheckProgram;
+static refalrts::RefalNativeFunction descr_CheckProgram(func_CheckProgram, refalrts::RefalFuncName("CheckProgram", 0U, 0U));
 
 static refalrts::FnResult func_gen_FindErrors_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -733,8 +673,7 @@ static refalrts::FnResult func_gen_FindErrors_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FindErrors_L1(func_gen_FindErrors_L1, "FindErrors\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_FindErrors_L1_3280841751_205519715 = descr_gen_FindErrors_L1;
+static refalrts::RefalNativeFunction descr_gen_FindErrors_L1(func_gen_FindErrors_L1, refalrts::RefalFuncName("FindErrors\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_FindErrors_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -761,7 +700,7 @@ static refalrts::FnResult func_gen_FindErrors_L2(refalrts::Iter arg_begin, refal
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & CheckValidUsings/4 AsIs: (/7 } </9 & CheckDeclarations/10 Tile{ AsIs: e.Declarations#2/5 } >/11 )/12 </13 & Map/14 Tile{ HalfReuse: & CheckFunctionBody/8 AsIs: e.FunctionBodies#2/2 AsIs: >/1 } >/15 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & CheckDeclarations_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_CheckDeclarations.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
@@ -769,12 +708,12 @@ static refalrts::FnResult func_gen_FindErrors_L2(refalrts::Iter arg_begin, refal
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & CheckValidUsings_alias );
-  refalrts::reinit_name( context[8], & CheckFunctionBody_alias );
+  refalrts::update_name( context[4], ref_CheckValidUsings.ref.function );
+  refalrts::reinit_name( context[8], ref_CheckFunctionBody.ref.function );
   refalrts::push_stack( context[15] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[1] );
@@ -794,8 +733,7 @@ static refalrts::FnResult func_gen_FindErrors_L2(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FindErrors_L2(func_gen_FindErrors_L2, "FindErrors\\2#3280841751:205519715");
-refalrts::RefalFunction& gen_FindErrors_L2_3280841751_205519715 = descr_gen_FindErrors_L2;
+static refalrts::RefalNativeFunction descr_gen_FindErrors_L2(func_gen_FindErrors_L2, refalrts::RefalFuncName("FindErrors\\2", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -813,13 +751,13 @@ static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::It
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Seq/5 (/6 & MapReduce/7 & FindErrors\1/8 (/9 )/10 )/11 & FindErrors\2/12 >/13 >/14 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & gen_FindErrors_L1_alias ) )
+  if( ! refalrts::alloc_name( context[8], ref_gen_FindErrors_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
@@ -827,13 +765,13 @@ static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & gen_FindErrors_L2_alias ) )
+  if( ! refalrts::alloc_name( context[12], ref_gen_FindErrors_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[14] );
   refalrts::push_stack( context[0] );
@@ -849,8 +787,7 @@ static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindErrors(func_FindErrors, "FindErrors#3280841751:205519715");
-refalrts::RefalFunction& FindErrors_3280841751_205519715 = descr_FindErrors;
+static refalrts::RefalNativeFunction descr_FindErrors(func_FindErrors, refalrts::RefalFuncName("FindErrors", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_CheckDeclarations_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -901,8 +838,7 @@ static refalrts::FnResult func_gen_CheckDeclarations_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckDeclarations_L1(func_gen_CheckDeclarations_L1, "CheckDeclarations\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckDeclarations_L1_3280841751_205519715 = descr_gen_CheckDeclarations_L1;
+static refalrts::RefalNativeFunction descr_gen_CheckDeclarations_L1(func_gen_CheckDeclarations_L1, refalrts::RefalFuncName("CheckDeclarations\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -920,19 +856,19 @@ static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refal
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Declarations#1/2 HalfReuse: </1 } & Seq/5 & CleanupValidForwards/6 & FindInvalidForwards/7 & CheckRedefinitions/8 (/9 & Map/10 & CheckDeclarations\1/11 )/12 >/13 >/14 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & CleanupValidForwards_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_CleanupValidForwards.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & FindInvalidForwards_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_FindInvalidForwards.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & CheckRedefinitions_alias ) )
+  if( ! refalrts::alloc_name( context[8], ref_CheckRedefinitions.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & gen_CheckDeclarations_L1_alias ) )
+  if( ! refalrts::alloc_name( context[11], ref_gen_CheckDeclarations_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
@@ -940,7 +876,7 @@ static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refal
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[14] );
   refalrts::push_stack( context[0] );
@@ -955,8 +891,7 @@ static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckDeclarations(func_CheckDeclarations, "CheckDeclarations#3280841751:205519715");
-refalrts::RefalFunction& CheckDeclarations_3280841751_205519715 = descr_CheckDeclarations;
+static refalrts::RefalNativeFunction descr_CheckDeclarations(func_CheckDeclarations, refalrts::RefalFuncName("CheckDeclarations", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1131,8 +1066,7 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CleanupValidForwards(func_CleanupValidForwards, "CleanupValidForwards#3280841751:205519715");
-refalrts::RefalFunction& CleanupValidForwards_3280841751_205519715 = descr_CleanupValidForwards;
+static refalrts::RefalNativeFunction descr_CleanupValidForwards(func_CleanupValidForwards, refalrts::RefalFuncName("CleanupValidForwards", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1373,8 +1307,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindInvalidForwards(func_FindInvalidForwards, "FindInvalidForwards#3280841751:205519715");
-refalrts::RefalFunction& FindInvalidForwards_3280841751_205519715 = descr_FindInvalidForwards;
+static refalrts::RefalNativeFunction descr_FindInvalidForwards(func_FindInvalidForwards, refalrts::RefalFuncName("FindInvalidForwards", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckRedefinitions(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1482,8 +1415,7 @@ static refalrts::FnResult func_CheckRedefinitions(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckRedefinitions(func_CheckRedefinitions, "CheckRedefinitions#3280841751:205519715");
-refalrts::RefalFunction& CheckRedefinitions_3280841751_205519715 = descr_CheckRedefinitions;
+static refalrts::RefalNativeFunction descr_CheckRedefinitions(func_CheckRedefinitions, refalrts::RefalFuncName("CheckRedefinitions", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckFunctionBody(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1509,7 +1441,7 @@ static refalrts::FnResult func_CheckFunctionBody(refalrts::Iter arg_begin, refal
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & CheckFunctionBodyRec/4 AsIs: (/7 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Body#1/5 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & CheckFunctionBodyRec_alias );
+  refalrts::update_name( context[4], ref_CheckFunctionBodyRec.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -1522,8 +1454,7 @@ static refalrts::FnResult func_CheckFunctionBody(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckFunctionBody(func_CheckFunctionBody, "CheckFunctionBody#3280841751:205519715");
-refalrts::RefalFunction& CheckFunctionBody_3280841751_205519715 = descr_CheckFunctionBody;
+static refalrts::RefalNativeFunction descr_CheckFunctionBody(func_CheckFunctionBody, refalrts::RefalFuncName("CheckFunctionBody", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckFunctionBodyRec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1559,8 +1490,8 @@ static refalrts::FnResult func_CheckFunctionBodyRec(refalrts::Iter arg_begin, re
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } Tile{ HalfReuse: & CheckSentence/8 } Tile{ AsIs: e.ScopeVars#1/5 } Tile{ HalfReuse: )/9 AsIs: e.Sentences#1/2 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & Map_alias );
-    refalrts::reinit_name( context[8], & CheckSentence_alias );
+    refalrts::update_name( context[4], ref_Map.ref.function );
+    refalrts::reinit_name( context[8], ref_CheckSentence.ref.function );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -1592,8 +1523,7 @@ static refalrts::FnResult func_CheckFunctionBodyRec(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckFunctionBodyRec(func_CheckFunctionBodyRec, "CheckFunctionBodyRec#3280841751:205519715");
-refalrts::RefalFunction& CheckFunctionBodyRec_3280841751_205519715 = descr_CheckFunctionBodyRec;
+static refalrts::RefalNativeFunction descr_CheckFunctionBodyRec(func_CheckFunctionBodyRec, refalrts::RefalFuncName("CheckFunctionBodyRec", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1628,8 +1558,8 @@ static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, re
   if( ! refalrts::alloc_close_call( context[13] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[8], & CheckResult_alias );
-  refalrts::update_name( context[4], & FlatExpr_alias );
+  refalrts::reinit_name( context[8], ref_CheckResult.ref.function );
+  refalrts::update_name( context[4], ref_FlatExpr.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[13] );
@@ -1648,8 +1578,7 @@ static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckSentence_L1(func_gen_CheckSentence_L1, "CheckSentence\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckSentence_L1_3280841751_205519715 = descr_gen_CheckSentence_L1;
+static refalrts::RefalNativeFunction descr_gen_CheckSentence_L1(func_gen_CheckSentence_L1, refalrts::RefalFuncName("CheckSentence\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1695,7 +1624,7 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & FlatExpr_alias ) )
+  if( ! refalrts::alloc_name( context[20], ref_FlatExpr.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
@@ -1705,9 +1634,9 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[24], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
-  refalrts::reinit_name( context[7], & CheckPattern_alias );
-  refalrts::reinit_name( context[12], & gen_CheckSentence_L1_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::reinit_name( context[7], ref_CheckPattern.ref.function );
+  refalrts::reinit_name( context[12], ref_gen_CheckSentence_L1.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -1732,8 +1661,7 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckSentence(func_CheckSentence, "CheckSentence#3280841751:205519715");
-refalrts::RefalFunction& CheckSentence_3280841751_205519715 = descr_CheckSentence;
+static refalrts::RefalNativeFunction descr_CheckSentence(func_CheckSentence, refalrts::RefalFuncName("CheckSentence", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1856,7 +1784,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/5 # Brackets/9 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlatExpr/4 } Tile{ AsIs: e.InBrackets#2/7 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FlatExpr_alias );
+    refalrts::update_name( context[4], ref_FlatExpr.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1897,7 +1825,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/5 # ADT-Brackets/9 t.SrcPos#2/10 (/14 # UnnamedADT/16 )/15 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlatExpr/4 } Tile{ AsIs: e.InBrackets#2/7 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FlatExpr_alias );
+    refalrts::update_name( context[4], ref_FlatExpr.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1935,7 +1863,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/14 {REMOVED TILE} )/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/5 Reuse: # TkName/9 AsIs: t.SrcPos#2/10 } Tile{ AsIs: e.Name#2/12 } Tile{ AsIs: )/6 } Tile{ AsIs: </0 Reuse: & FlatExpr/4 } Tile{ AsIs: e.InBrackets#2/7 } Tile{ AsIs: >/1 ]] }
     refalrts::update_ident( context[9], ident_TkName );
-    refalrts::update_name( context[4], & FlatExpr_alias );
+    refalrts::update_name( context[4], ref_FlatExpr.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[5], context[6] );
@@ -1967,7 +1895,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/5 # CallBrackets/9 {REMOVED TILE} )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlatExpr/4 } Tile{ AsIs: e.InBrackets#2/7 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & FlatExpr_alias );
+    refalrts::update_name( context[4], ref_FlatExpr.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2017,8 +1945,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FlatExpr_L1(func_gen_FlatExpr_L1, "FlatExpr\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_FlatExpr_L1_3280841751_205519715 = descr_gen_FlatExpr_L1;
+static refalrts::RefalNativeFunction descr_gen_FlatExpr_L1(func_gen_FlatExpr_L1, refalrts::RefalFuncName("FlatExpr\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_FlatExpr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2038,8 +1965,8 @@ static refalrts::FnResult func_FlatExpr(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & FlatExpr\1/4 AsIs: e.Expr#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
-  refalrts::update_name( context[4], & gen_FlatExpr_L1_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::update_name( context[4], ref_gen_FlatExpr_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -2050,8 +1977,7 @@ static refalrts::FnResult func_FlatExpr(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FlatExpr(func_FlatExpr, "FlatExpr#3280841751:205519715");
-refalrts::RefalFunction& FlatExpr_3280841751_205519715 = descr_FlatExpr;
+static refalrts::RefalNativeFunction descr_FlatExpr(func_FlatExpr, refalrts::RefalFuncName("FlatExpr", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_CheckPattern_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2232,7 +2158,7 @@ static refalrts::FnResult func_gen_CheckPattern_S2L1(refalrts::Iter arg_begin, r
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & FixupKnownVars/7 AsIs: e.KnownVars#2/5 HalfReuse: (/8 } Tile{ AsIs: s.Mode#2/16 AsIs: e.Index#2/26(9) AsIs: )/12 AsIs: >/1 } Tile{ HalfReuse: )/13 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[7], & FixupKnownVars_alias );
+    refalrts::reinit_name( context[7], ref_FixupKnownVars.ref.function );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[13] );
     refalrts::link_brackets( context[0], context[13] );
@@ -2293,8 +2219,7 @@ static refalrts::FnResult func_gen_CheckPattern_S2L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckPattern_S2L1(func_gen_CheckPattern_S2L1, "CheckPattern$2\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckPattern_S2L1_3280841751_205519715 = descr_gen_CheckPattern_S2L1;
+static refalrts::RefalNativeFunction descr_gen_CheckPattern_S2L1(func_gen_CheckPattern_S2L1, refalrts::RefalFuncName("CheckPattern$2\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2416,8 +2341,8 @@ static refalrts::FnResult func_CheckPattern(refalrts::Iter arg_begin, refalrts::
   //RESULT: Tile{ [[ } </9 Tile{ HalfReuse: & MapReduce/0 Reuse: & CheckPattern$2\1/4 AsIs: (/7 AsIs: e.ScopeVars#1/5 AsIs: )/8 AsIs: e.Items#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & MapReduce_alias );
-  refalrts::update_name( context[4], & gen_CheckPattern_S2L1_alias );
+  refalrts::reinit_name( context[0], ref_MapReduce.ref.function );
+  refalrts::update_name( context[4], ref_gen_CheckPattern_S2L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::link_brackets( context[7], context[8] );
@@ -2429,8 +2354,7 @@ static refalrts::FnResult func_CheckPattern(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckPattern(func_CheckPattern, "CheckPattern#3280841751:205519715");
-refalrts::RefalFunction& CheckPattern_3280841751_205519715 = descr_CheckPattern;
+static refalrts::RefalNativeFunction descr_CheckPattern(func_CheckPattern, refalrts::RefalFuncName("CheckPattern", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_FixupKnownVars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2515,8 +2439,7 @@ static refalrts::FnResult func_FixupKnownVars(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FixupKnownVars(func_FixupKnownVars, "FixupKnownVars#3280841751:205519715");
-refalrts::RefalFunction& FixupKnownVars_3280841751_205519715 = descr_FixupKnownVars;
+static refalrts::RefalNativeFunction descr_FixupKnownVars(func_FixupKnownVars, refalrts::RefalFuncName("FixupKnownVars", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_CheckResult_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2710,7 +2633,7 @@ static refalrts::FnResult func_gen_CheckResult_L1(refalrts::Iter arg_begin, refa
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # Closure/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & CheckFunctionBodyRec/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.KnownVars#2/2 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Body#2/5 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & CheckFunctionBodyRec_alias );
+    refalrts::update_name( context[4], ref_CheckFunctionBodyRec.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
@@ -2750,8 +2673,7 @@ static refalrts::FnResult func_gen_CheckResult_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckResult_L1(func_gen_CheckResult_L1, "CheckResult\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckResult_L1_3280841751_205519715 = descr_gen_CheckResult_L1;
+static refalrts::RefalNativeFunction descr_gen_CheckResult_L1(func_gen_CheckResult_L1, refalrts::RefalFuncName("CheckResult\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2778,9 +2700,9 @@ static refalrts::FnResult func_CheckResult(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ } </9 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & CheckResult\1/7 AsIs: e.ScopeVars#1/5 AsIs: )/8 AsIs: e.Items#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_name( context[7], & gen_CheckResult_L1_alias );
+  refalrts::reinit_name( context[7], ref_gen_CheckResult_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::link_brackets( context[4], context[8] );
@@ -2792,8 +2714,7 @@ static refalrts::FnResult func_CheckResult(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckResult(func_CheckResult, "CheckResult#3280841751:205519715");
-refalrts::RefalFunction& CheckResult_3280841751_205519715 = descr_CheckResult;
+static refalrts::RefalNativeFunction descr_CheckResult(func_CheckResult, refalrts::RefalFuncName("CheckResult", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_gen_CheckValidUsings_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2856,8 +2777,7 @@ static refalrts::FnResult func_gen_CheckValidUsings_S4L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CheckValidUsings_S4L1(func_gen_CheckValidUsings_S4L1, "CheckValidUsings$4\\1#3280841751:205519715");
-refalrts::RefalFunction& gen_CheckValidUsings_S4L1_3280841751_205519715 = descr_gen_CheckValidUsings_S4L1;
+static refalrts::RefalNativeFunction descr_gen_CheckValidUsings_S4L1(func_gen_CheckValidUsings_S4L1, refalrts::RefalFuncName("CheckValidUsings$4\\1", 3280841751U, 205519715U));
 
 static refalrts::FnResult func_CheckValidUsings(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3039,8 +2959,8 @@ static refalrts::FnResult func_CheckValidUsings(refalrts::Iter arg_begin, refalr
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & CheckValidUsings$4\1/7 AsIs: e.DeclarationsAndErrors#1/5 HalfReuse: >/8 } Tile{ ]] }
-  refalrts::update_name( context[4], & Map_alias );
-  refalrts::reinit_name( context[7], & gen_CheckValidUsings_S4L1_alias );
+  refalrts::update_name( context[4], ref_Map.ref.function );
+  refalrts::reinit_name( context[7], ref_gen_CheckValidUsings_S4L1.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[0] );
@@ -3051,8 +2971,7 @@ static refalrts::FnResult func_CheckValidUsings(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckValidUsings(func_CheckValidUsings, "CheckValidUsings#3280841751:205519715");
-refalrts::RefalFunction& CheckValidUsings_3280841751_205519715 = descr_CheckValidUsings;
+static refalrts::RefalNativeFunction descr_CheckValidUsings(func_CheckValidUsings, refalrts::RefalFuncName("CheckValidUsings", 3280841751U, 205519715U));
 
 
 //End of file

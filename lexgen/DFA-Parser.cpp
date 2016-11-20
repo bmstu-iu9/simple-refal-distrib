@@ -2,30 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& ErrorAt_0_0;
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& DFA_TextFromToken_0_0;
-extern refalrts::RefalFunction& DFA_Parse_0_0;
-extern refalrts::RefalFunction& ParseElements_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ParseSetDescr_S1L1_452973408_3382509061;
-extern refalrts::RefalFunction& ParseSetDescr_452973408_3382509061;
-extern refalrts::RefalFunction& ExtractSets_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ParseSentence_S1L1_452973408_3382509061;
-extern refalrts::RefalFunction& ParseSentence_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L1_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L2_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L3_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L4_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L5_452973408_3382509061;
-extern refalrts::RefalFunction& gen_ExtractAlternatives_L6_452973408_3382509061;
-extern refalrts::RefalFunction& ExtractAlternatives_452973408_3382509061;
-extern refalrts::RefalFunction& ExtractAlternatives_Head_452973408_3382509061;
-extern refalrts::RefalFunction& ExtractAlternatives_Flush_452973408_3382509061;
-extern refalrts::RefalFunction& ExtractAlternatives_NextState_452973408_3382509061;
-extern refalrts::RefalFunction& UnexpectedToken_452973408_3382509061;
+static refalrts::UInt32 COOKIE1 = 452973408U;
+static refalrts::UInt32 COOKIE2 = 3382509061U;
+#define rasl rasl_452973408_3382509061
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -33,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

@@ -2,26 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& GetOpt_0_0;
-extern refalrts::RefalFunction& GetOpt_CheckRepeated_0_0;
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& MapReduce_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L2_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L3_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L4_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L5L1_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L5_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L6L1_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L6_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7S2L1S4L1_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7S2L1_2866188145_291805591;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L7_2866188145_291805591;
-extern refalrts::RefalFunction& ParseCommandLine_0_0;
+static refalrts::UInt32 COOKIE1 = 2866188145U;
+static refalrts::UInt32 COOKIE2 = 291805591U;
+#define rasl rasl_2866188145_291805591
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -29,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

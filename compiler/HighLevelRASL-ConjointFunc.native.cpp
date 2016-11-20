@@ -10,93 +10,43 @@ const refalrts::RefalIdentifier ident_CmdSentence = refalrts::ident_from_static(
 const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
 const refalrts::RefalIdentifier ident_Junk = refalrts::ident_from_static("Junk");
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Seq_0_0;
-#define Seq_alias Seq_0_0
-#define Seq_str "Seq#0:0"
-
-extern refalrts::RefalFunction& MapReduce_0_0;
-#define MapReduce_alias MapReduce_0_0
-#define MapReduce_str "MapReduce#0:0"
-
-extern refalrts::RefalFunction& DelAccumulator_0_0;
-#define DelAccumulator_alias DelAccumulator_0_0
-#define DelAccumulator_str "DelAccumulator#0:0"
-
-extern refalrts::RefalFunction& Max_0_0;
-#define Max_alias Max_0_0
-#define Max_str "Max#0:0"
-
-extern refalrts::RefalFunction& CreateHardPattern_0_0;
-#define CreateHardPattern_alias CreateHardPattern_0_0
-#define CreateHardPattern_str "CreateHardPattern#0:0"
-
-extern refalrts::RefalFunction& CreateGlobalGen_0_0;
-#define CreateGlobalGen_alias CreateGlobalGen_0_0
-#define CreateGlobalGen_str "CreateGlobalGen#0:0"
-
-extern refalrts::RefalFunction& SplitGen_0_0;
-#define SplitGen_alias SplitGen_0_0
-#define SplitGen_str "SplitGen#0:0"
-
-extern refalrts::RefalFunction& PatternComment_0_0;
-#define PatternComment_alias PatternComment_0_0
-#define PatternComment_str "PatternComment#0:0"
-
-extern refalrts::RefalFunction& ReverseGen_0_0;
-#define ReverseGen_alias ReverseGen_0_0
-#define ReverseGen_str "ReverseGen#0:0"
-
-extern refalrts::RefalFunction& GenPattern_0_0;
-#define GenPattern_alias GenPattern_0_0
-#define GenPattern_str "GenPattern#0:0"
-
-extern refalrts::RefalFunction& GenResult_0_0;
-#define GenResult_alias GenResult_0_0
-#define GenResult_str "GenResult#0:0"
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L1L1_alias gen_HighLevelRASL_Function_Conjoint_L1L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L1_alias gen_HighLevelRASL_Function_Conjoint_L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L2_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L2_alias gen_HighLevelRASL_Function_Conjoint_L2_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L3_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L3_alias gen_HighLevelRASL_Function_Conjoint_L3_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L4L1_alias gen_HighLevelRASL_Function_Conjoint_L4L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L4_alias gen_HighLevelRASL_Function_Conjoint_L4_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L5L1L1_alias gen_HighLevelRASL_Function_Conjoint_L5L1L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L5L1_alias gen_HighLevelRASL_Function_Conjoint_L5L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L5_alias gen_HighLevelRASL_Function_Conjoint_L5_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6L1_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L6L1_alias gen_HighLevelRASL_Function_Conjoint_L6L1_834265304_2877529394
-
-extern refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6_834265304_2877529394;
-#define gen_HighLevelRASL_Function_Conjoint_L6_alias gen_HighLevelRASL_Function_Conjoint_L6_834265304_2877529394
-
-extern refalrts::RefalFunction& HighLevelRASL_Function_Conjoint_0_0;
-#define HighLevelRASL_Function_Conjoint_alias HighLevelRASL_Function_Conjoint_0_0
-
-extern refalrts::RefalFunction& ComposeVars_834265304_2877529394;
-#define ComposeVars_alias ComposeVars_834265304_2877529394
-
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
+static refalrts::ExternalReference ref_DelAccumulator("DelAccumulator", 0U, 0U);
+#define str_DelAccumulator refalrts::RefalFuncName("DelAccumulator", 0U, 0U)
+static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
+#define str_Max refalrts::RefalFuncName("Max", 0U, 0U)
+static refalrts::ExternalReference ref_CreateHardPattern("CreateHardPattern", 0U, 0U);
+#define str_CreateHardPattern refalrts::RefalFuncName("CreateHardPattern", 0U, 0U)
+static refalrts::ExternalReference ref_CreateGlobalGen("CreateGlobalGen", 0U, 0U);
+#define str_CreateGlobalGen refalrts::RefalFuncName("CreateGlobalGen", 0U, 0U)
+static refalrts::ExternalReference ref_SplitGen("SplitGen", 0U, 0U);
+#define str_SplitGen refalrts::RefalFuncName("SplitGen", 0U, 0U)
+static refalrts::ExternalReference ref_PatternComment("PatternComment", 0U, 0U);
+#define str_PatternComment refalrts::RefalFuncName("PatternComment", 0U, 0U)
+static refalrts::ExternalReference ref_ReverseGen("ReverseGen", 0U, 0U);
+#define str_ReverseGen refalrts::RefalFuncName("ReverseGen", 0U, 0U)
+static refalrts::ExternalReference ref_GenPattern("GenPattern", 0U, 0U);
+#define str_GenPattern refalrts::RefalFuncName("GenPattern", 0U, 0U)
+static refalrts::ExternalReference ref_GenResult("GenResult", 0U, 0U);
+#define str_GenResult refalrts::RefalFuncName("GenResult", 0U, 0U)
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L1L1("HighLevelRASL-Function-Conjoint\\1\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L1("HighLevelRASL-Function-Conjoint\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L2("HighLevelRASL-Function-Conjoint\\2", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L3("HighLevelRASL-Function-Conjoint\\3", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L4L1("HighLevelRASL-Function-Conjoint\\4\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L4("HighLevelRASL-Function-Conjoint\\4", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L5L1L1("HighLevelRASL-Function-Conjoint\\5\\1\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L5L1("HighLevelRASL-Function-Conjoint\\5\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L5("HighLevelRASL-Function-Conjoint\\5", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L6L1("HighLevelRASL-Function-Conjoint\\6\\1", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Conjoint_L6("HighLevelRASL-Function-Conjoint\\6", 834265304U, 2877529394U);
+static refalrts::ExternalReference ref_HighLevelRASL_Function_Conjoint("HighLevelRASL-Function-Conjoint", 0U, 0U);
+static refalrts::ExternalReference ref_ComposeVars("ComposeVars", 834265304U, 2877529394U);
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -138,7 +88,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & PatternComment_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_PatternComment.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
@@ -168,8 +118,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1L1(func_gen_HighLevelRASL_Function_Conjoint_L1L1, "HighLevelRASL-Function-Conjoint\\1\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L1L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1L1(func_gen_HighLevelRASL_Function_Conjoint_L1L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\1\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -217,16 +166,16 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & CreateHardPattern/21 Tile{ AsIs: e.Pattern#2/13 } >/22 </23 Tile{ HalfReuse: & @create_closure@/8 HalfReuse: & HighLevelRASL-Function-Conjoint\1\1/11 AsIs: (/15 } Tile{ AsIs: e.HardGens#2/5 } Tile{ AsIs: )/16 AsIs: (/19 AsIs: e.Result#2/17 AsIs: )/20 HalfReuse: >/12 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[21], & CreateHardPattern_alias ) )
+  if( ! refalrts::alloc_name( context[21], ref_CreateHardPattern.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[22] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[23] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[7] );
   refalrts::reinit_name( context[8], & refalrts::create_closure );
-  refalrts::reinit_name( context[11], & gen_HighLevelRASL_Function_Conjoint_L1L1_alias );
+  refalrts::reinit_name( context[11], ref_gen_HighLevelRASL_Function_Conjoint_L1L1.ref.function );
   refalrts::reinit_close_call( context[12] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -248,8 +197,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1(func_gen_HighLevelRASL_Function_Conjoint_L1, "HighLevelRASL-Function-Conjoint\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L1(func_gen_HighLevelRASL_Function_Conjoint_L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -274,7 +222,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & CreateGlobalGen/4 } Tile{ AsIs: e.HardPatterns#2/5 } Tile{ AsIs: >/1 } Tile{ AsIs: e.SentenceTails#2/2 } Tile{ ]] }
-  refalrts::update_name( context[4], & CreateGlobalGen_alias );
+  refalrts::update_name( context[4], ref_CreateGlobalGen.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -287,8 +235,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L2(func_gen_HighLevelRASL_Function_Conjoint_L2, "HighLevelRASL-Function-Conjoint\\2#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L2_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L2;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L2(func_gen_HighLevelRASL_Function_Conjoint_L2, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\2", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -324,7 +271,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & PatternComment_alias ) )
+  if( ! refalrts::alloc_name( context[16], ref_PatternComment.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[17] ) )
     return refalrts::cNoMemory;
@@ -338,7 +285,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], & PatternComment_alias ) )
+  if( ! refalrts::alloc_name( context[24], ref_PatternComment.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[25], context[26], context[9], context[10]))
     return refalrts::cNoMemory;
@@ -359,7 +306,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_bracket( context[4] );
   refalrts::reinit_ident( context[7], ident_CmdComment );
-  refalrts::reinit_name( context[8], & SplitGen_alias );
+  refalrts::reinit_name( context[8], ref_SplitGen.ref.function );
   refalrts::link_brackets( context[30], context[32] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[31] );
@@ -384,8 +331,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L3(func_gen_HighLevelRASL_Function_Conjoint_L3, "HighLevelRASL-Function-Conjoint\\3#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L3_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L3;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L3(func_gen_HighLevelRASL_Function_Conjoint_L3, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\3", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -458,8 +404,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4L1(refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4L1(func_gen_HighLevelRASL_Function_Conjoint_L4L1, "HighLevelRASL-Function-Conjoint\\4\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L4L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4L1(func_gen_HighLevelRASL_Function_Conjoint_L4L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\4\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -509,7 +454,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/21 } Tile{ AsIs: e.Comments#2/11 } Tile{ AsIs: )/14 AsIs: (/17 } Tile{ AsIs: </0 Reuse: & GenPattern/4 AsIs: s.FnGenInitSubst#1/5 AsIs: s.FnGenSubst#1/6 AsIs: (/9 AsIs: e.Name#1/7 AsIs: )/10 HalfReuse: </13 } & ReverseGen/23 Tile{ AsIs: e.CommonPattern#2/19 } >/24 >/25 )/26 </27 & DelAccumulator/28 </29 & MapReduce/30 & HighLevelRASL-Function-Conjoint\4\1/31 Tile{ HalfReuse: (/22 AsIs: e.SentSubsts#2/15 AsIs: )/18 AsIs: e.SentenceTails#2/2 AsIs: >/1 } >/32 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[23], & ReverseGen_alias ) )
+  if( ! refalrts::alloc_name( context[23], ref_ReverseGen.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
@@ -519,17 +464,17 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[28], & DelAccumulator_alias ) )
+  if( ! refalrts::alloc_name( context[28], ref_DelAccumulator.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[29] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[30], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[30], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[31], & gen_HighLevelRASL_Function_Conjoint_L4L1_alias ) )
+  if( ! refalrts::alloc_name( context[31], ref_gen_HighLevelRASL_Function_Conjoint_L4L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[32] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & GenPattern_alias );
+  refalrts::update_name( context[4], ref_GenPattern.ref.function );
   refalrts::reinit_open_call( context[13] );
   refalrts::reinit_open_bracket( context[22] );
   refalrts::push_stack( context[32] );
@@ -560,8 +505,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4(func_gen_HighLevelRASL_Function_Conjoint_L4, "HighLevelRASL-Function-Conjoint\\4#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L4;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L4(func_gen_HighLevelRASL_Function_Conjoint_L4, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\4", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -605,7 +549,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Max_alias );
+  refalrts::update_name( context[4], ref_Max.ref.function );
   refalrts::reinit_svar( context[8], context[15] );
   refalrts::reinit_ident( context[9], ident_CmdSentence );
   refalrts::update_ident( context[14], ident_CmdComment );
@@ -624,8 +568,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1L1, "HighLevelRASL-Function-Conjoint\\5\\1\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\5\\1\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -697,7 +640,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </33 & GenResult/34 Tile{ HalfReuse: s.FnGenResult1 #21/16 AsIs: (/19 AsIs: e.Result#3/17 AsIs: )/20 HalfReuse: </8 HalfReuse: s.FnGenSubst1 #22/1 } Tile{ AsIs: s.ContextSize#2/23 HalfReuse: </26 } Tile{ HalfReuse: & ComposeVars/27 AsIs: (/30 } Tile{ AsIs: e.MarkedPattern#2/24 } Tile{ HalfReuse: )/7 AsIs: (/11 AsIs: e.Substitute#3/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars#2/28 } )/35 >/36 (/37 )/38 >/39 >/40 </41 & @create_closure@/42 Tile{ HalfReuse: & HighLevelRASL-Function-Conjoint\5\1\1/31 AsIs: s.MaxMemory#3/32 } (/43 Tile{ AsIs: e.HardGenComment#3/13 } )/44 >/45 >/46 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[33] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[34], & GenResult_alias ) )
+  if( ! refalrts::alloc_name( context[34], ref_GenResult.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[35] ) )
     return refalrts::cNoMemory;
@@ -723,14 +666,14 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[46] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_svar( context[16], context[21] );
   refalrts::reinit_open_call( context[8] );
   refalrts::reinit_svar( context[1], context[22] );
   refalrts::reinit_open_call( context[26] );
-  refalrts::reinit_name( context[27], & ComposeVars_alias );
+  refalrts::reinit_name( context[27], ref_ComposeVars.ref.function );
   refalrts::reinit_close_bracket( context[7] );
-  refalrts::reinit_name( context[31], & gen_HighLevelRASL_Function_Conjoint_L5L1L1_alias );
+  refalrts::reinit_name( context[31], ref_gen_HighLevelRASL_Function_Conjoint_L5L1L1.ref.function );
   refalrts::push_stack( context[46] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[45] );
@@ -766,8 +709,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1, "HighLevelRASL-Function-Conjoint\\5\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1(func_gen_HighLevelRASL_Function_Conjoint_L5L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\5\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -819,7 +761,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ContextSize#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/9 } Tile{ AsIs: e.Comments#2/7 } Tile{ AsIs: e.CommonMatchCommands#2/11 } Tile{ AsIs: )/10 HalfReuse: </13 } & MapReduce/24 </25 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL-Function-Conjoint\5\1/4 AsIs: s.FnGenResult#1/5 AsIs: s.FnGenSubst#1/6 } Tile{ HalfReuse: s.ContextSize2 #15/19 AsIs: (/22 AsIs: e.MarkedPattern#2/20 AsIs: )/23 } Tile{ AsIs: (/18 } Tile{ AsIs: e.Vars#2/16 } )/26 >/27 Tile{ HalfReuse: s.ContextSize2 #15/14 AsIs: e.SentencesWithSubst#2/2 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[24], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[24], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
@@ -829,7 +771,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
     return refalrts::cNoMemory;
   refalrts::reinit_open_call( context[13] );
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_HighLevelRASL_Function_Conjoint_L5L1_alias );
+  refalrts::update_name( context[4], ref_gen_HighLevelRASL_Function_Conjoint_L5L1.ref.function );
   refalrts::reinit_svar( context[19], context[15] );
   refalrts::reinit_svar( context[14], context[15] );
   refalrts::push_stack( context[1] );
@@ -856,8 +798,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5(func_gen_HighLevelRASL_Function_Conjoint_L5, "HighLevelRASL-Function-Conjoint\\5#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L5;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L5(func_gen_HighLevelRASL_Function_Conjoint_L5, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\5", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -924,8 +865,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6L1(func_gen_HighLevelRASL_Function_Conjoint_L6L1, "HighLevelRASL-Function-Conjoint\\6\\1#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6L1_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L6L1;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6L1(func_gen_HighLevelRASL_Function_Conjoint_L6L1, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\6\\1", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -979,8 +919,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   refalrts::reinit_ident( context[4], ident_Function );
   refalrts::reinit_ident( context[18], ident_CmdIssueMem );
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[9], & Fetch_alias );
-  refalrts::reinit_name( context[8], & gen_HighLevelRASL_Function_Conjoint_L6L1_alias );
+  refalrts::reinit_name( context[9], ref_Fetch.ref.function );
+  refalrts::reinit_name( context[8], ref_gen_HighLevelRASL_Function_Conjoint_L6L1.ref.function );
   refalrts::link_brackets( context[0], context[21] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
@@ -999,8 +939,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6(func_gen_HighLevelRASL_Function_Conjoint_L6, "HighLevelRASL-Function-Conjoint\\6#834265304:2877529394");
-refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6_834265304_2877529394 = descr_gen_HighLevelRASL_Function_Conjoint_L6;
+static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Conjoint_L6(func_gen_HighLevelRASL_Function_Conjoint_L6, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint\\6", 834265304U, 2877529394U));
 
 static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1035,17 +974,17 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
   //RESULT: Tile{ [[ } </13 & Fetch/14 Tile{ AsIs: e.Sentences#1/2 } </15 & Seq/16 (/17 & MapReduce/18 & HighLevelRASL-Function-Conjoint\1/19 (/20 )/21 )/22 & HighLevelRASL-Function-Conjoint\2/23 & HighLevelRASL-Function-Conjoint\3/24 </25 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL-Function-Conjoint\4/4 AsIs: s.FnGenInitSubst#1/5 AsIs: s.FnGenSubst#1/6 } (/26 e.Name#1/9/27 )/29 >/30 </31 & @create_closure@/32 & HighLevelRASL-Function-Conjoint\5/33 Tile{ AsIs: s.FnGenResult#1/7 } s.FnGenSubst#1/6/34 >/35 </36 & @create_closure@/37 & HighLevelRASL-Function-Conjoint\6/38 Tile{ AsIs: s.ScopeClass#1/8 AsIs: (/11 AsIs: e.Name#1/9 AsIs: )/12 } >/39 >/40 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & Fetch_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[16], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[18], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & gen_HighLevelRASL_Function_Conjoint_L1_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_gen_HighLevelRASL_Function_Conjoint_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
@@ -1053,9 +992,9 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[23], & gen_HighLevelRASL_Function_Conjoint_L2_alias ) )
+  if( ! refalrts::alloc_name( context[23], ref_gen_HighLevelRASL_Function_Conjoint_L2.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], & gen_HighLevelRASL_Function_Conjoint_L3_alias ) )
+  if( ! refalrts::alloc_name( context[24], ref_gen_HighLevelRASL_Function_Conjoint_L3.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
@@ -1071,7 +1010,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[32], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[33], & gen_HighLevelRASL_Function_Conjoint_L5_alias ) )
+  if( ! refalrts::alloc_name( context[33], ref_gen_HighLevelRASL_Function_Conjoint_L5.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[34], context[6]))
     return refalrts::cNoMemory;
@@ -1081,14 +1020,14 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[37], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[38], & gen_HighLevelRASL_Function_Conjoint_L6_alias ) )
+  if( ! refalrts::alloc_name( context[38], ref_gen_HighLevelRASL_Function_Conjoint_L6.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[39] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[40] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_HighLevelRASL_Function_Conjoint_L4_alias );
+  refalrts::update_name( context[4], ref_gen_HighLevelRASL_Function_Conjoint_L4.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[13] );
   refalrts::push_stack( context[40] );
@@ -1119,8 +1058,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_HighLevelRASL_Function_Conjoint(func_HighLevelRASL_Function_Conjoint, "HighLevelRASL-Function-Conjoint#0:0");
-refalrts::RefalFunction& HighLevelRASL_Function_Conjoint_0_0 = descr_HighLevelRASL_Function_Conjoint;
+static refalrts::RefalNativeFunction descr_HighLevelRASL_Function_Conjoint(func_HighLevelRASL_Function_Conjoint, refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint", 0U, 0U));
 
 static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1256,7 +1194,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
           refalrts::reinit_open_bracket( context[23] );
           refalrts::reinit_svar( context[36], context[32] );
           refalrts::reinit_svar( context[37], context[53] );
-          refalrts::reinit_name( context[44], & ComposeVars_alias );
+          refalrts::reinit_name( context[44], ref_ComposeVars.ref.function );
           refalrts::reinit_open_bracket( context[22] );
           refalrts::push_stack( context[1] );
           refalrts::push_stack( context[0] );
@@ -1308,8 +1246,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ComposeVars(func_ComposeVars, "ComposeVars#834265304:2877529394");
-refalrts::RefalFunction& ComposeVars_834265304_2877529394 = descr_ComposeVars;
+static refalrts::RefalNativeFunction descr_ComposeVars(func_ComposeVars, refalrts::RefalFuncName("ComposeVars", 834265304U, 2877529394U));
 
 
 //End of file

@@ -2,19 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& GetOpt_0_0;
-extern refalrts::RefalFunction& WriteLine_0_0;
-extern refalrts::RefalFunction& StrFromInt_0_0;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1_1416714831_2058974398;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1_1416714831_2058974398;
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1_1416714831_2058974398;
-extern refalrts::RefalFunction& ParseCommandLine_0_0;
-extern refalrts::RefalFunction& FormatError_1416714831_2058974398;
-extern refalrts::RefalFunction& Help_1416714831_2058974398;
+static refalrts::UInt32 COOKIE1 = 1416714831U;
+static refalrts::UInt32 COOKIE2 = 2058974398U;
+#define rasl rasl_1416714831_2058974398
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -22,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

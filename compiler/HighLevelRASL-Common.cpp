@@ -2,33 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Add_0_0;
-extern refalrts::RefalFunction& Inc_0_0;
-extern refalrts::RefalFunction& StrFromInt_0_0;
-extern refalrts::RefalFunction& Map_0_0;
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& DisplayName_0_0;
-extern refalrts::RefalFunction& EscapeChar_0_0;
-extern refalrts::RefalFunction& Inc2_0_0;
-extern refalrts::RefalFunction& IncVarOffset_0_0;
-extern refalrts::RefalFunction& PrintVar_0_0;
-extern refalrts::RefalFunction& gen_FakeOffset_L1_2831821102_2640145651;
-extern refalrts::RefalFunction& FakeOffset_0_0;
-extern refalrts::RefalFunction& gen_TextFromExpr_L1_2831821102_2640145651;
-extern refalrts::RefalFunction& TextFromExpr_0_0;
-extern refalrts::RefalFunction& TextFromExpr_Prepare_2831821102_2640145651;
-extern refalrts::RefalFunction& TextFromExpr_Prepare_Chars_2831821102_2640145651;
-extern refalrts::RefalFunction& Offset_2831821102_2640145651;
-extern refalrts::RefalFunction& gen_GenPattern_L1_2831821102_2640145651;
-extern refalrts::RefalFunction& GenPattern_0_0;
-extern refalrts::RefalFunction& gen_GenResult_L1_2831821102_2640145651;
-extern refalrts::RefalFunction& GenResult_0_0;
-extern refalrts::RefalFunction& FoldOpenELoops_2831821102_2640145651;
-extern refalrts::RefalFunction& gen_CollectStrings_S1L1_2831821102_2640145651;
-extern refalrts::RefalFunction& CollectStrings_0_0;
-extern refalrts::RefalFunction& BuildString_2831821102_2640145651;
+static refalrts::UInt32 COOKIE1 = 2831821102U;
+static refalrts::UInt32 COOKIE2 = 2640145651U;
+#define rasl rasl_2831821102_2640145651
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -36,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

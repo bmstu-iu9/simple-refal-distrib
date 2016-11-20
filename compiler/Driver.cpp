@@ -2,29 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Fetch_0_0;
-extern refalrts::RefalFunction& Seq_0_0;
-extern refalrts::RefalFunction& SaveFile_0_0;
-extern refalrts::RefalFunction& LoadSource_0_0;
-extern refalrts::RefalFunction& LexFolding_0_0;
-extern refalrts::RefalFunction& ParseProgram_0_0;
-extern refalrts::RefalFunction& EL_Create_0_0;
-extern refalrts::RefalFunction& EL_Destroy_0_0;
-extern refalrts::RefalFunction& CheckProgram_0_0;
-extern refalrts::RefalFunction& Desugar_0_0;
-extern refalrts::RefalFunction& HighLevelRASL_0_0;
-extern refalrts::RefalFunction& LowLevelRASL_0_0;
-extern refalrts::RefalFunction& GenProgram_RASL_0_0;
-extern refalrts::RefalFunction& GenProgram_Native_0_0;
-extern refalrts::RefalFunction& gen_CompileFile_L1_3222736457_1848565868;
-extern refalrts::RefalFunction& gen_CompileFile_L2L1S1L1L1_3222736457_1848565868;
-extern refalrts::RefalFunction& gen_CompileFile_L2L1S1L1_3222736457_1848565868;
-extern refalrts::RefalFunction& gen_CompileFile_L2L1_3222736457_1848565868;
-extern refalrts::RefalFunction& gen_CompileFile_L2_3222736457_1848565868;
-extern refalrts::RefalFunction& CompileFile_0_0;
-extern refalrts::RefalFunction& SelectOptFlags_3222736457_1848565868;
+static refalrts::UInt32 COOKIE1 = 3476121254U;
+static refalrts::UInt32 COOKIE2 = 2149362136U;
+#define rasl rasl_3476121254_2149362136
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -32,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

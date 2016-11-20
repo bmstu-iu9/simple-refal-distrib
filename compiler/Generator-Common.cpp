@@ -2,9 +2,9 @@
 #include "refalrts.h"
 
 
-static refalrts::UInt32 COOKIE1 = 834265304U;
-static refalrts::UInt32 COOKIE2 = 2877529394U;
-#define rasl rasl_834265304_2877529394
+static refalrts::UInt32 COOKIE1 = 3801898875U;
+static refalrts::UInt32 COOKIE2 = 2531986778U;
+#define rasl rasl_3801898875_2531986778
 
 extern const refalrts::RASLCommand rasl[];
 

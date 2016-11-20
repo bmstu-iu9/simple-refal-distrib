@@ -11,44 +11,22 @@ const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Re
 const refalrts::RefalIdentifier ident_To = refalrts::ident_from_static("To");
 const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
 const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& GetOpt_0_0;
-#define GetOpt_alias GetOpt_0_0
-#define GetOpt_str "GetOpt#0:0"
-
-extern refalrts::RefalFunction& WriteLine_0_0;
-#define WriteLine_alias WriteLine_0_0
-#define WriteLine_str "WriteLine#0:0"
-
-extern refalrts::RefalFunction& StrFromInt_0_0;
-#define StrFromInt_alias StrFromInt_0_0
-#define StrFromInt_str "StrFromInt#0:0"
-
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1_1416714831_2058974398;
-#define gen_ParseCommandLine_L1S2L1_alias gen_ParseCommandLine_L1S2L1_1416714831_2058974398
-
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1_1416714831_2058974398;
-#define gen_ParseCommandLine_L1S5L1_alias gen_ParseCommandLine_L1S5L1_1416714831_2058974398
-
-extern refalrts::RefalFunction& gen_ParseCommandLine_L1_1416714831_2058974398;
-#define gen_ParseCommandLine_L1_alias gen_ParseCommandLine_L1_1416714831_2058974398
-
-extern refalrts::RefalFunction& ParseCommandLine_0_0;
-#define ParseCommandLine_alias ParseCommandLine_0_0
-
-extern refalrts::RefalFunction& FormatError_1416714831_2058974398;
-#define FormatError_alias FormatError_1416714831_2058974398
-
-extern refalrts::RefalFunction& Help_1416714831_2058974398;
-#define Help_alias Help_1416714831_2058974398
-
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_GetOpt("GetOpt", 0U, 0U);
+#define str_GetOpt refalrts::RefalFuncName("GetOpt", 0U, 0U)
+static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
+#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
+static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
+#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L1S2L1("ParseCommandLine\\1$2\\1", 1416714831U, 2058974398U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L1S5L1("ParseCommandLine\\1$5\\1", 1416714831U, 2058974398U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 1416714831U, 2058974398U);
+static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
+static refalrts::ExternalReference ref_FormatError("FormatError", 1416714831U, 2058974398U);
+static refalrts::ExternalReference ref_Help("Help", 1416714831U, 2058974398U);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -127,9 +105,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & Help_alias ) )
+  if( ! refalrts::alloc_name( context[14], ref_Help.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & FormatError_alias );
+  refalrts::update_name( context[4], ref_FormatError.ref.function );
   refalrts::reinit_svar( context[7], context[9] );
   refalrts::reinit_char( context[8], 'e' );
   refalrts::push_stack( context[1] );
@@ -145,8 +123,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S2L1(func_gen_ParseCommandLine_L1S2L1, "ParseCommandLine\\1$2\\1#1416714831:2058974398");
-refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1_1416714831_2058974398 = descr_gen_ParseCommandLine_L1S2L1;
+static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S2L1(func_gen_ParseCommandLine_L1S2L1, refalrts::RefalFuncName("ParseCommandLine\\1$2\\1", 1416714831U, 2058974398U));
 
 static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -190,7 +167,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[14], context[15], " expects paramete", 17 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & FormatError_alias );
+    refalrts::update_name( context[4], ref_FormatError.ref.function );
     refalrts::reinit_svar( context[7], context[9] );
     refalrts::reinit_char( context[10], 'p' );
     refalrts::reinit_char( context[8], 'r' );
@@ -226,7 +203,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos3 #9/7 } Tile{ HalfReuse: 'u'/10 }"nknown option -"/12 Tile{ HalfReuse: s.Option3 #11/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_chars( context[12], context[13], "nknown option -", 15 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & FormatError_alias );
+    refalrts::update_name( context[4], ref_FormatError.ref.function );
     refalrts::reinit_svar( context[7], context[9] );
     refalrts::reinit_char( context[10], 'u' );
     refalrts::reinit_svar( context[8], context[11] );
@@ -255,7 +232,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[12], context[13], "nown option --", 14 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & FormatError_alias );
+  refalrts::update_name( context[4], ref_FormatError.ref.function );
   refalrts::reinit_svar( context[7], context[9] );
   refalrts::reinit_char( context[10], 'u' );
   refalrts::reinit_char( context[8], 'k' );
@@ -273,8 +250,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S5L1(func_gen_ParseCommandLine_L1S5L1, "ParseCommandLine\\1$5\\1#1416714831:2058974398");
-refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1_1416714831_2058974398 = descr_gen_ParseCommandLine_L1S5L1;
+static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1S5L1(func_gen_ParseCommandLine_L1S5L1, refalrts::RefalFuncName("ParseCommandLine\\1$5\\1", 1416714831U, 2058974398U));
 
 static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -368,10 +344,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#2/9 } Tile{ AsIs: e.End#2/27(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & @create_closure@/7 HalfReuse: & ParseCommandLine\1$2\1/8 } Tile{ AsIs: (/13 } Tile{ AsIs: e.From#2/11 } Tile{ HalfReuse: )/15 AsIs: s.PosFrom#2/16 } >/17 Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_close_call( context[17] ) )
         return refalrts::cNoMemory;
-      refalrts::update_name( context[4], & Fetch_alias );
+      refalrts::update_name( context[4], ref_Fetch.ref.function );
       refalrts::reinit_open_call( context[14] );
       refalrts::reinit_name( context[7], & refalrts::create_closure );
-      refalrts::reinit_name( context[8], & gen_ParseCommandLine_L1S2L1_alias );
+      refalrts::reinit_name( context[8], ref_gen_ParseCommandLine_L1S2L1.ref.function );
       refalrts::reinit_close_bracket( context[15] );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
@@ -435,9 +411,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[21] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[22], & Help_alias ) )
+      if( ! refalrts::alloc_name( context[22], ref_Help.ref.function ) )
         return refalrts::cNoMemory;
-      refalrts::update_name( context[4], & FormatError_alias );
+      refalrts::update_name( context[4], ref_FormatError.ref.function );
       refalrts::reinit_svar( context[7], context[16] );
       refalrts::reinit_char( context[8], 'e' );
       refalrts::reinit_char( context[13], 'p' );
@@ -478,9 +454,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & Help_alias ) )
+    if( ! refalrts::alloc_name( context[13], ref_Help.ref.function ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & WriteLine_alias );
+    refalrts::update_name( context[4], ref_WriteLine.ref.function );
     refalrts::reinit_char( context[7], 'C' );
     refalrts::reinit_char( context[8], 'o' );
     refalrts::push_stack( context[1] );
@@ -506,10 +482,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\1$5\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } </9 & Help/10 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Help_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_Help.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Map_alias );
-  refalrts::reinit_name( context[7], & gen_ParseCommandLine_L1S5L1_alias );
+  refalrts::update_name( context[4], ref_Map.ref.function );
+  refalrts::reinit_name( context[7], ref_gen_ParseCommandLine_L1S5L1.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
@@ -523,8 +499,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, "ParseCommandLine\\1#1416714831:2058974398");
-refalrts::RefalFunction& gen_ParseCommandLine_L1_1416714831_2058974398 = descr_gen_ParseCommandLine_L1;
+static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, refalrts::RefalFuncName("ParseCommandLine\\1", 1416714831U, 2058974398U));
 
 static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -544,7 +519,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # From/9 # Required/10 'f'/11 (/12"from"/13 )/15 )/16 (/17 # To/18 # Required/19 'o'/20 (/21"to"/22 )/24 )/25 )/26 Tile{ AsIs: e.Options#1/2 } >/27 & ParseCommandLine\1/28 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & GetOpt_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_GetOpt.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[7] ) )
     return refalrts::cNoMemory;
@@ -584,9 +559,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[28], & gen_ParseCommandLine_L1_alias ) )
+  if( ! refalrts::alloc_name( context[28], ref_gen_ParseCommandLine_L1.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[27] );
@@ -606,8 +581,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ParseCommandLine(func_ParseCommandLine, "ParseCommandLine#0:0");
-refalrts::RefalFunction& ParseCommandLine_0_0 = descr_ParseCommandLine;
+static refalrts::RefalNativeFunction descr_ParseCommandLine(func_ParseCommandLine, refalrts::RefalFuncName("ParseCommandLine", 0U, 0U));
 
 static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -631,13 +605,13 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & StrFromInt_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_StrFromInt.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[11], context[12], ": ", 2 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & WriteLine_alias );
+  refalrts::update_name( context[4], ref_WriteLine.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[10] );
@@ -653,8 +627,7 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FormatError(func_FormatError, "FormatError#1416714831:2058974398");
-refalrts::RefalFunction& FormatError_1416714831_2058974398 = descr_FormatError;
+static refalrts::RefalNativeFunction descr_FormatError(func_FormatError, refalrts::RefalFuncName("FormatError", 1416714831U, 2058974398U));
 
 static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -677,7 +650,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & WriteLine_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_WriteLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[8], context[9], "Use:", 4 ) )
     return refalrts::cNoMemory;
@@ -685,7 +658,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & WriteLine_alias ) )
+  if( ! refalrts::alloc_name( context[12], ref_WriteLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[13], context[14], "    lexgen filename.sref - for rewritting file\n", 47 ) )
     return refalrts::cNoMemory;
@@ -693,7 +666,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], & WriteLine_alias ) )
+  if( ! refalrts::alloc_name( context[17], ref_WriteLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[18], context[19], "    lexgen --from=file1.sref --to=file2.sref - for writting to other target\n", 76 ) )
     return refalrts::cNoMemory;
@@ -701,7 +674,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[22], & WriteLine_alias ) )
+  if( ! refalrts::alloc_name( context[22], ref_WriteLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[23], context[24], "    --from, -f - source file", 28 ) )
     return refalrts::cNoMemory;
@@ -709,7 +682,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[27], & WriteLine_alias ) )
+  if( ! refalrts::alloc_name( context[27], ref_WriteLine.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[28], context[29], "    --to, -o - target fi", 24 ) )
     return refalrts::cNoMemory;
@@ -733,8 +706,7 @@ static refalrts::FnResult func_Help(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Help(func_Help, "Help#1416714831:2058974398");
-refalrts::RefalFunction& Help_1416714831_2058974398 = descr_Help;
+static refalrts::RefalNativeFunction descr_Help(func_Help, refalrts::RefalFuncName("Help", 1416714831U, 2058974398U));
 
 
 //End of file

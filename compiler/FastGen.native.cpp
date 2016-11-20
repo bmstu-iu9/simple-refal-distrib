@@ -10,73 +10,31 @@ const refalrts::RefalIdentifier ident_Eq = refalrts::ident_from_static("Eq");
 const refalrts::RefalIdentifier ident_NotEq = refalrts::ident_from_static("NotEq");
 const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
 const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Inc_0_0;
-#define Inc_alias Inc_0_0
-#define Inc_str "Inc#0:0"
-
-extern refalrts::RefalFunction& Dec_0_0;
-#define Dec_alias Dec_0_0
-#define Dec_str "Dec#0:0"
-
-extern refalrts::RefalFunction& UnBracketAndNum_3381238288_2475174895;
-#define UnBracketAndNum_alias UnBracketAndNum_3381238288_2475174895
-
-extern refalrts::RefalFunction& UnBracketInBrackets_3381238288_2475174895;
-#define UnBracketInBrackets_alias UnBracketInBrackets_3381238288_2475174895
-
-extern refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1_3381238288_2475174895;
-#define gen_PreparePatternsFastGen_Aux_L1_alias gen_PreparePatternsFastGen_Aux_L1_3381238288_2475174895
-
-extern refalrts::RefalFunction& PreparePatternsFastGen_Aux_3381238288_2475174895;
-#define PreparePatternsFastGen_Aux_alias PreparePatternsFastGen_Aux_3381238288_2475174895
-
-extern refalrts::RefalFunction& gen_PreparePatternsFastGen_L1_3381238288_2475174895;
-#define gen_PreparePatternsFastGen_L1_alias gen_PreparePatternsFastGen_L1_3381238288_2475174895
-
-extern refalrts::RefalFunction& PreparePatternsFastGen_3381238288_2475174895;
-#define PreparePatternsFastGen_alias PreparePatternsFastGen_3381238288_2475174895
-
-extern refalrts::RefalFunction& SplitReps_Aux_3381238288_2475174895;
-#define SplitReps_Aux_alias SplitReps_Aux_3381238288_2475174895
-
-extern refalrts::RefalFunction& gen_SplitReps_Brackets_L1_3381238288_2475174895;
-#define gen_SplitReps_Brackets_L1_alias gen_SplitReps_Brackets_L1_3381238288_2475174895
-
-extern refalrts::RefalFunction& SplitReps_Brackets_3381238288_2475174895;
-#define SplitReps_Brackets_alias SplitReps_Brackets_3381238288_2475174895
-
-extern refalrts::RefalFunction& gen_SplitReps_L1_3381238288_2475174895;
-#define gen_SplitReps_L1_alias gen_SplitReps_L1_3381238288_2475174895
-
-extern refalrts::RefalFunction& SplitReps_3381238288_2475174895;
-#define SplitReps_alias SplitReps_3381238288_2475174895
-
-extern refalrts::RefalFunction& FastGen_Terms_0_0;
-#define FastGen_Terms_alias FastGen_Terms_0_0
-
-extern refalrts::RefalFunction& FastGen_MeN_3381238288_2475174895;
-#define FastGen_MeN_alias FastGen_MeN_3381238288_2475174895
-
-extern refalrts::RefalFunction& LengthComp_3381238288_2475174895;
-#define LengthComp_alias LengthComp_3381238288_2475174895
-
-extern refalrts::RefalFunction& FastGen_K_3381238288_2475174895;
-#define FastGen_K_alias FastGen_K_3381238288_2475174895
-
-extern refalrts::RefalFunction& FastGen_3381238288_2475174895;
-#define FastGen_alias FastGen_3381238288_2475174895
-
-extern refalrts::RefalFunction& CreateFastGen_0_0;
-#define CreateFastGen_alias CreateFastGen_0_0
-
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
+static refalrts::ExternalReference ref_Dec("Dec", 0U, 0U);
+#define str_Dec refalrts::RefalFuncName("Dec", 0U, 0U)
+static refalrts::ExternalReference ref_UnBracketAndNum("UnBracketAndNum", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_UnBracketInBrackets("UnBracketInBrackets", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_gen_PreparePatternsFastGen_Aux_L1("PreparePatternsFastGen-Aux\\1", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_PreparePatternsFastGen_Aux("PreparePatternsFastGen-Aux", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_gen_PreparePatternsFastGen_L1("PreparePatternsFastGen\\1", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_PreparePatternsFastGen("PreparePatternsFastGen", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_SplitReps_Aux("SplitReps-Aux", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_gen_SplitReps_Brackets_L1("SplitReps-Brackets\\1", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_SplitReps_Brackets("SplitReps-Brackets", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_gen_SplitReps_L1("SplitReps\\1", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_SplitReps("SplitReps", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_FastGen_Terms("FastGen-Terms", 0U, 0U);
+static refalrts::ExternalReference ref_FastGen_MeN("FastGen-MeN", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_LengthComp("LengthComp", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_FastGen_K("FastGen-K", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_FastGen("FastGen", 3381238288U, 2475174895U);
+static refalrts::ExternalReference ref_CreateFastGen("CreateFastGen", 0U, 0U);
 
 static refalrts::FnResult func_UnBracketAndNum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -113,8 +71,7 @@ static refalrts::FnResult func_UnBracketAndNum(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UnBracketAndNum(func_UnBracketAndNum, "UnBracketAndNum#3381238288:2475174895");
-refalrts::RefalFunction& UnBracketAndNum_3381238288_2475174895 = descr_UnBracketAndNum;
+static refalrts::RefalNativeFunction descr_UnBracketAndNum(func_UnBracketAndNum, refalrts::RefalFuncName("UnBracketAndNum", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -184,8 +141,7 @@ static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UnBracketInBrackets(func_UnBracketInBrackets, "UnBracketInBrackets#3381238288:2475174895");
-refalrts::RefalFunction& UnBracketInBrackets_3381238288_2475174895 = descr_UnBracketInBrackets;
+static refalrts::RefalNativeFunction descr_UnBracketInBrackets(func_UnBracketInBrackets, refalrts::RefalFuncName("UnBracketInBrackets", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -273,7 +229,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
     refalrts::reinit_ident( context[0], ident_Brackets );
     refalrts::reinit_number( context[4], 1UL );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[9], & PreparePatternsFastGen_Aux_alias );
+    refalrts::reinit_name( context[9], ref_PreparePatternsFastGen_Aux.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[10], context[1] );
@@ -309,7 +265,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
     //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # ADT-Brackets/9 AsIs: (/12 AsIs: e.Name#2/10 AsIs: )/13 } 1/14 Tile{ AsIs: </0 Reuse: & PreparePatternsFastGen-Aux/4 } Tile{ AsIs: e.inBrackets#2/22(5) } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
     if( ! refalrts::alloc_number( context[14], 1UL ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & PreparePatternsFastGen_Aux_alias );
+    refalrts::update_name( context[4], ref_PreparePatternsFastGen_Aux.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[7], context[1] );
@@ -346,8 +302,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_Aux_L1(func_gen_PreparePatternsFastGen_Aux_L1, "PreparePatternsFastGen-Aux\\1#3381238288:2475174895");
-refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1_3381238288_2475174895 = descr_gen_PreparePatternsFastGen_Aux_L1;
+static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_Aux_L1(func_gen_PreparePatternsFastGen_Aux_L1, refalrts::RefalFuncName("PreparePatternsFastGen-Aux\\1", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -367,8 +322,8 @@ static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_beg
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PreparePatternsFastGen-Aux\1/4 AsIs: e.Pattern#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
-  refalrts::update_name( context[4], & gen_PreparePatternsFastGen_Aux_L1_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::update_name( context[4], ref_gen_PreparePatternsFastGen_Aux_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -379,8 +334,7 @@ static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_PreparePatternsFastGen_Aux(func_PreparePatternsFastGen_Aux, "PreparePatternsFastGen-Aux#3381238288:2475174895");
-refalrts::RefalFunction& PreparePatternsFastGen_Aux_3381238288_2475174895 = descr_PreparePatternsFastGen_Aux;
+static refalrts::RefalNativeFunction descr_PreparePatternsFastGen_Aux(func_PreparePatternsFastGen_Aux, refalrts::RefalFuncName("PreparePatternsFastGen-Aux", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -408,7 +362,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & PreparePatternsFastGen-Aux/7 AsIs: e.sent#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & PreparePatternsFastGen_Aux_alias );
+  refalrts::reinit_name( context[7], ref_PreparePatternsFastGen_Aux.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
@@ -417,8 +371,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_L1(func_gen_PreparePatternsFastGen_L1, "PreparePatternsFastGen\\1#3381238288:2475174895");
-refalrts::RefalFunction& gen_PreparePatternsFastGen_L1_3381238288_2475174895 = descr_gen_PreparePatternsFastGen_L1;
+static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_L1(func_gen_PreparePatternsFastGen_L1, refalrts::RefalFuncName("PreparePatternsFastGen\\1", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -438,8 +391,8 @@ static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, 
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PreparePatternsFastGen\1/4 AsIs: e.all#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
-  refalrts::update_name( context[4], & gen_PreparePatternsFastGen_L1_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::update_name( context[4], ref_gen_PreparePatternsFastGen_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -450,8 +403,7 @@ static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_PreparePatternsFastGen(func_PreparePatternsFastGen, "PreparePatternsFastGen#3381238288:2475174895");
-refalrts::RefalFunction& PreparePatternsFastGen_3381238288_2475174895 = descr_PreparePatternsFastGen;
+static refalrts::RefalNativeFunction descr_PreparePatternsFastGen(func_PreparePatternsFastGen, refalrts::RefalFuncName("PreparePatternsFastGen", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -922,7 +874,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & SplitReps_Aux_alias ) )
+  if( ! refalrts::alloc_name( context[16], ref_SplitReps_Aux.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[17] ) )
     return refalrts::cNoMemory;
@@ -933,7 +885,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_close_bracket( context[7] );
-  refalrts::update_name( context[4], & Dec_alias );
+  refalrts::update_name( context[4], ref_Dec.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[15] );
   refalrts::link_brackets( context[20], context[8] );
@@ -956,8 +908,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps_Aux(func_SplitReps_Aux, "SplitReps-Aux#3381238288:2475174895");
-refalrts::RefalFunction& SplitReps_Aux_3381238288_2475174895 = descr_SplitReps_Aux;
+static refalrts::RefalNativeFunction descr_SplitReps_Aux(func_SplitReps_Aux, refalrts::RefalFuncName("SplitReps-Aux", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1006,10 +957,10 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[15] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & UnBracketInBrackets_alias );
+    refalrts::reinit_name( context[0], ref_UnBracketInBrackets.ref.function );
     refalrts::reinit_svar( context[4], context[10] );
     refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[9], & SplitReps_alias );
+    refalrts::reinit_name( context[9], ref_SplitReps.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::link_brackets( context[11], context[15] );
     refalrts::push_stack( context[1] );
@@ -1055,11 +1006,11 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[18], & SplitReps_alias ) )
+    if( ! refalrts::alloc_name( context[18], ref_SplitReps.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[19] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & UnBracketInBrackets_alias );
+    refalrts::update_name( context[4], ref_UnBracketInBrackets.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::link_brackets( context[7], context[19] );
     refalrts::push_stack( context[1] );
@@ -1097,8 +1048,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_SplitReps_Brackets_L1(func_gen_SplitReps_Brackets_L1, "SplitReps-Brackets\\1#3381238288:2475174895");
-refalrts::RefalFunction& gen_SplitReps_Brackets_L1_3381238288_2475174895 = descr_gen_SplitReps_Brackets_L1;
+static refalrts::RefalNativeFunction descr_gen_SplitReps_Brackets_L1(func_gen_SplitReps_Brackets_L1, refalrts::RefalFuncName("SplitReps-Brackets\\1", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1118,8 +1068,8 @@ static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refa
   //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & SplitReps-Brackets\1/4 AsIs: e.Reps#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & Map_alias );
-  refalrts::update_name( context[4], & gen_SplitReps_Brackets_L1_alias );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::update_name( context[4], ref_gen_SplitReps_Brackets_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -1130,8 +1080,7 @@ static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps_Brackets(func_SplitReps_Brackets, "SplitReps-Brackets#3381238288:2475174895");
-refalrts::RefalFunction& SplitReps_Brackets_3381238288_2475174895 = descr_SplitReps_Brackets;
+static refalrts::RefalNativeFunction descr_SplitReps_Brackets(func_SplitReps_Brackets, refalrts::RefalFuncName("SplitReps-Brackets", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1190,7 +1139,7 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & SplitReps_Aux_alias );
+  refalrts::update_name( context[4], ref_SplitReps_Aux.ref.function );
   refalrts::reinit_open_bracket( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[0] );
@@ -1204,8 +1153,7 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_SplitReps_L1(func_gen_SplitReps_L1, "SplitReps\\1#3381238288:2475174895");
-refalrts::RefalFunction& gen_SplitReps_L1_3381238288_2475174895 = descr_gen_SplitReps_L1;
+static refalrts::RefalNativeFunction descr_gen_SplitReps_L1(func_gen_SplitReps_L1, refalrts::RefalFuncName("SplitReps\\1", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1227,13 +1175,13 @@ static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: s.Num#1/5 } </6 & SplitReps-Brackets/7 Tile{ AsIs: e.Reps#1/2 } >/8 & SplitReps\1/9 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & SplitReps_Brackets_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_SplitReps_Brackets.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & gen_SplitReps_L1_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_gen_SplitReps_L1.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[8] );
@@ -1248,8 +1196,7 @@ static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps(func_SplitReps, "SplitReps#3381238288:2475174895");
-refalrts::RefalFunction& SplitReps_3381238288_2475174895 = descr_SplitReps;
+static refalrts::RefalNativeFunction descr_SplitReps(func_SplitReps, refalrts::RefalFuncName("SplitReps", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1388,7 +1335,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # E/22 AsIs: '$'/23 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: e.any#1/17 AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/39(9) } Tile{ HalfReuse: )/1 ]] }
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_close_bracket( context[1] );
@@ -1446,7 +1393,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[33] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
@@ -1568,7 +1515,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[29] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
@@ -1742,7 +1689,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[34] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
@@ -1847,7 +1794,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[30] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
@@ -1899,9 +1846,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # Brackets/22 } Tile{ AsIs: </0 Reuse: & UnBracketAndNum/4 } Tile{ HalfReuse: </20 HalfReuse: & FastGen/16 HalfReuse: s.Num11 #24/7 AsIs: (/11 } Tile{ AsIs: e.1#1/39(17) } )/26 Tile{ AsIs: (/15 } Tile{ AsIs: e.2#1/41(9) } Tile{ AsIs: )/12 HalfReuse: >/8 AsIs: >/1 } Tile{ HalfReuse: )/23 } Tile{ ]] }
     if( ! refalrts::alloc_close_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & UnBracketAndNum_alias );
+    refalrts::update_name( context[4], ref_UnBracketAndNum.ref.function );
     refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[16], & FastGen_alias );
+    refalrts::reinit_name( context[16], ref_FastGen.ref.function );
     refalrts::reinit_svar( context[7], context[24] );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[23] );
@@ -1969,9 +1916,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} e.Name#1/24 )/27 s.Num1#1/34 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num2#1/35 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # ADT-Brackets/23 AsIs: (/30 AsIs: e.Name#1/32 AsIs: )/31 } Tile{ AsIs: </0 Reuse: & UnBracketAndNum/4 } Tile{ HalfReuse: </15 HalfReuse: & FastGen/19 HalfReuse: s.Num11 #34/22 AsIs: (/26 } Tile{ AsIs: e.1#1/39(17) } Tile{ AsIs: )/16 AsIs: (/7 } Tile{ AsIs: e.2#1/41(9) } Tile{ AsIs: )/12 HalfReuse: >/8 AsIs: >/1 } Tile{ AsIs: )/20 } Tile{ ]] }
-    refalrts::update_name( context[4], & UnBracketAndNum_alias );
+    refalrts::update_name( context[4], ref_UnBracketAndNum.ref.function );
     refalrts::reinit_open_call( context[15] );
-    refalrts::reinit_name( context[19], & FastGen_alias );
+    refalrts::reinit_name( context[19], ref_FastGen.ref.function );
     refalrts::reinit_svar( context[22], context[34] );
     refalrts::reinit_close_call( context[8] );
     refalrts::link_brackets( context[11], context[20] );
@@ -2045,7 +1992,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[38] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_open_bracket( context[23] );
@@ -2141,7 +2088,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/23 AsIs: '$'/24 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/25 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_close_bracket( context[1] );
@@ -2242,7 +2189,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/23 AsIs: '$'/24 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::reinit_close_call( context[16] );
     refalrts::reinit_close_bracket( context[1] );
@@ -2625,8 +2572,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_Terms(func_FastGen_Terms, "FastGen-Terms#0:0");
-refalrts::RefalFunction& FastGen_Terms_0_0 = descr_FastGen_Terms;
+static refalrts::RefalNativeFunction descr_FastGen_Terms(func_FastGen_Terms, refalrts::RefalFuncName("FastGen-Terms", 0U, 0U));
 
 static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2722,13 +2668,13 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_call( context[36] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[37], & FastGen_MeN_alias ) )
+        if( ! refalrts::alloc_name( context[37], ref_FastGen_MeN.ref.function ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(context[38], context[13]))
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[39] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], & FastGen_Terms_alias );
+        refalrts::update_name( context[4], ref_FastGen_Terms.ref.function );
         refalrts::push_stack( context[1] );
         refalrts::push_stack( context[36] );
         refalrts::link_brackets( context[7], context[8] );
@@ -2814,7 +2760,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_call( context[34] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[35], & FastGen_Terms_alias ) )
+        if( ! refalrts::alloc_name( context[35], ref_FastGen_Terms.ref.function ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(context[36], context[13]))
           return refalrts::cNoMemory;
@@ -2937,7 +2883,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & SplitReps_alias );
+  refalrts::update_name( context[4], ref_SplitReps.ref.function );
   refalrts::reinit_open_bracket( context[12] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[11], context[17] );
@@ -2959,8 +2905,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_MeN(func_FastGen_MeN, "FastGen-MeN#3381238288:2475174895");
-refalrts::RefalFunction& FastGen_MeN_3381238288_2475174895 = descr_FastGen_MeN;
+static refalrts::RefalNativeFunction descr_FastGen_MeN(func_FastGen_MeN, refalrts::RefalFuncName("FastGen-MeN", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3073,8 +3018,7 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LengthComp(func_LengthComp, "LengthComp#3381238288:2475174895");
-refalrts::RefalFunction& LengthComp_3381238288_2475174895 = descr_LengthComp;
+static refalrts::RefalNativeFunction descr_LengthComp(func_LengthComp, refalrts::RefalFuncName("LengthComp", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3132,7 +3076,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     //RESULT: Tile{ [[ } </19 & FastGen-Terms/20 s.Num#1/13/21 (/22 Tile{ AsIs: t.1#1/15 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: t.2#1/17 } )/23 >/24 Tile{ AsIs: </0 AsIs: & FastGen-K/4 AsIs: s.Num#1/13 AsIs: # Eq/14 AsIs: (/11 } Tile{ AsIs: e.tail1#1/27(9) } )/25 (/26 Tile{ AsIs: e.tail2#1/29(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], & FastGen_Terms_alias ) )
+    if( ! refalrts::alloc_name( context[20], ref_FastGen_Terms.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[21], context[13]))
       return refalrts::cNoMemory;
@@ -3213,7 +3157,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   refalrts::update_ident( context[14], ident_E );
   refalrts::reinit_char( context[11], '$' );
-  refalrts::update_name( context[4], & SplitReps_alias );
+  refalrts::update_name( context[4], ref_SplitReps.ref.function );
   refalrts::reinit_open_bracket( context[12] );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[15], context[17] );
@@ -3235,8 +3179,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_K(func_FastGen_K, "FastGen-K#3381238288:2475174895");
-refalrts::RefalFunction& FastGen_K_3381238288_2475174895 = descr_FastGen_K;
+static refalrts::RefalNativeFunction descr_FastGen_K(func_FastGen_K, refalrts::RefalFuncName("FastGen-K", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3307,7 +3250,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </14 & Inc/15 Tile{ HalfReuse: s.Num1 #5/8 HalfReuse: >/9 AsIs: (/12 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[8], context[5] );
     refalrts::reinit_close_call( context[9] );
@@ -3361,7 +3304,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </20 & Inc/21 Tile{ AsIs: s.Num#1/5 } Tile{ HalfReuse: >/18 } Tile{ AsIs: (/8 AsIs: (/12 AsIs: # E/14 AsIs: '$'/15 AsIs: e.Pattern#1/10 HalfReuse: (/13 HalfReuse: (/9 } Tile{ AsIs: e.any#1/16 } )/22 )/23 )/24 Tile{ AsIs: )/19 AsIs: e.Tail#1/41(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[21], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
@@ -3426,13 +3369,13 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } Tile{ HalfReuse: </8 } & Inc/20 Tile{ AsIs: s.Num#1/5 } Tile{ HalfReuse: >/9 AsIs: (/12 AsIs: (/16 AsIs: # E/18 } '$'/21 </22 & SplitReps/23 s.Num#1/5/24 Tile{ AsIs: e.any#1/6 } Tile{ HalfReuse: >/19 AsIs: e.Pattern#1/14 AsIs: )/17 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[20], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[20], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[21], '$' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], & SplitReps_alias ) )
+    if( ! refalrts::alloc_name( context[23], ref_SplitReps.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[24], context[5]))
       return refalrts::cNoMemory;
@@ -3482,7 +3425,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ } </14 & FastGen/15 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 HalfReuse: >/8 } (/16 (/17 # E/18 '$'/19 </20 & SplitReps/21 s.Num#1/5/22 Tile{ AsIs: e.Any#1/6 } >/23 (/24 (/25 )/26 Tile{ AsIs: )/9 HalfReuse: )/12 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & FastGen_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_FastGen.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[16] ) )
       return refalrts::cNoMemory;
@@ -3494,7 +3437,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & SplitReps_alias ) )
+    if( ! refalrts::alloc_name( context[21], ref_SplitReps.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[22], context[5]))
       return refalrts::cNoMemory;
@@ -3506,7 +3449,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & Inc_alias );
+    refalrts::update_name( context[4], ref_Inc.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_close_bracket( context[12] );
     refalrts::push_stack( context[1] );
@@ -3555,11 +3498,11 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ } </14 & FastGen/15 </16 & Inc/17 s.Num#1/5/18 >/19 (/20 (/21 # E/22 '$'/23 Tile{ AsIs: </0 Reuse: & SplitReps/4 AsIs: s.Num#1/5 HalfReuse: >/8 HalfReuse: (/9 AsIs: (/12 AsIs: e.Any#1/10 AsIs: )/13 } )/24 )/25 )/26 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & FastGen_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_FastGen.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[17], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[18], context[5]))
       return refalrts::cNoMemory;
@@ -3579,7 +3522,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SplitReps_alias );
+    refalrts::update_name( context[4], ref_SplitReps.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::reinit_open_bracket( context[9] );
     refalrts::push_stack( context[1] );
@@ -3653,7 +3596,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} # E/14 '$'/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } Tile{ HalfReuse: </8 HalfReuse: & Inc/12 } Tile{ HalfReuse: s.Num1 #5/13 HalfReuse: >/9 AsIs: (/18 AsIs: (/22 AsIs: # E/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/10 } Tile{ AsIs: e.Pattern2#1/20 } Tile{ AsIs: )/23 AsIs: )/19 AsIs: e.Tail#1/41(2) AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[12], & Inc_alias );
+    refalrts::reinit_name( context[12], ref_Inc.ref.function );
     refalrts::reinit_svar( context[13], context[5] );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[1] );
@@ -3704,11 +3647,11 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ } </18 & FastGen/19 </20 & Inc/21 s.Num#1/5/22 >/23 (/24 Tile{ AsIs: </0 Reuse: & FastGen-Terms/4 AsIs: s.Num#1/5 AsIs: (/8 AsIs: t.1#1/14 AsIs: )/9 AsIs: (/12 AsIs: t.2#1/16 AsIs: )/13 } >/25 )/26 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[19], & FastGen_alias ) )
+    if( ! refalrts::alloc_name( context[19], ref_FastGen.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[21], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[22], context[5]))
       return refalrts::cNoMemory;
@@ -3720,7 +3663,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[26] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & FastGen_Terms_alias );
+    refalrts::update_name( context[4], ref_FastGen_Terms.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[18] );
     refalrts::link_brackets( context[24], context[26] );
@@ -3804,11 +3747,11 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
         //RESULT: Tile{ [[ } </30 & FastGen/31 </32 & Inc/33 s.Num#1/5/34 >/35 (/36 Tile{ AsIs: </0 Reuse: & FastGen-MeN/4 AsIs: s.Num#1/5 AsIs: (/8 AsIs: e.1#1/14 AsIs: (/18 AsIs: # E/20 AsIs: '$'/21 AsIs: e.Pattern1#1/16 AsIs: )/19 AsIs: e.2#1/43(6) AsIs: )/9 AsIs: (/12 AsIs: e.3#1/22 AsIs: (/26 AsIs: # E/28 AsIs: '$'/29 AsIs: e.Pattern2#1/24 AsIs: )/27 AsIs: e.4#1/47(10) AsIs: )/13 } >/37 )/38 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
         if( ! refalrts::alloc_open_call( context[30] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[31], & FastGen_alias ) )
+        if( ! refalrts::alloc_name( context[31], ref_FastGen.ref.function ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_call( context[32] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
+        if( ! refalrts::alloc_name( context[33], ref_Inc.ref.function ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(context[34], context[5]))
           return refalrts::cNoMemory;
@@ -3820,7 +3763,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( context[38] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], & FastGen_MeN_alias );
+        refalrts::update_name( context[4], ref_FastGen_MeN.ref.function );
         refalrts::push_stack( context[1] );
         refalrts::push_stack( context[30] );
         refalrts::link_brackets( context[36], context[38] );
@@ -3866,7 +3809,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </14 & Inc/15 s.Num#1/5/16 >/17 (/18 </19 & FastGen-K/20 Tile{ AsIs: s.Num#1/5 } </21 & LengthComp/22 Tile{ AsIs: (/8 AsIs: e.1#1/6 AsIs: )/9 AsIs: (/12 AsIs: e.2#1/10 AsIs: )/13 } >/23 (/24 e.1#1/6/25 )/27 (/28 e.2#1/10/29 )/31 >/32 )/33 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[15], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[16], context[5]))
       return refalrts::cNoMemory;
@@ -3876,11 +3819,11 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], & FastGen_K_alias ) )
+    if( ! refalrts::alloc_name( context[20], ref_FastGen_K.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[21] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[22], & LengthComp_alias ) )
+    if( ! refalrts::alloc_name( context[22], ref_LengthComp.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[23] ) )
       return refalrts::cNoMemory;
@@ -3981,8 +3924,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen(func_FastGen, "FastGen#3381238288:2475174895");
-refalrts::RefalFunction& FastGen_3381238288_2475174895 = descr_FastGen;
+static refalrts::RefalNativeFunction descr_FastGen(func_FastGen, refalrts::RefalFuncName("FastGen", 3381238288U, 2475174895U));
 
 static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4002,13 +3944,13 @@ static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts:
   //RESULT: Tile{ [[ } </5 & FastGen/6 1/7 Tile{ AsIs: </0 Reuse: & PreparePatternsFastGen/4 AsIs: e.Patterns#1/2 AsIs: >/1 } >/8 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & FastGen_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_FastGen.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_number( context[7], 1UL ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[8] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & PreparePatternsFastGen_alias );
+  refalrts::update_name( context[4], ref_PreparePatternsFastGen.ref.function );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[5] );
   refalrts::push_stack( context[1] );
@@ -4023,8 +3965,7 @@ static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateFastGen(func_CreateFastGen, "CreateFastGen#0:0");
-refalrts::RefalFunction& CreateFastGen_0_0 = descr_CreateFastGen;
+static refalrts::RefalNativeFunction descr_CreateFastGen(func_CreateFastGen, refalrts::RefalFuncName("CreateFastGen", 0U, 0U));
 
 
 //End of file

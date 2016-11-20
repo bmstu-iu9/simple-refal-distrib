@@ -2,18 +2,17 @@
 #include "refalrts.h"
 
 
-extern refalrts::RefalFunction& Inc_0_0;
-extern refalrts::RefalFunction& Add_0_0;
-extern refalrts::RefalFunction& Inc2_0_0;
-extern refalrts::RefalFunction& PrintVar_0_0;
-extern refalrts::RefalFunction& TextFromExpr_0_0;
-extern refalrts::RefalFunction& GenInitSubst_Save_0_0;
-extern refalrts::RefalFunction& GenSubst_Save_0_0;
-extern refalrts::RefalFunction& DoGenSubst_1788560981_2194543583;
-extern refalrts::RefalFunction& IncVarOffset_Saved_1788560981_2194543583;
-extern refalrts::RefalFunction& MakeRepeatedSave_1788560981_2194543583;
+static refalrts::UInt32 COOKIE1 = 1788560981U;
+static refalrts::UInt32 COOKIE2 = 2194543583U;
+#define rasl rasl_1788560981_2194543583
 
-using refalrts::functions;
+extern const refalrts::RASLCommand rasl[];
+
+static refalrts::FunctionTableItem func_table_items[] = {
+  0
+};
+
+static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
 
 using refalrts::idents;
 
@@ -21,5 +20,8 @@ using refalrts::numbers;
 
 using refalrts::strings;
 
+const refalrts::RASLCommand rasl[] = {
+  {refalrts::icEnd, 0, 0, 0}
+};
 
 //End of file

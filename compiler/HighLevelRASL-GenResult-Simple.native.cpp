@@ -41,66 +41,32 @@ const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkNa
 const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
 const refalrts::RefalIdentifier ident_TkString = refalrts::ident_from_static("TkString");
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& Inc_0_0;
-#define Inc_alias Inc_0_0
-#define Inc_str "Inc#0:0"
-
-extern refalrts::RefalFunction& Sort_0_0;
-#define Sort_alias Sort_0_0
-#define Sort_str "Sort#0:0"
-
-extern refalrts::RefalFunction& Seq_0_0;
-#define Seq_alias Seq_0_0
-#define Seq_str "Seq#0:0"
-
-extern refalrts::RefalFunction& Add_0_0;
-#define Add_alias Add_0_0
-#define Add_str "Add#0:0"
-
-extern refalrts::RefalFunction& CollectStrings_0_0;
-#define CollectStrings_alias CollectStrings_0_0
-#define CollectStrings_str "CollectStrings#0:0"
-
-extern refalrts::RefalFunction& IncVarOffset_0_0;
-#define IncVarOffset_alias IncVarOffset_0_0
-#define IncVarOffset_str "IncVarOffset#0:0"
-
-extern refalrts::RefalFunction& PrintVar_0_0;
-#define PrintVar_alias PrintVar_0_0
-#define PrintVar_str "PrintVar#0:0"
-
-extern refalrts::RefalFunction& gen_GenResult_Simple_L1_2528518871_2573030195;
-#define gen_GenResult_Simple_L1_alias gen_GenResult_Simple_L1_2528518871_2573030195
-
-extern refalrts::RefalFunction& gen_GenResult_Simple_L2_2528518871_2573030195;
-#define gen_GenResult_Simple_L2_alias gen_GenResult_Simple_L2_2528518871_2573030195
-
-extern refalrts::RefalFunction& GenResult_Simple_0_0;
-#define GenResult_Simple_alias GenResult_Simple_0_0
-
-extern refalrts::RefalFunction& DoGenResult_2528518871_2573030195;
-#define DoGenResult_alias DoGenResult_2528518871_2573030195
-
-extern refalrts::RefalFunction& MakeVariableCommentTable_2528518871_2573030195;
-#define MakeVariableCommentTable_alias MakeVariableCommentTable_2528518871_2573030195
-
-extern refalrts::RefalFunction& gen_ReplicateVar_L1_2528518871_2573030195;
-#define gen_ReplicateVar_L1_alias gen_ReplicateVar_L1_2528518871_2573030195
-
-extern refalrts::RefalFunction& ReplicateVar_2528518871_2573030195;
-#define ReplicateVar_alias ReplicateVar_2528518871_2573030195
-
-extern refalrts::RefalFunction& MakeVariableComment_2528518871_2573030195;
-#define MakeVariableComment_alias MakeVariableComment_2528518871_2573030195
-
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
+static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
+#define str_Sort refalrts::RefalFuncName("Sort", 0U, 0U)
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
+static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
+#define str_Add refalrts::RefalFuncName("Add", 0U, 0U)
+static refalrts::ExternalReference ref_CollectStrings("CollectStrings", 0U, 0U);
+#define str_CollectStrings refalrts::RefalFuncName("CollectStrings", 0U, 0U)
+static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
+#define str_IncVarOffset refalrts::RefalFuncName("IncVarOffset", 0U, 0U)
+static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
+#define str_PrintVar refalrts::RefalFuncName("PrintVar", 0U, 0U)
+static refalrts::ExternalReference ref_gen_GenResult_Simple_L1("GenResult-Simple\\1", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_gen_GenResult_Simple_L2("GenResult-Simple\\2", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_GenResult_Simple("GenResult-Simple", 0U, 0U);
+static refalrts::ExternalReference ref_DoGenResult("DoGenResult", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_MakeVariableCommentTable("MakeVariableCommentTable", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_gen_ReplicateVar_L1("ReplicateVar\\1", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_ReplicateVar("ReplicateVar", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_MakeVariableComment("MakeVariableComment", 2528518871U, 2573030195U);
 
 static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -151,8 +117,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, "GenResult-Simple\\1#2528518871:2573030195");
-refalrts::RefalFunction& gen_GenResult_Simple_L1_2528518871_2573030195 = descr_gen_GenResult_Simple_L1;
+static refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L1(func_gen_GenResult_Simple_L1, refalrts::RefalFuncName("GenResult-Simple\\1", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -201,7 +166,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
       return refalrts::cNoMemory;
     refalrts::reinit_svar( context[0], context[5] );
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[8], & MakeVariableCommentTable_alias );
+    refalrts::reinit_name( context[8], ref_MakeVariableCommentTable.ref.function );
     refalrts::reinit_close_call( context[9] );
     refalrts::reinit_open_bracket( context[1] );
     refalrts::link_brackets( context[12], context[14] );
@@ -226,7 +191,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.ContextOffset#2/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: s.ContextOffset2 #5/0 HalfReuse: </4 } & MakeVariableCommentTable/10 Tile{ AsIs: e.CommonVars#2/6 } >/11 Tile{ AsIs: (/8 } # CmdResetAllocator/12 )/13 (/14 # CmdSetRes/15 # ARG-BEGIN/16 Tile{ AsIs: )/9 AsIs: e.ResultCommands#2/2 HalfReuse: (/1 } # CmdUseRes/17 )/18 (/19 # CmdSpliceToFreeList/20 )/21 (/22 # CmdNextStep/23 )/24 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[10], & MakeVariableCommentTable_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_MakeVariableCommentTable.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
@@ -280,8 +245,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, "GenResult-Simple\\2#2528518871:2573030195");
-refalrts::RefalFunction& gen_GenResult_Simple_L2_2528518871_2573030195 = descr_gen_GenResult_Simple_L2;
+static refalrts::RefalNativeFunction descr_gen_GenResult_Simple_L2(func_gen_GenResult_Simple_L2, refalrts::RefalFuncName("GenResult-Simple\\2", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -317,15 +281,15 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </14 & DoGenResult/15 (/16 </17 & Map/18 & GenResult-Simple\1/19 Tile{ AsIs: e.PatternVars#1/6 } >/20 Tile{ AsIs: )/9 AsIs: (/12 } )/21 (/22 )/23 Tile{ AsIs: s.ContextOffset#1/5 HalfReuse: </8 } Tile{ HalfReuse: & CollectStrings/13 AsIs: e.Result#1/2 AsIs: >/1 } >/24 & GenResult-Simple\2/25 >/26 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & DoGenResult_alias ) )
+  if( ! refalrts::alloc_name( context[15], ref_DoGenResult.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[16] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[18], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], & gen_GenResult_Simple_L1_alias ) )
+  if( ! refalrts::alloc_name( context[19], ref_gen_GenResult_Simple_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
@@ -337,13 +301,13 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[25], & gen_GenResult_Simple_L2_alias ) )
+  if( ! refalrts::alloc_name( context[25], ref_gen_GenResult_Simple_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[26] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[8] );
-  refalrts::reinit_name( context[13], & CollectStrings_alias );
+  refalrts::reinit_name( context[13], ref_CollectStrings.ref.function );
   refalrts::push_stack( context[26] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[24] );
@@ -370,8 +334,7 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GenResult_Simple(func_GenResult_Simple, "GenResult-Simple#0:0");
-refalrts::RefalFunction& GenResult_Simple_0_0 = descr_GenResult_Simple;
+static refalrts::RefalNativeFunction descr_GenResult_Simple(func_GenResult_Simple, refalrts::RefalFuncName("GenResult-Simple", 0U, 0U));
 
 static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -454,7 +417,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[32] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[33], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[34], context[17]))
       return refalrts::cNoMemory;
@@ -524,7 +487,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[31], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[31], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
@@ -602,7 +565,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[32] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[33], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[33], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[34], context[17]))
       return refalrts::cNoMemory;
@@ -672,7 +635,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[31], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[31], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
@@ -745,7 +708,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[31], & Add_alias ) )
+    if( ! refalrts::alloc_name( context[31], ref_Add.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
@@ -820,7 +783,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[31], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[31], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
@@ -900,7 +863,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[31], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[31], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[32], context[17]))
       return refalrts::cNoMemory;
@@ -1003,7 +966,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[12] );
     refalrts::reinit_ident( context[15], ident_CmdCreateElem );
-    refalrts::reinit_name( context[16], & Inc_alias );
+    refalrts::reinit_name( context[16], ref_Inc.ref.function );
     refalrts::reinit_close_call( context[20] );
     refalrts::reinit_open_bracket( context[22] );
     refalrts::reinit_ident( context[25], ident_TkName );
@@ -1083,7 +1046,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[35] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[36], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[36], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[37], context[17]))
       return refalrts::cNoMemory;
@@ -1167,7 +1130,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[35] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[36], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[36], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[37], context[17]))
       return refalrts::cNoMemory;
@@ -1255,7 +1218,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[37] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[38], & Inc_alias ) )
+    if( ! refalrts::alloc_name( context[38], ref_Inc.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[39], context[17]))
       return refalrts::cNoMemory;
@@ -1465,7 +1428,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( context[50] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( context[51], & IncVarOffset_alias ) )
+      if( ! refalrts::alloc_name( context[51], ref_IncVarOffset.ref.function ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(context[52], context[17]))
         return refalrts::cNoMemory;
@@ -1530,8 +1493,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoGenResult(func_DoGenResult, "DoGenResult#2528518871:2573030195");
-refalrts::RefalFunction& DoGenResult_2528518871_2573030195 = descr_DoGenResult;
+static refalrts::RefalNativeFunction descr_DoGenResult(func_DoGenResult, refalrts::RefalFuncName("DoGenResult", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1549,23 +1511,23 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Vars#1/2 HalfReuse: </1 } & Seq/5 (/6 & Map/7 & ReplicateVar/8 )/9 & Sort/10 (/11 & Map/12 & MakeVariableComment/13 )/14 >/15 >/16 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[7], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & ReplicateVar_alias ) )
+  if( ! refalrts::alloc_name( context[8], ref_ReplicateVar.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Sort_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_Sort.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & Map_alias ) )
+  if( ! refalrts::alloc_name( context[12], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & MakeVariableComment_alias ) )
+  if( ! refalrts::alloc_name( context[13], ref_MakeVariableComment.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[14] ) )
     return refalrts::cNoMemory;
@@ -1573,7 +1535,7 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[16] );
   refalrts::push_stack( context[0] );
@@ -1589,8 +1551,7 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_MakeVariableCommentTable(func_MakeVariableCommentTable, "MakeVariableCommentTable#2528518871:2573030195");
-refalrts::RefalFunction& MakeVariableCommentTable_2528518871_2573030195 = descr_MakeVariableCommentTable;
+static refalrts::RefalNativeFunction descr_MakeVariableCommentTable(func_MakeVariableCommentTable, refalrts::RefalFuncName("MakeVariableCommentTable", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1632,8 +1593,7 @@ static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, "ReplicateVar\\1#2528518871:2573030195");
-refalrts::RefalFunction& gen_ReplicateVar_L1_2528518871_2573030195 = descr_gen_ReplicateVar_L1;
+static refalrts::RefalNativeFunction descr_gen_ReplicateVar_L1(func_gen_ReplicateVar_L1, refalrts::RefalFuncName("ReplicateVar\\1", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1676,9 +1636,9 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } Tile{ HalfReuse: & Map/17 } Tile{ AsIs: </0 Reuse: & @create_closure@/4 HalfReuse: & ReplicateVar\1/7 AsIs: s.Mode#1/9 AsIs: (/12 AsIs: e.Index#1/10 AsIs: )/13 HalfReuse: >/16 } Tile{ AsIs: e.ResultOccurences#1/14 } Tile{ AsIs: e.PatternOccurences#1/5 } Tile{ AsIs: >/1 ]] }
   refalrts::reinit_open_call( context[8] );
-  refalrts::reinit_name( context[17], & Map_alias );
+  refalrts::reinit_name( context[17], ref_Map.ref.function );
   refalrts::update_name( context[4], & refalrts::create_closure );
-  refalrts::reinit_name( context[7], & gen_ReplicateVar_L1_alias );
+  refalrts::reinit_name( context[7], ref_gen_ReplicateVar_L1.ref.function );
   refalrts::reinit_close_call( context[16] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[8] );
@@ -1697,8 +1657,7 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ReplicateVar(func_ReplicateVar, "ReplicateVar#2528518871:2573030195");
-refalrts::RefalFunction& ReplicateVar_2528518871_2573030195 = descr_ReplicateVar;
+static refalrts::RefalNativeFunction descr_ReplicateVar(func_ReplicateVar, refalrts::RefalFuncName("ReplicateVar", 2528518871U, 2573030195U));
 
 static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1734,7 +1693,7 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], & PrintVar_alias ) )
+  if( ! refalrts::alloc_name( context[15], ref_PrintVar.ref.function ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
   refalrts::reinit_ident( context[4], ident_CmdComment );
@@ -1752,8 +1711,7 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_MakeVariableComment(func_MakeVariableComment, "MakeVariableComment#2528518871:2573030195");
-refalrts::RefalFunction& MakeVariableComment_2528518871_2573030195 = descr_MakeVariableComment;
+static refalrts::RefalNativeFunction descr_MakeVariableComment(func_MakeVariableComment, refalrts::RefalFuncName("MakeVariableComment", 2528518871U, 2573030195U));
 
 
 //End of file

@@ -7,95 +7,45 @@ const refalrts::RefalIdentifier ident_From = refalrts::ident_from_static("From")
 const refalrts::RefalIdentifier ident_InPlace = refalrts::ident_from_static("InPlace");
 const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
 const refalrts::RefalIdentifier ident_To = refalrts::ident_from_static("To");
-extern refalrts::RefalFunction& ArgList_0_0;
-#define ArgList_alias ArgList_0_0
-#define ArgList_str "ArgList#0:0"
-
-extern refalrts::RefalFunction& Fetch_0_0;
-#define Fetch_alias Fetch_0_0
-#define Fetch_str "Fetch#0:0"
-
-extern refalrts::RefalFunction& Seq_0_0;
-#define Seq_alias Seq_0_0
-#define Seq_str "Seq#0:0"
-
-extern refalrts::RefalFunction& LoadFile_0_0;
-#define LoadFile_alias LoadFile_0_0
-#define LoadFile_str "LoadFile#0:0"
-
-extern refalrts::RefalFunction& SaveFile_0_0;
-#define SaveFile_alias SaveFile_0_0
-#define SaveFile_str "SaveFile#0:0"
-
-extern refalrts::RefalFunction& Map_0_0;
-#define Map_alias Map_0_0
-#define Map_str "Map#0:0"
-
-extern refalrts::RefalFunction& Inc_0_0;
-#define Inc_alias Inc_0_0
-#define Inc_str "Inc#0:0"
-
-extern refalrts::RefalFunction& MapReduce_0_0;
-#define MapReduce_alias MapReduce_0_0
-#define MapReduce_str "MapReduce#0:0"
-
-extern refalrts::RefalFunction& ParseCommandLine_0_0;
-#define ParseCommandLine_alias ParseCommandLine_0_0
-#define ParseCommandLine_str "ParseCommandLine#0:0"
-
-extern refalrts::RefalFunction& DFA_Tokens_0_0;
-#define DFA_Tokens_alias DFA_Tokens_0_0
-#define DFA_Tokens_str "DFA-Tokens#0:0"
-
-extern refalrts::RefalFunction& DFA_Parse_0_0;
-#define DFA_Parse_alias DFA_Parse_0_0
-#define DFA_Parse_str "DFA-Parse#0:0"
-
-extern refalrts::RefalFunction& DFA_Compile_0_0;
-#define DFA_Compile_alias DFA_Compile_0_0
-#define DFA_Compile_str "DFA-Compile#0:0"
-
-extern refalrts::RefalFunction& GenerateFromDFA_0_0;
-#define GenerateFromDFA_alias GenerateFromDFA_0_0
-#define GenerateFromDFA_str "GenerateFromDFA#0:0"
-
-extern refalrts::RefalFunction& ErrorAt_0_0;
-#define ErrorAt_alias ErrorAt_0_0
-#define ErrorAt_str "ErrorAt#0:0"
-
-extern refalrts::RefalFunction& gen_Go_L1_4120172509_3596181138;
-#define gen_Go_L1_alias gen_Go_L1_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Go_L2_4120172509_3596181138;
-#define gen_Go_L2_alias gen_Go_L2_4120172509_3596181138
-
-extern refalrts::RefalFunction& Go_0_0;
-#define Go_alias Go_0_0
-
-extern refalrts::RefalFunction& gen_Transform_L1_4120172509_3596181138;
-#define gen_Transform_L1_alias gen_Transform_L1_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Transform_L2_4120172509_3596181138;
-#define gen_Transform_L2_alias gen_Transform_L2_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Transform_L3S1L1_4120172509_3596181138;
-#define gen_Transform_L3S1L1_alias gen_Transform_L3S1L1_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Transform_L3S1L2_4120172509_3596181138;
-#define gen_Transform_L3S1L2_alias gen_Transform_L3S1L2_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Transform_L3_4120172509_3596181138;
-#define gen_Transform_L3_alias gen_Transform_L3_4120172509_3596181138
-
-extern refalrts::RefalFunction& Transform_4120172509_3596181138;
-#define Transform_alias Transform_4120172509_3596181138
-
-extern refalrts::RefalFunction& gen_Length_T_L1_4120172509_3596181138;
-#define gen_Length_T_L1_alias gen_Length_T_L1_4120172509_3596181138
-
-extern refalrts::RefalFunction& Length_T_4120172509_3596181138;
-#define Length_T_alias Length_T_4120172509_3596181138
-
+static refalrts::ExternalReference ref_ArgList("ArgList", 0U, 0U);
+#define str_ArgList refalrts::RefalFuncName("ArgList", 0U, 0U)
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
+static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
+#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
+static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
+#define str_SaveFile refalrts::RefalFuncName("SaveFile", 0U, 0U)
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
+static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
+#define str_ParseCommandLine refalrts::RefalFuncName("ParseCommandLine", 0U, 0U)
+static refalrts::ExternalReference ref_DFA_Tokens("DFA-Tokens", 0U, 0U);
+#define str_DFA_Tokens refalrts::RefalFuncName("DFA-Tokens", 0U, 0U)
+static refalrts::ExternalReference ref_DFA_Parse("DFA-Parse", 0U, 0U);
+#define str_DFA_Parse refalrts::RefalFuncName("DFA-Parse", 0U, 0U)
+static refalrts::ExternalReference ref_DFA_Compile("DFA-Compile", 0U, 0U);
+#define str_DFA_Compile refalrts::RefalFuncName("DFA-Compile", 0U, 0U)
+static refalrts::ExternalReference ref_GenerateFromDFA("GenerateFromDFA", 0U, 0U);
+#define str_GenerateFromDFA refalrts::RefalFuncName("GenerateFromDFA", 0U, 0U)
+static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
+#define str_ErrorAt refalrts::RefalFuncName("ErrorAt", 0U, 0U)
+static refalrts::ExternalReference ref_gen_Go_L1("Go\\1", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Go_L2("Go\\2", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
+static refalrts::ExternalReference ref_gen_Transform_L1("Transform\\1", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Transform_L2("Transform\\2", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Transform_L3S1L1("Transform\\3$1\\1", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Transform_L3S1L2("Transform\\3$1\\2", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Transform_L3("Transform\\3", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_Transform("Transform", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_gen_Length_T_L1("Length-T\\1", 4120172509U, 3596181138U);
+static refalrts::ExternalReference ref_Length_T("Length-T", 4120172509U, 3596181138U);
 
 static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -120,7 +70,7 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & Go\1/4 (/7 e.ProgName#2/5 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & ParseCommandLine/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
-  refalrts::reinit_name( context[8], & ParseCommandLine_alias );
+  refalrts::reinit_name( context[8], ref_ParseCommandLine.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -130,8 +80,7 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Go_L1(func_gen_Go_L1, "Go\\1#4120172509:3596181138");
-refalrts::RefalFunction& gen_Go_L1_4120172509_3596181138 = descr_gen_Go_L1;
+static refalrts::RefalNativeFunction descr_gen_Go_L1(func_gen_Go_L1, refalrts::RefalFuncName("Go\\1", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -161,7 +110,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & SaveFile/4 HalfReuse: (/5 AsIs: e.FileName#2/2 HalfReuse: )/1 } </6 & Transform/7 (/8 e.FileName#2/2/9 )/11 </12 & LoadFile/13 e.FileName#2/2/14 >/16 >/17 >/18 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[6] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[7], & Transform_alias ) )
+    if( ! refalrts::alloc_name( context[7], ref_Transform.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[8] ) )
       return refalrts::cNoMemory;
@@ -171,7 +120,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], & LoadFile_alias ) )
+    if( ! refalrts::alloc_name( context[13], ref_LoadFile.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
       return refalrts::cNoMemory;
@@ -181,7 +130,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & SaveFile_alias );
+    refalrts::update_name( context[4], ref_SaveFile.ref.function );
     refalrts::reinit_open_bracket( context[5] );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::push_stack( context[18] );
@@ -233,7 +182,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
     //RESULT: Tile{ [[ } </15 & SaveFile/16 (/17 Tile{ AsIs: e.To#2/11 } )/18 (/19"// Automatically generated file, don\'t edit!"/20 )/22 (/23"// Edit file \'"/24 e.From#2/6/26 '\''/28 )/29 (/30 )/31 (/32 Tile{ HalfReuse: )/0 HalfReuse: </4 HalfReuse: & Transform/5 AsIs: (/8 AsIs: e.From#2/6 AsIs: )/9 HalfReuse: </10 HalfReuse: & LoadFile/13 } e.From#2/6/33 >/35 Tile{ HalfReuse: >/14 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], & SaveFile_alias ) )
+    if( ! refalrts::alloc_name( context[16], ref_SaveFile.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[17] ) )
       return refalrts::cNoMemory;
@@ -267,9 +216,9 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
       return refalrts::cNoMemory;
     refalrts::reinit_close_bracket( context[0] );
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], & Transform_alias );
+    refalrts::reinit_name( context[5], ref_Transform.ref.function );
     refalrts::reinit_open_call( context[10] );
-    refalrts::reinit_name( context[13], & LoadFile_alias );
+    refalrts::reinit_name( context[13], ref_LoadFile.ref.function );
     refalrts::reinit_close_call( context[14] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[15] );
@@ -314,8 +263,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Go_L2(func_gen_Go_L2, "Go\\2#4120172509:3596181138");
-refalrts::RefalFunction& gen_Go_L2_4120172509_3596181138 = descr_gen_Go_L2;
+static refalrts::RefalNativeFunction descr_gen_Go_L2(func_gen_Go_L2, refalrts::RefalFuncName("Go\\2", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -334,23 +282,23 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </1 } & ArgList/5 >/6 </7 & Seq/8 & Go\1/9 & Go\2/10 >/11 >/12 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], & ArgList_alias ) )
+  if( ! refalrts::alloc_name( context[5], ref_ArgList.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[8], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], & gen_Go_L1_alias ) )
+  if( ! refalrts::alloc_name( context[9], ref_gen_Go_L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & gen_Go_L2_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_gen_Go_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[11] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & Fetch_alias );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::reinit_open_call( context[1] );
   refalrts::push_stack( context[12] );
   refalrts::push_stack( context[0] );
@@ -366,8 +314,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Go(func_Go, "Go#0:0");
-refalrts::RefalFunction& Go_0_0 = descr_Go;
+static refalrts::RefalNativeFunction descr_Go(func_Go, refalrts::RefalFuncName("Go", 0U, 0U));
 
 static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -440,7 +387,7 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[0] );
       refalrts::reinit_open_call( context[4] );
-      refalrts::reinit_name( context[8], & Length_T_alias );
+      refalrts::reinit_name( context[8], ref_Length_T.ref.function );
       refalrts::link_brackets( context[7], context[24] );
       refalrts::link_brackets( context[0], context[21] );
       refalrts::push_stack( context[1] );
@@ -474,7 +421,7 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[10], context[11], "Lexer description not found", 27 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ErrorAt_alias );
+  refalrts::update_name( context[4], ref_ErrorAt.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -489,8 +436,7 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L1(func_gen_Transform_L1, "Transform\\1#4120172509:3596181138");
-refalrts::RefalFunction& gen_Transform_L1_4120172509_3596181138 = descr_gen_Transform_L1;
+static refalrts::RefalNativeFunction descr_gen_Transform_L1(func_gen_Transform_L1, refalrts::RefalFuncName("Transform\\1", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -610,7 +556,7 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[19], context[20], "f description not found", 23 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ErrorAt_alias );
+  refalrts::update_name( context[4], ref_ErrorAt.ref.function );
   refalrts::reinit_char( context[11], 'E' );
   refalrts::reinit_char( context[12], 'd' );
   refalrts::reinit_char( context[15], ' ' );
@@ -632,8 +578,7 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L2(func_gen_Transform_L2, "Transform\\2#4120172509:3596181138");
-refalrts::RefalFunction& gen_Transform_L2_4120172509_3596181138 = descr_gen_Transform_L2;
+static refalrts::RefalNativeFunction descr_gen_Transform_L2(func_gen_Transform_L2, refalrts::RefalFuncName("Transform\\2", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -679,7 +624,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.LineNumber#3/14 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Text#3/9 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], & ErrorAt_alias );
+    refalrts::update_name( context[4], ref_ErrorAt.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[12] );
@@ -719,8 +664,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L1(func_gen_Transform_L3S1L1, "Transform\\3$1\\1#4120172509:3596181138");
-refalrts::RefalFunction& gen_Transform_L3S1L1_4120172509_3596181138 = descr_gen_Transform_L3S1L1;
+static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L1(func_gen_Transform_L3S1L1, refalrts::RefalFuncName("Transform\\3$1\\1", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -779,8 +723,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L2(func_gen_Transform_L3S1L2, "Transform\\3$1\\2#4120172509:3596181138");
-refalrts::RefalFunction& gen_Transform_L3S1L2_4120172509_3596181138 = descr_gen_Transform_L3S1L2;
+static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L2(func_gen_Transform_L3S1L2, refalrts::RefalFuncName("Transform\\3$1\\2", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -853,19 +796,19 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
     //RESULT: Tile{ [[ } </24 & Fetch/25 Tile{ AsIs: s.Length#2/17 } e.Description#2/2/26 </28 & Seq/29 & DFA-Tokens/30 (/31 & Map/32 </33 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\3$1\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 HalfReuse: >/11 } Tile{ AsIs: )/12 HalfReuse: & DFA-Parse/15 HalfReuse: & DFA-Compile/18 HalfReuse: & GenerateFromDFA/19 HalfReuse: </20 HalfReuse: & @create_closure@/21 HalfReuse: & Transform\3$1\2/22 HalfReuse: (/23 } Tile{ AsIs: e.LinesBefore#2/9 } Tile{ AsIs: )/16 } (/34 Tile{ AsIs: e.Description#2/2 } )/35 >/36 >/37 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[24] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[25], & Fetch_alias ) )
+    if( ! refalrts::alloc_name( context[25], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[26], context[27], context[2], context[3]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[28] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[29], & Seq_alias ) )
+    if( ! refalrts::alloc_name( context[29], ref_Seq.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[30], & DFA_Tokens_alias ) )
+    if( ! refalrts::alloc_name( context[30], ref_DFA_Tokens.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[31] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[32], & Map_alias ) )
+    if( ! refalrts::alloc_name( context[32], ref_Map.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[33] ) )
       return refalrts::cNoMemory;
@@ -878,14 +821,14 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
     if( ! refalrts::alloc_close_call( context[37] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[0], & refalrts::create_closure );
-    refalrts::update_name( context[4], & gen_Transform_L3S1L1_alias );
+    refalrts::update_name( context[4], ref_gen_Transform_L3S1L1.ref.function );
     refalrts::reinit_close_call( context[11] );
-    refalrts::reinit_name( context[15], & DFA_Parse_alias );
-    refalrts::reinit_name( context[18], & DFA_Compile_alias );
-    refalrts::reinit_name( context[19], & GenerateFromDFA_alias );
+    refalrts::reinit_name( context[15], ref_DFA_Parse.ref.function );
+    refalrts::reinit_name( context[18], ref_DFA_Compile.ref.function );
+    refalrts::reinit_name( context[19], ref_GenerateFromDFA.ref.function );
     refalrts::reinit_open_call( context[20] );
     refalrts::reinit_name( context[21], & refalrts::create_closure );
-    refalrts::reinit_name( context[22], & gen_Transform_L3S1L2_alias );
+    refalrts::reinit_name( context[22], ref_gen_Transform_L3S1L2.ref.function );
     refalrts::reinit_open_bracket( context[23] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[24] );
@@ -930,7 +873,7 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/8 HalfReuse: 'U'/11 } Tile{ HalfReuse: 'n'/12 HalfReuse: 'k'/15 } Tile{ HalfReuse: 'n'/16 }"own generation mode "/18 Tile{ AsIs: e.OtherGenMode#2/13 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_chars( context[18], context[19], "own generation mode ", 20 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ErrorAt_alias );
+  refalrts::update_name( context[4], ref_ErrorAt.ref.function );
   refalrts::reinit_char( context[11], 'U' );
   refalrts::reinit_char( context[12], 'n' );
   refalrts::reinit_char( context[15], 'k' );
@@ -952,8 +895,7 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3(func_gen_Transform_L3, "Transform\\3#4120172509:3596181138");
-refalrts::RefalFunction& gen_Transform_L3_4120172509_3596181138 = descr_gen_Transform_L3;
+static refalrts::RefalNativeFunction descr_gen_Transform_L3(func_gen_Transform_L3, refalrts::RefalFuncName("Transform\\3", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -980,11 +922,11 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Lines#1/2 } </11 & Seq/12 </13 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 } >/14 </15 & @create_closure@/16 & Transform\2/17 (/18 e.Source#1/5/19 )/21 >/22 </23 & @create_closure@/24 & Transform\3/25 (/26 e.Source#1/5/27 )/29 >/30 >/31 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Fetch_alias ) )
+  if( ! refalrts::alloc_name( context[10], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], & Seq_alias ) )
+  if( ! refalrts::alloc_name( context[12], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
@@ -994,7 +936,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[16], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], & gen_Transform_L2_alias ) )
+  if( ! refalrts::alloc_name( context[17], ref_gen_Transform_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[18] ) )
     return refalrts::cNoMemory;
@@ -1008,7 +950,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[24], & refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[25], & gen_Transform_L3_alias ) )
+  if( ! refalrts::alloc_name( context[25], ref_gen_Transform_L3.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[26] ) )
     return refalrts::cNoMemory;
@@ -1021,7 +963,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::alloc_close_call( context[31] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], & refalrts::create_closure );
-  refalrts::update_name( context[4], & gen_Transform_L1_alias );
+  refalrts::update_name( context[4], ref_gen_Transform_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
   refalrts::push_stack( context[31] );
@@ -1047,8 +989,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Transform(func_Transform, "Transform#4120172509:3596181138");
-refalrts::RefalFunction& Transform_4120172509_3596181138 = descr_Transform;
+static refalrts::RefalNativeFunction descr_Transform(func_Transform, refalrts::RefalFuncName("Transform", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1076,7 +1017,7 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.Next#2/9 HalfReuse: >/7 } Tile{ HalfReuse: (/8 } Tile{ AsIs: e.Line#2/5 } Tile{ HalfReuse: )/1 ]] }
-  refalrts::update_name( context[4], & Inc_alias );
+  refalrts::update_name( context[4], ref_Inc.ref.function );
   refalrts::reinit_close_call( context[7] );
   refalrts::reinit_open_bracket( context[8] );
   refalrts::reinit_close_bracket( context[1] );
@@ -1092,8 +1033,7 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Length_T_L1(func_gen_Length_T_L1, "Length-T\\1#4120172509:3596181138");
-refalrts::RefalFunction& gen_Length_T_L1_4120172509_3596181138 = descr_gen_Length_T_L1;
+static refalrts::RefalNativeFunction descr_gen_Length_T_L1(func_gen_Length_T_L1, refalrts::RefalFuncName("Length-T\\1", 4120172509U, 3596181138U));
 
 static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1113,9 +1053,9 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
   //RESULT: Tile{ [[ } </5 & MapReduce/6 Tile{ HalfReuse: & Length-T\1/0 HalfReuse: 0/4 AsIs: e.Lines#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & MapReduce_alias ) )
+  if( ! refalrts::alloc_name( context[6], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & gen_Length_T_L1_alias );
+  refalrts::reinit_name( context[0], ref_gen_Length_T_L1.ref.function );
   refalrts::reinit_number( context[4], 0UL );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[5] );
@@ -1127,8 +1067,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Length_T(func_Length_T, "Length-T#4120172509:3596181138");
-refalrts::RefalFunction& Length_T_4120172509_3596181138 = descr_Length_T;
+static refalrts::RefalNativeFunction descr_Length_T(func_Length_T, refalrts::RefalFuncName("Length-T", 4120172509U, 3596181138U));
 
 
 //End of file
