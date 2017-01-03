@@ -11,33 +11,11 @@ static refalrts::ExternalReference ref_HashLittle2_Chars("HashLittle2-Chars", 0U
 */
 #include <stddef.h>
 
-template <bool b, typename T, typename U>
-struct If;
+using refalrts::UInt32;
 
-template <typename T, typename U>
-struct If<true, T, U> {
-  typedef T Result;
-};
-
-template <typename T, typename U>
-struct If<false, T, U> {
-  typedef U Result;
-};
-
-struct NotAInteger;
-
-typedef If<
-  sizeof(unsigned int) == 4,
-  unsigned int,
-  If<
-    sizeof(unsigned long) == 4,
-    unsigned long,
-    NotAInteger
-  >::Result
->::Result UInt32;
-#line 39 "Hash.native.cpp"
+#line 17 "Hash.native.cpp"
 static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-#line 36 "Hash.sref"
+#line 14 "Hash.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter func_name =
@@ -195,7 +173,7 @@ static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refal
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 199 "Hash.native.cpp"
+#line 177 "Hash.native.cpp"
 }
 
 static refalrts::RefalNativeFunction descr_HashLittle2_Chars(func_HashLittle2_Chars, refalrts::RefalFuncName("HashLittle2-Chars", 0U, 0U));

@@ -149,7 +149,7 @@ refalrts::FnResult write_to_stream(
         break;
 
       case refalrts::cDataNumber:
-        printf_res = fprintf(out, "%lu ", p->number_info);
+        printf_res = fprintf(out, "%u ", p->number_info);
         break;
 
       case refalrts::cDataFunction:
@@ -186,7 +186,7 @@ refalrts::FnResult write_to_stream(
         break;
 
       case refalrts::cDataClosureHead:
-        printf_res = fprintf(out, "[%lu] ", p->number_info);
+        printf_res = fprintf(out, "[%u] ", p->number_info);
         break;
 
       case refalrts::cDataUnwrappedClosure:
