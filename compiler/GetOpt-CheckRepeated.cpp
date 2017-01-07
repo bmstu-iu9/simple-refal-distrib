@@ -1,27 +1,95 @@
 // Automatically generated file. Don't edit!
 #include "refalrts.h"
 
-
-static refalrts::UInt32 COOKIE1 = 3777023149U;
-static refalrts::UInt32 COOKIE2 = 2036363496U;
-#define rasl rasl_3777023149_2036363496
-
-extern const refalrts::RASLCommand rasl[];
-
-static refalrts::FunctionTableItem func_table_items[] = {
+static unsigned char bytes[] = {
+  1,
+  8,
+  0,
+  0,
+  0,
+  82,
+  65,
+  83,
+  76,
+  67,
+  79,
+  68,
+  69,
+  2,
+  40,
+  0,
+  0,
+  0,
+  173,
+  204,
+  32,
+  225,
+  232,
+  112,
+  96,
+  121,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  4,
+  22,
+  0,
+  0,
+  0,
+  42,
+  71,
+  101,
+  116,
+  79,
+  112,
+  116,
+  45,
+  67,
+  104,
+  101,
+  99,
+  107,
+  82,
+  101,
+  112,
+  101,
+  97,
+  116,
+  101,
+  100,
+  0,
   0
 };
 
-static refalrts::FunctionTable functions(COOKIE1, COOKIE2, func_table_items);
-
-using refalrts::idents;
-
-using refalrts::numbers;
-
-using refalrts::strings;
-
-const refalrts::RASLCommand rasl[] = {
-  {refalrts::icEnd, 0, 0, 0}
-};
+static refalrts::RawBytesBlock block(bytes, sizeof(bytes) - 1);
 
 //End of file

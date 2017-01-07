@@ -3,11 +3,8 @@
 
 
 static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
-#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
 static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
-#define str_Exit refalrts::RefalFuncName("Exit", 0U, 0U)
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
 
@@ -74,7 +71,7 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ErrorAt(func_ErrorAt, refalrts::RefalFuncName("ErrorAt", 0U, 0U));
+static refalrts::NativeReference nat_ref_ErrorAt("ErrorAt", 0U, 0U, func_ErrorAt);
 
 static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -127,7 +124,7 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_WarningAt(func_WarningAt, refalrts::RefalFuncName("WarningAt", 0U, 0U));
+static refalrts::NativeReference nat_ref_WarningAt("WarningAt", 0U, 0U, func_WarningAt);
 
 
 //End of file

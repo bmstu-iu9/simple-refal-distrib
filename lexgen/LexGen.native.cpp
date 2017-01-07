@@ -8,33 +8,19 @@ const refalrts::RefalIdentifier ident_InPlace = refalrts::ident_from_static("InP
 const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
 const refalrts::RefalIdentifier ident_To = refalrts::ident_from_static("To");
 static refalrts::ExternalReference ref_ArgList("ArgList", 0U, 0U);
-#define str_ArgList refalrts::RefalFuncName("ArgList", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
 static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
-#define str_SaveFile refalrts::RefalFuncName("SaveFile", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
-#define str_ParseCommandLine refalrts::RefalFuncName("ParseCommandLine", 0U, 0U)
 static refalrts::ExternalReference ref_DFA_Tokens("DFA-Tokens", 0U, 0U);
-#define str_DFA_Tokens refalrts::RefalFuncName("DFA-Tokens", 0U, 0U)
 static refalrts::ExternalReference ref_DFA_Parse("DFA-Parse", 0U, 0U);
-#define str_DFA_Parse refalrts::RefalFuncName("DFA-Parse", 0U, 0U)
 static refalrts::ExternalReference ref_DFA_Compile("DFA-Compile", 0U, 0U);
-#define str_DFA_Compile refalrts::RefalFuncName("DFA-Compile", 0U, 0U)
 static refalrts::ExternalReference ref_GenerateFromDFA("GenerateFromDFA", 0U, 0U);
-#define str_GenerateFromDFA refalrts::RefalFuncName("GenerateFromDFA", 0U, 0U)
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
-#define str_ErrorAt refalrts::RefalFuncName("ErrorAt", 0U, 0U)
 static refalrts::ExternalReference ref_gen_Go_L1("Go\\1", 4120172509U, 3596181138U);
 static refalrts::ExternalReference ref_gen_Go_L2("Go\\2", 4120172509U, 3596181138U);
 static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
@@ -80,7 +66,7 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Go_L1(func_gen_Go_L1, refalrts::RefalFuncName("Go\\1", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Go_L1("Go\\1", 4120172509U, 3596181138U, func_gen_Go_L1);
 
 static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -263,7 +249,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Go_L2(func_gen_Go_L2, refalrts::RefalFuncName("Go\\2", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Go_L2("Go\\2", 4120172509U, 3596181138U, func_gen_Go_L2);
 
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -314,7 +300,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Go(func_Go, refalrts::RefalFuncName("Go", 0U, 0U));
+static refalrts::NativeReference nat_ref_Go("Go", 0U, 0U, func_Go);
 
 static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -436,7 +422,7 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L1(func_gen_Transform_L1, refalrts::RefalFuncName("Transform\\1", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Transform_L1("Transform\\1", 4120172509U, 3596181138U, func_gen_Transform_L1);
 
 static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -578,7 +564,7 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L2(func_gen_Transform_L2, refalrts::RefalFuncName("Transform\\2", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Transform_L2("Transform\\2", 4120172509U, 3596181138U, func_gen_Transform_L2);
 
 static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -664,7 +650,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L1(func_gen_Transform_L3S1L1, refalrts::RefalFuncName("Transform\\3$1\\1", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Transform_L3S1L1("Transform\\3$1\\1", 4120172509U, 3596181138U, func_gen_Transform_L3S1L1);
 
 static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -723,7 +709,7 @@ static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3S1L2(func_gen_Transform_L3S1L2, refalrts::RefalFuncName("Transform\\3$1\\2", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Transform_L3S1L2("Transform\\3$1\\2", 4120172509U, 3596181138U, func_gen_Transform_L3S1L2);
 
 static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -820,14 +806,14 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[37] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_Transform_L3S1L1.ref.function );
     refalrts::reinit_close_call( context[11] );
     refalrts::reinit_name( context[15], ref_DFA_Parse.ref.function );
     refalrts::reinit_name( context[18], ref_DFA_Compile.ref.function );
     refalrts::reinit_name( context[19], ref_GenerateFromDFA.ref.function );
     refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[21], & refalrts::create_closure );
+    refalrts::reinit_name( context[21], refalrts::create_closure );
     refalrts::reinit_name( context[22], ref_gen_Transform_L3S1L2.ref.function );
     refalrts::reinit_open_bracket( context[23] );
     refalrts::push_stack( context[1] );
@@ -895,7 +881,7 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Transform_L3(func_gen_Transform_L3, refalrts::RefalFuncName("Transform\\3", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Transform_L3("Transform\\3", 4120172509U, 3596181138U, func_gen_Transform_L3);
 
 static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -934,7 +920,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[16], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[17], ref_gen_Transform_L2.ref.function ) )
     return refalrts::cNoMemory;
@@ -948,7 +934,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[24], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[25], ref_gen_Transform_L3.ref.function ) )
     return refalrts::cNoMemory;
@@ -962,7 +948,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[31] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & refalrts::create_closure );
+  refalrts::reinit_name( context[0], refalrts::create_closure );
   refalrts::update_name( context[4], ref_gen_Transform_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
@@ -989,7 +975,7 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Transform(func_Transform, refalrts::RefalFuncName("Transform", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_Transform("Transform", 4120172509U, 3596181138U, func_Transform);
 
 static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1033,7 +1019,7 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Length_T_L1(func_gen_Length_T_L1, refalrts::RefalFuncName("Length-T\\1", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_gen_Length_T_L1("Length-T\\1", 4120172509U, 3596181138U, func_gen_Length_T_L1);
 
 static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1067,7 +1053,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Length_T(func_Length_T, refalrts::RefalFuncName("Length-T", 4120172509U, 3596181138U));
+static refalrts::NativeReference nat_ref_Length_T("Length-T", 4120172509U, 3596181138U, func_Length_T);
 
 
 //End of file

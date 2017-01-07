@@ -3,24 +3,17 @@
 
 
 const refalrts::RefalIdentifier ident_CmdFail = refalrts::ident_from_static("CmdFail");
-const refalrts::RefalIdentifier ident_CmdIssueMem = refalrts::ident_from_static("CmdIssueMem");
+const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
 const refalrts::RefalIdentifier ident_CmdOpenELoop = refalrts::ident_from_static("CmdOpenELoop");
 const refalrts::RefalIdentifier ident_CmdSentence = refalrts::ident_from_static("CmdSentence");
 const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
 static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
-#define str_Max refalrts::RefalFuncName("Max", 0U, 0U)
 static refalrts::ExternalReference ref_GenPattern("GenPattern", 0U, 0U);
-#define str_GenPattern refalrts::RefalFuncName("GenPattern", 0U, 0U)
 static refalrts::ExternalReference ref_GenResult("GenResult", 0U, 0U);
-#define str_GenResult refalrts::RefalFuncName("GenResult", 0U, 0U)
 static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Disjoint_L1("HighLevelRASL-Function-Disjoint\\1", 2690989127U, 1541861332U);
 static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Disjoint_L2("HighLevelRASL-Function-Disjoint\\2", 2690989127U, 1541861332U);
 static refalrts::ExternalReference ref_gen_HighLevelRASL_Function_Disjoint_L3L1("HighLevelRASL-Function-Disjoint\\3\\1", 2690989127U, 1541861332U);
@@ -110,14 +103,14 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Disjoint_L1(func_gen_HighLevelRASL_Function_Disjoint_L1, refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint\\1", 2690989127U, 1541861332U));
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_Function_Disjoint_L1("HighLevelRASL-Function-Disjoint\\1", 2690989127U, 1541861332U, func_gen_HighLevelRASL_Function_Disjoint_L1);
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  // </0 & HighLevelRASL-Function-Disjoint\2/4 s.MaxMemory#2/14 (/7 (/11 # CmdIssueMem/13 s.Memory#2/15 )/12 e.Sentence#2/5 )/8 >/1
+  // </0 & HighLevelRASL-Function-Disjoint\2/4 s.MaxMemory#2/14 (/7 (/11 # CmdIssueMemory/13 s.Memory#2/15 )/12 e.Sentence#2/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -135,7 +128,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  context[13] = refalrts::ident_left(  ident_CmdIssueMem, context[9], context[10] );
+  context[13] = refalrts::ident_left(  ident_CmdIssueMemory, context[9], context[10] );
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentence#2 as range 5
@@ -167,7 +160,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Disjoint_L2(func_gen_HighLevelRASL_Function_Disjoint_L2, refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint\\2", 2690989127U, 1541861332U));
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_Function_Disjoint_L2("HighLevelRASL-Function-Disjoint\\2", 2690989127U, 1541861332U, func_gen_HighLevelRASL_Function_Disjoint_L2);
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -234,7 +227,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Disjoint_L3L1(func_gen_HighLevelRASL_Function_Disjoint_L3L1, refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint\\3\\1", 2690989127U, 1541861332U));
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_Function_Disjoint_L3L1("HighLevelRASL-Function-Disjoint\\3\\1", 2690989127U, 1541861332U, func_gen_HighLevelRASL_Function_Disjoint_L3L1);
 
 static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -272,10 +265,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Function/4 AsIs: s.ScopeClass#1/10 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 } (/16 # CmdIssueMem/17 Tile{ AsIs: s.MaxMemory#2/15 } )/18 Tile{ AsIs: e.Sentences#2/2 } Tile{ HalfReuse: </7 HalfReuse: & Fetch/9 AsIs: e.LastSentence#2/5 HalfReuse: & HighLevelRASL-Function-Disjoint\3\1/8 AsIs: >/1 } )/19 Tile{ ]] }
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Function/4 AsIs: s.ScopeClass#1/10 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 } (/16 # CmdIssueMemory/17 Tile{ AsIs: s.MaxMemory#2/15 } )/18 Tile{ AsIs: e.Sentences#2/2 } Tile{ HalfReuse: </7 HalfReuse: & Fetch/9 AsIs: e.LastSentence#2/5 HalfReuse: & HighLevelRASL-Function-Disjoint\3\1/8 AsIs: >/1 } )/19 Tile{ ]] }
   if( ! refalrts::alloc_open_bracket( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[17], ident_CmdIssueMem ) )
+  if( ! refalrts::alloc_ident( context[17], ident_CmdIssueMemory ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[18] ) )
     return refalrts::cNoMemory;
@@ -304,7 +297,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_Function_Disjoint_L3(func_gen_HighLevelRASL_Function_Disjoint_L3, refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint\\3", 2690989127U, 1541861332U));
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_Function_Disjoint_L3("HighLevelRASL-Function-Disjoint\\3", 2690989127U, 1541861332U, func_gen_HighLevelRASL_Function_Disjoint_L3);
 
 static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -347,7 +340,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[18], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[19], ref_gen_HighLevelRASL_Function_Disjoint_L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -373,7 +366,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[31] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[32], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[32], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[33], ref_gen_HighLevelRASL_Function_Disjoint_L3.ref.function ) )
     return refalrts::cNoMemory;
@@ -408,7 +401,7 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_HighLevelRASL_Function_Disjoint(func_HighLevelRASL_Function_Disjoint, refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint", 0U, 0U));
+static refalrts::NativeReference nat_ref_HighLevelRASL_Function_Disjoint("HighLevelRASL-Function-Disjoint", 0U, 0U, func_HighLevelRASL_Function_Disjoint);
 
 
 //End of file

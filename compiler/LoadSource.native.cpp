@@ -3,11 +3,8 @@
 
 
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
 static refalrts::ExternalReference ref_gen_LoadSource_L1("LoadSource\\1", 2935148884U, 199067485U);
 static refalrts::ExternalReference ref_LoadSource("LoadSource", 0U, 0U);
 static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 2935148884U, 199067485U);
@@ -69,7 +66,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_LoadSource_L1(func_gen_LoadSource_L1, refalrts::RefalFuncName("LoadSource\\1", 2935148884U, 199067485U));
+static refalrts::NativeReference nat_ref_gen_LoadSource_L1("LoadSource\\1", 2935148884U, 199067485U, func_gen_LoadSource_L1);
 
 static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -120,7 +117,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LoadSource(func_LoadSource, refalrts::RefalFuncName("LoadSource", 0U, 0U));
+static refalrts::NativeReference nat_ref_LoadSource("LoadSource", 0U, 0U, func_LoadSource);
 
 static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -155,7 +152,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LinearizeLine(func_LinearizeLine, refalrts::RefalFuncName("LinearizeLine", 2935148884U, 199067485U));
+static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 2935148884U, 199067485U, func_LinearizeLine);
 
 
 //End of file

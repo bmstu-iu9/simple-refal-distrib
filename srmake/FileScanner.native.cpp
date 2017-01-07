@@ -7,13 +7,9 @@ const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Outp
 const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
 const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-#define str_LoadFile refalrts::RefalFuncName("LoadFile", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Trim("Trim", 0U, 0U);
-#define str_Trim refalrts::RefalFuncName("Trim", 0U, 0U)
 static refalrts::ExternalReference ref_FindFiles("FindFiles", 0U, 0U);
-#define str_FindFiles refalrts::RefalFuncName("FindFiles", 0U, 0U)
 static refalrts::ExternalReference ref_CreateFileList("CreateFileList", 0U, 0U);
 static refalrts::ExternalReference ref_DoCreateFileList("DoCreateFileList", 45697312U, 547554160U);
 static refalrts::ExternalReference ref_FindImports("FindImports", 45697312U, 547554160U);
@@ -81,7 +77,7 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateFileList(func_CreateFileList, refalrts::RefalFuncName("CreateFileList", 0U, 0U));
+static refalrts::NativeReference nat_ref_CreateFileList("CreateFileList", 0U, 0U, func_CreateFileList);
 
 static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -236,7 +232,7 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoCreateFileList(func_DoCreateFileList, refalrts::RefalFuncName("DoCreateFileList", 45697312U, 547554160U));
+static refalrts::NativeReference nat_ref_DoCreateFileList("DoCreateFileList", 45697312U, 547554160U, func_DoCreateFileList);
 
 static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -332,7 +328,7 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindImports(func_FindImports, refalrts::RefalFuncName("FindImports", 45697312U, 547554160U));
+static refalrts::NativeReference nat_ref_FindImports("FindImports", 45697312U, 547554160U, func_FindImports);
 
 static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -509,7 +505,7 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LoadList(func_LoadList, refalrts::RefalFuncName("LoadList", 45697312U, 547554160U));
+static refalrts::NativeReference nat_ref_LoadList("LoadList", 45697312U, 547554160U, func_LoadList);
 
 
 //End of file

@@ -8,15 +8,10 @@ const refalrts::RefalIdentifier ident_NoLine = refalrts::ident_from_static("NoLi
 const refalrts::RefalIdentifier ident_TkError = refalrts::ident_from_static("TkError");
 const refalrts::RefalIdentifier ident_TkUnexpected = refalrts::ident_from_static("TkUnexpected");
 static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
-#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
 static refalrts::ExternalReference ref_StrFromToken("StrFromToken", 0U, 0U);
-#define str_StrFromToken refalrts::RefalFuncName("StrFromToken", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
-#define str_Sort refalrts::RefalFuncName("Sort", 0U, 0U)
 static refalrts::ExternalReference ref_ErrorList("ErrorList", 167490376U, 3611868372U);
 static refalrts::ExternalReference ref_EL_Create("EL-Create", 0U, 0U);
 static refalrts::ExternalReference ref_EL_AddError("EL-AddError", 0U, 0U);
@@ -60,7 +55,7 @@ static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EL_Create(func_EL_Create, refalrts::RefalFuncName("EL-Create", 0U, 0U));
+static refalrts::NativeReference nat_ref_EL_Create("EL-Create", 0U, 0U, func_EL_Create);
 
 static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -110,7 +105,7 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EL_AddError(func_EL_AddError, refalrts::RefalFuncName("EL-AddError", 0U, 0U));
+static refalrts::NativeReference nat_ref_EL_AddError("EL-AddError", 0U, 0U, func_EL_AddError);
 
 static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -159,7 +154,7 @@ static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EL_AddErrorAt(func_EL_AddErrorAt, refalrts::RefalFuncName("EL-AddErrorAt", 0U, 0U));
+static refalrts::NativeReference nat_ref_EL_AddErrorAt("EL-AddErrorAt", 0U, 0U, func_EL_AddErrorAt);
 
 static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -285,7 +280,7 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EL_AddUnexpected(func_EL_AddUnexpected, refalrts::RefalFuncName("EL-AddUnexpected", 0U, 0U));
+static refalrts::NativeReference nat_ref_EL_AddUnexpected("EL-AddUnexpected", 0U, 0U, func_EL_AddUnexpected);
 
 static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -389,7 +384,7 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EL_Destroy_S2L1(func_gen_EL_Destroy_S2L1, refalrts::RefalFuncName("EL-Destroy$2\\1", 167490376U, 3611868372U));
+static refalrts::NativeReference nat_ref_gen_EL_Destroy_S2L1("EL-Destroy$2\\1", 167490376U, 3611868372U, func_gen_EL_Destroy_S2L1);
 
 static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -461,7 +456,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], ref_Map.ref.function );
   refalrts::reinit_open_call( context[4] );
-  refalrts::reinit_name( context[7], & refalrts::create_closure );
+  refalrts::reinit_name( context[7], refalrts::create_closure );
   refalrts::update_name( context[8], ref_gen_EL_Destroy_S2L1.ref.function );
   refalrts::reinit_close_call( context[9] );
   refalrts::reinit_ident( context[1], ident_EL_HasErrors );
@@ -484,7 +479,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EL_Destroy(func_EL_Destroy, refalrts::RefalFuncName("EL-Destroy", 0U, 0U));
+static refalrts::NativeReference nat_ref_EL_Destroy("EL-Destroy", 0U, 0U, func_EL_Destroy);
 
 
 //End of file

@@ -21,23 +21,14 @@ const refalrts::RefalIdentifier ident_OptResult = refalrts::ident_from_static("O
 const refalrts::RefalIdentifier ident_Sentences = refalrts::ident_from_static("Sentences");
 const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_HighLevelRASL_Function_Disjoint("HighLevelRASL-Function-Disjoint", 0U, 0U);
-#define str_HighLevelRASL_Function_Disjoint refalrts::RefalFuncName("HighLevelRASL-Function-Disjoint", 0U, 0U)
 static refalrts::ExternalReference ref_HighLevelRASL_Function_Conjoint("HighLevelRASL-Function-Conjoint", 0U, 0U);
-#define str_HighLevelRASL_Function_Conjoint refalrts::RefalFuncName("HighLevelRASL-Function-Conjoint", 0U, 0U)
 static refalrts::ExternalReference ref_GenInitSubst_Simple("GenInitSubst-Simple", 0U, 0U);
-#define str_GenInitSubst_Simple refalrts::RefalFuncName("GenInitSubst-Simple", 0U, 0U)
 static refalrts::ExternalReference ref_GenSubst_Simple("GenSubst-Simple", 0U, 0U);
-#define str_GenSubst_Simple refalrts::RefalFuncName("GenSubst-Simple", 0U, 0U)
 static refalrts::ExternalReference ref_GenResult_Simple("GenResult-Simple", 0U, 0U);
-#define str_GenResult_Simple refalrts::RefalFuncName("GenResult-Simple", 0U, 0U)
 static refalrts::ExternalReference ref_GenInitSubst_Save("GenInitSubst-Save", 0U, 0U);
-#define str_GenInitSubst_Save refalrts::RefalFuncName("GenInitSubst-Save", 0U, 0U)
 static refalrts::ExternalReference ref_GenSubst_Save("GenSubst-Save", 0U, 0U);
-#define str_GenSubst_Save refalrts::RefalFuncName("GenSubst-Save", 0U, 0U)
 static refalrts::ExternalReference ref_GenResult_Opt("GenResult-Opt", 0U, 0U);
-#define str_GenResult_Opt refalrts::RefalFuncName("GenResult-Opt", 0U, 0U)
 static refalrts::ExternalReference ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 656936134U, 33269278U);
 static refalrts::ExternalReference ref_HighLevelRASL("HighLevelRASL", 0U, 0U);
 static refalrts::ExternalReference ref_HighLevelRASL_Function("HighLevelRASL-Function", 656936134U, 33269278U);
@@ -287,7 +278,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_HighLevelRASL_L1(func_gen_HighLevelRASL_L1, refalrts::RefalFuncName("HighLevelRASL\\1", 656936134U, 33269278U));
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 656936134U, 33269278U, func_gen_HighLevelRASL_L1);
 
 static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -317,7 +308,7 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], & refalrts::create_closure );
+  refalrts::reinit_name( context[0], refalrts::create_closure );
   refalrts::update_name( context[4], ref_gen_HighLevelRASL_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
@@ -334,7 +325,7 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_HighLevelRASL(func_HighLevelRASL, refalrts::RefalFuncName("HighLevelRASL", 0U, 0U));
+static refalrts::NativeReference nat_ref_HighLevelRASL("HighLevelRASL", 0U, 0U, func_HighLevelRASL);
 
 static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -438,7 +429,7 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_HighLevelRASL_Function(func_HighLevelRASL_Function, refalrts::RefalFuncName("HighLevelRASL-Function", 656936134U, 33269278U));
+static refalrts::NativeReference nat_ref_HighLevelRASL_Function("HighLevelRASL-Function", 656936134U, 33269278U, func_HighLevelRASL_Function);
 
 static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -491,7 +482,7 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GenSentenceFunc(func_GenSentenceFunc, refalrts::RefalFuncName("GenSentenceFunc", 656936134U, 33269278U));
+static refalrts::NativeReference nat_ref_GenSentenceFunc("GenSentenceFunc", 656936134U, 33269278U, func_GenSentenceFunc);
 
 static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -548,7 +539,7 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GenResultFuncs(func_GenResultFuncs, refalrts::RefalFuncName("GenResultFuncs", 656936134U, 33269278U));
+static refalrts::NativeReference nat_ref_GenResultFuncs("GenResultFuncs", 656936134U, 33269278U, func_GenResultFuncs);
 
 
 //End of file

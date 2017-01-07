@@ -7,9 +7,7 @@ const refalrts::RefalIdentifier ident_Hash = refalrts::ident_from_static("Hash")
 const refalrts::RefalIdentifier ident_SUF = refalrts::ident_from_static("SUF");
 const refalrts::RefalIdentifier ident_VAR = refalrts::ident_from_static("VAR");
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
 static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
-#define str_EscapeString refalrts::RefalFuncName("EscapeString", 0U, 0U)
 static refalrts::ExternalReference ref_DisplayName("DisplayName", 0U, 0U);
 static refalrts::ExternalReference ref_DisplayNameSuf("DisplayNameSuf", 2758278484U, 1268811382U);
 static refalrts::ExternalReference ref_DisplayCName("DisplayCName", 0U, 0U);
@@ -198,7 +196,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DisplayName(func_DisplayName, refalrts::RefalFuncName("DisplayName", 0U, 0U));
+static refalrts::NativeReference nat_ref_DisplayName("DisplayName", 0U, 0U, func_DisplayName);
 
 static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -305,7 +303,7 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DisplayNameSuf(func_DisplayNameSuf, refalrts::RefalFuncName("DisplayNameSuf", 2758278484U, 1268811382U));
+static refalrts::NativeReference nat_ref_DisplayNameSuf("DisplayNameSuf", 2758278484U, 1268811382U, func_DisplayNameSuf);
 
 static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -344,7 +342,7 @@ static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DisplayCName(func_DisplayCName, refalrts::RefalFuncName("DisplayCName", 0U, 0U));
+static refalrts::NativeReference nat_ref_DisplayCName("DisplayCName", 0U, 0U, func_DisplayCName);
 
 static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -584,7 +582,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CName(func_CName, refalrts::RefalFuncName("CName", 0U, 0U));
+static refalrts::NativeReference nat_ref_CName("CName", 0U, 0U, func_CName);
 
 static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -691,7 +689,7 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CNameSuf(func_CNameSuf, refalrts::RefalFuncName("CNameSuf", 2758278484U, 1268811382U));
+static refalrts::NativeReference nat_ref_CNameSuf("CNameSuf", 2758278484U, 1268811382U, func_CNameSuf);
 
 
 //End of file

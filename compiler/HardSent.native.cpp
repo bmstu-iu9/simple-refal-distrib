@@ -14,9 +14,7 @@ const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkNa
 const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 4049383299U, 2111946739U);
 static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 4049383299U, 2111946739U);
 static refalrts::ExternalReference ref_PreparePatternHardSent("PreparePatternHardSent", 4049383299U, 2111946739U);
@@ -92,7 +90,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1S5L1(func_gen_PreparePatternHardSent_L1S5L1, refalrts::RefalFuncName("PreparePatternHardSent\\1$5\\1", 4049383299U, 2111946739U));
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 4049383299U, 2111946739U, func_gen_PreparePatternHardSent_L1S5L1);
 
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -317,7 +315,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternHardSent_L1(func_gen_PreparePatternHardSent_L1, refalrts::RefalFuncName("PreparePatternHardSent\\1", 4049383299U, 2111946739U));
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 4049383299U, 2111946739U, func_gen_PreparePatternHardSent_L1);
 
 static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -349,7 +347,7 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_PreparePatternHardSent(func_PreparePatternHardSent, refalrts::RefalFuncName("PreparePatternHardSent", 4049383299U, 2111946739U));
+static refalrts::NativeReference nat_ref_PreparePatternHardSent("PreparePatternHardSent", 4049383299U, 2111946739U, func_PreparePatternHardSent);
 
 static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1065,7 +1063,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateHardPattern_Aux(func_CreateHardPattern_Aux, refalrts::RefalFuncName("CreateHardPattern-Aux", 4049383299U, 2111946739U));
+static refalrts::NativeReference nat_ref_CreateHardPattern_Aux("CreateHardPattern-Aux", 4049383299U, 2111946739U, func_CreateHardPattern_Aux);
 
 static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1104,7 +1102,7 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateHardPattern(func_CreateHardPattern, refalrts::RefalFuncName("CreateHardPattern", 0U, 0U));
+static refalrts::NativeReference nat_ref_CreateHardPattern("CreateHardPattern", 0U, 0U, func_CreateHardPattern);
 
 
 //End of file

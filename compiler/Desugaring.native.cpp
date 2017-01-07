@@ -25,23 +25,14 @@ const refalrts::RefalIdentifier ident_TkNewVariable = refalrts::ident_from_stati
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 const refalrts::RefalIdentifier ident_VAR = refalrts::ident_from_static("VAR");
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
 static refalrts::ExternalReference ref_DelAccumulator("DelAccumulator", 0U, 0U);
-#define str_DelAccumulator refalrts::RefalFuncName("DelAccumulator", 0U, 0U)
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
-#define str_Reduce refalrts::RefalFuncName("Reduce", 0U, 0U)
 static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
-#define str_Sort refalrts::RefalFuncName("Sort", 0U, 0U)
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
 static refalrts::ExternalReference ref_Desugar("Desugar", 0U, 0U);
 static refalrts::ExternalReference ref_gen_Pass_RemovePos_L1("Pass-RemovePos\\1", 799324599U, 386387407U);
 static refalrts::ExternalReference ref_Pass_RemovePos("Pass-RemovePos", 799324599U, 386387407U);
@@ -178,7 +169,7 @@ static refalrts::FnResult func_Desugar(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Desugar(func_Desugar, refalrts::RefalFuncName("Desugar", 0U, 0U));
+static refalrts::NativeReference nat_ref_Desugar("Desugar", 0U, 0U, func_Desugar);
 
 static refalrts::FnResult func_gen_Pass_RemovePos_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -308,7 +299,7 @@ static refalrts::FnResult func_gen_Pass_RemovePos_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_RemovePos_L1(func_gen_Pass_RemovePos_L1, refalrts::RefalFuncName("Pass-RemovePos\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_RemovePos_L1("Pass-RemovePos\\1", 799324599U, 386387407U, func_gen_Pass_RemovePos_L1);
 
 static refalrts::FnResult func_Pass_RemovePos(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -340,7 +331,7 @@ static refalrts::FnResult func_Pass_RemovePos(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Pass_RemovePos(func_Pass_RemovePos, refalrts::RefalFuncName("Pass-RemovePos", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Pass_RemovePos("Pass-RemovePos", 799324599U, 386387407U, func_Pass_RemovePos);
 
 static refalrts::FnResult func_gen_RemovePos_Body_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -411,7 +402,7 @@ static refalrts::FnResult func_gen_RemovePos_Body_S1L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemovePos_Body_S1L1(func_gen_RemovePos_Body_S1L1, refalrts::RefalFuncName("RemovePos-Body$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemovePos_Body_S1L1("RemovePos-Body$1\\1", 799324599U, 386387407U, func_gen_RemovePos_Body_S1L1);
 
 static refalrts::FnResult func_RemovePos_Body(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -475,7 +466,7 @@ static refalrts::FnResult func_RemovePos_Body(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_RemovePos_Body(func_RemovePos_Body, refalrts::RefalFuncName("RemovePos-Body", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_RemovePos_Body("RemovePos-Body", 799324599U, 386387407U, func_RemovePos_Body);
 
 static refalrts::FnResult func_gen_RemovePos_Expr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -729,7 +720,7 @@ static refalrts::FnResult func_gen_RemovePos_Expr_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemovePos_Expr_L1(func_gen_RemovePos_Expr_L1, refalrts::RefalFuncName("RemovePos-Expr\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemovePos_Expr_L1("RemovePos-Expr\\1", 799324599U, 386387407U, func_gen_RemovePos_Expr_L1);
 
 static refalrts::FnResult func_RemovePos_Expr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -761,7 +752,7 @@ static refalrts::FnResult func_RemovePos_Expr(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_RemovePos_Expr(func_RemovePos_Expr, refalrts::RefalFuncName("RemovePos-Expr", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_RemovePos_Expr("RemovePos-Expr", 799324599U, 386387407U, func_RemovePos_Expr);
 
 static refalrts::FnResult func_gen_Pass_EnumerateVariables_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -845,7 +836,7 @@ static refalrts::FnResult func_gen_Pass_EnumerateVariables_L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_EnumerateVariables_L1(func_gen_Pass_EnumerateVariables_L1, refalrts::RefalFuncName("Pass-EnumerateVariables\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_EnumerateVariables_L1("Pass-EnumerateVariables\\1", 799324599U, 386387407U, func_gen_Pass_EnumerateVariables_L1);
 
 static refalrts::FnResult func_Pass_EnumerateVariables(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -877,7 +868,7 @@ static refalrts::FnResult func_Pass_EnumerateVariables(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Pass_EnumerateVariables(func_Pass_EnumerateVariables, refalrts::RefalFuncName("Pass-EnumerateVariables", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Pass_EnumerateVariables("Pass-EnumerateVariables", 799324599U, 386387407U, func_Pass_EnumerateVariables);
 
 static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -924,7 +915,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1L1(refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Sentences_S1L1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1L1, refalrts::RefalFuncName("EnumerateVars-Sentences$1\\1\\1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Sentences_S1L1L1L1("EnumerateVars-Sentences$1\\1\\1\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Sentences_S1L1L1L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -966,7 +957,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1(refalrts::Iter
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[18], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[19] ) )
     return refalrts::cNoMemory;
@@ -998,7 +989,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1L1(refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Sentences_S1L1L1(func_gen_EnumerateVars_Sentences_S1L1L1, refalrts::RefalFuncName("EnumerateVars-Sentences$1\\1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Sentences_S1L1L1("EnumerateVars-Sentences$1\\1\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Sentences_S1L1L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1052,7 +1043,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1(refalrts::Iter a
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[24], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[25], ref_gen_EnumerateVars_Sentences_S1L1L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -1080,7 +1071,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Sentences_S1L1(refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Sentences_S1L1(func_gen_EnumerateVars_Sentences_S1L1, refalrts::RefalFuncName("EnumerateVars-Sentences$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Sentences_S1L1("EnumerateVars-Sentences$1\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Sentences_S1L1);
 
 static refalrts::FnResult func_EnumerateVars_Sentences(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1126,7 +1117,7 @@ static refalrts::FnResult func_EnumerateVars_Sentences(refalrts::Iter arg_begin,
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_EnumerateVars_Sentences_S1L1.ref.function );
     refalrts::reinit_close_call( context[10] );
     refalrts::push_stack( context[1] );
@@ -1165,7 +1156,7 @@ static refalrts::FnResult func_EnumerateVars_Sentences(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EnumerateVars_Sentences(func_EnumerateVars_Sentences, refalrts::RefalFuncName("EnumerateVars-Sentences", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_EnumerateVars_Sentences("EnumerateVars-Sentences", 799324599U, 386387407U, func_EnumerateVars_Sentences);
 
 static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1205,7 +1196,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S4L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Expr_L1S4L1(func_gen_EnumerateVars_Expr_L1S4L1, refalrts::RefalFuncName("EnumerateVars-Expr\\1$4\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Expr_L1S4L1("EnumerateVars-Expr\\1$4\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Expr_L1S4L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1253,7 +1244,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S5L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Expr_L1S5L1(func_gen_EnumerateVars_Expr_L1S5L1, refalrts::RefalFuncName("EnumerateVars-Expr\\1$5\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Expr_L1S5L1("EnumerateVars-Expr\\1$5\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Expr_L1S5L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1293,7 +1284,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S6L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Expr_L1S6L1(func_gen_EnumerateVars_Expr_L1S6L1, refalrts::RefalFuncName("EnumerateVars-Expr\\1$6\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Expr_L1S6L1("EnumerateVars-Expr\\1$6\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Expr_L1S6L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1333,7 +1324,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1S7L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Expr_L1S7L1(func_gen_EnumerateVars_Expr_L1S7L1, refalrts::RefalFuncName("EnumerateVars-Expr\\1$7\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Expr_L1S7L1("EnumerateVars-Expr\\1$7\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Expr_L1S7L1);
 
 static refalrts::FnResult func_gen_EnumerateVars_Expr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1568,7 +1559,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1(refalrts::Iter arg_begi
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_EnumerateVars_Expr.ref.function );
-    refalrts::reinit_name( context[10], & refalrts::create_closure );
+    refalrts::reinit_name( context[10], refalrts::create_closure );
     refalrts::reinit_name( context[14], ref_gen_EnumerateVars_Expr_L1S5L1.ref.function );
     refalrts::reinit_close_call( context[11] );
     refalrts::push_stack( context[1] );
@@ -1665,7 +1656,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1(refalrts::Iter arg_begi
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[24] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[25], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[25], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[26], ref_gen_EnumerateVars_Expr_L1S7L1.ref.function ) )
       return refalrts::cNoMemory;
@@ -1713,7 +1704,7 @@ static refalrts::FnResult func_gen_EnumerateVars_Expr_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EnumerateVars_Expr_L1(func_gen_EnumerateVars_Expr_L1, refalrts::RefalFuncName("EnumerateVars-Expr\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_EnumerateVars_Expr_L1("EnumerateVars-Expr\\1", 799324599U, 386387407U, func_gen_EnumerateVars_Expr_L1);
 
 static refalrts::FnResult func_EnumerateVars_Expr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1742,7 +1733,7 @@ static refalrts::FnResult func_EnumerateVars_Expr(refalrts::Iter arg_begin, refa
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapReduce/4 } </10 & @create_closure@/11 & EnumerateVars-Expr\1/12 Tile{ AsIs: s.Depth#1/5 } >/13 Tile{ AsIs: (/8 AsIs: e.OriginScopeVars#1/6 AsIs: )/9 AsIs: e.Expr#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[11], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[12], ref_gen_EnumerateVars_Expr_L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -1764,7 +1755,7 @@ static refalrts::FnResult func_EnumerateVars_Expr(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EnumerateVars_Expr(func_EnumerateVars_Expr, refalrts::RefalFuncName("EnumerateVars-Expr", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_EnumerateVars_Expr("EnumerateVars-Expr", 799324599U, 386387407U, func_EnumerateVars_Expr);
 
 static refalrts::FnResult func_gen_Pass_NameNestedFuncs_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1850,7 +1841,7 @@ static refalrts::FnResult func_gen_Pass_NameNestedFuncs_L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_NameNestedFuncs_L1(func_gen_Pass_NameNestedFuncs_L1, refalrts::RefalFuncName("Pass-NameNestedFuncs\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_NameNestedFuncs_L1("Pass-NameNestedFuncs\\1", 799324599U, 386387407U, func_gen_Pass_NameNestedFuncs_L1);
 
 static refalrts::FnResult func_Pass_NameNestedFuncs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1882,7 +1873,7 @@ static refalrts::FnResult func_Pass_NameNestedFuncs(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Pass_NameNestedFuncs(func_Pass_NameNestedFuncs, refalrts::RefalFuncName("Pass-NameNestedFuncs", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Pass_NameNestedFuncs("Pass-NameNestedFuncs", 799324599U, 386387407U, func_Pass_NameNestedFuncs);
 
 static refalrts::FnResult func_gen_NameNestedBody_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1966,7 +1957,7 @@ static refalrts::FnResult func_gen_NameNestedBody_S2L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_NameNestedBody_S2L1(func_gen_NameNestedBody_S2L1, refalrts::RefalFuncName("NameNestedBody$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_NameNestedBody_S2L1("NameNestedBody$2\\1", 799324599U, 386387407U, func_gen_NameNestedBody_S2L1);
 
 static refalrts::FnResult func_NameNestedBody(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2074,7 +2065,7 @@ static refalrts::FnResult func_NameNestedBody(refalrts::Iter arg_begin, refalrts
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[17] ) )
       return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_NameNestedBody_S2L1.ref.function );
     refalrts::reinit_close_call( context[9] );
     refalrts::push_stack( context[1] );
@@ -2119,7 +2110,7 @@ static refalrts::FnResult func_NameNestedBody(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_NameNestedBody(func_NameNestedBody, refalrts::RefalFuncName("NameNestedBody", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_NameNestedBody("NameNestedBody", 799324599U, 386387407U, func_NameNestedBody);
 
 static refalrts::FnResult func_NameNestedResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2169,7 +2160,7 @@ static refalrts::FnResult func_NameNestedResult(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_NameNestedResult(func_NameNestedResult, refalrts::RefalFuncName("NameNestedResult", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_NameNestedResult("NameNestedResult", 799324599U, 386387407U, func_NameNestedResult);
 
 static refalrts::FnResult func_gen_NameNestedResultRec_L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2204,7 +2195,7 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S1L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_NameNestedResultRec_L1S1L1(func_gen_NameNestedResultRec_L1S1L1, refalrts::RefalFuncName("NameNestedResultRec\\1$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_NameNestedResultRec_L1S1L1("NameNestedResultRec\\1$1\\1", 799324599U, 386387407U, func_gen_NameNestedResultRec_L1S1L1);
 
 static refalrts::FnResult func_gen_NameNestedResultRec_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2246,7 +2237,7 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S2L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_NameNestedResultRec_L1S2L1(func_gen_NameNestedResultRec_L1S2L1, refalrts::RefalFuncName("NameNestedResultRec\\1$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_NameNestedResultRec_L1S2L1("NameNestedResultRec\\1$2\\1", 799324599U, 386387407U, func_gen_NameNestedResultRec_L1S2L1);
 
 static refalrts::FnResult func_gen_NameNestedResultRec_L1S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2281,7 +2272,7 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1S3L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_NameNestedResultRec_L1S3L1(func_gen_NameNestedResultRec_L1S3L1, refalrts::RefalFuncName("NameNestedResultRec\\1$3\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_NameNestedResultRec_L1S3L1("NameNestedResultRec\\1$3\\1", 799324599U, 386387407U, func_gen_NameNestedResultRec_L1S3L1);
 
 static refalrts::FnResult func_gen_NameNestedResultRec_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2388,7 +2379,7 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1(refalrts::Iter arg_beg
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[0], ref_NameNestedResultRec.ref.function );
     refalrts::reinit_svar( context[4], context[9] );
-    refalrts::reinit_name( context[10], & refalrts::create_closure );
+    refalrts::reinit_name( context[10], refalrts::create_closure );
     refalrts::reinit_name( context[14], ref_gen_NameNestedResultRec_L1S2L1.ref.function );
     refalrts::reinit_close_call( context[11] );
     refalrts::push_stack( context[1] );
@@ -2531,7 +2522,7 @@ static refalrts::FnResult func_gen_NameNestedResultRec_L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_NameNestedResultRec_L1(func_gen_NameNestedResultRec_L1, refalrts::RefalFuncName("NameNestedResultRec\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_NameNestedResultRec_L1("NameNestedResultRec\\1", 799324599U, 386387407U, func_gen_NameNestedResultRec_L1);
 
 static refalrts::FnResult func_NameNestedResultRec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2560,7 +2551,7 @@ static refalrts::FnResult func_NameNestedResultRec(refalrts::Iter arg_begin, ref
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapReduce/4 } </10 & @create_closure@/11 & NameNestedResultRec\1/12 Tile{ AsIs: (/8 } Tile{ AsIs: e.MainName#1/6 } )/13 >/14 Tile{ HalfReuse: s.StartNumber1 #5/9 AsIs: e.Result#1/2 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[11], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[12], ref_gen_NameNestedResultRec_L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -2586,7 +2577,7 @@ static refalrts::FnResult func_NameNestedResultRec(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_NameNestedResultRec(func_NameNestedResultRec, refalrts::RefalFuncName("NameNestedResultRec", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_NameNestedResultRec("NameNestedResultRec", 799324599U, 386387407U, func_NameNestedResultRec);
 
 static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2635,7 +2626,7 @@ static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1S1L1(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_FlatNestedFuncs_L1S1L1(func_gen_Pass_FlatNestedFuncs_L1S1L1, refalrts::RefalFuncName("Pass-FlatNestedFuncs\\1$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_FlatNestedFuncs_L1S1L1("Pass-FlatNestedFuncs\\1$1\\1", 799324599U, 386387407U, func_gen_Pass_FlatNestedFuncs_L1S1L1);
 
 static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2690,7 +2681,7 @@ static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1(refalrts::Iter arg_be
     if( ! refalrts::alloc_open_call( context[19] ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_ExtractNested.ref.function );
-    refalrts::reinit_name( context[6], & refalrts::create_closure );
+    refalrts::reinit_name( context[6], refalrts::create_closure );
     refalrts::reinit_name( context[10], ref_gen_Pass_FlatNestedFuncs_L1S1L1.ref.function );
     refalrts::reinit_close_call( context[7] );
     refalrts::push_stack( context[1] );
@@ -2727,7 +2718,7 @@ static refalrts::FnResult func_gen_Pass_FlatNestedFuncs_L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_FlatNestedFuncs_L1(func_gen_Pass_FlatNestedFuncs_L1, refalrts::RefalFuncName("Pass-FlatNestedFuncs\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_FlatNestedFuncs_L1("Pass-FlatNestedFuncs\\1", 799324599U, 386387407U, func_gen_Pass_FlatNestedFuncs_L1);
 
 static refalrts::FnResult func_Pass_FlatNestedFuncs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2749,7 +2740,7 @@ static refalrts::FnResult func_Pass_FlatNestedFuncs(refalrts::Iter arg_begin, re
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 } </6 & @create_closure@/7 & Pass-FlatNestedFuncs\1/8 Tile{ AsIs: s.MarkupContext#1/5 } >/9 Tile{ AsIs: e.AST#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[7], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[8], ref_gen_Pass_FlatNestedFuncs_L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -2771,7 +2762,7 @@ static refalrts::FnResult func_Pass_FlatNestedFuncs(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Pass_FlatNestedFuncs(func_Pass_FlatNestedFuncs, refalrts::RefalFuncName("Pass-FlatNestedFuncs", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Pass_FlatNestedFuncs("Pass-FlatNestedFuncs", 799324599U, 386387407U, func_Pass_FlatNestedFuncs);
 
 static refalrts::FnResult func_gen_ExtractNested_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2814,7 +2805,7 @@ static refalrts::FnResult func_gen_ExtractNested_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_L1(func_gen_ExtractNested_L1, refalrts::RefalFuncName("ExtractNested\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_L1("ExtractNested\\1", 799324599U, 386387407U, func_gen_ExtractNested_L1);
 
 static refalrts::FnResult func_ExtractNested(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2864,7 +2855,7 @@ static refalrts::FnResult func_ExtractNested(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractNested(func_ExtractNested, refalrts::RefalFuncName("ExtractNested", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractNested("ExtractNested", 799324599U, 386387407U, func_ExtractNested);
 
 static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2932,7 +2923,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNestedRec_S1L1L1L1(func_gen_ExtractNestedRec_S1L1L1L1, refalrts::RefalFuncName("ExtractNestedRec$1\\1\\1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNestedRec_S1L1L1L1("ExtractNestedRec$1\\1\\1\\1", 799324599U, 386387407U, func_gen_ExtractNestedRec_S1L1L1L1);
 
 static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2999,7 +2990,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[31] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[32], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[32], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_ExtractNested_Result.ref.function );
   refalrts::reinit_name( context[17], ref_gen_ExtractNestedRec_S1L1L1L1.ref.function );
@@ -3033,7 +3024,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNestedRec_S1L1L1(func_gen_ExtractNestedRec_S1L1L1, refalrts::RefalFuncName("ExtractNestedRec$1\\1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNestedRec_S1L1L1("ExtractNestedRec$1\\1\\1", 799324599U, 386387407U, func_gen_ExtractNestedRec_S1L1L1);
 
 static refalrts::FnResult func_gen_ExtractNestedRec_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3124,7 +3115,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1(refalrts::Iter arg_begi
   refalrts::update_name( context[4], ref_ExtractNested_Pattern.ref.function );
   refalrts::reinit_close_call( context[32] );
   refalrts::reinit_open_call( context[24] );
-  refalrts::reinit_name( context[11], & refalrts::create_closure );
+  refalrts::reinit_name( context[11], refalrts::create_closure );
   refalrts::reinit_name( context[15], ref_gen_ExtractNestedRec_S1L1L1.ref.function );
   refalrts::reinit_svar( context[23], context[33] );
   refalrts::reinit_open_bracket( context[12] );
@@ -3159,7 +3150,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNestedRec_S1L1(func_gen_ExtractNestedRec_S1L1, refalrts::RefalFuncName("ExtractNestedRec$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNestedRec_S1L1("ExtractNestedRec$1\\1", 799324599U, 386387407U, func_gen_ExtractNestedRec_S1L1);
 
 static refalrts::FnResult func_gen_ExtractNestedRec_S1L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3214,7 +3205,7 @@ static refalrts::FnResult func_gen_ExtractNestedRec_S1L2(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNestedRec_S1L2(func_gen_ExtractNestedRec_S1L2, refalrts::RefalFuncName("ExtractNestedRec$1\\2", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNestedRec_S1L2("ExtractNestedRec$1\\2", 799324599U, 386387407U, func_gen_ExtractNestedRec_S1L2);
 
 static refalrts::FnResult func_ExtractNestedRec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3258,7 +3249,7 @@ static refalrts::FnResult func_ExtractNestedRec(refalrts::Iter arg_begin, refalr
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[14], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[15], ref_gen_ExtractNestedRec_S1L1.ref.function ) )
       return refalrts::cNoMemory;
@@ -3332,7 +3323,7 @@ static refalrts::FnResult func_ExtractNestedRec(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractNestedRec(func_ExtractNestedRec, refalrts::RefalFuncName("ExtractNestedRec", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractNestedRec("ExtractNestedRec", 799324599U, 386387407U, func_ExtractNestedRec);
 
 static refalrts::FnResult func_ExtractNested_Pattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3401,7 +3392,7 @@ static refalrts::FnResult func_ExtractNested_Pattern(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractNested_Pattern(func_ExtractNested_Pattern, refalrts::RefalFuncName("ExtractNested-Pattern", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractNested_Pattern("ExtractNested-Pattern", 799324599U, 386387407U, func_ExtractNested_Pattern);
 
 static refalrts::FnResult func_ExtractAllVars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3557,7 +3548,7 @@ static refalrts::FnResult func_ExtractAllVars(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractAllVars(func_ExtractAllVars, refalrts::RefalFuncName("ExtractAllVars", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractAllVars("ExtractAllVars", 799324599U, 386387407U, func_ExtractAllVars);
 
 static refalrts::FnResult func_Uniq(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3631,7 +3622,7 @@ static refalrts::FnResult func_Uniq(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Uniq(func_Uniq, refalrts::RefalFuncName("Uniq", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Uniq("Uniq", 799324599U, 386387407U, func_Uniq);
 
 static refalrts::FnResult func_UpdateBorrowedVars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3768,7 +3759,7 @@ static refalrts::FnResult func_UpdateBorrowedVars(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UpdateBorrowedVars(func_UpdateBorrowedVars, refalrts::RefalFuncName("UpdateBorrowedVars", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_UpdateBorrowedVars("UpdateBorrowedVars", 799324599U, 386387407U, func_UpdateBorrowedVars);
 
 static refalrts::FnResult func_gen_ExtractNested_Result_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3819,7 +3810,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_Result_L1(func_gen_ExtractNested_Result_L1, refalrts::RefalFuncName("ExtractNested-Result\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_Result_L1("ExtractNested-Result\\1", 799324599U, 386387407U, func_gen_ExtractNested_Result_L1);
 
 static refalrts::FnResult func_ExtractNested_Result(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3914,7 +3905,7 @@ static refalrts::FnResult func_ExtractNested_Result(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractNested_Result(func_ExtractNested_Result, refalrts::RefalFuncName("ExtractNested-Result", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractNested_Result("ExtractNested-Result", 799324599U, 386387407U, func_ExtractNested_Result);
 
 static refalrts::FnResult func_gen_ExtractNested_Result_Term_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3968,7 +3959,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S2L1(refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_Result_Term_S2L1(func_gen_ExtractNested_Result_Term_S2L1, refalrts::RefalFuncName("ExtractNested-Result-Term$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_Result_Term_S2L1("ExtractNested-Result-Term$2\\1", 799324599U, 386387407U, func_gen_ExtractNested_Result_Term_S2L1);
 
 static refalrts::FnResult func_gen_ExtractNested_Result_Term_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4033,7 +4024,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S3L1(refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_Result_Term_S3L1(func_gen_ExtractNested_Result_Term_S3L1, refalrts::RefalFuncName("ExtractNested-Result-Term$3\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_Result_Term_S3L1("ExtractNested-Result-Term$3\\1", 799324599U, 386387407U, func_gen_ExtractNested_Result_Term_S3L1);
 
 static refalrts::FnResult func_gen_ExtractNested_Result_Term_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4087,7 +4078,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S4L1(refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_Result_Term_S4L1(func_gen_ExtractNested_Result_Term_S4L1, refalrts::RefalFuncName("ExtractNested-Result-Term$4\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_Result_Term_S4L1("ExtractNested-Result-Term$4\\1", 799324599U, 386387407U, func_gen_ExtractNested_Result_Term_S4L1);
 
 static refalrts::FnResult func_gen_ExtractNested_Result_Term_S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4374,7 +4365,7 @@ static refalrts::FnResult func_gen_ExtractNested_Result_Term_S5L1(refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractNested_Result_Term_S5L1(func_gen_ExtractNested_Result_Term_S5L1, refalrts::RefalFuncName("ExtractNested-Result-Term$5\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractNested_Result_Term_S5L1("ExtractNested-Result-Term$5\\1", 799324599U, 386387407U, func_gen_ExtractNested_Result_Term_S5L1);
 
 static refalrts::FnResult func_ExtractNested_Result_Term(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4576,7 +4567,7 @@ static refalrts::FnResult func_ExtractNested_Result_Term(refalrts::Iter arg_begi
     refalrts::reinit_name( context[13], ref_ExtractNested_Result.ref.function );
     refalrts::reinit_svar( context[16], context[5] );
     refalrts::reinit_open_bracket( context[17] );
-    refalrts::reinit_name( context[26], & refalrts::create_closure );
+    refalrts::reinit_name( context[26], refalrts::create_closure );
     refalrts::reinit_name( context[30], ref_gen_ExtractNested_Result_Term_S3L1.ref.function );
     refalrts::reinit_close_call( context[27] );
     refalrts::push_stack( context[1] );
@@ -4686,7 +4677,7 @@ static refalrts::FnResult func_ExtractNested_Result_Term(refalrts::Iter arg_begi
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </20 } & Fetch/35 Tile{ AsIs: </0 Reuse: & ExtractNestedRec/4 AsIs: s.MarkupContext#1/5 AsIs: (/8 } Tile{ AsIs: e.ScopeVars#1/6 } Tile{ AsIs: e.LocalVars#1/10 } Tile{ AsIs: )/34 AsIs: e.Body#1/28 HalfReuse: >/27 HalfReuse: </1 } & @create_closure@/36 Tile{ HalfReuse: & ExtractNested-Result-Term$5\1/30 AsIs: (/33 } Tile{ AsIs: e.NestedFuncs#1/18 } Tile{ AsIs: )/13 AsIs: (/16 } Tile{ AsIs: e.ClosureName#1/31 } Tile{ AsIs: )/21 AsIs: (/24 AsIs: e.BorrowedVars#1/22 AsIs: )/25 HalfReuse: s.MarkupContext1 #5/17 AsIs: (/26 } e.ScopeVars#1/6/37 Tile{ AsIs: )/9 HalfReuse: >/12 } >/39 Tile{ ]] }
     if( ! refalrts::alloc_name( context[35], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[36], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[36], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[37], context[38], context[6], context[7]))
       return refalrts::cNoMemory;
@@ -4754,7 +4745,7 @@ static refalrts::FnResult func_ExtractNested_Result_Term(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractNested_Result_Term(func_ExtractNested_Result_Term, refalrts::RefalFuncName("ExtractNested-Result-Term", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractNested_Result_Term("ExtractNested-Result-Term", 799324599U, 386387407U, func_ExtractNested_Result_Term);
 
 static refalrts::FnResult func_CheckBorrowed(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4898,7 +4889,7 @@ static refalrts::FnResult func_CheckBorrowed(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CheckBorrowed(func_CheckBorrowed, refalrts::RefalFuncName("CheckBorrowed", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_CheckBorrowed("CheckBorrowed", 799324599U, 386387407U, func_CheckBorrowed);
 
 static refalrts::FnResult func_AddContextToSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4960,7 +4951,7 @@ static refalrts::FnResult func_AddContextToSentence(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AddContextToSentence(func_AddContextToSentence, refalrts::RefalFuncName("AddContextToSentence", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_AddContextToSentence("AddContextToSentence", 799324599U, 386387407U, func_AddContextToSentence);
 
 static refalrts::FnResult func_gen_CreateContext_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5055,7 +5046,7 @@ static refalrts::FnResult func_gen_CreateContext_S1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CreateContext_S1L1(func_gen_CreateContext_S1L1, refalrts::RefalFuncName("CreateContext$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_CreateContext_S1L1("CreateContext$1\\1", 799324599U, 386387407U, func_gen_CreateContext_S1L1);
 
 static refalrts::FnResult func_gen_CreateContext_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5126,7 +5117,7 @@ static refalrts::FnResult func_gen_CreateContext_S2L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_CreateContext_S2L1(func_gen_CreateContext_S2L1, refalrts::RefalFuncName("CreateContext$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_CreateContext_S2L1("CreateContext$2\\1", 799324599U, 386387407U, func_gen_CreateContext_S2L1);
 
 static refalrts::FnResult func_CreateContext(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5178,7 +5169,7 @@ static refalrts::FnResult func_CreateContext(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateContext(func_CreateContext, refalrts::RefalFuncName("CreateContext", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_CreateContext("CreateContext", 799324599U, 386387407U, func_CreateContext);
 
 static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5238,7 +5229,7 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1S1L1(refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_CreatePredeclarations_L1S1L1(func_gen_Pass_CreatePredeclarations_L1S1L1, refalrts::RefalFuncName("Pass-CreatePredeclarations\\1$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_CreatePredeclarations_L1S1L1("Pass-CreatePredeclarations\\1$1\\1", 799324599U, 386387407U, func_gen_Pass_CreatePredeclarations_L1S1L1);
 
 static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5304,7 +5295,7 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1(refalrts::Iter 
     if( ! refalrts::alloc_open_call( context[23] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[17], ref_Fetch.ref.function );
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_Pass_CreatePredeclarations_L1S1L1.ref.function );
     refalrts::reinit_svar( context[11], context[14] );
     refalrts::reinit_open_bracket( context[13] );
@@ -5458,7 +5449,7 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_CreatePredeclarations_L1(func_gen_Pass_CreatePredeclarations_L1, refalrts::RefalFuncName("Pass-CreatePredeclarations\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_CreatePredeclarations_L1("Pass-CreatePredeclarations\\1", 799324599U, 386387407U, func_gen_Pass_CreatePredeclarations_L1);
 
 static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5504,7 +5495,7 @@ static refalrts::FnResult func_gen_Pass_CreatePredeclarations_L2(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Pass_CreatePredeclarations_L2(func_gen_Pass_CreatePredeclarations_L2, refalrts::RefalFuncName("Pass-CreatePredeclarations\\2", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_Pass_CreatePredeclarations_L2("Pass-CreatePredeclarations\\2", 799324599U, 386387407U, func_gen_Pass_CreatePredeclarations_L2);
 
 static refalrts::FnResult func_Pass_CreatePredeclarations(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5562,7 +5553,7 @@ static refalrts::FnResult func_Pass_CreatePredeclarations(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Pass_CreatePredeclarations(func_Pass_CreatePredeclarations, refalrts::RefalFuncName("Pass-CreatePredeclarations", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_Pass_CreatePredeclarations("Pass-CreatePredeclarations", 799324599U, 386387407U, func_Pass_CreatePredeclarations);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5779,7 +5770,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L1(func_gen_RemoveRedudandElements_L1, refalrts::RefalFuncName("RemoveRedudandElements\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L1("RemoveRedudandElements\\1", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L1);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5870,7 +5861,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L2(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L2(func_gen_RemoveRedudandElements_L2, refalrts::RefalFuncName("RemoveRedudandElements\\2", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L2("RemoveRedudandElements\\2", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L2);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L3S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5901,7 +5892,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S1L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L3S1L1(func_gen_RemoveRedudandElements_L3S1L1, refalrts::RefalFuncName("RemoveRedudandElements\\3$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L3S1L1("RemoveRedudandElements\\3$1\\1", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L3S1L1);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L3S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5932,7 +5923,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S2L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L3S2L1(func_gen_RemoveRedudandElements_L3S2L1, refalrts::RefalFuncName("RemoveRedudandElements\\3$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L3S2L1("RemoveRedudandElements\\3$2\\1", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L3S2L1);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L3S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5960,7 +5951,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3S3L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L3S3L1(func_gen_RemoveRedudandElements_L3S3L1, refalrts::RefalFuncName("RemoveRedudandElements\\3$3\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L3S3L1("RemoveRedudandElements\\3$3\\1", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L3S3L1);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6086,7 +6077,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L3(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L3(func_gen_RemoveRedudandElements_L3, refalrts::RefalFuncName("RemoveRedudandElements\\3", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L3("RemoveRedudandElements\\3", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L3);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6150,7 +6141,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L4L1(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L4L1(func_gen_RemoveRedudandElements_L4L1, refalrts::RefalFuncName("RemoveRedudandElements\\4\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L4L1("RemoveRedudandElements\\4\\1", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L4L1);
 
 static refalrts::FnResult func_gen_RemoveRedudandElements_L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6172,7 +6163,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L4(refalrts::Iter arg_
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 } </6 & @create_closure@/7 & RemoveRedudandElements\4\1/8 Tile{ AsIs: s.FnSelectiveSaver#2/5 } >/9 Tile{ AsIs: e.AST#2/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[7], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[8], ref_gen_RemoveRedudandElements_L4L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -6194,7 +6185,7 @@ static refalrts::FnResult func_gen_RemoveRedudandElements_L4(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_RemoveRedudandElements_L4(func_gen_RemoveRedudandElements_L4, refalrts::RefalFuncName("RemoveRedudandElements\\4", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_RemoveRedudandElements_L4("RemoveRedudandElements\\4", 799324599U, 386387407U, func_gen_RemoveRedudandElements_L4);
 
 static refalrts::FnResult func_RemoveRedudandElements(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6261,7 +6252,7 @@ static refalrts::FnResult func_RemoveRedudandElements(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_RemoveRedudandElements(func_RemoveRedudandElements, refalrts::RefalFuncName("RemoveRedudandElements", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_RemoveRedudandElements("RemoveRedudandElements", 799324599U, 386387407U, func_RemoveRedudandElements);
 
 static refalrts::FnResult func_gen_FoldEnums_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6336,7 +6327,7 @@ static refalrts::FnResult func_gen_FoldEnums_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_FoldEnums_L1(func_gen_FoldEnums_L1, refalrts::RefalFuncName("FoldEnums\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_FoldEnums_L1("FoldEnums\\1", 799324599U, 386387407U, func_gen_FoldEnums_L1);
 
 static refalrts::FnResult func_FoldEnums(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6368,7 +6359,7 @@ static refalrts::FnResult func_FoldEnums(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FoldEnums(func_FoldEnums, refalrts::RefalFuncName("FoldEnums", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_FoldEnums("FoldEnums", 799324599U, 386387407U, func_FoldEnums);
 
 static refalrts::FnResult func_gen_ExtractIdents_S1L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6442,7 +6433,7 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L1L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdents_S1L1L1(func_gen_ExtractIdents_S1L1L1, refalrts::RefalFuncName("ExtractIdents$1\\1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdents_S1L1L1("ExtractIdents$1\\1\\1", 799324599U, 386387407U, func_gen_ExtractIdents_S1L1L1);
 
 static refalrts::FnResult func_gen_ExtractIdents_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6510,7 +6501,7 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L1(refalrts::Iter arg_begin, 
   refalrts::reinit_name( context[19], ref_ExtractIdent_Expr.ref.function );
   refalrts::reinit_close_call( context[20] );
   refalrts::reinit_open_call( context[1] );
-  refalrts::reinit_name( context[0], & refalrts::create_closure );
+  refalrts::reinit_name( context[0], refalrts::create_closure );
   refalrts::update_name( context[4], ref_gen_ExtractIdents_S1L1L1.ref.function );
   refalrts::reinit_close_call( context[11] );
   refalrts::reinit_close_call( context[15] );
@@ -6537,7 +6528,7 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdents_S1L1(func_gen_ExtractIdents_S1L1, refalrts::RefalFuncName("ExtractIdents$1\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdents_S1L1("ExtractIdents$1\\1", 799324599U, 386387407U, func_gen_ExtractIdents_S1L1);
 
 static refalrts::FnResult func_gen_ExtractIdents_S1L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6584,7 +6575,7 @@ static refalrts::FnResult func_gen_ExtractIdents_S1L2(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdents_S1L2(func_gen_ExtractIdents_S1L2, refalrts::RefalFuncName("ExtractIdents$1\\2", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdents_S1L2("ExtractIdents$1\\2", 799324599U, 386387407U, func_gen_ExtractIdents_S1L2);
 
 static refalrts::FnResult func_ExtractIdents(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6628,7 +6619,7 @@ static refalrts::FnResult func_ExtractIdents(refalrts::Iter arg_begin, refalrts:
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[14], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[14], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[15], ref_gen_ExtractIdents_S1L2.ref.function ) )
       return refalrts::cNoMemory;
@@ -6688,7 +6679,7 @@ static refalrts::FnResult func_ExtractIdents(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractIdents(func_ExtractIdents, refalrts::RefalFuncName("ExtractIdents", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractIdents("ExtractIdents", 799324599U, 386387407U, func_ExtractIdents);
 
 static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6735,7 +6726,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S2L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdent_Expr_L1S2L1(func_gen_ExtractIdent_Expr_L1S2L1, refalrts::RefalFuncName("ExtractIdent-Expr\\1$2\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdent_Expr_L1S2L1("ExtractIdent-Expr\\1$2\\1", 799324599U, 386387407U, func_gen_ExtractIdent_Expr_L1S2L1);
 
 static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6792,7 +6783,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S3L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdent_Expr_L1S3L1(func_gen_ExtractIdent_Expr_L1S3L1, refalrts::RefalFuncName("ExtractIdent-Expr\\1$3\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdent_Expr_L1S3L1("ExtractIdent-Expr\\1$3\\1", 799324599U, 386387407U, func_gen_ExtractIdent_Expr_L1S3L1);
 
 static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6839,7 +6830,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1S4L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdent_Expr_L1S4L1(func_gen_ExtractIdent_Expr_L1S4L1, refalrts::RefalFuncName("ExtractIdent-Expr\\1$4\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdent_Expr_L1S4L1("ExtractIdent-Expr\\1$4\\1", 799324599U, 386387407U, func_gen_ExtractIdent_Expr_L1S4L1);
 
 static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6929,7 +6920,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[10], ref_Fetch.ref.function );
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_ExtractIdent_Expr_L1S2L1.ref.function );
     refalrts::reinit_close_call( context[9] );
     refalrts::reinit_close_call( context[13] );
@@ -6988,7 +6979,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin
       return refalrts::cNoMemory;
     refalrts::reinit_open_call( context[13] );
     refalrts::reinit_name( context[16], ref_Fetch.ref.function );
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_ExtractIdent_Expr_L1S3L1.ref.function );
     refalrts::reinit_close_call( context[10] );
     refalrts::push_stack( context[1] );
@@ -7039,7 +7030,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin
     if( ! refalrts::alloc_open_call( context[17] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_name( context[10], ref_Fetch.ref.function );
-    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
     refalrts::update_name( context[4], ref_gen_ExtractIdent_Expr_L1S4L1.ref.function );
     refalrts::reinit_close_call( context[9] );
     refalrts::reinit_close_call( context[13] );
@@ -7081,7 +7072,7 @@ static refalrts::FnResult func_gen_ExtractIdent_Expr_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ExtractIdent_Expr_L1(func_gen_ExtractIdent_Expr_L1, refalrts::RefalFuncName("ExtractIdent-Expr\\1", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_gen_ExtractIdent_Expr_L1("ExtractIdent-Expr\\1", 799324599U, 386387407U, func_gen_ExtractIdent_Expr_L1);
 
 static refalrts::FnResult func_ExtractIdent_Expr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7118,7 +7109,7 @@ static refalrts::FnResult func_ExtractIdent_Expr(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExtractIdent_Expr(func_ExtractIdent_Expr, refalrts::RefalFuncName("ExtractIdent-Expr", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_ExtractIdent_Expr("ExtractIdent-Expr", 799324599U, 386387407U, func_ExtractIdent_Expr);
 
 static refalrts::FnResult func_UniqSorted(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7184,7 +7175,7 @@ static refalrts::FnResult func_UniqSorted(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UniqSorted(func_UniqSorted, refalrts::RefalFuncName("UniqSorted", 799324599U, 386387407U));
+static refalrts::NativeReference nat_ref_UniqSorted("UniqSorted", 799324599U, 386387407U, func_UniqSorted);
 
 
 //End of file

@@ -44,15 +44,10 @@ const refalrts::RefalIdentifier ident_TkOpenBracket = refalrts::ident_from_stati
 const refalrts::RefalIdentifier ident_TkOpenCall = refalrts::ident_from_static("TkOpenCall");
 const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
-#define str_Add refalrts::RefalFuncName("Add", 0U, 0U)
 static refalrts::ExternalReference ref_Inc2("Inc2", 0U, 0U);
-#define str_Inc2 refalrts::RefalFuncName("Inc2", 0U, 0U)
 static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
-#define str_PrintVar refalrts::RefalFuncName("PrintVar", 0U, 0U)
 static refalrts::ExternalReference ref_TextFromExpr("TextFromExpr", 0U, 0U);
-#define str_TextFromExpr refalrts::RefalFuncName("TextFromExpr", 0U, 0U)
 static refalrts::ExternalReference ref_GenInitSubst_Save("GenInitSubst-Save", 0U, 0U);
 static refalrts::ExternalReference ref_GenSubst_Save("GenSubst-Save", 0U, 0U);
 static refalrts::ExternalReference ref_DoGenSubst("DoGenSubst", 1788560981U, 2194543583U);
@@ -147,7 +142,7 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GenInitSubst_Save(func_GenInitSubst_Save, refalrts::RefalFuncName("GenInitSubst-Save", 0U, 0U));
+static refalrts::NativeReference nat_ref_GenInitSubst_Save("GenInitSubst-Save", 0U, 0U, func_GenInitSubst_Save);
 
 static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -192,7 +187,7 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_GenSubst_Save(func_GenSubst_Save, refalrts::RefalFuncName("GenSubst-Save", 0U, 0U));
+static refalrts::NativeReference nat_ref_GenSubst_Save("GenSubst-Save", 0U, 0U, func_GenSubst_Save);
 
 static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4655,7 +4650,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_DoGenSubst(func_DoGenSubst, refalrts::RefalFuncName("DoGenSubst", 1788560981U, 2194543583U));
+static refalrts::NativeReference nat_ref_DoGenSubst("DoGenSubst", 1788560981U, 2194543583U, func_DoGenSubst);
 
 static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4737,7 +4732,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_IncVarOffset_Saved(func_IncVarOffset_Saved, refalrts::RefalFuncName("IncVarOffset-Saved", 1788560981U, 2194543583U));
+static refalrts::NativeReference nat_ref_IncVarOffset_Saved("IncVarOffset-Saved", 1788560981U, 2194543583U, func_IncVarOffset_Saved);
 
 static refalrts::FnResult func_MakeRepeatedSave(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4799,7 +4794,7 @@ static refalrts::FnResult func_MakeRepeatedSave(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_MakeRepeatedSave(func_MakeRepeatedSave, refalrts::RefalFuncName("MakeRepeatedSave", 1788560981U, 2194543583U));
+static refalrts::NativeReference nat_ref_MakeRepeatedSave("MakeRepeatedSave", 1788560981U, 2194543583U, func_MakeRepeatedSave);
 
 
 //End of file

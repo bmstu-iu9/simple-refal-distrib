@@ -176,7 +176,7 @@ static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refal
 #line 177 "Hash.native.cpp"
 }
 
-static refalrts::RefalNativeFunction descr_HashLittle2_Chars(func_HashLittle2_Chars, refalrts::RefalFuncName("HashLittle2-Chars", 0U, 0U));
+static refalrts::NativeReference nat_ref_HashLittle2_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2_Chars);
 
 
 //End of file

@@ -1,4 +1,5 @@
 #include <exception>
+#include <new>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1577,9 +1578,7 @@ const refalrts::RASLCommand rasl_create_closure[] = {
 
 }
 
-refalrts::RefalFunction refalrts::create_closure(
-  rasl_create_closure, refalrts::RefalFuncName("@create_closure@", 0, 0)
-);
+refalrts::RefalFunction *refalrts::create_closure = 0;
 
 /*
   Собственно замыкание (функция + контекст) определяется как
@@ -1668,7 +1667,7 @@ refalrts::Iter refalrts::vm::initialize_swap_head(refalrts::Iter head) {
 }
 
 const refalrts::RASLCommand refalrts::RefalSwap::run[] = {
-  { refalrts::icThisIsGeneratedFunction, 0, 0, 0 },
+  { refalrts::icProfileFunction, 0, 0, 0 },
   { refalrts::icIssueMemory, 8, 0, 0 },
   { refalrts::icInitB0_Lite, 0, 0, 0 },
   { refalrts::icCallSaveLeft, 0, 2, 0 },
@@ -2462,6 +2461,7 @@ public:
   }
 
   Value *alloc(Key key);
+  Value *lookup(Key key);
 
 private:
   struct Node {
@@ -2610,6 +2610,33 @@ Value * refalrts::dynamic::DynamicHash<Key, Value>::alloc(Key key) {
   return &return_node->value;
 }
 
+template <typename Key, typename Value>
+Value *refalrts::dynamic::DynamicHash<Key, Value>::lookup(Key key) {
+  // Хаки для Watcom
+  using refalrts::UInt32;
+  using refalrts::dynamic::HashKeyTraits;
+
+  UInt32 hash = HashKeyTraits<Key>::hash(key);
+  UInt32 hash_mask = (UInt32(1) << m_table_power) - 1;
+
+  Node *return_node = m_table[hash & hash_mask];
+  while (
+    return_node != 0
+    && (
+      return_node->hash != hash
+      || ! HashKeyTraits<Key>::equal(return_node->value.key(), key)
+    )
+  ) {
+    return_node = return_node->next;
+  }
+
+  if (return_node != 0) {
+    return &return_node->value;
+  } else {
+    return 0;
+  }
+}
+
 //------------------------------------------------------------------------------
 
 // Идентификаторы
@@ -2703,6 +2730,9 @@ refalrts::RefalIdentifier refalrts::RefalIdentDescr::from_static(
 refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
   const char *name
 ) {
+  if (! name) {
+    name = "";
+  }
   dynamic::IdentHashNode *value = dynamic::alloc_ident_node(name);
 
 #ifdef IDENTS_LIMIT
@@ -2714,7 +2744,11 @@ refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
 #endif // ifdef IDENTS_LIMIT
 
   if (value->ident.m_name == 0) {
-    size_t length = name ? strlen(name) : 0;
+    if (! name) {
+      name = "";
+    }
+
+    size_t length = strlen(name);
     char *new_name = new char[length + 1];
     memcpy(new_name, name, length + 1);
 
@@ -2765,7 +2799,9 @@ struct FuncHashNode {
   }
 
   void cleanup() {
-    /* пусто */
+    // Деструкторов (в т.ч. неявных в функциях нет),
+    // память выделялась только malloc’ом, поэтому освобождаем free()
+    free(function);
   }
 
   RefalFuncName key() const {
@@ -2812,7 +2848,8 @@ void refalrts::RefalFunction::register_me() {
   if (node->function != 0) {
     fprintf(
       stderr, "INTERNAL ERROR: function redeclared: %s#%u:%u\n",
-      name.name, name.cookie1, name.cookie2);
+      name.name, name.cookie1, name.cookie2
+    );
     exit(156);
   }
 
@@ -2861,8 +2898,8 @@ unsigned refalrts::dynamic::find_unresolved_externals() {
       }
 
       RefalFuncName name(str_name + 1, cookie1, cookie2);
-      FuncHashNode *node = funcs_table().alloc(name);
-      if (node->function != 0) {
+      FuncHashNode *node = funcs_table().lookup(name);
+      if (node != 0) {
         items[i].function = node->function;
       } else {
         fprintf(
@@ -2879,8 +2916,8 @@ unsigned refalrts::dynamic::find_unresolved_externals() {
   while (g_unresolved_external_references != 0) {
     ExternalReference *er = g_unresolved_external_references;
     RefalFuncName name(er->ref.func_name, er->cookie1, er->cookie2);
-    FuncHashNode *node = funcs_table().alloc(name);
-    if (node->function != 0) {
+    FuncHashNode *node = funcs_table().lookup(name);
+    if (node != 0) {
       er->ref.function = node->function;
     } else {
       fprintf(
@@ -2899,6 +2936,398 @@ unsigned refalrts::dynamic::find_unresolved_externals() {
 void refalrts::dynamic::free_funcs_table() {
   delete g_funcs_table;
 }
+
+//------------------------------------------------------------------------------
+
+// Загружаемый модуль
+
+namespace refalrts {
+
+namespace dynamic {
+
+template <typename T>
+inline T *malloc(size_t count = 1) {
+  T *result = static_cast<T*>(::malloc(sizeof(T) * count));
+  assert(count == 0 || result);
+  return result;
+}
+
+struct ConstTable {
+  UInt32 cookie1;
+  UInt32 cookie2;
+  FunctionTableItem *externals;
+  FunctionTable *function_table;
+  RefalIdentifier *idents;
+  RefalNumber *numbers;
+  StringItem *strings;
+  RASLCommand *rasl;
+
+  char *external_memory;
+  char *idents_memory;
+  char *strings_memory;
+
+  ConstTable *next;
+
+  RefalFuncName make_name(const char *name) const;
+};
+
+struct ConstTable *g_tables = 0;
+
+void enumerate_blocks();
+void cleanup_module();
+
+struct FILE {
+  RawBytesBlock *raw;
+  size_t offset;
+
+  FILE(RawBytesBlock *raw)
+    : raw(raw), offset(0)
+  {
+    /* пусто */
+  }
+};
+
+FILE *fopen(RawBytesBlock *raw);
+size_t fread(void *ptr, size_t size, size_t count, FILE *stream);
+void fclose(FILE *stream);
+
+const char *read_asciiz(FILE *stream);
+
+} // namespace dynamic
+
+} // namespace refalrts
+
+refalrts::dynamic::FILE *
+refalrts::dynamic::fopen(refalrts::RawBytesBlock *raw) {
+  return new FILE(raw);
+}
+
+size_t refalrts::dynamic::fread(
+  void *ptr, size_t size, size_t count, refalrts::dynamic::FILE *stream
+) {
+  size_t avail_count = (stream->raw->length - stream->offset) / size;
+
+  if (count > avail_count) {
+    count = avail_count;
+  }
+
+  size_t bytes_count = size * count;
+  memcpy(ptr, &stream->raw->bytes[stream->offset], bytes_count);
+  stream->offset += bytes_count;
+
+  return count;
+}
+
+void refalrts::dynamic::fclose(refalrts::dynamic::FILE *stream) {
+  delete stream;
+}
+
+const char *refalrts::dynamic::read_asciiz(refalrts::dynamic::FILE *stream) {
+  enum { cINC_SIZE = 20 };
+
+  size_t buflen = cINC_SIZE;
+  char *buffer = static_cast<char *>(::malloc(buflen));
+  assert(buffer);
+
+  size_t buffoffset = 0;
+
+  size_t read;
+  do {
+    read = fread(&buffer[buffoffset], 1, 1, stream);
+    if (read) {
+      ++buffoffset;
+      if (buffoffset == buflen) {
+        size_t new_buflen = buflen + cINC_SIZE;
+        char *new_buffer = static_cast<char*>(::realloc(buffer, new_buflen));
+        assert(new_buffer);
+
+        buflen = new_buflen;
+        buffer = new_buffer;
+      }
+    }
+  } while (read == 1 && buffer[buffoffset - 1] != '\0');
+
+  if (read == 1) {
+    return buffer;
+  } else {
+    free(buffer);
+    return 0;
+  }
+}
+
+refalrts::RawBytesBlock *refalrts::RawBytesBlock::s_first = 0;
+refalrts::RawBytesBlock *refalrts::RawBytesBlock::s_last = 0;
+
+refalrts::RefalFuncName
+refalrts::dynamic::ConstTable::make_name(const char *name) const {
+  char type = name[0];
+  const char *proper_name = name + 1;
+
+  assert(type == '*' || type == '#');
+  if (type == '#') {
+    return RefalFuncName(proper_name, cookie1, cookie2);
+  } else {
+    return RefalFuncName(proper_name, 0, 0);
+  }
+}
+
+void refalrts::dynamic::enumerate_blocks() {
+  RawBytesBlock *first = RawBytesBlock::s_first;
+
+  ConstTable *table = 0;
+
+  while (first != 0) {
+    FILE *stream = fopen(first);
+    unsigned char type;
+
+    while (fread(&type, sizeof(type), 1, stream) == 1) {
+      UInt32 datalen;
+
+      size_t read = fread(&datalen, sizeof(datalen), 1, stream);
+      assert(read == 1);      // TODO: сообщение об ошибке
+
+      switch (type) {
+        case cBlockTypeStart:
+          {
+            static const char sample[8] = {
+              'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
+            };
+            assert(sizeof(sample) == datalen);
+
+            char signature[sizeof(sample)];
+            read = fread(&signature, 1, sizeof(signature), stream);
+            assert(sizeof(signature) == read);
+            assert(memcmp(sample, signature, sizeof(signature)) == 0);
+          }
+          break;
+
+        case cBlockTypeConstTable:
+          {
+            struct {
+              UInt32 cookie1;
+              UInt32 cookie2;
+              UInt32 external_count;
+              UInt32 ident_count;
+              UInt32 number_count;
+              UInt32 string_count;
+              UInt32 rasl_length;
+              UInt32 external_size;
+              UInt32 ident_size;
+              UInt32 string_size;
+            } fixed_part;
+
+            read = fread(&fixed_part, sizeof(fixed_part), 1, stream);
+            assert(read == 1);
+
+            ConstTable *new_table = malloc<ConstTable>();
+            assert(new_table);
+
+            new_table->cookie1 = fixed_part.cookie1;
+            new_table->cookie2 = fixed_part.cookie2;
+
+            new_table->externals =
+              malloc<FunctionTableItem>(fixed_part.external_count + 1);
+            new_table->external_memory = malloc<char>(fixed_part.external_size);
+            read = fread(
+              new_table->external_memory, 1, fixed_part.external_size, stream
+            );
+            assert(read == fixed_part.external_size);
+            const char *next_external_name = new_table->external_memory;
+            for (size_t i = 0; i < fixed_part.external_count; ++i) {
+              new_table->externals[i].func_name = next_external_name;
+              // TODO: нужна проверка за выход из границ
+              next_external_name += strlen(next_external_name) + 1;
+            }
+            new_table->externals[fixed_part.external_count] = 0;
+            new_table->function_table = new FunctionTable(
+              fixed_part.cookie1, fixed_part.cookie2, new_table->externals
+            );
+
+            new_table->idents = malloc<RefalIdentifier>(fixed_part.ident_count);
+            new_table->idents_memory = malloc<char>(fixed_part.ident_size);
+            read = fread(
+              new_table->idents_memory, 1, fixed_part.ident_size, stream
+            );
+            assert(read == fixed_part.ident_size);
+            const char *next_ident_name = new_table->idents_memory;
+            for (size_t i = 0; i < fixed_part.ident_count; ++i) {
+              RefalIdentifier ident = ident_implode(next_ident_name);
+#ifdef IDENTS_LIMIT
+              if (! ident) {
+                fprintf(
+                  stderr,
+                  "INTERNAL ERROR: Identifiers table overflows (max %ld)\n",
+                  static_cast<unsigned long>(IDENTS_LIMIT)
+                );
+                exit(154);
+              }
+#else
+              assert(ident != 0);
+#endif // ifdef IDENTS_LIMIT
+              new_table->idents[i] = ident;
+              // TODO: нужна проверка за выход из границ
+              next_ident_name += strlen(next_ident_name) + 1;
+            }
+
+            new_table->numbers = malloc<RefalNumber>(fixed_part.number_count);
+            read = fread(
+              new_table->numbers, sizeof(RefalNumber), fixed_part.number_count,
+              stream
+            );
+            assert(read == fixed_part.number_count);
+
+            new_table->strings = malloc<StringItem>(fixed_part.string_count);
+            new_table->strings_memory = malloc<char>(fixed_part.string_size);
+            char *string_target = new_table->strings_memory;
+            for (size_t i = 0; i < fixed_part.string_count; ++i) {
+              UInt32 length;
+              read = fread(&length, sizeof(length), 1, stream);
+              assert(read == 1);
+              read = fread(string_target, 1, length, stream);
+              assert(read == length);
+              new_table->strings[i].string = string_target;
+              new_table->strings[i].string_len = length;
+              string_target += length;
+            }
+
+            new_table->rasl = malloc<RASLCommand>(fixed_part.rasl_length);
+            read = fread(
+              new_table->rasl, sizeof(RASLCommand), fixed_part.rasl_length,
+              stream
+            );
+            assert(read == fixed_part.rasl_length);
+
+            new_table->next = g_tables;
+            g_tables = new_table;
+
+            table = new_table;
+          }
+          break;
+
+        case cBlockTypeRefalFunction:
+          {
+            const char *name = read_asciiz(stream);
+            assert(name);
+
+            UInt32 offset;
+            read = fread(&offset, sizeof(offset), 1, stream);
+            assert(read == 1);
+
+            RASLFunction *result = dynamic::malloc<RASLFunction>();
+            // TODO: выдача сообщения об ошибке
+            assert(result != 0);
+            new (result) RASLFunction(
+              table->make_name(name),
+              table->rasl + offset,
+              table->function_table,
+              table->idents,
+              table->numbers,
+              table->strings
+            );
+          }
+          break;
+
+        case cBlockTypeNativeFunction:
+          {
+            const char *name = read_asciiz(stream);
+            assert(name);
+
+            char type = name[0];
+            assert(type == '*' || type == '#');
+
+            const char *proper_name = name + 1;
+
+            NativeReference *ref = NativeReference::s_references;
+            while (
+              ref != 0
+              && ! (
+                type == '*'
+                ? (
+                  ref->cookie1 == 0
+                  && ref->cookie2 == 0
+                  && strcmp(ref->name, proper_name) == 0
+                )
+                : (
+                  ref->cookie1 == table->cookie1
+                  && ref->cookie2 == table->cookie2
+                  && strcmp(ref->name, proper_name) == 0
+                )
+              )
+            ) {
+              ref = ref->next;
+            }
+
+            // TODO: Сообщение об ошибке
+            assert(ref != 0);
+
+            RefalNativeFunction *result = dynamic::malloc<RefalNativeFunction>();
+            // TODO: выдача сообщения об ошибке
+            assert(result != 0);
+            new (result) RefalNativeFunction(
+              ref->code, table->make_name(name)
+            );
+          }
+          break;
+
+        case cBlockTypeEmptyFunction:
+          {
+            const char *name = read_asciiz(stream);
+            assert(name);
+
+            RefalEmptyFunction *result = dynamic::malloc<RefalEmptyFunction>();
+            // TODO: выдача сообщения об ошибке
+            assert(result != 0);
+            new (result) RefalEmptyFunction(table->make_name(name));
+          }
+          break;
+
+        case cBlockTypeSwap:
+          {
+            const char *name = read_asciiz(stream);
+            assert(name);
+
+            RefalSwap *result = dynamic::malloc<RefalSwap>();
+            // TODO: выдача сообщения об ошибке
+            assert(result != 0);
+            new (result) RefalSwap(table->make_name(name));
+          }
+          break;
+
+        default:
+          refalrts_switch_default_violation(type);
+      }
+    }
+
+    fclose(stream);
+
+    first = first->next;
+  }
+}
+
+void refalrts::dynamic::cleanup_module() {
+  while (g_tables != 0) {
+    ConstTable *next = g_tables->next;
+
+    free(g_tables->rasl);
+
+    free(g_tables->strings_memory);
+    free(g_tables->strings);
+
+    free(g_tables->numbers);
+
+    free(g_tables->idents_memory);
+    free(g_tables->idents);
+
+    delete g_tables->function_table;
+    free(g_tables->external_memory);
+    free(g_tables->externals);
+
+    free(g_tables);
+    g_tables = next;
+  }
+}
+
+refalrts::NativeReference *refalrts::NativeReference::s_references = 0;
 
 //==============================================================================
 // Виртуальная машина
@@ -3365,9 +3794,9 @@ refalrts::FnResult refalrts::vm::main_loop() {
     { icIssueMemory, 3, 0, 0 },
     { refalrts::icResetAllocator, 0, 0, 0 },
     { refalrts::icSetResArgBegin, 0, 0, 0 },
-    { icAllocBracket, 0, ibOpenCall, 0 },
-    { icAllocFunc, 0, 0, 1 },
-    { icAllocBracket, 0, ibCloseCall, 2 },
+    { icAllocateBracket, 0, ibOpenCall, 0 },
+    { icAllocateName, 0, 0, 1 },
+    { icAllocateBracket, 0, ibCloseCall, 2 },
     { icSpliceTile, 0, 2, 0 },
     { icPushStack, 0, 0, 2 },
     { icPushStack, 0, 0, 0 },
@@ -3412,9 +3841,8 @@ refalrts::FnResult refalrts::vm::main_loop() {
     Iter &res_b = context[rasl->val2];
     Iter &res_e = context[rasl->val2 + 1];
 
-    switch(rasl->cmd)
-    {
-      case icThisIsGeneratedFunction:
+    switch(rasl->cmd) {
+      case icProfileFunction:
         this_is_generated_function();
         break;
 
@@ -3475,14 +3903,14 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icCharLeftSave:
+      case icCharSaveLeft:
         save_pos = char_left(static_cast<char>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icCharRightSave:
+      case icCharSaveRight:
         save_pos = char_right(static_cast<char>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
@@ -3507,14 +3935,14 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icNumLeftSave:
+      case icNumSaveLeft:
         save_pos = number_left(static_cast<RefalNumber>(rasl->val2), bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icNumRightSave:
+      case icNumSaveRight:
         save_pos =
           number_right(static_cast<RefalNumber>(rasl->val2), bb, be);
         if (! save_pos) {
@@ -3540,46 +3968,46 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icHugeNumLeftSave:
+      case icHugeNumSaveLeft:
         save_pos = number_left(numbers[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icHugeNumRightSave:
+      case icHugeNumSaveRight:
         save_pos = number_right(numbers[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icFuncLeft:
+      case icNameLeft:
         if (! function_left(functions[rasl->val2].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
-      case icFuncRight:
+      case icNameRight:
         if (! function_right(functions[rasl->val2].function, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
-      case icFuncTerm:
+      case icNameTerm:
         if (! function_term(functions[rasl->val2].function, bb)) {
           MATCH_FAIL;
         }
         break;
 
-      case icFuncLeftSave:
+      case icNameSaveLeft:
         save_pos = function_left(functions[rasl->val2].function, bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icFuncRightSave:
+      case icNameSaveRight:
         save_pos = function_right(functions[rasl->val2].function, bb, be);
         if (! save_pos) {
           MATCH_FAIL;
@@ -3604,39 +4032,39 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icIdentLeftSave:
+      case icIdentSaveLeft:
         save_pos = ident_left(idents[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icIdentRightSave:
+      case icIdentSaveRight:
         save_pos = ident_right(idents[rasl->val2], bb, be);
         if (! save_pos) {
           MATCH_FAIL;
         }
         break;
 
-      case icBracketLeft:
+      case icBracketsLeft:
         if (! brackets_left(res_b, res_e, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
-      case icBracketRight:
+      case icBracketsRight:
         if (! brackets_right(res_b, res_e, bb, be)) {
           MATCH_FAIL;
         }
         break;
 
-      case icBracketTerm:
+      case icBracketsTerm:
         if (! brackets_term(res_b, res_e, bb)) {
           MATCH_FAIL;
         }
         break;
 
-      case icBracketLeftSave:
+      case icBracketsSaveLeft:
         {
           int inner = rasl->val2;
           context[inner + 2] =
@@ -3648,7 +4076,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icBracketRightSave:
+      case icBracketsSaveRight:
         {
           int inner = rasl->val2;
           context[inner + 2] =
@@ -3678,7 +4106,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icADTLeftSave:
+      case icADTSaveLeft:
         {
           int inner = rasl->val2;
           const RefalFunction *tag = functions[rasl->val1].function;
@@ -3693,7 +4121,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icADTRightSave:
+      case icADTSaveRight:
         {
           int inner = rasl->val2;
           const RefalFunction *tag = functions[rasl->val1].function;
@@ -3708,7 +4136,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icADTTermSave:
+      case icADTSaveTerm:
         {
           int inner = rasl->val2;
           const RefalFunction *tag = functions[rasl->val1].function;
@@ -3770,7 +4198,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
        break;
 
-      case ictVarLeftSave:
+      case ictVarSaveLeft:
         index = rasl->val2;
         context[index + 1] = tvar_left(context[index], bb, be);
         if (! context[index + 1]) {
@@ -3778,7 +4206,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case ictVarRightSave:
+      case ictVarSaveRight:
         index = rasl->val2;
         context[index + 1] = tvar_right(context[index], bb, be);
         if (! context[index + 1]) {
@@ -3786,7 +4214,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case iceRepeatLeft:
+      case iceRepeatedLeft:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3802,7 +4230,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case iceRepeatRight:
+      case iceRepeatedRight:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3818,8 +4246,8 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icsRepeatLeft:
-      case ictRepeatLeft:
+      case icsRepeatedLeft:
+      case ictRepeatedLeft:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3829,8 +4257,8 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icsRepeatRight:
-      case ictRepeatRight:
+      case icsRepeatedRight:
+      case ictRepeatedRight:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3840,15 +4268,15 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icsRepeatTerm:
-      case ictRepeatTerm:
+      case icsRepeatedTerm:
+      case ictRepeatedTerm:
         assert(rasl->bracket == rasl->val1);
         if (! repeated_stvar_term(context[rasl->val2], bb)) {
           MATCH_FAIL;
         }
         break;
 
-      case ictRepeatLeftSave:
+      case ictRepeatedSaveLeft:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3861,7 +4289,7 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case ictRepeatRightSave:
+      case ictRepeatedSaveRight:
         {
           int index = rasl->val1;
           int sample = rasl->val2;
@@ -3922,8 +4350,9 @@ refalrts::FnResult refalrts::vm::main_loop() {
               context[target], context[target + 1],
               context[sample], context[sample + 1]
             )
-          )
+          ) {
             return cNoMemory;
+          }
         }
         break;
 
@@ -3941,37 +4370,37 @@ refalrts::FnResult refalrts::vm::main_loop() {
         reinit_svar(elem, context[rasl->val2]);
         break;
 
-      case icAllocChar:
+      case icAllocateChar:
         if (! alloc_char(elem, static_cast<char>(rasl->val2))) {
           return cNoMemory;
         }
         break;
 
-      case icAllocFunc:
+      case icAllocateName:
         if (! alloc_name(elem, functions[rasl->val2].function)) {
           return cNoMemory;
         }
         break;
 
-      case icAllocInt:
+      case icAllocateNumber:
         if (! alloc_number(elem, static_cast<RefalNumber>(rasl->val2))) {
           return cNoMemory;
         }
         break;
 
-      case icAllocHugeInt:
+      case icAllocateHugeNumber:
         if (! alloc_number(elem, numbers[rasl->val2])) {
           return cNoMemory;
         }
         break;
 
-      case icAllocIdent:
+      case icAllocateIdent:
         if (! alloc_ident(elem, idents[rasl->val2])) {
           return cNoMemory;
         }
         break;
 
-      case icAllocBracket:
+      case icAllocateBracket:
         {
           static bool (*const allocator[])(Iter& res) = {
             alloc_open_adt,
@@ -3989,15 +4418,16 @@ refalrts::FnResult refalrts::vm::main_loop() {
         }
         break;
 
-      case icAllocString:
+      case icAllocateString:
         {
           if (
             ! alloc_chars(
               bb, be,
               strings[rasl->val2].string, strings[rasl->val2].string_len
             )
-          )
+          ) {
             return cNoMemory;
+          }
         }
         break;
 
@@ -4005,15 +4435,15 @@ refalrts::FnResult refalrts::vm::main_loop() {
         reinit_char(elem, static_cast<char>(rasl->val2));
         break;
 
-      case icReinitFunc:
+      case icReinitName:
         reinit_name(elem, functions[rasl->val2].function);
         break;
 
-      case icReinitInt:
+      case icReinitNumber:
         reinit_number(elem, static_cast<RefalNumber>(rasl->val2));
         break;
 
-      case icReinitHugeInt:
+      case icReinitHugeNumber:
         reinit_number(elem, numbers[rasl->val2]);
         break;
 
@@ -4050,15 +4480,15 @@ refalrts::FnResult refalrts::vm::main_loop() {
         update_char(elem, static_cast<char>(rasl->val2));
         break;
 
-      case icUpdateFunc:
+      case icUpdateName:
         update_name(elem, functions[rasl->val2].function);
         break;
 
-      case icUpdateInt:
+      case icUpdateNumber:
         update_number(elem, static_cast<RefalNumber>(rasl->val2));
         break;
 
-      case icUpdateHugeInt:
+      case icUpdateHugeNumber:
         update_number(elem, numbers[rasl->val2]);
         break;
 
@@ -4270,8 +4700,21 @@ int main(int argc, char **argv) {
   refalrts::vm::g_argc = argc;
   refalrts::vm::g_argv = argv;
 
+  refalrts::create_closure =
+    refalrts::dynamic::malloc<refalrts::RefalFunction>();
+  // TODO: выдача сообщения об ошибке
+  assert(refalrts::create_closure != 0);
+  new (refalrts::create_closure) refalrts::RefalFunction(
+    rasl_create_closure, refalrts::RefalFuncName("@create_closure@", 0, 0)
+  );
+
+  refalrts::dynamic::enumerate_blocks();
+
   unsigned unresolved = refalrts::dynamic::find_unresolved_externals();
   if (unresolved > 0) {
+    refalrts::dynamic::free_idents_table();
+    refalrts::dynamic::free_funcs_table();
+    refalrts::dynamic::cleanup_module();
     fprintf(stderr, "Found %u unresolved externals\n", unresolved);
     return 157;
   }
@@ -4298,6 +4741,7 @@ int main(int argc, char **argv) {
   refalrts::allocator::free_memory();
   refalrts::dynamic::free_idents_table();
   refalrts::dynamic::free_funcs_table();
+  refalrts::dynamic::cleanup_module();
 
   fflush(stdout);
 

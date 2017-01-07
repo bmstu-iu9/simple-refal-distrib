@@ -3,17 +3,11 @@
 
 
 static refalrts::ExternalReference ref_Div("Div", 0U, 0U);
-#define str_Div refalrts::RefalFuncName("Div", 0U, 0U)
 static refalrts::ExternalReference ref_Mod("Mod", 0U, 0U);
-#define str_Mod refalrts::RefalFuncName("Mod", 0U, 0U)
 static refalrts::ExternalReference ref_Ord("Ord", 0U, 0U);
-#define str_Ord refalrts::RefalFuncName("Ord", 0U, 0U)
 static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
-#define str_Compare refalrts::RefalFuncName("Compare", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_OctDigit("OctDigit", 1335600754U, 1331116615U);
 static refalrts::ExternalReference ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1335600754U, 1331116615U);
 static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
@@ -178,7 +172,7 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_OctDigit(func_OctDigit, refalrts::RefalFuncName("OctDigit", 1335600754U, 1331116615U));
+static refalrts::NativeReference nat_ref_OctDigit("OctDigit", 1335600754U, 1331116615U, func_OctDigit);
 
 static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -301,7 +295,7 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_EscapeChar_S7L1(func_gen_EscapeChar_S7L1, refalrts::RefalFuncName("EscapeChar$7\\1", 1335600754U, 1331116615U));
+static refalrts::NativeReference nat_ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1335600754U, 1331116615U, func_gen_EscapeChar_S7L1);
 
 static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -455,7 +449,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[14], refalrts::create_closure ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[15], ref_gen_EscapeChar_S7L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -484,7 +478,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EscapeChar(func_EscapeChar, refalrts::RefalFuncName("EscapeChar", 0U, 0U));
+static refalrts::NativeReference nat_ref_EscapeChar("EscapeChar", 0U, 0U, func_EscapeChar);
 
 static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -516,7 +510,7 @@ static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_EscapeString(func_EscapeString, refalrts::RefalFuncName("EscapeString", 0U, 0U));
+static refalrts::NativeReference nat_ref_EscapeString("EscapeString", 0U, 0U, func_EscapeString);
 
 
 //End of file

@@ -11,21 +11,13 @@ const refalrts::RefalIdentifier ident_Search = refalrts::ident_from_static("Sear
 const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
 const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
 static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
-#define str_WriteLine refalrts::RefalFuncName("WriteLine", 0U, 0U)
 static refalrts::ExternalReference ref_System("System", 0U, 0U);
-#define str_System refalrts::RefalFuncName("System", 0U, 0U)
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-#define str_StrFromInt refalrts::RefalFuncName("StrFromInt", 0U, 0U)
 static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
-#define str_Exit refalrts::RefalFuncName("Exit", 0U, 0U)
 static refalrts::ExternalReference ref_ArgList("ArgList", 0U, 0U);
-#define str_ArgList refalrts::RefalFuncName("ArgList", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_CreateFileList("CreateFileList", 0U, 0U);
-#define str_CreateFileList refalrts::RefalFuncName("CreateFileList", 0U, 0U)
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
-#define str_ParseCommandLine refalrts::RefalFuncName("ParseCommandLine", 0U, 0U)
 static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
 static refalrts::ExternalReference ref_Main("Main", 1598433284U, 870988702U);
 static refalrts::ExternalReference ref_gen_MakeProject_S1L1("MakeProject$1\\1", 1598433284U, 870988702U);
@@ -73,7 +65,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Go(func_Go, refalrts::RefalFuncName("Go", 0U, 0U));
+static refalrts::NativeReference nat_ref_Go("Go", 0U, 0U, func_Go);
 
 static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -160,7 +152,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Main(func_Main, refalrts::RefalFuncName("Main", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_Main("Main", 1598433284U, 870988702U, func_Main);
 
 static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -199,7 +191,7 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_MakeProject_S1L1(func_gen_MakeProject_S1L1, refalrts::RefalFuncName("MakeProject$1\\1", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_gen_MakeProject_S1L1("MakeProject$1\\1", 1598433284U, 870988702U, func_gen_MakeProject_S1L1);
 
 static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -259,7 +251,7 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_MakeProject_S2L1(func_gen_MakeProject_S2L1, refalrts::RefalFuncName("MakeProject$2\\1", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_gen_MakeProject_S2L1("MakeProject$2\\1", 1598433284U, 870988702U, func_gen_MakeProject_S2L1);
 
 static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -392,7 +384,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_MakeProject(func_MakeProject, refalrts::RefalFuncName("MakeProject", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_MakeProject("MakeProject", 1598433284U, 870988702U, func_MakeProject);
 
 static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -517,7 +509,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S1L1(func_gen_Make_S1L1, refalrts::RefalFuncName("Make$1\\1", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_gen_Make_S1L1("Make$1\\1", 1598433284U, 870988702U, func_gen_Make_S1L1);
 
 static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -593,7 +585,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S2L1(func_gen_Make_S2L1, refalrts::RefalFuncName("Make$2\\1", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_gen_Make_S2L1("Make$2\\1", 1598433284U, 870988702U, func_gen_Make_S2L1);
 
 static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -668,7 +660,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_Make_S2L2(func_gen_Make_S2L2, refalrts::RefalFuncName("Make$2\\2", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_gen_Make_S2L2("Make$2\\2", 1598433284U, 870988702U, func_gen_Make_S2L2);
 
 static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -810,7 +802,7 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_Make(func_Make, refalrts::RefalFuncName("Make", 1598433284U, 870988702U));
+static refalrts::NativeReference nat_ref_Make("Make", 1598433284U, 870988702U, func_Make);
 
 
 //End of file

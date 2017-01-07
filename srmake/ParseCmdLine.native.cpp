@@ -20,17 +20,11 @@ const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Suc
 const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
 const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
 static refalrts::ExternalReference ref_GetOpt("GetOpt", 0U, 0U);
-#define str_GetOpt refalrts::RefalFuncName("GetOpt", 0U, 0U)
 static refalrts::ExternalReference ref_GetOpt_CheckRepeated("GetOpt-CheckRepeated", 0U, 0U);
-#define str_GetOpt_CheckRepeated refalrts::RefalFuncName("GetOpt-CheckRepeated", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-#define str_Seq refalrts::RefalFuncName("Seq", 0U, 0U)
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-#define str_MapReduce refalrts::RefalFuncName("MapReduce", 0U, 0U)
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 2866188145U, 291805591U);
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 2866188145U, 291805591U);
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 2866188145U, 291805591U);
@@ -91,7 +85,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L1(func_gen_ParseCommandLine_L1, refalrts::RefalFuncName("ParseCommandLine\\1", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 2866188145U, 291805591U, func_gen_ParseCommandLine_L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -203,7 +197,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L2(func_gen_ParseCommandLine_L2, refalrts::RefalFuncName("ParseCommandLine\\2", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 2866188145U, 291805591U, func_gen_ParseCommandLine_L2);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -320,7 +314,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L3(func_gen_ParseCommandLine_L3, refalrts::RefalFuncName("ParseCommandLine\\3", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 2866188145U, 291805591U, func_gen_ParseCommandLine_L3);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -438,7 +432,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L4(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L4(func_gen_ParseCommandLine_L4, refalrts::RefalFuncName("ParseCommandLine\\4", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L4("ParseCommandLine\\4", 2866188145U, 291805591U, func_gen_ParseCommandLine_L4);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -536,7 +530,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L5L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L5L1(func_gen_ParseCommandLine_L5L1, refalrts::RefalFuncName("ParseCommandLine\\5\\1", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L5L1("ParseCommandLine\\5\\1", 2866188145U, 291805591U, func_gen_ParseCommandLine_L5L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L5(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -587,7 +581,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L5(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L5(func_gen_ParseCommandLine_L5, refalrts::RefalFuncName("ParseCommandLine\\5", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L5("ParseCommandLine\\5", 2866188145U, 291805591U, func_gen_ParseCommandLine_L5);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -659,7 +653,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L6L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L6L1(func_gen_ParseCommandLine_L6L1, refalrts::RefalFuncName("ParseCommandLine\\6\\1", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L6L1("ParseCommandLine\\6\\1", 2866188145U, 291805591U, func_gen_ParseCommandLine_L6L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L6(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -709,7 +703,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L6(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L6(func_gen_ParseCommandLine_L6, refalrts::RefalFuncName("ParseCommandLine\\6", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L6("ParseCommandLine\\6", 2866188145U, 291805591U, func_gen_ParseCommandLine_L6);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L7S2L1S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -798,7 +792,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7S2L1S4L1(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L7S2L1S4L1(func_gen_ParseCommandLine_L7S2L1S4L1, refalrts::RefalFuncName("ParseCommandLine\\7$2\\1$4\\1", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L7S2L1S4L1("ParseCommandLine\\7$2\\1$4\\1", 2866188145U, 291805591U, func_gen_ParseCommandLine_L7S2L1S4L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L7S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1042,7 +1036,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7S2L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L7S2L1(func_gen_ParseCommandLine_L7S2L1, refalrts::RefalFuncName("ParseCommandLine\\7$2\\1", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L7S2L1("ParseCommandLine\\7$2\\1", 2866188145U, 291805591U, func_gen_ParseCommandLine_L7S2L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1147,7 +1141,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L7(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_ParseCommandLine_L7(func_gen_ParseCommandLine_L7, refalrts::RefalFuncName("ParseCommandLine\\7", 2866188145U, 291805591U));
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L7("ParseCommandLine\\7", 2866188145U, 291805591U, func_gen_ParseCommandLine_L7);
 
 static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1324,7 +1318,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ParseCommandLine(func_ParseCommandLine, refalrts::RefalFuncName("ParseCommandLine", 0U, 0U));
+static refalrts::NativeReference nat_ref_ParseCommandLine("ParseCommandLine", 0U, 0U, func_ParseCommandLine);
 
 
 //End of file

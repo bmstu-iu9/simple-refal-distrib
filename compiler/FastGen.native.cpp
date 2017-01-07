@@ -11,13 +11,9 @@ const refalrts::RefalIdentifier ident_NotEq = refalrts::ident_from_static("NotEq
 const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
 const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-#define str_Inc refalrts::RefalFuncName("Inc", 0U, 0U)
 static refalrts::ExternalReference ref_Dec("Dec", 0U, 0U);
-#define str_Dec refalrts::RefalFuncName("Dec", 0U, 0U)
 static refalrts::ExternalReference ref_UnBracketAndNum("UnBracketAndNum", 3381238288U, 2475174895U);
 static refalrts::ExternalReference ref_UnBracketInBrackets("UnBracketInBrackets", 3381238288U, 2475174895U);
 static refalrts::ExternalReference ref_gen_PreparePatternsFastGen_Aux_L1("PreparePatternsFastGen-Aux\\1", 3381238288U, 2475174895U);
@@ -71,7 +67,7 @@ static refalrts::FnResult func_UnBracketAndNum(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UnBracketAndNum(func_UnBracketAndNum, refalrts::RefalFuncName("UnBracketAndNum", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_UnBracketAndNum("UnBracketAndNum", 3381238288U, 2475174895U, func_UnBracketAndNum);
 
 static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -141,7 +137,7 @@ static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_UnBracketInBrackets(func_UnBracketInBrackets, refalrts::RefalFuncName("UnBracketInBrackets", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_UnBracketInBrackets("UnBracketInBrackets", 3381238288U, 2475174895U, func_UnBracketInBrackets);
 
 static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -302,7 +298,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_Aux_L1(func_gen_PreparePatternsFastGen_Aux_L1, refalrts::RefalFuncName("PreparePatternsFastGen-Aux\\1", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_gen_PreparePatternsFastGen_Aux_L1("PreparePatternsFastGen-Aux\\1", 3381238288U, 2475174895U, func_gen_PreparePatternsFastGen_Aux_L1);
 
 static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -334,7 +330,7 @@ static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_PreparePatternsFastGen_Aux(func_PreparePatternsFastGen_Aux, refalrts::RefalFuncName("PreparePatternsFastGen-Aux", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_PreparePatternsFastGen_Aux("PreparePatternsFastGen-Aux", 3381238288U, 2475174895U, func_PreparePatternsFastGen_Aux);
 
 static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -371,7 +367,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_PreparePatternsFastGen_L1(func_gen_PreparePatternsFastGen_L1, refalrts::RefalFuncName("PreparePatternsFastGen\\1", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_gen_PreparePatternsFastGen_L1("PreparePatternsFastGen\\1", 3381238288U, 2475174895U, func_gen_PreparePatternsFastGen_L1);
 
 static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -403,7 +399,7 @@ static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_PreparePatternsFastGen(func_PreparePatternsFastGen, refalrts::RefalFuncName("PreparePatternsFastGen", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_PreparePatternsFastGen("PreparePatternsFastGen", 3381238288U, 2475174895U, func_PreparePatternsFastGen);
 
 static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -908,7 +904,7 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps_Aux(func_SplitReps_Aux, refalrts::RefalFuncName("SplitReps-Aux", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_SplitReps_Aux("SplitReps-Aux", 3381238288U, 2475174895U, func_SplitReps_Aux);
 
 static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1048,7 +1044,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_SplitReps_Brackets_L1(func_gen_SplitReps_Brackets_L1, refalrts::RefalFuncName("SplitReps-Brackets\\1", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_gen_SplitReps_Brackets_L1("SplitReps-Brackets\\1", 3381238288U, 2475174895U, func_gen_SplitReps_Brackets_L1);
 
 static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1080,7 +1076,7 @@ static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps_Brackets(func_SplitReps_Brackets, refalrts::RefalFuncName("SplitReps-Brackets", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_SplitReps_Brackets("SplitReps-Brackets", 3381238288U, 2475174895U, func_SplitReps_Brackets);
 
 static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1153,7 +1149,7 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_SplitReps_L1(func_gen_SplitReps_L1, refalrts::RefalFuncName("SplitReps\\1", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_gen_SplitReps_L1("SplitReps\\1", 3381238288U, 2475174895U, func_gen_SplitReps_L1);
 
 static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1196,7 +1192,7 @@ static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_SplitReps(func_SplitReps, refalrts::RefalFuncName("SplitReps", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_SplitReps("SplitReps", 3381238288U, 2475174895U, func_SplitReps);
 
 static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2572,7 +2568,7 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_Terms(func_FastGen_Terms, refalrts::RefalFuncName("FastGen-Terms", 0U, 0U));
+static refalrts::NativeReference nat_ref_FastGen_Terms("FastGen-Terms", 0U, 0U, func_FastGen_Terms);
 
 static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2905,7 +2901,7 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_MeN(func_FastGen_MeN, refalrts::RefalFuncName("FastGen-MeN", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_FastGen_MeN("FastGen-MeN", 3381238288U, 2475174895U, func_FastGen_MeN);
 
 static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3018,7 +3014,7 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_LengthComp(func_LengthComp, refalrts::RefalFuncName("LengthComp", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_LengthComp("LengthComp", 3381238288U, 2475174895U, func_LengthComp);
 
 static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3179,7 +3175,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen_K(func_FastGen_K, refalrts::RefalFuncName("FastGen-K", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_FastGen_K("FastGen-K", 3381238288U, 2475174895U, func_FastGen_K);
 
 static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3924,7 +3920,7 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FastGen(func_FastGen, refalrts::RefalFuncName("FastGen", 3381238288U, 2475174895U));
+static refalrts::NativeReference nat_ref_FastGen("FastGen", 3381238288U, 2475174895U, func_FastGen);
 
 static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3965,7 +3961,7 @@ static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_CreateFastGen(func_CreateFastGen, refalrts::RefalFuncName("CreateFastGen", 0U, 0U));
+static refalrts::NativeReference nat_ref_CreateFastGen("CreateFastGen", 0U, 0U, func_CreateFastGen);
 
 
 //End of file

@@ -10,11 +10,8 @@ const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_st
 const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
 const refalrts::RefalIdentifier ident_True = refalrts::ident_from_static("True");
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-#define str_Map refalrts::RefalFuncName("Map", 0U, 0U)
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-#define str_Fetch refalrts::RefalFuncName("Fetch", 0U, 0U)
 static refalrts::ExternalReference ref_ExistFile("ExistFile", 0U, 0U);
-#define str_ExistFile refalrts::RefalFuncName("ExistFile", 0U, 0U)
 static refalrts::ExternalReference ref_FindFiles("FindFiles", 0U, 0U);
 static refalrts::ExternalReference ref_AnalyzeFile_ByFolders("AnalyzeFile-ByFolders", 2890757293U, 861746543U);
 static refalrts::ExternalReference ref_AnalyzeInFolder("AnalyzeInFolder", 2890757293U, 861746543U);
@@ -67,7 +64,7 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_FindFiles(func_FindFiles, refalrts::RefalFuncName("FindFiles", 0U, 0U));
+static refalrts::NativeReference nat_ref_FindFiles("FindFiles", 0U, 0U, func_FindFiles);
 
 static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -125,7 +122,7 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, refalrts::RefalFuncName("AnalyzeFile-ByFolders", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_AnalyzeFile_ByFolders("AnalyzeFile-ByFolders", 2890757293U, 861746543U, func_AnalyzeFile_ByFolders);
 
 static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -192,7 +189,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AnalyzeInFolder(func_AnalyzeInFolder, refalrts::RefalFuncName("AnalyzeInFolder", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_AnalyzeInFolder("AnalyzeInFolder", 2890757293U, 861746543U, func_AnalyzeInFolder);
 
 static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -377,7 +374,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, refalrts::RefalFuncName("AnalyzeFile-CheckNotFound", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_AnalyzeFile_CheckNotFound("AnalyzeFile-CheckNotFound", 2890757293U, 861746543U, func_AnalyzeFile_CheckNotFound);
 
 static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -408,7 +405,7 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_ExistFile_T(func_ExistFile_T, refalrts::RefalFuncName("ExistFile-T", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_ExistFile_T("ExistFile-T", 2890757293U, 861746543U, func_ExistFile_T);
 
 static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -495,7 +492,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_AnalyzeFile_S1L1(func_gen_AnalyzeFile_S1L1, refalrts::RefalFuncName("AnalyzeFile$1\\1", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S1L1("AnalyzeFile$1\\1", 2890757293U, 861746543U, func_gen_AnalyzeFile_S1L1);
 
 static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -566,7 +563,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_AnalyzeFile_S2L1S1L1(func_gen_AnalyzeFile_S2L1S1L1, refalrts::RefalFuncName("AnalyzeFile$2\\1$1\\1", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2L1S1L1("AnalyzeFile$2\\1$1\\1", 2890757293U, 861746543U, func_gen_AnalyzeFile_S2L1S1L1);
 
 static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -610,7 +607,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[15], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[16] ) )
       return refalrts::cNoMemory;
@@ -662,7 +659,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_AnalyzeFile_S2L1(func_gen_AnalyzeFile_S2L1, refalrts::RefalFuncName("AnalyzeFile$2\\1", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2L1("AnalyzeFile$2\\1", 2890757293U, 861746543U, func_gen_AnalyzeFile_S2L1);
 
 static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -794,7 +791,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_gen_AnalyzeFile_S3L1(func_gen_AnalyzeFile_S3L1, refalrts::RefalFuncName("AnalyzeFile$3\\1", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S3L1("AnalyzeFile$3\\1", 2890757293U, 861746543U, func_gen_AnalyzeFile_S3L1);
 
 static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -887,7 +884,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], & refalrts::create_closure ) )
+    if( ! refalrts::alloc_name( context[12], refalrts::create_closure ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[13], ref_gen_AnalyzeFile_S2L1.ref.function ) )
       return refalrts::cNoMemory;
@@ -972,7 +969,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::RefalNativeFunction descr_AnalyzeFile(func_AnalyzeFile, refalrts::RefalFuncName("AnalyzeFile", 2890757293U, 861746543U));
+static refalrts::NativeReference nat_ref_AnalyzeFile("AnalyzeFile", 2890757293U, 861746543U, func_AnalyzeFile);
 
 
 //End of file
