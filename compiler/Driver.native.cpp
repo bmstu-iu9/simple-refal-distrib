@@ -18,6 +18,7 @@ static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_SaveBytes("SaveBytes", 0U, 0U);
 static refalrts::ExternalReference ref_LoadSource("LoadSource", 0U, 0U);
 static refalrts::ExternalReference ref_LexFolding("LexFolding", 0U, 0U);
 static refalrts::ExternalReference ref_ParseProgram("ParseProgram", 0U, 0U);
@@ -30,19 +31,19 @@ static refalrts::ExternalReference ref_LowLevelRASL("LowLevelRASL", 0U, 0U);
 static refalrts::ExternalReference ref_GenProgram_RASL("GenProgram-RASL", 0U, 0U);
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
 static refalrts::ExternalReference ref_GenProgram_Native("GenProgram-Native", 0U, 0U);
-static refalrts::ExternalReference ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_gen_CompileFile_L1("CompileFile\\1", 2226918263U, 2546591263U);
+static refalrts::ExternalReference ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_gen_CompileFile_L1("CompileFile\\1", 1605349615U, 1968623103U);
 static refalrts::ExternalReference ref_CompileFile("CompileFile", 0U, 0U);
-static refalrts::ExternalReference ref_gen_FrontEnd_L1("FrontEnd\\1", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_FrontEnd("FrontEnd", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_gen_BackEnd_L1("BackEnd\\1", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_BackEnd("BackEnd", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_gen_BackEnd_RASLModule_L1("BackEnd-RASLModule\\1", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_BackEnd_RASLModule("BackEnd-RASLModule", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_gen_EnvelopeCLines_L1("EnvelopeCLines\\1", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_EnvelopeCLines("EnvelopeCLines", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_BackEnd_NativeModule("BackEnd-NativeModule", 2226918263U, 2546591263U);
-static refalrts::ExternalReference ref_SelectOptFlags("SelectOptFlags", 2226918263U, 2546591263U);
+static refalrts::ExternalReference ref_gen_FrontEnd_L1("FrontEnd\\1", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_FrontEnd("FrontEnd", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_gen_BackEnd_L1("BackEnd\\1", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_BackEnd("BackEnd", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_gen_BackEnd_RASLModule_L1("BackEnd-RASLModule\\1", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_BackEnd_RASLModule("BackEnd-RASLModule", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_gen_EnvelopeCLines_L1("EnvelopeCLines\\1", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_EnvelopeCLines("EnvelopeCLines", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_BackEnd_NativeModule("BackEnd-NativeModule", 1605349615U, 1968623103U);
+static refalrts::ExternalReference ref_SelectOptFlags("SelectOptFlags", 1605349615U, 1968623103U);
 
 static refalrts::FnResult func_gen_CompileFile_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -140,7 +141,7 @@ static refalrts::FnResult func_gen_CompileFile_L1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 2226918263U, 2546591263U, func_gen_CompileFile_L1L1);
+static refalrts::NativeReference nat_ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 1605349615U, 1968623103U, func_gen_CompileFile_L1L1);
 
 static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -222,7 +223,7 @@ static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFile_L1("CompileFile\\1", 2226918263U, 2546591263U, func_gen_CompileFile_L1);
+static refalrts::NativeReference nat_ref_gen_CompileFile_L1("CompileFile\\1", 1605349615U, 1968623103U, func_gen_CompileFile_L1);
 
 static refalrts::FnResult func_CompileFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -351,7 +352,7 @@ static refalrts::FnResult func_gen_FrontEnd_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FrontEnd_L1("FrontEnd\\1", 2226918263U, 2546591263U, func_gen_FrontEnd_L1);
+static refalrts::NativeReference nat_ref_gen_FrontEnd_L1("FrontEnd\\1", 1605349615U, 1968623103U, func_gen_FrontEnd_L1);
 
 static refalrts::FnResult func_FrontEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -403,7 +404,7 @@ static refalrts::FnResult func_FrontEnd(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FrontEnd("FrontEnd", 2226918263U, 2546591263U, func_FrontEnd);
+static refalrts::NativeReference nat_ref_FrontEnd("FrontEnd", 1605349615U, 1968623103U, func_FrontEnd);
 
 static refalrts::FnResult func_gen_BackEnd_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -525,7 +526,7 @@ static refalrts::FnResult func_gen_BackEnd_L1(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_L1("BackEnd\\1", 2226918263U, 2546591263U, func_gen_BackEnd_L1);
+static refalrts::NativeReference nat_ref_gen_BackEnd_L1("BackEnd\\1", 1605349615U, 1968623103U, func_gen_BackEnd_L1);
 
 static refalrts::FnResult func_BackEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -627,13 +628,13 @@ static refalrts::FnResult func_BackEnd(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEnd("BackEnd", 2226918263U, 2546591263U, func_BackEnd);
+static refalrts::NativeReference nat_ref_BackEnd("BackEnd", 1605349615U, 1968623103U, func_BackEnd);
 
 static refalrts::FnResult func_gen_BackEnd_RASLModule_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
   // </0 & BackEnd-RASLModule\1/4 (/7 e.OutputName#1/5 )/8 e.ByteStream#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -651,61 +652,88 @@ static refalrts::FnResult func_gen_BackEnd_RASLModule_L1(refalrts::Iter arg_begi
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & SaveFile/4 AsIs: (/7 AsIs: e.OutputName#1/5 AsIs: )/8 } </9 & EnvelopeCLines/10 Tile{ AsIs: e.ByteStream#2/2 } >/11 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[9] ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & SaveFile/4 AsIs: (/7 AsIs: e.OutputName#1/5 HalfReuse: '.'/8 }"cpp"/9 )/11 </12 & EnvelopeCLines/13 e.ByteStream#2/2/14 >/16 >/17 </18 & SaveBytes/19 (/20 e.OutputName#1/5/21".rasl"/23 )/25 Tile{ AsIs: e.ByteStream#2/2 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_chars( context[9], context[10], "cpp", 3 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], ref_EnvelopeCLines.ref.function ) )
+  if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[11] ) )
+  if( ! refalrts::alloc_open_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[13], ref_EnvelopeCLines.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[16] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[17] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[18] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[19], ref_SaveBytes.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[20] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[21], context[22], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[23], context[24], ".rasl", 5 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[25] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_SaveFile.ref.function );
+  refalrts::reinit_char( context[8], '.' );
   refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[18] );
+  refalrts::link_brackets( context[20], context[25] );
+  refalrts::push_stack( context[17] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[9] );
-  refalrts::link_brackets( context[7], context[8] );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[12] );
+  refalrts::link_brackets( context[7], context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[11], context[11] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[9], context[25] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_RASLModule_L1("BackEnd-RASLModule\\1", 2226918263U, 2546591263U, func_gen_BackEnd_RASLModule_L1);
+static refalrts::NativeReference nat_ref_gen_BackEnd_RASLModule_L1("BackEnd-RASLModule\\1", 1605349615U, 1968623103U, func_gen_BackEnd_RASLModule_L1);
 
 static refalrts::FnResult func_BackEnd_RASLModule(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & BackEnd-RASLModule/4 t.RASLModule#1/5 e.OutputName#1/2 >/1
+  // </0 & BackEnd-RASLModule/4 t.RASLModule#1/9 e.OutputName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  context[5] = refalrts::char_right( 'p', context[2], context[3] );
+  if( ! context[5] )
+    return refalrts::cRecognitionImpossible;
+  context[6] = refalrts::char_right( 'p', context[2], context[3] );
   if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = refalrts::char_right( 'c', context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  context[8] = refalrts::char_right( '.', context[2], context[3] );
+  if( ! context[8] )
+    return refalrts::cRecognitionImpossible;
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.OutputName#1 as range 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </7 & GenProgram-RASL/8 Tile{ AsIs: t.RASLModule#1/5 } Tile{ AsIs: >/1 } </9 & @create_closure@/10 & BackEnd-RASLModule\1/11 (/12 Tile{ AsIs: e.OutputName#1/2 } )/13 >/14 >/15 # Success/16 e.OutputName#1/2/17 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[7] ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 & GenProgram-RASL/12 Tile{ AsIs: t.RASLModule#1/9 } Tile{ HalfReuse: >/8 HalfReuse: </7 HalfReuse: & @create_closure@/6 HalfReuse: & BackEnd-RASLModule\1/5 HalfReuse: (/1 } Tile{ AsIs: e.OutputName#1/2 } )/13 >/14 >/15 # Success/16 e.OutputName#1/2/17 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], ref_GenProgram_RASL.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[9] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], refalrts::create_closure ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], ref_gen_BackEnd_RASLModule_L1.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[12] ) )
+  if( ! refalrts::alloc_name( context[12], ref_GenProgram_RASL.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[13] ) )
     return refalrts::cNoMemory;
@@ -718,28 +746,32 @@ static refalrts::FnResult func_BackEnd_RASLModule(refalrts::Iter arg_begin, refa
   if (! refalrts::copy_evar(context[17], context[18], context[2], context[3]))
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::reinit_close_call( context[8] );
+  refalrts::reinit_open_call( context[7] );
+  refalrts::reinit_name( context[6], refalrts::create_closure );
+  refalrts::reinit_name( context[5], ref_gen_BackEnd_RASLModule_L1.ref.function );
+  refalrts::reinit_open_bracket( context[1] );
   refalrts::push_stack( context[15] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[14] );
-  refalrts::push_stack( context[9] );
-  refalrts::link_brackets( context[12], context[13] );
-  refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[1], context[13] );
+  refalrts::push_stack( context[8] );
+  refalrts::push_stack( context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[17], context[18] );
   res = refalrts::splice_evar( res, context[13], context[16] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[12] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
+  res = refalrts::splice_evar( res, context[8], context[1] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEnd_RASLModule("BackEnd-RASLModule", 2226918263U, 2546591263U, func_BackEnd_RASLModule);
+static refalrts::NativeReference nat_ref_BackEnd_RASLModule("BackEnd-RASLModule", 1605349615U, 1968623103U, func_BackEnd_RASLModule);
 
 static refalrts::FnResult func_gen_EnvelopeCLines_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -782,7 +814,7 @@ static refalrts::FnResult func_gen_EnvelopeCLines_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_EnvelopeCLines_L1("EnvelopeCLines\\1", 2226918263U, 2546591263U, func_gen_EnvelopeCLines_L1);
+static refalrts::NativeReference nat_ref_gen_EnvelopeCLines_L1("EnvelopeCLines\\1", 1605349615U, 1968623103U, func_gen_EnvelopeCLines_L1);
 
 static refalrts::FnResult func_EnvelopeCLines(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -880,7 +912,7 @@ static refalrts::FnResult func_EnvelopeCLines(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EnvelopeCLines("EnvelopeCLines", 2226918263U, 2546591263U, func_EnvelopeCLines);
+static refalrts::NativeReference nat_ref_EnvelopeCLines("EnvelopeCLines", 1605349615U, 1968623103U, func_EnvelopeCLines);
 
 static refalrts::FnResult func_BackEnd_NativeModule(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -955,7 +987,7 @@ static refalrts::FnResult func_BackEnd_NativeModule(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEnd_NativeModule("BackEnd-NativeModule", 2226918263U, 2546591263U, func_BackEnd_NativeModule);
+static refalrts::NativeReference nat_ref_BackEnd_NativeModule("BackEnd-NativeModule", 1605349615U, 1968623103U, func_BackEnd_NativeModule);
 
 static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1048,7 +1080,7 @@ static refalrts::FnResult func_SelectOptFlags(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SelectOptFlags("SelectOptFlags", 2226918263U, 2546591263U, func_SelectOptFlags);
+static refalrts::NativeReference nat_ref_SelectOptFlags("SelectOptFlags", 1605349615U, 1968623103U, func_SelectOptFlags);
 
 
 //End of file

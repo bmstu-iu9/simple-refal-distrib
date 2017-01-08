@@ -37,49 +37,51 @@ static refalrts::ExternalReference ref_RenameFile("RenameFile", 0U, 0U);
 static refalrts::ExternalReference ref_FindFiles("FindFiles", 0U, 0U);
 static refalrts::ExternalReference ref_CompileFile("CompileFile", 0U, 0U);
 static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
-static refalrts::ExternalReference ref_Main("Main", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Main_SwValidCommandLine("Main-SwValidCommandLine", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_ReportErrors_S1L1("ReportErrors$1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_ReportErrors_S2L1("ReportErrors$2\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_ReportErrors("ReportErrors", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_CreateErrorFileMark("CreateErrorFileMark", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Main_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Main_SwFoundFiles("Main-SwFoundFiles", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Main_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Main_SwRenamedTargets("Main-SwRenamedTargets", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Main_SwCompiledFiles("Main-SwCompiledFiles", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L1("CalcTargetFileName$2\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L2("CalcTargetFileName$2\\2", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L3("CalcTargetFileName$2\\3", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_CalcTargetFileName("CalcTargetFileName", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_LookupSourceFiles_L1L1("LookupSourceFiles\\1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_LookupSourceFiles("LookupSourceFiles", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_RenameTargets("RenameTargets", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_GetFileName("GetFileName", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_ScanCollisions("ScanCollisions", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_RenameLocations("RenameLocations", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_RenameLocations_Aux_L1("RenameLocations-Aux\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_RenameLocations_Aux("RenameLocations-Aux", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_CompileFiles_L1S3L1("CompileFiles\\1$3\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_CompileFiles_L1("CompileFiles\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_CompileFiles("CompileFiles", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L1S2L1("Link$2\\1$2\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L1("Link$2\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L2("Link$2\\2", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L3S2L1S1L1("Link$2\\3$2\\1$1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L3S2L1("Link$2\\3$2\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L3("Link$2\\3", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_Link_S2L4("Link$2\\4", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Link("Link", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_LinkError("LinkError", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_GetLastPartName("GetLastPartName", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_DoGetFileName("DoGetFileName", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_Lower("Lower", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_LowerChar_L1S1L1("LowerChar\\1$1\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_gen_LowerChar_L1("LowerChar\\1", 3464183397U, 3917537773U);
-static refalrts::ExternalReference ref_LowerChar("LowerChar", 3464183397U, 3917537773U);
+static refalrts::ExternalReference ref_Main("Main", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Main_SwValidCommandLine("Main-SwValidCommandLine", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_ReportErrors_S1L1("ReportErrors$1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_ReportErrors_S2L1("ReportErrors$2\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_ReportErrors("ReportErrors", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_CreateErrorFileMark("CreateErrorFileMark", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_Main_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Main_SwFoundFiles("Main-SwFoundFiles", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_Main_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Main_SwRenamedTargets("Main-SwRenamedTargets", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Main_SwCompiledFiles("Main-SwCompiledFiles", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L1("CalcTargetFileName$2\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L2("CalcTargetFileName$2\\2", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_CalcTargetFileName_S2L3("CalcTargetFileName$2\\3", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_CalcTargetFileName("CalcTargetFileName", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_LookupSourceFiles_L1L1("LookupSourceFiles\\1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_LookupSourceFiles("LookupSourceFiles", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_RenameTargets("RenameTargets", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_GetFileName("GetFileName", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_ScanCollisions("ScanCollisions", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_RenameLocations("RenameLocations", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_RenameLocations_Aux_L1("RenameLocations-Aux\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_RenameLocations_Aux("RenameLocations-Aux", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_CompileFiles_L1S3L1("CompileFiles\\1$3\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_CompileFiles_L1("CompileFiles\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_CompileFiles("CompileFiles", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_Link_S2L1("Link$2\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Link("Link", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PreLinkCleanupTemporary_L1S2L1("PreLinkCleanupTemporary\\1$2\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PreLinkCleanupTemporary_L1("PreLinkCleanupTemporary\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_PreLinkCleanupTemporary("PreLinkCleanupTemporary", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PostLinkRename_L1S2L1S1L1("PostLinkRename\\1$2\\1$1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PostLinkRename_L1S2L1("PostLinkRename\\1$2\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PostLinkRename_L1("PostLinkRename\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_PostLinkRename_L2("PostLinkRename\\2", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_PostLinkRename("PostLinkRename", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_LinkError("LinkError", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_GetLastPartName("GetLastPartName", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_DoGetFileName("DoGetFileName", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_Lower("Lower", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_LowerChar_L1S1L1("LowerChar\\1$1\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_gen_LowerChar_L1("LowerChar\\1", 3079657239U, 1526901386U);
+static refalrts::ExternalReference ref_LowerChar("LowerChar", 3079657239U, 1526901386U);
 
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -224,7 +226,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main("Main", 3464183397U, 3917537773U, func_Main);
+static refalrts::NativeReference nat_ref_Main("Main", 3079657239U, 1526901386U, func_Main);
 
 static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -404,7 +406,7 @@ static refalrts::FnResult func_Main_SwValidCommandLine(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main_SwValidCommandLine("Main-SwValidCommandLine", 3464183397U, 3917537773U, func_Main_SwValidCommandLine);
+static refalrts::NativeReference nat_ref_Main_SwValidCommandLine("Main-SwValidCommandLine", 3079657239U, 1526901386U, func_Main_SwValidCommandLine);
 
 static refalrts::FnResult func_gen_ReportErrors_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -464,7 +466,7 @@ static refalrts::FnResult func_gen_ReportErrors_S1L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReportErrors_S1L1("ReportErrors$1\\1", 3464183397U, 3917537773U, func_gen_ReportErrors_S1L1);
+static refalrts::NativeReference nat_ref_gen_ReportErrors_S1L1("ReportErrors$1\\1", 3079657239U, 1526901386U, func_gen_ReportErrors_S1L1);
 
 static refalrts::FnResult func_gen_ReportErrors_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -526,7 +528,7 @@ static refalrts::FnResult func_gen_ReportErrors_S2L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReportErrors_S2L1("ReportErrors$2\\1", 3464183397U, 3917537773U, func_gen_ReportErrors_S2L1);
+static refalrts::NativeReference nat_ref_gen_ReportErrors_S2L1("ReportErrors$2\\1", 3079657239U, 1526901386U, func_gen_ReportErrors_S2L1);
 
 static refalrts::FnResult func_ReportErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -651,7 +653,7 @@ static refalrts::FnResult func_ReportErrors(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReportErrors("ReportErrors", 3464183397U, 3917537773U, func_ReportErrors);
+static refalrts::NativeReference nat_ref_ReportErrors("ReportErrors", 3079657239U, 1526901386U, func_ReportErrors);
 
 static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -715,7 +717,7 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateErrorFileMark("CreateErrorFileMark", 3464183397U, 3917537773U, func_CreateErrorFileMark);
+static refalrts::NativeReference nat_ref_CreateErrorFileMark("CreateErrorFileMark", 3079657239U, 1526901386U, func_CreateErrorFileMark);
 
 static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -822,7 +824,7 @@ static refalrts::FnResult func_gen_Main_SwFoundFiles_S1L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Main_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 3464183397U, 3917537773U, func_gen_Main_SwFoundFiles_S1L1);
+static refalrts::NativeReference nat_ref_gen_Main_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 3079657239U, 1526901386U, func_gen_Main_SwFoundFiles_S1L1);
 
 static refalrts::FnResult func_Main_SwFoundFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -948,7 +950,7 @@ static refalrts::FnResult func_Main_SwFoundFiles(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main_SwFoundFiles("Main-SwFoundFiles", 3464183397U, 3917537773U, func_Main_SwFoundFiles);
+static refalrts::NativeReference nat_ref_Main_SwFoundFiles("Main-SwFoundFiles", 3079657239U, 1526901386U, func_Main_SwFoundFiles);
 
 static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1069,7 +1071,7 @@ static refalrts::FnResult func_gen_Main_SwRenamedTargets_S1L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Main_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 3464183397U, 3917537773U, func_gen_Main_SwRenamedTargets_S1L1);
+static refalrts::NativeReference nat_ref_gen_Main_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 3079657239U, 1526901386U, func_gen_Main_SwRenamedTargets_S1L1);
 
 static refalrts::FnResult func_Main_SwRenamedTargets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1198,7 +1200,7 @@ static refalrts::FnResult func_Main_SwRenamedTargets(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main_SwRenamedTargets("Main-SwRenamedTargets", 3464183397U, 3917537773U, func_Main_SwRenamedTargets);
+static refalrts::NativeReference nat_ref_Main_SwRenamedTargets("Main-SwRenamedTargets", 3079657239U, 1526901386U, func_Main_SwRenamedTargets);
 
 static refalrts::FnResult func_Main_SwCompiledFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1285,7 +1287,7 @@ static refalrts::FnResult func_Main_SwCompiledFiles(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main_SwCompiledFiles("Main-SwCompiledFiles", 3464183397U, 3917537773U, func_Main_SwCompiledFiles);
+static refalrts::NativeReference nat_ref_Main_SwCompiledFiles("Main-SwCompiledFiles", 3079657239U, 1526901386U, func_Main_SwCompiledFiles);
 
 static refalrts::FnResult func_gen_CalcTargetFileName_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1324,7 +1326,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_S2L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L1("CalcTargetFileName$2\\1", 3464183397U, 3917537773U, func_gen_CalcTargetFileName_S2L1);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L1("CalcTargetFileName$2\\1", 3079657239U, 1526901386U, func_gen_CalcTargetFileName_S2L1);
 
 static refalrts::FnResult func_gen_CalcTargetFileName_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1533,7 +1535,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_S2L2(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L2("CalcTargetFileName$2\\2", 3464183397U, 3917537773U, func_gen_CalcTargetFileName_S2L2);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L2("CalcTargetFileName$2\\2", 3079657239U, 1526901386U, func_gen_CalcTargetFileName_S2L2);
 
 static refalrts::FnResult func_gen_CalcTargetFileName_S2L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1570,7 +1572,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_S2L3(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L3("CalcTargetFileName$2\\3", 3464183397U, 3917537773U, func_gen_CalcTargetFileName_S2L3);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_S2L3("CalcTargetFileName$2\\3", 3079657239U, 1526901386U, func_gen_CalcTargetFileName_S2L3);
 
 static refalrts::FnResult func_CalcTargetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1677,7 +1679,7 @@ static refalrts::FnResult func_CalcTargetFileName(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcTargetFileName("CalcTargetFileName", 3464183397U, 3917537773U, func_CalcTargetFileName);
+static refalrts::NativeReference nat_ref_CalcTargetFileName("CalcTargetFileName", 3079657239U, 1526901386U, func_CalcTargetFileName);
 
 static refalrts::FnResult func_gen_LookupSourceFiles_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1718,7 +1720,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1L1("LookupSourceFiles\\1\\1", 3464183397U, 3917537773U, func_gen_LookupSourceFiles_L1L1);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1L1("LookupSourceFiles\\1\\1", 3079657239U, 1526901386U, func_gen_LookupSourceFiles_L1L1);
 
 static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1789,7 +1791,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 3464183397U, 3917537773U, func_gen_LookupSourceFiles_L1);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 3079657239U, 1526901386U, func_gen_LookupSourceFiles_L1);
 
 static refalrts::FnResult func_LookupSourceFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1840,7 +1842,7 @@ static refalrts::FnResult func_LookupSourceFiles(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LookupSourceFiles("LookupSourceFiles", 3464183397U, 3917537773U, func_LookupSourceFiles);
+static refalrts::NativeReference nat_ref_LookupSourceFiles("LookupSourceFiles", 3079657239U, 1526901386U, func_LookupSourceFiles);
 
 static refalrts::FnResult func_RenameTargets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1911,7 +1913,7 @@ static refalrts::FnResult func_RenameTargets(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameTargets("RenameTargets", 3464183397U, 3917537773U, func_RenameTargets);
+static refalrts::NativeReference nat_ref_RenameTargets("RenameTargets", 3079657239U, 1526901386U, func_RenameTargets);
 
 static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2081,7 +2083,7 @@ static refalrts::FnResult func_GetFileName(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetFileName("GetFileName", 3464183397U, 3917537773U, func_GetFileName);
+static refalrts::NativeReference nat_ref_GetFileName("GetFileName", 3079657239U, 1526901386U, func_GetFileName);
 
 static refalrts::FnResult func_ScanCollisions(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2218,7 +2220,7 @@ static refalrts::FnResult func_ScanCollisions(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ScanCollisions("ScanCollisions", 3464183397U, 3917537773U, func_ScanCollisions);
+static refalrts::NativeReference nat_ref_ScanCollisions("ScanCollisions", 3079657239U, 1526901386U, func_ScanCollisions);
 
 static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2374,7 +2376,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameLocations("RenameLocations", 3464183397U, 3917537773U, func_RenameLocations);
+static refalrts::NativeReference nat_ref_RenameLocations("RenameLocations", 3079657239U, 1526901386U, func_RenameLocations);
 
 static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2519,7 +2521,7 @@ static refalrts::FnResult func_gen_RenameLocations_Aux_L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_RenameLocations_Aux_L1("RenameLocations-Aux\\1", 3464183397U, 3917537773U, func_gen_RenameLocations_Aux_L1);
+static refalrts::NativeReference nat_ref_gen_RenameLocations_Aux_L1("RenameLocations-Aux\\1", 3079657239U, 1526901386U, func_gen_RenameLocations_Aux_L1);
 
 static refalrts::FnResult func_RenameLocations_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2563,7 +2565,7 @@ static refalrts::FnResult func_RenameLocations_Aux(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameLocations_Aux("RenameLocations-Aux", 3464183397U, 3917537773U, func_RenameLocations_Aux);
+static refalrts::NativeReference nat_ref_RenameLocations_Aux("RenameLocations-Aux", 3079657239U, 1526901386U, func_RenameLocations_Aux);
 
 static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2671,7 +2673,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1S3L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_L1S3L1("CompileFiles\\1$3\\1", 3464183397U, 3917537773U, func_gen_CompileFiles_L1S3L1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_L1S3L1("CompileFiles\\1$3\\1", 3079657239U, 1526901386U, func_gen_CompileFiles_L1S3L1);
 
 static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2857,7 +2859,7 @@ static refalrts::FnResult func_gen_CompileFiles_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_L1("CompileFiles\\1", 3464183397U, 3917537773U, func_gen_CompileFiles_L1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_L1("CompileFiles\\1", 3079657239U, 1526901386U, func_gen_CompileFiles_L1);
 
 static refalrts::FnResult func_CompileFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2906,198 +2908,14 @@ static refalrts::FnResult func_CompileFiles(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CompileFiles("CompileFiles", 3464183397U, 3917537773U, func_CompileFiles);
-
-static refalrts::FnResult func_gen_Link_S2L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  //FAST GEN: ( e.$ ) t.$ s.$
-  //GLOBAL GEN: ( e.$ ) t.$ s.$
-  // </0 & Link$2\1$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
-  if( ! context[10] )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // ( e.idx ) t.idx # True
-    // </0 & Link$2\1$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
-    if( ! refalrts::ident_term(  ident_True, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.ErrorFile#1/9 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'L'/7 } 'o'/12 Tile{ HalfReuse: 's'/8 }"t temporary file "/13 Tile{ AsIs: e.TargetFileName#1/5 }".partial is remove"/15 Tile{ HalfReuse: 'd'/11 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[12], 'o' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[13], context[14], "t temporary file ", 17 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[15], context[16], ".partial is remove", 18 ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_WriteLine.ref.function );
-    refalrts::reinit_char( context[7], 'L' );
-    refalrts::reinit_char( context[8], 's' );
-    refalrts::reinit_char( context[11], 'd' );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[11];
-    res = refalrts::splice_evar( res, context[15], context[16] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
-    res = refalrts::splice_evar( res, context[8], context[8] );
-    res = refalrts::splice_evar( res, context[12], context[12] );
-    refalrts::splice_to_freelist_open( context[7], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) t.idx # False
-  // </0 & Link$2\1$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
-  if( ! refalrts::ident_term(  ident_False, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 5
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 } Tile{ AsIs: t.ErrorFile#1/9 }"Can\'t remove file"/12 Tile{ HalfReuse: ' '/7 AsIs: e.TargetFileName#1/5 HalfReuse: '.'/8 }"partia"/14 Tile{ HalfReuse: 'l'/11 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_chars( context[12], context[13], "Can\'t remove file", 17 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[14], context[15], "partia", 6 ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_LinkError.ref.function );
-  refalrts::reinit_char( context[7], ' ' );
-  refalrts::reinit_char( context[8], '.' );
-  refalrts::reinit_char( context[11], 'l' );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[11];
-  res = refalrts::splice_evar( res, context[14], context[15] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[12], context[13] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L1S2L1("Link$2\\1$2\\1", 3464183397U, 3917537773U, func_gen_Link_S2L1S2L1);
+static refalrts::NativeReference nat_ref_CompileFiles("CompileFiles", 3079657239U, 1526901386U, func_CompileFiles);
 
 static refalrts::FnResult func_gen_Link_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  //FAST GEN: ( e.$ ) t.$ s.$
-  //GLOBAL GEN: ( e.$ ) t.$ s.$
-  // </0 & Link$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
-  if( ! context[10] )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // ( e.idx ) t.idx # False
-    // </0 & Link$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
-    if( ! refalrts::ident_term(  ident_False, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Link$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ ]] }
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) t.idx # True
-  // </0 & Link$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
-  if( ! refalrts::ident_term(  ident_True, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 5
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </12 & Fetch/13 </14 & RemoveFile/15 e.TargetFileName#1/5/16".partial"/18 >/20 </21 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Link$2\1$2\1/4 AsIs: (/7 AsIs: e.TargetFileName#1/5 AsIs: )/8 AsIs: t.ErrorFile#1/9 HalfReuse: >/11 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], ref_Fetch.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[14] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], ref_RemoveFile.ref.function ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[16], context[17], context[5], context[6]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[18], context[19], ".partial", 8 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[20] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[21] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], refalrts::create_closure );
-  refalrts::update_name( context[4], ref_gen_Link_S2L1S2L1.ref.function );
-  refalrts::reinit_close_call( context[11] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[21] );
-  refalrts::link_brackets( context[7], context[8] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[14] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[0];
-  res = refalrts::splice_evar( res, context[12], context[21] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L1("Link$2\\1", 3464183397U, 3917537773U, func_gen_Link_S2L1);
-
-static refalrts::FnResult func_gen_Link_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Link$2\2/4 (/7 e.FileName#2/5 )/8 >/1
+  // </0 & Link$2\1/4 (/7 e.FileName#2/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3127,374 +2945,13 @@ static refalrts::FnResult func_gen_Link_S2L2(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Link_S2L2("Link$2\\2", 3464183397U, 3917537773U, func_gen_Link_S2L2);
-
-static refalrts::FnResult func_gen_Link_S2L3S2L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
-  //FAST GEN: t.$ ( e.$ ) s.$
-  //GLOBAL GEN: t.$ ( e.$ ) s.$
-  // </0 & Link$2\3$2\1$1\1/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 s.idxVT#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.idxVB#0 as range 7
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // t.idx ( e.idx ) # True
-    // </0 & Link$2\3$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # True/11 >/1
-    if( ! refalrts::ident_term(  ident_True, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 7
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 }"an"/12 Tile{ HalfReuse: '\''/10 HalfReuse: 't'/11 }" remove file "/14 Tile{ AsIs: e.TargetFileName#1/7 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_chars( context[12], context[13], "an", 2 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[14], context[15], " remove file ", 13 ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_LinkError.ref.function );
-    refalrts::reinit_char( context[9], 'C' );
-    refalrts::reinit_char( context[10], '\'' );
-    refalrts::reinit_char( context[11], 't' );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[7], context[8] );
-    res = refalrts::splice_evar( res, context[14], context[15] );
-    res = refalrts::splice_evar( res, context[10], context[11] );
-    res = refalrts::splice_evar( res, context[12], context[13] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // t.idx ( e.idx ) # False
-  // </0 & Link$2\3$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1
-  if( ! refalrts::ident_term(  ident_False, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 7
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & Link$2\3$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L3S2L1S1L1("Link$2\\3$2\\1$1\\1", 3464183397U, 3917537773U, func_gen_Link_S2L3S2L1S1L1);
-
-static refalrts::FnResult func_gen_Link_S2L3S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
-  //FAST GEN: ( e.$ ) t.$ s.$
-  //GLOBAL GEN: ( e.$ ) t.$ s.$
-  // </0 & Link$2\3$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
-  if( ! context[10] )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // ( e.idx ) t.idx # True
-    // </0 & Link$2\3$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
-    if( ! refalrts::ident_term(  ident_True, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 5
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & RemoveFile/12 Tile{ AsIs: e.TargetFileName#1/5 } >/13 </14 & @create_closure@/15 Tile{ HalfReuse: & Link$2\3$2\1$1\1/8 AsIs: t.ErrorFile#1/9 } (/16 e.TargetFileName#1/5/17 )/19 Tile{ HalfReuse: >/11 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[12], ref_RemoveFile.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[13] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[14] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], refalrts::create_closure ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[16] ) )
-      return refalrts::cNoMemory;
-    if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[19] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_Fetch.ref.function );
-    refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_name( context[8], ref_gen_Link_S2L3S2L1S1L1.ref.function );
-    refalrts::reinit_close_call( context[11] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::push_stack( context[11] );
-    refalrts::push_stack( context[14] );
-    refalrts::link_brackets( context[16], context[19] );
-    refalrts::push_stack( context[13] );
-    refalrts::push_stack( context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[11];
-    res = refalrts::splice_evar( res, context[16], context[19] );
-    res = refalrts::splice_evar( res, context[8], context[10] );
-    res = refalrts::splice_evar( res, context[13], context[15] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[12], context[12] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) t.idx # False
-  // </0 & Link$2\3$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
-  if( ! refalrts::ident_term(  ident_False, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 5
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & Link$2\3$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L3S2L1("Link$2\\3$2\\1", 3464183397U, 3917537773U, func_gen_Link_S2L3S2L1);
-
-static refalrts::FnResult func_gen_Link_S2L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
-  //FAST GEN: t.$ ( e.$ ) s.$
-  //GLOBAL GEN: t.$ ( e.$ ) s.$
-  // </0 & Link$2\3/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 s.idxVT#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.idxVB#0 as range 7
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // t.idx ( e.idx ) # False
-    // </0 & Link$2\3/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1
-    if( ! refalrts::ident_term(  ident_False, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 7
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} e.TargetFileName#1/7 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 }"++ compilation is fail"/12 Tile{ HalfReuse: 'e'/10 HalfReuse: 'd'/11 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_chars( context[12], context[13], "++ compilation is fail", 22 ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_LinkError.ref.function );
-    refalrts::reinit_char( context[9], 'C' );
-    refalrts::reinit_char( context[10], 'e' );
-    refalrts::reinit_char( context[11], 'd' );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[10];
-    res = refalrts::splice_evar( res, context[12], context[13] );
-    refalrts::splice_to_freelist_open( context[9], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // t.idx ( e.idx ) # True
-  // </0 & Link$2\3/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # True/11 >/1
-  if( ! refalrts::ident_term(  ident_True, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 7
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </12 & ExistFile/13 e.TargetFileName#1/7/14 >/16 </17 & @create_closure@/18 & Link$2\3$2\1/19 Tile{ AsIs: (/9 AsIs: e.TargetFileName#1/7 AsIs: )/10 } Tile{ AsIs: t.ErrorFile#1/5 } Tile{ HalfReuse: >/11 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], ref_ExistFile.ref.function ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[14], context[15], context[7], context[8]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[16] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[17] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], refalrts::create_closure ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], ref_gen_Link_S2L3S2L1.ref.function ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Fetch.ref.function );
-  refalrts::reinit_close_call( context[11] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[17] );
-  refalrts::link_brackets( context[9], context[10] );
-  refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[12] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[11];
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[12], context[19] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L3("Link$2\\3", 3464183397U, 3917537773U, func_gen_Link_S2L3);
-
-static refalrts::FnResult func_gen_Link_S2L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
-  //FAST GEN: t.$ ( e.$ ) s.$
-  //GLOBAL GEN: t.$ ( e.$ ) s.$
-  // </0 & Link$2\4/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 s.idxVT#0/11 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.idxVB#0 as range 7
-  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // t.idx ( e.idx ) # True
-    // </0 & Link$2\4/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # True/11 >/1
-    if( ! refalrts::ident_term(  ident_True, context[11] ) )
-      continue;
-    // closed e.TargetFileName#1 as range 7
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} t.ErrorFile#1/5 {REMOVED TILE} e.TargetFileName#1/7 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ HalfReuse: '*'/9 }"* Compilation successed "/12 Tile{ HalfReuse: '*'/10 HalfReuse: '*'/11 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_chars( context[12], context[13], "* Compilation successed ", 24 ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_WriteLine.ref.function );
-    refalrts::reinit_char( context[9], '*' );
-    refalrts::reinit_char( context[10], '*' );
-    refalrts::reinit_char( context[11], '*' );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[10];
-    res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
-    refalrts::splice_to_freelist_open( context[4], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // t.idx ( e.idx ) # False
-  // </0 & Link$2\4/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1
-  if( ! refalrts::ident_term(  ident_False, context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.TargetFileName#1 as range 7
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 }"an"/12 Tile{ HalfReuse: '\''/10 HalfReuse: 't'/11 }" rename from "/14 Tile{ AsIs: e.TargetFileName#1/7 }".partial to "/16 e.TargetFileName#1/7/18 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_chars( context[12], context[13], "an", 2 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[14], context[15], " rename from ", 13 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[16], context[17], ".partial to ", 12 ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[18], context[19], context[7], context[8]))
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_LinkError.ref.function );
-  refalrts::reinit_char( context[9], 'C' );
-  refalrts::reinit_char( context[10], '\'' );
-  refalrts::reinit_char( context[11], 't' );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[18], context[19] );
-  res = refalrts::splice_evar( res, context[16], context[17] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[14], context[15] );
-  res = refalrts::splice_evar( res, context[10], context[11] );
-  res = refalrts::splice_evar( res, context[12], context[13] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_Link_S2L4("Link$2\\4", 3464183397U, 3917537773U, func_gen_Link_S2L4);
+static refalrts::NativeReference nat_ref_gen_Link_S2L1("Link$2\\1", 3079657239U, 1526901386U, func_gen_Link_S2L1);
 
 static refalrts::FnResult func_Link(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 85 elems
-  refalrts::Iter context[85];
-  refalrts::zeros( context, 85 );
+  // issue here memory for vars with 48 elems
+  refalrts::Iter context[48];
+  refalrts::zeros( context, 48 );
   //FAST GEN: t.$ t.$ ( e.$ ) e.$
   //GLOBAL GEN: t.$ t.$ ( e.$ ) e.$
   // </0 & Link/4 t.idx#0/5 t.idxV#0/7 (/11 e.idxVVB#0/9 )/12 e.idxVVT#0/2 >/1
@@ -3562,160 +3019,818 @@ static refalrts::FnResult func_Link(refalrts::Iter arg_begin, refalrts::Iter arg
   // closed e.Files#1 as range 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & ExistFile/17 } e.TargetFileName#1/9/23".partial"/25 >/27 </28 & @create_closure@/29 & Link$2\1/30 (/31 e.TargetFileName#1/9/32 )/34 t.ErrorFile#1/7/35 >/37 >/38 </39 & System/40 Tile{ AsIs: e.CommandLine#1/15 } e.TargetFileName#1/9/41".partial"/43 Tile{ AsIs: e.Flags#1/19 } </45 & Map/46 & Link$2\2/47 Tile{ AsIs: e.Files#1/2 } >/48 >/49 </50 & Fetch/51 </52 & ExistFile/53 e.TargetFileName#1/9/54".partial"/56 >/58 </59 Tile{ HalfReuse: & @create_closure@/22 HalfReuse: & Link$2\3/6 AsIs: t.ErrorFile#1/7 AsIs: (/11 AsIs: e.TargetFileName#1/9 AsIs: )/12 } >/60 >/61 </62 & Fetch/63 </64 & RenameFile/65 (/66 e.TargetFileName#1/9/67".partial"/69 Tile{ AsIs: )/18 AsIs: (/21 } e.TargetFileName#1/9/71 )/73 >/74 </75 & @create_closure@/76 & Link$2\4/77 t.ErrorFile#1/7/78 (/80 e.TargetFileName#1/9/81 )/83 >/84 Tile{ AsIs: >/1 ]] }
-  if (! refalrts::copy_evar(context[23], context[24], context[9], context[10]))
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PreLinkCleanupTemporary/4 } t.ErrorFile#1/7/23 e.TargetFileName#1/9/25".par"/27 Tile{ HalfReuse: 't'/5 HalfReuse: 'i'/17 }"al"/29 >/31 </32 & System/33 Tile{ AsIs: e.CommandLine#1/15 } e.TargetFileName#1/9/34".partial"/36 Tile{ AsIs: e.Flags#1/19 } </38 & Map/39 & Link$2\1/40 Tile{ AsIs: e.Files#1/2 } >/41 >/42 Tile{ HalfReuse: </22 HalfReuse: & PostLinkRename/6 AsIs: t.ErrorFile#1/7 AsIs: (/11 AsIs: e.TargetFileName#1/9 HalfReuse: '.'/12 }"partial"/43 Tile{ AsIs: )/18 AsIs: (/21 } e.TargetFileName#1/9/45 )/47 Tile{ AsIs: >/1 ]] }
+  if (! refalrts::copy_evar(context[23], context[24], context[7], context[8]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[25], context[26], ".partial", 8 ) )
+  if (! refalrts::copy_evar(context[25], context[26], context[9], context[10]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[27] ) )
+  if( ! refalrts::alloc_chars( context[27], context[28], ".par", 4 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[28] ) )
+  if( ! refalrts::alloc_chars( context[29], context[30], "al", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[29], refalrts::create_closure ) )
+  if( ! refalrts::alloc_close_call( context[31] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[30], ref_gen_Link_S2L1.ref.function ) )
+  if( ! refalrts::alloc_open_call( context[32] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[31] ) )
+  if( ! refalrts::alloc_name( context[33], ref_System.ref.function ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[32], context[33], context[9], context[10]))
+  if (! refalrts::copy_evar(context[34], context[35], context[9], context[10]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[34] ) )
+  if( ! refalrts::alloc_chars( context[36], context[37], ".partial", 8 ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[35], context[36], context[7], context[8]))
+  if( ! refalrts::alloc_open_call( context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[37] ) )
+  if( ! refalrts::alloc_name( context[39], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[38] ) )
+  if( ! refalrts::alloc_name( context[40], ref_gen_Link_S2L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[39] ) )
+  if( ! refalrts::alloc_close_call( context[41] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[40], ref_System.ref.function ) )
+  if( ! refalrts::alloc_close_call( context[42] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[41], context[42], context[9], context[10]))
+  if( ! refalrts::alloc_chars( context[43], context[44], "partial", 7 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[43], context[44], ".partial", 8 ) )
+  if (! refalrts::copy_evar(context[45], context[46], context[9], context[10]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[45] ) )
+  if( ! refalrts::alloc_close_bracket( context[47] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[46], ref_Map.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[47], ref_gen_Link_S2L2.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[48] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[49] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[50] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[51], ref_Fetch.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[52] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[53], ref_ExistFile.ref.function ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[54], context[55], context[9], context[10]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[56], context[57], ".partial", 8 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[58] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[59] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[60] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[61] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[62] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[63], ref_Fetch.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[64] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[65], ref_RenameFile.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[66] ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[67], context[68], context[9], context[10]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[69], context[70], ".partial", 8 ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[71], context[72], context[9], context[10]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[73] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[74] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[75] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[76], refalrts::create_closure ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[77], ref_gen_Link_S2L4.ref.function ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[78], context[79], context[7], context[8]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[80] ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[81], context[82], context[9], context[10]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[83] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[84] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Fetch.ref.function );
-  refalrts::reinit_open_call( context[5] );
-  refalrts::reinit_name( context[17], ref_ExistFile.ref.function );
-  refalrts::reinit_name( context[22], refalrts::create_closure );
-  refalrts::reinit_name( context[6], ref_gen_Link_S2L3.ref.function );
+  refalrts::update_name( context[4], ref_PreLinkCleanupTemporary.ref.function );
+  refalrts::reinit_char( context[5], 't' );
+  refalrts::reinit_char( context[17], 'i' );
+  refalrts::reinit_open_call( context[22] );
+  refalrts::reinit_name( context[6], ref_PostLinkRename.ref.function );
+  refalrts::reinit_char( context[12], '.' );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[62] );
-  refalrts::push_stack( context[84] );
-  refalrts::push_stack( context[75] );
-  refalrts::link_brackets( context[80], context[83] );
-  refalrts::push_stack( context[74] );
-  refalrts::push_stack( context[64] );
-  refalrts::link_brackets( context[21], context[73] );
-  refalrts::link_brackets( context[66], context[18] );
-  refalrts::push_stack( context[61] );
-  refalrts::push_stack( context[50] );
-  refalrts::push_stack( context[60] );
-  refalrts::push_stack( context[59] );
-  refalrts::link_brackets( context[11], context[12] );
-  refalrts::push_stack( context[58] );
-  refalrts::push_stack( context[52] );
-  refalrts::push_stack( context[49] );
-  refalrts::push_stack( context[39] );
-  refalrts::push_stack( context[48] );
-  refalrts::push_stack( context[45] );
+  refalrts::push_stack( context[22] );
+  refalrts::link_brackets( context[21], context[47] );
+  refalrts::link_brackets( context[11], context[18] );
+  refalrts::push_stack( context[42] );
+  refalrts::push_stack( context[32] );
+  refalrts::push_stack( context[41] );
   refalrts::push_stack( context[38] );
+  refalrts::push_stack( context[31] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[37] );
-  refalrts::push_stack( context[28] );
-  refalrts::link_brackets( context[31], context[34] );
-  refalrts::push_stack( context[27] );
-  refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[73], context[84] );
-  res = refalrts::splice_evar( res, context[71], context[72] );
+  res = refalrts::splice_evar( res, context[47], context[47] );
+  res = refalrts::splice_evar( res, context[45], context[46] );
   res = refalrts::splice_evar( res, context[18], context[21] );
-  res = refalrts::splice_evar( res, context[60], context[70] );
-  res = refalrts::splice_evar( res, context[22], context[12] );
-  res = refalrts::splice_evar( res, context[48], context[59] );
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[45], context[47] );
-  res = refalrts::splice_evar( res, context[19], context[20] );
   res = refalrts::splice_evar( res, context[43], context[44] );
+  res = refalrts::splice_evar( res, context[22], context[12] );
   res = refalrts::splice_evar( res, context[41], context[42] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[38], context[40] );
+  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[36], context[37] );
+  res = refalrts::splice_evar( res, context[34], context[35] );
   res = refalrts::splice_evar( res, context[15], context[16] );
-  res = refalrts::splice_evar( res, context[25], context[40] );
-  res = refalrts::splice_evar( res, context[23], context[24] );
+  res = refalrts::splice_evar( res, context[29], context[33] );
+  res = refalrts::splice_evar( res, context[5], context[17] );
+  res = refalrts::splice_evar( res, context[23], context[28] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Link("Link", 3464183397U, 3917537773U, func_Link);
+static refalrts::NativeReference nat_ref_Link("Link", 3079657239U, 1526901386U, func_Link);
+
+static refalrts::FnResult func_gen_PreLinkCleanupTemporary_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  //FAST GEN: ( e.$ ) t.$ s.$
+  //GLOBAL GEN: ( e.$ ) t.$ s.$
+  // </0 & PreLinkCleanupTemporary\1$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.idxB#0 as range 5
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // ( e.idx ) t.idx # True
+    // </0 & PreLinkCleanupTemporary\1$2\1/4 (/7 e.Temporary#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
+    if( ! refalrts::ident_term(  ident_True, context[11] ) )
+      continue;
+    // closed e.Temporary#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.ErrorFile#1/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'L'/7 } 'o'/12 Tile{ HalfReuse: 's'/8 }"t temporary file "/13 Tile{ AsIs: e.Temporary#1/5 }" is remove"/15 Tile{ HalfReuse: 'd'/11 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[12], 'o' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[13], context[14], "t temporary file ", 17 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[15], context[16], " is remove", 10 ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_WriteLine.ref.function );
+    refalrts::reinit_char( context[7], 'L' );
+    refalrts::reinit_char( context[8], 's' );
+    refalrts::reinit_char( context[11], 'd' );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[11];
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[8], context[8] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
+    refalrts::splice_to_freelist_open( context[7], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) t.idx # False
+  // </0 & PreLinkCleanupTemporary\1$2\1/4 (/7 e.Temporary#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
+  if( ! refalrts::ident_term(  ident_False, context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Temporary#1 as range 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 } Tile{ AsIs: t.ErrorFile#1/9 HalfReuse: 'C'/11 } Tile{ HalfReuse: 'a'/7 } Tile{ HalfReuse: 'n'/8 }"\'t remove file "/12 Tile{ AsIs: e.Temporary#1/5 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_chars( context[12], context[13], "\'t remove file ", 15 ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_LinkError.ref.function );
+  refalrts::reinit_char( context[11], 'C' );
+  refalrts::reinit_char( context[7], 'a' );
+  refalrts::reinit_char( context[8], 'n' );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[9], context[11] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_L1S2L1("PreLinkCleanupTemporary\\1$2\\1", 3079657239U, 1526901386U, func_gen_PreLinkCleanupTemporary_L1S2L1);
+
+static refalrts::FnResult func_gen_PreLinkCleanupTemporary_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
+  //FAST GEN: ( e.$ ) t.$ s.$
+  //GLOBAL GEN: ( e.$ ) t.$ s.$
+  // </0 & PreLinkCleanupTemporary\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.idxB#0 as range 5
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // ( e.idx ) t.idx # False
+    // </0 & PreLinkCleanupTemporary\1/4 (/7 e.Temporary#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
+    if( ! refalrts::ident_term(  ident_False, context[11] ) )
+      continue;
+    // closed e.Temporary#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & PreLinkCleanupTemporary\1/4 (/7 e.Temporary#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) t.idx # True
+  // </0 & PreLinkCleanupTemporary\1/4 (/7 e.Temporary#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
+  if( ! refalrts::ident_term(  ident_True, context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Temporary#1 as range 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </12 & Fetch/13 </14 & RemoveFile/15 e.Temporary#1/5/16 >/18 </19 Tile{ HalfReuse: & @create_closure@/0 Reuse: & PreLinkCleanupTemporary\1$2\1/4 AsIs: (/7 AsIs: e.Temporary#1/5 AsIs: )/8 AsIs: t.ErrorFile#1/9 HalfReuse: >/11 AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[13], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[14] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[15], ref_RemoveFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[16], context[17], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[18] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[19] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[0], refalrts::create_closure );
+  refalrts::update_name( context[4], ref_gen_PreLinkCleanupTemporary_L1S2L1.ref.function );
+  refalrts::reinit_close_call( context[11] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[19] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[14] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[12], context[19] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_L1("PreLinkCleanupTemporary\\1", 3079657239U, 1526901386U, func_gen_PreLinkCleanupTemporary_L1);
+
+static refalrts::FnResult func_PreLinkCleanupTemporary(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
+  // </0 & PreLinkCleanupTemporary/4 t.ErrorFile#1/5 e.Temporary#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Temporary#1 as range 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </7 & ExistFile/8 e.Temporary#1/2/9 >/11 </12 & @create_closure@/13 & PreLinkCleanupTemporary\1/14 (/15 Tile{ AsIs: e.Temporary#1/2 } )/16 Tile{ AsIs: t.ErrorFile#1/5 } >/17 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_ExistFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[9], context[10], context[2], context[3]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[11] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[13], refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[14], ref_gen_PreLinkCleanupTemporary_L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[15] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[16] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[17] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[12] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[7] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[17], context[17] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[7], context[15] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_PreLinkCleanupTemporary("PreLinkCleanupTemporary", 3079657239U, 1526901386U, func_PreLinkCleanupTemporary);
+
+static refalrts::FnResult func_gen_PostLinkRename_L1S2L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 16 elems
+  refalrts::Iter context[16];
+  refalrts::zeros( context, 16 );
+  //FAST GEN: t.$ ( e.$ ) s.$
+  //GLOBAL GEN: t.$ ( e.$ ) s.$
+  // </0 & PostLinkRename\1$2\1$1\1/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 s.idxVT#0/11 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = 0;
+  context[8] = 0;
+  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
+  if( ! context[9] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[9], context[10]);
+  // closed e.idxVB#0 as range 7
+  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // t.idx ( e.idx ) # True
+    // </0 & PostLinkRename\1$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # True/11 >/1
+    if( ! refalrts::ident_term(  ident_True, context[11] ) )
+      continue;
+    // closed e.TargetFileName#1 as range 7
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 }"an"/12 Tile{ HalfReuse: '\''/10 HalfReuse: 't'/11 }" remove file "/14 Tile{ AsIs: e.TargetFileName#1/7 } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_chars( context[12], context[13], "an", 2 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[14], context[15], " remove file ", 13 ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_LinkError.ref.function );
+    refalrts::reinit_char( context[9], 'C' );
+    refalrts::reinit_char( context[10], '\'' );
+    refalrts::reinit_char( context[11], 't' );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // t.idx ( e.idx ) # False
+  // </0 & PostLinkRename\1$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1
+  if( ! refalrts::ident_term(  ident_False, context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.TargetFileName#1 as range 7
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & PostLinkRename\1$2\1$1\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ ]] }
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_L1S2L1S1L1("PostLinkRename\\1$2\\1$1\\1", 3079657239U, 1526901386U, func_gen_PostLinkRename_L1S2L1S1L1);
+
+static refalrts::FnResult func_gen_PostLinkRename_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
+  //FAST GEN: ( e.$ ) t.$ s.$
+  //GLOBAL GEN: ( e.$ ) t.$ s.$
+  // </0 & PostLinkRename\1$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 s.idxTV#0/11 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.idxB#0 as range 5
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // ( e.idx ) t.idx # True
+    // </0 & PostLinkRename\1$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # True/11 >/1
+    if( ! refalrts::ident_term(  ident_True, context[11] ) )
+      continue;
+    // closed e.TargetFileName#1 as range 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & RemoveFile/12 Tile{ AsIs: e.TargetFileName#1/5 } >/13 </14 & @create_closure@/15 Tile{ HalfReuse: & PostLinkRename\1$2\1$1\1/8 AsIs: t.ErrorFile#1/9 } (/16 e.TargetFileName#1/5/17 )/19 Tile{ HalfReuse: >/11 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_name( context[12], ref_RemoveFile.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[13] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[15], refalrts::create_closure ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[19] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_Fetch.ref.function );
+    refalrts::reinit_open_call( context[7] );
+    refalrts::reinit_name( context[8], ref_gen_PostLinkRename_L1S2L1S1L1.ref.function );
+    refalrts::reinit_close_call( context[11] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::push_stack( context[11] );
+    refalrts::push_stack( context[14] );
+    refalrts::link_brackets( context[16], context[19] );
+    refalrts::push_stack( context[13] );
+    refalrts::push_stack( context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[11];
+    res = refalrts::splice_evar( res, context[16], context[19] );
+    res = refalrts::splice_evar( res, context[8], context[10] );
+    res = refalrts::splice_evar( res, context[13], context[15] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) t.idx # False
+  // </0 & PostLinkRename\1$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1
+  if( ! refalrts::ident_term(  ident_False, context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.TargetFileName#1 as range 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & PostLinkRename\1$2\1/4 (/7 e.TargetFileName#1/5 )/8 t.ErrorFile#1/9 # False/11 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ ]] }
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_L1S2L1("PostLinkRename\\1$2\\1", 3079657239U, 1526901386U, func_gen_PostLinkRename_L1S2L1);
+
+static refalrts::FnResult func_gen_PostLinkRename_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
+  //FAST GEN: t.$ ( e.$ ) s.$
+  //GLOBAL GEN: t.$ ( e.$ ) s.$
+  // </0 & PostLinkRename\1/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 s.idxVT#0/11 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = 0;
+  context[8] = 0;
+  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
+  if( ! context[9] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[9], context[10]);
+  // closed e.idxVB#0 as range 7
+  if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // t.idx ( e.idx ) # False
+    // </0 & PostLinkRename\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # False/11 >/1
+    if( ! refalrts::ident_term(  ident_False, context[11] ) )
+      continue;
+    // closed e.TargetFileName#1 as range 7
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} e.TargetFileName#1/7 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 }"++ compilation is fail"/12 Tile{ HalfReuse: 'e'/10 HalfReuse: 'd'/11 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_chars( context[12], context[13], "++ compilation is fail", 22 ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_LinkError.ref.function );
+    refalrts::reinit_char( context[9], 'C' );
+    refalrts::reinit_char( context[10], 'e' );
+    refalrts::reinit_char( context[11], 'd' );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[10];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::splice_to_freelist_open( context[9], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // t.idx ( e.idx ) # True
+  // </0 & PostLinkRename\1/4 t.ErrorFile#1/5 (/9 e.TargetFileName#1/7 )/10 # True/11 >/1
+  if( ! refalrts::ident_term(  ident_True, context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.TargetFileName#1 as range 7
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </12 & ExistFile/13 e.TargetFileName#1/7/14 >/16 </17 & @create_closure@/18 & PostLinkRename\1$2\1/19 Tile{ AsIs: (/9 AsIs: e.TargetFileName#1/7 AsIs: )/10 } Tile{ AsIs: t.ErrorFile#1/5 } Tile{ HalfReuse: >/11 AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[13], ref_ExistFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[14], context[15], context[7], context[8]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[16] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[17] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[18], refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[19], ref_gen_PostLinkRename_L1S2L1.ref.function ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::reinit_close_call( context[11] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[17] );
+  refalrts::link_brackets( context[9], context[10] );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[11];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[12], context[19] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_L1("PostLinkRename\\1", 3079657239U, 1526901386U, func_gen_PostLinkRename_L1);
+
+static refalrts::FnResult func_gen_PostLinkRename_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  //FAST GEN: t.$ ( e.$ ) ( e.$ ) s.$
+  //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) s.$
+  // </0 & PostLinkRename\2/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 s.idxVTT#0/15 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = 0;
+  context[8] = 0;
+  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
+  if( ! context[9] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[9], context[10]);
+  context[11] = 0;
+  context[12] = 0;
+  context[13] = refalrts::brackets_left( context[11], context[12], context[2], context[3] );
+  if( ! context[13] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[13], context[14]);
+  // closed e.idxVB#0 as range 7
+  // closed e.idxVTB#0 as range 11
+  if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // t.idx ( e.idx ) ( e.idx ) # True
+    // </0 & PostLinkRename\2/4 t.ErrorFile#1/5 (/9 e.TemporaryName#1/7 )/10 (/13 e.TargetFileName#1/11 )/14 # True/15 >/1
+    if( ! refalrts::ident_term(  ident_True, context[15] ) )
+      continue;
+    // closed e.TemporaryName#1 as range 7
+    // closed e.TargetFileName#1 as range 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} t.ErrorFile#1/5 {REMOVED TILE} e.TemporaryName#1/7 {REMOVED TILE} e.TargetFileName#1/11 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ HalfReuse: '*'/10 HalfReuse: '*'/13 } Tile{ HalfReuse: ' '/9 }"Compilation successed "/16 Tile{ HalfReuse: '*'/14 HalfReuse: '*'/15 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_chars( context[16], context[17], "Compilation successed ", 22 ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_WriteLine.ref.function );
+    refalrts::reinit_char( context[10], '*' );
+    refalrts::reinit_char( context[13], '*' );
+    refalrts::reinit_char( context[9], ' ' );
+    refalrts::reinit_char( context[14], '*' );
+    refalrts::reinit_char( context[15], '*' );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[14];
+    res = refalrts::splice_evar( res, context[16], context[17] );
+    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_evar( res, context[10], context[13] );
+    refalrts::splice_to_freelist_open( context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // t.idx ( e.idx ) ( e.idx ) # False
+  // </0 & PostLinkRename\2/4 t.ErrorFile#1/5 (/9 e.TemporaryName#1/7 )/10 (/13 e.TargetFileName#1/11 )/14 # False/15 >/1
+  if( ! refalrts::ident_term(  ident_False, context[15] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.TemporaryName#1 as range 7
+  // closed e.TargetFileName#1 as range 11
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LinkError/4 AsIs: t.ErrorFile#1/5 HalfReuse: 'C'/9 } Tile{ HalfReuse: 'a'/10 HalfReuse: 'n'/13 } '\''/16 Tile{ HalfReuse: 't'/14 HalfReuse: ' '/15 }"rename from "/17 Tile{ AsIs: e.TemporaryName#1/7 }" to "/19 Tile{ AsIs: e.TargetFileName#1/11 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_char( context[16], '\'' ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[17], context[18], "rename from ", 12 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[19], context[20], " to ", 4 ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_LinkError.ref.function );
+  refalrts::reinit_char( context[9], 'C' );
+  refalrts::reinit_char( context[10], 'a' );
+  refalrts::reinit_char( context[13], 'n' );
+  refalrts::reinit_char( context[14], 't' );
+  refalrts::reinit_char( context[15], ' ' );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[14], context[15] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  res = refalrts::splice_evar( res, context[10], context[13] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_L2("PostLinkRename\\2", 3079657239U, 1526901386U, func_gen_PostLinkRename_L2);
+
+static refalrts::FnResult func_PostLinkRename(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 48 elems
+  refalrts::Iter context[48];
+  refalrts::zeros( context, 48 );
+  // </0 & PostLinkRename/4 t.ErrorFile#1/13 (/11 e.TemporaryName#1/9 )/12 (/7 e.TargetFileName#1/5 )/8 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_right( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.TemporaryName#1 as range 9
+  // closed e.TargetFileName#1 as range 5
+  context[14] = refalrts::tvar_left( context[13], context[2], context[3] );
+  if( ! context[14] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </15 & Fetch/16 </17 & ExistFile/18 e.TemporaryName#1/9/19 >/21 </22 & @create_closure@/23 & PostLinkRename\1/24 t.ErrorFile#1/13/25 (/27 e.TargetFileName#1/5/28 )/30 >/31 >/32 </33 & Fetch/34 </35 & RenameFile/36 (/37 e.TemporaryName#1/9/38 )/40 (/41 e.TargetFileName#1/5/42 )/44 >/45 </46 Tile{ HalfReuse: & @create_closure@/0 Reuse: & PostLinkRename\2/4 AsIs: t.ErrorFile#1/13 AsIs: (/11 AsIs: e.TemporaryName#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.TargetFileName#1/5 AsIs: )/8 AsIs: >/1 } >/47 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[15] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[16], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[17] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[18], ref_ExistFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[19], context[20], context[9], context[10]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[21] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[22] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[23], refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[24], ref_gen_PostLinkRename_L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[25], context[26], context[13], context[14]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[27] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[28], context[29], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[30] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[31] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[32] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[33] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[34], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[35] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[36], ref_RenameFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[37] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[38], context[39], context[9], context[10]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[40] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[41] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[42], context[43], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[44] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[45] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[46] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[47] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[0], refalrts::create_closure );
+  refalrts::update_name( context[4], ref_gen_PostLinkRename_L2.ref.function );
+  refalrts::push_stack( context[47] );
+  refalrts::push_stack( context[33] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[46] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::push_stack( context[45] );
+  refalrts::push_stack( context[35] );
+  refalrts::link_brackets( context[41], context[44] );
+  refalrts::link_brackets( context[37], context[40] );
+  refalrts::push_stack( context[32] );
+  refalrts::push_stack( context[15] );
+  refalrts::push_stack( context[31] );
+  refalrts::push_stack( context[22] );
+  refalrts::link_brackets( context[27], context[30] );
+  refalrts::push_stack( context[21] );
+  refalrts::push_stack( context[17] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[47], context[47] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[15], context[46] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_PostLinkRename("PostLinkRename", 3079657239U, 1526901386U, func_PostLinkRename);
 
 static refalrts::FnResult func_LinkError(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3771,7 +3886,7 @@ static refalrts::FnResult func_LinkError(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LinkError("LinkError", 3464183397U, 3917537773U, func_LinkError);
+static refalrts::NativeReference nat_ref_LinkError("LinkError", 3079657239U, 1526901386U, func_LinkError);
 
 static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3819,7 +3934,7 @@ static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 3464183397U, 3917537773U, func_GetBaseNameLowerCase);
+static refalrts::NativeReference nat_ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 3079657239U, 1526901386U, func_GetBaseNameLowerCase);
 
 static refalrts::FnResult func_GetLastPartName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3843,7 +3958,7 @@ static refalrts::FnResult func_GetLastPartName(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetLastPartName("GetLastPartName", 3464183397U, 3917537773U, func_GetLastPartName);
+static refalrts::NativeReference nat_ref_GetLastPartName("GetLastPartName", 3079657239U, 1526901386U, func_GetLastPartName);
 
 static refalrts::FnResult func_DoGetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3943,7 +4058,7 @@ static refalrts::FnResult func_DoGetFileName(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoGetFileName("DoGetFileName", 3464183397U, 3917537773U, func_DoGetFileName);
+static refalrts::NativeReference nat_ref_DoGetFileName("DoGetFileName", 3079657239U, 1526901386U, func_DoGetFileName);
 
 static refalrts::FnResult func_Lower(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3975,7 +4090,7 @@ static refalrts::FnResult func_Lower(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lower("Lower", 3464183397U, 3917537773U, func_Lower);
+static refalrts::NativeReference nat_ref_Lower("Lower", 3079657239U, 1526901386U, func_Lower);
 
 static refalrts::FnResult func_gen_LowerChar_L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4015,7 +4130,7 @@ static refalrts::FnResult func_gen_LowerChar_L1S1L1(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowerChar_L1S1L1("LowerChar\\1$1\\1", 3464183397U, 3917537773U, func_gen_LowerChar_L1S1L1);
+static refalrts::NativeReference nat_ref_gen_LowerChar_L1S1L1("LowerChar\\1$1\\1", 3079657239U, 1526901386U, func_gen_LowerChar_L1S1L1);
 
 static refalrts::FnResult func_gen_LowerChar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4093,7 +4208,7 @@ static refalrts::FnResult func_gen_LowerChar_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowerChar_L1("LowerChar\\1", 3464183397U, 3917537773U, func_gen_LowerChar_L1);
+static refalrts::NativeReference nat_ref_gen_LowerChar_L1("LowerChar\\1", 3079657239U, 1526901386U, func_gen_LowerChar_L1);
 
 static refalrts::FnResult func_LowerChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4140,7 +4255,7 @@ static refalrts::FnResult func_LowerChar(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LowerChar("LowerChar", 3464183397U, 3917537773U, func_LowerChar);
+static refalrts::NativeReference nat_ref_LowerChar("LowerChar", 3079657239U, 1526901386U, func_LowerChar);
 
 
 //End of file
