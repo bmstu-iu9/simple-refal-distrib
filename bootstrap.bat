@@ -19,7 +19,8 @@ setlocal
   pushd %DIR%
   set FILELIST=%MAINSRC%.cpp
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINE%..\bin\%TARGET% -I..\srlib -DDONT_PRINT_STATISTICS %FILELIST%
+  %CPPLINE%..\bin\%TARGET% -I..\srlib -DDONT_PRINT_STATISTICS ^
+    %FILELIST% ..\srlib\platform-Windows\refalrts-platform-specific.cpp
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
   popd
