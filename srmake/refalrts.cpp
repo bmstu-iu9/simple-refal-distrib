@@ -2979,53 +2979,60 @@ struct ConstTable *g_tables = 0;
 void enumerate_blocks();
 void cleanup_module();
 
-struct FILE {
-  RawBytesBlock *raw;
-  size_t offset;
-
-  FILE(RawBytesBlock *raw)
-    : raw(raw), offset(0)
-  {
-    /* пусто */
-  }
-};
-
-FILE *fopen(RawBytesBlock *raw);
-size_t fread(void *ptr, size_t size, size_t count, FILE *stream);
-void fclose(FILE *stream);
-
+bool seek_rasl_signature(FILE *stream);
 const char *read_asciiz(FILE *stream);
 
 } // namespace dynamic
 
 } // namespace refalrts
 
-refalrts::dynamic::FILE *
-refalrts::dynamic::fopen(refalrts::RawBytesBlock *raw) {
-  return new FILE(raw);
-}
-
-size_t refalrts::dynamic::fread(
-  void *ptr, size_t size, size_t count, refalrts::dynamic::FILE *stream
-) {
-  size_t avail_count = (stream->raw->length - stream->offset) / size;
-
-  if (count > avail_count) {
-    count = avail_count;
+bool refalrts::dynamic::seek_rasl_signature(FILE *stream) {
+  int seek_res = fseek(stream, 0L, SEEK_END);
+  if (seek_res != 0) {
+    fprintf(stderr, "INTERNAL ERROR: can't seek in module\n");
+    exit(155);
   }
 
-  size_t bytes_count = size * count;
-  memcpy(ptr, &stream->raw->bytes[stream->offset], bytes_count);
-  stream->offset += bytes_count;
+  long int file_size = ftell(stream);
+  if (file_size == -1L) {
+    fprintf(
+      stderr, "INTERNAL ERROR: filesize obtaining error %s\n",
+      strerror(errno)
+    );
+    exit(155);
+  }
 
-  return count;
+  long int next_offset = 0L;
+  bool found = false;
+  while (next_offset < file_size && ! found) {
+    seek_res = fseek(stream, next_offset, SEEK_SET);
+    if (seek_res != 0) {
+      fprintf(stderr, "INTERNAL ERROR: can't seek in module\n");
+      exit(155);
+    }
+
+    static const char sample_sig[] = {
+      '\x01', '\x08', '\0', '\0', '\0', 'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
+    };
+    char actual_sig[sizeof(sample_sig)];
+    size_t read = fread(actual_sig, sizeof(actual_sig), 1, stream);
+    if (read != 1) {
+      fprintf(stderr, "INTERNAL ERROR: can't read bytes from module\n");
+      exit(155);
+    }
+
+    found = memcmp(sample_sig, actual_sig, sizeof(sample_sig)) == 0;
+    next_offset += 4096;
+  }
+
+  /*
+    Позиция в файле после чтения сигнатуры будет в начале следующего блока,
+    что вполне нормально для функции enumerate_blocks().
+  */
+  return found;
 }
 
-void refalrts::dynamic::fclose(refalrts::dynamic::FILE *stream) {
-  delete stream;
-}
-
-const char *refalrts::dynamic::read_asciiz(refalrts::dynamic::FILE *stream) {
+const char *refalrts::dynamic::read_asciiz(FILE *stream) {
   enum { cINC_SIZE = 20 };
 
   size_t buflen = cINC_SIZE;
@@ -3058,9 +3065,6 @@ const char *refalrts::dynamic::read_asciiz(refalrts::dynamic::FILE *stream) {
   }
 }
 
-refalrts::RawBytesBlock *refalrts::RawBytesBlock::s_first = 0;
-refalrts::RawBytesBlock *refalrts::RawBytesBlock::s_last = 0;
-
 refalrts::RefalFuncName
 refalrts::dynamic::ConstTable::make_name(const char *name) const {
   char type = name[0];
@@ -3075,245 +3079,248 @@ refalrts::dynamic::ConstTable::make_name(const char *name) const {
 }
 
 void refalrts::dynamic::enumerate_blocks() {
-#ifndef DONT_PRINT_STATISTICS
   char module_name[platform_specific::cModuleNameBufferLen];
-  if (platform_specific::get_main_module_name(module_name)) {
-    fprintf(stderr, "**DEBUG: my name is %s**\n", module_name);
-  } else {
-    fprintf(stderr, "**DEBUG: can't obtain module name\n");
-  }
-#endif // ifndef DONT_PRINT_STATISTICS
 
-  RawBytesBlock *first = RawBytesBlock::s_first;
+  bool successed = platform_specific::get_main_module_name(module_name);
+  if (! successed) {
+    fprintf(stderr, "INTERNAL ERROR: can't obtain name of main executable\n");
+    exit(155);
+  }
 
   ConstTable *table = 0;
 
-  while (first != 0) {
-    FILE *stream = fopen(first);
-    unsigned char type;
-
-    while (fread(&type, sizeof(type), 1, stream) == 1) {
-      UInt32 datalen;
-
-      size_t read = fread(&datalen, sizeof(datalen), 1, stream);
-      assert(read == 1);      // TODO: сообщение об ошибке
-
-      switch (type) {
-        case cBlockTypeStart:
-          {
-            static const char sample[8] = {
-              'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
-            };
-            assert(sizeof(sample) == datalen);
-
-            char signature[sizeof(sample)];
-            read = fread(&signature, 1, sizeof(signature), stream);
-            assert(sizeof(signature) == read);
-            assert(memcmp(sample, signature, sizeof(signature)) == 0);
-          }
-          break;
-
-        case cBlockTypeConstTable:
-          {
-            struct {
-              UInt32 cookie1;
-              UInt32 cookie2;
-              UInt32 external_count;
-              UInt32 ident_count;
-              UInt32 number_count;
-              UInt32 string_count;
-              UInt32 rasl_length;
-              UInt32 external_size;
-              UInt32 ident_size;
-              UInt32 string_size;
-            } fixed_part;
-
-            read = fread(&fixed_part, sizeof(fixed_part), 1, stream);
-            assert(read == 1);
-
-            ConstTable *new_table = malloc<ConstTable>();
-            assert(new_table);
-
-            new_table->cookie1 = fixed_part.cookie1;
-            new_table->cookie2 = fixed_part.cookie2;
-
-            new_table->externals =
-              malloc<FunctionTableItem>(fixed_part.external_count + 1);
-            new_table->external_memory = malloc<char>(fixed_part.external_size);
-            read = fread(
-              new_table->external_memory, 1, fixed_part.external_size, stream
-            );
-            assert(read == fixed_part.external_size);
-            const char *next_external_name = new_table->external_memory;
-            for (size_t i = 0; i < fixed_part.external_count; ++i) {
-              new_table->externals[i].func_name = next_external_name;
-              // TODO: нужна проверка за выход из границ
-              next_external_name += strlen(next_external_name) + 1;
-            }
-            new_table->externals[fixed_part.external_count] = 0;
-            new_table->function_table = new FunctionTable(
-              fixed_part.cookie1, fixed_part.cookie2, new_table->externals
-            );
-
-            new_table->idents = malloc<RefalIdentifier>(fixed_part.ident_count);
-            new_table->idents_memory = malloc<char>(fixed_part.ident_size);
-            read = fread(
-              new_table->idents_memory, 1, fixed_part.ident_size, stream
-            );
-            assert(read == fixed_part.ident_size);
-            const char *next_ident_name = new_table->idents_memory;
-            for (size_t i = 0; i < fixed_part.ident_count; ++i) {
-              RefalIdentifier ident = ident_implode(next_ident_name);
-#ifdef IDENTS_LIMIT
-              if (! ident) {
-                fprintf(
-                  stderr,
-                  "INTERNAL ERROR: Identifiers table overflows (max %ld)\n",
-                  static_cast<unsigned long>(IDENTS_LIMIT)
-                );
-                exit(154);
-              }
-#else
-              assert(ident != 0);
-#endif // ifdef IDENTS_LIMIT
-              new_table->idents[i] = ident;
-              // TODO: нужна проверка за выход из границ
-              next_ident_name += strlen(next_ident_name) + 1;
-            }
-
-            new_table->numbers = malloc<RefalNumber>(fixed_part.number_count);
-            read = fread(
-              new_table->numbers, sizeof(RefalNumber), fixed_part.number_count,
-              stream
-            );
-            assert(read == fixed_part.number_count);
-
-            new_table->strings = malloc<StringItem>(fixed_part.string_count);
-            new_table->strings_memory = malloc<char>(fixed_part.string_size);
-            char *string_target = new_table->strings_memory;
-            for (size_t i = 0; i < fixed_part.string_count; ++i) {
-              UInt32 length;
-              read = fread(&length, sizeof(length), 1, stream);
-              assert(read == 1);
-              read = fread(string_target, 1, length, stream);
-              assert(read == length);
-              new_table->strings[i].string = string_target;
-              new_table->strings[i].string_len = length;
-              string_target += length;
-            }
-
-            new_table->rasl = malloc<RASLCommand>(fixed_part.rasl_length);
-            read = fread(
-              new_table->rasl, sizeof(RASLCommand), fixed_part.rasl_length,
-              stream
-            );
-            assert(read == fixed_part.rasl_length);
-
-            new_table->next = g_tables;
-            g_tables = new_table;
-
-            table = new_table;
-          }
-          break;
-
-        case cBlockTypeRefalFunction:
-          {
-            const char *name = read_asciiz(stream);
-            assert(name);
-
-            UInt32 offset;
-            read = fread(&offset, sizeof(offset), 1, stream);
-            assert(read == 1);
-
-            RASLFunction *result = dynamic::malloc<RASLFunction>();
-            // TODO: выдача сообщения об ошибке
-            assert(result != 0);
-            new (result) RASLFunction(
-              table->make_name(name),
-              table->rasl + offset,
-              table->function_table,
-              table->idents,
-              table->numbers,
-              table->strings
-            );
-          }
-          break;
-
-        case cBlockTypeNativeFunction:
-          {
-            const char *name = read_asciiz(stream);
-            assert(name);
-
-            char type = name[0];
-            assert(type == '*' || type == '#');
-
-            const char *proper_name = name + 1;
-
-            NativeReference *ref = NativeReference::s_references;
-            while (
-              ref != 0
-              && ! (
-                type == '*'
-                ? (
-                  ref->cookie1 == 0
-                  && ref->cookie2 == 0
-                  && strcmp(ref->name, proper_name) == 0
-                )
-                : (
-                  ref->cookie1 == table->cookie1
-                  && ref->cookie2 == table->cookie2
-                  && strcmp(ref->name, proper_name) == 0
-                )
-              )
-            ) {
-              ref = ref->next;
-            }
-
-            // TODO: Сообщение об ошибке
-            assert(ref != 0);
-
-            RefalNativeFunction *result = dynamic::malloc<RefalNativeFunction>();
-            // TODO: выдача сообщения об ошибке
-            assert(result != 0);
-            new (result) RefalNativeFunction(
-              ref->code, table->make_name(name)
-            );
-          }
-          break;
-
-        case cBlockTypeEmptyFunction:
-          {
-            const char *name = read_asciiz(stream);
-            assert(name);
-
-            RefalEmptyFunction *result = dynamic::malloc<RefalEmptyFunction>();
-            // TODO: выдача сообщения об ошибке
-            assert(result != 0);
-            new (result) RefalEmptyFunction(table->make_name(name));
-          }
-          break;
-
-        case cBlockTypeSwap:
-          {
-            const char *name = read_asciiz(stream);
-            assert(name);
-
-            RefalSwap *result = dynamic::malloc<RefalSwap>();
-            // TODO: выдача сообщения об ошибке
-            assert(result != 0);
-            new (result) RefalSwap(table->make_name(name));
-          }
-          break;
-
-        default:
-          refalrts_switch_default_violation(type);
-      }
-    }
-
-    fclose(stream);
-
-    first = first->next;
+  FILE *stream = fopen(module_name, "rb");
+  if (! stream) {
+    fprintf(stderr, "INTERNAL ERROR: can't open main executable for read\n");
+    exit(155);
   }
+
+  successed = seek_rasl_signature(stream);
+  if (! successed) {
+    fprintf(stderr, "INTERNAL ERROR: can't find signature in executable\n");
+    exit(155);
+  }
+
+  unsigned char type;
+  while (fread(&type, sizeof(type), 1, stream) == 1) {
+    UInt32 datalen;
+
+    size_t read = fread(&datalen, sizeof(datalen), 1, stream);
+    assert(read == 1);      // TODO: сообщение об ошибке
+
+    switch (type) {
+      case cBlockTypeStart:
+        {
+          static const char sample[8] = {
+            'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
+          };
+          assert(sizeof(sample) == datalen);
+
+          char signature[sizeof(sample)];
+          read = fread(&signature, 1, sizeof(signature), stream);
+          assert(sizeof(signature) == read);
+          assert(memcmp(sample, signature, sizeof(signature)) == 0);
+        }
+        break;
+
+      case cBlockTypeConstTable:
+        {
+          struct {
+            UInt32 cookie1;
+            UInt32 cookie2;
+            UInt32 external_count;
+            UInt32 ident_count;
+            UInt32 number_count;
+            UInt32 string_count;
+            UInt32 rasl_length;
+            UInt32 external_size;
+            UInt32 ident_size;
+            UInt32 string_size;
+          } fixed_part;
+
+          read = fread(&fixed_part, sizeof(fixed_part), 1, stream);
+          assert(read == 1);
+
+          ConstTable *new_table = malloc<ConstTable>();
+          assert(new_table);
+
+          new_table->cookie1 = fixed_part.cookie1;
+          new_table->cookie2 = fixed_part.cookie2;
+
+          new_table->externals =
+            malloc<FunctionTableItem>(fixed_part.external_count + 1);
+          new_table->external_memory = malloc<char>(fixed_part.external_size);
+          read = fread(
+            new_table->external_memory, 1, fixed_part.external_size, stream
+          );
+          assert(read == fixed_part.external_size);
+          const char *next_external_name = new_table->external_memory;
+          for (size_t i = 0; i < fixed_part.external_count; ++i) {
+            new_table->externals[i].func_name = next_external_name;
+            // TODO: нужна проверка за выход из границ
+            next_external_name += strlen(next_external_name) + 1;
+          }
+          new_table->externals[fixed_part.external_count] = 0;
+          new_table->function_table = new FunctionTable(
+            fixed_part.cookie1, fixed_part.cookie2, new_table->externals
+          );
+
+          new_table->idents = malloc<RefalIdentifier>(fixed_part.ident_count);
+          new_table->idents_memory = malloc<char>(fixed_part.ident_size);
+          read = fread(
+            new_table->idents_memory, 1, fixed_part.ident_size, stream
+          );
+          assert(read == fixed_part.ident_size);
+          const char *next_ident_name = new_table->idents_memory;
+          for (size_t i = 0; i < fixed_part.ident_count; ++i) {
+            RefalIdentifier ident = ident_implode(next_ident_name);
+#ifdef IDENTS_LIMIT
+            if (! ident) {
+              fprintf(
+                stderr,
+                "INTERNAL ERROR: Identifiers table overflows (max %ld)\n",
+                static_cast<unsigned long>(IDENTS_LIMIT)
+              );
+              exit(154);
+            }
+#else
+            assert(ident != 0);
+#endif // ifdef IDENTS_LIMIT
+            new_table->idents[i] = ident;
+            // TODO: нужна проверка за выход из границ
+            next_ident_name += strlen(next_ident_name) + 1;
+          }
+
+          new_table->numbers = malloc<RefalNumber>(fixed_part.number_count);
+          read = fread(
+            new_table->numbers, sizeof(RefalNumber), fixed_part.number_count,
+            stream
+          );
+          assert(read == fixed_part.number_count);
+
+          new_table->strings = malloc<StringItem>(fixed_part.string_count);
+          new_table->strings_memory = malloc<char>(fixed_part.string_size);
+          char *string_target = new_table->strings_memory;
+          for (size_t i = 0; i < fixed_part.string_count; ++i) {
+            UInt32 length;
+            read = fread(&length, sizeof(length), 1, stream);
+            assert(read == 1);
+            read = fread(string_target, 1, length, stream);
+            assert(read == length);
+            new_table->strings[i].string = string_target;
+            new_table->strings[i].string_len = length;
+            string_target += length;
+          }
+
+          new_table->rasl = malloc<RASLCommand>(fixed_part.rasl_length);
+          read = fread(
+            new_table->rasl, sizeof(RASLCommand), fixed_part.rasl_length,
+            stream
+          );
+          assert(read == fixed_part.rasl_length);
+
+          new_table->next = g_tables;
+          g_tables = new_table;
+
+          table = new_table;
+        }
+        break;
+
+      case cBlockTypeRefalFunction:
+        {
+          const char *name = read_asciiz(stream);
+          assert(name);
+
+          UInt32 offset;
+          read = fread(&offset, sizeof(offset), 1, stream);
+          assert(read == 1);
+
+          RASLFunction *result = dynamic::malloc<RASLFunction>();
+          // TODO: выдача сообщения об ошибке
+          assert(result != 0);
+          new (result) RASLFunction(
+            table->make_name(name),
+            table->rasl + offset,
+            table->function_table,
+            table->idents,
+            table->numbers,
+            table->strings
+          );
+        }
+        break;
+
+      case cBlockTypeNativeFunction:
+        {
+          const char *name = read_asciiz(stream);
+          assert(name);
+
+          char type = name[0];
+          assert(type == '*' || type == '#');
+
+          const char *proper_name = name + 1;
+
+          NativeReference *ref = NativeReference::s_references;
+          while (
+            ref != 0
+            && ! (
+              type == '*'
+              ? (
+                ref->cookie1 == 0
+                && ref->cookie2 == 0
+                && strcmp(ref->name, proper_name) == 0
+              )
+              : (
+                ref->cookie1 == table->cookie1
+                && ref->cookie2 == table->cookie2
+                && strcmp(ref->name, proper_name) == 0
+              )
+            )
+          ) {
+            ref = ref->next;
+          }
+
+          // TODO: Сообщение об ошибке
+          assert(ref != 0);
+
+          RefalNativeFunction *result = dynamic::malloc<RefalNativeFunction>();
+          // TODO: выдача сообщения об ошибке
+          assert(result != 0);
+          new (result) RefalNativeFunction(
+            ref->code, table->make_name(name)
+          );
+        }
+        break;
+
+      case cBlockTypeEmptyFunction:
+        {
+          const char *name = read_asciiz(stream);
+          assert(name);
+
+          RefalEmptyFunction *result = dynamic::malloc<RefalEmptyFunction>();
+          // TODO: выдача сообщения об ошибке
+          assert(result != 0);
+          new (result) RefalEmptyFunction(table->make_name(name));
+        }
+        break;
+
+      case cBlockTypeSwap:
+        {
+          const char *name = read_asciiz(stream);
+          assert(name);
+
+          RefalSwap *result = dynamic::malloc<RefalSwap>();
+          // TODO: выдача сообщения об ошибке
+          assert(result != 0);
+          new (result) RefalSwap(table->make_name(name));
+        }
+        break;
+
+      default:
+        refalrts_switch_default_violation(type);
+    }
+  }
+
+  fclose(stream);
 }
 
 void refalrts::dynamic::cleanup_module() {
