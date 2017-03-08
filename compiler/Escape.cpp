@@ -22,6 +22,7 @@ extern refalrts::RefalFunction& EscapeString;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_OctDigit {
+    static const char *filename = "..\\common/Escape.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -145,7 +146,8 @@ refalrts::RASLFunction descr_OctDigit(
   scope_OctDigit::functions,
   scope_OctDigit::idents,
   scope_OctDigit::numbers,
-  scope_OctDigit::strings
+  scope_OctDigit::strings,
+  scope_OctDigit::filename
 );
 refalrts::RefalFunction& OctDigit = descr_OctDigit;
 
@@ -329,6 +331,7 @@ refalrts::RefalFunction& OctDigit = descr_OctDigit;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_EscapeChar_S7L1 {
+    static const char *filename = "..\\common/Escape.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Div,
       & OctDigit,
@@ -355,6 +358,8 @@ namespace /* unnamed */ {
       // s.idx '<' s.idx
       // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 6},
+      //DEBUG: s.Other#1: 5
+      //DEBUG: s.Code#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } '\\'/8 Tile{ AsIs: </0 Reuse: & OctDigit/4 } </9 Tile{ HalfReuse: & Div/6 AsIs: s.Code#2/7 } 64/10 >/11 >/12 </13 & OctDigit/14 </15 & Mod/16 </17 & Div/18 s.Code#2/7/19 8/20 >/21 8/22 >/23 >/24 </25 & OctDigit/26 </27 & Mod/28 s.Code#2/7/29 8/30 >/31 Tile{ AsIs: >/1 ]] }
@@ -409,6 +414,9 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx s.idx s.idx
       // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+      //DEBUG: s.Other#1: 5
+      //DEBUG: s.Compare#2: 6
+      //DEBUG: s.Code#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
@@ -429,7 +437,8 @@ refalrts::RASLFunction descr_gen_EscapeChar_S7L1(
   scope_gen_EscapeChar_S7L1::functions,
   scope_gen_EscapeChar_S7L1::idents,
   scope_gen_EscapeChar_S7L1::numbers,
-  scope_gen_EscapeChar_S7L1::strings
+  scope_gen_EscapeChar_S7L1::strings,
+  scope_gen_EscapeChar_S7L1::filename
 );
 refalrts::RefalFunction& gen_EscapeChar_S7L1 = descr_gen_EscapeChar_S7L1;
 
@@ -462,6 +471,8 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
     // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     if( ! refalrts::char_term( '<', context[6] ) )
       continue;
+    //DEBUG: s.Other#1: 5
+    //DEBUG: s.Code#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
@@ -546,6 +557,9 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
 
   // s.idx s.idx s.idx
   // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+  //DEBUG: s.Other#1: 5
+  //DEBUG: s.Compare#2: 6
+  //DEBUG: s.Code#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
@@ -569,6 +583,7 @@ refalrts::RefalFunction& gen_EscapeChar_S7L1 = descr_gen_EscapeChar_S7L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EscapeChar {
+    static const char *filename = "..\\common/Escape.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Ord,
       & gen_EscapeChar_S7L1,
@@ -670,6 +685,7 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & EscapeChar/4 s.Other#1/5 >/1
+      //DEBUG: s.Other#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
@@ -712,7 +728,8 @@ refalrts::RASLFunction descr_EscapeChar(
   scope_EscapeChar::functions,
   scope_EscapeChar::idents,
   scope_EscapeChar::numbers,
-  scope_EscapeChar::strings
+  scope_EscapeChar::strings,
+  scope_EscapeChar::filename
 );
 refalrts::RefalFunction& EscapeChar = descr_EscapeChar;
 
@@ -855,6 +872,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
 
   // s.idx
   // </0 & EscapeChar/4 s.Other#1/5 >/1
+  //DEBUG: s.Other#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -911,6 +929,7 @@ refalrts::RefalFunction& EscapeChar = descr_EscapeChar;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EscapeString {
+    static const char *filename = "..\\common/Escape.cpp";
     static refalrts::RefalFunction *functions[] = {
       & EscapeChar,
       & Map
@@ -926,6 +945,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.String#1 as range 2
+      //DEBUG: e.String#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & EscapeChar/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
@@ -949,7 +969,8 @@ refalrts::RASLFunction descr_EscapeString(
   scope_EscapeString::functions,
   scope_EscapeString::idents,
   scope_EscapeString::numbers,
-  scope_EscapeString::strings
+  scope_EscapeString::strings,
+  scope_EscapeString::filename
 );
 refalrts::RefalFunction& EscapeString = descr_EscapeString;
 
@@ -966,6 +987,7 @@ static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.String#1 as range 2
+  //DEBUG: e.String#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}

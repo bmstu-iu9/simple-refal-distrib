@@ -89,6 +89,7 @@ extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FindFiles {
+    static const char *filename = "..\\common/FindFile.cpp";
     static refalrts::RefalFunction *functions[] = {
       & AnalyzeFile_ByFolders,
       & Map
@@ -108,6 +109,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Folders#1 as range 5
       // closed e.Files#1 as range 2
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Files#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
@@ -134,7 +137,8 @@ refalrts::RASLFunction descr_FindFiles(
   scope_FindFiles::functions,
   scope_FindFiles::idents,
   scope_FindFiles::numbers,
-  scope_FindFiles::strings
+  scope_FindFiles::strings,
+  scope_FindFiles::filename
 );
 refalrts::RefalFunction& FindFiles = descr_FindFiles;
 
@@ -158,6 +162,8 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 5
   // closed e.Files#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Files#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -187,6 +193,7 @@ refalrts::RefalFunction& FindFiles = descr_FindFiles;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeFile_ByFolders {
+    static const char *filename = "..\\common/FindFile.cpp";
     static refalrts::RefalFunction *functions[] = {
       & AnalyzeFile_CheckNotFound,
       & AnalyzeInFolder,
@@ -205,6 +212,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketRightSave, 0, 5, 2},
       // closed e.Folders#1 as range 2
       // closed e.FileName#1 as range 5
+      //DEBUG: e.Folders#1: 2
+      //DEBUG: e.FileName#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
@@ -242,7 +251,8 @@ refalrts::RASLFunction descr_AnalyzeFile_ByFolders(
   scope_AnalyzeFile_ByFolders::functions,
   scope_AnalyzeFile_ByFolders::idents,
   scope_AnalyzeFile_ByFolders::numbers,
-  scope_AnalyzeFile_ByFolders::strings
+  scope_AnalyzeFile_ByFolders::strings,
+  scope_AnalyzeFile_ByFolders::filename
 );
 refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
 
@@ -268,6 +278,8 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 2
   // closed e.FileName#1 as range 5
+  //DEBUG: e.Folders#1: 2
+  //DEBUG: e.FileName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -315,6 +327,7 @@ refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeInFolder {
+    static const char *filename = "..\\common/FindFile.cpp";
     static refalrts::RefalFunction *functions[] = {
       & AnalyzeFile
     };
@@ -340,6 +353,7 @@ namespace /* unnamed */ {
       // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
       // closed e.FileName#1 as range 2
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
@@ -356,6 +370,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       // closed e.FileName#1 as range 2
       // closed e.Folder#1 as range 7
+      //DEBUG: e.FileName#1: 2
+      //DEBUG: e.Folder#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
@@ -382,7 +398,8 @@ refalrts::RASLFunction descr_AnalyzeInFolder(
   scope_AnalyzeInFolder::functions,
   scope_AnalyzeInFolder::idents,
   scope_AnalyzeInFolder::numbers,
-  scope_AnalyzeInFolder::strings
+  scope_AnalyzeInFolder::strings,
+  scope_AnalyzeInFolder::filename
 );
 refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
 
@@ -412,6 +429,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::ident_term(  & ident_Current<int>::name, context[5] ) )
       continue;
     // closed e.FileName#1 as range 2
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -437,6 +455,8 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 2
   // closed e.Folder#1 as range 7
+  //DEBUG: e.FileName#1: 2
+  //DEBUG: e.Folder#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
@@ -466,6 +486,7 @@ refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeFile_CheckNotFound {
+    static const char *filename = "..\\common/FindFile.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name,
@@ -498,6 +519,10 @@ namespace /* unnamed */ {
       // closed e.Source#1 as range 14
       // closed e.Output#1 as range 9
       // closed e.Variants#1 as range 18(2)
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.Source#1: 14
+      //DEBUG: e.Output#1: 9
+      //DEBUG: e.Variants#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Source/13 AsIs: (/16 AsIs: e.Source#1/14 AsIs: )/17 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
@@ -517,6 +542,9 @@ namespace /* unnamed */ {
       // closed e.FileName#1 as range 5
       // closed e.Output#1 as range 9
       // closed e.Variants#1 as range 18(2)
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.Output#1: 9
+      //DEBUG: e.Variants#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Output/13 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
@@ -535,6 +563,9 @@ namespace /* unnamed */ {
       // closed e.FileName#1 as range 5
       // closed e.NotFoundPath#1 as range 9
       // closed e.Variants#1 as range 18(2)
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.NotFoundPath#1: 9
+      //DEBUG: e.Variants#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ AsIs: e.Variants#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -550,6 +581,7 @@ namespace /* unnamed */ {
       // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.FileName#1 as range 5
+      //DEBUG: e.FileName#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
@@ -573,7 +605,8 @@ refalrts::RASLFunction descr_AnalyzeFile_CheckNotFound(
   scope_AnalyzeFile_CheckNotFound::functions,
   scope_AnalyzeFile_CheckNotFound::idents,
   scope_AnalyzeFile_CheckNotFound::numbers,
-  scope_AnalyzeFile_CheckNotFound::strings
+  scope_AnalyzeFile_CheckNotFound::strings,
+  scope_AnalyzeFile_CheckNotFound::filename
 );
 refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
 
@@ -625,6 +658,10 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.Source#1 as range 14
     // closed e.Output#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Source#1: 14
+    //DEBUG: e.Output#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
@@ -658,6 +695,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.FileName#1 as range 5
     // closed e.Output#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Output#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
@@ -690,6 +730,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.FileName#1 as range 5
     // closed e.NotFoundPath#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.NotFoundPath#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
@@ -712,6 +755,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 5
+  //DEBUG: e.FileName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -738,6 +782,7 @@ refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotF
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExistFile_T {
+    static const char *filename = "..\\common/FindFile.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExistFile
     };
@@ -752,6 +797,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.FileName#1 as range 2
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
@@ -775,7 +821,8 @@ refalrts::RASLFunction descr_ExistFile_T(
   scope_ExistFile_T::functions,
   scope_ExistFile_T::idents,
   scope_ExistFile_T::numbers,
-  scope_ExistFile_T::strings
+  scope_ExistFile_T::strings,
+  scope_ExistFile_T::filename
 );
 refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
 
@@ -794,6 +841,7 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -821,6 +869,7 @@ refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeFile {
+    static const char *filename = "..\\common/FindFile.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExistFile_T,
       & AnalyzeBoth_CheckExist,
@@ -854,6 +903,7 @@ namespace /* unnamed */ {
       {refalrts::icCharRightSave, 8, static_cast<unsigned char>('s'), 20},
       {refalrts::icCharRightSave, 9, static_cast<unsigned char>('.'), 20},
       // closed e.FileName#1 as range 20(2)
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
@@ -880,6 +930,7 @@ namespace /* unnamed */ {
       {refalrts::icCharRightSave, 7, static_cast<unsigned char>('c'), 20},
       {refalrts::icCharRightSave, 8, static_cast<unsigned char>('.'), 20},
       // closed e.FileName#1 as range 20(2)
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
@@ -900,6 +951,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
       // closed e.FileName#1 as range 2
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
@@ -942,7 +994,8 @@ refalrts::RASLFunction descr_AnalyzeFile(
   scope_AnalyzeFile::functions,
   scope_AnalyzeFile::idents,
   scope_AnalyzeFile::numbers,
-  scope_AnalyzeFile::strings
+  scope_AnalyzeFile::strings,
+  scope_AnalyzeFile::filename
 );
 refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
 
@@ -984,6 +1037,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     if( ! context[9] )
       continue;
     // closed e.FileName#1 as range 20(2)
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1028,6 +1082,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     if( ! context[8] )
       continue;
     // closed e.FileName#1 as range 20(2)
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1057,6 +1112,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   // e.idx
   // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1114,6 +1170,7 @@ refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeSource_CheckExist {
+    static const char *filename = "..\\common/FindFile.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name,
@@ -1148,6 +1205,7 @@ namespace /* unnamed */ {
       {refalrts::icCharRightSave, 9, static_cast<unsigned char>('s'), 16},
       {refalrts::icCharRightSave, 10, static_cast<unsigned char>('.'), 16},
       // closed e.UnitName#1 as range 16(2)
+      //DEBUG: e.UnitName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 HalfReuse: (/5 AsIs: e.UnitName#1/16(2) AsIs: '.'/10 AsIs: 's'/9 AsIs: 'r'/8 AsIs: 'e'/7 AsIs: 'f'/6 HalfReuse: )/1 } e.UnitName#1/16(2)/11".cpp"/13 )/15 Tile{ ]] }
@@ -1169,6 +1227,7 @@ namespace /* unnamed */ {
       // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
       // closed e.SourceName#1 as range 2
+      //DEBUG: e.SourceName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#1/2 HalfReuse: )/1 ]] }
@@ -1192,7 +1251,8 @@ refalrts::RASLFunction descr_AnalyzeSource_CheckExist(
   scope_AnalyzeSource_CheckExist::functions,
   scope_AnalyzeSource_CheckExist::idents,
   scope_AnalyzeSource_CheckExist::numbers,
-  scope_AnalyzeSource_CheckExist::strings
+  scope_AnalyzeSource_CheckExist::strings,
+  scope_AnalyzeSource_CheckExist::filename
 );
 refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
 
@@ -1238,6 +1298,7 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
     if( ! context[10] )
       continue;
     // closed e.UnitName#1 as range 16(2)
+    //DEBUG: e.UnitName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -1269,6 +1330,7 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
   if( ! refalrts::ident_term(  & ident_False<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.SourceName#1 as range 2
+  //DEBUG: e.SourceName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1295,6 +1357,7 @@ refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeOutput_CheckExist {
+    static const char *filename = "..\\common/FindFile.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name,
@@ -1321,6 +1384,7 @@ namespace /* unnamed */ {
       // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
       {refalrts::icIdentTerm, 0, 3, 5},
       // closed e.OutName#1 as range 2
+      //DEBUG: e.OutName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # Output/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
@@ -1336,6 +1400,7 @@ namespace /* unnamed */ {
       // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
       // closed e.OutName#1 as range 2
+      //DEBUG: e.OutName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
@@ -1359,7 +1424,8 @@ refalrts::RASLFunction descr_AnalyzeOutput_CheckExist(
   scope_AnalyzeOutput_CheckExist::functions,
   scope_AnalyzeOutput_CheckExist::idents,
   scope_AnalyzeOutput_CheckExist::numbers,
-  scope_AnalyzeOutput_CheckExist::strings
+  scope_AnalyzeOutput_CheckExist::strings,
+  scope_AnalyzeOutput_CheckExist::filename
 );
 refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
 
@@ -1388,6 +1454,7 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
     if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
       continue;
     // closed e.OutName#1 as range 2
+    //DEBUG: e.OutName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1410,6 +1477,7 @@ static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin
   if( ! refalrts::ident_term(  & ident_False<int>::name, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.OutName#1 as range 2
+  //DEBUG: e.OutName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1436,6 +1504,7 @@ refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AnalyzeBoth_CheckExist {
+    static const char *filename = "..\\common/FindFile.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotFound<int>::name,
@@ -1467,6 +1536,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 3, 9},
       // closed e.SourceName#1 as range 5
       // closed e.OutName#1 as range 2
+      //DEBUG: s.Res#1: 10
+      //DEBUG: e.SourceName#1: 5
+      //DEBUG: e.OutName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#1/5 AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
@@ -1489,6 +1561,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 3, 10},
       // closed e.SourceName#1 as range 5
       // closed e.OutName#1 as range 2
+      //DEBUG: e.SourceName#1: 5
+      //DEBUG: e.OutName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
@@ -1516,6 +1590,7 @@ namespace /* unnamed */ {
       // closed e.UnitName#1 as range 5
       {refalrts::iceRepeatLeft, 20, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.UnitName#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
@@ -1539,7 +1614,8 @@ refalrts::RASLFunction descr_AnalyzeBoth_CheckExist(
   scope_AnalyzeBoth_CheckExist::functions,
   scope_AnalyzeBoth_CheckExist::idents,
   scope_AnalyzeBoth_CheckExist::numbers,
-  scope_AnalyzeBoth_CheckExist::strings
+  scope_AnalyzeBoth_CheckExist::strings,
+  scope_AnalyzeBoth_CheckExist::filename
 );
 refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
 
@@ -1578,6 +1654,9 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
       continue;
     // closed e.SourceName#1 as range 5
     // closed e.OutName#1 as range 2
+    //DEBUG: s.Res#1: 10
+    //DEBUG: e.SourceName#1: 5
+    //DEBUG: e.OutName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
@@ -1608,6 +1687,8 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
       continue;
     // closed e.SourceName#1 as range 5
     // closed e.OutName#1 as range 2
+    //DEBUG: e.SourceName#1: 5
+    //DEBUG: e.OutName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
@@ -1663,6 +1744,7 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.UnitName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}

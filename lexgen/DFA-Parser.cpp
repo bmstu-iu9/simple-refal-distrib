@@ -231,6 +231,7 @@ extern refalrts::RefalFunction& UnexpectedToken;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DFA_Parse {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ParseElements,
       & ErrorAt
@@ -263,6 +264,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 15},
       {refalrts::ictVarLeftSave, 0, 10, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#1/10 } 'I'/12 Tile{ HalfReuse: 'l'/7 HalfReuse: 'l'/9 }"egal empty descriptio"/13 Tile{ HalfReuse: 'n'/8 AsIs: >/1 ]] }
@@ -284,6 +286,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & DFA-Parse/4 e.Tokens#1/2 >/1
       // closed e.Tokens#1 as range 2
+      //DEBUG: e.Tokens#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & ParseElements/6 (/7 (/8"Any"/9 )/11 )/12 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.Tokens#1/2 AsIs: >/1 ]] }
@@ -316,7 +319,8 @@ refalrts::RASLFunction descr_DFA_Parse(
   scope_DFA_Parse::functions,
   scope_DFA_Parse::idents,
   scope_DFA_Parse::numbers,
-  scope_DFA_Parse::strings
+  scope_DFA_Parse::strings,
+  scope_DFA_Parse::filename
 );
 refalrts::RefalFunction& DFA_Parse = descr_DFA_Parse;
 
@@ -356,6 +360,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -385,6 +390,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   // e.idx
   // </0 & DFA-Parse/4 e.Tokens#1/2 >/1
   // closed e.Tokens#1 as range 2
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -425,6 +431,7 @@ refalrts::RefalFunction& DFA_Parse = descr_DFA_Parse;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseElements {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken,
       & ParseSentence,
@@ -476,6 +483,12 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 26, 15, 22},
       {refalrts::icEmpty, 0, 0, 22},
       // closed e.SetNames-E#1 as range 34(5)
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.SetNames-B#1: 20
+      //DEBUG: e.SetNames-E#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames-B#1/20 {REMOVED TILE} e.SetNames-E#1/34(5) {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#1/18 } Tile{ HalfReuse: 'S'/8 HalfReuse: 'e'/11 } Tile{ HalfReuse: 't'/12 HalfReuse: ' '/13 HalfReuse: 'n'/17 } Tile{ HalfReuse: 'a'/7 } Tile{ HalfReuse: 'm'/14 }"e "/28 Tile{ HalfReuse: ':'/24 AsIs: e.Name#1/26 HalfReuse: ':'/25 }" redeclared"/30 Tile{ AsIs: >/1 ]] }
@@ -515,6 +528,11 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 2
       {refalrts::ictVarLeftSave, 0, 18, 15},
       // closed e.Name#1 as range 15
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseSetDescr/4 AsIs: (/7 AsIs: e.SetNames#1/5 HalfReuse: (/8 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/17 } )/20 Tile{ AsIs: (/11 AsIs: e.RuleNames#1/9 AsIs: )/12 } Tile{ AsIs: t.SrcPos#1/18 } Tile{ AsIs: (/13 } e.Name#1/15/21 Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
@@ -556,6 +574,12 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 26, 15, 22},
       {refalrts::icEmpty, 0, 0, 22},
       // closed e.RuleNames-E#1 as range 34(9)
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.RuleNames-B#1: 20
+      //DEBUG: e.RuleNames-E#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames-B#1/20 {REMOVED TILE} e.RuleNames-E#1/34(9) {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#1/18 } Tile{ HalfReuse: 'N'/8 HalfReuse: 'a'/11 } Tile{ HalfReuse: 'm'/7 } 'e'/28 Tile{ HalfReuse: ' '/24 AsIs: e.Name#1/26 HalfReuse: ' '/25 } Tile{ HalfReuse: 'r'/12 HalfReuse: 'e'/13 HalfReuse: 'd'/17 } Tile{ HalfReuse: 'e'/14 }"clared"/29 Tile{ AsIs: >/1 ]] }
@@ -595,6 +619,11 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 2
       {refalrts::ictVarLeftSave, 0, 18, 15},
       // closed e.Name#1 as range 15
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseSentence/4 AsIs: (/7 AsIs: e.SetNames#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.RuleNames#1/9 HalfReuse: (/12 } e.Name#1/15/20 Tile{ HalfReuse: )/13 HalfReuse: )/17 AsIs: t.SrcPos#1/18 } (/22 Tile{ AsIs: e.Name#1/15 } Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
@@ -627,6 +656,10 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 2
       {refalrts::ictVarLeftSave, 0, 18, 15},
       {refalrts::icEmpty, 0, 0, 15},
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TEOF/17 t.SrcPos#1/18 )/14 e.Tail#1/2 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -639,6 +672,10 @@ namespace /* unnamed */ {
       // closed e.SetNames#1 as range 5
       // closed e.RuleNames#1 as range 9
       // closed e.Tail#1 as range 2
+      //DEBUG: t.Unexpected#1: 13
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/13 } Tile{ HalfReuse: 'n'/7 } Tile{ HalfReuse: 'a'/8 HalfReuse: 'm'/11 } Tile{ HalfReuse: 'e'/12 }" or set name"/15 Tile{ AsIs: >/1 ]] }
@@ -671,7 +708,8 @@ refalrts::RASLFunction descr_ParseElements(
   scope_ParseElements::functions,
   scope_ParseElements::idents,
   scope_ParseElements::numbers,
-  scope_ParseElements::strings
+  scope_ParseElements::strings,
+  scope_ParseElements::filename
 );
 refalrts::RefalFunction& ParseElements = descr_ParseElements;
 
@@ -744,6 +782,12 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       if( ! refalrts::empty_seq( context[22], context[23] ) )
         continue;
       // closed e.SetNames-E#1 as range 34(5)
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.SetNames-B#1: 20
+      //DEBUG: e.SetNames-E#1: 5
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames-B#1/20 {REMOVED TILE} e.SetNames-E#1/34(5) {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -799,6 +843,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! context[19] )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -866,6 +915,12 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       if( ! refalrts::empty_seq( context[22], context[23] ) )
         continue;
       // closed e.RuleNames-E#1 as range 34(9)
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.RuleNames-B#1: 20
+      //DEBUG: e.RuleNames-E#1: 9
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames-B#1/20 {REMOVED TILE} e.RuleNames-E#1/34(9) {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -921,6 +976,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! context[19] )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -969,6 +1029,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TEOF/17 t.SrcPos#1/18 )/14 e.Tail#1/2 >/1 {REMOVED TILE}
@@ -987,6 +1051,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   // closed e.SetNames#1 as range 5
   // closed e.RuleNames#1 as range 9
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Unexpected#1: 13
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -1023,6 +1091,7 @@ refalrts::RefalFunction& ParseElements = descr_ParseElements;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseSetDescr_S1L1 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken,
       & ParseElements,
@@ -1071,6 +1140,12 @@ namespace /* unnamed */ {
       // closed e.Tail#2 as range 2
       {refalrts::ictVarLeftSave, 0, 28, 25},
       {refalrts::icEmpty, 0, 0, 25},
+      //DEBUG: t.SetNamePos#1: 9
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.SetNames#1: 11
+      //DEBUG: e.RuleNames#1: 15
+      //DEBUG: e.Tail#2: 2
+      //DEBUG: t.SrcPos#2: 28
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#2/28 HalfReuse: 'S'/24 } Tile{ HalfReuse: 'e'/13 } Tile{ HalfReuse: 't'/14 HalfReuse: ' '/17 } Tile{ HalfReuse: ':'/8 } Tile{ AsIs: e.Name#1/5 } Tile{ HalfReuse: ':'/18 HalfReuse: ' '/21 HalfReuse: 'n'/22 HalfReuse: 'o'/23 HalfReuse: 't'/27 } Tile{ HalfReuse: ' '/7 }"have content"/30 Tile{ AsIs: >/1 ]] }
@@ -1113,6 +1188,13 @@ namespace /* unnamed */ {
       // closed e.Tail#2 as range 2
       {refalrts::ictVarLeftSave, 0, 28, 25},
       {refalrts::icEmpty, 0, 0, 25},
+      //DEBUG: t.SetNamePos#1: 9
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.SetNames#1: 11
+      //DEBUG: e.RuleNames#1: 15
+      //DEBUG: e.Body#2: 19
+      //DEBUG: e.Tail#2: 2
+      //DEBUG: t.SrcPos#2: 28
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Set/4 } Tile{ AsIs: t.SetNamePos#1/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Name#1/5 } Tile{ HalfReuse: )/21 AsIs: e.Body#2/19 AsIs: )/22 HalfReuse: </23 HalfReuse: & ParseElements/27 } Tile{ AsIs: (/13 AsIs: e.SetNames#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.RuleNames#1/15 AsIs: )/18 } Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
@@ -1144,6 +1226,13 @@ namespace /* unnamed */ {
       // closed e.RuleNames#1 as range 15
       // closed e.Body#2 as range 19
       // closed e.Tail#2 as range 2
+      //DEBUG: t.SetNamePos#1: 9
+      //DEBUG: t.Unexpected#2: 23
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.SetNames#1: 11
+      //DEBUG: e.RuleNames#1: 15
+      //DEBUG: e.Body#2: 19
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Name#1/5 {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#2/23 } Tile{ HalfReuse: 'd'/14 HalfReuse: 'o'/17 } Tile{ HalfReuse: 't'/18 HalfReuse: ' '/21 } Tile{ HalfReuse: 'a'/22 } Tile{ HalfReuse: 't'/13 } Tile{ HalfReuse: ' '/8 } Tile{ HalfReuse: 'e'/7 }"nd of set"/25 Tile{ AsIs: >/1 ]] }
@@ -1183,7 +1272,8 @@ refalrts::RASLFunction descr_gen_ParseSetDescr_S1L1(
   scope_gen_ParseSetDescr_S1L1::functions,
   scope_gen_ParseSetDescr_S1L1::idents,
   scope_gen_ParseSetDescr_S1L1::numbers,
-  scope_gen_ParseSetDescr_S1L1::strings
+  scope_gen_ParseSetDescr_S1L1::strings,
+  scope_gen_ParseSetDescr_S1L1::filename
 );
 refalrts::RefalFunction& gen_ParseSetDescr_S1L1 = descr_gen_ParseSetDescr_S1L1;
 
@@ -1261,6 +1351,12 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 9
+    //DEBUG: e.Name#1: 5
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -1318,6 +1414,13 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 9
+    //DEBUG: e.Name#1: 5
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Body#2: 19
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
@@ -1355,6 +1458,13 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
   // closed e.RuleNames#1 as range 15
   // closed e.Body#2 as range 19
   // closed e.Tail#2 as range 2
+  //DEBUG: t.SetNamePos#1: 9
+  //DEBUG: t.Unexpected#2: 23
+  //DEBUG: e.Name#1: 5
+  //DEBUG: e.SetNames#1: 11
+  //DEBUG: e.RuleNames#1: 15
+  //DEBUG: e.Body#2: 19
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Name#1/5 {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -1398,6 +1508,7 @@ refalrts::RefalFunction& gen_ParseSetDescr_S1L1 = descr_gen_ParseSetDescr_S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseSetDescr {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken,
       & refalrts::create_closure,
@@ -1440,6 +1551,12 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 2
       {refalrts::ictVarLeftSave, 0, 24, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: t.SetNamePos#1: 13
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 24
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </26 & ExtractSets/27 Tile{ AsIs: (/19 } Tile{ AsIs: )/20 AsIs: e.Tail#1/2 AsIs: >/1 } </28 Tile{ HalfReuse: & @create_closure@/23 } & ParseSetDescr$1\1/29 Tile{ AsIs: (/17 AsIs: e.Name#1/15 AsIs: )/18 } Tile{ AsIs: t.SetNamePos#1/13 } Tile{ AsIs: (/7 AsIs: e.SetNames#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.RuleNames#1/9 AsIs: )/12 } >/30 >/31 Tile{ ]] }
@@ -1481,6 +1598,12 @@ namespace /* unnamed */ {
       // closed e.RuleNames#1 as range 9
       // closed e.Name#1 as range 15
       // closed e.Tail#1 as range 2
+      //DEBUG: t.SetNamePos#1: 13
+      //DEBUG: t.Unexpected#1: 19
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/19 } Tile{ HalfReuse: '\"'/8 HalfReuse: '='/11 } Tile{ HalfReuse: '\"'/18 } Tile{ AsIs: >/1 ]] }
@@ -1509,7 +1632,8 @@ refalrts::RASLFunction descr_ParseSetDescr(
   scope_ParseSetDescr::functions,
   scope_ParseSetDescr::idents,
   scope_ParseSetDescr::numbers,
-  scope_ParseSetDescr::strings
+  scope_ParseSetDescr::strings,
+  scope_ParseSetDescr::filename
 );
 refalrts::RefalFunction& ParseSetDescr = descr_ParseSetDescr;
 
@@ -1576,6 +1700,12 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 13
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Name#1: 15
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
@@ -1629,6 +1759,12 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
   // closed e.RuleNames#1 as range 9
   // closed e.Name#1 as range 15
   // closed e.Tail#1 as range 2
+  //DEBUG: t.SetNamePos#1: 13
+  //DEBUG: t.Unexpected#1: 19
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Name#1: 15
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -1660,6 +1796,7 @@ refalrts::RefalFunction& ParseSetDescr = descr_ParseSetDescr;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractSets {
+    static const char *filename = "DFA-Parser.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Set<int>::name,
@@ -1692,6 +1829,10 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 16(2)
       {refalrts::ictVarLeftSave, 0, 14, 9},
       // closed e.Content#1 as range 9
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 14
+      //DEBUG: e.Content#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/14 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ExtractSets/4 AsIs: (/7 AsIs: e.Found#1/5 HalfReuse: (/8 HalfReuse: # Chars/11 } Tile{ AsIs: e.Content#1/9 } Tile{ HalfReuse: )/13 } Tile{ AsIs: )/12 AsIs: e.Tail#1/16(2) AsIs: >/1 ]] }
@@ -1718,6 +1859,10 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 16(2)
       {refalrts::ictVarLeftSave, 0, 14, 9},
       // closed e.Name#1 as range 9
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 14
+      //DEBUG: e.Name#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ExtractSets/4 AsIs: (/7 AsIs: e.Found#1/5 HalfReuse: (/8 HalfReuse: # Set/11 } Tile{ AsIs: t.SrcPos#1/14 } Tile{ AsIs: e.Name#1/9 } Tile{ HalfReuse: )/13 } Tile{ AsIs: )/12 AsIs: e.Tail#1/16(2) AsIs: >/1 ]] }
@@ -1738,6 +1883,8 @@ namespace /* unnamed */ {
       // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 e.OtherTail#1/2 >/1
       // closed e.Found#1 as range 5
       // closed e.OtherTail#1 as range 2
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.OtherTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractSets/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Found#1/5 AsIs: )/8 } Tile{ AsIs: e.OtherTail#1/2 } Tile{ ]] }
@@ -1760,7 +1907,8 @@ refalrts::RASLFunction descr_ExtractSets(
   scope_ExtractSets::functions,
   scope_ExtractSets::idents,
   scope_ExtractSets::numbers,
-  scope_ExtractSets::strings
+  scope_ExtractSets::strings,
+  scope_ExtractSets::filename
 );
 refalrts::RefalFunction& ExtractSets = descr_ExtractSets;
 
@@ -1808,6 +1956,10 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     if( ! context[15] )
       continue;
     // closed e.Content#1 as range 9
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 14
+    //DEBUG: e.Content#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/14 {REMOVED TILE} {REMOVED TILE}
@@ -1850,6 +2002,10 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     if( ! context[15] )
       continue;
     // closed e.Name#1 as range 9
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 14
+    //DEBUG: e.Name#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1876,6 +2032,8 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
   // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 e.OtherTail#1/2 >/1
   // closed e.Found#1 as range 5
   // closed e.OtherTail#1 as range 2
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.OtherTail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractSets/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1901,6 +2059,7 @@ refalrts::RefalFunction& ExtractSets = descr_ExtractSets;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseSentence_S1L1 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken,
       & ParseElements
@@ -1946,6 +2105,13 @@ namespace /* unnamed */ {
       // closed e.Tail#2 as range 2
       {refalrts::ictVarLeftSave, 0, 28, 25},
       {refalrts::icEmpty, 0, 0, 25},
+      //DEBUG: t.SentNamePos#1: 5
+      //DEBUG: e.Name#1: 7
+      //DEBUG: e.SetNames#1: 11
+      //DEBUG: e.RuleNames#1: 15
+      //DEBUG: e.Body#2: 19
+      //DEBUG: e.Tail#2: 2
+      //DEBUG: t.SrcPos#2: 28
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TDot/27 t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Sentence/4 AsIs: t.SentNamePos#1/5 AsIs: (/9 } Tile{ AsIs: e.Name#1/7 } Tile{ HalfReuse: )/21 AsIs: e.Body#2/19 AsIs: )/22 HalfReuse: </23 } Tile{ HalfReuse: & ParseElements/10 AsIs: (/13 AsIs: e.SetNames#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.RuleNames#1/15 AsIs: )/18 } Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
@@ -1975,6 +2141,13 @@ namespace /* unnamed */ {
       // closed e.RuleNames#1 as range 15
       // closed e.Body#2 as range 19
       // closed e.Tail#2 as range 2
+      //DEBUG: t.SentNamePos#1: 5
+      //DEBUG: t.Unexpected#2: 23
+      //DEBUG: e.Name#1: 7
+      //DEBUG: e.SetNames#1: 11
+      //DEBUG: e.RuleNames#1: 15
+      //DEBUG: e.Body#2: 19
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} t.SentNamePos#1/5 {REMOVED TILE} e.Name#1/7 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#2/23 } Tile{ HalfReuse: 'e'/14 HalfReuse: 'n'/17 } Tile{ HalfReuse: 'd'/18 HalfReuse: ' '/21 } Tile{ HalfReuse: 'o'/10 HalfReuse: 'f'/13 } Tile{ HalfReuse: ' '/22 } Tile{ HalfReuse: 's'/9 }"entence"/25 Tile{ AsIs: >/1 ]] }
@@ -2013,7 +2186,8 @@ refalrts::RASLFunction descr_gen_ParseSentence_S1L1(
   scope_gen_ParseSentence_S1L1::functions,
   scope_gen_ParseSentence_S1L1::idents,
   scope_gen_ParseSentence_S1L1::numbers,
-  scope_gen_ParseSentence_S1L1::strings
+  scope_gen_ParseSentence_S1L1::strings,
+  scope_gen_ParseSentence_S1L1::filename
 );
 refalrts::RefalFunction& gen_ParseSentence_S1L1 = descr_gen_ParseSentence_S1L1;
 
@@ -2088,6 +2262,13 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SentNamePos#1: 5
+    //DEBUG: e.Name#1: 7
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Body#2: 19
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TDot/27 t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
@@ -2123,6 +2304,13 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
   // closed e.RuleNames#1 as range 15
   // closed e.Body#2 as range 19
   // closed e.Tail#2 as range 2
+  //DEBUG: t.SentNamePos#1: 5
+  //DEBUG: t.Unexpected#2: 23
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.SetNames#1: 11
+  //DEBUG: e.RuleNames#1: 15
+  //DEBUG: e.Body#2: 19
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} t.SentNamePos#1/5 {REMOVED TILE} e.Name#1/7 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -2165,6 +2353,7 @@ refalrts::RefalFunction& gen_ParseSentence_S1L1 = descr_gen_ParseSentence_S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseSentence {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken,
       & refalrts::create_closure,
@@ -2207,6 +2396,12 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 2
       {refalrts::ictVarLeftSave, 0, 24, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: t.SentNamePos#1: 13
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 24
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 } & Fetch/26 </27 Tile{ HalfReuse: & ExtractAlternatives/18 AsIs: (/19 } Tile{ AsIs: )/20 AsIs: e.Tail#1/2 AsIs: >/1 } </28 Tile{ HalfReuse: & @create_closure@/23 } & ParseSentence$1\1/29 Tile{ AsIs: t.SentNamePos#1/13 AsIs: (/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.SetNames#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.RuleNames#1/9 AsIs: )/12 } >/30 >/31 Tile{ ]] }
@@ -2249,6 +2444,12 @@ namespace /* unnamed */ {
       // closed e.RuleNames#1 as range 9
       // closed e.Name#1 as range 15
       // closed e.Tail#1 as range 2
+      //DEBUG: t.SentNamePos#1: 13
+      //DEBUG: t.Unexpected#1: 19
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 } Tile{ AsIs: t.Unexpected#1/19 } Tile{ HalfReuse: '\"'/8 HalfReuse: '='/11 } Tile{ HalfReuse: '\"'/18 } Tile{ AsIs: >/1 ]] }
@@ -2277,7 +2478,8 @@ refalrts::RASLFunction descr_ParseSentence(
   scope_ParseSentence::functions,
   scope_ParseSentence::idents,
   scope_ParseSentence::numbers,
-  scope_ParseSentence::strings
+  scope_ParseSentence::strings,
+  scope_ParseSentence::filename
 );
 refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 
@@ -2344,6 +2546,12 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.SentNamePos#1: 13
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Name#1: 15
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
@@ -2398,6 +2606,12 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
   // closed e.RuleNames#1 as range 9
   // closed e.Name#1 as range 15
   // closed e.Tail#1 as range 2
+  //DEBUG: t.SentNamePos#1: 13
+  //DEBUG: t.Unexpected#1: 19
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Name#1: 15
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -2429,6 +2643,7 @@ refalrts::RefalFunction& ParseSentence = descr_ParseSentence;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L1 {
+    static const char *filename = "DFA-Parser.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -2445,6 +2660,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 9, 5},
       {refalrts::ictVarLeftSave, 0, 10, 5},
       // closed e.Info#2 as range 5
+      //DEBUG: e.Tail#2: 2
+      //DEBUG: s.TokType#2: 9
+      //DEBUG: t.SrcPos#2: 10
+      //DEBUG: e.Info#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\1/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } t.SrcPos#2/10/12 Tile{ AsIs: (/7 AsIs: s.TokType#2/9 AsIs: t.SrcPos#2/10 AsIs: e.Info#2/5 AsIs: )/8 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -2469,7 +2688,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L1(
   scope_gen_ExtractAlternatives_L1::functions,
   scope_gen_ExtractAlternatives_L1::idents,
   scope_gen_ExtractAlternatives_L1::numbers,
-  scope_gen_ExtractAlternatives_L1::strings
+  scope_gen_ExtractAlternatives_L1::strings,
+  scope_gen_ExtractAlternatives_L1::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L1 = descr_gen_ExtractAlternatives_L1;
 
@@ -2500,6 +2720,10 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L1(refalrts::Iter arg_beg
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#2 as range 5
+  //DEBUG: e.Tail#2: 2
+  //DEBUG: s.TokType#2: 9
+  //DEBUG: t.SrcPos#2: 10
+  //DEBUG: e.Info#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\1/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2528,6 +2752,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L1 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L2 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExtractAlternatives_Head
     };
@@ -2544,6 +2769,9 @@ namespace /* unnamed */ {
       {refalrts::ictVarLeftSave, 0, 5, 2},
       {refalrts::ictVarLeftSave, 0, 7, 2},
       // closed e.Tail#2 as range 2
+      //DEBUG: t.BeginSrcPos#2: 5
+      //DEBUG: t.NextToken#2: 7
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-Head/4 } Tile{ AsIs: t.NextToken#2/7 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -2570,7 +2798,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L2(
   scope_gen_ExtractAlternatives_L2::functions,
   scope_gen_ExtractAlternatives_L2::idents,
   scope_gen_ExtractAlternatives_L2::numbers,
-  scope_gen_ExtractAlternatives_L2::strings
+  scope_gen_ExtractAlternatives_L2::strings,
+  scope_gen_ExtractAlternatives_L2::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L2 = descr_gen_ExtractAlternatives_L2;
 
@@ -2595,6 +2824,9 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_beg
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.NextToken#2: 7
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2624,6 +2856,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L2 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L3 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExtractAlternatives_Flush
     };
@@ -2641,6 +2874,10 @@ namespace /* unnamed */ {
       {refalrts::ictVarLeftSave, 0, 7, 2},
       {refalrts::ictVarLeftSave, 0, 9, 2},
       // closed e.Tail#2 as range 2
+      //DEBUG: t.BeginSrcPos#2: 5
+      //DEBUG: t.Head#2: 7
+      //DEBUG: t.NextToken#2: 9
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 AsIs: t.Head#2/7 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-Flush/4 } Tile{ AsIs: t.NextToken#2/9 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -2667,7 +2904,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L3(
   scope_gen_ExtractAlternatives_L3::functions,
   scope_gen_ExtractAlternatives_L3::idents,
   scope_gen_ExtractAlternatives_L3::numbers,
-  scope_gen_ExtractAlternatives_L3::strings
+  scope_gen_ExtractAlternatives_L3::strings,
+  scope_gen_ExtractAlternatives_L3::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L3 = descr_gen_ExtractAlternatives_L3;
 
@@ -2695,6 +2933,10 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_beg
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.NextToken#2: 9
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2724,6 +2966,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L3 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L4 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExtractAlternatives_NextState
     };
@@ -2742,6 +2985,11 @@ namespace /* unnamed */ {
       {refalrts::ictVarLeftSave, 0, 9, 2},
       {refalrts::ictVarLeftSave, 0, 11, 2},
       // closed e.Tail#2 as range 2
+      //DEBUG: t.BeginSrcPos#2: 5
+      //DEBUG: t.Head#2: 7
+      //DEBUG: t.Flush#2: 9
+      //DEBUG: t.NextToken#2: 11
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.BeginSrcPos#2/5 AsIs: t.Head#2/7 AsIs: t.Flush#2/9 } Tile{ AsIs: </0 Reuse: & ExtractAlternatives-NextState/4 } Tile{ AsIs: t.NextToken#2/11 } Tile{ AsIs: >/1 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -2768,7 +3016,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L4(
   scope_gen_ExtractAlternatives_L4::functions,
   scope_gen_ExtractAlternatives_L4::idents,
   scope_gen_ExtractAlternatives_L4::numbers,
-  scope_gen_ExtractAlternatives_L4::strings
+  scope_gen_ExtractAlternatives_L4::strings,
+  scope_gen_ExtractAlternatives_L4::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L4 = descr_gen_ExtractAlternatives_L4;
 
@@ -2799,6 +3048,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_beg
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.Flush#2: 9
+  //DEBUG: t.NextToken#2: 11
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2828,6 +3082,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L4 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L5 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt
     };
@@ -2860,6 +3115,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 1, 9},
       {refalrts::icIdentTerm, 0, 0, 11},
       // closed e.Tail#2 as range 2
+      //DEBUG: t.BeginSrcPos#2: 5
+      //DEBUG: t.Head#2: 7
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} t.Head#2/7 {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: t.BeginSrcPos#2/5 } 'E'/13 Tile{ HalfReuse: 'O'/9 HalfReuse: 'F'/11 }" alternative must have flush"/14 Tile{ AsIs: >/1 ]] }
@@ -2880,6 +3138,11 @@ namespace /* unnamed */ {
       // t.idx t.idx t.idx t.idx e.idx
       // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextState#2/11 e.Tail#2/2 >/1
       // closed e.Tail#2 as range 2
+      //DEBUG: t.BeginSrcPos#2: 5
+      //DEBUG: t.Head#2: 7
+      //DEBUG: t.Flush#2: 9
+      //DEBUG: t.NextState#2: 11
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Head#2/7 AsIs: t.Flush#2/9 AsIs: t.NextState#2/11 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -2901,7 +3164,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L5(
   scope_gen_ExtractAlternatives_L5::functions,
   scope_gen_ExtractAlternatives_L5::idents,
   scope_gen_ExtractAlternatives_L5::numbers,
-  scope_gen_ExtractAlternatives_L5::strings
+  scope_gen_ExtractAlternatives_L5::strings,
+  scope_gen_ExtractAlternatives_L5::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L5 = descr_gen_ExtractAlternatives_L5;
 
@@ -2942,6 +3206,9 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
     if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[11] ) )
       continue;
     // closed e.Tail#2 as range 2
+    //DEBUG: t.BeginSrcPos#2: 5
+    //DEBUG: t.Head#2: 7
+    //DEBUG: e.Tail#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.Head#2/7 {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -2970,6 +3237,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
   // t.idx t.idx t.idx t.idx e.idx
   // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextState#2/11 e.Tail#2/2 >/1
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.Flush#2: 9
+  //DEBUG: t.NextState#2: 11
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2994,6 +3266,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L5 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ExtractAlternatives_L6 {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ExtractAlternatives
     };
@@ -3028,6 +3301,12 @@ namespace /* unnamed */ {
       // closed e.Tail#2 as range 22(2)
       {refalrts::ictVarLeftSave, 0, 20, 15},
       {refalrts::icEmpty, 0, 0, 15},
+      //DEBUG: t.Head#2: 9
+      //DEBUG: t.Flush#2: 11
+      //DEBUG: t.NextState#2: 13
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.Tail#2: 2
+      //DEBUG: t.SrcPos#2: 20
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} t.SrcPos#2/20 )/18 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExtractAlternatives/4 AsIs: (/7 AsIs: e.Found#1/5 HalfReuse: (/8 AsIs: t.Head#2/9 AsIs: t.Flush#2/11 AsIs: t.NextState#2/13 HalfReuse: )/17 HalfReuse: )/19 } Tile{ AsIs: e.Tail#2/22(2) } Tile{ AsIs: >/1 ]] }
@@ -3048,6 +3327,11 @@ namespace /* unnamed */ {
       // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 e.Tail#2/2 >/1
       // closed e.Found#1 as range 5
       // closed e.Tail#2 as range 2
+      //DEBUG: t.Head#2: 9
+      //DEBUG: t.Flush#2: 11
+      //DEBUG: t.NextState#2: 13
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Found#1/5 HalfReuse: (/8 AsIs: t.Head#2/9 AsIs: t.Flush#2/11 AsIs: t.NextState#2/13 } Tile{ HalfReuse: )/0 HalfReuse: )/4 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
@@ -3075,7 +3359,8 @@ refalrts::RASLFunction descr_gen_ExtractAlternatives_L6(
   scope_gen_ExtractAlternatives_L6::functions,
   scope_gen_ExtractAlternatives_L6::idents,
   scope_gen_ExtractAlternatives_L6::numbers,
-  scope_gen_ExtractAlternatives_L6::strings
+  scope_gen_ExtractAlternatives_L6::strings,
+  scope_gen_ExtractAlternatives_L6::filename
 );
 refalrts::RefalFunction& gen_ExtractAlternatives_L6 = descr_gen_ExtractAlternatives_L6;
 
@@ -3133,6 +3418,12 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.Head#2: 9
+    //DEBUG: t.Flush#2: 11
+    //DEBUG: t.NextState#2: 13
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.SrcPos#2/20 )/18 {REMOVED TILE} {REMOVED TILE}
@@ -3159,6 +3450,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
   // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 e.Tail#2/2 >/1
   // closed e.Found#1 as range 5
   // closed e.Tail#2 as range 2
+  //DEBUG: t.Head#2: 9
+  //DEBUG: t.Flush#2: 11
+  //DEBUG: t.NextState#2: 13
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3189,6 +3485,7 @@ refalrts::RefalFunction& gen_ExtractAlternatives_L6 = descr_gen_ExtractAlternati
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_ExtractAlternatives_L6,
       & refalrts::create_closure,
@@ -3213,6 +3510,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Found#1 as range 5
       // closed e.Tail#1 as range 2
+      //DEBUG: e.Found#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Tail#1/2 } </11 & Seq/12 & ExtractAlternatives\1/13 & ExtractAlternatives\2/14 & ExtractAlternatives\3/15 & ExtractAlternatives\4/16 & ExtractAlternatives\5/17 </18 Tile{ HalfReuse: & @create_closure@/0 Reuse: & ExtractAlternatives\6/4 AsIs: (/7 AsIs: e.Found#1/5 AsIs: )/8 } >/19 >/20 Tile{ AsIs: >/1 ]] }
@@ -3257,7 +3556,8 @@ refalrts::RASLFunction descr_ExtractAlternatives(
   scope_ExtractAlternatives::functions,
   scope_ExtractAlternatives::idents,
   scope_ExtractAlternatives::numbers,
-  scope_ExtractAlternatives::strings
+  scope_ExtractAlternatives::strings,
+  scope_ExtractAlternatives::filename
 );
 refalrts::RefalFunction& ExtractAlternatives = descr_ExtractAlternatives;
 
@@ -3283,6 +3583,8 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Found#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3342,6 +3644,7 @@ refalrts::RefalFunction& ExtractAlternatives = descr_ExtractAlternatives;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_Head {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken
     };
@@ -3383,6 +3686,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Content#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Content#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/5 Reuse: # Chars/9 } Tile{ AsIs: e.Content#1/7 } Tile{ HalfReuse: )/1 ]] }
@@ -3404,6 +3709,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Content#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Content#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/5 Reuse: # Set/9 AsIs: t.SrcPos#1/10 AsIs: e.Content#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3423,6 +3730,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TFlush/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -3442,6 +3750,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Name#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Name#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TNamedFlush/9 AsIs: t.SrcPos#1/10 AsIs: e.Name#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3461,6 +3771,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Message#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Message#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TErrorFlush/9 AsIs: t.SrcPos#1/10 AsIs: e.Message#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3480,6 +3792,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Name#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Name#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TName/9 AsIs: t.SrcPos#1/10 AsIs: e.Name#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3499,6 +3813,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Message#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Message#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TAlternative/9 AsIs: t.SrcPos#1/10 AsIs: e.Message#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3518,6 +3834,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 12},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Empty/4 AsIs: (/5 AsIs: # TDot/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -3531,6 +3848,8 @@ namespace /* unnamed */ {
       // t.idx e.idx
       // </0 & ExtractAlternatives-Head/4 t.Unexpected#1/5 e.Tail#1/2 >/1
       // closed e.Tail#1 as range 2
+      //DEBUG: t.Unexpected#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 AsIs: t.Unexpected#1/5 }" definition of state"/7 Tile{ AsIs: >/1 ]] }
@@ -3555,7 +3874,8 @@ refalrts::RASLFunction descr_ExtractAlternatives_Head(
   scope_ExtractAlternatives_Head::functions,
   scope_ExtractAlternatives_Head::idents,
   scope_ExtractAlternatives_Head::numbers,
-  scope_ExtractAlternatives_Head::strings
+  scope_ExtractAlternatives_Head::strings,
+  scope_ExtractAlternatives_Head::filename
 );
 refalrts::RefalFunction& ExtractAlternatives_Head = descr_ExtractAlternatives_Head;
 
@@ -3597,6 +3917,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Content#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Content#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -3633,6 +3955,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Content#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Content#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3668,6 +3992,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3702,6 +4027,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3736,6 +4063,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3770,6 +4099,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3804,6 +4135,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3839,6 +4172,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3858,6 +4192,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
   // t.idx e.idx
   // </0 & ExtractAlternatives-Head/4 t.Unexpected#1/5 e.Tail#1/2 >/1
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Unexpected#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -3886,6 +4222,7 @@ refalrts::RefalFunction& ExtractAlternatives_Head = descr_ExtractAlternatives_He
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_Flush {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken
     };
@@ -3924,6 +4261,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 9, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Unnamed/1 ]] }
@@ -3939,6 +4277,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 7, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Name#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Name#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/5 Reuse: # Flush/9 } Tile{ AsIs: e.Name#1/7 } Tile{ HalfReuse: )/1 ]] }
@@ -3958,6 +4298,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 5, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Message#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Message#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/5 Reuse: # FlushError/9 } Tile{ AsIs: e.Message#1/7 } Tile{ HalfReuse: )/1 ]] }
@@ -3977,6 +4319,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 3, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Name#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Name#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # None/4 AsIs: (/5 AsIs: # TName/9 AsIs: t.SrcPos#1/10 AsIs: e.Name#1/7 AsIs: )/6 } Tile{ ]] }
@@ -3994,6 +4338,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 2, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # None/4 AsIs: (/5 AsIs: # TAlternative/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -4011,6 +4356,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # None/4 AsIs: (/5 AsIs: # TDot/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -4023,6 +4369,7 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx
       // </0 & ExtractAlternatives-Flush/4 t.Unexpected#1/5 >/1
+      //DEBUG: t.Unexpected#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 AsIs: t.Unexpected#1/5 HalfReuse: 'f'/1 }"lush or next state name"/7 >/9 Tile{ ]] }
@@ -4048,7 +4395,8 @@ refalrts::RASLFunction descr_ExtractAlternatives_Flush(
   scope_ExtractAlternatives_Flush::functions,
   scope_ExtractAlternatives_Flush::idents,
   scope_ExtractAlternatives_Flush::numbers,
-  scope_ExtractAlternatives_Flush::strings
+  scope_ExtractAlternatives_Flush::strings,
+  scope_ExtractAlternatives_Flush::filename
 );
 refalrts::RefalFunction& ExtractAlternatives_Flush = descr_ExtractAlternatives_Flush;
 
@@ -4088,6 +4436,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 {REMOVED TILE}
@@ -4116,6 +4465,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -4148,6 +4499,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -4180,6 +4533,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4211,6 +4566,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4242,6 +4598,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4260,6 +4617,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
 
   // t.idx
   // </0 & ExtractAlternatives-Flush/4 t.Unexpected#1/5 >/1
+  //DEBUG: t.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -4290,6 +4648,7 @@ refalrts::RefalFunction& ExtractAlternatives_Flush = descr_ExtractAlternatives_F
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ExtractAlternatives_NextState {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnexpectedToken
     };
@@ -4322,6 +4681,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 3, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       // closed e.Name#1 as range 7
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Name#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-NextState/4 (/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: t.SrcPos#1/10 AsIs: e.Name#1/7 AsIs: )/6 } Tile{ ]] }
@@ -4339,6 +4700,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 2, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Finitive/4 AsIs: (/5 AsIs: # TAlternative/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -4356,6 +4718,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 7},
       {refalrts::ictVarLeftSave, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: t.SrcPos#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Finitive/4 AsIs: (/5 AsIs: # TDot/9 AsIs: t.SrcPos#1/10 AsIs: )/6 } Tile{ ]] }
@@ -4368,6 +4731,7 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx
       // </0 & ExtractAlternatives-NextState/4 t.Unexpected#1/5 >/1
+      //DEBUG: t.Unexpected#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnexpectedToken/4 AsIs: t.Unexpected#1/5 HalfReuse: 'n'/1 }"ext state name or next alternative"/7 >/9 Tile{ ]] }
@@ -4393,7 +4757,8 @@ refalrts::RASLFunction descr_ExtractAlternatives_NextState(
   scope_ExtractAlternatives_NextState::functions,
   scope_ExtractAlternatives_NextState::idents,
   scope_ExtractAlternatives_NextState::numbers,
-  scope_ExtractAlternatives_NextState::strings
+  scope_ExtractAlternatives_NextState::strings,
+  scope_ExtractAlternatives_NextState::filename
 );
 refalrts::RefalFunction& ExtractAlternatives_NextState = descr_ExtractAlternatives_NextState;
 
@@ -4432,6 +4797,8 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-NextState/4 (/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4463,6 +4830,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4494,6 +4862,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4512,6 +4881,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
 
   // t.idx
   // </0 & ExtractAlternatives-NextState/4 t.Unexpected#1/5 >/1
+  //DEBUG: t.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -4542,6 +4912,7 @@ refalrts::RefalFunction& ExtractAlternatives_NextState = descr_ExtractAlternativ
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_UnexpectedToken {
+    static const char *filename = "DFA-Parser.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DFA_TextFromToken,
       & ErrorAt
@@ -4564,6 +4935,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 9, 5},
       {refalrts::ictVarLeftSave, 0, 10, 5},
       // closed e.Unexpected#1 as range 5
+      //DEBUG: e.Message#1: 2
+      //DEBUG: s.Type#1: 9
+      //DEBUG: t.SrcPos#1: 10
+      //DEBUG: e.Unexpected#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.SrcPos#1/10 }"Unexpected "/12 </14 Tile{ HalfReuse: & DFA-TextFromToken/7 AsIs: s.Type#1/9 } Tile{ AsIs: e.Unexpected#1/5 } >/15" expected"/16 Tile{ HalfReuse: ' '/8 AsIs: e.Message#1/2 AsIs: >/1 ]] }
@@ -4598,7 +4973,8 @@ refalrts::RASLFunction descr_UnexpectedToken(
   scope_UnexpectedToken::functions,
   scope_UnexpectedToken::idents,
   scope_UnexpectedToken::numbers,
-  scope_UnexpectedToken::strings
+  scope_UnexpectedToken::strings,
+  scope_UnexpectedToken::filename
 );
 refalrts::RefalFunction& UnexpectedToken = descr_UnexpectedToken;
 
@@ -4629,6 +5005,10 @@ static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrt
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   // closed e.Unexpected#1 as range 5
+  //DEBUG: e.Message#1: 2
+  //DEBUG: s.Type#1: 9
+  //DEBUG: t.SrcPos#1: 10
+  //DEBUG: e.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

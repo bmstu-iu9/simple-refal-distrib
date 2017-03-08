@@ -66,6 +66,14 @@ struct ident_CmdOpenedE {
   }
 };
 
+// identifier #CmdVariableDebugTable
+template <typename SREFAL_PARAM_INT>
+struct ident_CmdVariableDebugTable {
+  static const char *name() {
+    return "CmdVariableDebugTable";
+  }
+};
+
 // identifier #E
 template <typename SREFAL_PARAM_INT>
 struct ident_E {
@@ -313,6 +321,14 @@ extern refalrts::RefalFunction& FoldOpenELoops;
 } // unnamed namespace
 
 namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_PutVariableDebugTable_L1;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& PutVariableDebugTable;
+} // unnamed namespace
+
+namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_CollectStrings_S1L1;
 } // unnamed namespace
 
@@ -325,6 +341,7 @@ extern refalrts::RefalFunction& BuildString;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Inc2 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Add
     };
@@ -340,6 +357,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </6 Tile{ HalfReuse: & Add/0 HalfReuse: 2/4 AsIs: s.Num#1/5 AsIs: >/1 ]] }
@@ -363,7 +381,8 @@ refalrts::RASLFunction descr_Inc2(
   scope_Inc2::functions,
   scope_Inc2::idents,
   scope_Inc2::numbers,
-  scope_Inc2::strings
+  scope_Inc2::strings,
+  scope_Inc2::filename
 );
 refalrts::RefalFunction& Inc2 = descr_Inc2;
 
@@ -383,6 +402,7 @@ static refalrts::FnResult func_Inc2(refalrts::Iter arg_begin, refalrts::Iter arg
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -408,6 +428,7 @@ refalrts::RefalFunction& Inc2 = descr_Inc2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_IncVarOffset {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc,
       & Inc2
@@ -432,6 +453,7 @@ namespace /* unnamed */ {
       // s.idx 'e'
       // </0 & IncVarOffset/4 s.ContextOffset#1/5 'e'/6 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('e'), 6},
+      //DEBUG: s.ContextOffset#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc2/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
@@ -447,6 +469,7 @@ namespace /* unnamed */ {
       // s.idx 't'
       // </0 & IncVarOffset/4 s.ContextOffset#1/5 't'/6 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('t'), 6},
+      //DEBUG: s.ContextOffset#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
@@ -461,6 +484,7 @@ namespace /* unnamed */ {
       // s.idx 's'
       // </0 & IncVarOffset/4 s.ContextOffset#1/5 's'/6 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('s'), 6},
+      //DEBUG: s.ContextOffset#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.ContextOffset#1/5 HalfReuse: >/6 } Tile{ ]] }
@@ -483,7 +507,8 @@ refalrts::RASLFunction descr_IncVarOffset(
   scope_IncVarOffset::functions,
   scope_IncVarOffset::idents,
   scope_IncVarOffset::numbers,
-  scope_IncVarOffset::strings
+  scope_IncVarOffset::strings,
+  scope_IncVarOffset::filename
 );
 refalrts::RefalFunction& IncVarOffset = descr_IncVarOffset;
 
@@ -512,6 +537,7 @@ static refalrts::FnResult func_IncVarOffset(refalrts::Iter arg_begin, refalrts::
     // </0 & IncVarOffset/4 s.ContextOffset#1/5 'e'/6 >/1
     if( ! refalrts::char_term( 'e', context[6] ) )
       continue;
+    //DEBUG: s.ContextOffset#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -534,6 +560,7 @@ static refalrts::FnResult func_IncVarOffset(refalrts::Iter arg_begin, refalrts::
     // </0 & IncVarOffset/4 s.ContextOffset#1/5 't'/6 >/1
     if( ! refalrts::char_term( 't', context[6] ) )
       continue;
+    //DEBUG: s.ContextOffset#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -555,6 +582,7 @@ static refalrts::FnResult func_IncVarOffset(refalrts::Iter arg_begin, refalrts::
   // </0 & IncVarOffset/4 s.ContextOffset#1/5 's'/6 >/1
   if( ! refalrts::char_term( 's', context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.ContextOffset#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -578,6 +606,7 @@ refalrts::RefalFunction& IncVarOffset = descr_IncVarOffset;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_PrintVar {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt
     };
@@ -604,6 +633,8 @@ namespace /* unnamed */ {
       // </0 & PrintVar/4 s.Mode#1/5 e.Index#1/2 # NoDepth/6 >/1
       {refalrts::icIdentTerm, 0, 0, 6},
       // closed e.Index#1 as range 2
+      //DEBUG: s.Mode#1: 5
+      //DEBUG: e.Index#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Mode#1/5 {REMOVED TILE} # NoDepth/6 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: s.Mode1 #5/0 HalfReuse: '.'/4 } Tile{ AsIs: e.Index#1/2 } Tile{ ]] }
@@ -617,6 +648,9 @@ namespace /* unnamed */ {
       // s.idx e.idx s.idx
       // </0 & PrintVar/4 s.Mode#1/5 e.Index#1/2 s.Depth#1/6 >/1
       // closed e.Index#1 as range 2
+      //DEBUG: s.Mode#1: 5
+      //DEBUG: s.Depth#1: 6
+      //DEBUG: e.Index#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Mode#1/5 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: s.Mode1 #5/0 HalfReuse: '.'/4 } Tile{ AsIs: e.Index#1/2 } '#'/7 </8 & StrFromInt/9 Tile{ AsIs: s.Depth#1/6 AsIs: >/1 ]] }
@@ -644,7 +678,8 @@ refalrts::RASLFunction descr_PrintVar(
   scope_PrintVar::functions,
   scope_PrintVar::idents,
   scope_PrintVar::numbers,
-  scope_PrintVar::strings
+  scope_PrintVar::strings,
+  scope_PrintVar::filename
 );
 refalrts::RefalFunction& PrintVar = descr_PrintVar;
 
@@ -673,6 +708,8 @@ static refalrts::FnResult func_PrintVar(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::ident_term(  & ident_NoDepth<int>::name, context[6] ) )
       continue;
     // closed e.Index#1 as range 2
+    //DEBUG: s.Mode#1: 5
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#1/5 {REMOVED TILE} # NoDepth/6 >/1 {REMOVED TILE}
@@ -692,6 +729,9 @@ static refalrts::FnResult func_PrintVar(refalrts::Iter arg_begin, refalrts::Iter
   // s.idx e.idx s.idx
   // </0 & PrintVar/4 s.Mode#1/5 e.Index#1/2 s.Depth#1/6 >/1
   // closed e.Index#1 as range 2
+  //DEBUG: s.Mode#1: 5
+  //DEBUG: s.Depth#1: 6
+  //DEBUG: e.Index#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Mode#1/5 {REMOVED TILE} {REMOVED TILE}
@@ -723,6 +763,7 @@ refalrts::RefalFunction& PrintVar = descr_PrintVar;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FakeOffset_L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NoOffset<int>::name,
@@ -749,6 +790,7 @@ namespace /* unnamed */ {
       // </0 & FakeOffset\1/4 (/7 s.Bracket#2/9 )/8 >/1
       {refalrts::icSave, 0, 13, 5},
       {refalrts::icEmpty, 0, 0, 13},
+      //DEBUG: s.Bracket#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Bracket#2/9 HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
@@ -768,6 +810,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarRight, 0, 11, 13},
       {refalrts::icsVarRight, 0, 12, 13},
       // closed e.Index#2 as range 13(5)
+      //DEBUG: s.Mode#2: 10
+      //DEBUG: s.Offset#2: 11
+      //DEBUG: s.Depth#2: 12
+      //DEBUG: e.Index#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # TkVariable/9 AsIs: s.Mode#2/10 AsIs: e.Index#2/13(5) AsIs: s.Depth#2/12 AsIs: s.Offset#2/11 AsIs: )/8 } Tile{ ]] }
@@ -780,6 +826,8 @@ namespace /* unnamed */ {
       // ( s.idx e.idx )
       // </0 & FakeOffset\1/4 (/7 s.Token#2/9 e.TokenInfo#2/5 )/8 >/1
       // closed e.TokenInfo#2 as range 5
+      //DEBUG: s.Token#2: 9
+      //DEBUG: e.TokenInfo#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Token#2/9 AsIs: e.TokenInfo#2/5 HalfReuse: # NoOffset/8 HalfReuse: )/1 ]] }
@@ -802,7 +850,8 @@ refalrts::RASLFunction descr_gen_FakeOffset_L1(
   scope_gen_FakeOffset_L1::functions,
   scope_gen_FakeOffset_L1::idents,
   scope_gen_FakeOffset_L1::numbers,
-  scope_gen_FakeOffset_L1::strings
+  scope_gen_FakeOffset_L1::strings,
+  scope_gen_FakeOffset_L1::filename
 );
 refalrts::RefalFunction& gen_FakeOffset_L1 = descr_gen_FakeOffset_L1;
 
@@ -840,6 +889,7 @@ static refalrts::FnResult func_gen_FakeOffset_L1(refalrts::Iter arg_begin, refal
     context[14] = context[6];
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.Bracket#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE}
@@ -870,6 +920,10 @@ static refalrts::FnResult func_gen_FakeOffset_L1(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_right( context[12], context[13], context[14] ) )
       continue;
     // closed e.Index#2 as range 13(5)
+    //DEBUG: s.Mode#2: 10
+    //DEBUG: s.Offset#2: 11
+    //DEBUG: s.Depth#2: 12
+    //DEBUG: e.Index#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -888,6 +942,8 @@ static refalrts::FnResult func_gen_FakeOffset_L1(refalrts::Iter arg_begin, refal
   // ( s.idx e.idx )
   // </0 & FakeOffset\1/4 (/7 s.Token#2/9 e.TokenInfo#2/5 )/8 >/1
   // closed e.TokenInfo#2 as range 5
+  //DEBUG: s.Token#2: 9
+  //DEBUG: e.TokenInfo#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FakeOffset\1/4 {REMOVED TILE}
@@ -913,6 +969,7 @@ refalrts::RefalFunction& gen_FakeOffset_L1 = descr_gen_FakeOffset_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FakeOffset {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_FakeOffset_L1,
       & Map
@@ -928,6 +985,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Expr#1 as range 2
+      //DEBUG: e.Expr#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & FakeOffset\1/4 AsIs: e.Expr#1/2 AsIs: >/1 ]] }
@@ -951,7 +1009,8 @@ refalrts::RASLFunction descr_FakeOffset(
   scope_FakeOffset::functions,
   scope_FakeOffset::idents,
   scope_FakeOffset::numbers,
-  scope_FakeOffset::strings
+  scope_FakeOffset::strings,
+  scope_FakeOffset::filename
 );
 refalrts::RefalFunction& FakeOffset = descr_FakeOffset;
 
@@ -968,6 +1027,7 @@ static refalrts::FnResult func_FakeOffset(refalrts::Iter arg_begin, refalrts::It
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Expr#1 as range 2
+  //DEBUG: e.Expr#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -993,6 +1053,7 @@ refalrts::RefalFunction& FakeOffset = descr_FakeOffset;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_TextFromExpr_L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & TextFromExpr,
       & Offset,
@@ -1053,6 +1114,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 20, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '('/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1074,6 +1136,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 19, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: ')'/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1095,6 +1158,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 18, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '<'/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1116,6 +1180,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 17, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '>'/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1138,6 +1203,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icsVarRight, 0, 11, 7},
       // closed e.Name#2 as range 7
+      //DEBUG: s.ContextOffset#2: 10
+      //DEBUG: s.NameOffset#2: 11
+      //DEBUG: e.Name#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.NameOffset#2/11 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '['/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 } >/12 </13 & DisplayName/14 Tile{ AsIs: e.Name#2/7 } >/15 </16 & Offset/17 Tile{ HalfReuse: s.NameOffset2 #11/6 AsIs: >/1 ]] }
@@ -1172,6 +1240,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 16, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '['/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1193,6 +1262,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 15, 7},
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.ContextOffset#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: ']'/4 HalfReuse: </5 HalfReuse: & Offset/9 AsIs: s.ContextOffset#2/10 HalfReuse: >/6 } Tile{ ]] }
@@ -1215,6 +1285,8 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icsVarLeft, 0, 11, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.Char#2: 10
+      //DEBUG: s.Offset#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Offset#2/11 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '\''/4 HalfReuse: </5 HalfReuse: & EscapeChar/9 AsIs: s.Char#2/10 } >/12 '\''/13 </14 & Offset/15 Tile{ HalfReuse: s.Offset2 #11/6 AsIs: >/1 ]] }
@@ -1242,6 +1314,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 13, 7},
       // closed e.Chars#2 as range 7
+      //DEBUG: e.Chars#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & TextFromExpr\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/5 HalfReuse: '\''/9 AsIs: e.Chars#2/7 HalfReuse: '\''/6 } Tile{ ]] }
@@ -1261,6 +1334,8 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::icsVarLeft, 0, 11, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.Number#2: 10
+      //DEBUG: s.Offset#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Number#2/10 s.Offset#2/11 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 HalfReuse: s.Number2 #10/9 } >/12 </13 & Offset/14 Tile{ HalfReuse: s.Offset2 #11/6 AsIs: >/1 ]] }
@@ -1288,6 +1363,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 11, 7},
       {refalrts::icsVarRight, 0, 10, 7},
       // closed e.Name#2 as range 7
+      //DEBUG: s.Offset#2: 10
+      //DEBUG: e.Name#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '&'/4 HalfReuse: ' '/5 HalfReuse: </9 } & DisplayName/11 Tile{ AsIs: e.Name#2/7 } >/12 </13 & Offset/14 Tile{ HalfReuse: s.Offset2 #10/6 AsIs: >/1 ]] }
@@ -1318,6 +1395,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 10, 7},
       {refalrts::icsVarRight, 0, 10, 7},
       // closed e.String#2 as range 7
+      //DEBUG: s.Offset#2: 10
+      //DEBUG: e.String#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '\"'/0 HalfReuse: </4 HalfReuse: & Map/5 HalfReuse: & EscapeChar/9 } Tile{ AsIs: e.String#2/7 } >/11 '\"'/12 </13 & Offset/14 Tile{ HalfReuse: s.Offset2 #10/6 AsIs: >/1 ]] }
@@ -1349,6 +1428,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarRight, 0, 11, 7},
       {refalrts::icsVarRight, 0, 12, 7},
       // closed e.Index#2 as range 7
+      //DEBUG: s.Mode#2: 10
+      //DEBUG: s.Offset#2: 11
+      //DEBUG: s.Depth#2: 12
+      //DEBUG: e.Index#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Offset#2/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/4 HalfReuse: </5 HalfReuse: & PrintVar/9 AsIs: s.Mode#2/10 AsIs: e.Index#2/7 AsIs: s.Depth#2/12 } >/13 Tile{ AsIs: </0 } & Offset/14 Tile{ HalfReuse: s.Offset2 #11/6 AsIs: >/1 ]] }
@@ -1380,6 +1463,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarRight, 0, 12, 7},
       {refalrts::icsVarRight, 0, 13, 7},
       // closed e.Index#2 as range 7
+      //DEBUG: s.Mode#2: 10
+      //DEBUG: s.CopyOffset#2: 11
+      //DEBUG: s.SampleOffset#2: 12
+      //DEBUG: s.Depth#2: 13
+      //DEBUG: e.Index#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CopyOffset#2/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/4 HalfReuse: </5 HalfReuse: & PrintVar/9 AsIs: s.Mode#2/10 AsIs: e.Index#2/7 AsIs: s.Depth#2/13 } >/14 Tile{ AsIs: </0 } & Offset/15 Tile{ AsIs: s.SampleOffset#2/12 } >/16 </17 & Offset/18 Tile{ HalfReuse: s.CopyOffset2 #11/6 AsIs: >/1 ]] }
@@ -1415,6 +1503,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 7, 7},
       {refalrts::icsVarRight, 0, 10, 7},
       // closed e.Name#2 as range 7
+      //DEBUG: s.Offset#2: 10
+      //DEBUG: e.Name#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '#'/4 HalfReuse: ' '/5 HalfReuse: </9 } & DisplayName/11 Tile{ AsIs: e.Name#2/7 } >/12 </13 & Offset/14 Tile{ HalfReuse: s.Offset2 #10/6 AsIs: >/1 ]] }
@@ -1444,6 +1534,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 6, 7},
       // closed e.SubRange#2 as range 7
+      //DEBUG: e.SubRange#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }" Til"/10 Tile{ HalfReuse: 'e'/0 HalfReuse: '{'/4 HalfReuse: </5 HalfReuse: & TextFromExpr/9 AsIs: e.SubRange#2/7 HalfReuse: >/6 HalfReuse: ' '/1 } '}'/12 Tile{ ]] }
@@ -1469,6 +1560,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 5, 7},
       // closed e.SubRange#2 as range 7
+      //DEBUG: e.SubRange#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }" As"/10 Tile{ HalfReuse: 'I'/1 } Tile{ HalfReuse: 's'/0 HalfReuse: ':'/4 HalfReuse: </5 HalfReuse: & TextFromExpr/9 AsIs: e.SubRange#2/7 HalfReuse: >/6 } Tile{ ]] }
@@ -1493,6 +1585,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 4, 7},
       // closed e.SubRange#2 as range 7
+      //DEBUG: e.SubRange#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }" Re"/10 Tile{ HalfReuse: 'u'/1 } 's'/12 Tile{ HalfReuse: 'e'/0 HalfReuse: ':'/4 HalfReuse: </5 HalfReuse: & TextFromExpr/9 AsIs: e.SubRange#2/7 HalfReuse: >/6 } Tile{ ]] }
@@ -1519,6 +1612,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 3, 7},
       // closed e.SubRange#2 as range 7
+      //DEBUG: e.SubRange#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }" Ha"/10 Tile{ HalfReuse: 'l'/1 }"fReus"/12 Tile{ HalfReuse: 'e'/0 HalfReuse: ':'/4 HalfReuse: </5 HalfReuse: & TextFromExpr/9 AsIs: e.SubRange#2/7 HalfReuse: >/6 } Tile{ ]] }
@@ -1598,7 +1692,8 @@ refalrts::RASLFunction descr_gen_TextFromExpr_L1(
   scope_gen_TextFromExpr_L1::functions,
   scope_gen_TextFromExpr_L1::idents,
   scope_gen_TextFromExpr_L1::numbers,
-  scope_gen_TextFromExpr_L1::strings
+  scope_gen_TextFromExpr_L1::strings,
+  scope_gen_TextFromExpr_L1::filename
 );
 refalrts::RefalFunction& gen_TextFromExpr_L1 = descr_gen_TextFromExpr_L1;
 
@@ -1637,6 +1732,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1671,6 +1767,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1705,6 +1802,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1739,6 +1837,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1774,6 +1873,9 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[11], context[7], context[8] ) )
       continue;
     // closed e.Name#2 as range 7
+    //DEBUG: s.ContextOffset#2: 10
+    //DEBUG: s.NameOffset#2: 11
+    //DEBUG: e.Name#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.NameOffset#2/11 {REMOVED TILE}
@@ -1827,6 +1929,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1861,6 +1964,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.ContextOffset#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1897,6 +2001,8 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.Char#2: 10
+    //DEBUG: s.Offset#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Offset#2/11 {REMOVED TILE}
@@ -1939,6 +2045,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! context[9] )
       continue;
     // closed e.Chars#2 as range 7
+    //DEBUG: e.Chars#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & TextFromExpr\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1972,6 +2079,8 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.Number#2: 10
+    //DEBUG: s.Offset#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Number#2/10 s.Offset#2/11 {REMOVED TILE}
@@ -2014,6 +2123,8 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[10], context[7], context[8] ) )
       continue;
     // closed e.Name#2 as range 7
+    //DEBUG: s.Offset#2: 10
+    //DEBUG: e.Name#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
@@ -2060,6 +2171,8 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[10], context[7], context[8] ) )
       continue;
     // closed e.String#2 as range 7
+    //DEBUG: s.Offset#2: 10
+    //DEBUG: e.String#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
@@ -2109,6 +2222,10 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[12], context[7], context[8] ) )
       continue;
     // closed e.Index#2 as range 7
+    //DEBUG: s.Mode#2: 10
+    //DEBUG: s.Offset#2: 11
+    //DEBUG: s.Depth#2: 12
+    //DEBUG: e.Index#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Offset#2/11 {REMOVED TILE}
@@ -2157,6 +2274,11 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[13], context[7], context[8] ) )
       continue;
     // closed e.Index#2 as range 7
+    //DEBUG: s.Mode#2: 10
+    //DEBUG: s.CopyOffset#2: 11
+    //DEBUG: s.SampleOffset#2: 12
+    //DEBUG: s.Depth#2: 13
+    //DEBUG: e.Index#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CopyOffset#2/11 {REMOVED TILE}
@@ -2209,6 +2331,8 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[10], context[7], context[8] ) )
       continue;
     // closed e.Name#2 as range 7
+    //DEBUG: s.Offset#2: 10
+    //DEBUG: e.Name#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE}
@@ -2253,6 +2377,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! context[9] )
       continue;
     // closed e.SubRange#2 as range 7
+    //DEBUG: e.SubRange#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2291,6 +2416,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! context[9] )
       continue;
     // closed e.SubRange#2 as range 7
+    //DEBUG: e.SubRange#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2327,6 +2453,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! context[9] )
       continue;
     // closed e.SubRange#2 as range 7
+    //DEBUG: e.SubRange#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2366,6 +2493,7 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     if( ! context[9] )
       continue;
     // closed e.SubRange#2 as range 7
+    //DEBUG: e.SubRange#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2482,6 +2610,7 @@ refalrts::RefalFunction& gen_TextFromExpr_L1 = descr_gen_TextFromExpr_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_TextFromExpr {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & TextFromExpr_Prepare,
       & gen_TextFromExpr_L1,
@@ -2498,6 +2627,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Expr#1 as range 2
+      //DEBUG: e.Expr#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & Map/6 & TextFromExpr\1/7 Tile{ AsIs: </0 Reuse: & TextFromExpr-Prepare/4 AsIs: e.Expr#1/2 AsIs: >/1 } >/8 Tile{ ]] }
@@ -2527,7 +2657,8 @@ refalrts::RASLFunction descr_TextFromExpr(
   scope_TextFromExpr::functions,
   scope_TextFromExpr::idents,
   scope_TextFromExpr::numbers,
-  scope_TextFromExpr::strings
+  scope_TextFromExpr::strings,
+  scope_TextFromExpr::filename
 );
 refalrts::RefalFunction& TextFromExpr = descr_TextFromExpr;
 
@@ -2544,6 +2675,7 @@ static refalrts::FnResult func_TextFromExpr(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Expr#1 as range 2
+  //DEBUG: e.Expr#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2578,6 +2710,7 @@ refalrts::RefalFunction& TextFromExpr = descr_TextFromExpr;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_TextFromExpr_Prepare {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & TextFromExpr_Prepare_Chars
     };
@@ -2610,6 +2743,8 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 17(2)
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.Char#1: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </12 & TextFromExpr-Prepare-Chars/13 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: (/7 AsIs: # TkChar/9 AsIs: s.Char#1/11 AsIs: # NoOffset/10 AsIs: )/8 AsIs: e.Tail#1/17(2) AsIs: >/1 ]] }
@@ -2638,6 +2773,10 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 5},
       {refalrts::icsVarRight, 0, 16, 10},
       // closed e.Name#1 as range 10
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.BracketOffset#1: 15
+      //DEBUG: s.NameOffset#1: 16
+      //DEBUG: e.Name#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} (/7 # TkOpenADT/9 s.BracketOffset#1/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 HalfReuse: # TkOpenADT/12 HalfReuse: s.BracketOffset1 #15/14 AsIs: e.Name#1/10 AsIs: s.NameOffset#1/16 AsIs: )/13 } Tile{ AsIs: </0 AsIs: & TextFromExpr-Prepare/4 } Tile{ AsIs: e.Tail#1/17(2) } Tile{ AsIs: >/1 ]] }
@@ -2660,6 +2799,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 17, 2},
       {refalrts::ictVarLeftSave, 0, 5, 17},
       // closed e.Tail#1 as range 17(2)
+      //DEBUG: t.Other#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Other#1/5 } Tile{ AsIs: </0 AsIs: & TextFromExpr-Prepare/4 } Tile{ AsIs: e.Tail#1/17(2) } Tile{ AsIs: >/1 ]] }
@@ -2693,7 +2834,8 @@ refalrts::RASLFunction descr_TextFromExpr_Prepare(
   scope_TextFromExpr_Prepare::functions,
   scope_TextFromExpr_Prepare::idents,
   scope_TextFromExpr_Prepare::numbers,
-  scope_TextFromExpr_Prepare::strings
+  scope_TextFromExpr_Prepare::strings,
+  scope_TextFromExpr_Prepare::filename
 );
 refalrts::RefalFunction& TextFromExpr_Prepare = descr_TextFromExpr_Prepare;
 
@@ -2736,6 +2878,8 @@ static refalrts::FnResult func_TextFromExpr_Prepare(refalrts::Iter arg_begin, re
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.Char#1: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2790,6 +2934,10 @@ static refalrts::FnResult func_TextFromExpr_Prepare(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_right( context[16], context[10], context[11] ) )
       continue;
     // closed e.Name#1 as range 10
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketOffset#1: 15
+    //DEBUG: s.NameOffset#1: 16
+    //DEBUG: e.Name#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} (/7 # TkOpenADT/9 s.BracketOffset#1/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2821,6 +2969,8 @@ static refalrts::FnResult func_TextFromExpr_Prepare(refalrts::Iter arg_begin, re
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 17(2)
+    //DEBUG: t.Other#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2864,6 +3014,7 @@ refalrts::RefalFunction& TextFromExpr_Prepare = descr_TextFromExpr_Prepare;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_TextFromExpr_Prepare_Chars {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & TextFromExpr_Prepare,
       & EscapeChar
@@ -2899,6 +3050,9 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 16(2)
       {refalrts::icsVarLeft, 0, 15, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Chars#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.Char#1: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & TextFromExpr-Prepare-Chars/4 AsIs: (/7 } Tile{ AsIs: e.Chars#1/5 } Tile{ HalfReuse: </11 HalfReuse: & EscapeChar/13 AsIs: s.Char#1/15 HalfReuse: >/14 AsIs: )/12 AsIs: e.Tail#1/16(2) AsIs: >/1 ]] }
@@ -2919,6 +3073,8 @@ namespace /* unnamed */ {
       // </0 & TextFromExpr-Prepare-Chars/4 (/7 e.Chars#1/5 )/8 e.Tail#1/2 >/1
       // closed e.Chars#1 as range 5
       // closed e.Tail#1 as range 2
+      //DEBUG: e.Chars#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkChars/4 } Tile{ AsIs: e.Chars#1/5 } Tile{ HalfReuse: )/7 } </9 Tile{ HalfReuse: & TextFromExpr-Prepare/8 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
@@ -2948,7 +3104,8 @@ refalrts::RASLFunction descr_TextFromExpr_Prepare_Chars(
   scope_TextFromExpr_Prepare_Chars::functions,
   scope_TextFromExpr_Prepare_Chars::idents,
   scope_TextFromExpr_Prepare_Chars::numbers,
-  scope_TextFromExpr_Prepare_Chars::strings
+  scope_TextFromExpr_Prepare_Chars::strings,
+  scope_TextFromExpr_Prepare_Chars::filename
 );
 refalrts::RefalFunction& TextFromExpr_Prepare_Chars = descr_TextFromExpr_Prepare_Chars;
 
@@ -2999,6 +3156,9 @@ static refalrts::FnResult func_TextFromExpr_Prepare_Chars(refalrts::Iter arg_beg
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: e.Chars#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.Char#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
@@ -3025,6 +3185,8 @@ static refalrts::FnResult func_TextFromExpr_Prepare_Chars(refalrts::Iter arg_beg
   // </0 & TextFromExpr-Prepare-Chars/4 (/7 e.Chars#1/5 )/8 e.Tail#1/2 >/1
   // closed e.Chars#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: e.Chars#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3058,6 +3220,7 @@ refalrts::RefalFunction& TextFromExpr_Prepare_Chars = descr_TextFromExpr_Prepare
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Offset {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Offset<int>::name,
@@ -3090,6 +3253,7 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & Offset/4 s.Offset#1/5 >/1
+      //DEBUG: s.Offset#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '/'/0 HalfReuse: # Offset/4 AsIs: s.Offset#1/5 } Tile{ ]] }
@@ -3111,7 +3275,8 @@ refalrts::RASLFunction descr_Offset(
   scope_Offset::functions,
   scope_Offset::idents,
   scope_Offset::numbers,
-  scope_Offset::strings
+  scope_Offset::strings,
+  scope_Offset::filename
 );
 refalrts::RefalFunction& Offset = descr_Offset;
 
@@ -3155,6 +3320,7 @@ static refalrts::FnResult func_Offset(refalrts::Iter arg_begin, refalrts::Iter a
 
   // s.idx
   // </0 & Offset/4 s.Offset#1/5 >/1
+  //DEBUG: s.Offset#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3179,6 +3345,7 @@ refalrts::RefalFunction& Offset = descr_Offset;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenPattern_L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_E<int>::name,
@@ -3205,6 +3372,13 @@ namespace /* unnamed */ {
       // closed e.JunkLeft#2 as range 12
       // closed e.JunkRight#2 as range 17
       // closed e.InitCommands#2 as range 2
+      //DEBUG: s.FnGenSubst#1: 5
+      //DEBUG: e.Pattern#1: 6
+      //DEBUG: s.B0-Offset#2: 10
+      //DEBUG: s.ContextTop#2: 11
+      //DEBUG: e.JunkLeft#2: 12
+      //DEBUG: e.JunkRight#2: 17
+      //DEBUG: e.InitCommands#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenSubst#1/5 {REMOVED TILE} s.B0-Offset#2/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 HalfReuse: s.FnGenSubst1 #5/4 } Tile{ AsIs: s.ContextTop#2/11 AsIs: (/14 AsIs: # Junk/16 AsIs: e.JunkLeft#2/12 AsIs: )/15 AsIs: (/19 Reuse: # E/21 } Tile{ HalfReuse: s.B0-Offset2 #10/8 AsIs: e.Pattern#1/6 AsIs: )/9 } (/22 # Junk/23 Tile{ AsIs: e.JunkRight#2/17 } Tile{ AsIs: )/20 } (/24 Tile{ AsIs: e.InitCommands#2/2 } )/25 Tile{ AsIs: >/1 ]] }
@@ -3245,7 +3419,8 @@ refalrts::RASLFunction descr_gen_GenPattern_L1(
   scope_gen_GenPattern_L1::functions,
   scope_gen_GenPattern_L1::idents,
   scope_gen_GenPattern_L1::numbers,
-  scope_gen_GenPattern_L1::strings
+  scope_gen_GenPattern_L1::strings,
+  scope_gen_GenPattern_L1::filename
 );
 refalrts::RefalFunction& gen_GenPattern_L1 = descr_gen_GenPattern_L1;
 
@@ -3297,6 +3472,13 @@ static refalrts::FnResult func_gen_GenPattern_L1(refalrts::Iter arg_begin, refal
   // closed e.JunkLeft#2 as range 12
   // closed e.JunkRight#2 as range 17
   // closed e.InitCommands#2 as range 2
+  //DEBUG: s.FnGenSubst#1: 5
+  //DEBUG: e.Pattern#1: 6
+  //DEBUG: s.B0-Offset#2: 10
+  //DEBUG: s.ContextTop#2: 11
+  //DEBUG: e.JunkLeft#2: 12
+  //DEBUG: e.JunkRight#2: 17
+  //DEBUG: e.InitCommands#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenSubst#1/5 {REMOVED TILE} s.B0-Offset#2/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3344,6 +3526,7 @@ refalrts::RefalFunction& gen_GenPattern_L1 = descr_gen_GenPattern_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenPattern {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_GenPattern_L1,
@@ -3364,6 +3547,10 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 7, 2},
       // closed e.Name#1 as range 7
       // closed e.Pattern#1 as range 2
+      //DEBUG: s.FnGenInitSubst#1: 5
+      //DEBUG: s.FnGenSubst#1: 6
+      //DEBUG: e.Name#1: 7
+      //DEBUG: e.Pattern#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 Tile{ AsIs: s.FnGenInitSubst#1/5 } Tile{ AsIs: e.Name#1/7 } >/12 </13 & @create_closure@/14 & GenPattern\1/15 Tile{ AsIs: s.FnGenSubst#1/6 AsIs: (/9 } Tile{ AsIs: e.Pattern#1/2 } Tile{ AsIs: )/10 } >/16 Tile{ AsIs: >/1 ]] }
@@ -3403,7 +3590,8 @@ refalrts::RASLFunction descr_GenPattern(
   scope_GenPattern::functions,
   scope_GenPattern::idents,
   scope_GenPattern::numbers,
-  scope_GenPattern::strings
+  scope_GenPattern::strings,
+  scope_GenPattern::filename
 );
 refalrts::RefalFunction& GenPattern = descr_GenPattern;
 
@@ -3431,6 +3619,10 @@ static refalrts::FnResult func_GenPattern(refalrts::Iter arg_begin, refalrts::It
   refalrts::bracket_pointers(context[9], context[10]);
   // closed e.Name#1 as range 7
   // closed e.Pattern#1 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.Pattern#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3477,7 +3669,9 @@ refalrts::RefalFunction& GenPattern = descr_GenPattern;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GenResult_L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
+      & PutVariableDebugTable,
       & FoldOpenELoops
     };
     static const refalrts::RefalIdentifier idents[] = {
@@ -3488,28 +3682,42 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 11, 0, 0},
-      // </0 & GenResult\1/4 (/7 e.PatternCommands#1/5 )/8 s.ContextCount#2/9 e.ResultCommands#2/2 >/1
+      {refalrts::icIssueMemory, 17, 0, 0},
+      // </0 & GenResult\1/4 (/7 e.PatternCommands#1/5 )/8 (/11 e.PatternVars#1/9 )/12 s.ContextCount#2/13 e.ResultCommands#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
       // closed e.PatternCommands#1 as range 5
-      {refalrts::icsVarLeft, 0, 9, 2},
+      // closed e.PatternVars#1 as range 9
+      {refalrts::icsVarLeft, 0, 13, 2},
       // closed e.ResultCommands#2 as range 2
+      //DEBUG: e.PatternCommands#1: 5
+      //DEBUG: e.PatternVars#1: 9
+      //DEBUG: s.ContextCount#2: 13
+      //DEBUG: e.ResultCommands#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldOpenELoops/4 AsIs: (/7 } Tile{ HalfReuse: # CmdIssueMem/8 AsIs: s.ContextCount#2/9 } )/10 Tile{ AsIs: e.PatternCommands#1/5 } Tile{ AsIs: e.ResultCommands#2/2 } Tile{ AsIs: >/1 ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 10},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitIdent, 0, 0, 8},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} s.ContextCount#2/13 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </14 & FoldOpenELoops/15 (/16 Tile{ HalfReuse: # CmdIssueMem/0 HalfReuse: s.ContextCount2 #13/4 HalfReuse: )/7 AsIs: e.PatternCommands#1/5 HalfReuse: </8 HalfReuse: & PutVariableDebugTable/11 AsIs: e.PatternVars#1/9 HalfReuse: >/12 } Tile{ AsIs: e.ResultCommands#2/2 } Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 14},
+      {refalrts::icAllocFunc, 0, 1, 15},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 16},
+      {refalrts::icReinitIdent, 0, 0, 0},
+      {refalrts::icReinitSVar, 0, 13, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 7},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 8},
+      {refalrts::icReinitFunc, 0, 0, 11},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 12},
       {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icLinkBrackets, 7, 10, 0},
+      {refalrts::icPushStack, 0, 0, 14},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icPushStack, 0, 0, 8},
+      {refalrts::icLinkBrackets, 16, 7, 0},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceEVar, 0, 0, 5},
-      {refalrts::icSpliceTile, 10, 10, 0},
-      {refalrts::icSpliceTile, 8, 9, 0},
+      {refalrts::icSpliceTile, 0, 12, 0},
+      {refalrts::icSpliceTile, 14, 16, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
@@ -3524,7 +3732,8 @@ refalrts::RASLFunction descr_gen_GenResult_L1(
   scope_gen_GenResult_L1::functions,
   scope_gen_GenResult_L1::idents,
   scope_gen_GenResult_L1::numbers,
-  scope_gen_GenResult_L1::strings
+  scope_gen_GenResult_L1::strings,
+  scope_gen_GenResult_L1::filename
 );
 refalrts::RefalFunction& gen_GenResult_L1 = descr_gen_GenResult_L1;
 
@@ -3533,10 +3742,10 @@ refalrts::RefalFunction& gen_GenResult_L1 = descr_gen_GenResult_L1;
 #else
 static refalrts::FnResult func_gen_GenResult_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 11 elems
-  refalrts::Iter context[11];
-  refalrts::zeros( context, 11 );
-  // </0 & GenResult\1/4 (/7 e.PatternCommands#1/5 )/8 s.ContextCount#2/9 e.ResultCommands#2/2 >/1
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  // </0 & GenResult\1/4 (/7 e.PatternCommands#1/5 )/8 (/11 e.PatternVars#1/9 )/12 s.ContextCount#2/13 e.ResultCommands#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3548,29 +3757,50 @@ static refalrts::FnResult func_gen_GenResult_L1(refalrts::Iter arg_begin, refalr
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
   // closed e.PatternCommands#1 as range 5
-  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
+  // closed e.PatternVars#1 as range 9
+  if( ! refalrts::svar_left( context[13], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.ResultCommands#2 as range 2
+  //DEBUG: e.PatternCommands#1: 5
+  //DEBUG: e.PatternVars#1: 9
+  //DEBUG: s.ContextCount#2: 13
+  //DEBUG: e.ResultCommands#2: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldOpenELoops/4 AsIs: (/7 } Tile{ HalfReuse: # CmdIssueMem/8 AsIs: s.ContextCount#2/9 } )/10 Tile{ AsIs: e.PatternCommands#1/5 } Tile{ AsIs: e.ResultCommands#2/2 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_close_bracket( context[10] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} s.ContextCount#2/13 {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </14 & FoldOpenELoops/15 (/16 Tile{ HalfReuse: # CmdIssueMem/0 HalfReuse: s.ContextCount2 #13/4 HalfReuse: )/7 AsIs: e.PatternCommands#1/5 HalfReuse: </8 HalfReuse: & PutVariableDebugTable/11 AsIs: e.PatternVars#1/9 HalfReuse: >/12 } Tile{ AsIs: e.ResultCommands#2/2 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & FoldOpenELoops );
-  refalrts::reinit_ident( context[8], & ident_CmdIssueMem<int>::name );
+  if( ! refalrts::alloc_name( context[15], & FoldOpenELoops ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[16] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_ident( context[0], & ident_CmdIssueMem<int>::name );
+  refalrts::reinit_svar( context[4], context[13] );
+  refalrts::reinit_close_bracket( context[7] );
+  refalrts::reinit_open_call( context[8] );
+  refalrts::reinit_name( context[11], & PutVariableDebugTable );
+  refalrts::reinit_close_call( context[12] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[7], context[10] );
+  refalrts::push_stack( context[14] );
+  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[8] );
+  refalrts::link_brackets( context[16], context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[10], context[10] );
-  res = refalrts::splice_evar( res, context[8], context[9] );
+  res = refalrts::splice_evar( res, context[0], context[12] );
+  res = refalrts::splice_evar( res, context[14], context[16] );
   refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
 
@@ -3584,6 +3814,7 @@ refalrts::RefalFunction& gen_GenResult_L1 = descr_gen_GenResult_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenResult {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_GenResult_L1,
@@ -3595,7 +3826,7 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 26, 0, 0},
+      {refalrts::icIssueMemory, 30, 0, 0},
       // </0 & GenResult/4 s.FnGenResult#1/5 (/8 e.Result#1/6 )/9 s.ContextOffset#1/10 (/13 e.PatternVars#1/11 )/14 (/17 e.MarkedPattern#1/15 )/18 e.PatternCommands#1/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
@@ -3608,29 +3839,39 @@ namespace /* unnamed */ {
       // closed e.PatternVars#1 as range 11
       // closed e.MarkedPattern#1 as range 15
       // closed e.PatternCommands#1 as range 2
+      //DEBUG: s.FnGenResult#1: 5
+      //DEBUG: e.Result#1: 6
+      //DEBUG: s.ContextOffset#1: 10
+      //DEBUG: e.PatternVars#1: 11
+      //DEBUG: e.MarkedPattern#1: 15
+      //DEBUG: e.PatternCommands#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenResult#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 Tile{ HalfReuse: s.FnGenResult1 #5/9 AsIs: s.ContextOffset#1/10 AsIs: (/13 AsIs: e.PatternVars#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.MarkedPattern#1/15 AsIs: )/18 } Tile{ AsIs: e.Result#1/6 } >/20 </21 & @create_closure@/22 & GenResult\1/23 Tile{ AsIs: (/8 } Tile{ AsIs: e.PatternCommands#1/2 } )/24 >/25 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 Tile{ HalfReuse: s.FnGenResult1 #5/9 AsIs: s.ContextOffset#1/10 AsIs: (/13 AsIs: e.PatternVars#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.MarkedPattern#1/15 AsIs: )/18 } Tile{ AsIs: e.Result#1/6 } >/20 </21 & @create_closure@/22 & GenResult\1/23 Tile{ AsIs: (/8 } Tile{ AsIs: e.PatternCommands#1/2 } )/24 (/25 e.PatternVars#1/11/26 )/28 >/29 Tile{ AsIs: >/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 21},
       {refalrts::icAllocFunc, 0, 2, 22},
       {refalrts::icAllocFunc, 0, 1, 23},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 24},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 25},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 25},
+      {refalrts::icCopyEVar, 26, 11, 0},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 28},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 29},
       {refalrts::icUpdateFunc, 0, 0, 4},
       {refalrts::icReinitSVar, 0, 5, 9},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icPushStack, 0, 0, 25},
+      {refalrts::icPushStack, 0, 0, 29},
       {refalrts::icPushStack, 0, 0, 21},
+      {refalrts::icLinkBrackets, 25, 28, 0},
       {refalrts::icLinkBrackets, 8, 24, 0},
       {refalrts::icPushStack, 0, 0, 20},
       {refalrts::icPushStack, 0, 0, 19},
       {refalrts::icLinkBrackets, 17, 18, 0},
       {refalrts::icLinkBrackets, 13, 14, 0},
       {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceTile, 24, 25, 0},
+      {refalrts::icSpliceTile, 24, 29, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
       {refalrts::icSpliceTile, 8, 8, 0},
       {refalrts::icSpliceTile, 20, 23, 0},
@@ -3651,16 +3892,17 @@ refalrts::RASLFunction descr_GenResult(
   scope_GenResult::functions,
   scope_GenResult::idents,
   scope_GenResult::numbers,
-  scope_GenResult::strings
+  scope_GenResult::strings,
+  scope_GenResult::filename
 );
 refalrts::RefalFunction& GenResult = descr_GenResult;
 
 #else
 static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 26 elems
-  refalrts::Iter context[26];
-  refalrts::zeros( context, 26 );
+  // issue here memory for vars with 30 elems
+  refalrts::Iter context[30];
+  refalrts::zeros( context, 30 );
   // </0 & GenResult/4 s.FnGenResult#1/5 (/8 e.Result#1/6 )/9 s.ContextOffset#1/10 (/13 e.PatternVars#1/11 )/14 (/17 e.MarkedPattern#1/15 )/18 e.PatternCommands#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3693,10 +3935,16 @@ static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.PatternVars#1 as range 11
   // closed e.MarkedPattern#1 as range 15
   // closed e.PatternCommands#1 as range 2
+  //DEBUG: s.FnGenResult#1: 5
+  //DEBUG: e.Result#1: 6
+  //DEBUG: s.ContextOffset#1: 10
+  //DEBUG: e.PatternVars#1: 11
+  //DEBUG: e.MarkedPattern#1: 15
+  //DEBUG: e.PatternCommands#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenResult#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 Tile{ HalfReuse: s.FnGenResult1 #5/9 AsIs: s.ContextOffset#1/10 AsIs: (/13 AsIs: e.PatternVars#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.MarkedPattern#1/15 AsIs: )/18 } Tile{ AsIs: e.Result#1/6 } >/20 </21 & @create_closure@/22 & GenResult\1/23 Tile{ AsIs: (/8 } Tile{ AsIs: e.PatternCommands#1/2 } )/24 >/25 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 Tile{ HalfReuse: s.FnGenResult1 #5/9 AsIs: s.ContextOffset#1/10 AsIs: (/13 AsIs: e.PatternVars#1/11 AsIs: )/14 AsIs: (/17 AsIs: e.MarkedPattern#1/15 AsIs: )/18 } Tile{ AsIs: e.Result#1/6 } >/20 </21 & @create_closure@/22 & GenResult\1/23 Tile{ AsIs: (/8 } Tile{ AsIs: e.PatternCommands#1/2 } )/24 (/25 e.PatternVars#1/11/26 )/28 >/29 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[19] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[20] ) )
@@ -3709,14 +3957,21 @@ static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[25] ) )
+  if( ! refalrts::alloc_open_bracket( context[25] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[26], context[27], context[11], context[12]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[28] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[29] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], & Fetch );
   refalrts::reinit_svar( context[9], context[5] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[25] );
+  refalrts::push_stack( context[29] );
   refalrts::push_stack( context[21] );
+  refalrts::link_brackets( context[25], context[28] );
   refalrts::link_brackets( context[8], context[24] );
   refalrts::push_stack( context[20] );
   refalrts::push_stack( context[19] );
@@ -3725,7 +3980,7 @@ static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[24], context[25] );
+  res = refalrts::splice_evar( res, context[24], context[29] );
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[8], context[8] );
   res = refalrts::splice_evar( res, context[20], context[23] );
@@ -3744,6 +3999,7 @@ refalrts::RefalFunction& GenResult = descr_GenResult;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldOpenELoops {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdOpenELoop<int>::name,
@@ -3777,6 +4033,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 13, 7},
       {refalrts::icsVarLeft, 0, 14, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: e.Commands-B#1: 5
+      //DEBUG: e.Commands-E#1: 2
+      //DEBUG: s.BracketNum#1: 13
+      //DEBUG: s.VarNumber#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands-B#1/5 } Tile{ AsIs: (/9 Reuse: # CmdOpenELoop/11 AsIs: # AlgLeft/12 AsIs: s.BracketNum#1/13 AsIs: s.VarNumber#1/14 HalfReuse: </10 } Tile{ AsIs: & FoldOpenELoops/4 } Tile{ AsIs: e.Commands-E#1/17(2) } Tile{ HalfReuse: >/0 } Tile{ HalfReuse: )/1 ]] }
@@ -3798,6 +4058,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & FoldOpenELoops/4 e.Commands#1/2 >/1
       // closed e.Commands#1 as range 2
+      //DEBUG: e.Commands#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FoldOpenELoops/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands#1/2 } Tile{ ]] }
@@ -3818,7 +4079,8 @@ refalrts::RASLFunction descr_FoldOpenELoops(
   scope_FoldOpenELoops::functions,
   scope_FoldOpenELoops::idents,
   scope_FoldOpenELoops::numbers,
-  scope_FoldOpenELoops::strings
+  scope_FoldOpenELoops::strings,
+  scope_FoldOpenELoops::filename
 );
 refalrts::RefalFunction& FoldOpenELoops = descr_FoldOpenELoops;
 
@@ -3869,6 +4131,10 @@ static refalrts::FnResult func_FoldOpenELoops(refalrts::Iter arg_begin, refalrts
         continue;
       if( ! refalrts::empty_seq( context[7], context[8] ) )
         continue;
+      //DEBUG: e.Commands-B#1: 5
+      //DEBUG: e.Commands-E#1: 2
+      //DEBUG: s.BracketNum#1: 13
+      //DEBUG: s.VarNumber#1: 14
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3897,6 +4163,7 @@ static refalrts::FnResult func_FoldOpenELoops(refalrts::Iter arg_begin, refalrts
   // e.idx
   // </0 & FoldOpenELoops/4 e.Commands#1/2 >/1
   // closed e.Commands#1 as range 2
+  //DEBUG: e.Commands#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FoldOpenELoops/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3919,7 +4186,221 @@ refalrts::RefalFunction& FoldOpenELoops = descr_FoldOpenELoops;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
+  namespace scope_gen_PutVariableDebugTable_L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
+    using refalrts::functions;
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_CmdVariableDebugTable<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 15, 0, 0},
+      // </0 & PutVariableDebugTable\1/4 (/7 s.Mode#2/9 (/12 e.Index#2/10 )/13 s.FirstOffset#2/14 e.Offsets#2/5 )/8 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icsVarLeft, 0, 9, 5},
+      {refalrts::icBracketLeftSave, 0, 10, 5},
+      // closed e.Index#2 as range 10
+      {refalrts::icsVarLeft, 0, 14, 5},
+      // closed e.Offsets#2 as range 5
+      //DEBUG: s.Mode#2: 9
+      //DEBUG: e.Index#2: 10
+      //DEBUG: s.FirstOffset#2: 14
+      //DEBUG: e.Offsets#2: 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} s.Mode#2/9 (/12 {REMOVED TILE} )/13 s.FirstOffset#2/14 e.Offsets#2/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdVariableDebugTable/4 HalfReuse: s.Mode2 #9/7 } Tile{ AsIs: e.Index#2/10 } Tile{ HalfReuse: s.FirstOffset2 #14/8 HalfReuse: )/1 ]] }
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
+      {refalrts::icReinitIdent, 0, 0, 4},
+      {refalrts::icReinitSVar, 0, 9, 7},
+      {refalrts::icReinitSVar, 0, 14, 8},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 0, 1, 0},
+      {refalrts::icSetRes, 0, 0, 8},
+      {refalrts::icSpliceEVar, 0, 0, 10},
+      {refalrts::icTrash, 0, 0, 7},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_PutVariableDebugTable_L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_PutVariableDebugTable_L1(
+  "PutVariableDebugTable\\1",
+  scope_gen_PutVariableDebugTable_L1::raa,
+  scope_gen_PutVariableDebugTable_L1::functions,
+  scope_gen_PutVariableDebugTable_L1::idents,
+  scope_gen_PutVariableDebugTable_L1::numbers,
+  scope_gen_PutVariableDebugTable_L1::strings,
+  scope_gen_PutVariableDebugTable_L1::filename
+);
+refalrts::RefalFunction& gen_PutVariableDebugTable_L1 = descr_gen_PutVariableDebugTable_L1;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_PutVariableDebugTable_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
+  // </0 & PutVariableDebugTable\1/4 (/7 s.Mode#2/9 (/12 e.Index#2/10 )/13 s.FirstOffset#2/14 e.Offsets#2/5 )/8 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  context[10] = 0;
+  context[11] = 0;
+  context[12] = refalrts::brackets_left( context[10], context[11], context[5], context[6] );
+  if( ! context[12] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[12], context[13]);
+  // closed e.Index#2 as range 10
+  if( ! refalrts::svar_left( context[14], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Offsets#2 as range 5
+  //DEBUG: s.Mode#2: 9
+  //DEBUG: e.Index#2: 10
+  //DEBUG: s.FirstOffset#2: 14
+  //DEBUG: e.Offsets#2: 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} s.Mode#2/9 (/12 {REMOVED TILE} )/13 s.FirstOffset#2/14 e.Offsets#2/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdVariableDebugTable/4 HalfReuse: s.Mode2 #9/7 } Tile{ AsIs: e.Index#2/10 } Tile{ HalfReuse: s.FirstOffset2 #14/8 HalfReuse: )/1 ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_ident( context[4], & ident_CmdVariableDebugTable<int>::name );
+  refalrts::reinit_svar( context[7], context[9] );
+  refalrts::reinit_svar( context[8], context[14] );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[0], context[1] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[8];
+  res = refalrts::splice_evar( res, context[10], context[11] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( context[7], res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_PutVariableDebugTable_L1(func_gen_PutVariableDebugTable_L1, "PutVariableDebugTable\\1");
+refalrts::RefalFunction& gen_PutVariableDebugTable_L1 = descr_gen_PutVariableDebugTable_L1;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_PutVariableDebugTable {
+    static const char *filename = "HighLevelRASL-Common.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & gen_PutVariableDebugTable_L1,
+      & Map
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 6, 0, 0},
+      // </0 & PutVariableDebugTable/4 e.PatternVars#1/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.PatternVars#1 as range 2
+      //DEBUG: e.PatternVars#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PutVariableDebugTable\1/4 AsIs: e.PatternVars#1/2 AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
+      {refalrts::icReinitFunc, 0, 1, 0},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 5},
+      {refalrts::icSetRes, 0, 0, 0},
+      {refalrts::icSpliceTile, 5, 5, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_PutVariableDebugTable
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_PutVariableDebugTable(
+  "PutVariableDebugTable",
+  scope_PutVariableDebugTable::raa,
+  scope_PutVariableDebugTable::functions,
+  scope_PutVariableDebugTable::idents,
+  scope_PutVariableDebugTable::numbers,
+  scope_PutVariableDebugTable::strings,
+  scope_PutVariableDebugTable::filename
+);
+refalrts::RefalFunction& PutVariableDebugTable = descr_PutVariableDebugTable;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_PutVariableDebugTable(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 6 elems
+  refalrts::Iter context[6];
+  refalrts::zeros( context, 6 );
+  // </0 & PutVariableDebugTable/4 e.PatternVars#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.PatternVars#1 as range 2
+  //DEBUG: e.PatternVars#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PutVariableDebugTable\1/4 AsIs: e.PatternVars#1/2 AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[5] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[0], & Map );
+  refalrts::update_name( context[4], & gen_PutVariableDebugTable_L1 );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_PutVariableDebugTable(func_PutVariableDebugTable, "PutVariableDebugTable");
+refalrts::RefalFunction& PutVariableDebugTable = descr_PutVariableDebugTable;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
   namespace scope_gen_CollectStrings_S1L1 {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & CollectStrings
     };
@@ -3938,6 +4419,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Chars#2 as range 5
       // closed e.Tail#2 as range 2
+      //DEBUG: e.Chars#2: 5
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkString/4 } Tile{ AsIs: e.Chars#2/5 } Tile{ HalfReuse: )/7 } </9 Tile{ HalfReuse: & CollectStrings/8 AsIs: e.Tail#2/2 AsIs: >/1 ]] }
@@ -3967,7 +4450,8 @@ refalrts::RASLFunction descr_gen_CollectStrings_S1L1(
   scope_gen_CollectStrings_S1L1::functions,
   scope_gen_CollectStrings_S1L1::idents,
   scope_gen_CollectStrings_S1L1::numbers,
-  scope_gen_CollectStrings_S1L1::strings
+  scope_gen_CollectStrings_S1L1::strings,
+  scope_gen_CollectStrings_S1L1::filename
 );
 refalrts::RefalFunction& gen_CollectStrings_S1L1 = descr_gen_CollectStrings_S1L1;
 
@@ -3993,6 +4477,8 @@ static refalrts::FnResult func_gen_CollectStrings_S1L1(refalrts::Iter arg_begin,
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Chars#2 as range 5
   // closed e.Tail#2 as range 2
+  //DEBUG: e.Chars#2: 5
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4026,6 +4512,7 @@ refalrts::RefalFunction& gen_CollectStrings_S1L1 = descr_gen_CollectStrings_S1L1
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CollectStrings {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     static refalrts::RefalFunction *functions[] = {
       & CollectStrings,
       & gen_CollectStrings_S1L1,
@@ -4064,6 +4551,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 5},
       {refalrts::icsVarLeft, 0, 16, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.Value1#1: 15
+      //DEBUG: s.Value2#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Value1#1/15 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } Tile{ HalfReuse: & BuildString/8 AsIs: (/12 HalfReuse: s.Value11 #15/14 AsIs: s.Value2#1/16 AsIs: )/13 AsIs: e.Tail#1/18(2) AsIs: >/1 } Tile{ HalfReuse: & CollectStrings$1\1/9 } >/17 Tile{ ]] }
@@ -4093,6 +4583,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 2, 5},
       // closed e.InBrackets#1 as range 5
       // closed e.Tail#1 as range 18(2)
+      //DEBUG: e.InBrackets#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -4122,6 +4614,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 5},
       // closed e.InBrackets#1 as range 5
       // closed e.Tail#1 as range 18(2)
+      //DEBUG: e.InBrackets#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CallBrackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -4151,6 +4645,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 0, 5},
       // closed e.InBrackets#1 as range 5
       // closed e.Tail#1 as range 18(2)
+      //DEBUG: e.InBrackets#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # ADT-Brackets/4 HalfReuse: </7 HalfReuse: & CollectStrings/9 AsIs: e.InBrackets#1/5 HalfReuse: >/8 } )/10 </11 & CollectStrings/12 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -4178,6 +4674,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 18, 2},
       {refalrts::ictVarLeftSave, 0, 5, 18},
       // closed e.Tail#1 as range 18(2)
+      //DEBUG: t.OtherTerm#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.OtherTerm#1/5 } Tile{ AsIs: </0 AsIs: & CollectStrings/4 } Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -4210,7 +4708,8 @@ refalrts::RASLFunction descr_CollectStrings(
   scope_CollectStrings::functions,
   scope_CollectStrings::idents,
   scope_CollectStrings::numbers,
-  scope_CollectStrings::strings
+  scope_CollectStrings::strings,
+  scope_CollectStrings::filename
 );
 refalrts::RefalFunction& CollectStrings = descr_CollectStrings;
 
@@ -4261,6 +4760,9 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.Value1#1: 15
+    //DEBUG: s.Value2#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Value1#1/15 {REMOVED TILE} {REMOVED TILE}
@@ -4305,6 +4807,8 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
+    //DEBUG: e.InBrackets#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4351,6 +4855,8 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
+    //DEBUG: e.InBrackets#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4397,6 +4903,8 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 18(2)
+    //DEBUG: e.InBrackets#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4436,6 +4944,8 @@ static refalrts::FnResult func_CollectStrings(refalrts::Iter arg_begin, refalrts
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 18(2)
+    //DEBUG: t.OtherTerm#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4476,6 +4986,7 @@ refalrts::RefalFunction& CollectStrings = descr_CollectStrings;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_BuildString {
+    static const char *filename = "HighLevelRASL-Common.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TkChar<int>::name
@@ -4505,6 +5016,9 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 15(2)
       {refalrts::icsVarLeft, 0, 14, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Chars#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.Value#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & BuildString/4 AsIs: (/7 AsIs: e.Chars#1/5 HalfReuse: s.Value1 #14/8 HalfReuse: )/11 } Tile{ AsIs: e.Tail#1/15(2) } Tile{ AsIs: >/1 ]] }
@@ -4522,6 +5036,8 @@ namespace /* unnamed */ {
       // </0 & BuildString/4 (/7 e.Chars#1/5 )/8 e.Tail#1/2 >/1
       // closed e.Chars#1 as range 5
       // closed e.Tail#1 as range 2
+      //DEBUG: e.Chars#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & BuildString/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Chars#1/5 AsIs: )/8 } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
@@ -4544,7 +5060,8 @@ refalrts::RASLFunction descr_BuildString(
   scope_BuildString::functions,
   scope_BuildString::idents,
   scope_BuildString::numbers,
-  scope_BuildString::strings
+  scope_BuildString::strings,
+  scope_BuildString::filename
 );
 refalrts::RefalFunction& BuildString = descr_BuildString;
 
@@ -4592,6 +5109,9 @@ static refalrts::FnResult func_BuildString(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: e.Chars#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.Value#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkChar/13 s.Value#1/14 )/12 {REMOVED TILE} {REMOVED TILE}
@@ -4615,6 +5135,8 @@ static refalrts::FnResult func_BuildString(refalrts::Iter arg_begin, refalrts::I
   // </0 & BuildString/4 (/7 e.Chars#1/5 )/8 e.Tail#1/2 >/1
   // closed e.Chars#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: e.Chars#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & BuildString/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}

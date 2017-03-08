@@ -136,6 +136,7 @@ extern refalrts::RefalFunction& CreateFastGen;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_UnBracketAndNum {
+    static const char *filename = "FastGen.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -151,6 +152,8 @@ namespace /* unnamed */ {
       // closed e.Any#1 as range 5
       {refalrts::icsVarLeft, 0, 9, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Any#1: 5
+      //DEBUG: s.Num#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} & UnBracketAndNum/4 s.Num#1/9 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: s.Num1 #9/0 } Tile{ AsIs: e.Any#1/5 } Tile{ ]] }
@@ -172,7 +175,8 @@ refalrts::RASLFunction descr_UnBracketAndNum(
   scope_UnBracketAndNum::functions,
   scope_UnBracketAndNum::idents,
   scope_UnBracketAndNum::numbers,
-  scope_UnBracketAndNum::strings
+  scope_UnBracketAndNum::strings,
+  scope_UnBracketAndNum::filename
 );
 refalrts::RefalFunction& UnBracketAndNum = descr_UnBracketAndNum;
 
@@ -201,6 +205,8 @@ static refalrts::FnResult func_UnBracketAndNum(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Any#1: 5
+  //DEBUG: s.Num#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & UnBracketAndNum/4 s.Num#1/9 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -225,6 +231,7 @@ refalrts::RefalFunction& UnBracketAndNum = descr_UnBracketAndNum;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_UnBracketInBrackets {
+    static const char *filename = "FastGen.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -251,6 +258,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 6},
       {refalrts::icEmpty, 0, 0, 14},
       // closed e.Smth#1 as range 10
+      //DEBUG: e.Smth#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & UnBracketInBrackets/4 1/5 (/8 (/12 {REMOVED TILE} )/13 )/9 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Smth#1/10 } Tile{ ]] }
@@ -262,6 +270,8 @@ namespace /* unnamed */ {
       // s.idx e.idx
       // </0 & UnBracketInBrackets/4 s.Other#1/5 e.Any#1/2 >/1
       // closed e.Any#1 as range 2
+      //DEBUG: s.Other#1: 5
+      //DEBUG: e.Any#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & UnBracketInBrackets/4 s.Other#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Any#1/2 } Tile{ ]] }
@@ -282,7 +292,8 @@ refalrts::RASLFunction descr_UnBracketInBrackets(
   scope_UnBracketInBrackets::functions,
   scope_UnBracketInBrackets::idents,
   scope_UnBracketInBrackets::numbers,
-  scope_UnBracketInBrackets::strings
+  scope_UnBracketInBrackets::strings,
+  scope_UnBracketInBrackets::filename
 );
 refalrts::RefalFunction& UnBracketInBrackets = descr_UnBracketInBrackets;
 
@@ -329,6 +340,7 @@ static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, ref
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
     // closed e.Smth#1 as range 10
+    //DEBUG: e.Smth#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & UnBracketInBrackets/4 1/5 (/8 (/12 {REMOVED TILE} )/13 )/9 >/1 {REMOVED TILE}
@@ -346,6 +358,8 @@ static refalrts::FnResult func_UnBracketInBrackets(refalrts::Iter arg_begin, ref
   // s.idx e.idx
   // </0 & UnBracketInBrackets/4 s.Other#1/5 e.Any#1/2 >/1
   // closed e.Any#1 as range 2
+  //DEBUG: s.Other#1: 5
+  //DEBUG: e.Any#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & UnBracketInBrackets/4 s.Other#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -369,6 +383,7 @@ refalrts::RefalFunction& UnBracketInBrackets = descr_UnBracketInBrackets;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_PreparePatternsFastGen_Aux_L1 {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & PreparePatternsFastGen_Aux
     };
@@ -404,6 +419,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 22},
       // closed e.idx#2 as range 10
       // closed e.Replacement#2 as range 18
+      //DEBUG: s.type#2: 9
+      //DEBUG: e.idx#2: 10
+      //DEBUG: e.Replacement#2: 18
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & PreparePatternsFastGen-Aux\1/4 {REMOVED TILE} (/12 e.idx#2/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.type#2/9 } Tile{ HalfReuse: '$'/13 AsIs: (/16 AsIs: (/20 AsIs: e.Replacement#2/18 AsIs: )/21 AsIs: )/17 AsIs: )/8 } Tile{ ]] }
@@ -422,6 +440,7 @@ namespace /* unnamed */ {
       // </0 & PreparePatternsFastGen-Aux\1/4 (/7 # Brackets/9 e.inBrackets#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 2, 9},
       // closed e.inBrackets#2 as range 5
+      //DEBUG: e.inBrackets#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/10 Tile{ HalfReuse: # Brackets/0 HalfReuse: 1/4 HalfReuse: </7 HalfReuse: & PreparePatternsFastGen-Aux/9 AsIs: e.inBrackets#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
@@ -447,6 +466,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 10, 22},
       // closed e.Name#2 as range 10
       // closed e.inBrackets#2 as range 22(5)
+      //DEBUG: e.Name#2: 10
+      //DEBUG: e.inBrackets#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # ADT-Brackets/9 AsIs: (/12 AsIs: e.Name#2/10 AsIs: )/13 } 1/14 Tile{ AsIs: </0 Reuse: & PreparePatternsFastGen-Aux/4 } Tile{ AsIs: e.inBrackets#2/22(5) } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
@@ -469,6 +490,7 @@ namespace /* unnamed */ {
       // </0 & PreparePatternsFastGen-Aux\1/4 (/7 # Atom/9 e.any#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.any#2 as range 5
+      //DEBUG: e.any#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & PreparePatternsFastGen-Aux\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # Atom/9 AsIs: e.any#2/5 AsIs: )/8 } Tile{ ]] }
@@ -490,7 +512,8 @@ refalrts::RASLFunction descr_gen_PreparePatternsFastGen_Aux_L1(
   scope_gen_PreparePatternsFastGen_Aux_L1::functions,
   scope_gen_PreparePatternsFastGen_Aux_L1::idents,
   scope_gen_PreparePatternsFastGen_Aux_L1::numbers,
-  scope_gen_PreparePatternsFastGen_Aux_L1::strings
+  scope_gen_PreparePatternsFastGen_Aux_L1::strings,
+  scope_gen_PreparePatternsFastGen_Aux_L1::filename
 );
 refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1 = descr_gen_PreparePatternsFastGen_Aux_L1;
 
@@ -550,6 +573,9 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
       continue;
     // closed e.idx#2 as range 10
     // closed e.Replacement#2 as range 18
+    //DEBUG: s.type#2: 9
+    //DEBUG: e.idx#2: 10
+    //DEBUG: e.Replacement#2: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PreparePatternsFastGen-Aux\1/4 {REMOVED TILE} (/12 e.idx#2/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -575,6 +601,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
     if( ! refalrts::ident_term(  & ident_Brackets<int>::name, context[9] ) )
       continue;
     // closed e.inBrackets#2 as range 5
+    //DEBUG: e.inBrackets#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -614,6 +641,8 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
     refalrts::bracket_pointers(context[12], context[13]);
     // closed e.Name#2 as range 10
     // closed e.inBrackets#2 as range 22(5)
+    //DEBUG: e.Name#2: 10
+    //DEBUG: e.inBrackets#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -644,6 +673,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_Aux_L1(refalrts::Iter 
   if( ! refalrts::ident_term(  & ident_Atom<int>::name, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.any#2 as range 5
+  //DEBUG: e.any#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & PreparePatternsFastGen-Aux\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -668,6 +698,7 @@ refalrts::RefalFunction& gen_PreparePatternsFastGen_Aux_L1 = descr_gen_PreparePa
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_PreparePatternsFastGen_Aux {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_PreparePatternsFastGen_Aux_L1,
       & Map
@@ -683,6 +714,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Pattern#1 as range 2
+      //DEBUG: e.Pattern#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PreparePatternsFastGen-Aux\1/4 AsIs: e.Pattern#1/2 AsIs: >/1 ]] }
@@ -707,7 +739,8 @@ refalrts::RASLFunction descr_PreparePatternsFastGen_Aux(
   scope_PreparePatternsFastGen_Aux::functions,
   scope_PreparePatternsFastGen_Aux::idents,
   scope_PreparePatternsFastGen_Aux::numbers,
-  scope_PreparePatternsFastGen_Aux::strings
+  scope_PreparePatternsFastGen_Aux::strings,
+  scope_PreparePatternsFastGen_Aux::filename
 );
 refalrts::RefalFunction& PreparePatternsFastGen_Aux = descr_PreparePatternsFastGen_Aux;
 
@@ -726,6 +759,7 @@ static refalrts::FnResult func_PreparePatternsFastGen_Aux(refalrts::Iter arg_beg
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Pattern#1 as range 2
+  //DEBUG: e.Pattern#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -754,6 +788,7 @@ refalrts::RefalFunction& PreparePatternsFastGen_Aux = descr_PreparePatternsFastG
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_PreparePatternsFastGen_L1 {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & PreparePatternsFastGen_Aux
     };
@@ -770,6 +805,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.sent#2 as range 5
+      //DEBUG: e.sent#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & PreparePatternsFastGen-Aux/7 AsIs: e.sent#2/5 HalfReuse: >/8 HalfReuse: )/1 ]] }
@@ -795,7 +831,8 @@ refalrts::RASLFunction descr_gen_PreparePatternsFastGen_L1(
   scope_gen_PreparePatternsFastGen_L1::functions,
   scope_gen_PreparePatternsFastGen_L1::idents,
   scope_gen_PreparePatternsFastGen_L1::numbers,
-  scope_gen_PreparePatternsFastGen_L1::strings
+  scope_gen_PreparePatternsFastGen_L1::strings,
+  scope_gen_PreparePatternsFastGen_L1::filename
 );
 refalrts::RefalFunction& gen_PreparePatternsFastGen_L1 = descr_gen_PreparePatternsFastGen_L1;
 
@@ -822,6 +859,7 @@ static refalrts::FnResult func_gen_PreparePatternsFastGen_L1(refalrts::Iter arg_
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.sent#2 as range 5
+  //DEBUG: e.sent#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -847,6 +885,7 @@ refalrts::RefalFunction& gen_PreparePatternsFastGen_L1 = descr_gen_PreparePatter
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_PreparePatternsFastGen {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_PreparePatternsFastGen_L1,
       & Map
@@ -862,6 +901,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.all#1 as range 2
+      //DEBUG: e.all#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & PreparePatternsFastGen\1/4 AsIs: e.all#1/2 AsIs: >/1 ]] }
@@ -886,7 +926,8 @@ refalrts::RASLFunction descr_PreparePatternsFastGen(
   scope_PreparePatternsFastGen::functions,
   scope_PreparePatternsFastGen::idents,
   scope_PreparePatternsFastGen::numbers,
-  scope_PreparePatternsFastGen::strings
+  scope_PreparePatternsFastGen::strings,
+  scope_PreparePatternsFastGen::filename
 );
 refalrts::RefalFunction& PreparePatternsFastGen = descr_PreparePatternsFastGen;
 
@@ -905,6 +946,7 @@ static refalrts::FnResult func_PreparePatternsFastGen(refalrts::Iter arg_begin, 
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.all#1 as range 2
+  //DEBUG: e.all#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -933,6 +975,7 @@ refalrts::RefalFunction& PreparePatternsFastGen = descr_PreparePatternsFastGen;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SplitReps_Aux {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Dec,
       & SplitReps_Aux
@@ -966,6 +1009,9 @@ namespace /* unnamed */ {
       // closed e.Any#1 as range 2
       // closed e.Scanned#1 as range 9
       // closed e.Else#1 as range 5
+      //DEBUG: e.Any#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SplitReps-Aux/4 0/13 e.Any#1/2 (/11 e.Scanned#1/9 )/12 (/7 e.Else#1/5 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -984,6 +1030,11 @@ namespace /* unnamed */ {
       // closed e.Else#1 as range 5
       {refalrts::icsVarLeft, 0, 19, 14},
       {refalrts::icEmpty, 0, 0, 14},
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.ONum#1: 19
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 } Tile{ HalfReuse: s.Num1 #13/17 AsIs: e.Tail#1/36(2) AsIs: (/11 AsIs: e.Scanned#1/9 HalfReuse: (/12 HalfReuse: # Brackets/7 } s.ONum#1/19/20 )/21 )/22 (/23 Tile{ AsIs: e.Else#1/5 } Tile{ AsIs: (/16 AsIs: # Brackets/18 AsIs: s.ONum#1/19 } )/24 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1025,6 +1076,13 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 20},
       // closed e.Rep#1 as range 24
       // closed e.Replacements#1 as range 14
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.ONum#1: 19
+      //DEBUG: e.Rep#1: 24
+      //DEBUG: e.Replacements#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 } Tile{ HalfReuse: s.Num1 #13/17 AsIs: e.Tail#1/36(2) AsIs: (/11 AsIs: e.Scanned#1/9 HalfReuse: (/12 HalfReuse: # Brackets/7 } Tile{ HalfReuse: s.ONum1 #19/26 AsIs: e.Rep#1/24 AsIs: )/27 AsIs: )/23 } Tile{ AsIs: (/22 } Tile{ AsIs: e.Else#1/5 } Tile{ AsIs: (/16 AsIs: # Brackets/18 AsIs: s.ONum#1/19 } Tile{ AsIs: e.Replacements#1/14 } )/28 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1063,6 +1121,12 @@ namespace /* unnamed */ {
       // closed e.Else#1 as range 5
       {refalrts::icsVarLeft, 0, 23, 14},
       {refalrts::icEmpty, 0, 0, 14},
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Name#1: 19
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.ONum#1: 23
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.Tail#1/36(2) } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: (/16 AsIs: # ADT-Brackets/18 AsIs: (/21 AsIs: e.Name#1/19 AsIs: )/22 AsIs: s.ONum#1/23 AsIs: )/17 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Else#1/5 HalfReuse: (/8 HalfReuse: # ADT-Brackets/1 } (/24 e.Name#1/19/25 )/27 s.ONum#1/23/28 )/29 )/30 >/31 Tile{ ]] }
@@ -1109,6 +1173,14 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 24},
       // closed e.Rep#1 as range 28
       // closed e.Replacements#1 as range 14
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Name#1: 19
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.ONum#1: 23
+      //DEBUG: e.Rep#1: 28
+      //DEBUG: e.Replacements#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.Tail#1/36(2) } Tile{ AsIs: (/26 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: (/16 AsIs: # ADT-Brackets/18 AsIs: (/21 AsIs: e.Name#1/19 AsIs: )/22 AsIs: s.ONum#1/23 } Tile{ AsIs: e.Rep#1/28 } Tile{ HalfReuse: )/30 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Else#1/5 HalfReuse: (/8 HalfReuse: # ADT-Brackets/1 } Tile{ AsIs: (/11 } e.Name#1/19/32 Tile{ AsIs: )/31 HalfReuse: s.ONum1 #23/27 AsIs: e.Replacements#1/14 AsIs: )/17 } )/34 >/35 Tile{ ]] }
@@ -1156,6 +1228,13 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 20},
       // closed e.Rep#1 as range 24
       // closed e.otherRep#1 as range 14
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.Mode#1: 18
+      //DEBUG: e.Rep#1: 24
+      //DEBUG: e.otherRep#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.Tail#1/36(2) } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: (/16 AsIs: s.Mode#1/18 AsIs: '$'/19 AsIs: (/22 AsIs: (/26 AsIs: e.Rep#1/24 AsIs: )/27 AsIs: )/23 } Tile{ AsIs: )/17 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Else#1/5 HalfReuse: (/8 HalfReuse: s.Mode1 #18/1 } '$'/28 Tile{ AsIs: e.otherRep#1/14 } )/29 )/30 >/31 Tile{ ]] }
@@ -1196,6 +1275,13 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 18, 14},
       {refalrts::icsVarLeft, 0, 19, 14},
       // closed e.Value#1 as range 14
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
+      //DEBUG: s.Mode#1: 18
+      //DEBUG: s.Type#1: 19
+      //DEBUG: e.Value#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SplitReps-Aux/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.Tail#1/36(2) } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: (/16 AsIs: s.Mode#1/18 AsIs: s.Type#1/19 AsIs: e.Value#1/14 AsIs: )/17 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Else#1/5 HalfReuse: (/8 HalfReuse: s.Mode1 #18/1 } s.Type#1/19/20 e.Value#1/14/21 )/23 )/24 >/25 Tile{ ]] }
@@ -1226,6 +1312,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Scanned#1 as range 9
       // closed e.Else#1 as range 5
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: e.Else#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/14 Tile{ AsIs: (/11 AsIs: e.Scanned#1/9 AsIs: )/12 HalfReuse: )/7 } </15 & SplitReps-Aux/16 Tile{ AsIs: </0 Reuse: & Dec/4 AsIs: s.Num#1/13 } >/17 Tile{ AsIs: e.Else#1/5 } (/18 )/19 (/20 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1268,7 +1357,8 @@ refalrts::RASLFunction descr_SplitReps_Aux(
   scope_SplitReps_Aux::functions,
   scope_SplitReps_Aux::idents,
   scope_SplitReps_Aux::numbers,
-  scope_SplitReps_Aux::strings
+  scope_SplitReps_Aux::strings,
+  scope_SplitReps_Aux::filename
 );
 refalrts::RefalFunction& SplitReps_Aux = descr_SplitReps_Aux;
 
@@ -1313,6 +1403,9 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     // closed e.Any#1 as range 2
     // closed e.Scanned#1 as range 9
     // closed e.Else#1 as range 5
+    //DEBUG: e.Any#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SplitReps-Aux/4 0/13 e.Any#1/2 (/11 e.Scanned#1/9 )/12 (/7 e.Else#1/5 )/8 >/1 {REMOVED TILE}
@@ -1347,6 +1440,11 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.ONum#1: 19
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1419,6 +1517,13 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Rep#1 as range 24
     // closed e.Replacements#1 as range 14
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.ONum#1: 19
+    //DEBUG: e.Rep#1: 24
+    //DEBUG: e.Replacements#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1479,6 +1584,12 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Name#1: 19
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.ONum#1: 23
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1563,6 +1674,14 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Rep#1 as range 28
     // closed e.Replacements#1 as range 14
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Name#1: 19
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.ONum#1: 23
+    //DEBUG: e.Rep#1: 28
+    //DEBUG: e.Replacements#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1639,6 +1758,13 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Rep#1 as range 24
     // closed e.otherRep#1 as range 14
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.Mode#1: 18
+    //DEBUG: e.Rep#1: 24
+    //DEBUG: e.otherRep#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1697,6 +1823,13 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[19], context[14], context[15] ) )
       continue;
     // closed e.Value#1 as range 14
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: e.Else#1: 5
+    //DEBUG: s.Mode#1: 18
+    //DEBUG: s.Type#1: 19
+    //DEBUG: e.Value#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1739,6 +1872,9 @@ static refalrts::FnResult func_SplitReps_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.Scanned#1 as range 9
   // closed e.Else#1 as range 5
+  //DEBUG: s.Num#1: 13
+  //DEBUG: e.Scanned#1: 9
+  //DEBUG: e.Else#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1791,6 +1927,7 @@ refalrts::RefalFunction& SplitReps_Aux = descr_SplitReps_Aux;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_SplitReps_Brackets_L1 {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & UnBracketInBrackets,
       & SplitReps
@@ -1821,6 +1958,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 20},
       {refalrts::icsVarLeft, 0, 10, 20},
       // closed e.inBrackets#2 as range 20(5)
+      //DEBUG: s.Num#2: 10
+      //DEBUG: e.inBrackets#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/11 # Brackets/12 1/13 </14 Tile{ HalfReuse: & UnBracketInBrackets/0 HalfReuse: s.Num2 #10/4 HalfReuse: </7 HalfReuse: & SplitReps/9 AsIs: s.Num#2/10 AsIs: e.inBrackets#2/20(5) HalfReuse: >/8 AsIs: >/1 } )/15 Tile{ ]] }
@@ -1854,6 +1993,9 @@ namespace /* unnamed */ {
       // closed e.Name#2 as range 10
       {refalrts::icsVarLeft, 0, 14, 20},
       // closed e.inBrackets#2 as range 20(5)
+      //DEBUG: e.Name#2: 10
+      //DEBUG: s.Num#2: 14
+      //DEBUG: e.inBrackets#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # ADT-Brackets/9 AsIs: (/12 AsIs: e.Name#2/10 AsIs: )/13 } 1/15 Tile{ AsIs: </0 Reuse: & UnBracketInBrackets/4 } s.Num#2/14/16 </17 & SplitReps/18 Tile{ AsIs: s.Num#2/14 AsIs: e.inBrackets#2/20(5) HalfReuse: >/8 AsIs: >/1 } )/19 Tile{ ]] }
@@ -1882,6 +2024,7 @@ namespace /* unnamed */ {
       // ( e.idx )
       // </0 & SplitReps-Brackets\1/4 (/7 e.Else#2/5 )/8 >/1
       // closed e.Else#2 as range 5
+      //DEBUG: e.Else#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SplitReps-Brackets\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Else#2/5 AsIs: )/8 } Tile{ ]] }
@@ -1903,7 +2046,8 @@ refalrts::RASLFunction descr_gen_SplitReps_Brackets_L1(
   scope_gen_SplitReps_Brackets_L1::functions,
   scope_gen_SplitReps_Brackets_L1::idents,
   scope_gen_SplitReps_Brackets_L1::numbers,
-  scope_gen_SplitReps_Brackets_L1::strings
+  scope_gen_SplitReps_Brackets_L1::strings,
+  scope_gen_SplitReps_Brackets_L1::filename
 );
 refalrts::RefalFunction& gen_SplitReps_Brackets_L1 = descr_gen_SplitReps_Brackets_L1;
 
@@ -1943,6 +2087,8 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
     if( ! refalrts::svar_left( context[10], context[20], context[21] ) )
       continue;
     // closed e.inBrackets#2 as range 20(5)
+    //DEBUG: s.Num#2: 10
+    //DEBUG: e.inBrackets#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1996,6 +2142,9 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
     if( ! refalrts::svar_left( context[14], context[20], context[21] ) )
       continue;
     // closed e.inBrackets#2 as range 20(5)
+    //DEBUG: e.Name#2: 10
+    //DEBUG: s.Num#2: 14
+    //DEBUG: e.inBrackets#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2035,6 +2184,7 @@ static refalrts::FnResult func_gen_SplitReps_Brackets_L1(refalrts::Iter arg_begi
   // ( e.idx )
   // </0 & SplitReps-Brackets\1/4 (/7 e.Else#2/5 )/8 >/1
   // closed e.Else#2 as range 5
+  //DEBUG: e.Else#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & SplitReps-Brackets\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2059,6 +2209,7 @@ refalrts::RefalFunction& gen_SplitReps_Brackets_L1 = descr_gen_SplitReps_Bracket
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SplitReps_Brackets {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_SplitReps_Brackets_L1,
       & Map
@@ -2074,6 +2225,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Reps#1 as range 2
+      //DEBUG: e.Reps#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & SplitReps-Brackets\1/4 AsIs: e.Reps#1/2 AsIs: >/1 ]] }
@@ -2098,7 +2250,8 @@ refalrts::RASLFunction descr_SplitReps_Brackets(
   scope_SplitReps_Brackets::functions,
   scope_SplitReps_Brackets::idents,
   scope_SplitReps_Brackets::numbers,
-  scope_SplitReps_Brackets::strings
+  scope_SplitReps_Brackets::strings,
+  scope_SplitReps_Brackets::filename
 );
 refalrts::RefalFunction& SplitReps_Brackets = descr_SplitReps_Brackets;
 
@@ -2117,6 +2270,7 @@ static refalrts::FnResult func_SplitReps_Brackets(refalrts::Iter arg_begin, refa
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Reps#1 as range 2
+  //DEBUG: e.Reps#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2145,6 +2299,7 @@ refalrts::RefalFunction& SplitReps_Brackets = descr_SplitReps_Brackets;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_SplitReps_L1 {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SplitReps_Aux
     };
@@ -2168,6 +2323,7 @@ namespace /* unnamed */ {
       // </0 & SplitReps\1/4 1/5 e.Any#2/2 >/1
       {refalrts::icNumTerm, 0, 1, 5},
       // closed e.Any#2 as range 2
+      //DEBUG: e.Any#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: (/5 AsIs: e.Any#2/2 HalfReuse: )/1 } Tile{ HalfReuse: )/0 } Tile{ ]] }
@@ -2185,6 +2341,8 @@ namespace /* unnamed */ {
       // s.idx e.idx
       // </0 & SplitReps\1/4 s.Other#2/5 e.Any#2/2 >/1
       // closed e.Any#2 as range 2
+      //DEBUG: s.Other#2: 5
+      //DEBUG: e.Any#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SplitReps-Aux/4 AsIs: s.Other#2/5 AsIs: e.Any#2/2 HalfReuse: (/1 } )/6 (/7 )/8 >/9 Tile{ ]] }
@@ -2214,7 +2372,8 @@ refalrts::RASLFunction descr_gen_SplitReps_L1(
   scope_gen_SplitReps_L1::functions,
   scope_gen_SplitReps_L1::idents,
   scope_gen_SplitReps_L1::numbers,
-  scope_gen_SplitReps_L1::strings
+  scope_gen_SplitReps_L1::strings,
+  scope_gen_SplitReps_L1::filename
 );
 refalrts::RefalFunction& gen_SplitReps_L1 = descr_gen_SplitReps_L1;
 
@@ -2243,6 +2402,7 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
     if( ! refalrts::number_term( 1UL, context[5] ) )
       continue;
     // closed e.Any#2 as range 2
+    //DEBUG: e.Any#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2266,6 +2426,8 @@ static refalrts::FnResult func_gen_SplitReps_L1(refalrts::Iter arg_begin, refalr
   // s.idx e.idx
   // </0 & SplitReps\1/4 s.Other#2/5 e.Any#2/2 >/1
   // closed e.Any#2 as range 2
+  //DEBUG: s.Other#2: 5
+  //DEBUG: e.Any#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2302,6 +2464,7 @@ refalrts::RefalFunction& gen_SplitReps_L1 = descr_gen_SplitReps_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SplitReps {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_SplitReps_L1,
@@ -2319,6 +2482,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       // closed e.Reps#1 as range 2
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Reps#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: s.Num#1/5 } </6 & SplitReps-Brackets/7 Tile{ AsIs: e.Reps#1/2 } >/8 & SplitReps\1/9 Tile{ AsIs: >/1 ]] }
@@ -2349,7 +2514,8 @@ refalrts::RASLFunction descr_SplitReps(
   scope_SplitReps::functions,
   scope_SplitReps::idents,
   scope_SplitReps::numbers,
-  scope_SplitReps::strings
+  scope_SplitReps::strings,
+  scope_SplitReps::filename
 );
 refalrts::RefalFunction& SplitReps = descr_SplitReps;
 
@@ -2370,6 +2536,8 @@ static refalrts::FnResult func_SplitReps(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Reps#1 as range 2
+  //DEBUG: s.Num#1: 5
+  //DEBUG: e.Reps#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2407,6 +2575,7 @@ refalrts::RefalFunction& SplitReps = descr_SplitReps;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastGen_Terms {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SplitReps,
       & FastGen,
@@ -2453,6 +2622,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 25, static_cast<unsigned char>('$'), 41},
       // closed e.Pattern1#1 as range 39(17)
       // closed e.Pattern2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern1#1: 17
+      //DEBUG: e.Pattern2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # E/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # E/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/39(17) } Tile{ AsIs: e.Pattern2#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -2473,6 +2645,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 23, static_cast<unsigned char>('$'), 39},
       // closed e.Pattern#1 as range 39(17)
       // closed e.any#1 as range 9
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: e.any#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # E/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: e.any#1/9 AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -2498,6 +2673,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 23, static_cast<unsigned char>('$'), 39},
       // closed e.any#1 as range 17
       // closed e.Pattern#1 as range 39(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.any#1: 17
+      //DEBUG: e.Pattern#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # E/22 AsIs: '$'/23 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: e.any#1/17 AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/39(9) } Tile{ HalfReuse: )/1 ]] }
@@ -2529,6 +2707,11 @@ namespace /* unnamed */ {
       // closed e.val#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 28, 39},
       // closed e.1#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Name#1: 24
+      //DEBUG: e.val#1: 9
+      //DEBUG: s.NumB#1: 28
+      //DEBUG: e.1#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/29 # T/30 '$'/31 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/26 AsIs: e.Name#1/24 AsIs: )/27 AsIs: s.NumB#1/28 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 } # Atom/32 Tile{ AsIs: e.val#1/41(9) } )/33 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
@@ -2572,6 +2755,11 @@ namespace /* unnamed */ {
       // closed e.Name#1 as range 24
       {refalrts::icsVarLeft, 0, 28, 41},
       // closed e.1#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val#1: 17
+      //DEBUG: e.Name#1: 24
+      //DEBUG: s.NumB#1: 28
+      //DEBUG: e.1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # T/4 } '$'/29 (/30 Tile{ AsIs: (/15 AsIs: (/19 AsIs: # Atom/22 } Tile{ AsIs: e.val#1/39(17) } )/31 )/32 Tile{ AsIs: )/20 HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # ADT-Brackets/23 AsIs: (/26 AsIs: e.Name#1/24 AsIs: )/27 AsIs: s.NumB#1/28 AsIs: e.1#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } )/33 Tile{ ]] }
@@ -2612,6 +2800,10 @@ namespace /* unnamed */ {
       // closed e.val#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 24, 39},
       // closed e.1#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val#1: 9
+      //DEBUG: s.NumB#1: 24
+      //DEBUG: e.1#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/25 # T/26 '$'/27 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/24 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 } # Atom/28 Tile{ AsIs: e.val#1/41(9) } )/29 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
@@ -2652,6 +2844,10 @@ namespace /* unnamed */ {
       // closed e.val#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 24, 41},
       // closed e.1#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val#1: 17
+      //DEBUG: s.NumB#1: 24
+      //DEBUG: e.1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # T/4 } '$'/25 (/26 Tile{ AsIs: (/15 AsIs: (/19 AsIs: # Atom/22 } Tile{ AsIs: e.val#1/39(17) } )/27 )/28 Tile{ AsIs: )/20 HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Brackets/23 AsIs: s.NumB#1/24 AsIs: e.1#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } )/29 Tile{ ]] }
@@ -2694,6 +2890,11 @@ namespace /* unnamed */ {
       // closed e.Name#1 as range 25
       {refalrts::icsVarLeft, 0, 29, 41},
       // closed e.inBr#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: e.Name#1: 25
+      //DEBUG: s.NumB#1: 29
+      //DEBUG: e.inBr#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 Reuse: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # ADT-Brackets/24 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -2726,6 +2927,11 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 29, 39},
       // closed e.inBr#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Name#1: 25
+      //DEBUG: e.Pattern#1: 9
+      //DEBUG: s.NumB#1: 29
+      //DEBUG: e.inBr#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/30 # T/31 '$'/32 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # S/24 } '$'/33 Tile{ AsIs: e.Pattern#1/41(9) } )/34 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
@@ -2769,6 +2975,10 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 25, 41},
       // closed e.inBr#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: s.NumB#1: 25
+      //DEBUG: e.inBr#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 Reuse: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Brackets/24 AsIs: s.NumB#1/25 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -2798,6 +3008,10 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 25, 39},
       // closed e.inBr#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 9
+      //DEBUG: s.NumB#1: 25
+      //DEBUG: e.inBr#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/26 # T/27 '$'/28 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/25 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # S/24 } '$'/29 Tile{ AsIs: e.Pattern#1/41(9) } )/30 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
@@ -2840,6 +3054,11 @@ namespace /* unnamed */ {
       // closed e.1#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 25, 41},
       // closed e.2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: s.Num1#1: 24
+      //DEBUG: e.1#1: 17
+      //DEBUG: s.Num2#1: 25
+      //DEBUG: e.2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} s.Num1#1/24 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num2#1/25 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # Brackets/22 } Tile{ AsIs: </0 Reuse: & UnBracketAndNum/4 } Tile{ HalfReuse: </20 HalfReuse: & FastGen/16 HalfReuse: s.Num11 #24/7 AsIs: (/11 } Tile{ AsIs: e.1#1/39(17) } )/26 Tile{ AsIs: (/15 } Tile{ AsIs: e.2#1/41(9) } Tile{ AsIs: )/12 HalfReuse: >/8 AsIs: >/1 } Tile{ HalfReuse: )/23 } Tile{ ]] }
@@ -2886,6 +3105,12 @@ namespace /* unnamed */ {
       // closed e.1#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 35, 41},
       // closed e.2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Name#1: 24
+      //DEBUG: s.Num1#1: 34
+      //DEBUG: e.1#1: 17
+      //DEBUG: s.Num2#1: 35
+      //DEBUG: e.2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} e.Name#1/24 )/27 s.Num1#1/34 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num2#1/35 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # ADT-Brackets/23 AsIs: (/30 AsIs: e.Name#1/32 AsIs: )/31 } Tile{ AsIs: </0 Reuse: & UnBracketAndNum/4 } Tile{ HalfReuse: </15 HalfReuse: & FastGen/19 HalfReuse: s.Num11 #34/22 AsIs: (/26 } Tile{ AsIs: e.1#1/39(17) } Tile{ AsIs: )/16 AsIs: (/7 } Tile{ AsIs: e.2#1/41(9) } Tile{ AsIs: )/12 HalfReuse: >/8 AsIs: >/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -2929,6 +3154,13 @@ namespace /* unnamed */ {
       // closed e.1#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 33, 41},
       // closed e.2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Name1#1: 24
+      //DEBUG: e.Name2#1: 28
+      //DEBUG: s.Num1#1: 32
+      //DEBUG: e.1#1: 17
+      //DEBUG: s.Num2#1: 33
+      //DEBUG: e.2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/34 # T/35 '$'/36 Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/26 AsIs: e.Name1#1/24 AsIs: )/27 AsIs: s.Num1#1/32 AsIs: e.1#1/39(17) AsIs: )/20 HalfReuse: >/16 AsIs: (/7 AsIs: (/11 HalfReuse: (/23 HalfReuse: # ADT-Brackets/30 } (/37 Tile{ AsIs: e.Name2#1/28 } Tile{ AsIs: )/31 AsIs: s.Num2#1/33 AsIs: e.2#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } )/38 Tile{ ]] }
@@ -2974,6 +3206,10 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 39(17)
       {refalrts::icsVarLeft, 0, 25, 41},
       // closed e.inBr#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: s.NumB#1: 25
+      //DEBUG: e.inBr#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Brackets/24 AsIs: s.NumB#1/25 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -3002,6 +3238,10 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 25, 39},
       // closed e.inBr#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 9
+      //DEBUG: s.NumB#1: 25
+      //DEBUG: e.inBr#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/23 AsIs: '$'/24 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # Brackets/22 AsIs: s.NumB#1/25 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3034,6 +3274,11 @@ namespace /* unnamed */ {
       // closed e.Name#1 as range 25
       {refalrts::icsVarLeft, 0, 29, 41},
       // closed e.inBr#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: e.Name#1: 25
+      //DEBUG: s.NumB#1: 29
+      //DEBUG: e.inBr#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # ADT-Brackets/24 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -3065,6 +3310,11 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 41(9)
       {refalrts::icsVarLeft, 0, 29, 39},
       // closed e.inBr#1 as range 39(17)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Name#1: 25
+      //DEBUG: e.Pattern#1: 9
+      //DEBUG: s.NumB#1: 29
+      //DEBUG: e.inBr#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/23 AsIs: '$'/24 } Tile{ AsIs: </0 Reuse: & SplitReps/4 } Tile{ HalfReuse: s.Num1 #21/15 AsIs: (/19 AsIs: # ADT-Brackets/22 AsIs: (/27 AsIs: e.Name#1/25 AsIs: )/28 AsIs: s.NumB#1/29 AsIs: e.inBr#1/39(17) AsIs: )/20 HalfReuse: >/16 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3094,6 +3344,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 23, 2, 41},
       // closed e.val1#1 as range 39(17)
       // closed e.val2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val1#1: 17
+      //DEBUG: e.val2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # S/4 } '$'/24 (/25 Tile{ AsIs: (/15 AsIs: (/19 AsIs: # Atom/22 AsIs: e.val1#1/39(17) AsIs: )/20 AsIs: )/16 HalfReuse: )/7 AsIs: (/11 HalfReuse: (/23 } (/26 # Atom/27 Tile{ AsIs: e.val2#1/41(9) } )/28 Tile{ AsIs: )/12 AsIs: )/8 HalfReuse: )/1 ]] }
@@ -3133,6 +3386,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 24, static_cast<unsigned char>('$'), 41},
       // closed e.val#1 as range 39(17)
       // closed e.Pattern#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val#1: 17
+      //DEBUG: e.Pattern#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # S/23 AsIs: '$'/24 } Tile{ HalfReuse: (/12 } Tile{ AsIs: (/15 AsIs: (/19 AsIs: # Atom/22 AsIs: e.val#1/39(17) AsIs: )/20 AsIs: )/16 HalfReuse: )/7 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3161,6 +3417,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 24, 2, 41},
       // closed e.Pattern#1 as range 39(17)
       // closed e.val#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: e.val#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # S/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Atom/24 AsIs: e.val#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -3188,6 +3447,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 24, static_cast<unsigned char>('$'), 41},
       // closed e.val#1 as range 39(17)
       // closed e.Pattern#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.val#1: 17
+      //DEBUG: e.Pattern#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/23 AsIs: '$'/24 } Tile{ HalfReuse: (/12 } Tile{ AsIs: (/15 AsIs: (/19 AsIs: # Atom/22 AsIs: e.val#1/39(17) AsIs: )/20 AsIs: )/16 HalfReuse: )/7 } Tile{ AsIs: e.Pattern#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3216,6 +3478,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 24, 2, 41},
       // closed e.Pattern#1 as range 39(17)
       // closed e.val#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern#1: 17
+      //DEBUG: e.val#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern#1/39(17) } Tile{ HalfReuse: (/16 AsIs: (/7 AsIs: (/11 AsIs: # Atom/24 AsIs: e.val#1/41(9) AsIs: )/12 AsIs: )/8 HalfReuse: )/1 } Tile{ AsIs: )/20 } Tile{ ]] }
@@ -3244,6 +3509,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 25, static_cast<unsigned char>('$'), 41},
       // closed e.Pattern1#1 as range 39(17)
       // closed e.Pattern2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern1#1: 17
+      //DEBUG: e.Pattern2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/39(17) } Tile{ AsIs: e.Pattern2#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3267,6 +3535,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 25, static_cast<unsigned char>('$'), 41},
       // closed e.Pattern1#1 as range 39(17)
       // closed e.Pattern2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern1#1: 17
+      //DEBUG: e.Pattern2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} )/20 )/16 (/7 (/11 # S/24 '$'/25 {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/19 AsIs: # T/22 AsIs: '$'/23 } Tile{ AsIs: e.Pattern1#1/39(17) } Tile{ AsIs: e.Pattern2#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3290,6 +3561,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 25, static_cast<unsigned char>('$'), 41},
       // closed e.Pattern1#1 as range 39(17)
       // closed e.Pattern2#1 as range 41(9)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern1#1: 17
+      //DEBUG: e.Pattern2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # T/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/39(17) } Tile{ AsIs: e.Pattern2#1/41(9) } Tile{ HalfReuse: )/1 ]] }
@@ -3310,6 +3584,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 25, static_cast<unsigned char>('$'), 9},
       // closed e.Pattern1#1 as range 17
       // closed e.Pattern2#1 as range 9
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.Pattern1#1: 17
+      //DEBUG: e.Pattern2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # S/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/17 } Tile{ AsIs: e.Pattern2#1/9 } Tile{ HalfReuse: )/1 ]] }
@@ -3333,7 +3610,8 @@ refalrts::RASLFunction descr_FastGen_Terms(
   scope_FastGen_Terms::functions,
   scope_FastGen_Terms::idents,
   scope_FastGen_Terms::numbers,
-  scope_FastGen_Terms::strings
+  scope_FastGen_Terms::strings,
+  scope_FastGen_Terms::filename
 );
 refalrts::RefalFunction& FastGen_Terms = descr_FastGen_Terms;
 
@@ -3406,6 +3684,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern1#1 as range 39(17)
     // closed e.Pattern2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern1#1: 17
+    //DEBUG: e.Pattern2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # E/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -3437,6 +3718,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern#1 as range 39(17)
     // closed e.any#1 as range 9
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: e.any#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3473,6 +3757,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.any#1 as range 17
     // closed e.Pattern#1 as range 39(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.any#1: 17
+    //DEBUG: e.Pattern#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -3522,6 +3809,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[28], context[39], context[40] ) )
       continue;
     // closed e.1#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Name#1: 24
+    //DEBUG: e.val#1: 9
+    //DEBUG: s.NumB#1: 28
+    //DEBUG: e.1#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3588,6 +3880,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[28], context[41], context[42] ) )
       continue;
     // closed e.1#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val#1: 17
+    //DEBUG: e.Name#1: 24
+    //DEBUG: s.NumB#1: 28
+    //DEBUG: e.1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3646,6 +3943,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[24], context[39], context[40] ) )
       continue;
     // closed e.1#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val#1: 9
+    //DEBUG: s.NumB#1: 24
+    //DEBUG: e.1#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3704,6 +4005,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[24], context[41], context[42] ) )
       continue;
     // closed e.1#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val#1: 17
+    //DEBUG: s.NumB#1: 24
+    //DEBUG: e.1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3771,6 +4076,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[29], context[41], context[42] ) )
       continue;
     // closed e.inBr#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: e.Name#1: 25
+    //DEBUG: s.NumB#1: 29
+    //DEBUG: e.inBr#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3823,6 +4133,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[29], context[39], context[40] ) )
       continue;
     // closed e.inBr#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Name#1: 25
+    //DEBUG: e.Pattern#1: 9
+    //DEBUG: s.NumB#1: 29
+    //DEBUG: e.inBr#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3886,6 +4201,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[25], context[41], context[42] ) )
       continue;
     // closed e.inBr#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: s.NumB#1: 25
+    //DEBUG: e.inBr#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3930,6 +4249,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[25], context[39], context[40] ) )
       continue;
     // closed e.inBr#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 9
+    //DEBUG: s.NumB#1: 25
+    //DEBUG: e.inBr#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3991,6 +4314,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[25], context[41], context[42] ) )
       continue;
     // closed e.2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: s.Num1#1: 24
+    //DEBUG: e.1#1: 17
+    //DEBUG: s.Num2#1: 25
+    //DEBUG: e.2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} s.Num1#1/24 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num2#1/25 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4064,6 +4392,12 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[35], context[41], context[42] ) )
       continue;
     // closed e.2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Name#1: 24
+    //DEBUG: s.Num1#1: 34
+    //DEBUG: e.1#1: 17
+    //DEBUG: s.Num2#1: 35
+    //DEBUG: e.2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} e.Name#1/24 )/27 s.Num1#1/34 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num2#1/35 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4131,6 +4465,13 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[33], context[41], context[42] ) )
       continue;
     // closed e.2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Name1#1: 24
+    //DEBUG: e.Name2#1: 28
+    //DEBUG: s.Num1#1: 32
+    //DEBUG: e.1#1: 17
+    //DEBUG: s.Num2#1: 33
+    //DEBUG: e.2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4196,6 +4537,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[25], context[41], context[42] ) )
       continue;
     // closed e.inBr#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: s.NumB#1: 25
+    //DEBUG: e.inBr#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4239,6 +4584,10 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[25], context[39], context[40] ) )
       continue;
     // closed e.inBr#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 9
+    //DEBUG: s.NumB#1: 25
+    //DEBUG: e.inBr#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4291,6 +4640,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[29], context[41], context[42] ) )
       continue;
     // closed e.inBr#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: e.Name#1: 25
+    //DEBUG: s.NumB#1: 29
+    //DEBUG: e.inBr#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4342,6 +4696,11 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[29], context[39], context[40] ) )
       continue;
     // closed e.inBr#1 as range 39(17)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Name#1: 25
+    //DEBUG: e.Pattern#1: 9
+    //DEBUG: s.NumB#1: 29
+    //DEBUG: e.inBr#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/21 {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4383,6 +4742,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.val1#1 as range 39(17)
     // closed e.val2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val1#1: 17
+    //DEBUG: e.val2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4441,6 +4803,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.val#1 as range 39(17)
     // closed e.Pattern#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val#1: 17
+    //DEBUG: e.Pattern#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
@@ -4483,6 +4848,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern#1 as range 39(17)
     // closed e.val#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: e.val#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4524,6 +4892,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.val#1 as range 39(17)
     // closed e.Pattern#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.val#1: 17
+    //DEBUG: e.Pattern#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
@@ -4566,6 +4937,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern#1 as range 39(17)
     // closed e.val#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern#1: 17
+    //DEBUG: e.val#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4610,6 +4984,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern1#1 as range 39(17)
     // closed e.Pattern2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern1#1: 17
+    //DEBUG: e.Pattern2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # T/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4649,6 +5026,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern1#1 as range 39(17)
     // closed e.Pattern2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern1#1: 17
+    //DEBUG: e.Pattern2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 {REMOVED TILE} {REMOVED TILE} )/20 )/16 (/7 (/11 # S/24 '$'/25 {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4688,6 +5068,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Pattern1#1 as range 39(17)
     // closed e.Pattern2#1 as range 41(9)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.Pattern1#1: 17
+    //DEBUG: e.Pattern2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4722,6 +5105,9 @@ static refalrts::FnResult func_FastGen_Terms(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern1#1 as range 17
   // closed e.Pattern2#1 as range 9
+  //DEBUG: s.Num#1: 21
+  //DEBUG: e.Pattern1#1: 17
+  //DEBUG: e.Pattern2#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FastGen-Terms/4 s.Num#1/21 (/15 (/19 # S/22 '$'/23 {REMOVED TILE} )/20 )/16 (/7 {REMOVED TILE} {REMOVED TILE} )/12 )/8 {REMOVED TILE}
@@ -4746,6 +5132,7 @@ refalrts::RefalFunction& FastGen_Terms = descr_FastGen_Terms;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastGen_MeN {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SplitReps,
       & FastGen_Terms,
@@ -4794,6 +5181,15 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 31, 0, 27},
       // closed e.inE2#1 as range 27
       // closed e.4#1 as range 48(5)
+      //DEBUG: s.Num#1: 13
+      //DEBUG: t.left1#1: 14
+      //DEBUG: t.left2#1: 16
+      //DEBUG: e.1#1: 18
+      //DEBUG: e.inE1#1: 20
+      //DEBUG: e.2#1: 9
+      //DEBUG: e.3#1: 25
+      //DEBUG: e.inE2#1: 27
+      //DEBUG: e.4#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FastGen-Terms/4 AsIs: s.Num#1/13 AsIs: (/11 AsIs: t.left1#1/14 } )/32 (/33 Tile{ AsIs: t.left2#1/16 } )/34 >/35 </36 & FastGen-MeN/37 s.Num#1/13/38 (/39 Tile{ AsIs: e.1#1/18 } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: e.inE1#1/20 AsIs: )/23 AsIs: e.2#1/44(9) AsIs: )/12 AsIs: (/7 } Tile{ AsIs: e.3#1/25 } Tile{ AsIs: (/29 AsIs: # E/31 AsIs: e.inE2#1/27 AsIs: )/30 AsIs: e.4#1/48(5) AsIs: )/8 AsIs: >/1 ]] }
@@ -4847,6 +5243,15 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 31, 0, 27},
       // closed e.inE2#1 as range 27
       // closed e.4#1 as range 48(5)
+      //DEBUG: s.Num#1: 13
+      //DEBUG: t.right1#1: 14
+      //DEBUG: t.right2#1: 16
+      //DEBUG: e.1#1: 18
+      //DEBUG: e.inE1#1: 20
+      //DEBUG: e.2#1: 9
+      //DEBUG: e.3#1: 25
+      //DEBUG: e.inE2#1: 27
+      //DEBUG: e.4#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen-MeN/4 AsIs: s.Num#1/13 AsIs: (/11 AsIs: e.1#1/18 AsIs: (/22 AsIs: # E/24 AsIs: e.inE1#1/20 AsIs: )/23 } Tile{ AsIs: e.2#1/44(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.3#1/25 AsIs: (/29 AsIs: # E/31 AsIs: e.inE2#1/27 AsIs: )/30 } Tile{ AsIs: e.4#1/48(5) } )/32 >/33 </34 & FastGen-Terms/35 s.Num#1/13/36 (/37 Tile{ AsIs: t.right1#1/14 } )/38 (/39 Tile{ AsIs: t.right2#1/16 AsIs: )/8 AsIs: >/1 ]] }
@@ -4896,6 +5301,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 42},
       // closed e.inE1#1 as range 14
       // closed e.inE2#1 as range 30
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.inE1#1: 14
+      //DEBUG: e.inE2#1: 30
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-MeN/4 s.Num#1/13 (/11 (/16 # E/18 '$'/19 {REMOVED TILE} )/17 )/12 (/7 {REMOVED TILE} {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: '$'/25 } Tile{ AsIs: e.inE1#1/14 } Tile{ AsIs: (/28 AsIs: (/32 AsIs: e.inE2#1/30 AsIs: )/33 AsIs: )/29 AsIs: )/23 } Tile{ ]] }
@@ -4913,6 +5321,9 @@ namespace /* unnamed */ {
       // </0 & FastGen-MeN/4 s.Num#1/13 (/11 e.in1#1/9 )/12 (/7 e.in2#1/5 )/8 >/1
       // closed e.in1#1 as range 9
       // closed e.in2#1 as range 5
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.in1#1: 9
+      //DEBUG: e.in2#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 } # E/14 '$'/15 Tile{ AsIs: </0 Reuse: & SplitReps/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.in1#1/9 } >/16 Tile{ HalfReuse: (/12 AsIs: (/7 AsIs: e.in2#1/5 AsIs: )/8 HalfReuse: )/1 } )/17 Tile{ ]] }
@@ -4950,7 +5361,8 @@ refalrts::RASLFunction descr_FastGen_MeN(
   scope_FastGen_MeN::functions,
   scope_FastGen_MeN::idents,
   scope_FastGen_MeN::numbers,
-  scope_FastGen_MeN::strings
+  scope_FastGen_MeN::strings,
+  scope_FastGen_MeN::filename
 );
 refalrts::RefalFunction& FastGen_MeN = descr_FastGen_MeN;
 
@@ -5037,6 +5449,15 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
           continue;
         // closed e.inE2#1 as range 27
         // closed e.4#1 as range 48(5)
+        //DEBUG: s.Num#1: 13
+        //DEBUG: t.left1#1: 14
+        //DEBUG: t.left2#1: 16
+        //DEBUG: e.1#1: 18
+        //DEBUG: e.inE1#1: 20
+        //DEBUG: e.2#1: 9
+        //DEBUG: e.3#1: 25
+        //DEBUG: e.inE2#1: 27
+        //DEBUG: e.4#1: 5
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5133,6 +5554,15 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
           continue;
         // closed e.inE2#1 as range 27
         // closed e.4#1 as range 48(5)
+        //DEBUG: s.Num#1: 13
+        //DEBUG: t.right1#1: 14
+        //DEBUG: t.right2#1: 16
+        //DEBUG: e.1#1: 18
+        //DEBUG: e.inE1#1: 20
+        //DEBUG: e.2#1: 9
+        //DEBUG: e.3#1: 25
+        //DEBUG: e.inE2#1: 27
+        //DEBUG: e.4#1: 5
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5232,6 +5662,9 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
       continue;
     // closed e.inE1#1 as range 14
     // closed e.inE2#1 as range 30
+    //DEBUG: s.Num#1: 13
+    //DEBUG: e.inE1#1: 14
+    //DEBUG: e.inE2#1: 30
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-MeN/4 s.Num#1/13 (/11 (/16 # E/18 '$'/19 {REMOVED TILE} )/17 )/12 (/7 {REMOVED TILE} {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -5255,6 +5688,9 @@ static refalrts::FnResult func_FastGen_MeN(refalrts::Iter arg_begin, refalrts::I
   // </0 & FastGen-MeN/4 s.Num#1/13 (/11 e.in1#1/9 )/12 (/7 e.in2#1/5 )/8 >/1
   // closed e.in1#1 as range 9
   // closed e.in2#1 as range 5
+  //DEBUG: s.Num#1: 13
+  //DEBUG: e.in1#1: 9
+  //DEBUG: e.in2#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5299,6 +5735,7 @@ refalrts::RefalFunction& FastGen_MeN = descr_FastGen_MeN;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LengthComp {
+    static const char *filename = "FastGen.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NotEq<int>::name,
@@ -5328,6 +5765,10 @@ namespace /* unnamed */ {
       // closed e.tail1#1 as range 5
       {refalrts::ictVarLeftSave, 0, 15, 9},
       // closed e.tail2#1 as range 9
+      //DEBUG: t.1#1: 13
+      //DEBUG: e.tail1#1: 5
+      //DEBUG: t.2#1: 15
+      //DEBUG: e.tail2#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} t.1#1/13 {REMOVED TILE} {REMOVED TILE} t.2#1/15 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & LengthComp/4 AsIs: (/7 } Tile{ AsIs: e.tail1#1/5 } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.tail2#1/9 } Tile{ AsIs: )/12 AsIs: >/1 ]] }
@@ -5362,6 +5803,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & LengthComp/4 e.1#1/2 >/1
       // closed e.1#1 as range 2
+      //DEBUG: e.1#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & LengthComp/4 e.1#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NotEq/1 ]] }
@@ -5382,7 +5824,8 @@ refalrts::RASLFunction descr_LengthComp(
   scope_LengthComp::functions,
   scope_LengthComp::idents,
   scope_LengthComp::numbers,
-  scope_LengthComp::strings
+  scope_LengthComp::strings,
+  scope_LengthComp::filename
 );
 refalrts::RefalFunction& LengthComp = descr_LengthComp;
 
@@ -5430,6 +5873,10 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
     if( ! context[16] )
       continue;
     // closed e.tail2#1 as range 9
+    //DEBUG: t.1#1: 13
+    //DEBUG: e.tail1#1: 5
+    //DEBUG: t.2#1: 15
+    //DEBUG: e.tail2#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.1#1/13 {REMOVED TILE} {REMOVED TILE} t.2#1/15 {REMOVED TILE} {REMOVED TILE}
@@ -5490,6 +5937,7 @@ static refalrts::FnResult func_LengthComp(refalrts::Iter arg_begin, refalrts::It
   // e.idx
   // </0 & LengthComp/4 e.1#1/2 >/1
   // closed e.1#1 as range 2
+  //DEBUG: e.1#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LengthComp/4 e.1#1/2 {REMOVED TILE}
@@ -5513,6 +5961,7 @@ refalrts::RefalFunction& LengthComp = descr_LengthComp;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastGen_K {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SplitReps,
       & FastGen_Terms
@@ -5551,6 +6000,11 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 29, 5},
       {refalrts::ictVarLeftSave, 0, 17, 29},
       // closed e.tail2#1 as range 29(5)
+      //DEBUG: s.Num#1: 13
+      //DEBUG: t.1#1: 15
+      //DEBUG: e.tail1#1: 9
+      //DEBUG: t.2#1: 17
+      //DEBUG: e.tail2#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </19 & FastGen-Terms/20 s.Num#1/13/21 (/22 Tile{ AsIs: t.1#1/15 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: t.2#1/17 } )/23 >/24 Tile{ AsIs: </0 AsIs: & FastGen-K/4 AsIs: s.Num#1/13 AsIs: # Eq/14 AsIs: (/11 } Tile{ AsIs: e.tail1#1/27(9) } )/25 (/26 Tile{ AsIs: e.tail2#1/29(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -5589,6 +6043,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 27},
       {refalrts::icSave, 0, 29, 5},
       {refalrts::icEmpty, 0, 0, 29},
+      //DEBUG: s.Num#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen-K/4 s.Num#1/13 # Eq/14 (/11 )/12 (/7 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -5601,6 +6056,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 1, 14},
       // closed e.1#1 as range 9
       // closed e.2#1 as range 5
+      //DEBUG: s.Num#1: 13
+      //DEBUG: e.1#1: 9
+      //DEBUG: e.2#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/15 Tile{ Reuse: # E/14 HalfReuse: '$'/11 } Tile{ AsIs: </0 Reuse: & SplitReps/4 AsIs: s.Num#1/13 } Tile{ AsIs: e.1#1/9 } >/16 Tile{ HalfReuse: (/12 AsIs: (/7 AsIs: e.2#1/5 AsIs: )/8 HalfReuse: )/1 } )/17 Tile{ ]] }
@@ -5639,7 +6097,8 @@ refalrts::RASLFunction descr_FastGen_K(
   scope_FastGen_K::functions,
   scope_FastGen_K::idents,
   scope_FastGen_K::numbers,
-  scope_FastGen_K::strings
+  scope_FastGen_K::strings,
+  scope_FastGen_K::filename
 );
 refalrts::RefalFunction& FastGen_K = descr_FastGen_K;
 
@@ -5696,6 +6155,11 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[18] )
       continue;
     // closed e.tail2#1 as range 29(5)
+    //DEBUG: s.Num#1: 13
+    //DEBUG: t.1#1: 15
+    //DEBUG: e.tail1#1: 9
+    //DEBUG: t.2#1: 17
+    //DEBUG: e.tail2#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5753,6 +6217,7 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     context[30] = context[6];
     if( ! refalrts::empty_seq( context[29], context[30] ) )
       continue;
+    //DEBUG: s.Num#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen-K/4 s.Num#1/13 # Eq/14 (/11 )/12 (/7 )/8 >/1 {REMOVED TILE}
@@ -5772,6 +6237,9 @@ static refalrts::FnResult func_FastGen_K(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   // closed e.1#1 as range 9
   // closed e.2#1 as range 5
+  //DEBUG: s.Num#1: 13
+  //DEBUG: e.1#1: 9
+  //DEBUG: e.2#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5816,6 +6284,7 @@ refalrts::RefalFunction& FastGen_K = descr_FastGen_K;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastGen {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & LengthComp,
       & FastGen_K,
@@ -5850,6 +6319,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 39, 2},
       {refalrts::icEmpty, 0, 0, 39},
       // closed e.1#1 as range 6
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.1#1: 6
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastGen/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: s.Num#1/5 AsIs: (/8 AsIs: e.1#1/6 AsIs: )/9 } Tile{ ]] }
@@ -5868,6 +6339,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 41},
       {refalrts::icEmpty, 0, 0, 10},
       // closed e.Tail#1 as range 39(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </14 & Inc/15 Tile{ HalfReuse: s.Num1 #5/8 HalfReuse: >/9 AsIs: (/12 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
@@ -5898,6 +6371,10 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 10
       // closed e.any#1 as range 16
       // closed e.Tail#1 as range 41(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Pattern#1: 10
+      //DEBUG: e.any#1: 16
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </20 & Inc/21 Tile{ AsIs: s.Num#1/5 } Tile{ HalfReuse: >/18 } Tile{ AsIs: (/8 AsIs: (/12 AsIs: # E/14 AsIs: '$'/15 AsIs: e.Pattern#1/10 HalfReuse: (/13 HalfReuse: (/9 } Tile{ AsIs: e.any#1/16 } )/22 )/23 )/24 Tile{ AsIs: )/19 AsIs: e.Tail#1/41(2) AsIs: >/1 ]] }
@@ -5938,6 +6415,10 @@ namespace /* unnamed */ {
       // closed e.any#1 as range 6
       // closed e.Pattern#1 as range 14
       // closed e.Tail#1 as range 39(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.any#1: 6
+      //DEBUG: e.Pattern#1: 14
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } Tile{ HalfReuse: </8 } & Inc/20 Tile{ AsIs: s.Num#1/5 } Tile{ HalfReuse: >/9 AsIs: (/12 AsIs: (/16 AsIs: # E/18 } '$'/21 </22 & SplitReps/23 s.Num#1/5/24 Tile{ AsIs: e.any#1/6 } Tile{ HalfReuse: >/19 AsIs: e.Pattern#1/14 AsIs: )/17 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
@@ -5974,6 +6455,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 10},
       // closed e.Any#1 as range 6
       // closed e.Tail#1 as range 39(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Any#1: 6
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </14 & FastGen/15 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 HalfReuse: >/8 } (/16 (/17 # E/18 '$'/19 </20 & SplitReps/21 s.Num#1/5/22 Tile{ AsIs: e.Any#1/6 } >/23 (/24 (/25 )/26 Tile{ AsIs: )/9 HalfReuse: )/12 AsIs: )/13 AsIs: e.Tail#1/39(2) AsIs: >/1 ]] }
@@ -6020,6 +6504,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 41},
       // closed e.Any#1 as range 10
       // closed e.Tail#1 as range 39(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Any#1: 10
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </14 & FastGen/15 </16 & Inc/17 s.Num#1/5/18 >/19 (/20 (/21 # E/22 '$'/23 Tile{ AsIs: </0 Reuse: & SplitReps/4 AsIs: s.Num#1/5 HalfReuse: >/8 HalfReuse: (/9 AsIs: (/12 AsIs: e.Any#1/10 AsIs: )/13 } )/24 )/25 )/26 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
@@ -6073,6 +6560,10 @@ namespace /* unnamed */ {
       // closed e.Pattern1#1 as range 10
       // closed e.Pattern2#1 as range 20
       // closed e.Tail#1 as range 41(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Pattern1#1: 10
+      //DEBUG: e.Pattern2#1: 20
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} # E/14 '$'/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } Tile{ HalfReuse: </8 HalfReuse: & Inc/12 } Tile{ HalfReuse: s.Num1 #5/13 HalfReuse: >/9 AsIs: (/18 AsIs: (/22 AsIs: # E/24 AsIs: '$'/25 } Tile{ AsIs: e.Pattern1#1/10 } Tile{ AsIs: e.Pattern2#1/20 } Tile{ AsIs: )/23 AsIs: )/19 AsIs: e.Tail#1/41(2) AsIs: >/1 ]] }
@@ -6105,6 +6596,10 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 41},
       {refalrts::ictVarLeftSave, 0, 16, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.1#1: 14
+      //DEBUG: t.2#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </18 & FastGen/19 </20 & Inc/21 s.Num#1/5/22 >/23 (/24 Tile{ AsIs: </0 Reuse: & FastGen-Terms/4 AsIs: s.Num#1/5 AsIs: (/8 AsIs: t.1#1/14 AsIs: )/9 AsIs: (/12 AsIs: t.2#1/16 AsIs: )/13 } >/25 )/26 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
@@ -6158,6 +6653,14 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 29, static_cast<unsigned char>('$'), 24},
       // closed e.Pattern2#1 as range 24
       // closed e.4#1 as range 47(10)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.1#1: 14
+      //DEBUG: e.Pattern1#1: 16
+      //DEBUG: e.2#1: 6
+      //DEBUG: e.3#1: 22
+      //DEBUG: e.Pattern2#1: 24
+      //DEBUG: e.4#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </30 & FastGen/31 </32 & Inc/33 s.Num#1/5/34 >/35 (/36 Tile{ AsIs: </0 Reuse: & FastGen-MeN/4 AsIs: s.Num#1/5 AsIs: (/8 AsIs: e.1#1/14 AsIs: (/18 AsIs: # E/20 AsIs: '$'/21 AsIs: e.Pattern1#1/16 AsIs: )/19 AsIs: e.2#1/43(6) AsIs: )/9 AsIs: (/12 AsIs: e.3#1/22 AsIs: (/26 AsIs: # E/28 AsIs: '$'/29 AsIs: e.Pattern2#1/24 AsIs: )/27 AsIs: e.4#1/47(10) AsIs: )/13 } >/37 )/38 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
@@ -6197,6 +6700,10 @@ namespace /* unnamed */ {
       // closed e.1#1 as range 6
       // closed e.2#1 as range 10
       // closed e.Tail#1 as range 39(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.1#1: 6
+      //DEBUG: e.2#1: 10
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FastGen/4 } </14 & Inc/15 s.Num#1/5/16 >/17 (/18 </19 & FastGen-K/20 Tile{ AsIs: s.Num#1/5 } </21 & LengthComp/22 Tile{ AsIs: (/8 AsIs: e.1#1/6 AsIs: )/9 AsIs: (/12 AsIs: e.2#1/10 AsIs: )/13 } >/23 (/24 e.1#1/6/25 )/27 (/28 e.2#1/10/29 )/31 >/32 )/33 Tile{ AsIs: e.Tail#1/39(2) } Tile{ AsIs: >/1 ]] }
@@ -6246,6 +6753,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.1#1 as range 6
       // closed e.2#1 as range 10
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.1#1: 6
+      //DEBUG: e.2#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 } # E/14 '$'/15 Tile{ AsIs: (/8 } (/16 Tile{ AsIs: e.1#1/6 } )/17 )/18 Tile{ HalfReuse: (/9 AsIs: (/12 AsIs: e.2#1/10 AsIs: )/13 HalfReuse: )/1 } )/19 )/20 Tile{ ]] }
@@ -6289,7 +6799,8 @@ refalrts::RASLFunction descr_FastGen(
   scope_FastGen::functions,
   scope_FastGen::idents,
   scope_FastGen::numbers,
-  scope_FastGen::strings
+  scope_FastGen::strings,
+  scope_FastGen::filename
 );
 refalrts::RefalFunction& FastGen = descr_FastGen;
 
@@ -6327,6 +6838,8 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::empty_seq( context[39], context[40] ) )
       continue;
     // closed e.1#1 as range 6
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.1#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FastGen/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -6360,6 +6873,8 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
     // closed e.Tail#1 as range 39(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE}
@@ -6415,6 +6930,10 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Pattern#1 as range 10
     // closed e.any#1 as range 16
     // closed e.Tail#1 as range 41(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Pattern#1: 10
+    //DEBUG: e.any#1: 16
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6482,6 +7001,10 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.any#1 as range 6
     // closed e.Pattern#1 as range 14
     // closed e.Tail#1 as range 39(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.any#1: 6
+    //DEBUG: e.Pattern#1: 14
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6536,6 +7059,9 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Any#1 as range 6
     // closed e.Tail#1 as range 39(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Any#1: 6
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6609,6 +7135,9 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Any#1 as range 10
     // closed e.Tail#1 as range 39(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Any#1: 10
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6708,6 +7237,10 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.Pattern1#1 as range 10
     // closed e.Pattern2#1 as range 20
     // closed e.Tail#1 as range 41(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Pattern1#1: 10
+    //DEBUG: e.Pattern2#1: 20
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} # E/14 '$'/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6759,6 +7292,10 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.1#1: 14
+    //DEBUG: t.2#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6859,6 +7396,14 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
           continue;
         // closed e.Pattern2#1 as range 24
         // closed e.4#1 as range 47(10)
+        //DEBUG: s.Num#1: 5
+        //DEBUG: e.Tail#1: 2
+        //DEBUG: e.1#1: 14
+        //DEBUG: e.Pattern1#1: 16
+        //DEBUG: e.2#1: 6
+        //DEBUG: e.3#1: 22
+        //DEBUG: e.Pattern2#1: 24
+        //DEBUG: e.4#1: 10
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6921,6 +7466,10 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     // closed e.1#1 as range 6
     // closed e.2#1 as range 10
     // closed e.Tail#1 as range 39(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.1#1: 6
+    //DEBUG: e.2#1: 10
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7000,6 +7549,9 @@ static refalrts::FnResult func_FastGen(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cRecognitionImpossible;
   // closed e.1#1 as range 6
   // closed e.2#1 as range 10
+  //DEBUG: s.Num#1: 5
+  //DEBUG: e.1#1: 6
+  //DEBUG: e.2#1: 10
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7053,6 +7605,7 @@ refalrts::RefalFunction& FastGen = descr_FastGen;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CreateFastGen {
+    static const char *filename = "FastGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & PreparePatternsFastGen,
       & FastGen
@@ -7068,6 +7621,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Patterns#1 as range 2
+      //DEBUG: e.Patterns#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & FastGen/6 1/7 Tile{ AsIs: </0 Reuse: & PreparePatternsFastGen/4 AsIs: e.Patterns#1/2 AsIs: >/1 } >/8 Tile{ ]] }
@@ -7097,7 +7651,8 @@ refalrts::RASLFunction descr_CreateFastGen(
   scope_CreateFastGen::functions,
   scope_CreateFastGen::idents,
   scope_CreateFastGen::numbers,
-  scope_CreateFastGen::strings
+  scope_CreateFastGen::strings,
+  scope_CreateFastGen::filename
 );
 refalrts::RefalFunction& CreateFastGen = descr_CreateFastGen;
 
@@ -7114,6 +7669,7 @@ static refalrts::FnResult func_CreateFastGen(refalrts::Iter arg_begin, refalrts:
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Patterns#1 as range 2
+  //DEBUG: e.Patterns#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

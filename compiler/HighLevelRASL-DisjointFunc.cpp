@@ -70,6 +70,7 @@ extern refalrts::RefalFunction& HighLevelRASL_Function_Disjoint;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Disjoint_L1 {
+    static const char *filename = "HighLevelRASL-DisjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & GenPattern,
       & GenResult
@@ -96,6 +97,12 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 22, 2},
       {refalrts::icsVarLeft, 0, 23, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Name#1: 17
+      //DEBUG: e.Pattern#2: 9
+      //DEBUG: e.Result#2: 13
+      //DEBUG: s.FnGenResult#1: 21
+      //DEBUG: s.FnGenInitSubst#1: 22
+      //DEBUG: s.FnGenSubst#1: 23
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenResult#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 } & GenResult/24 Tile{ HalfReuse: s.FnGenResult1 #21/12 AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 HalfReuse: </8 HalfReuse: & GenPattern/1 } Tile{ AsIs: s.FnGenInitSubst#1/22 AsIs: s.FnGenSubst#1/23 AsIs: (/19 AsIs: e.Name#1/17 AsIs: )/20 } Tile{ AsIs: e.Pattern#2/9 } Tile{ HalfReuse: >/7 HalfReuse: >/11 } )/25 Tile{ ]] }
@@ -137,7 +144,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L1(
   scope_gen_HighLevelRASL_Function_Disjoint_L1::functions,
   scope_gen_HighLevelRASL_Function_Disjoint_L1::idents,
   scope_gen_HighLevelRASL_Function_Disjoint_L1::numbers,
-  scope_gen_HighLevelRASL_Function_Disjoint_L1::strings
+  scope_gen_HighLevelRASL_Function_Disjoint_L1::strings,
+  scope_gen_HighLevelRASL_Function_Disjoint_L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1 = descr_gen_HighLevelRASL_Function_Disjoint_L1;
 
@@ -192,6 +200,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L1(refalrts::
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Name#1: 17
+  //DEBUG: e.Pattern#2: 9
+  //DEBUG: e.Result#2: 13
+  //DEBUG: s.FnGenResult#1: 21
+  //DEBUG: s.FnGenInitSubst#1: 22
+  //DEBUG: s.FnGenSubst#1: 23
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenResult#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -238,6 +252,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L1 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Disjoint_L2 {
+    static const char *filename = "HighLevelRASL-DisjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Max
     };
@@ -262,6 +277,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::icsVarLeft, 0, 15, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Sentence#2: 5
+      //DEBUG: s.MaxMemory#2: 14
+      //DEBUG: s.Memory#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Memory#2/15 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Max/4 AsIs: s.MaxMemory#2/14 HalfReuse: s.Memory2 #15/7 HalfReuse: >/11 HalfReuse: (/13 } Tile{ HalfReuse: # CmdSentence/12 AsIs: e.Sentence#2/5 AsIs: )/8 } Tile{ ]] }
@@ -290,7 +308,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L2(
   scope_gen_HighLevelRASL_Function_Disjoint_L2::functions,
   scope_gen_HighLevelRASL_Function_Disjoint_L2::idents,
   scope_gen_HighLevelRASL_Function_Disjoint_L2::numbers,
-  scope_gen_HighLevelRASL_Function_Disjoint_L2::strings
+  scope_gen_HighLevelRASL_Function_Disjoint_L2::strings,
+  scope_gen_HighLevelRASL_Function_Disjoint_L2::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2 = descr_gen_HighLevelRASL_Function_Disjoint_L2;
 
@@ -332,6 +351,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Sentence#2: 5
+  //DEBUG: s.MaxMemory#2: 14
+  //DEBUG: s.Memory#2: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Memory#2/15 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -363,6 +385,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L2 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Disjoint_L3L1 {
+    static const char *filename = "HighLevelRASL-DisjointFunc.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdFail<int>::name,
@@ -389,6 +412,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 5},
       // closed e.Commands#3 as range 10(2)
       // closed e.OpenELoop#3 as range 5
+      //DEBUG: e.Commands#3: 2
+      //DEBUG: e.OpenELoop#3: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands#3/10(2) } Tile{ AsIs: (/7 AsIs: # CmdOpenELoop/9 AsIs: e.OpenELoop#3/5 AsIs: )/8 HalfReuse: (/1 } Tile{ HalfReuse: # CmdFail/0 HalfReuse: )/4 } Tile{ ]] }
@@ -406,6 +431,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.LastSentence#3/2 >/1
       // closed e.LastSentence#3 as range 2
+      //DEBUG: e.LastSentence#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Disjoint\3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.LastSentence#3/2 } Tile{ ]] }
@@ -426,7 +452,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L3L1(
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::functions,
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::idents,
   scope_gen_HighLevelRASL_Function_Disjoint_L3L1::numbers,
-  scope_gen_HighLevelRASL_Function_Disjoint_L3L1::strings
+  scope_gen_HighLevelRASL_Function_Disjoint_L3L1::strings,
+  scope_gen_HighLevelRASL_Function_Disjoint_L3L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1 = descr_gen_HighLevelRASL_Function_Disjoint_L3L1;
 
@@ -463,6 +490,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
       continue;
     // closed e.Commands#3 as range 10(2)
     // closed e.OpenELoop#3 as range 5
+    //DEBUG: e.Commands#3: 2
+    //DEBUG: e.OpenELoop#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -486,6 +515,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
   // e.idx
   // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.LastSentence#3/2 >/1
   // closed e.LastSentence#3 as range 2
+  //DEBUG: e.LastSentence#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Disjoint\3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -509,6 +539,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3L1 = descr_gen_Hi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Disjoint_L3 {
+    static const char *filename = "HighLevelRASL-DisjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Disjoint_L3L1,
       & Fetch
@@ -535,6 +566,11 @@ namespace /* unnamed */ {
       // closed e.Name#1 as range 11
       {refalrts::icsVarLeft, 0, 15, 2},
       // closed e.Sentences#2 as range 2
+      //DEBUG: e.LastSentence#2: 5
+      //DEBUG: s.ScopeClass#1: 10
+      //DEBUG: e.Name#1: 11
+      //DEBUG: s.MaxMemory#2: 15
+      //DEBUG: e.Sentences#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Function/4 AsIs: s.ScopeClass#1/10 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 } (/16 # CmdIssueMem/17 Tile{ AsIs: s.MaxMemory#2/15 } )/18 Tile{ AsIs: e.Sentences#2/2 } Tile{ HalfReuse: </7 HalfReuse: & Fetch/9 AsIs: e.LastSentence#2/5 HalfReuse: & HighLevelRASL-Function-Disjoint\3\1/8 AsIs: >/1 } )/19 Tile{ ]] }
@@ -573,7 +609,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Disjoint_L3(
   scope_gen_HighLevelRASL_Function_Disjoint_L3::functions,
   scope_gen_HighLevelRASL_Function_Disjoint_L3::idents,
   scope_gen_HighLevelRASL_Function_Disjoint_L3::numbers,
-  scope_gen_HighLevelRASL_Function_Disjoint_L3::strings
+  scope_gen_HighLevelRASL_Function_Disjoint_L3::strings,
+  scope_gen_HighLevelRASL_Function_Disjoint_L3::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3 = descr_gen_HighLevelRASL_Function_Disjoint_L3;
 
@@ -613,6 +650,11 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::
   if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentences#2 as range 2
+  //DEBUG: e.LastSentence#2: 5
+  //DEBUG: s.ScopeClass#1: 10
+  //DEBUG: e.Name#1: 11
+  //DEBUG: s.MaxMemory#2: 15
+  //DEBUG: e.Sentences#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -658,6 +700,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Disjoint_L3 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL_Function_Disjoint {
+    static const char *filename = "HighLevelRASL-DisjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_HighLevelRASL_Function_Disjoint_L3,
@@ -685,6 +728,12 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 9, 2},
       // closed e.Name#1 as range 9
       // closed e.Sentences#1 as range 2
+      //DEBUG: s.FnGenInitSubst#1: 5
+      //DEBUG: s.FnGenSubst#1: 6
+      //DEBUG: s.FnGenResult#1: 7
+      //DEBUG: s.ScopeClass#1: 8
+      //DEBUG: e.Name#1: 9
+      //DEBUG: e.Sentences#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Sentences#1/2 } </13 & Seq/14 (/15 & Map/16 </17 & @create_closure@/18 & HighLevelRASL-Function-Disjoint\1/19 Tile{ AsIs: s.FnGenResult#1/7 } Tile{ AsIs: s.FnGenInitSubst#1/5 AsIs: s.FnGenSubst#1/6 } (/20 e.Name#1/9/21 )/23 >/24 )/25 (/26 & MapReduce/27 & HighLevelRASL-Function-Disjoint\2/28 0/29 )/30 </31 & @create_closure@/32 & HighLevelRASL-Function-Disjoint\3/33 Tile{ AsIs: s.ScopeClass#1/8 AsIs: (/11 AsIs: e.Name#1/9 AsIs: )/12 } >/34 >/35 Tile{ AsIs: >/1 ]] }
@@ -744,7 +793,8 @@ refalrts::RASLFunction descr_HighLevelRASL_Function_Disjoint(
   scope_HighLevelRASL_Function_Disjoint::functions,
   scope_HighLevelRASL_Function_Disjoint::idents,
   scope_HighLevelRASL_Function_Disjoint::numbers,
-  scope_HighLevelRASL_Function_Disjoint::strings
+  scope_HighLevelRASL_Function_Disjoint::strings,
+  scope_HighLevelRASL_Function_Disjoint::filename
 );
 refalrts::RefalFunction& HighLevelRASL_Function_Disjoint = descr_HighLevelRASL_Function_Disjoint;
 
@@ -776,6 +826,12 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
   refalrts::bracket_pointers(context[11], context[12]);
   // closed e.Name#1 as range 9
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: s.FnGenResult#1: 7
+  //DEBUG: s.ScopeClass#1: 8
+  //DEBUG: e.Name#1: 9
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

@@ -104,6 +104,7 @@ extern refalrts::RefalFunction& Help;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseCommandLine_L1S2L1 {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FormatError,
       & Help
@@ -140,6 +141,10 @@ namespace /* unnamed */ {
       // closed e.From#2 as range 5
       {refalrts::icsVarLeft, 0, 15, 10},
       // closed e.To#3 as range 10
+      //DEBUG: s.PosFrom#2: 9
+      //DEBUG: e.From#2: 5
+      //DEBUG: s.PosTo#3: 15
+      //DEBUG: e.To#3: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.PosFrom#2/9 {REMOVED TILE} {REMOVED TILE} s.PosTo#3/15 {REMOVED TILE} )/13 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # From/4 AsIs: (/7 AsIs: e.From#2/5 AsIs: )/8 } Tile{ AsIs: # To/14 } Tile{ AsIs: (/12 } Tile{ AsIs: e.To#3/10 } Tile{ HalfReuse: )/1 ]] }
@@ -159,6 +164,9 @@ namespace /* unnamed */ {
       // </0 & ParseCommandLine\1$2\1/4 (/7 e.From#2/5 )/8 s.PosFrom#2/9 e.Other#3/2 >/1
       // closed e.From#2 as range 5
       // closed e.Other#3 as range 2
+      //DEBUG: s.PosFrom#2: 9
+      //DEBUG: e.From#2: 5
+      //DEBUG: e.Other#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.From#2/5 {REMOVED TILE} s.PosFrom#2/9 e.Other#3/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.PosFrom2 #9/7 } Tile{ HalfReuse: 'e'/8 }"xpected argument --to"/10 >/12 </13 & Help/14 Tile{ AsIs: >/1 ]] }
@@ -191,7 +199,8 @@ refalrts::RASLFunction descr_gen_ParseCommandLine_L1S2L1(
   scope_gen_ParseCommandLine_L1S2L1::functions,
   scope_gen_ParseCommandLine_L1S2L1::idents,
   scope_gen_ParseCommandLine_L1S2L1::numbers,
-  scope_gen_ParseCommandLine_L1S2L1::strings
+  scope_gen_ParseCommandLine_L1S2L1::strings,
+  scope_gen_ParseCommandLine_L1S2L1::filename
 );
 refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1 = descr_gen_ParseCommandLine_L1S2L1;
 
@@ -241,6 +250,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
     if( ! refalrts::svar_left( context[15], context[10], context[11] ) )
       continue;
     // closed e.To#3 as range 10
+    //DEBUG: s.PosFrom#2: 9
+    //DEBUG: e.From#2: 5
+    //DEBUG: s.PosTo#3: 15
+    //DEBUG: e.To#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.PosFrom#2/9 {REMOVED TILE} {REMOVED TILE} s.PosTo#3/15 {REMOVED TILE} )/13 {REMOVED TILE}
@@ -266,6 +279,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
   // </0 & ParseCommandLine\1$2\1/4 (/7 e.From#2/5 )/8 s.PosFrom#2/9 e.Other#3/2 >/1
   // closed e.From#2 as range 5
   // closed e.Other#3 as range 2
+  //DEBUG: s.PosFrom#2: 9
+  //DEBUG: e.From#2: 5
+  //DEBUG: e.Other#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.From#2/5 {REMOVED TILE} s.PosFrom#2/9 e.Other#3/2 {REMOVED TILE}
@@ -305,6 +321,7 @@ refalrts::RefalFunction& gen_ParseCommandLine_L1S2L1 = descr_gen_ParseCommandLin
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseCommandLine_L1S5L1 {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FormatError
     };
@@ -340,6 +357,8 @@ namespace /* unnamed */ {
       // </0 & ParseCommandLine\1$5\1/4 (/7 s.Pos#3/9 # NoRequiredParam/10 e.Opt#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 2, 10},
       // closed e.Opt#3 as range 5
+      //DEBUG: s.Pos#3: 9
+      //DEBUG: e.Opt#3: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos3 #9/7 } 'o'/11 Tile{ HalfReuse: 'p'/10 }"tion "/12 Tile{ AsIs: e.Opt#3/5 }" expects paramete"/14 Tile{ HalfReuse: 'r'/8 AsIs: >/1 ]] }
@@ -368,6 +387,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 5},
       {refalrts::icsVarLeft, 0, 11, 16},
       {refalrts::icEmpty, 0, 0, 16},
+      //DEBUG: s.Pos#3: 9
+      //DEBUG: s.Option#3: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} s.Option#3/11 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos3 #9/7 } Tile{ HalfReuse: 'u'/10 }"nknown option -"/12 Tile{ HalfReuse: s.Option3 #11/8 AsIs: >/1 ]] }
@@ -388,6 +409,8 @@ namespace /* unnamed */ {
       // </0 & ParseCommandLine\1$5\1/4 (/7 s.Pos#3/9 # UnknownLongOption/10 e.Option#3/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 0, 10},
       // closed e.Option#3 as range 5
+      //DEBUG: s.Pos#3: 9
+      //DEBUG: e.Option#3: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos3 #9/7 } Tile{ HalfReuse: 'u'/10 } 'n'/11 Tile{ HalfReuse: 'k'/8 }"nown option --"/12 Tile{ AsIs: e.Option#3/5 } Tile{ AsIs: >/1 ]] }
@@ -420,7 +443,8 @@ refalrts::RASLFunction descr_gen_ParseCommandLine_L1S5L1(
   scope_gen_ParseCommandLine_L1S5L1::functions,
   scope_gen_ParseCommandLine_L1S5L1::idents,
   scope_gen_ParseCommandLine_L1S5L1::numbers,
-  scope_gen_ParseCommandLine_L1S5L1::strings
+  scope_gen_ParseCommandLine_L1S5L1::strings,
+  scope_gen_ParseCommandLine_L1S5L1::filename
 );
 refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1 = descr_gen_ParseCommandLine_L1S5L1;
 
@@ -459,6 +483,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
     if( ! refalrts::ident_term(  & ident_NoRequiredParam<int>::name, context[10] ) )
       continue;
     // closed e.Opt#3 as range 5
+    //DEBUG: s.Pos#3: 9
+    //DEBUG: e.Opt#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -500,6 +526,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.Pos#3: 9
+    //DEBUG: s.Option#3: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} s.Option#3/11 {REMOVED TILE}
@@ -528,6 +556,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
   if( ! refalrts::ident_term(  & ident_UnknownLongOption<int>::name, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Option#3 as range 5
+  //DEBUG: s.Pos#3: 9
+  //DEBUG: e.Option#3: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -565,6 +595,7 @@ refalrts::RefalFunction& gen_ParseCommandLine_L1S5L1 = descr_gen_ParseCommandLin
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_ParseCommandLine_L1 {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_ParseCommandLine_L1S5L1,
       & Map,
@@ -610,6 +641,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       {refalrts::icsVarLeft, 0, 14, 9},
       // closed e.FileName#2 as range 9
+      //DEBUG: s.Pos#2: 14
+      //DEBUG: e.FileName#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} & ParseCommandLine\1/4 (/7 )/8 (/11 # FILE/13 s.Pos#2/14 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: # InPlace/0 } Tile{ AsIs: e.FileName#2/9 } Tile{ ]] }
@@ -633,6 +666,10 @@ namespace /* unnamed */ {
       // closed e.End#2 as range 27(2)
       {refalrts::icsVarLeft, 0, 16, 11},
       // closed e.From#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.PosFrom#2: 16
+      //DEBUG: e.From#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Begin#2/9 } Tile{ AsIs: e.End#2/27(2) } Tile{ HalfReuse: </14 } Tile{ HalfReuse: & @create_closure@/7 HalfReuse: & ParseCommandLine\1$2\1/8 } Tile{ AsIs: (/13 } Tile{ AsIs: e.From#2/11 } Tile{ HalfReuse: )/15 AsIs: s.PosFrom#2/16 } >/17 Tile{ AsIs: >/1 ]] }
@@ -672,6 +709,10 @@ namespace /* unnamed */ {
       // closed e.End#2 as range 27(2)
       {refalrts::icsVarLeft, 0, 16, 11},
       // closed e.To#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.Pos#2: 16
+      //DEBUG: e.To#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Begin#2/9 {REMOVED TILE} s.Pos#2/16 e.To#2/11 {REMOVED TILE} e.End#2/27(2) {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FormatError/4 HalfReuse: s.Pos2 #16/7 HalfReuse: 'e'/8 } 'x'/17 Tile{ HalfReuse: 'p'/13 HalfReuse: 't'/15 } Tile{ HalfReuse: 'e'/14 }"cted argument --from"/18 >/20 </21 & Help/22 Tile{ AsIs: >/1 ]] }
@@ -704,6 +745,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 23, 5},
       {refalrts::icEmpty, 0, 0, 23},
       // closed e.AnyOther#2 as range 2
+      //DEBUG: e.AnyOther#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: 'C'/7 HalfReuse: 'o'/8 }"mmand line error: unrecognized command line"/9 >/11 </12 & Help/13 Tile{ AsIs: >/1 ]] }
@@ -727,6 +769,8 @@ namespace /* unnamed */ {
       // </0 & ParseCommandLine\1/4 (/7 e.Errors#2/5 )/8 e.AnyOther#2/2 >/1
       // closed e.Errors#2 as range 5
       // closed e.AnyOther#2 as range 2
+      //DEBUG: e.Errors#2: 5
+      //DEBUG: e.AnyOther#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ParseCommandLine\1$5\1/7 AsIs: e.Errors#2/5 HalfReuse: >/8 } </9 & Help/10 Tile{ AsIs: >/1 ]] }
@@ -756,7 +800,8 @@ refalrts::RASLFunction descr_gen_ParseCommandLine_L1(
   scope_gen_ParseCommandLine_L1::functions,
   scope_gen_ParseCommandLine_L1::idents,
   scope_gen_ParseCommandLine_L1::numbers,
-  scope_gen_ParseCommandLine_L1::strings
+  scope_gen_ParseCommandLine_L1::strings,
+  scope_gen_ParseCommandLine_L1::filename
 );
 refalrts::RefalFunction& gen_ParseCommandLine_L1 = descr_gen_ParseCommandLine_L1;
 
@@ -807,6 +852,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
       continue;
     // closed e.FileName#2 as range 9
+    //DEBUG: s.Pos#2: 14
+    //DEBUG: e.FileName#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & ParseCommandLine\1/4 (/7 )/8 (/11 # FILE/13 s.Pos#2/14 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
@@ -850,6 +897,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.From#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.PosFrom#2: 16
+      //DEBUG: e.From#2: 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -911,6 +962,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.To#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.Pos#2: 16
+      //DEBUG: e.To#2: 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.Begin#2/9 {REMOVED TILE} s.Pos#2/16 e.To#2/11 {REMOVED TILE} e.End#2/27(2) {REMOVED TILE}
@@ -957,6 +1012,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
     // closed e.AnyOther#2 as range 2
+    //DEBUG: e.AnyOther#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
@@ -990,6 +1046,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   // </0 & ParseCommandLine\1/4 (/7 e.Errors#2/5 )/8 e.AnyOther#2/2 >/1
   // closed e.Errors#2 as range 5
   // closed e.AnyOther#2 as range 2
+  //DEBUG: e.Errors#2: 5
+  //DEBUG: e.AnyOther#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
@@ -1024,6 +1082,7 @@ refalrts::RefalFunction& gen_ParseCommandLine_L1 = descr_gen_ParseCommandLine_L1
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ParseCommandLine {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_ParseCommandLine_L1,
@@ -1047,6 +1106,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Options#1 as range 2
+      //DEBUG: e.Options#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # From/9 # Required/10 'f'/11 (/12"from"/13 )/15 )/16 (/17 # To/18 # Required/19 'o'/20 (/21"to"/22 )/24 )/25 )/26 Tile{ AsIs: e.Options#1/2 } >/27 & ParseCommandLine\1/28 Tile{ AsIs: >/1 ]] }
@@ -1099,7 +1159,8 @@ refalrts::RASLFunction descr_ParseCommandLine(
   scope_ParseCommandLine::functions,
   scope_ParseCommandLine::idents,
   scope_ParseCommandLine::numbers,
-  scope_ParseCommandLine::strings
+  scope_ParseCommandLine::strings,
+  scope_ParseCommandLine::filename
 );
 refalrts::RefalFunction& ParseCommandLine = descr_ParseCommandLine;
 
@@ -1116,6 +1177,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Options#1 as range 2
+  //DEBUG: e.Options#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1191,6 +1253,7 @@ refalrts::RefalFunction& ParseCommandLine = descr_ParseCommandLine;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FormatError {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & WriteLine,
       & StrFromInt
@@ -1210,6 +1273,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       // closed e.Message#1 as range 2
+      //DEBUG: s.Pos#1: 5
+      //DEBUG: e.Message#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Command line argument "/6 </8 & StrFromInt/9 Tile{ AsIs: s.Pos#1/5 } >/10": "/11 Tile{ AsIs: e.Message#1/2 } Tile{ AsIs: >/1 ]] }
@@ -1242,7 +1307,8 @@ refalrts::RASLFunction descr_FormatError(
   scope_FormatError::functions,
   scope_FormatError::idents,
   scope_FormatError::numbers,
-  scope_FormatError::strings
+  scope_FormatError::strings,
+  scope_FormatError::filename
 );
 refalrts::RefalFunction& FormatError = descr_FormatError;
 
@@ -1263,6 +1329,8 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 2
+  //DEBUG: s.Pos#1: 5
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1303,6 +1371,7 @@ refalrts::RefalFunction& FormatError = descr_FormatError;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Help {
+    static const char *filename = "ParseCmdLine.cpp";
     static refalrts::RefalFunction *functions[] = {
       & WriteLine
     };
@@ -1376,7 +1445,8 @@ refalrts::RASLFunction descr_Help(
   scope_Help::functions,
   scope_Help::idents,
   scope_Help::numbers,
-  scope_Help::strings
+  scope_Help::strings,
+  scope_Help::filename
 );
 refalrts::RefalFunction& Help = descr_Help;
 

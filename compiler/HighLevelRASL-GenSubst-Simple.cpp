@@ -266,6 +266,7 @@ extern refalrts::RefalFunction& DoGenSubst;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenInitSubst_Simple {
+    static const char *filename = "HighLevelRASL-GenSubst-Simple.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdInitB0<int>::name,
@@ -281,6 +282,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.FuncName#1 as range 2
+      //DEBUG: e.FuncName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.FuncName#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 0/0 HalfReuse: 2/4 } (/5 # Junk/6 )/7 (/8 # Junk/9 )/10 (/11 # CmdInitB0/12 Tile{ HalfReuse: )/1 ]] }
@@ -314,7 +316,8 @@ refalrts::RASLFunction descr_GenInitSubst_Simple(
   scope_GenInitSubst_Simple::functions,
   scope_GenInitSubst_Simple::idents,
   scope_GenInitSubst_Simple::numbers,
-  scope_GenInitSubst_Simple::strings
+  scope_GenInitSubst_Simple::strings,
+  scope_GenInitSubst_Simple::filename
 );
 refalrts::RefalFunction& GenInitSubst_Simple = descr_GenInitSubst_Simple;
 
@@ -331,6 +334,7 @@ static refalrts::FnResult func_GenInitSubst_Simple(refalrts::Iter arg_begin, ref
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FuncName#1 as range 2
+  //DEBUG: e.FuncName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.FuncName#1/2 {REMOVED TILE}
@@ -373,6 +377,7 @@ refalrts::RefalFunction& GenInitSubst_Simple = descr_GenInitSubst_Simple;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenSubst_Simple {
+    static const char *filename = "HighLevelRASL-GenSubst-Simple.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoGenSubst
     };
@@ -390,6 +395,9 @@ namespace /* unnamed */ {
       // closed e.PrefixCommands#1 as range 5
       {refalrts::icsVarLeft, 0, 9, 2},
       // closed e.Substitutes#1 as range 2
+      //DEBUG: e.PrefixCommands#1: 5
+      //DEBUG: s.ContextTop#1: 9
+      //DEBUG: e.Substitutes#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoGenSubst/4 AsIs: s.ContextTop#1/9 AsIs: e.Substitutes#1/2 AsIs: (/7 } )/10 (/11 Tile{ AsIs: e.PrefixCommands#1/5 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -416,7 +424,8 @@ refalrts::RASLFunction descr_GenSubst_Simple(
   scope_GenSubst_Simple::functions,
   scope_GenSubst_Simple::idents,
   scope_GenSubst_Simple::numbers,
-  scope_GenSubst_Simple::strings
+  scope_GenSubst_Simple::strings,
+  scope_GenSubst_Simple::filename
 );
 refalrts::RefalFunction& GenSubst_Simple = descr_GenSubst_Simple;
 
@@ -442,6 +451,9 @@ static refalrts::FnResult func_GenSubst_Simple(refalrts::Iter arg_begin, refalrt
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Substitutes#1 as range 2
+  //DEBUG: e.PrefixCommands#1: 5
+  //DEBUG: s.ContextTop#1: 9
+  //DEBUG: e.Substitutes#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -471,6 +483,7 @@ refalrts::RefalFunction& GenSubst_Simple = descr_GenSubst_Simple;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoGenSubst {
+    static const char *filename = "HighLevelRASL-GenSubst-Simple.cpp";
     static refalrts::RefalFunction *functions[] = {
       & TextFromExpr,
       & FakeOffset,
@@ -556,6 +569,15 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 21},
       {refalrts::icsVarLeft, 0, 37, 31},
       {refalrts::icEmpty, 0, 0, 31},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Char#1/37 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ HalfReuse: (/34 HalfReuse: # TkChar/24 HalfReuse: s.Char1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } Tile{ Reuse: # AlgTerm/25 AsIs: s.Num#1/36 HalfReuse: s.Char1 #37/33 HalfReuse: )/35 } Tile{ AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -607,6 +629,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 36, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # T/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkName/23 } e.Name#1/31/37 Tile{ HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: e.Name#1/31 AsIs: )/34 AsIs: )/24 HalfReuse: >/28 } Tile{ ]] }
@@ -656,6 +687,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 36, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # T/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkIdentifier/23 } e.Ident#1/31/37 Tile{ HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: e.Ident#1/31 AsIs: )/34 AsIs: )/24 HalfReuse: >/28 } Tile{ ]] }
@@ -706,6 +746,15 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 21},
       {refalrts::icsVarLeft, 0, 37, 31},
       {refalrts::icEmpty, 0, 0, 31},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Value#1/37 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ HalfReuse: (/34 HalfReuse: # TkNumber/24 HalfReuse: s.Value1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } Tile{ Reuse: # AlgTerm/25 AsIs: s.Num#1/36 HalfReuse: s.Value1 #37/33 HalfReuse: )/35 } Tile{ AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -757,6 +806,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 36, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc2/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkOpenBracket/23 HalfReuse: )/25 } )/40 Tile{ AsIs: (/33 Reuse: # E/35 } s.ContextOffset#1/13/41 Tile{ AsIs: e.SubRange#1/31 } )/42 (/43 Tile{ HalfReuse: # Junk/34 HalfReuse: (/24 HalfReuse: # TkCloseBracket/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgTerm/44 Tile{ AsIs: s.Num#1/36 } s.ContextOffset#1/13/45 )/46 )/47 >/48 Tile{ ]] }
@@ -836,6 +894,16 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 40, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 36
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 40
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/40 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </41 & Inc2/42 Tile{ AsIs: s.ContextOffset#1/13 } >/43 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkOpenADT/23 HalfReuse: )/25 } (/44 # TkName/45 e.Name#1/36/46 )/48 )/49 (/50 # E/51 s.ContextOffset#1/13/52 Tile{ AsIs: e.SubRange#1/31 } )/53 (/54 Tile{ HalfReuse: # Junk/34 HalfReuse: (/24 HalfReuse: # TkCloseADT/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #40/35 HalfReuse: s.ContextOffset1 #13/38 AsIs: e.Name#1/36 AsIs: )/39 } )/55 >/56 Tile{ ]] }
@@ -929,6 +997,19 @@ namespace /* unnamed */ {
       // closed e.Vars-E#1 as range 67(9)
       {refalrts::icsVarRight, 0, 51, 40},
       // closed e.Offsets#1 as range 40
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Mode#1: 37
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Vars-B#1: 38
+      //DEBUG: e.Vars-E#1: 9
+      //DEBUG: s.SampleOffset#1: 51
+      //DEBUG: e.Offsets#1: 40
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: s.Mode1 #44/25 } Tile{ AsIs: e.Index#1/31 } Tile{ HalfReuse: s.Num1 #36/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars-B#1/38 AsIs: (/42 AsIs: s.Mode#1/44 AsIs: (/47 AsIs: e.Index#1/49 AsIs: )/48 AsIs: e.Offsets#1/40 AsIs: s.SampleOffset#1/51 HalfReuse: s.Num1 #36/43 } )/52 Tile{ AsIs: e.Vars-E#1/67(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeated/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: s.Mode#1/37 } Tile{ AsIs: s.Num#1/36 } s.SampleOffset#1/51/53 Tile{ AsIs: )/34 AsIs: )/24 } >/54 Tile{ ]] }
@@ -991,6 +1072,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 37, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 't'/25 } e.Index#1/31/38 Tile{ HalfReuse: s.Num1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } Tile{ HalfReuse: (/36 AsIs: e.Index#1/31 AsIs: )/34 HalfReuse: s.Num1 #37/24 } Tile{ HalfReuse: )/35 } )/40 Tile{ AsIs: (/33 } Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1049,6 +1139,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 37, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 's'/25 } e.Index#1/31/38 Tile{ HalfReuse: s.Num1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } Tile{ HalfReuse: (/36 AsIs: e.Index#1/31 AsIs: )/34 HalfReuse: s.Num1 #37/24 } )/40 )/41 (/42 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/33 Reuse: # CmdVar/35 } # AlgTerm/43 Tile{ AsIs: s.Num#1/37 } 's'/44 s.ContextOffset#1/13/45 )/46 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1115,6 +1214,15 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 21},
       {refalrts::icsVarLeft, 0, 37, 31},
       {refalrts::icEmpty, 0, 0, 31},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Char#1/37 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ HalfReuse: (/34 HalfReuse: # TkChar/24 HalfReuse: s.Char1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } Tile{ Reuse: # AlgTerm/25 AsIs: s.Num#1/36 HalfReuse: s.Char1 #37/33 HalfReuse: )/35 } Tile{ AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -1166,6 +1274,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 36, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # S/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkName/23 } e.Name#1/31/37 Tile{ HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: e.Name#1/31 AsIs: )/34 AsIs: )/24 HalfReuse: >/28 } Tile{ ]] }
@@ -1215,6 +1332,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 36, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # S/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkIdentifier/23 } e.Ident#1/31/37 Tile{ HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: e.Ident#1/31 AsIs: )/34 AsIs: )/24 HalfReuse: >/28 } Tile{ ]] }
@@ -1265,6 +1391,15 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 21},
       {refalrts::icsVarLeft, 0, 37, 31},
       {refalrts::icEmpty, 0, 0, 31},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Value#1/37 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ HalfReuse: (/34 HalfReuse: # TkNumber/24 HalfReuse: s.Value1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } Tile{ Reuse: # AlgTerm/25 AsIs: s.Num#1/36 HalfReuse: s.Value1 #37/33 HalfReuse: )/35 } Tile{ AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -1328,6 +1463,19 @@ namespace /* unnamed */ {
       // closed e.Vars-E#1 as range 67(9)
       {refalrts::icsVarRight, 0, 51, 40},
       // closed e.Offsets#1 as range 40
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Mode#1: 37
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Vars-B#1: 38
+      //DEBUG: e.Vars-E#1: 9
+      //DEBUG: s.SampleOffset#1: 51
+      //DEBUG: e.Offsets#1: 40
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: s.Mode1 #44/25 } Tile{ AsIs: e.Index#1/31 } Tile{ HalfReuse: s.Num1 #36/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars-B#1/38 AsIs: (/42 AsIs: s.Mode#1/44 AsIs: (/47 AsIs: e.Index#1/49 AsIs: )/48 AsIs: e.Offsets#1/40 AsIs: s.SampleOffset#1/51 HalfReuse: s.Num1 #36/43 } )/52 Tile{ AsIs: e.Vars-E#1/67(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeated/1 } Tile{ HalfReuse: # AlgTerm/33 HalfReuse: s.Num1 #36/35 AsIs: s.Mode#1/37 } Tile{ AsIs: s.Num#1/36 } s.SampleOffset#1/51/53 Tile{ AsIs: )/34 AsIs: )/24 } >/54 Tile{ ]] }
@@ -1390,6 +1538,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 37, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 's'/25 } e.Index#1/31/38 Tile{ HalfReuse: s.Num1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } Tile{ HalfReuse: (/36 AsIs: e.Index#1/31 AsIs: )/34 HalfReuse: s.Num1 #37/24 } Tile{ HalfReuse: )/35 } )/40 Tile{ AsIs: (/33 } Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1445,6 +1602,15 @@ namespace /* unnamed */ {
       // closed e.Range#1 as range 21
       {refalrts::icsVarLeft, 0, 32, 27},
       {refalrts::icEmpty, 0, 0, 27},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Char#1: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkChar/23 HalfReuse: s.Char1 #32/25 } )/33 )/34 Tile{ AsIs: (/29 Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } # AlgLeft/35 Tile{ AsIs: s.Num#1/26 } Tile{ AsIs: s.Char#1/32 } )/36 )/37 >/38 Tile{ ]] }
@@ -1500,6 +1666,15 @@ namespace /* unnamed */ {
       // closed e.Range#1 as range 21
       {refalrts::icsVarLeft, 0, 32, 27},
       {refalrts::icEmpty, 0, 0, 27},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Number#1: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkNumber/23 HalfReuse: s.Number1 #32/25 } )/33 )/34 Tile{ AsIs: (/29 Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } # AlgLeft/35 Tile{ AsIs: s.Num#1/26 } Tile{ AsIs: s.Number#1/32 } )/36 )/37 >/38 Tile{ ]] }
@@ -1554,6 +1729,15 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 31, 13, 27},
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Junk#1/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: (/29 AsIs: # TkName/31 } Tile{ AsIs: e.Name#1/27 } )/32 Tile{ AsIs: )/19 AsIs: (/23 AsIs: # E/25 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } # AlgLeft/33 Tile{ AsIs: s.Num#1/26 } e.Name#1/27/34 )/36 )/37 >/38 Tile{ ]] }
@@ -1607,6 +1791,15 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 31, 21, 27},
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkIdentifier/23 } e.Name#1/27/32 )/34 )/35 Tile{ AsIs: (/29 Reuse: # E/31 } Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } Tile{ Reuse: # AlgLeft/25 AsIs: s.Num#1/26 } Tile{ AsIs: e.Name#1/27 } )/36 )/37 >/38 Tile{ ]] }
@@ -1662,6 +1855,15 @@ namespace /* unnamed */ {
       // closed e.Range#1 as range 16
       {refalrts::icsVarLeft, 0, 32, 26},
       {refalrts::icEmpty, 0, 0, 26},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Char#1: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/33 Tile{ HalfReuse: (/29 HalfReuse: # TkChar/19 HalfReuse: s.Char1 #32/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } # AlgRight/34 s.Num#1/31/35 Tile{ AsIs: s.Char#1/32 } )/36 )/37 >/38 Tile{ ]] }
@@ -1716,6 +1918,15 @@ namespace /* unnamed */ {
       // closed e.Range#1 as range 16
       {refalrts::icsVarLeft, 0, 32, 26},
       {refalrts::icEmpty, 0, 0, 26},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Number#1: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/33 Tile{ HalfReuse: (/29 HalfReuse: # TkNumber/19 HalfReuse: s.Number1 #32/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } # AlgRight/34 s.Num#1/31/35 Tile{ AsIs: s.Number#1/32 } )/36 )/37 >/38 Tile{ ]] }
@@ -1769,6 +1980,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 31, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/32 (/33 # TkName/34 Tile{ AsIs: e.Name#1/26 } Tile{ HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } # AlgRight/35 s.Num#1/31/36 e.Name#1/26/37 Tile{ AsIs: )/29 AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -1821,6 +2041,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 31, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/32 (/33 # TkIdentifier/34 Tile{ AsIs: e.Name#1/26 } Tile{ HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } # AlgRight/35 s.Num#1/31/36 e.Name#1/26/37 Tile{ AsIs: )/29 AsIs: )/19 HalfReuse: >/23 } Tile{ ]] }
@@ -1873,6 +2102,15 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 31, 19, 27},
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc2/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkOpenBracket/23 HalfReuse: )/25 } )/35 Tile{ AsIs: (/29 Reuse: # E/31 } s.ContextOffset#1/13/36 Tile{ AsIs: e.SubRange#1/27 } )/37 (/38 # Junk/39 (/40 # TkCloseBracket/41 )/42 )/43 (/44 # E/45 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgLeft/46 Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/47 )/48 )/49 >/50 Tile{ ]] }
@@ -1952,6 +2190,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 31, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </32 & Inc2/33 Tile{ AsIs: s.ContextOffset#1/13 } >/34 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/35 (/36 # TkOpenBracket/37 )/38 )/39 (/40 # E/41 s.ContextOffset#1/13/42 Tile{ AsIs: e.SubRange#1/26 } )/43 (/44 Tile{ HalfReuse: # Junk/29 HalfReuse: (/19 HalfReuse: # TkCloseBracket/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgRight/45 s.Num#1/31/46 s.ContextOffset#1/13/47 )/48 )/49 >/50 Tile{ ]] }
@@ -2030,6 +2277,16 @@ namespace /* unnamed */ {
       // closed e.Name#1 as range 32
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 32
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Inc2/37 Tile{ AsIs: s.ContextOffset#1/13 } >/38 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkOpenADT/23 HalfReuse: )/25 } (/39 # TkName/40 e.Name#1/32/41 )/43 )/44 (/45 # E/46 s.ContextOffset#1/13/47 Tile{ AsIs: e.SubRange#1/27 } )/48 (/49 # Junk/50 (/51 # TkCloseADT/52 )/53 )/54 (/55 # E/56 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } Tile{ HalfReuse: # AlgLeft/29 HalfReuse: s.Num1 #26/31 HalfReuse: s.ContextOffset1 #13/34 AsIs: e.Name#1/32 AsIs: )/35 } )/57 >/58 Tile{ ]] }
@@ -2115,6 +2372,16 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 35, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 35
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Inc2/37 Tile{ AsIs: s.ContextOffset#1/13 } >/38 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/35 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/33 } (/39 # TkOpenADT/40 Tile{ AsIs: )/34 } (/41 # TkName/42 Tile{ AsIs: e.Name#1/31 } )/43 )/44 (/45 # E/46 s.ContextOffset#1/13/47 Tile{ AsIs: e.SubRange#1/26 } )/48 (/49 Tile{ HalfReuse: # Junk/29 HalfReuse: (/19 HalfReuse: # TkCloseADT/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } # AlgRight/50 s.Num#1/35/51 s.ContextOffset#1/13/52 e.Name#1/31/53 )/55 )/56 >/57 Tile{ ]] }
@@ -2199,6 +2466,14 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 31, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/19 (/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 } Tile{ AsIs: e.Junk1#1/16 } Tile{ AsIs: e.Junk2#1/26 } Tile{ AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdEmpty/1 } Tile{ Reuse: # AlgLeft/25 AsIs: s.Num#1/31 AsIs: )/24 HalfReuse: )/28 HalfReuse: >/30 } Tile{ ]] }
@@ -2253,6 +2528,19 @@ namespace /* unnamed */ {
       // closed e.Vars-E#1 as range 67(9)
       {refalrts::icsVarRight, 0, 46, 35},
       // closed e.Offsets#1 as range 35
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Mode#1: 32
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Vars-B#1: 33
+      //DEBUG: e.Vars-E#1: 9
+      //DEBUG: s.SampleOffset#1: 46
+      //DEBUG: e.Offsets#1: 35
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </47 Tile{ HalfReuse: & IncVarOffset/29 HalfReuse: s.ContextOffset1 #13/31 AsIs: s.Mode#1/32 } >/48 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: s.Mode1 #39/25 } Tile{ AsIs: e.Index#1/27 } Tile{ AsIs: s.ContextOffset#1/13 } )/49 )/50 (/51 # E/52 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars-B#1/33 AsIs: (/37 AsIs: s.Mode#1/39 AsIs: (/42 AsIs: e.Index#1/44 AsIs: )/43 AsIs: e.Offsets#1/35 AsIs: s.SampleOffset#1/46 HalfReuse: s.ContextOffset1 #13/38 } )/53 Tile{ AsIs: e.Vars-E#1/67(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeated/1 } # AlgLeft/54 Tile{ AsIs: s.Num#1/26 } s.Mode#1/39/55 s.ContextOffset#1/13/56 s.SampleOffset#1/46/57 )/58 )/59 >/60 Tile{ ]] }
@@ -2341,6 +2629,19 @@ namespace /* unnamed */ {
       // closed e.Vars-E#1 as range 67(9)
       {refalrts::icsVarRight, 0, 46, 35},
       // closed e.Offsets#1 as range 35
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Mode#1: 32
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Vars-B#1: 33
+      //DEBUG: e.Vars-E#1: 9
+      //DEBUG: s.SampleOffset#1: 46
+      //DEBUG: e.Offsets#1: 35
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </47 & IncVarOffset/48 Tile{ AsIs: s.ContextOffset#1/13 } Tile{ AsIs: s.Mode#1/32 } >/49 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/50 (/51 # TkVariable/52 s.Mode#1/39/53 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars-B#1/33 AsIs: (/37 AsIs: s.Mode#1/39 AsIs: (/42 AsIs: e.Index#1/44 AsIs: )/43 AsIs: e.Offsets#1/35 AsIs: s.SampleOffset#1/46 HalfReuse: s.ContextOffset1 #13/38 } )/54 Tile{ AsIs: e.Vars-E#1/67(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeated/1 } # AlgRight/55 s.Num#1/31/56 s.Mode#1/39/57 s.ContextOffset#1/13/58 s.SampleOffset#1/46/59 Tile{ AsIs: )/29 AsIs: )/19 } >/60 Tile{ ]] }
@@ -2419,6 +2720,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 37, 21},
       {refalrts::icEmpty, 0, 0, 21},
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/14 AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk1#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 'e'/25 } e.Index#1/31/38 Tile{ HalfReuse: s.Num1 #37/28 HalfReuse: )/30 AsIs: e.Junk2#1/26 AsIs: )/29 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 'e'/7 } (/40 e.Index#1/31/41 )/43 Tile{ AsIs: s.Num#1/37 } )/44 )/45 (/46 Tile{ AsIs: e.Commands#1/5 } (/47 # CmdComment/48" closed "/49 Tile{ HalfReuse: </33 HalfReuse: & PrintVar/35 AsIs: 'e'/36 AsIs: e.Index#1/31 HalfReuse: >/34 HalfReuse: ' '/24 }"as range "/51 # Offset/53 s.Num#1/37/54 )/55 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2491,6 +2801,15 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 32, static_cast<unsigned char>('s'), 27},
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 's'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdVar/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } 's'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2569,6 +2888,15 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 32, static_cast<unsigned char>('t'), 27},
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 't'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdVar/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } 't'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2647,6 +2975,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 32, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/32 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/31 } (/36 # TkVariable/37 's'/38 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/39 e.Index#1/26/40 )/42 s.ContextOffset#1/13/43 Tile{ AsIs: )/29 AsIs: )/19 } (/44 Tile{ AsIs: e.Commands#1/5 } (/45 # CmdVar/46 # AlgRight/47 s.Num#1/32/48 's'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2724,6 +3061,15 @@ namespace /* unnamed */ {
       // closed e.Substs-E#1 as range 63(2)
       {refalrts::icsVarLeft, 0, 32, 16},
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/32 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 HalfReuse: # Junk/31 } (/36 # TkVariable/37 't'/38 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/39 e.Index#1/26/40 )/42 s.ContextOffset#1/13/43 Tile{ AsIs: )/29 AsIs: )/19 } (/44 Tile{ AsIs: e.Commands#1/5 } (/45 # CmdVar/46 # AlgRight/47 s.Num#1/32/48 't'/49 s.ContextOffset#1/13/50 )/51 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2801,6 +3147,15 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 32, static_cast<unsigned char>('e'), 27},
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </33 & Inc2/34 Tile{ AsIs: s.ContextOffset#1/13 } >/35 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # Junk/20 AsIs: e.Junk#1/16 HalfReuse: (/19 HalfReuse: # TkVariable/23 HalfReuse: 'e'/25 } Tile{ AsIs: e.Index#1/27 } s.ContextOffset#1/13/36 )/37 )/38 (/39 # E/40 Tile{ HalfReuse: s.Num1 #26/30 AsIs: e.Range#1/21 AsIs: )/24 AsIs: e.Substs-E#1/63(2) AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 'e'/7 } (/41 e.Index#1/27/42 )/44 s.ContextOffset#1/13/45 )/46 )/47 (/48 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/29 Reuse: # CmdOpenedE/31 HalfReuse: # AlgLeft/32 } Tile{ AsIs: s.Num#1/26 } s.ContextOffset#1/13/49 )/50 Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -2865,6 +3220,10 @@ namespace /* unnamed */ {
       // closed e.MarkedPattern#1 as range 14
       // closed e.Vars#1 as range 9
       // closed e.Commands#1 as range 5
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.MarkedPattern#1: 14
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.ContextOffset#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: s.ContextOffset1 #13/17 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 } e.MarkedPattern#1/14/19 )/21 Tile{ AsIs: (/16 Reuse: # CmdComment/18 } Tile{ AsIs: </0 Reuse: & TextFromExpr/4 } </22 & FakeOffset/23 Tile{ AsIs: e.MarkedPattern#1/14 } Tile{ HalfReuse: >/8 AsIs: >/1 } )/24 Tile{ AsIs: e.Commands#1/5 } Tile{ ]] }
@@ -2910,7 +3269,8 @@ refalrts::RASLFunction descr_DoGenSubst(
   scope_DoGenSubst::functions,
   scope_DoGenSubst::idents,
   scope_DoGenSubst::numbers,
-  scope_DoGenSubst::strings
+  scope_DoGenSubst::strings,
+  scope_DoGenSubst::filename
 );
 refalrts::RefalFunction& DoGenSubst = descr_DoGenSubst;
 
@@ -3007,6 +3367,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Char#1/37 {REMOVED TILE} {REMOVED TILE}
@@ -3099,6 +3468,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} # T/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3190,6 +3568,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} # T/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3284,6 +3671,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Value#1/37 {REMOVED TILE} {REMOVED TILE}
@@ -3376,6 +3772,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3513,6 +3918,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 36
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 40
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/40 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3681,6 +4096,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[51], context[40], context[41] ) )
           continue;
         // closed e.Offsets#1 as range 40
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk1#1: 16
+        //DEBUG: e.Junk2#1: 26
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 36
+        //DEBUG: s.Mode#1: 37
+        //DEBUG: e.Index#1: 31
+        //DEBUG: e.Vars-B#1: 38
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 51
+        //DEBUG: e.Offsets#1: 40
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3790,6 +4218,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3893,6 +4330,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4010,6 +4456,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Char#1/37 {REMOVED TILE} {REMOVED TILE}
@@ -4102,6 +4557,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} # S/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4193,6 +4657,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} # S/25 s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4287,6 +4760,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Value#1/37 {REMOVED TILE} {REMOVED TILE}
@@ -4410,6 +4892,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[51], context[40], context[41] ) )
           continue;
         // closed e.Offsets#1 as range 40
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk1#1: 16
+        //DEBUG: e.Junk2#1: 26
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 36
+        //DEBUG: s.Mode#1: 37
+        //DEBUG: e.Index#1: 31
+        //DEBUG: e.Vars-B#1: 38
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 51
+        //DEBUG: e.Offsets#1: 40
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4519,6 +5014,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4611,6 +5115,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[27], context[28] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Char#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4707,6 +5220,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[27], context[28] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Number#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4800,6 +5322,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.Junk#1/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4892,6 +5423,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4988,6 +5528,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[26], context[27] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Char#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5083,6 +5632,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[26], context[27] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Number#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5175,6 +5733,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5266,6 +5833,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5357,6 +5933,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5488,6 +6073,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5623,6 +6217,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       // closed e.Name#1 as range 32
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 32
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5768,6 +6372,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[35], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 35
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5907,6 +6521,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/19 (/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6013,6 +6635,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[46], context[35], context[36] ) )
           continue;
         // closed e.Offsets#1 as range 35
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk#1: 16
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 26
+        //DEBUG: e.Range#1: 21
+        //DEBUG: s.Mode#1: 32
+        //DEBUG: e.Index#1: 27
+        //DEBUG: e.Vars-B#1: 33
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 46
+        //DEBUG: e.Offsets#1: 35
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6168,6 +6803,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[46], context[35], context[36] ) )
           continue;
         // closed e.Offsets#1 as range 35
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk#1: 21
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 31
+        //DEBUG: e.Range#1: 16
+        //DEBUG: s.Mode#1: 32
+        //DEBUG: e.Index#1: 26
+        //DEBUG: e.Vars-B#1: 33
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 46
+        //DEBUG: e.Offsets#1: 35
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6304,6 +6952,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6425,6 +7082,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6556,6 +7222,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6687,6 +7362,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[32], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6817,6 +7501,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[32], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6947,6 +7640,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7043,6 +7745,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
   // closed e.MarkedPattern#1 as range 14
   // closed e.Vars#1 as range 9
   // closed e.Commands#1 as range 5
+  //DEBUG: s.ContextOffset#1: 13
+  //DEBUG: e.MarkedPattern#1: 14
+  //DEBUG: e.Vars#1: 9
+  //DEBUG: e.Commands#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.ContextOffset#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

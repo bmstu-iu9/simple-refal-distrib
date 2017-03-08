@@ -228,6 +228,7 @@ extern refalrts::RefalFunction& Literal_DecCode;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DFA_TextFromToken {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & EscapeString
     };
@@ -270,6 +271,7 @@ namespace /* unnamed */ {
       // </0 & DFA-TextFromToken/4 # TSetName/5 e.Name#1/2 >/1
       {refalrts::icIdentTerm, 0, 9, 5},
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 's'/0 HalfReuse: 'e'/4 HalfReuse: 't'/5 }" n"/6 Tile{ HalfReuse: 'a'/1 }"me "/8 Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
@@ -291,6 +293,7 @@ namespace /* unnamed */ {
       // </0 & DFA-TextFromToken/4 # TLiteral/5 e.Text#1/2 >/1
       {refalrts::icIdentTerm, 0, 8, 5},
       // closed e.Text#1 as range 2
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }"literal "/6 Tile{ HalfReuse: '\''/0 HalfReuse: </4 HalfReuse: & EscapeString/5 AsIs: e.Text#1/2 AsIs: >/1 } '\''/8 Tile{ ]] }
@@ -312,6 +315,7 @@ namespace /* unnamed */ {
       // </0 & DFA-TextFromToken/4 # TName/5 e.Name#1/2 >/1
       {refalrts::icIdentTerm, 0, 7, 5},
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 'n'/0 HalfReuse: 'a'/4 HalfReuse: 'm'/5 } Tile{ HalfReuse: 'e'/1 } ' '/6 Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
@@ -331,6 +335,7 @@ namespace /* unnamed */ {
       // </0 & DFA-TextFromToken/4 # TNamedFlush/5 e.Name#1/2 >/1
       {refalrts::icIdentTerm, 0, 6, 5},
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 'n'/0 HalfReuse: 'a'/4 HalfReuse: 'm'/5 }"ed"/6 Tile{ HalfReuse: ' '/1 }"flush "/8 Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
@@ -418,6 +423,7 @@ namespace /* unnamed */ {
       // </0 & DFA-TextFromToken/4 # TErrorFlush/5 e.Text#1/2 >/1
       {refalrts::icIdentTerm, 0, 1, 5},
       // closed e.Text#1 as range 2
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }"error flus"/6 Tile{ HalfReuse: 'h'/0 HalfReuse: ' '/4 HalfReuse: '\"'/5 AsIs: e.Text#1/2 HalfReuse: '\"'/1 ]] }
@@ -457,7 +463,8 @@ refalrts::RASLFunction descr_DFA_TextFromToken(
   scope_DFA_TextFromToken::functions,
   scope_DFA_TextFromToken::idents,
   scope_DFA_TextFromToken::numbers,
-  scope_DFA_TextFromToken::strings
+  scope_DFA_TextFromToken::strings,
+  scope_DFA_TextFromToken::filename
 );
 refalrts::RefalFunction& DFA_TextFromToken = descr_DFA_TextFromToken;
 
@@ -484,6 +491,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
     if( ! refalrts::ident_term(  & ident_TSetName<int>::name, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -514,6 +522,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
     if( ! refalrts::ident_term(  & ident_TLiteral<int>::name, context[5] ) )
       continue;
     // closed e.Text#1 as range 2
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -544,6 +553,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
     if( ! refalrts::ident_term(  & ident_TName<int>::name, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -571,6 +581,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
     if( ! refalrts::ident_term(  & ident_TNamedFlush<int>::name, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -704,6 +715,7 @@ static refalrts::FnResult func_DFA_TextFromToken(refalrts::Iter arg_begin, refal
     if( ! refalrts::ident_term(  & ident_TErrorFlush<int>::name, context[5] ) )
       continue;
     // closed e.Text#1 as range 2
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -754,6 +766,7 @@ refalrts::RefalFunction& DFA_TextFromToken = descr_DFA_TextFromToken;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_DFA_Tokens_L1 {
+    static const char *filename = "DFA-Lexer.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -768,6 +781,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Line#2 as range 5
+      //DEBUG: e.Line#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DFA-Tokens\1/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#2/5 } Tile{ HalfReuse: '\n'/1 ]] }
@@ -789,7 +803,8 @@ refalrts::RASLFunction descr_gen_DFA_Tokens_L1(
   scope_gen_DFA_Tokens_L1::functions,
   scope_gen_DFA_Tokens_L1::idents,
   scope_gen_DFA_Tokens_L1::numbers,
-  scope_gen_DFA_Tokens_L1::strings
+  scope_gen_DFA_Tokens_L1::strings,
+  scope_gen_DFA_Tokens_L1::filename
 );
 refalrts::RefalFunction& gen_DFA_Tokens_L1 = descr_gen_DFA_Tokens_L1;
 
@@ -816,6 +831,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L1(refalrts::Iter arg_begin, refal
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Line#2 as range 5
+  //DEBUG: e.Line#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DFA-Tokens\1/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -840,6 +856,7 @@ refalrts::RefalFunction& gen_DFA_Tokens_L1 = descr_gen_DFA_Tokens_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_DFA_Tokens_L2 {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc
     };
@@ -869,6 +886,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 0, 10},
       {refalrts::icSave, 0, 11, 5},
       {refalrts::icEmpty, 0, 0, 11},
+      //DEBUG: s.LineNumber#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # TNewLine/10 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.LineNumber#2/9 HalfReuse: >/7 } Tile{ ]] }
@@ -883,6 +901,9 @@ namespace /* unnamed */ {
       // s.idx ( s.idx e.idx )
       // </0 & DFA-Tokens\2/4 s.LineNumber#2/9 (/7 s.TokName#2/10 e.Content#2/5 )/8 >/1
       // closed e.Content#2 as range 5
+      //DEBUG: s.LineNumber#2: 9
+      //DEBUG: s.TokName#2: 10
+      //DEBUG: e.Content#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DFA-Tokens\2/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: s.LineNumber#2/9 AsIs: (/7 AsIs: s.TokName#2/10 } Tile{ HalfReuse: s.LineNumber2 #9/8 } Tile{ AsIs: e.Content#2/5 } Tile{ HalfReuse: )/1 ]] }
@@ -908,7 +929,8 @@ refalrts::RASLFunction descr_gen_DFA_Tokens_L2(
   scope_gen_DFA_Tokens_L2::functions,
   scope_gen_DFA_Tokens_L2::idents,
   scope_gen_DFA_Tokens_L2::numbers,
-  scope_gen_DFA_Tokens_L2::strings
+  scope_gen_DFA_Tokens_L2::strings,
+  scope_gen_DFA_Tokens_L2::filename
 );
 refalrts::RefalFunction& gen_DFA_Tokens_L2 = descr_gen_DFA_Tokens_L2;
 
@@ -950,6 +972,7 @@ static refalrts::FnResult func_gen_DFA_Tokens_L2(refalrts::Iter arg_begin, refal
     context[12] = context[6];
     if( ! refalrts::empty_seq( context[11], context[12] ) )
       continue;
+    //DEBUG: s.LineNumber#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TNewLine/10 )/8 >/1 {REMOVED TILE}
@@ -970,6 +993,9 @@ static refalrts::FnResult func_gen_DFA_Tokens_L2(refalrts::Iter arg_begin, refal
   // s.idx ( s.idx e.idx )
   // </0 & DFA-Tokens\2/4 s.LineNumber#2/9 (/7 s.TokName#2/10 e.Content#2/5 )/8 >/1
   // closed e.Content#2 as range 5
+  //DEBUG: s.LineNumber#2: 9
+  //DEBUG: s.TokName#2: 10
+  //DEBUG: e.Content#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DFA-Tokens\2/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -998,6 +1024,7 @@ refalrts::RefalFunction& gen_DFA_Tokens_L2 = descr_gen_DFA_Tokens_L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_DFA_Tokens_L3 {
+    static const char *filename = "DFA-Lexer.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_TEOF<int>::name,
@@ -1026,6 +1053,9 @@ namespace /* unnamed */ {
       // closed e.Tokens#2 as range 12(2)
       {refalrts::icsVarLeft, 0, 11, 6},
       {refalrts::icEmpty, 0, 0, 6},
+      //DEBUG: s.LineNumber#2: 5
+      //DEBUG: e.Tokens#2: 2
+      //DEBUG: s.EOFLineNumber#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DFA-Tokens\3/4 s.LineNumber#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Tokens#2/12(2) } Tile{ AsIs: (/8 Reuse: # TEOF/10 AsIs: s.EOFLineNumber#2/11 AsIs: )/9 } Tile{ ]] }
@@ -1040,6 +1070,8 @@ namespace /* unnamed */ {
       // s.idx e.idx
       // </0 & DFA-Tokens\3/4 s.LineNumber#2/5 e.Tokens#2/2 >/1
       // closed e.Tokens#2 as range 2
+      //DEBUG: s.LineNumber#2: 5
+      //DEBUG: e.Tokens#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Tokens#2/2 } Tile{ HalfReuse: (/0 HalfReuse: # TEOF/4 AsIs: s.LineNumber#2/5 } Tile{ HalfReuse: )/1 ]] }
@@ -1064,7 +1096,8 @@ refalrts::RASLFunction descr_gen_DFA_Tokens_L3(
   scope_gen_DFA_Tokens_L3::functions,
   scope_gen_DFA_Tokens_L3::idents,
   scope_gen_DFA_Tokens_L3::numbers,
-  scope_gen_DFA_Tokens_L3::strings
+  scope_gen_DFA_Tokens_L3::strings,
+  scope_gen_DFA_Tokens_L3::filename
 );
 refalrts::RefalFunction& gen_DFA_Tokens_L3 = descr_gen_DFA_Tokens_L3;
 
@@ -1106,6 +1139,9 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.LineNumber#2: 5
+    //DEBUG: e.Tokens#2: 2
+    //DEBUG: s.EOFLineNumber#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DFA-Tokens\3/4 s.LineNumber#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1126,6 +1162,8 @@ static refalrts::FnResult func_gen_DFA_Tokens_L3(refalrts::Iter arg_begin, refal
   // s.idx e.idx
   // </0 & DFA-Tokens\3/4 s.LineNumber#2/5 e.Tokens#2/2 >/1
   // closed e.Tokens#2 as range 2
+  //DEBUG: s.LineNumber#2: 5
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1153,6 +1191,7 @@ refalrts::RefalFunction& gen_DFA_Tokens_L3 = descr_gen_DFA_Tokens_L3;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DFA_Tokens {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_DFA_Tokens_L3,
@@ -1176,6 +1215,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       // closed e.Lines#1 as range 2
+      //DEBUG: s.FirstLineNumber#1: 5
+      //DEBUG: e.Lines#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Lines#1/2 } </6 & Seq/7 (/8 & Map/9 & DFA-Tokens\1/10 )/11 & LoTokens/12 (/13 & MapReduce/14 & DFA-Tokens\2/15 </16 & Inc/17 Tile{ AsIs: s.FirstLineNumber#1/5 } >/18 )/19 & DFA-Tokens\3/20 >/21 Tile{ AsIs: >/1 ]] }
@@ -1222,7 +1263,8 @@ refalrts::RASLFunction descr_DFA_Tokens(
   scope_DFA_Tokens::functions,
   scope_DFA_Tokens::idents,
   scope_DFA_Tokens::numbers,
-  scope_DFA_Tokens::strings
+  scope_DFA_Tokens::strings,
+  scope_DFA_Tokens::filename
 );
 refalrts::RefalFunction& DFA_Tokens = descr_DFA_Tokens;
 
@@ -1241,6 +1283,8 @@ static refalrts::FnResult func_DFA_Tokens(refalrts::Iter arg_begin, refalrts::It
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Lines#1 as range 2
+  //DEBUG: s.FirstLineNumber#1: 5
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1304,6 +1348,7 @@ refalrts::RefalFunction& DFA_Tokens = descr_DFA_Tokens;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LoTokens {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FilterTokens,
       & Root
@@ -1319,6 +1364,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Text#1 as range 2
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FilterTokens/4 } </5 & Root/6 (/7 )/8 Tile{ AsIs: e.Text#1/2 } >/9 Tile{ AsIs: >/1 ]] }
@@ -1351,7 +1397,8 @@ refalrts::RASLFunction descr_LoTokens(
   scope_LoTokens::functions,
   scope_LoTokens::idents,
   scope_LoTokens::numbers,
-  scope_LoTokens::strings
+  scope_LoTokens::strings,
+  scope_LoTokens::filename
 );
 refalrts::RefalFunction& LoTokens = descr_LoTokens;
 
@@ -1370,6 +1417,7 @@ static refalrts::FnResult func_LoTokens(refalrts::Iter arg_begin, refalrts::Iter
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Text#1 as range 2
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1410,6 +1458,7 @@ refalrts::RefalFunction& LoTokens = descr_LoTokens;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FilterTokens_L1 {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Unescape
     };
@@ -1472,6 +1521,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 5},
       {refalrts::icCharRightSave, 10, static_cast<unsigned char>(':'), 16},
       // closed e.SetName#2 as range 16(5)
+      //DEBUG: e.SetName#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # TSetName/9 AsIs: e.SetName#2/16(5) HalfReuse: )/10 } Tile{ ]] }
@@ -1506,6 +1556,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 5},
       {refalrts::icCharRightSave, 10, static_cast<unsigned char>('\"'), 16},
       // closed e.Message#2 as range 16(5)
+      //DEBUG: e.Message#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # TErrorFlush/9 AsIs: e.Message#2/16(5) HalfReuse: )/10 } Tile{ ]] }
@@ -1521,6 +1572,7 @@ namespace /* unnamed */ {
       // </0 & FilterTokens\1/4 (/7 # TNamedFlush/9 e.FlushName#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 10, 9},
       // closed e.FlushName#2 as range 5
+      //DEBUG: e.FlushName#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # TNamedFlush/9 AsIs: e.FlushName#2/5 AsIs: )/8 } Tile{ ]] }
@@ -1537,6 +1589,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 5},
       {refalrts::icCharRightSave, 10, static_cast<unsigned char>('\''), 16},
       // closed e.Content#2 as range 16(5)
+      //DEBUG: e.Content#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TLiteral/4 HalfReuse: </7 HalfReuse: & Unescape/9 AsIs: e.Content#2/16(5) HalfReuse: >/10 AsIs: )/8 } Tile{ ]] }
@@ -1557,6 +1610,7 @@ namespace /* unnamed */ {
       // </0 & FilterTokens\1/4 (/7 # TokenError/9 e.Message#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 8, 9},
       // closed e.Message#2 as range 5
+      //DEBUG: e.Message#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # TError/9 AsIs: e.Message#2/5 AsIs: )/8 } Tile{ ]] }
@@ -1626,6 +1680,7 @@ namespace /* unnamed */ {
       // </0 & FilterTokens\1/4 (/7 # TName/9 e.Name#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 3, 9},
       // closed e.Name#2 as range 5
+      //DEBUG: e.Name#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # TName/9 AsIs: e.Name#2/5 AsIs: )/8 } Tile{ ]] }
@@ -1642,6 +1697,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 5},
       {refalrts::icsVarLeft, 0, 10, 16},
       {refalrts::icEmpty, 0, 0, 16},
+      //DEBUG: s.Char#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/11 # TError/12 'U'/13 Tile{ HalfReuse: 'n'/1 }"expected charac"/14 Tile{ HalfReuse: 't'/0 HalfReuse: 'e'/4 HalfReuse: 'r'/7 HalfReuse: ' '/9 AsIs: s.Char#2/10 AsIs: )/8 } Tile{ ]] }
@@ -1687,7 +1743,8 @@ refalrts::RASLFunction descr_gen_FilterTokens_L1(
   scope_gen_FilterTokens_L1::functions,
   scope_gen_FilterTokens_L1::idents,
   scope_gen_FilterTokens_L1::numbers,
-  scope_gen_FilterTokens_L1::strings
+  scope_gen_FilterTokens_L1::strings,
+  scope_gen_FilterTokens_L1::filename
 );
 refalrts::RefalFunction& gen_FilterTokens_L1 = descr_gen_FilterTokens_L1;
 
@@ -1757,6 +1814,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! context[10] )
       continue;
     // closed e.SetName#2 as range 16(5)
+    //DEBUG: e.SetName#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -1812,6 +1870,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! context[10] )
       continue;
     // closed e.Message#2 as range 16(5)
+    //DEBUG: e.Message#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -1834,6 +1893,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::ident_term(  & ident_TNamedFlush<int>::name, context[9] ) )
       continue;
     // closed e.FlushName#2 as range 5
+    //DEBUG: e.FlushName#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1860,6 +1920,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! context[10] )
       continue;
     // closed e.Content#2 as range 16(5)
+    //DEBUG: e.Content#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1887,6 +1948,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::ident_term(  & ident_TokenError<int>::name, context[9] ) )
       continue;
     // closed e.Message#2 as range 5
+    //DEBUG: e.Message#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1996,6 +2058,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::ident_term(  & ident_TName<int>::name, context[9] ) )
       continue;
     // closed e.Name#2 as range 5
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & FilterTokens\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2022,6 +2085,7 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.Char#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2082,6 +2146,7 @@ refalrts::RefalFunction& gen_FilterTokens_L1 = descr_gen_FilterTokens_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FilterTokens {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_FilterTokens_L1,
       & Map
@@ -2097,6 +2162,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Tokens#1 as range 2
+      //DEBUG: e.Tokens#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & FilterTokens\1/4 AsIs: e.Tokens#1/2 AsIs: >/1 ]] }
@@ -2121,7 +2187,8 @@ refalrts::RASLFunction descr_FilterTokens(
   scope_FilterTokens::functions,
   scope_FilterTokens::idents,
   scope_FilterTokens::numbers,
-  scope_FilterTokens::strings
+  scope_FilterTokens::strings,
+  scope_FilterTokens::filename
 );
 refalrts::RefalFunction& FilterTokens = descr_FilterTokens;
 
@@ -2140,6 +2207,7 @@ static refalrts::FnResult func_FilterTokens(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Tokens#1 as range 2
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2168,6 +2236,7 @@ refalrts::RefalFunction& FilterTokens = descr_FilterTokens;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Unescape_S6L1 {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Chr,
       & Unescape
@@ -2187,6 +2256,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 5, 0, 2},
       {refalrts::icsVarLeft, 0, 6, 2},
       // closed e.Tail#2 as range 2
+      //DEBUG: s.Number#2: 6
+      //DEBUG: e.Tail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Number#2/6 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 HalfReuse: s.Number2 #6/5 } >/7 </8 & Unescape/9 Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
@@ -2217,7 +2288,8 @@ refalrts::RASLFunction descr_gen_Unescape_S6L1(
   scope_gen_Unescape_S6L1::functions,
   scope_gen_Unescape_S6L1::idents,
   scope_gen_Unescape_S6L1::numbers,
-  scope_gen_Unescape_S6L1::strings
+  scope_gen_Unescape_S6L1::strings,
+  scope_gen_Unescape_S6L1::filename
 );
 refalrts::RefalFunction& gen_Unescape_S6L1 = descr_gen_Unescape_S6L1;
 
@@ -2241,6 +2313,8 @@ static refalrts::FnResult func_gen_Unescape_S6L1(refalrts::Iter arg_begin, refal
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: s.Number#2: 6
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Number#2/6 {REMOVED TILE} {REMOVED TILE}
@@ -2277,6 +2351,7 @@ refalrts::RefalFunction& gen_Unescape_S6L1 = descr_gen_Unescape_S6L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Unescape {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Unescape,
       & IntFromStr,
@@ -2304,6 +2379,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('n'), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\n'/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2323,6 +2399,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('r'), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\r'/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2342,6 +2419,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('\\'), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\\'/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2361,6 +2439,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('t'), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\t'/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2380,6 +2459,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('\''), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\''/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2399,6 +2479,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('d'), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & IntFromStr/6 AsIs: e.Tail#1/9(2) AsIs: >/1 } & Unescape$6\1/7 >/8 Tile{ ]] }
@@ -2422,6 +2503,7 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\''), 9},
       {refalrts::icCharLeftSave, 6, static_cast<unsigned char>('\''), 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\''/4 HalfReuse: </5 HalfReuse: & Unescape/6 AsIs: e.Tail#1/9(2) AsIs: >/1 ]] }
@@ -2440,6 +2522,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 9, 2},
       {refalrts::icsVarLeft, 0, 5, 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: s.Other#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: s.Other#1/5 } Tile{ AsIs: </0 AsIs: & Unescape/4 } Tile{ AsIs: e.Tail#1/9(2) } Tile{ AsIs: >/1 ]] }
@@ -2473,7 +2557,8 @@ refalrts::RASLFunction descr_Unescape(
   scope_Unescape::functions,
   scope_Unescape::idents,
   scope_Unescape::numbers,
-  scope_Unescape::strings
+  scope_Unescape::strings,
+  scope_Unescape::filename
 );
 refalrts::RefalFunction& Unescape = descr_Unescape;
 
@@ -2506,6 +2591,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2536,6 +2622,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2566,6 +2653,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2596,6 +2684,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2626,6 +2715,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2656,6 +2746,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2692,6 +2783,7 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! context[6] )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2718,6 +2810,8 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[5], context[9], context[10] ) )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: s.Other#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2761,6 +2855,7 @@ refalrts::RefalFunction& Unescape = descr_Unescape;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Root {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Name,
       & Literal,
@@ -2795,6 +2890,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(' '), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Root/4 AsIs: (/7 } Tile{ HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2813,6 +2910,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\t'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Root/4 AsIs: (/7 } Tile{ HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2831,6 +2930,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\r'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Root/4 AsIs: (/7 } Tile{ HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2849,6 +2950,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TNewLine/10 Tile{ AsIs: e.Accum#1/5 } '\n'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2876,6 +2979,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(':'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SetName/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2896,6 +3001,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('!'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Flush/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2916,6 +3023,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2936,6 +3045,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '='/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2963,6 +3074,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('.'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '.'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -2990,6 +3103,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('|'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TPunctuation/10 Tile{ AsIs: e.Accum#1/5 } '|'/11 )/12 Tile{ AsIs: </0 AsIs: & Root/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3017,6 +3132,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3035,6 +3152,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3053,6 +3172,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3071,6 +3192,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3089,6 +3212,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3107,6 +3232,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3125,6 +3252,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3143,6 +3272,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3161,6 +3292,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3179,6 +3312,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3197,6 +3332,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3215,6 +3352,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3233,6 +3372,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3251,6 +3392,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3269,6 +3412,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3287,6 +3432,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3305,6 +3452,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3323,6 +3472,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3341,6 +3492,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3359,6 +3512,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3377,6 +3532,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3395,6 +3552,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3413,6 +3572,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3431,6 +3592,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3449,6 +3612,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3467,6 +3632,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -3485,6 +3652,9 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 13, 2},
       {refalrts::icsVarLeft, 0, 9, 13},
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: s.Any#1: 9
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/10 # TUnexpectedChar/11 Tile{ AsIs: e.Accum#1/5 } Tile{ AsIs: s.Any#1/9 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & Root/4 AsIs: (/7 } )/12 Tile{ AsIs: e.Text#1/13(2) } Tile{ AsIs: >/1 ]] }
@@ -3509,6 +3679,7 @@ namespace /* unnamed */ {
       // </0 & Root/4 (/7 e.Accum#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Accum#1 as range 5
+      //DEBUG: e.Accum#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # TEOF/7 AsIs: e.Accum#1/5 AsIs: )/8 } Tile{ ]] }
@@ -3532,7 +3703,8 @@ refalrts::RASLFunction descr_Root(
   scope_Root::functions,
   scope_Root::idents,
   scope_Root::numbers,
-  scope_Root::strings
+  scope_Root::strings,
+  scope_Root::filename
 );
 refalrts::RefalFunction& Root = descr_Root;
 
@@ -3570,6 +3742,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3597,6 +3771,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3624,6 +3800,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3651,6 +3829,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3690,6 +3870,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -3719,6 +3901,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -3748,6 +3932,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -3777,6 +3963,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3816,6 +4004,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3855,6 +4045,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3894,6 +4086,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3918,6 +4112,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3942,6 +4138,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3966,6 +4164,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3990,6 +4190,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4014,6 +4216,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4038,6 +4242,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4062,6 +4268,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4086,6 +4294,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4110,6 +4320,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4134,6 +4346,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4158,6 +4372,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4182,6 +4398,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4206,6 +4424,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4230,6 +4450,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4254,6 +4476,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4278,6 +4502,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4302,6 +4528,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4326,6 +4554,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4350,6 +4580,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4374,6 +4606,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4398,6 +4632,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4422,6 +4658,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4446,6 +4684,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4470,6 +4710,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4494,6 +4736,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4517,6 +4761,9 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::svar_left( context[9], context[13], context[14] ) )
       continue;
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: s.Any#1: 9
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4551,6 +4798,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
+  //DEBUG: e.Accum#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4577,6 +4825,7 @@ refalrts::RefalFunction& Root = descr_Root;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SetName {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root
     };
@@ -4609,6 +4858,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(':'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TSetName/4 } Tile{ AsIs: e.Accum#1/5 } ':'/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4638,6 +4889,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4655,6 +4908,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4672,6 +4927,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4689,6 +4946,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4706,6 +4965,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4723,6 +4984,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4740,6 +5003,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4757,6 +5022,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4774,6 +5041,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4791,6 +5060,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4808,6 +5079,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4825,6 +5098,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4842,6 +5117,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4859,6 +5136,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4876,6 +5155,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4893,6 +5174,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4910,6 +5193,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'g'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4927,6 +5212,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'h'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4944,6 +5231,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'i'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4961,6 +5250,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'j'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4978,6 +5269,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'k'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -4995,6 +5288,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'l'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5012,6 +5307,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'm'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5029,6 +5326,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'n'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5046,6 +5345,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'o'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5063,6 +5364,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'p'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5080,6 +5383,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'q'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5097,6 +5402,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'r'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5114,6 +5421,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 's'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5131,6 +5440,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 't'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5148,6 +5459,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'u'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5165,6 +5478,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'v'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5182,6 +5497,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'w'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5199,6 +5516,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'x'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5216,6 +5535,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'y'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5233,6 +5554,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'z'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5250,6 +5573,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5267,6 +5592,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5284,6 +5611,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5301,6 +5630,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5318,6 +5649,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5335,6 +5668,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5352,6 +5687,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5369,6 +5706,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5386,6 +5725,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5403,6 +5744,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5420,6 +5763,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5437,6 +5782,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5454,6 +5801,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5471,6 +5820,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5488,6 +5839,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5505,6 +5858,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5522,6 +5877,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5539,6 +5896,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5556,6 +5915,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5573,6 +5934,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5590,6 +5953,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5607,6 +5972,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5624,6 +5991,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5641,6 +6010,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5658,6 +6029,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5675,6 +6048,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5692,6 +6067,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '-'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5709,6 +6086,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & SetName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '_'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -5725,6 +6104,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 14, 2},
       {refalrts::icEmpty, 0, 0, 14},
       // closed e.Accum#1 as range 5
+      //DEBUG: e.Accum#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TokenError/4 HalfReuse: 'e'/7 }"xpected end of set name, got EO"/9 Tile{ HalfReuse: 'F'/8 HalfReuse: )/1 ]] }
@@ -5744,6 +6124,8 @@ namespace /* unnamed */ {
       // </0 & SetName/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TokenError/10"expected end of set name"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -5774,7 +6156,8 @@ refalrts::RASLFunction descr_SetName(
   scope_SetName::functions,
   scope_SetName::idents,
   scope_SetName::numbers,
-  scope_SetName::strings
+  scope_SetName::strings,
+  scope_SetName::filename
 );
 refalrts::RefalFunction& SetName = descr_SetName;
 
@@ -5812,6 +6195,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5853,6 +6238,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5876,6 +6263,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5899,6 +6288,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5922,6 +6313,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5945,6 +6338,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5968,6 +6363,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5991,6 +6388,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6014,6 +6413,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6037,6 +6438,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6060,6 +6463,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6083,6 +6488,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6106,6 +6513,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6129,6 +6538,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6152,6 +6563,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6175,6 +6588,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6198,6 +6613,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6221,6 +6638,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6244,6 +6663,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6267,6 +6688,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6290,6 +6713,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6313,6 +6738,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6336,6 +6763,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6359,6 +6788,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6382,6 +6813,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6405,6 +6838,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6428,6 +6863,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6451,6 +6888,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6474,6 +6913,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6497,6 +6938,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6520,6 +6963,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6543,6 +6988,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6566,6 +7013,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6589,6 +7038,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6612,6 +7063,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6635,6 +7088,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6658,6 +7113,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6681,6 +7138,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6704,6 +7163,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6727,6 +7188,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6750,6 +7213,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6773,6 +7238,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6796,6 +7263,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6819,6 +7288,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6842,6 +7313,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6865,6 +7338,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6888,6 +7363,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6911,6 +7388,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6934,6 +7413,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6957,6 +7438,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6980,6 +7463,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7003,6 +7488,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7026,6 +7513,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7049,6 +7538,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7072,6 +7563,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7095,6 +7588,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7118,6 +7613,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7141,6 +7638,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7164,6 +7663,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7187,6 +7688,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7210,6 +7713,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7233,6 +7738,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7256,6 +7763,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7279,6 +7788,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7302,6 +7813,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7323,6 +7836,7 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
     // closed e.Accum#1 as range 5
+    //DEBUG: e.Accum#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -7349,6 +7863,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
   // </0 & SetName/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -7386,6 +7902,7 @@ refalrts::RefalFunction& SetName = descr_SetName;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Flush {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FlushName,
       & ErrorFlush,
@@ -7416,6 +7933,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TFlush/4 } Tile{ AsIs: e.Accum#1/5 } '-'/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -7445,6 +7964,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\"'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorFlush/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -7465,6 +7986,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('#'), 13},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushName/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '#'/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
@@ -7480,6 +8003,8 @@ namespace /* unnamed */ {
       // </0 & Flush/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushName/4 AsIs: (/7 AsIs: e.Accum#1/5 AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -7501,7 +8026,8 @@ refalrts::RASLFunction descr_Flush(
   scope_Flush::functions,
   scope_Flush::idents,
   scope_Flush::numbers,
-  scope_Flush::strings
+  scope_Flush::strings,
+  scope_Flush::filename
 );
 refalrts::RefalFunction& Flush = descr_Flush;
 
@@ -7539,6 +8065,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7580,6 +8108,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -7609,6 +8139,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7627,6 +8159,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   // </0 & Flush/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -7648,6 +8182,7 @@ refalrts::RefalFunction& Flush = descr_Flush;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Literal {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root,
       & Literal_Quote,
@@ -7681,6 +8216,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\\'), 15},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 15(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal-Escape/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\\'/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
@@ -7699,6 +8236,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 15},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 15(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal-Quote/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\''/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
@@ -7717,6 +8256,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\n'), 15},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 15(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TokenError/4 HalfReuse: 'U'/7 }"nexpected end of line at literal"/10 )/12 </13 & Root/14 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/15(2) AsIs: >/1 ]] }
@@ -7744,6 +8285,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 15, 2},
       {refalrts::icEmpty, 0, 0, 15},
       // closed e.Accum#1 as range 5
+      //DEBUG: e.Accum#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TokenError/4 HalfReuse: 'U'/7 }"nexpected end of file at litera"/9 Tile{ HalfReuse: 'l'/8 HalfReuse: )/1 ]] }
@@ -7764,6 +8306,9 @@ namespace /* unnamed */ {
       // closed e.Accum#1 as range 5
       {refalrts::icsVarLeft, 0, 9, 2},
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: s.Any#1: 9
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Any#1/9 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: s.Any1 #9/8 } )/10 Tile{ AsIs: e.Text#1/2 } Tile{ AsIs: >/1 ]] }
@@ -7790,7 +8335,8 @@ refalrts::RASLFunction descr_Literal(
   scope_Literal::functions,
   scope_Literal::idents,
   scope_Literal::numbers,
-  scope_Literal::strings
+  scope_Literal::strings,
+  scope_Literal::filename
 );
 refalrts::RefalFunction& Literal = descr_Literal;
 
@@ -7828,6 +8374,8 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7852,6 +8400,8 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7876,6 +8426,8 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -7915,6 +8467,7 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
     // closed e.Accum#1 as range 5
+    //DEBUG: e.Accum#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -7943,6 +8496,9 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: s.Any#1: 9
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Any#1/9 {REMOVED TILE} {REMOVED TILE}
@@ -7973,6 +8529,7 @@ refalrts::RefalFunction& Literal = descr_Literal;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Name {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root
     };
@@ -8001,6 +8558,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8018,6 +8577,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8035,6 +8596,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8052,6 +8615,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8069,6 +8634,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8086,6 +8653,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8103,6 +8672,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8120,6 +8691,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8137,6 +8710,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8154,6 +8729,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8171,6 +8748,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8188,6 +8767,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8205,6 +8786,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8222,6 +8805,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8239,6 +8824,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8256,6 +8843,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8273,6 +8862,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'g'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8290,6 +8881,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'h'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8307,6 +8900,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'i'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8324,6 +8919,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'j'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8341,6 +8938,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'k'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8358,6 +8957,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'l'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8375,6 +8976,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'm'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8392,6 +8995,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'n'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8409,6 +9014,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'o'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8426,6 +9033,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'p'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8443,6 +9052,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'q'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8460,6 +9071,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'r'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8477,6 +9090,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 's'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8494,6 +9109,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 't'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8511,6 +9128,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'u'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8528,6 +9147,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'v'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8545,6 +9166,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'w'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8562,6 +9185,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'x'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8579,6 +9204,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'y'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8596,6 +9223,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'z'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8613,6 +9242,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8630,6 +9261,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8647,6 +9280,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8664,6 +9299,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8681,6 +9318,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8698,6 +9337,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8715,6 +9356,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8732,6 +9375,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8749,6 +9394,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8766,6 +9413,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8783,6 +9432,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8800,6 +9451,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8817,6 +9470,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8834,6 +9489,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8851,6 +9508,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8868,6 +9527,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8885,6 +9546,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8902,6 +9565,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8919,6 +9584,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8936,6 +9603,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8953,6 +9622,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8970,6 +9641,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -8987,6 +9660,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9004,6 +9679,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9021,6 +9698,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9038,6 +9717,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9055,6 +9736,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '-'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9072,6 +9755,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Name/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '_'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -9086,6 +9771,8 @@ namespace /* unnamed */ {
       // </0 & Name/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TName/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -9116,7 +9803,8 @@ refalrts::RASLFunction descr_Name(
   scope_Name::functions,
   scope_Name::idents,
   scope_Name::numbers,
-  scope_Name::strings
+  scope_Name::strings,
+  scope_Name::filename
 );
 refalrts::RefalFunction& Name = descr_Name;
 
@@ -9154,6 +9842,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9177,6 +9867,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9200,6 +9892,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9223,6 +9917,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9246,6 +9942,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9269,6 +9967,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9292,6 +9992,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9315,6 +10017,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9338,6 +10042,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9361,6 +10067,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9384,6 +10092,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9407,6 +10117,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9430,6 +10142,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9453,6 +10167,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9476,6 +10192,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9499,6 +10217,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9522,6 +10242,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9545,6 +10267,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9568,6 +10292,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9591,6 +10317,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9614,6 +10342,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9637,6 +10367,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9660,6 +10392,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9683,6 +10417,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9706,6 +10442,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9729,6 +10467,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9752,6 +10492,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9775,6 +10517,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9798,6 +10542,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9821,6 +10567,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9844,6 +10592,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9867,6 +10617,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9890,6 +10642,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9913,6 +10667,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9936,6 +10692,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9959,6 +10717,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9982,6 +10742,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10005,6 +10767,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10028,6 +10792,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10051,6 +10817,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10074,6 +10842,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10097,6 +10867,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10120,6 +10892,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10143,6 +10917,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10166,6 +10942,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10189,6 +10967,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10212,6 +10992,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10235,6 +11017,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10258,6 +11042,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10281,6 +11067,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10304,6 +11092,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10327,6 +11117,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10350,6 +11142,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10373,6 +11167,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10396,6 +11192,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10419,6 +11217,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10442,6 +11242,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10465,6 +11267,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10488,6 +11292,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10511,6 +11317,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10534,6 +11342,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10557,6 +11367,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10580,6 +11392,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10603,6 +11417,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10620,6 +11436,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   // </0 & Name/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10656,6 +11474,7 @@ refalrts::RefalFunction& Name = descr_Name;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ErrorFlush {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root
     };
@@ -10687,6 +11506,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10704,6 +11525,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10721,6 +11544,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10738,6 +11563,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10755,6 +11582,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10772,6 +11601,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10789,6 +11620,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10806,6 +11639,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10823,6 +11658,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10840,6 +11677,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10857,6 +11696,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10874,6 +11715,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10891,6 +11734,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10908,6 +11753,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10925,6 +11772,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10942,6 +11791,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10959,6 +11810,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'g'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10976,6 +11829,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'h'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -10993,6 +11848,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'i'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11010,6 +11867,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'j'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11027,6 +11886,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'k'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11044,6 +11905,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'l'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11061,6 +11924,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'm'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11078,6 +11943,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'n'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11095,6 +11962,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'o'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11112,6 +11981,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'p'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11129,6 +12000,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'q'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11146,6 +12019,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'r'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11163,6 +12038,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 's'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11180,6 +12057,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 't'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11197,6 +12076,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'u'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11214,6 +12095,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'v'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11231,6 +12114,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'w'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11248,6 +12133,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'x'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11265,6 +12152,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'y'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11282,6 +12171,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'z'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11299,6 +12190,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11316,6 +12209,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11333,6 +12228,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11350,6 +12247,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11367,6 +12266,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11384,6 +12285,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11401,6 +12304,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11418,6 +12323,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11435,6 +12342,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11452,6 +12361,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11469,6 +12380,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11486,6 +12399,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11503,6 +12418,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11520,6 +12437,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11537,6 +12456,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11554,6 +12475,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11571,6 +12494,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11588,6 +12513,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11605,6 +12532,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11622,6 +12551,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11639,6 +12570,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11656,6 +12589,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11673,6 +12608,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11690,6 +12627,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11707,6 +12646,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11724,6 +12665,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11741,6 +12684,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '-'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11758,6 +12703,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '_'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11775,6 +12722,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(' '), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ' '/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11792,6 +12741,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\t'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\t'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11809,6 +12760,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(','), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ','/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11826,6 +12779,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('.'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '.'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11843,6 +12798,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(':'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ':'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11860,6 +12817,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(';'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ';'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11877,6 +12836,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('('), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '('/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11894,6 +12855,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(')'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ')'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11911,6 +12874,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('{'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '{'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11928,6 +12893,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('}'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '}'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11945,6 +12912,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('['), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '['/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11962,6 +12931,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(']'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: ']'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11979,6 +12950,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('*'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '*'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -11996,6 +12969,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('&'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '&'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12013,6 +12988,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('!'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '!'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12030,6 +13007,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('@'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '@'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12047,6 +13026,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('#'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '#'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12064,6 +13045,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('$'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '$'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12081,6 +13064,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('%'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '%'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12098,6 +13083,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('^'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '^'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12115,6 +13102,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('='), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '='/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12132,6 +13121,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('+'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '+'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12149,6 +13140,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('/'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & ErrorFlush/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '/'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12166,6 +13159,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\"'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TErrorFlush/4 } Tile{ AsIs: e.Accum#1/5 } '\"'/10 Tile{ HalfReuse: )/7 } </11 & Root/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -12192,6 +13187,8 @@ namespace /* unnamed */ {
       // </0 & ErrorFlush/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected error text or double quote"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -12222,7 +13219,8 @@ refalrts::RASLFunction descr_ErrorFlush(
   scope_ErrorFlush::functions,
   scope_ErrorFlush::idents,
   scope_ErrorFlush::numbers,
-  scope_ErrorFlush::strings
+  scope_ErrorFlush::strings,
+  scope_ErrorFlush::filename
 );
 refalrts::RefalFunction& ErrorFlush = descr_ErrorFlush;
 
@@ -12260,6 +13258,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12283,6 +13283,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12306,6 +13308,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12329,6 +13333,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12352,6 +13358,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12375,6 +13383,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12398,6 +13408,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12421,6 +13433,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12444,6 +13458,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12467,6 +13483,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12490,6 +13508,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12513,6 +13533,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12536,6 +13558,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12559,6 +13583,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12582,6 +13608,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12605,6 +13633,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12628,6 +13658,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12651,6 +13683,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12674,6 +13708,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12697,6 +13733,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12720,6 +13758,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12743,6 +13783,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12766,6 +13808,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12789,6 +13833,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12812,6 +13858,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12835,6 +13883,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12858,6 +13908,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12881,6 +13933,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12904,6 +13958,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12927,6 +13983,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12950,6 +14008,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12973,6 +14033,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12996,6 +14058,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13019,6 +14083,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13042,6 +14108,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13065,6 +14133,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13088,6 +14158,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13111,6 +14183,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13134,6 +14208,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13157,6 +14233,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13180,6 +14258,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13203,6 +14283,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13226,6 +14308,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13249,6 +14333,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13272,6 +14358,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13295,6 +14383,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13318,6 +14408,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13341,6 +14433,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13364,6 +14458,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13387,6 +14483,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13410,6 +14508,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13433,6 +14533,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13456,6 +14558,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13479,6 +14583,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13502,6 +14608,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13525,6 +14633,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13548,6 +14658,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13571,6 +14683,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13594,6 +14708,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13617,6 +14733,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13640,6 +14758,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13663,6 +14783,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13686,6 +14808,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13709,6 +14833,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13732,6 +14858,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13755,6 +14883,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13778,6 +14908,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13801,6 +14933,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13824,6 +14958,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13847,6 +14983,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13870,6 +15008,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13893,6 +15033,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13916,6 +15058,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13939,6 +15083,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13962,6 +15108,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13985,6 +15133,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14008,6 +15158,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14031,6 +15183,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14054,6 +15208,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14077,6 +15233,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14100,6 +15258,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14123,6 +15283,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14146,6 +15308,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14169,6 +15333,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14192,6 +15358,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14215,6 +15383,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14238,6 +15408,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14261,6 +15433,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -14296,6 +15470,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
   // </0 & ErrorFlush/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -14333,6 +15509,7 @@ refalrts::RefalFunction& ErrorFlush = descr_ErrorFlush;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FlushName {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root,
       & FlushNameTail
@@ -14364,6 +15541,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14382,6 +15561,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14400,6 +15581,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14418,6 +15601,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14436,6 +15621,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14454,6 +15641,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14472,6 +15661,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14490,6 +15681,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14508,6 +15701,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14526,6 +15721,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14544,6 +15741,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14562,6 +15761,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14580,6 +15781,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14598,6 +15801,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14616,6 +15821,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14634,6 +15841,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14652,6 +15861,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14670,6 +15881,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14688,6 +15901,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14706,6 +15921,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14724,6 +15941,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14742,6 +15961,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14760,6 +15981,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14778,6 +16001,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14796,6 +16021,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14814,6 +16041,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -14829,6 +16058,8 @@ namespace /* unnamed */ {
       // </0 & FlushName/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected flush name"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -14859,7 +16090,8 @@ refalrts::RASLFunction descr_FlushName(
   scope_FlushName::functions,
   scope_FlushName::idents,
   scope_FlushName::numbers,
-  scope_FlushName::strings
+  scope_FlushName::strings,
+  scope_FlushName::filename
 );
 refalrts::RefalFunction& FlushName = descr_FlushName;
 
@@ -14897,6 +16129,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14921,6 +16155,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14945,6 +16181,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14969,6 +16207,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14993,6 +16233,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15017,6 +16259,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15041,6 +16285,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15065,6 +16311,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15089,6 +16337,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15113,6 +16363,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15137,6 +16389,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15161,6 +16415,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15185,6 +16441,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15209,6 +16467,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15233,6 +16493,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15257,6 +16519,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15281,6 +16545,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15305,6 +16571,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15329,6 +16597,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15353,6 +16623,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15377,6 +16649,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15401,6 +16675,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15425,6 +16701,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15449,6 +16727,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15473,6 +16753,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15497,6 +16779,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15515,6 +16799,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
   // </0 & FlushName/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -15552,6 +16838,7 @@ refalrts::RefalFunction& FlushName = descr_FlushName;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Literal_Escape {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root,
       & Literal_DecCode,
@@ -15584,6 +16871,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'n'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15602,6 +16891,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'r'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15620,6 +16911,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\\'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\\'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15638,6 +16931,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 't'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15656,6 +16951,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\''/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15674,6 +16971,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal-DecCode/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -15689,6 +16988,8 @@ namespace /* unnamed */ {
       // </0 & Literal-Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TokenError/10"Unexpected escaped character"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -15719,7 +17020,8 @@ refalrts::RASLFunction descr_Literal_Escape(
   scope_Literal_Escape::functions,
   scope_Literal_Escape::idents,
   scope_Literal_Escape::numbers,
-  scope_Literal_Escape::strings
+  scope_Literal_Escape::strings,
+  scope_Literal_Escape::filename
 );
 refalrts::RefalFunction& Literal_Escape = descr_Literal_Escape;
 
@@ -15757,6 +17059,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15781,6 +17085,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15805,6 +17111,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15829,6 +17137,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15853,6 +17163,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15877,6 +17189,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -15895,6 +17209,8 @@ static refalrts::FnResult func_Literal_Escape(refalrts::Iter arg_begin, refalrts
   // </0 & Literal-Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -15932,6 +17248,7 @@ refalrts::RefalFunction& Literal_Escape = descr_Literal_Escape;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Literal_Quote {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root,
       & Literal
@@ -15961,6 +17278,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('\''), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '\''/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -15976,6 +17295,8 @@ namespace /* unnamed */ {
       // </0 & Literal-Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TLiteral/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -16006,7 +17327,8 @@ refalrts::RASLFunction descr_Literal_Quote(
   scope_Literal_Quote::functions,
   scope_Literal_Quote::idents,
   scope_Literal_Quote::numbers,
-  scope_Literal_Quote::strings
+  scope_Literal_Quote::strings,
+  scope_Literal_Quote::filename
 );
 refalrts::RefalFunction& Literal_Quote = descr_Literal_Quote;
 
@@ -16044,6 +17366,8 @@ static refalrts::FnResult func_Literal_Quote(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -16062,6 +17386,8 @@ static refalrts::FnResult func_Literal_Quote(refalrts::Iter arg_begin, refalrts:
   // </0 & Literal-Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -16098,6 +17424,7 @@ refalrts::RefalFunction& Literal_Quote = descr_Literal_Quote;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FlushNameTail {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root
     };
@@ -16126,6 +17453,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16143,6 +17472,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16160,6 +17491,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16177,6 +17510,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16194,6 +17529,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16211,6 +17548,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16228,6 +17567,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16245,6 +17586,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16262,6 +17605,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16279,6 +17624,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16296,6 +17643,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('a'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'a'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16313,6 +17662,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('b'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'b'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16330,6 +17681,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('c'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'c'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16347,6 +17700,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('d'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'd'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16364,6 +17719,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('e'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'e'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16381,6 +17738,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('f'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'f'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16398,6 +17757,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('g'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'g'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16415,6 +17776,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('h'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'h'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16432,6 +17795,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('i'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'i'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16449,6 +17814,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('j'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'j'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16466,6 +17833,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('k'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'k'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16483,6 +17852,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('l'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'l'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16500,6 +17871,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('m'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'm'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16517,6 +17890,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('n'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'n'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16534,6 +17909,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('o'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'o'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16551,6 +17928,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('p'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'p'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16568,6 +17947,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('q'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'q'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16585,6 +17966,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('r'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'r'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16602,6 +17985,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('s'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 's'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16619,6 +18004,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('t'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 't'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16636,6 +18023,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('u'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'u'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16653,6 +18042,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('v'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'v'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16670,6 +18061,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('w'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'w'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16687,6 +18080,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('x'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'x'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16704,6 +18099,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('y'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'y'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16721,6 +18118,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('z'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'z'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16738,6 +18137,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('A'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'A'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16755,6 +18156,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('B'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'B'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16772,6 +18175,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('C'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'C'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16789,6 +18194,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('D'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'D'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16806,6 +18213,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('E'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'E'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16823,6 +18232,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('F'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'F'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16840,6 +18251,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('G'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'G'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16857,6 +18270,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('H'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'H'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16874,6 +18289,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('I'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'I'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16891,6 +18308,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('J'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'J'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16908,6 +18327,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('K'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'K'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16925,6 +18346,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('L'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'L'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16942,6 +18365,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('M'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'M'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16959,6 +18384,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('N'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'N'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16976,6 +18403,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('O'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'O'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -16993,6 +18422,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('P'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'P'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17010,6 +18441,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Q'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Q'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17027,6 +18460,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('R'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'R'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17044,6 +18479,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('S'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'S'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17061,6 +18498,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('T'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'T'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17078,6 +18517,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('U'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'U'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17095,6 +18536,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('V'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'V'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17112,6 +18555,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('W'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'W'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17129,6 +18574,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('X'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'X'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17146,6 +18593,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Y'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Y'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17163,6 +18612,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('Z'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: 'Z'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17180,6 +18631,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('-'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '-'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17197,6 +18650,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('_'), 12},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 12(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FlushNameTail/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '_'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
@@ -17211,6 +18666,8 @@ namespace /* unnamed */ {
       // </0 & FlushNameTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TNamedFlush/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -17241,7 +18698,8 @@ refalrts::RASLFunction descr_FlushNameTail(
   scope_FlushNameTail::functions,
   scope_FlushNameTail::idents,
   scope_FlushNameTail::numbers,
-  scope_FlushNameTail::strings
+  scope_FlushNameTail::strings,
+  scope_FlushNameTail::filename
 );
 refalrts::RefalFunction& FlushNameTail = descr_FlushNameTail;
 
@@ -17279,6 +18737,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17302,6 +18762,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17325,6 +18787,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17348,6 +18812,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17371,6 +18837,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17394,6 +18862,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17417,6 +18887,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17440,6 +18912,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17463,6 +18937,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17486,6 +18962,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17509,6 +18987,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17532,6 +19012,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17555,6 +19037,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17578,6 +19062,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17601,6 +19087,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17624,6 +19112,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17647,6 +19137,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17670,6 +19162,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17693,6 +19187,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17716,6 +19212,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17739,6 +19237,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17762,6 +19262,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17785,6 +19287,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17808,6 +19312,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17831,6 +19337,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17854,6 +19362,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17877,6 +19387,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17900,6 +19412,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17923,6 +19437,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17946,6 +19462,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17969,6 +19487,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -17992,6 +19512,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18015,6 +19537,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18038,6 +19562,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18061,6 +19587,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18084,6 +19612,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18107,6 +19637,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18130,6 +19662,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18153,6 +19687,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18176,6 +19712,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18199,6 +19737,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18222,6 +19762,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18245,6 +19787,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18268,6 +19812,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18291,6 +19837,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18314,6 +19862,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18337,6 +19887,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18360,6 +19912,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18383,6 +19937,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18406,6 +19962,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18429,6 +19987,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18452,6 +20012,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18475,6 +20037,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18498,6 +20062,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18521,6 +20087,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18544,6 +20112,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18567,6 +20137,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18590,6 +20162,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18613,6 +20187,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18636,6 +20212,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18659,6 +20237,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18682,6 +20262,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18705,6 +20287,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18728,6 +20312,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -18745,6 +20331,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
   // </0 & FlushNameTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -18781,6 +20369,7 @@ refalrts::RefalFunction& FlushNameTail = descr_FlushNameTail;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Literal_DecCode {
+    static const char *filename = "DFA-Lexer.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Root,
       & Literal
@@ -18813,6 +20402,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('0'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18831,6 +20422,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('1'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18849,6 +20442,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('2'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18867,6 +20462,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('3'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18885,6 +20482,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('4'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18903,6 +20502,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('5'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18921,6 +20522,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('6'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18939,6 +20542,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('7'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18957,6 +20562,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('8'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '8'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18975,6 +20582,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 9, static_cast<unsigned char>('9'), 14},
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 14(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Literal/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '9'/8 HalfReuse: )/9 AsIs: e.Text#1/14(2) AsIs: >/1 ]] }
@@ -18991,6 +20600,8 @@ namespace /* unnamed */ {
       // </0 & Literal-DecCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
       // closed e.Accum#1 as range 5
       // closed e.Text#1 as range 2
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/9 # TokenError/10"Expected digits"/11 )/13 Tile{ AsIs: </0 Reuse: & Root/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
@@ -19013,6 +20624,7 @@ namespace /* unnamed */ {
       // </0 & Literal-DecCode/4 (/7 e.Accum#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Accum#1 as range 5
+      //DEBUG: e.Accum#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TokenError/4 HalfReuse: 'U'/7 }"nexpected end of fil"/9 Tile{ HalfReuse: 'e'/8 HalfReuse: )/1 ]] }
@@ -19040,7 +20652,8 @@ refalrts::RASLFunction descr_Literal_DecCode(
   scope_Literal_DecCode::functions,
   scope_Literal_DecCode::idents,
   scope_Literal_DecCode::numbers,
-  scope_Literal_DecCode::strings
+  scope_Literal_DecCode::strings,
+  scope_Literal_DecCode::filename
 );
 refalrts::RefalFunction& Literal_DecCode = descr_Literal_DecCode;
 
@@ -19078,6 +20691,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19102,6 +20717,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19126,6 +20743,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19150,6 +20769,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19174,6 +20795,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19198,6 +20821,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19222,6 +20847,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19246,6 +20873,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19270,6 +20899,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19294,6 +20925,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -19313,6 +20946,8 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
     // </0 & Literal-DecCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 2
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -19346,6 +20981,7 @@ static refalrts::FnResult func_Literal_DecCode(refalrts::Iter arg_begin, refalrt
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Accum#1 as range 5
+  //DEBUG: e.Accum#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}

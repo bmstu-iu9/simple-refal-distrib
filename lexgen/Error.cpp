@@ -11,6 +11,7 @@ extern refalrts::RefalFunction& WarningAt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ErrorAt {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt,
       & WriteLine,
@@ -32,6 +33,9 @@ namespace /* unnamed */ {
       // closed e.Text#1 as range 2
       {refalrts::icsVarLeft, 0, 9, 5},
       // closed e.File#1 as range 5
+      //DEBUG: e.Text#1: 2
+      //DEBUG: s.Number#1: 9
+      //DEBUG: e.File#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & StrFromInt/7 AsIs: s.Number#1/9 } >/12":ERROR:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Text#1/2 AsIs: >/1 } </15 & Exit/16 1/17 >/18 Tile{ ]] }
@@ -72,7 +76,8 @@ refalrts::RASLFunction descr_ErrorAt(
   scope_ErrorAt::functions,
   scope_ErrorAt::idents,
   scope_ErrorAt::numbers,
-  scope_ErrorAt::strings
+  scope_ErrorAt::strings,
+  scope_ErrorAt::filename
 );
 refalrts::RefalFunction& ErrorAt = descr_ErrorAt;
 
@@ -98,6 +103,9 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.File#1 as range 5
+  //DEBUG: e.Text#1: 2
+  //DEBUG: s.Number#1: 9
+  //DEBUG: e.File#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -147,6 +155,7 @@ refalrts::RefalFunction& ErrorAt = descr_ErrorAt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WarningAt {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt,
       & WriteLine
@@ -167,6 +176,9 @@ namespace /* unnamed */ {
       // closed e.Message#1 as range 2
       {refalrts::icsVarLeft, 0, 9, 5},
       // closed e.File#1 as range 5
+      //DEBUG: e.Message#1: 2
+      //DEBUG: s.Number#1: 9
+      //DEBUG: e.File#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & StrFromInt/7 AsIs: s.Number#1/9 } >/12":WARNING:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Message#1/2 AsIs: >/1 ]] }
@@ -199,7 +211,8 @@ refalrts::RASLFunction descr_WarningAt(
   scope_WarningAt::functions,
   scope_WarningAt::idents,
   scope_WarningAt::numbers,
-  scope_WarningAt::strings
+  scope_WarningAt::strings,
+  scope_WarningAt::filename
 );
 refalrts::RefalFunction& WarningAt = descr_WarningAt;
 
@@ -225,6 +238,9 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.File#1 as range 5
+  //DEBUG: e.Message#1: 2
+  //DEBUG: s.Number#1: 9
+  //DEBUG: e.File#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

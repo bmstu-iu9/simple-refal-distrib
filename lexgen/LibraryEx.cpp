@@ -133,6 +133,7 @@ extern refalrts::RefalFunction& Max;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Apply {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -154,6 +155,8 @@ namespace /* unnamed */ {
       // </0 & Apply/4 s.Fn#1/5 e.Argument#1/2 >/1
       {refalrts::icsVarTerm, 0, 7, 5},
       // closed e.Argument#1 as range 2
+      //DEBUG: s.Fn#1: 5
+      //DEBUG: e.Argument#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 AsIs: s.Fn#1/5 AsIs: e.Argument#1/2 AsIs: >/1 ]] }
@@ -170,6 +173,9 @@ namespace /* unnamed */ {
       // closed e.Argument#1 as range 2
       {refalrts::ictVarLeftSave, 0, 9, 7},
       // closed e.Bounded#1 as range 7
+      //DEBUG: e.Argument#1: 2
+      //DEBUG: t.Closure#1: 9
+      //DEBUG: e.Bounded#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply/4 } Tile{ AsIs: t.Closure#1/9 } Tile{ AsIs: e.Bounded#1/7 } Tile{ AsIs: e.Argument#1/2 } Tile{ AsIs: >/1 ]] }
@@ -193,7 +199,8 @@ refalrts::RASLFunction descr_Apply(
   scope_Apply::functions,
   scope_Apply::idents,
   scope_Apply::numbers,
-  scope_Apply::strings
+  scope_Apply::strings,
+  scope_Apply::filename
 );
 refalrts::RefalFunction& Apply = descr_Apply;
 
@@ -221,6 +228,8 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! refalrts::svar_term( context[7], context[5] ) )
       continue;
     // closed e.Argument#1 as range 2
+    //DEBUG: s.Fn#1: 5
+    //DEBUG: e.Argument#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -248,6 +257,9 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Bounded#1 as range 7
+  //DEBUG: e.Argument#1: 2
+  //DEBUG: t.Closure#1: 9
+  //DEBUG: e.Bounded#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE} {REMOVED TILE}
@@ -272,6 +284,7 @@ refalrts::RefalFunction& Apply = descr_Apply;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Map {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Apply,
       & Map
@@ -297,6 +310,9 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 14, 2},
       {refalrts::ictVarLeftSave, 0, 7, 14},
       // closed e.Tail#1 as range 14(2)
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Next#1: 7
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply/4 AsIs: t.Fn#1/5 AsIs: t.Next#1/7 } >/9 </10 & Map/11 t.Fn#1/5/12 Tile{ AsIs: e.Tail#1/14(2) } Tile{ AsIs: >/1 ]] }
@@ -317,6 +333,7 @@ namespace /* unnamed */ {
       // t.idx
       // </0 & Map/4 t.Fn#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: t.Fn#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Map/4 t.Fn#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -335,7 +352,8 @@ refalrts::RASLFunction descr_Map(
   scope_Map::functions,
   scope_Map::idents,
   scope_Map::numbers,
-  scope_Map::strings
+  scope_Map::strings,
+  scope_Map::filename
 );
 refalrts::RefalFunction& Map = descr_Map;
 
@@ -366,6 +384,9 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
     if( ! context[8] )
       continue;
     // closed e.Tail#1 as range 14(2)
+    //DEBUG: t.Fn#1: 5
+    //DEBUG: t.Next#1: 7
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -397,6 +418,7 @@ static refalrts::FnResult func_Map(refalrts::Iter arg_begin, refalrts::Iter arg_
   // </0 & Map/4 t.Fn#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Fn#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Map/4 t.Fn#1/5 >/1 {REMOVED TILE}
@@ -416,6 +438,7 @@ refalrts::RefalFunction& Map = descr_Map;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Reduce {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Apply,
       & Reduce
@@ -442,6 +465,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 2},
       {refalrts::ictVarLeftSave, 0, 9, 16},
       // closed e.Tail#1 as range 16(2)
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Acc#1: 7
+      //DEBUG: t.Next#1: 9
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </11 & Reduce/12 t.Fn#1/5/13 Tile{ AsIs: </0 Reuse: & Apply/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 AsIs: t.Next#1/9 } >/15 Tile{ AsIs: e.Tail#1/16(2) } Tile{ AsIs: >/1 ]] }
@@ -464,6 +491,8 @@ namespace /* unnamed */ {
       // t.idx t.idx
       // </0 & Reduce/4 t.Fn#1/5 t.Acc#1/7 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Acc#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Reduce/4 t.Fn#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/7 } Tile{ ]] }
@@ -483,7 +512,8 @@ refalrts::RASLFunction descr_Reduce(
   scope_Reduce::functions,
   scope_Reduce::idents,
   scope_Reduce::numbers,
-  scope_Reduce::strings
+  scope_Reduce::strings,
+  scope_Reduce::filename
 );
 refalrts::RefalFunction& Reduce = descr_Reduce;
 
@@ -517,6 +547,10 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[10] )
       continue;
     // closed e.Tail#1 as range 16(2)
+    //DEBUG: t.Fn#1: 5
+    //DEBUG: t.Acc#1: 7
+    //DEBUG: t.Next#1: 9
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -550,6 +584,8 @@ static refalrts::FnResult func_Reduce(refalrts::Iter arg_begin, refalrts::Iter a
   // </0 & Reduce/4 t.Fn#1/5 t.Acc#1/7 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Fn#1: 5
+  //DEBUG: t.Acc#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Reduce/4 t.Fn#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -570,6 +606,7 @@ refalrts::RefalFunction& Reduce = descr_Reduce;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Fetch {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Apply
     };
@@ -585,6 +622,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::ictVarRightSave, 0, 5, 2},
       // closed e.Argument#1 as range 2
+      //DEBUG: t.Function#1: 5
+      //DEBUG: e.Argument#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply/4 } Tile{ AsIs: t.Function#1/5 } Tile{ AsIs: e.Argument#1/2 } Tile{ AsIs: >/1 ]] }
@@ -607,7 +646,8 @@ refalrts::RASLFunction descr_Fetch(
   scope_Fetch::functions,
   scope_Fetch::idents,
   scope_Fetch::numbers,
-  scope_Fetch::strings
+  scope_Fetch::strings,
+  scope_Fetch::filename
 );
 refalrts::RefalFunction& Fetch = descr_Fetch;
 
@@ -627,6 +667,8 @@ static refalrts::FnResult func_Fetch(refalrts::Iter arg_begin, refalrts::Iter ar
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Argument#1 as range 2
+  //DEBUG: t.Function#1: 5
+  //DEBUG: e.Argument#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -650,6 +692,7 @@ refalrts::RefalFunction& Fetch = descr_Fetch;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Y_L1 {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Y
     };
@@ -665,6 +708,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       // closed e.Arg#2 as range 2
+      //DEBUG: s.Y-Func#1: 5
+      //DEBUG: e.Arg#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 HalfReuse: </4 AsIs: s.Y-Func#1/5 } </6 & Y/7 s.Y-Func#1/5/8 >/9 >/10 Tile{ AsIs: e.Arg#2/2 } Tile{ AsIs: >/1 ]] }
@@ -697,7 +742,8 @@ refalrts::RASLFunction descr_gen_Y_L1(
   scope_gen_Y_L1::functions,
   scope_gen_Y_L1::idents,
   scope_gen_Y_L1::numbers,
-  scope_gen_Y_L1::strings
+  scope_gen_Y_L1::strings,
+  scope_gen_Y_L1::filename
 );
 refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
 
@@ -718,6 +764,8 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::Iter arg_begin, refalrts::Iter
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Arg#2 as range 2
+  //DEBUG: s.Y-Func#1: 5
+  //DEBUG: e.Arg#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -758,6 +806,7 @@ refalrts::RefalFunction& gen_Y_L1 = descr_gen_Y_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Y {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_Y_L1,
       & refalrts::create_closure
@@ -774,6 +823,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Y-Func#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </6 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Y\1/4 AsIs: s.Y-Func#1/5 AsIs: >/1 ]] }
@@ -797,7 +847,8 @@ refalrts::RASLFunction descr_Y(
   scope_Y::functions,
   scope_Y::idents,
   scope_Y::numbers,
-  scope_Y::strings
+  scope_Y::strings,
+  scope_Y::filename
 );
 refalrts::RefalFunction& Y = descr_Y;
 
@@ -817,6 +868,7 @@ static refalrts::FnResult func_Y(refalrts::Iter arg_begin, refalrts::Iter arg_en
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Y-Func#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -842,6 +894,7 @@ refalrts::RefalFunction& Y = descr_Y;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MapReduce {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoMapReduce
     };
@@ -858,6 +911,9 @@ namespace /* unnamed */ {
       {refalrts::ictVarLeftSave, 0, 5, 2},
       {refalrts::ictVarLeftSave, 0, 7, 2},
       // closed e.Tail#1 as range 2
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Acc#1: 7
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapReduce/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 } (/9 )/10 Tile{ AsIs: e.Tail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -883,7 +939,8 @@ refalrts::RASLFunction descr_MapReduce(
   scope_MapReduce::functions,
   scope_MapReduce::idents,
   scope_MapReduce::numbers,
-  scope_MapReduce::strings
+  scope_MapReduce::strings,
+  scope_MapReduce::filename
 );
 refalrts::RefalFunction& MapReduce = descr_MapReduce;
 
@@ -906,6 +963,9 @@ static refalrts::FnResult func_MapReduce(refalrts::Iter arg_begin, refalrts::Ite
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Fn#1: 5
+  //DEBUG: t.Acc#1: 7
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -934,6 +994,7 @@ refalrts::RefalFunction& MapReduce = descr_MapReduce;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoMapReduce {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Apply,
       & MapReduce_AddScanned
@@ -963,6 +1024,11 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 23, 2},
       {refalrts::ictVarLeftSave, 0, 13, 23},
       // closed e.Tail#1 as range 23(2)
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Acc#1: 7
+      //DEBUG: e.Scanned#1: 9
+      //DEBUG: t.Next#1: 13
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoMapReduce/4 AsIs: t.Fn#1/5 } </15 & MapReduce-AddScanned/16 </17 & Apply/18 t.Fn#1/5/19 Tile{ AsIs: t.Acc#1/7 } Tile{ AsIs: t.Next#1/13 } >/21 Tile{ AsIs: (/11 AsIs: e.Scanned#1/9 AsIs: )/12 } >/22 Tile{ AsIs: e.Tail#1/23(2) } Tile{ AsIs: >/1 ]] }
@@ -994,6 +1060,9 @@ namespace /* unnamed */ {
       // </0 & DoMapReduce/4 t.Fn#1/5 t.Acc#1/7 (/11 e.Scanned#1/9 )/12 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Scanned#1 as range 9
+      //DEBUG: t.Fn#1: 5
+      //DEBUG: t.Acc#1: 7
+      //DEBUG: e.Scanned#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DoMapReduce/4 t.Fn#1/5 {REMOVED TILE} (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/7 } Tile{ AsIs: e.Scanned#1/9 } Tile{ ]] }
@@ -1015,7 +1084,8 @@ refalrts::RASLFunction descr_DoMapReduce(
   scope_DoMapReduce::functions,
   scope_DoMapReduce::idents,
   scope_DoMapReduce::numbers,
-  scope_DoMapReduce::strings
+  scope_DoMapReduce::strings,
+  scope_DoMapReduce::filename
 );
 refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
 
@@ -1059,6 +1129,11 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
     if( ! context[14] )
       continue;
     // closed e.Tail#1 as range 23(2)
+    //DEBUG: t.Fn#1: 5
+    //DEBUG: t.Acc#1: 7
+    //DEBUG: e.Scanned#1: 9
+    //DEBUG: t.Next#1: 13
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1104,6 +1179,9 @@ static refalrts::FnResult func_DoMapReduce(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Scanned#1 as range 9
+  //DEBUG: t.Fn#1: 5
+  //DEBUG: t.Acc#1: 7
+  //DEBUG: e.Scanned#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DoMapReduce/4 t.Fn#1/5 {REMOVED TILE} (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
@@ -1128,6 +1206,7 @@ refalrts::RefalFunction& DoMapReduce = descr_DoMapReduce;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MapReduce_AddScanned {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -1143,6 +1222,9 @@ namespace /* unnamed */ {
       // closed e.Scanned#1 as range 5
       {refalrts::ictVarLeftSave, 0, 9, 2},
       // closed e.StepScanned#1 as range 2
+      //DEBUG: e.Scanned#1: 5
+      //DEBUG: t.Acc#1: 9
+      //DEBUG: e.StepScanned#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & MapReduce-AddScanned/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Scanned#1/5 } Tile{ AsIs: e.StepScanned#1/2 } Tile{ HalfReuse: )/1 ]] }
@@ -1168,7 +1250,8 @@ refalrts::RASLFunction descr_MapReduce_AddScanned(
   scope_MapReduce_AddScanned::functions,
   scope_MapReduce_AddScanned::idents,
   scope_MapReduce_AddScanned::numbers,
-  scope_MapReduce_AddScanned::strings
+  scope_MapReduce_AddScanned::strings,
+  scope_MapReduce_AddScanned::filename
 );
 refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
 
@@ -1197,6 +1280,9 @@ static refalrts::FnResult func_MapReduce_AddScanned(refalrts::Iter arg_begin, re
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.StepScanned#1 as range 2
+  //DEBUG: e.Scanned#1: 5
+  //DEBUG: t.Acc#1: 9
+  //DEBUG: e.StepScanned#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & MapReduce-AddScanned/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
@@ -1225,6 +1311,7 @@ refalrts::RefalFunction& MapReduce_AddScanned = descr_MapReduce_AddScanned;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_UnBracket {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -1239,6 +1326,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Expr#1 as range 5
+      //DEBUG: e.Expr#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & UnBracket/4 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Expr#1/5 } Tile{ ]] }
@@ -1258,7 +1346,8 @@ refalrts::RASLFunction descr_UnBracket(
   scope_UnBracket::functions,
   scope_UnBracket::idents,
   scope_UnBracket::numbers,
-  scope_UnBracket::strings
+  scope_UnBracket::strings,
+  scope_UnBracket::filename
 );
 refalrts::RefalFunction& UnBracket = descr_UnBracket;
 
@@ -1283,6 +1372,7 @@ static refalrts::FnResult func_UnBracket(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Expr#1 as range 5
+  //DEBUG: e.Expr#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & UnBracket/4 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -1303,6 +1393,7 @@ refalrts::RefalFunction& UnBracket = descr_UnBracket;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DelAccumulator {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -1316,6 +1407,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::ictVarLeftSave, 0, 5, 2},
       // closed e.Tail#1 as range 2
+      //DEBUG: t.Acc#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DelAccumulator/4 t.Acc#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
@@ -1335,7 +1428,8 @@ refalrts::RASLFunction descr_DelAccumulator(
   scope_DelAccumulator::functions,
   scope_DelAccumulator::idents,
   scope_DelAccumulator::numbers,
-  scope_DelAccumulator::strings
+  scope_DelAccumulator::strings,
+  scope_DelAccumulator::filename
 );
 refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
 
@@ -1355,6 +1449,8 @@ static refalrts::FnResult func_DelAccumulator(refalrts::Iter arg_begin, refalrts
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Acc#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DelAccumulator/4 t.Acc#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1375,6 +1471,7 @@ refalrts::RefalFunction& DelAccumulator = descr_DelAccumulator;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LoadFile {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoLoadFile,
       & FOpen,
@@ -1391,6 +1488,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.FileName#1 as range 2
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoLoadFile/4 } </5 & FReadLine/6 </7 & FOpen/8 'r'/9 Tile{ AsIs: e.FileName#1/2 } >/10 >/11 Tile{ AsIs: >/1 ]] }
@@ -1425,7 +1523,8 @@ refalrts::RASLFunction descr_LoadFile(
   scope_LoadFile::functions,
   scope_LoadFile::idents,
   scope_LoadFile::numbers,
-  scope_LoadFile::strings
+  scope_LoadFile::strings,
+  scope_LoadFile::filename
 );
 refalrts::RefalFunction& LoadFile = descr_LoadFile;
 
@@ -1442,6 +1541,7 @@ static refalrts::FnResult func_LoadFile(refalrts::Iter arg_begin, refalrts::Iter
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1484,6 +1584,7 @@ refalrts::RefalFunction& LoadFile = descr_LoadFile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoLoadFile {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FReadLine,
       & DoLoadFile,
@@ -1510,6 +1611,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 12, 2},
       {refalrts::icNumLeftSave, 7, 0, 12},
       {refalrts::icEmpty, 0, 0, 12},
+      //DEBUG: t.File#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FClose/4 AsIs: t.File#1/5 HalfReuse: >/7 } Tile{ ]] }
@@ -1527,6 +1629,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 12, 2},
       {refalrts::icNumRightSave, 7, 0, 12},
       // closed e.Line#1 as range 12(2)
+      //DEBUG: t.File#1: 5
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/8 Tile{ AsIs: e.Line#1/12(2) } Tile{ HalfReuse: )/7 } Tile{ AsIs: </0 Reuse: & FClose/4 AsIs: t.File#1/5 } Tile{ AsIs: >/1 ]] }
@@ -1546,6 +1650,8 @@ namespace /* unnamed */ {
       // t.idx e.idx
       // </0 & DoLoadFile/4 t.File#1/5 e.Line#1/2 >/1
       // closed e.Line#1 as range 2
+      //DEBUG: t.File#1: 5
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/7 Tile{ AsIs: e.Line#1/2 } )/8 </9 & DoLoadFile/10 Tile{ AsIs: </0 Reuse: & FReadLine/4 AsIs: t.File#1/5 } >/11 Tile{ AsIs: >/1 ]] }
@@ -1580,7 +1686,8 @@ refalrts::RASLFunction descr_DoLoadFile(
   scope_DoLoadFile::functions,
   scope_DoLoadFile::idents,
   scope_DoLoadFile::numbers,
-  scope_DoLoadFile::strings
+  scope_DoLoadFile::strings,
+  scope_DoLoadFile::filename
 );
 refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
 
@@ -1614,6 +1721,7 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
       continue;
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
+    //DEBUG: t.File#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1640,6 +1748,8 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
     if( ! context[7] )
       continue;
     // closed e.Line#1 as range 12(2)
+    //DEBUG: t.File#1: 5
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1666,6 +1776,8 @@ static refalrts::FnResult func_DoLoadFile(refalrts::Iter arg_begin, refalrts::It
   // t.idx e.idx
   // </0 & DoLoadFile/4 t.File#1/5 e.Line#1/2 >/1
   // closed e.Line#1 as range 2
+  //DEBUG: t.File#1: 5
+  //DEBUG: e.Line#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1708,6 +1820,7 @@ refalrts::RefalFunction& DoLoadFile = descr_DoLoadFile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SaveFile {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FOpen,
       & WriteBracketLine,
@@ -1727,6 +1840,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.FileName#1 as range 5
       // closed e.Lines#1 as range 2
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.Lines#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & FClose/10 </11 & Reduce/12 & WriteBracketLine/13 Tile{ AsIs: </0 Reuse: & FOpen/4 HalfReuse: 'w'/7 AsIs: e.FileName#1/5 HalfReuse: >/8 AsIs: e.Lines#1/2 AsIs: >/1 } >/14 Tile{ ]] }
@@ -1762,7 +1877,8 @@ refalrts::RASLFunction descr_SaveFile(
   scope_SaveFile::functions,
   scope_SaveFile::idents,
   scope_SaveFile::numbers,
-  scope_SaveFile::strings
+  scope_SaveFile::strings,
+  scope_SaveFile::filename
 );
 refalrts::RefalFunction& SaveFile = descr_SaveFile;
 
@@ -1786,6 +1902,8 @@ static refalrts::FnResult func_SaveFile(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.FileName#1 as range 5
   // closed e.Lines#1 as range 2
+  //DEBUG: e.FileName#1: 5
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1828,6 +1946,7 @@ refalrts::RefalFunction& SaveFile = descr_SaveFile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteBracketLine {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FWriteLine
     };
@@ -1845,6 +1964,8 @@ namespace /* unnamed */ {
       // closed e.Line#1 as range 5
       {refalrts::ictVarLeftSave, 0, 9, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Line#1: 5
+      //DEBUG: t.File#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FWriteLine/4 AsIs: t.File#1/9 } Tile{ AsIs: e.Line#1/5 } Tile{ AsIs: >/1 ]] }
@@ -1868,7 +1989,8 @@ refalrts::RASLFunction descr_WriteBracketLine(
   scope_WriteBracketLine::functions,
   scope_WriteBracketLine::idents,
   scope_WriteBracketLine::numbers,
-  scope_WriteBracketLine::strings
+  scope_WriteBracketLine::strings,
+  scope_WriteBracketLine::filename
 );
 refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
 
@@ -1898,6 +2020,8 @@ static refalrts::FnResult func_WriteBracketLine(refalrts::Iter arg_begin, refalr
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Line#1: 5
+  //DEBUG: t.File#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -1924,6 +2048,7 @@ refalrts::RefalFunction& WriteBracketLine = descr_WriteBracketLine;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Inc {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Add
     };
@@ -1939,6 +2064,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
@@ -1962,7 +2088,8 @@ refalrts::RASLFunction descr_Inc(
   scope_Inc::functions,
   scope_Inc::idents,
   scope_Inc::numbers,
-  scope_Inc::strings
+  scope_Inc::strings,
+  scope_Inc::filename
 );
 refalrts::RefalFunction& Inc = descr_Inc;
 
@@ -1982,6 +2109,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2007,6 +2135,7 @@ refalrts::RefalFunction& Inc = descr_Inc;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Dec {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Sub
     };
@@ -2022,6 +2151,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
@@ -2045,7 +2175,8 @@ refalrts::RASLFunction descr_Dec(
   scope_Dec::functions,
   scope_Dec::idents,
   scope_Dec::numbers,
-  scope_Dec::strings
+  scope_Dec::strings,
+  scope_Dec::filename
 );
 refalrts::RefalFunction& Dec = descr_Dec;
 
@@ -2065,6 +2196,7 @@ static refalrts::FnResult func_Dec(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2090,6 +2222,7 @@ refalrts::RefalFunction& Dec = descr_Dec;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastIntFromStr_Guard {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Success<int>::name
@@ -2106,6 +2239,7 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 5, 0, 2},
       {refalrts::icsVarLeft, 0, 6, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Number#1: 6
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FastIntFromStr-Guard/4 # Success/5 s.Number#1/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Number1 #6/1 ]] }
@@ -2126,7 +2260,8 @@ refalrts::RASLFunction descr_FastIntFromStr_Guard(
   scope_FastIntFromStr_Guard::functions,
   scope_FastIntFromStr_Guard::idents,
   scope_FastIntFromStr_Guard::numbers,
-  scope_FastIntFromStr_Guard::strings
+  scope_FastIntFromStr_Guard::strings,
+  scope_FastIntFromStr_Guard::filename
 );
 refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
 
@@ -2151,6 +2286,7 @@ static refalrts::FnResult func_FastIntFromStr_Guard(refalrts::Iter arg_begin, re
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Number#1: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FastIntFromStr-Guard/4 # Success/5 s.Number#1/6 {REMOVED TILE}
@@ -2174,6 +2310,7 @@ refalrts::RefalFunction& FastIntFromStr_Guard = descr_FastIntFromStr_Guard;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FastIntFromStr {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & IntFromStr,
       & FastIntFromStr_Guard
@@ -2189,6 +2326,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Digits#1 as range 2
+      //DEBUG: e.Digits#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & FastIntFromStr-Guard/6 Tile{ AsIs: </0 Reuse: & IntFromStr/4 AsIs: e.Digits#1/2 AsIs: >/1 } >/7 Tile{ ]] }
@@ -2217,7 +2355,8 @@ refalrts::RASLFunction descr_FastIntFromStr(
   scope_FastIntFromStr::functions,
   scope_FastIntFromStr::idents,
   scope_FastIntFromStr::numbers,
-  scope_FastIntFromStr::strings
+  scope_FastIntFromStr::strings,
+  scope_FastIntFromStr::filename
 );
 refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
 
@@ -2234,6 +2373,7 @@ static refalrts::FnResult func_FastIntFromStr(refalrts::Iter arg_begin, refalrts
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Digits#1 as range 2
+  //DEBUG: e.Digits#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2266,6 +2406,7 @@ refalrts::RefalFunction& FastIntFromStr = descr_FastIntFromStr;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ArgList {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoArgList
     };
@@ -2303,7 +2444,8 @@ refalrts::RASLFunction descr_ArgList(
   scope_ArgList::functions,
   scope_ArgList::idents,
   scope_ArgList::numbers,
-  scope_ArgList::strings
+  scope_ArgList::strings,
+  scope_ArgList::filename
 );
 refalrts::RefalFunction& ArgList = descr_ArgList;
 
@@ -2346,6 +2488,7 @@ refalrts::RefalFunction& ArgList = descr_ArgList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoArgList {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc,
       & Arg,
@@ -2363,6 +2506,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Next#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </6 & SwDoArgList/7 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Next#1/5 AsIs: >/1 } </8 & Arg/9 s.Next#1/5/10 >/11 >/12 Tile{ ]] }
@@ -2398,7 +2542,8 @@ refalrts::RASLFunction descr_DoArgList(
   scope_DoArgList::functions,
   scope_DoArgList::idents,
   scope_DoArgList::numbers,
-  scope_DoArgList::strings
+  scope_DoArgList::strings,
+  scope_DoArgList::filename
 );
 refalrts::RefalFunction& DoArgList = descr_DoArgList;
 
@@ -2420,6 +2565,7 @@ static refalrts::FnResult func_DoArgList(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Next#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2465,6 +2611,7 @@ refalrts::RefalFunction& DoArgList = descr_DoArgList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_SwDoArgList {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoArgList
     };
@@ -2488,6 +2635,7 @@ namespace /* unnamed */ {
       // </0 & SwDoArgList/4 s.Next#1/5 >/1
       {refalrts::icSave, 0, 8, 2},
       {refalrts::icEmpty, 0, 0, 8},
+      //DEBUG: s.Next#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwDoArgList/4 s.Next#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -2498,6 +2646,8 @@ namespace /* unnamed */ {
       // s.idx e.idx
       // </0 & SwDoArgList/4 s.Next#1/5 e.Arg#1/2 >/1
       // closed e.Arg#1 as range 2
+      //DEBUG: s.Next#1: 5
+      //DEBUG: e.Arg#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/6 Tile{ AsIs: e.Arg#1/2 } )/7 Tile{ AsIs: </0 Reuse: & DoArgList/4 AsIs: s.Next#1/5 } Tile{ AsIs: >/1 ]] }
@@ -2526,7 +2676,8 @@ refalrts::RASLFunction descr_SwDoArgList(
   scope_SwDoArgList::functions,
   scope_SwDoArgList::idents,
   scope_SwDoArgList::numbers,
-  scope_SwDoArgList::strings
+  scope_SwDoArgList::strings,
+  scope_SwDoArgList::filename
 );
 refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
 
@@ -2556,6 +2707,7 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Next#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & SwDoArgList/4 s.Next#1/5 >/1 {REMOVED TILE}
@@ -2572,6 +2724,8 @@ static refalrts::FnResult func_SwDoArgList(refalrts::Iter arg_begin, refalrts::I
   // s.idx e.idx
   // </0 & SwDoArgList/4 s.Next#1/5 e.Arg#1/2 >/1
   // closed e.Arg#1 as range 2
+  //DEBUG: s.Next#1: 5
+  //DEBUG: e.Arg#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2605,6 +2759,7 @@ refalrts::RefalFunction& SwDoArgList = descr_SwDoArgList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Compare {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SymbCompare,
       & Lexicon
@@ -2632,6 +2787,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 11, 7},
       // closed e.Left#1 as range 9
       // closed e.Right#1 as range 11
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.Right#1: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon/4 AsIs: (/5 AsIs: e.Left#1/9 AsIs: )/6 AsIs: (/7 AsIs: e.Right#1/11 AsIs: )/8 AsIs: >/1 ]] }
@@ -2648,6 +2805,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 5},
       {refalrts::icsVarTerm, 0, 11, 7},
       // closed e.Left#1 as range 9
+      //DEBUG: s.Right#1: 7
+      //DEBUG: e.Left#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Compare/4 (/5 e.Left#1/9 )/6 s.Right#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '>'/1 ]] }
@@ -2662,6 +2821,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 7},
       {refalrts::icsVarTerm, 0, 11, 5},
       // closed e.Right#1 as range 9
+      //DEBUG: s.Left#1: 5
+      //DEBUG: e.Right#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Compare/4 s.Left#1/5 (/7 e.Right#1/9 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '<'/1 ]] }
@@ -2674,6 +2835,8 @@ namespace /* unnamed */ {
       // </0 & Compare/4 s.Left#1/5 s.Right#1/7 >/1
       {refalrts::icsVarTerm, 0, 9, 5},
       {refalrts::icsVarTerm, 0, 9, 7},
+      //DEBUG: s.Left#1: 5
+      //DEBUG: s.Right#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbCompare/4 AsIs: s.Left#1/5 AsIs: s.Right#1/7 AsIs: >/1 ]] }
@@ -2693,7 +2856,8 @@ refalrts::RASLFunction descr_Compare(
   scope_Compare::functions,
   scope_Compare::idents,
   scope_Compare::numbers,
-  scope_Compare::strings
+  scope_Compare::strings,
+  scope_Compare::filename
 );
 refalrts::RefalFunction& Compare = descr_Compare;
 
@@ -2732,6 +2896,8 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Left#1 as range 9
     // closed e.Right#1 as range 11
+    //DEBUG: e.Left#1: 9
+    //DEBUG: e.Right#1: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -2755,6 +2921,8 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::svar_term( context[11], context[7] ) )
       continue;
     // closed e.Left#1 as range 9
+    //DEBUG: s.Right#1: 7
+    //DEBUG: e.Left#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Compare/4 (/5 e.Left#1/9 )/6 s.Right#1/7 {REMOVED TILE}
@@ -2779,6 +2947,8 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::svar_term( context[11], context[5] ) )
       continue;
     // closed e.Right#1 as range 9
+    //DEBUG: s.Left#1: 5
+    //DEBUG: e.Right#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Compare/4 s.Left#1/5 (/7 e.Right#1/9 )/8 {REMOVED TILE}
@@ -2799,6 +2969,8 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_term( context[9], context[7] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Left#1: 5
+  //DEBUG: s.Right#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -2816,6 +2988,7 @@ refalrts::RefalFunction& Compare = descr_Compare;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Lexicon_Aux,
       & Compare
@@ -2847,6 +3020,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 22, 9},
       {refalrts::ictVarLeftSave, 0, 15, 22},
       // closed e.Right#1 as range 22(9)
+      //DEBUG: t.FirstLeft#1: 13
+      //DEBUG: e.Left#1: 5
+      //DEBUG: t.FirstRight#1: 15
+      //DEBUG: e.Right#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-Aux/4 HalfReuse: </7 } & Compare/17 Tile{ AsIs: t.FirstLeft#1/13 } Tile{ AsIs: t.FirstRight#1/15 } >/18 (/19 Tile{ AsIs: e.Left#1/20(5) } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Right#1/22(9) } Tile{ AsIs: )/12 AsIs: >/1 ]] }
@@ -2892,6 +3069,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 20, 5},
       {refalrts::icEmpty, 0, 0, 20},
       // closed e.Right#1 as range 9
+      //DEBUG: e.Right#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Lexicon/4 (/7 )/8 (/11 e.Right#1/9 )/12 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '<'/1 ]] }
@@ -2904,6 +3082,7 @@ namespace /* unnamed */ {
       // </0 & Lexicon/4 (/7 e.Left#1/5 )/8 (/11 )/12 >/1
       {refalrts::icEmpty, 0, 0, 9},
       // closed e.Left#1 as range 5
+      //DEBUG: e.Left#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Lexicon/4 (/7 e.Left#1/5 )/8 (/11 )/12 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '>'/1 ]] }
@@ -2924,7 +3103,8 @@ refalrts::RASLFunction descr_Lexicon(
   scope_Lexicon::functions,
   scope_Lexicon::idents,
   scope_Lexicon::numbers,
-  scope_Lexicon::strings
+  scope_Lexicon::strings,
+  scope_Lexicon::filename
 );
 refalrts::RefalFunction& Lexicon = descr_Lexicon;
 
@@ -2975,6 +3155,10 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[16] )
       continue;
     // closed e.Right#1 as range 22(9)
+    //DEBUG: t.FirstLeft#1: 13
+    //DEBUG: e.Left#1: 5
+    //DEBUG: t.FirstRight#1: 15
+    //DEBUG: e.Right#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3041,6 +3225,7 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! refalrts::empty_seq( context[20], context[21] ) )
       continue;
     // closed e.Right#1 as range 9
+    //DEBUG: e.Right#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Lexicon/4 (/7 )/8 (/11 e.Right#1/9 )/12 {REMOVED TILE}
@@ -3060,6 +3245,7 @@ static refalrts::FnResult func_Lexicon(refalrts::Iter arg_begin, refalrts::Iter 
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Left#1 as range 5
+  //DEBUG: e.Left#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Lexicon/4 (/7 e.Left#1/5 )/8 (/11 )/12 {REMOVED TILE}
@@ -3083,6 +3269,7 @@ refalrts::RefalFunction& Lexicon = descr_Lexicon;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_Aux {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Lexicon
     };
@@ -3111,6 +3298,8 @@ namespace /* unnamed */ {
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 13},
       // closed e.Left#1 as range 9
       // closed e.Right#1 as range 5
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.Right#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Lexicon-Aux/4 '<'/13 (/11 e.Left#1/9 )/12 (/7 e.Right#1/5 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '<'/1 ]] }
@@ -3125,6 +3314,8 @@ namespace /* unnamed */ {
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('='), 13},
       // closed e.Left#1 as range 9
       // closed e.Right#1 as range 5
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.Right#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Lexicon/13 AsIs: (/11 AsIs: e.Left#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Right#1/5 AsIs: )/8 AsIs: >/1 ]] }
@@ -3143,6 +3334,8 @@ namespace /* unnamed */ {
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('>'), 13},
       // closed e.Left#1 as range 9
       // closed e.Right#1 as range 5
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.Right#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Lexicon-Aux/4 '>'/13 (/11 e.Left#1/9 )/12 (/7 e.Right#1/5 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '>'/1 ]] }
@@ -3163,7 +3356,8 @@ refalrts::RASLFunction descr_Lexicon_Aux(
   scope_Lexicon_Aux::functions,
   scope_Lexicon_Aux::idents,
   scope_Lexicon_Aux::numbers,
-  scope_Lexicon_Aux::strings
+  scope_Lexicon_Aux::strings,
+  scope_Lexicon_Aux::filename
 );
 refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
 
@@ -3208,6 +3402,8 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
       continue;
     // closed e.Left#1 as range 9
     // closed e.Right#1 as range 5
+    //DEBUG: e.Left#1: 9
+    //DEBUG: e.Right#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Lexicon-Aux/4 '<'/13 (/11 e.Left#1/9 )/12 (/7 e.Right#1/5 )/8 {REMOVED TILE}
@@ -3229,6 +3425,8 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
       continue;
     // closed e.Left#1 as range 9
     // closed e.Right#1 as range 5
+    //DEBUG: e.Left#1: 9
+    //DEBUG: e.Right#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -3254,6 +3452,8 @@ static refalrts::FnResult func_Lexicon_Aux(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   // closed e.Left#1 as range 9
   // closed e.Right#1 as range 5
+  //DEBUG: e.Left#1: 9
+  //DEBUG: e.Right#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Lexicon-Aux/4 '>'/13 (/11 e.Left#1/9 )/12 (/7 e.Right#1/5 )/8 {REMOVED TILE}
@@ -3277,6 +3477,7 @@ refalrts::RefalFunction& Lexicon_Aux = descr_Lexicon_Aux;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Compare_T {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SymbCompare,
       & Lexicon_T
@@ -3304,6 +3505,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 11, 7},
       // closed e.Left#1 as range 9
       // closed e.Right#1 as range 11
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.Right#1: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-T/4 AsIs: (/5 } )/13 (/14 Tile{ AsIs: e.Left#1/9 } )/15 (/16 Tile{ AsIs: )/6 AsIs: (/7 AsIs: e.Right#1/11 AsIs: )/8 AsIs: >/1 ]] }
@@ -3330,6 +3533,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 5},
       {refalrts::icsVarTerm, 0, 11, 7},
       // closed e.Left#1 as range 9
+      //DEBUG: s.Right#1: 7
+      //DEBUG: e.Left#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '>'/4 AsIs: (/5 AsIs: e.Left#1/9 AsIs: )/6 AsIs: s.Right#1/7 } Tile{ ]] }
@@ -3346,6 +3551,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 7},
       {refalrts::icsVarTerm, 0, 11, 5},
       // closed e.Right#1 as range 9
+      //DEBUG: s.Left#1: 5
+      //DEBUG: e.Right#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '<'/4 AsIs: s.Left#1/5 AsIs: (/7 AsIs: e.Right#1/9 AsIs: )/8 } Tile{ ]] }
@@ -3360,6 +3567,8 @@ namespace /* unnamed */ {
       // </0 & Compare-T/4 s.Left#1/5 s.Right#1/7 >/1
       {refalrts::icsVarTerm, 0, 9, 5},
       {refalrts::icsVarTerm, 0, 9, 7},
+      //DEBUG: s.Left#1: 5
+      //DEBUG: s.Right#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbCompare/4 AsIs: s.Left#1/5 AsIs: s.Right#1/7 AsIs: >/1 } s.Left#1/5/9 s.Right#1/7/10 Tile{ ]] }
@@ -3383,7 +3592,8 @@ refalrts::RASLFunction descr_Compare_T(
   scope_Compare_T::functions,
   scope_Compare_T::idents,
   scope_Compare_T::numbers,
-  scope_Compare_T::strings
+  scope_Compare_T::strings,
+  scope_Compare_T::filename
 );
 refalrts::RefalFunction& Compare_T = descr_Compare_T;
 
@@ -3422,6 +3632,8 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Left#1 as range 9
     // closed e.Right#1 as range 11
+    //DEBUG: e.Left#1: 9
+    //DEBUG: e.Right#1: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3462,6 +3674,8 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_term( context[11], context[7] ) )
       continue;
     // closed e.Left#1 as range 9
+    //DEBUG: s.Right#1: 7
+    //DEBUG: e.Left#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3488,6 +3702,8 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_term( context[11], context[5] ) )
       continue;
     // closed e.Right#1 as range 9
+    //DEBUG: s.Left#1: 5
+    //DEBUG: e.Right#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3510,6 +3726,8 @@ static refalrts::FnResult func_Compare_T(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_term( context[9], context[7] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Left#1: 5
+  //DEBUG: s.Right#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3536,6 +3754,7 @@ refalrts::RefalFunction& Compare_T = descr_Compare_T;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_T {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Lexicon_T_Aux,
       & Compare_T
@@ -3573,6 +3792,12 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 30, 17},
       {refalrts::ictVarLeftSave, 0, 23, 30},
       // closed e.Right#1 as range 30(17)
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 13
+      //DEBUG: t.FirstLeft#1: 21
+      //DEBUG: e.Left#1: 9
+      //DEBUG: t.FirstRight#1: 23
+      //DEBUG: e.Right#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-T-Aux/4 AsIs: (/7 AsIs: e.ScannedLeft#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.ScannedRight#1/13 } )/25 </26 & Compare-T/27 Tile{ AsIs: t.FirstLeft#1/21 } Tile{ AsIs: t.FirstRight#1/23 } Tile{ HalfReuse: >/12 AsIs: (/15 } Tile{ AsIs: e.Left#1/28(9) } Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.Right#1/30(17) } Tile{ AsIs: )/20 AsIs: >/1 ]] }
@@ -3609,6 +3834,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 30},
       // closed e.ScannedLeft#1 as range 5
       // closed e.ScannedRight#1 as range 13
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 )/20 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '='/4 AsIs: (/7 AsIs: e.ScannedLeft#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.ScannedRight#1/13 } Tile{ HalfReuse: )/1 ]] }
@@ -3630,6 +3857,9 @@ namespace /* unnamed */ {
       // closed e.ScannedLeft#1 as range 5
       // closed e.ScannedRight#1 as range 13
       // closed e.Right#1 as range 17
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 13
+      //DEBUG: e.Right#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '<'/4 AsIs: (/7 AsIs: e.ScannedLeft#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.ScannedRight#1/13 } Tile{ AsIs: e.Right#1/17 } Tile{ HalfReuse: )/1 ]] }
@@ -3650,6 +3880,9 @@ namespace /* unnamed */ {
       // closed e.ScannedLeft#1 as range 5
       // closed e.Left#1 as range 9
       // closed e.ScannedRight#1 as range 13
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.Left#1: 9
+      //DEBUG: e.ScannedRight#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} {REMOVED TILE} (/19 )/20 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '>'/0 HalfReuse: (/4 } Tile{ AsIs: e.ScannedLeft#1/5 } Tile{ AsIs: e.Left#1/9 } Tile{ AsIs: )/12 AsIs: (/15 AsIs: e.ScannedRight#1/13 AsIs: )/16 } Tile{ ]] }
@@ -3676,7 +3909,8 @@ refalrts::RASLFunction descr_Lexicon_T(
   scope_Lexicon_T::functions,
   scope_Lexicon_T::idents,
   scope_Lexicon_T::numbers,
-  scope_Lexicon_T::strings
+  scope_Lexicon_T::strings,
+  scope_Lexicon_T::filename
 );
 refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
 
@@ -3743,6 +3977,12 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
     if( ! context[24] )
       continue;
     // closed e.Right#1 as range 30(17)
+    //DEBUG: e.ScannedLeft#1: 5
+    //DEBUG: e.ScannedRight#1: 13
+    //DEBUG: t.FirstLeft#1: 21
+    //DEBUG: e.Left#1: 9
+    //DEBUG: t.FirstRight#1: 23
+    //DEBUG: e.Right#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3792,6 +4032,8 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.ScannedLeft#1 as range 5
     // closed e.ScannedRight#1 as range 13
+    //DEBUG: e.ScannedLeft#1: 5
+    //DEBUG: e.ScannedRight#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 )/20 {REMOVED TILE}
@@ -3821,6 +4063,9 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
     // closed e.ScannedLeft#1 as range 5
     // closed e.ScannedRight#1 as range 13
     // closed e.Right#1 as range 17
+    //DEBUG: e.ScannedLeft#1: 5
+    //DEBUG: e.ScannedRight#1: 13
+    //DEBUG: e.Right#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
@@ -3848,6 +4093,9 @@ static refalrts::FnResult func_Lexicon_T(refalrts::Iter arg_begin, refalrts::Ite
   // closed e.ScannedLeft#1 as range 5
   // closed e.Left#1 as range 9
   // closed e.ScannedRight#1 as range 13
+  //DEBUG: e.ScannedLeft#1: 5
+  //DEBUG: e.Left#1: 9
+  //DEBUG: e.ScannedRight#1: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} {REMOVED TILE} (/19 )/20 >/1 {REMOVED TILE}
@@ -3877,6 +4125,7 @@ refalrts::RefalFunction& Lexicon_T = descr_Lexicon_T;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Lexicon_T_Aux {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Lexicon_T
     };
@@ -3913,6 +4162,12 @@ namespace /* unnamed */ {
       // closed e.ScannedRight#1 as range 9
       // closed e.Left#1 as range 17
       // closed e.Right#1 as range 13
+      //DEBUG: t.NextLeft#1: 22
+      //DEBUG: t.NextRight#1: 24
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 9
+      //DEBUG: e.Left#1: 17
+      //DEBUG: e.Right#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 '<'/21 {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '<'/0 HalfReuse: (/4 } Tile{ AsIs: e.ScannedLeft#1/5 } Tile{ AsIs: t.NextLeft#1/22 } Tile{ AsIs: e.Left#1/17 } Tile{ AsIs: )/20 AsIs: (/15 } Tile{ AsIs: e.ScannedRight#1/9 } Tile{ AsIs: t.NextRight#1/24 } Tile{ AsIs: e.Right#1/13 } Tile{ HalfReuse: )/1 ]] }
@@ -3940,6 +4195,12 @@ namespace /* unnamed */ {
       // closed e.ScannedRight#1 as range 9
       // closed e.Left#1 as range 17
       // closed e.Right#1 as range 13
+      //DEBUG: t.NextLeft#1: 22
+      //DEBUG: t.NextRight#1: 24
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 9
+      //DEBUG: e.Left#1: 17
+      //DEBUG: e.Right#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Lexicon-T/4 AsIs: (/7 } Tile{ AsIs: e.ScannedLeft#1/5 } Tile{ AsIs: t.NextLeft#1/22 } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Left#1/17 } Tile{ AsIs: )/12 HalfReuse: (/21 } Tile{ AsIs: e.ScannedRight#1/9 } Tile{ AsIs: t.NextRight#1/24 } Tile{ AsIs: )/20 AsIs: (/15 AsIs: e.Right#1/13 AsIs: )/16 AsIs: >/1 ]] }
@@ -3969,6 +4230,12 @@ namespace /* unnamed */ {
       // closed e.ScannedRight#1 as range 9
       // closed e.Left#1 as range 17
       // closed e.Right#1 as range 13
+      //DEBUG: t.NextLeft#1: 22
+      //DEBUG: t.NextRight#1: 24
+      //DEBUG: e.ScannedLeft#1: 5
+      //DEBUG: e.ScannedRight#1: 9
+      //DEBUG: e.Left#1: 17
+      //DEBUG: e.Right#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 '>'/21 {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '>'/0 HalfReuse: (/4 } Tile{ AsIs: e.ScannedLeft#1/5 } Tile{ AsIs: t.NextLeft#1/22 } Tile{ AsIs: e.Left#1/17 } Tile{ AsIs: )/20 AsIs: (/15 } Tile{ AsIs: e.ScannedRight#1/9 } Tile{ AsIs: t.NextRight#1/24 } Tile{ AsIs: e.Right#1/13 } Tile{ HalfReuse: )/1 ]] }
@@ -4000,7 +4267,8 @@ refalrts::RASLFunction descr_Lexicon_T_Aux(
   scope_Lexicon_T_Aux::functions,
   scope_Lexicon_T_Aux::idents,
   scope_Lexicon_T_Aux::numbers,
-  scope_Lexicon_T_Aux::strings
+  scope_Lexicon_T_Aux::strings,
+  scope_Lexicon_T_Aux::filename
 );
 refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
 
@@ -4067,6 +4335,12 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
     // closed e.ScannedRight#1 as range 9
     // closed e.Left#1 as range 17
     // closed e.Right#1 as range 13
+    //DEBUG: t.NextLeft#1: 22
+    //DEBUG: t.NextRight#1: 24
+    //DEBUG: e.ScannedLeft#1: 5
+    //DEBUG: e.ScannedRight#1: 9
+    //DEBUG: e.Left#1: 17
+    //DEBUG: e.Right#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 '<'/21 {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE}
@@ -4101,6 +4375,12 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
     // closed e.ScannedRight#1 as range 9
     // closed e.Left#1 as range 17
     // closed e.Right#1 as range 13
+    //DEBUG: t.NextLeft#1: 22
+    //DEBUG: t.NextRight#1: 24
+    //DEBUG: e.ScannedLeft#1: 5
+    //DEBUG: e.ScannedRight#1: 9
+    //DEBUG: e.Left#1: 17
+    //DEBUG: e.Right#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE}
@@ -4137,6 +4417,12 @@ static refalrts::FnResult func_Lexicon_T_Aux(refalrts::Iter arg_begin, refalrts:
   // closed e.ScannedRight#1 as range 9
   // closed e.Left#1 as range 17
   // closed e.Right#1 as range 13
+  //DEBUG: t.NextLeft#1: 22
+  //DEBUG: t.NextRight#1: 24
+  //DEBUG: e.ScannedLeft#1: 5
+  //DEBUG: e.ScannedRight#1: 9
+  //DEBUG: e.Left#1: 17
+  //DEBUG: e.Right#1: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 '>'/21 {REMOVED TILE} {REMOVED TILE} (/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE}
@@ -4171,6 +4457,7 @@ refalrts::RefalFunction& Lexicon_T_Aux = descr_Lexicon_T_Aux;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Type {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SymbType
     };
@@ -4196,6 +4483,7 @@ namespace /* unnamed */ {
       // </0 & Type/4 (/5 e.InBracket#1/7 )/6 >/1
       {refalrts::icBracketTerm, 0, 7, 5},
       // closed e.InBracket#1 as range 7
+      //DEBUG: e.InBracket#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Type/4 (/5 e.InBracket#1/7 )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TypeBracket/1 ]] }
@@ -4207,6 +4495,7 @@ namespace /* unnamed */ {
       // s.idx
       // </0 & Type/4 s.Symbol#1/5 >/1
       {refalrts::icsVarTerm, 0, 7, 5},
+      //DEBUG: s.Symbol#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbType/4 AsIs: s.Symbol#1/5 AsIs: >/1 ]] }
@@ -4226,7 +4515,8 @@ refalrts::RASLFunction descr_Type(
   scope_Type::functions,
   scope_Type::idents,
   scope_Type::numbers,
-  scope_Type::strings
+  scope_Type::strings,
+  scope_Type::filename
 );
 refalrts::RefalFunction& Type = descr_Type;
 
@@ -4257,6 +4547,7 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
     // closed e.InBracket#1 as range 7
+    //DEBUG: e.InBracket#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Type/4 (/5 e.InBracket#1/7 )/6 {REMOVED TILE}
@@ -4275,6 +4566,7 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
   // </0 & Type/4 s.Symbol#1/5 >/1
   if( ! refalrts::svar_term( context[7], context[5] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Symbol#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -4292,6 +4584,7 @@ refalrts::RefalFunction& Type = descr_Type;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Type_T {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SymbType
     };
@@ -4318,6 +4611,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 9},
       // closed e.InBrackets#1 as range 5
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: e.InBrackets#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TypeBracket/4 AsIs: (/7 AsIs: e.InBrackets#1/5 AsIs: )/8 } Tile{ AsIs: e.Tail#1/9(2) } Tile{ ]] }
@@ -4335,6 +4630,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 9, 2},
       {refalrts::icsVarLeft, 0, 5, 9},
       // closed e.Tail#1 as range 9(2)
+      //DEBUG: s.Symbol#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SymbType/4 AsIs: s.Symbol#1/5 } Tile{ AsIs: >/1 } s.Symbol#1/5/6 Tile{ AsIs: e.Tail#1/9(2) } Tile{ ]] }
@@ -4370,7 +4667,8 @@ refalrts::RASLFunction descr_Type_T(
   scope_Type_T::functions,
   scope_Type_T::idents,
   scope_Type_T::numbers,
-  scope_Type_T::strings
+  scope_Type_T::strings,
+  scope_Type_T::filename
 );
 refalrts::RefalFunction& Type_T = descr_Type_T;
 
@@ -4402,6 +4700,8 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
     refalrts::bracket_pointers(context[7], context[8]);
     // closed e.InBrackets#1 as range 5
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: e.InBrackets#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4427,6 +4727,8 @@ static refalrts::FnResult func_Type_T(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! refalrts::svar_left( context[5], context[9], context[10] ) )
       continue;
     // closed e.Tail#1 as range 9(2)
+    //DEBUG: s.Symbol#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4471,6 +4773,7 @@ refalrts::RefalFunction& Type_T = descr_Type_T;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Trim {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Trim_R,
       & Trim_L
@@ -4486,6 +4789,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Line#1 as range 2
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & Trim-L/6 Tile{ AsIs: </0 Reuse: & Trim-R/4 AsIs: e.Line#1/2 AsIs: >/1 } >/7 Tile{ ]] }
@@ -4514,7 +4818,8 @@ refalrts::RASLFunction descr_Trim(
   scope_Trim::functions,
   scope_Trim::idents,
   scope_Trim::numbers,
-  scope_Trim::strings
+  scope_Trim::strings,
+  scope_Trim::filename
 );
 refalrts::RefalFunction& Trim = descr_Trim;
 
@@ -4531,6 +4836,7 @@ static refalrts::FnResult func_Trim(refalrts::Iter arg_begin, refalrts::Iter arg
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Line#1 as range 2
+  //DEBUG: e.Line#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4563,6 +4869,7 @@ refalrts::RefalFunction& Trim = descr_Trim;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Trim_L {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Trim_L
     };
@@ -4586,6 +4893,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>(' '), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
@@ -4603,6 +4911,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\t'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
@@ -4620,6 +4929,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\r'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
@@ -4637,6 +4947,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\n'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Trim-L/5 AsIs: e.Line#1/6(2) AsIs: >/1 ]] }
@@ -4651,6 +4962,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & Trim-L/4 e.Line#1/2 >/1
       // closed e.Line#1 as range 2
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Trim-L/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/2 } Tile{ ]] }
@@ -4670,7 +4982,8 @@ refalrts::RASLFunction descr_Trim_L(
   scope_Trim_L::functions,
   scope_Trim_L::idents,
   scope_Trim_L::numbers,
-  scope_Trim_L::strings
+  scope_Trim_L::strings,
+  scope_Trim_L::filename
 );
 refalrts::RefalFunction& Trim_L = descr_Trim_L;
 
@@ -4698,6 +5011,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -4724,6 +5038,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -4750,6 +5065,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -4776,6 +5092,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -4796,6 +5113,7 @@ static refalrts::FnResult func_Trim_L(refalrts::Iter arg_begin, refalrts::Iter a
   // e.idx
   // </0 & Trim-L/4 e.Line#1/2 >/1
   // closed e.Line#1 as range 2
+  //DEBUG: e.Line#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Trim-L/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4816,6 +5134,7 @@ refalrts::RefalFunction& Trim_L = descr_Trim_L;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Trim_R {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -4837,6 +5156,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharRightSave, 5, static_cast<unsigned char>(' '), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Trim-R/4 AsIs: e.Line#1/6(2) HalfReuse: >/5 } Tile{ ]] }
@@ -4853,6 +5173,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharRightSave, 5, static_cast<unsigned char>('\t'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Trim-R/4 AsIs: e.Line#1/6(2) HalfReuse: >/5 } Tile{ ]] }
@@ -4869,6 +5190,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharRightSave, 5, static_cast<unsigned char>('\r'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Trim-R/4 AsIs: e.Line#1/6(2) HalfReuse: >/5 } Tile{ ]] }
@@ -4885,6 +5207,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 6, 2},
       {refalrts::icCharRightSave, 5, static_cast<unsigned char>('\n'), 6},
       // closed e.Line#1 as range 6(2)
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & Trim-R/4 AsIs: e.Line#1/6(2) HalfReuse: >/5 } Tile{ ]] }
@@ -4898,6 +5221,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & Trim-R/4 e.Line#1/2 >/1
       // closed e.Line#1 as range 2
+      //DEBUG: e.Line#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Trim-R/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/2 } Tile{ ]] }
@@ -4917,7 +5241,8 @@ refalrts::RASLFunction descr_Trim_R(
   scope_Trim_R::functions,
   scope_Trim_R::idents,
   scope_Trim_R::numbers,
-  scope_Trim_R::strings
+  scope_Trim_R::strings,
+  scope_Trim_R::filename
 );
 refalrts::RefalFunction& Trim_R = descr_Trim_R;
 
@@ -4945,6 +5270,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4970,6 +5296,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4995,6 +5322,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5020,6 +5348,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! context[5] )
       continue;
     // closed e.Line#1 as range 6(2)
+    //DEBUG: e.Line#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5039,6 +5368,7 @@ static refalrts::FnResult func_Trim_R(refalrts::Iter arg_begin, refalrts::Iter a
   // e.idx
   // </0 & Trim-R/4 e.Line#1/2 >/1
   // closed e.Line#1 as range 2
+  //DEBUG: e.Line#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Trim-R/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5059,6 +5389,7 @@ refalrts::RefalFunction& Trim_R = descr_Trim_R;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Seq_S2L1 {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Seq,
       & Fetch,
@@ -5078,6 +5409,9 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 7, 2},
       // closed e.Funcs#1 as range 7
       // closed e.Arg#2 as range 2
+      //DEBUG: t.Func#1: 5
+      //DEBUG: e.Funcs#1: 7
+      //DEBUG: e.Arg#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 & Apply/12 Tile{ AsIs: t.Func#1/5 } Tile{ AsIs: e.Arg#2/2 } >/13 </14 Tile{ HalfReuse: & Seq/9 AsIs: e.Funcs#1/7 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
@@ -5114,7 +5448,8 @@ refalrts::RASLFunction descr_gen_Seq_S2L1(
   scope_gen_Seq_S2L1::functions,
   scope_gen_Seq_S2L1::idents,
   scope_gen_Seq_S2L1::numbers,
-  scope_gen_Seq_S2L1::strings
+  scope_gen_Seq_S2L1::strings,
+  scope_gen_Seq_S2L1::filename
 );
 refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
 
@@ -5143,6 +5478,9 @@ static refalrts::FnResult func_gen_Seq_S2L1(refalrts::Iter arg_begin, refalrts::
   refalrts::bracket_pointers(context[9], context[10]);
   // closed e.Funcs#1 as range 7
   // closed e.Arg#2 as range 2
+  //DEBUG: t.Func#1: 5
+  //DEBUG: e.Funcs#1: 7
+  //DEBUG: e.Arg#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5186,6 +5524,7 @@ refalrts::RefalFunction& gen_Seq_S2L1 = descr_gen_Seq_S2L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Seq_S3L1 {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -5198,6 +5537,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Arg#2 as range 2
+      //DEBUG: e.Arg#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Seq$3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Arg#2/2 } Tile{ ]] }
@@ -5218,7 +5558,8 @@ refalrts::RASLFunction descr_gen_Seq_S3L1(
   scope_gen_Seq_S3L1::functions,
   scope_gen_Seq_S3L1::idents,
   scope_gen_Seq_S3L1::numbers,
-  scope_gen_Seq_S3L1::strings
+  scope_gen_Seq_S3L1::strings,
+  scope_gen_Seq_S3L1::filename
 );
 refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
 
@@ -5237,6 +5578,7 @@ static refalrts::FnResult func_gen_Seq_S3L1(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Arg#2 as range 2
+  //DEBUG: e.Arg#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Seq$3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5260,6 +5602,7 @@ refalrts::RefalFunction& gen_Seq_S3L1 = descr_gen_Seq_S3L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Seq {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_Seq_S3L1,
       & refalrts::create_closure,
@@ -5285,6 +5628,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 10, 2},
       {refalrts::ictVarLeftSave, 0, 5, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: t.Func#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Seq/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Func#1/5 } Tile{ ]] }
@@ -5299,6 +5643,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 10, 2},
       {refalrts::ictVarLeftSave, 0, 5, 10},
       // closed e.Funcs#1 as range 10(2)
+      //DEBUG: t.Func#1: 5
+      //DEBUG: e.Funcs#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & @create_closure@/4 } & Seq$2\1/7 Tile{ AsIs: t.Func#1/5 } (/8 Tile{ AsIs: e.Funcs#1/10(2) } )/9 Tile{ AsIs: >/1 ]] }
@@ -5339,7 +5685,8 @@ refalrts::RASLFunction descr_Seq(
   scope_Seq::functions,
   scope_Seq::idents,
   scope_Seq::numbers,
-  scope_Seq::strings
+  scope_Seq::strings,
+  scope_Seq::filename
 );
 refalrts::RefalFunction& Seq = descr_Seq;
 
@@ -5368,6 +5715,7 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: t.Func#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Seq/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5391,6 +5739,8 @@ static refalrts::FnResult func_Seq(refalrts::Iter arg_begin, refalrts::Iter arg_
     if( ! context[6] )
       continue;
     // closed e.Funcs#1 as range 10(2)
+    //DEBUG: t.Func#1: 5
+    //DEBUG: e.Funcs#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5442,6 +5792,7 @@ refalrts::RefalFunction& Seq = descr_Seq;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Sort_S2L1L1 {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -5472,6 +5823,10 @@ namespace /* unnamed */ {
       // closed e.Less#2 as range 5
       // closed e.Equal#2 as range 11
       // closed e.Greater#2 as range 15
+      //DEBUG: t.Next#2: 9
+      //DEBUG: e.Less#2: 5
+      //DEBUG: e.Equal#2: 11
+      //DEBUG: e.Greater#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 } Tile{ AsIs: e.Less#2/5 } Tile{ AsIs: t.Next#2/9 } Tile{ AsIs: )/8 } Tile{ AsIs: (/13 AsIs: e.Equal#2/11 AsIs: )/14 AsIs: (/17 AsIs: e.Greater#2/15 AsIs: )/18 HalfReuse: )/19 } Tile{ ]] }
@@ -5497,6 +5852,10 @@ namespace /* unnamed */ {
       // closed e.Less#2 as range 5
       // closed e.Equal#2 as range 11
       // closed e.Greater#2 as range 15
+      //DEBUG: t.Next#2: 9
+      //DEBUG: e.Less#2: 5
+      //DEBUG: e.Equal#2: 11
+      //DEBUG: e.Greater#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.Less#2/5 AsIs: )/8 } Tile{ AsIs: (/13 } Tile{ AsIs: e.Equal#2/11 } Tile{ AsIs: t.Next#2/9 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: e.Greater#2/15 AsIs: )/18 HalfReuse: )/19 } Tile{ ]] }
@@ -5521,6 +5880,10 @@ namespace /* unnamed */ {
       // closed e.Less#2 as range 5
       // closed e.Equal#2 as range 11
       // closed e.Greater#2 as range 15
+      //DEBUG: t.Next#2: 9
+      //DEBUG: e.Less#2: 5
+      //DEBUG: e.Equal#2: 11
+      //DEBUG: e.Greater#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/18 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.Less#2/5 AsIs: )/8 } Tile{ AsIs: (/13 AsIs: e.Equal#2/11 AsIs: )/14 AsIs: (/17 } Tile{ AsIs: e.Greater#2/15 } Tile{ AsIs: t.Next#2/9 } Tile{ HalfReuse: )/19 HalfReuse: )/1 ]] }
@@ -5551,7 +5914,8 @@ refalrts::RASLFunction descr_gen_Sort_S2L1L1(
   scope_gen_Sort_S2L1L1::functions,
   scope_gen_Sort_S2L1L1::idents,
   scope_gen_Sort_S2L1L1::numbers,
-  scope_gen_Sort_S2L1L1::strings
+  scope_gen_Sort_S2L1L1::strings,
+  scope_gen_Sort_S2L1L1::filename
 );
 refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
 
@@ -5607,6 +5971,10 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
     // closed e.Less#2 as range 5
     // closed e.Equal#2 as range 11
     // closed e.Greater#2 as range 15
+    //DEBUG: t.Next#2: 9
+    //DEBUG: e.Less#2: 5
+    //DEBUG: e.Equal#2: 11
+    //DEBUG: e.Greater#2: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5639,6 +6007,10 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
     // closed e.Less#2 as range 5
     // closed e.Equal#2 as range 11
     // closed e.Greater#2 as range 15
+    //DEBUG: t.Next#2: 9
+    //DEBUG: e.Less#2: 5
+    //DEBUG: e.Equal#2: 11
+    //DEBUG: e.Greater#2: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5670,6 +6042,10 @@ static refalrts::FnResult func_gen_Sort_S2L1L1(refalrts::Iter arg_begin, refalrt
   // closed e.Less#2 as range 5
   // closed e.Equal#2 as range 11
   // closed e.Greater#2 as range 15
+  //DEBUG: t.Next#2: 9
+  //DEBUG: e.Less#2: 5
+  //DEBUG: e.Equal#2: 11
+  //DEBUG: e.Greater#2: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/18 {REMOVED TILE}
@@ -5703,6 +6079,7 @@ refalrts::RefalFunction& gen_Sort_S2L1L1 = descr_gen_Sort_S2L1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Sort_S2L1 {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_Sort_S2L1L1,
       & Fetch,
@@ -5730,6 +6107,11 @@ namespace /* unnamed */ {
       // closed e.Greater#2 as range 19
       {refalrts::ictVarLeftSave, 0, 23, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: t.Pivot#1: 5
+      //DEBUG: e.Less#2: 11
+      //DEBUG: e.Equal#2: 15
+      //DEBUG: e.Greater#2: 19
+      //DEBUG: t.Next#2: 23
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </25 & Compare/26 Tile{ AsIs: t.Next#2/23 } Tile{ AsIs: t.Pivot#1/5 } >/27 </28 & @create_closure@/29 Tile{ HalfReuse: & Sort$2\1\1/9 AsIs: (/13 AsIs: e.Less#2/11 AsIs: )/14 } t.Next#2/23/30 Tile{ AsIs: (/17 AsIs: e.Equal#2/15 AsIs: )/18 AsIs: (/21 AsIs: e.Greater#2/19 AsIs: )/22 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
@@ -5773,7 +6155,8 @@ refalrts::RASLFunction descr_gen_Sort_S2L1(
   scope_gen_Sort_S2L1::functions,
   scope_gen_Sort_S2L1::idents,
   scope_gen_Sort_S2L1::numbers,
-  scope_gen_Sort_S2L1::strings
+  scope_gen_Sort_S2L1::strings,
+  scope_gen_Sort_S2L1::filename
 );
 refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
 
@@ -5828,6 +6211,11 @@ static refalrts::FnResult func_gen_Sort_S2L1(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Pivot#1: 5
+  //DEBUG: e.Less#2: 11
+  //DEBUG: e.Equal#2: 15
+  //DEBUG: e.Greater#2: 19
+  //DEBUG: t.Next#2: 23
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5880,6 +6268,7 @@ refalrts::RefalFunction& gen_Sort_S2L1 = descr_gen_Sort_S2L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Sort_S2L2 {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Sort
     };
@@ -5902,6 +6291,9 @@ namespace /* unnamed */ {
       // closed e.Less#2 as range 9
       // closed e.Equal#2 as range 13
       // closed e.Greater#2 as range 17
+      //DEBUG: e.Less#2: 9
+      //DEBUG: e.Equal#2: 13
+      //DEBUG: e.Greater#2: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 (/11 {REMOVED TILE} )/12 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sort/4 } Tile{ AsIs: e.Less#2/9 } Tile{ HalfReuse: >/15 AsIs: e.Equal#2/13 HalfReuse: </16 HalfReuse: & Sort/19 AsIs: e.Greater#2/17 HalfReuse: >/20 } Tile{ ]] }
@@ -5932,7 +6324,8 @@ refalrts::RASLFunction descr_gen_Sort_S2L2(
   scope_gen_Sort_S2L2::functions,
   scope_gen_Sort_S2L2::idents,
   scope_gen_Sort_S2L2::numbers,
-  scope_gen_Sort_S2L2::strings
+  scope_gen_Sort_S2L2::strings,
+  scope_gen_Sort_S2L2::filename
 );
 refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
 
@@ -5981,6 +6374,9 @@ static refalrts::FnResult func_gen_Sort_S2L2(refalrts::Iter arg_begin, refalrts:
   // closed e.Less#2 as range 9
   // closed e.Equal#2 as range 13
   // closed e.Greater#2 as range 17
+  //DEBUG: e.Less#2: 9
+  //DEBUG: e.Equal#2: 13
+  //DEBUG: e.Greater#2: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 (/11 {REMOVED TILE} )/12 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
@@ -6014,6 +6410,7 @@ refalrts::RefalFunction& gen_Sort_S2L2 = descr_gen_Sort_S2L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Sort {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_Sort_S2L2,
@@ -6052,6 +6449,8 @@ namespace /* unnamed */ {
       // </0 & Sort/4 t.Pivot#1/5 e.Items#1/2 >/1
       {refalrts::ictVarLeftSave, 0, 5, 2},
       // closed e.Items#1 as range 2
+      //DEBUG: t.Pivot#1: 5
+      //DEBUG: e.Items#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Items#1/2 } </7 & Seq/8 (/9 & Reduce/10 </11 & @create_closure@/12 & Sort$2\1/13 Tile{ AsIs: t.Pivot#1/5 } >/14 (/15 (/16 )/17 (/18 t.Pivot#1/5/19 )/21 (/22 )/23 )/24 )/25 & Sort$2\2/26 >/27 Tile{ AsIs: >/1 ]] }
@@ -6105,7 +6504,8 @@ refalrts::RASLFunction descr_Sort(
   scope_Sort::functions,
   scope_Sort::idents,
   scope_Sort::numbers,
-  scope_Sort::strings
+  scope_Sort::strings,
+  scope_Sort::filename
 );
 refalrts::RefalFunction& Sort = descr_Sort;
 
@@ -6150,6 +6550,8 @@ static refalrts::FnResult func_Sort(refalrts::Iter arg_begin, refalrts::Iter arg
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Items#1 as range 2
+  //DEBUG: t.Pivot#1: 5
+  //DEBUG: e.Items#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6224,6 +6626,7 @@ refalrts::RefalFunction& Sort = descr_Sort;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Min_S1L1 {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -6246,6 +6649,8 @@ namespace /* unnamed */ {
       // t.idx t.idx '<'
       // </0 & Min$1\1/4 t.X#1/5 t.Y#1/7 '<'/9 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 9},
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Min$1\1/4 {REMOVED TILE} t.Y#1/7 '<'/9 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.X#1/5 } Tile{ ]] }
@@ -6256,6 +6661,9 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx t.idx s.idx
       // </0 & Min$1\1/4 t.X#1/5 t.Y#1/7 s.Other#2/9 >/1
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
+      //DEBUG: s.Other#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Min$1\1/4 t.X#1/5 {REMOVED TILE} s.Other#2/9 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Y#1/7 } Tile{ ]] }
@@ -6276,7 +6684,8 @@ refalrts::RASLFunction descr_gen_Min_S1L1(
   scope_gen_Min_S1L1::functions,
   scope_gen_Min_S1L1::idents,
   scope_gen_Min_S1L1::numbers,
-  scope_gen_Min_S1L1::strings
+  scope_gen_Min_S1L1::strings,
+  scope_gen_Min_S1L1::filename
 );
 refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
 
@@ -6311,6 +6720,8 @@ static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::
     // </0 & Min$1\1/4 t.X#1/5 t.Y#1/7 '<'/9 >/1
     if( ! refalrts::char_term( '<', context[9] ) )
       continue;
+    //DEBUG: t.X#1: 5
+    //DEBUG: t.Y#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Min$1\1/4 {REMOVED TILE} t.Y#1/7 '<'/9 >/1 {REMOVED TILE}
@@ -6327,6 +6738,9 @@ static refalrts::FnResult func_gen_Min_S1L1(refalrts::Iter arg_begin, refalrts::
 
   // t.idx t.idx s.idx
   // </0 & Min$1\1/4 t.X#1/5 t.Y#1/7 s.Other#2/9 >/1
+  //DEBUG: t.X#1: 5
+  //DEBUG: t.Y#1: 7
+  //DEBUG: s.Other#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Min$1\1/4 t.X#1/5 {REMOVED TILE} s.Other#2/9 >/1 {REMOVED TILE}
@@ -6350,6 +6764,7 @@ refalrts::RefalFunction& gen_Min_S1L1 = descr_gen_Min_S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Min {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Reduce,
       & Compare,
@@ -6378,6 +6793,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 20, 2},
       {refalrts::ictVarLeftSave, 0, 7, 20},
       {refalrts::icEmpty, 0, 0, 20},
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: </0 Reuse: & Compare/4 AsIs: t.X#1/5 AsIs: t.Y#1/7 AsIs: >/1 } </11 & @create_closure@/12 & Min$1\1/13 t.X#1/5/14 t.Y#1/7/16 >/18 >/19 Tile{ ]] }
@@ -6406,6 +6823,8 @@ namespace /* unnamed */ {
       // t.idx e.idx
       // </0 & Min/4 t.First#1/5 e.Tail#1/2 >/1
       // closed e.Tail#1 as range 2
+      //DEBUG: t.First#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & Reduce/0 AsIs: & Min/4 AsIs: t.First#1/5 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
@@ -6428,7 +6847,8 @@ refalrts::RASLFunction descr_Min(
   scope_Min::functions,
   scope_Min::idents,
   scope_Min::numbers,
-  scope_Min::strings
+  scope_Min::strings,
+  scope_Min::filename
 );
 refalrts::RefalFunction& Min = descr_Min;
 
@@ -6460,6 +6880,8 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[20], context[21] ) )
       continue;
+    //DEBUG: t.X#1: 5
+    //DEBUG: t.Y#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6503,6 +6925,8 @@ static refalrts::FnResult func_Min(refalrts::Iter arg_begin, refalrts::Iter arg_
   // t.idx e.idx
   // </0 & Min/4 t.First#1/5 e.Tail#1/2 >/1
   // closed e.Tail#1 as range 2
+  //DEBUG: t.First#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -6527,6 +6951,7 @@ refalrts::RefalFunction& Min = descr_Min;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Max_S1L1 {
+    static const char *filename = "LibraryEx.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -6549,6 +6974,8 @@ namespace /* unnamed */ {
       // t.idx t.idx '>'
       // </0 & Max$1\1/4 t.X#1/5 t.Y#1/7 '>'/9 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('>'), 9},
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Max$1\1/4 {REMOVED TILE} t.Y#1/7 '>'/9 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.X#1/5 } Tile{ ]] }
@@ -6559,6 +6986,9 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx t.idx s.idx
       // </0 & Max$1\1/4 t.X#1/5 t.Y#1/7 s.Other#2/9 >/1
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
+      //DEBUG: s.Other#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Max$1\1/4 t.X#1/5 {REMOVED TILE} s.Other#2/9 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Y#1/7 } Tile{ ]] }
@@ -6579,7 +7009,8 @@ refalrts::RASLFunction descr_gen_Max_S1L1(
   scope_gen_Max_S1L1::functions,
   scope_gen_Max_S1L1::idents,
   scope_gen_Max_S1L1::numbers,
-  scope_gen_Max_S1L1::strings
+  scope_gen_Max_S1L1::strings,
+  scope_gen_Max_S1L1::filename
 );
 refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
 
@@ -6614,6 +7045,8 @@ static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::
     // </0 & Max$1\1/4 t.X#1/5 t.Y#1/7 '>'/9 >/1
     if( ! refalrts::char_term( '>', context[9] ) )
       continue;
+    //DEBUG: t.X#1: 5
+    //DEBUG: t.Y#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Max$1\1/4 {REMOVED TILE} t.Y#1/7 '>'/9 >/1 {REMOVED TILE}
@@ -6630,6 +7063,9 @@ static refalrts::FnResult func_gen_Max_S1L1(refalrts::Iter arg_begin, refalrts::
 
   // t.idx t.idx s.idx
   // </0 & Max$1\1/4 t.X#1/5 t.Y#1/7 s.Other#2/9 >/1
+  //DEBUG: t.X#1: 5
+  //DEBUG: t.Y#1: 7
+  //DEBUG: s.Other#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Max$1\1/4 t.X#1/5 {REMOVED TILE} s.Other#2/9 >/1 {REMOVED TILE}
@@ -6653,6 +7089,7 @@ refalrts::RefalFunction& gen_Max_S1L1 = descr_gen_Max_S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Max {
+    static const char *filename = "LibraryEx.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Reduce,
       & Compare,
@@ -6681,6 +7118,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 20, 2},
       {refalrts::ictVarLeftSave, 0, 7, 20},
       {refalrts::icEmpty, 0, 0, 20},
+      //DEBUG: t.X#1: 5
+      //DEBUG: t.Y#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: </0 Reuse: & Compare/4 AsIs: t.X#1/5 AsIs: t.Y#1/7 AsIs: >/1 } </11 & @create_closure@/12 & Max$1\1/13 t.X#1/5/14 t.Y#1/7/16 >/18 >/19 Tile{ ]] }
@@ -6709,6 +7148,8 @@ namespace /* unnamed */ {
       // t.idx e.idx
       // </0 & Max/4 t.First#1/5 e.Tail#1/2 >/1
       // closed e.Tail#1 as range 2
+      //DEBUG: t.First#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & Reduce/0 AsIs: & Max/4 AsIs: t.First#1/5 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
@@ -6731,7 +7172,8 @@ refalrts::RASLFunction descr_Max(
   scope_Max::functions,
   scope_Max::idents,
   scope_Max::numbers,
-  scope_Max::strings
+  scope_Max::strings,
+  scope_Max::filename
 );
 refalrts::RefalFunction& Max = descr_Max;
 
@@ -6763,6 +7205,8 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[20], context[21] ) )
       continue;
+    //DEBUG: t.X#1: 5
+    //DEBUG: t.Y#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6806,6 +7250,8 @@ static refalrts::FnResult func_Max(refalrts::Iter arg_begin, refalrts::Iter arg_
   // t.idx e.idx
   // </0 & Max/4 t.First#1/5 e.Tail#1/2 >/1
   // closed e.Tail#1 as range 2
+  //DEBUG: t.First#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}

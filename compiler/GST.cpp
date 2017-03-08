@@ -246,6 +246,7 @@ extern refalrts::RefalFunction& OverlapItem;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GST_L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Enum
     };
@@ -264,6 +265,9 @@ namespace /* unnamed */ {
       // closed e.Pattern#1 as range 5
       // closed e.Result#1 as range 9
       // closed e.Tiles#2 as range 2
+      //DEBUG: e.Pattern#1: 5
+      //DEBUG: e.Result#1: 9
+      //DEBUG: e.Tiles#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/13 Tile{ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Enum/7 AsIs: e.Pattern#1/5 HalfReuse: >/8 HalfReuse: )/11 } (/14 </15 & Enum/16 Tile{ AsIs: e.Result#1/9 } Tile{ AsIs: >/1 } Tile{ AsIs: )/12 } )/17 Tile{ AsIs: e.Tiles#2/2 } Tile{ ]] }
@@ -307,7 +311,8 @@ refalrts::RASLFunction descr_gen_GST_L1(
   scope_gen_GST_L1::functions,
   scope_gen_GST_L1::idents,
   scope_gen_GST_L1::numbers,
-  scope_gen_GST_L1::strings
+  scope_gen_GST_L1::strings,
+  scope_gen_GST_L1::filename
 );
 refalrts::RefalFunction& gen_GST_L1 = descr_gen_GST_L1;
 
@@ -340,6 +345,9 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
   // closed e.Tiles#2 as range 2
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
+  //DEBUG: e.Tiles#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -391,6 +399,7 @@ refalrts::RefalFunction& gen_GST_L1 = descr_gen_GST_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GST_L2 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ReplaceTile
     };
@@ -412,6 +421,9 @@ namespace /* unnamed */ {
       // closed e.Result#2 as range 13
       {refalrts::ictVarLeftSave, 0, 17, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Pattern#2: 9
+      //DEBUG: e.Result#2: 13
+      //DEBUG: t.Tile#2: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & ReplaceTile/7 AsIs: (/11 AsIs: e.Pattern#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 } Tile{ AsIs: t.Tile#2/17 AsIs: >/1 } Tile{ AsIs: )/8 } Tile{ ]] }
@@ -440,7 +452,8 @@ refalrts::RASLFunction descr_gen_GST_L2(
   scope_gen_GST_L2::functions,
   scope_gen_GST_L2::idents,
   scope_gen_GST_L2::numbers,
-  scope_gen_GST_L2::strings
+  scope_gen_GST_L2::strings,
+  scope_gen_GST_L2::filename
 );
 refalrts::RefalFunction& gen_GST_L2 = descr_gen_GST_L2;
 
@@ -485,6 +498,9 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Pattern#2: 9
+  //DEBUG: e.Result#2: 13
+  //DEBUG: t.Tile#2: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -516,6 +532,7 @@ refalrts::RefalFunction& gen_GST_L2 = descr_gen_GST_L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_GST_L3 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DeEnum
     };
@@ -536,6 +553,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Trash#2 as range 9
       // closed e.MarkedResult#2 as range 13
+      //DEBUG: e.Trash#2: 9
+      //DEBUG: e.MarkedResult#2: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & DeEnum/7 } Tile{ AsIs: e.Trash#2/9 } Tile{ AsIs: >/1 } )/17 Tile{ AsIs: (/11 } Tile{ HalfReuse: </12 HalfReuse: & DeEnum/15 AsIs: e.MarkedResult#2/13 HalfReuse: >/16 AsIs: )/8 } Tile{ ]] }
@@ -572,7 +591,8 @@ refalrts::RASLFunction descr_gen_GST_L3(
   scope_gen_GST_L3::functions,
   scope_gen_GST_L3::idents,
   scope_gen_GST_L3::numbers,
-  scope_gen_GST_L3::strings
+  scope_gen_GST_L3::strings,
+  scope_gen_GST_L3::filename
 );
 refalrts::RefalFunction& gen_GST_L3 = descr_gen_GST_L3;
 
@@ -614,6 +634,8 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   // closed e.Trash#2 as range 9
   // closed e.MarkedResult#2 as range 13
+  //DEBUG: e.Trash#2: 9
+  //DEBUG: e.MarkedResult#2: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -654,6 +676,7 @@ refalrts::RefalFunction& gen_GST_L3 = descr_gen_GST_L3;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GST {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_GST_L3,
@@ -680,6 +703,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Pattern#1 as range 5
       // closed e.Result#1 as range 9
+      //DEBUG: e.Pattern#1: 5
+      //DEBUG: e.Result#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 HalfReuse: </1 } & Seq/13 & TileCandidates/14 & FilterOverlapped/15 </16 & @create_closure@/17 & GST\1/18 (/19 e.Pattern#1/5/20 )/22 (/23 e.Result#1/9/24 )/26 >/27 (/28 & Reduce/29 & GST\2/30 )/31 & GST\3/32 >/33 >/34 Tile{ ]] }
@@ -731,7 +756,8 @@ refalrts::RASLFunction descr_GST(
   scope_GST::functions,
   scope_GST::idents,
   scope_GST::numbers,
-  scope_GST::strings
+  scope_GST::strings,
+  scope_GST::filename
 );
 refalrts::RefalFunction& GST = descr_GST;
 
@@ -763,6 +789,8 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -835,6 +863,7 @@ refalrts::RefalFunction& GST = descr_GST;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Enum_L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc
     };
@@ -853,6 +882,8 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::ictVarLeftSave, 0, 6, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#2: 5
+      //DEBUG: t.Item#2: 6
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </8 & Inc/9 s.Num#2/5/10 >/11 Tile{ HalfReuse: (/0 HalfReuse: # Num/4 AsIs: s.Num#2/5 AsIs: t.Item#2/6 HalfReuse: )/1 ]] }
@@ -882,7 +913,8 @@ refalrts::RASLFunction descr_gen_Enum_L1(
   scope_gen_Enum_L1::functions,
   scope_gen_Enum_L1::idents,
   scope_gen_Enum_L1::numbers,
-  scope_gen_Enum_L1::strings
+  scope_gen_Enum_L1::strings,
+  scope_gen_Enum_L1::filename
 );
 refalrts::RefalFunction& gen_Enum_L1 = descr_gen_Enum_L1;
 
@@ -907,6 +939,8 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#2: 5
+  //DEBUG: t.Item#2: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -943,6 +977,7 @@ refalrts::RefalFunction& gen_Enum_L1 = descr_gen_Enum_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Enum {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DelAccumulator,
       & gen_Enum_L1,
@@ -959,6 +994,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Items#1 as range 2
+      //DEBUG: e.Items#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DelAccumulator/4 } </5 & MapReduce/6 & Enum\1/7 0/8 Tile{ AsIs: e.Items#1/2 } >/9 Tile{ AsIs: >/1 ]] }
@@ -990,7 +1026,8 @@ refalrts::RASLFunction descr_Enum(
   scope_Enum::functions,
   scope_Enum::idents,
   scope_Enum::numbers,
-  scope_Enum::strings
+  scope_Enum::strings,
+  scope_Enum::filename
 );
 refalrts::RefalFunction& Enum = descr_Enum;
 
@@ -1009,6 +1046,7 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Items#1 as range 2
+  //DEBUG: e.Items#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1048,6 +1086,7 @@ refalrts::RefalFunction& Enum = descr_Enum;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_DeEnum_L1 {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Tile<int>::name,
@@ -1076,6 +1115,8 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 7},
       {refalrts::ictVarLeftSave, 0, 11, 7},
       {refalrts::icEmpty, 0, 0, 7},
+      //DEBUG: s.Num#2: 10
+      //DEBUG: t.Item#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 (/5 # Num/9 s.Num#2/10 {REMOVED TILE} )/6 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Item#2/11 } Tile{ ]] }
@@ -1101,6 +1142,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       {refalrts::icIdentLeftSave, 9, 0, 7},
       // closed e.Tile#2 as range 7
+      //DEBUG: e.Tile#2: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/5 AsIs: # Tile/9 AsIs: e.Tile#2/7 AsIs: )/6 } Tile{ ]] }
@@ -1122,7 +1164,8 @@ refalrts::RASLFunction descr_gen_DeEnum_L1(
   scope_gen_DeEnum_L1::functions,
   scope_gen_DeEnum_L1::idents,
   scope_gen_DeEnum_L1::numbers,
-  scope_gen_DeEnum_L1::strings
+  scope_gen_DeEnum_L1::strings,
+  scope_gen_DeEnum_L1::filename
 );
 refalrts::RefalFunction& gen_DeEnum_L1 = descr_gen_DeEnum_L1;
 
@@ -1164,6 +1207,8 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.Num#2: 10
+    //DEBUG: t.Item#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 (/5 # Num/9 s.Num#2/10 {REMOVED TILE} )/6 >/1 {REMOVED TILE}
@@ -1207,6 +1252,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tile#2 as range 7
+  //DEBUG: e.Tile#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1231,6 +1277,7 @@ refalrts::RefalFunction& gen_DeEnum_L1 = descr_gen_DeEnum_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DeEnum {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_DeEnum_L1,
       & Map
@@ -1246,6 +1293,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Items#1 as range 2
+      //DEBUG: e.Items#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & DeEnum\1/4 AsIs: e.Items#1/2 AsIs: >/1 ]] }
@@ -1270,7 +1318,8 @@ refalrts::RASLFunction descr_DeEnum(
   scope_DeEnum::functions,
   scope_DeEnum::idents,
   scope_DeEnum::numbers,
-  scope_DeEnum::strings
+  scope_DeEnum::strings,
+  scope_DeEnum::filename
 );
 refalrts::RefalFunction& DeEnum = descr_DeEnum;
 
@@ -1289,6 +1338,7 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Items#1 as range 2
+  //DEBUG: e.Items#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -1317,6 +1367,7 @@ refalrts::RefalFunction& DeEnum = descr_DeEnum;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_TileCandidates_L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoOverlapOffsets
     };
@@ -1337,6 +1388,10 @@ namespace /* unnamed */ {
       // closed e.AlignedResult#2 as range 9
       {refalrts::ictVarRightSave, 0, 15, 5},
       // closed e.AlignedPattern#2 as range 5
+      //DEBUG: t.First#2: 13
+      //DEBUG: e.AlignedResult#2: 9
+      //DEBUG: t.Last#2: 15
+      //DEBUG: e.AlignedPattern#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoOverlapOffsets/4 AsIs: (/7 } Tile{ AsIs: e.AlignedPattern#2/5 } )/17 (/18 Tile{ AsIs: t.Last#2/15 AsIs: )/8 AsIs: (/11 AsIs: t.First#2/13 } )/19 (/20 Tile{ AsIs: e.AlignedResult#2/9 } Tile{ AsIs: )/12 AsIs: >/1 ]] }
@@ -1371,7 +1426,8 @@ refalrts::RASLFunction descr_gen_TileCandidates_L1(
   scope_gen_TileCandidates_L1::functions,
   scope_gen_TileCandidates_L1::idents,
   scope_gen_TileCandidates_L1::numbers,
-  scope_gen_TileCandidates_L1::strings
+  scope_gen_TileCandidates_L1::strings,
+  scope_gen_TileCandidates_L1::filename
 );
 refalrts::RefalFunction& gen_TileCandidates_L1 = descr_gen_TileCandidates_L1;
 
@@ -1411,6 +1467,10 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
   // closed e.AlignedPattern#2 as range 5
+  //DEBUG: t.First#2: 13
+  //DEBUG: e.AlignedResult#2: 9
+  //DEBUG: t.Last#2: 15
+  //DEBUG: e.AlignedPattern#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1452,6 +1512,7 @@ refalrts::RefalFunction& gen_TileCandidates_L1 = descr_gen_TileCandidates_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_TileCandidates {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_TileCandidates_L1,
@@ -1472,6 +1533,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Pattern#1 as range 5
       // closed e.Result#1 as range 9
+      //DEBUG: e.Pattern#1: 5
+      //DEBUG: e.Result#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & AlignEnumExprs/13 0/14 (/15 )/16 (/17 Tile{ AsIs: e.Pattern#1/5 } )/18 (/19 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } & TileCandidates\1/20 >/21 Tile{ ]] }
@@ -1514,7 +1577,8 @@ refalrts::RASLFunction descr_TileCandidates(
   scope_TileCandidates::functions,
   scope_TileCandidates::idents,
   scope_TileCandidates::numbers,
-  scope_TileCandidates::strings
+  scope_TileCandidates::strings,
+  scope_TileCandidates::filename
 );
 refalrts::RefalFunction& TileCandidates = descr_TileCandidates;
 
@@ -1548,6 +1612,8 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1602,6 +1668,7 @@ refalrts::RefalFunction& TileCandidates = descr_TileCandidates;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_AlignEnumExprs {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc,
       & AlignEnumExprs
@@ -1640,6 +1707,13 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 37, 5},
       {refalrts::ictVarLeftSave, 0, 24, 37},
       // closed e.Result#1 as range 37(5)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.ScannedPattern#1: 17
+      //DEBUG: e.ScannedResult#1: 9
+      //DEBUG: t.PatternItem#1: 22
+      //DEBUG: e.Pattern#1: 13
+      //DEBUG: t.ResultItem#1: 24
+      //DEBUG: e.Result#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </26 & Inc/27 Tile{ AsIs: s.Num#1/21 } >/28 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/17 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/22 } )/29 )/30 (/31 Tile{ AsIs: e.Pattern#1/35(13) } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/24 } )/32 )/33 (/34 Tile{ AsIs: e.Result#1/37(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1688,6 +1762,11 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 37, 5},
       {refalrts::ictVarLeftSave, 0, 22, 37},
       // closed e.Result#1 as range 37(5)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.ScannedPattern#1: 17
+      //DEBUG: e.ScannedResult#1: 9
+      //DEBUG: t.ResultItem#1: 22
+      //DEBUG: e.Result#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </24 & AlignEnumExprs/25 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/21 HalfReuse: >/19 } (/26 Tile{ AsIs: e.ScannedPattern#1/17 } (/27 s.Num#1/21/28 '*'/29 )/30 Tile{ AsIs: )/20 AsIs: (/15 AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/22 } )/31 )/32 (/33 Tile{ AsIs: e.Result#1/37(5) } Tile{ AsIs: )/8 AsIs: >/1 ]] }
@@ -1736,6 +1815,11 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 37, 13},
       {refalrts::ictVarLeftSave, 0, 22, 37},
       // closed e.Pattern#1 as range 37(13)
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.ScannedPattern#1: 17
+      //DEBUG: e.ScannedResult#1: 9
+      //DEBUG: t.PatternItem#1: 22
+      //DEBUG: e.Pattern#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </24 & Inc/25 Tile{ AsIs: s.Num#1/21 } >/26 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/17 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/22 } )/27 Tile{ AsIs: )/16 AsIs: (/11 } Tile{ AsIs: e.Pattern#1/37(13) } )/28 (/29 Tile{ AsIs: e.ScannedResult#1/9 } (/30 s.Num#1/21/31 '*'/32 )/33 Tile{ AsIs: )/12 AsIs: (/7 AsIs: )/8 AsIs: >/1 ]] }
@@ -1780,6 +1864,9 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 5},
       // closed e.ScannedPattern#1 as range 17
       // closed e.ScannedResult#1 as range 9
+      //DEBUG: s.Num#1: 21
+      //DEBUG: e.ScannedPattern#1: 17
+      //DEBUG: e.ScannedResult#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} & AlignEnumExprs/4 s.Num#1/21 (/19 {REMOVED TILE} )/20 (/15 {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.ScannedPattern#1/17 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 AsIs: )/12 } Tile{ ]] }
@@ -1804,7 +1891,8 @@ refalrts::RASLFunction descr_AlignEnumExprs(
   scope_AlignEnumExprs::functions,
   scope_AlignEnumExprs::idents,
   scope_AlignEnumExprs::numbers,
-  scope_AlignEnumExprs::strings
+  scope_AlignEnumExprs::strings,
+  scope_AlignEnumExprs::filename
 );
 refalrts::RefalFunction& AlignEnumExprs = descr_AlignEnumExprs;
 
@@ -1873,6 +1961,13 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[25] )
       continue;
     // closed e.Result#1 as range 37(5)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.PatternItem#1: 22
+    //DEBUG: e.Pattern#1: 13
+    //DEBUG: t.ResultItem#1: 24
+    //DEBUG: e.Result#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1941,6 +2036,11 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[23] )
       continue;
     // closed e.Result#1 as range 37(5)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.ResultItem#1: 22
+    //DEBUG: e.Result#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2010,6 +2110,11 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[23] )
       continue;
     // closed e.Pattern#1 as range 37(13)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.PatternItem#1: 22
+    //DEBUG: e.Pattern#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2072,6 +2177,9 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.ScannedPattern#1 as range 17
   // closed e.ScannedResult#1 as range 9
+  //DEBUG: s.Num#1: 21
+  //DEBUG: e.ScannedPattern#1: 17
+  //DEBUG: e.ScannedResult#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & AlignEnumExprs/4 s.Num#1/21 (/19 {REMOVED TILE} )/20 (/15 {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
@@ -2099,6 +2207,7 @@ refalrts::RefalFunction& AlignEnumExprs = descr_AlignEnumExprs;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoOverlapOffsets {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoOverlapOffsets,
       & OverlapChain
@@ -2136,6 +2245,12 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 38, 5},
       {refalrts::ictVarRightSave, 0, 23, 38},
       // closed e.Pattern#1 as range 38(5)
+      //DEBUG: e.OverlappedPattern#1: 9
+      //DEBUG: e.OverlappedResult#1: 13
+      //DEBUG: t.First#1: 21
+      //DEBUG: e.Result#1: 17
+      //DEBUG: t.Last#1: 23
+      //DEBUG: e.Pattern#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </25 Tile{ HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/9 AsIs: )/12 AsIs: (/15 AsIs: e.OverlappedResult#1/13 AsIs: )/16 HalfReuse: >/19 } Tile{ AsIs: </0 AsIs: & DoOverlapOffsets/4 AsIs: (/7 } Tile{ AsIs: e.Pattern#1/38(5) } )/26 (/27 Tile{ AsIs: t.Last#1/23 } e.OverlappedPattern#1/9/28 )/30 (/31 e.OverlappedResult#1/13/32 Tile{ AsIs: t.First#1/21 } )/34 (/35 Tile{ AsIs: e.Result#1/36(17) } Tile{ AsIs: )/20 AsIs: >/1 ]] }
@@ -2188,6 +2303,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 42, 9},
       {refalrts::ictVarRightSave, 0, 23, 42},
       // closed e.OverlappedPattern#1 as range 42(9)
+      //DEBUG: t.First#1: 21
+      //DEBUG: e.OverlappedResult#1: 13
+      //DEBUG: t.Last#1: 23
+      //DEBUG: e.OverlappedPattern#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/42(9) AsIs: t.Last#1/23 AsIs: )/12 AsIs: (/15 AsIs: t.First#1/21 AsIs: e.OverlappedResult#1/40(13) AsIs: )/16 HalfReuse: >/19 HalfReuse: </20 HalfReuse: & DoOverlapOffsets/1 } Tile{ HalfReuse: (/0 HalfReuse: )/4 } (/25 e.OverlappedPattern#1/42(9)/26 )/28 (/29 e.OverlappedResult#1/40(13)/30 )/32 (/33 )/34 >/35 Tile{ ]] }
@@ -2248,7 +2367,8 @@ refalrts::RASLFunction descr_DoOverlapOffsets(
   scope_DoOverlapOffsets::functions,
   scope_DoOverlapOffsets::idents,
   scope_DoOverlapOffsets::numbers,
-  scope_DoOverlapOffsets::strings
+  scope_DoOverlapOffsets::strings,
+  scope_DoOverlapOffsets::filename
 );
 refalrts::RefalFunction& DoOverlapOffsets = descr_DoOverlapOffsets;
 
@@ -2315,6 +2435,12 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 38(5)
+    //DEBUG: e.OverlappedPattern#1: 9
+    //DEBUG: e.OverlappedResult#1: 13
+    //DEBUG: t.First#1: 21
+    //DEBUG: e.Result#1: 17
+    //DEBUG: t.Last#1: 23
+    //DEBUG: e.Pattern#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2392,6 +2518,10 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
     if( ! context[24] )
       continue;
     // closed e.OverlappedPattern#1 as range 42(9)
+    //DEBUG: t.First#1: 21
+    //DEBUG: e.OverlappedResult#1: 13
+    //DEBUG: t.Last#1: 23
+    //DEBUG: e.OverlappedPattern#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2474,6 +2604,7 @@ refalrts::RefalFunction& DoOverlapOffsets = descr_DoOverlapOffsets;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_OverlapChain {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ZipItems,
       & GlueTiles
@@ -2493,6 +2624,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Pattern#1 as range 5
       // closed e.Result#1 as range 9
+      //DEBUG: e.Pattern#1: 5
+      //DEBUG: e.Result#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </13 & GlueTiles/14 Tile{ AsIs: </0 Reuse: & ZipItems/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } >/15 Tile{ ]] }
@@ -2524,7 +2657,8 @@ refalrts::RASLFunction descr_OverlapChain(
   scope_OverlapChain::functions,
   scope_OverlapChain::idents,
   scope_OverlapChain::numbers,
-  scope_OverlapChain::strings
+  scope_OverlapChain::strings,
+  scope_OverlapChain::filename
 );
 refalrts::RefalFunction& OverlapChain = descr_OverlapChain;
 
@@ -2558,6 +2692,8 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2595,6 +2731,7 @@ refalrts::RefalFunction& OverlapChain = descr_OverlapChain;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ZipItems {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & OverlapItem
     };
@@ -2631,6 +2768,12 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 13},
       {refalrts::ictVarLeftSave, 0, 25, 17},
       {refalrts::icEmpty, 0, 0, 17},
+      //DEBUG: e.Pattern#1: 5
+      //DEBUG: e.Result#1: 9
+      //DEBUG: s.CurIndexP#1: 21
+      //DEBUG: s.CurIndexR#1: 22
+      //DEBUG: t.PatternItem#1: 23
+      //DEBUG: t.ResultItem#1: 25
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: s.CurIndexP1 #21/19 AsIs: s.CurIndexR#1/22 } </27 & OverlapItem/28 Tile{ AsIs: t.PatternItem#1/23 } Tile{ AsIs: t.ResultItem#1/25 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/8 } Tile{ AsIs: </0 AsIs: & ZipItems/4 AsIs: (/7 } Tile{ AsIs: e.Pattern#1/29(5) } Tile{ AsIs: )/16 } Tile{ HalfReuse: (/20 AsIs: e.Result#1/31(9) AsIs: )/12 AsIs: >/1 ]] }
@@ -2682,7 +2825,8 @@ refalrts::RASLFunction descr_ZipItems(
   scope_ZipItems::functions,
   scope_ZipItems::idents,
   scope_ZipItems::numbers,
-  scope_ZipItems::strings
+  scope_ZipItems::strings,
+  scope_ZipItems::filename
 );
 refalrts::RefalFunction& ZipItems = descr_ZipItems;
 
@@ -2753,6 +2897,12 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
+    //DEBUG: e.Pattern#1: 5
+    //DEBUG: e.Result#1: 9
+    //DEBUG: s.CurIndexP#1: 21
+    //DEBUG: s.CurIndexR#1: 22
+    //DEBUG: t.PatternItem#1: 23
+    //DEBUG: t.ResultItem#1: 25
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2817,6 +2967,7 @@ refalrts::RefalFunction& ZipItems = descr_ZipItems;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GlueTiles {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & GlueNextTile,
       & GlueTiles
@@ -2848,6 +2999,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 5},
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.CurIndexP#1: 10
+      //DEBUG: s.CurIndexR#1: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & GlueTiles/4 (/7 s.CurIndexP#1/10 s.CurIndexR#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & GlueTiles/8 AsIs: e.Tail#1/18(2) AsIs: >/1 ]] }
@@ -2870,6 +3024,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icsVarLeft, 0, 12, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.CurIndexP#1: 10
+      //DEBUG: s.CurIndexR#1: 11
+      //DEBUG: s.Weight#1: 12
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/13 s.Weight#1/12/14 Tile{ HalfReuse: s.CurIndexP1 #10/0 HalfReuse: s.CurIndexR1 #11/4 AsIs: (/7 AsIs: s.CurIndexP#1/10 AsIs: s.CurIndexR#1/11 AsIs: s.Weight#1/12 AsIs: # AsIsE/9 AsIs: )/8 } )/15 </16 & GlueTiles/17 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -2902,6 +3060,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icsVarLeft, 0, 12, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.CurIndexP#1: 9
+      //DEBUG: s.CurIndexR#1: 10
+      //DEBUG: s.Weight#1: 11
+      //DEBUG: s.Ident#1: 12
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </13 & GlueNextTile/14 Tile{ HalfReuse: (/0 HalfReuse: s.Weight1 #11/4 AsIs: (/7 AsIs: s.CurIndexP#1/9 AsIs: s.CurIndexR#1/10 AsIs: s.Weight#1/11 AsIs: s.Ident#1/12 AsIs: )/8 } )/15 Tile{ AsIs: e.Tail#1/18(2) } Tile{ AsIs: >/1 ]] }
@@ -2943,7 +3106,8 @@ refalrts::RASLFunction descr_GlueTiles(
   scope_GlueTiles::functions,
   scope_GlueTiles::idents,
   scope_GlueTiles::numbers,
-  scope_GlueTiles::strings
+  scope_GlueTiles::strings,
+  scope_GlueTiles::filename
 );
 refalrts::RefalFunction& GlueTiles = descr_GlueTiles;
 
@@ -2985,6 +3149,9 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GlueTiles/4 (/7 s.CurIndexP#1/10 s.CurIndexR#1/11 {REMOVED TILE}
@@ -3025,6 +3192,10 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
+    //DEBUG: s.Weight#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3079,6 +3250,11 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 9
+    //DEBUG: s.CurIndexR#1: 10
+    //DEBUG: s.Weight#1: 11
+    //DEBUG: s.Ident#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3133,6 +3309,7 @@ refalrts::RefalFunction& GlueTiles = descr_GlueTiles;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GlueNextTile {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FoldTile_EEnd,
       & Add,
@@ -3168,6 +3345,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 15, 10},
       {refalrts::icsVarLeft, 0, 16, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.Weight#1: 9
+      //DEBUG: e.Items#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.CurIndexP#1: 15
+      //DEBUG: s.CurIndexR#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/12 s.CurIndexP#1/15 s.CurIndexR#1/16 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & FoldTile-EEnd/7 AsIs: s.Weight#1/9 AsIs: e.Items#1/5 HalfReuse: >/8 } Tile{ HalfReuse: </14 HalfReuse: & GlueTiles/13 AsIs: e.Tail#1/22(2) AsIs: >/1 ]] }
@@ -3197,6 +3379,13 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 16, 10},
       {refalrts::icsVarLeft, 0, 17, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.Weight#1: 9
+      //DEBUG: e.Items#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.CurIndexP#1: 14
+      //DEBUG: s.CurIndexR#1: 15
+      //DEBUG: s.ItemWeight#1: 16
+      //DEBUG: s.Ident#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & GlueNextTile/4 AsIs: (/7 } </18 & Add/19 Tile{ AsIs: s.Weight#1/9 } s.ItemWeight#1/16/20 >/21 Tile{ AsIs: e.Items#1/5 } Tile{ AsIs: (/12 AsIs: s.CurIndexP#1/14 AsIs: s.CurIndexR#1/15 AsIs: s.ItemWeight#1/16 AsIs: s.Ident#1/17 AsIs: )/13 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Tail#1/22(2) } Tile{ AsIs: >/1 ]] }
@@ -3224,6 +3413,8 @@ namespace /* unnamed */ {
       // </0 & GlueNextTile/4 (/7 s.Weight#1/9 e.Items#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Items#1 as range 5
+      //DEBUG: s.Weight#1: 9
+      //DEBUG: e.Items#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & FoldTile-EEnd/7 AsIs: s.Weight#1/9 AsIs: e.Items#1/5 HalfReuse: >/8 } Tile{ ]] }
@@ -3249,7 +3440,8 @@ refalrts::RASLFunction descr_GlueNextTile(
   scope_GlueNextTile::functions,
   scope_GlueNextTile::idents,
   scope_GlueNextTile::numbers,
-  scope_GlueNextTile::strings
+  scope_GlueNextTile::strings,
+  scope_GlueNextTile::filename
 );
 refalrts::RefalFunction& GlueNextTile = descr_GlueNextTile;
 
@@ -3301,6 +3493,11 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Weight#1: 9
+    //DEBUG: e.Items#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 15
+    //DEBUG: s.CurIndexR#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/12 s.CurIndexP#1/15 s.CurIndexR#1/16 {REMOVED TILE}
@@ -3347,6 +3544,13 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Weight#1: 9
+    //DEBUG: e.Items#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 14
+    //DEBUG: s.CurIndexR#1: 15
+    //DEBUG: s.ItemWeight#1: 16
+    //DEBUG: s.Ident#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3385,6 +3589,8 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Items#1 as range 5
+  //DEBUG: s.Weight#1: 9
+  //DEBUG: e.Items#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3413,6 +3619,7 @@ refalrts::RefalFunction& GlueNextTile = descr_GlueNextTile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldTile_EEnd {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Sub
     };
@@ -3444,6 +3651,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 12, 6},
       {refalrts::icsVarLeft, 0, 13, 6},
       {refalrts::icEmpty, 0, 0, 6},
+      //DEBUG: s.Weight#1: 5
+      //DEBUG: e.Items#1: 2
+      //DEBUG: s.CurIndexP#1: 12
+      //DEBUG: s.CurIndexR#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & FoldTile-EEnd/4 } </14 & Sub/15 Tile{ AsIs: s.Weight#1/5 } 3/16 >/17 Tile{ AsIs: e.Items#1/23(2) } >/18 (/19 3/20 s.CurIndexP#1/12/21 s.CurIndexR#1/13/22 Tile{ AsIs: (/8 AsIs: s.CurIndexP#1/12 AsIs: s.CurIndexR#1/13 AsIs: 3/11 AsIs: # AsIsE/10 AsIs: )/9 HalfReuse: )/1 ]] }
@@ -3482,6 +3693,12 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 12, 6},
       {refalrts::icsVarLeft, 0, 13, 6},
       {refalrts::icEmpty, 0, 0, 6},
+      //DEBUG: s.Weight#1: 5
+      //DEBUG: e.Items#1: 2
+      //DEBUG: s.CurIndexP#1: 10
+      //DEBUG: s.CurIndexR#1: 11
+      //DEBUG: s.ItemWeight#1: 12
+      //DEBUG: s.Ident#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Weight#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.Weight1 #5/4 } s.CurIndexP#1/10/14 s.CurIndexR#1/11/15 Tile{ AsIs: (/8 AsIs: s.CurIndexP#1/10 AsIs: s.CurIndexR#1/11 AsIs: s.ItemWeight#1/12 AsIs: s.Ident#1/13 AsIs: )/9 AsIs: e.Items#1/23(2) HalfReuse: )/1 ]] }
@@ -3500,6 +3717,7 @@ namespace /* unnamed */ {
       // s.idx
       // </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Weight#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -3519,7 +3737,8 @@ refalrts::RASLFunction descr_FoldTile_EEnd(
   scope_FoldTile_EEnd::functions,
   scope_FoldTile_EEnd::idents,
   scope_FoldTile_EEnd::numbers,
-  scope_FoldTile_EEnd::strings
+  scope_FoldTile_EEnd::strings,
+  scope_FoldTile_EEnd::filename
 );
 refalrts::RefalFunction& FoldTile_EEnd = descr_FoldTile_EEnd;
 
@@ -3566,6 +3785,10 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 12
+    //DEBUG: s.CurIndexR#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3630,6 +3853,12 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
+    //DEBUG: s.ItemWeight#1: 12
+    //DEBUG: s.Ident#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Weight#1/5 {REMOVED TILE}
@@ -3657,6 +3886,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
   // </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1 {REMOVED TILE}
@@ -3679,6 +3909,7 @@ refalrts::RefalFunction& FoldTile_EEnd = descr_FoldTile_EEnd;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FilterOverlapped_S1L1L1 {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -3697,6 +3928,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icsVarLeft, 0, 12, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: s.CurIndexP#3: 9
+      //DEBUG: s.CurIndexR#3: 10
+      //DEBUG: s.ItemWeight#3: 11
+      //DEBUG: s.Ident#3: 12
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterOverlapped$1\1\1/4 (/7 s.CurIndexP#3/9 s.CurIndexR#3/10 s.ItemWeight#3/11 s.Ident#3/12 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Ident3 #12/1 ]] }
@@ -3717,7 +3952,8 @@ refalrts::RASLFunction descr_gen_FilterOverlapped_S1L1L1(
   scope_gen_FilterOverlapped_S1L1L1::functions,
   scope_gen_FilterOverlapped_S1L1L1::idents,
   scope_gen_FilterOverlapped_S1L1L1::numbers,
-  scope_gen_FilterOverlapped_S1L1L1::strings
+  scope_gen_FilterOverlapped_S1L1L1::strings,
+  scope_gen_FilterOverlapped_S1L1L1::filename
 );
 refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1 = descr_gen_FilterOverlapped_S1L1L1;
 
@@ -3753,6 +3989,10 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_be
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.CurIndexP#3: 9
+  //DEBUG: s.CurIndexR#3: 10
+  //DEBUG: s.ItemWeight#3: 11
+  //DEBUG: s.Ident#3: 12
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterOverlapped$1\1\1/4 (/7 s.CurIndexP#3/9 s.CurIndexR#3/10 s.ItemWeight#3/11 s.Ident#3/12 )/8 {REMOVED TILE}
@@ -3776,6 +4016,7 @@ refalrts::RefalFunction& gen_FilterOverlapped_S1L1L1 = descr_gen_FilterOverlappe
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FilterOverlapped_S1L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & RejectTile,
       & FilterOverlapped,
@@ -3798,6 +4039,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 10, 5},
       {refalrts::icsVarLeft, 0, 11, 5},
       // closed e.MaxItems#2 as range 5
+      //DEBUG: e.Tiles#2: 2
+      //DEBUG: s.MaxWeight#2: 9
+      //DEBUG: s.IndexP#2: 10
+      //DEBUG: s.IndexR#2: 11
+      //DEBUG: e.MaxItems#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: s.IndexP2 #10/4 HalfReuse: s.IndexR2 #11/7 AsIs: s.MaxWeight#2/9 } (/12 </13 & Map/14 & FilterOverlapped$1\1\1/15 Tile{ AsIs: e.MaxItems#2/5 } >/16 Tile{ AsIs: )/8 } )/17 </18 & FilterOverlapped/19 </20 & RejectTile/21 (/22 Tile{ AsIs: e.Tiles#2/2 } )/23 e.MaxItems#2/5/24 >/26 Tile{ AsIs: >/1 ]] }
@@ -3850,7 +4096,8 @@ refalrts::RASLFunction descr_gen_FilterOverlapped_S1L1(
   scope_gen_FilterOverlapped_S1L1::functions,
   scope_gen_FilterOverlapped_S1L1::idents,
   scope_gen_FilterOverlapped_S1L1::numbers,
-  scope_gen_FilterOverlapped_S1L1::strings
+  scope_gen_FilterOverlapped_S1L1::strings,
+  scope_gen_FilterOverlapped_S1L1::filename
 );
 refalrts::RefalFunction& gen_FilterOverlapped_S1L1 = descr_gen_FilterOverlapped_S1L1;
 
@@ -3882,6 +4129,11 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
   if( ! refalrts::svar_left( context[11], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.MaxItems#2 as range 5
+  //DEBUG: e.Tiles#2: 2
+  //DEBUG: s.MaxWeight#2: 9
+  //DEBUG: s.IndexP#2: 10
+  //DEBUG: s.IndexR#2: 11
+  //DEBUG: e.MaxItems#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3951,6 +4203,7 @@ refalrts::RefalFunction& gen_FilterOverlapped_S1L1 = descr_gen_FilterOverlapped_
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FilterOverlapped {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FindHeavyTile,
       & gen_FilterOverlapped_S1L1,
@@ -3976,6 +4229,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 11, 2},
       {refalrts::ictVarLeftSave, 0, 5, 11},
       // closed e.Tiles#1 as range 11(2)
+      //DEBUG: t.NextTile#1: 5
+      //DEBUG: e.Tiles#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </7 & Fetch/8 Tile{ AsIs: </0 Reuse: & FindHeavyTile/4 AsIs: t.NextTile#1/5 AsIs: e.Tiles#1/11(2) AsIs: >/1 } & FilterOverlapped$1\1/9 >/10 Tile{ ]] }
@@ -4016,7 +4271,8 @@ refalrts::RASLFunction descr_FilterOverlapped(
   scope_FilterOverlapped::functions,
   scope_FilterOverlapped::idents,
   scope_FilterOverlapped::numbers,
-  scope_FilterOverlapped::strings
+  scope_FilterOverlapped::strings,
+  scope_FilterOverlapped::filename
 );
 refalrts::RefalFunction& FilterOverlapped = descr_FilterOverlapped;
 
@@ -4046,6 +4302,8 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
     if( ! context[6] )
       continue;
     // closed e.Tiles#1 as range 11(2)
+    //DEBUG: t.NextTile#1: 5
+    //DEBUG: e.Tiles#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4100,6 +4358,7 @@ refalrts::RefalFunction& FilterOverlapped = descr_FilterOverlapped;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FindHeavyTile_L1L1 {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -4132,6 +4391,14 @@ namespace /* unnamed */ {
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('<'), 19},
       // closed e.Items#2 as range 8
       // closed e.MaxItems#2 as range 15
+      //DEBUG: s.Weight#2: 5
+      //DEBUG: s.CurIndexP#2: 6
+      //DEBUG: s.CurIndexR#2: 7
+      //DEBUG: s.MaxWeight#2: 12
+      //DEBUG: s.IndexP#2: 13
+      //DEBUG: s.IndexR#2: 14
+      //DEBUG: e.Items#2: 8
+      //DEBUG: e.MaxItems#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} {REMOVED TILE} '<'/19 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: s.Weight#2/5 AsIs: s.CurIndexP#2/6 AsIs: s.CurIndexR#2/7 } Tile{ AsIs: e.Items#2/8 } Tile{ AsIs: )/18 } Tile{ HalfReuse: (/11 AsIs: s.MaxWeight#2/12 AsIs: s.IndexP#2/13 AsIs: s.IndexR#2/14 } Tile{ AsIs: e.MaxItems#2/15 } Tile{ HalfReuse: )/1 ]] }
@@ -4153,6 +4420,15 @@ namespace /* unnamed */ {
       // </0 & FindHeavyTile\1\1/4 s.Weight#2/5 s.CurIndexP#2/6 s.CurIndexR#2/7 (/10 e.Items#2/8 )/11 s.MaxWeight#2/12 s.IndexP#2/13 s.IndexR#2/14 (/17 e.MaxItems#2/15 )/18 s.Other#3/19 >/1
       // closed e.Items#2 as range 8
       // closed e.MaxItems#2 as range 15
+      //DEBUG: s.Weight#2: 5
+      //DEBUG: s.CurIndexP#2: 6
+      //DEBUG: s.CurIndexR#2: 7
+      //DEBUG: s.MaxWeight#2: 12
+      //DEBUG: s.IndexP#2: 13
+      //DEBUG: s.IndexR#2: 14
+      //DEBUG: s.Other#3: 19
+      //DEBUG: e.Items#2: 8
+      //DEBUG: e.MaxItems#2: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} )/18 s.Other#3/19 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/11 AsIs: s.MaxWeight#2/12 AsIs: s.IndexP#2/13 AsIs: s.IndexR#2/14 } Tile{ AsIs: e.MaxItems#2/15 } Tile{ HalfReuse: )/0 HalfReuse: (/4 AsIs: s.Weight#2/5 AsIs: s.CurIndexP#2/6 AsIs: s.CurIndexR#2/7 } Tile{ AsIs: e.Items#2/8 } Tile{ HalfReuse: )/1 ]] }
@@ -4182,7 +4458,8 @@ refalrts::RASLFunction descr_gen_FindHeavyTile_L1L1(
   scope_gen_FindHeavyTile_L1L1::functions,
   scope_gen_FindHeavyTile_L1L1::idents,
   scope_gen_FindHeavyTile_L1L1::numbers,
-  scope_gen_FindHeavyTile_L1L1::strings
+  scope_gen_FindHeavyTile_L1L1::strings,
+  scope_gen_FindHeavyTile_L1L1::filename
 );
 refalrts::RefalFunction& gen_FindHeavyTile_L1L1 = descr_gen_FindHeavyTile_L1L1;
 
@@ -4239,6 +4516,14 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
       continue;
     // closed e.Items#2 as range 8
     // closed e.MaxItems#2 as range 15
+    //DEBUG: s.Weight#2: 5
+    //DEBUG: s.CurIndexP#2: 6
+    //DEBUG: s.CurIndexR#2: 7
+    //DEBUG: s.MaxWeight#2: 12
+    //DEBUG: s.IndexP#2: 13
+    //DEBUG: s.IndexR#2: 14
+    //DEBUG: e.Items#2: 8
+    //DEBUG: e.MaxItems#2: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} {REMOVED TILE} '<'/19 {REMOVED TILE}
@@ -4266,6 +4551,15 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
   // </0 & FindHeavyTile\1\1/4 s.Weight#2/5 s.CurIndexP#2/6 s.CurIndexR#2/7 (/10 e.Items#2/8 )/11 s.MaxWeight#2/12 s.IndexP#2/13 s.IndexR#2/14 (/17 e.MaxItems#2/15 )/18 s.Other#3/19 >/1
   // closed e.Items#2 as range 8
   // closed e.MaxItems#2 as range 15
+  //DEBUG: s.Weight#2: 5
+  //DEBUG: s.CurIndexP#2: 6
+  //DEBUG: s.CurIndexR#2: 7
+  //DEBUG: s.MaxWeight#2: 12
+  //DEBUG: s.IndexP#2: 13
+  //DEBUG: s.IndexR#2: 14
+  //DEBUG: s.Other#3: 19
+  //DEBUG: e.Items#2: 8
+  //DEBUG: e.MaxItems#2: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} )/18 s.Other#3/19 {REMOVED TILE}
@@ -4298,6 +4592,7 @@ refalrts::RefalFunction& gen_FindHeavyTile_L1L1 = descr_gen_FindHeavyTile_L1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FindHeavyTile_L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_FindHeavyTile_L1L1,
       & refalrts::create_closure,
@@ -4325,6 +4620,14 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 17, 9},
       {refalrts::icsVarLeft, 0, 18, 9},
       // closed e.Items#2 as range 9
+      //DEBUG: s.MaxWeight#2: 13
+      //DEBUG: s.IndexP#2: 14
+      //DEBUG: s.IndexR#2: 15
+      //DEBUG: e.MaxItems#2: 5
+      //DEBUG: s.Weight#2: 16
+      //DEBUG: s.CurIndexP#2: 17
+      //DEBUG: s.CurIndexR#2: 18
+      //DEBUG: e.Items#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </19 & Compare/20 s.MaxWeight#2/13/21 s.Weight#2/16/22 >/23 </24 Tile{ HalfReuse: & @create_closure@/8 HalfReuse: & FindHeavyTile\1\1/11 AsIs: s.Weight#2/16 AsIs: s.CurIndexP#2/17 AsIs: s.CurIndexR#2/18 } (/25 Tile{ AsIs: e.Items#2/9 } Tile{ HalfReuse: )/7 AsIs: s.MaxWeight#2/13 AsIs: s.IndexP#2/14 AsIs: s.IndexR#2/15 } (/26 Tile{ AsIs: e.MaxItems#2/5 } )/27 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
@@ -4373,7 +4676,8 @@ refalrts::RASLFunction descr_gen_FindHeavyTile_L1(
   scope_gen_FindHeavyTile_L1::functions,
   scope_gen_FindHeavyTile_L1::idents,
   scope_gen_FindHeavyTile_L1::numbers,
-  scope_gen_FindHeavyTile_L1::strings
+  scope_gen_FindHeavyTile_L1::strings,
+  scope_gen_FindHeavyTile_L1::filename
 );
 refalrts::RefalFunction& gen_FindHeavyTile_L1 = descr_gen_FindHeavyTile_L1;
 
@@ -4419,6 +4723,14 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
   if( ! refalrts::svar_left( context[18], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Items#2 as range 9
+  //DEBUG: s.MaxWeight#2: 13
+  //DEBUG: s.IndexP#2: 14
+  //DEBUG: s.IndexR#2: 15
+  //DEBUG: e.MaxItems#2: 5
+  //DEBUG: s.Weight#2: 16
+  //DEBUG: s.CurIndexP#2: 17
+  //DEBUG: s.CurIndexR#2: 18
+  //DEBUG: e.Items#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4479,6 +4791,7 @@ refalrts::RefalFunction& gen_FindHeavyTile_L1 = descr_gen_FindHeavyTile_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FindHeavyTile {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_FindHeavyTile_L1,
       & MapReduce
@@ -4495,6 +4808,8 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::ictVarLeftSave, 0, 5, 2},
       // closed e.Tiles#1 as range 2
+      //DEBUG: t.NextTile#1: 5
+      //DEBUG: e.Tiles#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & MapReduce/0 Reuse: & FindHeavyTile\1/4 AsIs: t.NextTile#1/5 AsIs: e.Tiles#1/2 AsIs: >/1 ]] }
@@ -4519,7 +4834,8 @@ refalrts::RASLFunction descr_FindHeavyTile(
   scope_FindHeavyTile::functions,
   scope_FindHeavyTile::idents,
   scope_FindHeavyTile::numbers,
-  scope_FindHeavyTile::strings
+  scope_FindHeavyTile::strings,
+  scope_FindHeavyTile::filename
 );
 refalrts::RefalFunction& FindHeavyTile = descr_FindHeavyTile;
 
@@ -4541,6 +4857,8 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tiles#1 as range 2
+  //DEBUG: t.NextTile#1: 5
+  //DEBUG: e.Tiles#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -4569,6 +4887,7 @@ refalrts::RefalFunction& FindHeavyTile = descr_FindHeavyTile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_RejectTile_L1L1 {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -4581,6 +4900,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Tiles#3 as range 2
+      //DEBUG: e.Tiles#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: e.Tiles#3/2 HalfReuse: )/1 ]] }
@@ -4603,7 +4923,8 @@ refalrts::RASLFunction descr_gen_RejectTile_L1L1(
   scope_gen_RejectTile_L1L1::functions,
   scope_gen_RejectTile_L1L1::idents,
   scope_gen_RejectTile_L1L1::numbers,
-  scope_gen_RejectTile_L1L1::strings
+  scope_gen_RejectTile_L1L1::strings,
+  scope_gen_RejectTile_L1L1::filename
 );
 refalrts::RefalFunction& gen_RejectTile_L1L1 = descr_gen_RejectTile_L1L1;
 
@@ -4622,6 +4943,7 @@ static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, ref
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Tiles#3 as range 2
+  //DEBUG: e.Tiles#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -4647,6 +4969,7 @@ refalrts::RefalFunction& gen_RejectTile_L1L1 = descr_gen_RejectTile_L1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_RejectTile_L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_RejectTile_L1L1,
@@ -4674,6 +4997,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 15, 9},
       {refalrts::icsVarLeft, 0, 16, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Tiles#2: 5
+      //DEBUG: s.CurIndexP#2: 13
+      //DEBUG: s.CurIndexR#2: 14
+      //DEBUG: s.ItemWeight#2: 15
+      //DEBUG: s.Ident#2: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ItemWeight#2/15 s.Ident#2/16 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Tiles#2/5 } </17 & Seq/18 Tile{ AsIs: (/7 } & Map/19 (/20 & FilterPatternPos/21 Tile{ AsIs: s.CurIndexP#2/13 } )/22 Tile{ AsIs: )/8 AsIs: (/11 } & Map/23 (/24 & FilterResultPos/25 Tile{ AsIs: s.CurIndexR#2/14 } )/26 )/27 & RejectTile\1\1/28 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
@@ -4725,7 +5053,8 @@ refalrts::RASLFunction descr_gen_RejectTile_L1(
   scope_gen_RejectTile_L1::functions,
   scope_gen_RejectTile_L1::idents,
   scope_gen_RejectTile_L1::numbers,
-  scope_gen_RejectTile_L1::strings
+  scope_gen_RejectTile_L1::strings,
+  scope_gen_RejectTile_L1::filename
 );
 refalrts::RefalFunction& gen_RejectTile_L1 = descr_gen_RejectTile_L1;
 
@@ -4768,6 +5097,11 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Tiles#2: 5
+  //DEBUG: s.CurIndexP#2: 13
+  //DEBUG: s.CurIndexR#2: 14
+  //DEBUG: s.ItemWeight#2: 15
+  //DEBUG: s.Ident#2: 16
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ItemWeight#2/15 s.Ident#2/16 {REMOVED TILE}
@@ -4834,6 +5168,7 @@ refalrts::RefalFunction& gen_RejectTile_L1 = descr_gen_RejectTile_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_RejectTile {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_RejectTile_L1,
       & Reduce,
@@ -4852,6 +5187,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Tiles#1 as range 5
       // closed e.HeavyTileItems#1 as range 2
+      //DEBUG: e.Tiles#1: 5
+      //DEBUG: e.HeavyTileItems#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & UnBracket/10 </11 Tile{ HalfReuse: & Reduce/0 Reuse: & RejectTile\1/4 AsIs: (/7 AsIs: e.Tiles#1/5 AsIs: )/8 AsIs: e.HeavyTileItems#1/2 AsIs: >/1 } >/12 Tile{ ]] }
@@ -4884,7 +5221,8 @@ refalrts::RASLFunction descr_RejectTile(
   scope_RejectTile::functions,
   scope_RejectTile::idents,
   scope_RejectTile::numbers,
-  scope_RejectTile::strings
+  scope_RejectTile::strings,
+  scope_RejectTile::filename
 );
 refalrts::RefalFunction& RejectTile = descr_RejectTile;
 
@@ -4910,6 +5248,8 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Tiles#1 as range 5
   // closed e.HeavyTileItems#1 as range 2
+  //DEBUG: e.Tiles#1: 5
+  //DEBUG: e.HeavyTileItems#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4949,6 +5289,7 @@ refalrts::RefalFunction& RejectTile = descr_RejectTile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FilterPatternPos {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FoldTileW,
       & Sub,
@@ -4984,6 +5325,12 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 19, 13},
       {refalrts::icsVarLeft, 0, 20, 13},
       {refalrts::icEmpty, 0, 0, 13},
+      //DEBUG: s.CurIndexP#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.CurIndexR#1: 12
+      //DEBUG: e.Items#1: 8
+      //DEBUG: s.ItemWeight#1: 19
+      //DEBUG: s.Ident#1: 20
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </7 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/10 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/15 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
@@ -5018,6 +5365,14 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 19, 10},
       {refalrts::icsVarLeft, 0, 20, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.CurIndexP#1: 5
+      //DEBUG: s.Weight#1: 15
+      //DEBUG: s.IndexP#1: 16
+      //DEBUG: s.IndexR#1: 17
+      //DEBUG: e.Items#1: 8
+      //DEBUG: s.CurIndexR#1: 18
+      //DEBUG: s.ItemWeight#1: 19
+      //DEBUG: s.Ident#1: 20
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.IndexP#1/16 s.IndexR#1/17 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/14 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/15 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/13 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
@@ -5055,6 +5410,15 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 21, 15},
       {refalrts::icsVarLeft, 0, 22, 15},
       {refalrts::icEmpty, 0, 0, 15},
+      //DEBUG: s.CurIndexP#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexR#1: 20
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTileW/4 } Tile{ AsIs: e.Items-B#1/13 } Tile{ HalfReuse: >/17 } Tile{ HalfReuse: </18 } Tile{ HalfReuse: & FoldTileW/7 } Tile{ AsIs: e.Items-E#1/23(8) } Tile{ AsIs: >/1 ]] }
@@ -5077,6 +5441,8 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx t.idx
       // </0 & FilterPatternPos/4 s.CurIndexP#1/5 t.Tile#1/6 >/1
+      //DEBUG: t.Tile#1: 6
+      //DEBUG: s.CurIndexP#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterPatternPos/4 s.CurIndexP#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Tile#1/6 } Tile{ ]] }
@@ -5097,7 +5463,8 @@ refalrts::RASLFunction descr_FilterPatternPos(
   scope_FilterPatternPos::functions,
   scope_FilterPatternPos::idents,
   scope_FilterPatternPos::numbers,
-  scope_FilterPatternPos::strings
+  scope_FilterPatternPos::strings,
+  scope_FilterPatternPos::filename
 );
 refalrts::RefalFunction& FilterPatternPos = descr_FilterPatternPos;
 
@@ -5154,6 +5521,12 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.CurIndexP#1: 5
+    //DEBUG: s.Weight#1: 10
+    //DEBUG: s.CurIndexR#1: 12
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5210,6 +5583,14 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.CurIndexP#1: 5
+    //DEBUG: s.Weight#1: 15
+    //DEBUG: s.IndexP#1: 16
+    //DEBUG: s.IndexR#1: 17
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.CurIndexR#1: 18
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.IndexP#1/16 s.IndexR#1/17 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/14 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
@@ -5272,6 +5653,15 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
         continue;
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
+      //DEBUG: s.CurIndexP#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexR#1: 20
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5301,6 +5691,8 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
 
   // s.idx t.idx
   // </0 & FilterPatternPos/4 s.CurIndexP#1/5 t.Tile#1/6 >/1
+  //DEBUG: t.Tile#1: 6
+  //DEBUG: s.CurIndexP#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterPatternPos/4 s.CurIndexP#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5324,6 +5716,7 @@ refalrts::RefalFunction& FilterPatternPos = descr_FilterPatternPos;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FilterResultPos {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FoldTileW,
       & Sub,
@@ -5359,6 +5752,12 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 19, 13},
       {refalrts::icsVarLeft, 0, 20, 13},
       {refalrts::icEmpty, 0, 0, 13},
+      //DEBUG: s.CurIndexR#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.CurIndexP#1: 11
+      //DEBUG: e.Items#1: 8
+      //DEBUG: s.ItemWeight#1: 19
+      //DEBUG: s.Ident#1: 20
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </7 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/10 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/15 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
@@ -5393,6 +5792,14 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 19, 10},
       {refalrts::icsVarLeft, 0, 20, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.CurIndexR#1: 5
+      //DEBUG: s.Weight#1: 14
+      //DEBUG: s.IndexP#1: 15
+      //DEBUG: s.IndexR#1: 16
+      //DEBUG: e.Items#1: 8
+      //DEBUG: s.CurIndexP#1: 17
+      //DEBUG: s.ItemWeight#1: 19
+      //DEBUG: s.Ident#1: 20
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.IndexP#1/15 s.IndexR#1/16 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile/4 } Tile{ HalfReuse: </12 } Tile{ HalfReuse: & Sub/6 AsIs: s.Weight#1/14 } Tile{ AsIs: s.ItemWeight#1/19 } Tile{ HalfReuse: >/13 } Tile{ AsIs: e.Items#1/8 } Tile{ AsIs: >/1 ]] }
@@ -5430,6 +5837,15 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 21, 15},
       {refalrts::icsVarLeft, 0, 22, 15},
       {refalrts::icEmpty, 0, 0, 15},
+      //DEBUG: s.CurIndexR#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexP#1: 19
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTileW/4 } Tile{ AsIs: e.Items-B#1/13 } Tile{ HalfReuse: >/17 } Tile{ HalfReuse: </18 } Tile{ HalfReuse: & FoldTileW/7 } Tile{ AsIs: e.Items-E#1/23(8) } Tile{ AsIs: >/1 ]] }
@@ -5452,6 +5868,8 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx t.idx
       // </0 & FilterResultPos/4 s.CurIndexR#1/5 t.Tile#1/6 >/1
+      //DEBUG: t.Tile#1: 6
+      //DEBUG: s.CurIndexR#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FilterResultPos/4 s.CurIndexR#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: t.Tile#1/6 } Tile{ ]] }
@@ -5472,7 +5890,8 @@ refalrts::RASLFunction descr_FilterResultPos(
   scope_FilterResultPos::functions,
   scope_FilterResultPos::idents,
   scope_FilterResultPos::numbers,
-  scope_FilterResultPos::strings
+  scope_FilterResultPos::strings,
+  scope_FilterResultPos::filename
 );
 refalrts::RefalFunction& FilterResultPos = descr_FilterResultPos;
 
@@ -5529,6 +5948,12 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.CurIndexR#1: 5
+    //DEBUG: s.Weight#1: 10
+    //DEBUG: s.CurIndexP#1: 11
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5585,6 +6010,14 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.CurIndexR#1: 5
+    //DEBUG: s.Weight#1: 14
+    //DEBUG: s.IndexP#1: 15
+    //DEBUG: s.IndexR#1: 16
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.CurIndexP#1: 17
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.IndexP#1/15 s.IndexR#1/16 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
@@ -5647,6 +6080,15 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
         continue;
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
+      //DEBUG: s.CurIndexR#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexP#1: 19
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5676,6 +6118,8 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
 
   // s.idx t.idx
   // </0 & FilterResultPos/4 s.CurIndexR#1/5 t.Tile#1/6 >/1
+  //DEBUG: t.Tile#1: 6
+  //DEBUG: s.CurIndexR#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterResultPos/4 s.CurIndexR#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -5699,6 +6143,7 @@ refalrts::RefalFunction& FilterResultPos = descr_FilterResultPos;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldTile {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & FoldTile_EEnd,
       & Sub,
@@ -5732,6 +6177,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 12, 6},
       {refalrts::icsVarLeft, 0, 13, 6},
       {refalrts::icEmpty, 0, 0, 6},
+      //DEBUG: s.Weight#1: 5
+      //DEBUG: e.Items#1: 2
+      //DEBUG: s.CurIndexP#1: 12
+      //DEBUG: s.CurIndexR#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/14 3/15 s.CurIndexP#1/12/16 s.CurIndexR#1/13/17 Tile{ AsIs: (/8 AsIs: s.CurIndexP#1/12 AsIs: s.CurIndexR#1/13 AsIs: 3/11 AsIs: # AsIsE/10 AsIs: )/9 } )/18 </19 & FoldTile/20 Tile{ AsIs: </0 Reuse: & Sub/4 AsIs: s.Weight#1/5 } 3/21 >/22 Tile{ AsIs: e.Items#1/23(2) } Tile{ AsIs: >/1 ]] }
@@ -5764,6 +6213,8 @@ namespace /* unnamed */ {
       // s.idx e.idx
       // </0 & FoldTile/4 s.Weight#1/5 e.Items#1/2 >/1
       // closed e.Items#1 as range 2
+      //DEBUG: s.Weight#1: 5
+      //DEBUG: e.Items#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FoldTile-EEnd/4 AsIs: s.Weight#1/5 AsIs: e.Items#1/2 AsIs: >/1 ]] }
@@ -5775,6 +6226,7 @@ namespace /* unnamed */ {
       // s.idx
       // </0 & FoldTile/4 s.Weight#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Weight#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FoldTile/4 s.Weight#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -5794,7 +6246,8 @@ refalrts::RASLFunction descr_FoldTile(
   scope_FoldTile::functions,
   scope_FoldTile::idents,
   scope_FoldTile::numbers,
-  scope_FoldTile::strings
+  scope_FoldTile::strings,
+  scope_FoldTile::filename
 );
 refalrts::RefalFunction& FoldTile = descr_FoldTile;
 
@@ -5841,6 +6294,10 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 12
+    //DEBUG: s.CurIndexR#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -5888,6 +6345,8 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
     // s.idx e.idx
     // </0 & FoldTile/4 s.Weight#1/5 e.Items#1/2 >/1
     // closed e.Items#1 as range 2
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5903,6 +6362,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
   // </0 & FoldTile/4 s.Weight#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FoldTile/4 s.Weight#1/5 >/1 {REMOVED TILE}
@@ -5925,6 +6385,7 @@ refalrts::RefalFunction& FoldTile = descr_FoldTile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_FoldTileW_S1L1 {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Add
     };
@@ -5946,6 +6407,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 12, 5},
       {refalrts::icsVarLeft, 0, 13, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: s.Weight#2: 9
+      //DEBUG: s.IndexP#2: 10
+      //DEBUG: s.IndexR#2: 11
+      //DEBUG: s.ItemWeight#2: 12
+      //DEBUG: s.Ident#2: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 s.ItemWeight#2/12 s.Ident#2/13 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Weight#2/9 HalfReuse: s.ItemWeight2 #12/7 } Tile{ AsIs: >/1 ]] }
@@ -5969,7 +6435,8 @@ refalrts::RASLFunction descr_gen_FoldTileW_S1L1(
   scope_gen_FoldTileW_S1L1::functions,
   scope_gen_FoldTileW_S1L1::idents,
   scope_gen_FoldTileW_S1L1::numbers,
-  scope_gen_FoldTileW_S1L1::strings
+  scope_gen_FoldTileW_S1L1::strings,
+  scope_gen_FoldTileW_S1L1::filename
 );
 refalrts::RefalFunction& gen_FoldTileW_S1L1 = descr_gen_FoldTileW_S1L1;
 
@@ -6007,6 +6474,11 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#2: 9
+  //DEBUG: s.IndexP#2: 10
+  //DEBUG: s.IndexR#2: 11
+  //DEBUG: s.ItemWeight#2: 12
+  //DEBUG: s.Ident#2: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 s.ItemWeight#2/12 s.Ident#2/13 )/8 {REMOVED TILE}
@@ -6033,6 +6505,7 @@ refalrts::RefalFunction& gen_FoldTileW_S1L1 = descr_gen_FoldTileW_S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldTileW {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_FoldTileW_S1L1,
       & Reduce,
@@ -6063,6 +6536,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 11, 5},
       {refalrts::icsVarLeft, 0, 12, 5},
       {refalrts::icEmpty, 0, 0, 5},
+      //DEBUG: e.Items#1: 2
+      //DEBUG: s.CurIndexP#1: 9
+      //DEBUG: s.CurIndexR#1: 10
+      //DEBUG: s.ItemWeight#1: 11
+      //DEBUG: s.Ident#1: 12
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 } & FoldTile/13 </14 & Reduce/15 & FoldTileW$1\1/16 s.ItemWeight#1/11/17 e.Items#1/20(2)/18 Tile{ HalfReuse: >/4 AsIs: (/7 AsIs: s.CurIndexP#1/9 AsIs: s.CurIndexR#1/10 AsIs: s.ItemWeight#1/11 AsIs: s.Ident#1/12 AsIs: )/8 AsIs: e.Items#1/20(2) AsIs: >/1 ]] }
@@ -6105,7 +6583,8 @@ refalrts::RASLFunction descr_FoldTileW(
   scope_FoldTileW::functions,
   scope_FoldTileW::idents,
   scope_FoldTileW::numbers,
-  scope_FoldTileW::strings
+  scope_FoldTileW::strings,
+  scope_FoldTileW::filename
 );
 refalrts::RefalFunction& FoldTileW = descr_FoldTileW;
 
@@ -6148,6 +6627,11 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 9
+    //DEBUG: s.CurIndexR#1: 10
+    //DEBUG: s.ItemWeight#1: 11
+    //DEBUG: s.Ident#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -6206,6 +6690,7 @@ refalrts::RefalFunction& FoldTileW = descr_FoldTileW;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ReplaceTile {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Modify
     };
@@ -6251,6 +6736,16 @@ namespace /* unnamed */ {
       // closed e.Result-E#1 as range 50(9)
       {refalrts::ictVarLeftSave, 0, 42, 36},
       {refalrts::icEmpty, 0, 0, 36},
+      //DEBUG: e.Idents#1: 17
+      //DEBUG: s.IndexP#1: 21
+      //DEBUG: s.IndexR#1: 22
+      //DEBUG: s.Weight#1: 23
+      //DEBUG: e.Pattern-B#1: 24
+      //DEBUG: e.Pattern-E#1: 5
+      //DEBUG: t.PatternItem#1: 32
+      //DEBUG: e.Result-B#1: 34
+      //DEBUG: e.Result-E#1: 9
+      //DEBUG: t.ResultItem#1: 42
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.IndexP#1/21 s.IndexR#1/22 s.Weight#1/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Modify/4 AsIs: (/7 } Tile{ AsIs: e.Idents#1/17 } Tile{ HalfReuse: )/1 } Tile{ AsIs: (/19 } Tile{ AsIs: e.Pattern-B#1/24 } Tile{ AsIs: )/20 HalfReuse: (/16 } Tile{ AsIs: (/28 AsIs: # Num/30 AsIs: s.IndexP#1/31 AsIs: t.PatternItem#1/32 AsIs: )/29 AsIs: e.Pattern-E#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: e.Result-B#1/34 HalfReuse: )/38 HalfReuse: (/40 } (/44 # Num/45 Tile{ AsIs: s.IndexR#1/41 AsIs: t.ResultItem#1/42 AsIs: )/39 AsIs: e.Result-E#1/50(9) AsIs: )/12 HalfReuse: >/15 } Tile{ ]] }
@@ -6296,7 +6791,8 @@ refalrts::RASLFunction descr_ReplaceTile(
   scope_ReplaceTile::functions,
   scope_ReplaceTile::idents,
   scope_ReplaceTile::numbers,
-  scope_ReplaceTile::strings
+  scope_ReplaceTile::strings,
+  scope_ReplaceTile::filename
 );
 refalrts::RefalFunction& ReplaceTile = descr_ReplaceTile;
 
@@ -6397,6 +6893,16 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
         continue;
       if( ! refalrts::empty_seq( context[36], context[37] ) )
         continue;
+      //DEBUG: e.Idents#1: 17
+      //DEBUG: s.IndexP#1: 21
+      //DEBUG: s.IndexR#1: 22
+      //DEBUG: s.Weight#1: 23
+      //DEBUG: e.Pattern-B#1: 24
+      //DEBUG: e.Pattern-E#1: 5
+      //DEBUG: t.PatternItem#1: 32
+      //DEBUG: e.Result-B#1: 34
+      //DEBUG: e.Result-E#1: 9
+      //DEBUG: t.ResultItem#1: 42
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.IndexP#1/21 s.IndexR#1/22 s.Weight#1/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6449,6 +6955,7 @@ refalrts::RefalFunction& ReplaceTile = descr_ReplaceTile;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Modify_L1 {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Tile<int>::name,
@@ -6476,6 +6983,11 @@ namespace /* unnamed */ {
       // closed e.PatSecond#2 as range 13
       // closed e.Tile#2 as range 22
       // closed e.ResSecond#2 as range 18
+      //DEBUG: e.PatFirst#1: 5
+      //DEBUG: e.ResFirst#1: 9
+      //DEBUG: e.PatSecond#2: 13
+      //DEBUG: e.Tile#2: 22
+      //DEBUG: e.ResSecond#2: 18
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} & Modify\1/4 (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 (/15 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.PatFirst#1/5 } Tile{ AsIs: # RemovedTile/17 AsIs: e.PatSecond#2/13 AsIs: )/16 AsIs: (/20 } Tile{ AsIs: e.ResFirst#1/9 } Tile{ AsIs: (/24 AsIs: # Tile/26 AsIs: e.Tile#2/22 AsIs: )/25 AsIs: e.ResSecond#2/18 AsIs: )/21 } Tile{ ]] }
@@ -6503,7 +7015,8 @@ refalrts::RASLFunction descr_gen_Modify_L1(
   scope_gen_Modify_L1::functions,
   scope_gen_Modify_L1::idents,
   scope_gen_Modify_L1::numbers,
-  scope_gen_Modify_L1::strings
+  scope_gen_Modify_L1::strings,
+  scope_gen_Modify_L1::filename
 );
 refalrts::RefalFunction& gen_Modify_L1 = descr_gen_Modify_L1;
 
@@ -6564,6 +7077,11 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
   // closed e.PatSecond#2 as range 13
   // closed e.Tile#2 as range 22
   // closed e.ResSecond#2 as range 18
+  //DEBUG: e.PatFirst#1: 5
+  //DEBUG: e.ResFirst#1: 9
+  //DEBUG: e.PatSecond#2: 13
+  //DEBUG: e.Tile#2: 22
+  //DEBUG: e.ResSecond#2: 18
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & Modify\1/4 (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 (/15 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -6594,6 +7112,7 @@ refalrts::RefalFunction& gen_Modify_L1 = descr_gen_Modify_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Modify {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoModify,
       & gen_Modify_L1,
@@ -6623,6 +7142,11 @@ namespace /* unnamed */ {
       // closed e.PatSecond#1 as range 13
       // closed e.ResFirst#1 as range 17
       // closed e.ResSecond#1 as range 21
+      //DEBUG: e.Idents#1: 5
+      //DEBUG: e.PatFirst#1: 9
+      //DEBUG: e.PatSecond#1: 13
+      //DEBUG: e.ResFirst#1: 17
+      //DEBUG: e.ResSecond#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </25 & Fetch/26 Tile{ AsIs: </0 Reuse: & DoModify/4 AsIs: (/7 AsIs: e.Idents#1/5 AsIs: )/8 AsIs: (/11 } # Tile/27 Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.PatSecond#1/13 } Tile{ AsIs: )/20 AsIs: (/23 AsIs: e.ResSecond#1/21 AsIs: )/24 AsIs: >/1 } </28 & @create_closure@/29 & Modify\1/30 (/31 Tile{ AsIs: e.PatFirst#1/9 } Tile{ AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.ResFirst#1/17 } )/32 >/33 >/34 Tile{ ]] }
@@ -6675,7 +7199,8 @@ refalrts::RASLFunction descr_Modify(
   scope_Modify::functions,
   scope_Modify::idents,
   scope_Modify::numbers,
-  scope_Modify::strings
+  scope_Modify::strings,
+  scope_Modify::filename
 );
 refalrts::RefalFunction& Modify = descr_Modify;
 
@@ -6730,6 +7255,11 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.PatSecond#1 as range 13
   // closed e.ResFirst#1 as range 17
   // closed e.ResSecond#1 as range 21
+  //DEBUG: e.Idents#1: 5
+  //DEBUG: e.PatFirst#1: 9
+  //DEBUG: e.PatSecond#1: 13
+  //DEBUG: e.ResFirst#1: 17
+  //DEBUG: e.ResSecond#1: 21
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6795,6 +7325,7 @@ refalrts::RefalFunction& Modify = descr_Modify;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoModify {
+    static const char *filename = "GST.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoModify
     };
@@ -6856,6 +7387,17 @@ namespace /* unnamed */ {
       // closed e.InfoFromRes#1 as range 37
       {refalrts::icsVarRight, 0, 45, 33},
       // closed e.InfoFromPat#1 as range 33
+      //DEBUG: e.Idents#1: 5
+      //DEBUG: e.Tile#1: 9
+      //DEBUG: e.PatSecond#1: 13
+      //DEBUG: e.ResSecond#1: 17
+      //DEBUG: s.NumP#1: 41
+      //DEBUG: s.TypeFromPat#1: 42
+      //DEBUG: s.NumR#1: 43
+      //DEBUG: s.TypeFromRes#1: 44
+      //DEBUG: e.InfoFromRes#1: 37
+      //DEBUG: s.Offset#1: 45
+      //DEBUG: e.InfoFromPat#1: 33
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/41 (/35 s.TypeFromPat#1/42 e.InfoFromPat#1/33 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/30 # Num/32 s.NumR#1/43 (/39 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # AsIs/15 AsIs: (/25 HalfReuse: s.TypeFromRes1 #44/27 } Tile{ AsIs: e.InfoFromRes#1/37 } Tile{ AsIs: s.Offset#1/45 AsIs: )/36 AsIs: )/26 } Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.PatSecond#1/48(13) } Tile{ AsIs: )/40 HalfReuse: (/31 AsIs: e.ResSecond#1/50(17) AsIs: )/20 AsIs: >/1 ]] }
@@ -6909,6 +7451,12 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       {refalrts::icsVarLeft, 0, 44, 28},
       {refalrts::icEmpty, 0, 0, 28},
+      //DEBUG: e.Idents#1: 5
+      //DEBUG: e.Tile#1: 9
+      //DEBUG: e.PatSecond#1: 13
+      //DEBUG: e.ResSecond#1: 17
+      //DEBUG: s.NumP#1: 43
+      //DEBUG: s.NumR#1: 44
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # LEFT-EDGE/37 )/36 )/26 {REMOVED TILE} )/16 (/19 (/30 # Num/32 s.NumR#1/44 {REMOVED TILE} # LEFT-EDGE/42 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # LEFT-EDGE/15 HalfReuse: )/25 HalfReuse: )/27 } Tile{ AsIs: (/40 } Tile{ AsIs: e.PatSecond#1/48(13) } Tile{ AsIs: )/41 HalfReuse: (/31 AsIs: e.ResSecond#1/50(17) AsIs: )/20 AsIs: >/1 ]] }
@@ -6960,6 +7508,10 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       {refalrts::icsVarLeft, 0, 44, 28},
       {refalrts::icEmpty, 0, 0, 28},
+      //DEBUG: e.Idents#1: 5
+      //DEBUG: e.Tile#1: 9
+      //DEBUG: s.NumP#1: 43
+      //DEBUG: s.NumR#1: 44
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # RIGHT-EDGE/37 )/36 )/26 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & DoModify/7 HalfReuse: (/22 AsIs: e.Idents#1/46(5) AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: # RIGHT-EDGE/15 HalfReuse: )/25 HalfReuse: )/27 } Tile{ HalfReuse: (/42 AsIs: )/41 HalfReuse: (/31 AsIs: )/20 AsIs: >/1 ]] }
@@ -7011,6 +7563,18 @@ namespace /* unnamed */ {
       // closed e.InfoFromRes#1 as range 36
       {refalrts::icsVarRight, 0, 45, 32},
       // closed e.InfoFromPat#1 as range 32
+      //DEBUG: e.Tile#1: 9
+      //DEBUG: e.PatSecond#1: 13
+      //DEBUG: e.ResSecond#1: 17
+      //DEBUG: s.Ident#1: 40
+      //DEBUG: e.Idents#1: 5
+      //DEBUG: s.NumP#1: 41
+      //DEBUG: s.TypeFromPat#1: 42
+      //DEBUG: s.NumR#1: 43
+      //DEBUG: s.TypeFromRes#1: 44
+      //DEBUG: e.InfoFromRes#1: 36
+      //DEBUG: s.Offset#1: 45
+      //DEBUG: e.InfoFromPat#1: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Ident#1/40 {REMOVED TILE} {REMOVED TILE} s.NumP#1/41 (/34 s.TypeFromPat#1/42 e.InfoFromPat#1/32 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/29 # Num/31 s.NumR#1/43 (/38 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoModify/4 AsIs: (/7 } Tile{ AsIs: e.Idents#1/50(5) } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 HalfReuse: (/12 HalfReuse: s.Ident1 #40/15 AsIs: (/24 HalfReuse: s.TypeFromRes1 #44/26 } Tile{ AsIs: e.InfoFromRes#1/36 } Tile{ AsIs: s.Offset#1/45 AsIs: )/35 AsIs: )/25 } Tile{ AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.PatSecond#1/46(13) } Tile{ AsIs: )/39 HalfReuse: (/30 AsIs: e.ResSecond#1/48(17) AsIs: )/20 AsIs: >/1 ]] }
@@ -7043,6 +7607,9 @@ namespace /* unnamed */ {
       // closed e.Tile#1 as range 9
       // closed e.PatSecond#1 as range 13
       // closed e.ResSecond#1 as range 17
+      //DEBUG: e.Tile#1: 9
+      //DEBUG: e.PatSecond#1: 13
+      //DEBUG: e.ResSecond#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # RemovedTile/4 } Tile{ AsIs: e.PatSecond#1/13 } Tile{ HalfReuse: )/7 HalfReuse: (/8 AsIs: (/11 AsIs: # Tile/21 AsIs: e.Tile#1/9 AsIs: )/12 } Tile{ AsIs: e.ResSecond#1/17 } Tile{ HalfReuse: )/1 ]] }
@@ -7073,7 +7640,8 @@ refalrts::RASLFunction descr_DoModify(
   scope_DoModify::functions,
   scope_DoModify::idents,
   scope_DoModify::numbers,
-  scope_DoModify::strings
+  scope_DoModify::strings,
+  scope_DoModify::filename
 );
 refalrts::RefalFunction& DoModify = descr_DoModify;
 
@@ -7189,6 +7757,17 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_right( context[45], context[33], context[34] ) )
       continue;
     // closed e.InfoFromPat#1 as range 33
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.NumP#1: 41
+    //DEBUG: s.TypeFromPat#1: 42
+    //DEBUG: s.NumR#1: 43
+    //DEBUG: s.TypeFromRes#1: 44
+    //DEBUG: e.InfoFromRes#1: 37
+    //DEBUG: s.Offset#1: 45
+    //DEBUG: e.InfoFromPat#1: 33
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/41 (/35 s.TypeFromPat#1/42 e.InfoFromPat#1/33 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/30 # Num/32 s.NumR#1/43 (/39 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
@@ -7288,6 +7867,12 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[28], context[29] ) )
       continue;
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.NumP#1: 43
+    //DEBUG: s.NumR#1: 44
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # LEFT-EDGE/37 )/36 )/26 {REMOVED TILE} )/16 (/19 (/30 # Num/32 s.NumR#1/44 {REMOVED TILE} # LEFT-EDGE/42 {REMOVED TILE}
@@ -7387,6 +7972,10 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[28], context[29] ) )
       continue;
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: s.NumP#1: 43
+    //DEBUG: s.NumR#1: 44
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # RIGHT-EDGE/37 )/36 )/26 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 {REMOVED TILE}
@@ -7480,6 +8069,18 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_right( context[45], context[32], context[33] ) )
       continue;
     // closed e.InfoFromPat#1 as range 32
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.Ident#1: 40
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: s.NumP#1: 41
+    //DEBUG: s.TypeFromPat#1: 42
+    //DEBUG: s.NumR#1: 43
+    //DEBUG: s.TypeFromRes#1: 44
+    //DEBUG: e.InfoFromRes#1: 36
+    //DEBUG: s.Offset#1: 45
+    //DEBUG: e.InfoFromPat#1: 32
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Ident#1/40 {REMOVED TILE} {REMOVED TILE} s.NumP#1/41 (/34 s.TypeFromPat#1/42 e.InfoFromPat#1/32 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/29 # Num/31 s.NumR#1/43 (/38 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
@@ -7520,6 +8121,9 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.Tile#1 as range 9
   // closed e.PatSecond#1 as range 13
   // closed e.ResSecond#1 as range 17
+  //DEBUG: e.Tile#1: 9
+  //DEBUG: e.PatSecond#1: 13
+  //DEBUG: e.ResSecond#1: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
@@ -7553,6 +8157,7 @@ refalrts::RefalFunction& DoModify = descr_DoModify;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_OverlapItem {
+    static const char *filename = "GST.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_NoOverlap<int>::name,
@@ -7592,6 +8197,8 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 17, 11, 9},
       {refalrts::icsVarLeft, 0, 19, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Index#1: 11
+      //DEBUG: s.Offset#1: 19
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/13 'e'/14 e.Index#1/17 s.Offset#1/19 )/6 (/7 # TkVariable/15 'e'/16 e.Index#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIsE/1 ]] }
@@ -7612,6 +8219,9 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 15, 11, 9},
       {refalrts::icsVarLeft, 0, 17, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: s.AnyType#1: 13
+      //DEBUG: e.Info#1: 11
+      //DEBUG: s.Offset#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/13 e.Info#1/15 s.Offset#1/17 )/6 (/7 s.AnyType#1/14 e.Info#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
@@ -7629,6 +8239,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 12, 9},
       {refalrts::icsVarRight, 0, 13, 9},
       // closed e.Index#1 as range 9
+      //DEBUG: t.AnyItem#1: 7
+      //DEBUG: s.Mode#1: 12
+      //DEBUG: s.Offset#1: 13
+      //DEBUG: e.Index#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/11 s.Mode#1/12 e.Index#1/9 s.Offset#1/13 )/6 t.AnyItem#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7648,6 +8262,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 15, 9},
       {refalrts::icsVarRight, 0, 16, 9},
       // closed e.Info#1 as range 9
+      //DEBUG: e.Index#1: 11
+      //DEBUG: s.AnyType#1: 15
+      //DEBUG: s.Offset#1: 16
+      //DEBUG: e.Info#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/15 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 's'/14 e.Index#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
@@ -7668,6 +8286,11 @@ namespace /* unnamed */ {
       // closed e.Index#1 as range 11
       {refalrts::icsVarRight, 0, 16, 9},
       // closed e.Info#1 as range 9
+      //DEBUG: s.AnyType#1: 14
+      //DEBUG: s.Mode#1: 15
+      //DEBUG: e.Index#1: 11
+      //DEBUG: s.Offset#1: 16
+      //DEBUG: e.Info#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 s.Mode#1/15 e.Index#1/11 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7686,6 +8309,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 14, 9},
       {refalrts::icsVarRight, 0, 15, 9},
       // closed e.Info1#1 as range 9
+      //DEBUG: s.Type1#1: 14
+      //DEBUG: s.Offset#1: 15
+      //DEBUG: e.Info1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # LEFT-EDGE/13 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7704,6 +8330,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 14, 9},
       {refalrts::icsVarRight, 0, 15, 9},
       // closed e.Info1#1 as range 9
+      //DEBUG: s.Type1#1: 14
+      //DEBUG: s.Offset#1: 15
+      //DEBUG: e.Info1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # RIGHT-EDGE/13 )/8 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7722,6 +8351,10 @@ namespace /* unnamed */ {
       // closed e.Info2#1 as range 11
       {refalrts::icsVarRight, 0, 15, 9},
       // closed e.Info1#1 as range 9
+      //DEBUG: s.Type#1: 13
+      //DEBUG: e.Info2#1: 11
+      //DEBUG: s.Offset#1: 15
+      //DEBUG: e.Info1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type#1/14 e.Info2#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/8 HalfReuse: # Reuse/1 ]] }
@@ -7741,6 +8374,11 @@ namespace /* unnamed */ {
       // closed e.Info2#1 as range 11
       {refalrts::icsVarRight, 0, 15, 9},
       // closed e.Info1#1 as range 9
+      //DEBUG: s.Type1#1: 13
+      //DEBUG: s.Type2#1: 14
+      //DEBUG: e.Info2#1: 11
+      //DEBUG: s.Offset#1: 15
+      //DEBUG: e.Info1#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type2#1/14 e.Info2#1/11 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
@@ -7792,6 +8430,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 5},
       {refalrts::icIdentLeftSave, 11, 2, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: t.Other#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7806,6 +8445,7 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 9, 5},
       {refalrts::icIdentLeftSave, 11, 1, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: t.Other#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7818,6 +8458,7 @@ namespace /* unnamed */ {
       // t.idx '*'
       // </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('*'), 7},
+      //DEBUG: t.AnyItem#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7829,6 +8470,7 @@ namespace /* unnamed */ {
       // '*' t.idx
       // </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 >/1
       {refalrts::icCharTerm, 0, static_cast<unsigned char>('*'), 5},
+      //DEBUG: t.AnyItem#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
@@ -7849,7 +8491,8 @@ refalrts::RASLFunction descr_OverlapItem(
   scope_OverlapItem::functions,
   scope_OverlapItem::idents,
   scope_OverlapItem::numbers,
-  scope_OverlapItem::strings
+  scope_OverlapItem::strings,
+  scope_OverlapItem::filename
 );
 refalrts::RefalFunction& OverlapItem = descr_OverlapItem;
 
@@ -7907,6 +8550,8 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.Offset#1: 19
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/13 'e'/14 e.Index#1/17 s.Offset#1/19 )/6 (/7 # TkVariable/15 'e'/16 e.Index#1/11 {REMOVED TILE}
@@ -7944,6 +8589,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: s.AnyType#1: 13
+    //DEBUG: e.Info#1: 11
+    //DEBUG: s.Offset#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/13 e.Info#1/15 s.Offset#1/17 )/6 (/7 s.AnyType#1/14 e.Info#1/11 {REMOVED TILE}
@@ -7974,6 +8622,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[13], context[9], context[10] ) )
       continue;
     // closed e.Index#1 as range 9
+    //DEBUG: t.AnyItem#1: 7
+    //DEBUG: s.Mode#1: 12
+    //DEBUG: s.Offset#1: 13
+    //DEBUG: e.Index#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/11 s.Mode#1/12 e.Index#1/9 s.Offset#1/13 )/6 t.AnyItem#1/7 {REMOVED TILE}
@@ -8011,6 +8663,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[16], context[9], context[10] ) )
       continue;
     // closed e.Info#1 as range 9
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.AnyType#1: 15
+    //DEBUG: s.Offset#1: 16
+    //DEBUG: e.Info#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/15 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 's'/14 e.Index#1/11 {REMOVED TILE}
@@ -8048,6 +8704,11 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[16], context[9], context[10] ) )
       continue;
     // closed e.Info#1 as range 9
+    //DEBUG: s.AnyType#1: 14
+    //DEBUG: s.Mode#1: 15
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.Offset#1: 16
+    //DEBUG: e.Info#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 s.Mode#1/15 e.Index#1/11 )/8 {REMOVED TILE}
@@ -8083,6 +8744,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 14
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # LEFT-EDGE/13 )/8 {REMOVED TILE}
@@ -8118,6 +8782,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 14
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # RIGHT-EDGE/13 )/8 {REMOVED TILE}
@@ -8151,6 +8818,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type#1: 13
+    //DEBUG: e.Info2#1: 11
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type#1/14 e.Info2#1/11 {REMOVED TILE}
@@ -8185,6 +8856,11 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 13
+    //DEBUG: s.Type2#1: 14
+    //DEBUG: e.Info2#1: 11
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type2#1/14 e.Info2#1/11 {REMOVED TILE}
@@ -8284,6 +8960,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: t.Other#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
@@ -8310,6 +8987,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: t.Other#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
@@ -8329,6 +9007,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     // </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 >/1
     if( ! refalrts::char_term( '*', context[7] ) )
       continue;
+    //DEBUG: t.AnyItem#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 {REMOVED TILE}
@@ -8347,6 +9026,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
   // </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 >/1
   if( ! refalrts::char_term( '*', context[5] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.AnyItem#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 {REMOVED TILE}

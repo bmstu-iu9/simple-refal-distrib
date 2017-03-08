@@ -47,6 +47,7 @@ extern refalrts::RefalFunction& LoadList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CreateFileList {
+    static const char *filename = "FileScanner.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoCreateFileList,
       & FindFiles
@@ -64,6 +65,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Folders#1 as range 5
       // closed e.Unit#1 as range 2
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Unit#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 } (/9 )/10 </11 & FindFiles/12 (/13 e.Folders#1/5/14 )/16 (/17 Tile{ AsIs: e.Unit#1/2 } )/18 >/19 Tile{ AsIs: >/1 ]] }
@@ -103,7 +106,8 @@ refalrts::RASLFunction descr_CreateFileList(
   scope_CreateFileList::functions,
   scope_CreateFileList::idents,
   scope_CreateFileList::numbers,
-  scope_CreateFileList::strings
+  scope_CreateFileList::strings,
+  scope_CreateFileList::filename
 );
 refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
 
@@ -127,6 +131,8 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 5
   // closed e.Unit#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Unit#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -177,6 +183,7 @@ refalrts::RefalFunction& CreateFileList = descr_CreateFileList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoCreateFileList {
+    static const char *filename = "FileScanner.cpp";
     static refalrts::RefalFunction *functions[] = {
       & LoadList
     };
@@ -205,6 +212,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 26},
       // closed e.Folders#1 as range 5
       // closed e.Modules#1 as range 9
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Modules#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Modules#1/9 } Tile{ ]] }
@@ -229,6 +238,11 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 23, 13, 19},
       {refalrts::icEmpty, 0, 0, 19},
       // closed e.Modules-E#1 as range 30(9)
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.NextModule#1: 13
+      //DEBUG: e.NotScanned#1: 2
+      //DEBUG: e.Modules-B#1: 17
+      //DEBUG: e.Modules-E#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/15 e.NextModule#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules-B#1/17 AsIs: (/21 AsIs: e.NextModule#1/23 AsIs: )/22 AsIs: e.Modules-E#1/30(9) AsIs: )/12 } Tile{ AsIs: e.NotScanned#1/26(2) } Tile{ AsIs: >/1 ]] }
@@ -249,6 +263,10 @@ namespace /* unnamed */ {
       // closed e.Modules#1 as range 9
       // closed e.NextModule#1 as range 13
       // closed e.NotScanned#1 as range 2
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Modules#1: 9
+      //DEBUG: e.NextModule#1: 13
+      //DEBUG: e.NotScanned#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoCreateFileList/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Modules#1/9 HalfReuse: (/12 } e.NextModule#1/13/17 )/19 )/20 </21 & LoadList/22 (/23 e.Folders#1/5/24 Tile{ HalfReuse: )/15 AsIs: e.NextModule#1/13 HalfReuse: >/16 AsIs: e.NotScanned#1/2 AsIs: >/1 ]] }
@@ -288,7 +306,8 @@ refalrts::RASLFunction descr_DoCreateFileList(
   scope_DoCreateFileList::functions,
   scope_DoCreateFileList::idents,
   scope_DoCreateFileList::numbers,
-  scope_DoCreateFileList::strings
+  scope_DoCreateFileList::strings,
+  scope_DoCreateFileList::filename
 );
 refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
 
@@ -332,6 +351,8 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Folders#1 as range 5
     // closed e.Modules#1 as range 9
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.Modules#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
@@ -379,6 +400,11 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
       if( ! refalrts::empty_seq( context[19], context[20] ) )
         continue;
       // closed e.Modules-E#1 as range 30(9)
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.NextModule#1: 13
+      //DEBUG: e.NotScanned#1: 2
+      //DEBUG: e.Modules-B#1: 17
+      //DEBUG: e.Modules-E#1: 9
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} (/15 e.NextModule#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
@@ -411,6 +437,10 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   // closed e.Modules#1 as range 9
   // closed e.NextModule#1 as range 13
   // closed e.NotScanned#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Modules#1: 9
+  //DEBUG: e.NextModule#1: 13
+  //DEBUG: e.NotScanned#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -460,6 +490,7 @@ refalrts::RefalFunction& DoCreateFileList = descr_DoCreateFileList;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FindImports {
+    static const char *filename = "FileScanner.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Trim,
       & FindFiles
@@ -492,6 +523,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 15, static_cast<unsigned char>(' '), 5},
       // closed e.Folders#1 as range 16(2)
       // closed e.Name#1 as range 5
+      //DEBUG: e.Folders#1: 2
+      //DEBUG: e.Name#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles/4 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Folders#1/16(2) } Tile{ HalfReuse: )/12 HalfReuse: (/13 HalfReuse: </14 HalfReuse: & Trim/15 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: )/1 } Tile{ HalfReuse: >/11 } Tile{ ]] }
@@ -520,6 +553,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & FindImports/4 e.OtherLine#1/2 >/1
       // closed e.OtherLine#1 as range 2
+      //DEBUG: e.OtherLine#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -539,7 +573,8 @@ refalrts::RASLFunction descr_FindImports(
   scope_FindImports::functions,
   scope_FindImports::idents,
   scope_FindImports::numbers,
-  scope_FindImports::strings
+  scope_FindImports::strings,
+  scope_FindImports::filename
 );
 refalrts::RefalFunction& FindImports = descr_FindImports;
 
@@ -594,6 +629,8 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
       continue;
     // closed e.Folders#1 as range 16(2)
     // closed e.Name#1 as range 5
+    //DEBUG: e.Folders#1: 2
+    //DEBUG: e.Name#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -628,6 +665,7 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   // e.idx
   // </0 & FindImports/4 e.OtherLine#1/2 >/1
   // closed e.OtherLine#1 as range 2
+  //DEBUG: e.OtherLine#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FindImports/4 e.OtherLine#1/2 >/1 {REMOVED TILE}
@@ -650,6 +688,7 @@ refalrts::RefalFunction& FindImports = descr_FindImports;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_LoadList {
+    static const char *filename = "FileScanner.cpp";
     static refalrts::RefalFunction *functions[] = {
       & LoadFile,
       & Map,
@@ -685,6 +724,9 @@ namespace /* unnamed */ {
       // closed e.Folders#1 as range 5
       // closed e.NextModule#1 as range 10
       // closed e.Output#1 as range 15(2)
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.NextModule#1: 10
+      //DEBUG: e.Output#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Output#1/15(2) {REMOVED TILE}
       //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: (/4 HalfReuse: & FindImports/7 AsIs: e.Folders#1/5 AsIs: )/8 HalfReuse: </9 HalfReuse: & LoadFile/12 AsIs: e.NextModule#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
@@ -712,6 +754,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 1, 9},
       // closed e.Folders#1 as range 5
       // closed e.Output#1 as range 2
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Output#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 AsIs: (/7 } & FindImports/10 Tile{ AsIs: e.Folders#1/5 } )/11 Tile{ HalfReuse: </8 HalfReuse: & LoadFile/9 AsIs: e.Output#1/2 AsIs: >/1 } >/12 Tile{ ]] }
@@ -739,6 +783,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.Folders#1 as range 5
       // closed e.Unit#1 as range 2
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.Unit#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -758,7 +804,8 @@ refalrts::RASLFunction descr_LoadList(
   scope_LoadList::functions,
   scope_LoadList::idents,
   scope_LoadList::numbers,
-  scope_LoadList::strings
+  scope_LoadList::strings,
+  scope_LoadList::filename
 );
 refalrts::RefalFunction& LoadList = descr_LoadList;
 
@@ -804,6 +851,9 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Folders#1 as range 5
     // closed e.NextModule#1 as range 10
     // closed e.Output#1 as range 15(2)
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.NextModule#1: 10
+    //DEBUG: e.Output#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.Output#1/15(2) {REMOVED TILE}
@@ -839,6 +889,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     // closed e.Folders#1 as range 5
     // closed e.Output#1 as range 2
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.Output#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -876,6 +928,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   // closed e.Folders#1 as range 5
   // closed e.Unit#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Unit#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE}

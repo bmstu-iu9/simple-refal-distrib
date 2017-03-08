@@ -65,6 +65,7 @@ extern refalrts::RefalFunction& EL_Destroy;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EL_Create {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorList
     };
@@ -79,6 +80,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.FileName#1 as range 2
+      //DEBUG: e.FileName#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: [/0 Reuse: & ErrorList/4 } (/5 Tile{ AsIs: e.FileName#1/2 } )/6 Tile{ HalfReuse: ]/1 ]] }
@@ -106,7 +108,8 @@ refalrts::RASLFunction descr_EL_Create(
   scope_EL_Create::functions,
   scope_EL_Create::idents,
   scope_EL_Create::numbers,
-  scope_EL_Create::strings
+  scope_EL_Create::strings,
+  scope_EL_Create::filename
 );
 refalrts::RefalFunction& EL_Create = descr_EL_Create;
 
@@ -123,6 +126,7 @@ static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Ite
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -153,6 +157,7 @@ refalrts::RefalFunction& EL_Create = descr_EL_Create;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EL_AddError {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorList
     };
@@ -173,6 +178,9 @@ namespace /* unnamed */ {
       // closed e.FileName#1 as range 10
       // closed e.Errors#1 as range 5
       // closed e.Message#1 as range 2
+      //DEBUG: e.FileName#1: 10
+      //DEBUG: e.Errors#1: 5
+      //DEBUG: e.Message#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 } Tile{ HalfReuse: # NoLine/4 } Tile{ AsIs: e.Message#1/2 } Tile{ HalfReuse: )/0 } Tile{ HalfReuse: ]/1 ]] }
@@ -201,7 +209,8 @@ refalrts::RASLFunction descr_EL_AddError(
   scope_EL_AddError::functions,
   scope_EL_AddError::idents,
   scope_EL_AddError::numbers,
-  scope_EL_AddError::strings
+  scope_EL_AddError::strings,
+  scope_EL_AddError::filename
 );
 refalrts::RefalFunction& EL_AddError = descr_EL_AddError;
 
@@ -232,6 +241,9 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   // closed e.FileName#1 as range 10
   // closed e.Errors#1 as range 5
   // closed e.Message#1 as range 2
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -261,6 +273,7 @@ refalrts::RefalFunction& EL_AddError = descr_EL_AddError;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EL_AddErrorAt {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorList
     };
@@ -280,6 +293,10 @@ namespace /* unnamed */ {
       // closed e.Errors#1 as range 5
       {refalrts::icsVarLeft, 0, 14, 2},
       // closed e.Message#1 as range 2
+      //DEBUG: e.FileName#1: 10
+      //DEBUG: e.Errors#1: 5
+      //DEBUG: s.LineNumber#1: 14
+      //DEBUG: e.Message#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: [/7 AsIs: & ErrorList/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 AsIs: e.Errors#1/5 HalfReuse: (/9 AsIs: s.LineNumber#1/14 AsIs: e.Message#1/2 HalfReuse: )/1 } Tile{ HalfReuse: ]/4 } Tile{ ]] }
@@ -306,7 +323,8 @@ refalrts::RASLFunction descr_EL_AddErrorAt(
   scope_EL_AddErrorAt::functions,
   scope_EL_AddErrorAt::idents,
   scope_EL_AddErrorAt::numbers,
-  scope_EL_AddErrorAt::strings
+  scope_EL_AddErrorAt::strings,
+  scope_EL_AddErrorAt::filename
 );
 refalrts::RefalFunction& EL_AddErrorAt = descr_EL_AddErrorAt;
 
@@ -339,6 +357,10 @@ static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[14], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 2
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
+  //DEBUG: s.LineNumber#1: 14
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -366,6 +388,7 @@ refalrts::RefalFunction& EL_AddErrorAt = descr_EL_AddErrorAt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EL_AddUnexpected {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & EL_AddErrorAt,
       & StrFromToken
@@ -402,6 +425,10 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 1, 11},
       // closed e.Message#1 as range 7
       // closed e.Expected#1 as range 2
+      //DEBUG: t.ErrorList#1: 5
+      //DEBUG: s.LineNumber#1: 12
+      //DEBUG: e.Message#1: 7
+      //DEBUG: e.Expected#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} # TkError/11 s.LineNumber#1/12 {REMOVED TILE} )/10 e.Expected#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 } Tile{ AsIs: e.Message#1/7 } Tile{ AsIs: >/1 ]] }
@@ -420,6 +447,10 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 0, 11},
       // closed e.Unexpected#1 as range 7
       // closed e.Expected#1 as range 2
+      //DEBUG: t.ErrorList#1: 5
+      //DEBUG: s.LineNumber#1: 12
+      //DEBUG: e.Unexpected#1: 7
+      //DEBUG: e.Expected#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE} e.Expected#1/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 HalfReuse: 'U'/11 } 'n'/13 Tile{ HalfReuse: 'k'/10 }"nown characters \""/14 Tile{ AsIs: e.Unexpected#1/7 } '\"'/16 Tile{ AsIs: >/1 ]] }
@@ -445,6 +476,11 @@ namespace /* unnamed */ {
       // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
       // closed e.Info#1 as range 7
       // closed e.Expected#1 as range 2
+      //DEBUG: t.ErrorList#1: 5
+      //DEBUG: s.Unexpected#1: 11
+      //DEBUG: s.LineNumber#1: 12
+      //DEBUG: e.Info#1: 7
+      //DEBUG: e.Expected#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LineNumber1 #12/9 }"Unexpected "/13 </15 & StrFromToken/16 Tile{ AsIs: s.Unexpected#1/11 } Tile{ AsIs: e.Info#1/7 } >/17", expected"/18 Tile{ HalfReuse: ' '/10 AsIs: e.Expected#1/2 AsIs: >/1 ]] }
@@ -479,7 +515,8 @@ refalrts::RASLFunction descr_EL_AddUnexpected(
   scope_EL_AddUnexpected::functions,
   scope_EL_AddUnexpected::idents,
   scope_EL_AddUnexpected::numbers,
-  scope_EL_AddUnexpected::strings
+  scope_EL_AddUnexpected::strings,
+  scope_EL_AddUnexpected::filename
 );
 refalrts::RefalFunction& EL_AddUnexpected = descr_EL_AddUnexpected;
 
@@ -519,6 +556,10 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Message#1 as range 7
     // closed e.Expected#1 as range 2
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: s.LineNumber#1: 12
+    //DEBUG: e.Message#1: 7
+    //DEBUG: e.Expected#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkError/11 s.LineNumber#1/12 {REMOVED TILE} )/10 e.Expected#1/2 {REMOVED TILE}
@@ -544,6 +585,10 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Unexpected#1 as range 7
     // closed e.Expected#1 as range 2
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: s.LineNumber#1: 12
+    //DEBUG: e.Unexpected#1: 7
+    //DEBUG: e.Expected#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE} e.Expected#1/2 {REMOVED TILE}
@@ -578,6 +623,11 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
   // closed e.Info#1 as range 7
   // closed e.Expected#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: s.Unexpected#1: 11
+  //DEBUG: s.LineNumber#1: 12
+  //DEBUG: e.Info#1: 7
+  //DEBUG: e.Expected#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE}
@@ -618,6 +668,7 @@ refalrts::RefalFunction& EL_AddUnexpected = descr_EL_AddUnexpected;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_EL_Destroy_S2L1 {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt,
       & WriteLine
@@ -653,6 +704,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 0, 13},
       // closed e.FileName#1 as range 5
       // closed e.Message#2 as range 9
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.Message#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.FileName#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 HalfReuse: ' '/7 }" E"/14 Tile{ HalfReuse: 'R'/1 }"RO"/16 Tile{ HalfReuse: 'R'/8 HalfReuse: ':'/11 HalfReuse: ' '/13 AsIs: e.Message#2/9 HalfReuse: >/12 } Tile{ ]] }
@@ -679,6 +732,9 @@ namespace /* unnamed */ {
       // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
       // closed e.FileName#1 as range 5
       // closed e.Message#2 as range 9
+      //DEBUG: s.LineNumber#2: 13
+      //DEBUG: e.FileName#1: 5
+      //DEBUG: e.Message#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.FileName#1/5 } Tile{ HalfReuse: ':'/7 } Tile{ HalfReuse: </8 HalfReuse: & StrFromInt/11 AsIs: s.LineNumber#2/13 } >/14 Tile{ HalfReuse: ':'/12 }"ERROR: "/15 Tile{ AsIs: e.Message#2/9 } Tile{ AsIs: >/1 ]] }
@@ -715,7 +771,8 @@ refalrts::RASLFunction descr_gen_EL_Destroy_S2L1(
   scope_gen_EL_Destroy_S2L1::functions,
   scope_gen_EL_Destroy_S2L1::idents,
   scope_gen_EL_Destroy_S2L1::numbers,
-  scope_gen_EL_Destroy_S2L1::strings
+  scope_gen_EL_Destroy_S2L1::strings,
+  scope_gen_EL_Destroy_S2L1::filename
 );
 refalrts::RefalFunction& gen_EL_Destroy_S2L1 = descr_gen_EL_Destroy_S2L1;
 
@@ -760,6 +817,8 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
       continue;
     // closed e.FileName#1 as range 5
     // closed e.Message#2 as range 9
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Message#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.FileName#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -794,6 +853,9 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
   // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
   // closed e.FileName#1 as range 5
   // closed e.Message#2 as range 9
+  //DEBUG: s.LineNumber#2: 13
+  //DEBUG: e.FileName#1: 5
+  //DEBUG: e.Message#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -835,6 +897,7 @@ refalrts::RefalFunction& gen_EL_Destroy_S2L1 = descr_gen_EL_Destroy_S2L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_EL_Destroy {
+    static const char *filename = "Error.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_EL_Destroy_S2L1,
       & refalrts::create_closure,
@@ -869,6 +932,7 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 19, 5},
       {refalrts::icEmpty, 0, 0, 19},
       // closed e.FileName#1 as range 10
+      //DEBUG: e.FileName#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # EL-NoErrors/1 ]] }
@@ -881,6 +945,8 @@ namespace /* unnamed */ {
       // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
       // closed e.FileName#1 as range 10
       // closed e.Errors#1 as range 5
+      //DEBUG: e.FileName#1: 10
+      //DEBUG: e.Errors#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </14 Tile{ HalfReuse: & Map/0 HalfReuse: </4 HalfReuse: & @create_closure@/7 Reuse: & EL-Destroy$2\1/8 AsIs: (/12 AsIs: e.FileName#1/10 AsIs: )/13 } >/15 </16 & Sort/17 Tile{ AsIs: e.Errors#1/5 } >/18 Tile{ HalfReuse: >/9 HalfReuse: # EL-HasErrors/1 ]] }
@@ -921,7 +987,8 @@ refalrts::RASLFunction descr_EL_Destroy(
   scope_EL_Destroy::functions,
   scope_EL_Destroy::idents,
   scope_EL_Destroy::numbers,
-  scope_EL_Destroy::strings
+  scope_EL_Destroy::strings,
+  scope_EL_Destroy::filename
 );
 refalrts::RefalFunction& EL_Destroy = descr_EL_Destroy;
 
@@ -963,6 +1030,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::empty_seq( context[19], context[20] ) )
       continue;
     // closed e.FileName#1 as range 10
+    //DEBUG: e.FileName#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE}
@@ -981,6 +1049,8 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
   // closed e.FileName#1 as range 10
   // closed e.Errors#1 as range 5
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

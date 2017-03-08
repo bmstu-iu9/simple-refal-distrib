@@ -153,6 +153,7 @@ extern refalrts::RefalFunction& DoFoldErrors;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GetOpt {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ResolveOpts,
       & MarkupArguments,
@@ -171,6 +172,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Description#1 as range 5
       // closed e.Arguments#1 as range 2
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Arguments#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & FoldErrors/10 Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } </11 & MarkupArguments/12 1/13 Tile{ AsIs: e.Arguments#1/2 } >/14 >/15 Tile{ AsIs: >/1 ]] }
@@ -208,7 +211,8 @@ refalrts::RASLFunction descr_GetOpt(
   scope_GetOpt::functions,
   scope_GetOpt::idents,
   scope_GetOpt::numbers,
-  scope_GetOpt::strings
+  scope_GetOpt::strings,
+  scope_GetOpt::filename
 );
 refalrts::RefalFunction& GetOpt = descr_GetOpt;
 
@@ -232,6 +236,8 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Description#1 as range 5
   // closed e.Arguments#1 as range 2
+  //DEBUG: e.Description#1: 5
+  //DEBUG: e.Arguments#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -277,6 +283,7 @@ refalrts::RefalFunction& GetOpt = descr_GetOpt;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Inc {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Add
     };
@@ -292,6 +299,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Add/4 AsIs: s.Num#1/5 HalfReuse: 1/1 } >/6 Tile{ ]] }
@@ -316,7 +324,8 @@ refalrts::RASLFunction descr_Inc(
   scope_Inc::functions,
   scope_Inc::idents,
   scope_Inc::numbers,
-  scope_Inc::strings
+  scope_Inc::strings,
+  scope_Inc::filename
 );
 refalrts::RefalFunction& Inc = descr_Inc;
 
@@ -338,6 +347,7 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -366,6 +376,7 @@ refalrts::RefalFunction& Inc = descr_Inc;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MarkupArguments {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc,
       & MarkupArguments,
@@ -400,6 +411,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('-'), 6},
       {refalrts::icEmpty, 0, 0, 6},
       // closed e.Tail#1 as range 19(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & MarkupAllFiles/4 } Tile{ HalfReuse: </8 HalfReuse: & Inc/10 HalfReuse: s.Num1 #5/11 HalfReuse: >/9 AsIs: e.Tail#1/19(2) AsIs: >/1 ]] }
@@ -429,6 +442,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 21, 6},
       {refalrts::icCharLeftSave, 14, static_cast<unsigned char>('='), 21},
       // closed e.Param#1 as range 21(6)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Arg#1: 12
+      //DEBUG: e.Param#1: 6
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/15 Tile{ HalfReuse: # Long-Param/8 HalfReuse: s.Num1 #5/10 HalfReuse: (/11 AsIs: e.Arg#1/12 HalfReuse: )/14 AsIs: e.Param#1/21(6) AsIs: )/9 } </16 & MarkupArguments/17 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/18 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
@@ -465,6 +482,9 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 11, static_cast<unsigned char>('-'), 6},
       // closed e.Arg#1 as range 6
       // closed e.Tail#1 as range 19(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Arg#1: 6
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/8 HalfReuse: # Long/10 HalfReuse: s.Num1 #5/11 AsIs: e.Arg#1/6 AsIs: )/9 } </12 & MarkupArguments/13 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/14 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
@@ -496,6 +516,10 @@ namespace /* unnamed */ {
       // closed e.Tail#1 as range 19(2)
       {refalrts::icsVarLeft, 0, 11, 6},
       // closed e.Arg#1 as range 6
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.Init#1: 11
+      //DEBUG: e.Arg#1: 6
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/12 Tile{ HalfReuse: # Short/8 HalfReuse: s.Num1 #5/10 AsIs: s.Init#1/11 AsIs: e.Arg#1/6 AsIs: )/9 } </13 & MarkupArguments/14 Tile{ AsIs: </0 Reuse: & Inc/4 AsIs: s.Num#1/5 } >/15 Tile{ AsIs: e.Tail#1/19(2) } Tile{ AsIs: >/1 ]] }
@@ -527,6 +551,9 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 6, 19},
       // closed e.Arg#1 as range 6
       // closed e.Tail#1 as range 19(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Arg#1: 6
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Word/4 AsIs: s.Num#1/5 } Tile{ AsIs: e.Arg#1/6 } Tile{ HalfReuse: )/8 } </10 & MarkupArguments/11 </12 & Inc/13 s.Num#1/5/14 Tile{ HalfReuse: >/9 AsIs: e.Tail#1/19(2) AsIs: >/1 ]] }
@@ -553,6 +580,7 @@ namespace /* unnamed */ {
       // s.idx
       // </0 & MarkupArguments/4 s.Num#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & MarkupArguments/4 s.Num#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -572,7 +600,8 @@ refalrts::RASLFunction descr_MarkupArguments(
   scope_MarkupArguments::functions,
   scope_MarkupArguments::idents,
   scope_MarkupArguments::numbers,
-  scope_MarkupArguments::strings
+  scope_MarkupArguments::strings,
+  scope_MarkupArguments::filename
 );
 refalrts::RefalFunction& MarkupArguments = descr_MarkupArguments;
 
@@ -615,6 +644,8 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
     // closed e.Tail#1 as range 19(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Num#1/5 {REMOVED TILE}
@@ -665,6 +696,10 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       if( ! context[14] )
         continue;
       // closed e.Param#1 as range 21(6)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: e.Arg#1: 12
+      //DEBUG: e.Param#1: 6
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -722,6 +757,9 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Arg#1 as range 6
     // closed e.Tail#1 as range 19(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Arg#1: 6
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -771,6 +809,10 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::svar_left( context[11], context[6], context[7] ) )
       continue;
     // closed e.Arg#1 as range 6
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.Init#1: 11
+    //DEBUG: e.Arg#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -818,6 +860,9 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
     refalrts::bracket_pointers(context[8], context[9]);
     // closed e.Arg#1 as range 6
     // closed e.Tail#1 as range 19(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Arg#1: 6
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -856,6 +901,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
   // </0 & MarkupArguments/4 s.Num#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & MarkupArguments/4 s.Num#1/5 >/1 {REMOVED TILE}
@@ -878,6 +924,7 @@ refalrts::RefalFunction& MarkupArguments = descr_MarkupArguments;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_MarkupAllFiles {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc,
       & MarkupAllFiles
@@ -906,6 +953,9 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 6, 15},
       // closed e.Arg#1 as range 6
       // closed e.Tail#1 as range 15(2)
+      //DEBUG: s.Num#1: 5
+      //DEBUG: e.Arg#1: 6
+      //DEBUG: e.Tail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Word/4 AsIs: s.Num#1/5 } Tile{ AsIs: e.Arg#1/6 } Tile{ HalfReuse: )/8 } </10 & MarkupAllFiles/11 </12 & Inc/13 s.Num#1/5/14 Tile{ HalfReuse: >/9 AsIs: e.Tail#1/15(2) AsIs: >/1 ]] }
@@ -932,6 +982,7 @@ namespace /* unnamed */ {
       // s.idx
       // </0 & MarkupAllFiles/4 s.Num#1/5 >/1
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: s.Num#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & MarkupAllFiles/4 s.Num#1/5 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -951,7 +1002,8 @@ refalrts::RASLFunction descr_MarkupAllFiles(
   scope_MarkupAllFiles::functions,
   scope_MarkupAllFiles::idents,
   scope_MarkupAllFiles::numbers,
-  scope_MarkupAllFiles::strings
+  scope_MarkupAllFiles::strings,
+  scope_MarkupAllFiles::filename
 );
 refalrts::RefalFunction& MarkupAllFiles = descr_MarkupAllFiles;
 
@@ -987,6 +1039,9 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
     refalrts::bracket_pointers(context[8], context[9]);
     // closed e.Arg#1 as range 6
     // closed e.Tail#1 as range 15(2)
+    //DEBUG: s.Num#1: 5
+    //DEBUG: e.Arg#1: 6
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1025,6 +1080,7 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
   // </0 & MarkupAllFiles/4 s.Num#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & MarkupAllFiles/4 s.Num#1/5 >/1 {REMOVED TILE}
@@ -1047,6 +1103,7 @@ refalrts::RefalFunction& MarkupAllFiles = descr_MarkupAllFiles;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Error,
       & ResolveOpts_Short,
@@ -1103,6 +1160,16 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 33, 15, 29},
       {refalrts::icEmpty, 0, 0, 29},
       // closed e.Opts-E#1 as range 43(21)
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: e.Long#1: 15
+      //DEBUG: e.Param#1: 9
+      //DEBUG: e.Descrs-B#1: 19
+      //DEBUG: e.Descrs-E#1: 5
+      //DEBUG: s.Tag#1: 25
+      //DEBUG: s.HasArg#1: 26
+      //DEBUG: e.Opts-B#1: 27
+      //DEBUG: e.Opts-E#1: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-LongParam/4 AsIs: (/7 AsIs: e.Descrs-B#1/19 AsIs: (/23 AsIs: s.Tag#1/25 AsIs: s.HasArg#1/26 AsIs: e.Opts-B#1/27 AsIs: (/31 AsIs: e.Long#1/33 AsIs: )/32 AsIs: e.Opts-E#1/43(21) AsIs: )/24 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #25/13 } s.HasArg#1/26/35 Tile{ AsIs: (/17 } Tile{ AsIs: e.Long#1/15 } )/36 Tile{ HalfReuse: (/18 AsIs: e.Param#1/9 AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
@@ -1139,6 +1206,11 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 15, 9},
       // closed e.Long#1 as range 15
       // closed e.Param#1 as range 9
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: e.Long#1: 15
+      //DEBUG: e.Param#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Param#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 HalfReuse: # UnknownLongOption/17 AsIs: e.Long#1/15 AsIs: )/18 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
@@ -1179,6 +1251,15 @@ namespace /* unnamed */ {
       {refalrts::iceRepeatLeft, 29, 9, 25},
       {refalrts::icEmpty, 0, 0, 25},
       // closed e.Opts-E#1 as range 43(17)
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: e.Long#1: 9
+      //DEBUG: e.Descrs-B#1: 15
+      //DEBUG: e.Descrs-E#1: 5
+      //DEBUG: s.Tag#1: 21
+      //DEBUG: s.HasArg#1: 22
+      //DEBUG: e.Opts-B#1: 23
+      //DEBUG: e.Opts-E#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Long/4 AsIs: (/7 AsIs: e.Descrs-B#1/15 AsIs: (/19 AsIs: s.Tag#1/21 AsIs: s.HasArg#1/22 AsIs: e.Opts-B#1/23 AsIs: (/27 AsIs: e.Long#1/29 AsIs: )/28 AsIs: e.Opts-E#1/43(17) AsIs: )/20 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #21/13 } s.HasArg#1/22/31 (/32 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
@@ -1209,6 +1290,10 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 37(2)
       {refalrts::icsVarLeft, 0, 14, 9},
       // closed e.Long#1 as range 9
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: e.Long#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownLongOption/15 Tile{ AsIs: e.Long#1/9 } Tile{ AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
@@ -1250,6 +1335,16 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 43, 18},
       {refalrts::icsRepeatLeft, 26, 15, 43},
       // closed e.Opts-E#1 as range 43(18)
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: s.Short#1: 15
+      //DEBUG: e.OptTail#1: 9
+      //DEBUG: e.Descrs-B#1: 16
+      //DEBUG: e.Descrs-E#1: 5
+      //DEBUG: s.Tag#1: 22
+      //DEBUG: s.HasArg#1: 23
+      //DEBUG: e.Opts-B#1: 24
+      //DEBUG: e.Opts-E#1: 18
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveOpts-Short/4 AsIs: (/7 AsIs: e.Descrs-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.HasArg#1/23 AsIs: e.Opts-B#1/24 AsIs: s.Short#1/26 AsIs: e.Opts-E#1/43(18) AsIs: )/21 AsIs: e.Descrs-E#1/41(5) AsIs: )/8 HalfReuse: s.Num1 #14/11 HalfReuse: s.Tag1 #22/13 } s.HasArg#1/23/27 Tile{ AsIs: s.Short#1/15 } (/28 Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
@@ -1282,6 +1377,10 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 14, 9},
       {refalrts::icsVarLeft, 0, 15, 9},
       {refalrts::icEmpty, 0, 0, 9},
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: s.Short#1: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 HalfReuse: & Error/13 AsIs: s.Num#1/14 } # UnknownShortOption/16 Tile{ AsIs: s.Short#1/15 AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
@@ -1310,6 +1409,11 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 14, 9},
       {refalrts::icsVarLeft, 0, 15, 9},
       // closed e.OptTail#1 as range 9
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: s.Short#1: 15
+      //DEBUG: e.OptTail#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/16 & Error/17 s.Num#1/14/18 # UnknownShortOption/19 Tile{ AsIs: s.Short#1/15 } )/20 Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 AsIs: (/11 AsIs: # Short/13 AsIs: s.Num#1/14 } Tile{ AsIs: e.OptTail#1/9 } Tile{ AsIs: )/12 AsIs: e.ArgsTail#1/37(2) AsIs: >/1 ]] }
@@ -1341,6 +1445,10 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 37(2)
       {refalrts::icsVarLeft, 0, 14, 9},
       // closed e.File#1 as range 9
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.Num#1: 14
+      //DEBUG: e.File#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 Reuse: # FILE/13 AsIs: s.Num#1/14 AsIs: e.File#1/9 AsIs: )/12 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/37(2) } Tile{ AsIs: >/1 ]] }
@@ -1359,6 +1467,7 @@ namespace /* unnamed */ {
       // </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 >/1
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.Description#1 as range 5
+      //DEBUG: e.Description#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -1378,7 +1487,8 @@ refalrts::RASLFunction descr_ResolveOpts(
   scope_ResolveOpts::functions,
   scope_ResolveOpts::idents,
   scope_ResolveOpts::numbers,
-  scope_ResolveOpts::strings
+  scope_ResolveOpts::strings,
+  scope_ResolveOpts::filename
 );
 refalrts::RefalFunction& ResolveOpts = descr_ResolveOpts;
 
@@ -1467,6 +1577,16 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
         if( ! refalrts::empty_seq( context[29], context[30] ) )
           continue;
         // closed e.Opts-E#1 as range 43(21)
+        //DEBUG: e.ArgsTail#1: 2
+        //DEBUG: s.Num#1: 14
+        //DEBUG: e.Long#1: 15
+        //DEBUG: e.Param#1: 9
+        //DEBUG: e.Descrs-B#1: 19
+        //DEBUG: e.Descrs-E#1: 5
+        //DEBUG: s.Tag#1: 25
+        //DEBUG: s.HasArg#1: 26
+        //DEBUG: e.Opts-B#1: 27
+        //DEBUG: e.Opts-E#1: 21
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1527,6 +1647,11 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     refalrts::bracket_pointers(context[17], context[18]);
     // closed e.Long#1 as range 15
     // closed e.Param#1 as range 9
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.Num#1: 14
+    //DEBUG: e.Long#1: 15
+    //DEBUG: e.Param#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Param#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
@@ -1603,6 +1728,15 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
         if( ! refalrts::empty_seq( context[25], context[26] ) )
           continue;
         // closed e.Opts-E#1 as range 43(17)
+        //DEBUG: e.ArgsTail#1: 2
+        //DEBUG: s.Num#1: 14
+        //DEBUG: e.Long#1: 9
+        //DEBUG: e.Descrs-B#1: 15
+        //DEBUG: e.Descrs-E#1: 5
+        //DEBUG: s.Tag#1: 21
+        //DEBUG: s.HasArg#1: 22
+        //DEBUG: e.Opts-B#1: 23
+        //DEBUG: e.Opts-E#1: 17
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE}
@@ -1652,6 +1786,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
       continue;
     // closed e.Long#1 as range 9
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.Num#1: 14
+    //DEBUG: e.Long#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1725,6 +1863,16 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
         if( ! refalrts::repeated_stvar_left( context[26], context[15], context[43], context[44] ) )
           continue;
         // closed e.Opts-E#1 as range 43(18)
+        //DEBUG: e.ArgsTail#1: 2
+        //DEBUG: s.Num#1: 14
+        //DEBUG: s.Short#1: 15
+        //DEBUG: e.OptTail#1: 9
+        //DEBUG: e.Descrs-B#1: 16
+        //DEBUG: e.Descrs-E#1: 5
+        //DEBUG: s.Tag#1: 22
+        //DEBUG: s.HasArg#1: 23
+        //DEBUG: e.Opts-B#1: 24
+        //DEBUG: e.Opts-E#1: 18
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} s.Num#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1778,6 +1926,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.Num#1: 14
+    //DEBUG: s.Short#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1823,6 +1975,11 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[15], context[9], context[10] ) )
       continue;
     // closed e.OptTail#1 as range 9
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.Num#1: 14
+    //DEBUG: s.Short#1: 15
+    //DEBUG: e.OptTail#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1874,6 +2031,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
       continue;
     // closed e.File#1 as range 9
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.Num#1: 14
+    //DEBUG: e.File#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1899,6 +2060,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Description#1 as range 5
+  //DEBUG: e.Description#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ResolveOpts/4 (/7 e.Description#1/5 )/8 >/1 {REMOVED TILE}
@@ -1921,6 +2083,7 @@ refalrts::RefalFunction& ResolveOpts = descr_ResolveOpts;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_LongParam {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ResolveOpts,
       & Error
@@ -1961,6 +2124,12 @@ namespace /* unnamed */ {
       // closed e.Long#1 as range 12
       // closed e.Param#1 as range 16
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.Param#1: 16
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Required/11 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ HalfReuse: s.Tag1 #10/15 HalfReuse: s.Num1 #9/18 AsIs: e.Param#1/16 AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -1987,6 +2156,12 @@ namespace /* unnamed */ {
       // closed e.Long#1 as range 12
       // closed e.Param#1 as range 16
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.Param#1: 16
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Optional/11 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ HalfReuse: s.Tag1 #10/15 HalfReuse: s.Num1 #9/18 AsIs: e.Param#1/16 AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2012,6 +2187,12 @@ namespace /* unnamed */ {
       // closed e.Long#1 as range 12
       // closed e.Param#1 as range 16
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.Param#1: 16
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/20 & Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2051,7 +2232,8 @@ refalrts::RASLFunction descr_ResolveOpts_LongParam(
   scope_ResolveOpts_LongParam::functions,
   scope_ResolveOpts_LongParam::idents,
   scope_ResolveOpts_LongParam::numbers,
-  scope_ResolveOpts_LongParam::strings
+  scope_ResolveOpts_LongParam::strings,
+  scope_ResolveOpts_LongParam::filename
 );
 refalrts::RefalFunction& ResolveOpts_LongParam = descr_ResolveOpts_LongParam;
 
@@ -2108,6 +2290,12 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
     // closed e.Long#1 as range 12
     // closed e.Param#1 as range 16
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.Param#1: 16
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Required/11 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2141,6 +2329,12 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
     // closed e.Long#1 as range 12
     // closed e.Param#1 as range 16
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.Param#1: 16
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Optional/11 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2173,6 +2367,12 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   // closed e.Long#1 as range 12
   // closed e.Param#1 as range 16
   // closed e.ArgsTail#1 as range 2
+  //DEBUG: s.Num#1: 9
+  //DEBUG: s.Tag#1: 10
+  //DEBUG: e.Description#1: 5
+  //DEBUG: e.Long#1: 12
+  //DEBUG: e.Param#1: 16
+  //DEBUG: e.ArgsTail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2218,6 +2418,7 @@ refalrts::RefalFunction& ResolveOpts_LongParam = descr_ResolveOpts_LongParam;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_Long {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ResolveOpts,
       & Error
@@ -2262,6 +2463,13 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 22(2)
       {refalrts::icsVarLeft, 0, 21, 16},
       // closed e.Param#1 as range 16
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.WordNum#1: 21
+      //DEBUG: e.Param#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/22(2) } Tile{ AsIs: >/1 ]] }
@@ -2288,6 +2496,11 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.Long#1 as range 12
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/16 & Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2323,6 +2536,13 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 22(2)
       {refalrts::icsVarLeft, 0, 21, 16},
       // closed e.Param#1 as range 16
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.WordNum#1: 21
+      //DEBUG: e.Param#1: 16
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/14 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/22(2) } Tile{ AsIs: >/1 ]] }
@@ -2349,6 +2569,11 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.Long#1 as range 12
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/16 Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 HalfReuse: # NoParam/14 } Tile{ AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2375,6 +2600,11 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.Long#1 as range 12
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Long#1: 12
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/15 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 HalfReuse: )/14 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2406,7 +2636,8 @@ refalrts::RASLFunction descr_ResolveOpts_Long(
   scope_ResolveOpts_Long::functions,
   scope_ResolveOpts_Long::idents,
   scope_ResolveOpts_Long::numbers,
-  scope_ResolveOpts_Long::strings
+  scope_ResolveOpts_Long::strings,
+  scope_ResolveOpts_Long::filename
 );
 refalrts::RefalFunction& ResolveOpts_Long = descr_ResolveOpts_Long;
 
@@ -2469,6 +2700,13 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     if( ! refalrts::svar_left( context[21], context[16], context[17] ) )
       continue;
     // closed e.Param#1 as range 16
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.WordNum#1: 21
+    //DEBUG: e.Param#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
@@ -2502,6 +2740,11 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2556,6 +2799,13 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     if( ! refalrts::svar_left( context[21], context[16], context[17] ) )
       continue;
     // closed e.Param#1 as range 16
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.WordNum#1: 21
+    //DEBUG: e.Param#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} e.Long#1/12 {REMOVED TILE} (/18 # Word/20 s.WordNum#1/21 {REMOVED TILE} )/19 {REMOVED TILE} {REMOVED TILE}
@@ -2589,6 +2839,11 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
     // closed e.Description#1 as range 5
     // closed e.Long#1 as range 12
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Long#1: 12
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2623,6 +2878,11 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   // closed e.Description#1 as range 5
   // closed e.Long#1 as range 12
   // closed e.ArgsTail#1 as range 2
+  //DEBUG: s.Num#1: 9
+  //DEBUG: s.Tag#1: 10
+  //DEBUG: e.Description#1: 5
+  //DEBUG: e.Long#1: 12
+  //DEBUG: e.ArgsTail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} e.Long#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2657,6 +2917,7 @@ refalrts::RefalFunction& ResolveOpts_Long = descr_ResolveOpts_Long;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ResolveOpts_Short {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ResolveOpts,
       & Error
@@ -2704,6 +2965,13 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 23(2)
       {refalrts::icsVarLeft, 0, 22, 17},
       // closed e.Param#1 as range 17
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.WordNum#1: 22
+      //DEBUG: e.Param#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 {REMOVED TILE} # Word/21 s.WordNum#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/15 HalfReuse: s.Tag1 #10/16 HalfReuse: s.Num1 #9/19 } Tile{ AsIs: e.Param#1/17 } Tile{ AsIs: )/20 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/23(2) } Tile{ AsIs: >/1 ]] }
@@ -2731,6 +2999,11 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       // closed e.Description#1 as range 5
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/17 & Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2761,6 +3034,12 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.Param#1 as range 13
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Param#1: 13
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/11 } Tile{ AsIs: s.Tag#1/10 } Tile{ HalfReuse: s.Num1 #9/15 AsIs: e.Param#1/13 AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2793,6 +3072,13 @@ namespace /* unnamed */ {
       // closed e.ArgsTail#1 as range 23(2)
       {refalrts::icsVarLeft, 0, 22, 17},
       // closed e.Param#1 as range 17
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
+      //DEBUG: s.WordNum#1: 22
+      //DEBUG: e.Param#1: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 {REMOVED TILE} # Word/21 s.WordNum#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/15 HalfReuse: s.Tag1 #10/16 HalfReuse: s.Num1 #9/19 } Tile{ AsIs: e.Param#1/17 } Tile{ AsIs: )/20 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/23(2) } Tile{ AsIs: >/1 ]] }
@@ -2820,6 +3106,11 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       // closed e.Description#1 as range 5
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/17 Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ HalfReuse: # NoParam/15 AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2847,6 +3138,12 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.Param#1 as range 13
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.Param#1: 13
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/11 } Tile{ AsIs: s.Tag#1/10 } Tile{ HalfReuse: s.Num1 #9/15 AsIs: e.Param#1/13 AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2874,6 +3171,11 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 23},
       // closed e.Description#1 as range 5
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/15 } Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } Tile{ AsIs: )/16 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
@@ -2898,6 +3200,12 @@ namespace /* unnamed */ {
       // closed e.Description#1 as range 5
       // closed e.OptTail#1 as range 13
       // closed e.ArgsTail#1 as range 2
+      //DEBUG: s.Num#1: 9
+      //DEBUG: s.Tag#1: 10
+      //DEBUG: s.Short#1: 12
+      //DEBUG: e.Description#1: 5
+      //DEBUG: e.OptTail#1: 13
+      //DEBUG: e.ArgsTail#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE}
       //RESULT: Tile{ [[ } (/17 Tile{ AsIs: s.Tag#1/10 HalfReuse: s.Num1 #9/11 } )/18 Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } (/19 # Short/20 Tile{ HalfReuse: s.Num1 #9/15 AsIs: e.OptTail#1/13 AsIs: )/16 AsIs: e.ArgsTail#1/2 AsIs: >/1 ]] }
@@ -2934,7 +3242,8 @@ refalrts::RASLFunction descr_ResolveOpts_Short(
   scope_ResolveOpts_Short::functions,
   scope_ResolveOpts_Short::idents,
   scope_ResolveOpts_Short::numbers,
-  scope_ResolveOpts_Short::strings
+  scope_ResolveOpts_Short::strings,
+  scope_ResolveOpts_Short::filename
 );
 refalrts::RefalFunction& ResolveOpts_Short = descr_ResolveOpts_Short;
 
@@ -3002,6 +3311,13 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_left( context[22], context[17], context[18] ) )
       continue;
     // closed e.Param#1 as range 17
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.WordNum#1: 22
+    //DEBUG: e.Param#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 {REMOVED TILE} # Word/21 s.WordNum#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3038,6 +3354,11 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Description#1 as range 5
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3077,6 +3398,12 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Param#1: 13
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3127,6 +3454,13 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_left( context[22], context[17], context[18] ) )
       continue;
     // closed e.Param#1 as range 17
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
+    //DEBUG: s.WordNum#1: 22
+    //DEBUG: e.Param#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 {REMOVED TILE} # Word/21 s.WordNum#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3163,6 +3497,11 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Description#1 as range 5
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3198,6 +3537,12 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
     // closed e.Description#1 as range 5
     // closed e.Param#1 as range 13
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.Param#1: 13
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3234,6 +3579,11 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Description#1 as range 5
     // closed e.ArgsTail#1 as range 2
+    //DEBUG: s.Num#1: 9
+    //DEBUG: s.Tag#1: 10
+    //DEBUG: s.Short#1: 12
+    //DEBUG: e.Description#1: 5
+    //DEBUG: e.ArgsTail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3265,6 +3615,12 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   // closed e.Description#1 as range 5
   // closed e.OptTail#1 as range 13
   // closed e.ArgsTail#1 as range 2
+  //DEBUG: s.Num#1: 9
+  //DEBUG: s.Tag#1: 10
+  //DEBUG: s.Short#1: 12
+  //DEBUG: e.Description#1: 5
+  //DEBUG: e.OptTail#1: 13
+  //DEBUG: e.ArgsTail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/9 {REMOVED TILE} s.Short#1/12 {REMOVED TILE}
@@ -3308,6 +3664,7 @@ refalrts::RefalFunction& ResolveOpts_Short = descr_ResolveOpts_Short;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_FoldErrors {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DoFoldErrors
     };
@@ -3322,6 +3679,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.OptionsAndErrors#1 as range 2
+      //DEBUG: e.OptionsAndErrors#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & DoFoldErrors/6 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.OptionsAndErrors#1/2 AsIs: >/1 ]] }
@@ -3348,7 +3706,8 @@ refalrts::RASLFunction descr_FoldErrors(
   scope_FoldErrors::functions,
   scope_FoldErrors::idents,
   scope_FoldErrors::numbers,
-  scope_FoldErrors::strings
+  scope_FoldErrors::strings,
+  scope_FoldErrors::filename
 );
 refalrts::RefalFunction& FoldErrors = descr_FoldErrors;
 
@@ -3367,6 +3726,7 @@ static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::It
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.OptionsAndErrors#1 as range 2
+  //DEBUG: e.OptionsAndErrors#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3398,6 +3758,7 @@ refalrts::RefalFunction& FoldErrors = descr_FoldErrors;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DoFoldErrors {
+    static const char *filename = "GetOpt.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Error
     };
@@ -3431,6 +3792,12 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 16, 11},
       {refalrts::icsVarLeft, 0, 17, 11},
       // closed e.Info#1 as range 11
+      //DEBUG: e.Errors#1: 5
+      //DEBUG: e.Options#1: 9
+      //DEBUG: e.OptionsAndErrors#1: 2
+      //DEBUG: s.Num#1: 16
+      //DEBUG: s.ErrorCode#1: 17
+      //DEBUG: e.Info#1: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} & Error/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoFoldErrors/4 AsIs: (/7 AsIs: e.Errors#1/5 HalfReuse: (/8 } Tile{ AsIs: s.Num#1/16 AsIs: s.ErrorCode#1/17 AsIs: e.Info#1/11 AsIs: )/14 } Tile{ HalfReuse: )/13 } Tile{ AsIs: e.Options#1/9 } Tile{ AsIs: e.OptionsAndErrors#1/20(2) } Tile{ AsIs: >/1 ]] }
@@ -3452,6 +3819,8 @@ namespace /* unnamed */ {
       // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/2 >/1
       // closed e.Errors#1 as range 5
       // closed e.Options#1 as range 2
+      //DEBUG: e.Errors#1: 5
+      //DEBUG: e.Options#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DoFoldErrors/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Errors#1/5 AsIs: )/8 } Tile{ AsIs: e.Options#1/2 } Tile{ ]] }
@@ -3474,7 +3843,8 @@ refalrts::RASLFunction descr_DoFoldErrors(
   scope_DoFoldErrors::functions,
   scope_DoFoldErrors::idents,
   scope_DoFoldErrors::numbers,
-  scope_DoFoldErrors::strings
+  scope_DoFoldErrors::strings,
+  scope_DoFoldErrors::filename
 );
 refalrts::RefalFunction& DoFoldErrors = descr_DoFoldErrors;
 
@@ -3529,6 +3899,12 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
       if( ! refalrts::svar_left( context[17], context[11], context[12] ) )
         continue;
       // closed e.Info#1 as range 11
+      //DEBUG: e.Errors#1: 5
+      //DEBUG: e.Options#1: 9
+      //DEBUG: e.OptionsAndErrors#1: 2
+      //DEBUG: s.Num#1: 16
+      //DEBUG: s.ErrorCode#1: 17
+      //DEBUG: e.Info#1: 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} & Error/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3557,6 +3933,8 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
   // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/2 >/1
   // closed e.Errors#1 as range 5
   // closed e.Options#1 as range 2
+  //DEBUG: e.Errors#1: 5
+  //DEBUG: e.Options#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DoFoldErrors/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}

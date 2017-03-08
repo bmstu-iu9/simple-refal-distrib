@@ -101,6 +101,7 @@ extern refalrts::RefalFunction& Length_T;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Go_L1 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ParseCommandLine
     };
@@ -117,6 +118,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.ProgName#2 as range 5
       // closed e.Options#2 as range 2
+      //DEBUG: e.ProgName#2: 5
+      //DEBUG: e.Options#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} & Go\1/4 (/7 e.ProgName#2/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & ParseCommandLine/8 AsIs: e.Options#2/2 AsIs: >/1 ]] }
@@ -139,7 +142,8 @@ refalrts::RASLFunction descr_gen_Go_L1(
   scope_gen_Go_L1::functions,
   scope_gen_Go_L1::idents,
   scope_gen_Go_L1::numbers,
-  scope_gen_Go_L1::strings
+  scope_gen_Go_L1::strings,
+  scope_gen_Go_L1::filename
 );
 refalrts::RefalFunction& gen_Go_L1 = descr_gen_Go_L1;
 
@@ -165,6 +169,8 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.ProgName#2 as range 5
   // closed e.Options#2 as range 2
+  //DEBUG: e.ProgName#2: 5
+  //DEBUG: e.Options#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & Go\1/4 (/7 e.ProgName#2/5 {REMOVED TILE}
@@ -190,6 +196,7 @@ refalrts::RefalFunction& gen_Go_L1 = descr_gen_Go_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Go_L2 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & LoadFile,
       & Transform,
@@ -223,6 +230,7 @@ namespace /* unnamed */ {
       // </0 & Go\2/4 # InPlace/5 e.FileName#2/2 >/1
       {refalrts::icIdentTerm, 0, 3, 5},
       // closed e.FileName#2 as range 2
+      //DEBUG: e.FileName#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & SaveFile/4 HalfReuse: (/5 AsIs: e.FileName#2/2 HalfReuse: )/1 } </6 & Transform/7 (/8 e.FileName#2/2/9 )/11 </12 & LoadFile/13 e.FileName#2/2/14 >/16 >/17 >/18 Tile{ ]] }
@@ -263,6 +271,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 36},
       // closed e.From#2 as range 6
       // closed e.To#2 as range 11
+      //DEBUG: e.From#2: 6
+      //DEBUG: e.To#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </15 & SaveFile/16 (/17 Tile{ AsIs: e.To#2/11 } )/18 (/19"// Automatically generated file, don\'t edit!"/20 )/22 (/23"// Edit file \'"/24 e.From#2/6/26 '\''/28 )/29 (/30 )/31 (/32 Tile{ HalfReuse: )/0 HalfReuse: </4 HalfReuse: & Transform/5 AsIs: (/8 AsIs: e.From#2/6 AsIs: )/9 HalfReuse: </10 HalfReuse: & LoadFile/13 } e.From#2/6/33 >/35 Tile{ HalfReuse: >/14 AsIs: >/1 ]] }
@@ -333,7 +343,8 @@ refalrts::RASLFunction descr_gen_Go_L2(
   scope_gen_Go_L2::functions,
   scope_gen_Go_L2::idents,
   scope_gen_Go_L2::numbers,
-  scope_gen_Go_L2::strings
+  scope_gen_Go_L2::strings,
+  scope_gen_Go_L2::filename
 );
 refalrts::RefalFunction& gen_Go_L2 = descr_gen_Go_L2;
 
@@ -362,6 +373,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::ident_term(  & ident_InPlace<int>::name, context[5] ) )
       continue;
     // closed e.FileName#2 as range 2
+    //DEBUG: e.FileName#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -434,6 +446,8 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.From#2 as range 6
     // closed e.To#2 as range 11
+    //DEBUG: e.From#2: 6
+    //DEBUG: e.To#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -532,6 +546,7 @@ refalrts::RefalFunction& gen_Go_L2 = descr_gen_Go_L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Go {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Fetch,
       & gen_Go_L2,
@@ -584,7 +599,8 @@ refalrts::RASLFunction descr_Go(
   scope_Go::functions,
   scope_Go::idents,
   scope_Go::numbers,
-  scope_Go::strings
+  scope_Go::strings,
+  scope_Go::filename
 );
 refalrts::RefalFunction& Go = descr_Go;
 
@@ -645,6 +661,7 @@ refalrts::RefalFunction& Go = descr_Go;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Transform_L1 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt,
       & Length_T
@@ -684,6 +701,10 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 20, static_cast<unsigned char>(':'), 11},
       // closed e.GenMode#2 as range 11
       // closed e.DescriptionAndTail#2 as range 27(2)
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 11
+      //DEBUG: e.DescriptionAndTail#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Source#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 } Tile{ HalfReuse: & Length-T/8 AsIs: e.LinesBefore#2/9 AsIs: (/13 AsIs: '/'/15 AsIs: '*'/16 AsIs: 'G'/17 AsIs: 'E'/18 AsIs: 'N'/19 AsIs: ':'/20 AsIs: e.GenMode#2/11 AsIs: )/14 } Tile{ AsIs: >/1 } )/21 Tile{ AsIs: (/7 } e.GenMode#2/11/22 )/24 Tile{ AsIs: e.DescriptionAndTail#2/27(2) } Tile{ ]] }
@@ -713,6 +734,8 @@ namespace /* unnamed */ {
       // </0 & Transform\1/4 (/7 e.Source#1/5 )/8 e.Other#2/2 >/1
       // closed e.Source#1 as range 5
       // closed e.Other#2 as range 2
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.Other#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } 1/9 Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/8 }"Lexer description not found"/10 Tile{ AsIs: >/1 ]] }
@@ -742,7 +765,8 @@ refalrts::RASLFunction descr_gen_Transform_L1(
   scope_gen_Transform_L1::functions,
   scope_gen_Transform_L1::idents,
   scope_gen_Transform_L1::numbers,
-  scope_gen_Transform_L1::strings
+  scope_gen_Transform_L1::strings,
+  scope_gen_Transform_L1::filename
 );
 refalrts::RefalFunction& gen_Transform_L1 = descr_gen_Transform_L1;
 
@@ -808,6 +832,10 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
         continue;
       // closed e.GenMode#2 as range 11
       // closed e.DescriptionAndTail#2 as range 27(2)
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 11
+      //DEBUG: e.DescriptionAndTail#2: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Source#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -847,6 +875,8 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
   // </0 & Transform\1/4 (/7 e.Source#1/5 )/8 e.Other#2/2 >/1
   // closed e.Source#1 as range 5
   // closed e.Other#2 as range 2
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Other#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
@@ -881,6 +911,7 @@ refalrts::RefalFunction& gen_Transform_L1 = descr_gen_Transform_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Transform_L2 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt
     };
@@ -929,6 +960,12 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 32, static_cast<unsigned char>('/'), 20},
       {refalrts::icEmpty, 0, 0, 20},
       // closed e.Deleted#2 as range 35(2)
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 13
+      //DEBUG: e.Description#2: 18
+      //DEBUG: e.Deleted#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Transform\2/4 (/7 e.Source#1/5 )/8 {REMOVED TILE} {REMOVED TILE} (/22 'G'/24 'E'/25 'N'/26 ':'/27 'E'/28 'N'/29 'D'/30 '*'/31 '/'/32 )/23 e.Deleted#2/35(2) >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: s.Length#2/17 AsIs: e.LinesBefore#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.GenMode#2/13 AsIs: )/16 } Tile{ AsIs: e.Description#2/18 } Tile{ ]] }
@@ -946,6 +983,11 @@ namespace /* unnamed */ {
       // closed e.LinesBefore#2 as range 9
       // closed e.GenMode#2 as range 13
       // closed e.Other#2 as range 2
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 13
+      //DEBUG: e.Other#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} e.GenMode#2/13 {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/8 HalfReuse: 'E'/11 } 'n'/18 Tile{ HalfReuse: 'd'/12 HalfReuse: ' '/15 } Tile{ HalfReuse: 'o'/16 }"f description not found"/19 Tile{ AsIs: >/1 ]] }
@@ -982,7 +1024,8 @@ refalrts::RASLFunction descr_gen_Transform_L2(
   scope_gen_Transform_L2::functions,
   scope_gen_Transform_L2::idents,
   scope_gen_Transform_L2::numbers,
-  scope_gen_Transform_L2::strings
+  scope_gen_Transform_L2::strings,
+  scope_gen_Transform_L2::filename
 );
 refalrts::RefalFunction& gen_Transform_L2 = descr_gen_Transform_L2;
 
@@ -1076,6 +1119,12 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
       if( ! refalrts::empty_seq( context[20], context[21] ) )
         continue;
       // closed e.Deleted#2 as range 35(2)
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 13
+      //DEBUG: e.Description#2: 18
+      //DEBUG: e.Deleted#2: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} </0 & Transform\2/4 (/7 e.Source#1/5 )/8 {REMOVED TILE} {REMOVED TILE} (/22 'G'/24 'E'/25 'N'/26 ':'/27 'E'/28 'N'/29 'D'/30 '*'/31 '/'/32 )/23 e.Deleted#2/35(2) >/1 {REMOVED TILE}
@@ -1100,6 +1149,11 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
   // closed e.LinesBefore#2 as range 9
   // closed e.GenMode#2 as range 13
   // closed e.Other#2 as range 2
+  //DEBUG: s.Length#2: 17
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.LinesBefore#2: 9
+  //DEBUG: e.GenMode#2: 13
+  //DEBUG: e.Other#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} e.GenMode#2/13 {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
@@ -1141,6 +1195,7 @@ refalrts::RefalFunction& gen_Transform_L2 = descr_gen_Transform_L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Transform_L3S1L1 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt
     };
@@ -1172,6 +1227,9 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 0, 13},
       // closed e.Source#1 as range 5
       // closed e.Text#3 as range 9
+      //DEBUG: s.LineNumber#3: 14
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.Text#3: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.LineNumber#3/14 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Text#3/9 } Tile{ AsIs: >/1 ]] }
@@ -1191,6 +1249,10 @@ namespace /* unnamed */ {
       // </0 & Transform\3$1\1/4 (/7 e.Source#1/5 )/8 (/11 s.TokType#3/13 s.LineNumber#3/14 e.Info#3/9 )/12 >/1
       // closed e.Source#1 as range 5
       // closed e.Info#3 as range 9
+      //DEBUG: s.TokType#3: 13
+      //DEBUG: s.LineNumber#3: 14
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.Info#3: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.TokType#3/13 s.LineNumber#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 } Tile{ HalfReuse: s.TokType3 #13/0 HalfReuse: (/4 HalfReuse: s.LineNumber3 #14/7 AsIs: e.Source#1/5 AsIs: )/8 } Tile{ AsIs: e.Info#3/9 } Tile{ HalfReuse: )/1 ]] }
@@ -1219,7 +1281,8 @@ refalrts::RASLFunction descr_gen_Transform_L3S1L1(
   scope_gen_Transform_L3S1L1::functions,
   scope_gen_Transform_L3S1L1::idents,
   scope_gen_Transform_L3S1L1::numbers,
-  scope_gen_Transform_L3S1L1::strings
+  scope_gen_Transform_L3S1L1::strings,
+  scope_gen_Transform_L3S1L1::filename
 );
 refalrts::RefalFunction& gen_Transform_L3S1L1 = descr_gen_Transform_L3S1L1;
 
@@ -1266,6 +1329,9 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
       continue;
     // closed e.Source#1 as range 5
     // closed e.Text#3 as range 9
+    //DEBUG: s.LineNumber#3: 14
+    //DEBUG: e.Source#1: 5
+    //DEBUG: e.Text#3: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1291,6 +1357,10 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
   // </0 & Transform\3$1\1/4 (/7 e.Source#1/5 )/8 (/11 s.TokType#3/13 s.LineNumber#3/14 e.Info#3/9 )/12 >/1
   // closed e.Source#1 as range 5
   // closed e.Info#3 as range 9
+  //DEBUG: s.TokType#3: 13
+  //DEBUG: s.LineNumber#3: 14
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Info#3: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.TokType#3/13 s.LineNumber#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
@@ -1322,6 +1392,7 @@ refalrts::RefalFunction& gen_Transform_L3S1L1 = descr_gen_Transform_L3S1L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Transform_L3S1L2 {
+    static const char *filename = "LexGen.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -1341,6 +1412,9 @@ namespace /* unnamed */ {
       // closed e.LinesBefore#2 as range 5
       // closed e.Description#2 as range 9
       // closed e.Generated#3 as range 2
+      //DEBUG: e.LinesBefore#2: 5
+      //DEBUG: e.Description#2: 9
+      //DEBUG: e.Generated#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.LinesBefore#2/5 } Tile{ AsIs: e.Description#2/9 } Tile{ AsIs: (/11 } Tile{ HalfReuse: 'G'/0 HalfReuse: 'E'/4 HalfReuse: 'N'/7 } Tile{ HalfReuse: ':'/8 }"EN"/13 Tile{ HalfReuse: 'D'/1 }"*/"/15 Tile{ AsIs: )/12 } Tile{ AsIs: e.Generated#3/2 } Tile{ ]] }
@@ -1377,7 +1451,8 @@ refalrts::RASLFunction descr_gen_Transform_L3S1L2(
   scope_gen_Transform_L3S1L2::functions,
   scope_gen_Transform_L3S1L2::idents,
   scope_gen_Transform_L3S1L2::numbers,
-  scope_gen_Transform_L3S1L2::strings
+  scope_gen_Transform_L3S1L2::strings,
+  scope_gen_Transform_L3S1L2::filename
 );
 refalrts::RefalFunction& gen_Transform_L3S1L2 = descr_gen_Transform_L3S1L2;
 
@@ -1410,6 +1485,9 @@ static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, re
   // closed e.LinesBefore#2 as range 5
   // closed e.Description#2 as range 9
   // closed e.Generated#3 as range 2
+  //DEBUG: e.LinesBefore#2: 5
+  //DEBUG: e.Description#2: 9
+  //DEBUG: e.Generated#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1451,6 +1529,7 @@ refalrts::RefalFunction& gen_Transform_L3S1L2 = descr_gen_Transform_L3S1L2;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Transform_L3 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt,
       & gen_Transform_L3S1L2,
@@ -1501,6 +1580,10 @@ namespace /* unnamed */ {
       // closed e.Source#1 as range 5
       // closed e.LinesBefore#2 as range 9
       // closed e.Description#2 as range 2
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.Description#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </24 & Fetch/25 Tile{ AsIs: s.Length#2/17 } e.Description#2/2/26 </28 & Seq/29 & DFA-Tokens/30 (/31 & Map/32 </33 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\3$1\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 HalfReuse: >/11 } Tile{ AsIs: )/12 HalfReuse: & DFA-Parse/15 HalfReuse: & DFA-Compile/18 HalfReuse: & GenerateFromDFA/19 HalfReuse: </20 HalfReuse: & @create_closure@/21 HalfReuse: & Transform\3$1\2/22 HalfReuse: (/23 } Tile{ AsIs: e.LinesBefore#2/9 } Tile{ AsIs: )/16 } (/34 Tile{ AsIs: e.Description#2/2 } )/35 >/36 >/37 Tile{ AsIs: >/1 ]] }
@@ -1559,6 +1642,11 @@ namespace /* unnamed */ {
       // closed e.LinesBefore#2 as range 9
       // closed e.OtherGenMode#2 as range 13
       // closed e.Description#2 as range 2
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.OtherGenMode#2: 13
+      //DEBUG: e.Description#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Description#2/2 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/8 HalfReuse: 'U'/11 } Tile{ HalfReuse: 'n'/12 HalfReuse: 'k'/15 } Tile{ HalfReuse: 'n'/16 }"own generation mode "/18 Tile{ AsIs: e.OtherGenMode#2/13 } Tile{ AsIs: >/1 ]] }
@@ -1594,7 +1682,8 @@ refalrts::RASLFunction descr_gen_Transform_L3(
   scope_gen_Transform_L3::functions,
   scope_gen_Transform_L3::idents,
   scope_gen_Transform_L3::numbers,
-  scope_gen_Transform_L3::strings
+  scope_gen_Transform_L3::strings,
+  scope_gen_Transform_L3::filename
 );
 refalrts::RefalFunction& gen_Transform_L3 = descr_gen_Transform_L3;
 
@@ -1666,6 +1755,10 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
     // closed e.Source#1 as range 5
     // closed e.LinesBefore#2 as range 9
     // closed e.Description#2 as range 2
+    //DEBUG: s.Length#2: 17
+    //DEBUG: e.Source#1: 5
+    //DEBUG: e.LinesBefore#2: 9
+    //DEBUG: e.Description#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1743,6 +1836,11 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   // closed e.LinesBefore#2 as range 9
   // closed e.OtherGenMode#2 as range 13
   // closed e.Description#2 as range 2
+  //DEBUG: s.Length#2: 17
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.LinesBefore#2: 9
+  //DEBUG: e.OtherGenMode#2: 13
+  //DEBUG: e.Description#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Description#2/2 {REMOVED TILE}
@@ -1782,6 +1880,7 @@ refalrts::RefalFunction& gen_Transform_L3 = descr_gen_Transform_L3;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Transform {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_Transform_L1,
       & refalrts::create_closure,
@@ -1803,6 +1902,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.Source#1 as range 5
       // closed e.Lines#1 as range 2
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.Lines#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Lines#1/2 } </11 & Seq/12 </13 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 } >/14 </15 & @create_closure@/16 & Transform\2/17 (/18 e.Source#1/5/19 )/21 >/22 </23 & @create_closure@/24 & Transform\3/25 (/26 e.Source#1/5/27 )/29 >/30 >/31 Tile{ AsIs: >/1 ]] }
@@ -1862,7 +1963,8 @@ refalrts::RASLFunction descr_Transform(
   scope_Transform::functions,
   scope_Transform::idents,
   scope_Transform::numbers,
-  scope_Transform::strings
+  scope_Transform::strings,
+  scope_Transform::filename
 );
 refalrts::RefalFunction& Transform = descr_Transform;
 
@@ -1888,6 +1990,8 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Source#1 as range 5
   // closed e.Lines#1 as range 2
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1971,6 +2075,7 @@ refalrts::RefalFunction& Transform = descr_Transform;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_Length_T_L1 {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Inc
     };
@@ -1988,6 +2093,8 @@ namespace /* unnamed */ {
       // closed e.Line#2 as range 5
       {refalrts::icsVarLeft, 0, 9, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Line#2: 5
+      //DEBUG: s.Next#2: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Inc/4 AsIs: s.Next#2/9 HalfReuse: >/7 } Tile{ HalfReuse: (/8 } Tile{ AsIs: e.Line#2/5 } Tile{ HalfReuse: )/1 ]] }
@@ -2015,7 +2122,8 @@ refalrts::RASLFunction descr_gen_Length_T_L1(
   scope_gen_Length_T_L1::functions,
   scope_gen_Length_T_L1::idents,
   scope_gen_Length_T_L1::numbers,
-  scope_gen_Length_T_L1::strings
+  scope_gen_Length_T_L1::strings,
+  scope_gen_Length_T_L1::filename
 );
 refalrts::RefalFunction& gen_Length_T_L1 = descr_gen_Length_T_L1;
 
@@ -2044,6 +2152,8 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Line#2: 5
+  //DEBUG: s.Next#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2074,6 +2184,7 @@ refalrts::RefalFunction& gen_Length_T_L1 = descr_gen_Length_T_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Length_T {
+    static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_Length_T_L1,
       & MapReduce
@@ -2089,6 +2200,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Lines#1 as range 2
+      //DEBUG: e.Lines#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & MapReduce/6 Tile{ HalfReuse: & Length-T\1/0 HalfReuse: 0/4 AsIs: e.Lines#1/2 AsIs: >/1 ]] }
@@ -2114,7 +2226,8 @@ refalrts::RASLFunction descr_Length_T(
   scope_Length_T::functions,
   scope_Length_T::idents,
   scope_Length_T::numbers,
-  scope_Length_T::strings
+  scope_Length_T::strings,
+  scope_Length_T::filename
 );
 refalrts::RefalFunction& Length_T = descr_Length_T;
 
@@ -2133,6 +2246,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Lines#1 as range 2
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}

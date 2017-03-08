@@ -43,6 +43,7 @@ extern refalrts::RefalFunction& CNameSuf;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DisplayName {
+    static const char *filename = "DisplayName.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DisplayNameSuf,
       & StrFromInt
@@ -93,6 +94,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 6, 11},
       {refalrts::icsVarRight, 0, 7, 11},
       // closed e.Index#1 as range 11(2)
+      //DEBUG: s.Mode#1: 6
+      //DEBUG: s.Depth#1: 7
+      //DEBUG: e.Index#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Mode#1/6 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: s.Mode1 #6/0 HalfReuse: '.'/4 } Tile{ AsIs: e.Index#1/11(2) } '#'/8 Tile{ HalfReuse: </5 } & StrFromInt/9 Tile{ AsIs: s.Depth#1/7 AsIs: >/1 } ':'/10 Tile{ ]] }
@@ -123,6 +127,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 13, 11},
       {refalrts::icIdentLeftSave, 7, 0, 13},
       // closed e.Suffix#1 as range 13(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} & DisplayName/4 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Name#1/5 } Tile{ AsIs: </0 } Tile{ HalfReuse: & DisplayNameSuf/7 AsIs: e.Suffix#1/13(2) AsIs: >/1 ]] }
@@ -138,6 +144,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & DisplayName/4 e.Name#1/2 >/1
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & DisplayName/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
@@ -157,7 +164,8 @@ refalrts::RASLFunction descr_DisplayName(
   scope_DisplayName::functions,
   scope_DisplayName::idents,
   scope_DisplayName::numbers,
-  scope_DisplayName::strings
+  scope_DisplayName::strings,
+  scope_DisplayName::filename
 );
 refalrts::RefalFunction& DisplayName = descr_DisplayName;
 
@@ -218,6 +226,9 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[7], context[11], context[12] ) )
       continue;
     // closed e.Index#1 as range 11(2)
+    //DEBUG: s.Mode#1: 6
+    //DEBUG: s.Depth#1: 7
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Mode#1/6 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -263,6 +274,8 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 13(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} & DisplayName/4 {REMOVED TILE} {REMOVED TILE}
@@ -285,6 +298,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
   // e.idx
   // </0 & DisplayName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DisplayName/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -305,6 +319,7 @@ refalrts::RefalFunction& DisplayName = descr_DisplayName;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DisplayNameSuf {
+    static const char *filename = "DisplayName.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt,
       & DisplayNameSuf
@@ -330,6 +345,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 10},
       {refalrts::icsVarLeft, 0, 6, 10},
       // closed e.Suffix#1 as range 10(2)
+      //DEBUG: s.Num#1: 6
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: '\\'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & DisplayNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
@@ -355,6 +372,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 5, 10},
       {refalrts::icsVarLeft, 0, 6, 10},
       // closed e.Suffix#1 as range 10(2)
+      //DEBUG: s.Tag#1: 5
+      //DEBUG: s.Num#1: 6
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: s.Tag#1/5 } </7 & StrFromInt/8 Tile{ AsIs: s.Num#1/6 } >/9 Tile{ AsIs: </0 AsIs: & DisplayNameSuf/4 } Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
@@ -396,7 +416,8 @@ refalrts::RASLFunction descr_DisplayNameSuf(
   scope_DisplayNameSuf::functions,
   scope_DisplayNameSuf::idents,
   scope_DisplayNameSuf::numbers,
-  scope_DisplayNameSuf::strings
+  scope_DisplayNameSuf::strings,
+  scope_DisplayNameSuf::filename
 );
 refalrts::RefalFunction& DisplayNameSuf = descr_DisplayNameSuf;
 
@@ -428,6 +449,8 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -465,6 +488,9 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Tag#1: 5
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -519,6 +545,7 @@ refalrts::RefalFunction& DisplayNameSuf = descr_DisplayNameSuf;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_DisplayCName {
+    static const char *filename = "DisplayName.cpp";
     static refalrts::RefalFunction *functions[] = {
       & DisplayName,
       & EscapeString
@@ -534,6 +561,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 & EscapeString/6 Tile{ AsIs: </0 Reuse: & DisplayName/4 AsIs: e.Name#1/2 AsIs: >/1 } >/7 Tile{ ]] }
@@ -562,7 +590,8 @@ refalrts::RASLFunction descr_DisplayCName(
   scope_DisplayCName::functions,
   scope_DisplayCName::idents,
   scope_DisplayCName::numbers,
-  scope_DisplayCName::strings
+  scope_DisplayCName::strings,
+  scope_DisplayCName::filename
 );
 refalrts::RefalFunction& DisplayCName = descr_DisplayCName;
 
@@ -579,6 +608,7 @@ static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -611,6 +641,7 @@ refalrts::RefalFunction& DisplayCName = descr_DisplayCName;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CName {
+    static const char *filename = "DisplayName.cpp";
     static refalrts::RefalFunction *functions[] = {
       & CName,
       & CNameSuf,
@@ -663,6 +694,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 6, 15},
       {refalrts::icsVarRight, 0, 7, 15},
       // closed e.Index#1 as range 15(2)
+      //DEBUG: s.Mode#1: 6
+      //DEBUG: s.Depth#1: 7
+      //DEBUG: e.Index#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } 'v'/8 Tile{ HalfReuse: 'a'/0 HalfReuse: 'r'/4 HalfReuse: '_'/5 AsIs: s.Mode#1/6 } </9 & CName/10 Tile{ AsIs: e.Index#1/15(2) } >/11 '_'/12 </13 & StrFromInt/14 Tile{ AsIs: s.Depth#1/7 AsIs: >/1 ]] }
@@ -697,6 +731,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 17, 15},
       {refalrts::icIdentLeftSave, 7, 0, 17},
       // closed e.Suffix#1 as range 17(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }"gen_"/8 Tile{ AsIs: </0 AsIs: & CName/4 AsIs: e.Name#1/5 HalfReuse: >/7 } '_'/10 </11 & CNameSuf/12 Tile{ AsIs: e.Suffix#1/17(2) } Tile{ AsIs: >/1 ]] }
@@ -725,6 +761,8 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 17, 15},
       {refalrts::icCharLeftSave, 7, static_cast<unsigned char>('-'), 17},
       // closed e.Name-E#1 as range 17(2)
+      //DEBUG: e.Name-B#1: 5
+      //DEBUG: e.Name-E#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Name-B#1/5 } Tile{ HalfReuse: '_'/4 } Tile{ AsIs: </0 } Tile{ HalfReuse: & CName/7 AsIs: e.Name-E#1/17(2) AsIs: >/1 ]] }
@@ -741,6 +779,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & CName/4 e.Name#1/2 >/1
       // closed e.Name#1 as range 2
+      //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & CName/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Name#1/2 } Tile{ ]] }
@@ -760,7 +799,8 @@ refalrts::RASLFunction descr_CName(
   scope_CName::functions,
   scope_CName::idents,
   scope_CName::numbers,
-  scope_CName::strings
+  scope_CName::strings,
+  scope_CName::filename
 );
 refalrts::RefalFunction& CName = descr_CName;
 
@@ -821,6 +861,9 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! refalrts::svar_right( context[7], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(2)
+    //DEBUG: s.Mode#1: 6
+    //DEBUG: s.Depth#1: 7
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -874,6 +917,8 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 17(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -919,6 +964,8 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
       if( ! context[7] )
         continue;
       // closed e.Name-E#1 as range 17(2)
+      //DEBUG: e.Name-B#1: 5
+      //DEBUG: e.Name-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -942,6 +989,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
   // e.idx
   // </0 & CName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & CName/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -962,6 +1010,7 @@ refalrts::RefalFunction& CName = descr_CName;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_CNameSuf {
+    static const char *filename = "DisplayName.cpp";
     static refalrts::RefalFunction *functions[] = {
       & StrFromInt,
       & CNameSuf
@@ -987,6 +1036,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('$'), 10},
       {refalrts::icsVarLeft, 0, 6, 10},
       // closed e.Suffix#1 as range 10(2)
+      //DEBUG: s.Num#1: 6
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 'S'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & CNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
@@ -1012,6 +1063,8 @@ namespace /* unnamed */ {
       {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('\\'), 10},
       {refalrts::icsVarLeft, 0, 6, 10},
       // closed e.Suffix#1 as range 10(2)
+      //DEBUG: s.Num#1: 6
+      //DEBUG: e.Suffix#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: 'L'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & CNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
@@ -1052,7 +1105,8 @@ refalrts::RASLFunction descr_CNameSuf(
   scope_CNameSuf::functions,
   scope_CNameSuf::idents,
   scope_CNameSuf::numbers,
-  scope_CNameSuf::strings
+  scope_CNameSuf::strings,
+  scope_CNameSuf::filename
 );
 refalrts::RefalFunction& CNameSuf = descr_CNameSuf;
 
@@ -1084,6 +1138,8 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1122,6 +1178,8 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

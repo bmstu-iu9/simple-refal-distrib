@@ -98,6 +98,7 @@ extern refalrts::RefalFunction& NextState_R;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenerateFromDFA {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & WriteFunction,
       & Map
@@ -113,6 +114,7 @@ namespace /* unnamed */ {
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       // closed e.Rules#1 as range 2
+      //DEBUG: e.Rules#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map/0 Reuse: & WriteFunction/4 AsIs: e.Rules#1/2 AsIs: >/1 ]] }
@@ -136,7 +138,8 @@ refalrts::RASLFunction descr_GenerateFromDFA(
   scope_GenerateFromDFA::functions,
   scope_GenerateFromDFA::idents,
   scope_GenerateFromDFA::numbers,
-  scope_GenerateFromDFA::strings
+  scope_GenerateFromDFA::strings,
+  scope_GenerateFromDFA::filename
 );
 refalrts::RefalFunction& GenerateFromDFA = descr_GenerateFromDFA;
 
@@ -153,6 +156,7 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Rules#1 as range 2
+  //DEBUG: e.Rules#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -178,6 +182,7 @@ refalrts::RefalFunction& GenerateFromDFA = descr_GenerateFromDFA;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteFunction {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & WriteAlternative,
       & Map
@@ -197,6 +202,8 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 2},
       // closed e.NextRule#1 as range 9
       // closed e.Alternatives#1 as range 5
+      //DEBUG: e.NextRule#1: 9
+      //DEBUG: e.Alternatives#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: )/7 AsIs: (/11 AsIs: e.NextRule#1/9 HalfReuse: ' '/12 } '{'/13 )/14 Tile{ AsIs: </0 } & Map/15 & WriteAlternative/16 Tile{ AsIs: e.Alternatives#1/5 } >/17 (/18 Tile{ HalfReuse: '}'/8 HalfReuse: )/1 ]] }
@@ -237,7 +244,8 @@ refalrts::RASLFunction descr_WriteFunction(
   scope_WriteFunction::functions,
   scope_WriteFunction::idents,
   scope_WriteFunction::numbers,
-  scope_WriteFunction::strings
+  scope_WriteFunction::strings,
+  scope_WriteFunction::filename
 );
 refalrts::RefalFunction& WriteFunction = descr_WriteFunction;
 
@@ -271,6 +279,8 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.NextRule#1 as range 9
   // closed e.Alternatives#1 as range 5
+  //DEBUG: e.NextRule#1: 9
+  //DEBUG: e.Alternatives#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -320,6 +330,7 @@ refalrts::RefalFunction& WriteFunction = descr_WriteFunction;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteAlternative {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & WriteAlternative_Aux
     };
@@ -337,6 +348,7 @@ namespace /* unnamed */ {
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::ictVarLeftSave, 0, 5, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: t.Alternative#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/7"  (e.Accum)"/8 Tile{ AsIs: </0 Reuse: & WriteAlternative-Aux/4 AsIs: t.Alternative#1/5 AsIs: >/1 } ';'/10 )/11 Tile{ ]] }
@@ -366,7 +378,8 @@ refalrts::RASLFunction descr_WriteAlternative(
   scope_WriteAlternative::functions,
   scope_WriteAlternative::idents,
   scope_WriteAlternative::numbers,
-  scope_WriteAlternative::strings
+  scope_WriteAlternative::strings,
+  scope_WriteAlternative::filename
 );
 refalrts::RefalFunction& WriteAlternative = descr_WriteAlternative;
 
@@ -389,6 +402,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Alternative#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -425,6 +439,7 @@ refalrts::RefalFunction& WriteAlternative = descr_WriteAlternative;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_WriteAlternative_Aux_S2L1 {
+    static const char *filename = "Generator.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -456,6 +471,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & WriteAlternative-Aux$2\1/4 e.ResultNotEmpty#2/2 >/1
       // closed e.ResultNotEmpty#2 as range 2
+      //DEBUG: e.ResultNotEmpty#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & WriteAlternative-Aux$2\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.ResultNotEmpty#2/2 } Tile{ ]] }
@@ -476,7 +492,8 @@ refalrts::RASLFunction descr_gen_WriteAlternative_Aux_S2L1(
   scope_gen_WriteAlternative_Aux_S2L1::functions,
   scope_gen_WriteAlternative_Aux_S2L1::idents,
   scope_gen_WriteAlternative_Aux_S2L1::numbers,
-  scope_gen_WriteAlternative_Aux_S2L1::strings
+  scope_gen_WriteAlternative_Aux_S2L1::strings,
+  scope_gen_WriteAlternative_Aux_S2L1::filename
 );
 refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1 = descr_gen_WriteAlternative_Aux_S2L1;
 
@@ -521,6 +538,7 @@ static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_
   // e.idx
   // </0 & WriteAlternative-Aux$2\1/4 e.ResultNotEmpty#2/2 >/1
   // closed e.ResultNotEmpty#2 as range 2
+  //DEBUG: e.ResultNotEmpty#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & WriteAlternative-Aux$2\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -544,6 +562,7 @@ refalrts::RefalFunction& gen_WriteAlternative_Aux_S2L1 = descr_gen_WriteAlternat
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_WriteAlternative_Aux {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_WriteAlternative_Aux_S2L1,
       & Head,
@@ -579,6 +598,8 @@ namespace /* unnamed */ {
       // ( s.idx # None t.idx )
       // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 # None/10 t.NextState#1/12 )/8 >/1
       {refalrts::icIdentTerm, 0, 0, 10},
+      //DEBUG: t.NextState#1: 12
+      //DEBUG: s.Head#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Head/4 HalfReuse: s.Head1 #9/7 } >/14 </15 & NextState-L/16 t.NextState#1/12/17 >/19 </20 Tile{ HalfReuse: & NextState-R/10 AsIs: t.NextState#1/12 }"e.Accum"/21 </23 & Head/24 Tile{ AsIs: s.Head#1/9 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
@@ -612,6 +633,9 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( s.idx t.idx t.idx )
       // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 t.Flush#1/10 t.NextState#1/12 )/8 >/1
+      //DEBUG: t.Flush#1: 10
+      //DEBUG: t.NextState#1: 12
+      //DEBUG: s.Head#1: 9
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Head/4 HalfReuse: s.Head1 #9/7 } >/14 </15 & NextState-L/16 t.NextState#1/12/17 >/19 </20 & Fetch/21 </22 & Flush/23 Tile{ AsIs: s.Head#1/9 AsIs: t.Flush#1/10 } >/24 </25 & NextState-R/26 Tile{ AsIs: t.NextState#1/12 } >/27 Tile{ HalfReuse: & WriteAlternative-Aux$2\1/8 AsIs: >/1 ]] }
@@ -661,7 +685,8 @@ refalrts::RASLFunction descr_WriteAlternative_Aux(
   scope_WriteAlternative_Aux::functions,
   scope_WriteAlternative_Aux::idents,
   scope_WriteAlternative_Aux::numbers,
-  scope_WriteAlternative_Aux::strings
+  scope_WriteAlternative_Aux::strings,
+  scope_WriteAlternative_Aux::filename
 );
 refalrts::RefalFunction& WriteAlternative_Aux = descr_WriteAlternative_Aux;
 
@@ -704,6 +729,8 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 # None/10 t.NextState#1/12 )/8 >/1
     if( ! refalrts::ident_term(  & ident_None<int>::name, context[10] ) )
       continue;
+    //DEBUG: t.NextState#1: 12
+    //DEBUG: s.Head#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -752,6 +779,9 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
 
   // ( s.idx t.idx t.idx )
   // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 t.Flush#1/10 t.NextState#1/12 )/8 >/1
+  //DEBUG: t.Flush#1: 10
+  //DEBUG: t.NextState#1: 12
+  //DEBUG: s.Head#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -817,6 +847,7 @@ refalrts::RefalFunction& WriteAlternative_Aux = descr_WriteAlternative_Aux;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Head {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & EscapeChar
     };
@@ -870,6 +901,7 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // s.idx
       // </0 & Head/4 s.Other#1/5 >/1
+      //DEBUG: s.Other#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ }" \'"/6 Tile{ AsIs: </0 Reuse: & EscapeChar/4 AsIs: s.Other#1/5 AsIs: >/1 } '\''/8 Tile{ ]] }
@@ -896,7 +928,8 @@ refalrts::RASLFunction descr_Head(
   scope_Head::functions,
   scope_Head::idents,
   scope_Head::numbers,
-  scope_Head::strings
+  scope_Head::strings,
+  scope_Head::filename
 );
 refalrts::RefalFunction& Head = descr_Head;
 
@@ -964,6 +997,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
 
   // s.idx
   // </0 & Head/4 s.Other#1/5 >/1
+  //DEBUG: s.Other#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -995,6 +1029,7 @@ refalrts::RefalFunction& Head = descr_Head;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_Flush {
+    static const char *filename = "Generator.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Head
     };
@@ -1025,6 +1060,7 @@ namespace /* unnamed */ {
       // s.idx # Unnamed
       // </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1
       {refalrts::icIdentTerm, 0, 2, 6},
+      //DEBUG: s.Head#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -1038,6 +1074,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 8, 6},
       {refalrts::icIdentLeftSave, 10, 1, 8},
       // closed e.FlushName#1 as range 8
+      //DEBUG: s.Head#1: 5
+      //DEBUG: e.FlushName#1: 8
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '('/1 } Tile{ AsIs: e.FlushName#1/8 }" e.Accum"/11 Tile{ AsIs: </0 Reuse: & Head/4 AsIs: s.Head#1/5 HalfReuse: >/6 HalfReuse: ')'/10 } Tile{ ]] }
@@ -1061,6 +1099,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 8, 6},
       {refalrts::icIdentLeftSave, 10, 0, 8},
       // closed e.Message#1 as range 8
+      //DEBUG: s.Head#1: 5
+      //DEBUG: e.Message#1: 8
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.Head#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '('/4 }"#TokenError"/11 Tile{ HalfReuse: ' '/6 HalfReuse: '\''/10 AsIs: e.Message#1/8 HalfReuse: '\''/7 HalfReuse: ')'/1 ]] }
@@ -1088,7 +1128,8 @@ refalrts::RASLFunction descr_Flush(
   scope_Flush::functions,
   scope_Flush::idents,
   scope_Flush::numbers,
-  scope_Flush::strings
+  scope_Flush::strings,
+  scope_Flush::filename
 );
 refalrts::RefalFunction& Flush = descr_Flush;
 
@@ -1120,6 +1161,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1
     if( ! refalrts::ident_term(  & ident_Unnamed<int>::name, context[6] ) )
       continue;
+    //DEBUG: s.Head#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1 {REMOVED TILE}
@@ -1144,6 +1186,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! context[10] )
       continue;
     // closed e.FlushName#1 as range 8
+    //DEBUG: s.Head#1: 5
+    //DEBUG: e.FlushName#1: 8
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1179,6 +1223,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 8
+  //DEBUG: s.Head#1: 5
+  //DEBUG: e.Message#1: 8
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Head#1/5 {REMOVED TILE}
@@ -1210,6 +1256,7 @@ refalrts::RefalFunction& Flush = descr_Flush;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_NextState_L {
+    static const char *filename = "Generator.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Finitive<int>::name
@@ -1247,6 +1294,7 @@ namespace /* unnamed */ {
       // </0 & NextState-L/4 (/5 e.NextStateName#1/7 )/6 >/1
       {refalrts::icBracketTerm, 0, 7, 5},
       // closed e.NextStateName#1 as range 7
+      //DEBUG: e.NextStateName#1: 7
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} e.NextStateName#1/7 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: 'e'/4 HalfReuse: '.'/5 }"Text"/9 Tile{ HalfReuse: ' '/6 HalfReuse: '='/1 ]] }
@@ -1273,7 +1321,8 @@ refalrts::RASLFunction descr_NextState_L(
   scope_NextState_L::functions,
   scope_NextState_L::idents,
   scope_NextState_L::numbers,
-  scope_NextState_L::strings
+  scope_NextState_L::strings,
+  scope_NextState_L::filename
 );
 refalrts::RefalFunction& NextState_L = descr_NextState_L;
 
@@ -1325,6 +1374,7 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.NextStateName#1 as range 7
+  //DEBUG: e.NextStateName#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.NextStateName#1/7 {REMOVED TILE}
@@ -1355,6 +1405,7 @@ refalrts::RefalFunction& NextState_L = descr_NextState_L;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_NextState_R {
+    static const char *filename = "Generator.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_Finitive<int>::name
@@ -1380,6 +1431,7 @@ namespace /* unnamed */ {
       // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1
       {refalrts::icIdentTerm, 0, 0, 5},
       // closed e.NextStateAccum#1 as range 2
+      //DEBUG: e.NextStateAccum#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
@@ -1392,6 +1444,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketTerm, 0, 7, 5},
       // closed e.NextStateName#1 as range 7
       // closed e.NextStateAccum#1 as range 2
+      //DEBUG: e.NextStateName#1: 7
+      //DEBUG: e.NextStateAccum#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/4 HalfReuse: '<'/5 AsIs: e.NextStateName#1/7 HalfReuse: ' '/6 } '('/9 Tile{ AsIs: e.NextStateAccum#1/2 } Tile{ HalfReuse: ')'/0 }" e.Text"/10 Tile{ HalfReuse: '>'/1 ]] }
@@ -1422,7 +1476,8 @@ refalrts::RASLFunction descr_NextState_R(
   scope_NextState_R::functions,
   scope_NextState_R::idents,
   scope_NextState_R::numbers,
-  scope_NextState_R::strings
+  scope_NextState_R::strings,
+  scope_NextState_R::filename
 );
 refalrts::RefalFunction& NextState_R = descr_NextState_R;
 
@@ -1452,6 +1507,7 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::ident_term(  & ident_Finitive<int>::name, context[5] ) )
       continue;
     // closed e.NextStateAccum#1 as range 2
+    //DEBUG: e.NextStateAccum#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1 {REMOVED TILE}
@@ -1473,6 +1529,8 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   // closed e.NextStateName#1 as range 7
   // closed e.NextStateAccum#1 as range 2
+  //DEBUG: e.NextStateName#1: 7
+  //DEBUG: e.NextStateAccum#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

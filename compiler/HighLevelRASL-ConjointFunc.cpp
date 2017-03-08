@@ -131,6 +131,7 @@ extern refalrts::RefalFunction& ComposeVars;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L1L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & PatternComment
     };
@@ -149,6 +150,9 @@ namespace /* unnamed */ {
       // closed e.HardGens#2 as range 5
       // closed e.Result#2 as range 9
       // closed e.HardGen#3 as range 2
+      //DEBUG: e.HardGens#2: 5
+      //DEBUG: e.Result#2: 9
+      //DEBUG: e.HardGen#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.HardGens#2/5 } (/14 e.HardGen#3/2/15 Tile{ HalfReuse: )/0 HalfReuse: )/4 AsIs: (/7 } (/17 </18 & PatternComment/19 Tile{ AsIs: e.HardGen#3/2 } >/20 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 } Tile{ HalfReuse: )/1 ]] }
@@ -193,7 +197,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L1L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L1L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L1L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L1L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L1L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L1L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L1L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1L1 = descr_gen_HighLevelRASL_Function_Conjoint_L1L1;
 
@@ -226,6 +231,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts
   // closed e.HardGens#2 as range 5
   // closed e.Result#2 as range 9
   // closed e.HardGen#3 as range 2
+  //DEBUG: e.HardGens#2: 5
+  //DEBUG: e.Result#2: 9
+  //DEBUG: e.HardGen#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -280,6 +288,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1L1 = descr_gen_Hi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Conjoint_L1L1,
       & refalrts::create_closure,
@@ -305,6 +314,9 @@ namespace /* unnamed */ {
       // closed e.HardGens#2 as range 5
       // closed e.Pattern#2 as range 13
       // closed e.Result#2 as range 17
+      //DEBUG: e.HardGens#2: 5
+      //DEBUG: e.Pattern#2: 13
+      //DEBUG: e.Result#2: 17
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & CreateHardPattern/21 Tile{ AsIs: e.Pattern#2/13 } >/22 </23 Tile{ HalfReuse: & @create_closure@/8 HalfReuse: & HighLevelRASL-Function-Conjoint\1\1/11 AsIs: (/15 } Tile{ AsIs: e.HardGens#2/5 } Tile{ AsIs: )/16 AsIs: (/19 AsIs: e.Result#2/17 AsIs: )/20 HalfReuse: >/12 AsIs: >/1 ]] }
@@ -344,7 +356,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1 = descr_gen_HighLevelRASL_Function_Conjoint_L1;
 
@@ -393,6 +406,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::
   // closed e.HardGens#2 as range 5
   // closed e.Pattern#2 as range 13
   // closed e.Result#2 as range 17
+  //DEBUG: e.HardGens#2: 5
+  //DEBUG: e.Pattern#2: 13
+  //DEBUG: e.Result#2: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -438,6 +454,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L1 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L2 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & CreateGlobalGen
     };
@@ -454,6 +471,8 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 5, 2},
       // closed e.HardPatterns#2 as range 5
       // closed e.SentenceTails#2 as range 2
+      //DEBUG: e.HardPatterns#2: 5
+      //DEBUG: e.SentenceTails#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & CreateGlobalGen/4 } Tile{ AsIs: e.HardPatterns#2/5 } Tile{ AsIs: >/1 } Tile{ AsIs: e.SentenceTails#2/2 } Tile{ ]] }
@@ -479,7 +498,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L2(
   scope_gen_HighLevelRASL_Function_Conjoint_L2::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L2::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L2::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L2::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L2::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L2::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L2 = descr_gen_HighLevelRASL_Function_Conjoint_L2;
 
@@ -505,6 +525,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.HardPatterns#2 as range 5
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: e.HardPatterns#2: 5
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -533,6 +555,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L2 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L3 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & SplitGen,
       & PatternComment
@@ -557,6 +580,9 @@ namespace /* unnamed */ {
       // closed e.FastGen#2 as range 5
       // closed e.GlobalGen#2 as range 9
       // closed e.SentenceTails#2 as range 2
+      //DEBUG: e.FastGen#2: 5
+      //DEBUG: e.GlobalGen#2: 9
+      //DEBUG: e.SentenceTails#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 HalfReuse: # CmdComment/7 }"FAST GEN:"/13 </15 & PatternComment/16 Tile{ AsIs: e.FastGen#2/5 } >/17 )/18 (/19 # CmdComment/20"GLOBAL GEN:"/21 </23 & PatternComment/24 e.GlobalGen#2/9/25 >/27 )/28 )/29 (/30 </31 Tile{ HalfReuse: & SplitGen/8 AsIs: (/11 AsIs: e.GlobalGen#2/9 AsIs: )/12 AsIs: e.SentenceTails#2/2 AsIs: >/1 } )/32 e.SentenceTails#2/2/33 Tile{ ]] }
@@ -614,7 +640,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L3(
   scope_gen_HighLevelRASL_Function_Conjoint_L3::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L3::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L3::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L3::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L3::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L3::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L3 = descr_gen_HighLevelRASL_Function_Conjoint_L3;
 
@@ -647,6 +674,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
   // closed e.FastGen#2 as range 5
   // closed e.GlobalGen#2 as range 9
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: e.FastGen#2: 5
+  //DEBUG: e.GlobalGen#2: 9
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -725,6 +755,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L3 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L4L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     using refalrts::functions;
     using refalrts::idents;
     using refalrts::numbers;
@@ -747,6 +778,10 @@ namespace /* unnamed */ {
       // closed e.Substs#3 as range 5
       // closed e.HardGenComment#3 as range 17
       // closed e.Result#3 as range 21
+      //DEBUG: e.Substitute#3: 9
+      //DEBUG: e.Substs#3: 5
+      //DEBUG: e.HardGenComment#3: 17
+      //DEBUG: e.Result#3: 21
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\4\1/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 AsIs: e.Substs#3/5 AsIs: )/8 } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Substitute#3/9 } Tile{ HalfReuse: )/15 AsIs: (/19 AsIs: e.HardGenComment#3/17 AsIs: )/20 AsIs: (/23 AsIs: e.Result#3/21 AsIs: )/24 AsIs: )/16 } Tile{ ]] }
@@ -777,7 +812,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L4L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L4L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L4L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L4L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L4L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L4L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L4L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4L1 = descr_gen_HighLevelRASL_Function_Conjoint_L4L1;
 
@@ -833,6 +869,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4L1(refalrts
   // closed e.Substs#3 as range 5
   // closed e.HardGenComment#3 as range 17
   // closed e.Result#3 as range 21
+  //DEBUG: e.Substitute#3: 9
+  //DEBUG: e.Substs#3: 5
+  //DEBUG: e.HardGenComment#3: 17
+  //DEBUG: e.Result#3: 21
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\4\1/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -866,6 +906,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4L1 = descr_gen_Hi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L4 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & GenPattern,
       & gen_HighLevelRASL_Function_Conjoint_L4L1,
@@ -894,6 +935,13 @@ namespace /* unnamed */ {
       // closed e.CommonPattern#2 as range 19
       // closed e.SentSubsts#2 as range 15
       // closed e.SentenceTails#2 as range 2
+      //DEBUG: s.FnGenInitSubst#1: 5
+      //DEBUG: s.FnGenSubst#1: 6
+      //DEBUG: e.Name#1: 7
+      //DEBUG: e.Comments#2: 11
+      //DEBUG: e.CommonPattern#2: 19
+      //DEBUG: e.SentSubsts#2: 15
+      //DEBUG: e.SentenceTails#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/21 } Tile{ AsIs: e.Comments#2/11 } Tile{ AsIs: )/14 AsIs: (/17 } Tile{ AsIs: </0 Reuse: & GenPattern/4 AsIs: s.FnGenInitSubst#1/5 AsIs: s.FnGenSubst#1/6 AsIs: (/9 AsIs: e.Name#1/7 AsIs: )/10 HalfReuse: </13 } & ReverseGen/23 Tile{ AsIs: e.CommonPattern#2/19 } >/24 >/25 )/26 </27 & DelAccumulator/28 </29 & MapReduce/30 & HighLevelRASL-Function-Conjoint\4\1/31 Tile{ HalfReuse: (/22 AsIs: e.SentSubsts#2/15 AsIs: )/18 AsIs: e.SentenceTails#2/2 AsIs: >/1 } >/32 Tile{ ]] }
@@ -946,7 +994,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L4(
   scope_gen_HighLevelRASL_Function_Conjoint_L4::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L4::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L4::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L4::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L4::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L4::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4 = descr_gen_HighLevelRASL_Function_Conjoint_L4;
 
@@ -997,6 +1046,13 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
   // closed e.CommonPattern#2 as range 19
   // closed e.SentSubsts#2 as range 15
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.Comments#2: 11
+  //DEBUG: e.CommonPattern#2: 19
+  //DEBUG: e.SentSubsts#2: 15
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1062,6 +1118,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L4 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & Max
     };
@@ -1087,6 +1144,10 @@ namespace /* unnamed */ {
       // closed e.Commands#4 as range 2
       {refalrts::icsVarLeft, 0, 15, 10},
       {refalrts::icEmpty, 0, 0, 10},
+      //DEBUG: s.MaxMemory#3: 5
+      //DEBUG: e.HardGenComment#3: 6
+      //DEBUG: e.Commands#4: 2
+      //DEBUG: s.Memory#4: 15
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Memory#4/15 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Max/4 AsIs: s.MaxMemory#3/5 HalfReuse: s.Memory4 #15/8 } >/16 (/17 Tile{ HalfReuse: # CmdSentence/9 AsIs: (/12 Reuse: # CmdComment/14 } Tile{ AsIs: e.HardGenComment#3/6 } Tile{ AsIs: )/13 AsIs: e.Commands#4/2 HalfReuse: )/1 ]] }
@@ -1120,7 +1181,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L5L1L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1L1 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1L1;
 
@@ -1161,6 +1223,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[10], context[11] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.MaxMemory#3: 5
+  //DEBUG: e.HardGenComment#3: 6
+  //DEBUG: e.Commands#4: 2
+  //DEBUG: s.Memory#4: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Memory#4/15 {REMOVED TILE}
@@ -1199,6 +1265,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1L1 = descr_gen_
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L5L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Conjoint_L5L1L1,
       & ComposeVars,
@@ -1233,6 +1300,15 @@ namespace /* unnamed */ {
       // closed e.Vars#2 as range 28
       {refalrts::icsVarLeft, 0, 32, 2},
       {refalrts::icEmpty, 0, 0, 2},
+      //DEBUG: e.Substitute#3: 9
+      //DEBUG: e.HardGenComment#3: 13
+      //DEBUG: e.Result#3: 17
+      //DEBUG: s.FnGenResult#1: 21
+      //DEBUG: s.FnGenSubst#1: 22
+      //DEBUG: s.ContextSize#2: 23
+      //DEBUG: e.MarkedPattern#2: 24
+      //DEBUG: e.Vars#2: 28
+      //DEBUG: s.MaxMemory#3: 32
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenResult#1/21 s.FnGenSubst#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </33 & GenResult/34 Tile{ HalfReuse: s.FnGenResult1 #21/16 AsIs: (/19 AsIs: e.Result#3/17 AsIs: )/20 HalfReuse: </8 HalfReuse: s.FnGenSubst1 #22/1 } Tile{ AsIs: s.ContextSize#2/23 HalfReuse: </26 } Tile{ HalfReuse: & ComposeVars/27 AsIs: (/30 } Tile{ AsIs: e.MarkedPattern#2/24 } Tile{ HalfReuse: )/7 AsIs: (/11 AsIs: e.Substitute#3/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars#2/28 } )/35 >/36 (/37 )/38 >/39 >/40 </41 & @create_closure@/42 Tile{ HalfReuse: & HighLevelRASL-Function-Conjoint\5\1\1/31 AsIs: s.MaxMemory#3/32 } (/43 Tile{ AsIs: e.HardGenComment#3/13 } )/44 >/45 >/46 Tile{ ]] }
@@ -1302,7 +1378,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L5L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L5L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L5L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L5L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L5L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1 = descr_gen_HighLevelRASL_Function_Conjoint_L5L1;
 
@@ -1373,6 +1450,15 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Substitute#3: 9
+  //DEBUG: e.HardGenComment#3: 13
+  //DEBUG: e.Result#3: 17
+  //DEBUG: s.FnGenResult#1: 21
+  //DEBUG: s.FnGenSubst#1: 22
+  //DEBUG: s.ContextSize#2: 23
+  //DEBUG: e.MarkedPattern#2: 24
+  //DEBUG: e.Vars#2: 28
+  //DEBUG: s.MaxMemory#3: 32
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenResult#1/21 s.FnGenSubst#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1459,6 +1545,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5L1 = descr_gen_Hi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L5 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Conjoint_L5L1,
       & refalrts::create_closure,
@@ -1486,6 +1573,14 @@ namespace /* unnamed */ {
       // closed e.Vars#2 as range 16
       // closed e.MarkedPattern#2 as range 20
       // closed e.CommonMatchCommands#2 as range 11
+      //DEBUG: s.FnGenResult#1: 5
+      //DEBUG: s.FnGenSubst#1: 6
+      //DEBUG: e.Comments#2: 7
+      //DEBUG: e.SentencesWithSubst#2: 2
+      //DEBUG: s.ContextSize#2: 15
+      //DEBUG: e.Vars#2: 16
+      //DEBUG: e.MarkedPattern#2: 20
+      //DEBUG: e.CommonMatchCommands#2: 11
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ContextSize#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/9 } Tile{ AsIs: e.Comments#2/7 } Tile{ AsIs: e.CommonMatchCommands#2/11 } Tile{ AsIs: )/10 HalfReuse: </13 } & MapReduce/24 </25 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL-Function-Conjoint\5\1/4 AsIs: s.FnGenResult#1/5 AsIs: s.FnGenSubst#1/6 } Tile{ HalfReuse: s.ContextSize2 #15/19 AsIs: (/22 AsIs: e.MarkedPattern#2/20 AsIs: )/23 } Tile{ AsIs: (/18 } Tile{ AsIs: e.Vars#2/16 } )/26 >/27 Tile{ HalfReuse: s.ContextSize2 #15/14 AsIs: e.SentencesWithSubst#2/2 AsIs: >/1 ]] }
@@ -1531,7 +1626,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L5(
   scope_gen_HighLevelRASL_Function_Conjoint_L5::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L5::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L5::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L5::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L5::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L5::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5 = descr_gen_HighLevelRASL_Function_Conjoint_L5;
 
@@ -1584,6 +1680,14 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
   // closed e.Vars#2 as range 16
   // closed e.MarkedPattern#2 as range 20
   // closed e.CommonMatchCommands#2 as range 11
+  //DEBUG: s.FnGenResult#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: e.Comments#2: 7
+  //DEBUG: e.SentencesWithSubst#2: 2
+  //DEBUG: s.ContextSize#2: 15
+  //DEBUG: e.Vars#2: 16
+  //DEBUG: e.MarkedPattern#2: 20
+  //DEBUG: e.CommonMatchCommands#2: 11
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ContextSize#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1636,6 +1740,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L5 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L6L1 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdFail<int>::name,
@@ -1662,6 +1767,8 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 9, 1, 5},
       // closed e.Commands#3 as range 10(2)
       // closed e.OpenELoop#3 as range 5
+      //DEBUG: e.Commands#3: 2
+      //DEBUG: e.OpenELoop#3: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands#3/10(2) } Tile{ AsIs: (/7 AsIs: # CmdOpenELoop/9 AsIs: e.OpenELoop#3/5 AsIs: )/8 HalfReuse: (/1 } Tile{ HalfReuse: # CmdFail/0 HalfReuse: )/4 } Tile{ ]] }
@@ -1679,6 +1786,7 @@ namespace /* unnamed */ {
       // e.idx
       // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.LastSentence#3/2 >/1
       // closed e.LastSentence#3 as range 2
+      //DEBUG: e.LastSentence#3: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\6\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: e.LastSentence#3/2 } Tile{ ]] }
@@ -1699,7 +1807,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L6L1(
   scope_gen_HighLevelRASL_Function_Conjoint_L6L1::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L6L1::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L6L1::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L6L1::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L6L1::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L6L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6L1 = descr_gen_HighLevelRASL_Function_Conjoint_L6L1;
 
@@ -1736,6 +1845,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
       continue;
     // closed e.Commands#3 as range 10(2)
     // closed e.OpenELoop#3 as range 5
+    //DEBUG: e.Commands#3: 2
+    //DEBUG: e.OpenELoop#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1759,6 +1870,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
   // e.idx
   // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.LastSentence#3/2 >/1
   // closed e.LastSentence#3 as range 2
+  //DEBUG: e.LastSentence#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\6\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1782,6 +1894,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6L1 = descr_gen_Hi
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_Function_Conjoint_L6 {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Conjoint_L6L1,
       & Fetch
@@ -1810,6 +1923,12 @@ namespace /* unnamed */ {
       // closed e.Prefix#2 as range 15
       {refalrts::icsVarLeft, 0, 19, 2},
       // closed e.Sentences#2 as range 2
+      //DEBUG: e.LastSentence#2: 5
+      //DEBUG: s.ScopeClass#1: 10
+      //DEBUG: e.Name#1: 11
+      //DEBUG: e.Prefix#2: 15
+      //DEBUG: s.MaxMemory#2: 19
+      //DEBUG: e.Sentences#2: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Function/4 AsIs: s.ScopeClass#1/10 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 AsIs: (/17 } Tile{ HalfReuse: # CmdIssueMem/18 AsIs: s.MaxMemory#2/19 } )/20 Tile{ AsIs: e.Prefix#2/15 } Tile{ AsIs: e.Sentences#2/2 } Tile{ HalfReuse: </7 HalfReuse: & Fetch/9 AsIs: e.LastSentence#2/5 HalfReuse: & HighLevelRASL-Function-Conjoint\6\1/8 AsIs: >/1 } )/21 Tile{ ]] }
@@ -1847,7 +1966,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_Function_Conjoint_L6(
   scope_gen_HighLevelRASL_Function_Conjoint_L6::functions,
   scope_gen_HighLevelRASL_Function_Conjoint_L6::idents,
   scope_gen_HighLevelRASL_Function_Conjoint_L6::numbers,
-  scope_gen_HighLevelRASL_Function_Conjoint_L6::strings
+  scope_gen_HighLevelRASL_Function_Conjoint_L6::strings,
+  scope_gen_HighLevelRASL_Function_Conjoint_L6::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6 = descr_gen_HighLevelRASL_Function_Conjoint_L6;
 
@@ -1894,6 +2014,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   if( ! refalrts::svar_left( context[19], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentences#2 as range 2
+  //DEBUG: e.LastSentence#2: 5
+  //DEBUG: s.ScopeClass#1: 10
+  //DEBUG: e.Name#1: 11
+  //DEBUG: e.Prefix#2: 15
+  //DEBUG: s.MaxMemory#2: 19
+  //DEBUG: e.Sentences#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1936,6 +2062,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_Function_Conjoint_L6 = descr_gen_High
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL_Function_Conjoint {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_Function_Conjoint_L4,
       & refalrts::create_closure,
@@ -1965,6 +2092,12 @@ namespace /* unnamed */ {
       {refalrts::icBracketLeftSave, 0, 9, 2},
       // closed e.Name#1 as range 9
       // closed e.Sentences#1 as range 2
+      //DEBUG: s.FnGenInitSubst#1: 5
+      //DEBUG: s.FnGenSubst#1: 6
+      //DEBUG: s.FnGenResult#1: 7
+      //DEBUG: s.ScopeClass#1: 8
+      //DEBUG: e.Name#1: 9
+      //DEBUG: e.Sentences#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </13 & Fetch/14 Tile{ AsIs: e.Sentences#1/2 } </15 & Seq/16 (/17 & MapReduce/18 & HighLevelRASL-Function-Conjoint\1/19 (/20 )/21 )/22 & HighLevelRASL-Function-Conjoint\2/23 & HighLevelRASL-Function-Conjoint\3/24 </25 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL-Function-Conjoint\4/4 AsIs: s.FnGenInitSubst#1/5 AsIs: s.FnGenSubst#1/6 } (/26 e.Name#1/9/27 )/29 >/30 </31 & @create_closure@/32 & HighLevelRASL-Function-Conjoint\5/33 Tile{ AsIs: s.FnGenResult#1/7 } s.FnGenSubst#1/6/34 >/35 </36 & @create_closure@/37 & HighLevelRASL-Function-Conjoint\6/38 Tile{ AsIs: s.ScopeClass#1/8 AsIs: (/11 AsIs: e.Name#1/9 AsIs: )/12 } >/39 >/40 Tile{ AsIs: >/1 ]] }
@@ -2034,7 +2167,8 @@ refalrts::RASLFunction descr_HighLevelRASL_Function_Conjoint(
   scope_HighLevelRASL_Function_Conjoint::functions,
   scope_HighLevelRASL_Function_Conjoint::idents,
   scope_HighLevelRASL_Function_Conjoint::numbers,
-  scope_HighLevelRASL_Function_Conjoint::strings
+  scope_HighLevelRASL_Function_Conjoint::strings,
+  scope_HighLevelRASL_Function_Conjoint::filename
 );
 refalrts::RefalFunction& HighLevelRASL_Function_Conjoint = descr_HighLevelRASL_Function_Conjoint;
 
@@ -2066,6 +2200,12 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
   refalrts::bracket_pointers(context[11], context[12]);
   // closed e.Name#1 as range 9
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: s.FnGenResult#1: 7
+  //DEBUG: s.ScopeClass#1: 8
+  //DEBUG: e.Name#1: 9
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2163,6 +2303,7 @@ refalrts::RefalFunction& HighLevelRASL_Function_Conjoint = descr_HighLevelRASL_F
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_ComposeVars {
+    static const char *filename = "HighLevelRASL-ConjointFunc.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ComposeVars
     };
@@ -2226,6 +2367,17 @@ namespace /* unnamed */ {
       {refalrts::icsRepeatLeft, 53, 25, 42},
       {refalrts::icEmpty, 0, 0, 42},
       // closed e.Vars-E#1 as range 64(13)
+      //DEBUG: e.MarkedPattern-B#1: 17
+      //DEBUG: e.MarkedPattern-E#1: 5
+      //DEBUG: s.Mode#1: 24
+      //DEBUG: s.Offset#1: 25
+      //DEBUG: e.Name#1: 19
+      //DEBUG: e.Substitute-B#1: 26
+      //DEBUG: e.Substitute-E#1: 9
+      //DEBUG: s.Tag#1: 32
+      //DEBUG: e.Subst#1: 28
+      //DEBUG: e.Vars-B#1: 40
+      //DEBUG: e.Vars-E#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/24 e.Name#1/19 s.Offset#1/25 {REMOVED TILE} {REMOVED TILE} (/30 s.Tag#1/32 (/35 e.Name#1/38 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/46 (/49 e.Name#1/51 )/50 s.Offset#1/53 )/45 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Junk/7 AsIs: e.MarkedPattern-B#1/17 HalfReuse: )/21 HalfReuse: (/23 } Tile{ HalfReuse: s.Tag1 #32/36 HalfReuse: s.Offset1 #53/37 AsIs: e.Subst#1/28 AsIs: )/31 } Tile{ AsIs: </0 } Tile{ HalfReuse: & ComposeVars/44 } Tile{ HalfReuse: (/22 AsIs: e.MarkedPattern-E#1/56(5) AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Substitute-B#1/26 } Tile{ AsIs: e.Substitute-E#1/60(9) } Tile{ AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars-B#1/40 } Tile{ AsIs: e.Vars-E#1/64(13) } Tile{ AsIs: )/16 AsIs: >/1 ]] }
@@ -2263,6 +2415,7 @@ namespace /* unnamed */ {
       {refalrts::icEmpty, 0, 0, 9},
       {refalrts::icEmpty, 0, 0, 13},
       // closed e.MarkedPattern#1 as range 5
+      //DEBUG: e.MarkedPattern#1: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 )/12 (/15 )/16 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Junk/7 AsIs: e.MarkedPattern#1/5 AsIs: )/8 } Tile{ ]] }
@@ -2286,7 +2439,8 @@ refalrts::RASLFunction descr_ComposeVars(
   scope_ComposeVars::functions,
   scope_ComposeVars::idents,
   scope_ComposeVars::numbers,
-  scope_ComposeVars::strings
+  scope_ComposeVars::strings,
+  scope_ComposeVars::filename
 );
 refalrts::RefalFunction& ComposeVars = descr_ComposeVars;
 
@@ -2417,6 +2571,17 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
           if( ! refalrts::empty_seq( context[42], context[43] ) )
             continue;
           // closed e.Vars-E#1 as range 64(13)
+          //DEBUG: e.MarkedPattern-B#1: 17
+          //DEBUG: e.MarkedPattern-E#1: 5
+          //DEBUG: s.Mode#1: 24
+          //DEBUG: s.Offset#1: 25
+          //DEBUG: e.Name#1: 19
+          //DEBUG: e.Substitute-B#1: 26
+          //DEBUG: e.Substitute-E#1: 9
+          //DEBUG: s.Tag#1: 32
+          //DEBUG: e.Subst#1: 28
+          //DEBUG: e.Vars-B#1: 40
+          //DEBUG: e.Vars-E#1: 13
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/24 e.Name#1/19 s.Offset#1/25 {REMOVED TILE} {REMOVED TILE} (/30 s.Tag#1/32 (/35 e.Name#1/38 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/46 (/49 e.Name#1/51 )/50 s.Offset#1/53 )/45 {REMOVED TILE} {REMOVED TILE}
@@ -2465,6 +2630,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::empty_seq( context[13], context[14] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.MarkedPattern#1 as range 5
+  //DEBUG: e.MarkedPattern#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 )/12 (/15 )/16 >/1 {REMOVED TILE}

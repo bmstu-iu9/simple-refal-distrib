@@ -176,6 +176,7 @@ extern refalrts::RefalFunction& GenResultFuncs;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_gen_HighLevelRASL_L1 {
+    static const char *filename = "HighLevelRASL.cpp";
     static refalrts::RefalFunction *functions[] = {
       & GenSentenceFunc,
       & GenResultFuncs,
@@ -225,6 +226,11 @@ namespace /* unnamed */ {
       {refalrts::icIdentLeftSave, 17, 13, 21},
       // closed e.Name#2 as range 13
       // closed e.Sentences#2 as range 21(5)
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: s.ScopeClass#2: 12
+      //DEBUG: e.Name#2: 13
+      //DEBUG: e.Sentences#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.OptResult#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </18 & HighLevelRASL-Function/19 Tile{ AsIs: </0 Reuse: & GenSentenceFunc/4 AsIs: s.Joint#1/9 } Tile{ HalfReuse: >/8 } Tile{ HalfReuse: </17 } & GenResultFuncs/20 Tile{ HalfReuse: s.OptResult1 #10/7 HalfReuse: >/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 } Tile{ AsIs: e.Sentences#2/21(5) } Tile{ AsIs: >/1 ]] }
@@ -265,6 +271,12 @@ namespace /* unnamed */ {
       // closed e.Name#2 as range 13
       {refalrts::ictVarLeftSave, 0, 18, 21},
       // closed e.Code#2 as range 21(5)
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: s.ScopeClass#2: 12
+      //DEBUG: e.Name#2: 13
+      //DEBUG: t.SrcPos#2: 18
+      //DEBUG: e.Code#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} # NativeBody/17 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdNativeFunction/11 AsIs: s.ScopeClass#2/12 AsIs: (/15 AsIs: e.Name#2/13 AsIs: )/16 } Tile{ AsIs: t.SrcPos#2/18 AsIs: e.Code#2/21(5) AsIs: )/8 } Tile{ ]] }
@@ -284,6 +296,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 21, 5},
       {refalrts::icsVarLeft, 0, 12, 21},
       // closed e.Name#2 as range 21(5)
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: s.ScopeClass#2: 12
+      //DEBUG: e.Name#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdEnum/11 AsIs: s.ScopeClass#2/12 AsIs: e.Name#2/21(5) AsIs: )/8 } Tile{ ]] }
@@ -301,6 +317,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 21, 5},
       {refalrts::icsVarLeft, 0, 12, 21},
       // closed e.Name#2 as range 21(5)
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: s.ScopeClass#2: 12
+      //DEBUG: e.Name#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdSwap/11 AsIs: s.ScopeClass#2/12 AsIs: e.Name#2/21(5) AsIs: )/8 } Tile{ ]] }
@@ -318,6 +338,10 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 21, 5},
       {refalrts::icsVarLeft, 0, 12, 21},
       // closed e.Name#2 as range 21(5)
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: s.ScopeClass#2: 12
+      //DEBUG: e.Name#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdDeclaration/11 AsIs: s.ScopeClass#2/12 AsIs: e.Name#2/21(5) AsIs: )/8 } Tile{ ]] }
@@ -333,6 +357,9 @@ namespace /* unnamed */ {
       // </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 (/7 # Ident/11 e.Name#2/5 )/8 >/1
       {refalrts::icIdentTerm, 0, 3, 11},
       // closed e.Name#2 as range 5
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: e.Name#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdDefineIdent/11 AsIs: e.Name#2/5 AsIs: )/8 } Tile{ ]] }
@@ -348,6 +375,10 @@ namespace /* unnamed */ {
       {refalrts::icIdentTerm, 0, 1, 11},
       {refalrts::ictVarLeftSave, 0, 12, 5},
       // closed e.Code#2 as range 5
+      //DEBUG: s.Joint#1: 9
+      //DEBUG: s.OptResult#1: 10
+      //DEBUG: t.SrcPos#2: 12
+      //DEBUG: e.Code#2: 5
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdEmitNativeCode/11 AsIs: t.SrcPos#2/12 AsIs: e.Code#2/5 AsIs: )/8 } Tile{ ]] }
@@ -370,7 +401,8 @@ refalrts::RASLFunction descr_gen_HighLevelRASL_L1(
   scope_gen_HighLevelRASL_L1::functions,
   scope_gen_HighLevelRASL_L1::idents,
   scope_gen_HighLevelRASL_L1::numbers,
-  scope_gen_HighLevelRASL_L1::strings
+  scope_gen_HighLevelRASL_L1::strings,
+  scope_gen_HighLevelRASL_L1::filename
 );
 refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
 
@@ -425,6 +457,11 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
       continue;
     // closed e.Name#2 as range 13
     // closed e.Sentences#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 13
+    //DEBUG: e.Sentences#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.OptResult#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -486,6 +523,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! context[19] )
       continue;
     // closed e.Code#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 13
+    //DEBUG: t.SrcPos#2: 18
+    //DEBUG: e.Code#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} # NativeBody/17 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -514,6 +557,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -540,6 +587,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -566,6 +617,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -588,6 +643,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::ident_term(  & ident_Ident<int>::name, context[11] ) )
       continue;
     // closed e.Name#2 as range 5
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -612,6 +670,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   // closed e.Code#2 as range 5
+  //DEBUG: s.Joint#1: 9
+  //DEBUG: s.OptResult#1: 10
+  //DEBUG: t.SrcPos#2: 12
+  //DEBUG: e.Code#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -637,6 +699,7 @@ refalrts::RefalFunction& gen_HighLevelRASL_L1 = descr_gen_HighLevelRASL_L1;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL {
+    static const char *filename = "HighLevelRASL.cpp";
     static refalrts::RefalFunction *functions[] = {
       & gen_HighLevelRASL_L1,
       & refalrts::create_closure,
@@ -655,6 +718,9 @@ namespace /* unnamed */ {
       {refalrts::icsVarLeft, 0, 5, 2},
       {refalrts::icsVarLeft, 0, 6, 2},
       // closed e.ProgramElements#1 as range 2
+      //DEBUG: s.Joint#1: 5
+      //DEBUG: s.OptResult#1: 6
+      //DEBUG: e.ProgramElements#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </7 & Map/8 </9 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL\1/4 AsIs: s.Joint#1/5 AsIs: s.OptResult#1/6 } >/10 Tile{ AsIs: e.ProgramElements#1/2 } Tile{ AsIs: >/1 ]] }
@@ -686,7 +752,8 @@ refalrts::RASLFunction descr_HighLevelRASL(
   scope_HighLevelRASL::functions,
   scope_HighLevelRASL::idents,
   scope_HighLevelRASL::numbers,
-  scope_HighLevelRASL::strings
+  scope_HighLevelRASL::strings,
+  scope_HighLevelRASL::filename
 );
 refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
 
@@ -707,6 +774,9 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.ProgramElements#1 as range 2
+  //DEBUG: s.Joint#1: 5
+  //DEBUG: s.OptResult#1: 6
+  //DEBUG: e.ProgramElements#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -743,6 +813,7 @@ refalrts::RefalFunction& HighLevelRASL = descr_HighLevelRASL;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_HighLevelRASL_Function {
+    static const char *filename = "HighLevelRASL.cpp";
     static refalrts::RefalFunction *functions[] = {
       & HighLevelRASL_Function_Disjoint
     };
@@ -775,6 +846,12 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 2},
       {refalrts::icEmpty, 0, 0, 16},
       // closed e.Name#1 as range 10
+      //DEBUG: s.FnGenFunction#1: 5
+      //DEBUG: s.FnGenInitSubst#1: 6
+      //DEBUG: s.FnGenSubst#1: 7
+      //DEBUG: s.FnGenResult#1: 8
+      //DEBUG: s.ScopeClass#1: 9
+      //DEBUG: e.Name#1: 10
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdEnum/4 } Tile{ HalfReuse: s.ScopeClass1 #9/12 AsIs: e.Name#1/10 AsIs: )/13 } Tile{ ]] }
@@ -794,6 +871,13 @@ namespace /* unnamed */ {
       {refalrts::icSave, 0, 16, 2},
       {refalrts::ictVarLeftSave, 0, 14, 16},
       {refalrts::icEmpty, 0, 0, 16},
+      //DEBUG: s.FnGenFunction#1: 5
+      //DEBUG: s.FnGenInitSubst#1: 6
+      //DEBUG: s.FnGenSubst#1: 7
+      //DEBUG: s.FnGenResult#1: 8
+      //DEBUG: s.ScopeClass#1: 9
+      //DEBUG: e.Name#1: 10
+      //DEBUG: t.OneSentence#1: 14
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL-Function-Disjoint/4 } Tile{ AsIs: s.FnGenInitSubst#1/6 AsIs: s.FnGenSubst#1/7 AsIs: s.FnGenResult#1/8 AsIs: s.ScopeClass#1/9 AsIs: (/12 AsIs: e.Name#1/10 AsIs: )/13 AsIs: t.OneSentence#1/14 AsIs: >/1 ]] }
@@ -809,6 +893,13 @@ namespace /* unnamed */ {
       // </0 & HighLevelRASL-Function/4 s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 (/12 e.Name#1/10 )/13 e.Sentences#1/2 >/1
       // closed e.Name#1 as range 10
       // closed e.Sentences#1 as range 2
+      //DEBUG: s.FnGenFunction#1: 5
+      //DEBUG: s.FnGenInitSubst#1: 6
+      //DEBUG: s.FnGenSubst#1: 7
+      //DEBUG: s.FnGenResult#1: 8
+      //DEBUG: s.ScopeClass#1: 9
+      //DEBUG: e.Name#1: 10
+      //DEBUG: e.Sentences#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 AsIs: s.FnGenFunction#1/5 AsIs: s.FnGenInitSubst#1/6 AsIs: s.FnGenSubst#1/7 AsIs: s.FnGenResult#1/8 AsIs: s.ScopeClass#1/9 AsIs: (/12 AsIs: e.Name#1/10 AsIs: )/13 AsIs: e.Sentences#1/2 AsIs: >/1 ]] }
@@ -832,7 +923,8 @@ refalrts::RASLFunction descr_HighLevelRASL_Function(
   scope_HighLevelRASL_Function::functions,
   scope_HighLevelRASL_Function::idents,
   scope_HighLevelRASL_Function::numbers,
-  scope_HighLevelRASL_Function::strings
+  scope_HighLevelRASL_Function::strings,
+  scope_HighLevelRASL_Function::filename
 );
 refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
 
@@ -878,6 +970,12 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
     // closed e.Name#1 as range 10
+    //DEBUG: s.FnGenFunction#1: 5
+    //DEBUG: s.FnGenInitSubst#1: 6
+    //DEBUG: s.FnGenSubst#1: 7
+    //DEBUG: s.FnGenResult#1: 8
+    //DEBUG: s.ScopeClass#1: 9
+    //DEBUG: e.Name#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -907,6 +1005,13 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.FnGenFunction#1: 5
+    //DEBUG: s.FnGenInitSubst#1: 6
+    //DEBUG: s.FnGenSubst#1: 7
+    //DEBUG: s.FnGenResult#1: 8
+    //DEBUG: s.ScopeClass#1: 9
+    //DEBUG: e.Name#1: 10
+    //DEBUG: t.OneSentence#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 {REMOVED TILE}
@@ -928,6 +1033,13 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
   // </0 & HighLevelRASL-Function/4 s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 (/12 e.Name#1/10 )/13 e.Sentences#1/2 >/1
   // closed e.Name#1 as range 10
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenFunction#1: 5
+  //DEBUG: s.FnGenInitSubst#1: 6
+  //DEBUG: s.FnGenSubst#1: 7
+  //DEBUG: s.FnGenResult#1: 8
+  //DEBUG: s.ScopeClass#1: 9
+  //DEBUG: e.Name#1: 10
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -954,6 +1066,7 @@ refalrts::RefalFunction& HighLevelRASL_Function = descr_HighLevelRASL_Function;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenSentenceFunc {
+    static const char *filename = "HighLevelRASL.cpp";
     static refalrts::RefalFunction *functions[] = {
       & HighLevelRASL_Function_Disjoint,
       & HighLevelRASL_Function_Conjoint
@@ -1011,7 +1124,8 @@ refalrts::RASLFunction descr_GenSentenceFunc(
   scope_GenSentenceFunc::functions,
   scope_GenSentenceFunc::idents,
   scope_GenSentenceFunc::numbers,
-  scope_GenSentenceFunc::strings
+  scope_GenSentenceFunc::strings,
+  scope_GenSentenceFunc::filename
 );
 refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
 
@@ -1081,6 +1195,7 @@ refalrts::RefalFunction& GenSentenceFunc = descr_GenSentenceFunc;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GenResultFuncs {
+    static const char *filename = "HighLevelRASL.cpp";
     static refalrts::RefalFunction *functions[] = {
       & GenResult_Opt,
       & GenSubst_Save,
@@ -1146,7 +1261,8 @@ refalrts::RASLFunction descr_GenResultFuncs(
   scope_GenResultFuncs::functions,
   scope_GenResultFuncs::idents,
   scope_GenResultFuncs::numbers,
-  scope_GenResultFuncs::strings
+  scope_GenResultFuncs::strings,
+  scope_GenResultFuncs::filename
 );
 refalrts::RefalFunction& GenResultFuncs = descr_GenResultFuncs;
 

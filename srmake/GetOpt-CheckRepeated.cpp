@@ -15,6 +15,7 @@ extern refalrts::RefalFunction& GetOpt_CheckRepeated;
 #ifdef INTERPRET
 namespace /* unnamed */ {
   namespace scope_GetOpt_CheckRepeated {
+    static const char *filename = "..\\common/GetOpt-CheckRepeated.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
       & ident_RepeatOption<int>::name
@@ -63,6 +64,16 @@ namespace /* unnamed */ {
       // closed e.Opts-E#1 as range 42(2)
       {refalrts::icsVarLeft, 0, 33, 26},
       {refalrts::icEmpty, 0, 0, 26},
+      //DEBUG: e.Errors#1: 9
+      //DEBUG: e.CheckedTags-B#1: 13
+      //DEBUG: s.Tag#1: 15
+      //DEBUG: e.CheckedTags-E#1: 5
+      //DEBUG: e.Opts-B#1: 16
+      //DEBUG: s.Num1#1: 23
+      //DEBUG: e.Value#1: 18
+      //DEBUG: e.Opts-M#1: 24
+      //DEBUG: e.Opts-E#1: 2
+      //DEBUG: s.Num2#1: 33
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 AsIs: e.Opts-B#1/16 AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
@@ -103,6 +114,17 @@ namespace /* unnamed */ {
       // closed e.Opts-E#1 as range 42(2)
       {refalrts::icsVarLeft, 0, 31, 26},
       // closed e.Value2#1 as range 26
+      //DEBUG: e.Errors#1: 9
+      //DEBUG: e.CheckedTags-B#1: 13
+      //DEBUG: s.Tag#1: 15
+      //DEBUG: e.CheckedTags-E#1: 5
+      //DEBUG: e.Opts-B#1: 16
+      //DEBUG: s.Num1#1: 23
+      //DEBUG: e.Value1#1: 18
+      //DEBUG: e.Opts-M#1: 24
+      //DEBUG: e.Opts-E#1: 2
+      //DEBUG: s.Num2#1: 31
+      //DEBUG: e.Value2#1: 26
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Value2#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & GetOpt-CheckRepeated/4 AsIs: (/7 AsIs: e.CheckedTags-B#1/13 AsIs: s.Tag#1/15 AsIs: e.CheckedTags-E#1/36(5) AsIs: )/8 AsIs: (/11 AsIs: e.Errors#1/9 HalfReuse: (/12 } Tile{ AsIs: s.Num2#1/31 } Tile{ HalfReuse: # RepeatOption/28 AsIs: s.Tag#1/30 } Tile{ AsIs: )/29 } )/32 Tile{ AsIs: e.Opts-B#1/16 } Tile{ AsIs: (/20 AsIs: s.Tag#1/22 AsIs: s.Num1#1/23 AsIs: e.Value1#1/18 AsIs: )/21 } Tile{ AsIs: e.Opts-M#1/24 } Tile{ AsIs: e.Opts-E#1/42(2) } Tile{ AsIs: >/1 ]] }
@@ -132,6 +154,9 @@ namespace /* unnamed */ {
       // closed e.CheckedTags#1 as range 5
       // closed e.Errors#1 as range 9
       // closed e.Options#1 as range 2
+      //DEBUG: e.CheckedTags#1: 5
+      //DEBUG: e.Errors#1: 9
+      //DEBUG: e.Options#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.Errors#1/9 AsIs: )/12 } Tile{ AsIs: e.Options#1/2 } Tile{ ]] }
@@ -153,7 +178,8 @@ refalrts::RASLFunction descr_GetOpt_CheckRepeated(
   scope_GetOpt_CheckRepeated::functions,
   scope_GetOpt_CheckRepeated::idents,
   scope_GetOpt_CheckRepeated::numbers,
-  scope_GetOpt_CheckRepeated::strings
+  scope_GetOpt_CheckRepeated::strings,
+  scope_GetOpt_CheckRepeated::filename
 );
 refalrts::RefalFunction& GetOpt_CheckRepeated = descr_GetOpt_CheckRepeated;
 
@@ -241,6 +267,16 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
             continue;
           if( ! refalrts::empty_seq( context[26], context[27] ) )
             continue;
+          //DEBUG: e.Errors#1: 9
+          //DEBUG: e.CheckedTags-B#1: 13
+          //DEBUG: s.Tag#1: 15
+          //DEBUG: e.CheckedTags-E#1: 5
+          //DEBUG: e.Opts-B#1: 16
+          //DEBUG: s.Num1#1: 23
+          //DEBUG: e.Value#1: 18
+          //DEBUG: e.Opts-M#1: 24
+          //DEBUG: e.Opts-E#1: 2
+          //DEBUG: s.Num2#1: 33
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 {REMOVED TILE} {REMOVED TILE}
@@ -316,6 +352,17 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
           if( ! refalrts::svar_left( context[31], context[26], context[27] ) )
             continue;
           // closed e.Value2#1 as range 26
+          //DEBUG: e.Errors#1: 9
+          //DEBUG: e.CheckedTags-B#1: 13
+          //DEBUG: s.Tag#1: 15
+          //DEBUG: e.CheckedTags-E#1: 5
+          //DEBUG: e.Opts-B#1: 16
+          //DEBUG: s.Num1#1: 23
+          //DEBUG: e.Value1#1: 18
+          //DEBUG: e.Opts-M#1: 24
+          //DEBUG: e.Opts-E#1: 2
+          //DEBUG: s.Num2#1: 31
+          //DEBUG: e.Value2#1: 26
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Value2#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -355,6 +402,9 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   // closed e.CheckedTags#1 as range 5
   // closed e.Errors#1 as range 9
   // closed e.Options#1 as range 2
+  //DEBUG: e.CheckedTags#1: 5
+  //DEBUG: e.Errors#1: 9
+  //DEBUG: e.Options#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
