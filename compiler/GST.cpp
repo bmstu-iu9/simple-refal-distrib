@@ -87,6 +87,9 @@ static refalrts::FnResult func_gen_GST_L1(refalrts::Iter arg_begin, refalrts::It
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
   // closed e.Tiles#2 as range 2
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
+  //DEBUG: e.Tiles#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -168,6 +171,9 @@ static refalrts::FnResult func_gen_GST_L2(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Pattern#2: 9
+  //DEBUG: e.Result#2: 13
+  //DEBUG: t.Tile#2: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -226,6 +232,8 @@ static refalrts::FnResult func_gen_GST_L3(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cRecognitionImpossible;
   // closed e.Trash#2 as range 9
   // closed e.MarkedResult#2 as range 13
+  //DEBUG: e.Trash#2: 9
+  //DEBUG: e.MarkedResult#2: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -285,6 +293,8 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -370,6 +380,8 @@ static refalrts::FnResult func_gen_Enum_L1(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Num#2: 5
+  //DEBUG: t.Item#2: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -410,6 +422,7 @@ static refalrts::FnResult func_Enum(refalrts::Iter arg_begin, refalrts::Iter arg
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Items#1 as range 2
+  //DEBUG: e.Items#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -476,6 +489,8 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.Num#2: 10
+    //DEBUG: t.Item#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 (/5 # Num/9 s.Num#2/10 {REMOVED TILE} )/6 >/1 {REMOVED TILE}
@@ -517,6 +532,7 @@ static refalrts::FnResult func_gen_DeEnum_L1(refalrts::Iter arg_begin, refalrts:
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tile#2 as range 7
+  //DEBUG: e.Tile#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DeEnum\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -544,6 +560,7 @@ static refalrts::FnResult func_DeEnum(refalrts::Iter arg_begin, refalrts::Iter a
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Items#1 as range 2
+  //DEBUG: e.Items#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -597,6 +614,10 @@ static refalrts::FnResult func_gen_TileCandidates_L1(refalrts::Iter arg_begin, r
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
   // closed e.AlignedPattern#2 as range 5
+  //DEBUG: t.First#2: 13
+  //DEBUG: e.AlignedResult#2: 9
+  //DEBUG: t.Last#2: 15
+  //DEBUG: e.AlignedPattern#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -657,6 +678,8 @@ static refalrts::FnResult func_TileCandidates(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -765,6 +788,13 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[25] )
       continue;
     // closed e.Result#1 as range 37(5)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.PatternItem#1: 22
+    //DEBUG: e.Pattern#1: 13
+    //DEBUG: t.ResultItem#1: 24
+    //DEBUG: e.Result#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -833,6 +863,11 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[23] )
       continue;
     // closed e.Result#1 as range 37(5)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.ResultItem#1: 22
+    //DEBUG: e.Result#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -902,6 +937,11 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     if( ! context[23] )
       continue;
     // closed e.Pattern#1 as range 37(13)
+    //DEBUG: s.Num#1: 21
+    //DEBUG: e.ScannedPattern#1: 17
+    //DEBUG: e.ScannedResult#1: 9
+    //DEBUG: t.PatternItem#1: 22
+    //DEBUG: e.Pattern#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -964,6 +1004,9 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::Iter arg_begin, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.ScannedPattern#1 as range 17
   // closed e.ScannedResult#1 as range 9
+  //DEBUG: s.Num#1: 21
+  //DEBUG: e.ScannedPattern#1: 17
+  //DEBUG: e.ScannedResult#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & AlignEnumExprs/4 s.Num#1/21 (/19 {REMOVED TILE} )/20 (/15 {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
@@ -1042,6 +1085,12 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
     if( ! context[24] )
       continue;
     // closed e.Pattern#1 as range 38(5)
+    //DEBUG: e.OverlappedPattern#1: 9
+    //DEBUG: e.OverlappedResult#1: 13
+    //DEBUG: t.First#1: 21
+    //DEBUG: e.Result#1: 17
+    //DEBUG: t.Last#1: 23
+    //DEBUG: e.Pattern#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1119,6 +1168,10 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::Iter arg_begin, refalr
     if( ! context[24] )
       continue;
     // closed e.OverlappedPattern#1 as range 42(9)
+    //DEBUG: t.First#1: 21
+    //DEBUG: e.OverlappedResult#1: 13
+    //DEBUG: t.Last#1: 23
+    //DEBUG: e.OverlappedPattern#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1219,6 +1272,8 @@ static refalrts::FnResult func_OverlapChain(refalrts::Iter arg_begin, refalrts::
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 5
   // closed e.Result#1 as range 9
+  //DEBUG: e.Pattern#1: 5
+  //DEBUG: e.Result#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1312,6 +1367,12 @@ static refalrts::FnResult func_ZipItems(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[17], context[18] ) )
       continue;
+    //DEBUG: e.Pattern#1: 5
+    //DEBUG: e.Result#1: 9
+    //DEBUG: s.CurIndexP#1: 21
+    //DEBUG: s.CurIndexR#1: 22
+    //DEBUG: t.PatternItem#1: 23
+    //DEBUG: t.ResultItem#1: 25
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1401,6 +1462,9 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GlueTiles/4 (/7 s.CurIndexP#1/10 s.CurIndexR#1/11 {REMOVED TILE}
@@ -1440,6 +1504,10 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
+    //DEBUG: s.Weight#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1494,6 +1562,11 @@ static refalrts::FnResult func_GlueTiles(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 9
+    //DEBUG: s.CurIndexR#1: 10
+    //DEBUG: s.Weight#1: 11
+    //DEBUG: s.Ident#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1584,6 +1657,11 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Weight#1: 9
+    //DEBUG: e.Items#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 15
+    //DEBUG: s.CurIndexR#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/12 s.CurIndexP#1/15 s.CurIndexR#1/16 {REMOVED TILE}
@@ -1629,6 +1707,13 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Weight#1: 9
+    //DEBUG: e.Items#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.CurIndexP#1: 14
+    //DEBUG: s.CurIndexR#1: 15
+    //DEBUG: s.ItemWeight#1: 16
+    //DEBUG: s.Ident#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1667,6 +1752,8 @@ static refalrts::FnResult func_GlueNextTile(refalrts::Iter arg_begin, refalrts::
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Items#1 as range 5
+  //DEBUG: s.Weight#1: 9
+  //DEBUG: e.Items#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1726,6 +1813,10 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 12
+    //DEBUG: s.CurIndexR#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1790,6 +1881,12 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 10
+    //DEBUG: s.CurIndexR#1: 11
+    //DEBUG: s.ItemWeight#1: 12
+    //DEBUG: s.Ident#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Weight#1/5 {REMOVED TILE}
@@ -1816,6 +1913,7 @@ static refalrts::FnResult func_FoldTile_EEnd(refalrts::Iter arg_begin, refalrts:
   // </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FoldTile-EEnd/4 s.Weight#1/5 >/1 {REMOVED TILE}
@@ -1858,6 +1956,10 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1L1(refalrts::Iter arg_be
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.CurIndexP#3: 9
+  //DEBUG: s.CurIndexR#3: 10
+  //DEBUG: s.ItemWeight#3: 11
+  //DEBUG: s.Ident#3: 12
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterOverlapped$1\1\1/4 (/7 s.CurIndexP#3/9 s.CurIndexR#3/10 s.ItemWeight#3/11 s.Ident#3/12 )/8 {REMOVED TILE}
@@ -1897,6 +1999,11 @@ static refalrts::FnResult func_gen_FilterOverlapped_S1L1(refalrts::Iter arg_begi
   if( ! refalrts::svar_left( context[11], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.MaxItems#2 as range 5
+  //DEBUG: e.Tiles#2: 2
+  //DEBUG: s.MaxWeight#2: 9
+  //DEBUG: s.IndexP#2: 10
+  //DEBUG: s.IndexR#2: 11
+  //DEBUG: e.MaxItems#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1980,6 +2087,8 @@ static refalrts::FnResult func_FilterOverlapped(refalrts::Iter arg_begin, refalr
     if( ! context[6] )
       continue;
     // closed e.Tiles#1 as range 11(2)
+    //DEBUG: t.NextTile#1: 5
+    //DEBUG: e.Tiles#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2075,6 +2184,14 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
       continue;
     // closed e.Items#2 as range 8
     // closed e.MaxItems#2 as range 15
+    //DEBUG: s.Weight#2: 5
+    //DEBUG: s.CurIndexP#2: 6
+    //DEBUG: s.CurIndexR#2: 7
+    //DEBUG: s.MaxWeight#2: 12
+    //DEBUG: s.IndexP#2: 13
+    //DEBUG: s.IndexR#2: 14
+    //DEBUG: e.Items#2: 8
+    //DEBUG: e.MaxItems#2: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} {REMOVED TILE} '<'/19 {REMOVED TILE}
@@ -2101,6 +2218,15 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1L1(refalrts::Iter arg_begin, 
   // </0 & FindHeavyTile\1\1/4 s.Weight#2/5 s.CurIndexP#2/6 s.CurIndexR#2/7 (/10 e.Items#2/8 )/11 s.MaxWeight#2/12 s.IndexP#2/13 s.IndexR#2/14 (/17 e.MaxItems#2/15 )/18 s.Other#3/19 >/1
   // closed e.Items#2 as range 8
   // closed e.MaxItems#2 as range 15
+  //DEBUG: s.Weight#2: 5
+  //DEBUG: s.CurIndexP#2: 6
+  //DEBUG: s.CurIndexR#2: 7
+  //DEBUG: s.MaxWeight#2: 12
+  //DEBUG: s.IndexP#2: 13
+  //DEBUG: s.IndexR#2: 14
+  //DEBUG: s.Other#3: 19
+  //DEBUG: e.Items#2: 8
+  //DEBUG: e.MaxItems#2: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/10 {REMOVED TILE} {REMOVED TILE} (/17 {REMOVED TILE} )/18 s.Other#3/19 {REMOVED TILE}
@@ -2163,6 +2289,14 @@ static refalrts::FnResult func_gen_FindHeavyTile_L1(refalrts::Iter arg_begin, re
   if( ! refalrts::svar_left( context[18], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Items#2 as range 9
+  //DEBUG: s.MaxWeight#2: 13
+  //DEBUG: s.IndexP#2: 14
+  //DEBUG: s.IndexR#2: 15
+  //DEBUG: e.MaxItems#2: 5
+  //DEBUG: s.Weight#2: 16
+  //DEBUG: s.CurIndexP#2: 17
+  //DEBUG: s.CurIndexR#2: 18
+  //DEBUG: e.Items#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2230,6 +2364,8 @@ static refalrts::FnResult func_FindHeavyTile(refalrts::Iter arg_begin, refalrts:
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tiles#1 as range 2
+  //DEBUG: t.NextTile#1: 5
+  //DEBUG: e.Tiles#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2262,6 +2398,7 @@ static refalrts::FnResult func_gen_RejectTile_L1L1(refalrts::Iter arg_begin, ref
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Tiles#3 as range 2
+  //DEBUG: e.Tiles#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2314,6 +2451,11 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Tiles#2: 5
+  //DEBUG: s.CurIndexP#2: 13
+  //DEBUG: s.CurIndexR#2: 14
+  //DEBUG: s.ItemWeight#2: 15
+  //DEBUG: s.Ident#2: 16
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ItemWeight#2/15 s.Ident#2/16 {REMOVED TILE}
@@ -2390,6 +2532,8 @@ static refalrts::FnResult func_RejectTile(refalrts::Iter arg_begin, refalrts::It
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Tiles#1 as range 5
   // closed e.HeavyTileItems#1 as range 2
+  //DEBUG: e.Tiles#1: 5
+  //DEBUG: e.HeavyTileItems#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2471,6 +2615,12 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.CurIndexP#1: 5
+    //DEBUG: s.Weight#1: 10
+    //DEBUG: s.CurIndexR#1: 12
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2526,6 +2676,14 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.CurIndexP#1: 5
+    //DEBUG: s.Weight#1: 15
+    //DEBUG: s.IndexP#1: 16
+    //DEBUG: s.IndexR#1: 17
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.CurIndexR#1: 18
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexP#1/5 {REMOVED TILE} s.IndexP#1/16 s.IndexR#1/17 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/14 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
@@ -2587,6 +2745,15 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
         continue;
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
+      //DEBUG: s.CurIndexP#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexR#1: 20
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexP#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2615,6 +2782,8 @@ static refalrts::FnResult func_FilterPatternPos(refalrts::Iter arg_begin, refalr
 
   // s.idx t.idx
   // </0 & FilterPatternPos/4 s.CurIndexP#1/5 t.Tile#1/6 >/1
+  //DEBUG: t.Tile#1: 6
+  //DEBUG: s.CurIndexP#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterPatternPos/4 s.CurIndexP#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2679,6 +2848,12 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.CurIndexR#1: 5
+    //DEBUG: s.Weight#1: 10
+    //DEBUG: s.CurIndexP#1: 11
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.CurIndexP#1/11 s.CurIndexR#1/12 {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 )/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2734,6 +2909,14 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.CurIndexR#1: 5
+    //DEBUG: s.Weight#1: 14
+    //DEBUG: s.IndexP#1: 15
+    //DEBUG: s.IndexR#1: 16
+    //DEBUG: e.Items#1: 8
+    //DEBUG: s.CurIndexP#1: 17
+    //DEBUG: s.ItemWeight#1: 19
+    //DEBUG: s.Ident#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.CurIndexR#1/5 {REMOVED TILE} s.IndexP#1/15 s.IndexR#1/16 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/17 s.CurIndexR#1/18 {REMOVED TILE} s.Ident#1/20 {REMOVED TILE} )/7 {REMOVED TILE}
@@ -2795,6 +2978,15 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
         continue;
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
+      //DEBUG: s.CurIndexR#1: 5
+      //DEBUG: s.Weight#1: 10
+      //DEBUG: s.IndexP#1: 11
+      //DEBUG: s.IndexR#1: 12
+      //DEBUG: e.Items-B#1: 13
+      //DEBUG: e.Items-E#1: 8
+      //DEBUG: s.CurIndexP#1: 19
+      //DEBUG: s.ItemWeight#1: 21
+      //DEBUG: s.Ident#1: 22
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.CurIndexR#1/5 (/6 s.Weight#1/10 s.IndexP#1/11 s.IndexR#1/12 {REMOVED TILE} {REMOVED TILE} s.CurIndexP#1/19 s.CurIndexR#1/20 s.ItemWeight#1/21 s.Ident#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2823,6 +3015,8 @@ static refalrts::FnResult func_FilterResultPos(refalrts::Iter arg_begin, refalrt
 
   // s.idx t.idx
   // </0 & FilterResultPos/4 s.CurIndexR#1/5 t.Tile#1/6 >/1
+  //DEBUG: t.Tile#1: 6
+  //DEBUG: s.CurIndexR#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FilterResultPos/4 s.CurIndexR#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2877,6 +3071,10 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 12
+    //DEBUG: s.CurIndexR#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2924,6 +3122,8 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
     // s.idx e.idx
     // </0 & FoldTile/4 s.Weight#1/5 e.Items#1/2 >/1
     // closed e.Items#1 as range 2
+    //DEBUG: s.Weight#1: 5
+    //DEBUG: e.Items#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -2939,6 +3139,7 @@ static refalrts::FnResult func_FoldTile(refalrts::Iter arg_begin, refalrts::Iter
   // </0 & FoldTile/4 s.Weight#1/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FoldTile/4 s.Weight#1/5 >/1 {REMOVED TILE}
@@ -2983,6 +3184,11 @@ static refalrts::FnResult func_gen_FoldTileW_S1L1(refalrts::Iter arg_begin, refa
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Weight#2: 9
+  //DEBUG: s.IndexP#2: 10
+  //DEBUG: s.IndexR#2: 11
+  //DEBUG: s.ItemWeight#2: 12
+  //DEBUG: s.Ident#2: 13
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.IndexP#2/10 s.IndexR#2/11 s.ItemWeight#2/12 s.Ident#2/13 )/8 {REMOVED TILE}
@@ -3036,6 +3242,11 @@ static refalrts::FnResult func_FoldTileW(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Items#1: 2
+    //DEBUG: s.CurIndexP#1: 9
+    //DEBUG: s.CurIndexR#1: 10
+    //DEBUG: s.ItemWeight#1: 11
+    //DEBUG: s.Ident#1: 12
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -3179,6 +3390,16 @@ static refalrts::FnResult func_ReplaceTile(refalrts::Iter arg_begin, refalrts::I
         continue;
       if( ! refalrts::empty_seq( context[36], context[37] ) )
         continue;
+      //DEBUG: e.Idents#1: 17
+      //DEBUG: s.IndexP#1: 21
+      //DEBUG: s.IndexR#1: 22
+      //DEBUG: s.Weight#1: 23
+      //DEBUG: e.Pattern-B#1: 24
+      //DEBUG: e.Pattern-E#1: 5
+      //DEBUG: t.PatternItem#1: 32
+      //DEBUG: e.Result-B#1: 34
+      //DEBUG: e.Result-E#1: 9
+      //DEBUG: t.ResultItem#1: 42
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.IndexP#1/21 s.IndexR#1/22 s.Weight#1/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3276,6 +3497,11 @@ static refalrts::FnResult func_gen_Modify_L1(refalrts::Iter arg_begin, refalrts:
   // closed e.PatSecond#2 as range 13
   // closed e.Tile#2 as range 22
   // closed e.ResSecond#2 as range 18
+  //DEBUG: e.PatFirst#1: 5
+  //DEBUG: e.ResFirst#1: 9
+  //DEBUG: e.PatSecond#2: 13
+  //DEBUG: e.Tile#2: 22
+  //DEBUG: e.ResSecond#2: 18
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & Modify\1/4 (/7 {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 (/15 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3345,6 +3571,11 @@ static refalrts::FnResult func_Modify(refalrts::Iter arg_begin, refalrts::Iter a
   // closed e.PatSecond#1 as range 13
   // closed e.ResFirst#1 as range 17
   // closed e.ResSecond#1 as range 21
+  //DEBUG: e.Idents#1: 5
+  //DEBUG: e.PatFirst#1: 9
+  //DEBUG: e.PatSecond#1: 13
+  //DEBUG: e.ResFirst#1: 17
+  //DEBUG: e.ResSecond#1: 21
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3511,6 +3742,17 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_right( context[45], context[33], context[34] ) )
       continue;
     // closed e.InfoFromPat#1 as range 33
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.NumP#1: 41
+    //DEBUG: s.TypeFromPat#1: 42
+    //DEBUG: s.NumR#1: 43
+    //DEBUG: s.TypeFromRes#1: 44
+    //DEBUG: e.InfoFromRes#1: 37
+    //DEBUG: s.Offset#1: 45
+    //DEBUG: e.InfoFromPat#1: 33
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/41 (/35 s.TypeFromPat#1/42 e.InfoFromPat#1/33 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/30 # Num/32 s.NumR#1/43 (/39 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
@@ -3609,6 +3851,12 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[28], context[29] ) )
       continue;
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.NumP#1: 43
+    //DEBUG: s.NumR#1: 44
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # LEFT-EDGE/37 )/36 )/26 {REMOVED TILE} )/16 (/19 (/30 # Num/32 s.NumR#1/44 {REMOVED TILE} # LEFT-EDGE/42 {REMOVED TILE}
@@ -3707,6 +3955,10 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[28], context[29] ) )
       continue;
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: s.NumP#1: 43
+    //DEBUG: s.NumR#1: 44
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NumP#1/43 (/35 # RIGHT-EDGE/37 )/36 )/26 )/16 (/19 (/30 # Num/32 s.NumR#1/44 (/40 {REMOVED TILE}
@@ -3799,6 +4051,18 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_right( context[45], context[32], context[33] ) )
       continue;
     // closed e.InfoFromPat#1 as range 32
+    //DEBUG: e.Tile#1: 9
+    //DEBUG: e.PatSecond#1: 13
+    //DEBUG: e.ResSecond#1: 17
+    //DEBUG: s.Ident#1: 40
+    //DEBUG: e.Idents#1: 5
+    //DEBUG: s.NumP#1: 41
+    //DEBUG: s.TypeFromPat#1: 42
+    //DEBUG: s.NumR#1: 43
+    //DEBUG: s.TypeFromRes#1: 44
+    //DEBUG: e.InfoFromRes#1: 36
+    //DEBUG: s.Offset#1: 45
+    //DEBUG: e.InfoFromPat#1: 32
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Ident#1/40 {REMOVED TILE} {REMOVED TILE} s.NumP#1/41 (/34 s.TypeFromPat#1/42 e.InfoFromPat#1/32 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/29 # Num/31 s.NumR#1/43 (/38 s.TypeFromRes#1/44 {REMOVED TILE} {REMOVED TILE}
@@ -3838,6 +4102,9 @@ static refalrts::FnResult func_DoModify(refalrts::Iter arg_begin, refalrts::Iter
   // closed e.Tile#1 as range 9
   // closed e.PatSecond#1 as range 13
   // closed e.ResSecond#1 as range 17
+  //DEBUG: e.Tile#1: 9
+  //DEBUG: e.PatSecond#1: 13
+  //DEBUG: e.ResSecond#1: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 {REMOVED TILE}
@@ -3913,6 +4180,8 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.Offset#1: 19
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/13 'e'/14 e.Index#1/17 s.Offset#1/19 )/6 (/7 # TkVariable/15 'e'/16 e.Index#1/11 {REMOVED TILE}
@@ -3949,6 +4218,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: s.AnyType#1: 13
+    //DEBUG: e.Info#1: 11
+    //DEBUG: s.Offset#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/13 e.Info#1/15 s.Offset#1/17 )/6 (/7 s.AnyType#1/14 e.Info#1/11 {REMOVED TILE}
@@ -3978,6 +4250,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[13], context[9], context[10] ) )
       continue;
     // closed e.Index#1 as range 9
+    //DEBUG: t.AnyItem#1: 7
+    //DEBUG: s.Mode#1: 12
+    //DEBUG: s.Offset#1: 13
+    //DEBUG: e.Index#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/11 s.Mode#1/12 e.Index#1/9 s.Offset#1/13 )/6 t.AnyItem#1/7 {REMOVED TILE}
@@ -4014,6 +4290,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[16], context[9], context[10] ) )
       continue;
     // closed e.Info#1 as range 9
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.AnyType#1: 15
+    //DEBUG: s.Offset#1: 16
+    //DEBUG: e.Info#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/15 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 's'/14 e.Index#1/11 {REMOVED TILE}
@@ -4050,6 +4330,11 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[16], context[9], context[10] ) )
       continue;
     // closed e.Info#1 as range 9
+    //DEBUG: s.AnyType#1: 14
+    //DEBUG: s.Mode#1: 15
+    //DEBUG: e.Index#1: 11
+    //DEBUG: s.Offset#1: 16
+    //DEBUG: e.Info#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/9 s.Offset#1/16 )/6 (/7 # TkVariable/13 s.Mode#1/15 e.Index#1/11 )/8 {REMOVED TILE}
@@ -4084,6 +4369,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 14
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # LEFT-EDGE/13 )/8 {REMOVED TILE}
@@ -4118,6 +4406,9 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 14
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/9 s.Offset#1/15 )/6 (/7 # RIGHT-EDGE/13 )/8 {REMOVED TILE}
@@ -4150,6 +4441,10 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type#1: 13
+    //DEBUG: e.Info2#1: 11
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type#1/14 e.Info2#1/11 {REMOVED TILE}
@@ -4183,6 +4478,11 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[15], context[9], context[10] ) )
       continue;
     // closed e.Info1#1 as range 9
+    //DEBUG: s.Type1#1: 13
+    //DEBUG: s.Type2#1: 14
+    //DEBUG: e.Info2#1: 11
+    //DEBUG: s.Offset#1: 15
+    //DEBUG: e.Info1#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/13 e.Info1#1/9 s.Offset#1/15 )/6 (/7 s.Type2#1/14 e.Info2#1/11 {REMOVED TILE}
@@ -4279,6 +4579,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: t.Other#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
@@ -4304,6 +4605,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
+    //DEBUG: t.Other#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
@@ -4322,6 +4624,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
     // </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 >/1
     if( ! refalrts::char_term( '*', context[7] ) )
       continue;
+    //DEBUG: t.AnyItem#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 {REMOVED TILE}
@@ -4339,6 +4642,7 @@ static refalrts::FnResult func_OverlapItem(refalrts::Iter arg_begin, refalrts::I
   // </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 >/1
   if( ! refalrts::char_term( '*', context[5] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.AnyItem#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 {REMOVED TILE}

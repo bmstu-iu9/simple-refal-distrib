@@ -88,6 +88,16 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
             continue;
           if( ! refalrts::empty_seq( context[26], context[27] ) )
             continue;
+          //DEBUG: e.Errors#1: 9
+          //DEBUG: e.CheckedTags-B#1: 13
+          //DEBUG: s.Tag#1: 15
+          //DEBUG: e.CheckedTags-E#1: 5
+          //DEBUG: e.Opts-B#1: 16
+          //DEBUG: s.Num1#1: 23
+          //DEBUG: e.Value#1: 18
+          //DEBUG: e.Opts-M#1: 24
+          //DEBUG: e.Opts-E#1: 2
+          //DEBUG: s.Num2#1: 33
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} (/28 s.Tag#1/30 s.Num2#1/33 e.Value#1/31 )/29 {REMOVED TILE} {REMOVED TILE}
@@ -162,6 +172,17 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
           if( ! refalrts::svar_left( context[31], context[26], context[27] ) )
             continue;
           // closed e.Value2#1 as range 26
+          //DEBUG: e.Errors#1: 9
+          //DEBUG: e.CheckedTags-B#1: 13
+          //DEBUG: s.Tag#1: 15
+          //DEBUG: e.CheckedTags-E#1: 5
+          //DEBUG: e.Opts-B#1: 16
+          //DEBUG: s.Num1#1: 23
+          //DEBUG: e.Value1#1: 18
+          //DEBUG: e.Opts-M#1: 24
+          //DEBUG: e.Opts-E#1: 2
+          //DEBUG: s.Num2#1: 31
+          //DEBUG: e.Value2#1: 26
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Value2#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -200,6 +221,9 @@ static refalrts::FnResult func_GetOpt_CheckRepeated(refalrts::Iter arg_begin, re
   // closed e.CheckedTags#1 as range 5
   // closed e.Errors#1 as range 9
   // closed e.Options#1 as range 2
+  //DEBUG: e.CheckedTags#1: 5
+  //DEBUG: e.Errors#1: 9
+  //DEBUG: e.Options#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GetOpt-CheckRepeated/4 (/7 e.CheckedTags#1/5 )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}

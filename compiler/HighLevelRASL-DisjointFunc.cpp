@@ -68,6 +68,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L1(refalrts::
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Name#1: 17
+  //DEBUG: e.Pattern#2: 9
+  //DEBUG: e.Result#2: 13
+  //DEBUG: s.FnGenResult#1: 21
+  //DEBUG: s.FnGenInitSubst#1: 22
+  //DEBUG: s.FnGenSubst#1: 23
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenResult#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -140,6 +146,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L2(refalrts::
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Sentence#2: 5
+  //DEBUG: s.MaxMemory#2: 14
+  //DEBUG: s.Memory#2: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Memory#2/15 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -192,6 +201,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
       continue;
     // closed e.Commands#3 as range 10(2)
     // closed e.OpenELoop#3 as range 5
+    //DEBUG: e.Commands#3: 2
+    //DEBUG: e.OpenELoop#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -215,6 +226,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3L1(refalrts
   // e.idx
   // </0 & HighLevelRASL-Function-Disjoint\3\1/4 e.LastSentence#3/2 >/1
   // closed e.LastSentence#3 as range 2
+  //DEBUG: e.LastSentence#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Disjoint\3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -262,6 +274,11 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Disjoint_L3(refalrts::
   if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentences#2 as range 2
+  //DEBUG: e.LastSentence#2: 5
+  //DEBUG: s.ScopeClass#1: 10
+  //DEBUG: e.Name#1: 11
+  //DEBUG: s.MaxMemory#2: 15
+  //DEBUG: e.Sentences#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -326,6 +343,12 @@ static refalrts::FnResult func_HighLevelRASL_Function_Disjoint(refalrts::Iter ar
   refalrts::bracket_pointers(context[11], context[12]);
   // closed e.Name#1 as range 9
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: s.FnGenResult#1: 7
+  //DEBUG: s.ScopeClass#1: 8
+  //DEBUG: e.Name#1: 9
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

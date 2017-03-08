@@ -42,6 +42,8 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 5
   // closed e.Files#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Files#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -85,6 +87,8 @@ static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, r
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 2
   // closed e.FileName#1 as range 5
+  //DEBUG: e.Folders#1: 2
+  //DEBUG: e.FileName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -147,6 +151,7 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::ident_term(  ident_Current, context[5] ) )
       continue;
     // closed e.FileName#1 as range 2
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -171,6 +176,8 @@ static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 2
   // closed e.Folder#1 as range 7
+  //DEBUG: e.FileName#1: 2
+  //DEBUG: e.Folder#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
@@ -236,6 +243,10 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.Source#1 as range 14
     // closed e.Output#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Source#1: 14
+    //DEBUG: e.Output#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
@@ -268,6 +279,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.FileName#1 as range 5
     // closed e.Output#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Output#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
@@ -306,6 +320,10 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.Output#1 as range 14
     // closed e.Native#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Output#1: 14
+    //DEBUG: e.Native#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
@@ -338,6 +356,9 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
     // closed e.FileName#1 as range 5
     // closed e.NotFoundPath#1 as range 9
     // closed e.Variants#1 as range 18(2)
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.NotFoundPath#1: 9
+    //DEBUG: e.Variants#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
@@ -359,6 +380,7 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 5
+  //DEBUG: e.FileName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -388,6 +410,7 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -446,6 +469,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
     if( ! context[10] )
       continue;
     // closed e.UnitName#2 as range 16(2)
+    //DEBUG: e.UnitName#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -477,6 +501,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, re
   if( ! refalrts::ident_term(  ident_False, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.SourceName#2 as range 2
+  //DEBUG: e.SourceName#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -524,6 +549,8 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
       continue;
     // closed e.OutName#2 as range 5
     // closed e.NativeName#3 as range 2
+    //DEBUG: e.OutName#2: 5
+    //DEBUG: e.NativeName#3: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # True/9 {REMOVED TILE} {REMOVED TILE}
@@ -548,6 +575,8 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1S1L1(refalrts::Iter arg_begin
     return refalrts::cRecognitionImpossible;
   // closed e.OutName#2 as range 5
   // closed e.NativeName#3 as range 2
+  //DEBUG: e.OutName#2: 5
+  //DEBUG: e.NativeName#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} # False/9 e.NativeName#3/2 >/1 {REMOVED TILE}
@@ -595,6 +624,8 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
       continue;
     // closed e.FileName#1 as range 5
     // closed e.OutName#2 as range 2
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.OutName#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -644,6 +675,8 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, re
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 5
   // closed e.OutName#2 as range 2
+  //DEBUG: e.FileName#1: 5
+  //DEBUG: e.OutName#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AnalyzeFile$2\1/4 (/7 e.FileName#1/5 {REMOVED TILE}
@@ -711,6 +744,11 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     // closed e.SourceName#2 as range 5
     // closed e.OutName#2 as range 9
     // closed e.Native#2 as range 13
+    //DEBUG: s.ResOut#2: 18
+    //DEBUG: s.ResNat#2: 19
+    //DEBUG: e.SourceName#2: 5
+    //DEBUG: e.OutName#2: 9
+    //DEBUG: e.Native#2: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 s.ResOut#2/18 {REMOVED TILE} )/12 (/15 s.ResNat#2/19 e.Native#2/13 )/16 {REMOVED TILE}
@@ -743,6 +781,9 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     // closed e.SourceName#2 as range 5
     // closed e.OutName#2 as range 9
     // closed e.Native#2 as range 13
+    //DEBUG: e.SourceName#2: 5
+    //DEBUG: e.OutName#2: 9
+    //DEBUG: e.Native#2: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 (/7 # False/17 e.SourceName#2/5 {REMOVED TILE} (/15 # True/19 {REMOVED TILE} )/16 {REMOVED TILE}
@@ -775,6 +816,9 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     // closed e.SourceName#2 as range 5
     // closed e.OutName#2 as range 9
     // closed e.Native#2 as range 13
+    //DEBUG: e.SourceName#2: 5
+    //DEBUG: e.OutName#2: 9
+    //DEBUG: e.Native#2: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 (/7 # False/17 e.SourceName#2/5 )/8 {REMOVED TILE} (/15 # False/19 e.Native#2/13 )/16 >/1 {REMOVED TILE}
@@ -849,6 +893,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, re
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[13], context[14] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.UnitName#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 (/7 # False/17 e.UnitName#2/5 '.'/24 's'/23 'r'/22 'e'/21 'f'/20 )/8 (/11 # False/18 e.UnitName#2/34 '.'/29 'r'/28 'a'/27 's'/26 'l'/25 )/12 {REMOVED TILE} 'c'/32 'p'/31 'p'/30 )/16 >/1 {REMOVED TILE}
@@ -901,6 +946,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     if( ! context[9] )
       continue;
     // closed e.FileName#1 as range 32(2)
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -950,6 +996,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
     if( ! context[9] )
       continue;
     // closed e.FileName#1 as range 32(2)
+    //DEBUG: e.FileName#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -996,6 +1043,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::I
   // e.idx
   // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

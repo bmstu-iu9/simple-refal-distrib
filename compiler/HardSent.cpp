@@ -127,6 +127,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.char#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -154,6 +155,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.value#2: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -176,6 +178,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     if( ! refalrts::ident_term(  ident_TkName, context[9] ) )
       continue;
     // closed e.name#2 as range 5
+    //DEBUG: e.name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -198,6 +201,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     if( ! refalrts::ident_term(  ident_TkIdentifier, context[9] ) )
       continue;
     // closed e.ident#2 as range 5
+    //DEBUG: e.ident#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -224,6 +228,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     if( ! refalrts::svar_left( context[10], context[16], context[17] ) )
       continue;
     // closed e.Index#2 as range 16(5)
+    //DEBUG: s.Mode#2: 10
+    //DEBUG: e.Index#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#2/10 {REMOVED TILE} {REMOVED TILE}
@@ -265,6 +271,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
     if( ! refalrts::ident_term(  ident_Brackets, context[9] ) )
       continue;
     // closed e.inBrackets#2 as range 5
+    //DEBUG: e.inBrackets#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -294,6 +301,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   refalrts::bracket_pointers(context[12], context[13]);
   // closed e.Name#2 as range 10
   // closed e.inBrackets#2 as range 5
+  //DEBUG: e.Name#2: 10
+  //DEBUG: e.inBrackets#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -329,6 +338,7 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Pattern#1 as range 2
+  //DEBUG: e.Pattern#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -387,6 +397,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       continue;
     // closed e.Name#1 as range 10
     // closed e.body#1 as range 5
+    //DEBUG: e.Name#1: 10
+    //DEBUG: e.body#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -431,6 +443,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.Name#1 as range 10
     // closed e.body#1 as range 5
     // closed e.smth#1 as range 27(2)
+    //DEBUG: e.Name#1: 10
+    //DEBUG: e.body#1: 5
+    //DEBUG: e.smth#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -483,6 +498,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.smth#1 as range 27(2)
     // closed e.Name#1 as range 10
     // closed e.body#1 as range 5
+    //DEBUG: e.smth#1: 2
+    //DEBUG: e.Name#1: 10
+    //DEBUG: e.body#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -533,6 +551,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     if( ! refalrts::empty_seq( context[27], context[28] ) )
       continue;
     // closed e.body#1 as range 5
+    //DEBUG: e.body#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -566,6 +585,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       continue;
     // closed e.body#1 as range 5
     // closed e.smth#1 as range 27(2)
+    //DEBUG: e.body#1: 5
+    //DEBUG: e.smth#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -612,6 +633,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       continue;
     // closed e.smth#1 as range 27(2)
     // closed e.body#1 as range 5
+    //DEBUG: e.smth#1: 2
+    //DEBUG: e.body#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -672,6 +695,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.name#1 as range 10
     // closed e.pattern#1 as range 14
     // closed e.smth#1 as range 27(2)
+    //DEBUG: e.name#1: 10
+    //DEBUG: e.pattern#1: 14
+    //DEBUG: e.smth#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.pattern#1/14 {REMOVED TILE}
@@ -747,6 +773,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.smth#1 as range 27(2)
     // closed e.name#1 as range 10
     // closed e.pattern#1 as range 14
+    //DEBUG: e.smth#1: 2
+    //DEBUG: e.name#1: 10
+    //DEBUG: e.pattern#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.pattern#1/14 {REMOVED TILE}
@@ -819,6 +848,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.name#1 as range 10
     // closed e.pattern#1 as range 14
     // closed e.smth#1 as range 27(2)
+    //DEBUG: e.name#1: 10
+    //DEBUG: e.pattern#1: 14
+    //DEBUG: e.smth#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.pattern#1/14 {REMOVED TILE}
@@ -894,6 +926,9 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
     // closed e.smth#1 as range 27(2)
     // closed e.name#1 as range 10
     // closed e.pattern#1 as range 14
+    //DEBUG: e.smth#1: 2
+    //DEBUG: e.name#1: 10
+    //DEBUG: e.pattern#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.pattern#1/14 {REMOVED TILE}
@@ -951,6 +986,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       continue;
     // closed e.attr#1 as range 5
     // closed e.smth#1 as range 27(2)
+    //DEBUG: e.attr#1: 5
+    //DEBUG: e.smth#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -985,6 +1022,8 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
       continue;
     // closed e.smth#1 as range 27(2)
     // closed e.attr#1 as range 5
+    //DEBUG: e.smth#1: 2
+    //DEBUG: e.attr#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1028,6 +1067,7 @@ static refalrts::FnResult func_CreateHardPattern_Aux(refalrts::Iter arg_begin, r
   // e.idx
   // </0 & CreateHardPattern-Aux/4 e.smth#1/2 >/1
   // closed e.smth#1 as range 2
+  //DEBUG: e.smth#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1077,6 +1117,7 @@ static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refal
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.pattern#1 as range 2
+  //DEBUG: e.pattern#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

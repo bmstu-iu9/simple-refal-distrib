@@ -110,6 +110,9 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1L1(refalrts::Iter arg_begin, 
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.MarkedResult#3 as range 2
+  //DEBUG: e.Trash#2: 5
+  //DEBUG: s.ContextOffset#3: 9
+  //DEBUG: e.MarkedResult#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -181,6 +184,10 @@ static refalrts::FnResult func_gen_GenResult_Opt_L1(refalrts::Iter arg_begin, re
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.PatternVars#1: 13
+  //DEBUG: e.Trash#2: 9
+  //DEBUG: e.MarkedResult#2: 5
+  //DEBUG: s.ContextOffset#1: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -249,6 +256,10 @@ static refalrts::FnResult func_GenResult_Opt(refalrts::Iter arg_begin, refalrts:
   // closed e.PatternVars#1 as range 6
   // closed e.MarkedPattern#1 as range 10
   // closed e.Result#1 as range 2
+  //DEBUG: s.ContextOffset#1: 5
+  //DEBUG: e.PatternVars#1: 6
+  //DEBUG: e.MarkedPattern#1: 10
+  //DEBUG: e.Result#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -372,6 +383,9 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.SubRange-E#1 as range 7
       // closed e.Range-E#1 as range 25(2)
+      //DEBUG: e.Range-B#1: 5
+      //DEBUG: e.SubRange-E#1: 7
+      //DEBUG: e.Range-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -439,6 +453,9 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.SubRange-E#1 as range 7
       // closed e.Range-E#1 as range 25(2)
+      //DEBUG: e.Range-B#1: 5
+      //DEBUG: e.SubRange-E#1: 7
+      //DEBUG: e.Range-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -513,6 +530,10 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
       // closed e.Name#1 as range 12
       // closed e.SubRange-E#1 as range 7
       // closed e.Range-E#1 as range 25(2)
+      //DEBUG: e.Range-B#1: 5
+      //DEBUG: e.Name#1: 12
+      //DEBUG: e.SubRange-E#1: 7
+      //DEBUG: e.Range-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -560,6 +581,7 @@ static refalrts::FnResult func_FlatResult(refalrts::Iter arg_begin, refalrts::It
   // e.idx
   // </0 & FlatResult/4 e.Range#1/2 >/1
   // closed e.Range#1 as range 2
+  //DEBUG: e.Range#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FlatResult/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -605,6 +627,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     if( ! context[9] )
       continue;
     // closed e.Tile#2 as range 14(5)
+    //DEBUG: e.Tile#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 (/7 # Tile/9 e.Tile#2/14(5) )/8 >/1 {REMOVED TILE}
@@ -635,6 +658,10 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_right( context[13], context[14], context[15] ) )
       continue;
     // closed e.Index#2 as range 14(5)
+    //DEBUG: s.Offset#2: 11
+    //DEBUG: s.SampleOffset#2: 12
+    //DEBUG: s.Level#2: 13
+    //DEBUG: e.Index#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
@@ -670,6 +697,11 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_right( context[13], context[14], context[15] ) )
       continue;
     // closed e.Index#2 as range 14(5)
+    //DEBUG: s.Mode#2: 10
+    //DEBUG: s.Offset#2: 11
+    //DEBUG: s.SampleOffset#2: 12
+    //DEBUG: s.Level#2: 13
+    //DEBUG: e.Index#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\1/4 {REMOVED TILE} e.Index#2/14(5) s.Level#2/13 s.SampleOffset#2/12 {REMOVED TILE}
@@ -698,6 +730,8 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_right( context[10], context[14], context[15] ) )
       continue;
     // closed e.String#2 as range 14(5)
+    //DEBUG: s.Offset#2: 10
+    //DEBUG: e.String#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Offset#2/10 {REMOVED TILE} {REMOVED TILE}
@@ -722,6 +756,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L1(refalrts::Iter arg_begin, re
   // ( e.idx )
   // </0 & GenResult-Aux\1/4 (/7 e.Elem#2/5 )/8 >/1
   // closed e.Elem#2 as range 5
+  //DEBUG: e.Elem#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -784,6 +819,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
       continue;
     if( ! refalrts::empty_seq( context[18], context[19] ) )
       continue;
+    //DEBUG: t.Item#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 (/7 # AsIs/9 t.Item#3/10 )/8 >/1 {REMOVED TILE}
@@ -822,6 +858,9 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     if( ! refalrts::svar_right( context[17], context[10], context[11] ) )
       continue;
     // closed e.Index#3 as range 10
+    //DEBUG: s.Offset#3: 16
+    //DEBUG: s.SampleOffset#3: 17
+    //DEBUG: e.Index#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2$1\1/4 {REMOVED TILE} e.Index#3/10 s.SampleOffset#3/17 s.Offset#3/16 )/13 )/8 >/1 {REMOVED TILE}
@@ -856,6 +895,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     if( ! refalrts::empty_seq( context[18], context[19] ) )
       continue;
     // closed e.Elem#3 as range 10
+    //DEBUG: e.Elem#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -893,6 +933,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2S1L1(refalrts::Iter arg_begin
     if( ! refalrts::empty_seq( context[18], context[19] ) )
       continue;
     // closed e.Elem#3 as range 10
+    //DEBUG: e.Elem#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -983,6 +1024,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
     if( ! context[9] )
       continue;
     // closed e.Tile#2 as range 7
+    //DEBUG: e.Tile#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # Tile/9 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -1002,6 +1044,7 @@ static refalrts::FnResult func_gen_GenResult_Aux_L2(refalrts::Iter arg_begin, re
 
   // t.idx
   // </0 & GenResult-Aux\2/4 t.Other#2/5 >/1
+  //DEBUG: t.Other#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenResult-Aux\2/4 t.Other#2/5 >/1 {REMOVED TILE}
@@ -1042,6 +1085,8 @@ static refalrts::FnResult func_GenResult_Aux(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.Trash#1 as range 5
   // closed e.MarkedResult#1 as range 9
+  //DEBUG: e.Trash#1: 5
+  //DEBUG: e.MarkedResult#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1171,6 +1216,8 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
+    //DEBUG: s.Char#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
@@ -1197,6 +1244,8 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
       continue;
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
+    //DEBUG: s.Number#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
@@ -1221,6 +1270,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenBracket/5 {REMOVED TILE}
@@ -1243,6 +1293,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseBracket/5 {REMOVED TILE}
@@ -1265,6 +1316,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenADT/5 {REMOVED TILE}
@@ -1287,6 +1339,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseADT/5 {REMOVED TILE}
@@ -1309,6 +1362,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkOpenCall/5 {REMOVED TILE}
@@ -1331,6 +1385,7 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     context[9] = context[3];
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
+    //DEBUG: s.Offset#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & CreateElemParam/4 # TkCloseCall/5 {REMOVED TILE}
@@ -1350,6 +1405,8 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::ident_term(  ident_TkName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: s.Offset#1: 6
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkName/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
@@ -1370,6 +1427,8 @@ static refalrts::FnResult func_CreateElemParam(refalrts::Iter arg_begin, refalrt
   if( ! refalrts::ident_term(  ident_TkIdentifier, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Name#1 as range 2
+  //DEBUG: s.Offset#1: 6
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} # TkIdentifier/5 {REMOVED TILE} s.Offset#1/6 >/1 {REMOVED TILE}
@@ -1429,6 +1488,8 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: e.Stack#2: 5
+    //DEBUG: s.Offset#2: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenCall/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
@@ -1457,6 +1518,8 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: e.Stack#2: 5
+    //DEBUG: s.Offset#2: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenADT/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
@@ -1485,6 +1548,8 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: e.Stack#2: 5
+    //DEBUG: s.Offset#2: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} # TkOpenBracket/13 s.Offset#2/14 )/12 >/1 {REMOVED TILE}
@@ -1517,6 +1582,9 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     if( ! refalrts::svar_right( context[15], context[18], context[19] ) )
       continue;
     // closed e.Stack#2 as range 18(5)
+    //DEBUG: s.Offset#2: 14
+    //DEBUG: s.OpenOffset#2: 15
+    //DEBUG: e.Stack#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1556,6 +1624,9 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     if( ! refalrts::svar_right( context[15], context[18], context[19] ) )
       continue;
     // closed e.Stack#2 as range 18(5)
+    //DEBUG: s.Offset#2: 14
+    //DEBUG: s.OpenOffset#2: 15
+    //DEBUG: e.Stack#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1594,6 +1665,9 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
     if( ! refalrts::svar_right( context[15], context[18], context[19] ) )
       continue;
     // closed e.Stack#2 as range 18(5)
+    //DEBUG: s.Offset#2: 14
+    //DEBUG: s.OpenOffset#2: 15
+    //DEBUG: e.Stack#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & GenPushLink\1/4 (/7 {REMOVED TILE} s.OpenOffset#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1620,6 +1694,9 @@ static refalrts::FnResult func_gen_GenPushLink_L1(refalrts::Iter arg_begin, refa
   // </0 & GenPushLink\1/4 (/7 e.Stack#2/5 )/8 (/11 s.tag#2/13 e.Info#2/9 )/12 >/1
   // closed e.Stack#2 as range 5
   // closed e.Info#2 as range 9
+  //DEBUG: s.tag#2: 13
+  //DEBUG: e.Stack#2: 5
+  //DEBUG: e.Info#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenPushLink\1/4 {REMOVED TILE} (/11 s.tag#2/13 e.Info#2/9 )/12 >/1 {REMOVED TILE}
@@ -1655,6 +1732,7 @@ static refalrts::FnResult func_gen_GenPushLink_L2(refalrts::Iter arg_begin, refa
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Commands#2 as range 2
+  //DEBUG: e.Commands#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenPushLink\2/4 {REMOVED TILE}
@@ -1684,6 +1762,7 @@ static refalrts::FnResult func_GenPushLink(refalrts::Iter arg_begin, refalrts::I
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.MarkedResult#1 as range 2
+  //DEBUG: e.MarkedResult#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1743,6 +1822,8 @@ static refalrts::FnResult func_Reverse(refalrts::Iter arg_begin, refalrts::Iter 
     if( ! context[6] )
       continue;
     // closed e.Items#1 as range 7(2)
+    //DEBUG: t.Last#1: 5
+    //DEBUG: e.Items#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1807,6 +1888,8 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
       continue;
     // closed e.Tile#1 as range 5
     // closed e.Result#1 as range 10(2)
+    //DEBUG: e.Tile#1: 5
+    //DEBUG: e.Result#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1844,6 +1927,9 @@ static refalrts::FnResult func_ModifyResult(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
       continue;
     // closed e.info#1 as range 5
+    //DEBUG: e.Result#1: 2
+    //DEBUG: s.tag#1: 9
+    //DEBUG: e.info#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1910,6 +1996,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
     // closed e.Range#1 as range 12(2)
+    //DEBUG: e.Range#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
@@ -1943,6 +2030,7 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
     // closed e.Range#1 as range 12(2)
+    //DEBUG: e.Range#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ModifyTile/4 (/7 {REMOVED TILE}
@@ -1979,6 +2067,8 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Range#1: 2
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # AsIs/9 {REMOVED TILE} {REMOVED TILE}
@@ -2016,6 +2106,8 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Range#1: 2
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # HalfReuse/9 {REMOVED TILE} {REMOVED TILE}
@@ -2053,6 +2145,8 @@ static refalrts::FnResult func_ModifyTile(refalrts::Iter arg_begin, refalrts::It
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: e.Range#1: 2
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} & ModifyTile/4 (/7 # Reuse/9 {REMOVED TILE} {REMOVED TILE}
@@ -2145,6 +2239,9 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     if( ! refalrts::svar_right( context[21], context[14], context[15] ) )
       continue;
     // closed e.Index#2 as range 14
+    //DEBUG: s.Offset#2: 20
+    //DEBUG: s.Depth#2: 21
+    //DEBUG: e.Index#2: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenSplices$1\1/4 (/7 (/9 # AsIs/13 {REMOVED TILE} e.Index#2/14 s.Depth#2/21 {REMOVED TILE} )/10 )/8 >/1 {REMOVED TILE}
@@ -2168,6 +2265,7 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
     context[23] = context[6];
     if( ! refalrts::empty_seq( context[22], context[23] ) )
       continue;
+    //DEBUG: t.OneItem#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2207,6 +2305,9 @@ static refalrts::FnResult func_gen_GenSplices_S1L1(refalrts::Iter arg_begin, ref
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   // closed e.Inner#2 as range 5
+  //DEBUG: t.Begin#2: 9
+  //DEBUG: t.End#2: 11
+  //DEBUG: e.Inner#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Inner#2/5 {REMOVED TILE}
@@ -2291,6 +2392,10 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
     // closed e.LeftTile#1 as range 9
     // closed e.Result#1 as range 29(2)
     // closed e.RightTile#1 as range 14
+    //DEBUG: e.Trash#1: 5
+    //DEBUG: e.LeftTile#1: 9
+    //DEBUG: e.Result#1: 2
+    //DEBUG: e.RightTile#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2362,6 +2467,7 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.OneTile#1 as range 9
+  //DEBUG: e.OneTile#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & GenSplices/4 {REMOVED TILE} (/11 # Tile/13 e.OneTile#1/9 )/12 >/1 {REMOVED TILE}
@@ -2427,6 +2533,8 @@ static refalrts::FnResult func_CalcRes(refalrts::Iter arg_begin, refalrts::Iter 
   // t.idx e.idx
   // </0 & CalcRes/4 t.First#1/5 e.Tile#1/2 >/1
   // closed e.Tile#1 as range 2
+  //DEBUG: t.First#1: 5
+  //DEBUG: e.Tile#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Tile#1/2 {REMOVED TILE}
@@ -2473,6 +2581,8 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
       continue;
     // closed e.Tile#1 as range 5
     // closed e.Other#1 as range 14(2)
+    //DEBUG: e.Tile#1: 5
+    //DEBUG: e.Other#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2514,6 +2624,9 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
         continue;
       // closed e.Tile#1 as range 7
       // closed e.Other#1 as range 16(2)
+      //DEBUG: e.Allocated#1: 5
+      //DEBUG: e.Tile#1: 7
+      //DEBUG: e.Other#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2564,6 +2677,7 @@ static refalrts::FnResult func_CollectTiles(refalrts::Iter arg_begin, refalrts::
   // e.idx
   // </0 & CollectTiles/4 e.Allocated#1/2 >/1
   // closed e.Allocated#1 as range 2
+  //DEBUG: e.Allocated#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -2615,6 +2729,11 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
     if( ! refalrts::svar_right( context[13], context[5], context[6] ) )
       continue;
     // closed e.Index#1 as range 5
+    //DEBUG: e.Alloc#1: 2
+    //DEBUG: s.Offset#1: 11
+    //DEBUG: s.Sample#1: 12
+    //DEBUG: s.Level#1: 13
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2666,6 +2785,11 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
     if( ! refalrts::svar_right( context[13], context[5], context[6] ) )
       continue;
     // closed e.Index#1 as range 5
+    //DEBUG: e.Alloc#1: 2
+    //DEBUG: s.Offset#1: 11
+    //DEBUG: s.Sample#1: 12
+    //DEBUG: s.Level#1: 13
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2714,6 +2838,7 @@ static refalrts::FnResult func_CollectTiles_Alloc(refalrts::Iter arg_begin, refa
   // e.idx
   // </0 & CollectTiles-Alloc/4 e.Alloc#1/2 >/1
   // closed e.Alloc#1 as range 2
+  //DEBUG: e.Alloc#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -2767,6 +2892,9 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
       if( ! context[11] )
         continue;
       // closed e.Trash-E#1 as range 16(2)
+      //DEBUG: e.LeftTile#1: 5
+      //DEBUG: e.Trash-B#1: 9
+      //DEBUG: e.Trash-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} # RemovedTile/11 {REMOVED TILE} {REMOVED TILE}
@@ -2793,6 +2921,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
     // closed e.LeftTile#1 as range 5
+    //DEBUG: e.LeftTile#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.LeftTile#1/5 )/8 >/1 {REMOVED TILE}
@@ -2828,6 +2957,7 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
     // closed e.Trash#1 as range 2
+    //DEBUG: e.Trash#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GenTrash/4 {REMOVED TILE} )/8 e.Trash#1/2 >/1 {REMOVED TILE}
@@ -2850,6 +2980,9 @@ static refalrts::FnResult func_GenTrash(refalrts::Iter arg_begin, refalrts::Iter
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.LeftTile#1 as range 5
+  //DEBUG: e.Trash#1: 2
+  //DEBUG: t.Last#1: 9
+  //DEBUG: e.LeftTile#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.LeftTile#1/5 {REMOVED TILE} e.Trash#1/2 {REMOVED TILE}
@@ -2911,6 +3044,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
     context[13] = context[6];
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -2935,6 +3069,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
     context[13] = context[6];
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -2959,6 +3094,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
     context[13] = context[6];
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -2979,6 +3115,9 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::svar_term( context[12], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#1 as range 5
+  //DEBUG: s.Offset#1: 10
+  //DEBUG: s.Tag#1: 9
+  //DEBUG: e.Info#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
@@ -3029,6 +3168,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     context[16] = context[6];
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # AsIs/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -3053,6 +3193,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     context[16] = context[6];
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # HalfReuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -3077,6 +3218,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     context[16] = context[6];
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.Item#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # Reuse/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -3107,6 +3249,9 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_right( context[13], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(5)
+    //DEBUG: s.Offset#1: 10
+    //DEBUG: s.Depth#1: 13
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariable/9 's'/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
@@ -3137,6 +3282,10 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_right( context[14], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(5)
+    //DEBUG: s.Offset#1: 10
+    //DEBUG: s.Sample#1: 13
+    //DEBUG: s.Depth#1: 14
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 {REMOVED TILE}
@@ -3164,6 +3313,10 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_right( context[13], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(5)
+    //DEBUG: s.Offset#1: 10
+    //DEBUG: s.Mode#1: 12
+    //DEBUG: s.Depth#1: 13
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
@@ -3197,6 +3350,11 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::svar_right( context[14], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(5)
+    //DEBUG: s.Offset#1: 10
+    //DEBUG: s.Mode#1: 12
+    //DEBUG: s.Sample#1: 13
+    //DEBUG: s.Depth#1: 14
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Mode#1/12 e.Index#1/15(5) s.Depth#1/14 s.Sample#1/13 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
@@ -3222,6 +3380,8 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::ident_term(  ident_TkString, context[9] ) )
       continue;
     // closed e.String#1 as range 5
+    //DEBUG: s.Offset#1: 10
+    //DEBUG: e.String#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.String#1/5 s.Offset#1/10 )/8 >/1 {REMOVED TILE}
@@ -3244,6 +3404,9 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::svar_term( context[12], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#1 as range 5
+  //DEBUG: s.Offset#1: 10
+  //DEBUG: s.Tag#1: 9
+  //DEBUG: e.Info#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/5 s.Offset#1/10 )/8 {REMOVED TILE}
@@ -3313,6 +3476,10 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
     if( ! refalrts::svar_right( context[21], context[14], context[15] ) )
       continue;
     // closed e.Index#3 as range 14
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: s.Offset#3: 20
+    //DEBUG: s.Level#3: 21
+    //DEBUG: e.Index#3: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3346,6 +3513,8 @@ static refalrts::FnResult func_gen_AddOffsets_L1S1L1(refalrts::Iter arg_begin, r
   // ( e.idx ) t.idx
   // </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 t.Other#3/9 >/1
   // closed e.PatternVars#1 as range 5
+  //DEBUG: t.Other#3: 9
+  //DEBUG: e.PatternVars#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AddOffsets\1$1\1/4 (/7 e.PatternVars#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3400,6 +3569,9 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       continue;
     // closed e.PatternVars#1 as range 5
     // closed e.Tile#2 as range 9
+    //DEBUG: s.Offset#2: 13
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: e.Tile#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3449,6 +3621,10 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_right( context[16], context[22], context[23] ) )
       continue;
     // closed e.Index#2 as range 22(9)
+    //DEBUG: s.Offset#2: 13
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: s.Level#2: 16
+    //DEBUG: e.Index#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3502,6 +3678,10 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_right( context[16], context[22], context[23] ) )
       continue;
     // closed e.Index#2 as range 22(9)
+    //DEBUG: s.Offset#2: 13
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: s.Level#2: 16
+    //DEBUG: e.Index#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3555,6 +3735,10 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
     if( ! refalrts::svar_right( context[16], context[22], context[23] ) )
       continue;
     // closed e.Index#2 as range 22(9)
+    //DEBUG: s.Offset#2: 13
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: s.Level#2: 16
+    //DEBUG: e.Index#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3601,6 +3785,9 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
       continue;
     // closed e.PatternVars#1 as range 5
     // closed e.String#2 as range 9
+    //DEBUG: s.Offset#2: 13
+    //DEBUG: e.PatternVars#1: 5
+    //DEBUG: e.String#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
@@ -3626,6 +3813,10 @@ static refalrts::FnResult func_gen_AddOffsets_L1(refalrts::Iter arg_begin, refal
   // </0 & AddOffsets\1/4 (/7 e.PatternVars#1/5 )/8 s.Offset#2/13 (/11 s.Tag#2/14 e.Info#2/9 )/12 >/1
   // closed e.PatternVars#1 as range 5
   // closed e.Info#2 as range 9
+  //DEBUG: s.Offset#2: 13
+  //DEBUG: s.Tag#2: 14
+  //DEBUG: e.PatternVars#1: 5
+  //DEBUG: e.Info#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.PatternVars#1/5 {REMOVED TILE} s.Offset#2/13 {REMOVED TILE}
@@ -3669,6 +3860,9 @@ static refalrts::FnResult func_AddOffsets(refalrts::Iter arg_begin, refalrts::It
   refalrts::bracket_pointers(context[8], context[9]);
   // closed e.PatternVars#1 as range 6
   // closed e.MarkedResult#1 as range 2
+  //DEBUG: s.ContextOffset#1: 5
+  //DEBUG: e.PatternVars#1: 6
+  //DEBUG: e.MarkedResult#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3763,6 +3957,13 @@ static refalrts::FnResult func_GetSampleOffset(refalrts::Iter arg_begin, refalrt
     if( ! refalrts::svar_right( context[25], context[13], context[14] ) )
       continue;
     // closed e.Offsets#1 as range 13
+    //DEBUG: s.Mode#1: 9
+    //DEBUG: s.Level#1: 10
+    //DEBUG: e.Index#1: 5
+    //DEBUG: e.PatternVars-B#1: 11
+    //DEBUG: e.PatternVars-E#1: 2
+    //DEBUG: s.SampleOffset#1: 25
+    //DEBUG: e.Offsets#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & GetSampleOffset/4 e.PatternVars-B#1/11 (/15 s.Mode#1/17 (/20 e.Index#1/22 s.Level#1/24 )/21 e.Offsets#1/13 s.SampleOffset#1/25 )/16 e.PatternVars-E#1/26(2) (/7 {REMOVED TILE} >/1 {REMOVED TILE}

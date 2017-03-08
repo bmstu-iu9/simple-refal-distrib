@@ -52,6 +52,8 @@ static refalrts::FnResult func_gen_Go_L1(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.ProgName#2 as range 5
   // closed e.Options#2 as range 2
+  //DEBUG: e.ProgName#2: 5
+  //DEBUG: e.Options#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & Go\1/4 (/7 e.ProgName#2/5 {REMOVED TILE}
@@ -90,6 +92,7 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
     if( ! refalrts::ident_term(  ident_InPlace, context[5] ) )
       continue;
     // closed e.FileName#2 as range 2
+    //DEBUG: e.FileName#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -162,6 +165,8 @@ static refalrts::FnResult func_gen_Go_L2(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.From#2 as range 6
     // closed e.To#2 as range 11
+    //DEBUG: e.From#2: 6
+    //DEBUG: e.To#2: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -361,6 +366,10 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
         continue;
       // closed e.GenMode#2 as range 11
       // closed e.DescriptionAndTail#2 as range 27(2)
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 11
+      //DEBUG: e.DescriptionAndTail#2: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.Source#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -399,6 +408,8 @@ static refalrts::FnResult func_gen_Transform_L1(refalrts::Iter arg_begin, refalr
   // </0 & Transform\1/4 (/7 e.Source#1/5 )/8 e.Other#2/2 >/1
   // closed e.Source#1 as range 5
   // closed e.Other#2 as range 2
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Other#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
@@ -511,6 +522,12 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
       if( ! refalrts::empty_seq( context[20], context[21] ) )
         continue;
       // closed e.Deleted#2 as range 35(2)
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.GenMode#2: 13
+      //DEBUG: e.Description#2: 18
+      //DEBUG: e.Deleted#2: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} </0 & Transform\2/4 (/7 e.Source#1/5 )/8 {REMOVED TILE} {REMOVED TILE} (/22 'G'/24 'E'/25 'N'/26 ':'/27 'E'/28 'N'/29 'D'/30 '*'/31 '/'/32 )/23 e.Deleted#2/35(2) >/1 {REMOVED TILE}
@@ -534,6 +551,11 @@ static refalrts::FnResult func_gen_Transform_L2(refalrts::Iter arg_begin, refalr
   // closed e.LinesBefore#2 as range 9
   // closed e.GenMode#2 as range 13
   // closed e.Other#2 as range 2
+  //DEBUG: s.Length#2: 17
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.LinesBefore#2: 9
+  //DEBUG: e.GenMode#2: 13
+  //DEBUG: e.Other#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} e.GenMode#2/13 {REMOVED TILE} e.Other#2/2 {REMOVED TILE}
@@ -606,6 +628,9 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
       continue;
     // closed e.Source#1 as range 5
     // closed e.Text#3 as range 9
+    //DEBUG: s.LineNumber#3: 14
+    //DEBUG: e.Source#1: 5
+    //DEBUG: e.Text#3: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -630,6 +655,10 @@ static refalrts::FnResult func_gen_Transform_L3S1L1(refalrts::Iter arg_begin, re
   // </0 & Transform\3$1\1/4 (/7 e.Source#1/5 )/8 (/11 s.TokType#3/13 s.LineNumber#3/14 e.Info#3/9 )/12 >/1
   // closed e.Source#1 as range 5
   // closed e.Info#3 as range 9
+  //DEBUG: s.TokType#3: 13
+  //DEBUG: s.LineNumber#3: 14
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Info#3: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.TokType#3/13 s.LineNumber#3/14 {REMOVED TILE} )/12 {REMOVED TILE}
@@ -678,6 +707,9 @@ static refalrts::FnResult func_gen_Transform_L3S1L2(refalrts::Iter arg_begin, re
   // closed e.LinesBefore#2 as range 5
   // closed e.Description#2 as range 9
   // closed e.Generated#3 as range 2
+  //DEBUG: e.LinesBefore#2: 5
+  //DEBUG: e.Description#2: 9
+  //DEBUG: e.Generated#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -776,6 +808,10 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
     // closed e.Source#1 as range 5
     // closed e.LinesBefore#2 as range 9
     // closed e.Description#2 as range 2
+    //DEBUG: s.Length#2: 17
+    //DEBUG: e.Source#1: 5
+    //DEBUG: e.LinesBefore#2: 9
+    //DEBUG: e.Description#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -853,6 +889,11 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   // closed e.LinesBefore#2 as range 9
   // closed e.OtherGenMode#2 as range 13
   // closed e.Description#2 as range 2
+  //DEBUG: s.Length#2: 17
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.LinesBefore#2: 9
+  //DEBUG: e.OtherGenMode#2: 13
+  //DEBUG: e.Description#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.LinesBefore#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Description#2/2 {REMOVED TILE}
@@ -902,6 +943,8 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Source#1 as range 5
   // closed e.Lines#1 as range 2
+  //DEBUG: e.Source#1: 5
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -999,6 +1042,8 @@ static refalrts::FnResult func_gen_Length_T_L1(refalrts::Iter arg_begin, refalrt
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Line#2: 5
+  //DEBUG: s.Next#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1033,6 +1078,7 @@ static refalrts::FnResult func_Length_T(refalrts::Iter arg_begin, refalrts::Iter
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Lines#1 as range 2
+  //DEBUG: e.Lines#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}

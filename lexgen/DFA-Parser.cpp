@@ -79,6 +79,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -108,6 +109,7 @@ static refalrts::FnResult func_DFA_Parse(refalrts::Iter arg_begin, refalrts::Ite
   // e.idx
   // </0 & DFA-Parse/4 e.Tokens#1/2 >/1
   // closed e.Tokens#1 as range 2
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -209,6 +211,12 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       if( ! refalrts::empty_seq( context[22], context[23] ) )
         continue;
       // closed e.SetNames-E#1 as range 34(5)
+      //DEBUG: e.RuleNames#1: 9
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.SetNames-B#1: 20
+      //DEBUG: e.SetNames-E#1: 5
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames-B#1/20 {REMOVED TILE} e.SetNames-E#1/34(5) {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -263,6 +271,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! context[19] )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -330,6 +343,12 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       if( ! refalrts::empty_seq( context[22], context[23] ) )
         continue;
       // closed e.RuleNames-E#1 as range 34(9)
+      //DEBUG: e.SetNames#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: t.SrcPos#1: 18
+      //DEBUG: e.Name#1: 15
+      //DEBUG: e.RuleNames-B#1: 20
+      //DEBUG: e.RuleNames-E#1: 9
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames-B#1/20 {REMOVED TILE} e.RuleNames-E#1/34(9) {REMOVED TILE} {REMOVED TILE} e.Name#1/15 {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -384,6 +403,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! context[19] )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -432,6 +456,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseElements/4 (/7 e.SetNames#1/5 )/8 (/11 e.RuleNames#1/9 )/12 (/13 # TEOF/17 t.SrcPos#1/18 )/14 e.Tail#1/2 >/1 {REMOVED TILE}
@@ -449,6 +477,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   // closed e.SetNames#1 as range 5
   // closed e.RuleNames#1 as range 9
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Unexpected#1: 13
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -547,6 +579,12 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 9
+    //DEBUG: e.Name#1: 5
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -603,6 +641,13 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 9
+    //DEBUG: e.Name#1: 5
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Body#2: 19
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
@@ -639,6 +684,13 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::Iter arg_begin, 
   // closed e.RuleNames#1 as range 15
   // closed e.Body#2 as range 19
   // closed e.Tail#2 as range 2
+  //DEBUG: t.SetNamePos#1: 9
+  //DEBUG: t.Unexpected#2: 23
+  //DEBUG: e.Name#1: 5
+  //DEBUG: e.SetNames#1: 11
+  //DEBUG: e.RuleNames#1: 15
+  //DEBUG: e.Body#2: 19
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Name#1/5 {REMOVED TILE} t.SetNamePos#1/9 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -733,6 +785,12 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.SetNamePos#1: 13
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Name#1: 15
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
@@ -785,6 +843,12 @@ static refalrts::FnResult func_ParseSetDescr(refalrts::Iter arg_begin, refalrts:
   // closed e.RuleNames#1 as range 9
   // closed e.Name#1 as range 15
   // closed e.Tail#1 as range 2
+  //DEBUG: t.SetNamePos#1: 13
+  //DEBUG: t.Unexpected#1: 19
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Name#1: 15
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SetNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -848,6 +912,10 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     if( ! context[15] )
       continue;
     // closed e.Content#1 as range 9
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 14
+    //DEBUG: e.Content#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/14 {REMOVED TILE} {REMOVED TILE}
@@ -889,6 +957,10 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
     if( ! context[15] )
       continue;
     // closed e.Name#1 as range 9
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 14
+    //DEBUG: e.Name#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -915,6 +987,8 @@ static refalrts::FnResult func_ExtractSets(refalrts::Iter arg_begin, refalrts::I
   // </0 & ExtractSets/4 (/7 e.Found#1/5 )/8 e.OtherTail#1/2 >/1
   // closed e.Found#1 as range 5
   // closed e.OtherTail#1 as range 2
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.OtherTail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractSets/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -999,6 +1073,13 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
+    //DEBUG: t.SentNamePos#1: 5
+    //DEBUG: e.Name#1: 7
+    //DEBUG: e.SetNames#1: 11
+    //DEBUG: e.RuleNames#1: 15
+    //DEBUG: e.Body#2: 19
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TDot/27 t.SrcPos#2/28 )/24 {REMOVED TILE} {REMOVED TILE}
@@ -1033,6 +1114,13 @@ static refalrts::FnResult func_gen_ParseSentence_S1L1(refalrts::Iter arg_begin, 
   // closed e.RuleNames#1 as range 15
   // closed e.Body#2 as range 19
   // closed e.Tail#2 as range 2
+  //DEBUG: t.SentNamePos#1: 5
+  //DEBUG: t.Unexpected#2: 23
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.SetNames#1: 11
+  //DEBUG: e.RuleNames#1: 15
+  //DEBUG: e.Body#2: 19
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} t.SentNamePos#1/5 {REMOVED TILE} e.Name#1/7 {REMOVED TILE} e.SetNames#1/11 {REMOVED TILE} e.RuleNames#1/15 {REMOVED TILE} e.Body#2/19 {REMOVED TILE} {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -1126,6 +1214,12 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.SentNamePos#1: 13
+    //DEBUG: e.SetNames#1: 5
+    //DEBUG: e.RuleNames#1: 9
+    //DEBUG: e.Name#1: 15
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#1/24 {REMOVED TILE} {REMOVED TILE}
@@ -1179,6 +1273,12 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
   // closed e.RuleNames#1 as range 9
   // closed e.Name#1 as range 15
   // closed e.Tail#1 as range 2
+  //DEBUG: t.SentNamePos#1: 13
+  //DEBUG: t.Unexpected#1: 19
+  //DEBUG: e.SetNames#1: 5
+  //DEBUG: e.RuleNames#1: 9
+  //DEBUG: e.Name#1: 15
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 e.SetNames#1/5 {REMOVED TILE} e.RuleNames#1/9 )/12 t.SentNamePos#1/13 (/17 e.Name#1/15 {REMOVED TILE} {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -1225,6 +1325,10 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L1(refalrts::Iter arg_beg
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#2 as range 5
+  //DEBUG: e.Tail#2: 2
+  //DEBUG: s.TokType#2: 9
+  //DEBUG: t.SrcPos#2: 10
+  //DEBUG: e.Info#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\1/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1262,6 +1366,9 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L2(refalrts::Iter arg_beg
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.NextToken#2: 7
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1304,6 +1411,10 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L3(refalrts::Iter arg_beg
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.NextToken#2: 9
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1349,6 +1460,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L4(refalrts::Iter arg_beg
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.Flush#2: 9
+  //DEBUG: t.NextToken#2: 11
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1404,6 +1520,9 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
     if( ! refalrts::ident_term(  ident_Finitive, context[11] ) )
       continue;
     // closed e.Tail#2 as range 2
+    //DEBUG: t.BeginSrcPos#2: 5
+    //DEBUG: t.Head#2: 7
+    //DEBUG: e.Tail#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.Head#2/7 {REMOVED TILE} e.Tail#2/2 {REMOVED TILE}
@@ -1431,6 +1550,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L5(refalrts::Iter arg_beg
   // t.idx t.idx t.idx t.idx e.idx
   // </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 t.Head#2/7 t.Flush#2/9 t.NextState#2/11 e.Tail#2/2 >/1
   // closed e.Tail#2 as range 2
+  //DEBUG: t.BeginSrcPos#2: 5
+  //DEBUG: t.Head#2: 7
+  //DEBUG: t.Flush#2: 9
+  //DEBUG: t.NextState#2: 11
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ExtractAlternatives\5/4 t.BeginSrcPos#2/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1497,6 +1621,12 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.Head#2: 9
+    //DEBUG: t.Flush#2: 11
+    //DEBUG: t.NextState#2: 13
+    //DEBUG: e.Found#1: 5
+    //DEBUG: e.Tail#2: 2
+    //DEBUG: t.SrcPos#2: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} t.SrcPos#2/20 )/18 {REMOVED TILE} {REMOVED TILE}
@@ -1522,6 +1652,11 @@ static refalrts::FnResult func_gen_ExtractAlternatives_L6(refalrts::Iter arg_beg
   // </0 & ExtractAlternatives\6/4 (/7 e.Found#1/5 )/8 t.Head#2/9 t.Flush#2/11 t.NextState#2/13 e.Tail#2/2 >/1
   // closed e.Found#1 as range 5
   // closed e.Tail#2 as range 2
+  //DEBUG: t.Head#2: 9
+  //DEBUG: t.Flush#2: 11
+  //DEBUG: t.NextState#2: 13
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1562,6 +1697,8 @@ static refalrts::FnResult func_ExtractAlternatives(refalrts::Iter arg_begin, ref
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Found#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: e.Found#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1648,6 +1785,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Content#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Content#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -1683,6 +1822,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Content#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Content#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Head/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1717,6 +1858,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1750,6 +1892,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1783,6 +1927,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1816,6 +1962,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1849,6 +1997,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1883,6 +2033,7 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1901,6 +2052,8 @@ static refalrts::FnResult func_ExtractAlternatives_Head(refalrts::Iter arg_begin
   // t.idx e.idx
   // </0 & ExtractAlternatives-Head/4 t.Unexpected#1/5 e.Tail#1/2 >/1
   // closed e.Tail#1 as range 2
+  //DEBUG: t.Unexpected#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Tail#1/2 {REMOVED TILE}
@@ -1953,6 +2106,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 (/5 # TFlush/9 t.SrcPos#1/10 )/6 {REMOVED TILE}
@@ -1980,6 +2134,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -2011,6 +2167,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Message#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Message#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-Flush/4 {REMOVED TILE} t.SrcPos#1/10 {REMOVED TILE} )/6 {REMOVED TILE}
@@ -2042,6 +2200,8 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2072,6 +2232,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2102,6 +2263,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2119,6 +2281,7 @@ static refalrts::FnResult func_ExtractAlternatives_Flush(refalrts::Iter arg_begi
 
   // t.idx
   // </0 & ExtractAlternatives-Flush/4 t.Unexpected#1/5 >/1
+  //DEBUG: t.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2173,6 +2336,8 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
     if( ! context[11] )
       continue;
     // closed e.Name#1 as range 7
+    //DEBUG: t.SrcPos#1: 10
+    //DEBUG: e.Name#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ExtractAlternatives-NextState/4 (/5 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2203,6 +2368,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2233,6 +2399,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2250,6 +2417,7 @@ static refalrts::FnResult func_ExtractAlternatives_NextState(refalrts::Iter arg_
 
   // t.idx
   // </0 & ExtractAlternatives-NextState/4 t.Unexpected#1/5 >/1
+  //DEBUG: t.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2296,6 +2464,10 @@ static refalrts::FnResult func_UnexpectedToken(refalrts::Iter arg_begin, refalrt
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   // closed e.Unexpected#1 as range 5
+  //DEBUG: e.Message#1: 2
+  //DEBUG: s.Type#1: 9
+  //DEBUG: t.SrcPos#1: 10
+  //DEBUG: e.Unexpected#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

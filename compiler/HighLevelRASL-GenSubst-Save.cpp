@@ -66,6 +66,7 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FuncName#1 as range 2
+  //DEBUG: e.FuncName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -165,6 +166,9 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Substitutes#1 as range 2
+  //DEBUG: e.PrefixCommands#1: 5
+  //DEBUG: s.ContextTop#1: 9
+  //DEBUG: e.Substitutes#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -279,6 +283,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -369,6 +382,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -461,6 +483,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -556,6 +587,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -646,6 +686,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -795,6 +844,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 36
+      //DEBUG: e.SubRange#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 40
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -988,6 +1047,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[51], context[40], context[41] ) )
           continue;
         // closed e.Offsets#1 as range 40
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk1#1: 16
+        //DEBUG: e.Junk2#1: 26
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 36
+        //DEBUG: s.Mode#1: 37
+        //DEBUG: e.Index#1: 31
+        //DEBUG: e.Vars-B#1: 38
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 51
+        //DEBUG: e.Offsets#1: 40
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1097,6 +1169,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1199,6 +1280,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1316,6 +1406,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Char#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1406,6 +1505,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1498,6 +1606,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Ident#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/36 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1593,6 +1710,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[31], context[32] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 36
+      //DEBUG: s.Value#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1714,6 +1840,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[51], context[40], context[41] ) )
           continue;
         // closed e.Offsets#1 as range 40
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk1#1: 16
+        //DEBUG: e.Junk2#1: 26
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 36
+        //DEBUG: s.Mode#1: 37
+        //DEBUG: e.Index#1: 31
+        //DEBUG: e.Vars-B#1: 38
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 51
+        //DEBUG: e.Offsets#1: 40
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1823,6 +1962,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} s.Num#1/37 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1914,6 +2062,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[27], context[28] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Char#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2028,6 +2185,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[27], context[28] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Range#1: 21
+      //DEBUG: s.Number#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2139,6 +2305,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2250,6 +2425,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Name#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2364,6 +2548,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[26], context[27] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Char#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2476,6 +2669,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[26], context[27] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
+      //DEBUG: s.Number#1: 32
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2585,6 +2787,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2694,6 +2905,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2803,6 +3023,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2960,6 +3189,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[31], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3121,6 +3359,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       // closed e.Name#1 as range 32
       // closed e.SubRange#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Name#1: 32
+      //DEBUG: e.SubRange#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3303,6 +3551,16 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[35], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Name#1: 31
+      //DEBUG: e.SubRange#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 35
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3480,6 +3738,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 31
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/19 (/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3585,6 +3851,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[46], context[35], context[36] ) )
           continue;
         // closed e.Offsets#1 as range 35
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk#1: 16
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 26
+        //DEBUG: e.Range#1: 21
+        //DEBUG: s.Mode#1: 32
+        //DEBUG: e.Index#1: 27
+        //DEBUG: e.Vars-B#1: 33
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 46
+        //DEBUG: e.Offsets#1: 35
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3741,6 +4020,19 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         if( ! refalrts::svar_right( context[46], context[35], context[36] ) )
           continue;
         // closed e.Offsets#1 as range 35
+        //DEBUG: s.ContextOffset#1: 13
+        //DEBUG: e.Commands#1: 5
+        //DEBUG: e.Substs-B#1: 14
+        //DEBUG: e.Junk#1: 21
+        //DEBUG: e.Substs-E#1: 2
+        //DEBUG: s.Num#1: 31
+        //DEBUG: e.Range#1: 16
+        //DEBUG: s.Mode#1: 32
+        //DEBUG: e.Index#1: 26
+        //DEBUG: e.Vars-B#1: 33
+        //DEBUG: e.Vars-E#1: 9
+        //DEBUG: s.SampleOffset#1: 46
+        //DEBUG: e.Offsets#1: 35
 
         refalrts::reset_allocator();
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3879,6 +4171,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk1#1: 16
+      //DEBUG: e.Index#1: 31
+      //DEBUG: e.Junk2#1: 26
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 37
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4000,6 +4301,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4131,6 +4441,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4262,6 +4581,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[32], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4392,6 +4720,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! refalrts::svar_left( context[32], context[16], context[17] ) )
         continue;
       // closed e.Range#1 as range 16
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Index#1: 26
+      //DEBUG: e.Junk#1: 21
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 32
+      //DEBUG: e.Range#1: 16
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4522,6 +4859,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         continue;
       // closed e.Index#1 as range 27
       // closed e.Range#1 as range 21
+      //DEBUG: s.ContextOffset#1: 13
+      //DEBUG: e.Vars#1: 9
+      //DEBUG: e.Commands#1: 5
+      //DEBUG: e.Substs-B#1: 14
+      //DEBUG: e.Junk#1: 16
+      //DEBUG: e.Substs-E#1: 2
+      //DEBUG: s.Num#1: 26
+      //DEBUG: e.Index#1: 27
+      //DEBUG: e.Range#1: 21
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4618,6 +4964,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
   // closed e.MarkedPattern#1 as range 14
   // closed e.Vars#1 as range 9
   // closed e.Commands#1 as range 5
+  //DEBUG: s.ContextOffset#1: 13
+  //DEBUG: e.MarkedPattern#1: 14
+  //DEBUG: e.Vars#1: 9
+  //DEBUG: e.Commands#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.ContextOffset#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4676,6 +5026,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 'e'/6 >/1
     if( ! refalrts::char_term( 'e', context[6] ) )
       continue;
+    //DEBUG: s.ContextOffset#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4697,6 +5048,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
     // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 't'/6 >/1
     if( ! refalrts::char_term( 't', context[6] ) )
       continue;
+    //DEBUG: s.ContextOffset#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4717,6 +5069,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   // </0 & IncVarOffset-Saved/4 s.ContextOffset#1/5 's'/6 >/1
   if( ! refalrts::char_term( 's', context[6] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.ContextOffset#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4764,6 +5117,10 @@ static refalrts::FnResult func_MakeRepeatedSave(refalrts::Iter arg_begin, refalr
     // </0 & MakeRepeatedSave/4 s.Direction#1/5 s.Num#1/6 't'/7 s.ContextOffset#1/8 s.SampleOffset#1/9 >/1
     if( ! refalrts::char_term( 't', context[7] ) )
       continue;
+    //DEBUG: s.Direction#1: 5
+    //DEBUG: s.Num#1: 6
+    //DEBUG: s.ContextOffset#1: 8
+    //DEBUG: s.SampleOffset#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.ContextOffset#1/8 {REMOVED TILE}
@@ -4783,6 +5140,11 @@ static refalrts::FnResult func_MakeRepeatedSave(refalrts::Iter arg_begin, refalr
 
   // s.idx s.idx s.idx s.idx s.idx
   // </0 & MakeRepeatedSave/4 s.Direction#1/5 s.Num#1/6 s.Mode#1/7 s.ContextOffset#1/8 s.SampleOffset#1/9 >/1
+  //DEBUG: s.Direction#1: 5
+  //DEBUG: s.Num#1: 6
+  //DEBUG: s.Mode#1: 7
+  //DEBUG: s.ContextOffset#1: 8
+  //DEBUG: s.SampleOffset#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}

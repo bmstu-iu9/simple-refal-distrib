@@ -94,6 +94,8 @@ static refalrts::FnResult func_ParseProgram(refalrts::Iter arg_begin, refalrts::
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -160,6 +162,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -190,6 +193,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -220,6 +224,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -250,6 +255,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -280,6 +286,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -310,6 +317,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
+    //DEBUG: s.LnNum#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE}
@@ -328,6 +336,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
 
   // t.idx
   // </0 & PrepareBracket/4 t.OtherToken#1/5 >/1
+  //DEBUG: t.OtherToken#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & PrepareBracket/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -371,6 +380,10 @@ static refalrts::FnResult func_gen_ParseElements_S2L1(refalrts::Iter arg_begin, 
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: e.AST#1: 5
+  //DEBUG: e.NewASTItems#2: 9
+  //DEBUG: t.ErrorList#2: 13
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -423,6 +436,10 @@ static refalrts::FnResult func_gen_ParseElements_S4L1(refalrts::Iter arg_begin, 
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: e.AST#1: 5
+  //DEBUG: e.NewASTItems#2: 9
+  //DEBUG: t.ErrorList#2: 13
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -492,6 +509,9 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.AST#1: 7
+    //DEBUG: s.LnNum#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseElements/4 {REMOVED TILE} (/9 {REMOVED TILE} )/10 (/11 # TkEOF/15 s.LnNum#1/16 )/12 >/1 {REMOVED TILE}
@@ -524,6 +544,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.AST#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 16
+    //DEBUG: s.Directive#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/16 s.Directive#1/17 {REMOVED TILE} {REMOVED TILE}
@@ -578,6 +603,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! context[17] )
       continue;
     // closed e.Block#1 as range 13
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.AST#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: t.SrcPos#1: 16
+    //DEBUG: e.Block#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -615,6 +645,11 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[16], context[13], context[14] ) )
       continue;
     // closed e.Name#1 as range 13
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.AST#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 16
+    //DEBUG: e.Name#1: 13
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/16 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -676,6 +711,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.AST#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/11 # TkSemicolon/15 s.LnNum#1/16 )/12 {REMOVED TILE} {REMOVED TILE}
@@ -696,6 +735,10 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   // </0 & ParseElements/4 t.ErrorList#1/5 (/9 e.AST#1/7 )/10 t.Unexpected#1/11 e.Tail#1/2 >/1
   // closed e.AST#1 as range 7
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: t.Unexpected#1: 11
+  //DEBUG: e.AST#1: 7
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -914,6 +957,10 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
     if( ! refalrts::svar_left( context[13], context[8], context[9] ) )
       continue;
     // closed e.Name#1 as range 8
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 13
+    //DEBUG: e.Name#1: 8
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TkName/12 s.LnNum#1/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -947,6 +994,9 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
     if( ! context[9] )
       continue;
     // closed e.Tail#1 as range 17(2)
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: t.Unexpected#1: 8
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -985,6 +1035,9 @@ static refalrts::FnResult func_ParseElement_SwDirective(refalrts::Iter arg_begin
   // t.idx s.idx e.idx
   // </0 & ParseElement-SwDirective/4 t.ErrorList#1/5 s.Directive#1/7 e.Tail#1/2 >/1
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: s.Directive#1: 7
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1066,6 +1119,13 @@ static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::svar_left( context[18], context[15], context[16] ) )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: t.ErrorList#1: 9
+    //DEBUG: s.ASTItem#1: 11
+    //DEBUG: s.ScopeClass#1: 12
+    //DEBUG: e.AST#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 18
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1101,6 +1161,12 @@ static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts:
   // </0 & ParseNameList/4 (/7 e.AST#1/5 )/8 t.ErrorList#1/9 s.ASTItem#1/11 s.ScopeClass#1/12 t.Unexpected#1/13 e.Tail#1/2 >/1
   // closed e.AST#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 9
+  //DEBUG: t.Unexpected#1: 13
+  //DEBUG: s.ASTItem#1: 11
+  //DEBUG: s.ScopeClass#1: 12
+  //DEBUG: e.AST#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ASTItem#1/11 s.ScopeClass#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1156,6 +1222,9 @@ static refalrts::FnResult func_Wrap(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::ident_term(  ident_Ident, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: s.LnNum#1: 6
+    //DEBUG: s.ScopeClass#1: 7
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.ScopeClass#1/7 {REMOVED TILE} {REMOVED TILE}
@@ -1176,6 +1245,10 @@ static refalrts::FnResult func_Wrap(refalrts::Iter arg_begin, refalrts::Iter arg
   // s.idx s.idx s.idx e.idx
   // </0 & Wrap/4 s.ASTItem#1/5 s.LnNum#1/6 s.ScopeClass#1/7 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: s.ASTItem#1: 5
+  //DEBUG: s.LnNum#1: 6
+  //DEBUG: s.ScopeClass#1: 7
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1239,6 +1312,12 @@ static refalrts::FnResult func_ParseNameList_Tail(refalrts::Iter arg_begin, refa
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 9
+    //DEBUG: s.ASTItem#1: 11
+    //DEBUG: s.ScopeClass#1: 12
+    //DEBUG: e.AST#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/13 # TkComma/17 s.LnNum#1/18 )/14 {REMOVED TILE} {REMOVED TILE}
@@ -1272,6 +1351,12 @@ static refalrts::FnResult func_ParseNameList_Tail(refalrts::Iter arg_begin, refa
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 9
+    //DEBUG: s.ASTItem#1: 11
+    //DEBUG: s.ScopeClass#1: 12
+    //DEBUG: e.AST#1: 5
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseNameList-Tail/4 {REMOVED TILE} s.ASTItem#1/11 s.ScopeClass#1/12 (/13 # TkSemicolon/17 s.LnNum#1/18 )/14 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1291,6 +1376,12 @@ static refalrts::FnResult func_ParseNameList_Tail(refalrts::Iter arg_begin, refa
   // </0 & ParseNameList-Tail/4 (/7 e.AST#1/5 )/8 t.ErrorList#1/9 s.ASTItem#1/11 s.ScopeClass#1/12 t.Unexpected#1/13 e.Tail#1/2 >/1
   // closed e.AST#1 as range 5
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 9
+  //DEBUG: t.Unexpected#1: 13
+  //DEBUG: s.ASTItem#1: 11
+  //DEBUG: s.ScopeClass#1: 12
+  //DEBUG: e.AST#1: 5
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ASTItem#1/11 s.ScopeClass#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1353,6 +1444,12 @@ static refalrts::FnResult func_gen_ParseFunction_S1L1(refalrts::Iter arg_begin, 
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: s.LnNum#1: 5
+  //DEBUG: s.ScopeClass#1: 6
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.Block#2: 11
+  //DEBUG: t.ErrorList#2: 15
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1423,6 +1520,11 @@ static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 10
+    //DEBUG: s.ScopeClass#1: 5
+    //DEBUG: e.Name#1: 6
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 17
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1469,6 +1571,11 @@ static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts:
   // </0 & ParseFunction/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 t.ErrorList#1/10 t.Unexpected#1/12 e.Tail#1/2 >/1
   // closed e.Name#1 as range 6
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 10
+  //DEBUG: t.Unexpected#1: 12
+  //DEBUG: s.ScopeClass#1: 5
+  //DEBUG: e.Name#1: 6
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.ScopeClass#1/5 {REMOVED TILE} e.Name#1/6 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1552,6 +1659,11 @@ static refalrts::FnResult func_gen_ParseBlock_S1L1(refalrts::Iter arg_begin, ref
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.SrcPos#1: 5
+    //DEBUG: t.ErrorList#1: 11
+    //DEBUG: e.Block#1: 7
+    //DEBUG: e.Tokens#2: 2
+    //DEBUG: t.CloseBlockSrcPos#2: 18
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/9 {REMOVED TILE} {REMOVED TILE} (/13 # TkCloseBlock/17 t.CloseBlockSrcPos#2/18 )/14 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1574,6 +1686,11 @@ static refalrts::FnResult func_gen_ParseBlock_S1L1(refalrts::Iter arg_begin, ref
   // </0 & ParseBlock$1\1/4 t.SrcPos#1/5 (/9 e.Block#1/7 )/10 t.ErrorList#1/11 t.Unexpected#2/13 e.Tokens#2/2 >/1
   // closed e.Block#1 as range 7
   // closed e.Tokens#2 as range 2
+  //DEBUG: t.SrcPos#1: 5
+  //DEBUG: t.ErrorList#1: 11
+  //DEBUG: t.Unexpected#2: 13
+  //DEBUG: e.Block#1: 7
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1644,6 +1761,10 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
     if( ! context[13] )
       continue;
     // closed e.Block#1 as range 7
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Tokens#1: 2
+    //DEBUG: t.SrcPos#1: 12
+    //DEBUG: e.Block#1: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1681,6 +1802,8 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
   // t.idx e.idx
   // </0 & ParseBlock/4 t.ErrorList#1/5 e.Tokens#1/2 >/1
   // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1748,6 +1871,10 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[11], context[12] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Sentences#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNumber#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & DoParseBlock/4 {REMOVED TILE} {REMOVED TILE} (/13 # TkCloseBlock/15 s.LnNumber#1/16 )/14 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1786,6 +1913,10 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[11], context[12] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Sentences#1: 7
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1829,6 +1960,9 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
   // </0 & DoParseBlock/4 t.ErrorList#1/5 (/9 e.Sentences#1/7 )/10 e.Tokens#1/2 >/1
   // closed e.Sentences#1 as range 7
   // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Sentences#1: 7
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1900,6 +2034,10 @@ static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, re
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: t.ErrorList#2: 5
+    //DEBUG: e.Pattern#2: 7
+    //DEBUG: e.Tokens#2: 2
+    //DEBUG: s.LnNum#2: 16
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseSentence\1/4 {REMOVED TILE} (/11 # TkReplace/15 s.LnNum#2/16 )/12 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1919,6 +2057,10 @@ static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, re
   // </0 & ParseSentence\1/4 t.ErrorList#2/5 (/9 e.Pattern#2/7 )/10 t.NextResultToken#2/11 e.Tokens#2/2 >/1
   // closed e.Pattern#2 as range 7
   // closed e.Tokens#2 as range 2
+  //DEBUG: t.ErrorList#2: 5
+  //DEBUG: t.NextResultToken#2: 11
+  //DEBUG: e.Pattern#2: 7
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1966,6 +2108,9 @@ static refalrts::FnResult func_gen_ParseSentence_L2(refalrts::Iter arg_begin, re
   refalrts::bracket_pointers(context[9], context[10]);
   // closed e.Pattern#2 as range 7
   // closed e.Tokens#2 as range 2
+  //DEBUG: t.ErrorList#2: 5
+  //DEBUG: e.Pattern#2: 7
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2057,6 +2202,12 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.ErrorList#2: 13
+    //DEBUG: e.Sentences#1: 5
+    //DEBUG: e.Pattern#2: 9
+    //DEBUG: e.Result#2: 15
+    //DEBUG: e.Tokens#2: 2
+    //DEBUG: s.LnNum#2: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & ParseSentence\3/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#2/24 )/20 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2098,6 +2249,12 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.ErrorList#2: 13
+    //DEBUG: e.Sentences#1: 5
+    //DEBUG: e.Pattern#2: 9
+    //DEBUG: e.Result#2: 15
+    //DEBUG: e.Tokens#2: 2
+    //DEBUG: s.LnNum#2: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2168,6 +2325,11 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
       continue;
     if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
+    //DEBUG: t.ErrorList#2: 13
+    //DEBUG: e.Sentences#1: 5
+    //DEBUG: e.Pattern#2: 9
+    //DEBUG: e.Result#2: 15
+    //DEBUG: s.LnNum#2: 24
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2222,6 +2384,12 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
   // closed e.Pattern#2 as range 9
   // closed e.Result#2 as range 15
   // closed e.Tokens#2 as range 2
+  //DEBUG: t.ErrorList#2: 13
+  //DEBUG: t.Unexpected#2: 19
+  //DEBUG: e.Sentences#1: 5
+  //DEBUG: e.Pattern#2: 9
+  //DEBUG: e.Result#2: 15
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2284,6 +2452,9 @@ static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts:
   refalrts::bracket_pointers(context[9], context[10]);
   // closed e.Sentences#1 as range 7
   // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Sentences#1: 7
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2402,6 +2573,12 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBrackets#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Char#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Char#1/21 {REMOVED TILE}
@@ -2448,6 +2625,12 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBrackets#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Number#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Number#1/21 {REMOVED TILE}
@@ -2491,6 +2674,12 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[20], context[15], context[16] ) )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBrackets#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
@@ -2548,6 +2737,13 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[26], context[20], context[21] ) )
       continue;
     // closed e.Name#1 as range 20
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBrackets#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNumMarker#1: 25
+    //DEBUG: s.LnNumName#1: 26
+    //DEBUG: e.Name#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkIdentMarker/19 s.LnNumMarker#1/25 {REMOVED TILE} (/22 # TkName/24 s.LnNumName#1/26 {REMOVED TILE} {REMOVED TILE}
@@ -2590,6 +2786,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBrackets#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2664,6 +2865,14 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[20], context[21] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNumVar#1: 25
+    //DEBUG: s.Mode#1: 26
+    //DEBUG: e.Index#1: 15
+    //DEBUG: s.LnNumRedef#1: 27
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNumVar#1/25 {REMOVED TILE} (/22 # TkRedefinition/24 s.LnNumRedef#1/27 {REMOVED TILE}
@@ -2707,6 +2916,13 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[21], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Mode#1: 21
+    //DEBUG: e.Index#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2753,6 +2969,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2816,6 +3037,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2878,6 +3104,13 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[27], context[21], context[22] ) )
       continue;
     // closed e.Name#1 as range 21
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNumBracket#1: 26
+    //DEBUG: s.LnNumName#1: 27
+    //DEBUG: e.Name#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNumBracket#1/26 {REMOVED TILE} s.LnNumName#1/27 {REMOVED TILE} {REMOVED TILE}
@@ -2934,6 +3167,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3012,6 +3250,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/21 {REMOVED TILE}
@@ -3095,6 +3338,15 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.InnerScanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketsSign#1: 24
+    //DEBUG: s.InnerLnNum#1: 25
+    //DEBUG: s.CloseBracket#1: 26
+    //DEBUG: e.Scanned#1: 20
+    //DEBUG: s.ClosedLnNum#1: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} )/23 {REMOVED TILE} {REMOVED TILE} # Close/19 s.ClosedLnNum#1/28 s.CloseBracket#1/27 {REMOVED TILE}
@@ -3156,6 +3408,16 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.InnerScanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketsSign#1: 24
+    //DEBUG: s.InnerLnNum#1: 25
+    //DEBUG: s.CloseBracket#1: 26
+    //DEBUG: e.Scanned#1: 20
+    //DEBUG: s.LnNum#1: 27
+    //DEBUG: s.OtherCloseBracket#1: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3235,6 +3497,11 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.CloseBracket#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3305,6 +3572,14 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[21], context[15], context[16] ) )
       continue;
     // closed e.Scanned#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.InnerScanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketsSign#1: 19
+    //DEBUG: s.InnerLnNum#1: 20
+    //DEBUG: s.CloseBracket#1: 21
+    //DEBUG: e.Scanned#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerLnNum#1/20 s.CloseBracket#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3363,6 +3638,9 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 11
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Pattern#1: 11
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ParsePattern/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -3701,6 +3979,11 @@ static refalrts::FnResult func_gen_ParseResult_S11L1(refalrts::Iter arg_begin, r
   if( ! context[18] )
     return refalrts::cRecognitionImpossible;
   // closed e.Tail#2 as range 2
+  //DEBUG: e.MultiBracket#1: 5
+  //DEBUG: e.Scanned#1: 9
+  //DEBUG: e.Block#2: 13
+  //DEBUG: t.ErrorList#2: 17
+  //DEBUG: e.Tail#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3782,6 +4065,12 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Char#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Char#1/21 {REMOVED TILE}
@@ -3828,6 +4117,12 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Number#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Number#1/21 {REMOVED TILE}
@@ -3871,6 +4166,12 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[20], context[15], context[16] ) )
       continue;
     // closed e.Name#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: e.Name#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
@@ -3928,6 +4229,13 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[26], context[20], context[21] ) )
       continue;
     // closed e.Name#1 as range 20
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.MarkerLnNum#1: 25
+    //DEBUG: s.NameLnNum#1: 26
+    //DEBUG: e.Name#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkIdentMarker/19 s.MarkerLnNum#1/25 {REMOVED TILE} (/22 # TkName/24 s.NameLnNum#1/26 {REMOVED TILE} {REMOVED TILE}
@@ -3970,6 +4278,11 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4031,6 +4344,13 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[21], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.Mode#1: 21
+    //DEBUG: e.Index#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4092,6 +4412,13 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[27], context[21], context[22] ) )
       continue;
     // closed e.Name#1 as range 21
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNumADT#1: 26
+    //DEBUG: s.LnNumName#1: 27
+    //DEBUG: e.Name#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNumADT#1/26 {REMOVED TILE} s.LnNumName#1/27 {REMOVED TILE} {REMOVED TILE}
@@ -4148,6 +4475,11 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4225,6 +4557,12 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.OpenBracket#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4312,6 +4650,15 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.InnerScanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketsSign#1: 24
+    //DEBUG: s.OpenLnNum#1: 25
+    //DEBUG: s.CloseBracket#1: 26
+    //DEBUG: e.Scanned#1: 20
+    //DEBUG: s.LnNum#1: 28
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.BracketsSign#1/24 s.OpenLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} )/23 {REMOVED TILE} {REMOVED TILE} # Close/19 s.LnNum#1/28 s.CloseBracket#1/27 {REMOVED TILE}
@@ -4356,6 +4703,11 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4417,6 +4769,14 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_left( context[21], context[15], context[16] ) )
       continue;
     // closed e.Scanned#1 as range 15
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.MultiBracket#1: 7
+    //DEBUG: e.InnerScanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.BracketsSign#1: 19
+    //DEBUG: s.OpenLnNum#1: 20
+    //DEBUG: s.CloseBracket#1: 21
+    //DEBUG: e.Scanned#1: 15
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.OpenLnNum#1/20 s.CloseBracket#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4495,6 +4855,11 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: e.Scanned#1: 11
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LnNum#1: 20
+    //DEBUG: s.CloseBracket#1: 21
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4550,6 +4915,9 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   // closed e.Result#1 as range 11
   // closed e.Tail#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Result#1: 11
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & ParseResult/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}

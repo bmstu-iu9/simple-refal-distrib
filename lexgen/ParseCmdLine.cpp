@@ -66,6 +66,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
     if( ! refalrts::svar_left( context[15], context[10], context[11] ) )
       continue;
     // closed e.To#3 as range 10
+    //DEBUG: s.PosFrom#2: 9
+    //DEBUG: e.From#2: 5
+    //DEBUG: s.PosTo#3: 15
+    //DEBUG: e.To#3: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.PosFrom#2/9 {REMOVED TILE} {REMOVED TILE} s.PosTo#3/15 {REMOVED TILE} )/13 {REMOVED TILE}
@@ -90,6 +94,9 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S2L1(refalrts::Iter arg_be
   // </0 & ParseCommandLine\1$2\1/4 (/7 e.From#2/5 )/8 s.PosFrom#2/9 e.Other#3/2 >/1
   // closed e.From#2 as range 5
   // closed e.Other#3 as range 2
+  //DEBUG: s.PosFrom#2: 9
+  //DEBUG: e.From#2: 5
+  //DEBUG: e.Other#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.From#2/5 {REMOVED TILE} s.PosFrom#2/9 e.Other#3/2 {REMOVED TILE}
@@ -152,6 +159,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
     if( ! refalrts::ident_term(  ident_NoRequiredParam, context[10] ) )
       continue;
     // closed e.Opt#3 as range 5
+    //DEBUG: s.Pos#3: 9
+    //DEBUG: e.Opt#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -192,6 +201,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.Pos#3: 9
+    //DEBUG: s.Option#3: 11
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} s.Option#3/11 {REMOVED TILE}
@@ -219,6 +230,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1S5L1(refalrts::Iter arg_be
   if( ! refalrts::ident_term(  ident_UnknownLongOption, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Option#3 as range 5
+  //DEBUG: s.Pos#3: 9
+  //DEBUG: e.Option#3: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Pos#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -291,6 +304,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
       continue;
     // closed e.FileName#2 as range 9
+    //DEBUG: s.Pos#2: 14
+    //DEBUG: e.FileName#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} & ParseCommandLine\1/4 (/7 )/8 (/11 # FILE/13 s.Pos#2/14 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
@@ -333,6 +348,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.From#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.PosFrom#2: 16
+      //DEBUG: e.From#2: 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -394,6 +413,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
       if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
         continue;
       // closed e.To#2 as range 11
+      //DEBUG: e.Begin#2: 9
+      //DEBUG: e.End#2: 2
+      //DEBUG: s.Pos#2: 16
+      //DEBUG: e.To#2: 11
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.Begin#2/9 {REMOVED TILE} s.Pos#2/16 e.To#2/11 {REMOVED TILE} e.End#2/27(2) {REMOVED TILE}
@@ -439,6 +462,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
     if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
     // closed e.AnyOther#2 as range 2
+    //DEBUG: e.AnyOther#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
@@ -471,6 +495,8 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   // </0 & ParseCommandLine\1/4 (/7 e.Errors#2/5 )/8 e.AnyOther#2/2 >/1
   // closed e.Errors#2 as range 5
   // closed e.AnyOther#2 as range 2
+  //DEBUG: e.Errors#2: 5
+  //DEBUG: e.AnyOther#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.AnyOther#2/2 {REMOVED TILE}
@@ -508,6 +534,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Options#1 as range 2
+  //DEBUG: e.Options#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -592,6 +619,8 @@ static refalrts::FnResult func_FormatError(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 2
+  //DEBUG: s.Pos#1: 5
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

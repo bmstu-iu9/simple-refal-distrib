@@ -40,6 +40,8 @@ static refalrts::FnResult func_CreateFileList(refalrts::Iter arg_begin, refalrts
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.Folders#1 as range 5
   // closed e.Unit#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Unit#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -122,6 +124,8 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Folders#1 as range 5
     // closed e.Modules#1 as range 9
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.Modules#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & DoCreateFileList/4 (/7 e.Folders#1/5 )/8 (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
@@ -168,6 +172,11 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
       if( ! refalrts::empty_seq( context[19], context[20] ) )
         continue;
       // closed e.Modules-E#1 as range 30(9)
+      //DEBUG: e.Folders#1: 5
+      //DEBUG: e.NextModule#1: 13
+      //DEBUG: e.NotScanned#1: 2
+      //DEBUG: e.Modules-B#1: 17
+      //DEBUG: e.Modules-E#1: 9
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} (/15 e.NextModule#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
@@ -199,6 +208,10 @@ static refalrts::FnResult func_DoCreateFileList(refalrts::Iter arg_begin, refalr
   // closed e.Modules#1 as range 9
   // closed e.NextModule#1 as range 13
   // closed e.NotScanned#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Modules#1: 9
+  //DEBUG: e.NextModule#1: 13
+  //DEBUG: e.NotScanned#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -289,6 +302,8 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
       continue;
     // closed e.Folders#1 as range 2
     // closed e.Name#1 as range 16(5)
+    //DEBUG: e.Folders#1: 2
+    //DEBUG: e.Name#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} '/'/9 '/'/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -323,6 +338,8 @@ static refalrts::FnResult func_FindImports(refalrts::Iter arg_begin, refalrts::I
   // </0 & FindImports/4 e.Folders#1/2 (/7 e.OtherLine#1/5 )/8 >/1
   // closed e.Folders#1 as range 2
   // closed e.OtherLine#1 as range 5
+  //DEBUG: e.Folders#1: 2
+  //DEBUG: e.OtherLine#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & FindImports/4 e.Folders#1/2 (/7 e.OtherLine#1/5 )/8 >/1 {REMOVED TILE}
@@ -375,6 +392,9 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Folders#1 as range 5
     // closed e.NextModule#1 as range 10
     // closed e.Output#1 as range 25(2)
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.NextModule#1: 10
+    //DEBUG: e.Output#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} e.Output#1/25(2) {REMOVED TILE}
@@ -409,6 +429,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     // closed e.Folders#1 as range 5
     // closed e.Output#1 as range 2
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.Output#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -468,6 +490,9 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     // closed e.Folders#1 as range 5
     // closed e.Output#1 as range 10
     // closed e.Native#1 as range 25(2)
+    //DEBUG: e.Folders#1: 5
+    //DEBUG: e.Output#1: 10
+    //DEBUG: e.Native#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -524,6 +549,8 @@ static refalrts::FnResult func_LoadList(refalrts::Iter arg_begin, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   // closed e.Folders#1 as range 5
   // closed e.Unit#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.Unit#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LoadList/4 (/7 e.Folders#1/5 )/8 # NotFound/9 e.Unit#1/2 >/1 {REMOVED TILE}
@@ -567,6 +594,7 @@ static refalrts::FnResult func_gen_LoadIfExist_L1(refalrts::Iter arg_begin, refa
     if( ! refalrts::ident_term(  ident_True, context[9] ) )
       continue;
     // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 # True/9 {REMOVED TILE}
@@ -588,6 +616,7 @@ static refalrts::FnResult func_gen_LoadIfExist_L1(refalrts::Iter arg_begin, refa
   if( ! refalrts::ident_term(  ident_False, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.FileName#1 as range 5
+  //DEBUG: e.FileName#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LoadIfExist\1/4 (/7 e.FileName#1/5 )/8 # False/9 >/1 {REMOVED TILE}
@@ -613,6 +642,7 @@ static refalrts::FnResult func_LoadIfExist(refalrts::Iter arg_begin, refalrts::I
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

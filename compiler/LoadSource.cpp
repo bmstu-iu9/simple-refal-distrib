@@ -38,6 +38,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
     if( ! context[7] )
       continue;
     // closed e.Content#2 as range 8(2)
+    //DEBUG: e.Content#2: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -54,6 +55,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   // e.idx
   // </0 & LoadSource\1/4 e.Content#2/2 >/1
   // closed e.Content#2 as range 2
+  //DEBUG: e.Content#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LoadSource\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -80,6 +82,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -139,6 +142,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Line#1 as range 5
+  //DEBUG: e.Line#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & LinearizeLine/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}

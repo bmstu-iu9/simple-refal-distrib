@@ -200,6 +200,8 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
     // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     if( ! refalrts::char_term( '<', context[6] ) )
       continue;
+    //DEBUG: s.Other#1: 5
+    //DEBUG: s.Code#2: 7
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Other#1/5 {REMOVED TILE} {REMOVED TILE}
@@ -283,6 +285,9 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
 
   // s.idx s.idx s.idx
   // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
+  //DEBUG: s.Other#1: 5
+  //DEBUG: s.Compare#2: 6
+  //DEBUG: s.Code#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 {REMOVED TILE}
@@ -429,6 +434,7 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
 
   // s.idx
   // </0 & EscapeChar/4 s.Other#1/5 >/1
+  //DEBUG: s.Other#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -492,6 +498,7 @@ static refalrts::FnResult func_EscapeString(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.String#1 as range 2
+  //DEBUG: e.String#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}

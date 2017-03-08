@@ -41,6 +41,9 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     if( ! context[7] )
       continue;
     // closed e.Name#1 as range 15(2)
+    //DEBUG: s.Cookie2#1: 5
+    //DEBUG: s.Cookie1#1: 6
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -119,6 +122,9 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::svar_right( context[7], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(2)
+    //DEBUG: s.Mode#1: 6
+    //DEBUG: s.Depth#1: 7
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Mode#1/6 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -163,6 +169,8 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 17(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} & DisplayName/4 {REMOVED TILE} {REMOVED TILE}
@@ -184,6 +192,7 @@ static refalrts::FnResult func_DisplayName(refalrts::Iter arg_begin, refalrts::I
   // e.idx
   // </0 & DisplayName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & DisplayName/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -223,6 +232,8 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -260,6 +271,9 @@ static refalrts::FnResult func_DisplayNameSuf(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Tag#1: 5
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -317,6 +331,7 @@ static refalrts::FnResult func_DisplayCName(refalrts::Iter arg_begin, refalrts::
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -371,6 +386,9 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! context[7] )
       continue;
     // closed e.Name#1 as range 15(2)
+    //DEBUG: s.Cookie2#1: 5
+    //DEBUG: s.Cookie1#1: 6
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -449,6 +467,9 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! refalrts::svar_right( context[7], context[15], context[16] ) )
       continue;
     // closed e.Index#1 as range 15(2)
+    //DEBUG: s.Mode#1: 6
+    //DEBUG: s.Depth#1: 7
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -502,6 +523,8 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
       if( ! context[7] )
         continue;
       // closed e.Suffix#1 as range 17(2)
+      //DEBUG: e.Name#1: 5
+      //DEBUG: e.Suffix#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -547,6 +570,8 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
       if( ! context[7] )
         continue;
       // closed e.Name-E#1 as range 17(2)
+      //DEBUG: e.Name-B#1: 5
+      //DEBUG: e.Name-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -570,6 +595,7 @@ static refalrts::FnResult func_CName(refalrts::Iter arg_begin, refalrts::Iter ar
   // e.idx
   // </0 & CName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & CName/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -609,6 +635,8 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -647,6 +675,8 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

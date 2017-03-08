@@ -32,6 +32,7 @@ static refalrts::FnResult func_EL_Create(refalrts::Iter arg_begin, refalrts::Ite
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.FileName#1 as range 2
+  //DEBUG: e.FileName#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -83,6 +84,9 @@ static refalrts::FnResult func_EL_AddError(refalrts::Iter arg_begin, refalrts::I
   // closed e.FileName#1 as range 10
   // closed e.Errors#1 as range 5
   // closed e.Message#1 as range 2
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -135,6 +139,10 @@ static refalrts::FnResult func_EL_AddErrorAt(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[14], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 2
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
+  //DEBUG: s.LineNumber#1: 14
+  //DEBUG: e.Message#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -191,6 +199,10 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Message#1 as range 7
     // closed e.Expected#1 as range 2
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: s.LineNumber#1: 12
+    //DEBUG: e.Message#1: 7
+    //DEBUG: e.Expected#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkError/11 s.LineNumber#1/12 {REMOVED TILE} )/10 e.Expected#1/2 {REMOVED TILE}
@@ -215,6 +227,10 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Unexpected#1 as range 7
     // closed e.Expected#1 as range 2
+    //DEBUG: t.ErrorList#1: 5
+    //DEBUG: s.LineNumber#1: 12
+    //DEBUG: e.Unexpected#1: 7
+    //DEBUG: e.Expected#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE} e.Expected#1/2 {REMOVED TILE}
@@ -248,6 +264,11 @@ static refalrts::FnResult func_EL_AddUnexpected(refalrts::Iter arg_begin, refalr
   // </0 & EL-AddUnexpected/4 t.ErrorList#1/5 (/9 s.Unexpected#1/11 s.LineNumber#1/12 e.Info#1/7 )/10 e.Expected#1/2 >/1
   // closed e.Info#1 as range 7
   // closed e.Expected#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: s.Unexpected#1: 11
+  //DEBUG: s.LineNumber#1: 12
+  //DEBUG: e.Info#1: 7
+  //DEBUG: e.Expected#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.LineNumber#1/12 {REMOVED TILE} {REMOVED TILE}
@@ -320,6 +341,8 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
       continue;
     // closed e.FileName#1 as range 5
     // closed e.Message#2 as range 9
+    //DEBUG: e.FileName#1: 5
+    //DEBUG: e.Message#2: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.FileName#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -353,6 +376,9 @@ static refalrts::FnResult func_gen_EL_Destroy_S2L1(refalrts::Iter arg_begin, ref
   // </0 & EL-Destroy$2\1/4 (/7 e.FileName#1/5 )/8 (/11 s.LineNumber#2/13 e.Message#2/9 )/12 >/1
   // closed e.FileName#1 as range 5
   // closed e.Message#2 as range 9
+  //DEBUG: s.LineNumber#2: 13
+  //DEBUG: e.FileName#1: 5
+  //DEBUG: e.Message#2: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -423,6 +449,7 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::empty_seq( context[19], context[20] ) )
       continue;
     // closed e.FileName#1 as range 10
+    //DEBUG: e.FileName#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 ]/9 {REMOVED TILE}
@@ -440,6 +467,8 @@ static refalrts::FnResult func_EL_Destroy(refalrts::Iter arg_begin, refalrts::It
   // </0 & EL-Destroy/4 [/7ErrorList/8 (/12 e.FileName#1/10 )/13 e.Errors#1/5 ]/9 >/1
   // closed e.FileName#1 as range 10
   // closed e.Errors#1 as range 5
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.Errors#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

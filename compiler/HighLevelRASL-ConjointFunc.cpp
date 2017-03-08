@@ -62,6 +62,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1L1(refalrts
   // closed e.HardGens#2 as range 5
   // closed e.Result#2 as range 9
   // closed e.HardGen#3 as range 2
+  //DEBUG: e.HardGens#2: 5
+  //DEBUG: e.Result#2: 9
+  //DEBUG: e.HardGen#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -150,6 +153,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L1(refalrts::
   // closed e.HardGens#2 as range 5
   // closed e.Pattern#2 as range 13
   // closed e.Result#2 as range 17
+  //DEBUG: e.HardGens#2: 5
+  //DEBUG: e.Pattern#2: 13
+  //DEBUG: e.Result#2: 17
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -206,6 +212,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L2(refalrts::
   refalrts::bracket_pointers(context[7], context[8]);
   // closed e.HardPatterns#2 as range 5
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: e.HardPatterns#2: 5
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -251,6 +259,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L3(refalrts::
   // closed e.FastGen#2 as range 5
   // closed e.GlobalGen#2 as range 9
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: e.FastGen#2: 5
+  //DEBUG: e.GlobalGen#2: 9
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -370,6 +381,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4L1(refalrts
   // closed e.Substs#3 as range 5
   // closed e.HardGenComment#3 as range 17
   // closed e.Result#3 as range 21
+  //DEBUG: e.Substitute#3: 9
+  //DEBUG: e.Substs#3: 5
+  //DEBUG: e.HardGenComment#3: 17
+  //DEBUG: e.Result#3: 21
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\4\1/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
@@ -438,6 +453,13 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L4(refalrts::
   // closed e.CommonPattern#2 as range 19
   // closed e.SentSubsts#2 as range 15
   // closed e.SentenceTails#2 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: e.Name#1: 7
+  //DEBUG: e.Comments#2: 11
+  //DEBUG: e.CommonPattern#2: 19
+  //DEBUG: e.SentSubsts#2: 15
+  //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -529,6 +551,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1L1(refalr
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[10], context[11] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.MaxMemory#3: 5
+  //DEBUG: e.HardGenComment#3: 6
+  //DEBUG: e.Commands#4: 2
+  //DEBUG: s.Memory#4: 15
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Memory#4/15 {REMOVED TILE}
@@ -622,6 +648,15 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5L1(refalrts
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.Substitute#3: 9
+  //DEBUG: e.HardGenComment#3: 13
+  //DEBUG: e.Result#3: 17
+  //DEBUG: s.FnGenResult#1: 21
+  //DEBUG: s.FnGenSubst#1: 22
+  //DEBUG: s.ContextSize#2: 23
+  //DEBUG: e.MarkedPattern#2: 24
+  //DEBUG: e.Vars#2: 28
+  //DEBUG: s.MaxMemory#3: 32
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.FnGenResult#1/21 s.FnGenSubst#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -745,6 +780,14 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L5(refalrts::
   // closed e.Vars#2 as range 16
   // closed e.MarkedPattern#2 as range 20
   // closed e.CommonMatchCommands#2 as range 11
+  //DEBUG: s.FnGenResult#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: e.Comments#2: 7
+  //DEBUG: e.SentencesWithSubst#2: 2
+  //DEBUG: s.ContextSize#2: 15
+  //DEBUG: e.Vars#2: 16
+  //DEBUG: e.MarkedPattern#2: 20
+  //DEBUG: e.CommonMatchCommands#2: 11
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ContextSize#2/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -818,6 +861,8 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
       continue;
     // closed e.Commands#3 as range 10(2)
     // closed e.OpenELoop#3 as range 5
+    //DEBUG: e.Commands#3: 2
+    //DEBUG: e.OpenELoop#3: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -841,6 +886,7 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6L1(refalrts
   // e.idx
   // </0 & HighLevelRASL-Function-Conjoint\6\1/4 e.LastSentence#3/2 >/1
   // closed e.LastSentence#3 as range 2
+  //DEBUG: e.LastSentence#3: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint\6\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -895,6 +941,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_Function_Conjoint_L6(refalrts::
   if( ! refalrts::svar_left( context[19], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentences#2 as range 2
+  //DEBUG: e.LastSentence#2: 5
+  //DEBUG: s.ScopeClass#1: 10
+  //DEBUG: e.Name#1: 11
+  //DEBUG: e.Prefix#2: 15
+  //DEBUG: s.MaxMemory#2: 19
+  //DEBUG: e.Sentences#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -956,6 +1008,12 @@ static refalrts::FnResult func_HighLevelRASL_Function_Conjoint(refalrts::Iter ar
   refalrts::bracket_pointers(context[11], context[12]);
   // closed e.Name#1 as range 9
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenInitSubst#1: 5
+  //DEBUG: s.FnGenSubst#1: 6
+  //DEBUG: s.FnGenResult#1: 7
+  //DEBUG: s.ScopeClass#1: 8
+  //DEBUG: e.Name#1: 9
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1172,6 +1230,17 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
           if( ! refalrts::empty_seq( context[42], context[43] ) )
             continue;
           // closed e.Vars-E#1 as range 64(13)
+          //DEBUG: e.MarkedPattern-B#1: 17
+          //DEBUG: e.MarkedPattern-E#1: 5
+          //DEBUG: s.Mode#1: 24
+          //DEBUG: s.Offset#1: 25
+          //DEBUG: e.Name#1: 19
+          //DEBUG: e.Substitute-B#1: 26
+          //DEBUG: e.Substitute-E#1: 9
+          //DEBUG: s.Tag#1: 32
+          //DEBUG: e.Subst#1: 28
+          //DEBUG: e.Vars-B#1: 40
+          //DEBUG: e.Vars-E#1: 13
 
           refalrts::reset_allocator();
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/24 e.Name#1/19 s.Offset#1/25 {REMOVED TILE} {REMOVED TILE} (/30 s.Tag#1/32 (/35 e.Name#1/38 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/46 (/49 e.Name#1/51 )/50 s.Offset#1/53 )/45 {REMOVED TILE} {REMOVED TILE}
@@ -1219,6 +1288,7 @@ static refalrts::FnResult func_ComposeVars(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::empty_seq( context[13], context[14] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.MarkedPattern#1 as range 5
+  //DEBUG: e.MarkedPattern#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 )/12 (/15 )/16 >/1 {REMOVED TILE}

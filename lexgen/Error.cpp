@@ -29,6 +29,9 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.File#1 as range 5
+  //DEBUG: e.Text#1: 2
+  //DEBUG: s.Number#1: 9
+  //DEBUG: e.File#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -94,6 +97,9 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.File#1 as range 5
+  //DEBUG: e.Message#1: 2
+  //DEBUG: s.Number#1: 9
+  //DEBUG: e.File#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

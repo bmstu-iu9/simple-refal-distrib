@@ -63,52 +63,51 @@ static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
 static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_LexFolding("LexFolding", 0U, 0U);
-static refalrts::ExternalReference ref_StrDirective("StrDirective", 3805126175U, 2389736882U);
+static refalrts::ExternalReference ref_StrDirective("StrDirective", 4258777400U, 2023349967U);
 static refalrts::ExternalReference ref_StrFromToken("StrFromToken", 0U, 0U);
-static refalrts::ExternalReference ref_NormalizeName("NormalizeName", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_NormalizeToken("NormalizeToken", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CharFromNum("CharFromNum", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_gen_ValidDirective_S9L1("ValidDirective$9\\1", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_ValidDirective("ValidDirective", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_SwPunctuation("SwPunctuation", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_AddLineNumber("AddLineNumber", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_NormalizeTokens("NormalizeTokens", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CollectNativeLines("CollectNativeLines", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CollectNativeLines_Aux("CollectNativeLines-Aux", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Root("Root", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StartNative_Percent("StartNative-Percent", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Main("Main", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StartNative_NewLine("StartNative-NewLine", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Name("Name", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_VariableStart("VariableStart", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Number("Number", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Directive("Directive", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Start("StringLiteral-Start", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StartComment("StartComment", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Native_Begin("Native-Begin", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_VariableIndex("VariableIndex", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_DirectiveTail("DirectiveTail", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral("StringLiteral", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CComment("CComment", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CppComment("CppComment", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Native_CheckEnd("Native-CheckEnd", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Native("Native", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_VariableIndexTail("VariableIndexTail", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Escape("StringLiteral-Escape", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Quote("StringLiteral-Quote", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CComment_CheckNested("CComment-CheckNested", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_CComment_CheckEnd("CComment-CheckEnd", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_Native_CheckEnd2("Native-CheckEnd2", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Escape_Code("StringLiteral-Escape-Code", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Escape_OCode("StringLiteral-Escape-OCode", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_StringLiteral_Escape_XCode("StringLiteral-Escape-XCode", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_SL_E_C1("SL-E-C1", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_SL_E_OC1("SL-E-OC1", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_SL_E_C2("SL-E-C2", 3805126175U, 2389736882U);
-static refalrts::ExternalReference ref_SL_E_OC2("SL-E-OC2", 3805126175U, 2389736882U);
+static refalrts::ExternalReference ref_NormalizeName("NormalizeName", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_NormalizeToken("NormalizeToken", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CharFromNum("CharFromNum", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_gen_ValidDirective_S9L1("ValidDirective$9\\1", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_ValidDirective("ValidDirective", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_SwPunctuation("SwPunctuation", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_AddLineNumber("AddLineNumber", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_NormalizeTokens("NormalizeTokens", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CollectNativeLines("CollectNativeLines", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CollectNativeLines_Aux("CollectNativeLines-Aux", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Root("Root", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StartNative_Percent("StartNative-Percent", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Main("Main", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StartNative_NewLine("StartNative-NewLine", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Name("Name", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_VariableStart("VariableStart", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Number("Number", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Directive("Directive", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Start("StringLiteral-Start", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StartComment("StartComment", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Native_Begin("Native-Begin", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_VariableIndex("VariableIndex", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_DirectiveTail("DirectiveTail", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral("StringLiteral", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CComment("CComment", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CppComment("CppComment", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Native_CheckEnd("Native-CheckEnd", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Native("Native", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_VariableIndexTail("VariableIndexTail", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Escape("StringLiteral-Escape", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Quote("StringLiteral-Quote", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CComment_CheckNested("CComment-CheckNested", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_CComment_CheckEnd("CComment-CheckEnd", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_Native_CheckEnd2("Native-CheckEnd2", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Escape_Code("StringLiteral-Escape-Code", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Escape_OCode("StringLiteral-Escape-OCode", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_StringLiteral_Escape_XCode("StringLiteral-Escape-XCode", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_SL_E_C1("SL-E-C1", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_SL_E_OC1("SL-E-OC1", 4258777400U, 2023349967U);
+static refalrts::ExternalReference ref_SL_E_C2("SL-E-C2", 4258777400U, 2023349967U);
 
 static refalrts::FnResult func_LexFolding(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -122,6 +121,7 @@ static refalrts::FnResult func_LexFolding(refalrts::Iter arg_begin, refalrts::It
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.SourceText#1 as range 2
+  //DEBUG: e.SourceText#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -347,7 +347,7 @@ static refalrts::FnResult func_StrDirective(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StrDirective("StrDirective", 3805126175U, 2389736882U, func_StrDirective);
+static refalrts::NativeReference nat_ref_StrDirective("StrDirective", 4258777400U, 2023349967U, func_StrDirective);
 
 static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -376,6 +376,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Char#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & StrFromToken/4 {REMOVED TILE}
@@ -521,6 +522,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Directive#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -579,6 +581,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::ident_term(  ident_TkError, context[5] ) )
       continue;
     // closed e.Message#1 as range 2
+    //DEBUG: e.Message#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -633,6 +636,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::ident_term(  ident_TkName, context[5] ) )
       continue;
     // closed e.Name#1 as range 2
+    //DEBUG: e.Name#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -665,6 +669,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.Number#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -835,6 +840,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::ident_term(  ident_TkUnexpected, context[5] ) )
       continue;
     // closed e.Unexpected#1 as range 2
+    //DEBUG: e.Unexpected#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -864,6 +870,8 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
       continue;
     // closed e.Index#1 as range 10(2)
+    //DEBUG: s.Mode#1: 6
+    //DEBUG: e.Index#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkVariable/5 s.Mode#1/6 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -909,6 +917,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     if( ! refalrts::ident_term(  ident_TkNativeBlock, context[5] ) )
       continue;
     // closed e.Block#1 as range 2
+    //DEBUG: e.Block#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Block#1/2 {REMOVED TILE}
@@ -939,6 +948,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
+    //DEBUG: s.OpenBracket#1: 6
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -963,6 +973,7 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.CloseBracket#1: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1009,6 +1020,8 @@ static refalrts::FnResult func_NormalizeName(refalrts::Iter arg_begin, refalrts:
       if( ! context[7] )
         continue;
       // closed e.Name-E#1 as range 10(2)
+      //DEBUG: e.Name-B#1: 5
+      //DEBUG: e.Name-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE}
@@ -1024,6 +1037,7 @@ static refalrts::FnResult func_NormalizeName(refalrts::Iter arg_begin, refalrts:
   // e.idx
   // </0 & NormalizeName/4 e.Name#1/2 >/1
   // closed e.Name#1 as range 2
+  //DEBUG: e.Name#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & NormalizeName/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1036,7 +1050,7 @@ static refalrts::FnResult func_NormalizeName(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeName("NormalizeName", 3805126175U, 2389736882U, func_NormalizeName);
+static refalrts::NativeReference nat_ref_NormalizeName("NormalizeName", 4258777400U, 2023349967U, func_NormalizeName);
 
 static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1068,6 +1082,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkDirective, context[9] ) )
       continue;
     // closed e.Directive#1 as range 5
+    //DEBUG: e.Directive#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 # TkDirective/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -1118,6 +1133,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.Char#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1139,6 +1155,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkLiteral_Code, context[9] ) )
       continue;
     // closed e.DecCode#1 as range 5
+    //DEBUG: e.DecCode#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1175,6 +1192,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkLiteral_OCode, context[9] ) )
       continue;
     // closed e.OctCode#1 as range 5
+    //DEBUG: e.OctCode#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -1205,6 +1223,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkLiteral_XCode, context[9] ) )
       continue;
     // closed e.HexCode#1 as range 5
+    //DEBUG: e.HexCode#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -1431,6 +1450,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkName, context[9] ) )
       continue;
     // closed e.Name#1 as range 5
+    //DEBUG: e.Name#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -1454,6 +1474,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkNewLine, context[9] ) )
       continue;
     // closed e.Accumulated#1 as range 5
+    //DEBUG: e.Accumulated#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} e.Accumulated#1/5 )/8 {REMOVED TILE}
@@ -1475,6 +1496,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkNumber, context[9] ) )
       continue;
     // closed e.Digits#1 as range 5
+    //DEBUG: e.Digits#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -1503,6 +1525,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
+    //DEBUG: s.Punctuation#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
@@ -1536,6 +1559,8 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! context[11] )
       continue;
     // closed e.Index#1 as range 13(5)
+    //DEBUG: s.Type#1: 10
+    //DEBUG: e.Index#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1564,6 +1589,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkNativeLine, context[9] ) )
       continue;
     // closed e.Line#1 as range 5
+    //DEBUG: e.Line#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -1587,6 +1613,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
     if( ! refalrts::ident_term(  ident_TkUnexpected, context[9] ) )
       continue;
     // closed e.Unexpected#1 as range 5
+    //DEBUG: e.Unexpected#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1606,6 +1633,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   if( ! refalrts::ident_term(  ident_TokenError, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 5
+  //DEBUG: e.Message#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & NormalizeToken/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -1620,7 +1648,7 @@ static refalrts::FnResult func_NormalizeToken(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeToken("NormalizeToken", 3805126175U, 2389736882U, func_NormalizeToken);
+static refalrts::NativeReference nat_ref_NormalizeToken("NormalizeToken", 4258777400U, 2023349967U, func_NormalizeToken);
 
 static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1641,6 +1669,9 @@ static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refa
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Base#1: 5
+  //DEBUG: s.Accum#2: 6
+  //DEBUG: s.Next#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1667,7 +1698,7 @@ static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 3805126175U, 2389736882U, func_gen_CharFromNum_L1);
+static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 4258777400U, 2023349967U, func_gen_CharFromNum_L1);
 
 static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1683,6 +1714,8 @@ static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Chars#1 as range 2
+  //DEBUG: s.Base#1: 5
+  //DEBUG: e.Chars#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1732,7 +1765,7 @@ static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CharFromNum("CharFromNum", 3805126175U, 2389736882U, func_CharFromNum);
+static refalrts::NativeReference nat_ref_CharFromNum("CharFromNum", 4258777400U, 2023349967U, func_CharFromNum);
 
 static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1771,6 +1804,12 @@ static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, re
       if( ! refalrts::repeated_stvar_left( context[15], context[5], context[18], context[19] ) )
         continue;
       // closed e.Vars-E#2 as range 18(8)
+      //DEBUG: s.Char#1: 5
+      //DEBUG: e.Assoc-B#2: 6
+      //DEBUG: e.Assoc-E#2: 2
+      //DEBUG: s.Digit#2: 12
+      //DEBUG: e.Vars-B#2: 13
+      //DEBUG: e.Vars-E#2: 8
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} </0 & DigitFromChar\1/4 s.Char#1/5 e.Assoc-B#2/6 (/10 s.Digit#2/12 e.Vars-B#2/13 s.Char#1/15 e.Vars-E#2/18(8) )/11 e.Assoc-E#2/16(2) {REMOVED TILE}
@@ -1786,7 +1825,7 @@ static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 3805126175U, 2389736882U, func_gen_DigitFromChar_L1);
+static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 4258777400U, 2023349967U, func_gen_DigitFromChar_L1);
 
 static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1803,6 +1842,7 @@ static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Char#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -1975,7 +2015,7 @@ static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 3805126175U, 2389736882U, func_DigitFromChar);
+static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 4258777400U, 2023349967U, func_DigitFromChar);
 
 static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1992,6 +2032,7 @@ static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin,
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: s.Char#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -2003,7 +2044,7 @@ static refalrts::FnResult func_gen_ValidDirective_S9L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ValidDirective_S9L1("ValidDirective$9\\1", 3805126175U, 2389736882U, func_gen_ValidDirective_S9L1);
+static refalrts::NativeReference nat_ref_gen_ValidDirective_S9L1("ValidDirective$9\\1", 4258777400U, 2023349967U, func_gen_ValidDirective_S9L1);
 
 static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2401,6 +2442,7 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
   // e.idx
   // </0 & ValidDirective/4 e.Other#1/2 >/1
   // closed e.Other#1 as range 2
+  //DEBUG: e.Other#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2423,7 +2465,7 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ValidDirective("ValidDirective", 3805126175U, 2389736882U, func_ValidDirective);
+static refalrts::NativeReference nat_ref_ValidDirective("ValidDirective", 4258777400U, 2023349967U, func_ValidDirective);
 
 static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2674,7 +2716,7 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SwPunctuation("SwPunctuation", 3805126175U, 2389736882U, func_SwPunctuation);
+static refalrts::NativeReference nat_ref_SwPunctuation("SwPunctuation", 4258777400U, 2023349967U, func_SwPunctuation);
 
 static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2711,6 +2753,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
     context[13] = context[6];
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
+    //DEBUG: s.LineNumber#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkNewLine/10 )/8 >/1 {REMOVED TILE}
@@ -2733,6 +2776,8 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::ident_term(  ident_TkNativeLine, context[10] ) )
       continue;
     // closed e.Line#1 as range 5
+    //DEBUG: s.LineNumber#1: 9
+    //DEBUG: e.Line#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2761,6 +2806,9 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
   // s.idx ( s.idx e.idx )
   // </0 & AddLineNumber/4 s.LineNumber#1/9 (/7 s.TokType#1/10 e.Info#1/5 )/8 >/1
   // closed e.Info#1 as range 5
+  //DEBUG: s.LineNumber#1: 9
+  //DEBUG: s.TokType#1: 10
+  //DEBUG: e.Info#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & AddLineNumber/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2778,7 +2826,7 @@ static refalrts::FnResult func_AddLineNumber(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AddLineNumber("AddLineNumber", 3805126175U, 2389736882U, func_AddLineNumber);
+static refalrts::NativeReference nat_ref_AddLineNumber("AddLineNumber", 4258777400U, 2023349967U, func_AddLineNumber);
 
 static refalrts::FnResult func_NormalizeTokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2792,6 +2840,7 @@ static refalrts::FnResult func_NormalizeTokens(refalrts::Iter arg_begin, refalrt
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Tokens#1 as range 2
+  //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -2840,7 +2889,7 @@ static refalrts::FnResult func_NormalizeTokens(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeTokens("NormalizeTokens", 3805126175U, 2389736882U, func_NormalizeTokens);
+static refalrts::NativeReference nat_ref_NormalizeTokens("NormalizeTokens", 4258777400U, 2023349967U, func_NormalizeTokens);
 
 static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2880,6 +2929,10 @@ static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refa
       if( ! refalrts::svar_left( context[12], context[7], context[8] ) )
         continue;
       // closed e.Line#1 as range 7
+      //DEBUG: e.SimpleTokens#1: 5
+      //DEBUG: e.Tail#1: 2
+      //DEBUG: s.LineNumber#1: 12
+      //DEBUG: e.Line#1: 7
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -2910,6 +2963,7 @@ static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refa
   // e.idx
   // </0 & CollectNativeLines/4 e.SimpleTokens#1/2 >/1
   // closed e.SimpleTokens#1 as range 2
+  //DEBUG: e.SimpleTokens#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & CollectNativeLines/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -2922,7 +2976,7 @@ static refalrts::FnResult func_CollectNativeLines(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CollectNativeLines("CollectNativeLines", 3805126175U, 2389736882U, func_CollectNativeLines);
+static refalrts::NativeReference nat_ref_CollectNativeLines("CollectNativeLines", 4258777400U, 2023349967U, func_CollectNativeLines);
 
 static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2966,6 +3020,11 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
     if( ! refalrts::svar_left( context[15], context[10], context[11] ) )
       continue;
     // closed e.Line#1 as range 10
+    //DEBUG: s.StartLineNumber#1: 5
+    //DEBUG: e.Block#1: 6
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.LineNumber#1: 15
+    //DEBUG: e.Line#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/12 {REMOVED TILE} s.LineNumber#1/15 {REMOVED TILE} {REMOVED TILE}
@@ -2990,6 +3049,9 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
   // </0 & CollectNativeLines-Aux/4 s.StartLineNumber#1/5 (/8 e.Block#1/6 )/9 e.Tail#1/2 >/1
   // closed e.Block#1 as range 6
   // closed e.Tail#1 as range 2
+  //DEBUG: s.StartLineNumber#1: 5
+  //DEBUG: e.Block#1: 6
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3013,7 +3075,7 @@ static refalrts::FnResult func_CollectNativeLines_Aux(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CollectNativeLines_Aux("CollectNativeLines-Aux", 3805126175U, 2389736882U, func_CollectNativeLines_Aux);
+static refalrts::NativeReference nat_ref_CollectNativeLines_Aux("CollectNativeLines-Aux", 4258777400U, 2023349967U, func_CollectNativeLines_Aux);
 
 static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3046,6 +3108,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 10(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -3068,6 +3132,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   // </0 & Root/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -3079,7 +3145,7 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Root("Root", 3805126175U, 2389736882U, func_Root);
+static refalrts::NativeReference nat_ref_Root("Root", 4258777400U, 2023349967U, func_Root);
 
 static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3112,6 +3178,8 @@ static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, ref
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -3134,6 +3202,8 @@ static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, ref
   // </0 & StartNative-Percent/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -3160,7 +3230,7 @@ static refalrts::FnResult func_StartNative_Percent(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StartNative_Percent("StartNative-Percent", 3805126175U, 2389736882U, func_StartNative_Percent);
+static refalrts::NativeReference nat_ref_StartNative_Percent("StartNative-Percent", 4258777400U, 2023349967U, func_StartNative_Percent);
 
 static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3193,6 +3263,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3219,6 +3291,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3245,6 +3319,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -3271,6 +3347,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3310,6 +3388,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3349,6 +3429,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3388,6 +3470,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3427,6 +3511,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3466,6 +3552,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3505,6 +3593,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3544,6 +3634,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3583,6 +3675,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3622,6 +3716,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3661,6 +3757,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3700,6 +3798,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3739,6 +3839,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -3778,6 +3880,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3802,6 +3906,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3826,6 +3932,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3850,6 +3958,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3874,6 +3984,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3898,6 +4010,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3922,6 +4036,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3946,6 +4062,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3970,6 +4088,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -3994,6 +4114,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4018,6 +4140,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4042,6 +4166,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4066,6 +4192,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4090,6 +4218,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4114,6 +4244,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4138,6 +4270,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4162,6 +4296,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4186,6 +4322,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4210,6 +4348,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4234,6 +4374,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4258,6 +4400,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4282,6 +4426,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4306,6 +4452,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4330,6 +4478,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4354,6 +4504,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4378,6 +4530,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4402,6 +4556,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4426,6 +4582,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4450,6 +4608,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4474,6 +4634,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4498,6 +4660,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4522,6 +4686,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4546,6 +4712,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4570,6 +4738,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4594,6 +4764,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4618,6 +4790,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4642,6 +4816,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4666,6 +4842,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4690,6 +4868,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4714,6 +4894,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -4742,6 +4924,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -4770,6 +4954,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -4794,6 +4980,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4833,6 +5021,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
     // closed e.Accum#1 as range 5
+    //DEBUG: e.Accum#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -4855,6 +5044,9 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: s.Any#1: 9
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4883,7 +5075,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main("Main", 3805126175U, 2389736882U, func_Main);
+static refalrts::NativeReference nat_ref_Main("Main", 4258777400U, 2023349967U, func_Main);
 
 static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4916,6 +5108,8 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 )/8 {REMOVED TILE}
@@ -4942,6 +5136,8 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -4977,6 +5173,8 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
   // </0 & StartNative-NewLine/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -5003,7 +5201,7 @@ static refalrts::FnResult func_StartNative_NewLine(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StartNative_NewLine("StartNative-NewLine", 3805126175U, 2389736882U, func_StartNative_NewLine);
+static refalrts::NativeReference nat_ref_StartNative_NewLine("StartNative-NewLine", 4258777400U, 2023349967U, func_StartNative_NewLine);
 
 static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5036,6 +5234,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5059,6 +5259,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5082,6 +5284,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5105,6 +5309,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5128,6 +5334,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5151,6 +5359,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5174,6 +5384,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5197,6 +5409,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5220,6 +5434,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5243,6 +5459,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5266,6 +5484,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5289,6 +5509,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5312,6 +5534,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5335,6 +5559,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5358,6 +5584,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5381,6 +5609,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5404,6 +5634,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5427,6 +5659,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5450,6 +5684,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5473,6 +5709,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5496,6 +5734,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5519,6 +5759,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5542,6 +5784,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5565,6 +5809,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5588,6 +5834,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5611,6 +5859,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5634,6 +5884,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5657,6 +5909,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5680,6 +5934,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5703,6 +5959,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5726,6 +5984,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5749,6 +6009,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5772,6 +6034,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5795,6 +6059,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5818,6 +6084,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5841,6 +6109,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5864,6 +6134,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5887,6 +6159,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5910,6 +6184,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5933,6 +6209,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5956,6 +6234,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -5979,6 +6259,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6002,6 +6284,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6025,6 +6309,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6048,6 +6334,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6071,6 +6359,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6094,6 +6384,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6117,6 +6409,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6140,6 +6434,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6163,6 +6459,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6186,6 +6484,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6209,6 +6509,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6232,6 +6534,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6255,6 +6559,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6278,6 +6584,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6301,6 +6609,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6324,6 +6634,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6347,6 +6659,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6370,6 +6684,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6393,6 +6709,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6416,6 +6734,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6439,6 +6759,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6462,6 +6784,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6485,6 +6809,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6502,6 +6828,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   // </0 & Name/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6528,7 +6856,7 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Name("Name", 3805126175U, 2389736882U, func_Name);
+static refalrts::NativeReference nat_ref_Name("Name", 4258777400U, 2023349967U, func_Name);
 
 static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6561,6 +6889,8 @@ static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6579,6 +6909,8 @@ static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts:
   // </0 & VariableStart/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -6605,7 +6937,7 @@ static refalrts::FnResult func_VariableStart(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_VariableStart("VariableStart", 3805126175U, 2389736882U, func_VariableStart);
+static refalrts::NativeReference nat_ref_VariableStart("VariableStart", 4258777400U, 2023349967U, func_VariableStart);
 
 static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6638,6 +6970,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6661,6 +6995,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6684,6 +7020,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6707,6 +7045,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6730,6 +7070,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6753,6 +7095,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6776,6 +7120,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6799,6 +7145,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6822,6 +7170,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6845,6 +7195,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6862,6 +7214,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
   // </0 & Number/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -6888,7 +7242,7 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Number("Number", 3805126175U, 2389736882U, func_Number);
+static refalrts::NativeReference nat_ref_Number("Number", 4258777400U, 2023349967U, func_Number);
 
 static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6921,6 +7275,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6945,6 +7301,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6969,6 +7327,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -6993,6 +7353,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7017,6 +7379,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7041,6 +7405,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7065,6 +7431,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7089,6 +7457,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7113,6 +7483,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7137,6 +7509,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7161,6 +7535,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7185,6 +7561,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7209,6 +7587,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7233,6 +7613,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7257,6 +7639,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7281,6 +7665,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7305,6 +7691,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7329,6 +7717,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7353,6 +7743,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7377,6 +7769,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7401,6 +7795,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7425,6 +7821,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7449,6 +7847,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7473,6 +7873,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7497,6 +7899,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7521,6 +7925,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7539,6 +7945,8 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
   // </0 & Directive/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -7565,7 +7973,7 @@ static refalrts::FnResult func_Directive(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Directive("Directive", 3805126175U, 2389736882U, func_Directive);
+static refalrts::NativeReference nat_ref_Directive("Directive", 4258777400U, 2023349967U, func_Directive);
 
 static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7598,6 +8006,8 @@ static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, ref
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7633,6 +8043,8 @@ static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, ref
   // </0 & StringLiteral-Start/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -7644,7 +8056,7 @@ static refalrts::FnResult func_StringLiteral_Start(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Start("StringLiteral-Start", 3805126175U, 2389736882U, func_StringLiteral_Start);
+static refalrts::NativeReference nat_ref_StringLiteral_Start("StringLiteral-Start", 4258777400U, 2023349967U, func_StringLiteral_Start);
 
 static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7677,6 +8089,8 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -7705,6 +8119,8 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -7727,6 +8143,8 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
   // </0 & StartComment/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -7753,7 +8171,7 @@ static refalrts::FnResult func_StartComment(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StartComment("StartComment", 3805126175U, 2389736882U, func_StartComment);
+static refalrts::NativeReference nat_ref_StartComment("StartComment", 4258777400U, 2023349967U, func_StartComment);
 
 static refalrts::FnResult func_Native_Begin(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7786,6 +8204,8 @@ static refalrts::FnResult func_Native_Begin(refalrts::Iter arg_begin, refalrts::
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 10(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7804,6 +8224,8 @@ static refalrts::FnResult func_Native_Begin(refalrts::Iter arg_begin, refalrts::
   // </0 & Native-Begin/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -7815,7 +8237,7 @@ static refalrts::FnResult func_Native_Begin(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Native_Begin("Native-Begin", 3805126175U, 2389736882U, func_Native_Begin);
+static refalrts::NativeReference nat_ref_Native_Begin("Native-Begin", 4258777400U, 2023349967U, func_Native_Begin);
 
 static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7848,6 +8270,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7872,6 +8296,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7896,6 +8322,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7920,6 +8348,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7944,6 +8374,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7968,6 +8400,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -7992,6 +8426,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8016,6 +8452,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8040,6 +8478,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8064,6 +8504,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8088,6 +8530,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8112,6 +8556,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8136,6 +8582,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8160,6 +8608,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8184,6 +8634,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8208,6 +8660,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8232,6 +8686,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8256,6 +8712,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8280,6 +8738,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8304,6 +8764,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8328,6 +8790,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8352,6 +8816,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8376,6 +8842,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8400,6 +8868,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8424,6 +8894,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8448,6 +8920,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8472,6 +8946,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8496,6 +8972,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8520,6 +8998,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8544,6 +9024,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8568,6 +9050,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8592,6 +9076,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8616,6 +9102,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8640,6 +9128,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8664,6 +9154,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8688,6 +9180,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8712,6 +9206,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8736,6 +9232,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8760,6 +9258,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8784,6 +9284,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8808,6 +9310,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8832,6 +9336,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8856,6 +9362,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8880,6 +9388,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8904,6 +9414,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8928,6 +9440,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8952,6 +9466,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -8976,6 +9492,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9000,6 +9518,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9024,6 +9544,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9048,6 +9570,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9072,6 +9596,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9096,6 +9622,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9120,6 +9648,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9144,6 +9674,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9168,6 +9700,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9192,6 +9726,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9216,6 +9752,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9240,6 +9778,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9264,6 +9804,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9288,6 +9830,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9312,6 +9856,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9336,6 +9882,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9360,6 +9908,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9378,6 +9928,8 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
   // </0 & VariableIndex/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -9404,7 +9956,7 @@ static refalrts::FnResult func_VariableIndex(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_VariableIndex("VariableIndex", 3805126175U, 2389736882U, func_VariableIndex);
+static refalrts::NativeReference nat_ref_VariableIndex("VariableIndex", 4258777400U, 2023349967U, func_VariableIndex);
 
 static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -9437,6 +9989,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9460,6 +10014,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9483,6 +10039,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9506,6 +10064,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9529,6 +10089,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9552,6 +10114,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9575,6 +10139,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9598,6 +10164,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9621,6 +10189,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9644,6 +10214,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9667,6 +10239,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9690,6 +10264,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9713,6 +10289,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9736,6 +10314,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9759,6 +10339,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9782,6 +10364,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9805,6 +10389,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9828,6 +10414,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9851,6 +10439,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9874,6 +10464,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9897,6 +10489,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9920,6 +10514,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9943,6 +10539,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9966,6 +10564,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -9989,6 +10589,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10012,6 +10614,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10029,6 +10633,8 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
   // </0 & DirectiveTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10055,7 +10661,7 @@ static refalrts::FnResult func_DirectiveTail(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DirectiveTail("DirectiveTail", 3805126175U, 2389736882U, func_DirectiveTail);
+static refalrts::NativeReference nat_ref_DirectiveTail("DirectiveTail", 4258777400U, 2023349967U, func_DirectiveTail);
 
 static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10088,6 +10694,8 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -10116,6 +10724,8 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -10144,6 +10754,8 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -10182,6 +10794,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
     // closed e.Accum#1 as range 5
+    //DEBUG: e.Accum#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -10209,6 +10822,9 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: s.Any#1: 9
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10237,7 +10853,7 @@ static refalrts::FnResult func_StringLiteral(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral("StringLiteral", 3805126175U, 2389736882U, func_StringLiteral);
+static refalrts::NativeReference nat_ref_StringLiteral("StringLiteral", 4258777400U, 2023349967U, func_StringLiteral);
 
 static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10270,6 +10886,8 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -10298,6 +10916,8 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -10326,6 +10946,8 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10364,6 +10986,9 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::svar_left( context[9], context[14], context[15] ) )
       continue;
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: s.Any#1: 9
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE} s.Any#1/9 {REMOVED TILE} {REMOVED TILE}
@@ -10385,6 +11010,8 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
   // </0 & CComment/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -10411,7 +11038,7 @@ static refalrts::FnResult func_CComment(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CComment("CComment", 3805126175U, 2389736882U, func_CComment);
+static refalrts::NativeReference nat_ref_CComment("CComment", 4258777400U, 2023349967U, func_CComment);
 
 static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10444,6 +11071,8 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10483,6 +11112,7 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
     // closed e.Accum#1 as range 5
+    //DEBUG: e.Accum#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -10505,6 +11135,9 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: s.Any#1: 9
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE} s.Any#1/9 {REMOVED TILE} {REMOVED TILE}
@@ -10521,7 +11154,7 @@ static refalrts::FnResult func_CppComment(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CppComment("CppComment", 3805126175U, 2389736882U, func_CppComment);
+static refalrts::NativeReference nat_ref_CppComment("CppComment", 4258777400U, 2023349967U, func_CppComment);
 
 static refalrts::FnResult func_Native_CheckEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10554,6 +11187,8 @@ static refalrts::FnResult func_Native_CheckEnd(refalrts::Iter arg_begin, refalrt
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 10(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10572,6 +11207,8 @@ static refalrts::FnResult func_Native_CheckEnd(refalrts::Iter arg_begin, refalrt
   // </0 & Native-CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -10583,7 +11220,7 @@ static refalrts::FnResult func_Native_CheckEnd(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Native_CheckEnd("Native-CheckEnd", 3805126175U, 2389736882U, func_Native_CheckEnd);
+static refalrts::NativeReference nat_ref_Native_CheckEnd("Native-CheckEnd", 4258777400U, 2023349967U, func_Native_CheckEnd);
 
 static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10616,6 +11253,8 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -10656,6 +11295,9 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
     if( ! refalrts::svar_left( context[9], context[14], context[15] ) )
       continue;
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: s.Any#1: 9
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.Any#1/9 {REMOVED TILE} {REMOVED TILE}
@@ -10680,6 +11322,8 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
   // </0 & Native/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -10706,7 +11350,7 @@ static refalrts::FnResult func_Native(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Native("Native", 3805126175U, 2389736882U, func_Native);
+static refalrts::NativeReference nat_ref_Native("Native", 4258777400U, 2023349967U, func_Native);
 
 static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10739,6 +11383,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10762,6 +11408,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10785,6 +11433,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10808,6 +11458,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10831,6 +11483,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10854,6 +11508,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10877,6 +11533,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10900,6 +11558,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10923,6 +11583,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10946,6 +11608,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10969,6 +11633,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -10992,6 +11658,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11015,6 +11683,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11038,6 +11708,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11061,6 +11733,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11084,6 +11758,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11107,6 +11783,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11130,6 +11808,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11153,6 +11833,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11176,6 +11858,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11199,6 +11883,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11222,6 +11908,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11245,6 +11933,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11268,6 +11958,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11291,6 +11983,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11314,6 +12008,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11337,6 +12033,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11360,6 +12058,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11383,6 +12083,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11406,6 +12108,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11429,6 +12133,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11452,6 +12158,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11475,6 +12183,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11498,6 +12208,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11521,6 +12233,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11544,6 +12258,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11567,6 +12283,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11590,6 +12308,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11613,6 +12333,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11636,6 +12358,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11659,6 +12383,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11682,6 +12408,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11705,6 +12433,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11728,6 +12458,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11751,6 +12483,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11774,6 +12508,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11797,6 +12533,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11820,6 +12558,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11843,6 +12583,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11866,6 +12608,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11889,6 +12633,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11912,6 +12658,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11935,6 +12683,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11958,6 +12708,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -11981,6 +12733,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12004,6 +12758,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12027,6 +12783,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12050,6 +12808,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12073,6 +12833,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12096,6 +12858,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12119,6 +12883,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12142,6 +12908,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12165,6 +12933,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12188,6 +12958,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12205,6 +12977,8 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
   // </0 & VariableIndexTail/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12231,7 +13005,7 @@ static refalrts::FnResult func_VariableIndexTail(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_VariableIndexTail("VariableIndexTail", 3805126175U, 2389736882U, func_VariableIndexTail);
+static refalrts::NativeReference nat_ref_VariableIndexTail("VariableIndexTail", 4258777400U, 2023349967U, func_VariableIndexTail);
 
 static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -12264,6 +13038,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12305,6 +13081,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12346,6 +13124,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12387,6 +13167,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12428,6 +13210,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12469,6 +13253,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12510,6 +13296,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12551,6 +13339,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12592,6 +13382,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12633,6 +13425,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -12674,6 +13468,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -12702,6 +13498,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -12730,6 +13528,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12754,6 +13554,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12778,6 +13580,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12802,6 +13606,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12826,6 +13632,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12850,6 +13658,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12874,6 +13684,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12898,6 +13710,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -12922,6 +13736,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -12950,6 +13766,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -12978,6 +13796,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -13012,6 +13832,8 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
   // </0 & StringLiteral-Escape/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -13038,7 +13860,7 @@ static refalrts::FnResult func_StringLiteral_Escape(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Escape("StringLiteral-Escape", 3805126175U, 2389736882U, func_StringLiteral_Escape);
+static refalrts::NativeReference nat_ref_StringLiteral_Escape("StringLiteral-Escape", 4258777400U, 2023349967U, func_StringLiteral_Escape);
 
 static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13071,6 +13893,8 @@ static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, ref
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -13106,6 +13930,8 @@ static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, ref
   // </0 & StringLiteral-Quote/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -13117,7 +13943,7 @@ static refalrts::FnResult func_StringLiteral_Quote(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Quote("StringLiteral-Quote", 3805126175U, 2389736882U, func_StringLiteral_Quote);
+static refalrts::NativeReference nat_ref_StringLiteral_Quote("StringLiteral-Quote", 4258777400U, 2023349967U, func_StringLiteral_Quote);
 
 static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13150,6 +13976,8 @@ static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, re
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 15(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -13184,6 +14012,8 @@ static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, re
   // </0 & CComment-CheckNested/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -13195,7 +14025,7 @@ static refalrts::FnResult func_CComment_CheckNested(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CComment_CheckNested("CComment-CheckNested", 3805126175U, 2389736882U, func_CComment_CheckNested);
+static refalrts::NativeReference nat_ref_CComment_CheckNested("CComment-CheckNested", 4258777400U, 2023349967U, func_CComment_CheckNested);
 
 static refalrts::FnResult func_CComment_CheckEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13228,6 +14058,8 @@ static refalrts::FnResult func_CComment_CheckEnd(refalrts::Iter arg_begin, refal
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 10(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} (/7 e.Accum#1/5 {REMOVED TILE}
@@ -13250,6 +14082,8 @@ static refalrts::FnResult func_CComment_CheckEnd(refalrts::Iter arg_begin, refal
   // </0 & CComment-CheckEnd/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -13261,7 +14095,7 @@ static refalrts::FnResult func_CComment_CheckEnd(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CComment_CheckEnd("CComment-CheckEnd", 3805126175U, 2389736882U, func_CComment_CheckEnd);
+static refalrts::NativeReference nat_ref_CComment_CheckEnd("CComment-CheckEnd", 4258777400U, 2023349967U, func_CComment_CheckEnd);
 
 static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13294,6 +14128,8 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13317,6 +14153,8 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -13352,6 +14190,8 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
   // </0 & Native-CheckEnd2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE}
@@ -13363,7 +14203,7 @@ static refalrts::FnResult func_Native_CheckEnd2(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Native_CheckEnd2("Native-CheckEnd2", 3805126175U, 2389736882U, func_Native_CheckEnd2);
+static refalrts::NativeReference nat_ref_Native_CheckEnd2("Native-CheckEnd2", 4258777400U, 2023349967U, func_Native_CheckEnd2);
 
 static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13396,6 +14236,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13420,6 +14262,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13444,6 +14288,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13468,6 +14314,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13492,6 +14340,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13516,6 +14366,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13540,6 +14392,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13564,6 +14418,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13588,6 +14444,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13612,6 +14470,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 14(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13630,6 +14490,8 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
   // </0 & StringLiteral-Escape-Code/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} e.Accum#1/5 {REMOVED TILE}
@@ -13656,7 +14518,7 @@ static refalrts::FnResult func_StringLiteral_Escape_Code(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Escape_Code("StringLiteral-Escape-Code", 3805126175U, 2389736882U, func_StringLiteral_Escape_Code);
+static refalrts::NativeReference nat_ref_StringLiteral_Escape_Code("StringLiteral-Escape-Code", 4258777400U, 2023349967U, func_StringLiteral_Escape_Code);
 
 static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13689,6 +14551,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13713,6 +14577,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13737,6 +14603,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13761,6 +14629,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13785,6 +14655,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13809,6 +14681,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13833,6 +14707,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13857,6 +14733,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13875,6 +14753,8 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
   // </0 & StringLiteral-Escape-OCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -13901,7 +14781,7 @@ static refalrts::FnResult func_StringLiteral_Escape_OCode(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Escape_OCode("StringLiteral-Escape-OCode", 3805126175U, 2389736882U, func_StringLiteral_Escape_OCode);
+static refalrts::NativeReference nat_ref_StringLiteral_Escape_OCode("StringLiteral-Escape-OCode", 4258777400U, 2023349967U, func_StringLiteral_Escape_OCode);
 
 static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13934,6 +14814,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13957,6 +14839,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -13980,6 +14864,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14003,6 +14889,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14026,6 +14914,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14049,6 +14939,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14072,6 +14964,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14095,6 +14989,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14118,6 +15014,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14141,6 +15039,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14164,6 +15064,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14187,6 +15089,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14210,6 +15114,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14233,6 +15139,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14256,6 +15164,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14279,6 +15189,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14302,6 +15214,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14325,6 +15239,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14348,6 +15264,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14371,6 +15289,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14394,6 +15314,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14417,6 +15339,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14434,6 +15358,8 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
   // </0 & StringLiteral-Escape-XCode/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -14460,7 +15386,7 @@ static refalrts::FnResult func_StringLiteral_Escape_XCode(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StringLiteral_Escape_XCode("StringLiteral-Escape-XCode", 3805126175U, 2389736882U, func_StringLiteral_Escape_XCode);
+static refalrts::NativeReference nat_ref_StringLiteral_Escape_XCode("StringLiteral-Escape-XCode", 4258777400U, 2023349967U, func_StringLiteral_Escape_XCode);
 
 static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -14493,6 +15419,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14517,6 +15445,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14541,6 +15471,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14565,6 +15497,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14589,6 +15523,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14613,6 +15549,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14637,6 +15575,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14661,6 +15601,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14685,6 +15627,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14709,6 +15653,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 12(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE}
@@ -14727,6 +15673,8 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
   // </0 & SL-E-C1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -14753,13 +15701,13 @@ static refalrts::FnResult func_SL_E_C1(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SL_E_C1("SL-E-C1", 3805126175U, 2389736882U, func_SL_E_C1);
+static refalrts::NativeReference nat_ref_SL_E_C1("SL-E-C1", 4258777400U, 2023349967U, func_SL_E_C1);
 
 static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
   //FAST GEN: ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & SL-E-OC1/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
@@ -14779,23 +15727,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '0' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '0', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '0', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '0'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '0' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '0' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14803,23 +15770,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '1' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '1', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '1', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '1'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '1' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '1' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14827,23 +15813,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '2' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '2', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '2', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '2'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '2' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '2' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14851,23 +15856,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '3' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '3', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '3', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '3'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '3' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '3' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14875,23 +15899,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '4' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '4', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '4', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '4'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '4' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '4' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14899,23 +15942,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '5' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '5', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '5', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '5'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '5' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '5' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14923,23 +15985,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '6' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '6', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '6', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '6'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '6' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '6' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14947,23 +16028,42 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   do {
     // ( e.idx ) '7' e.idx
     // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
-    context[12] = context[2];
-    context[13] = context[3];
-    context[9] = refalrts::char_left( '7', context[12], context[13] );
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( '7', context[13], context[14] );
     if( ! context[9] )
       continue;
     // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 12(2)
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & SL-E-OC2/4 AsIs: (/7 AsIs: e.Accum#1/5 HalfReuse: '7'/8 HalfReuse: )/9 AsIs: e.Text#1/12(2) AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_SL_E_OC2.ref.function );
-    refalrts::reinit_char( context[8], '7' );
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_char( context[10], '7' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
+    refalrts::reinit_close_bracket( context[7] );
+    refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[9] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[9] );
+    refalrts::push_stack( context[11] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[0], context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -14972,6 +16072,8 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   // </0 & SL-E-OC1/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -14998,7 +16100,7 @@ static refalrts::FnResult func_SL_E_OC1(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SL_E_OC1("SL-E-OC1", 3805126175U, 2389736882U, func_SL_E_OC1);
+static refalrts::NativeReference nat_ref_SL_E_OC1("SL-E-OC1", 4258777400U, 2023349967U, func_SL_E_OC1);
 
 static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -15031,6 +16133,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15072,6 +16176,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15113,6 +16219,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15154,6 +16262,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15195,6 +16305,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15236,6 +16348,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15277,6 +16391,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15318,6 +16434,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15359,6 +16477,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15400,6 +16520,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
       continue;
     // closed e.Accum#1 as range 5
     // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15435,6 +16557,8 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
   // </0 & SL-E-C2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
   // closed e.Accum#1 as range 5
   // closed e.Text#1 as range 2
+  //DEBUG: e.Accum#1: 5
+  //DEBUG: e.Text#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -15461,388 +16585,7 @@ static refalrts::FnResult func_SL_E_C2(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SL_E_C2("SL-E-C2", 3805126175U, 2389736882U, func_SL_E_C2);
-
-static refalrts::FnResult func_SL_E_OC2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
-  //FAST GEN: ( e.$ ) e.$
-  //GLOBAL GEN: ( e.$ ) e.$
-  // </0 & SL-E-OC2/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxT#0 as range 2
-  do {
-    // ( e.idx ) '0' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '0'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '0', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '0'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '0' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '1' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '1'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '1', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '1'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '1' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '2' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '2'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '2', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '2'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '2' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '3' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '3'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '3', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '3'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '3' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '4' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '4'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '4', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '4'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '4' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '5' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '5'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '5', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '5'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '5' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '6' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '6'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '6', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '6'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '6' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '7' e.idx
-    // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 '7'/9 e.Text#1/2 >/1
-    context[13] = context[2];
-    context[14] = context[3];
-    context[9] = refalrts::char_left( '7', context[13], context[14] );
-    if( ! context[9] )
-      continue;
-    // closed e.Accum#1 as range 5
-    // closed e.Text#1 as range 13(2)
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # TkLiteral-OCode/4 } Tile{ AsIs: e.Accum#1/5 } '7'/10 Tile{ HalfReuse: )/7 } </11 & StringLiteral/12 Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
-    if( ! refalrts::alloc_char( context[10], '7' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[11] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[12], ref_StringLiteral.ref.function ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_TkLiteral_OCode );
-    refalrts::reinit_close_bracket( context[7] );
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::reinit_close_bracket( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[11] );
-    refalrts::link_brackets( context[8], context[9] );
-    refalrts::link_brackets( context[0], context[7] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) e.idx
-  // </0 & SL-E-OC2/4 (/7 e.Accum#1/5 )/8 e.Text#1/2 >/1
-  // closed e.Accum#1 as range 5
-  // closed e.Text#1 as range 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } (/9 # TkLiteral-OCode/10 Tile{ AsIs: e.Accum#1/5 } )/11 Tile{ AsIs: </0 Reuse: & StringLiteral/4 AsIs: (/7 } Tile{ AsIs: )/8 AsIs: e.Text#1/2 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_bracket( context[9] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[10], ident_TkLiteral_OCode ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[11] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_StringLiteral.ref.function );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[7], context[8] );
-  refalrts::link_brackets( context[9], context[11] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[8];
-  res = refalrts::splice_evar( res, context[0], context[7] );
-  res = refalrts::splice_evar( res, context[11], context[11] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_SL_E_OC2("SL-E-OC2", 3805126175U, 2389736882U, func_SL_E_OC2);
+static refalrts::NativeReference nat_ref_SL_E_C2("SL-E-C2", 4258777400U, 2023349967U, func_SL_E_C2);
 
 
 //End of file

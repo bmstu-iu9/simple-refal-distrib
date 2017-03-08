@@ -64,6 +64,7 @@ const refalrts::RefalIdentifier ident_CmdTrashLeftEdge = refalrts::ident_from_st
 const refalrts::RefalIdentifier ident_CmdUnwrappedClosure = refalrts::ident_from_static("CmdUnwrappedClosure");
 const refalrts::RefalIdentifier ident_CmdVar = refalrts::ident_from_static("CmdVar");
 const refalrts::RefalIdentifier ident_CmdVarSave = refalrts::ident_from_static("CmdVarSave");
+const refalrts::RefalIdentifier ident_CmdVariableDebugOffset = refalrts::ident_from_static("CmdVariableDebugOffset");
 const refalrts::RefalIdentifier ident_CmdWrapClosure = refalrts::ident_from_static("CmdWrapClosure");
 const refalrts::RefalIdentifier ident_ConstTable = refalrts::ident_from_static("ConstTable");
 const refalrts::RefalIdentifier ident_ElBracket = refalrts::ident_from_static("ElBracket");
@@ -2822,17 +2823,39 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // # CmdEnd
-  // </0 & NumberFromOpcode/4 # CmdEnd/5 >/1
-  if( ! refalrts::ident_term(  ident_CmdEnd, context[5] ) )
+  do {
+    // # CmdEnd
+    // </0 & NumberFromOpcode/4 # CmdEnd/5 >/1
+    if( ! refalrts::ident_term(  ident_CmdEnd, context[5] ) )
+      continue;
+    context[8] = context[2];
+    context[9] = context[3];
+    if( ! refalrts::empty_seq( context[8], context[9] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEnd/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 111/1 ]] }
+    refalrts::reinit_number( context[1], 111UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # CmdVariableDebugOffset
+  // </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 >/1
+  if( ! refalrts::ident_term(  ident_CmdVariableDebugOffset, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEnd/5 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: 111/1 ]] }
-  refalrts::reinit_number( context[1], 111UL );
+  //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: 112/1 ]] }
+  refalrts::reinit_number( context[1], 112UL );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];

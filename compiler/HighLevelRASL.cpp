@@ -83,6 +83,11 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
       continue;
     // closed e.Name#2 as range 13
     // closed e.Sentences#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 13
+    //DEBUG: e.Sentences#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.OptResult#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -143,6 +148,12 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! context[19] )
       continue;
     // closed e.Code#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 13
+    //DEBUG: t.SrcPos#2: 18
+    //DEBUG: e.Code#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} # NativeBody/17 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -170,6 +181,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -195,6 +210,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -220,6 +239,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::svar_left( context[12], context[21], context[22] ) )
       continue;
     // closed e.Name#2 as range 21(5)
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: s.ScopeClass#2: 12
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -241,6 +264,9 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
     if( ! refalrts::ident_term(  ident_Ident, context[11] ) )
       continue;
     // closed e.Name#2 as range 5
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: e.Name#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -264,6 +290,10 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   // closed e.Code#2 as range 5
+  //DEBUG: s.Joint#1: 9
+  //DEBUG: s.OptResult#1: 10
+  //DEBUG: t.SrcPos#2: 12
+  //DEBUG: e.Code#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -296,6 +326,9 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.ProgramElements#1 as range 2
+  //DEBUG: s.Joint#1: 5
+  //DEBUG: s.OptResult#1: 6
+  //DEBUG: e.ProgramElements#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -366,6 +399,12 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
     // closed e.Name#1 as range 10
+    //DEBUG: s.FnGenFunction#1: 5
+    //DEBUG: s.FnGenInitSubst#1: 6
+    //DEBUG: s.FnGenSubst#1: 7
+    //DEBUG: s.FnGenResult#1: 8
+    //DEBUG: s.ScopeClass#1: 9
+    //DEBUG: e.Name#1: 10
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -394,6 +433,13 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
+    //DEBUG: s.FnGenFunction#1: 5
+    //DEBUG: s.FnGenInitSubst#1: 6
+    //DEBUG: s.FnGenSubst#1: 7
+    //DEBUG: s.FnGenResult#1: 8
+    //DEBUG: s.ScopeClass#1: 9
+    //DEBUG: e.Name#1: 10
+    //DEBUG: t.OneSentence#1: 14
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.FnGenFunction#1/5 {REMOVED TILE}
@@ -414,6 +460,13 @@ static refalrts::FnResult func_HighLevelRASL_Function(refalrts::Iter arg_begin, 
   // </0 & HighLevelRASL-Function/4 s.FnGenFunction#1/5 s.FnGenInitSubst#1/6 s.FnGenSubst#1/7 s.FnGenResult#1/8 s.ScopeClass#1/9 (/12 e.Name#1/10 )/13 e.Sentences#1/2 >/1
   // closed e.Name#1 as range 10
   // closed e.Sentences#1 as range 2
+  //DEBUG: s.FnGenFunction#1: 5
+  //DEBUG: s.FnGenInitSubst#1: 6
+  //DEBUG: s.FnGenSubst#1: 7
+  //DEBUG: s.FnGenResult#1: 8
+  //DEBUG: s.ScopeClass#1: 9
+  //DEBUG: e.Name#1: 10
+  //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}

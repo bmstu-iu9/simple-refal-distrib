@@ -99,6 +99,7 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::empty_seq( context[49], context[50] ) )
       continue;
     // closed e.Program#1 as range 5
+    //DEBUG: e.Program#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} e.Program#1/5 {REMOVED TILE}
@@ -201,6 +202,8 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
   // </0 & Main/4 (/7 e.Program#1/5 )/8 e.Arguments#1/2 >/1
   // closed e.Program#1 as range 5
   // closed e.Arguments#1 as range 2
+  //DEBUG: e.Program#1: 5
+  //DEBUG: e.Arguments#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.Program#1/5 {REMOVED TILE} {REMOVED TILE}
@@ -247,6 +250,8 @@ static refalrts::FnResult func_gen_MakeProject_S1L1(refalrts::Iter arg_begin, re
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Folder#2 as range 5
+  //DEBUG: s.FolderTag#2: 9
+  //DEBUG: e.Folder#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & MakeProject$1\1/4 (/7 s.FolderTag#2/9 {REMOVED TILE} )/8 {REMOVED TILE}
@@ -286,6 +291,8 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::Iter arg_begin, re
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#2 as range 5
+  //DEBUG: s.Pos#2: 9
+  //DEBUG: e.Message#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -372,6 +379,11 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
     refalrts::bracket_pointers(context[18], context[19]);
     // closed e.SourceFile#1 as range 16
     // closed e.Folders#1 as range 30(2)
+    //DEBUG: e.CppCompiler#1: 6
+    //DEBUG: e.SrefCompiler#1: 10
+    //DEBUG: t.Target#1: 14
+    //DEBUG: e.SourceFile#1: 16
+    //DEBUG: e.Folders#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -436,6 +448,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::ident_term(  ident_Fails, context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Errors#1 as range 2
+  //DEBUG: e.Errors#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -494,6 +507,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::ident_term(  ident_NotFound, context[9] ) )
       continue;
     // closed e.UnitName#2 as range 5
+    //DEBUG: e.UnitName#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -525,6 +539,7 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::ident_term(  ident_Output, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
+    //DEBUG: e.Output#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Make$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE}
@@ -552,6 +567,8 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
     refalrts::bracket_pointers(context[12], context[13]);
     // closed e.Output#2 as range 10
     // closed e.Native#2 as range 14(5)
+    //DEBUG: e.Output#2: 10
+    //DEBUG: e.Native#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Make$1\1/4 (/7 # OutputWithNative/9 (/12 e.Output#2/10 )/13 e.Native#2/14(5) )/8 >/1 {REMOVED TILE}
@@ -576,6 +593,8 @@ static refalrts::FnResult func_gen_Make_S1L1(refalrts::Iter arg_begin, refalrts:
   refalrts::bracket_pointers(context[12], context[13]);
   // closed e.Source#2 as range 10
   // closed e.Output#2 as range 5
+  //DEBUG: e.Source#2: 10
+  //DEBUG: e.Output#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Make$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE}
@@ -631,6 +650,7 @@ static refalrts::FnResult func_gen_Make_S2L1(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.TargetFile#2 as range 7
+  //DEBUG: e.TargetFile#2: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -684,6 +704,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::ident_term(  ident_Search, context[9] ) )
       continue;
     // closed e.Folder#2 as range 5
+    //DEBUG: e.Folder#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -709,6 +730,7 @@ static refalrts::FnResult func_gen_Make_S2L2(refalrts::Iter arg_begin, refalrts:
   if( ! refalrts::ident_term(  ident_Runtime, context[9] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Folder#2 as range 5
+  //DEBUG: e.Folder#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -760,6 +782,7 @@ static refalrts::FnResult func_gen_Make_S2L3(refalrts::Iter arg_begin, refalrts:
     if( ! refalrts::ident_term(  ident_Output, context[9] ) )
       continue;
     // closed e.Output#2 as range 5
+    //DEBUG: e.Output#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Make$2\3/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -791,6 +814,8 @@ static refalrts::FnResult func_gen_Make_S2L3(refalrts::Iter arg_begin, refalrts:
     refalrts::bracket_pointers(context[12], context[13]);
     // closed e.Output#2 as range 10
     // closed e.Native#2 as range 14(5)
+    //DEBUG: e.Output#2: 10
+    //DEBUG: e.Native#2: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Make$2\3/4 (/7 {REMOVED TILE} e.Native#2/14(5) )/8 >/1 {REMOVED TILE}
@@ -819,6 +844,8 @@ static refalrts::FnResult func_gen_Make_S2L3(refalrts::Iter arg_begin, refalrts:
   refalrts::bracket_pointers(context[12], context[13]);
   // closed e.Source#2 as range 10
   // closed e.Output#2 as range 5
+  //DEBUG: e.Source#2: 10
+  //DEBUG: e.Output#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Make$2\3/4 (/7 {REMOVED TILE} e.Output#2/5 )/8 >/1 {REMOVED TILE}
@@ -899,6 +926,13 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
         continue;
       // closed e.UnitName#1 as range 21
       // closed e.Units-E#1 as range 32(2)
+      //DEBUG: t.Target#1: 13
+      //DEBUG: e.SrefC#1: 5
+      //DEBUG: e.CompilerCommand#1: 9
+      //DEBUG: e.Directories#1: 15
+      //DEBUG: e.Units-B#1: 19
+      //DEBUG: e.UnitName#1: 21
+      //DEBUG: e.Units-E#1: 2
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} e.SrefC#1/5 {REMOVED TILE} e.CompilerCommand#1/9 )/12 t.Target#1/13 {REMOVED TILE} e.Directories#1/15 {REMOVED TILE} e.Units-B#1/19 {REMOVED TILE} {REMOVED TILE}
@@ -933,6 +967,11 @@ static refalrts::FnResult func_Make(refalrts::Iter arg_begin, refalrts::Iter arg
   // closed e.CompilerCommand#1 as range 9
   // closed e.Directories#1 as range 15
   // closed e.Units#1 as range 2
+  //DEBUG: t.Target#1: 13
+  //DEBUG: e.SrefC#1: 5
+  //DEBUG: e.CompilerCommand#1: 9
+  //DEBUG: e.Directories#1: 15
+  //DEBUG: e.Units#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}

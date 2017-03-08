@@ -34,6 +34,7 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.Rules#1 as range 2
+  //DEBUG: e.Rules#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
@@ -81,6 +82,8 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
     return refalrts::cRecognitionImpossible;
   // closed e.NextRule#1 as range 9
   // closed e.Alternatives#1 as range 5
+  //DEBUG: e.NextRule#1: 9
+  //DEBUG: e.Alternatives#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -138,6 +141,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Alternative#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -203,6 +207,7 @@ static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_
   // e.idx
   // </0 & WriteAlternative-Aux$2\1/4 e.ResultNotEmpty#2/2 >/1
   // closed e.ResultNotEmpty#2 as range 2
+  //DEBUG: e.ResultNotEmpty#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & WriteAlternative-Aux$2\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
@@ -253,6 +258,8 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 # None/10 t.NextState#1/12 )/8 >/1
     if( ! refalrts::ident_term(  ident_None, context[10] ) )
       continue;
+    //DEBUG: t.NextState#1: 12
+    //DEBUG: s.Head#1: 9
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -301,6 +308,9 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
 
   // ( s.idx t.idx t.idx )
   // </0 & WriteAlternative-Aux/4 (/7 s.Head#1/9 t.Flush#1/10 t.NextState#1/12 )/8 >/1
+  //DEBUG: t.Flush#1: 10
+  //DEBUG: t.NextState#1: 12
+  //DEBUG: s.Head#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -418,6 +428,7 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
 
   // s.idx
   // </0 & Head/4 s.Other#1/5 >/1
+  //DEBUG: s.Other#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -466,6 +477,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1
     if( ! refalrts::ident_term(  ident_Unnamed, context[6] ) )
       continue;
+    //DEBUG: s.Head#1: 5
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & Flush/4 s.Head#1/5 # Unnamed/6 >/1 {REMOVED TILE}
@@ -489,6 +501,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
     if( ! context[10] )
       continue;
     // closed e.FlushName#1 as range 8
+    //DEBUG: s.Head#1: 5
+    //DEBUG: e.FlushName#1: 8
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
@@ -524,6 +538,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   // closed e.Message#1 as range 8
+  //DEBUG: s.Head#1: 5
+  //DEBUG: e.Message#1: 8
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Head#1/5 {REMOVED TILE}
@@ -590,6 +606,7 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.NextStateName#1 as range 7
+  //DEBUG: e.NextStateName#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} e.NextStateName#1/7 {REMOVED TILE}
@@ -634,6 +651,7 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
     if( ! refalrts::ident_term(  ident_Finitive, context[5] ) )
       continue;
     // closed e.NextStateAccum#1 as range 2
+    //DEBUG: e.NextStateAccum#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1 {REMOVED TILE}
@@ -654,6 +672,8 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cRecognitionImpossible;
   // closed e.NextStateName#1 as range 7
   // closed e.NextStateAccum#1 as range 2
+  //DEBUG: e.NextStateName#1: 7
+  //DEBUG: e.NextStateAccum#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
