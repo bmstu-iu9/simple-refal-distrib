@@ -122,6 +122,14 @@ struct ident_TkCloseCall {
   }
 };
 
+// identifier #TkColon
+template <typename SREFAL_PARAM_INT>
+struct ident_TkColon {
+  static const char *name() {
+    return "TkColon";
+  }
+};
+
 // identifier #TkComma
 template <typename SREFAL_PARAM_INT>
 struct ident_TkComma {
@@ -1063,6 +1071,7 @@ namespace /* unnamed */ {
       & ident_TkRedefinition<int>::name,
       & ident_TkVariable<int>::name,
       & ident_TkUnexpected<int>::name,
+      & ident_TkColon<int>::name,
       & ident_TkSemicolon<int>::name,
       & ident_TkReplace<int>::name,
       & ident_TkOpenBracket<int>::name,
@@ -1094,7 +1103,7 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 23, 0, 0},
+      {refalrts::icReserveBacktrackStack, 24, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
       //GLOBAL GEN: s.$ e.$
@@ -1106,7 +1115,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkChar s.idx
       // </0 & StrFromToken/4 # TkChar/5 s.Char#1/6 >/1
-      {refalrts::icIdentTerm, 0, 23, 5},
+      {refalrts::icIdentTerm, 0, 24, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icsVarLeft, 0, 6, 10},
       {refalrts::icEmpty, 0, 0, 10},
@@ -1123,7 +1132,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkCloseADT
       // </0 & StrFromToken/4 # TkCloseADT/5 >/1
-      {refalrts::icIdentTerm, 0, 22, 5},
+      {refalrts::icIdentTerm, 0, 23, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1139,7 +1148,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkCloseCall
       // </0 & StrFromToken/4 # TkCloseCall/5 >/1
-      {refalrts::icIdentTerm, 0, 21, 5},
+      {refalrts::icIdentTerm, 0, 22, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1155,7 +1164,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkCloseBlock
       // </0 & StrFromToken/4 # TkCloseBlock/5 >/1
-      {refalrts::icIdentTerm, 0, 20, 5},
+      {refalrts::icIdentTerm, 0, 21, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1171,7 +1180,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkCloseBracket
       // </0 & StrFromToken/4 # TkCloseBracket/5 >/1
-      {refalrts::icIdentTerm, 0, 19, 5},
+      {refalrts::icIdentTerm, 0, 20, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1187,7 +1196,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkComma
       // </0 & StrFromToken/4 # TkComma/5 >/1
-      {refalrts::icIdentTerm, 0, 18, 5},
+      {refalrts::icIdentTerm, 0, 19, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1203,7 +1212,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +17, 0, 0},
       // # TkDirective s.idx
       // </0 & StrFromToken/4 # TkDirective/5 s.Directive#1/6 >/1
-      {refalrts::icIdentTerm, 0, 17, 5},
+      {refalrts::icIdentTerm, 0, 18, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icsVarLeft, 0, 6, 10},
       {refalrts::icEmpty, 0, 0, 10},
@@ -1227,7 +1236,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # TkEOF
       // </0 & StrFromToken/4 # TkEOF/5 >/1
-      {refalrts::icIdentTerm, 0, 16, 5},
+      {refalrts::icIdentTerm, 0, 17, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1245,7 +1254,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // # TkError e.idx
       // </0 & StrFromToken/4 # TkError/5 e.Message#1/2 >/1
-      {refalrts::icIdentTerm, 0, 15, 5},
+      {refalrts::icIdentTerm, 0, 16, 5},
       // closed e.Message#1 as range 2
       //DEBUG: e.Message#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1267,7 +1276,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkIdentMarker
       // </0 & StrFromToken/4 # TkIdentMarker/5 >/1
-      {refalrts::icIdentTerm, 0, 14, 5},
+      {refalrts::icIdentTerm, 0, 15, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1283,7 +1292,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +12, 0, 0},
       // # TkName e.idx
       // </0 & StrFromToken/4 # TkName/5 e.Name#1/2 >/1
-      {refalrts::icIdentTerm, 0, 13, 5},
+      {refalrts::icIdentTerm, 0, 14, 5},
       // closed e.Name#1 as range 2
       //DEBUG: e.Name#1: 2
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1303,7 +1312,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +14, 0, 0},
       // # TkNumber s.idx
       // </0 & StrFromToken/4 # TkNumber/5 s.Number#1/6 >/1
-      {refalrts::icIdentTerm, 0, 12, 5},
+      {refalrts::icIdentTerm, 0, 13, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icsVarLeft, 0, 6, 10},
       {refalrts::icEmpty, 0, 0, 10},
@@ -1324,7 +1333,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkOpenADT
       // </0 & StrFromToken/4 # TkOpenADT/5 >/1
-      {refalrts::icIdentTerm, 0, 11, 5},
+      {refalrts::icIdentTerm, 0, 12, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1340,7 +1349,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkOpenCall
       // </0 & StrFromToken/4 # TkOpenCall/5 >/1
-      {refalrts::icIdentTerm, 0, 10, 5},
+      {refalrts::icIdentTerm, 0, 11, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1356,7 +1365,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkOpenBlock
       // </0 & StrFromToken/4 # TkOpenBlock/5 >/1
-      {refalrts::icIdentTerm, 0, 9, 5},
+      {refalrts::icIdentTerm, 0, 10, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1372,7 +1381,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkOpenBracket
       // </0 & StrFromToken/4 # TkOpenBracket/5 >/1
-      {refalrts::icIdentTerm, 0, 8, 5},
+      {refalrts::icIdentTerm, 0, 9, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1388,7 +1397,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkReplace
       // </0 & StrFromToken/4 # TkReplace/5 >/1
-      {refalrts::icIdentTerm, 0, 7, 5},
+      {refalrts::icIdentTerm, 0, 8, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1404,7 +1413,7 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +10, 0, 0},
       // # TkSemicolon
       // </0 & StrFromToken/4 # TkSemicolon/5 >/1
-      {refalrts::icIdentTerm, 0, 6, 5},
+      {refalrts::icIdentTerm, 0, 7, 5},
       {refalrts::icSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 10},
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -1412,6 +1421,22 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ HalfReuse: '\"'/4 HalfReuse: ';'/5 HalfReuse: '\"'/1 ]] }
       {refalrts::icReinitChar, 0, '\"', 4},
       {refalrts::icReinitChar, 0, ';', 5},
+      {refalrts::icReinitChar, 0, '\"', 1},
+      {refalrts::icSetRes, 0, 0, 4},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +10, 0, 0},
+      // # TkColon
+      // </0 & StrFromToken/4 # TkColon/5 >/1
+      {refalrts::icIdentTerm, 0, 6, 5},
+      {refalrts::icSave, 0, 10, 2},
+      {refalrts::icEmpty, 0, 0, 10},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: '\"'/4 HalfReuse: ':'/5 HalfReuse: '\"'/1 ]] }
+      {refalrts::icReinitChar, 0, '\"', 4},
+      {refalrts::icReinitChar, 0, ':', 5},
       {refalrts::icReinitChar, 0, '\"', 1},
       {refalrts::icSetRes, 0, 0, 4},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -2030,6 +2055,31 @@ static refalrts::FnResult func_StrFromToken(refalrts::Iter arg_begin, refalrts::
     //RESULT: Tile{ [[ } Tile{ HalfReuse: '\"'/4 HalfReuse: ';'/5 HalfReuse: '\"'/1 ]] }
     refalrts::reinit_char( context[4], '\"' );
     refalrts::reinit_char( context[5], ';' );
+    refalrts::reinit_char( context[1], '\"' );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[4];
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # TkColon
+    // </0 & StrFromToken/4 # TkColon/5 >/1
+    if( ! refalrts::ident_term(  & ident_TkColon<int>::name, context[5] ) )
+      continue;
+    context[10] = context[2];
+    context[11] = context[3];
+    if( ! refalrts::empty_seq( context[10], context[11] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: '\"'/4 HalfReuse: ':'/5 HalfReuse: '\"'/1 ]] }
+    refalrts::reinit_char( context[4], '\"' );
+    refalrts::reinit_char( context[5], ':' );
     refalrts::reinit_char( context[1], '\"' );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -4992,6 +5042,7 @@ namespace /* unnamed */ {
       & ident_TkIdentMarker<int>::name,
       & ident_TkCloseADT<int>::name,
       & ident_TkOpenADT<int>::name,
+      & ident_TkColon<int>::name,
       & ident_TkSemicolon<int>::name,
       & ident_TkComma<int>::name,
       & ident_TkReplace<int>::name,
@@ -5007,7 +5058,7 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 12, 0, 0},
+      {refalrts::icReserveBacktrackStack, 13, 0, 0},
       {refalrts::icIssueMemory, 6, 0, 0},
       //FAST GEN: s.$
       //GLOBAL GEN: s.$
@@ -5023,7 +5074,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '<'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenCall/1 ]] }
-      {refalrts::icReinitIdent, 0, 12, 1},
+      {refalrts::icReinitIdent, 0, 13, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5035,7 +5086,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '>'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseCall/1 ]] }
-      {refalrts::icReinitIdent, 0, 11, 1},
+      {refalrts::icReinitIdent, 0, 12, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5047,7 +5098,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '{'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenBlock/1 ]] }
-      {refalrts::icReinitIdent, 0, 10, 1},
+      {refalrts::icReinitIdent, 0, 11, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5059,7 +5110,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '}'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseBlock/1 ]] }
-      {refalrts::icReinitIdent, 0, 9, 1},
+      {refalrts::icReinitIdent, 0, 10, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5071,7 +5122,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '('/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkOpenBracket/1 ]] }
-      {refalrts::icReinitIdent, 0, 8, 1},
+      {refalrts::icReinitIdent, 0, 9, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5083,7 +5134,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ')'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseBracket/1 ]] }
-      {refalrts::icReinitIdent, 0, 7, 1},
+      {refalrts::icReinitIdent, 0, 8, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5095,7 +5146,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 '='/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkReplace/1 ]] }
-      {refalrts::icReinitIdent, 0, 6, 1},
+      {refalrts::icReinitIdent, 0, 7, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5107,7 +5158,7 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ','/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkComma/1 ]] }
-      {refalrts::icReinitIdent, 0, 5, 1},
+      {refalrts::icReinitIdent, 0, 6, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
       {refalrts::icNextStep, 0, 0, 0},
@@ -5119,6 +5170,18 @@ namespace /* unnamed */ {
       {refalrts::icEmptyResult, 0, 0, 0},
       //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ';'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkSemicolon/1 ]] }
+      {refalrts::icReinitIdent, 0, 5, 1},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +6, 0, 0},
+      // ':'
+      // </0 & SwPunctuation/4 ':'/5 >/1
+      {refalrts::icCharTerm, 0, static_cast<unsigned char>(':'), 5},
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ':'/5 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkColon/1 ]] }
       {refalrts::icReinitIdent, 0, 4, 1},
       {refalrts::icSetRes, 0, 0, 1},
       {refalrts::icTrashLeftEdge, 0, 0, 0},
@@ -5370,6 +5433,25 @@ static refalrts::FnResult func_SwPunctuation(refalrts::Iter arg_begin, refalrts:
     //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ';'/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkSemicolon/1 ]] }
     refalrts::reinit_ident( context[1], & ident_TkSemicolon<int>::name );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ':'
+    // </0 & SwPunctuation/4 ':'/5 >/1
+    if( ! refalrts::char_term( ':', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & SwPunctuation/4 ':'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkColon/1 ]] }
+    refalrts::reinit_ident( context[1], & ident_TkColon<int>::name );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -6586,7 +6668,7 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 60, 0, 0},
+      {refalrts::icReserveBacktrackStack, 61, 0, 0},
       {refalrts::icIssueMemory, 15, 0, 0},
       //FAST GEN: e.$
       //GLOBAL GEN: ( e.$ ) e.$
@@ -6931,6 +7013,35 @@ namespace /* unnamed */ {
       //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ';'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
       {refalrts::icAllocIdent, 0, 3, 10},
       {refalrts::icAllocChar, 0, ';', 11},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 12},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icLinkBrackets, 8, 9, 0},
+      {refalrts::icLinkBrackets, 7, 12, 0},
+      {refalrts::icSetRes, 0, 0, 8},
+      {refalrts::icSpliceTile, 0, 4, 0},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icSpliceTile, 10, 10, 0},
+      {refalrts::icSpliceTile, 7, 7, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +19, 0, 0},
+      // ( e.idx ) ':' e.idx
+      // </0 & Main/4 (/7 e.Accum#1/5 )/8 ':'/9 e.Text#1/2 >/1
+      {refalrts::icSave, 0, 13, 2},
+      {refalrts::icCharLeftSave, 9, static_cast<unsigned char>(':'), 13},
+      // closed e.Accum#1 as range 5
+      // closed e.Text#1 as range 13(2)
+      //DEBUG: e.Accum#1: 5
+      //DEBUG: e.Text#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ':'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+      {refalrts::icAllocIdent, 0, 3, 10},
+      {refalrts::icAllocChar, 0, ':', 11},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 12},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 9},
@@ -8470,6 +8581,47 @@ static refalrts::FnResult func_Main(refalrts::Iter arg_begin, refalrts::Iter arg
     if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[11], ';' ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[12] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[8] );
+    refalrts::reinit_close_bracket( context[9] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[7], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ':' e.idx
+    // </0 & Main/4 (/7 e.Accum#1/5 )/8 ':'/9 e.Text#1/2 >/1
+    context[13] = context[2];
+    context[14] = context[3];
+    context[9] = refalrts::char_left( ':', context[13], context[14] );
+    if( ! context[9] )
+      continue;
+    // closed e.Accum#1 as range 5
+    // closed e.Text#1 as range 13(2)
+    //DEBUG: e.Accum#1: 5
+    //DEBUG: e.Text#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 } # TkPunctuation/10 Tile{ AsIs: e.Accum#1/5 } ':'/11 )/12 Tile{ AsIs: </0 AsIs: & Main/4 } Tile{ HalfReuse: (/8 HalfReuse: )/9 AsIs: e.Text#1/13(2) AsIs: >/1 ]] }
+    if( ! refalrts::alloc_ident( context[10], & ident_TkPunctuation<int>::name ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[11], ':' ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;

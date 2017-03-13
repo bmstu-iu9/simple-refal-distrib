@@ -1021,7 +1021,7 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icReserveBacktrackStack, 3, 0, 0},
       {refalrts::icIssueMemory, 12, 0, 0},
       //FAST GEN: e.$
       //GLOBAL GEN: e.$
@@ -1072,6 +1072,33 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
       {refalrts::icAllocFunc, 0, 1, 9},
       {refalrts::icReinitChar, 0, 'L', 0},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
+      {refalrts::icReinitFunc, 0, 0, 5},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 8},
+      {refalrts::icPushStack, 0, 0, 7},
+      {refalrts::icPushStack, 0, 0, 4},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 10},
+      {refalrts::icSpliceTile, 7, 9, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +18, 0, 0},
+      // '=' s.idx e.idx
+      // </0 & CNameSuf/4 '='/5 s.Num#1/6 e.Suffix#1/2 >/1
+      {refalrts::icSave, 0, 10, 2},
+      {refalrts::icCharLeftSave, 5, static_cast<unsigned char>('='), 10},
+      {refalrts::icsVarLeft, 0, 6, 10},
+      // closed e.Suffix#1 as range 10(2)
+      //DEBUG: s.Num#1: 6
+      //DEBUG: e.Suffix#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: 'A'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & CNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 7},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 8},
+      {refalrts::icAllocFunc, 0, 1, 9},
+      {refalrts::icReinitChar, 0, 'A', 0},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 4},
       {refalrts::icReinitFunc, 0, 0, 5},
       {refalrts::icPushStack, 0, 0, 1},
@@ -1191,6 +1218,46 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
     if( ! refalrts::alloc_name( context[9], & CNameSuf ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], 'L' );
+    refalrts::reinit_open_call( context[4] );
+    refalrts::reinit_name( context[5], & StrFromInt );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[8] );
+    refalrts::push_stack( context[7] );
+    refalrts::push_stack( context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[7], context[9] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // '=' s.idx e.idx
+    // </0 & CNameSuf/4 '='/5 s.Num#1/6 e.Suffix#1/2 >/1
+    context[10] = context[2];
+    context[11] = context[3];
+    context[5] = refalrts::char_left( '=', context[10], context[11] );
+    if( ! context[5] )
+      continue;
+    if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
+      continue;
+    // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'A'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & CNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_close_call( context[7] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[8] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[9], & CNameSuf ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'A' );
     refalrts::reinit_open_call( context[4] );
     refalrts::reinit_name( context[5], & StrFromInt );
     refalrts::push_stack( context[1] );

@@ -26,6 +26,14 @@ struct ident_AlreadyDefined {
   }
 };
 
+// identifier #Assign
+template <typename SREFAL_PARAM_INT>
+struct ident_Assign {
+  static const char *name() {
+    return "Assign";
+  }
+};
+
 // identifier #Brackets
 template <typename SREFAL_PARAM_INT>
 struct ident_Brackets {
@@ -290,7 +298,27 @@ extern refalrts::RefalFunction& gen_CheckSentence_L1;
 } // unnamed namespace
 
 namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_CheckSentence_L2;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_CheckSentence_L3;
+} // unnamed namespace
+
+namespace /* unnamed */ {
 extern refalrts::RefalFunction& CheckSentence;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_CheckAssignments_S2L1;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_CheckAssignments_S2L2;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& CheckAssignments;
 } // unnamed namespace
 
 namespace /* unnamed */ {
@@ -3380,6 +3408,236 @@ namespace /* unnamed */ {
   namespace scope_gen_CheckSentence_L1 {
     static const char *filename = "Checker.cpp";
     static refalrts::RefalFunction *functions[] = {
+      & CheckAssignments
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 15, 0, 0},
+      // </0 & CheckSentence\1/4 (/7 e.Assignments#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.Assignments#1 as range 5
+      // closed e.ScopeVars#2 as range 9
+      // closed e.PatternFunctionsAndErrors#2 as range 2
+      //DEBUG: e.Assignments#1: 5
+      //DEBUG: e.ScopeVars#2: 9
+      //DEBUG: e.PatternFunctionsAndErrors#2: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.PatternFunctionsAndErrors#2/2 } )/14 Tile{ AsIs: </0 Reuse: & CheckAssignments/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.ScopeVars#2/9 AsIs: )/12 } Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 13},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icLinkBrackets, 13, 14, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceTile, 0, 12, 0},
+      {refalrts::icSpliceTile, 14, 14, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 13, 13, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_CheckSentence_L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_CheckSentence_L1(
+  "CheckSentence\\1",
+  scope_gen_CheckSentence_L1::raa,
+  scope_gen_CheckSentence_L1::functions,
+  scope_gen_CheckSentence_L1::idents,
+  scope_gen_CheckSentence_L1::numbers,
+  scope_gen_CheckSentence_L1::strings,
+  scope_gen_CheckSentence_L1::filename
+);
+refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
+  // </0 & CheckSentence\1/4 (/7 e.Assignments#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.Assignments#1 as range 5
+  // closed e.ScopeVars#2 as range 9
+  // closed e.PatternFunctionsAndErrors#2 as range 2
+  //DEBUG: e.Assignments#1: 5
+  //DEBUG: e.ScopeVars#2: 9
+  //DEBUG: e.PatternFunctionsAndErrors#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.PatternFunctionsAndErrors#2/2 } )/14 Tile{ AsIs: </0 Reuse: & CheckAssignments/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.ScopeVars#2/9 AsIs: )/12 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_bracket( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[14] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], & CheckAssignments );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::link_brackets( context[13], context[14] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[0], context[12] );
+  res = refalrts::splice_evar( res, context[14], context[14] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_CheckSentence_L1(func_gen_CheckSentence_L1, "CheckSentence\\1");
+refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_CheckSentence_L2 {
+    static const char *filename = "Checker.cpp";
+    using refalrts::functions;
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 13, 0, 0},
+      // </0 & CheckSentence\2/4 (/7 e.PatternFunctionsAndErrors#2/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.AssignmentsFunctionsAndErrors#2/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.PatternFunctionsAndErrors#2 as range 5
+      // closed e.ScopeVars#2 as range 9
+      // closed e.AssignmentsFunctionsAndErrors#2 as range 2
+      //DEBUG: e.PatternFunctionsAndErrors#2: 5
+      //DEBUG: e.ScopeVars#2: 9
+      //DEBUG: e.AssignmentsFunctionsAndErrors#2: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & CheckSentence\2/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.ScopeVars#2/9 AsIs: )/12 } Tile{ AsIs: e.PatternFunctionsAndErrors#2/5 } Tile{ AsIs: e.AssignmentsFunctionsAndErrors#2/2 } Tile{ ]] }
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_CheckSentence_L2
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_CheckSentence_L2(
+  "CheckSentence\\2",
+  scope_gen_CheckSentence_L2::raa,
+  scope_gen_CheckSentence_L2::functions,
+  scope_gen_CheckSentence_L2::idents,
+  scope_gen_CheckSentence_L2::numbers,
+  scope_gen_CheckSentence_L2::strings,
+  scope_gen_CheckSentence_L2::filename
+);
+refalrts::RefalFunction& gen_CheckSentence_L2 = descr_gen_CheckSentence_L2;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_CheckSentence_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 13 elems
+  refalrts::Iter context[13];
+  refalrts::zeros( context, 13 );
+  // </0 & CheckSentence\2/4 (/7 e.PatternFunctionsAndErrors#2/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.AssignmentsFunctionsAndErrors#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.PatternFunctionsAndErrors#2 as range 5
+  // closed e.ScopeVars#2 as range 9
+  // closed e.AssignmentsFunctionsAndErrors#2 as range 2
+  //DEBUG: e.PatternFunctionsAndErrors#2: 5
+  //DEBUG: e.ScopeVars#2: 9
+  //DEBUG: e.AssignmentsFunctionsAndErrors#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & CheckSentence\2/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.ScopeVars#2/9 AsIs: )/12 } Tile{ AsIs: e.PatternFunctionsAndErrors#2/5 } Tile{ AsIs: e.AssignmentsFunctionsAndErrors#2/2 } Tile{ ]] }
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_CheckSentence_L2(func_gen_CheckSentence_L2, "CheckSentence\\2");
+refalrts::RefalFunction& gen_CheckSentence_L2 = descr_gen_CheckSentence_L2;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_CheckSentence_L3 {
+    static const char *filename = "Checker.cpp";
+    static refalrts::RefalFunction *functions[] = {
       & FlatExpr,
       & CheckResult
     };
@@ -3390,7 +3648,7 @@ namespace /* unnamed */ {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icIssueMemory, 14, 0, 0},
-      // </0 & CheckSentence\1/4 (/7 e.Result#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
+      // </0 & CheckSentence\3/4 (/7 e.Result#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
@@ -3423,31 +3681,31 @@ namespace /* unnamed */ {
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
-  } // namespace scope_gen_CheckSentence_L1
+  } // namespace scope_gen_CheckSentence_L3
 
 } // unnamed namespace
 
 namespace /* unnamed */ {
-refalrts::RASLFunction descr_gen_CheckSentence_L1(
-  "CheckSentence\\1",
-  scope_gen_CheckSentence_L1::raa,
-  scope_gen_CheckSentence_L1::functions,
-  scope_gen_CheckSentence_L1::idents,
-  scope_gen_CheckSentence_L1::numbers,
-  scope_gen_CheckSentence_L1::strings,
-  scope_gen_CheckSentence_L1::filename
+refalrts::RASLFunction descr_gen_CheckSentence_L3(
+  "CheckSentence\\3",
+  scope_gen_CheckSentence_L3::raa,
+  scope_gen_CheckSentence_L3::functions,
+  scope_gen_CheckSentence_L3::idents,
+  scope_gen_CheckSentence_L3::numbers,
+  scope_gen_CheckSentence_L3::strings,
+  scope_gen_CheckSentence_L3::filename
 );
-refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
+refalrts::RefalFunction& gen_CheckSentence_L3 = descr_gen_CheckSentence_L3;
 
 } // unnamed namespace
 
 #else
-static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_CheckSentence_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  // </0 & CheckSentence\1/4 (/7 e.Result#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
+  // </0 & CheckSentence\3/4 (/7 e.Result#1/5 )/8 (/11 e.ScopeVars#2/9 )/12 e.PatternFunctionsAndErrors#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3499,8 +3757,8 @@ static refalrts::FnResult func_gen_CheckSentence_L1(refalrts::Iter arg_begin, re
 }
 
 namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_gen_CheckSentence_L1(func_gen_CheckSentence_L1, "CheckSentence\\1");
-refalrts::RefalFunction& gen_CheckSentence_L1 = descr_gen_CheckSentence_L1;
+refalrts::RefalNativeFunction descr_gen_CheckSentence_L3(func_gen_CheckSentence_L3, "CheckSentence\\3");
+refalrts::RefalFunction& gen_CheckSentence_L3 = descr_gen_CheckSentence_L3;
 
 } // unnamed namespace
 
@@ -3510,11 +3768,14 @@ namespace /* unnamed */ {
   namespace scope_CheckSentence {
     static const char *filename = "Checker.cpp";
     static refalrts::RefalFunction *functions[] = {
-      & gen_CheckSentence_L1,
-      & CheckPattern,
+      & FlatExpr,
       & Fetch,
+      & gen_CheckSentence_L3,
       & refalrts::create_closure,
-      & FlatExpr
+      & gen_CheckSentence_L2,
+      & gen_CheckSentence_L1,
+      & Seq,
+      & CheckPattern
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -3522,52 +3783,72 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 25, 0, 0},
-      // </0 & CheckSentence/4 e.ScopeVars#1/2 (/7 (/11 e.Pattern#1/9 )/12 (/15 e.Result#1/13 )/16 )/8 >/1
+      {refalrts::icIssueMemory, 35, 0, 0},
+      // </0 & CheckSentence/4 e.ScopeVars#1/2 (/7 (/11 e.Pattern#1/9 )/12 e.Assignments#1/5 (/15 e.Result#1/13 )/16 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketRightSave, 0, 5, 2},
       {refalrts::icBracketLeftSave, 0, 9, 5},
-      {refalrts::icBracketLeftSave, 0, 13, 5},
-      {refalrts::icEmpty, 0, 0, 5},
+      {refalrts::icBracketRightSave, 0, 13, 5},
       // closed e.ScopeVars#1 as range 2
       // closed e.Pattern#1 as range 9
+      // closed e.Assignments#1 as range 5
       // closed e.Result#1 as range 13
       //DEBUG: e.ScopeVars#1: 2
       //DEBUG: e.Pattern#1: 9
+      //DEBUG: e.Assignments#1: 5
       //DEBUG: e.Result#1: 13
       {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </17 Tile{ HalfReuse: & CheckPattern/7 AsIs: (/11 } Tile{ AsIs: e.ScopeVars#1/2 } )/18 </19 & FlatExpr/20 Tile{ AsIs: e.Pattern#1/9 } >/21 >/22 </23 & @create_closure@/24 Tile{ HalfReuse: & CheckSentence\1/12 AsIs: (/15 AsIs: e.Result#1/13 AsIs: )/16 HalfReuse: >/8 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </17 & CheckPattern/18 (/19 Tile{ AsIs: e.ScopeVars#1/2 } )/20 Tile{ HalfReuse: </7 HalfReuse: & FlatExpr/11 AsIs: e.Pattern#1/9 HalfReuse: >/12 } >/21 </22 & Seq/23 </24 & @create_closure@/25 & CheckSentence\1/26 (/27 Tile{ AsIs: e.Assignments#1/5 } )/28 >/29 & CheckSentence\2/30 </31 & @create_closure@/32 & CheckSentence\3/33 Tile{ AsIs: (/15 AsIs: e.Result#1/13 AsIs: )/16 HalfReuse: >/8 AsIs: >/1 } >/34 Tile{ ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 17},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 18},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 19},
-      {refalrts::icAllocFunc, 0, 4, 20},
+      {refalrts::icAllocFunc, 0, 7, 18},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 19},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 21},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 22},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 23},
-      {refalrts::icAllocFunc, 0, 3, 24},
-      {refalrts::icUpdateFunc, 0, 2, 4},
-      {refalrts::icReinitFunc, 0, 1, 7},
-      {refalrts::icReinitFunc, 0, 0, 12},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 22},
+      {refalrts::icAllocFunc, 0, 6, 23},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 24},
+      {refalrts::icAllocFunc, 0, 3, 25},
+      {refalrts::icAllocFunc, 0, 5, 26},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 27},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 28},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 29},
+      {refalrts::icAllocFunc, 0, 4, 30},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 31},
+      {refalrts::icAllocFunc, 0, 3, 32},
+      {refalrts::icAllocFunc, 0, 2, 33},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 34},
+      {refalrts::icUpdateFunc, 0, 1, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 7},
+      {refalrts::icReinitFunc, 0, 0, 11},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 12},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 8},
-      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 34},
       {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icPushStack, 0, 0, 8},
-      {refalrts::icPushStack, 0, 0, 23},
-      {refalrts::icLinkBrackets, 15, 16, 0},
+      {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 22},
-      {refalrts::icPushStack, 0, 0, 17},
+      {refalrts::icPushStack, 0, 0, 8},
+      {refalrts::icPushStack, 0, 0, 31},
+      {refalrts::icLinkBrackets, 15, 16, 0},
+      {refalrts::icPushStack, 0, 0, 29},
+      {refalrts::icPushStack, 0, 0, 24},
+      {refalrts::icLinkBrackets, 27, 28, 0},
       {refalrts::icPushStack, 0, 0, 21},
-      {refalrts::icPushStack, 0, 0, 19},
-      {refalrts::icLinkBrackets, 11, 18, 0},
-      {refalrts::icSetRes, 0, 0, 12},
-      {refalrts::icSpliceTile, 21, 24, 0},
-      {refalrts::icSpliceEVar, 0, 0, 9},
-      {refalrts::icSpliceTile, 18, 20, 0},
+      {refalrts::icPushStack, 0, 0, 17},
+      {refalrts::icPushStack, 0, 0, 12},
+      {refalrts::icPushStack, 0, 0, 7},
+      {refalrts::icLinkBrackets, 19, 20, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 34, 34, 0},
+      {refalrts::icSpliceTile, 15, 1, 0},
+      {refalrts::icSpliceTile, 28, 33, 0},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icSpliceTile, 21, 27, 0},
+      {refalrts::icSpliceTile, 7, 12, 0},
+      {refalrts::icSpliceTile, 20, 20, 0},
       {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceTile, 7, 11, 0},
-      {refalrts::icSpliceTile, 17, 17, 0},
+      {refalrts::icSpliceTile, 17, 19, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icEnd, 0, 0, 0}
     };
@@ -3592,10 +3873,10 @@ refalrts::RefalFunction& CheckSentence = descr_CheckSentence;
 #else
 static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 25 elems
-  refalrts::Iter context[25];
-  refalrts::zeros( context, 25 );
-  // </0 & CheckSentence/4 e.ScopeVars#1/2 (/7 (/11 e.Pattern#1/9 )/12 (/15 e.Result#1/13 )/16 )/8 >/1
+  // issue here memory for vars with 35 elems
+  refalrts::Iter context[35];
+  refalrts::zeros( context, 35 );
+  // </0 & CheckSentence/4 e.ScopeVars#1/2 (/7 (/11 e.Pattern#1/9 )/12 e.Assignments#1/5 (/15 e.Result#1/13 )/16 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3615,61 +3896,90 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
   refalrts::bracket_pointers(context[11], context[12]);
   context[13] = 0;
   context[14] = 0;
-  context[15] = refalrts::brackets_left( context[13], context[14], context[5], context[6] );
+  context[15] = refalrts::brackets_right( context[13], context[14], context[5], context[6] );
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[15], context[16]);
-  if( ! refalrts::empty_seq( context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
   // closed e.ScopeVars#1 as range 2
   // closed e.Pattern#1 as range 9
+  // closed e.Assignments#1 as range 5
   // closed e.Result#1 as range 13
   //DEBUG: e.ScopeVars#1: 2
   //DEBUG: e.Pattern#1: 9
+  //DEBUG: e.Assignments#1: 5
   //DEBUG: e.Result#1: 13
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </17 Tile{ HalfReuse: & CheckPattern/7 AsIs: (/11 } Tile{ AsIs: e.ScopeVars#1/2 } )/18 </19 & FlatExpr/20 Tile{ AsIs: e.Pattern#1/9 } >/21 >/22 </23 & @create_closure@/24 Tile{ HalfReuse: & CheckSentence\1/12 AsIs: (/15 AsIs: e.Result#1/13 AsIs: )/16 HalfReuse: >/8 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </17 & CheckPattern/18 (/19 Tile{ AsIs: e.ScopeVars#1/2 } )/20 Tile{ HalfReuse: </7 HalfReuse: & FlatExpr/11 AsIs: e.Pattern#1/9 HalfReuse: >/12 } >/21 </22 & Seq/23 </24 & @create_closure@/25 & CheckSentence\1/26 (/27 Tile{ AsIs: e.Assignments#1/5 } )/28 >/29 & CheckSentence\2/30 </31 & @create_closure@/32 & CheckSentence\3/33 Tile{ AsIs: (/15 AsIs: e.Result#1/13 AsIs: )/16 HalfReuse: >/8 AsIs: >/1 } >/34 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[18] ) )
+  if( ! refalrts::alloc_name( context[18], & CheckPattern ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[19] ) )
+  if( ! refalrts::alloc_open_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], & FlatExpr ) )
+  if( ! refalrts::alloc_close_bracket( context[20] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[22] ) )
+  if( ! refalrts::alloc_open_call( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[23] ) )
+  if( ! refalrts::alloc_name( context[23], & Seq ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], & refalrts::create_closure ) )
+  if( ! refalrts::alloc_open_call( context[24] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[25], & refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[26], & gen_CheckSentence_L1 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[27] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[28] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[29] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[30], & gen_CheckSentence_L2 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[31] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[32], & refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[33], & gen_CheckSentence_L3 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[34] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], & Fetch );
-  refalrts::reinit_name( context[7], & CheckPattern );
-  refalrts::reinit_name( context[12], & gen_CheckSentence_L1 );
+  refalrts::reinit_open_call( context[7] );
+  refalrts::reinit_name( context[11], & FlatExpr );
+  refalrts::reinit_close_call( context[12] );
   refalrts::reinit_close_call( context[8] );
-  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[34] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[8] );
-  refalrts::push_stack( context[23] );
-  refalrts::link_brackets( context[15], context[16] );
+  refalrts::push_stack( context[1] );
   refalrts::push_stack( context[22] );
-  refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[8] );
+  refalrts::push_stack( context[31] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::push_stack( context[29] );
+  refalrts::push_stack( context[24] );
+  refalrts::link_brackets( context[27], context[28] );
   refalrts::push_stack( context[21] );
-  refalrts::push_stack( context[19] );
-  refalrts::link_brackets( context[11], context[18] );
+  refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[19], context[20] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[12];
-  res = refalrts::splice_evar( res, context[21], context[24] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[18], context[20] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[34], context[34] );
+  res = refalrts::splice_evar( res, context[15], context[1] );
+  res = refalrts::splice_evar( res, context[28], context[33] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[21], context[27] );
+  res = refalrts::splice_evar( res, context[7], context[12] );
+  res = refalrts::splice_evar( res, context[20], context[20] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[7], context[11] );
-  res = refalrts::splice_evar( res, context[17], context[17] );
+  res = refalrts::splice_evar( res, context[17], context[19] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -3677,6 +3987,589 @@ static refalrts::FnResult func_CheckSentence(refalrts::Iter arg_begin, refalrts:
 namespace /* unnamed */ {
 refalrts::RefalNativeFunction descr_CheckSentence(func_CheckSentence, "CheckSentence");
 refalrts::RefalFunction& CheckSentence = descr_CheckSentence;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_CheckAssignments_S2L1 {
+    static const char *filename = "Checker.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & CheckPattern,
+      & FlatExpr
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 16, 0, 0},
+      // </0 & CheckAssignments$2\1/4 (/7 e.ScopeVars#1/5 )/8 (/11 e.Pattern#1/9 )/12 e.Errors#2/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.ScopeVars#1 as range 5
+      // closed e.Pattern#1 as range 9
+      // closed e.Errors#2 as range 2
+      //DEBUG: e.ScopeVars#1: 5
+      //DEBUG: e.Pattern#1: 9
+      //DEBUG: e.Errors#2: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.Errors#2/2 } Tile{ AsIs: )/12 } Tile{ AsIs: </0 Reuse: & CheckPattern/4 AsIs: (/7 AsIs: e.ScopeVars#1/5 AsIs: )/8 HalfReuse: </11 } & FlatExpr/14 Tile{ AsIs: e.Pattern#1/9 } >/15 Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 13},
+      {refalrts::icAllocFunc, 0, 1, 14},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 11},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icPushStack, 0, 0, 15},
+      {refalrts::icPushStack, 0, 0, 11},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icLinkBrackets, 13, 12, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceTile, 15, 15, 0},
+      {refalrts::icSpliceEVar, 0, 0, 9},
+      {refalrts::icSpliceTile, 14, 14, 0},
+      {refalrts::icSpliceTile, 0, 11, 0},
+      {refalrts::icSpliceTile, 12, 12, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 13, 13, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_CheckAssignments_S2L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_CheckAssignments_S2L1(
+  "CheckAssignments$2\\1",
+  scope_gen_CheckAssignments_S2L1::raa,
+  scope_gen_CheckAssignments_S2L1::functions,
+  scope_gen_CheckAssignments_S2L1::idents,
+  scope_gen_CheckAssignments_S2L1::numbers,
+  scope_gen_CheckAssignments_S2L1::strings,
+  scope_gen_CheckAssignments_S2L1::filename
+);
+refalrts::RefalFunction& gen_CheckAssignments_S2L1 = descr_gen_CheckAssignments_S2L1;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_CheckAssignments_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 16 elems
+  refalrts::Iter context[16];
+  refalrts::zeros( context, 16 );
+  // </0 & CheckAssignments$2\1/4 (/7 e.ScopeVars#1/5 )/8 (/11 e.Pattern#1/9 )/12 e.Errors#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.ScopeVars#1 as range 5
+  // closed e.Pattern#1 as range 9
+  // closed e.Errors#2 as range 2
+  //DEBUG: e.ScopeVars#1: 5
+  //DEBUG: e.Pattern#1: 9
+  //DEBUG: e.Errors#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.Errors#2/2 } Tile{ AsIs: )/12 } Tile{ AsIs: </0 Reuse: & CheckPattern/4 AsIs: (/7 AsIs: e.ScopeVars#1/5 AsIs: )/8 HalfReuse: </11 } & FlatExpr/14 Tile{ AsIs: e.Pattern#1/9 } >/15 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_bracket( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[14], & FlatExpr ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[15] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], & CheckPattern );
+  refalrts::reinit_open_call( context[11] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[15] );
+  refalrts::push_stack( context[11] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::link_brackets( context[13], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[15], context[15] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[14], context[14] );
+  res = refalrts::splice_evar( res, context[0], context[11] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_CheckAssignments_S2L1(func_gen_CheckAssignments_S2L1, "CheckAssignments$2\\1");
+refalrts::RefalFunction& gen_CheckAssignments_S2L1 = descr_gen_CheckAssignments_S2L1;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_CheckAssignments_S2L2 {
+    static const char *filename = "Checker.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & CheckAssignments
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 17, 0, 0},
+      // </0 & CheckAssignments$2\2/4 (/7 e.Assignments#1/5 )/8 (/11 e.Errors#2/9 )/12 (/15 e.ScopeVars#2/13 )/16 e.PatternFunctionsAndErrors#2/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      {refalrts::icBracketLeftSave, 0, 13, 2},
+      // closed e.Assignments#1 as range 5
+      // closed e.Errors#2 as range 9
+      // closed e.ScopeVars#2 as range 13
+      // closed e.PatternFunctionsAndErrors#2 as range 2
+      //DEBUG: e.Assignments#1: 5
+      //DEBUG: e.Errors#2: 9
+      //DEBUG: e.ScopeVars#2: 13
+      //DEBUG: e.PatternFunctionsAndErrors#2: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} )/12 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & CheckAssignments/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.ScopeVars#2/13 } Tile{ AsIs: )/16 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: e.PatternFunctionsAndErrors#2/2 } Tile{ AsIs: >/1 ]] }
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icLinkBrackets, 11, 16, 0},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceEVar, 0, 0, 9},
+      {refalrts::icSpliceTile, 16, 16, 0},
+      {refalrts::icSpliceEVar, 0, 0, 13},
+      {refalrts::icTrash, 0, 0, 11},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_CheckAssignments_S2L2
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_CheckAssignments_S2L2(
+  "CheckAssignments$2\\2",
+  scope_gen_CheckAssignments_S2L2::raa,
+  scope_gen_CheckAssignments_S2L2::functions,
+  scope_gen_CheckAssignments_S2L2::idents,
+  scope_gen_CheckAssignments_S2L2::numbers,
+  scope_gen_CheckAssignments_S2L2::strings,
+  scope_gen_CheckAssignments_S2L2::filename
+);
+refalrts::RefalFunction& gen_CheckAssignments_S2L2 = descr_gen_CheckAssignments_S2L2;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_CheckAssignments_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  // </0 & CheckAssignments$2\2/4 (/7 e.Assignments#1/5 )/8 (/11 e.Errors#2/9 )/12 (/15 e.ScopeVars#2/13 )/16 e.PatternFunctionsAndErrors#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  // closed e.Assignments#1 as range 5
+  // closed e.Errors#2 as range 9
+  // closed e.ScopeVars#2 as range 13
+  // closed e.PatternFunctionsAndErrors#2 as range 2
+  //DEBUG: e.Assignments#1: 5
+  //DEBUG: e.Errors#2: 9
+  //DEBUG: e.ScopeVars#2: 13
+  //DEBUG: e.PatternFunctionsAndErrors#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} )/12 (/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & CheckAssignments/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.ScopeVars#2/13 } Tile{ AsIs: )/16 } Tile{ AsIs: e.Errors#2/9 } Tile{ AsIs: e.PatternFunctionsAndErrors#2/2 } Tile{ AsIs: >/1 ]] }
+  refalrts::update_name( context[4], & CheckAssignments );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[11], context[16] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( context[11], res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_CheckAssignments_S2L2(func_gen_CheckAssignments_S2L2, "CheckAssignments$2\\2");
+refalrts::RefalFunction& gen_CheckAssignments_S2L2 = descr_gen_CheckAssignments_S2L2;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_CheckAssignments {
+    static const char *filename = "Checker.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & gen_CheckAssignments_S2L1,
+      & refalrts::create_closure,
+      & Seq,
+      & CheckResult,
+      & gen_CheckAssignments_S2L2,
+      & FlatExpr,
+      & Fetch
+    };
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_Assign<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icReserveBacktrackStack, 1, 0, 0},
+      {refalrts::icIssueMemory, 44, 0, 0},
+      //FAST GEN: ( e.$ ) ( e.$ ) e.$
+      //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+      // </0 & CheckAssignments/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.idxB#0 as range 5
+      // closed e.idxTB#0 as range 9
+      // closed e.idxTT#0 as range 2
+      {refalrts::icOnFailGoTo, +9, 0, 0},
+      // ( ) ( e.idx ) e.idx
+      // </0 & CheckAssignments/4 (/7 )/8 (/11 e.ScopeVars#1/9 )/12 e.Errors#1/2 >/1
+      {refalrts::icSave, 0, 42, 5},
+      {refalrts::icEmpty, 0, 0, 42},
+      // closed e.ScopeVars#1 as range 9
+      // closed e.Errors#1 as range 2
+      //DEBUG: e.ScopeVars#1: 9
+      //DEBUG: e.Errors#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & CheckAssignments/4 (/7 )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.ScopeVars#1/9 AsIs: )/12 } Tile{ AsIs: e.Errors#1/2 } Tile{ ]] }
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 11, 12, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      // ( ( # Assign ( e.idx ) ( e.idx ) ) e.idx ) ( e.idx ) e.idx
+      // </0 & CheckAssignments/4 (/7 (/15 # Assign/17 (/20 e.Result#1/18 )/21 (/24 e.Pattern#1/22 )/25 )/16 e.Assignments#1/5 )/8 (/11 e.ScopeVars#1/9 )/12 e.Errors#1/2 >/1
+      {refalrts::icBracketLeftSave, 0, 13, 5},
+      {refalrts::icIdentLeftSave, 17, 0, 13},
+      {refalrts::icBracketLeftSave, 0, 18, 13},
+      {refalrts::icBracketLeftSave, 0, 22, 13},
+      {refalrts::icEmpty, 0, 0, 13},
+      // closed e.Result#1 as range 18
+      // closed e.Pattern#1 as range 22
+      // closed e.Assignments#1 as range 5
+      // closed e.ScopeVars#1 as range 9
+      // closed e.Errors#1 as range 2
+      //DEBUG: e.Result#1: 18
+      //DEBUG: e.Pattern#1: 22
+      //DEBUG: e.Assignments#1: 5
+      //DEBUG: e.ScopeVars#1: 9
+      //DEBUG: e.Errors#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Errors#1/2 {REMOVED TILE}
+      //RESULT: Tile{ [[ } </26 & Fetch/27 </28 Tile{ HalfReuse: & CheckResult/8 AsIs: (/11 AsIs: e.ScopeVars#1/9 AsIs: )/12 } </29 & FlatExpr/30 Tile{ AsIs: e.Result#1/18 } >/31 >/32 Tile{ AsIs: </0 Reuse: & Seq/4 HalfReuse: </7 HalfReuse: & @create_closure@/15 HalfReuse: & CheckAssignments$2\1/17 AsIs: (/20 } e.ScopeVars#1/9/33 Tile{ AsIs: )/21 AsIs: (/24 AsIs: e.Pattern#1/22 AsIs: )/25 HalfReuse: >/16 } </35 & @create_closure@/36 & CheckAssignments$2\2/37 (/38 Tile{ AsIs: e.Assignments#1/5 } )/39 >/40 >/41 Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 26},
+      {refalrts::icAllocFunc, 0, 6, 27},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 29},
+      {refalrts::icAllocFunc, 0, 5, 30},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 31},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 32},
+      {refalrts::icCopyEVar, 33, 9, 0},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 35},
+      {refalrts::icAllocFunc, 0, 1, 36},
+      {refalrts::icAllocFunc, 0, 4, 37},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 38},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 39},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 40},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 41},
+      {refalrts::icReinitFunc, 0, 3, 8},
+      {refalrts::icUpdateFunc, 0, 2, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 7},
+      {refalrts::icReinitFunc, 0, 1, 15},
+      {refalrts::icReinitFunc, 0, 0, 17},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 16},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 26},
+      {refalrts::icPushStack, 0, 0, 41},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icPushStack, 0, 0, 40},
+      {refalrts::icPushStack, 0, 0, 35},
+      {refalrts::icLinkBrackets, 38, 39, 0},
+      {refalrts::icPushStack, 0, 0, 16},
+      {refalrts::icPushStack, 0, 0, 7},
+      {refalrts::icLinkBrackets, 24, 25, 0},
+      {refalrts::icLinkBrackets, 20, 21, 0},
+      {refalrts::icPushStack, 0, 0, 32},
+      {refalrts::icPushStack, 0, 0, 28},
+      {refalrts::icPushStack, 0, 0, 31},
+      {refalrts::icPushStack, 0, 0, 29},
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceTile, 39, 41, 0},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icSpliceTile, 35, 38, 0},
+      {refalrts::icSpliceTile, 21, 16, 0},
+      {refalrts::icSpliceTile, 33, 34, 0},
+      {refalrts::icSpliceTile, 0, 20, 0},
+      {refalrts::icSpliceTile, 31, 32, 0},
+      {refalrts::icSpliceEVar, 0, 0, 18},
+      {refalrts::icSpliceTile, 29, 30, 0},
+      {refalrts::icSpliceTile, 8, 12, 0},
+      {refalrts::icSpliceTile, 26, 28, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_CheckAssignments
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_CheckAssignments(
+  "CheckAssignments",
+  scope_CheckAssignments::raa,
+  scope_CheckAssignments::functions,
+  scope_CheckAssignments::idents,
+  scope_CheckAssignments::numbers,
+  scope_CheckAssignments::strings,
+  scope_CheckAssignments::filename
+);
+refalrts::RefalFunction& CheckAssignments = descr_CheckAssignments;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_CheckAssignments(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 44 elems
+  refalrts::Iter context[44];
+  refalrts::zeros( context, 44 );
+  //FAST GEN: ( e.$ ) ( e.$ ) e.$
+  //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
+  // </0 & CheckAssignments/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.idxB#0 as range 5
+  // closed e.idxTB#0 as range 9
+  // closed e.idxTT#0 as range 2
+  do {
+    // ( ) ( e.idx ) e.idx
+    // </0 & CheckAssignments/4 (/7 )/8 (/11 e.ScopeVars#1/9 )/12 e.Errors#1/2 >/1
+    context[42] = context[5];
+    context[43] = context[6];
+    if( ! refalrts::empty_seq( context[42], context[43] ) )
+      continue;
+    // closed e.ScopeVars#1 as range 9
+    // closed e.Errors#1 as range 2
+    //DEBUG: e.ScopeVars#1: 9
+    //DEBUG: e.Errors#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & CheckAssignments/4 (/7 )/8 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: e.ScopeVars#1/9 AsIs: )/12 } Tile{ AsIs: e.Errors#1/2 } Tile{ ]] }
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( ( # Assign ( e.idx ) ( e.idx ) ) e.idx ) ( e.idx ) e.idx
+  // </0 & CheckAssignments/4 (/7 (/15 # Assign/17 (/20 e.Result#1/18 )/21 (/24 e.Pattern#1/22 )/25 )/16 e.Assignments#1/5 )/8 (/11 e.ScopeVars#1/9 )/12 e.Errors#1/2 >/1
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[5], context[6] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  context[17] = refalrts::ident_left(  & ident_Assign<int>::name, context[13], context[14] );
+  if( ! context[17] )
+    return refalrts::cRecognitionImpossible;
+  context[18] = 0;
+  context[19] = 0;
+  context[20] = refalrts::brackets_left( context[18], context[19], context[13], context[14] );
+  if( ! context[20] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[20], context[21]);
+  context[22] = 0;
+  context[23] = 0;
+  context[24] = refalrts::brackets_left( context[22], context[23], context[13], context[14] );
+  if( ! context[24] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[24], context[25]);
+  if( ! refalrts::empty_seq( context[13], context[14] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Result#1 as range 18
+  // closed e.Pattern#1 as range 22
+  // closed e.Assignments#1 as range 5
+  // closed e.ScopeVars#1 as range 9
+  // closed e.Errors#1 as range 2
+  //DEBUG: e.Result#1: 18
+  //DEBUG: e.Pattern#1: 22
+  //DEBUG: e.Assignments#1: 5
+  //DEBUG: e.ScopeVars#1: 9
+  //DEBUG: e.Errors#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Errors#1/2 {REMOVED TILE}
+  //RESULT: Tile{ [[ } </26 & Fetch/27 </28 Tile{ HalfReuse: & CheckResult/8 AsIs: (/11 AsIs: e.ScopeVars#1/9 AsIs: )/12 } </29 & FlatExpr/30 Tile{ AsIs: e.Result#1/18 } >/31 >/32 Tile{ AsIs: </0 Reuse: & Seq/4 HalfReuse: </7 HalfReuse: & @create_closure@/15 HalfReuse: & CheckAssignments$2\1/17 AsIs: (/20 } e.ScopeVars#1/9/33 Tile{ AsIs: )/21 AsIs: (/24 AsIs: e.Pattern#1/22 AsIs: )/25 HalfReuse: >/16 } </35 & @create_closure@/36 & CheckAssignments$2\2/37 (/38 Tile{ AsIs: e.Assignments#1/5 } )/39 >/40 >/41 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[26] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[27], & Fetch ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[28] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[29] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[30], & FlatExpr ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[31] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[32] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[33], context[34], context[9], context[10]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[35] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[36], & refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[37], & gen_CheckAssignments_S2L2 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[38] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[39] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[40] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[41] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[8], & CheckResult );
+  refalrts::update_name( context[4], & Seq );
+  refalrts::reinit_open_call( context[7] );
+  refalrts::reinit_name( context[15], & refalrts::create_closure );
+  refalrts::reinit_name( context[17], & gen_CheckAssignments_S2L1 );
+  refalrts::reinit_close_call( context[16] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[26] );
+  refalrts::push_stack( context[41] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[40] );
+  refalrts::push_stack( context[35] );
+  refalrts::link_brackets( context[38], context[39] );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[24], context[25] );
+  refalrts::link_brackets( context[20], context[21] );
+  refalrts::push_stack( context[32] );
+  refalrts::push_stack( context[28] );
+  refalrts::push_stack( context[31] );
+  refalrts::push_stack( context[29] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[39], context[41] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[35], context[38] );
+  res = refalrts::splice_evar( res, context[21], context[16] );
+  res = refalrts::splice_evar( res, context[33], context[34] );
+  res = refalrts::splice_evar( res, context[0], context[20] );
+  res = refalrts::splice_evar( res, context[31], context[32] );
+  res = refalrts::splice_evar( res, context[18], context[19] );
+  res = refalrts::splice_evar( res, context[29], context[30] );
+  res = refalrts::splice_evar( res, context[8], context[12] );
+  res = refalrts::splice_evar( res, context[26], context[28] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_CheckAssignments(func_CheckAssignments, "CheckAssignments");
+refalrts::RefalFunction& CheckAssignments = descr_CheckAssignments;
 
 } // unnamed namespace
 
