@@ -704,6 +704,46 @@ static refalrts::FnResult func_CNameSuf(refalrts::Iter arg_begin, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence();
 
+  do {
+    // '=' s.idx e.idx
+    // </0 & CNameSuf/4 '='/5 s.Num#1/6 e.Suffix#1/2 >/1
+    context[10] = context[2];
+    context[11] = context[3];
+    context[5] = refalrts::char_left( '=', context[10], context[11] );
+    if( ! context[5] )
+      continue;
+    if( ! refalrts::svar_left( context[6], context[10], context[11] ) )
+      continue;
+    // closed e.Suffix#1 as range 10(2)
+    //DEBUG: s.Num#1: 6
+    //DEBUG: e.Suffix#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'A'/0 HalfReuse: </4 HalfReuse: & StrFromInt/5 AsIs: s.Num#1/6 } >/7 </8 & CNameSuf/9 Tile{ AsIs: e.Suffix#1/10(2) } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_close_call( context[7] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[8] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[9], ref_CNameSuf.ref.function ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'A' );
+    refalrts::reinit_open_call( context[4] );
+    refalrts::reinit_name( context[5], ref_StrFromInt.ref.function );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[8] );
+    refalrts::push_stack( context[7] );
+    refalrts::push_stack( context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[7], context[9] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
   //
   // </0 & CNameSuf/4 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )

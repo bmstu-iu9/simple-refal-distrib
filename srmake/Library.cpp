@@ -444,9 +444,9 @@ static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter ar
     return refalrts::cRecognitionImpossible;
   }
 
-  refalrts::Iter file_ptr = arg_begin;
-  file_ptr->tag = refalrts::cDataFile;
   if (FILE *f = fopen(filename, mode.c_str())) {
+    refalrts::Iter file_ptr = arg_begin;
+    file_ptr->tag = refalrts::cDataFile;
     file_ptr->file_info = f;
   } else {
     return refalrts::cRecognitionImpossible;
