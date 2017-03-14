@@ -3,7 +3,7 @@ setlocal
   mkdir bin >NUL 2>NUL
   call c-plus-plus.conf.bat
 
-  %CPPLINE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
+  %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
 
   call :MAKE_DIR compiler srefc-core
   call :MAKE_DIR lexgen lexgen
@@ -23,7 +23,7 @@ setlocal
   pushd %DIR%
   set FILELIST=
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINE%%TARGET% -I..\srlib -DDONT_PRINT_STATISTICS ^
+  %CPPLINEE%%TARGET% -I..\srlib -DDONT_PRINT_STATISTICS ^
     %FILELIST% ..\srlib\platform-Windows\refalrts-platform-specific.cpp
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
