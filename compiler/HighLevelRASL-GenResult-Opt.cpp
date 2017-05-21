@@ -2348,8 +2348,8 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   refalrts::Iter context[31];
   refalrts::zeros( context, 31 );
   //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) e.$
-  // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 e.idxTT#0/2 >/1
+  //GLOBAL GEN: ( e.$ ) ( # Tile e.$ ) e.$
+  // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 # Tile/13 e.idxTBA#0/9 )/12 e.idxTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2367,16 +2367,15 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTT#0 as range 2
-  if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
+  context[13] = refalrts::ident_left(  ident_Tile, context[9], context[10] );
+  if( ! context[13] )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTBV#0 as range 9
+  // closed e.idxB#0 as range 5
+  // closed e.idxTBA#0 as range 9
+  // closed e.idxTT#0 as range 2
   do {
     // ( e.idx ) ( # Tile e.idx ) e.idx ( # Tile e.idx )
     // </0 & GenSplices/4 (/7 e.Trash#1/5 )/8 (/11 # Tile/13 e.LeftTile#1/9 )/12 e.Result#1/2 (/16 # Tile/18 e.RightTile#1/14 )/17 >/1
-    if( ! refalrts::ident_term(  ident_Tile, context[13] ) )
-      continue;
     context[29] = context[2];
     context[30] = context[3];
     context[14] = 0;
@@ -2457,8 +2456,6 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
 
   // ( # RemovedTile ) ( # Tile e.idx )
   // </0 & GenSplices/4 (/7 # RemovedTile/14 )/8 (/11 # Tile/13 e.OneTile#1/9 )/12 >/1
-  if( ! refalrts::ident_term(  ident_Tile, context[13] ) )
-    return refalrts::cRecognitionImpossible;
   context[14] = refalrts::ident_left(  ident_RemovedTile, context[5], context[6] );
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;

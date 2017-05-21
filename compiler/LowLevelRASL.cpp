@@ -9495,9 +9495,9 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  //FAST GEN: ( s.$ s.$ ) t.$
-  //GLOBAL GEN: ( s.$ s.$ ) t.$
-  // </0 & PrepareOpenEStack\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 )/8 t.idxT#0/11 >/1
+  //FAST GEN: ( # CmdReserveBacktrackStack s.$ ) t.$
+  //GLOBAL GEN: ( # CmdReserveBacktrackStack s.$ ) t.$
+  // </0 & PrepareOpenEStack\1/4 (/7 # CmdReserveBacktrackStack/9 s.idxBA#0/10 )/8 t.idxT#0/11 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9509,7 +9509,8 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  context[9] = refalrts::ident_left(  ident_CmdReserveBacktrackStack, context[5], context[6] );
+  if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[10], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
@@ -9526,8 +9527,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
     context[13] = 0;
     context[14] = 0;
     if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
-      continue;
-    if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[9] ) )
       continue;
     context[15] = refalrts::ident_left(  ident_CmdEStart, context[13], context[14] );
     if( ! context[15] )
@@ -9564,8 +9563,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
     context[14] = 0;
     if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
       continue;
-    if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[9] ) )
-      continue;
     context[15] = refalrts::ident_left(  ident_CmdOnFailGoTo, context[13], context[14] );
     if( ! context[15] )
       continue;
@@ -9599,8 +9596,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
 
   // ( # CmdReserveBacktrackStack s.idx ) t.idx
   // </0 & PrepareOpenEStack\1/4 (/7 # CmdReserveBacktrackStack/9 s.Depth#2/10 )/8 t.OtherCommand#2/11 >/1
-  if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[9] ) )
-    return refalrts::cRecognitionImpossible;
   //DEBUG: t.OtherCommand#2: 11
   //DEBUG: s.Depth#2: 10
 
@@ -9623,9 +9618,9 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  //FAST GEN: ( s.$ s.$ ) e.$
-  //GLOBAL GEN: ( s.$ s.$ ) e.$
-  // </0 & PrepareOpenEStack\2/4 (/7 s.idxB#0/9 s.idxBV#0/10 )/8 e.idxT#0/2 >/1
+  //FAST GEN: ( # CmdReserveBacktrackStack s.$ ) e.$
+  //GLOBAL GEN: ( # CmdReserveBacktrackStack s.$ ) e.$
+  // </0 & PrepareOpenEStack\2/4 (/7 # CmdReserveBacktrackStack/9 s.idxBA#0/10 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9637,9 +9632,10 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxT#0 as range 2
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  context[9] = refalrts::ident_left(  ident_CmdReserveBacktrackStack, context[5], context[6] );
+  if( ! context[9] )
     return refalrts::cRecognitionImpossible;
+  // closed e.idxT#0 as range 2
   if( ! refalrts::svar_left( context[10], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[5], context[6] ) )
@@ -9647,8 +9643,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin
   do {
     // ( # CmdReserveBacktrackStack 0 ) e.idx
     // </0 & PrepareOpenEStack\2/4 (/7 # CmdReserveBacktrackStack/9 0/10 )/8 e.Commands#2/2 >/1
-    if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[9] ) )
-      continue;
     if( ! refalrts::number_term( 0UL, context[10] ) )
       continue;
     // closed e.Commands#2 as range 2
@@ -9668,8 +9662,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin
 
   // ( # CmdReserveBacktrackStack s.idx ) e.idx
   // </0 & PrepareOpenEStack\2/4 (/7 # CmdReserveBacktrackStack/9 s.Depth#2/10 )/8 e.Commands#2/2 >/1
-  if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[9] ) )
-    return refalrts::cRecognitionImpossible;
   // closed e.Commands#2 as range 2
   //DEBUG: s.Depth#2: 10
   //DEBUG: e.Commands#2: 2
