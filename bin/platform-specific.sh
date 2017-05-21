@@ -18,10 +18,6 @@ platform_subdir_lookup() {
   echo $PLATFORMDIR
 }
 
-platform_suffix() {
-  platform_exe_suffix
-}
-
 platform_exe_suffix() {
   if [ "$(platform_uname)" == "MINGW32" ]; then
     echo ".exe"
