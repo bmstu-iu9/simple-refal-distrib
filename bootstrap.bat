@@ -5,9 +5,9 @@ setlocal
 
   %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
 
-  call :MAKE_DIR compiler srefc-core
-  call :MAKE_DIR lexgen lexgen
-  call :MAKE_DIR srmake srmake-core
+  call :MAKE_DIR compiler srefc-core || exit /b 1
+  call :MAKE_DIR lexgen lexgen || exit /b 1
+  call :MAKE_DIR srmake srmake-core || exit /b 1
 
   if exist *.obj erase *.obj
   erase rasl-appender\_rasl-appender.*
@@ -28,9 +28,14 @@ setlocal
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
 
+  if not exist %TARGET% (
+    echo Can't create file %TARGET%, aborting
+    exit /b 1
+  )
+
   set FILELIST=
   for %%c in (*.rasl) do call :ADD_FILE_TO_LIST %%c
-  ..\rasl-appender\_rasl-appender.exe %TARGET% %FILELIST%
+  ..\rasl-appender\_rasl-appender.exe %TARGET% %FILELIST% || exit /b 1
   popd
 endlocal
 goto :EOF

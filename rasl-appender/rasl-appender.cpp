@@ -37,6 +37,10 @@ int main(int argc, char *argv[]) {
 static void append_file(FILE *exe, const char *rasl_filename) {
   FILE *rasl = fopen(rasl_filename, "rb");
 
+  if (rasl == 0) {
+    failure("can't open RASL file %s for read", rasl_filename);
+  }
+
   char buffer[4096];
   size_t read;
   while ((read = fread(buffer, 1, sizeof(buffer), rasl)) > 0) {
@@ -62,6 +66,7 @@ static void failure(const char *message, ...) {
 
   fprintf(stderr, "ERROR in rasl-appender: ");
   vfprintf(stderr, message, args);
+  fputc('\n', stderr);
   va_end(args);
 
   exit(EXIT_FAILURE);
