@@ -1,4 +1,51 @@
-%%
+// Automatically generated file. Don't edit!
+#include "refalrts.h"
+
+
+const refalrts::RefalIdentifier ident_BEGIN = refalrts::ident_from_static("BEGIN");
+const refalrts::RefalIdentifier ident_CURRENT = refalrts::ident_from_static("CURRENT");
+const refalrts::RefalIdentifier ident_END = refalrts::ident_from_static("END");
+const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+const refalrts::RefalIdentifier ident_False = refalrts::ident_from_static("False");
+const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
+const refalrts::RefalIdentifier ident_True = refalrts::ident_from_static("True");
+const refalrts::RefalIdentifier ident_TypeCharacter = refalrts::ident_from_static("TypeCharacter");
+const refalrts::RefalIdentifier ident_TypeFile = refalrts::ident_from_static("TypeFile");
+const refalrts::RefalIdentifier ident_TypeFunction = refalrts::ident_from_static("TypeFunction");
+const refalrts::RefalIdentifier ident_TypeIdentifier = refalrts::ident_from_static("TypeIdentifier");
+const refalrts::RefalIdentifier ident_TypeNumber = refalrts::ident_from_static("TypeNumber");
+static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
+static refalrts::ExternalReference ref_Sub("Sub", 0U, 0U);
+static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
+static refalrts::ExternalReference ref_Div("Div", 0U, 0U);
+static refalrts::ExternalReference ref_Mod("Mod", 0U, 0U);
+static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
+static refalrts::ExternalReference ref_FWriteLine("FWriteLine", 0U, 0U);
+static refalrts::ExternalReference ref_ReadLine("ReadLine", 0U, 0U);
+static refalrts::ExternalReference ref_FReadLine("FReadLine", 0U, 0U);
+static refalrts::ExternalReference ref_FOpen("FOpen", 0U, 0U);
+static refalrts::ExternalReference ref_FClose("FClose", 0U, 0U);
+static refalrts::ExternalReference ref_Arg("Arg", 0U, 0U);
+static refalrts::ExternalReference ref_ExistFile("ExistFile", 0U, 0U);
+static refalrts::ExternalReference ref_GetEnv("GetEnv", 0U, 0U);
+static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
+static refalrts::ExternalReference ref_System("System", 0U, 0U);
+static refalrts::ExternalReference ref_IntFromStr("IntFromStr", 0U, 0U);
+static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
+static refalrts::ExternalReference ref_Chr("Chr", 0U, 0U);
+static refalrts::ExternalReference ref_Ord("Ord", 0U, 0U);
+static refalrts::ExternalReference ref_SymbCompare("SymbCompare", 0U, 0U);
+static refalrts::ExternalReference ref_SymbType("SymbType", 0U, 0U);
+static refalrts::ExternalReference ref_Implode("Implode", 0U, 0U);
+static refalrts::ExternalReference ref_Explode("Explode", 0U, 0U);
+static refalrts::ExternalReference ref_FWriteBytes("FWriteBytes", 0U, 0U);
+static refalrts::ExternalReference ref_FReadBytes("FReadBytes", 0U, 0U);
+static refalrts::ExternalReference ref_FTell("FTell", 0U, 0U);
+static refalrts::ExternalReference ref_FSeek("FSeek", 0U, 0U);
+static refalrts::ExternalReference ref_RenameFile("RenameFile", 0U, 0U);
+static refalrts::ExternalReference ref_RemoveFile("RemoveFile", 0U, 0U);
+
+#line 2 "Library.sref"
 #include <assert.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -9,34 +56,9 @@
 
 //FROM refalrts
 
-%%
-
-//==============================================================================
-// Библиотека "встроенных" функций
-//==============================================================================
-
-// Основные перечисления
-
-%%
 #define USE_IDENT(ident_name) (ident_ ## ident_name)
-%%
-
-$LABEL Success;
-$LABEL Fails;
-$LABEL True;
-$LABEL False;
-$LABEL TypeNumber;
-$LABEL TypeCharacter;
-$LABEL TypeFunction;
-$LABEL TypeFile;
-$LABEL TypeIdentifier;
-$LABEL CURRENT;
-$LABEL BEGIN;
-$LABEL END;
-
-// Математические операции
-
-%%
+#line 61 "Library.cpp"
+#line 40 "Library.sref"
 #define BINARY(binary) \
   refalrts::Iter pX = 0, pY = 0; \
   refalrts::Iter pFunc = refalrts::call_left(pX, pY, arg_begin, arg_end); \
@@ -75,41 +97,48 @@ $LABEL END;
     return refalrts::cRecognitionImpossible; \
   }
 
-%%
-
-$ENTRY Add {
-%%
+#line 101 "Library.cpp"
+static refalrts::FnResult func_Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 82 "Library.sref"
   ARITHM(+, ARITHM_NO_CHECK);
-%%
+#line 105 "Library.cpp"
 }
 
-$ENTRY Sub {
-%%
+static refalrts::NativeReference nat_ref_Add("Add", 0U, 0U, func_Add);
+
+static refalrts::FnResult func_Sub(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 88 "Library.sref"
   ARITHM(-, ARITHM_NO_CHECK);
-%%
+#line 113 "Library.cpp"
 }
 
-$ENTRY Mul {
-%%
+static refalrts::NativeReference nat_ref_Sub("Sub", 0U, 0U, func_Sub);
+
+static refalrts::FnResult func_Mul(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 94 "Library.sref"
   ARITHM(*, ARITHM_NO_CHECK);
-%%
+#line 121 "Library.cpp"
 }
 
-$ENTRY Div {
-%%
+static refalrts::NativeReference nat_ref_Mul("Mul", 0U, 0U, func_Mul);
+
+static refalrts::FnResult func_Div(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 100 "Library.sref"
   ARITHM(/, ARITHM_ZERODIV);
-%%
+#line 129 "Library.cpp"
 }
 
-$ENTRY Mod {
-%%
+static refalrts::NativeReference nat_ref_Div("Div", 0U, 0U, func_Div);
+
+static refalrts::FnResult func_Mod(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 106 "Library.sref"
   ARITHM(%, ARITHM_ZERODIV);
-%%
+#line 137 "Library.cpp"
 }
 
-// Ввод-вывод
+static refalrts::NativeReference nat_ref_Mod("Mod", 0U, 0U, func_Mod);
 
-%%
+#line 113 "Library.sref"
 refalrts::FnResult write_to_stream(
   FILE *out, refalrts::Iter str_begin, refalrts::Iter str_end
 ) {
@@ -192,10 +221,9 @@ refalrts::FnResult write_to_stream(
     return refalrts::cSuccess;
   }
 }
-%%
-
-$ENTRY WriteLine {
-%%
+#line 225 "Library.cpp"
+static refalrts::FnResult func_WriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 199 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -207,11 +235,13 @@ $ENTRY WriteLine {
 
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 239 "Library.cpp"
 }
 
-$ENTRY FWriteLine {
-%%
+static refalrts::NativeReference nat_ref_WriteLine("WriteLine", 0U, 0U, func_WriteLine);
+
+static refalrts::FnResult func_FWriteLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 215 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -234,10 +264,12 @@ $ENTRY FWriteLine {
   refalrts::splice_stvar(arg_begin, pfile_handle);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 268 "Library.cpp"
 }
 
-%%
+static refalrts::NativeReference nat_ref_FWriteLine("FWriteLine", 0U, 0U, func_FWriteLine);
+
+#line 241 "Library.sref"
 refalrts::FnResult read_from_stream(
   FILE *input, refalrts::Iter& begin, refalrts::Iter& end
 ) {
@@ -274,10 +306,9 @@ refalrts::FnResult read_from_stream(
 
   return refalrts::cSuccess;
 }
-%%
-
-$ENTRY ReadLine {
-%%
+#line 310 "Library.cpp"
+static refalrts::FnResult func_ReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 281 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -297,11 +328,13 @@ $ENTRY ReadLine {
   refalrts::splice_evar(arg_begin, str_begin, str_end);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 332 "Library.cpp"
 }
 
-$ENTRY FReadLine {
-%%
+static refalrts::NativeReference nat_ref_ReadLine("ReadLine", 0U, 0U, func_ReadLine);
+
+static refalrts::FnResult func_FReadLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 305 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -329,10 +362,12 @@ $ENTRY FReadLine {
   refalrts::splice_stvar(res, pfile_handle);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 366 "Library.cpp"
 }
 
-%%
+static refalrts::NativeReference nat_ref_FReadLine("FReadLine", 0U, 0U, func_FReadLine);
+
+#line 336 "Library.sref"
 namespace {
 
 refalrts::FnResult string_from_seq(
@@ -368,10 +403,9 @@ refalrts::FnResult string_from_seq(
 }
 
 } // unnamed namespace
-%%
-
-$ENTRY FOpen {
-%%
+#line 407 "Library.cpp"
+static refalrts::FnResult func_FOpen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 375 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -420,11 +454,13 @@ $ENTRY FOpen {
 
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 458 "Library.cpp"
 }
 
-$ENTRY FClose {
-%%
+static refalrts::NativeReference nat_ref_FOpen("FOpen", 0U, 0U, func_FOpen);
+
+static refalrts::FnResult func_FClose(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 428 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -445,11 +481,13 @@ $ENTRY FClose {
 
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 485 "Library.cpp"
 }
 
-$ENTRY Arg {
-%%
+static refalrts::NativeReference nat_ref_FClose("FClose", 0U, 0U, func_FClose);
+
+static refalrts::FnResult func_Arg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 453 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -476,11 +514,13 @@ $ENTRY Arg {
   refalrts::splice_evar(arg_begin, param_begin, param_end);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 518 "Library.cpp"
 }
 
-$ENTRY ExistFile {
-%%
+static refalrts::NativeReference nat_ref_Arg("Arg", 0U, 0U, func_Arg);
+
+static refalrts::FnResult func_ExistFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 484 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -507,11 +547,13 @@ $ENTRY ExistFile {
 
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 551 "Library.cpp"
 }
 
-$ENTRY GetEnv {
-%%
+static refalrts::NativeReference nat_ref_ExistFile("ExistFile", 0U, 0U, func_ExistFile);
+
+static refalrts::FnResult func_GetEnv(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 515 "Library.sref"
   refalrts::Iter envname_b = 0;
   refalrts::Iter envname_e = 0;
   refalrts::call_left(envname_b, envname_e, arg_begin, arg_end);
@@ -540,11 +582,13 @@ $ENTRY GetEnv {
 
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 586 "Library.cpp"
 }
 
-$ENTRY Exit {
-%%
+static refalrts::NativeReference nat_ref_GetEnv("GetEnv", 0U, 0U, func_GetEnv);
+
+static refalrts::FnResult func_Exit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 548 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -561,11 +605,13 @@ $ENTRY Exit {
   refalrts::set_return_code(pretcode->number_info);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cExit;
-%%
+#line 609 "Library.cpp"
 }
 
-$ENTRY System {
-%%
+static refalrts::NativeReference nat_ref_Exit("Exit", 0U, 0U, func_Exit);
+
+static refalrts::FnResult func_System(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 569 "Library.sref"
   refalrts::Iter command_b = 0;
   refalrts::Iter command_e = 0;
   refalrts::call_left(command_b, command_e, arg_begin, arg_end);
@@ -588,13 +634,13 @@ $ENTRY System {
   refalrts::reset_allocator();
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 638 "Library.cpp"
 }
 
-// Работа с типами символов
+static refalrts::NativeReference nat_ref_System("System", 0U, 0U, func_System);
 
-$ENTRY IntFromStr {
-%%
+static refalrts::FnResult func_IntFromStr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 598 "Library.sref"
   refalrts::Iter number_b = 0;
   refalrts::Iter number_e = 0;
   refalrts::Iter pfunc_name =
@@ -634,11 +680,13 @@ $ENTRY IntFromStr {
     }
 
     return refalrts::cSuccess;
-%%
+#line 684 "Library.cpp"
 }
 
-$ENTRY StrFromInt {
-%%
+static refalrts::NativeReference nat_ref_IntFromStr("IntFromStr", 0U, 0U, func_IntFromStr);
+
+static refalrts::FnResult func_StrFromInt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 642 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -690,11 +738,13 @@ $ENTRY StrFromInt {
   refalrts::splice_to_freelist(begin_splice, arg_end);
 
   return refalrts::cSuccess;
-%%
+#line 742 "Library.cpp"
 }
 
-$ENTRY Chr {
-%%
+static refalrts::NativeReference nat_ref_StrFromInt("StrFromInt", 0U, 0U, func_StrFromInt);
+
+static refalrts::FnResult func_Chr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 698 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -715,11 +765,13 @@ $ENTRY Chr {
   refalrts::splice_to_freelist(arg_begin, pfunc_name);
   refalrts::splice_to_freelist(arg_end, arg_end);
   return refalrts::cSuccess;
-%%
+#line 769 "Library.cpp"
 }
 
-$ENTRY Ord {
-%%
+static refalrts::NativeReference nat_ref_Chr("Chr", 0U, 0U, func_Chr);
+
+static refalrts::FnResult func_Ord(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 723 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -740,10 +792,12 @@ $ENTRY Ord {
   refalrts::splice_to_freelist(arg_begin, pfunc_name);
   refalrts::splice_to_freelist(arg_end, arg_end);
   return refalrts::cSuccess;
-%%
+#line 796 "Library.cpp"
 }
 
-%%
+static refalrts::NativeReference nat_ref_Ord("Ord", 0U, 0U, func_Ord);
+
+#line 747 "Library.sref"
 namespace {
 
 template <typename T>
@@ -946,16 +1000,17 @@ bool compare(refalrts::Iter left, refalrts::Iter right) {
   if (! compare(pX, pY)) { \
     return refalrts::cRecognitionImpossible; \
   }
-%%
-
-$ENTRY SymbCompare {
-%%
+#line 1004 "Library.cpp"
+static refalrts::FnResult func_SymbCompare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 953 "Library.sref"
   BINARY(COMPARE_BINARY);
-%%
+#line 1008 "Library.cpp"
 }
 
-$ENTRY SymbType {
-%%
+static refalrts::NativeReference nat_ref_SymbCompare("SymbCompare", 0U, 0U, func_SymbCompare);
+
+static refalrts::FnResult func_SymbType(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 959 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -998,11 +1053,13 @@ $ENTRY SymbType {
   refalrts::reinit_ident(arg_begin, type_tag);
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1057 "Library.cpp"
 }
 
-$ENTRY Implode {
-%%
+static refalrts::NativeReference nat_ref_SymbType("SymbType", 0U, 0U, func_SymbType);
+
+static refalrts::FnResult func_Implode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1006 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -1025,11 +1082,13 @@ $ENTRY Implode {
   refalrts::splice_to_freelist(pfunc_name, arg_end);
 
   return refalrts::cSuccess;
-%%
+#line 1086 "Library.cpp"
 }
 
-$ENTRY Explode {
-%%
+static refalrts::NativeReference nat_ref_Implode("Implode", 0U, 0U, func_Implode);
+
+static refalrts::FnResult func_Explode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1033 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -1053,11 +1112,13 @@ $ENTRY Explode {
   refalrts::splice_evar(arg_begin, content_b, content_e);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1116 "Library.cpp"
 }
 
-$ENTRY FWriteBytes {
-%%
+static refalrts::NativeReference nat_ref_Explode("Explode", 0U, 0U, func_Explode);
+
+static refalrts::FnResult func_FWriteBytes(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1061 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -1098,11 +1159,13 @@ $ENTRY FWriteBytes {
 
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1163 "Library.cpp"
 }
 
-$ENTRY FReadBytes {
-%%
+static refalrts::NativeReference nat_ref_FWriteBytes("FWriteBytes", 0U, 0U, func_FWriteBytes);
+
+static refalrts::FnResult func_FReadBytes(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1106 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   call_left(content_b, content_e, arg_begin, arg_end);
@@ -1156,11 +1219,13 @@ $ENTRY FReadBytes {
   refalrts::splice_evar(arg_begin, begin, end);
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1223 "Library.cpp"
 }
 
-$ENTRY FTell {
-%%
+static refalrts::NativeReference nat_ref_FReadBytes("FReadBytes", 0U, 0U, func_FReadBytes);
+
+static refalrts::FnResult func_FTell(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1164 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -1186,11 +1251,13 @@ $ENTRY FTell {
   refalrts::reinit_number(arg_begin, static_cast<refalrts::RefalNumber>(pos));
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1255 "Library.cpp"
 }
 
-$ENTRY FSeek {
-%%
+static refalrts::NativeReference nat_ref_FTell("FTell", 0U, 0U, func_FTell);
+
+static refalrts::FnResult func_FSeek(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1194 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -1244,11 +1311,13 @@ $ENTRY FSeek {
 
   refalrts::splice_to_freelist(arg_begin, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1315 "Library.cpp"
 }
 
-$ENTRY RenameFile {
-%%
+static refalrts::NativeReference nat_ref_FSeek("FSeek", 0U, 0U, func_FSeek);
+
+static refalrts::FnResult func_RenameFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1252 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -1289,11 +1358,13 @@ $ENTRY RenameFile {
   refalrts::reinit_ident(arg_begin, i_result);
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1362 "Library.cpp"
 }
 
-$ENTRY RemoveFile {
-%%
+static refalrts::NativeReference nat_ref_RenameFile("RenameFile", 0U, 0U, func_RenameFile);
+
+static refalrts::FnResult func_RemoveFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 1297 "Library.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter pfunc_name =
@@ -1315,5 +1386,10 @@ $ENTRY RemoveFile {
   refalrts::reinit_ident(arg_begin, i_result);
   refalrts::splice_to_freelist(pfunc_name, arg_end);
   return refalrts::cSuccess;
-%%
+#line 1390 "Library.cpp"
 }
+
+static refalrts::NativeReference nat_ref_RemoveFile("RemoveFile", 0U, 0U, func_RemoveFile);
+
+
+//End of file

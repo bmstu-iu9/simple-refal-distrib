@@ -7,7 +7,6 @@ const refalrts::RefalIdentifier ident_CppCompilerLib = refalrts::ident_from_stat
 const refalrts::RefalIdentifier ident_DefaultEXE = refalrts::ident_from_static("DefaultEXE");
 const refalrts::RefalIdentifier ident_DefaultTarget = refalrts::ident_from_static("DefaultTarget");
 const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
-const refalrts::RefalIdentifier ident_Falis = refalrts::ident_from_static("Falis");
 const refalrts::RefalIdentifier ident_Folders = refalrts::ident_from_static("Folders");
 const refalrts::RefalIdentifier ident_ManySourceFiles = refalrts::ident_from_static("ManySourceFiles");
 const refalrts::RefalIdentifier ident_NotSet = refalrts::ident_from_static("NotSet");
@@ -1503,8 +1502,8 @@ static refalrts::FnResult func_Config_SetTargetMode(refalrts::Iter arg_begin, re
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} [/7Config/8 e.Params-B#1/10 (/14 # TargetMode/16 s.OldTargetMode#1/17 )/15 e.Params-E#1/19(5) ]/9 e.NewTargetMode#1/2 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: # Falis/0 HalfReuse: # TargetModeAlreadySet/4 } Tile{ ]] }
-    refalrts::reinit_ident( context[0], ident_Falis );
+    //RESULT: Tile{ [[ HalfReuse: # Fails/0 HalfReuse: # TargetModeAlreadySet/4 } Tile{ ]] }
+    refalrts::reinit_ident( context[0], ident_Fails );
     refalrts::reinit_ident( context[4], ident_TargetModeAlreadySet );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);

@@ -950,8 +950,7 @@ bool refalrts::repeated_evar_right(
 }
 
 bool refalrts::open_evar_advance(
-  Iter& evar_b, Iter& evar_e,
-  Iter& first, Iter& last
+  Iter& evar_b, Iter& evar_e, Iter& first, Iter& last
 ) {
   assert((evar_b == 0) == (evar_e == 0));
 
@@ -1022,35 +1021,27 @@ bool copy_node(refalrts::Iter& res, refalrts::Iter sample) {
   switch(sample->tag) {
     case refalrts::cDataChar:
       return refalrts::alloc_char(res, sample->char_info);
-      // break;
 
     case refalrts::cDataNumber:
       return refalrts::alloc_number(res, sample->number_info);
-      // break;
 
     case refalrts::cDataFunction:
       return refalrts::alloc_name(res, sample->function_info);
-      // break;
 
     case refalrts::cDataIdentifier:
       return refalrts::alloc_ident(res, sample->ident_info);
-      // break;
 
     case refalrts::cDataOpenBracket:
       return refalrts::alloc_open_bracket(res);
-      // break;
 
     case refalrts::cDataCloseBracket:
       return refalrts::alloc_close_bracket(res);
-      // break;
 
     case refalrts::cDataOpenADT:
       return refalrts::alloc_open_adt(res);
-      // break;
 
     case refalrts::cDataCloseADT:
       return refalrts::alloc_close_adt(res);
-      // break;
 
     case refalrts::cDataClosure: {
       bool allocated = refalrts::allocator::alloc_node(res);
@@ -1064,7 +1055,6 @@ bool copy_node(refalrts::Iter& res, refalrts::Iter sample) {
         return false;
       }
     }
-    // break;
 
     case refalrts::cDataFile: {
       bool allocated = refalrts::allocator::alloc_node(res);
@@ -1076,7 +1066,6 @@ bool copy_node(refalrts::Iter& res, refalrts::Iter sample) {
         return false;
       }
     }
-    // break;
 
     /*
       Копируем только объектное выражение -- никаких вызовов функций
@@ -1084,7 +1073,6 @@ bool copy_node(refalrts::Iter& res, refalrts::Iter sample) {
     */
     default:
       refalrts_switch_default_violation(sample->tag);
-      // break;
   }
 }
 
@@ -1208,9 +1196,7 @@ bool refalrts::alloc_char(refalrts::Iter& res, char ch) {
   }
 }
 
-bool refalrts::alloc_number(
-  refalrts::Iter& res, refalrts::RefalNumber num
-) {
+bool refalrts::alloc_number(refalrts::Iter& res, refalrts::RefalNumber num) {
   if (allocator::alloc_node(res)) {
     res->tag = cDataNumber;
     res->number_info = num;
@@ -1220,10 +1206,7 @@ bool refalrts::alloc_number(
   }
 }
 
-bool refalrts::alloc_name(
-  refalrts::Iter& res,
-  refalrts::RefalFunction *fn
-) {
+bool refalrts::alloc_name(refalrts::Iter& res, refalrts::RefalFunction *fn) {
   if (allocator::alloc_node(res)) {
     res->tag = cDataFunction;
     res->function_info = fn;
@@ -1450,31 +1433,21 @@ void refalrts::update_char(refalrts::Iter res, char ch) {
   res->char_info = ch;
 }
 
-void refalrts::reinit_number(
-  refalrts::Iter res, refalrts::RefalNumber num)
-{
+void refalrts::reinit_number(refalrts::Iter res, refalrts::RefalNumber num) {
   res->tag = cDataNumber;
   res->number_info = num;
 }
 
-void refalrts::update_number(
-  refalrts::Iter res, refalrts::RefalNumber num
-) {
+void refalrts::update_number(refalrts::Iter res, refalrts::RefalNumber num) {
   res->number_info = num;
 }
 
-void refalrts::reinit_name(
-  refalrts::Iter res,
-  refalrts::RefalFunction *func
-) {
+void refalrts::reinit_name(refalrts::Iter res, refalrts::RefalFunction *func) {
   res->tag = cDataFunction;
   res->function_info = func;
 }
 
-void refalrts::update_name(
-  refalrts::Iter res,
-  refalrts::RefalFunction *func
-) {
+void refalrts::update_name(refalrts::Iter res, refalrts::RefalFunction *func) {
   res->function_info = func;
 }
 
@@ -1491,51 +1464,35 @@ void refalrts::update_ident(
   res->ident_info = ident;
 }
 
-void refalrts::reinit_open_bracket(
-  refalrts::Iter res
-) {
+void refalrts::reinit_open_bracket(refalrts::Iter res) {
   res->tag = cDataOpenBracket;
 }
 
-void refalrts::reinit_close_bracket(
-  refalrts::Iter res
-) {
+void refalrts::reinit_close_bracket(refalrts::Iter res) {
   res->tag = cDataCloseBracket;
 }
 
-void refalrts::reinit_open_adt(
-  refalrts::Iter res
-) {
+void refalrts::reinit_open_adt(refalrts::Iter res) {
   res->tag = cDataOpenADT;
 }
 
-void refalrts::reinit_close_adt(
-  refalrts::Iter res
-) {
+void refalrts::reinit_close_adt(refalrts::Iter res) {
   res->tag = cDataCloseADT;
 }
 
-void refalrts::reinit_open_call(
-  refalrts::Iter res
-) {
+void refalrts::reinit_open_call(refalrts::Iter res) {
   res->tag = cDataOpenCall;
 }
 
-void refalrts::reinit_close_call(
-  refalrts::Iter res
-) {
+void refalrts::reinit_close_call(refalrts::Iter res) {
   res->tag = cDataCloseCall;
 }
 
-refalrts::Iter refalrts::splice_elem(
-  refalrts::Iter res, refalrts::Iter elem
-) {
+refalrts::Iter refalrts::splice_elem(refalrts::Iter res, refalrts::Iter elem) {
   return list_splice(res, elem, elem);
 }
 
-refalrts::Iter refalrts::splice_stvar(
-  refalrts::Iter res, refalrts::Iter var
-) {
+refalrts::Iter refalrts::splice_stvar(refalrts::Iter res, refalrts::Iter var) {
   refalrts::Iter var_end;
   if (is_open_bracket(var)) {
     var_end = var->link_info;
@@ -3021,9 +2978,10 @@ bool refalrts::dynamic::seek_rasl_signature(FILE *stream) {
       exit(155);
     }
 
-    static const char sample_sig[] = {
-      '\x01', '\x08', '\0', '\0', '\0', 'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
+    static char sample_sig[] = {
+      '\x00', '\x08', '\0', '\0', '\0', 'R', 'A', 'S', 'L', 'C', 'O', 'D', 'E'
     };
+    sample_sig[0] = cBlockTypeStart;
     char actual_sig[sizeof(sample_sig)];
     size_t read = fread(actual_sig, sizeof(actual_sig), 1, stream);
     if (read != 1) {
@@ -4673,6 +4631,7 @@ int refalrts::debugger::find_debugger_flag(int argc, char **argv) {
 //=============================================================================
 
 refalrts::FnResult refalrts::vm::main_loop() {
+  // Формируем вызов <Go#0:0> в поле зрения
   static const RASLCommand startup_rasl[] = {
     { icIssueMemory, 3, 0, 0 },
     { refalrts::icResetAllocator, 0, 0, 0 },
@@ -5625,27 +5584,27 @@ int main(int argc, char **argv) {
   refalrts::vm::g_argc = argc;
   refalrts::vm::g_argv = argv;
 
-  refalrts::create_closure =
-    refalrts::dynamic::malloc<refalrts::RefalFunction>();
-  // TODO: выдача сообщения об ошибке
-  assert(refalrts::create_closure != 0);
-  new (refalrts::create_closure) refalrts::RefalFunction(
-    rasl_create_closure, refalrts::RefalFuncName("@create_closure@", 0, 0)
-  );
-
-  refalrts::dynamic::enumerate_blocks();
-
-  unsigned unresolved = refalrts::dynamic::find_unresolved_externals();
-  if (unresolved > 0) {
-    refalrts::dynamic::free_idents_table();
-    refalrts::dynamic::free_funcs_table();
-    refalrts::dynamic::cleanup_module();
-    fprintf(stderr, "Found %u unresolved externals\n", unresolved);
-    return 157;
-  }
-
   refalrts::FnResult res;
   try {
+    refalrts::create_closure =
+      refalrts::dynamic::malloc<refalrts::RefalFunction>();
+    // TODO: выдача сообщения об ошибке
+    assert(refalrts::create_closure != 0);
+    new (refalrts::create_closure) refalrts::RefalFunction(
+      rasl_create_closure, refalrts::RefalFuncName("@create_closure@", 0, 0)
+    );
+
+    refalrts::dynamic::enumerate_blocks();
+
+    unsigned unresolved = refalrts::dynamic::find_unresolved_externals();
+    if (unresolved > 0) {
+      refalrts::dynamic::free_idents_table();
+      refalrts::dynamic::free_funcs_table();
+      refalrts::dynamic::cleanup_module();
+      fprintf(stderr, "Found %u unresolved externals\n", unresolved);
+      return 157;
+    }
+
     refalrts::profiler::start_profiler();
     res = refalrts::vm::run();
     fflush(stderr);

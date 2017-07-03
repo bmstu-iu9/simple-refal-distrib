@@ -8,8 +8,8 @@ static refalrts::ExternalReference ref_Ord("Ord", 0U, 0U);
 static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_OctDigit("OctDigit", 1335600754U, 1331116615U);
-static refalrts::ExternalReference ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1335600754U, 1331116615U);
+static refalrts::ExternalReference ref_OctDigit("OctDigit", 2198416972U, 4102482912U);
+static refalrts::ExternalReference ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 2198416972U, 4102482912U);
 static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
 static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
 
@@ -172,7 +172,7 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OctDigit("OctDigit", 1335600754U, 1331116615U, func_OctDigit);
+static refalrts::NativeReference nat_ref_OctDigit("OctDigit", 2198416972U, 4102482912U, func_OctDigit);
 
 static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -300,7 +300,7 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1335600754U, 1331116615U, func_gen_EscapeChar_S7L1);
+static refalrts::NativeReference nat_ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 2198416972U, 4102482912U, func_gen_EscapeChar_S7L1);
 
 static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

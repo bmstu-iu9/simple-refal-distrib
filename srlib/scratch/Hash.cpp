@@ -1,4 +1,10 @@
-%%
+// Automatically generated file. Don't edit!
+#include "refalrts.h"
+
+
+static refalrts::ExternalReference ref_HashLittle2_Chars("HashLittle2-Chars", 0U, 0U);
+
+#line 2 "Hash.sref"
 /*
   Следующие манипуляции нужны для того, чтобы, оставаясь в рамках C++98,
   переносимо получить тип uint32_t.
@@ -7,10 +13,9 @@
 
 using refalrts::UInt32;
 
-%%
-
-$ENTRY HashLittle2-Chars {
-%%
+#line 17 "Hash.cpp"
+static refalrts::FnResult func_HashLittle2_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+#line 14 "Hash.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter func_name =
@@ -168,5 +173,10 @@ $ENTRY HashLittle2-Chars {
 #undef final
 #undef mix
   return refalrts::cSuccess;
-%%
+#line 177 "Hash.cpp"
 }
+
+static refalrts::NativeReference nat_ref_HashLittle2_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2_Chars);
+
+
+//End of file

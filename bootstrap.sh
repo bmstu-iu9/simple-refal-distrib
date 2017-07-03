@@ -11,8 +11,9 @@ make_dir() {
   DIR=$1
   TARGET=bin/$2$(platform_exe_suffix)
 
-  $CPPLINEE$TARGET -Isrlib -DDONT_PRINT_STATISTICS \
-    $DIR/*.cpp $(platform_subdir_lookup srlib)/refalrts-platform-specific.cpp \
+  $CPPLINEE$TARGET -Isrlib/scratch -DDONT_PRINT_STATISTICS \
+    $DIR/*.cpp \
+    $(platform_subdir_lookup srlib/scratch)/refalrts-platform-specific.cpp \
 
   if [ ! -e $TARGET ]; then
     echo "Can't create file $TARGET, aborting"
@@ -25,5 +26,8 @@ make_dir() {
 make_dir compiler srefc-core
 make_dir lexgen lexgen
 make_dir srmake srmake-core
+make_dir srlib-rich-prefix srlib-rich-prefix
+mv bin/srlib-rich-prefix$(platform_exe_suffix) srlib/rich/rich.exe-prefix
+chmod -x srlib/rich/rich.exe-prefix
 
 rm -f $APPENDER

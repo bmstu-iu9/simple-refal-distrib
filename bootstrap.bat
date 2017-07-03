@@ -8,6 +8,8 @@ setlocal
   call :MAKE_DIR compiler srefc-core || exit /b 1
   call :MAKE_DIR lexgen lexgen || exit /b 1
   call :MAKE_DIR srmake srmake-core || exit /b 1
+  call :MAKE_DIR srlib-rich-prefix srlib-rich-prefix || exit /b 1
+  move bin\srlib-rich-prefix.exe srlib\rich\rich.exe-prefix
 
   if exist *.obj erase *.obj
   erase rasl-appender\_rasl-appender.*
@@ -23,8 +25,8 @@ setlocal
   pushd %DIR%
   set FILELIST=
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINEE%%TARGET% -I..\srlib -DDONT_PRINT_STATISTICS ^
-    %FILELIST% ..\srlib\platform-Windows\refalrts-platform-specific.cpp
+  %CPPLINEE%%TARGET% -I..\srlib\scratch -DDONT_PRINT_STATISTICS ^
+    %FILELIST% ..\srlib\scratch\platform-Windows\refalrts-platform-specific.cpp
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
 
