@@ -2,7 +2,7 @@
 #include "refalrts.h"
 
 
-const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
 const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
 const refalrts::RefalIdentifier ident_AlgRight = refalrts::ident_from_static("AlgRight");
 const refalrts::RefalIdentifier ident_AlgTerm = refalrts::ident_from_static("AlgTerm");
@@ -17,7 +17,7 @@ const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("
 const refalrts::RefalIdentifier ident_CmdEmpty = refalrts::ident_from_static("CmdEmpty");
 const refalrts::RefalIdentifier ident_CmdIdent = refalrts::ident_from_static("CmdIdent");
 const refalrts::RefalIdentifier ident_CmdIdentSave = refalrts::ident_from_static("CmdIdentSave");
-const refalrts::RefalIdentifier ident_CmdInitB0_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
+const refalrts::RefalIdentifier ident_CmdInitB0m_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
 const refalrts::RefalIdentifier ident_CmdName = refalrts::ident_from_static("CmdName");
 const refalrts::RefalIdentifier ident_CmdNameSave = refalrts::ident_from_static("CmdNameSave");
 const refalrts::RefalIdentifier ident_CmdNumber = refalrts::ident_from_static("CmdNumber");
@@ -48,13 +48,13 @@ static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_Inc2("Inc2", 0U, 0U);
 static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
 static refalrts::ExternalReference ref_TextFromExpr("TextFromExpr", 0U, 0U);
-static refalrts::ExternalReference ref_GenInitSubst_Save("GenInitSubst-Save", 0U, 0U);
-static refalrts::ExternalReference ref_GenSubst_Save("GenSubst-Save", 0U, 0U);
+static refalrts::ExternalReference ref_GenInitSubstm_Save("GenInitSubst-Save", 0U, 0U);
+static refalrts::ExternalReference ref_GenSubstm_Save("GenSubst-Save", 0U, 0U);
 static refalrts::ExternalReference ref_DoGenSubst("DoGenSubst", 1788560981U, 2194543583U);
-static refalrts::ExternalReference ref_IncVarOffset_Saved("IncVarOffset-Saved", 1788560981U, 2194543583U);
+static refalrts::ExternalReference ref_IncVarOffsetm_Saved("IncVarOffset-Saved", 1788560981U, 2194543583U);
 static refalrts::ExternalReference ref_MakeRepeatedSave("MakeRepeatedSave", 1788560981U, 2194543583U);
 
-static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_GenInitSubstm_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 31 elems
   refalrts::Iter context[31];
@@ -107,7 +107,7 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[23], ident_CmdInitB0_Lite ) )
+  if( ! refalrts::alloc_ident( context[23], ident_CmdInitB0m_Lite ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
@@ -143,9 +143,9 @@ static refalrts::FnResult func_GenInitSubst_Save(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenInitSubst_Save("GenInitSubst-Save", 0U, 0U, func_GenInitSubst_Save);
+static refalrts::NativeReference nat_ref_GenInitSubstm_Save("GenInitSubst-Save", 0U, 0U, func_GenInitSubstm_Save);
 
-static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_GenSubstm_Save(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
@@ -191,7 +191,7 @@ static refalrts::FnResult func_GenSubst_Save(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenSubst_Save("GenSubst-Save", 0U, 0U, func_GenSubst_Save);
+static refalrts::NativeReference nat_ref_GenSubstm_Save("GenSubst-Save", 0U, 0U, func_GenSubstm_Save);
 
 static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -826,7 +826,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_ADT_Brackets, context[31], context[32] );
+      context[35] = refalrts::ident_left(  ident_ADTm_Brackets, context[31], context[32] );
       if( ! context[35] )
         continue;
       context[36] = 0;
@@ -3347,7 +3347,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[29] )
         continue;
       refalrts::bracket_pointers(context[29], context[30]);
-      context[31] = refalrts::ident_left(  ident_ADT_Brackets, context[27], context[28] );
+      context[31] = refalrts::ident_left(  ident_ADTm_Brackets, context[27], context[28] );
       if( ! context[31] )
         continue;
       context[32] = 0;
@@ -3535,7 +3535,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[28] )
         continue;
       refalrts::bracket_pointers(context[28], context[29]);
-      context[30] = refalrts::ident_left(  ident_ADT_Brackets, context[26], context[27] );
+      context[30] = refalrts::ident_left(  ident_ADTm_Brackets, context[26], context[27] );
       if( ! context[30] )
         continue;
       context[31] = 0;
@@ -3896,7 +3896,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( context[60] ) )
           return refalrts::cNoMemory;
-        refalrts::reinit_name( context[29], ref_IncVarOffset_Saved.ref.function );
+        refalrts::reinit_name( context[29], ref_IncVarOffsetm_Saved.ref.function );
         refalrts::reinit_svar( context[31], context[13] );
         refalrts::reinit_open_bracket( context[19] );
         refalrts::reinit_ident( context[23], ident_TkVariable );
@@ -4039,7 +4039,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </47 & IncVarOffset-Saved/48 Tile{ AsIs: s.ContextOffset#1/13 } Tile{ AsIs: s.Mode#1/32 } >/49 Tile{ AsIs: e.Substs-B#1/14 } Tile{ AsIs: (/18 AsIs: # E/20 AsIs: s.Num#1/31 AsIs: e.Range#1/16 HalfReuse: )/28 HalfReuse: (/30 } # Junk/50 (/51 # TkVariable/52 s.Mode#1/39/53 Tile{ AsIs: e.Index#1/26 } Tile{ HalfReuse: s.ContextOffset1 #13/23 HalfReuse: )/25 AsIs: e.Junk#1/21 AsIs: )/24 AsIs: e.Substs-E#1/77(2) AsIs: (/11 AsIs: e.Vars-B#1/33 AsIs: (/37 AsIs: s.Mode#1/39 AsIs: (/42 AsIs: e.Index#1/44 AsIs: )/43 AsIs: e.Offsets#1/35 AsIs: s.SampleOffset#1/46 HalfReuse: s.ContextOffset1 #13/38 } )/54 Tile{ AsIs: e.Vars-E#1/81(9) } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: </8 HalfReuse: & MakeRepeatedSave/1 } # AlgRight/55 s.Num#1/31/56 s.Mode#1/39/57 s.ContextOffset#1/13/58 s.SampleOffset#1/46/59 Tile{ HalfReuse: >/29 AsIs: )/19 } >/60 Tile{ ]] }
         if( ! refalrts::alloc_open_call( context[47] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( context[48], ref_IncVarOffset_Saved.ref.function ) )
+        if( ! refalrts::alloc_name( context[48], ref_IncVarOffsetm_Saved.ref.function ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( context[49] ) )
           return refalrts::cNoMemory;
@@ -5002,7 +5002,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
 
 static refalrts::NativeReference nat_ref_DoGenSubst("DoGenSubst", 1788560981U, 2194543583U, func_DoGenSubst);
 
-static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_IncVarOffsetm_Saved(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
@@ -5085,7 +5085,7 @@ static refalrts::FnResult func_IncVarOffset_Saved(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IncVarOffset_Saved("IncVarOffset-Saved", 1788560981U, 2194543583U, func_IncVarOffset_Saved);
+static refalrts::NativeReference nat_ref_IncVarOffsetm_Saved("IncVarOffset-Saved", 1788560981U, 2194543583U, func_IncVarOffsetm_Saved);
 
 static refalrts::FnResult func_MakeRepeatedSave(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

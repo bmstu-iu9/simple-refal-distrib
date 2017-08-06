@@ -15,12 +15,12 @@ static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
 static refalrts::ExternalReference ref_GenerateFromDFA("GenerateFromDFA", 0U, 0U);
 static refalrts::ExternalReference ref_WriteFunction("WriteFunction", 3016463358U, 4232659796U);
 static refalrts::ExternalReference ref_WriteAlternative("WriteAlternative", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_gen_WriteAlternative_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_WriteAlternative_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U);
+static refalrts::ExternalReference ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U);
+static refalrts::ExternalReference ref_WriteAlternativem_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U);
 static refalrts::ExternalReference ref_Head("Head", 3016463358U, 4232659796U);
 static refalrts::ExternalReference ref_Flush("Flush", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_NextState_L("NextState-L", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_NextState_R("NextState-R", 3016463358U, 4232659796U);
+static refalrts::ExternalReference ref_NextStatem_L("NextState-L", 3016463358U, 4232659796U);
+static refalrts::ExternalReference ref_NextStatem_R("NextState-R", 3016463358U, 4232659796U);
 
 static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -154,7 +154,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_WriteAlternative_Aux.ref.function );
+  refalrts::update_name( context[4], ref_WriteAlternativem_Aux.ref.function );
   refalrts::link_brackets( context[7], context[11] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -170,7 +170,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
 
 static refalrts::NativeReference nat_ref_WriteAlternative("WriteAlternative", 3016463358U, 4232659796U, func_WriteAlternative);
 
-static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
@@ -220,9 +220,9 @@ static refalrts::FnResult func_gen_WriteAlternative_Aux_S2L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_WriteAlternative_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U, func_gen_WriteAlternative_Aux_S2L1);
+static refalrts::NativeReference nat_ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U, func_gen_WriteAlternativem_Aux_S2L1);
 
-static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_WriteAlternativem_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 28 elems
   refalrts::Iter context[28];
@@ -268,7 +268,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], ref_NextState_L.ref.function ) )
+    if( ! refalrts::alloc_name( context[16], ref_NextStatem_L.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[17], context[18], context[12], context[13]))
       return refalrts::cNoMemory;
@@ -284,7 +284,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_Head.ref.function );
     refalrts::reinit_svar( context[7], context[9] );
-    refalrts::reinit_name( context[10], ref_NextState_R.ref.function );
+    refalrts::reinit_name( context[10], ref_NextStatem_R.ref.function );
     refalrts::reinit_close_call( context[8] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[20] );
@@ -319,7 +319,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_NextState_L.ref.function ) )
+  if( ! refalrts::alloc_name( context[16], ref_NextStatem_L.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[17], context[18], context[12], context[13]))
     return refalrts::cNoMemory;
@@ -337,13 +337,13 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[26], ref_NextState_R.ref.function ) )
+  if( ! refalrts::alloc_name( context[26], ref_NextStatem_R.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[27] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Head.ref.function );
   refalrts::reinit_svar( context[7], context[9] );
-  refalrts::reinit_name( context[8], ref_gen_WriteAlternative_Aux_S2L1.ref.function );
+  refalrts::reinit_name( context[8], ref_gen_WriteAlternativem_Aux_S2L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[20] );
   refalrts::push_stack( context[27] );
@@ -366,7 +366,7 @@ static refalrts::FnResult func_WriteAlternative_Aux(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteAlternative_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U, func_WriteAlternative_Aux);
+static refalrts::NativeReference nat_ref_WriteAlternativem_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U, func_WriteAlternativem_Aux);
 
 static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -562,7 +562,7 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
 
 static refalrts::NativeReference nat_ref_Flush("Flush", 3016463358U, 4232659796U, func_Flush);
 
-static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_NextStatem_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
@@ -626,9 +626,9 @@ static refalrts::FnResult func_NextState_L(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextState_L("NextState-L", 3016463358U, 4232659796U, func_NextState_L);
+static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", 3016463358U, 4232659796U, func_NextStatem_L);
 
-static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
@@ -699,7 +699,7 @@ static refalrts::FnResult func_NextState_R(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextState_R("NextState-R", 3016463358U, 4232659796U, func_NextState_R);
+static refalrts::NativeReference nat_ref_NextStatem_R("NextState-R", 3016463358U, 4232659796U, func_NextStatem_R);
 
 
 //End of file

@@ -5,8 +5,8 @@
 const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
 const refalrts::RefalIdentifier ident_Changed = refalrts::ident_from_static("Changed");
 const refalrts::RefalIdentifier ident_Chars = refalrts::ident_from_static("Chars");
-const refalrts::RefalIdentifier ident_EOF_Catched = refalrts::ident_from_static("EOF-Catched");
-const refalrts::RefalIdentifier ident_EOF_NotCatched = refalrts::ident_from_static("EOF-NotCatched");
+const refalrts::RefalIdentifier ident_EOFm_Catched = refalrts::ident_from_static("EOF-Catched");
+const refalrts::RefalIdentifier ident_EOFm_NotCatched = refalrts::ident_from_static("EOF-NotCatched");
 const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
 const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
 const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
@@ -22,9 +22,9 @@ static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
-static refalrts::ExternalReference ref_gen_DFA_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_DFA_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_DFA_Compile("DFA-Compile", 0U, 0U);
+static refalrts::ExternalReference ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U);
+static refalrts::ExternalReference ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U);
+static refalrts::ExternalReference ref_DFAm_Compile("DFA-Compile", 0U, 0U);
 static refalrts::ExternalReference ref_UniqueSet("UniqueSet", 3121760693U, 3999690326U);
 static refalrts::ExternalReference ref_gen_ResolvingSets_L1("ResolvingSets\\1", 3121760693U, 3999690326U);
 static refalrts::ExternalReference ref_gen_ResolvingSets_L2("ResolvingSets\\2", 3121760693U, 3999690326U);
@@ -48,7 +48,7 @@ static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S2L1("DoPrepareFun
 static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S4L1("DoPrepareFunctions$4\\1", 3121760693U, 3999690326U);
 static refalrts::ExternalReference ref_DoPrepareFunctions("DoPrepareFunctions", 3121760693U, 3999690326U);
 
-static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_DFAm_Compile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 28 elems
   refalrts::Iter context[28];
@@ -179,9 +179,9 @@ static refalrts::FnResult func_gen_DFA_Compile_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFA_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U, func_gen_DFA_Compile_L1);
+static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U, func_gen_DFAm_Compile_L1);
 
-static refalrts::FnResult func_gen_DFA_Compile_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_DFAm_Compile_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
@@ -239,9 +239,9 @@ static refalrts::FnResult func_gen_DFA_Compile_L2(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFA_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U, func_gen_DFA_Compile_L2);
+static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U, func_gen_DFAm_Compile_L2);
 
-static refalrts::FnResult func_DFA_Compile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_DFAm_Compile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 25 elems
   refalrts::Iter context[25];
@@ -264,7 +264,7 @@ static refalrts::FnResult func_DFA_Compile(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], ref_Reduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], ref_gen_DFA_Compile_L1.ref.function ) )
+  if( ! refalrts::alloc_name( context[8], ref_gen_DFAm_Compile_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
@@ -280,7 +280,7 @@ static refalrts::FnResult func_DFA_Compile(refalrts::Iter arg_begin, refalrts::I
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_gen_DFA_Compile_L2.ref.function ) )
+  if( ! refalrts::alloc_name( context[16], ref_gen_DFAm_Compile_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[17], ref_SubstituteSetsToRules.ref.function ) )
     return refalrts::cNoMemory;
@@ -317,7 +317,7 @@ static refalrts::FnResult func_DFA_Compile(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DFA_Compile("DFA-Compile", 0U, 0U, func_DFA_Compile);
+static refalrts::NativeReference nat_ref_DFAm_Compile("DFA-Compile", 0U, 0U, func_DFAm_Compile);
 
 static refalrts::FnResult func_UniqueSet(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2313,7 +2313,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
     //TRASH: {REMOVED TILE} (/7 s.CatchedEOF#1/13 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # EOF-Catched/4 } Tile{ AsIs: e.CatchedChars#1/5 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Empty/14 AsIs: t.Flush#1/16 AsIs: # Finitive/18 AsIs: )/12 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_EOF_Catched );
+    refalrts::reinit_ident( context[4], ident_EOFm_Catched );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::link_brackets( context[0], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2340,7 +2340,7 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
   //TRASH: {REMOVED TILE} s.CatchedEOF#1/13 e.CatchedChars#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # EOF-Catched/4 HalfReuse: # Any/7 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # Empty/14 AsIs: t.Flush#1/16 AsIs: t.NextRule#1/18 AsIs: )/12 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], ident_EOF_Catched );
+  refalrts::reinit_ident( context[4], ident_EOFm_Catched );
   refalrts::reinit_ident( context[7], ident_Any );
   refalrts::link_brackets( context[11], context[12] );
   refalrts::link_brackets( context[0], context[8] );
@@ -2741,7 +2741,7 @@ static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[23], ident_EOF_NotCatched ) )
+  if( ! refalrts::alloc_ident( context[23], ident_EOFm_NotCatched ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
@@ -2842,7 +2842,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     context[7] = refalrts::ident_right(  ident_Any, context[15], context[16] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::ident_right(  ident_EOF_Catched, context[15], context[16] );
+    context[8] = refalrts::ident_right(  ident_EOFm_Catched, context[15], context[16] );
     if( ! context[8] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -2871,7 +2871,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     do {
       context[17] = context[15];
       context[18] = context[16];
-      context[9] = refalrts::ident_left(  ident_EOF_Catched, context[17], context[18] );
+      context[9] = refalrts::ident_left(  ident_EOFm_Catched, context[17], context[18] );
       if( ! context[9] )
         continue;
       // closed e.CharSet#1 as range 17(2)
@@ -2914,7 +2914,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
     context[7] = refalrts::ident_right(  ident_Any, context[15], context[16] );
     if( ! context[7] )
       continue;
-    context[8] = refalrts::ident_right(  ident_EOF_NotCatched, context[15], context[16] );
+    context[8] = refalrts::ident_right(  ident_EOFm_NotCatched, context[15], context[16] );
     if( ! context[8] )
       continue;
     // closed e.Name#1 as range 15(2)
@@ -2952,7 +2952,7 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
   do {
     context[15] = context[2];
     context[16] = context[3];
-    context[9] = refalrts::ident_left(  ident_EOF_NotCatched, context[15], context[16] );
+    context[9] = refalrts::ident_left(  ident_EOFm_NotCatched, context[15], context[16] );
     if( ! context[9] )
       continue;
     // closed e.CharSet#1 as range 15(2)
@@ -3090,7 +3090,7 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
   do {
     // # EOF-Catched
     // </0 & DefaultCatchEOF/4 # EOF-Catched/5 >/1
-    if( ! refalrts::ident_term(  ident_EOF_Catched, context[5] ) )
+    if( ! refalrts::ident_term(  ident_EOFm_Catched, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -3106,7 +3106,7 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
 
   // # EOF-NotCatched
   // </0 & DefaultCatchEOF/4 # EOF-NotCatched/5 >/1
-  if( ! refalrts::ident_term(  ident_EOF_NotCatched, context[5] ) )
+  if( ! refalrts::ident_term(  ident_EOFm_NotCatched, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();

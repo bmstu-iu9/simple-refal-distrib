@@ -28,7 +28,7 @@ const refalrts::RefalIdentifier ident_CmdHugeNumSave = refalrts::ident_from_stat
 const refalrts::RefalIdentifier ident_CmdIdent = refalrts::ident_from_static("CmdIdent");
 const refalrts::RefalIdentifier ident_CmdIdentSave = refalrts::ident_from_static("CmdIdentSave");
 const refalrts::RefalIdentifier ident_CmdInitB0 = refalrts::ident_from_static("CmdInitB0");
-const refalrts::RefalIdentifier ident_CmdInitB0_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
+const refalrts::RefalIdentifier ident_CmdInitB0m_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
 const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
 const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
 const refalrts::RefalIdentifier ident_CmdLoadConstants = refalrts::ident_from_static("CmdLoadConstants");
@@ -265,7 +265,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdInitB0-Lite
     // </0 & NumberFromOpcode/4 # CmdInitB0-Lite/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdInitB0_Lite, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdInitB0m_Lite, context[5] ) )
       continue;
     context[8] = context[2];
     context[9] = context[3];

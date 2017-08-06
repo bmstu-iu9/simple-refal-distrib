@@ -2,13 +2,14 @@
 #include "refalrts.h"
 
 
-const refalrts::RefalIdentifier ident_CMD_LINE = refalrts::ident_from_static("CMD-LINE");
+const refalrts::RefalIdentifier ident_CMDm_LINE = refalrts::ident_from_static("CMD-LINE");
 const refalrts::RefalIdentifier ident_CompileOnly = refalrts::ident_from_static("CompileOnly");
 const refalrts::RefalIdentifier ident_DefaultEXE = refalrts::ident_from_static("DefaultEXE");
 const refalrts::RefalIdentifier ident_DefaultTarget = refalrts::ident_from_static("DefaultTarget");
 const refalrts::RefalIdentifier ident_EXE = refalrts::ident_from_static("EXE");
 const refalrts::RefalIdentifier ident_Error = refalrts::ident_from_static("Error");
 const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+const refalrts::RefalIdentifier ident_Include = refalrts::ident_from_static("Include");
 const refalrts::RefalIdentifier ident_LIB = refalrts::ident_from_static("LIB");
 const refalrts::RefalIdentifier ident_NotSet = refalrts::ident_from_static("NotSet");
 const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
@@ -27,15 +28,15 @@ static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
 static refalrts::ExternalReference ref_System("System", 0U, 0U);
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
 static refalrts::ExternalReference ref_CreateFileList("CreateFileList", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetFolders("Config-GetFolders", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetSourceFile("Config-GetSourceFile", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetPrefix("Config-GetPrefix", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetReferences("Config-GetReferences", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetTargetMode("Config-GetTargetMode", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetTargetFileName("Config-GetTargetFileName", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetFolders("Config-GetFolders", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetSourceFile("Config-GetSourceFile", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetPrefix("Config-GetPrefix", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetReferences("Config-GetReferences", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetTargetMode("Config-GetTargetMode", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetTargetFileName("Config-GetTargetFileName", 0U, 0U);
 static refalrts::ExternalReference ref_Go("Go", 0U, 0U);
 static refalrts::ExternalReference ref_Main("Main", 3579679476U, 726312407U);
 static refalrts::ExternalReference ref_gen_MakeProject_S1A3("MakeProject$1=3", 3579679476U, 726312407U);
@@ -371,7 +372,7 @@ static refalrts::FnResult func_gen_MakeProject_S1A1(refalrts::Iter arg_begin, re
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetSourceFile.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetSourceFile.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[14] );
@@ -536,7 +537,7 @@ static refalrts::FnResult func_MakeProject(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[13], ref_Config_GetFolders.ref.function ) )
+    if( ! refalrts::alloc_name( context[13], ref_Configm_GetFolders.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_evar(context[14], context[15], context[6], context[7]))
       return refalrts::cNoMemory;
@@ -622,7 +623,7 @@ static refalrts::FnResult func_PrintSrcPos(refalrts::Iter arg_begin, refalrts::I
   do {
     // # CMD-LINE
     // </0 & PrintSrcPos/4 # CMD-LINE/5 >/1
-    if( ! refalrts::ident_term(  ident_CMD_LINE, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CMDm_LINE, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -788,23 +789,44 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S1L1(refalrts::Iter arg_begin
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( # Source ( e.idx ) e.idx )
-  // </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  ident_Source, context[9] ) )
+  do {
+    // ( # Source ( e.idx ) e.idx )
+    // </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1
+    if( ! refalrts::ident_term(  ident_Source, context[9] ) )
+      continue;
+    context[14] = context[5];
+    context[15] = context[6];
+    context[10] = 0;
+    context[11] = 0;
+    context[12] = refalrts::brackets_left( context[10], context[11], context[14], context[15] );
+    if( ! context[12] )
+      continue;
+    refalrts::bracket_pointers(context[12], context[13]);
+    // closed e.Source#2 as range 10
+    // closed e.Output#2 as range 14(5)
+    //DEBUG: e.Source#2: 10
+    //DEBUG: e.Output#2: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/14(5) )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( # Include e.idx )
+  // </0 & RunSrefCompiler$1\1/4 (/7 # Include/9 e.Include#2/5 )/8 >/1
+  if( ! refalrts::ident_term(  ident_Include, context[9] ) )
     return refalrts::cRecognitionImpossible;
-  context[10] = 0;
-  context[11] = 0;
-  context[12] = refalrts::brackets_left( context[10], context[11], context[5], context[6] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[12], context[13]);
-  // closed e.Source#2 as range 10
-  // closed e.Output#2 as range 5
-  //DEBUG: e.Source#2: 10
-  //DEBUG: e.Output#2: 5
+  // closed e.Include#2 as range 5
+  //DEBUG: e.Include#2: 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/12 e.Source#2/10 )/13 e.Output#2/5 )/8 >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Include/9 e.Include#2/5 )/8 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -942,31 +964,52 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2L2(refalrts::Iter arg_begin
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( # Source ( e.idx ) e.idx )
-  // </0 & RunSrefCompiler$2\2/4 (/7 # Source/9 (/12 e.Source#10/10 )/13 e.Output#10/5 )/8 >/1
-  if( ! refalrts::ident_term(  ident_Source, context[9] ) )
+  do {
+    // ( # Source ( e.idx ) e.idx )
+    // </0 & RunSrefCompiler$2\2/4 (/7 # Source/9 (/12 e.Source#10/10 )/13 e.Output#10/5 )/8 >/1
+    if( ! refalrts::ident_term(  ident_Source, context[9] ) )
+      continue;
+    context[14] = context[5];
+    context[15] = context[6];
+    context[10] = 0;
+    context[11] = 0;
+    context[12] = refalrts::brackets_left( context[10], context[11], context[14], context[15] );
+    if( ! context[12] )
+      continue;
+    refalrts::bracket_pointers(context[12], context[13]);
+    // closed e.Source#10 as range 10
+    // closed e.Output#10 as range 14(5)
+    //DEBUG: e.Source#10: 10
+    //DEBUG: e.Output#10: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\2/4 (/7 {REMOVED TILE} e.Output#10/14(5) )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/12 AsIs: e.Source#10/10 HalfReuse: '\"'/13 } Tile{ ]] }
+    refalrts::reinit_char( context[9], ' ' );
+    refalrts::reinit_char( context[12], '\"' );
+    refalrts::reinit_char( context[13], '\"' );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[9], context[13] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( # Include e.idx )
+  // </0 & RunSrefCompiler$2\2/4 (/7 # Include/9 e.Include#10/5 )/8 >/1
+  if( ! refalrts::ident_term(  ident_Include, context[9] ) )
     return refalrts::cRecognitionImpossible;
-  context[10] = 0;
-  context[11] = 0;
-  context[12] = refalrts::brackets_left( context[10], context[11], context[5], context[6] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[12], context[13]);
-  // closed e.Source#10 as range 10
-  // closed e.Output#10 as range 5
-  //DEBUG: e.Source#10: 10
-  //DEBUG: e.Output#10: 5
+  // closed e.Include#10 as range 5
+  //DEBUG: e.Include#10: 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\2/4 (/7 {REMOVED TILE} e.Output#10/5 )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/12 AsIs: e.Source#10/10 HalfReuse: '\"'/13 } Tile{ ]] }
-  refalrts::reinit_char( context[9], ' ' );
-  refalrts::reinit_char( context[12], '\"' );
-  refalrts::reinit_char( context[13], '\"' );
+  //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\2/4 (/7 # Include/9 e.Include#10/5 )/8 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[13] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
@@ -1221,7 +1264,7 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2A7(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   refalrts::reinit_name( context[0], refalrts::create_closure );
   refalrts::update_name( context[4], ref_gen_RunSrefCompiler_S2A8.ref.function );
-  refalrts::reinit_name( context[32], ref_Config_GetReferences.ref.function );
+  refalrts::reinit_name( context[32], ref_Configm_GetReferences.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[35] );
   refalrts::push_stack( context[42] );
@@ -1719,7 +1762,7 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2A2(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], ref_Config_GetCppCompilerLib.ref.function ) )
+  if( ! refalrts::alloc_name( context[21], ref_Configm_GetCppCompilerLib.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[22], context[23], context[13], context[14]))
     return refalrts::cNoMemory;
@@ -1793,7 +1836,7 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2A1(refalrts::Iter arg_begin
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_Config_GetCppCompilerExe.ref.function ) )
+  if( ! refalrts::alloc_name( context[17], ref_Configm_GetCppCompilerExe.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[18], context[19], context[9], context[10]))
     return refalrts::cNoMemory;
@@ -1927,7 +1970,7 @@ static refalrts::FnResult func_RunSrefCompiler(refalrts::Iter arg_begin, refalrt
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetSrefCompiler.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetSrefCompiler.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[16] );
@@ -2104,7 +2147,7 @@ static refalrts::FnResult func_MakeTargetModeFlag(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetTargetMode.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetTargetMode.ref.function );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[1] );
@@ -2209,7 +2252,7 @@ static refalrts::FnResult func_MakeTargetFileFlag(refalrts::Iter arg_begin, refa
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetTargetFileName.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetTargetFileName.ref.function );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[1] );
@@ -2345,7 +2388,7 @@ static refalrts::FnResult func_MakeSearchFolderFlags(refalrts::Iter arg_begin, r
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetFolders.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetFolders.ref.function );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[1] );
@@ -2445,7 +2488,7 @@ static refalrts::FnResult func_GetPrefix(refalrts::Iter arg_begin, refalrts::Ite
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Config_GetPrefix.ref.function );
+  refalrts::update_name( context[4], ref_Configm_GetPrefix.ref.function );
   refalrts::push_stack( context[10] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[1] );

@@ -2,7 +2,7 @@
 #include "refalrts.h"
 
 
-const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
 const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
 const refalrts::RefalIdentifier ident_AlgRight = refalrts::ident_from_static("AlgRight");
 const refalrts::RefalIdentifier ident_AlgTerm = refalrts::ident_from_static("AlgTerm");
@@ -39,11 +39,11 @@ static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
 static refalrts::ExternalReference ref_FakeOffset("FakeOffset", 0U, 0U);
 static refalrts::ExternalReference ref_TextFromExpr("TextFromExpr", 0U, 0U);
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_GenInitSubst_Simple("GenInitSubst-Simple", 0U, 0U);
-static refalrts::ExternalReference ref_GenSubst_Simple("GenSubst-Simple", 0U, 0U);
+static refalrts::ExternalReference ref_GenInitSubstm_Simple("GenInitSubst-Simple", 0U, 0U);
+static refalrts::ExternalReference ref_GenSubstm_Simple("GenSubst-Simple", 0U, 0U);
 static refalrts::ExternalReference ref_DoGenSubst("DoGenSubst", 116784527U, 3104022280U);
 
-static refalrts::FnResult func_GenInitSubst_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_GenInitSubstm_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
@@ -90,9 +90,9 @@ static refalrts::FnResult func_GenInitSubst_Simple(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenInitSubst_Simple("GenInitSubst-Simple", 0U, 0U, func_GenInitSubst_Simple);
+static refalrts::NativeReference nat_ref_GenInitSubstm_Simple("GenInitSubst-Simple", 0U, 0U, func_GenInitSubstm_Simple);
 
-static refalrts::FnResult func_GenSubst_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_GenSubstm_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
@@ -138,7 +138,7 @@ static refalrts::FnResult func_GenSubst_Simple(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenSubst_Simple("GenSubst-Simple", 0U, 0U, func_GenSubst_Simple);
+static refalrts::NativeReference nat_ref_GenSubstm_Simple("GenSubst-Simple", 0U, 0U, func_GenSubstm_Simple);
 
 static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -759,7 +759,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_ADT_Brackets, context[31], context[32] );
+      context[35] = refalrts::ident_left(  ident_ADTm_Brackets, context[31], context[32] );
       if( ! context[35] )
         continue;
       context[36] = 0;
@@ -3056,7 +3056,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[29] )
         continue;
       refalrts::bracket_pointers(context[29], context[30]);
-      context[31] = refalrts::ident_left(  ident_ADT_Brackets, context[27], context[28] );
+      context[31] = refalrts::ident_left(  ident_ADTm_Brackets, context[27], context[28] );
       if( ! context[31] )
         continue;
       context[32] = 0;
@@ -3206,7 +3206,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
       if( ! context[28] )
         continue;
       refalrts::bracket_pointers(context[28], context[29]);
-      context[30] = refalrts::ident_left(  ident_ADT_Brackets, context[26], context[27] );
+      context[30] = refalrts::ident_left(  ident_ADTm_Brackets, context[26], context[27] );
       if( ! context[30] )
         continue;
       context[31] = 0;

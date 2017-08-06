@@ -2,7 +2,7 @@
 #include "refalrts.h"
 
 
-const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
 const refalrts::RefalIdentifier ident_AlreadyBounded = refalrts::ident_from_static("AlreadyBounded");
 const refalrts::RefalIdentifier ident_AlreadyDefined = refalrts::ident_from_static("AlreadyDefined");
 const refalrts::RefalIdentifier ident_Assign = refalrts::ident_from_static("Assign");
@@ -17,8 +17,8 @@ const refalrts::RefalIdentifier ident_Error = refalrts::ident_from_static("Error
 const refalrts::RefalIdentifier ident_ForwardForEntry = refalrts::ident_from_static("ForwardForEntry");
 const refalrts::RefalIdentifier ident_ForwardNotDefined = refalrts::ident_from_static("ForwardNotDefined");
 const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
-const refalrts::RefalIdentifier ident_GN_Entry = refalrts::ident_from_static("GN-Entry");
-const refalrts::RefalIdentifier ident_GN_Local = refalrts::ident_from_static("GN-Local");
+const refalrts::RefalIdentifier ident_GNm_Entry = refalrts::ident_from_static("GN-Entry");
+const refalrts::RefalIdentifier ident_GNm_Local = refalrts::ident_from_static("GN-Local");
 const refalrts::RefalIdentifier ident_Ident = refalrts::ident_from_static("Ident");
 const refalrts::RefalIdentifier ident_InvalidMode = refalrts::ident_from_static("InvalidMode");
 const refalrts::RefalIdentifier ident_NativeBlock = refalrts::ident_from_static("NativeBlock");
@@ -36,7 +36,7 @@ static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_EL_AddErrorAt("EL-AddErrorAt", 0U, 0U);
+static refalrts::ExternalReference ref_ELm_AddErrorAt("EL-AddErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_gen_CheckProgram_L1("CheckProgram\\1", 4173303087U, 954863195U);
 static refalrts::ExternalReference ref_CheckProgram("CheckProgram", 0U, 0U);
 static refalrts::ExternalReference ref_gen_FindErrors_L1("FindErrors\\1", 4173303087U, 954863195U);
@@ -116,7 +116,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " already define", 15 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -160,7 +160,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[23] ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[7], 'O' );
     refalrts::reinit_char( context[9], 'R' );
     refalrts::reinit_char( context[14], ' ' );
@@ -201,7 +201,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " is not define", 14 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -241,7 +241,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[18], context[19], " is not define", 14 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[14], 'F' );
     refalrts::reinit_char( context[7], 'n' );
     refalrts::reinit_char( context[9], 'c' );
@@ -286,7 +286,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[20], '.' ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[8], 'V' );
     refalrts::reinit_char( context[7], 'i' );
     refalrts::reinit_char( context[9], 'a' );
@@ -344,7 +344,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[27], context[28], " has different mode", 19 ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+    refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
     refalrts::reinit_char( context[7], 'a' );
     refalrts::reinit_char( context[9], 'b' );
     refalrts::reinit_char( context[14], ' ' );
@@ -392,7 +392,7 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_chars( context[21], context[22], " not foun", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_EL_AddErrorAt.ref.function );
+  refalrts::update_name( context[4], ref_ELm_AddErrorAt.ref.function );
   refalrts::reinit_char( context[7], 'i' );
   refalrts::reinit_char( context[9], 'a' );
   refalrts::reinit_char( context[14], ' ' );
@@ -905,7 +905,7 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
       context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
       if( ! context[13] )
         continue;
-      context[14] = refalrts::ident_left(  ident_GN_Local, context[7], context[8] );
+      context[14] = refalrts::ident_left(  ident_GNm_Local, context[7], context[8] );
       if( ! context[14] )
         continue;
       // closed e.Name#1 as range 7
@@ -926,7 +926,7 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
           continue;
         if( ! refalrts::repeated_evar_right( context[22], context[23], context[7], context[8], context[17], context[18] ) )
           continue;
-        context[24] = refalrts::ident_right(  ident_GN_Local, context[17], context[18] );
+        context[24] = refalrts::ident_right(  ident_GNm_Local, context[17], context[18] );
         if( ! context[24] )
           continue;
         // closed e.Declarations-E#1 as range 31(2)
@@ -983,7 +983,7 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
       context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
       if( ! context[13] )
         continue;
-      context[14] = refalrts::ident_left(  ident_GN_Local, context[7], context[8] );
+      context[14] = refalrts::ident_left(  ident_GNm_Local, context[7], context[8] );
       if( ! context[14] )
         continue;
       // closed e.Name#1 as range 7
@@ -1004,7 +1004,7 @@ static refalrts::FnResult func_CleanupValidForwards(refalrts::Iter arg_begin, re
           continue;
         if( ! refalrts::repeated_evar_right( context[22], context[23], context[7], context[8], context[17], context[18] ) )
           continue;
-        context[24] = refalrts::ident_right(  ident_GN_Local, context[17], context[18] );
+        context[24] = refalrts::ident_right(  ident_GNm_Local, context[17], context[18] );
         if( ! context[24] )
           continue;
         // closed e.Declarations-E#1 as range 31(2)
@@ -1093,7 +1093,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
       context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
       if( ! context[13] )
         continue;
-      context[14] = refalrts::ident_left(  ident_GN_Local, context[7], context[8] );
+      context[14] = refalrts::ident_left(  ident_GNm_Local, context[7], context[8] );
       if( ! context[14] )
         continue;
       // closed e.Name#1 as range 7
@@ -1114,7 +1114,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
           continue;
         if( ! refalrts::repeated_evar_right( context[22], context[23], context[7], context[8], context[17], context[18] ) )
           continue;
-        context[24] = refalrts::ident_right(  ident_GN_Entry, context[17], context[18] );
+        context[24] = refalrts::ident_right(  ident_GNm_Entry, context[17], context[18] );
         if( ! context[24] )
           continue;
         // closed e.Declarations-E#1 as range 31(2)
@@ -1168,7 +1168,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
       context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
       if( ! context[13] )
         continue;
-      context[14] = refalrts::ident_left(  ident_GN_Entry, context[7], context[8] );
+      context[14] = refalrts::ident_left(  ident_GNm_Entry, context[7], context[8] );
       if( ! context[14] )
         continue;
       // closed e.Name#1 as range 7
@@ -1189,7 +1189,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
           continue;
         if( ! refalrts::repeated_evar_right( context[22], context[23], context[7], context[8], context[17], context[18] ) )
           continue;
-        context[24] = refalrts::ident_right(  ident_GN_Local, context[17], context[18] );
+        context[24] = refalrts::ident_right(  ident_GNm_Local, context[17], context[18] );
         if( ! context[24] )
           continue;
         // closed e.Declarations-E#1 as range 31(2)
@@ -1244,7 +1244,7 @@ static refalrts::FnResult func_FindInvalidForwards(refalrts::Iter arg_begin, ref
       context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
       if( ! context[13] )
         continue;
-      context[14] = refalrts::ident_left(  ident_GN_Local, context[7], context[8] );
+      context[14] = refalrts::ident_left(  ident_GNm_Local, context[7], context[8] );
       if( ! context[14] )
         continue;
       // closed e.Name#1 as range 7
@@ -2227,7 +2227,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_ADTm_Brackets, context[7], context[8] );
     if( ! context[9] )
       continue;
     context[11] = refalrts::tvar_left( context[10], context[7], context[8] );
@@ -2270,7 +2270,7 @@ static refalrts::FnResult func_gen_FlatExpr_L1(refalrts::Iter arg_begin, refalrt
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  ident_ADT_Brackets, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_ADTm_Brackets, context[7], context[8] );
     if( ! context[9] )
       continue;
     context[11] = refalrts::tvar_left( context[10], context[7], context[8] );

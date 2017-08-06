@@ -4,7 +4,7 @@
 
 const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
 const refalrts::RefalIdentifier ident_Long = refalrts::ident_from_static("Long");
-const refalrts::RefalIdentifier ident_Long_Param = refalrts::ident_from_static("Long-Param");
+const refalrts::RefalIdentifier ident_Longm_Param = refalrts::ident_from_static("Long-Param");
 const refalrts::RefalIdentifier ident_NoParam = refalrts::ident_from_static("NoParam");
 const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
 const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
@@ -22,9 +22,9 @@ static refalrts::ExternalReference ref_MarkupArguments("MarkupArguments", 159105
 static refalrts::ExternalReference ref_MarkupAllFiles("MarkupAllFiles", 1591052355U, 3146445571U);
 static refalrts::ExternalReference ref_ResolveOpts("ResolveOpts", 1591052355U, 3146445571U);
 static refalrts::ExternalReference ref_Error("Error", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOpts_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOpts_Long("ResolveOpts-Long", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOpts_Short("ResolveOpts-Short", 1591052355U, 3146445571U);
+static refalrts::ExternalReference ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U);
+static refalrts::ExternalReference ref_ResolveOptsm_Long("ResolveOpts-Long", 1591052355U, 3146445571U);
+static refalrts::ExternalReference ref_ResolveOptsm_Short("ResolveOpts-Short", 1591052355U, 3146445571U);
 static refalrts::ExternalReference ref_FoldErrors("FoldErrors", 1591052355U, 3146445571U);
 static refalrts::ExternalReference ref_DoFoldErrors("DoFoldErrors", 1591052355U, 3146445571U);
 
@@ -228,7 +228,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( context[18] ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_ident( context[8], ident_Long_Param );
+      refalrts::reinit_ident( context[8], ident_Longm_Param );
       refalrts::reinit_svar( context[10], context[5] );
       refalrts::reinit_open_bracket( context[11] );
       refalrts::reinit_close_bracket( context[14] );
@@ -547,7 +547,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  ident_Long_Param, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Longm_Param, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.ArgsTail#1 as range 37(2)
@@ -615,7 +615,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( context[36] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ref_ResolveOpts_LongParam.ref.function );
+        refalrts::update_name( context[4], ref_ResolveOptsm_LongParam.ref.function );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[25] );
         refalrts::reinit_open_bracket( context[18] );
@@ -651,7 +651,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
     if( ! context[11] )
       continue;
     refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  ident_Long_Param, context[9], context[10] );
+    context[13] = refalrts::ident_left(  ident_Longm_Param, context[9], context[10] );
     if( ! context[13] )
       continue;
     // closed e.Description#1 as range 5
@@ -763,7 +763,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[32] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ref_ResolveOpts_Long.ref.function );
+        refalrts::update_name( context[4], ref_ResolveOptsm_Long.ref.function );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[21] );
         refalrts::push_stack( context[1] );
@@ -898,7 +898,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( context[28] ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ref_ResolveOpts_Short.ref.function );
+        refalrts::update_name( context[4], ref_ResolveOptsm_Short.ref.function );
         refalrts::reinit_svar( context[11], context[14] );
         refalrts::reinit_svar( context[13], context[22] );
         refalrts::push_stack( context[1] );
@@ -1090,7 +1090,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
 
 static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 1591052355U, 3146445571U, func_ResolveOpts);
 
-static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
@@ -1255,9 +1255,9 @@ static refalrts::FnResult func_ResolveOpts_LongParam(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U, func_ResolveOpts_LongParam);
+static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U, func_ResolveOptsm_LongParam);
 
-static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_ResolveOptsm_Long(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
@@ -1515,9 +1515,9 @@ static refalrts::FnResult func_ResolveOpts_Long(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts_Long("ResolveOpts-Long", 1591052355U, 3146445571U, func_ResolveOpts_Long);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 1591052355U, 3146445571U, func_ResolveOptsm_Long);
 
-static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_ResolveOptsm_Short(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
@@ -1913,7 +1913,7 @@ static refalrts::FnResult func_ResolveOpts_Short(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts_Short("ResolveOpts-Short", 1591052355U, 3146445571U, func_ResolveOpts_Short);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 1591052355U, 3146445571U, func_ResolveOptsm_Short);
 
 static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

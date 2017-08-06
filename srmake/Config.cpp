@@ -21,28 +21,28 @@ const refalrts::RefalIdentifier ident_TargetFileName = refalrts::ident_from_stat
 const refalrts::RefalIdentifier ident_TargetMode = refalrts::ident_from_static("TargetMode");
 const refalrts::RefalIdentifier ident_TargetModeAlreadySet = refalrts::ident_from_static("TargetModeAlreadySet");
 static refalrts::ExternalReference ref_Config("Config", 1716599720U, 323627134U);
-static refalrts::ExternalReference ref_Config_Create("Config-Create", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetCppCompilerExe("Config-SetCppCompilerExe", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetCppCompilerLib("Config-SetCppCompilerLib", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetFolders("Config-GetFolders", 0U, 0U);
-static refalrts::ExternalReference ref_Config_AddFolder("Config-AddFolder", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetSrefCompiler("Config-SetSrefCompiler", 0U, 0U);
-static refalrts::ExternalReference ref_Config_AddSrefCompilerFlag("Config-AddSrefCompilerFlag", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetTargetFileName("Config-GetTargetFileName", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetTargetFileName("Config-SetTargetFileName", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetSourceFile("Config-GetSourceFile", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetSourceFile("Config-SetSourceFile", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetPrefix("Config-GetPrefix", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetPrefix("Config-SetPrefix", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetReferences("Config-GetReferences", 0U, 0U);
-static refalrts::ExternalReference ref_Config_AddReference("Config-AddReference", 0U, 0U);
-static refalrts::ExternalReference ref_Config_GetTargetMode("Config-GetTargetMode", 0U, 0U);
-static refalrts::ExternalReference ref_Config_SetTargetMode("Config-SetTargetMode", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_Create("Config-Create", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetCppCompilerExe("Config-SetCppCompilerExe", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetCppCompilerLib("Config-SetCppCompilerLib", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetFolders("Config-GetFolders", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_AddFolder("Config-AddFolder", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetSrefCompiler("Config-SetSrefCompiler", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_AddSrefCompilerFlag("Config-AddSrefCompilerFlag", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetTargetFileName("Config-GetTargetFileName", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetTargetFileName("Config-SetTargetFileName", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetSourceFile("Config-GetSourceFile", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetSourceFile("Config-SetSourceFile", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetPrefix("Config-GetPrefix", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetPrefix("Config-SetPrefix", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetReferences("Config-GetReferences", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_AddReference("Config-AddReference", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetTargetMode("Config-GetTargetMode", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U);
 
-static refalrts::FnResult func_Config_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 40 elems
   refalrts::Iter context[40];
@@ -149,9 +149,9 @@ static refalrts::FnResult func_Config_Create(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Config_Create("Config-Create", 0U, 0U, func_Config_Create);
+static refalrts::NativeReference nat_ref_Configm_Create("Config-Create", 0U, 0U, func_Configm_Create);
 
-static refalrts::FnResult func_Config_GetCppCompilerExe(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetCppCompilerExe(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -204,9 +204,9 @@ static refalrts::FnResult func_Config_GetCppCompilerExe(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U, func_Config_GetCppCompilerExe);
+static refalrts::NativeReference nat_ref_Configm_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U, func_Configm_GetCppCompilerExe);
 
-static refalrts::FnResult func_Config_SetCppCompilerExe(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetCppCompilerExe(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -264,9 +264,9 @@ static refalrts::FnResult func_Config_SetCppCompilerExe(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetCppCompilerExe("Config-SetCppCompilerExe", 0U, 0U, func_Config_SetCppCompilerExe);
+static refalrts::NativeReference nat_ref_Configm_SetCppCompilerExe("Config-SetCppCompilerExe", 0U, 0U, func_Configm_SetCppCompilerExe);
 
-static refalrts::FnResult func_Config_GetCppCompilerLib(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetCppCompilerLib(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -319,9 +319,9 @@ static refalrts::FnResult func_Config_GetCppCompilerLib(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U, func_Config_GetCppCompilerLib);
+static refalrts::NativeReference nat_ref_Configm_GetCppCompilerLib("Config-GetCppCompilerLib", 0U, 0U, func_Configm_GetCppCompilerLib);
 
-static refalrts::FnResult func_Config_SetCppCompilerLib(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetCppCompilerLib(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -379,9 +379,9 @@ static refalrts::FnResult func_Config_SetCppCompilerLib(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetCppCompilerLib("Config-SetCppCompilerLib", 0U, 0U, func_Config_SetCppCompilerLib);
+static refalrts::NativeReference nat_ref_Configm_SetCppCompilerLib("Config-SetCppCompilerLib", 0U, 0U, func_Configm_SetCppCompilerLib);
 
-static refalrts::FnResult func_Config_GetFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -434,9 +434,9 @@ static refalrts::FnResult func_Config_GetFolders(refalrts::Iter arg_begin, refal
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetFolders("Config-GetFolders", 0U, 0U, func_Config_GetFolders);
+static refalrts::NativeReference nat_ref_Configm_GetFolders("Config-GetFolders", 0U, 0U, func_Configm_GetFolders);
 
-static refalrts::FnResult func_Config_AddFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_AddFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
@@ -564,9 +564,9 @@ static refalrts::FnResult func_Config_AddFolder(refalrts::Iter arg_begin, refalr
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_AddFolder("Config-AddFolder", 0U, 0U, func_Config_AddFolder);
+static refalrts::NativeReference nat_ref_Configm_AddFolder("Config-AddFolder", 0U, 0U, func_Configm_AddFolder);
 
-static refalrts::FnResult func_Config_GetSrefCompiler(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetSrefCompiler(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
@@ -628,9 +628,9 @@ static refalrts::FnResult func_Config_GetSrefCompiler(refalrts::Iter arg_begin, 
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U, func_Config_GetSrefCompiler);
+static refalrts::NativeReference nat_ref_Configm_GetSrefCompiler("Config-GetSrefCompiler", 0U, 0U, func_Configm_GetSrefCompiler);
 
-static refalrts::FnResult func_Config_SetSrefCompiler(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetSrefCompiler(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
@@ -697,9 +697,9 @@ static refalrts::FnResult func_Config_SetSrefCompiler(refalrts::Iter arg_begin, 
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetSrefCompiler("Config-SetSrefCompiler", 0U, 0U, func_Config_SetSrefCompiler);
+static refalrts::NativeReference nat_ref_Configm_SetSrefCompiler("Config-SetSrefCompiler", 0U, 0U, func_Configm_SetSrefCompiler);
 
-static refalrts::FnResult func_Config_AddSrefCompilerFlag(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_AddSrefCompilerFlag(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
@@ -769,9 +769,9 @@ static refalrts::FnResult func_Config_AddSrefCompilerFlag(refalrts::Iter arg_beg
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_AddSrefCompilerFlag("Config-AddSrefCompilerFlag", 0U, 0U, func_Config_AddSrefCompilerFlag);
+static refalrts::NativeReference nat_ref_Configm_AddSrefCompilerFlag("Config-AddSrefCompilerFlag", 0U, 0U, func_Configm_AddSrefCompilerFlag);
 
-static refalrts::FnResult func_Config_GetTargetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetTargetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -824,9 +824,9 @@ static refalrts::FnResult func_Config_GetTargetFileName(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetTargetFileName("Config-GetTargetFileName", 0U, 0U, func_Config_GetTargetFileName);
+static refalrts::NativeReference nat_ref_Configm_GetTargetFileName("Config-GetTargetFileName", 0U, 0U, func_Configm_GetTargetFileName);
 
-static refalrts::FnResult func_Config_SetTargetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetTargetFileName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -884,9 +884,9 @@ static refalrts::FnResult func_Config_SetTargetFileName(refalrts::Iter arg_begin
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetTargetFileName("Config-SetTargetFileName", 0U, 0U, func_Config_SetTargetFileName);
+static refalrts::NativeReference nat_ref_Configm_SetTargetFileName("Config-SetTargetFileName", 0U, 0U, func_Configm_SetTargetFileName);
 
-static refalrts::FnResult func_Config_GetSourceFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetSourceFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -939,9 +939,9 @@ static refalrts::FnResult func_Config_GetSourceFile(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetSourceFile("Config-GetSourceFile", 0U, 0U, func_Config_GetSourceFile);
+static refalrts::NativeReference nat_ref_Configm_GetSourceFile("Config-GetSourceFile", 0U, 0U, func_Configm_GetSourceFile);
 
-static refalrts::FnResult func_Config_SetSourceFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetSourceFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
@@ -1050,9 +1050,9 @@ static refalrts::FnResult func_Config_SetSourceFile(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetSourceFile("Config-SetSourceFile", 0U, 0U, func_Config_SetSourceFile);
+static refalrts::NativeReference nat_ref_Configm_SetSourceFile("Config-SetSourceFile", 0U, 0U, func_Configm_SetSourceFile);
 
-static refalrts::FnResult func_Config_GetPrefix(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetPrefix(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -1105,9 +1105,9 @@ static refalrts::FnResult func_Config_GetPrefix(refalrts::Iter arg_begin, refalr
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetPrefix("Config-GetPrefix", 0U, 0U, func_Config_GetPrefix);
+static refalrts::NativeReference nat_ref_Configm_GetPrefix("Config-GetPrefix", 0U, 0U, func_Configm_GetPrefix);
 
-static refalrts::FnResult func_Config_SetPrefix(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetPrefix(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -1165,9 +1165,9 @@ static refalrts::FnResult func_Config_SetPrefix(refalrts::Iter arg_begin, refalr
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetPrefix("Config-SetPrefix", 0U, 0U, func_Config_SetPrefix);
+static refalrts::NativeReference nat_ref_Configm_SetPrefix("Config-SetPrefix", 0U, 0U, func_Configm_SetPrefix);
 
-static refalrts::FnResult func_Config_GetReferences(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetReferences(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -1220,9 +1220,9 @@ static refalrts::FnResult func_Config_GetReferences(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetReferences("Config-GetReferences", 0U, 0U, func_Config_GetReferences);
+static refalrts::NativeReference nat_ref_Configm_GetReferences("Config-GetReferences", 0U, 0U, func_Configm_GetReferences);
 
-static refalrts::FnResult func_Config_AddReference(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_AddReference(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
@@ -1287,9 +1287,9 @@ static refalrts::FnResult func_Config_AddReference(refalrts::Iter arg_begin, ref
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_AddReference("Config-AddReference", 0U, 0U, func_Config_AddReference);
+static refalrts::NativeReference nat_ref_Configm_AddReference("Config-AddReference", 0U, 0U, func_Configm_AddReference);
 
-static refalrts::FnResult func_Config_GetTargetMode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_GetTargetMode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
@@ -1345,9 +1345,9 @@ static refalrts::FnResult func_Config_GetTargetMode(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_GetTargetMode("Config-GetTargetMode", 0U, 0U, func_Config_GetTargetMode);
+static refalrts::NativeReference nat_ref_Configm_GetTargetMode("Config-GetTargetMode", 0U, 0U, func_Configm_GetTargetMode);
 
-static refalrts::FnResult func_Config_SetTargetMode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_Configm_SetTargetMode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 25 elems
   refalrts::Iter context[25];
@@ -1514,7 +1514,7 @@ static refalrts::FnResult func_Config_SetTargetMode(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Config_SetTargetMode("Config-SetTargetMode", 0U, 0U, func_Config_SetTargetMode);
+static refalrts::NativeReference nat_ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U, func_Configm_SetTargetMode);
 
 
 //End of file

@@ -2,8 +2,8 @@
 #include "refalrts.h"
 
 
-const refalrts::RefalIdentifier ident_ADT_Brackets = refalrts::ident_from_static("ADT-Brackets");
-const refalrts::RefalIdentifier ident_ARG_BEGIN = refalrts::ident_from_static("ARG-BEGIN");
+const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
+const refalrts::RefalIdentifier ident_ARGm_BEGIN = refalrts::ident_from_static("ARG-BEGIN");
 const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
 const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
 const refalrts::RefalIdentifier ident_CallBrackets = refalrts::ident_from_static("CallBrackets");
@@ -50,16 +50,16 @@ static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_CollectStrings("CollectStrings", 0U, 0U);
 static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
 static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
-static refalrts::ExternalReference ref_gen_GenResult_Simple_L1("GenResult-Simple\\1", 2528518871U, 2573030195U);
-static refalrts::ExternalReference ref_gen_GenResult_Simple_L2("GenResult-Simple\\2", 2528518871U, 2573030195U);
-static refalrts::ExternalReference ref_GenResult_Simple("GenResult-Simple", 0U, 0U);
+static refalrts::ExternalReference ref_gen_GenResultm_Simple_L1("GenResult-Simple\\1", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_gen_GenResultm_Simple_L2("GenResult-Simple\\2", 2528518871U, 2573030195U);
+static refalrts::ExternalReference ref_GenResultm_Simple("GenResult-Simple", 0U, 0U);
 static refalrts::ExternalReference ref_DoGenResult("DoGenResult", 2528518871U, 2573030195U);
 static refalrts::ExternalReference ref_MakeVariableCommentTable("MakeVariableCommentTable", 2528518871U, 2573030195U);
 static refalrts::ExternalReference ref_gen_ReplicateVar_L1("ReplicateVar\\1", 2528518871U, 2573030195U);
 static refalrts::ExternalReference ref_ReplicateVar("ReplicateVar", 2528518871U, 2573030195U);
 static refalrts::ExternalReference ref_MakeVariableComment("MakeVariableComment", 2528518871U, 2573030195U);
 
-static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_GenResultm_Simple_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
@@ -111,9 +111,9 @@ static refalrts::FnResult func_gen_GenResult_Simple_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenResult_Simple_L1("GenResult-Simple\\1", 2528518871U, 2573030195U, func_gen_GenResult_Simple_L1);
+static refalrts::NativeReference nat_ref_gen_GenResultm_Simple_L1("GenResult-Simple\\1", 2528518871U, 2573030195U, func_gen_GenResultm_Simple_L1);
 
-static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_GenResultm_Simple_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
@@ -202,7 +202,7 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[15], ident_CmdSetRes ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[16], ident_ARG_BEGIN ) )
+  if( ! refalrts::alloc_ident( context[16], ident_ARGm_BEGIN ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[17], ident_CmdUseRes ) )
     return refalrts::cNoMemory;
@@ -244,9 +244,9 @@ static refalrts::FnResult func_gen_GenResult_Simple_L2(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenResult_Simple_L2("GenResult-Simple\\2", 2528518871U, 2573030195U, func_gen_GenResult_Simple_L2);
+static refalrts::NativeReference nat_ref_gen_GenResultm_Simple_L2("GenResult-Simple\\2", 2528518871U, 2573030195U, func_gen_GenResultm_Simple_L2);
 
-static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_GenResultm_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
@@ -292,7 +292,7 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[18], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], ref_gen_GenResult_Simple_L1.ref.function ) )
+  if( ! refalrts::alloc_name( context[19], ref_gen_GenResultm_Simple_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
@@ -304,7 +304,7 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[25], ref_gen_GenResult_Simple_L2.ref.function ) )
+  if( ! refalrts::alloc_name( context[25], ref_gen_GenResultm_Simple_L2.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[26] ) )
     return refalrts::cNoMemory;
@@ -337,7 +337,7 @@ static refalrts::FnResult func_GenResult_Simple(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenResult_Simple("GenResult-Simple", 0U, 0U, func_GenResult_Simple);
+static refalrts::NativeReference nat_ref_GenResultm_Simple("GenResult-Simple", 0U, 0U, func_GenResultm_Simple);
 
 static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -960,7 +960,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[20] )
       continue;
     refalrts::bracket_pointers(context[20], context[21]);
-    context[22] = refalrts::ident_left(  ident_ADT_Brackets, context[18], context[19] );
+    context[22] = refalrts::ident_left(  ident_ADTm_Brackets, context[18], context[19] );
     if( ! context[22] )
       continue;
     context[23] = 0;
