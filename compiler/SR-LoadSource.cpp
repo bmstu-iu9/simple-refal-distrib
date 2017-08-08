@@ -5,18 +5,18 @@
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-static refalrts::ExternalReference ref_gen_LoadSource_L1("LoadSource\\1", 2935148884U, 199067485U);
-static refalrts::ExternalReference ref_LoadSource("LoadSource", 0U, 0U);
-static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 2935148884U, 199067485U);
+static refalrts::ExternalReference ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1299759681U, 1153380958U);
+static refalrts::ExternalReference ref_SRm_LoadSource("SR-LoadSource", 0U, 0U);
+static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 1299759681U, 1153380958U);
 
-static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
   //FAST GEN: e.$
   //GLOBAL GEN: e.$
-  // </0 & LoadSource\1/4 e.idx#0/2 >/1
+  // </0 & SR-LoadSource\1/4 e.idx#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -25,7 +25,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   // closed e.idx#0 as range 2
   do {
     // '\357\273\277' e.idx
-    // </0 & LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 e.Content#2/2 >/1
+    // </0 & SR-LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 e.Content#2/2 >/1
     context[8] = context[2];
     context[9] = context[3];
     context[5] = refalrts::char_left( '\357', context[8], context[9] );
@@ -41,7 +41,7 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
     //DEBUG: e.Content#2: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE} >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/8(2) } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -53,12 +53,12 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   refalrts::stop_sentence();
 
   // e.idx
-  // </0 & LoadSource\1/4 e.Content#2/2 >/1
+  // </0 & SR-LoadSource\1/4 e.Content#2/2 >/1
   // closed e.Content#2 as range 2
   //DEBUG: e.Content#2: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & LoadSource\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -68,14 +68,14 @@ static refalrts::FnResult func_gen_LoadSource_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LoadSource_L1("LoadSource\\1", 2935148884U, 199067485U, func_gen_LoadSource_L1);
+static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1299759681U, 1153380958U, func_gen_SRm_LoadSource_L1);
 
-static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_SRm_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & LoadSource/4 e.FileName#1/2 >/1
+  // </0 & SR-LoadSource/4 e.FileName#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -86,7 +86,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & Fetch/6 </7 & Map/8 & LinearizeLine/9 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/10 & LoadSource\1/11 >/12 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & Fetch/6 </7 & Map/8 & LinearizeLine/9 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/10 & SR-LoadSource\1/11 >/12 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_Fetch.ref.function ) )
@@ -99,7 +99,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], ref_gen_LoadSource_L1.ref.function ) )
+  if( ! refalrts::alloc_name( context[11], ref_gen_SRm_LoadSource_L1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
@@ -120,7 +120,7 @@ static refalrts::FnResult func_LoadSource(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LoadSource("LoadSource", 0U, 0U, func_LoadSource);
+static refalrts::NativeReference nat_ref_SRm_LoadSource("SR-LoadSource", 0U, 0U, func_SRm_LoadSource);
 
 static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -156,7 +156,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 2935148884U, 199067485U, func_LinearizeLine);
+static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 1299759681U, 1153380958U, func_LinearizeLine);
 
 
 //End of file

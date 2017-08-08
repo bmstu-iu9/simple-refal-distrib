@@ -11,6 +11,7 @@ const refalrts::RefalIdentifier ident_Folders = refalrts::ident_from_static("Fol
 const refalrts::RefalIdentifier ident_ManySourceFiles = refalrts::ident_from_static("ManySourceFiles");
 const refalrts::RefalIdentifier ident_NotSet = refalrts::ident_from_static("NotSet");
 const refalrts::RefalIdentifier ident_Prefix = refalrts::ident_from_static("Prefix");
+const refalrts::RefalIdentifier ident_Prelude = refalrts::ident_from_static("Prelude");
 const refalrts::RefalIdentifier ident_References = refalrts::ident_from_static("References");
 const refalrts::RefalIdentifier ident_Runtime = refalrts::ident_from_static("Runtime");
 const refalrts::RefalIdentifier ident_Search = refalrts::ident_from_static("Search");
@@ -20,7 +21,7 @@ const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Suc
 const refalrts::RefalIdentifier ident_TargetFileName = refalrts::ident_from_static("TargetFileName");
 const refalrts::RefalIdentifier ident_TargetMode = refalrts::ident_from_static("TargetMode");
 const refalrts::RefalIdentifier ident_TargetModeAlreadySet = refalrts::ident_from_static("TargetModeAlreadySet");
-static refalrts::ExternalReference ref_Config("Config", 1716599720U, 323627134U);
+static refalrts::ExternalReference ref_Config("Config", 2591998108U, 1462205015U);
 static refalrts::ExternalReference ref_Configm_Create("Config-Create", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetCppCompilerExe("Config-GetCppCompilerExe", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetCppCompilerExe("Config-SetCppCompilerExe", 0U, 0U);
@@ -41,12 +42,14 @@ static refalrts::ExternalReference ref_Configm_GetReferences("Config-GetReferenc
 static refalrts::ExternalReference ref_Configm_AddReference("Config-AddReference", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetTargetMode("Config-GetTargetMode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetPrelude("Config-GetPrelude", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetPrelude("Config-SetPrelude", 0U, 0U);
 
 static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 40 elems
-  refalrts::Iter context[40];
-  refalrts::zeros( context, 40 );
+  // issue here memory for vars with 43 elems
+  refalrts::Iter context[43];
+  refalrts::zeros( context, 43 );
   // </0 & Config-Create/4 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -58,7 +61,7 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: [/0 Reuse: & Config/4 HalfReuse: (/1 } # CppCompilerExe/5 )/6 (/7 # CppCompilerLib/8 )/9 (/10 # Folders/11 )/12 (/13 # SrefCompiler/14 (/15"srefc-core"/16 )/18 )/19 (/20 # TargetFileName/21 # DefaultTarget/22 )/23 (/24 # SourceFile/25 # NotSet/26 )/27 (/28 # Prefix/29 # NotSet/30 )/31 (/32 # References/33 )/34 (/35 # TargetMode/36 # DefaultEXE/37 )/38 ]/39 Tile{ ]] }
+  //RESULT: Tile{ [[ HalfReuse: [/0 Reuse: & Config/4 HalfReuse: (/1 } # CppCompilerExe/5 )/6 (/7 # CppCompilerLib/8 )/9 (/10 # Folders/11 )/12 (/13 # SrefCompiler/14 (/15"srefc-core"/16 )/18 )/19 (/20 # TargetFileName/21 # DefaultTarget/22 )/23 (/24 # SourceFile/25 # NotSet/26 )/27 (/28 # Prefix/29 # NotSet/30 )/31 (/32 # References/33 )/34 (/35 # TargetMode/36 # DefaultEXE/37 )/38 (/39 # Prelude/40 )/41 ]/42 Tile{ ]] }
   if( ! refalrts::alloc_ident( context[5], ident_CppCompilerExe ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[6] ) )
@@ -125,12 +128,19 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_adt( context[39] ) )
+  if( ! refalrts::alloc_open_bracket( context[39] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_ident( context[40], ident_Prelude ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[41] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_adt( context[42] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_adt( context[0] );
   refalrts::update_name( context[4], ref_Config.ref.function );
   refalrts::reinit_open_bracket( context[1] );
-  refalrts::link_brackets( context[0], context[39] );
+  refalrts::link_brackets( context[0], context[42] );
+  refalrts::link_brackets( context[39], context[41] );
   refalrts::link_brackets( context[35], context[38] );
   refalrts::link_brackets( context[32], context[34] );
   refalrts::link_brackets( context[28], context[31] );
@@ -144,7 +154,7 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[39] );
+  res = refalrts::splice_evar( res, context[5], context[42] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -1515,6 +1525,121 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::Iter arg_begin, r
 }
 
 static refalrts::NativeReference nat_ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U, func_Configm_SetTargetMode);
+
+static refalrts::FnResult func_Configm_GetPrelude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B#1/10 (/14 # Prelude/16 e.Prelude#1/12 )/15 e.Params-E#1/5 ]/9 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::adt_left( context[5], context[6], ref_Config.ref.function, context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::adt_pointers(context[7], context[8], context[9]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  context[10] = 0;
+  context[11] = 0;
+  refalrts::start_e_loop();
+  do {
+    context[17] = context[5];
+    context[18] = context[6];
+    context[12] = 0;
+    context[13] = 0;
+    context[14] = refalrts::brackets_left( context[12], context[13], context[17], context[18] );
+    if( ! context[14] )
+      continue;
+    refalrts::bracket_pointers(context[14], context[15]);
+    context[16] = refalrts::ident_left(  ident_Prelude, context[12], context[13] );
+    if( ! context[16] )
+      continue;
+    // closed e.Prelude#1 as range 12
+    // closed e.Params-E#1 as range 17(5)
+    //DEBUG: e.Params-B#1: 10
+    //DEBUG: e.Prelude#1: 12
+    //DEBUG: e.Params-E#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B#1/10 (/14 # Prelude/16 {REMOVED TILE} )/15 e.Params-E#1/17(5) ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Prelude#1/12 } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( refalrts::open_evar_advance( context[10], context[11], context[5], context[6] ) );
+  return refalrts::cRecognitionImpossible;
+}
+
+static refalrts::NativeReference nat_ref_Configm_GetPrelude("Config-GetPrelude", 0U, 0U, func_Configm_GetPrelude);
+
+static refalrts::FnResult func_Configm_SetPrelude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & Config-SetPrelude/4 [/7Config/8 e.Params-B#1/10 (/14 # Prelude/16 e.OldPrelude#1/12 )/15 e.Params-E#1/5 ]/9 e.NewPrelude#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::adt_left( context[5], context[6], ref_Config.ref.function, context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::adt_pointers(context[7], context[8], context[9]);
+  // closed e.NewPrelude#1 as range 2
+  context[10] = 0;
+  context[11] = 0;
+  refalrts::start_e_loop();
+  do {
+    context[17] = context[5];
+    context[18] = context[6];
+    context[12] = 0;
+    context[13] = 0;
+    context[14] = refalrts::brackets_left( context[12], context[13], context[17], context[18] );
+    if( ! context[14] )
+      continue;
+    refalrts::bracket_pointers(context[14], context[15]);
+    context[16] = refalrts::ident_left(  ident_Prelude, context[12], context[13] );
+    if( ! context[16] )
+      continue;
+    // closed e.OldPrelude#1 as range 12
+    // closed e.Params-E#1 as range 17(5)
+    //DEBUG: e.NewPrelude#1: 2
+    //DEBUG: e.Params-B#1: 10
+    //DEBUG: e.OldPrelude#1: 12
+    //DEBUG: e.Params-E#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldPrelude#1/12 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/14 AsIs: # Prelude/16 } Tile{ AsIs: e.NewPrelude#1/2 } Tile{ AsIs: )/15 AsIs: e.Params-E#1/17(5) AsIs: ]/9 } Tile{ ]] }
+    refalrts::reinit_ident( context[4], ident_Success );
+    refalrts::link_brackets( context[7], context[9] );
+    refalrts::link_brackets( context[14], context[15] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[9] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[4], context[16] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( refalrts::open_evar_advance( context[10], context[11], context[5], context[6] ) );
+  return refalrts::cRecognitionImpossible;
+}
+
+static refalrts::NativeReference nat_ref_Configm_SetPrelude("Config-SetPrelude", 0U, 0U, func_Configm_SetPrelude);
 
 
 //End of file

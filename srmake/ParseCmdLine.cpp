@@ -14,6 +14,7 @@ const refalrts::RefalIdentifier ident_No = refalrts::ident_from_static("No");
 const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
 const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
 const refalrts::RefalIdentifier ident_Prefix = refalrts::ident_from_static("Prefix");
+const refalrts::RefalIdentifier ident_Prelude = refalrts::ident_from_static("Prelude");
 const refalrts::RefalIdentifier ident_R = refalrts::ident_from_static("R");
 const refalrts::RefalIdentifier ident_Reference = refalrts::ident_from_static("Reference");
 const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Required");
@@ -47,15 +48,16 @@ static refalrts::ExternalReference ref_Configm_SetSrefCompiler("Config-SetSrefCo
 static refalrts::ExternalReference ref_Configm_AddSrefCompilerFlag("Config-AddSrefCompilerFlag", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetTargetFileName("Config-SetTargetFileName", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetPrelude("Config-SetPrelude", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetSourceFile("Config-SetSourceFile", 0U, 0U);
-static refalrts::ExternalReference ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 1041172014U, 1740639674U);
-static refalrts::ExternalReference ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 1041172014U, 1740639674U);
-static refalrts::ExternalReference ref_gen_ParseCommandLine_L3S2L1("ParseCommandLine\\3$2\\1", 1041172014U, 1740639674U);
-static refalrts::ExternalReference ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 1041172014U, 1740639674U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 1987143680U, 3591683160U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 1987143680U, 3591683160U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L3S2L1("ParseCommandLine\\3$2\\1", 1987143680U, 3591683160U);
+static refalrts::ExternalReference ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 1987143680U, 3591683160U);
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
-static refalrts::ExternalReference ref_CheckRequiredOptions("CheckRequiredOptions", 1041172014U, 1740639674U);
-static refalrts::ExternalReference ref_gen_Update_L1("Update\\1", 1041172014U, 1740639674U);
-static refalrts::ExternalReference ref_Update("Update", 1041172014U, 1740639674U);
+static refalrts::ExternalReference ref_CheckRequiredOptions("CheckRequiredOptions", 1987143680U, 3591683160U);
+static refalrts::ExternalReference ref_gen_Update_L1("Update\\1", 1987143680U, 3591683160U);
+static refalrts::ExternalReference ref_Update("Update", 1987143680U, 3591683160U);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -98,7 +100,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 1041172014U, 1740639674U, func_gen_ParseCommandLine_L1);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 1987143680U, 3591683160U, func_gen_ParseCommandLine_L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -662,6 +664,47 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin,
   refalrts::stop_sentence();
 
   do {
+    // ( t.idx e.idx ) ( # Prelude s.idx e.idx )
+    // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/5 )/8 (/11 # Prelude/15 s.Num#2/16 e.Prelude#2/13 )/12 >/1
+    context[13] = 0;
+    context[14] = 0;
+    if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
+      continue;
+    context[15] = refalrts::ident_left(  ident_Prelude, context[13], context[14] );
+    if( ! context[15] )
+      continue;
+    // closed e.Errors#2 as range 5
+    if( ! refalrts::svar_left( context[16], context[13], context[14] ) )
+      continue;
+    // closed e.Prelude#2 as range 13
+    //DEBUG: t.Config#2: 9
+    //DEBUG: e.Errors#2: 5
+    //DEBUG: s.Num#2: 16
+    //DEBUG: e.Prelude#2: 13
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/5 } Tile{ HalfReuse: )/11 HalfReuse: & Config-SetPrelude/15 AsIs: s.Num#2/16 AsIs: e.Prelude#2/13 HalfReuse: >/12 } Tile{ ]] }
+    refalrts::update_name( context[4], ref_Update.ref.function );
+    refalrts::reinit_close_bracket( context[11] );
+    refalrts::reinit_name( context[15], ref_Configm_SetPrelude.ref.function );
+    refalrts::reinit_close_call( context[12] );
+    refalrts::push_stack( context[12] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[7], context[11] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    refalrts::splice_to_freelist_open( context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // ( t.idx e.idx ) ( # FILE s.idx e.idx )
     // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/5 )/8 (/11 # FILE/15 s.Num#2/16 e.SourceFile#2/13 )/12 >/1
     context[13] = 0;
@@ -721,7 +764,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 1041172014U, 1740639674U, func_gen_ParseCommandLine_L2);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 1987143680U, 3591683160U, func_gen_ParseCommandLine_L2);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L3S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1016,7 +1059,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L3S2L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3S2L1("ParseCommandLine\\3$2\\1", 1041172014U, 1740639674U, func_gen_ParseCommandLine_L3S2L1);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3S2L1("ParseCommandLine\\3$2\\1", 1987143680U, 3591683160U, func_gen_ParseCommandLine_L3S2L1);
 
 static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1089,13 +1132,13 @@ static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 1041172014U, 1740639674U, func_gen_ParseCommandLine_L3);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 1987143680U, 3591683160U, func_gen_ParseCommandLine_L3);
 
 static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 154 elems
-  refalrts::Iter context[154];
-  refalrts::zeros( context, 154 );
+  // issue here memory for vars with 162 elems
+  refalrts::Iter context[162];
+  refalrts::zeros( context, 162 );
   // </0 & ParseCommandLine/4 e.Arguments#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1107,7 +1150,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompilerExe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompilerLib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # Prefix/30 # Required/31 'p'/32 (/33"prefix"/34 )/36 )/37 (/38 # Reference/39 # Required/40 'r'/41 (/42"reference"/43 )/45 )/46 (/47 # RuntimeFolder/48 # Required/49 'D'/50 (/51"runtime-dir"/52 )/54 (/55"runtime-directory"/56 )/58 )/59 (/60 # SearchFolder/61 # Required/62 'd'/63 (/64"dir"/65 )/67 (/68"directory"/69 )/71 )/72 (/73 # SrefCompiler/74 # Required/75 's'/76 (/77"sref-command"/78 )/80 )/81 (/82 # SrefCompilerOption/83 # Required/84 'X'/85 (/86"thru"/87 )/89 (/90"through"/91 )/93 )/94 (/95 # TargetFileName/96 # Required/97 'o'/98 (/99"target-file"/100 )/102 )/103 (/104 # TargetMode-Exe/105 # None/106 'x'/107 (/108"makeexe"/109 )/111 )/112 (/113 # TargetMode-Lib/114 # None/115 'l'/116 (/117"makelib"/118 )/120 )/121 (/122 # TargetMode-R/123 # None/124 'R'/125 )/126 (/127 # TargetMode-C/128 # None/129 'C'/130 (/131"compile-only"/132 )/134 )/135 )/136 Tile{ AsIs: e.Arguments#1/2 } >/137 </138 & Seq/139 (/140 & CheckRequiredOptions/141 (/142 # CppCompilerExe/143 # FILE/144 )/145 )/146 & ParseCommandLine\1/147 (/148 & MapReduce/149 & ParseCommandLine\2/150 )/151 & ParseCommandLine\3/152 >/153 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompilerExe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompilerLib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # Prefix/30 # Required/31 'p'/32 (/33"prefix"/34 )/36 )/37 (/38 # Reference/39 # Required/40 'r'/41 (/42"reference"/43 )/45 )/46 (/47 # RuntimeFolder/48 # Required/49 'D'/50 (/51"runtime-dir"/52 )/54 (/55"runtime-directory"/56 )/58 )/59 (/60 # SearchFolder/61 # Required/62 'd'/63 (/64"dir"/65 )/67 (/68"directory"/69 )/71 )/72 (/73 # SrefCompiler/74 # Required/75 's'/76 (/77"sref-command"/78 )/80 )/81 (/82 # SrefCompilerOption/83 # Required/84 'X'/85 (/86"thru"/87 )/89 (/90"through"/91 )/93 )/94 (/95 # TargetFileName/96 # Required/97 'o'/98 (/99"target-file"/100 )/102 )/103 (/104 # TargetMode-Exe/105 # None/106 'x'/107 (/108"makeexe"/109 )/111 )/112 (/113 # TargetMode-Lib/114 # None/115 'l'/116 (/117"makelib"/118 )/120 )/121 (/122 # TargetMode-R/123 # None/124 'R'/125 )/126 (/127 # TargetMode-C/128 # None/129 'C'/130 (/131"compile-only"/132 )/134 )/135 (/136 # Prelude/137 # Required/138 (/139"prelude"/140 )/142 )/143 )/144 Tile{ AsIs: e.Arguments#1/2 } >/145 </146 & Seq/147 (/148 & CheckRequiredOptions/149 (/150 # CppCompilerExe/151 # FILE/152 )/153 )/154 & ParseCommandLine\1/155 (/156 & MapReduce/157 & ParseCommandLine\2/158 )/159 & ParseCommandLine\3/160 >/161 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_GetOpt.ref.function ) )
@@ -1338,53 +1381,69 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[135] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[136] ) )
+  if( ! refalrts::alloc_open_bracket( context[136] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[137] ) )
+  if( ! refalrts::alloc_ident( context[137], ident_Prelude ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[138] ) )
+  if( ! refalrts::alloc_ident( context[138], ident_Required ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[139], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[139] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[140] ) )
+  if( ! refalrts::alloc_chars( context[140], context[141], "prelude", 7 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[141], ref_CheckRequiredOptions.ref.function ) )
+  if( ! refalrts::alloc_close_bracket( context[142] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[142] ) )
+  if( ! refalrts::alloc_close_bracket( context[143] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[143], ident_CppCompilerExe ) )
+  if( ! refalrts::alloc_close_bracket( context[144] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( context[144], ident_FILE ) )
+  if( ! refalrts::alloc_close_call( context[145] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[145] ) )
+  if( ! refalrts::alloc_open_call( context[146] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[146] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[147], ref_gen_ParseCommandLine_L1.ref.function ) )
+  if( ! refalrts::alloc_name( context[147], ref_Seq.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[148] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[149], ref_MapReduce.ref.function ) )
+  if( ! refalrts::alloc_name( context[149], ref_CheckRequiredOptions.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[150], ref_gen_ParseCommandLine_L2.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[150] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[151] ) )
+  if( ! refalrts::alloc_ident( context[151], ident_CppCompilerExe ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[152], ref_gen_ParseCommandLine_L3.ref.function ) )
+  if( ! refalrts::alloc_ident( context[152], ident_FILE ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[153] ) )
+  if( ! refalrts::alloc_close_bracket( context[153] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[154] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[155], ref_gen_ParseCommandLine_L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[156] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[157], ref_MapReduce.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[158], ref_gen_ParseCommandLine_L2.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[159] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[160], ref_gen_ParseCommandLine_L3.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[161] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[153] );
-  refalrts::push_stack( context[138] );
-  refalrts::link_brackets( context[148], context[151] );
-  refalrts::link_brackets( context[140], context[146] );
-  refalrts::link_brackets( context[142], context[145] );
-  refalrts::push_stack( context[137] );
+  refalrts::push_stack( context[161] );
+  refalrts::push_stack( context[146] );
+  refalrts::link_brackets( context[156], context[159] );
+  refalrts::link_brackets( context[148], context[154] );
+  refalrts::link_brackets( context[150], context[153] );
+  refalrts::push_stack( context[145] );
   refalrts::push_stack( context[5] );
-  refalrts::link_brackets( context[7], context[136] );
+  refalrts::link_brackets( context[7], context[144] );
+  refalrts::link_brackets( context[136], context[143] );
+  refalrts::link_brackets( context[139], context[142] );
   refalrts::link_brackets( context[127], context[135] );
   refalrts::link_brackets( context[131], context[134] );
   refalrts::link_brackets( context[122], context[126] );
@@ -1417,9 +1476,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[137], context[153] );
+  res = refalrts::splice_evar( res, context[145], context[161] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[136] );
+  res = refalrts::splice_evar( res, context[5], context[144] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -1576,7 +1635,7 @@ static refalrts::FnResult func_CheckRequiredOptions(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CheckRequiredOptions("CheckRequiredOptions", 1041172014U, 1740639674U, func_CheckRequiredOptions);
+static refalrts::NativeReference nat_ref_CheckRequiredOptions("CheckRequiredOptions", 1987143680U, 3591683160U, func_CheckRequiredOptions);
 
 static refalrts::FnResult func_gen_Update_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1672,7 +1731,7 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Update_L1("Update\\1", 1041172014U, 1740639674U, func_gen_Update_L1);
+static refalrts::NativeReference nat_ref_gen_Update_L1("Update\\1", 1987143680U, 3591683160U, func_gen_Update_L1);
 
 static refalrts::FnResult func_Update(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1747,7 +1806,7 @@ static refalrts::FnResult func_Update(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Update("Update", 1041172014U, 1740639674U, func_Update);
+static refalrts::NativeReference nat_ref_Update("Update", 1987143680U, 3591683160U, func_Update);
 
 
 //End of file
