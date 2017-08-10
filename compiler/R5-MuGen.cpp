@@ -8,11 +8,8 @@ const refalrts::RefalIdentifier ident_k42_ = refalrts::ident_from_static("*");
 const refalrts::RefalIdentifier ident_k43_ = refalrts::ident_from_static("+");
 const refalrts::RefalIdentifier ident_m_ = refalrts::ident_from_static("-");
 const refalrts::RefalIdentifier ident_k47_ = refalrts::ident_from_static("/");
+const refalrts::RefalIdentifier ident_k63_ = refalrts::ident_from_static("?");
 const refalrts::RefalIdentifier ident_Add = refalrts::ident_from_static("Add");
-const refalrts::RefalIdentifier ident_AddMu = refalrts::ident_from_static("AddMu");
-const refalrts::RefalIdentifier ident_AddMuu_check = refalrts::ident_from_static("AddMu_check");
-const refalrts::RefalIdentifier ident_AddMuu_check0 = refalrts::ident_from_static("AddMu_check0");
-const refalrts::RefalIdentifier ident_AddMuu_check1 = refalrts::ident_from_static("AddMu_check1");
 const refalrts::RefalIdentifier ident_Arg = refalrts::ident_from_static("Arg");
 const refalrts::RefalIdentifier ident_Br = refalrts::ident_from_static("Br");
 const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
@@ -40,7 +37,6 @@ const refalrts::RefalIdentifier ident_Exit = refalrts::ident_from_static("Exit")
 const refalrts::RefalIdentifier ident_Explode = refalrts::ident_from_static("Explode");
 const refalrts::RefalIdentifier ident_Explodeu_Ext = refalrts::ident_from_static("Explode_Ext");
 const refalrts::RefalIdentifier ident_Extern = refalrts::ident_from_static("Extern");
-const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
 const refalrts::RefalIdentifier ident_False = refalrts::ident_from_static("False");
 const refalrts::RefalIdentifier ident_First = refalrts::ident_from_static("First");
 const refalrts::RefalIdentifier ident_Freeze = refalrts::ident_from_static("Freeze");
@@ -63,8 +59,6 @@ const refalrts::RefalIdentifier ident_Mod = refalrts::ident_from_static("Mod");
 const refalrts::RefalIdentifier ident_Mu = refalrts::ident_from_static("Mu");
 const refalrts::RefalIdentifier ident_MuSentence = refalrts::ident_from_static("MuSentence");
 const refalrts::RefalIdentifier ident_MuSentencem_Special = refalrts::ident_from_static("MuSentence-Special");
-const refalrts::RefalIdentifier ident_MuSentencem_Specialu_check = refalrts::ident_from_static("MuSentence-Special_check");
-const refalrts::RefalIdentifier ident_MuSentencem_Specialu_cont = refalrts::ident_from_static("MuSentence-Special_cont");
 const refalrts::RefalIdentifier ident_Mul = refalrts::ident_from_static("Mul");
 const refalrts::RefalIdentifier ident_NoPos = refalrts::ident_from_static("NoPos");
 const refalrts::RefalIdentifier ident_Numb = refalrts::ident_from_static("Numb");
@@ -74,13 +68,8 @@ const refalrts::RefalIdentifier ident_Print = refalrts::ident_from_static("Print
 const refalrts::RefalIdentifier ident_Prout = refalrts::ident_from_static("Prout");
 const refalrts::RefalIdentifier ident_Put = refalrts::ident_from_static("Put");
 const refalrts::RefalIdentifier ident_Putout = refalrts::ident_from_static("Putout");
+const refalrts::RefalIdentifier ident_R5m_AddMu = refalrts::ident_from_static("R5-AddMu");
 const refalrts::RefalIdentifier ident_R5m_Builtins = refalrts::ident_from_static("R5-Builtins");
-const refalrts::RefalIdentifier ident_R5m_Parse = refalrts::ident_from_static("R5-Parse");
-const refalrts::RefalIdentifier ident_R5m_Plain = refalrts::ident_from_static("R5-Plain");
-const refalrts::RefalIdentifier ident_R5m_Preprocess = refalrts::ident_from_static("R5-Preprocess");
-const refalrts::RefalIdentifier ident_R5m_Preprocess0 = refalrts::ident_from_static("R5-Preprocess0");
-const refalrts::RefalIdentifier ident_R5m_Scan = refalrts::ident_from_static("R5-Scan");
-const refalrts::RefalIdentifier ident_R5m_Transform = refalrts::ident_from_static("R5-Transform");
 const refalrts::RefalIdentifier ident_RETURN = refalrts::ident_from_static("RETURN");
 const refalrts::RefalIdentifier ident_Random = refalrts::ident_from_static("Random");
 const refalrts::RefalIdentifier ident_RandomDigit = refalrts::ident_from_static("RandomDigit");
@@ -130,107 +119,101 @@ static refalrts::ExternalReference ref_IntFromStr("IntFromStr", 0U, 0U);
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
 static refalrts::ExternalReference ref_SymbType("SymbType", 0U, 0U);
 static refalrts::ExternalReference ref_SymbCompare("SymbCompare", 0U, 0U);
-static refalrts::ExternalReference ref_Prout("Prout", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_fileu_handles("__file_handles", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Open("Open", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_read_A1("__read=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_read("__read", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_write_A1("__write=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_write("__write", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_Openm_SwOpened_S3A1("__Open-SwOpened$3=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Openm_SwOpened("__Open-SwOpened", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_handleu_foru_num("__handle_for_num", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_handleu_foru_numu_opened("__handle_for_num_opened", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Close("Close", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Closem_SwOpened("__Close-SwOpened", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_Get_A1("Get=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Get("Get", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_Putout_A1("Putout=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Putout("Putout", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Symb("Symb", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_Numb_A1("Numb=1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Numb("Numb", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_First("First", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_DoFirst("__DoFirst", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_ListOfBuiltin("ListOfBuiltin", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_ListOfBuiltinu_1("__ListOfBuiltin_1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_ListOfBuiltinu_2("__ListOfBuiltin_2", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Type("Type", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Typem_SwSymbol("__Type-SwSymbol", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Typem_SwCharacter("__Type-SwCharacter", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_fetch("__fetch", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_Typem_SwIdentifier_L1("__Type-SwIdentifier\\1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Typem_SwIdentifier("__Type-SwIdentifier", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_Typem_DoSwIdentifier_S1L1("__Type-DoSwIdentifier$1\\1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Typem_DoSwIdentifier("__Type-DoSwIdentifier", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_u_u_IdentTail_L1("__IdentTail\\1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_IdentTail("__IdentTail", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_gen_Compare_L1("Compare\\1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Compare("Compare", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_store("__store", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Br("Br", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Dg("Dg", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_u_u_Dgm_SwExist("__Dg-SwExist", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Explodeu_Ext("Explode_Ext", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Implodeu_Ext("Implode_Ext", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Card("Card", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Cp("Cp", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Dgall("Dgall", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Divmod("Divmod", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Implode("Implode", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Last("Last", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Lenw("Lenw", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Lower("Lower", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Print("Print", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Put("Put", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Rp("Rp", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Step("Step", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Time("Time", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Upper("Upper", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Sysfun("Sysfun", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Freeze("Freeze", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Freezer("Freezer", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Dn("Dn", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Up("Up", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Residue("Residue", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_GetEnv("GetEnv", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_System("System", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Exit("Exit", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_ExistFile("ExistFile", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_GetCurrentDirectory("GetCurrentDirectory", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_RemoveFile("RemoveFile", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_TimeElapsed("TimeElapsed", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_DeSysfun("DeSysfun", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_XMLParse("XMLParse", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Random("Random", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_RandomDigit("RandomDigit", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Write("Write", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_SizeOf("SizeOf", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_GetPID("GetPID", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_int4fabu_1("int4fab_1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_GetPPID("GetPPID", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Mu("Mu", 2145043902U, 3906231740U);
+static refalrts::ExternalReference ref_Prout("Prout", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_fileu_handles("__file_handles", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Open("Open", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_read_A1("__read=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_read("__read", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_write_A1("__write=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_write("__write", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_Openm_SwOpened_S3A1("__Open-SwOpened$3=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Openm_SwOpened("__Open-SwOpened", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_handleu_foru_num("__handle_for_num", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_handleu_foru_numu_opened("__handle_for_num_opened", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Close("Close", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Closem_SwOpened("__Close-SwOpened", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_Get_A1("Get=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Get("Get", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_Putout_A1("Putout=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Putout("Putout", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Symb("Symb", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_Numb_A1("Numb=1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Numb("Numb", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_First("First", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_DoFirst("__DoFirst", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_ListOfBuiltin("ListOfBuiltin", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_ListOfBuiltinu_1("__ListOfBuiltin_1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_ListOfBuiltinu_2("__ListOfBuiltin_2", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Type("Type", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Typem_SwSymbol("__Type-SwSymbol", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Typem_SwCharacter("__Type-SwCharacter", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_fetch("__fetch", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_Typem_SwIdentifier_L1("__Type-SwIdentifier\\1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Typem_SwIdentifier("__Type-SwIdentifier", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_Typem_DoSwIdentifier_S1L1("__Type-DoSwIdentifier$1\\1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Typem_DoSwIdentifier("__Type-DoSwIdentifier", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_u_u_IdentTail_L1("__IdentTail\\1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_IdentTail("__IdentTail", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_gen_Compare_L1("Compare\\1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Compare("Compare", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_store("__store", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Br("Br", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Dg("Dg", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_u_u_Dgm_SwExist("__Dg-SwExist", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Explodeu_Ext("Explode_Ext", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Implodeu_Ext("Implode_Ext", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Card("Card", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Cp("Cp", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Dgall("Dgall", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Divmod("Divmod", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Implode("Implode", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Last("Last", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Lenw("Lenw", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Lower("Lower", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Print("Print", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Put("Put", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Rp("Rp", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Step("Step", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Time("Time", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Upper("Upper", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Sysfun("Sysfun", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Freeze("Freeze", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Freezer("Freezer", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Dn("Dn", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Up("Up", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Evm_met("Ev-met", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Residue("Residue", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_GetEnv("GetEnv", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_System("System", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Exit("Exit", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_ExistFile("ExistFile", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_GetCurrentDirectory("GetCurrentDirectory", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_RemoveFile("RemoveFile", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_TimeElapsed("TimeElapsed", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_DeSysfun("DeSysfun", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_XMLParse("XMLParse", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Random("Random", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_RandomDigit("RandomDigit", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Write("Write", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_SizeOf("SizeOf", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_GetPID("GetPID", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_int4fabu_1("int4fab_1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_GetPPID("GetPPID", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Mu("Mu", 1728484166U, 762189050U);
 static refalrts::ExternalReference ref_R5m_Builtins("R5-Builtins", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Scan("R5-Scan", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Parse("R5-Parse", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Transform("R5-Transform", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Plain("R5-Plain", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Preprocess("R5-Preprocess", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Preprocess0("R5-Preprocess0", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_AddMu("AddMu", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_AddMuu_check("AddMu_check", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_AddMuu_check0("AddMu_check0", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_AddMuu_check1("AddMu_check1", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_DoAddMum_Names("DoAddMu-Names", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_MuSentence("MuSentence", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Varm_eX("Var-eX", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Callm_eX("Call-eX", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_MuSentencem_Special("MuSentence-Special", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_MuSentencem_Specialu_check("MuSentence-Special_check", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_MuSentencem_Specialu_cont("MuSentence-Special_cont", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_Chars("Chars", 2145043902U, 3906231740U);
-static refalrts::ExternalReference ref_DoAddMum_AST("DoAddMu-AST", 2145043902U, 3906231740U);
+static refalrts::ExternalReference ref_R5m_AddMu("R5-AddMu", 0U, 0U);
+static refalrts::ExternalReference ref_R5m_AddMuu_check("R5-AddMu_check", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_R5m_AddMuu_check0("R5-AddMu_check0", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_R5m_AddMuu_check1("R5-AddMu_check1", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_DoAddMum_Names("DoAddMu-Names", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_MuSentence("MuSentence", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Varm_eX("Var-eX", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Callm_eX("Call-eX", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_MuSentencem_Special("MuSentence-Special", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_MuSentencem_Specialu_check("MuSentence-Special_check", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_MuSentencem_Specialu_cont("MuSentence-Special_cont", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_Chars("Chars", 1728484166U, 762189050U);
+static refalrts::ExternalReference ref_DoAddMum_AST("DoAddMu-AST", 1728484166U, 762189050U);
 
 static refalrts::FnResult func_Prout(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -255,7 +238,7 @@ static refalrts::FnResult func_Prout(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Prout("Prout", 2145043902U, 3906231740U, func_Prout);
+static refalrts::NativeReference nat_ref_Prout("Prout", 1728484166U, 762189050U, func_Prout);
 
 static refalrts::FnResult func_Open(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -310,7 +293,7 @@ static refalrts::FnResult func_Open(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Open("Open", 2145043902U, 3906231740U, func_Open);
+static refalrts::NativeReference nat_ref_Open("Open", 1728484166U, 762189050U, func_Open);
 
 static refalrts::FnResult func_gen_u_u_read_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -346,7 +329,7 @@ static refalrts::FnResult func_gen_u_u_read_A1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_read_A1("__read=1", 2145043902U, 3906231740U, func_gen_u_u_read_A1);
+static refalrts::NativeReference nat_ref_gen_u_u_read_A1("__read=1", 1728484166U, 762189050U, func_gen_u_u_read_A1);
 
 static refalrts::FnResult func_u_u_read(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -398,7 +381,7 @@ static refalrts::FnResult func_u_u_read(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_read("__read", 2145043902U, 3906231740U, func_u_u_read);
+static refalrts::NativeReference nat_ref_u_u_read("__read", 1728484166U, 762189050U, func_u_u_read);
 
 static refalrts::FnResult func_gen_u_u_write_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -424,7 +407,7 @@ static refalrts::FnResult func_gen_u_u_write_A1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_write_A1("__write=1", 2145043902U, 3906231740U, func_gen_u_u_write_A1);
+static refalrts::NativeReference nat_ref_gen_u_u_write_A1("__write=1", 1728484166U, 762189050U, func_gen_u_u_write_A1);
 
 static refalrts::FnResult func_u_u_write(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -466,7 +449,7 @@ static refalrts::FnResult func_u_u_write(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_write("__write", 2145043902U, 3906231740U, func_u_u_write);
+static refalrts::NativeReference nat_ref_u_u_write("__write", 1728484166U, 762189050U, func_u_u_write);
 
 static refalrts::FnResult func_gen_u_u_Openm_SwOpened_S3A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -520,7 +503,7 @@ static refalrts::FnResult func_gen_u_u_Openm_SwOpened_S3A1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Openm_SwOpened_S3A1("__Open-SwOpened$3=1", 2145043902U, 3906231740U, func_gen_u_u_Openm_SwOpened_S3A1);
+static refalrts::NativeReference nat_ref_gen_u_u_Openm_SwOpened_S3A1("__Open-SwOpened$3=1", 1728484166U, 762189050U, func_gen_u_u_Openm_SwOpened_S3A1);
 
 static refalrts::FnResult func_u_u_Openm_SwOpened(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -698,7 +681,7 @@ static refalrts::FnResult func_u_u_Openm_SwOpened(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Openm_SwOpened("__Open-SwOpened", 2145043902U, 3906231740U, func_u_u_Openm_SwOpened);
+static refalrts::NativeReference nat_ref_u_u_Openm_SwOpened("__Open-SwOpened", 1728484166U, 762189050U, func_u_u_Openm_SwOpened);
 
 static refalrts::FnResult func_u_u_handleu_foru_num(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -745,7 +728,7 @@ static refalrts::FnResult func_u_u_handleu_foru_num(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_handleu_foru_num("__handle_for_num", 2145043902U, 3906231740U, func_u_u_handleu_foru_num);
+static refalrts::NativeReference nat_ref_u_u_handleu_foru_num("__handle_for_num", 1728484166U, 762189050U, func_u_u_handleu_foru_num);
 
 static refalrts::FnResult func_u_u_handleu_foru_numu_opened(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -841,7 +824,7 @@ static refalrts::FnResult func_u_u_handleu_foru_numu_opened(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_handleu_foru_numu_opened("__handle_for_num_opened", 2145043902U, 3906231740U, func_u_u_handleu_foru_numu_opened);
+static refalrts::NativeReference nat_ref_u_u_handleu_foru_numu_opened("__handle_for_num_opened", 1728484166U, 762189050U, func_u_u_handleu_foru_numu_opened);
 
 static refalrts::FnResult func_Close(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -885,7 +868,7 @@ static refalrts::FnResult func_Close(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Close("Close", 2145043902U, 3906231740U, func_Close);
+static refalrts::NativeReference nat_ref_Close("Close", 1728484166U, 762189050U, func_Close);
 
 static refalrts::FnResult func_u_u_Closem_SwOpened(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -953,7 +936,7 @@ static refalrts::FnResult func_u_u_Closem_SwOpened(refalrts::Iter arg_begin, ref
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Closem_SwOpened("__Close-SwOpened", 2145043902U, 3906231740U, func_u_u_Closem_SwOpened);
+static refalrts::NativeReference nat_ref_u_u_Closem_SwOpened("__Close-SwOpened", 1728484166U, 762189050U, func_u_u_Closem_SwOpened);
 
 static refalrts::FnResult func_gen_Get_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -983,7 +966,7 @@ static refalrts::FnResult func_gen_Get_A1(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Get_A1("Get=1", 2145043902U, 3906231740U, func_gen_Get_A1);
+static refalrts::NativeReference nat_ref_gen_Get_A1("Get=1", 1728484166U, 762189050U, func_gen_Get_A1);
 
 static refalrts::FnResult func_Get(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1036,7 +1019,7 @@ static refalrts::FnResult func_Get(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Get("Get", 2145043902U, 3906231740U, func_Get);
+static refalrts::NativeReference nat_ref_Get("Get", 1728484166U, 762189050U, func_Get);
 
 static refalrts::FnResult func_gen_Putout_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1065,7 +1048,7 @@ static refalrts::FnResult func_gen_Putout_A1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Putout_A1("Putout=1", 2145043902U, 3906231740U, func_gen_Putout_A1);
+static refalrts::NativeReference nat_ref_gen_Putout_A1("Putout=1", 1728484166U, 762189050U, func_gen_Putout_A1);
 
 static refalrts::FnResult func_Putout(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1120,7 +1103,7 @@ static refalrts::FnResult func_Putout(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Putout("Putout", 2145043902U, 3906231740U, func_Putout);
+static refalrts::NativeReference nat_ref_Putout("Putout", 1728484166U, 762189050U, func_Putout);
 
 static refalrts::FnResult func_Symb(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1148,7 +1131,7 @@ static refalrts::FnResult func_Symb(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Symb("Symb", 2145043902U, 3906231740U, func_Symb);
+static refalrts::NativeReference nat_ref_Symb("Symb", 1728484166U, 762189050U, func_Symb);
 
 static refalrts::FnResult func_gen_Numb_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1181,7 +1164,7 @@ static refalrts::FnResult func_gen_Numb_A1(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Numb_A1("Numb=1", 2145043902U, 3906231740U, func_gen_Numb_A1);
+static refalrts::NativeReference nat_ref_gen_Numb_A1("Numb=1", 1728484166U, 762189050U, func_gen_Numb_A1);
 
 static refalrts::FnResult func_Numb(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1221,7 +1204,7 @@ static refalrts::FnResult func_Numb(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Numb("Numb", 2145043902U, 3906231740U, func_Numb);
+static refalrts::NativeReference nat_ref_Numb("Numb", 1728484166U, 762189050U, func_Numb);
 
 static refalrts::FnResult func_First(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1260,7 +1243,7 @@ static refalrts::FnResult func_First(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_First("First", 2145043902U, 3906231740U, func_First);
+static refalrts::NativeReference nat_ref_First("First", 1728484166U, 762189050U, func_First);
 
 static refalrts::FnResult func_u_u_DoFirst(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1376,7 +1359,7 @@ static refalrts::FnResult func_u_u_DoFirst(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_DoFirst("__DoFirst", 2145043902U, 3906231740U, func_u_u_DoFirst);
+static refalrts::NativeReference nat_ref_u_u_DoFirst("__DoFirst", 1728484166U, 762189050U, func_u_u_DoFirst);
 
 static refalrts::FnResult func_ListOfBuiltin(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1414,7 +1397,7 @@ static refalrts::FnResult func_ListOfBuiltin(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ListOfBuiltin("ListOfBuiltin", 2145043902U, 3906231740U, func_ListOfBuiltin);
+static refalrts::NativeReference nat_ref_ListOfBuiltin("ListOfBuiltin", 1728484166U, 762189050U, func_ListOfBuiltin);
 
 static refalrts::FnResult func_u_u_ListOfBuiltinu_1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1823,7 +1806,7 @@ static refalrts::FnResult func_u_u_ListOfBuiltinu_1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_ListOfBuiltinu_1("__ListOfBuiltin_1", 2145043902U, 3906231740U, func_u_u_ListOfBuiltinu_1);
+static refalrts::NativeReference nat_ref_u_u_ListOfBuiltinu_1("__ListOfBuiltin_1", 1728484166U, 762189050U, func_u_u_ListOfBuiltinu_1);
 
 static refalrts::FnResult func_u_u_ListOfBuiltinu_2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2177,7 +2160,7 @@ static refalrts::FnResult func_u_u_ListOfBuiltinu_2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_ListOfBuiltinu_2("__ListOfBuiltin_2", 2145043902U, 3906231740U, func_u_u_ListOfBuiltinu_2);
+static refalrts::NativeReference nat_ref_u_u_ListOfBuiltinu_2("__ListOfBuiltin_2", 1728484166U, 762189050U, func_u_u_ListOfBuiltinu_2);
 
 static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2281,7 +2264,7 @@ static refalrts::FnResult func_Type(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Type("Type", 2145043902U, 3906231740U, func_Type);
+static refalrts::NativeReference nat_ref_Type("Type", 1728484166U, 762189050U, func_Type);
 
 static refalrts::FnResult func_u_u_Typem_SwSymbol(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2450,7 +2433,7 @@ static refalrts::FnResult func_u_u_Typem_SwSymbol(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Typem_SwSymbol("__Type-SwSymbol", 2145043902U, 3906231740U, func_u_u_Typem_SwSymbol);
+static refalrts::NativeReference nat_ref_u_u_Typem_SwSymbol("__Type-SwSymbol", 1728484166U, 762189050U, func_u_u_Typem_SwSymbol);
 
 static refalrts::FnResult func_u_u_Typem_SwCharacter(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2591,7 +2574,7 @@ static refalrts::FnResult func_u_u_Typem_SwCharacter(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Typem_SwCharacter("__Type-SwCharacter", 2145043902U, 3906231740U, func_u_u_Typem_SwCharacter);
+static refalrts::NativeReference nat_ref_u_u_Typem_SwCharacter("__Type-SwCharacter", 1728484166U, 762189050U, func_u_u_Typem_SwCharacter);
 
 static refalrts::FnResult func_u_u_fetch(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2624,7 +2607,7 @@ static refalrts::FnResult func_u_u_fetch(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_fetch("__fetch", 2145043902U, 3906231740U, func_u_u_fetch);
+static refalrts::NativeReference nat_ref_u_u_fetch("__fetch", 1728484166U, 762189050U, func_u_u_fetch);
 
 static refalrts::FnResult func_gen_u_u_Typem_SwIdentifier_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2711,7 +2694,7 @@ static refalrts::FnResult func_gen_u_u_Typem_SwIdentifier_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Typem_SwIdentifier_L1("__Type-SwIdentifier\\1", 2145043902U, 3906231740U, func_gen_u_u_Typem_SwIdentifier_L1);
+static refalrts::NativeReference nat_ref_gen_u_u_Typem_SwIdentifier_L1("__Type-SwIdentifier\\1", 1728484166U, 762189050U, func_gen_u_u_Typem_SwIdentifier_L1);
 
 static refalrts::FnResult func_u_u_Typem_SwIdentifier(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2778,7 +2761,7 @@ static refalrts::FnResult func_u_u_Typem_SwIdentifier(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Typem_SwIdentifier("__Type-SwIdentifier", 2145043902U, 3906231740U, func_u_u_Typem_SwIdentifier);
+static refalrts::NativeReference nat_ref_u_u_Typem_SwIdentifier("__Type-SwIdentifier", 1728484166U, 762189050U, func_u_u_Typem_SwIdentifier);
 
 static refalrts::FnResult func_gen_u_u_Typem_DoSwIdentifier_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2850,7 +2833,7 @@ static refalrts::FnResult func_gen_u_u_Typem_DoSwIdentifier_S1L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Typem_DoSwIdentifier_S1L1("__Type-DoSwIdentifier$1\\1", 2145043902U, 3906231740U, func_gen_u_u_Typem_DoSwIdentifier_S1L1);
+static refalrts::NativeReference nat_ref_gen_u_u_Typem_DoSwIdentifier_S1L1("__Type-DoSwIdentifier$1\\1", 1728484166U, 762189050U, func_gen_u_u_Typem_DoSwIdentifier_S1L1);
 
 static refalrts::FnResult func_u_u_Typem_DoSwIdentifier(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2942,7 +2925,7 @@ static refalrts::FnResult func_u_u_Typem_DoSwIdentifier(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Typem_DoSwIdentifier("__Type-DoSwIdentifier", 2145043902U, 3906231740U, func_u_u_Typem_DoSwIdentifier);
+static refalrts::NativeReference nat_ref_u_u_Typem_DoSwIdentifier("__Type-DoSwIdentifier", 1728484166U, 762189050U, func_u_u_Typem_DoSwIdentifier);
 
 static refalrts::FnResult func_gen_u_u_IdentTail_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3063,7 +3046,7 @@ static refalrts::FnResult func_gen_u_u_IdentTail_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_IdentTail_L1("__IdentTail\\1", 2145043902U, 3906231740U, func_gen_u_u_IdentTail_L1);
+static refalrts::NativeReference nat_ref_gen_u_u_IdentTail_L1("__IdentTail\\1", 1728484166U, 762189050U, func_gen_u_u_IdentTail_L1);
 
 static refalrts::FnResult func_u_u_IdentTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3108,7 +3091,7 @@ static refalrts::FnResult func_u_u_IdentTail(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_IdentTail("__IdentTail", 2145043902U, 3906231740U, func_u_u_IdentTail);
+static refalrts::NativeReference nat_ref_u_u_IdentTail("__IdentTail", 1728484166U, 762189050U, func_u_u_IdentTail);
 
 static refalrts::FnResult func_gen_Compare_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3179,7 +3162,7 @@ static refalrts::FnResult func_gen_Compare_L1(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Compare_L1("Compare\\1", 2145043902U, 3906231740U, func_gen_Compare_L1);
+static refalrts::NativeReference nat_ref_gen_Compare_L1("Compare\\1", 1728484166U, 762189050U, func_gen_Compare_L1);
 
 static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3225,7 +3208,7 @@ static refalrts::FnResult func_Compare(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Compare("Compare", 2145043902U, 3906231740U, func_Compare);
+static refalrts::NativeReference nat_ref_Compare("Compare", 1728484166U, 762189050U, func_Compare);
 
 static refalrts::FnResult func_Br(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3288,7 +3271,7 @@ static refalrts::FnResult func_Br(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Br("Br", 2145043902U, 3906231740U, func_Br);
+static refalrts::NativeReference nat_ref_Br("Br", 1728484166U, 762189050U, func_Br);
 
 static refalrts::FnResult func_Dg(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3333,7 +3316,7 @@ static refalrts::FnResult func_Dg(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Dg("Dg", 2145043902U, 3906231740U, func_Dg);
+static refalrts::NativeReference nat_ref_Dg("Dg", 1728484166U, 762189050U, func_Dg);
 
 static refalrts::FnResult func_u_u_Dgm_SwExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3430,7 +3413,7 @@ static refalrts::FnResult func_u_u_Dgm_SwExist(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Dgm_SwExist("__Dg-SwExist", 2145043902U, 3906231740U, func_u_u_Dgm_SwExist);
+static refalrts::NativeReference nat_ref_u_u_Dgm_SwExist("__Dg-SwExist", 1728484166U, 762189050U, func_u_u_Dgm_SwExist);
 
 static refalrts::FnResult func_Explodeu_Ext(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3458,7 +3441,7 @@ static refalrts::FnResult func_Explodeu_Ext(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Explodeu_Ext("Explode_Ext", 2145043902U, 3906231740U, func_Explodeu_Ext);
+static refalrts::NativeReference nat_ref_Explodeu_Ext("Explode_Ext", 1728484166U, 762189050U, func_Explodeu_Ext);
 
 static refalrts::FnResult func_Implodeu_Ext(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3483,13 +3466,13 @@ static refalrts::FnResult func_Implodeu_Ext(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Implodeu_Ext("Implode_Ext", 2145043902U, 3906231740U, func_Implodeu_Ext);
+static refalrts::NativeReference nat_ref_Implodeu_Ext("Implode_Ext", 1728484166U, 762189050U, func_Implodeu_Ext);
 
 static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 33 elems
-  refalrts::Iter context[33];
-  refalrts::zeros( context, 33 );
+  // issue here memory for vars with 28 elems
+  refalrts::Iter context[28];
+  refalrts::zeros( context, 28 );
   //FAST GEN: t.$ e.$
   //GLOBAL GEN: t.$ e.$
   // </0 & Mu/4 t.idx#0/5 e.idxV#0/2 >/1
@@ -3872,6 +3855,82 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
     //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & Mod/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[9] );
     refalrts::reinit_name( context[6], ref_Mod.ref.function );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[9] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[9];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // '?' e.idx
+    // </0 & Mu/4 '?'/5 e.eX#1/2 >/1
+    if( ! refalrts::char_term( '?', context[5] ) )
+      continue;
+    // closed e.eX#1 as range 2
+    //DEBUG: e.eX#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Residue/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
+    refalrts::reinit_open_call( context[4] );
+    refalrts::reinit_name( context[5], ref_Residue.ref.function );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[4];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # ? e.idx
+    // </0 & Mu/4 # ?/5 e.eX#1/2 >/1
+    if( ! refalrts::ident_term(  ident_k63_, context[5] ) )
+      continue;
+    // closed e.eX#1 as range 2
+    //DEBUG: e.eX#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Residue/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
+    refalrts::reinit_open_call( context[4] );
+    refalrts::reinit_name( context[5], ref_Residue.ref.function );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[4];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( '?' ) e.idx
+    // </0 & Mu/4 (/5 '?'/9 )/6 e.eX#1/2 >/1
+    context[7] = 0;
+    context[8] = 0;
+    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
+      continue;
+    context[9] = refalrts::char_left( '?', context[7], context[8] );
+    if( ! context[9] )
+      continue;
+    if( ! refalrts::empty_seq( context[7], context[8] ) )
+      continue;
+    // closed e.eX#1 as range 2
+    //DEBUG: e.eX#1: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </9 HalfReuse: & Residue/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
+    refalrts::reinit_open_call( context[9] );
+    refalrts::reinit_name( context[6], ref_Residue.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[9] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -8104,18 +8163,18 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::stop_sentence();
 
   do {
-    // # R5-Scan e.idx
-    // </0 & Mu/4 # R5-Scan/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Scan, context[5] ) )
+    // # R5-AddMu e.idx
+    // </0 & Mu/4 # R5-AddMu/5 e.eX#1/2 >/1
+    if( ! refalrts::ident_term(  ident_R5m_AddMu, context[5] ) )
       continue;
     // closed e.eX#1 as range 2
     //DEBUG: e.eX#1: 2
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Scan/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-AddMu/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Scan.ref.function );
+    refalrts::reinit_name( context[5], ref_R5m_AddMu.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -8127,8 +8186,8 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::stop_sentence();
 
   do {
-    // ( 'R5-Scan' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'S'/12 'c'/13 'a'/14 'n'/15 )/6 e.eX#1/2 >/1
+    // ( 'R5-AddMu' ) e.idx
+    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'A'/12 'd'/13 'd'/14 'M'/15 'u'/16 )/6 e.eX#1/2 >/1
     context[7] = 0;
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
@@ -8142,90 +8201,19 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
     context[11] = refalrts::char_left( '-', context[7], context[8] );
     if( ! context[11] )
       continue;
-    context[12] = refalrts::char_left( 'S', context[7], context[8] );
+    context[12] = refalrts::char_left( 'A', context[7], context[8] );
     if( ! context[12] )
       continue;
-    context[13] = refalrts::char_left( 'c', context[7], context[8] );
+    context[13] = refalrts::char_left( 'd', context[7], context[8] );
     if( ! context[13] )
       continue;
-    context[14] = refalrts::char_left( 'a', context[7], context[8] );
+    context[14] = refalrts::char_left( 'd', context[7], context[8] );
     if( ! context[14] )
       continue;
-    context[15] = refalrts::char_left( 'n', context[7], context[8] );
+    context[15] = refalrts::char_left( 'M', context[7], context[8] );
     if( ! context[15] )
       continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'S'/12 'c'/13 'a'/14 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </15 HalfReuse: & R5-Scan/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[15] );
-    refalrts::reinit_name( context[6], ref_R5m_Scan.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[15] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[15];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # R5-Parse e.idx
-    // </0 & Mu/4 # R5-Parse/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Parse, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Parse/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Parse.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'R5-Parse' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'a'/13 'r'/14 's'/15 'e'/16 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'R', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( '5', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'P', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'a', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'e', context[7], context[8] );
+    context[16] = refalrts::char_left( 'u', context[7], context[8] );
     if( ! context[16] )
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
@@ -8234,676 +8222,15 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
     //DEBUG: e.eX#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'a'/13 'r'/14 's'/15 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </16 HalfReuse: & R5-Parse/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'A'/12 'd'/13 'd'/14 'M'/15 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </16 HalfReuse: & R5-AddMu/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
     refalrts::reinit_open_call( context[16] );
-    refalrts::reinit_name( context[6], ref_R5m_Parse.ref.function );
+    refalrts::reinit_name( context[6], ref_R5m_AddMu.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[16] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[16];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # R5-Transform e.idx
-    // </0 & Mu/4 # R5-Transform/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Transform, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Transform/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Transform.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'R5-Transform' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'T'/12 'r'/13 'a'/14 'n'/15 's'/16 'f'/17 'o'/18 'r'/19 'm'/20 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'R', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( '5', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'T', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'a', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'f', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'o', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( 'm', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'T'/12 'r'/13 'a'/14 'n'/15 's'/16 'f'/17 'o'/18 'r'/19 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </20 HalfReuse: & R5-Transform/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[6], ref_R5m_Transform.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[20] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[20];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # R5-Plain e.idx
-    // </0 & Mu/4 # R5-Plain/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Plain, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Plain/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Plain.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'R5-Plain' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'l'/13 'a'/14 'i'/15 'n'/16 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'R', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( '5', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'P', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'l', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'a', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'i', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'l'/13 'a'/14 'i'/15 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </16 HalfReuse: & R5-Plain/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[16] );
-    refalrts::reinit_name( context[6], ref_R5m_Plain.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[16] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[16];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # R5-Preprocess e.idx
-    // </0 & Mu/4 # R5-Preprocess/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Preprocess, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Preprocess/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Preprocess.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'R5-Preprocess' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'r'/13 'e'/14 'p'/15 'r'/16 'o'/17 'c'/18 'e'/19 's'/20 's'/21 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'R', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( '5', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'P', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'p', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'o', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    context[21] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[21] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'r'/13 'e'/14 'p'/15 'r'/16 'o'/17 'c'/18 'e'/19 's'/20 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </21 HalfReuse: & R5-Preprocess/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[21] );
-    refalrts::reinit_name( context[6], ref_R5m_Preprocess.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[21] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[21];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # R5-Preprocess0 e.idx
-    // </0 & Mu/4 # R5-Preprocess0/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_R5m_Preprocess0, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & R5-Preprocess0/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_R5m_Preprocess0.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'R5-Preprocess0' ) e.idx
-    // </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'r'/13 'e'/14 'p'/15 'r'/16 'o'/17 'c'/18 'e'/19 's'/20 's'/21 '0'/22 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'R', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( '5', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'P', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'p', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'r', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'o', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    context[21] = refalrts::char_left( 's', context[7], context[8] );
-    if( ! context[21] )
-      continue;
-    context[22] = refalrts::char_left( '0', context[7], context[8] );
-    if( ! context[22] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'R'/9 '5'/10 '-'/11 'P'/12 'r'/13 'e'/14 'p'/15 'r'/16 'o'/17 'c'/18 'e'/19 's'/20 's'/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </22 HalfReuse: & R5-Preprocess0/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[22] );
-    refalrts::reinit_name( context[6], ref_R5m_Preprocess0.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[22] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[22];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # AddMu e.idx
-    // </0 & Mu/4 # AddMu/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_AddMu, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & AddMu/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_AddMu.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'AddMu' ) e.idx
-    // </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'A', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </13 HalfReuse: & AddMu/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[13] );
-    refalrts::reinit_name( context[6], ref_AddMu.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[13] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[13];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # AddMu_check e.idx
-    // </0 & Mu/4 # AddMu_check/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_AddMuu_check, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & AddMu_check/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_AddMuu_check.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'AddMu_check' ) e.idx
-    // </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 'k'/19 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'A', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( '_', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'h', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'k', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </19 HalfReuse: & AddMu_check/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[19] );
-    refalrts::reinit_name( context[6], ref_AddMuu_check.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[19] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[19];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # AddMu_check0 e.idx
-    // </0 & Mu/4 # AddMu_check0/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_AddMuu_check0, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & AddMu_check0/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_AddMuu_check0.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'AddMu_check0' ) e.idx
-    // </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 'k'/19 '0'/20 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'A', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( '_', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'h', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'k', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( '0', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 'k'/19 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </20 HalfReuse: & AddMu_check0/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[6], ref_AddMuu_check0.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[20] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[20];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # AddMu_check1 e.idx
-    // </0 & Mu/4 # AddMu_check1/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_AddMuu_check1, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & AddMu_check1/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_AddMuu_check1.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'AddMu_check1' ) e.idx
-    // </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 'k'/19 '1'/20 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'A', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'd', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( '_', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'h', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( 'k', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( '1', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'A'/9 'd'/10 'd'/11 'M'/12 'u'/13 '_'/14 'c'/15 'h'/16 'e'/17 'c'/18 'k'/19 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </20 HalfReuse: & AddMu_check1/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[20] );
-    refalrts::reinit_name( context[6], ref_AddMuu_check1.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[20] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[20];
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -9322,247 +8649,6 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
   refalrts::stop_sentence();
 
   do {
-    // # MuSentence-Special_check e.idx
-    // </0 & Mu/4 # MuSentence-Special_check/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_MuSentencem_Specialu_check, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & MuSentence-Special_check/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_MuSentencem_Specialu_check.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'MuSentence-Special_check' ) e.idx
-    // </0 & Mu/4 (/5 'M'/9 'u'/10 'S'/11 'e'/12 'n'/13 't'/14 'e'/15 'n'/16 'c'/17 'e'/18 '-'/19 'S'/20 'p'/21 'e'/22 'c'/23 'i'/24 'a'/25 'l'/26 '_'/27 'c'/28 'h'/29 'e'/30 'c'/31 'k'/32 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'S', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 't', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( 'S', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    context[21] = refalrts::char_left( 'p', context[7], context[8] );
-    if( ! context[21] )
-      continue;
-    context[22] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[22] )
-      continue;
-    context[23] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[23] )
-      continue;
-    context[24] = refalrts::char_left( 'i', context[7], context[8] );
-    if( ! context[24] )
-      continue;
-    context[25] = refalrts::char_left( 'a', context[7], context[8] );
-    if( ! context[25] )
-      continue;
-    context[26] = refalrts::char_left( 'l', context[7], context[8] );
-    if( ! context[26] )
-      continue;
-    context[27] = refalrts::char_left( '_', context[7], context[8] );
-    if( ! context[27] )
-      continue;
-    context[28] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[28] )
-      continue;
-    context[29] = refalrts::char_left( 'h', context[7], context[8] );
-    if( ! context[29] )
-      continue;
-    context[30] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[30] )
-      continue;
-    context[31] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[31] )
-      continue;
-    context[32] = refalrts::char_left( 'k', context[7], context[8] );
-    if( ! context[32] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'M'/9 'u'/10 'S'/11 'e'/12 'n'/13 't'/14 'e'/15 'n'/16 'c'/17 'e'/18 '-'/19 'S'/20 'p'/21 'e'/22 'c'/23 'i'/24 'a'/25 'l'/26 '_'/27 'c'/28 'h'/29 'e'/30 'c'/31 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </32 HalfReuse: & MuSentence-Special_check/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[32] );
-    refalrts::reinit_name( context[6], ref_MuSentencem_Specialu_check.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[32] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[32];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # MuSentence-Special_cont e.idx
-    // </0 & Mu/4 # MuSentence-Special_cont/5 e.eX#1/2 >/1
-    if( ! refalrts::ident_term(  ident_MuSentencem_Specialu_cont, context[5] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & MuSentence-Special_cont/5 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[4] );
-    refalrts::reinit_name( context[5], ref_MuSentencem_Specialu_cont.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( 'MuSentence-Special_cont' ) e.idx
-    // </0 & Mu/4 (/5 'M'/9 'u'/10 'S'/11 'e'/12 'n'/13 't'/14 'e'/15 'n'/16 'c'/17 'e'/18 '-'/19 'S'/20 'p'/21 'e'/22 'c'/23 'i'/24 'a'/25 'l'/26 '_'/27 'c'/28 'o'/29 'n'/30 't'/31 )/6 e.eX#1/2 >/1
-    context[7] = 0;
-    context[8] = 0;
-    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-      continue;
-    context[9] = refalrts::char_left( 'M', context[7], context[8] );
-    if( ! context[9] )
-      continue;
-    context[10] = refalrts::char_left( 'u', context[7], context[8] );
-    if( ! context[10] )
-      continue;
-    context[11] = refalrts::char_left( 'S', context[7], context[8] );
-    if( ! context[11] )
-      continue;
-    context[12] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[12] )
-      continue;
-    context[13] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 't', context[7], context[8] );
-    if( ! context[14] )
-      continue;
-    context[15] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[15] )
-      continue;
-    context[16] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[16] )
-      continue;
-    context[17] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[17] )
-      continue;
-    context[18] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[18] )
-      continue;
-    context[19] = refalrts::char_left( '-', context[7], context[8] );
-    if( ! context[19] )
-      continue;
-    context[20] = refalrts::char_left( 'S', context[7], context[8] );
-    if( ! context[20] )
-      continue;
-    context[21] = refalrts::char_left( 'p', context[7], context[8] );
-    if( ! context[21] )
-      continue;
-    context[22] = refalrts::char_left( 'e', context[7], context[8] );
-    if( ! context[22] )
-      continue;
-    context[23] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[23] )
-      continue;
-    context[24] = refalrts::char_left( 'i', context[7], context[8] );
-    if( ! context[24] )
-      continue;
-    context[25] = refalrts::char_left( 'a', context[7], context[8] );
-    if( ! context[25] )
-      continue;
-    context[26] = refalrts::char_left( 'l', context[7], context[8] );
-    if( ! context[26] )
-      continue;
-    context[27] = refalrts::char_left( '_', context[7], context[8] );
-    if( ! context[27] )
-      continue;
-    context[28] = refalrts::char_left( 'c', context[7], context[8] );
-    if( ! context[28] )
-      continue;
-    context[29] = refalrts::char_left( 'o', context[7], context[8] );
-    if( ! context[29] )
-      continue;
-    context[30] = refalrts::char_left( 'n', context[7], context[8] );
-    if( ! context[30] )
-      continue;
-    context[31] = refalrts::char_left( 't', context[7], context[8] );
-    if( ! context[31] )
-      continue;
-    if( ! refalrts::empty_seq( context[7], context[8] ) )
-      continue;
-    // closed e.eX#1 as range 2
-    //DEBUG: e.eX#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Mu/4 (/5 'M'/9 'u'/10 'S'/11 'e'/12 'n'/13 't'/14 'e'/15 'n'/16 'c'/17 'e'/18 '-'/19 'S'/20 'p'/21 'e'/22 'c'/23 'i'/24 'a'/25 'l'/26 '_'/27 'c'/28 'o'/29 'n'/30 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </31 HalfReuse: & MuSentence-Special_cont/6 AsIs: e.eX#1/2 AsIs: >/1 ]] }
-    refalrts::reinit_open_call( context[31] );
-    refalrts::reinit_name( context[6], ref_MuSentencem_Specialu_cont.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[31] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[31];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
     // # Chars e.idx
     // </0 & Mu/4 # Chars/5 e.eX#1/2 >/1
     if( ! refalrts::ident_term(  ident_Chars, context[5] ) )
@@ -9708,159 +8794,14 @@ static refalrts::FnResult func_Mu(refalrts::Iter arg_begin, refalrts::Iter arg_e
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 2145043902U, 3906231740U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 1728484166U, 762189050U, func_Mu);
 
-static refalrts::FnResult func_R5m_Preprocess(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
-  // </0 & R5-Preprocess/4 e.eSource#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.eSource#1 as range 2
-  //DEBUG: e.eSource#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & R5-Preprocess0/6 (/7 e.eSource#1/2/8 )/10 </11 & R5-Parse/12 Tile{ AsIs: </0 Reuse: & R5-Scan/4 AsIs: e.eSource#1/2 AsIs: >/1 } >/13 >/14 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[5] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], ref_R5m_Preprocess0.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[7] ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[8], context[9], context[2], context[3]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[11] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], ref_R5m_Parse.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[13] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[14] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_R5m_Scan.ref.function );
-  refalrts::push_stack( context[14] );
-  refalrts::push_stack( context[5] );
-  refalrts::push_stack( context[13] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[7], context[10] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[12] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_R5m_Preprocess("R5-Preprocess", 0U, 0U, func_R5m_Preprocess);
-
-static refalrts::FnResult func_R5m_Preprocess0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
-  //FAST GEN: ( e.$ ) s.$ e.$
-  //GLOBAL GEN: ( e.$ ) s.$ e.$
-  // </0 & R5-Preprocess0/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxTV#0 as range 2
-  do {
-    // ( e.idx ) # Success e.idx
-    // </0 & R5-Preprocess0/4 (/7 e.eSource#1/5 )/8 # Success/9 e.eFunctions#1/2 >/1
-    if( ! refalrts::ident_term(  ident_Success, context[9] ) )
-      continue;
-    // closed e.eSource#1 as range 5
-    // closed e.eFunctions#1 as range 2
-    //DEBUG: e.eSource#1: 5
-    //DEBUG: e.eFunctions#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} e.eSource#1/5 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } # Success/10 Tile{ AsIs: </0 Reuse: & R5-Plain/4 HalfReuse: </7 } & AddMu/11 Tile{ HalfReuse: </8 HalfReuse: & R5-Transform/9 AsIs: e.eFunctions#1/2 AsIs: >/1 } >/12 >/13 Tile{ ]] }
-    if( ! refalrts::alloc_ident( context[10], ident_Success ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], ref_AddMu.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[12] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[13] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_R5m_Plain.ref.function );
-    refalrts::reinit_open_call( context[7] );
-    refalrts::reinit_open_call( context[8] );
-    refalrts::reinit_name( context[9], ref_R5m_Transform.ref.function );
-    refalrts::push_stack( context[13] );
-    refalrts::push_stack( context[0] );
-    refalrts::push_stack( context[12] );
-    refalrts::push_stack( context[7] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[8], context[1] );
-    res = refalrts::splice_evar( res, context[11], context[11] );
-    res = refalrts::splice_evar( res, context[0], context[7] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) # Fails e.idx
-  // </0 & R5-Preprocess0/4 (/7 e.eSource#1/5 )/8 # Fails/9 e.eErrors#1/2 >/1
-  if( ! refalrts::ident_term(  ident_Fails, context[9] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.eSource#1 as range 5
-  // closed e.eErrors#1 as range 2
-  //DEBUG: e.eSource#1: 5
-  //DEBUG: e.eErrors#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} & R5-Preprocess0/4 (/7 e.eSource#1/5 )/8 # Fails/9 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: # Fails/0 } Tile{ AsIs: e.eErrors#1/2 } Tile{ ]] }
-  refalrts::reinit_ident( context[0], ident_Fails );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( context[0], res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_R5m_Preprocess0("R5-Preprocess0", 2145043902U, 3906231740U, func_R5m_Preprocess0);
-
-static refalrts::FnResult func_AddMu(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_R5m_AddMu(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & AddMu/4 e.eAST#1/2 >/1
+  // </0 & R5-AddMu/4 e.eAST#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9871,7 +8812,7 @@ static refalrts::FnResult func_AddMu(refalrts::Iter arg_begin, refalrts::Iter ar
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AddMu_check/4 } (/5 Tile{ AsIs: e.eAST#1/2 } )/6 </7 & R5-Builtins/8 >/9 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & R5-AddMu_check/4 } (/5 Tile{ AsIs: e.eAST#1/2 } )/6 </7 & R5-Builtins/8 >/9 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[6] ) )
@@ -9882,7 +8823,7 @@ static refalrts::FnResult func_AddMu(refalrts::Iter arg_begin, refalrts::Iter ar
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_AddMuu_check.ref.function );
+  refalrts::update_name( context[4], ref_R5m_AddMuu_check.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[9] );
@@ -9898,14 +8839,14 @@ static refalrts::FnResult func_AddMu(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AddMu("AddMu", 2145043902U, 3906231740U, func_AddMu);
+static refalrts::NativeReference nat_ref_R5m_AddMu("R5-AddMu", 0U, 0U, func_R5m_AddMu);
 
-static refalrts::FnResult func_AddMuu_check(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_R5m_AddMuu_check(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  // </0 & AddMu_check/4 (/7 e.eAST#1/5 )/8 e.eBuiltins#1/2 >/1
+  // </0 & R5-AddMu_check/4 (/7 e.eAST#1/5 )/8 e.eBuiltins#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9924,7 +8865,7 @@ static refalrts::FnResult func_AddMuu_check(refalrts::Iter arg_begin, refalrts::
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AddMu_check0/4 AsIs: (/7 AsIs: e.eAST#1/5 AsIs: )/8 } (/9 e.eBuiltins#1/2/10 )/12 </13 & DoAddMu-Names/14 Tile{ AsIs: e.eBuiltins#1/2 } >/15 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & R5-AddMu_check0/4 AsIs: (/7 AsIs: e.eAST#1/5 AsIs: )/8 } (/9 e.eBuiltins#1/2/10 )/12 </13 & DoAddMu-Names/14 Tile{ AsIs: e.eBuiltins#1/2 } >/15 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[9] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(context[10], context[11], context[2], context[3]))
@@ -9937,7 +8878,7 @@ static refalrts::FnResult func_AddMuu_check(refalrts::Iter arg_begin, refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_AddMuu_check0.ref.function );
+  refalrts::update_name( context[4], ref_R5m_AddMuu_check0.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[15] );
@@ -9954,14 +8895,14 @@ static refalrts::FnResult func_AddMuu_check(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AddMuu_check("AddMu_check", 2145043902U, 3906231740U, func_AddMuu_check);
+static refalrts::NativeReference nat_ref_R5m_AddMuu_check("R5-AddMu_check", 1728484166U, 762189050U, func_R5m_AddMuu_check);
 
-static refalrts::FnResult func_AddMuu_check0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_R5m_AddMuu_check0(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  // </0 & AddMu_check0/4 (/7 e.eAST#1/5 )/8 (/11 e.eBuiltins#1/9 )/12 e.eMuBuiltins#1/2 >/1
+  // </0 & R5-AddMu_check0/4 (/7 e.eAST#1/5 )/8 (/11 e.eBuiltins#1/9 )/12 e.eMuBuiltins#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9988,7 +8929,7 @@ static refalrts::FnResult func_AddMuu_check0(refalrts::Iter arg_begin, refalrts:
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AddMu_check1/4 AsIs: (/7 AsIs: e.eAST#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.eBuiltins#1/9 AsIs: )/12 } (/13 Tile{ AsIs: e.eMuBuiltins#1/2 } )/14 </15 & DoAddMu-AST/16 (/17 )/18 e.eAST#1/5/19 >/21 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & R5-AddMu_check1/4 AsIs: (/7 AsIs: e.eAST#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.eBuiltins#1/9 AsIs: )/12 } (/13 Tile{ AsIs: e.eMuBuiltins#1/2 } )/14 </15 & DoAddMu-AST/16 (/17 )/18 e.eAST#1/5/19 >/21 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( context[13] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[14] ) )
@@ -10005,7 +8946,7 @@ static refalrts::FnResult func_AddMuu_check0(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_AddMuu_check1.ref.function );
+  refalrts::update_name( context[4], ref_R5m_AddMuu_check1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::push_stack( context[21] );
@@ -10024,14 +8965,14 @@ static refalrts::FnResult func_AddMuu_check0(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AddMuu_check0("AddMu_check0", 2145043902U, 3906231740U, func_AddMuu_check0);
+static refalrts::NativeReference nat_ref_R5m_AddMuu_check0("R5-AddMu_check0", 1728484166U, 762189050U, func_R5m_AddMuu_check0);
 
-static refalrts::FnResult func_AddMuu_check1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_R5m_AddMuu_check1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  // </0 & AddMu_check1/4 (/7 e.eAST#1/5 )/8 (/11 e.eBuiltins#1/9 )/12 (/15 e.eMuBuiltins#1/13 )/16 (/19 e.eMuAST#1/17 )/20 e.eAST#1/21 >/1
+  // </0 & R5-AddMu_check1/4 (/7 e.eAST#1/5 )/8 (/11 e.eBuiltins#1/9 )/12 (/15 e.eMuBuiltins#1/13 )/16 (/19 e.eMuAST#1/17 )/20 e.eAST#1/21 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -10099,7 +9040,7 @@ static refalrts::FnResult func_AddMuu_check1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AddMuu_check1("AddMu_check1", 2145043902U, 3906231740U, func_AddMuu_check1);
+static refalrts::NativeReference nat_ref_R5m_AddMuu_check1("R5-AddMu_check1", 1728484166U, 762189050U, func_R5m_AddMuu_check1);
 
 static refalrts::FnResult func_DoAddMum_Names(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10237,7 +9178,7 @@ static refalrts::FnResult func_DoAddMum_Names(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoAddMum_Names("DoAddMu-Names", 2145043902U, 3906231740U, func_DoAddMum_Names);
+static refalrts::NativeReference nat_ref_DoAddMum_Names("DoAddMu-Names", 1728484166U, 762189050U, func_DoAddMum_Names);
 
 static refalrts::FnResult func_MuSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10363,7 +9304,7 @@ static refalrts::FnResult func_MuSentence(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MuSentence("MuSentence", 2145043902U, 3906231740U, func_MuSentence);
+static refalrts::NativeReference nat_ref_MuSentence("MuSentence", 1728484166U, 762189050U, func_MuSentence);
 
 static refalrts::FnResult func_Varm_eX(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10398,7 +9339,7 @@ static refalrts::FnResult func_Varm_eX(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Varm_eX("Var-eX", 2145043902U, 3906231740U, func_Varm_eX);
+static refalrts::NativeReference nat_ref_Varm_eX("Var-eX", 1728484166U, 762189050U, func_Varm_eX);
 
 static refalrts::FnResult func_Callm_eX(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10446,7 +9387,7 @@ static refalrts::FnResult func_Callm_eX(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Callm_eX("Call-eX", 2145043902U, 3906231740U, func_Callm_eX);
+static refalrts::NativeReference nat_ref_Callm_eX("Call-eX", 1728484166U, 762189050U, func_Callm_eX);
 
 static refalrts::FnResult func_MuSentencem_Special(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10507,7 +9448,7 @@ static refalrts::FnResult func_MuSentencem_Special(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MuSentencem_Special("MuSentence-Special", 2145043902U, 3906231740U, func_MuSentencem_Special);
+static refalrts::NativeReference nat_ref_MuSentencem_Special("MuSentence-Special", 1728484166U, 762189050U, func_MuSentencem_Special);
 
 static refalrts::FnResult func_MuSentencem_Specialu_check(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10615,7 +9556,7 @@ static refalrts::FnResult func_MuSentencem_Specialu_check(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MuSentencem_Specialu_check("MuSentence-Special_check", 2145043902U, 3906231740U, func_MuSentencem_Specialu_check);
+static refalrts::NativeReference nat_ref_MuSentencem_Specialu_check("MuSentence-Special_check", 1728484166U, 762189050U, func_MuSentencem_Specialu_check);
 
 static refalrts::FnResult func_MuSentencem_Specialu_cont(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10641,7 +9582,7 @@ static refalrts::FnResult func_MuSentencem_Specialu_cont(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MuSentencem_Specialu_cont("MuSentence-Special_cont", 2145043902U, 3906231740U, func_MuSentencem_Specialu_cont);
+static refalrts::NativeReference nat_ref_MuSentencem_Specialu_cont("MuSentence-Special_cont", 1728484166U, 762189050U, func_MuSentencem_Specialu_cont);
 
 static refalrts::FnResult func_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10707,7 +9648,7 @@ static refalrts::FnResult func_Chars(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Chars("Chars", 2145043902U, 3906231740U, func_Chars);
+static refalrts::NativeReference nat_ref_Chars("Chars", 1728484166U, 762189050U, func_Chars);
 
 static refalrts::FnResult func_DoAddMum_AST(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10916,7 +9857,7 @@ static refalrts::FnResult func_DoAddMum_AST(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoAddMum_AST("DoAddMu-AST", 2145043902U, 3906231740U, func_DoAddMum_AST);
+static refalrts::NativeReference nat_ref_DoAddMum_AST("DoAddMu-AST", 1728484166U, 762189050U, func_DoAddMum_AST);
 
 
 //End of file

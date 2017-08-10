@@ -4848,7 +4848,7 @@ static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrt
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Compilation failure in function "/7 Tile{ AsIs: e.Function#1/2 } ':'/9 >/10 </11 & WriteLine/12"  this function requests "/13 </15 Tile{ HalfReuse: & StrFromInt/6 AsIs: s.Memory#1/5 AsIs: >/1 }" local variables, but maximum size is 256."/16 >/18 </19 & WriteLine/20"  Compilation aborted."/21 >/23 </24 & Exit/25 1/26 >/27 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Compilation failure in function "/7 Tile{ AsIs: e.Function#1/2 } ':'/9 >/10 </11 & WriteLine/12"  this function requests "/13 </15 Tile{ HalfReuse: & StrFromInt/6 AsIs: s.Memory#1/5 AsIs: >/1 }" local variables, but maximum size is 255."/16 >/18 </19 & WriteLine/20"  Compilation aborted."/21 >/23 </24 & Exit/25 1/26 >/27 Tile{ ]] }
     if( ! refalrts::alloc_chars( context[7], context[8], "Compilation failure in function ", 32 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[9], ':' ) )
@@ -4863,7 +4863,7 @@ static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrt
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[16], context[17], " local variables, but maximum size is 256.", 42 ) )
+    if( ! refalrts::alloc_chars( context[16], context[17], " local variables, but maximum size is 255.", 42 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
@@ -4918,7 +4918,7 @@ static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrt
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Compilation failure in function "/7 Tile{ AsIs: e.Function#1/2 } ':'/9 >/10 </11 & WriteLine/12"  this function try jump over "/13 </15 Tile{ HalfReuse: & StrFromInt/6 AsIs: s.Memory#1/5 AsIs: >/1 }" commands, but maximum jump length is 256."/16 >/18 </19 & WriteLine/20"  Compilation aborted."/21 >/23 </24 & Exit/25 1/26 >/27 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 }"Compilation failure in function "/7 Tile{ AsIs: e.Function#1/2 } ':'/9 >/10 </11 & WriteLine/12"  this function try jump over "/13 </15 Tile{ HalfReuse: & StrFromInt/6 AsIs: s.Memory#1/5 AsIs: >/1 }" commands, but maximum jump length is 255."/16 >/18 </19 & WriteLine/20"  Compilation aborted."/21 >/23 </24 & Exit/25 1/26 >/27 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[7], context[8], "Compilation failure in function ", 32 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( context[9], ':' ) )
@@ -4933,7 +4933,7 @@ static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrt
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[16], context[17], " commands, but maximum jump length is 256.", 42 ) )
+  if( ! refalrts::alloc_chars( context[16], context[17], " commands, but maximum jump length is 255.", 42 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
