@@ -1998,9 +1998,9 @@ namespace /* unnamed */ {
     static const char *filename = "Generator.cpp";
     using refalrts::functions;
     static const refalrts::RefalIdentifier idents[] = {
-      & ident_TargetFileName<int>::name,
       & ident_CmdFileNameGP<int>::name,
-      & ident_CmdFileNameFB<int>::name
+      & ident_CmdFileNameFB<int>::name,
+      & ident_TargetFileName<int>::name
     };
     using refalrts::numbers;
     using refalrts::strings;
@@ -2009,26 +2009,25 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 25, 0, 0},
-      //FAST GEN: ( s.$ e.$ ) e.$
-      //GLOBAL GEN: ( s.$ e.$ ) e.$
-      // </0 & FileNameAd/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 e.idxT#0/2 >/1
+      //FAST GEN: ( # TargetFileName e.$ ) e.$
+      //GLOBAL GEN: ( # TargetFileName e.$ ) e.$
+      // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.idxBA#0/5 )/8 e.idxT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icIdentLeftSave, 9, 2, 5},
+      // closed e.idxBA#0 as range 5
       // closed e.idxT#0 as range 2
-      {refalrts::icsVarLeft, 0, 9, 5},
-      // closed e.idxBV#0 as range 5
-      {refalrts::icOnFailGoTo, +27, 0, 0},
+      {refalrts::icOnFailGoTo, +26, 0, 0},
       // ( # TargetFileName e.idx ) e.idx
       // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.TargetFileName#1/5 )/8 e.Commands-B#1/10 (/14 # CmdFileNameFB/16 )/15 e.Commands-E#1/2 >/1
-      {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.TargetFileName#1 as range 5
       {refalrts::icSave, 0, 21, 2},
       {refalrts::icEPrepare, 0, 10, 21},
       {refalrts::icEStart, 0, 10, 21},
       {refalrts::icSave, 0, 23, 21},
       {refalrts::icBracketLeftSave, 0, 12, 23},
-      {refalrts::icIdentLeftSave, 16, 2, 12},
+      {refalrts::icIdentLeftSave, 16, 1, 12},
       {refalrts::icEmpty, 0, 0, 12},
       // closed e.Commands-E#1 as range 23(2)
       //DEBUG: e.TargetFileName#1: 5
@@ -2040,7 +2039,7 @@ namespace /* unnamed */ {
       {refalrts::icCopyEVar, 17, 5, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 19},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 20},
-      {refalrts::icUpdateIdent, 0, 1, 16},
+      {refalrts::icUpdateIdent, 0, 0, 16},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 15},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 0},
@@ -2058,7 +2057,6 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( # TargetFileName e.idx ) e.idx
       // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.TargetFileName#1/5 )/8 e.Commands#1/2 >/1
-      {refalrts::icIdentTerm, 0, 0, 9},
       // closed e.TargetFileName#1 as range 5
       // closed e.Commands#1 as range 2
       //DEBUG: e.TargetFileName#1: 5
@@ -2096,9 +2094,9 @@ static refalrts::FnResult func_FileNameAd(refalrts::Iter arg_begin, refalrts::It
   // issue here memory for vars with 25 elems
   refalrts::Iter context[25];
   refalrts::zeros( context, 25 );
-  //FAST GEN: ( s.$ e.$ ) e.$
-  //GLOBAL GEN: ( s.$ e.$ ) e.$
-  // </0 & FileNameAd/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 e.idxT#0/2 >/1
+  //FAST GEN: ( # TargetFileName e.$ ) e.$
+  //GLOBAL GEN: ( # TargetFileName e.$ ) e.$
+  // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.idxBA#0/5 )/8 e.idxT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2110,15 +2108,14 @@ static refalrts::FnResult func_FileNameAd(refalrts::Iter arg_begin, refalrts::It
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxT#0 as range 2
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  context[9] = refalrts::ident_left(  & ident_TargetFileName<int>::name, context[5], context[6] );
+  if( ! context[9] )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxBV#0 as range 5
+  // closed e.idxBA#0 as range 5
+  // closed e.idxT#0 as range 2
   do {
     // ( # TargetFileName e.idx ) e.idx
     // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.TargetFileName#1/5 )/8 e.Commands-B#1/10 (/14 # CmdFileNameFB/16 )/15 e.Commands-E#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_TargetFileName<int>::name, context[9] ) )
-      continue;
     // closed e.TargetFileName#1 as range 5
     context[21] = context[2];
     context[22] = context[3];
@@ -2177,8 +2174,6 @@ static refalrts::FnResult func_FileNameAd(refalrts::Iter arg_begin, refalrts::It
 
   // ( # TargetFileName e.idx ) e.idx
   // </0 & FileNameAd/4 (/7 # TargetFileName/9 e.TargetFileName#1/5 )/8 e.Commands#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_TargetFileName<int>::name, context[9] ) )
-    return refalrts::cRecognitionImpossible;
   // closed e.TargetFileName#1 as range 5
   // closed e.Commands#1 as range 2
   //DEBUG: e.TargetFileName#1: 5

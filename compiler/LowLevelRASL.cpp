@@ -20625,22 +20625,21 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 2, 0, 0},
       {refalrts::icIssueMemory, 17, 0, 0},
-      //FAST GEN: ( s.$ s.$ ) t.$
-      //GLOBAL GEN: ( s.$ s.$ ) t.$
-      // </0 & PrepareOpenEStack\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 )/8 t.idxT#0/11 >/1
+      //FAST GEN: ( # CmdiReserveStack s.$ ) t.$
+      //GLOBAL GEN: ( # CmdiReserveStack s.$ ) t.$
+      // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.idxBA#0/10 )/8 t.idxT#0/11 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
-      {refalrts::icsVarLeft, 0, 9, 5},
+      {refalrts::icIdentLeftSave, 9, 0, 5},
       {refalrts::icsVarLeft, 0, 10, 5},
       {refalrts::icEmpty, 0, 0, 5},
       {refalrts::ictVarLeftSave, 0, 11, 2},
       {refalrts::icEmpty, 0, 0, 2},
-      {refalrts::icOnFailGoTo, +16, 0, 0},
+      {refalrts::icOnFailGoTo, +15, 0, 0},
       // ( # CmdiReserveStack s.idx ) ( # CmdiEStart e.idx )
       // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.Depth#2/10 )/8 (/11 # CmdiEStart/15 e.VarInfo#2/13 )/12 >/1
       {refalrts::icBracketTerm, 0, 13, 11},
-      {refalrts::icIdentTerm, 0, 0, 9},
       {refalrts::icIdentLeftSave, 15, 2, 13},
       // closed e.VarInfo#2 as range 13
       //DEBUG: s.Depth#2: 10
@@ -20661,11 +20660,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 1, 1, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +18, 0, 0},
+      {refalrts::icOnFailGoTo, +17, 0, 0},
       // ( # CmdiReserveStack s.idx ) ( # CmdiOnFailGoTo s.idx )
       // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.Depth#2/10 )/8 (/11 # CmdiOnFailGoTo/15 s.Offset#2/16 )/12 >/1
       {refalrts::icBracketTerm, 0, 13, 11},
-      {refalrts::icIdentTerm, 0, 0, 9},
       {refalrts::icIdentLeftSave, 15, 1, 13},
       {refalrts::icsVarLeft, 0, 16, 13},
       {refalrts::icEmpty, 0, 0, 13},
@@ -20689,7 +20687,6 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( # CmdiReserveStack s.idx ) t.idx
       // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.Depth#2/10 )/8 t.OtherCommand#2/11 >/1
-      {refalrts::icIdentTerm, 0, 0, 9},
       //DEBUG: t.OtherCommand#2: 11
       //DEBUG: s.Depth#2: 10
       {refalrts::icEmptyResult, 0, 0, 0},
@@ -20726,9 +20723,9 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  //FAST GEN: ( s.$ s.$ ) t.$
-  //GLOBAL GEN: ( s.$ s.$ ) t.$
-  // </0 & PrepareOpenEStack\1/4 (/7 s.idxB#0/9 s.idxBV#0/10 )/8 t.idxT#0/11 >/1
+  //FAST GEN: ( # CmdiReserveStack s.$ ) t.$
+  //GLOBAL GEN: ( # CmdiReserveStack s.$ ) t.$
+  // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.idxBA#0/10 )/8 t.idxT#0/11 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -20740,7 +20737,8 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  context[9] = refalrts::ident_left(  & ident_CmdiReserveStack<int>::name, context[5], context[6] );
+  if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[10], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
@@ -20757,8 +20755,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
     context[13] = 0;
     context[14] = 0;
     if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
-      continue;
-    if( ! refalrts::ident_term(  & ident_CmdiReserveStack<int>::name, context[9] ) )
       continue;
     context[15] = refalrts::ident_left(  & ident_CmdiEStart<int>::name, context[13], context[14] );
     if( ! context[15] )
@@ -20795,8 +20791,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
     context[14] = 0;
     if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
       continue;
-    if( ! refalrts::ident_term(  & ident_CmdiReserveStack<int>::name, context[9] ) )
-      continue;
     context[15] = refalrts::ident_left(  & ident_CmdiOnFailGoTo<int>::name, context[13], context[14] );
     if( ! context[15] )
       continue;
@@ -20830,8 +20824,6 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
 
   // ( # CmdiReserveStack s.idx ) t.idx
   // </0 & PrepareOpenEStack\1/4 (/7 # CmdiReserveStack/9 s.Depth#2/10 )/8 t.OtherCommand#2/11 >/1
-  if( ! refalrts::ident_term(  & ident_CmdiReserveStack<int>::name, context[9] ) )
-    return refalrts::cRecognitionImpossible;
   //DEBUG: t.OtherCommand#2: 11
   //DEBUG: s.Depth#2: 10
 

@@ -56,6 +56,10 @@ extern refalrts::RefalFunction& DFA_Parse;
 extern refalrts::RefalFunction& DFA_Compile;
 extern refalrts::RefalFunction& GenerateFromDFA;
 extern refalrts::RefalFunction& ErrorAt;
+extern refalrts::RefalFunction& Flex_Tokens;
+extern refalrts::RefalFunction& Flex_Parse;
+extern refalrts::RefalFunction& Flex_Check;
+extern refalrts::RefalFunction& Flex_Desugar;
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Go_L1;
 } // unnamed namespace
@@ -82,11 +86,27 @@ extern refalrts::RefalFunction& gen_Transform_L3S1L2;
 } // unnamed namespace
 
 namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Transform_L3S2L1;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Transform_L3S2L2;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& gen_Transform_L3S2L3;
+} // unnamed namespace
+
+namespace /* unnamed */ {
 extern refalrts::RefalFunction& gen_Transform_L3;
 } // unnamed namespace
 
 namespace /* unnamed */ {
 extern refalrts::RefalFunction& Transform;
+} // unnamed namespace
+
+namespace /* unnamed */ {
+extern refalrts::RefalFunction& Flex_Compile;
 } // unnamed namespace
 
 namespace /* unnamed */ {
@@ -1528,20 +1548,491 @@ refalrts::RefalFunction& gen_Transform_L3S1L2 = descr_gen_Transform_L3S1L2;
 #endif
 #ifdef INTERPRET
 namespace /* unnamed */ {
+  namespace scope_gen_Transform_L3S2L1 {
+    static const char *filename = "LexGen.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & ErrorAt
+    };
+    static const refalrts::RefalIdentifier idents[] = {
+      & ident_TError<int>::name
+    };
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icIssueMemory, 15, 0, 0},
+      //FAST GEN: ( e.$ ) t.$
+      //GLOBAL GEN: ( e.$ ) t.$
+      // </0 & Transform\3$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      // closed e.idxB#0 as range 5
+      {refalrts::ictVarLeftSave, 0, 9, 2},
+      {refalrts::icEmpty, 0, 0, 2},
+      {refalrts::icOnFailGoTo, +15, 0, 0},
+      // ( e.idx ) ( # TError s.idx e.idx )
+      // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 (/9 # TError/13 s.LineNumber#3/14 e.Text#3/11 )/10 >/1
+      {refalrts::icBracketTerm, 0, 11, 9},
+      {refalrts::icIdentLeftSave, 13, 0, 11},
+      // closed e.Source#1 as range 5
+      {refalrts::icsVarLeft, 0, 14, 11},
+      // closed e.Text#3 as range 11
+      //DEBUG: e.Source#1: 5
+      //DEBUG: s.LineNumber#3: 14
+      //DEBUG: e.Text#3: 11
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/9 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.LineNumber#3/14 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/10 } Tile{ AsIs: e.Text#3/11 } Tile{ AsIs: >/1 ]] }
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icLinkBrackets, 7, 10, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 11},
+      {refalrts::icSpliceTile, 10, 10, 0},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icSpliceTile, 14, 14, 0},
+      {refalrts::icTrash, 0, 0, 7},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +16, 0, 0},
+      // ( e.idx ) ( s.idx s.idx e.idx )
+      // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 (/9 s.TokType#3/13 s.LineNumber#3/14 e.Info#3/11 )/10 >/1
+      {refalrts::icBracketTerm, 0, 11, 9},
+      // closed e.Source#1 as range 5
+      {refalrts::icsVarLeft, 0, 13, 11},
+      {refalrts::icsVarLeft, 0, 14, 11},
+      // closed e.Info#3 as range 11
+      //DEBUG: e.Source#1: 5
+      //DEBUG: s.TokType#3: 13
+      //DEBUG: s.LineNumber#3: 14
+      //DEBUG: e.Info#3: 11
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.TokType#3/13 s.LineNumber#3/14 {REMOVED TILE} )/10 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 } Tile{ HalfReuse: s.TokType3 #13/0 HalfReuse: (/4 HalfReuse: s.LineNumber3 #14/7 AsIs: e.Source#1/5 AsIs: )/8 } Tile{ AsIs: e.Info#3/11 } Tile{ HalfReuse: )/1 ]] }
+      {refalrts::icReinitSVar, 0, 13, 0},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
+      {refalrts::icReinitSVar, 0, 14, 7},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
+      {refalrts::icLinkBrackets, 9, 1, 0},
+      {refalrts::icLinkBrackets, 4, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceEVar, 0, 0, 11},
+      {refalrts::icSpliceTile, 0, 8, 0},
+      {refalrts::icSpliceTile, 9, 9, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      // ( e.idx ) t.idx
+      // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 t.Other#3/9 >/1
+      // closed e.Source#1 as range 5
+      //DEBUG: t.Other#3: 9
+      //DEBUG: e.Source#1: 5
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: t.Other#3/9 } Tile{ ]] }
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 9, 10, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_Transform_L3S2L1
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_Transform_L3S2L1(
+  "Transform\\3$2\\1",
+  scope_gen_Transform_L3S2L1::raa,
+  scope_gen_Transform_L3S2L1::functions,
+  scope_gen_Transform_L3S2L1::idents,
+  scope_gen_Transform_L3S2L1::numbers,
+  scope_gen_Transform_L3S2L1::strings,
+  scope_gen_Transform_L3S2L1::filename
+);
+refalrts::RefalFunction& gen_Transform_L3S2L1 = descr_gen_Transform_L3S2L1;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_Transform_L3S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
+  //FAST GEN: ( e.$ ) t.$
+  //GLOBAL GEN: ( e.$ ) t.$
+  // </0 & Transform\3$2\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.idxB#0 as range 5
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // ( e.idx ) ( # TError s.idx e.idx )
+    // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 (/9 # TError/13 s.LineNumber#3/14 e.Text#3/11 )/10 >/1
+    context[11] = 0;
+    context[12] = 0;
+    if( ! refalrts::brackets_term( context[11], context[12], context[9] ) )
+      continue;
+    context[13] = refalrts::ident_left(  & ident_TError<int>::name, context[11], context[12] );
+    if( ! context[13] )
+      continue;
+    // closed e.Source#1 as range 5
+    if( ! refalrts::svar_left( context[14], context[11], context[12] ) )
+      continue;
+    // closed e.Text#3 as range 11
+    //DEBUG: e.Source#1: 5
+    //DEBUG: s.LineNumber#3: 14
+    //DEBUG: e.Text#3: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/9 # TError/13 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 AsIs: (/7 } Tile{ AsIs: s.LineNumber#3/14 } Tile{ AsIs: e.Source#1/5 } Tile{ AsIs: )/10 } Tile{ AsIs: e.Text#3/11 } Tile{ AsIs: >/1 ]] }
+    refalrts::update_name( context[4], & ErrorAt );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[7], context[10] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[14], context[14] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( context[7], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( s.idx s.idx e.idx )
+    // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 (/9 s.TokType#3/13 s.LineNumber#3/14 e.Info#3/11 )/10 >/1
+    context[11] = 0;
+    context[12] = 0;
+    if( ! refalrts::brackets_term( context[11], context[12], context[9] ) )
+      continue;
+    // closed e.Source#1 as range 5
+    if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
+      continue;
+    if( ! refalrts::svar_left( context[14], context[11], context[12] ) )
+      continue;
+    // closed e.Info#3 as range 11
+    //DEBUG: e.Source#1: 5
+    //DEBUG: s.TokType#3: 13
+    //DEBUG: s.LineNumber#3: 14
+    //DEBUG: e.Info#3: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.TokType#3/13 s.LineNumber#3/14 {REMOVED TILE} )/10 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/9 } Tile{ HalfReuse: s.TokType3 #13/0 HalfReuse: (/4 HalfReuse: s.LineNumber3 #14/7 AsIs: e.Source#1/5 AsIs: )/8 } Tile{ AsIs: e.Info#3/11 } Tile{ HalfReuse: )/1 ]] }
+    refalrts::reinit_svar( context[0], context[13] );
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::reinit_svar( context[7], context[14] );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[9], context[1] );
+    refalrts::link_brackets( context[4], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[0], context[8] );
+    res = refalrts::splice_evar( res, context[9], context[9] );
+    refalrts::use( res );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) t.idx
+  // </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 t.Other#3/9 >/1
+  // closed e.Source#1 as range 5
+  //DEBUG: t.Other#3: 9
+  //DEBUG: e.Source#1: 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & Transform\3$2\1/4 (/7 e.Source#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: t.Other#3/9 } Tile{ ]] }
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_Transform_L3S2L1(func_gen_Transform_L3S2L1, "Transform\\3$2\\1");
+refalrts::RefalFunction& gen_Transform_L3S2L1 = descr_gen_Transform_L3S2L1;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_Transform_L3S2L2 {
+    static const char *filename = "LexGen.cpp";
+    static refalrts::RefalFunction *functions[] = {
+      & Flex_Check
+    };
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 7, 0, 0},
+      // </0 & Transform\3$2\2/4 e.AST#3/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.AST#3 as range 2
+      //DEBUG: e.AST#3: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Flex-Check/4 AsIs: e.AST#3/2 AsIs: >/1 } e.AST#3/2/5 Tile{ ]] }
+      {refalrts::icCopyEVar, 5, 2, 0},
+      {refalrts::icUpdateFunc, 0, 0, 4},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceTile, 5, 6, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_Transform_L3S2L2
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_Transform_L3S2L2(
+  "Transform\\3$2\\2",
+  scope_gen_Transform_L3S2L2::raa,
+  scope_gen_Transform_L3S2L2::functions,
+  scope_gen_Transform_L3S2L2::idents,
+  scope_gen_Transform_L3S2L2::numbers,
+  scope_gen_Transform_L3S2L2::strings,
+  scope_gen_Transform_L3S2L2::filename
+);
+refalrts::RefalFunction& gen_Transform_L3S2L2 = descr_gen_Transform_L3S2L2;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_Transform_L3S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 7 elems
+  refalrts::Iter context[7];
+  refalrts::zeros( context, 7 );
+  // </0 & Transform\3$2\2/4 e.AST#3/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.AST#3 as range 2
+  //DEBUG: e.AST#3: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Flex-Check/4 AsIs: e.AST#3/2 AsIs: >/1 } e.AST#3/2/5 Tile{ ]] }
+  if (! refalrts::copy_evar(context[5], context[6], context[2], context[3]))
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], & Flex_Check );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_Transform_L3S2L2(func_gen_Transform_L3S2L2, "Transform\\3$2\\2");
+refalrts::RefalFunction& gen_Transform_L3S2L2 = descr_gen_Transform_L3S2L2;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_gen_Transform_L3S2L3 {
+    static const char *filename = "LexGen.cpp";
+    using refalrts::functions;
+    using refalrts::idents;
+    using refalrts::numbers;
+    static const refalrts::StringItem strings[] = {
+      {"*/", 2},
+      {"EN", 2}
+    };
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 17, 0, 0},
+      // </0 & Transform\3$2\3/4 (/7 e.LinesBefore#2/5 )/8 (/11 e.Description#2/9 )/12 e.Generated#3/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      {refalrts::icBracketLeftSave, 0, 5, 2},
+      {refalrts::icBracketLeftSave, 0, 9, 2},
+      // closed e.LinesBefore#2 as range 5
+      // closed e.Description#2 as range 9
+      // closed e.Generated#3 as range 2
+      //DEBUG: e.LinesBefore#2: 5
+      //DEBUG: e.Description#2: 9
+      //DEBUG: e.Generated#3: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: e.LinesBefore#2/5 } Tile{ AsIs: e.Description#2/9 } Tile{ AsIs: (/11 } Tile{ HalfReuse: 'G'/0 HalfReuse: 'E'/4 HalfReuse: 'N'/7 } Tile{ HalfReuse: ':'/8 }"EN"/13 Tile{ HalfReuse: 'D'/1 }"*/"/15 Tile{ AsIs: )/12 } Tile{ AsIs: e.Generated#3/2 } Tile{ ]] }
+      {refalrts::icAllocString, 0, 1, 13},
+      {refalrts::icAllocString, 0, 0, 15},
+      {refalrts::icReinitChar, 0, 'G', 0},
+      {refalrts::icReinitChar, 0, 'E', 4},
+      {refalrts::icReinitChar, 0, 'N', 7},
+      {refalrts::icReinitChar, 0, ':', 8},
+      {refalrts::icReinitChar, 0, 'D', 1},
+      {refalrts::icLinkBrackets, 11, 12, 0},
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 12, 12, 0},
+      {refalrts::icSpliceTile, 15, 16, 0},
+      {refalrts::icSpliceTile, 1, 1, 0},
+      {refalrts::icSpliceTile, 13, 14, 0},
+      {refalrts::icSpliceTile, 8, 8, 0},
+      {refalrts::icSpliceTile, 0, 7, 0},
+      {refalrts::icSpliceTile, 11, 11, 0},
+      {refalrts::icSpliceEVar, 0, 0, 9},
+      {refalrts::icSpliceEVar, 0, 0, 5},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_gen_Transform_L3S2L3
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_gen_Transform_L3S2L3(
+  "Transform\\3$2\\3",
+  scope_gen_Transform_L3S2L3::raa,
+  scope_gen_Transform_L3S2L3::functions,
+  scope_gen_Transform_L3S2L3::idents,
+  scope_gen_Transform_L3S2L3::numbers,
+  scope_gen_Transform_L3S2L3::strings,
+  scope_gen_Transform_L3S2L3::filename
+);
+refalrts::RefalFunction& gen_Transform_L3S2L3 = descr_gen_Transform_L3S2L3;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_gen_Transform_L3S2L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  // </0 & Transform\3$2\3/4 (/7 e.LinesBefore#2/5 )/8 (/11 e.Description#2/9 )/12 e.Generated#3/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.LinesBefore#2 as range 5
+  // closed e.Description#2 as range 9
+  // closed e.Generated#3 as range 2
+  //DEBUG: e.LinesBefore#2: 5
+  //DEBUG: e.Description#2: 9
+  //DEBUG: e.Generated#3: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.LinesBefore#2/5 } Tile{ AsIs: e.Description#2/9 } Tile{ AsIs: (/11 } Tile{ HalfReuse: 'G'/0 HalfReuse: 'E'/4 HalfReuse: 'N'/7 } Tile{ HalfReuse: ':'/8 }"EN"/13 Tile{ HalfReuse: 'D'/1 }"*/"/15 Tile{ AsIs: )/12 } Tile{ AsIs: e.Generated#3/2 } Tile{ ]] }
+  if( ! refalrts::alloc_chars( context[13], context[14], "EN", 2 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[15], context[16], "*/", 2 ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_char( context[0], 'G' );
+  refalrts::reinit_char( context[4], 'E' );
+  refalrts::reinit_char( context[7], 'N' );
+  refalrts::reinit_char( context[8], ':' );
+  refalrts::reinit_char( context[1], 'D' );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[15], context[16] );
+  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[0], context[7] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_gen_Transform_L3S2L3(func_gen_Transform_L3S2L3, "Transform\\3$2\\3");
+refalrts::RefalFunction& gen_Transform_L3S2L3 = descr_gen_Transform_L3S2L3;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
   namespace scope_gen_Transform_L3 {
     static const char *filename = "LexGen.cpp";
     static refalrts::RefalFunction *functions[] = {
       & ErrorAt,
-      & gen_Transform_L3S1L2,
       & refalrts::create_closure,
+      & Flex_Compile,
+      & Flex_Desugar,
+      & gen_Transform_L3S2L2,
+      & Flex_Parse,
+      & gen_Transform_L3S2L1,
+      & gen_Transform_L3S2L3,
+      & Map,
+      & Flex_Tokens,
+      & Seq,
+      & Fetch,
+      & gen_Transform_L3S1L2,
       & GenerateFromDFA,
       & DFA_Compile,
       & DFA_Parse,
       & gen_Transform_L3S1L1,
-      & Map,
-      & DFA_Tokens,
-      & Seq,
-      & Fetch
+      & DFA_Tokens
     };
     using refalrts::idents;
     using refalrts::numbers;
@@ -1551,8 +2042,8 @@ namespace /* unnamed */ {
     static const refalrts::RASLCommand raa[] = {
       {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
       {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 1, 0, 0},
-      {refalrts::icIssueMemory, 40, 0, 0},
+      {refalrts::icReserveBacktrackStack, 2, 0, 0},
+      {refalrts::icIssueMemory, 41, 0, 0},
       //FAST GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
       //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
       // </0 & Transform\3/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/17 e.idxTBV#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
@@ -1569,14 +2060,14 @@ namespace /* unnamed */ {
       {refalrts::icOnFailGoTo, +57, 0, 0},
       // ( e.idx ) ( s.idx e.idx ) ( 'TOKENS' ) e.idx
       // </0 & Transform\3/4 (/7 e.Source#1/5 )/8 (/11 s.Length#2/17 e.LinesBefore#2/9 )/12 (/15 'T'/18 'O'/19 'K'/20 'E'/21 'N'/22 'S'/23 )/16 e.Description#2/2 >/1
-      {refalrts::icSave, 0, 38, 13},
-      {refalrts::icCharLeftSave, 18, static_cast<unsigned char>('T'), 38},
-      {refalrts::icCharLeftSave, 19, static_cast<unsigned char>('O'), 38},
-      {refalrts::icCharLeftSave, 20, static_cast<unsigned char>('K'), 38},
-      {refalrts::icCharLeftSave, 21, static_cast<unsigned char>('E'), 38},
-      {refalrts::icCharLeftSave, 22, static_cast<unsigned char>('N'), 38},
-      {refalrts::icCharLeftSave, 23, static_cast<unsigned char>('S'), 38},
-      {refalrts::icEmpty, 0, 0, 38},
+      {refalrts::icSave, 0, 39, 13},
+      {refalrts::icCharLeftSave, 18, static_cast<unsigned char>('T'), 39},
+      {refalrts::icCharLeftSave, 19, static_cast<unsigned char>('O'), 39},
+      {refalrts::icCharLeftSave, 20, static_cast<unsigned char>('K'), 39},
+      {refalrts::icCharLeftSave, 21, static_cast<unsigned char>('E'), 39},
+      {refalrts::icCharLeftSave, 22, static_cast<unsigned char>('N'), 39},
+      {refalrts::icCharLeftSave, 23, static_cast<unsigned char>('S'), 39},
+      {refalrts::icEmpty, 0, 0, 39},
       // closed e.Source#1 as range 5
       // closed e.LinesBefore#2 as range 9
       // closed e.Description#2 as range 2
@@ -1588,27 +2079,27 @@ namespace /* unnamed */ {
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ } </24 & Fetch/25 Tile{ AsIs: s.Length#2/17 } e.Description#2/2/26 </28 & Seq/29 & DFA-Tokens/30 (/31 & Map/32 </33 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\3$1\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 HalfReuse: >/11 } Tile{ AsIs: )/12 HalfReuse: & DFA-Parse/15 HalfReuse: & DFA-Compile/18 HalfReuse: & GenerateFromDFA/19 HalfReuse: </20 HalfReuse: & @create_closure@/21 HalfReuse: & Transform\3$1\2/22 HalfReuse: (/23 } Tile{ AsIs: e.LinesBefore#2/9 } Tile{ AsIs: )/16 } (/34 Tile{ AsIs: e.Description#2/2 } )/35 >/36 >/37 Tile{ AsIs: >/1 ]] }
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 24},
-      {refalrts::icAllocFunc, 0, 10, 25},
+      {refalrts::icAllocFunc, 0, 11, 25},
       {refalrts::icCopyEVar, 26, 2, 0},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
-      {refalrts::icAllocFunc, 0, 9, 29},
-      {refalrts::icAllocFunc, 0, 8, 30},
+      {refalrts::icAllocFunc, 0, 10, 29},
+      {refalrts::icAllocFunc, 0, 17, 30},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 31},
-      {refalrts::icAllocFunc, 0, 7, 32},
+      {refalrts::icAllocFunc, 0, 8, 32},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 33},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 34},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 35},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 36},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 37},
-      {refalrts::icReinitFunc, 0, 2, 0},
-      {refalrts::icUpdateFunc, 0, 6, 4},
+      {refalrts::icReinitFunc, 0, 1, 0},
+      {refalrts::icUpdateFunc, 0, 16, 4},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 11},
-      {refalrts::icReinitFunc, 0, 5, 15},
-      {refalrts::icReinitFunc, 0, 4, 18},
-      {refalrts::icReinitFunc, 0, 3, 19},
+      {refalrts::icReinitFunc, 0, 15, 15},
+      {refalrts::icReinitFunc, 0, 14, 18},
+      {refalrts::icReinitFunc, 0, 13, 19},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 20},
-      {refalrts::icReinitFunc, 0, 2, 21},
-      {refalrts::icReinitFunc, 0, 1, 22},
+      {refalrts::icReinitFunc, 0, 1, 21},
+      {refalrts::icReinitFunc, 0, 12, 22},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 23},
       {refalrts::icPushStack, 0, 0, 1},
       {refalrts::icPushStack, 0, 0, 24},
@@ -1634,6 +2125,74 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 26, 27, 0},
       {refalrts::icSpliceTile, 17, 17, 0},
       {refalrts::icSpliceTile, 24, 25, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icProfilerStopSentence, 0, 0, 0},
+      {refalrts::icOnFailGoTo, +55, 0, 0},
+      // ( e.idx ) ( s.idx e.idx ) ( 'FLEX' ) e.idx
+      // </0 & Transform\3/4 (/7 e.Source#1/5 )/8 (/11 s.Length#2/17 e.LinesBefore#2/9 )/12 (/15 'F'/18 'L'/19 'E'/20 'X'/21 )/16 e.Description#2/2 >/1
+      {refalrts::icSave, 0, 39, 13},
+      {refalrts::icCharLeftSave, 18, static_cast<unsigned char>('F'), 39},
+      {refalrts::icCharLeftSave, 19, static_cast<unsigned char>('L'), 39},
+      {refalrts::icCharLeftSave, 20, static_cast<unsigned char>('E'), 39},
+      {refalrts::icCharLeftSave, 21, static_cast<unsigned char>('X'), 39},
+      {refalrts::icEmpty, 0, 0, 39},
+      // closed e.Source#1 as range 5
+      // closed e.LinesBefore#2 as range 9
+      // closed e.Description#2 as range 2
+      //DEBUG: s.Length#2: 17
+      //DEBUG: e.Source#1: 5
+      //DEBUG: e.LinesBefore#2: 9
+      //DEBUG: e.Description#2: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </22 & Fetch/23 Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Description#2/2 } </24 & Seq/25 & Flex-Tokens/26 (/27 & Map/28 </29 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\3$2\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 HalfReuse: >/11 } Tile{ AsIs: )/12 HalfReuse: & Flex-Parse/15 HalfReuse: & Transform\3$2\2/18 HalfReuse: & Flex-Desugar/19 HalfReuse: & Flex-Compile/20 HalfReuse: </21 HalfReuse: & @create_closure@/16 } & Transform\3$2\3/30 (/31 Tile{ AsIs: e.LinesBefore#2/9 } )/32 (/33 e.Description#2/2/34 )/36 >/37 >/38 Tile{ AsIs: >/1 ]] }
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 22},
+      {refalrts::icAllocFunc, 0, 11, 23},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 24},
+      {refalrts::icAllocFunc, 0, 10, 25},
+      {refalrts::icAllocFunc, 0, 9, 26},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 27},
+      {refalrts::icAllocFunc, 0, 8, 28},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 29},
+      {refalrts::icAllocFunc, 0, 7, 30},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 31},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 32},
+      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 33},
+      {refalrts::icCopyEVar, 34, 2, 0},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 36},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 37},
+      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 38},
+      {refalrts::icReinitFunc, 0, 1, 0},
+      {refalrts::icUpdateFunc, 0, 6, 4},
+      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 11},
+      {refalrts::icReinitFunc, 0, 5, 15},
+      {refalrts::icReinitFunc, 0, 4, 18},
+      {refalrts::icReinitFunc, 0, 3, 19},
+      {refalrts::icReinitFunc, 0, 2, 20},
+      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 21},
+      {refalrts::icReinitFunc, 0, 1, 16},
+      {refalrts::icPushStack, 0, 0, 1},
+      {refalrts::icPushStack, 0, 0, 22},
+      {refalrts::icPushStack, 0, 0, 38},
+      {refalrts::icPushStack, 0, 0, 24},
+      {refalrts::icPushStack, 0, 0, 37},
+      {refalrts::icPushStack, 0, 0, 21},
+      {refalrts::icLinkBrackets, 33, 36, 0},
+      {refalrts::icLinkBrackets, 31, 32, 0},
+      {refalrts::icLinkBrackets, 27, 12, 0},
+      {refalrts::icPushStack, 0, 0, 11},
+      {refalrts::icPushStack, 0, 0, 29},
+      {refalrts::icLinkBrackets, 7, 8, 0},
+      {refalrts::icSetRes, 0, 0, 1},
+      {refalrts::icSpliceTile, 32, 38, 0},
+      {refalrts::icSpliceEVar, 0, 0, 9},
+      {refalrts::icSpliceTile, 30, 31, 0},
+      {refalrts::icSpliceTile, 12, 16, 0},
+      {refalrts::icSpliceTile, 0, 11, 0},
+      {refalrts::icSpliceTile, 24, 29, 0},
+      {refalrts::icSpliceEVar, 0, 0, 2},
+      {refalrts::icSpliceTile, 17, 17, 0},
+      {refalrts::icSpliceTile, 22, 23, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( e.idx ) ( s.idx e.idx ) ( e.idx ) e.idx
@@ -1692,9 +2251,9 @@ refalrts::RefalFunction& gen_Transform_L3 = descr_gen_Transform_L3;
 #else
 static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 40 elems
-  refalrts::Iter context[40];
-  refalrts::zeros( context, 40 );
+  // issue here memory for vars with 41 elems
+  refalrts::Iter context[41];
+  refalrts::zeros( context, 41 );
   //FAST GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
   // </0 & Transform\3/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/17 e.idxTBV#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
@@ -1730,27 +2289,27 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
   do {
     // ( e.idx ) ( s.idx e.idx ) ( 'TOKENS' ) e.idx
     // </0 & Transform\3/4 (/7 e.Source#1/5 )/8 (/11 s.Length#2/17 e.LinesBefore#2/9 )/12 (/15 'T'/18 'O'/19 'K'/20 'E'/21 'N'/22 'S'/23 )/16 e.Description#2/2 >/1
-    context[38] = context[13];
-    context[39] = context[14];
-    context[18] = refalrts::char_left( 'T', context[38], context[39] );
+    context[39] = context[13];
+    context[40] = context[14];
+    context[18] = refalrts::char_left( 'T', context[39], context[40] );
     if( ! context[18] )
       continue;
-    context[19] = refalrts::char_left( 'O', context[38], context[39] );
+    context[19] = refalrts::char_left( 'O', context[39], context[40] );
     if( ! context[19] )
       continue;
-    context[20] = refalrts::char_left( 'K', context[38], context[39] );
+    context[20] = refalrts::char_left( 'K', context[39], context[40] );
     if( ! context[20] )
       continue;
-    context[21] = refalrts::char_left( 'E', context[38], context[39] );
+    context[21] = refalrts::char_left( 'E', context[39], context[40] );
     if( ! context[21] )
       continue;
-    context[22] = refalrts::char_left( 'N', context[38], context[39] );
+    context[22] = refalrts::char_left( 'N', context[39], context[40] );
     if( ! context[22] )
       continue;
-    context[23] = refalrts::char_left( 'S', context[38], context[39] );
+    context[23] = refalrts::char_left( 'S', context[39], context[40] );
     if( ! context[23] )
       continue;
-    if( ! refalrts::empty_seq( context[38], context[39] ) )
+    if( ! refalrts::empty_seq( context[39], context[40] ) )
       continue;
     // closed e.Source#1 as range 5
     // closed e.LinesBefore#2 as range 9
@@ -1825,6 +2384,106 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
     res = refalrts::splice_evar( res, context[26], context[27] );
     res = refalrts::splice_evar( res, context[17], context[17] );
     res = refalrts::splice_evar( res, context[24], context[25] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( s.idx e.idx ) ( 'FLEX' ) e.idx
+    // </0 & Transform\3/4 (/7 e.Source#1/5 )/8 (/11 s.Length#2/17 e.LinesBefore#2/9 )/12 (/15 'F'/18 'L'/19 'E'/20 'X'/21 )/16 e.Description#2/2 >/1
+    context[39] = context[13];
+    context[40] = context[14];
+    context[18] = refalrts::char_left( 'F', context[39], context[40] );
+    if( ! context[18] )
+      continue;
+    context[19] = refalrts::char_left( 'L', context[39], context[40] );
+    if( ! context[19] )
+      continue;
+    context[20] = refalrts::char_left( 'E', context[39], context[40] );
+    if( ! context[20] )
+      continue;
+    context[21] = refalrts::char_left( 'X', context[39], context[40] );
+    if( ! context[21] )
+      continue;
+    if( ! refalrts::empty_seq( context[39], context[40] ) )
+      continue;
+    // closed e.Source#1 as range 5
+    // closed e.LinesBefore#2 as range 9
+    // closed e.Description#2 as range 2
+    //DEBUG: s.Length#2: 17
+    //DEBUG: e.Source#1: 5
+    //DEBUG: e.LinesBefore#2: 9
+    //DEBUG: e.Description#2: 2
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </22 & Fetch/23 Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Description#2/2 } </24 & Seq/25 & Flex-Tokens/26 (/27 & Map/28 </29 Tile{ HalfReuse: & @create_closure@/0 Reuse: & Transform\3$2\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 HalfReuse: >/11 } Tile{ AsIs: )/12 HalfReuse: & Flex-Parse/15 HalfReuse: & Transform\3$2\2/18 HalfReuse: & Flex-Desugar/19 HalfReuse: & Flex-Compile/20 HalfReuse: </21 HalfReuse: & @create_closure@/16 } & Transform\3$2\3/30 (/31 Tile{ AsIs: e.LinesBefore#2/9 } )/32 (/33 e.Description#2/2/34 )/36 >/37 >/38 Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_open_call( context[22] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[23], & Fetch ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[24] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[25], & Seq ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[26], & Flex_Tokens ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[27] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[28], & Map ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[29] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[30], & gen_Transform_L3S2L3 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[31] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[32] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[33] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[34], context[35], context[2], context[3]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[36] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[37] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[38] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_name( context[0], & refalrts::create_closure );
+    refalrts::update_name( context[4], & gen_Transform_L3S2L1 );
+    refalrts::reinit_close_call( context[11] );
+    refalrts::reinit_name( context[15], & Flex_Parse );
+    refalrts::reinit_name( context[18], & gen_Transform_L3S2L2 );
+    refalrts::reinit_name( context[19], & Flex_Desugar );
+    refalrts::reinit_name( context[20], & Flex_Compile );
+    refalrts::reinit_open_call( context[21] );
+    refalrts::reinit_name( context[16], & refalrts::create_closure );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[22] );
+    refalrts::push_stack( context[38] );
+    refalrts::push_stack( context[24] );
+    refalrts::push_stack( context[37] );
+    refalrts::push_stack( context[21] );
+    refalrts::link_brackets( context[33], context[36] );
+    refalrts::link_brackets( context[31], context[32] );
+    refalrts::link_brackets( context[27], context[12] );
+    refalrts::push_stack( context[11] );
+    refalrts::push_stack( context[29] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[32], context[38] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[30], context[31] );
+    res = refalrts::splice_evar( res, context[12], context[16] );
+    res = refalrts::splice_evar( res, context[0], context[11] );
+    res = refalrts::splice_evar( res, context[24], context[29] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[17], context[17] );
+    res = refalrts::splice_evar( res, context[22], context[23] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -2068,6 +2727,82 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
 namespace /* unnamed */ {
 refalrts::RefalNativeFunction descr_Transform(func_Transform, "Transform");
 refalrts::RefalFunction& Transform = descr_Transform;
+
+} // unnamed namespace
+
+#endif
+#ifdef INTERPRET
+namespace /* unnamed */ {
+  namespace scope_Flex_Compile {
+    static const char *filename = "LexGen.cpp";
+    using refalrts::functions;
+    using refalrts::idents;
+    using refalrts::numbers;
+    using refalrts::strings;
+    static const refalrts::RASLCommand raa[] = {
+      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
+      {refalrts::icLoadConstants, 0, 0, 0},
+      {refalrts::icIssueMemory, 5, 0, 0},
+      // </0 & Flex-Compile/4 e.AnyInput#1/2 >/1
+      {refalrts::icInitB0_Lite, 0, 0, 0},
+      {refalrts::icCallSaveLeft, 0, 2, 0},
+      // closed e.AnyInput#1 as range 2
+      //DEBUG: e.AnyInput#1: 2
+      {refalrts::icEmptyResult, 0, 0, 0},
+      //TRASH: {REMOVED TILE} </0 & Flex-Compile/4 e.AnyInput#1/2 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ ]] }
+      {refalrts::icSetResRightEdge, 0, 0, 0},
+      {refalrts::icTrashLeftEdge, 0, 0, 0},
+      {refalrts::icNextStep, 0, 0, 0},
+      {refalrts::icEnd, 0, 0, 0}
+    };
+  } // namespace scope_Flex_Compile
+
+} // unnamed namespace
+
+namespace /* unnamed */ {
+refalrts::RASLFunction descr_Flex_Compile(
+  "Flex-Compile",
+  scope_Flex_Compile::raa,
+  scope_Flex_Compile::functions,
+  scope_Flex_Compile::idents,
+  scope_Flex_Compile::numbers,
+  scope_Flex_Compile::strings,
+  scope_Flex_Compile::filename
+);
+refalrts::RefalFunction& Flex_Compile = descr_Flex_Compile;
+
+} // unnamed namespace
+
+#else
+static refalrts::FnResult func_Flex_Compile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 5 elems
+  refalrts::Iter context[5];
+  refalrts::zeros( context, 5 );
+  // </0 & Flex-Compile/4 e.AnyInput#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.AnyInput#1 as range 2
+  //DEBUG: e.AnyInput#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & Flex-Compile/4 e.AnyInput#1/2 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ ]] }
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+namespace /* unnamed */ {
+refalrts::RefalNativeFunction descr_Flex_Compile(func_Flex_Compile, "Flex-Compile");
+refalrts::RefalFunction& Flex_Compile = descr_Flex_Compile;
 
 } // unnamed namespace
 

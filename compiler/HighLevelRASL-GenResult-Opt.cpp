@@ -4900,9 +4900,9 @@ namespace /* unnamed */ {
     static const refalrts::RefalIdentifier idents[] = {
       & ident_CmdNextStep<int>::name,
       & ident_RemovedTile<int>::name,
-      & ident_Tile<int>::name,
       & ident_CmdSetRes<int>::name,
-      & ident_CmdUseRes<int>::name
+      & ident_CmdUseRes<int>::name,
+      & ident_Tile<int>::name
     };
     using refalrts::numbers;
     using refalrts::strings;
@@ -4912,23 +4912,22 @@ namespace /* unnamed */ {
       {refalrts::icReserveBacktrackStack, 1, 0, 0},
       {refalrts::icIssueMemory, 34, 0, 0},
       //FAST GEN: e.$
-      //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) e.$
-      // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 e.idxTT#0/2 >/1
+      //GLOBAL GEN: ( e.$ ) ( # Tile e.$ ) e.$
+      // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 # Tile/13 e.idxTBA#0/9 )/12 e.idxTT#0/2 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketLeftSave, 0, 5, 2},
       {refalrts::icBracketLeftSave, 0, 9, 2},
+      {refalrts::icIdentLeftSave, 13, 4, 9},
       // closed e.idxB#0 as range 5
+      // closed e.idxTBA#0 as range 9
       // closed e.idxTT#0 as range 2
-      {refalrts::icsVarLeft, 0, 13, 9},
-      // closed e.idxTBV#0 as range 9
-      {refalrts::icOnFailGoTo, +50, 0, 0},
+      {refalrts::icOnFailGoTo, +49, 0, 0},
       // ( e.idx ) ( # Tile e.idx ) e.idx ( # Tile e.idx )
       // </0 & GenSplices/4 (/7 e.Trash#1/5 )/8 (/11 # Tile/13 e.LeftTile#1/9 )/12 e.Result#1/2 (/16 # Tile/18 e.RightTile#1/14 )/17 >/1
-      {refalrts::icIdentTerm, 0, 2, 13},
       {refalrts::icSave, 0, 32, 2},
       {refalrts::icBracketRightSave, 0, 14, 32},
-      {refalrts::icIdentLeftSave, 18, 2, 14},
+      {refalrts::icIdentLeftSave, 18, 4, 14},
       // closed e.Trash#1 as range 5
       // closed e.LeftTile#1 as range 9
       // closed e.Result#1 as range 32(2)
@@ -4948,13 +4947,13 @@ namespace /* unnamed */ {
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 24},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 25},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 26},
-      {refalrts::icAllocIdent, 0, 4, 27},
+      {refalrts::icAllocIdent, 0, 3, 27},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 28},
       {refalrts::icAllocFunc, 0, 1, 29},
       {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 30},
       {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 31},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-      {refalrts::icReinitIdent, 0, 3, 4},
+      {refalrts::icReinitIdent, 0, 2, 4},
       {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 16},
       {refalrts::icReinitFunc, 0, 0, 18},
       {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 17},
@@ -4988,7 +4987,6 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // ( # RemovedTile ) ( # Tile e.idx )
       // </0 & GenSplices/4 (/7 # RemovedTile/14 )/8 (/11 # Tile/13 e.OneTile#1/9 )/12 >/1
-      {refalrts::icIdentTerm, 0, 2, 13},
       {refalrts::icIdentLeftSave, 14, 1, 5},
       {refalrts::icEmpty, 0, 0, 5},
       {refalrts::icEmpty, 0, 0, 2},
@@ -5030,8 +5028,8 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   refalrts::Iter context[34];
   refalrts::zeros( context, 34 );
   //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) e.$
-  // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/13 e.idxTBV#0/9 )/12 e.idxTT#0/2 >/1
+  //GLOBAL GEN: ( e.$ ) ( # Tile e.$ ) e.$
+  // </0 & GenSplices/4 (/7 e.idxB#0/5 )/8 (/11 # Tile/13 e.idxTBA#0/9 )/12 e.idxTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -5049,16 +5047,15 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTT#0 as range 2
-  if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
+  context[13] = refalrts::ident_left(  & ident_Tile<int>::name, context[9], context[10] );
+  if( ! context[13] )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTBV#0 as range 9
+  // closed e.idxB#0 as range 5
+  // closed e.idxTBA#0 as range 9
+  // closed e.idxTT#0 as range 2
   do {
     // ( e.idx ) ( # Tile e.idx ) e.idx ( # Tile e.idx )
     // </0 & GenSplices/4 (/7 e.Trash#1/5 )/8 (/11 # Tile/13 e.LeftTile#1/9 )/12 e.Result#1/2 (/16 # Tile/18 e.RightTile#1/14 )/17 >/1
-    if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[13] ) )
-      continue;
     context[32] = context[2];
     context[33] = context[3];
     context[14] = 0;
@@ -5148,8 +5145,6 @@ static refalrts::FnResult func_GenSplices(refalrts::Iter arg_begin, refalrts::It
 
   // ( # RemovedTile ) ( # Tile e.idx )
   // </0 & GenSplices/4 (/7 # RemovedTile/14 )/8 (/11 # Tile/13 e.OneTile#1/9 )/12 >/1
-  if( ! refalrts::ident_term(  & ident_Tile<int>::name, context[13] ) )
-    return refalrts::cRecognitionImpossible;
   context[14] = refalrts::ident_left(  & ident_RemovedTile<int>::name, context[5], context[6] );
   if( ! context[14] )
     return refalrts::cRecognitionImpossible;

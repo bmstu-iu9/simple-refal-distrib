@@ -367,13 +367,13 @@ namespace /* unnamed */ {
     };
     static const refalrts::RefalIdentifier idents[] = {
       & ident_VariableNotFound<int>::name,
-      & ident_Error<int>::name,
       & ident_InvalidMode<int>::name,
       & ident_AlreadyBounded<int>::name,
       & ident_NotDefined<int>::name,
       & ident_ForwardNotDefined<int>::name,
       & ident_ForwardForEntry<int>::name,
-      & ident_AlreadyDefined<int>::name
+      & ident_AlreadyDefined<int>::name,
+      & ident_Error<int>::name
     };
     using refalrts::numbers;
     static const refalrts::StringItem strings[] = {
@@ -399,23 +399,22 @@ namespace /* unnamed */ {
       {refalrts::icLoadConstants, 0, 0, 0},
       {refalrts::icReserveBacktrackStack, 6, 0, 0},
       {refalrts::icIssueMemory, 31, 0, 0},
-      //FAST GEN: t.$ ( s.$ t.$ s.$ e.$ )
-      //GLOBAL GEN: t.$ ( s.$ t.$ s.$ e.$ )
-      // </0 & CheckProgram\1/4 t.idx#0/10 (/7 s.idxVB#0/9 t.idxVBV#0/12 s.idxVBVV#0/14 e.idxVBVVV#0/5 )/8 >/1
+      //FAST GEN: t.$ ( # Error t.$ s.$ e.$ )
+      //GLOBAL GEN: t.$ ( # Error t.$ s.$ e.$ )
+      // </0 & CheckProgram\1/4 t.idx#0/10 (/7 # Error/9 t.idxVBA#0/12 s.idxVBAV#0/14 e.idxVBAVV#0/5 )/8 >/1
       {refalrts::icInitB0_Lite, 0, 0, 0},
       {refalrts::icCallSaveLeft, 0, 2, 0},
       {refalrts::icBracketRightSave, 0, 5, 2},
-      {refalrts::icsVarLeft, 0, 9, 5},
+      {refalrts::icIdentLeftSave, 9, 7, 5},
       {refalrts::ictVarLeftSave, 0, 10, 2},
       {refalrts::icEmpty, 0, 0, 2},
       {refalrts::ictVarLeftSave, 0, 12, 5},
       {refalrts::icsVarLeft, 0, 14, 5},
-      // closed e.idxVBVVV#0 as range 5
-      {refalrts::icOnFailGoTo, +21, 0, 0},
+      // closed e.idxVBAVV#0 as range 5
+      {refalrts::icOnFailGoTo, +20, 0, 0},
       // t.idx ( # Error t.idx # AlreadyDefined e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # AlreadyDefined/14 e.Name#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 7, 14},
+      {refalrts::icIdentTerm, 0, 6, 14},
       // closed e.Name#2 as range 5
       //DEBUG: t.ErrorList#2: 10
       //DEBUG: t.SrcPos#2: 12
@@ -442,11 +441,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 14, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +24, 0, 0},
+      {refalrts::icOnFailGoTo, +23, 0, 0},
       // t.idx ( # Error t.idx # ForwardForEntry e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # ForwardForEntry/14 e.Name#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 6, 14},
+      {refalrts::icIdentTerm, 0, 5, 14},
       // closed e.Name#2 as range 5
       //DEBUG: t.ErrorList#2: 10
       //DEBUG: t.SrcPos#2: 12
@@ -476,11 +474,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 13, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +21, 0, 0},
+      {refalrts::icOnFailGoTo, +20, 0, 0},
       // t.idx ( # Error t.idx # ForwardNotDefined e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # ForwardNotDefined/14 e.Name#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 5, 14},
+      {refalrts::icIdentTerm, 0, 4, 14},
       // closed e.Name#2 as range 5
       //DEBUG: t.ErrorList#2: 10
       //DEBUG: t.SrcPos#2: 12
@@ -507,11 +504,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 14, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +21, 0, 0},
+      {refalrts::icOnFailGoTo, +20, 0, 0},
       // t.idx ( # Error t.idx # NotDefined e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # NotDefined/14 e.Name#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 4, 14},
+      {refalrts::icIdentTerm, 0, 3, 14},
       // closed e.Name#2 as range 5
       //DEBUG: t.ErrorList#2: 10
       //DEBUG: t.SrcPos#2: 12
@@ -538,11 +534,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 14, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +25, 0, 0},
+      {refalrts::icOnFailGoTo, +24, 0, 0},
       // t.idx ( # Error t.idx # AlreadyBounded s.idx e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # AlreadyBounded/14 s.Mode#2/15 e.Index#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 3, 14},
+      {refalrts::icIdentTerm, 0, 2, 14},
       {refalrts::icSave, 0, 29, 5},
       {refalrts::icsVarLeft, 0, 15, 29},
       // closed e.Index#2 as range 29(5)
@@ -574,11 +569,10 @@ namespace /* unnamed */ {
       {refalrts::icSpliceTile, 12, 13, 0},
       {refalrts::icNextStep, 0, 0, 0},
       {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +32, 0, 0},
+      {refalrts::icOnFailGoTo, +31, 0, 0},
       // t.idx ( # Error t.idx # InvalidMode s.idx s.idx e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # InvalidMode/14 s.OldMode#2/15 s.NewMode#2/16 e.Index#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 2, 14},
+      {refalrts::icIdentTerm, 0, 1, 14},
       {refalrts::icSave, 0, 29, 5},
       {refalrts::icsVarLeft, 0, 15, 29},
       {refalrts::icsVarLeft, 0, 16, 29},
@@ -620,7 +614,6 @@ namespace /* unnamed */ {
       {refalrts::icProfilerStopSentence, 0, 0, 0},
       // t.idx ( # Error t.idx # VariableNotFound s.idx e.idx )
       // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # VariableNotFound/14 s.Mode#2/15 e.Index#2/5 )/8 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
       {refalrts::icIdentTerm, 0, 0, 14},
       {refalrts::icsVarLeft, 0, 15, 5},
       // closed e.Index#2 as range 5
@@ -678,9 +671,9 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 31 elems
   refalrts::Iter context[31];
   refalrts::zeros( context, 31 );
-  //FAST GEN: t.$ ( s.$ t.$ s.$ e.$ )
-  //GLOBAL GEN: t.$ ( s.$ t.$ s.$ e.$ )
-  // </0 & CheckProgram\1/4 t.idx#0/10 (/7 s.idxVB#0/9 t.idxVBV#0/12 s.idxVBVV#0/14 e.idxVBVVV#0/5 )/8 >/1
+  //FAST GEN: t.$ ( # Error t.$ s.$ e.$ )
+  //GLOBAL GEN: t.$ ( # Error t.$ s.$ e.$ )
+  // </0 & CheckProgram\1/4 t.idx#0/10 (/7 # Error/9 t.idxVBA#0/12 s.idxVBAV#0/14 e.idxVBAVV#0/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -692,7 +685,8 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  context[9] = refalrts::ident_left(  & ident_Error<int>::name, context[5], context[6] );
+  if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   context[11] = refalrts::tvar_left( context[10], context[2], context[3] );
   if( ! context[11] )
@@ -704,12 +698,10 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[14], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxVBVVV#0 as range 5
+  // closed e.idxVBAVV#0 as range 5
   do {
     // t.idx ( # Error t.idx # AlreadyDefined e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # AlreadyDefined/14 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_AlreadyDefined<int>::name, context[14] ) )
       continue;
     // closed e.Name#2 as range 5
@@ -750,8 +742,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   do {
     // t.idx ( # Error t.idx # ForwardForEntry e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # ForwardForEntry/14 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_ForwardForEntry<int>::name, context[14] ) )
       continue;
     // closed e.Name#2 as range 5
@@ -797,8 +787,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   do {
     // t.idx ( # Error t.idx # ForwardNotDefined e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # ForwardNotDefined/14 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_ForwardNotDefined<int>::name, context[14] ) )
       continue;
     // closed e.Name#2 as range 5
@@ -839,8 +827,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   do {
     // t.idx ( # Error t.idx # NotDefined e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # NotDefined/14 e.Name#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_NotDefined<int>::name, context[14] ) )
       continue;
     // closed e.Name#2 as range 5
@@ -881,8 +867,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   do {
     // t.idx ( # Error t.idx # AlreadyBounded s.idx e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # AlreadyBounded/14 s.Mode#2/15 e.Index#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_AlreadyBounded<int>::name, context[14] ) )
       continue;
     context[29] = context[5];
@@ -930,8 +914,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
   do {
     // t.idx ( # Error t.idx # InvalidMode s.idx s.idx e.idx )
     // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # InvalidMode/14 s.OldMode#2/15 s.NewMode#2/16 e.Index#2/5 )/8 >/1
-    if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-      continue;
     if( ! refalrts::ident_term(  & ident_InvalidMode<int>::name, context[14] ) )
       continue;
     context[29] = context[5];
@@ -991,8 +973,6 @@ static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, ref
 
   // t.idx ( # Error t.idx # VariableNotFound s.idx e.idx )
   // </0 & CheckProgram\1/4 t.ErrorList#2/10 (/7 # Error/9 t.SrcPos#2/12 # VariableNotFound/14 s.Mode#2/15 e.Index#2/5 )/8 >/1
-  if( ! refalrts::ident_term(  & ident_Error<int>::name, context[9] ) )
-    return refalrts::cRecognitionImpossible;
   if( ! refalrts::ident_term(  & ident_VariableNotFound<int>::name, context[14] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[15], context[5], context[6] ) )
