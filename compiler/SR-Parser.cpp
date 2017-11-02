@@ -58,36 +58,42 @@ static refalrts::ExternalReference ref_Dec("Dec", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_AddUnexpected("EL-AddUnexpected", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_AddErrorAt("EL-AddErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_SRm_ParseProgram("SR-ParseProgram", 0U, 0U);
-static refalrts::ExternalReference ref_PrepareBracket("PrepareBracket", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseElements_S2L1("ParseElements$2\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseElements_S4L1("ParseElements$4\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseElements("ParseElements", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ASTItemFromDirective("ASTItemFromDirective", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseElementm_SwDirective("ParseElement-SwDirective", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseInclude("ParseInclude", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseNameList("ParseNameList", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseNameListm_Tail("ParseNameList-Tail", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseNameListm_Idents("ParseNameList-Idents", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseNameListm_Identsm_Tail("ParseNameList-Idents-Tail", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseFunction_S1L1("ParseFunction$1\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseFunction("ParseFunction", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseBlock_S1L1("ParseBlock$1\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseBlock("ParseBlock", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_DoParseBlock("DoParseBlock", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseSentence_L1("ParseSentence\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseSentence_L2("ParseSentence\\2", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseSentence_L3("ParseSentence\\3", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseSentence("ParseSentence", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseAssignmentPart_L1S2L1("ParseAssignmentPart\\1$2\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseAssignmentPart_L1S2L2("ParseAssignmentPart\\1$2\\2", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseAssignmentPart_L1("ParseAssignmentPart\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseAssignmentPart("ParseAssignmentPart", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParsePattern("ParsePattern", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_StrFromBracket("StrFromBracket", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseResult_S10L1("ParseResult$10\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseResult_S10L2("ParseResult$10\\2", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_gen_ParseResult_S12L1("ParseResult$12\\1", 697734020U, 3547692141U);
-static refalrts::ExternalReference ref_ParseResult("ParseResult", 697734020U, 3547692141U);
+static refalrts::ExternalReference ref_PrepareBracket("PrepareBracket", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseElements_S2L1("ParseElements$2\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseElements_S4L1("ParseElements$4\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseElements("ParseElements", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ASTItemFromDirective("ASTItemFromDirective", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseElementm_SwDirective("ParseElement-SwDirective", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseInclude("ParseInclude", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseNameList("ParseNameList", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseNameListm_Tail("ParseNameList-Tail", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseNameListm_Idents("ParseNameList-Idents", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseNameListm_Identsm_Tail("ParseNameList-Idents-Tail", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseFunction_S1L1("ParseFunction$1\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseFunction("ParseFunction", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseBlock("ParseBlock", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_Expect("Expect", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_DoParseBlock_S3A1("DoParseBlock$3=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_DoParseBlock("DoParseBlock", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentence_L1S2A2("ParseSentence\\1$2=2", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentence_L1S2A1("ParseSentence\\1$2=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentence_L1S4A1("ParseSentence\\1$4=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentence_L1("ParseSentence\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentence_A1("ParseSentence=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseSentence("ParseSentence", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentencePart_A3("ParseSentencePart=3", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentencePart_A2("ParseSentencePart=2", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseSentencePart_A1("ParseSentencePart=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseSentencePart("ParseSentencePart", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParsePattern("ParsePattern", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_DoParsePattern("DoParsePattern", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_StrFromBracket("StrFromBracket", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_ParseResult_A1("ParseResult=1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_ParseResult("ParseResult", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_DoParseResult_S10L1("DoParseResult$10\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_DoParseResult_S10L2("DoParseResult$10\\2", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_gen_DoParseResult_S12L1("DoParseResult$12\\1", 2568837022U, 2201090173U);
+static refalrts::ExternalReference ref_DoParseResult("DoParseResult", 2568837022U, 2201090173U);
 
 static refalrts::FnResult func_SRm_ParseProgram(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -359,7 +365,7 @@ static refalrts::FnResult func_PrepareBracket(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrepareBracket("PrepareBracket", 697734020U, 3547692141U, func_PrepareBracket);
+static refalrts::NativeReference nat_ref_PrepareBracket("PrepareBracket", 2568837022U, 2201090173U, func_PrepareBracket);
 
 static refalrts::FnResult func_gen_ParseElements_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -415,7 +421,7 @@ static refalrts::FnResult func_gen_ParseElements_S2L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseElements_S2L1("ParseElements$2\\1", 697734020U, 3547692141U, func_gen_ParseElements_S2L1);
+static refalrts::NativeReference nat_ref_gen_ParseElements_S2L1("ParseElements$2\\1", 2568837022U, 2201090173U, func_gen_ParseElements_S2L1);
 
 static refalrts::FnResult func_gen_ParseElements_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -471,7 +477,7 @@ static refalrts::FnResult func_gen_ParseElements_S4L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseElements_S4L1("ParseElements$4\\1", 697734020U, 3547692141U, func_gen_ParseElements_S4L1);
+static refalrts::NativeReference nat_ref_gen_ParseElements_S4L1("ParseElements$4\\1", 2568837022U, 2201090173U, func_gen_ParseElements_S4L1);
 
 static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -779,7 +785,7 @@ static refalrts::FnResult func_ParseElements(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseElements("ParseElements", 697734020U, 3547692141U, func_ParseElements);
+static refalrts::NativeReference nat_ref_ParseElements("ParseElements", 2568837022U, 2201090173U, func_ParseElements);
 
 static refalrts::FnResult func_ASTItemFromDirective(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -908,7 +914,7 @@ static refalrts::FnResult func_ASTItemFromDirective(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ASTItemFromDirective("ASTItemFromDirective", 697734020U, 3547692141U, func_ASTItemFromDirective);
+static refalrts::NativeReference nat_ref_ASTItemFromDirective("ASTItemFromDirective", 2568837022U, 2201090173U, func_ASTItemFromDirective);
 
 static refalrts::FnResult func_ParseElementm_SwDirective(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1118,7 +1124,7 @@ static refalrts::FnResult func_ParseElementm_SwDirective(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseElementm_SwDirective("ParseElement-SwDirective", 697734020U, 3547692141U, func_ParseElementm_SwDirective);
+static refalrts::NativeReference nat_ref_ParseElementm_SwDirective("ParseElement-SwDirective", 2568837022U, 2201090173U, func_ParseElementm_SwDirective);
 
 static refalrts::FnResult func_ParseInclude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1288,7 +1294,7 @@ static refalrts::FnResult func_ParseInclude(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseInclude("ParseInclude", 697734020U, 3547692141U, func_ParseInclude);
+static refalrts::NativeReference nat_ref_ParseInclude("ParseInclude", 2568837022U, 2201090173U, func_ParseInclude);
 
 static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1409,7 +1415,7 @@ static refalrts::FnResult func_ParseNameList(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNameList("ParseNameList", 697734020U, 3547692141U, func_ParseNameList);
+static refalrts::NativeReference nat_ref_ParseNameList("ParseNameList", 2568837022U, 2201090173U, func_ParseNameList);
 
 static refalrts::FnResult func_ParseNameListm_Tail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1555,7 +1561,7 @@ static refalrts::FnResult func_ParseNameListm_Tail(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNameListm_Tail("ParseNameList-Tail", 697734020U, 3547692141U, func_ParseNameListm_Tail);
+static refalrts::NativeReference nat_ref_ParseNameListm_Tail("ParseNameList-Tail", 2568837022U, 2201090173U, func_ParseNameListm_Tail);
 
 static refalrts::FnResult func_ParseNameListm_Idents(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1706,7 +1712,7 @@ static refalrts::FnResult func_ParseNameListm_Idents(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNameListm_Idents("ParseNameList-Idents", 697734020U, 3547692141U, func_ParseNameListm_Idents);
+static refalrts::NativeReference nat_ref_ParseNameListm_Idents("ParseNameList-Idents", 2568837022U, 2201090173U, func_ParseNameListm_Idents);
 
 static refalrts::FnResult func_ParseNameListm_Identsm_Tail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1841,7 +1847,7 @@ static refalrts::FnResult func_ParseNameListm_Identsm_Tail(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNameListm_Identsm_Tail("ParseNameList-Idents-Tail", 697734020U, 3547692141U, func_ParseNameListm_Identsm_Tail);
+static refalrts::NativeReference nat_ref_ParseNameListm_Identsm_Tail("ParseNameList-Idents-Tail", 2568837022U, 2201090173U, func_ParseNameListm_Identsm_Tail);
 
 static refalrts::FnResult func_gen_ParseFunction_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1905,7 +1911,7 @@ static refalrts::FnResult func_gen_ParseFunction_S1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseFunction_S1L1("ParseFunction$1\\1", 697734020U, 3547692141U, func_gen_ParseFunction_S1L1);
+static refalrts::NativeReference nat_ref_gen_ParseFunction_S1L1("ParseFunction$1\\1", 2568837022U, 2201090173U, func_gen_ParseFunction_S1L1);
 
 static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2042,126 +2048,13 @@ static refalrts::FnResult func_ParseFunction(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseFunction("ParseFunction", 697734020U, 3547692141U, func_ParseFunction);
+static refalrts::NativeReference nat_ref_ParseFunction("ParseFunction", 2568837022U, 2201090173U, func_ParseFunction);
 
-static refalrts::FnResult func_gen_ParseBlock_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  //FAST GEN: t.$ ( e.$ ) t.$ t.$ e.$
-  //GLOBAL GEN: t.$ ( e.$ ) t.$ t.$ e.$
-  // </0 & ParseBlock$1\1/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 t.idxVT#0/11 t.idxVTV#0/13 e.idxVTVV#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.idxVB#0 as range 7
-  context[12] = refalrts::tvar_left( context[11], context[2], context[3] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  context[14] = refalrts::tvar_left( context[13], context[2], context[3] );
-  if( ! context[14] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxVTVV#0 as range 2
-  do {
-    // t.idx ( e.idx ) t.idx ( # TkCloseBlock t.idx ) e.idx
-    // </0 & ParseBlock$1\1/4 t.SrcPos#1/5 (/9 e.Block#1/7 )/10 t.ErrorList#1/11 (/13 # TkCloseBlock/17 t.CloseBlockSrcPos#2/18 )/14 e.Tokens#2/2 >/1
-    context[15] = 0;
-    context[16] = 0;
-    if( ! refalrts::brackets_term( context[15], context[16], context[13] ) )
-      continue;
-    context[17] = refalrts::ident_left(  ident_TkCloseBlock, context[15], context[16] );
-    if( ! context[17] )
-      continue;
-    // closed e.Block#1 as range 7
-    // closed e.Tokens#2 as range 2
-    context[19] = refalrts::tvar_left( context[18], context[15], context[16] );
-    if( ! context[19] )
-      continue;
-    if( ! refalrts::empty_seq( context[15], context[16] ) )
-      continue;
-    //DEBUG: t.SrcPos#1: 5
-    //DEBUG: t.ErrorList#1: 11
-    //DEBUG: e.Block#1: 7
-    //DEBUG: e.Tokens#2: 2
-    //DEBUG: t.CloseBlockSrcPos#2: 18
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} (/9 {REMOVED TILE} {REMOVED TILE} (/13 # TkCloseBlock/17 t.CloseBlockSrcPos#2/18 )/14 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # NativeBody/4 AsIs: t.SrcPos#1/5 } Tile{ AsIs: e.Block#1/7 } Tile{ AsIs: )/10 AsIs: t.ErrorList#1/11 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], ident_NativeBody );
-    refalrts::link_brackets( context[0], context[10] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[10], context[12] );
-    res = refalrts::splice_evar( res, context[7], context[8] );
-    refalrts::splice_to_freelist_open( context[6], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // t.idx ( e.idx ) t.idx t.idx e.idx
-  // </0 & ParseBlock$1\1/4 t.SrcPos#1/5 (/9 e.Block#1/7 )/10 t.ErrorList#1/11 t.Unexpected#2/13 e.Tokens#2/2 >/1
-  // closed e.Block#1 as range 7
-  // closed e.Tokens#2 as range 2
-  //DEBUG: t.SrcPos#1: 5
-  //DEBUG: t.ErrorList#1: 11
-  //DEBUG: t.Unexpected#2: 13
-  //DEBUG: e.Block#1: 7
-  //DEBUG: e.Tokens#2: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # NativeBody/4 AsIs: t.SrcPos#1/5 } Tile{ AsIs: e.Block#1/7 } Tile{ HalfReuse: )/9 } </15 Tile{ HalfReuse: & EL-AddUnexpected/10 AsIs: t.ErrorList#1/11 AsIs: t.Unexpected#2/13 } '}'/16 Tile{ AsIs: >/1 } t.Unexpected#2/13/17 Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[15] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[16], '}' ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[17], context[18], context[13], context[14]))
-    return refalrts::cNoMemory;
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], ident_NativeBody );
-  refalrts::reinit_close_bracket( context[9] );
-  refalrts::reinit_name( context[10], ref_ELm_AddUnexpected.ref.function );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[15] );
-  refalrts::link_brackets( context[0], context[9] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  res = refalrts::splice_evar( res, context[16], context[16] );
-  res = refalrts::splice_evar( res, context[10], context[14] );
-  res = refalrts::splice_evar( res, context[15], context[15] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_ParseBlock_S1L1("ParseBlock$1\\1", 697734020U, 3547692141U, func_gen_ParseBlock_S1L1);
-
-static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 19 elems
-  refalrts::Iter context[19];
-  refalrts::zeros( context, 19 );
   //FAST GEN: t.$ e.$
   //GLOBAL GEN: t.$ e.$
   // </0 & ParseBlock/4 t.idx#0/5 e.idxV#0/2 >/1
@@ -2177,18 +2070,18 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
   do {
     // t.idx ( # TkNativeBlock t.idx e.idx ) e.idx
     // </0 & ParseBlock/4 t.ErrorList#1/5 (/9 # TkNativeBlock/11 t.SrcPos#1/12 e.Block#1/7 )/10 e.Tokens#1/2 >/1
-    context[17] = context[2];
-    context[18] = context[3];
+    context[18] = context[2];
+    context[19] = context[3];
     context[7] = 0;
     context[8] = 0;
-    context[9] = refalrts::brackets_left( context[7], context[8], context[17], context[18] );
+    context[9] = refalrts::brackets_left( context[7], context[8], context[18], context[19] );
     if( ! context[9] )
       continue;
     refalrts::bracket_pointers(context[9], context[10]);
     context[11] = refalrts::ident_left(  ident_TkNativeBlock, context[7], context[8] );
     if( ! context[11] )
       continue;
-    // closed e.Tokens#1 as range 17(2)
+    // closed e.Tokens#1 as range 18(2)
     context[13] = refalrts::tvar_left( context[12], context[7], context[8] );
     if( ! context[13] )
       continue;
@@ -2199,33 +2092,30 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
     //DEBUG: e.Block#1: 7
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Tokens#1/17(2) } </14 Tile{ HalfReuse: & @create_closure@/9 HalfReuse: & ParseBlock$1\1/11 AsIs: t.SrcPos#1/12 } (/15 Tile{ AsIs: e.Block#1/7 } Tile{ AsIs: )/10 } Tile{ AsIs: t.ErrorList#1/5 } >/16 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[14] ) )
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/9 Reuse: # NativeBody/11 AsIs: t.SrcPos#1/12 AsIs: e.Block#1/7 AsIs: )/10 } Tile{ AsIs: </0 Reuse: & Expect/4 } # TkCloseBlock/14 (/15 '}'/16 )/17 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: e.Tokens#1/18(2) } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_ident( context[14], ident_TkCloseBlock ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
+    if( ! refalrts::alloc_char( context[16], '}' ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_Fetch.ref.function );
-    refalrts::reinit_name( context[9], refalrts::create_closure );
-    refalrts::reinit_name( context[11], ref_gen_ParseBlock_S1L1.ref.function );
+    if( ! refalrts::alloc_close_bracket( context[17] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_ident( context[11], ident_NativeBody );
+    refalrts::update_name( context[4], ref_Expect.ref.function );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::link_brackets( context[15], context[10] );
+    refalrts::link_brackets( context[15], context[17] );
+    refalrts::link_brackets( context[9], context[10] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[16], context[16] );
+    res = refalrts::splice_evar( res, context[18], context[19] );
     res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
-    res = refalrts::splice_evar( res, context[7], context[8] );
-    res = refalrts::splice_evar( res, context[15], context[15] );
-    res = refalrts::splice_evar( res, context[9], context[13] );
-    res = refalrts::splice_evar( res, context[14], context[14] );
-    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[14], context[17] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -2257,7 +2147,160 @@ static refalrts::FnResult func_ParseBlock(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseBlock("ParseBlock", 697734020U, 3547692141U, func_ParseBlock);
+static refalrts::NativeReference nat_ref_ParseBlock("ParseBlock", 2568837022U, 2201090173U, func_ParseBlock);
+
+static refalrts::FnResult func_Expect(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  //FAST GEN: s.$ ( e.$ ) t.$ t.$ e.$
+  //GLOBAL GEN: s.$ ( e.$ ) t.$ t.$ e.$
+  // </0 & Expect/4 s.idx#0/5 (/8 e.idxVB#0/6 )/9 t.idxVT#0/10 t.idxVTV#0/12 e.idxVTVV#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  context[6] = 0;
+  context[7] = 0;
+  context[8] = refalrts::brackets_left( context[6], context[7], context[2], context[3] );
+  if( ! context[8] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[8], context[9]);
+  // closed e.idxVB#0 as range 6
+  context[11] = refalrts::tvar_left( context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  context[13] = refalrts::tvar_left( context[12], context[2], context[3] );
+  if( ! context[13] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxVTVV#0 as range 2
+  do {
+    // s.idx ( e.idx ) t.idx ( s.idx t.idx ) e.idx
+    // </0 & Expect/4 s.Expected#1/5 (/8 e.ExpectedText#1/6 )/9 t.ErrorList#1/10 (/12 s.Expected#1/16 t.SrcPos#1/17 )/13 e.Tokens#1/2 >/1
+    context[14] = 0;
+    context[15] = 0;
+    if( ! refalrts::brackets_term( context[14], context[15], context[12] ) )
+      continue;
+    if( ! refalrts::repeated_stvar_left( context[16], context[5], context[14], context[15] ) )
+      continue;
+    // closed e.ExpectedText#1 as range 6
+    // closed e.Tokens#1 as range 2
+    context[18] = refalrts::tvar_left( context[17], context[14], context[15] );
+    if( ! context[18] )
+      continue;
+    if( ! refalrts::empty_seq( context[14], context[15] ) )
+      continue;
+    //DEBUG: t.ErrorList#1: 10
+    //DEBUG: s.Expected#1: 5
+    //DEBUG: e.ExpectedText#1: 6
+    //DEBUG: e.Tokens#1: 2
+    //DEBUG: t.SrcPos#1: 17
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & Expect/4 s.Expected#1/5 (/8 e.ExpectedText#1/6 )/9 {REMOVED TILE} (/12 s.Expected#1/16 t.SrcPos#1/17 )/13 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#1/10 } Tile{ AsIs: e.Tokens#1/2 } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // s.idx ( e.idx ) t.idx t.idx e.idx
+  // </0 & Expect/4 s.Expected#1/5 (/8 e.ExpectedText#1/6 )/9 t.ErrorList#1/10 t.Unexpected#1/12 e.Tokens#1/2 >/1
+  // closed e.ExpectedText#1 as range 6
+  // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 10
+  //DEBUG: t.Unexpected#1: 12
+  //DEBUG: s.Expected#1: 5
+  //DEBUG: e.ExpectedText#1: 6
+  //DEBUG: e.Tokens#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} s.Expected#1/5 (/8 {REMOVED TILE} )/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddUnexpected/4 } Tile{ AsIs: t.ErrorList#1/10 AsIs: t.Unexpected#1/12 } Tile{ AsIs: e.ExpectedText#1/6 } Tile{ AsIs: >/1 } t.Unexpected#1/12/14 Tile{ AsIs: e.Tokens#1/2 } Tile{ ]] }
+  if (! refalrts::copy_evar(context[14], context[15], context[12], context[13]))
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_ELm_AddUnexpected.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[14], context[15] );
+  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_evar( res, context[6], context[7] );
+  res = refalrts::splice_evar( res, context[10], context[13] );
+  refalrts::splice_to_freelist_open( context[4], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_Expect("Expect", 2568837022U, 2201090173U, func_Expect);
+
+static refalrts::FnResult func_gen_DoParseBlock_S3A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
+  // </0 & DoParseBlock$3=1/4 (/7 e.Sentences#1/5 )/8 (/11 e.Sentence#2/9 )/12 t.ErrorList#2/13 e.Tail#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  // closed e.Sentences#1 as range 5
+  // closed e.Sentence#2 as range 9
+  context[14] = refalrts::tvar_left( context[13], context[2], context[3] );
+  if( ! context[14] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tail#2 as range 2
+  //DEBUG: e.Sentences#1: 5
+  //DEBUG: e.Sentence#2: 9
+  //DEBUG: t.ErrorList#2: 13
+  //DEBUG: e.Tail#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoParseBlock/4 } Tile{ AsIs: t.ErrorList#2/13 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Sentences#1/5 } Tile{ AsIs: (/11 AsIs: e.Sentence#2/9 AsIs: )/12 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
+  refalrts::update_name( context[4], ref_DoParseBlock.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_DoParseBlock_S3A1("DoParseBlock$3=1", 2568837022U, 2201090173U, func_gen_DoParseBlock_S3A1);
 
 static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2397,184 +2440,122 @@ static refalrts::FnResult func_DoParseBlock(refalrts::Iter arg_begin, refalrts::
   //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </11 & DoParseBlock/12 Tile{ AsIs: </0 Reuse: & ParseSentence/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.Sentences#1/7 AsIs: )/10 AsIs: e.Tokens#1/2 AsIs: >/1 } >/13 Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </11 </12 & @create_closure@/13 & DoParseBlock$3=1/14 Tile{ AsIs: (/9 AsIs: e.Sentences#1/7 AsIs: )/10 } >/15 Tile{ AsIs: </0 Reuse: & ParseSentence/4 AsIs: t.ErrorList#1/5 } Tile{ AsIs: e.Tokens#1/2 } >/16 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], ref_DoParseBlock.ref.function ) )
+  if( ! refalrts::alloc_open_call( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[13] ) )
+  if( ! refalrts::alloc_name( context[13], refalrts::create_closure ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[14], ref_gen_DoParseBlock_S3A1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[15] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_ParseSentence.ref.function );
-  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[1] );
   refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[16] );
   refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[15] );
+  refalrts::push_stack( context[12] );
   refalrts::link_brackets( context[9], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[13], context[13] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[11], context[12] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_DoParseBlock("DoParseBlock", 697734020U, 3547692141U, func_DoParseBlock);
-
-static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  //FAST GEN: t.$ ( e.$ ) t.$ e.$
-  //GLOBAL GEN: t.$ ( e.$ ) t.$ e.$
-  // </0 & ParseSentence\1/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 t.idxVT#0/11 e.idxVTV#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.idxVB#0 as range 7
-  context[12] = refalrts::tvar_left( context[11], context[2], context[3] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxVTV#0 as range 2
-  do {
-    // t.idx ( e.idx ) ( # TkReplace s.idx ) e.idx
-    // </0 & ParseSentence\1/4 t.ErrorList#2/5 (/9 e.Pattern#2/7 )/10 (/11 # TkReplace/15 s.LnNum#2/16 )/12 e.Tokens#2/2 >/1
-    context[13] = 0;
-    context[14] = 0;
-    if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
-      continue;
-    context[15] = refalrts::ident_left(  ident_TkReplace, context[13], context[14] );
-    if( ! context[15] )
-      continue;
-    // closed e.Pattern#2 as range 7
-    // closed e.Tokens#2 as range 2
-    if( ! refalrts::svar_left( context[16], context[13], context[14] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[13], context[14] ) )
-      continue;
-    //DEBUG: t.ErrorList#2: 5
-    //DEBUG: e.Pattern#2: 7
-    //DEBUG: e.Tokens#2: 2
-    //DEBUG: s.LnNum#2: 16
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseSentence\1/4 {REMOVED TILE} (/11 # TkReplace/15 s.LnNum#2/16 )/12 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#2/5 AsIs: (/9 AsIs: e.Pattern#2/7 AsIs: )/10 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-    refalrts::link_brackets( context[9], context[10] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[5], context[10] );
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // t.idx ( e.idx ) t.idx e.idx
-  // </0 & ParseSentence\1/4 t.ErrorList#2/5 (/9 e.Pattern#2/7 )/10 t.NextResultToken#2/11 e.Tokens#2/2 >/1
-  // closed e.Pattern#2 as range 7
-  // closed e.Tokens#2 as range 2
-  //DEBUG: t.ErrorList#2: 5
-  //DEBUG: t.NextResultToken#2: 11
-  //DEBUG: e.Pattern#2: 7
-  //DEBUG: e.Tokens#2: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & EL-AddUnexpected/4 AsIs: t.ErrorList#2/5 } t.NextResultToken#2/11/13 '='/15 Tile{ AsIs: >/1 } Tile{ AsIs: (/9 AsIs: e.Pattern#2/7 AsIs: )/10 AsIs: t.NextResultToken#2/11 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-  if (! refalrts::copy_evar(context[13], context[14], context[11], context[12]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[15], '=' ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_ELm_AddUnexpected.ref.function );
-  refalrts::link_brackets( context[9], context[10] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[16], context[16] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[12] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  res = refalrts::splice_evar( res, context[13], context[15] );
+  res = refalrts::splice_evar( res, context[0], context[6] );
+  res = refalrts::splice_evar( res, context[15], context[15] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[11], context[14] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseSentence_L1("ParseSentence\\1", 697734020U, 3547692141U, func_gen_ParseSentence_L1);
+static refalrts::NativeReference nat_ref_DoParseBlock("DoParseBlock", 2568837022U, 2201090173U, func_DoParseBlock);
 
-static refalrts::FnResult func_gen_ParseSentence_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 13 elems
-  refalrts::Iter context[13];
-  refalrts::zeros( context, 13 );
-  // </0 & ParseSentence\2/4 t.ErrorList#2/5 (/9 e.Pattern#2/7 )/10 e.Tokens#2/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.Pattern#2 as range 7
-  // closed e.Tokens#2 as range 2
-  //DEBUG: t.ErrorList#2: 5
-  //DEBUG: e.Pattern#2: 7
-  //DEBUG: e.Tokens#2: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } (/11 Tile{ AsIs: e.Pattern#2/7 } )/12 Tile{ AsIs: </0 Reuse: & ParseAssignmentPart/4 AsIs: t.ErrorList#2/5 AsIs: (/9 } Tile{ AsIs: )/10 AsIs: e.Tokens#2/2 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_bracket( context[11] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[12] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_ParseAssignmentPart.ref.function );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[9], context[10] );
-  refalrts::link_brackets( context[11], context[12] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[10];
-  res = refalrts::splice_evar( res, context[0], context[9] );
-  res = refalrts::splice_evar( res, context[12], context[12] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[11], context[11] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_ParseSentence_L2("ParseSentence\\2", 697734020U, 3547692141U, func_gen_ParseSentence_L2);
-
-static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseSentence_L1S2A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  // </0 & ParseSentence\3/4 (/7 e.Sentences#1/5 )/8 (/11 e.Pattern#2/9 )/12 (/15 e.Result#2/13 )/16 (/19 e.Assignments#2/17 )/20 t.ErrorList#2/21 e.Tokens#2/2 >/1
+  // </0 & ParseSentence\1$2=2/4 (/7 e.StartPattern#2/5 )/8 (/11 e.EndResult#4/9 )/12 (/15 e.EndBlocks#4/13 )/16 t.ErrorList#4/17 (/21 e.Tokens#4/19 )/22 e.Assignments#5/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  // closed e.StartPattern#2 as range 5
+  // closed e.EndResult#4 as range 9
+  // closed e.EndBlocks#4 as range 13
+  context[18] = refalrts::tvar_left( context[17], context[2], context[3] );
+  if( ! context[18] )
+    return refalrts::cRecognitionImpossible;
+  context[19] = 0;
+  context[20] = 0;
+  context[21] = refalrts::brackets_left( context[19], context[20], context[2], context[3] );
+  if( ! context[21] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[21], context[22]);
+  // closed e.Tokens#4 as range 19
+  // closed e.Assignments#5 as range 2
+  //DEBUG: e.StartPattern#2: 5
+  //DEBUG: e.EndResult#4: 9
+  //DEBUG: e.EndBlocks#4: 13
+  //DEBUG: t.ErrorList#4: 17
+  //DEBUG: e.Tokens#4: 19
+  //DEBUG: e.Assignments#5: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} (/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 } Tile{ AsIs: e.Assignments#5/2 } Tile{ AsIs: (/11 AsIs: e.EndResult#4/9 AsIs: )/12 AsIs: (/15 AsIs: e.EndBlocks#4/13 AsIs: )/16 } Tile{ AsIs: )/22 } Tile{ AsIs: t.ErrorList#4/17 } Tile{ AsIs: e.Tokens#4/19 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::link_brackets( context[4], context[22] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
+  res = refalrts::splice_evar( res, context[11], context[16] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[4], context[8] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_ParseSentence_L1S2A2("ParseSentence\\1$2=2", 2568837022U, 2201090173U, func_gen_ParseSentence_L1S2A2);
+
+static refalrts::FnResult func_gen_ParseSentence_L1S2A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 41 elems
+  refalrts::Iter context[41];
+  refalrts::zeros( context, 41 );
+  // </0 & ParseSentence\1$2=1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 (/19 (/23 e.InnerPattern#4/21 )/24 e.Assignments#4/17 (/31 e.EndResult#4/29 )/32 (/27 e.EndBlocks#4/25 )/28 )/20 t.ErrorList#4/33 e.Tokens#4/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2604,140 +2585,104 @@ static refalrts::FnResult func_gen_ParseSentence_L3(refalrts::Iter arg_begin, re
   if( ! context[19] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[19], context[20]);
-  // closed e.Sentences#1 as range 5
-  // closed e.Pattern#2 as range 9
-  // closed e.Result#2 as range 13
-  // closed e.Assignments#2 as range 17
-  context[22] = refalrts::tvar_left( context[21], context[2], context[3] );
-  if( ! context[22] )
+  context[21] = 0;
+  context[22] = 0;
+  context[23] = refalrts::brackets_left( context[21], context[22], context[17], context[18] );
+  if( ! context[23] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Tokens#2 as range 2
-  //DEBUG: e.Sentences#1: 5
-  //DEBUG: e.Pattern#2: 9
-  //DEBUG: e.Result#2: 13
-  //DEBUG: e.Assignments#2: 17
-  //DEBUG: t.ErrorList#2: 21
-  //DEBUG: e.Tokens#2: 2
+  refalrts::bracket_pointers(context[23], context[24]);
+  context[25] = 0;
+  context[26] = 0;
+  context[27] = refalrts::brackets_right( context[25], context[26], context[17], context[18] );
+  if( ! context[27] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[27], context[28]);
+  context[29] = 0;
+  context[30] = 0;
+  context[31] = refalrts::brackets_right( context[29], context[30], context[17], context[18] );
+  if( ! context[31] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[31], context[32]);
+  // closed e.StartPattern#2 as range 5
+  // closed e.Result#2 as range 9
+  // closed e.Blocks#2 as range 13
+  // closed e.InnerPattern#4 as range 21
+  // closed e.Assignments#4 as range 17
+  // closed e.EndResult#4 as range 29
+  // closed e.EndBlocks#4 as range 25
+  context[34] = refalrts::tvar_left( context[33], context[2], context[3] );
+  if( ! context[34] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#4 as range 2
+  //DEBUG: e.StartPattern#2: 5
+  //DEBUG: e.Result#2: 9
+  //DEBUG: e.Blocks#2: 13
+  //DEBUG: e.InnerPattern#4: 21
+  //DEBUG: e.Assignments#4: 17
+  //DEBUG: e.EndResult#4: 29
+  //DEBUG: e.EndBlocks#4: 25
+  //DEBUG: t.ErrorList#4: 33
+  //DEBUG: e.Tokens#4: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseSentence\3/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#2/21 } Tile{ AsIs: (/7 AsIs: e.Sentences#1/5 HalfReuse: (/8 AsIs: (/11 AsIs: e.Pattern#2/9 AsIs: )/12 } Tile{ AsIs: e.Assignments#2/17 } Tile{ AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 HalfReuse: )/19 } Tile{ AsIs: )/20 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-  refalrts::reinit_open_bracket( context[8] );
-  refalrts::reinit_close_bracket( context[19] );
-  refalrts::link_brackets( context[7], context[20] );
-  refalrts::link_brackets( context[8], context[19] );
-  refalrts::link_brackets( context[15], context[16] );
-  refalrts::link_brackets( context[11], context[12] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[20], context[20] );
-  res = refalrts::splice_evar( res, context[15], context[19] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
-  res = refalrts::splice_evar( res, context[7], context[12] );
-  res = refalrts::splice_evar( res, context[21], context[22] );
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_ParseSentence_L3("ParseSentence\\3", 697734020U, 3547692141U, func_gen_ParseSentence_L3);
-
-static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 27 elems
-  refalrts::Iter context[27];
-  refalrts::zeros( context, 27 );
-  // </0 & ParseSentence/4 t.ErrorList#1/5 (/9 e.Sentences#1/7 )/10 e.Tokens#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[7] = 0;
-  context[8] = 0;
-  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
-  if( ! context[9] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.Sentences#1 as range 7
-  // closed e.Tokens#1 as range 2
-  //DEBUG: t.ErrorList#1: 5
-  //DEBUG: e.Sentences#1: 7
-  //DEBUG: e.Tokens#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </11 & Fetch/12 Tile{ AsIs: </0 Reuse: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 } )/13 (/14 Tile{ AsIs: )/10 AsIs: e.Tokens#1/2 AsIs: >/1 } </15 & Seq/16 & ParseSentence\1/17 & ParseSentence\2/18 </19 & @create_closure@/20 & ParseSentence\3/21 (/22 Tile{ AsIs: e.Sentences#1/7 } )/23 >/24 >/25 >/26 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[11] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: </4 HalfReuse: & @create_closure@/7 } & ParseSentence\1$2=2/35 Tile{ AsIs: (/23 } Tile{ AsIs: e.StartPattern#2/5 } Tile{ AsIs: )/24 } Tile{ AsIs: (/31 AsIs: e.EndResult#4/29 AsIs: )/32 AsIs: (/27 AsIs: e.EndBlocks#4/25 AsIs: )/28 } Tile{ AsIs: t.ErrorList#4/33 } (/36 Tile{ AsIs: e.Tokens#4/2 } Tile{ AsIs: )/20 } >/37 (/38 Tile{ HalfReuse: # Assign/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 AsIs: (/19 } Tile{ AsIs: e.InnerPattern#4/21 } )/39 )/40 Tile{ AsIs: e.Assignments#4/17 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_name( context[35], ref_gen_ParseSentence_L1S2A2.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], ref_Fetch.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[36] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[13] ) )
+  if( ! refalrts::alloc_close_call( context[37] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[14] ) )
+  if( ! refalrts::alloc_open_bracket( context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  if( ! refalrts::alloc_close_bracket( context[39] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_close_bracket( context[40] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_gen_ParseSentence_L1.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], ref_gen_ParseSentence_L2.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[19] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], refalrts::create_closure ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], ref_gen_ParseSentence_L3.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[22] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[23] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[24] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[25] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[26] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_ParsePattern.ref.function );
-  refalrts::push_stack( context[26] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[25] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[24] );
-  refalrts::push_stack( context[19] );
-  refalrts::link_brackets( context[22], context[23] );
+  refalrts::reinit_open_call( context[4] );
+  refalrts::reinit_name( context[7], refalrts::create_closure );
+  refalrts::reinit_ident( context[8], ident_Assign );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[14], context[10] );
-  refalrts::link_brackets( context[9], context[13] );
+  refalrts::link_brackets( context[38], context[40] );
+  refalrts::link_brackets( context[19], context[39] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::push_stack( context[37] );
+  refalrts::push_stack( context[4] );
+  refalrts::link_brackets( context[36], context[20] );
+  refalrts::link_brackets( context[27], context[28] );
+  refalrts::link_brackets( context[31], context[32] );
+  refalrts::link_brackets( context[23], context[24] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[23], context[26] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[15], context[22] );
-  res = refalrts::splice_evar( res, context[10], context[1] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  res = refalrts::splice_evar( res, context[0], context[9] );
-  res = refalrts::splice_evar( res, context[11], context[12] );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[39], context[40] );
+  res = refalrts::splice_evar( res, context[21], context[22] );
+  res = refalrts::splice_evar( res, context[8], context[19] );
+  res = refalrts::splice_evar( res, context[37], context[38] );
+  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[36], context[36] );
+  res = refalrts::splice_evar( res, context[33], context[34] );
+  res = refalrts::splice_evar( res, context[31], context[28] );
+  res = refalrts::splice_evar( res, context[24], context[24] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[23], context[23] );
+  res = refalrts::splice_evar( res, context[35], context[35] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseSentence("ParseSentence", 697734020U, 3547692141U, func_ParseSentence);
+static refalrts::NativeReference nat_ref_gen_ParseSentence_L1S2A1("ParseSentence\\1$2=1", 2568837022U, 2201090173U, func_gen_ParseSentence_L1S2A1);
 
-static refalrts::FnResult func_gen_ParseAssignmentPart_L1S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseSentence_L1S4A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 19 elems
-  refalrts::Iter context[19];
-  refalrts::zeros( context, 19 );
-  // </0 & ParseAssignmentPart\1$2\1/4 (/7 e.Assignments#1/5 )/8 (/11 e.Result#2/9 )/12 t.ErrorList#3/13 (/17 e.Pattern#3/15 )/18 e.Tokens#3/2 >/1
+  // issue here memory for vars with 31 elems
+  refalrts::Iter context[31];
+  refalrts::zeros( context, 31 );
+  // </0 & ParseSentence\1$4=1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 t.SrcPos#3/19 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2755,61 +2700,80 @@ static refalrts::FnResult func_gen_ParseAssignmentPart_L1S2L1(refalrts::Iter arg
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.Assignments#1 as range 5
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  // closed e.StartPattern#2 as range 5
   // closed e.Result#2 as range 9
-  context[14] = refalrts::tvar_left( context[13], context[2], context[3] );
-  if( ! context[14] )
+  // closed e.Blocks#2 as range 13
+  context[18] = refalrts::tvar_left( context[17], context[2], context[3] );
+  if( ! context[18] )
     return refalrts::cRecognitionImpossible;
-  context[15] = 0;
-  context[16] = 0;
-  context[17] = refalrts::brackets_left( context[15], context[16], context[2], context[3] );
-  if( ! context[17] )
+  context[20] = refalrts::tvar_left( context[19], context[2], context[3] );
+  if( ! context[20] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[17], context[18]);
-  // closed e.Pattern#3 as range 15
-  // closed e.Tokens#3 as range 2
-  //DEBUG: e.Assignments#1: 5
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  //DEBUG: e.StartPattern#2: 5
   //DEBUG: e.Result#2: 9
-  //DEBUG: t.ErrorList#3: 13
-  //DEBUG: e.Pattern#3: 15
-  //DEBUG: e.Tokens#3: 2
+  //DEBUG: e.Blocks#2: 13
+  //DEBUG: t.ErrorList#2: 17
+  //DEBUG: t.SrcPos#3: 19
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Assignments#1/5 } Tile{ AsIs: (/7 } Tile{ HalfReuse: # Assign/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 } Tile{ AsIs: (/17 AsIs: e.Pattern#3/15 AsIs: )/18 } Tile{ HalfReuse: )/4 } Tile{ HalfReuse: )/1 } Tile{ AsIs: t.ErrorList#3/13 } Tile{ AsIs: e.Tokens#3/2 } Tile{ ]] }
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[8], ident_Assign );
-  refalrts::reinit_close_bracket( context[4] );
-  refalrts::reinit_close_bracket( context[1] );
-  refalrts::link_brackets( context[0], context[1] );
-  refalrts::link_brackets( context[7], context[4] );
-  refalrts::link_brackets( context[17], context[18] );
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 } )/21 Tile{ AsIs: </0 } & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#2/17 AsIs: t.SrcPos#3/19 HalfReuse: 'U'/1 }"nexpected EOF in function"/23 >/25 (/26 # TkEOF/27 t.SrcPos#3/19/28 )/30 Tile{ ]] }
+  if( ! refalrts::alloc_close_bracket( context[21] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[23], context[24], "nexpected EOF in function", 25 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[25] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[26] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_ident( context[27], ident_TkEOF ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[28], context[29], context[19], context[20]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[30] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::reinit_char( context[1], 'U' );
+  refalrts::link_brackets( context[26], context[30] );
+  refalrts::push_stack( context[25] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[4], context[21] );
+  refalrts::link_brackets( context[15], context[16] );
   refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  res = refalrts::splice_evar( res, context[4], context[4] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
-  res = refalrts::splice_evar( res, context[8], context[12] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[23], context[30] );
+  res = refalrts::splice_evar( res, context[17], context[1] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
+  res = refalrts::splice_evar( res, context[0], context[0] );
+  res = refalrts::splice_evar( res, context[21], context[21] );
+  res = refalrts::splice_evar( res, context[4], context[16] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseAssignmentPart_L1S2L1("ParseAssignmentPart\\1$2\\1", 697734020U, 3547692141U, func_gen_ParseAssignmentPart_L1S2L1);
+static refalrts::NativeReference nat_ref_gen_ParseSentence_L1S4A1("ParseSentence\\1$4=1", 2568837022U, 2201090173U, func_gen_ParseSentence_L1S4A1);
 
-static refalrts::FnResult func_gen_ParseAssignmentPart_L1S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseSentence_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 21 elems
-  refalrts::Iter context[21];
-  refalrts::zeros( context, 21 );
-  //FAST GEN: ( e.$ ) t.$ t.$ e.$
-  //GLOBAL GEN: ( e.$ ) t.$ t.$ e.$
-  // </0 & ParseAssignmentPart\1$2\2/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 t.idxTV#0/11 e.idxTVV#0/2 >/1
+  // issue here memory for vars with 37 elems
+  refalrts::Iter context[37];
+  refalrts::zeros( context, 37 );
+  //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) t.$ ( e.$ ) t.$
+  //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) t.$ ( e.$ ) t.$
+  // </0 & ParseSentence\1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 t.idxTTT#0/17 (/21 e.idxTTTVB#0/19 )/22 t.idxTTTVT#0/23 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2821,104 +2785,320 @@ static refalrts::FnResult func_gen_ParseAssignmentPart_L1S2L2(refalrts::Iter arg
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
   // closed e.idxB#0 as range 5
-  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
-  if( ! context[10] )
+  // closed e.idxTB#0 as range 9
+  // closed e.idxTTB#0 as range 13
+  context[18] = refalrts::tvar_left( context[17], context[2], context[3] );
+  if( ! context[18] )
     return refalrts::cRecognitionImpossible;
-  context[12] = refalrts::tvar_left( context[11], context[2], context[3] );
-  if( ! context[12] )
+  context[19] = 0;
+  context[20] = 0;
+  context[21] = refalrts::brackets_left( context[19], context[20], context[2], context[3] );
+  if( ! context[21] )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTVV#0 as range 2
+  refalrts::bracket_pointers(context[21], context[22]);
+  // closed e.idxTTTVB#0 as range 19
+  context[24] = refalrts::tvar_left( context[23], context[2], context[3] );
+  if( ! context[24] )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
   do {
-    // ( e.idx ) t.idx ( # TkReplace s.idx ) e.idx
-    // </0 & ParseAssignmentPart\1$2\2/4 (/7 e.Assignments#3/5 )/8 t.ErrorList#3/9 (/11 # TkReplace/15 s.LnNum#3/16 )/12 e.Tokens#3/2 >/1
-    context[13] = 0;
-    context[14] = 0;
-    if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
+    // ( e.idx ) ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TkSemicolon t.idx )
+    // </0 & ParseSentence\1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 (/21 e.Tokens#2/19 )/22 (/23 # TkSemicolon/27 t.SrcPos#3/28 )/24 >/1
+    context[25] = 0;
+    context[26] = 0;
+    if( ! refalrts::brackets_term( context[25], context[26], context[23] ) )
       continue;
-    context[15] = refalrts::ident_left(  ident_TkReplace, context[13], context[14] );
-    if( ! context[15] )
+    context[27] = refalrts::ident_left(  ident_TkSemicolon, context[25], context[26] );
+    if( ! context[27] )
       continue;
-    // closed e.Assignments#3 as range 5
-    // closed e.Tokens#3 as range 2
-    if( ! refalrts::svar_left( context[16], context[13], context[14] ) )
+    // closed e.StartPattern#2 as range 5
+    // closed e.Result#2 as range 9
+    // closed e.Blocks#2 as range 13
+    // closed e.Tokens#2 as range 19
+    context[29] = refalrts::tvar_left( context[28], context[25], context[26] );
+    if( ! context[29] )
       continue;
-    if( ! refalrts::empty_seq( context[13], context[14] ) )
+    if( ! refalrts::empty_seq( context[25], context[26] ) )
       continue;
-    //DEBUG: t.ErrorList#3: 9
-    //DEBUG: e.Assignments#3: 5
-    //DEBUG: e.Tokens#3: 2
-    //DEBUG: s.LnNum#3: 16
+    //DEBUG: t.ErrorList#2: 17
+    //DEBUG: e.StartPattern#2: 5
+    //DEBUG: e.Result#2: 9
+    //DEBUG: e.Blocks#2: 13
+    //DEBUG: e.Tokens#2: 19
+    //DEBUG: t.SrcPos#3: 28
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} # TkReplace/15 s.LnNum#3/16 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseAssignmentPart/4 } Tile{ AsIs: t.ErrorList#3/9 AsIs: (/11 } Tile{ AsIs: e.Assignments#3/5 } Tile{ AsIs: )/12 AsIs: e.Tokens#3/2 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_ParseAssignmentPart.ref.function );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} (/21 {REMOVED TILE} )/22 (/23 # TkSemicolon/27 t.SrcPos#3/28 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 } Tile{ AsIs: )/24 } Tile{ AsIs: t.ErrorList#2/17 } Tile{ AsIs: e.Tokens#2/19 } Tile{ ]] }
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::link_brackets( context[4], context[24] );
+    refalrts::link_brackets( context[15], context[16] );
     refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[12];
-    res = refalrts::splice_evar( res, context[5], context[6] );
-    res = refalrts::splice_evar( res, context[9], context[11] );
-    refalrts::splice_to_freelist_open( context[4], res );
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[24], context[24] );
+    res = refalrts::splice_evar( res, context[4], context[16] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) t.idx t.idx e.idx
-  // </0 & ParseAssignmentPart\1$2\2/4 (/7 e.Assignments#3/5 )/8 t.ErrorList#3/9 t.Unexpected#3/11 e.Tokens#3/2 >/1
-  // closed e.Assignments#3 as range 5
-  // closed e.Tokens#3 as range 2
-  //DEBUG: t.ErrorList#3: 9
-  //DEBUG: t.Unexpected#3: 11
-  //DEBUG: e.Assignments#3: 5
-  //DEBUG: e.Tokens#3: 2
+  do {
+    // ( e.idx ) ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TkColon t.idx )
+    // </0 & ParseSentence\1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 (/21 e.Tokens#2/19 )/22 (/23 # TkColon/27 t.SrcPos#3/28 )/24 >/1
+    context[25] = 0;
+    context[26] = 0;
+    if( ! refalrts::brackets_term( context[25], context[26], context[23] ) )
+      continue;
+    context[27] = refalrts::ident_left(  ident_TkColon, context[25], context[26] );
+    if( ! context[27] )
+      continue;
+    // closed e.StartPattern#2 as range 5
+    // closed e.Result#2 as range 9
+    // closed e.Blocks#2 as range 13
+    // closed e.Tokens#2 as range 19
+    context[29] = refalrts::tvar_left( context[28], context[25], context[26] );
+    if( ! context[29] )
+      continue;
+    if( ! refalrts::empty_seq( context[25], context[26] ) )
+      continue;
+    //DEBUG: t.ErrorList#2: 17
+    //DEBUG: e.StartPattern#2: 5
+    //DEBUG: e.Result#2: 9
+    //DEBUG: e.Blocks#2: 13
+    //DEBUG: e.Tokens#2: 19
+    //DEBUG: t.SrcPos#3: 28
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#3/28 {REMOVED TILE}
+    //RESULT: Tile{ [[ } </30 Tile{ HalfReuse: </21 } Tile{ HalfReuse: & @create_closure@/0 Reuse: & ParseSentence\1$2=1/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 } Tile{ HalfReuse: >/22 HalfReuse: </23 HalfReuse: & ParseSentence/27 } Tile{ AsIs: t.ErrorList#2/17 } Tile{ AsIs: e.Tokens#2/19 } Tile{ HalfReuse: >/24 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_open_call( context[30] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_call( context[21] );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
+    refalrts::update_name( context[4], ref_gen_ParseSentence_L1S2A1.ref.function );
+    refalrts::reinit_close_call( context[22] );
+    refalrts::reinit_open_call( context[23] );
+    refalrts::reinit_name( context[27], ref_ParseSentence.ref.function );
+    refalrts::reinit_close_call( context[24] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[30] );
+    refalrts::push_stack( context[24] );
+    refalrts::push_stack( context[23] );
+    refalrts::push_stack( context[22] );
+    refalrts::push_stack( context[21] );
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[24];
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[22], context[27] );
+    res = refalrts::splice_evar( res, context[0], context[16] );
+    res = refalrts::splice_evar( res, context[21], context[21] );
+    res = refalrts::splice_evar( res, context[30], context[30] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TkCloseBlock t.idx )
+    // </0 & ParseSentence\1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 (/21 e.Tokens#2/19 )/22 (/23 # TkCloseBlock/27 t.SrcPos#3/28 )/24 >/1
+    context[25] = 0;
+    context[26] = 0;
+    if( ! refalrts::brackets_term( context[25], context[26], context[23] ) )
+      continue;
+    context[27] = refalrts::ident_left(  ident_TkCloseBlock, context[25], context[26] );
+    if( ! context[27] )
+      continue;
+    // closed e.StartPattern#2 as range 5
+    // closed e.Result#2 as range 9
+    // closed e.Blocks#2 as range 13
+    // closed e.Tokens#2 as range 19
+    context[29] = refalrts::tvar_left( context[28], context[25], context[26] );
+    if( ! context[29] )
+      continue;
+    if( ! refalrts::empty_seq( context[25], context[26] ) )
+      continue;
+    //DEBUG: t.ErrorList#2: 17
+    //DEBUG: e.StartPattern#2: 5
+    //DEBUG: e.Result#2: 9
+    //DEBUG: e.Blocks#2: 13
+    //DEBUG: e.Tokens#2: 19
+    //DEBUG: t.SrcPos#3: 28
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 } Tile{ HalfReuse: )/21 } Tile{ AsIs: </0 } & EL-AddErrorAt/30 Tile{ AsIs: t.ErrorList#2/17 } t.SrcPos#3/28/31"Mi"/33 Tile{ HalfReuse: 's'/1 }"sed semicolon"/35 Tile{ HalfReuse: >/22 AsIs: (/23 AsIs: # TkCloseBlock/27 AsIs: t.SrcPos#3/28 AsIs: )/24 } Tile{ AsIs: e.Tokens#2/19 } Tile{ ]] }
+    if( ! refalrts::alloc_name( context[30], ref_ELm_AddErrorAt.ref.function ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[31], context[32], context[28], context[29]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[33], context[34], "Mi", 2 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[35], context[36], "sed semicolon", 13 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::reinit_close_bracket( context[21] );
+    refalrts::reinit_char( context[1], 's' );
+    refalrts::reinit_close_call( context[22] );
+    refalrts::link_brackets( context[23], context[24] );
+    refalrts::push_stack( context[22] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[4], context[21] );
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[22], context[24] );
+    res = refalrts::splice_evar( res, context[35], context[36] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[31], context[34] );
+    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[30], context[30] );
+    res = refalrts::splice_evar( res, context[0], context[0] );
+    res = refalrts::splice_evar( res, context[21], context[21] );
+    res = refalrts::splice_evar( res, context[4], context[16] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( e.idx ) ( e.idx ) t.idx ( e.idx ) ( # TkEOF t.idx )
+    // </0 & ParseSentence\1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 (/21 e.Tokens#2/19 )/22 (/23 # TkEOF/27 t.SrcPos#3/28 )/24 >/1
+    context[25] = 0;
+    context[26] = 0;
+    if( ! refalrts::brackets_term( context[25], context[26], context[23] ) )
+      continue;
+    context[27] = refalrts::ident_left(  ident_TkEOF, context[25], context[26] );
+    if( ! context[27] )
+      continue;
+    // closed e.StartPattern#2 as range 5
+    // closed e.Result#2 as range 9
+    // closed e.Blocks#2 as range 13
+    // closed e.Tokens#2 as range 19
+    context[29] = refalrts::tvar_left( context[28], context[25], context[26] );
+    if( ! context[29] )
+      continue;
+    if( ! refalrts::empty_seq( context[25], context[26] ) )
+      continue;
+    //DEBUG: t.ErrorList#2: 17
+    //DEBUG: e.StartPattern#2: 5
+    //DEBUG: e.Result#2: 9
+    //DEBUG: e.Blocks#2: 13
+    //DEBUG: e.Tokens#2: 19
+    //DEBUG: t.SrcPos#3: 28
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} (/21 {REMOVED TILE} )/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </23 HalfReuse: </27 } Tile{ HalfReuse: & @create_closure@/0 Reuse: & ParseSentence\1$4=1/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 AsIs: t.ErrorList#2/17 } Tile{ AsIs: t.SrcPos#3/28 HalfReuse: >/24 } Tile{ AsIs: e.Tokens#2/19 } Tile{ AsIs: >/1 ]] }
+    refalrts::reinit_open_call( context[23] );
+    refalrts::reinit_open_call( context[27] );
+    refalrts::reinit_name( context[0], refalrts::create_closure );
+    refalrts::update_name( context[4], ref_gen_ParseSentence_L1S4A1.ref.function );
+    refalrts::reinit_close_call( context[24] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[23] );
+    refalrts::push_stack( context[24] );
+    refalrts::push_stack( context[27] );
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[28], context[24] );
+    res = refalrts::splice_evar( res, context[0], context[18] );
+    res = refalrts::splice_evar( res, context[23], context[27] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) ( e.idx ) ( e.idx ) t.idx ( e.idx ) t.idx
+  // </0 & ParseSentence\1/4 (/7 e.StartPattern#2/5 )/8 (/11 e.Result#2/9 )/12 (/15 e.Blocks#2/13 )/16 t.ErrorList#2/17 (/21 e.Tokens#2/19 )/22 t.Unexpected#3/23 >/1
+  // closed e.StartPattern#2 as range 5
+  // closed e.Result#2 as range 9
+  // closed e.Blocks#2 as range 13
+  // closed e.Tokens#2 as range 19
+  //DEBUG: t.ErrorList#2: 17
+  //DEBUG: t.Unexpected#3: 23
+  //DEBUG: e.StartPattern#2: 5
+  //DEBUG: e.Result#2: 9
+  //DEBUG: e.Blocks#2: 13
+  //DEBUG: e.Tokens#2: 19
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </13 & ParseAssignmentPart/14 </15 & EL-AddUnexpected/16 Tile{ AsIs: t.ErrorList#3/9 } t.Unexpected#3/11/17"\"="/19 Tile{ HalfReuse: '\"'/0 HalfReuse: >/4 AsIs: (/7 AsIs: e.Assignments#3/5 AsIs: )/8 } Tile{ AsIs: t.Unexpected#3/11 AsIs: e.Tokens#3/2 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[13] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.StartPattern#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Blocks#2/13 AsIs: )/16 } Tile{ AsIs: )/22 } Tile{ AsIs: </0 } & EL-AddUnexpected/25 Tile{ AsIs: t.ErrorList#2/17 } Tile{ AsIs: t.Unexpected#3/23 HalfReuse: 's'/1 } 'e'/26 Tile{ HalfReuse: 'm'/21 }"icolon"/27 >/29 Tile{ AsIs: e.Tokens#2/19 } Tile{ ]] }
+  if( ! refalrts::alloc_name( context[25], ref_ELm_AddUnexpected.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_ParseAssignmentPart.ref.function ) )
+  if( ! refalrts::alloc_char( context[26], 'e' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  if( ! refalrts::alloc_chars( context[27], context[28], "icolon", 6 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_ELm_AddUnexpected.ref.function ) )
+  if( ! refalrts::alloc_close_call( context[29] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[17], context[18], context[11], context[12]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[19], context[20], "\"=", 2 ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_char( context[0], '\"' );
-  refalrts::reinit_close_call( context[4] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[13] );
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::reinit_char( context[1], 's' );
+  refalrts::reinit_char( context[21], 'm' );
+  refalrts::push_stack( context[29] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[4], context[22] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::link_brackets( context[11], context[12] );
   refalrts::link_brackets( context[7], context[8] );
-  refalrts::push_stack( context[4] );
-  refalrts::push_stack( context[15] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[11];
-  res = refalrts::splice_evar( res, context[0], context[8] );
-  res = refalrts::splice_evar( res, context[17], context[20] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[13], context[16] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[27], context[29] );
+  res = refalrts::splice_evar( res, context[21], context[21] );
+  res = refalrts::splice_evar( res, context[26], context[26] );
+  res = refalrts::splice_evar( res, context[23], context[1] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[25], context[25] );
+  res = refalrts::splice_evar( res, context[0], context[0] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
+  res = refalrts::splice_evar( res, context[4], context[16] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseAssignmentPart_L1S2L2("ParseAssignmentPart\\1$2\\2", 697734020U, 3547692141U, func_gen_ParseAssignmentPart_L1S2L2);
+static refalrts::NativeReference nat_ref_gen_ParseSentence_L1("ParseSentence\\1", 2568837022U, 2201090173U, func_gen_ParseSentence_L1);
 
-static refalrts::FnResult func_gen_ParseAssignmentPart_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseSentence_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 35 elems
-  refalrts::Iter context[35];
-  refalrts::zeros( context, 35 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) t.$ ( e.$ ) t.$ e.$
-  // </0 & ParseAssignmentPart\1/4 (/7 e.idxB#0/5 )/8 t.idxT#0/9 (/13 e.idxTVB#0/11 )/14 t.idxTVT#0/15 e.idxTVTV#0/2 >/1
+  // issue here memory for vars with 29 elems
+  refalrts::Iter context[29];
+  refalrts::zeros( context, 29 );
+  // </0 & ParseSentence=1/4 (/7 (/11 e.StartPattern#2/9 )/12 (/15 e.Result#2/13 )/16 (/19 e.Blocks#2/17 )/20 )/8 t.ErrorList#2/21 t.NextToken#2/23 e.Tokens#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2930,7 +3110,143 @@ static refalrts::FnResult func_gen_ParseAssignmentPart_L1(refalrts::Iter arg_beg
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[5], context[6] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[5], context[6] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  context[17] = 0;
+  context[18] = 0;
+  context[19] = refalrts::brackets_left( context[17], context[18], context[5], context[6] );
+  if( ! context[19] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[19], context[20]);
+  if( ! refalrts::empty_seq( context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.StartPattern#2 as range 9
+  // closed e.Result#2 as range 13
+  // closed e.Blocks#2 as range 17
+  context[22] = refalrts::tvar_left( context[21], context[2], context[3] );
+  if( ! context[22] )
+    return refalrts::cRecognitionImpossible;
+  context[24] = refalrts::tvar_left( context[23], context[2], context[3] );
+  if( ! context[24] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#2 as range 2
+  //DEBUG: e.StartPattern#2: 9
+  //DEBUG: e.Result#2: 13
+  //DEBUG: e.Blocks#2: 17
+  //DEBUG: t.ErrorList#2: 21
+  //DEBUG: t.NextToken#2: 23
+  //DEBUG: e.Tokens#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </25 & Fetch/26 Tile{ AsIs: t.NextToken#2/23 } Tile{ AsIs: </0 Reuse: & @create_closure@/4 HalfReuse: & ParseSentence\1/7 AsIs: (/11 AsIs: e.StartPattern#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 AsIs: (/19 AsIs: e.Blocks#2/17 AsIs: )/20 } Tile{ AsIs: t.ErrorList#2/21 } (/27 Tile{ AsIs: e.Tokens#2/2 } Tile{ AsIs: )/8 } >/28 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[25] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[26], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[27] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[28] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], refalrts::create_closure );
+  refalrts::reinit_name( context[7], ref_gen_ParseSentence_L1.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[25] );
+  refalrts::push_stack( context[28] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[27], context[8] );
+  refalrts::link_brackets( context[19], context[20] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[28], context[28] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[27], context[27] );
+  res = refalrts::splice_evar( res, context[21], context[22] );
+  res = refalrts::splice_evar( res, context[0], context[20] );
+  res = refalrts::splice_evar( res, context[23], context[24] );
+  res = refalrts::splice_evar( res, context[25], context[26] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_ParseSentence_A1("ParseSentence=1", 2568837022U, 2201090173U, func_gen_ParseSentence_A1);
+
+static refalrts::FnResult func_ParseSentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & ParseSentence/4 t.ErrorList#1/5 e.Tokens#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 & ParseSentence=1/8 Tile{ AsIs: </0 Reuse: & ParseSentencePart/4 AsIs: t.ErrorList#1/5 AsIs: e.Tokens#1/2 AsIs: >/1 } >/9 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_gen_ParseSentence_A1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[9] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_ParseSentencePart.ref.function );
+  refalrts::push_stack( context[9] );
+  refalrts::push_stack( context[7] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_ParseSentence("ParseSentence", 2568837022U, 2201090173U, func_ParseSentence);
+
+static refalrts::FnResult func_gen_ParseSentencePart_A3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & ParseSentencePart=3/4 (/7 e.Pattern#2/5 )/8 t.ErrorList#4/9 (/13 e.Result#4/11 )/14 (/17 e.Blocks#4/15 )/18 e.Tokens#4/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.Pattern#2 as range 5
   context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
@@ -2940,310 +3256,114 @@ static refalrts::FnResult func_gen_ParseAssignmentPart_L1(refalrts::Iter arg_beg
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[13], context[14]);
-  // closed e.idxTVB#0 as range 11
-  context[16] = refalrts::tvar_left( context[15], context[2], context[3] );
-  if( ! context[16] )
+  context[15] = 0;
+  context[16] = 0;
+  context[17] = refalrts::brackets_left( context[15], context[16], context[2], context[3] );
+  if( ! context[17] )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTVTV#0 as range 2
-  do {
-    // ( e.idx ) t.idx ( e.idx ) ( # TkSemicolon s.idx ) e.idx
-    // </0 & ParseAssignmentPart\1/4 (/7 e.Assignments#1/5 )/8 t.ErrorList#2/9 (/13 e.Result#2/11 )/14 (/15 # TkSemicolon/19 s.LnNum#2/20 )/16 e.Tokens#2/2 >/1
-    context[17] = 0;
-    context[18] = 0;
-    if( ! refalrts::brackets_term( context[17], context[18], context[15] ) )
-      continue;
-    context[19] = refalrts::ident_left(  ident_TkSemicolon, context[17], context[18] );
-    if( ! context[19] )
-      continue;
-    // closed e.Assignments#1 as range 5
-    // closed e.Result#2 as range 11
-    // closed e.Tokens#2 as range 2
-    if( ! refalrts::svar_left( context[20], context[17], context[18] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[17], context[18] ) )
-      continue;
-    //DEBUG: t.ErrorList#2: 9
-    //DEBUG: e.Assignments#1: 5
-    //DEBUG: e.Result#2: 11
-    //DEBUG: e.Tokens#2: 2
-    //DEBUG: s.LnNum#2: 20
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} (/13 {REMOVED TILE} )/14 (/15 # TkSemicolon/19 s.LnNum#2/20 )/16 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Result#2/11 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 AsIs: t.ErrorList#2/9 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_close_bracket( context[4] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::link_brackets( context[0], context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[4], context[10] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::splice_to_freelist_open( context[0], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) t.idx ( e.idx ) ( # TkColon s.idx ) e.idx
-    // </0 & ParseAssignmentPart\1/4 (/7 e.Assignments#1/5 )/8 t.ErrorList#2/9 (/13 e.Result#2/11 )/14 (/15 # TkColon/19 s.LnNum#2/20 )/16 e.Tokens#2/2 >/1
-    context[17] = 0;
-    context[18] = 0;
-    if( ! refalrts::brackets_term( context[17], context[18], context[15] ) )
-      continue;
-    context[19] = refalrts::ident_left(  ident_TkColon, context[17], context[18] );
-    if( ! context[19] )
-      continue;
-    // closed e.Assignments#1 as range 5
-    // closed e.Result#2 as range 11
-    // closed e.Tokens#2 as range 2
-    if( ! refalrts::svar_left( context[20], context[17], context[18] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[17], context[18] ) )
-      continue;
-    //DEBUG: t.ErrorList#2: 9
-    //DEBUG: e.Assignments#1: 5
-    //DEBUG: e.Result#2: 11
-    //DEBUG: e.Tokens#2: 2
-    //DEBUG: s.LnNum#2: 20
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#2/20 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </21 & Fetch/22 </23 & ParsePattern/24 Tile{ AsIs: t.ErrorList#2/9 } (/25 )/26 (/27 Tile{ AsIs: )/16 AsIs: e.Tokens#2/2 AsIs: >/1 } </28 & Seq/29 </30 Tile{ HalfReuse: & @create_closure@/0 Reuse: & ParseAssignmentPart\1$2\1/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 } Tile{ AsIs: (/13 AsIs: e.Result#2/11 AsIs: )/14 HalfReuse: >/15 HalfReuse: & ParseAssignmentPart\1$2\2/19 } >/31 >/32 Tile{ ]] }
-    if( ! refalrts::alloc_open_call( context[21] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[22], ref_Fetch.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[23] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[24], ref_ParsePattern.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[25] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[26] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[27] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[28] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[29], ref_Seq.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[30] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[31] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[32] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_name( context[0], refalrts::create_closure );
-    refalrts::update_name( context[4], ref_gen_ParseAssignmentPart_L1S2L1.ref.function );
-    refalrts::reinit_close_call( context[15] );
-    refalrts::reinit_name( context[19], ref_gen_ParseAssignmentPart_L1S2L2.ref.function );
-    refalrts::push_stack( context[32] );
-    refalrts::push_stack( context[21] );
-    refalrts::push_stack( context[31] );
-    refalrts::push_stack( context[28] );
-    refalrts::push_stack( context[15] );
-    refalrts::push_stack( context[30] );
-    refalrts::link_brackets( context[13], context[14] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[23] );
-    refalrts::link_brackets( context[27], context[16] );
-    refalrts::link_brackets( context[25], context[26] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[31], context[32] );
-    res = refalrts::splice_evar( res, context[13], context[19] );
-    res = refalrts::splice_evar( res, context[0], context[8] );
-    res = refalrts::splice_evar( res, context[28], context[30] );
-    res = refalrts::splice_evar( res, context[16], context[1] );
-    res = refalrts::splice_evar( res, context[25], context[27] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
-    res = refalrts::splice_evar( res, context[21], context[24] );
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) t.idx ( e.idx ) ( # TkCloseBlock s.idx ) e.idx
-    // </0 & ParseAssignmentPart\1/4 (/7 e.Assignments#1/5 )/8 t.ErrorList#2/9 (/13 e.Result#2/11 )/14 (/15 # TkCloseBlock/19 s.LnNum#2/20 )/16 e.Tokens#2/2 >/1
-    context[17] = 0;
-    context[18] = 0;
-    if( ! refalrts::brackets_term( context[17], context[18], context[15] ) )
-      continue;
-    context[19] = refalrts::ident_left(  ident_TkCloseBlock, context[17], context[18] );
-    if( ! context[19] )
-      continue;
-    // closed e.Assignments#1 as range 5
-    // closed e.Result#2 as range 11
-    // closed e.Tokens#2 as range 2
-    if( ! refalrts::svar_left( context[20], context[17], context[18] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[17], context[18] ) )
-      continue;
-    //DEBUG: t.ErrorList#2: 9
-    //DEBUG: e.Assignments#1: 5
-    //DEBUG: e.Result#2: 11
-    //DEBUG: e.Tokens#2: 2
-    //DEBUG: s.LnNum#2: 20
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Result#2/11 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#2/9 HalfReuse: s.LnNum2 #20/13 }"Mi"/23 Tile{ HalfReuse: 's'/1 }"sed semicolon"/25 Tile{ HalfReuse: >/14 AsIs: (/15 AsIs: # TkCloseBlock/19 AsIs: s.LnNum#2/20 AsIs: )/16 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-    if( ! refalrts::alloc_open_call( context[21] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[23], context[24], "Mi", 2 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[25], context[26], "sed semicolon", 13 ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_close_bracket( context[4] );
-    refalrts::reinit_svar( context[13], context[20] );
-    refalrts::reinit_char( context[1], 's' );
-    refalrts::reinit_close_call( context[14] );
-    refalrts::link_brackets( context[15], context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::push_stack( context[21] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::link_brackets( context[0], context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[14], context[16] );
-    res = refalrts::splice_evar( res, context[25], context[26] );
-    res = refalrts::splice_evar( res, context[1], context[1] );
-    res = refalrts::splice_evar( res, context[23], context[24] );
-    res = refalrts::splice_evar( res, context[9], context[13] );
-    res = refalrts::splice_evar( res, context[21], context[22] );
-    res = refalrts::splice_evar( res, context[4], context[8] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) t.idx ( e.idx ) ( # TkEOF s.idx )
-    // </0 & ParseAssignmentPart\1/4 (/7 e.Assignments#1/5 )/8 t.ErrorList#2/9 (/13 e.Result#2/11 )/14 (/15 # TkEOF/19 s.LnNum#2/20 )/16 >/1
-    context[17] = 0;
-    context[18] = 0;
-    if( ! refalrts::brackets_term( context[17], context[18], context[15] ) )
-      continue;
-    context[19] = refalrts::ident_left(  ident_TkEOF, context[17], context[18] );
-    if( ! context[19] )
-      continue;
-    context[33] = context[2];
-    context[34] = context[3];
-    if( ! refalrts::empty_seq( context[33], context[34] ) )
-      continue;
-    // closed e.Assignments#1 as range 5
-    // closed e.Result#2 as range 11
-    if( ! refalrts::svar_left( context[20], context[17], context[18] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[17], context[18] ) )
-      continue;
-    //DEBUG: t.ErrorList#2: 9
-    //DEBUG: e.Assignments#1: 5
-    //DEBUG: e.Result#2: 11
-    //DEBUG: s.LnNum#2: 20
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Result#2/11 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#2/9 HalfReuse: s.LnNum2 #20/13 } 'U'/23 Tile{ HalfReuse: 'n'/1 }"expected EOF in function"/24 Tile{ HalfReuse: >/14 AsIs: (/15 AsIs: # TkEOF/19 AsIs: s.LnNum#2/20 AsIs: )/16 } Tile{ ]] }
-    if( ! refalrts::alloc_open_call( context[21] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_char( context[23], 'U' ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[24], context[25], "expected EOF in function", 24 ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_close_bracket( context[4] );
-    refalrts::reinit_svar( context[13], context[20] );
-    refalrts::reinit_char( context[1], 'n' );
-    refalrts::reinit_close_call( context[14] );
-    refalrts::link_brackets( context[15], context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::push_stack( context[21] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::link_brackets( context[0], context[4] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[14], context[16] );
-    res = refalrts::splice_evar( res, context[24], context[25] );
-    res = refalrts::splice_evar( res, context[1], context[1] );
-    res = refalrts::splice_evar( res, context[23], context[23] );
-    res = refalrts::splice_evar( res, context[9], context[13] );
-    res = refalrts::splice_evar( res, context[21], context[22] );
-    res = refalrts::splice_evar( res, context[4], context[8] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( e.idx ) t.idx ( e.idx ) t.idx e.idx
-  // </0 & ParseAssignmentPart\1/4 (/7 e.Assignments#1/5 )/8 t.ErrorList#2/9 (/13 e.Result#2/11 )/14 t.Unexpected#2/15 e.Tokens#2/2 >/1
-  // closed e.Assignments#1 as range 5
-  // closed e.Result#2 as range 11
-  // closed e.Tokens#2 as range 2
-  //DEBUG: t.ErrorList#2: 9
-  //DEBUG: t.Unexpected#2: 15
-  //DEBUG: e.Assignments#1: 5
-  //DEBUG: e.Result#2: 11
-  //DEBUG: e.Tokens#2: 2
+  refalrts::bracket_pointers(context[17], context[18]);
+  // closed e.Result#4 as range 11
+  // closed e.Blocks#4 as range 15
+  // closed e.Tokens#4 as range 2
+  //DEBUG: e.Pattern#2: 5
+  //DEBUG: t.ErrorList#4: 9
+  //DEBUG: e.Result#4: 11
+  //DEBUG: e.Blocks#4: 15
+  //DEBUG: e.Tokens#4: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Result#2/11 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Assignments#1/5 AsIs: )/8 } </17 & EL-AddUnexpected/18 Tile{ AsIs: t.ErrorList#2/9 } Tile{ AsIs: t.Unexpected#2/15 } Tile{ HalfReuse: 's'/14 } Tile{ HalfReuse: 'e'/13 }"micolon"/19 Tile{ AsIs: >/1 } Tile{ AsIs: e.Tokens#2/2 } Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[17] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], ref_ELm_AddUnexpected.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[19], context[20], "micolon", 7 ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_close_bracket( context[4] );
-  refalrts::reinit_char( context[14], 's' );
-  refalrts::reinit_char( context[13], 'e' );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[17] );
+  //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 AsIs: (/7 AsIs: e.Pattern#2/5 AsIs: )/8 } Tile{ AsIs: (/13 AsIs: e.Result#4/11 AsIs: )/14 AsIs: (/17 AsIs: e.Blocks#4/15 AsIs: )/18 } Tile{ HalfReuse: )/1 } Tile{ AsIs: t.ErrorList#4/9 } Tile{ AsIs: e.Tokens#4/2 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[4], context[1] );
+  refalrts::link_brackets( context[17], context[18] );
+  refalrts::link_brackets( context[13], context[14] );
   refalrts::link_brackets( context[7], context[8] );
-  refalrts::link_brackets( context[0], context[4] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  res = refalrts::splice_evar( res, context[19], context[20] );
-  res = refalrts::splice_evar( res, context[13], context[13] );
-  res = refalrts::splice_evar( res, context[14], context[14] );
-  res = refalrts::splice_evar( res, context[15], context[16] );
   res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_evar( res, context[13], context[18] );
   res = refalrts::splice_evar( res, context[4], context[8] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_ParseSentencePart_A3("ParseSentencePart=3", 2568837022U, 2201090173U, func_gen_ParseSentencePart_A3);
+
+static refalrts::FnResult func_gen_ParseSentencePart_A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  // </0 & ParseSentencePart=2/4 (/7 e.Pattern#2/5 )/8 t.ErrorList#3/9 e.Tokens#3/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.Pattern#2 as range 5
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#3 as range 2
+  //DEBUG: e.Pattern#2: 5
+  //DEBUG: t.ErrorList#3: 9
+  //DEBUG: e.Tokens#3: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </11 </12 Tile{ HalfReuse: & @create_closure@/0 Reuse: & ParseSentencePart=3/4 AsIs: (/7 AsIs: e.Pattern#2/5 AsIs: )/8 } >/13 </14 & ParseResult/15 Tile{ AsIs: t.ErrorList#3/9 AsIs: e.Tokens#3/2 AsIs: >/1 } >/16 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[11] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[14] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[15], ref_ParseResult.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[16] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[0], refalrts::create_closure );
+  refalrts::update_name( context[4], ref_gen_ParseSentencePart_A3.ref.function );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[14] );
+  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[12] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  res = refalrts::splice_evar( res, context[9], context[1] );
+  res = refalrts::splice_evar( res, context[13], context[15] );
+  res = refalrts::splice_evar( res, context[0], context[8] );
   res = refalrts::splice_evar( res, context[11], context[12] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseAssignmentPart_L1("ParseAssignmentPart\\1", 697734020U, 3547692141U, func_gen_ParseAssignmentPart_L1);
+static refalrts::NativeReference nat_ref_gen_ParseSentencePart_A2("ParseSentencePart=2", 2568837022U, 2201090173U, func_gen_ParseSentencePart_A2);
 
-static refalrts::FnResult func_ParseAssignmentPart(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseSentencePart_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  // </0 & ParseAssignmentPart/4 t.ErrorList#1/5 (/9 e.Assignments#1/7 )/10 e.Tokens#1/2 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & ParseSentencePart=1/4 t.ErrorList#2/5 (/9 e.Pattern#2/7 )/10 e.Tokens#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3258,71 +3378,156 @@ static refalrts::FnResult func_ParseAssignmentPart(refalrts::Iter arg_begin, ref
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.Assignments#1 as range 7
-  // closed e.Tokens#1 as range 2
-  //DEBUG: t.ErrorList#1: 5
-  //DEBUG: e.Assignments#1: 7
-  //DEBUG: e.Tokens#1: 2
+  // closed e.Pattern#2 as range 7
+  // closed e.Tokens#2 as range 2
+  //DEBUG: t.ErrorList#2: 5
+  //DEBUG: e.Pattern#2: 7
+  //DEBUG: e.Tokens#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </11 & Fetch/12 Tile{ AsIs: </0 Reuse: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 } )/13 (/14 Tile{ AsIs: )/10 AsIs: e.Tokens#1/2 AsIs: >/1 } </15 & @create_closure@/16 & ParseAssignmentPart\1/17 (/18 Tile{ AsIs: e.Assignments#1/7 } )/19 >/20 >/21 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[11] ) )
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: </4 } & @create_closure@/11 & ParseSentencePart=2/12 Tile{ AsIs: (/9 AsIs: e.Pattern#2/7 AsIs: )/10 } >/13 </14 & Expect/15 # TkReplace/16 (/17 '='/18 )/19 Tile{ AsIs: t.ErrorList#2/5 } Tile{ AsIs: e.Tokens#2/2 } >/20 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_name( context[11], refalrts::create_closure ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], ref_Fetch.ref.function ) )
+  if( ! refalrts::alloc_name( context[12], ref_gen_ParseSentencePart_A2.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[13] ) )
+  if( ! refalrts::alloc_close_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[14] ) )
+  if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  if( ! refalrts::alloc_name( context[15], ref_Expect.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], refalrts::create_closure ) )
+  if( ! refalrts::alloc_ident( context[16], ident_TkReplace ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_gen_ParseAssignmentPart_L1.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[18] ) )
+  if( ! refalrts::alloc_char( context[18], '=' ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[19] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[21] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_ParseResult.ref.function );
-  refalrts::push_stack( context[21] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[15] );
-  refalrts::link_brackets( context[18], context[19] );
+  refalrts::reinit_open_call( context[4] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::link_brackets( context[14], context[10] );
-  refalrts::link_brackets( context[9], context[13] );
+  refalrts::push_stack( context[20] );
+  refalrts::push_stack( context[14] );
+  refalrts::link_brackets( context[17], context[19] );
+  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[4] );
+  refalrts::link_brackets( context[9], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[19], context[21] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[15], context[18] );
-  res = refalrts::splice_evar( res, context[10], context[1] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  res = refalrts::splice_evar( res, context[0], context[9] );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[13], context[19] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
   res = refalrts::splice_evar( res, context[11], context[12] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseAssignmentPart("ParseAssignmentPart", 697734020U, 3547692141U, func_ParseAssignmentPart);
+static refalrts::NativeReference nat_ref_gen_ParseSentencePart_A1("ParseSentencePart=1", 2568837022U, 2201090173U, func_gen_ParseSentencePart_A1);
+
+static refalrts::FnResult func_ParseSentencePart(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & ParseSentencePart/4 t.ErrorList#1/5 e.Tokens#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 & ParseSentencePart=1/8 Tile{ AsIs: </0 Reuse: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: e.Tokens#1/2 AsIs: >/1 } >/9 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_gen_ParseSentencePart_A1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[9] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_ParsePattern.ref.function );
+  refalrts::push_stack( context[9] );
+  refalrts::push_stack( context[7] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_ParseSentencePart("ParseSentencePart", 2568837022U, 2201090173U, func_ParseSentencePart);
 
 static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
+  // </0 & ParsePattern/4 t.ErrorList#1/5 e.Tokens#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoParsePattern/4 AsIs: t.ErrorList#1/5 } (/7 )/8 (/9 )/10 Tile{ AsIs: e.Tokens#1/2 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_bracket( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[8] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[9] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[10] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_DoParsePattern.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[9], context[10] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[7], context[10] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_ParsePattern("ParsePattern", 2568837022U, 2201090173U, func_ParsePattern);
+
+static refalrts::FnResult func_DoParsePattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 44 elems
   refalrts::Iter context[44];
   refalrts::zeros( context, 44 );
   //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
-  // </0 & ParsePattern/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
+  // </0 & DoParsePattern/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3348,7 +3553,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
   // closed e.idxVTT#0 as range 2
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkChar s.idx s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkChar/19 s.LnNum#1/20 s.Char#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkChar/19 s.LnNum#1/20 s.Char#1/21 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3378,7 +3583,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Char#1/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkChar/17 HalfReuse: s.Char1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkChar/17 HalfReuse: s.Char1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -3400,7 +3605,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkNumber s.idx s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkNumber/19 s.LnNum#1/20 s.Number#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkNumber/19 s.LnNum#1/20 s.Number#1/21 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3430,7 +3635,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Number#1/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNumber/17 HalfReuse: s.Number1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNumber/17 HalfReuse: s.Number1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -3452,7 +3657,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkName/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkName/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3479,7 +3684,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkName/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: e.Name#1/15 } )/21 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkName/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: e.Name#1/15 } )/21 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[21] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -3502,7 +3707,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkIdentMarker s.idx ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNumMarker#1/25 )/18 (/22 # TkName/24 s.LnNumName#1/26 e.Name#1/20 )/23 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNumMarker#1/25 )/18 (/22 # TkName/24 s.LnNumName#1/26 e.Name#1/20 )/23 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3543,7 +3748,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkIdentMarker/19 s.LnNumMarker#1/25 {REMOVED TILE} (/22 # TkName/24 s.LnNumName#1/26 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/20 } Tile{ AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/20 } Tile{ AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_ident( context[17], ident_TkIdentifier );
     refalrts::push_stack( context[1] );
@@ -3563,7 +3768,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkIdentMarker s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3590,7 +3795,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'M'/18 }"is"/23 Tile{ HalfReuse: 's'/17 HalfReuse: 'e'/19 }"d name after \'#\'"/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'M'/18 }"is"/23 Tile{ HalfReuse: 's'/17 HalfReuse: 'e'/19 }"d name after \'#\'"/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[21] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
@@ -3628,7 +3833,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkCompound s.idx e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkCompound/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBrackets#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkCompound/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3655,7 +3860,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/19 } Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBrackets#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/19 } Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_ident( context[17], ident_TkIdentifier );
     refalrts::reinit_close_bracket( context[19] );
@@ -3676,7 +3881,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkVariable s.idx s.idx e.idx ) ( # TkRedefinition s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNumVar#1/25 s.Mode#1/26 e.Index#1/15 )/18 (/22 # TkRedefinition/24 s.LnNumRedef#1/27 )/23 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNumVar#1/25 s.Mode#1/26 e.Index#1/15 )/18 (/22 # TkRedefinition/24 s.LnNumRedef#1/27 )/23 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3720,7 +3925,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNumVar#1/25 {REMOVED TILE} (/22 # TkRedefinition/24 s.LnNumRedef#1/27 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNewVariable/17 HalfReuse: s.LnNumVar1 #25/19 } Tile{ AsIs: s.Mode#1/26 AsIs: e.Index#1/15 AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNewVariable/17 HalfReuse: s.LnNumVar1 #25/19 } Tile{ AsIs: s.Mode#1/26 AsIs: e.Index#1/15 AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_ident( context[17], ident_TkNewVariable );
     refalrts::reinit_svar( context[19], context[25] );
@@ -3740,7 +3945,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkVariable s.idx s.idx e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNum#1/20 s.Mode#1/21 e.Index#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNum#1/20 s.Mode#1/21 e.Index#1/15 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3770,7 +3975,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkVariable/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: s.Mode#1/21 } Tile{ AsIs: e.Index#1/15 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkVariable/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: s.Mode#1/21 } Tile{ AsIs: e.Index#1/15 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -3794,7 +3999,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkRedefinition s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkRedefinition/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkRedefinition/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3821,7 +4026,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'N'/18 }"ak"/23 Tile{ HalfReuse: 'e'/17 HalfReuse: 'd'/19 }" redefinition sign"/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'N'/18 }"ak"/23 Tile{ HalfReuse: 'e'/17 HalfReuse: 'd'/19 }" redefinition sign"/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[21] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
@@ -3859,7 +4064,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenBracket ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenBracket/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenBracket/20 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3889,7 +4094,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # Brackets/13 } Tile{ AsIs: s.LnNum#1/21 } Tile{ Reuse: # TkCloseBracket/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ AsIs: )/14 HalfReuse: )/17 } Tile{ HalfReuse: (/20 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # Brackets/13 } Tile{ AsIs: s.LnNum#1/21 } Tile{ Reuse: # TkCloseBracket/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ AsIs: )/14 HalfReuse: )/17 } Tile{ HalfReuse: (/20 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[10] );
     refalrts::reinit_ident( context[13], ident_Brackets );
     refalrts::update_ident( context[19], ident_TkCloseBracket );
@@ -3914,7 +4119,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenADT ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNumBracket#1/26 # TkOpenADT/20 )/18 (/23 # TkName/25 s.LnNumName#1/27 e.Name#1/21 )/24 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNumBracket#1/26 # TkOpenADT/20 )/18 (/23 # TkName/25 s.LnNumName#1/27 e.Name#1/21 )/24 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -3958,7 +4163,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNumBracket#1/26 {REMOVED TILE} s.LnNumName#1/27 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # ADT-Brackets/13 } Tile{ HalfReuse: s.LnNumBracket1 #26/17 Reuse: # TkCloseADT/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ HalfReuse: )/20 AsIs: )/18 AsIs: (/23 HalfReuse: s.LnNumName1 #27/25 } (/28 Tile{ AsIs: e.Name#1/21 } Tile{ AsIs: )/14 } Tile{ AsIs: )/24 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # ADT-Brackets/13 } Tile{ HalfReuse: s.LnNumBracket1 #26/17 Reuse: # TkCloseADT/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ HalfReuse: )/20 AsIs: )/18 AsIs: (/23 HalfReuse: s.LnNumName1 #27/25 } (/28 Tile{ AsIs: e.Name#1/21 } Tile{ AsIs: )/14 } Tile{ AsIs: )/24 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[28] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[10] );
@@ -3989,7 +4194,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenADT ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenADT/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenADT/20 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -4019,10 +4224,10 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </22 & ParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Expected name after \"[\""/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 # ADT-Brackets/29 Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseADT/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 HalfReuse: (/19 AsIs: s.LnNum#1/21 HalfReuse: (/20 HalfReuse: # UnnamedADT/18 } )/30 )/31 Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </22 & DoParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Expected name after \"[\""/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 # ADT-Brackets/29 Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseADT/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 HalfReuse: (/19 AsIs: s.LnNum#1/21 HalfReuse: (/20 HalfReuse: # UnnamedADT/18 } )/30 )/31 Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_ParsePattern.ref.function ) )
+    if( ! refalrts::alloc_name( context[23], ref_DoParsePattern.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[24], context[25], "Expected name after \"[\"", 23 ) )
       return refalrts::cNoMemory;
@@ -4072,7 +4277,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenCall ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenCall/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenCall/20 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -4102,10 +4307,10 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ } </22 & ParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Unexpected call bracket in pattern expression"/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 Tile{ Reuse: # Brackets/19 } Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseCall/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 } Tile{ HalfReuse: (/20 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </22 & DoParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Unexpected call bracket in pattern expression"/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 Tile{ Reuse: # Brackets/19 } Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseCall/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 } Tile{ HalfReuse: (/20 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_ParsePattern.ref.function ) )
+    if( ! refalrts::alloc_name( context[23], ref_DoParsePattern.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[24], context[25], "Unexpected call bracket in pattern expression", 45 ) )
       return refalrts::cNoMemory;
@@ -4146,7 +4351,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ( s.idx s.idx s.idx e.idx ) ) ( e.idx ) ( # Close s.idx s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.ClosedLnNum#1/28 s.CloseBracket#1/27 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.ClosedLnNum#1/28 s.CloseBracket#1/27 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -4194,7 +4399,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} )/23 {REMOVED TILE} {REMOVED TILE} # Close/19 s.ClosedLnNum#1/28 s.CloseBracket#1/27 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/42(7) HalfReuse: )/22 } Tile{ AsIs: (/17 } Tile{ AsIs: e.Scanned#1/20 } Tile{ HalfReuse: (/10 HalfReuse: s.BracketsSign1 #24/13 AsIs: e.InnerScanned#1/11 AsIs: )/14 } Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/42(7) HalfReuse: )/22 } Tile{ AsIs: (/17 } Tile{ AsIs: e.Scanned#1/20 } Tile{ HalfReuse: (/10 HalfReuse: s.BracketsSign1 #24/13 AsIs: e.InnerScanned#1/11 AsIs: )/14 } Tile{ AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     refalrts::reinit_close_bracket( context[22] );
     refalrts::reinit_open_bracket( context[10] );
     refalrts::reinit_svar( context[13], context[24] );
@@ -4216,7 +4421,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ( s.idx s.idx s.idx e.idx ) ) ( e.idx ) ( # Close s.idx s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/27 s.OtherCloseBracket#1/28 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.InnerLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/27 s.OtherCloseBracket#1/28 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -4265,10 +4470,10 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </29 & ParsePattern/30 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.InnerLnNum1 #25/9 }"Unbalanced bracket \""/31 </33 & StrFromBracket/34 s.BracketsSign#1/24/35 >/36 '\"'/37 >/38 (/39 Tile{ AsIs: e.MultiBracket#1/42(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/20 } Tile{ AsIs: (/22 AsIs: s.BracketsSign#1/24 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/23 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: # Close/19 AsIs: s.LnNum#1/27 AsIs: s.OtherCloseBracket#1/28 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </29 & DoParsePattern/30 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.InnerLnNum1 #25/9 }"Unbalanced bracket \""/31 </33 & StrFromBracket/34 s.BracketsSign#1/24/35 >/36 '\"'/37 >/38 (/39 Tile{ AsIs: e.MultiBracket#1/42(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/20 } Tile{ AsIs: (/22 AsIs: s.BracketsSign#1/24 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/23 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: # Close/19 AsIs: s.LnNum#1/27 AsIs: s.OtherCloseBracket#1/28 AsIs: )/18 AsIs: e.Tail#1/40(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[29] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[30], ref_ParsePattern.ref.function ) )
+    if( ! refalrts::alloc_name( context[30], ref_DoParsePattern.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[31], context[32], "Unbalanced bracket \"", 20 ) )
       return refalrts::cNoMemory;
@@ -4317,7 +4522,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( ) ( e.idx ) ( # Close s.idx s.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/20 s.CloseBracket#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/20 s.CloseBracket#1/21 )/18 e.Tail#1/2 >/1
     context[40] = context[2];
     context[41] = context[3];
     context[15] = 0;
@@ -4349,7 +4554,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParsePattern/4 } </22 & EL-AddErrorAt/23 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 }"Unb"/24 Tile{ HalfReuse: 'a'/17 HalfReuse: 'l'/19 }"anced bracket \""/26 </28 & StrFromBracket/29 Tile{ AsIs: s.CloseBracket#1/21 HalfReuse: >/18 } '\"'/30 >/31 Tile{ AsIs: (/9 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParsePattern/4 } </22 & EL-AddErrorAt/23 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 }"Unb"/24 Tile{ HalfReuse: 'a'/17 HalfReuse: 'l'/19 }"anced bracket \""/26 </28 & StrFromBracket/29 Tile{ AsIs: s.CloseBracket#1/21 HalfReuse: >/18 } '\"'/30 >/31 Tile{ AsIs: (/9 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/40(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[23], ref_ELm_AddErrorAt.ref.function ) )
@@ -4397,7 +4602,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
   do {
     // t.idx ( e.idx ( s.idx s.idx s.idx e.idx ) ) ( e.idx ) e.idx
-    // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/17 s.BracketsSign#1/19 s.InnerLnNum#1/20 s.CloseBracket#1/21 e.Scanned#1/15 )/18 )/10 (/13 e.InnerScanned#1/11 )/14 e.Tail#1/2 >/1
+    // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/17 s.BracketsSign#1/19 s.InnerLnNum#1/20 s.CloseBracket#1/21 e.Scanned#1/15 )/18 )/10 (/13 e.InnerScanned#1/11 )/14 e.Tail#1/2 >/1
     context[40] = context[7];
     context[41] = context[8];
     context[15] = 0;
@@ -4427,10 +4632,10 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerLnNum#1/20 s.CloseBracket#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </22 & ParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.InnerLnNum1 #20/9 }"Unbalanced bracket \""/24 </26 & StrFromBracket/27 s.BracketsSign#1/19/28 >/29 '\"'/30 >/31 (/32 Tile{ AsIs: e.MultiBracket#1/40(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/15 } Tile{ AsIs: (/17 AsIs: s.BracketsSign#1/19 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/18 } Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </22 & DoParsePattern/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.InnerLnNum1 #20/9 }"Unbalanced bracket \""/24 </26 & StrFromBracket/27 s.BracketsSign#1/19/28 >/29 '\"'/30 >/31 (/32 Tile{ AsIs: e.MultiBracket#1/40(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/15 } Tile{ AsIs: (/17 AsIs: s.BracketsSign#1/19 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/18 } Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_ParsePattern.ref.function ) )
+    if( ! refalrts::alloc_name( context[23], ref_DoParsePattern.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[24], context[25], "Unbalanced bracket \"", 20 ) )
       return refalrts::cNoMemory;
@@ -4477,7 +4682,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
   refalrts::stop_sentence();
 
   // t.idx ( ) ( e.idx ) e.idx
-  // </0 & ParsePattern/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Pattern#1/11 )/14 e.Tail#1/2 >/1
+  // </0 & DoParsePattern/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Pattern#1/11 )/14 e.Tail#1/2 >/1
   if( ! refalrts::empty_seq( context[7], context[8] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Pattern#1 as range 11
@@ -4487,7 +4692,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
   //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParsePattern/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & DoParsePattern/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: (/13 AsIs: e.Pattern#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
   refalrts::link_brackets( context[13], context[14] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -4500,7 +4705,7 @@ static refalrts::FnResult func_ParsePattern(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParsePattern("ParsePattern", 697734020U, 3547692141U, func_ParsePattern);
+static refalrts::NativeReference nat_ref_DoParsePattern("DoParsePattern", 2568837022U, 2201090173U, func_DoParsePattern);
 
 static refalrts::FnResult func_StrFromBracket(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4679,16 +4884,117 @@ static refalrts::FnResult func_StrFromBracket(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StrFromBracket("StrFromBracket", 697734020U, 3547692141U, func_StrFromBracket);
+static refalrts::NativeReference nat_ref_StrFromBracket("StrFromBracket", 2568837022U, 2201090173U, func_StrFromBracket);
 
-static refalrts::FnResult func_gen_ParseResult_S10L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_ParseResult_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
+  // </0 & ParseResult=1/4 t.ErrorList#2/5 (/9 e.Result#2/7 )/10 e.Tail#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = 0;
+  context[8] = 0;
+  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
+  if( ! context[9] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[9], context[10]);
+  // closed e.Result#2 as range 7
+  // closed e.Tail#2 as range 2
+  //DEBUG: t.ErrorList#2: 5
+  //DEBUG: e.Result#2: 7
+  //DEBUG: e.Tail#2: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#2/5 AsIs: (/9 AsIs: e.Result#2/7 AsIs: )/10 } Tile{ HalfReuse: (/0 HalfReuse: )/4 } Tile{ AsIs: e.Tail#2/2 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_close_bracket( context[4] );
+  refalrts::link_brackets( context[0], context[4] );
+  refalrts::link_brackets( context[9], context[10] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[0], context[4] );
+  res = refalrts::splice_evar( res, context[5], context[10] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_ParseResult_A1("ParseResult=1", 2568837022U, 2201090173U, func_gen_ParseResult_A1);
+
+static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 14 elems
+  refalrts::Iter context[14];
+  refalrts::zeros( context, 14 );
+  // </0 & ParseResult/4 t.ErrorList#1/5 e.Tokens#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Tokens#1 as range 2
+  //DEBUG: t.ErrorList#1: 5
+  //DEBUG: e.Tokens#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseResult=1/4 } </7 & DoParseResult/8 Tile{ AsIs: t.ErrorList#1/5 } (/9 )/10 (/11 )/12 Tile{ AsIs: e.Tokens#1/2 } >/13 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_DoParseResult.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[9] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[10] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[11] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[13] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_gen_ParseResult_A1.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[9], context[10] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[9], context[12] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_ParseResult("ParseResult", 2568837022U, 2201090173U, func_ParseResult);
+
+static refalrts::FnResult func_gen_DoParseResult_S10L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
   //FAST GEN: s.$
   //GLOBAL GEN: s.$
-  // </0 & ParseResult$10\1/4 s.idx#0/5 >/1
+  // </0 & DoParseResult$10\1/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4700,12 +5006,12 @@ static refalrts::FnResult func_gen_ParseResult_S10L1(refalrts::Iter arg_begin, r
     return refalrts::cRecognitionImpossible;
   do {
     // # TkOpenBracket
-    // </0 & ParseResult$10\1/4 # TkOpenBracket/5 >/1
+    // </0 & DoParseResult$10\1/4 # TkOpenBracket/5 >/1
     if( ! refalrts::ident_term(  ident_TkOpenBracket, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseResult$10\1/4 # TkOpenBracket/5 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & DoParseResult$10\1/4 # TkOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Brackets/1 ]] }
     refalrts::reinit_ident( context[1], ident_Brackets );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4717,12 +5023,12 @@ static refalrts::FnResult func_gen_ParseResult_S10L1(refalrts::Iter arg_begin, r
   refalrts::stop_sentence();
 
   // # TkOpenCall
-  // </0 & ParseResult$10\1/4 # TkOpenCall/5 >/1
+  // </0 & DoParseResult$10\1/4 # TkOpenCall/5 >/1
   if( ! refalrts::ident_term(  ident_TkOpenCall, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseResult$10\1/4 # TkOpenCall/5 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & DoParseResult$10\1/4 # TkOpenCall/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # CallBrackets/1 ]] }
   refalrts::reinit_ident( context[1], ident_CallBrackets );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -4732,16 +5038,16 @@ static refalrts::FnResult func_gen_ParseResult_S10L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseResult_S10L1("ParseResult$10\\1", 697734020U, 3547692141U, func_gen_ParseResult_S10L1);
+static refalrts::NativeReference nat_ref_gen_DoParseResult_S10L1("DoParseResult$10\\1", 2568837022U, 2201090173U, func_gen_DoParseResult_S10L1);
 
-static refalrts::FnResult func_gen_ParseResult_S10L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_DoParseResult_S10L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
   //FAST GEN: s.$
   //GLOBAL GEN: s.$
-  // </0 & ParseResult$10\2/4 s.idx#0/5 >/1
+  // </0 & DoParseResult$10\2/4 s.idx#0/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4753,12 +5059,12 @@ static refalrts::FnResult func_gen_ParseResult_S10L2(refalrts::Iter arg_begin, r
     return refalrts::cRecognitionImpossible;
   do {
     // # TkOpenBracket
-    // </0 & ParseResult$10\2/4 # TkOpenBracket/5 >/1
+    // </0 & DoParseResult$10\2/4 # TkOpenBracket/5 >/1
     if( ! refalrts::ident_term(  ident_TkOpenBracket, context[5] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & ParseResult$10\2/4 # TkOpenBracket/5 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & DoParseResult$10\2/4 # TkOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseBracket/1 ]] }
     refalrts::reinit_ident( context[1], ident_TkCloseBracket );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4770,12 +5076,12 @@ static refalrts::FnResult func_gen_ParseResult_S10L2(refalrts::Iter arg_begin, r
   refalrts::stop_sentence();
 
   // # TkOpenCall
-  // </0 & ParseResult$10\2/4 # TkOpenCall/5 >/1
+  // </0 & DoParseResult$10\2/4 # TkOpenCall/5 >/1
   if( ! refalrts::ident_term(  ident_TkOpenCall, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseResult$10\2/4 # TkOpenCall/5 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & DoParseResult$10\2/4 # TkOpenCall/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # TkCloseCall/1 ]] }
   refalrts::reinit_ident( context[1], ident_TkCloseCall );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -4785,14 +5091,14 @@ static refalrts::FnResult func_gen_ParseResult_S10L2(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseResult_S10L2("ParseResult$10\\2", 697734020U, 3547692141U, func_gen_ParseResult_S10L2);
+static refalrts::NativeReference nat_ref_gen_DoParseResult_S10L2("DoParseResult$10\\2", 2568837022U, 2201090173U, func_gen_DoParseResult_S10L2);
 
-static refalrts::FnResult func_gen_ParseResult_S12L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_DoParseResult_S12L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & ParseResult$12\1/4 (/7 e.MultiBracket#1/5 )/8 (/11 e.Scanned#1/9 )/12 (/15 e.Block#2/13 )/16 t.ErrorList#2/17 e.Tail#2/2 >/1
+  // </0 & DoParseResult$12\1/4 (/7 e.MultiBracket#1/5 )/8 (/11 e.Scanned#1/9 )/12 (/15 e.Block#2/13 )/16 t.ErrorList#2/17 e.Tail#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4831,10 +5137,10 @@ static refalrts::FnResult func_gen_ParseResult_S12L1(refalrts::Iter arg_begin, r
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseResult/4 } Tile{ AsIs: t.ErrorList#2/17 } Tile{ AsIs: (/7 AsIs: e.MultiBracket#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Scanned#1/9 HalfReuse: (/12 HalfReuse: # Closure/15 AsIs: e.Block#2/13 AsIs: )/16 } )/19 Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoParseResult/4 } Tile{ AsIs: t.ErrorList#2/17 } Tile{ AsIs: (/7 AsIs: e.MultiBracket#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Scanned#1/9 HalfReuse: (/12 HalfReuse: # Closure/15 AsIs: e.Block#2/13 AsIs: )/16 } )/19 Tile{ AsIs: e.Tail#2/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_close_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_ParseResult.ref.function );
+  refalrts::update_name( context[4], ref_DoParseResult.ref.function );
   refalrts::reinit_open_bracket( context[12] );
   refalrts::reinit_ident( context[15], ident_Closure );
   refalrts::push_stack( context[1] );
@@ -4853,16 +5159,16 @@ static refalrts::FnResult func_gen_ParseResult_S12L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseResult_S12L1("ParseResult$12\\1", 697734020U, 3547692141U, func_gen_ParseResult_S12L1);
+static refalrts::NativeReference nat_ref_gen_DoParseResult_S12L1("DoParseResult$12\\1", 2568837022U, 2201090173U, func_gen_DoParseResult_S12L1);
 
-static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_DoParseResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
   //FAST GEN: t.$ ( e.$ ) ( e.$ ) e.$
   //GLOBAL GEN: t.$ ( e.$ ) ( e.$ ) e.$
-  // </0 & ParseResult/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
+  // </0 & DoParseResult/4 t.idx#0/5 (/9 e.idxVB#0/7 )/10 (/13 e.idxVTB#0/11 )/14 e.idxVTT#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -4888,7 +5194,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
   // closed e.idxVTT#0 as range 2
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkChar s.idx s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkChar/19 s.LnNum#1/20 s.Char#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkChar/19 s.LnNum#1/20 s.Char#1/21 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -4918,7 +5224,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Char#1/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkChar/17 HalfReuse: s.Char1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkChar/17 HalfReuse: s.Char1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -4940,7 +5246,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkNumber s.idx s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkNumber/19 s.LnNum#1/20 s.Number#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkNumber/19 s.LnNum#1/20 s.Number#1/21 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -4970,7 +5276,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 s.Number#1/21 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNumber/17 HalfReuse: s.Number1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkNumber/17 HalfReuse: s.Number1 #21/19 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -4992,7 +5298,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkName/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkName/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5019,7 +5325,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkName/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: e.Name#1/15 } )/21 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkName/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: e.Name#1/15 } )/21 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[21] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -5042,7 +5348,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkIdentMarker s.idx ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.MarkerLnNum#1/25 )/18 (/22 # TkName/24 s.NameLnNum#1/26 e.Name#1/20 )/23 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.MarkerLnNum#1/25 )/18 (/22 # TkName/24 s.NameLnNum#1/26 e.Name#1/20 )/23 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5083,7 +5389,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} # TkIdentMarker/19 s.MarkerLnNum#1/25 {REMOVED TILE} (/22 # TkName/24 s.NameLnNum#1/26 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/20 } Tile{ AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/20 } Tile{ AsIs: )/18 } Tile{ AsIs: )/23 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_ident( context[17], ident_TkIdentifier );
     refalrts::push_stack( context[1] );
@@ -5103,7 +5409,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkIdentMarker s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkIdentMarker/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5130,7 +5436,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'M'/18 }"is"/23 Tile{ HalfReuse: 's'/17 HalfReuse: 'e'/19 }"d name after \"#\""/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 } </21 & EL-AddErrorAt/22 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 HalfReuse: 'M'/18 }"is"/23 Tile{ HalfReuse: 's'/17 HalfReuse: 'e'/19 }"d name after \"#\""/25 >/27 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[21] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[22], ref_ELm_AddErrorAt.ref.function ) )
@@ -5168,7 +5474,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkCompound s.idx e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkCompound/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkCompound/19 s.LnNum#1/20 e.Name#1/15 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5195,7 +5501,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/19 } Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkIdentifier/17 } Tile{ AsIs: e.Name#1/15 } Tile{ HalfReuse: )/19 } Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     refalrts::reinit_open_bracket( context[14] );
     refalrts::reinit_ident( context[17], ident_TkIdentifier );
     refalrts::reinit_close_bracket( context[19] );
@@ -5216,7 +5522,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkVariable s.idx s.idx e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNum#1/20 s.Mode#1/21 e.Index#1/15 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkVariable/19 s.LnNum#1/20 s.Mode#1/21 e.Index#1/15 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5246,7 +5552,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkVariable/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: s.Mode#1/21 } Tile{ AsIs: e.Index#1/15 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 HalfReuse: (/14 HalfReuse: # TkVariable/17 HalfReuse: s.LnNum1 #20/19 } Tile{ AsIs: s.Mode#1/21 } Tile{ AsIs: e.Index#1/15 } )/22 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[22] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[14] );
@@ -5270,7 +5576,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenADT ) ( # TkName s.idx e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNumADT#1/26 # TkOpenADT/20 )/18 (/23 # TkName/25 s.LnNumName#1/27 e.Name#1/21 )/24 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNumADT#1/26 # TkOpenADT/20 )/18 (/23 # TkName/25 s.LnNumName#1/27 e.Name#1/21 )/24 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5314,7 +5620,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNumADT#1/26 {REMOVED TILE} s.LnNumName#1/27 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # ADT-Brackets/13 } Tile{ HalfReuse: s.LnNumADT1 #26/17 Reuse: # TkCloseADT/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ HalfReuse: )/20 AsIs: )/18 AsIs: (/23 HalfReuse: s.LnNumName1 #27/25 } (/28 Tile{ AsIs: e.Name#1/21 } Tile{ AsIs: )/14 } Tile{ AsIs: )/24 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: # ADT-Brackets/13 } Tile{ HalfReuse: s.LnNumADT1 #26/17 Reuse: # TkCloseADT/19 } Tile{ AsIs: e.Scanned#1/11 } Tile{ HalfReuse: )/20 AsIs: )/18 AsIs: (/23 HalfReuse: s.LnNumName1 #27/25 } (/28 Tile{ AsIs: e.Name#1/21 } Tile{ AsIs: )/14 } Tile{ AsIs: )/24 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( context[28] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[10] );
@@ -5345,7 +5651,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx # TkOpenADT ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenADT/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/21 # TkOpenADT/20 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5375,10 +5681,10 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </22 & ParseResult/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Expected name after \"[\""/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 # ADT-Brackets/29 Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseADT/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 HalfReuse: (/19 AsIs: s.LnNum#1/21 HalfReuse: (/20 HalfReuse: # UnnamedADT/18 } )/30 )/31 Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </22 & DoParseResult/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.LnNum1 #21/9 }"Expected name after \"[\""/24 >/26 (/27 Tile{ AsIs: e.MultiBracket#1/7 } (/28 # ADT-Brackets/29 Tile{ HalfReuse: s.LnNum1 #21/10 HalfReuse: # TkCloseADT/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: )/17 HalfReuse: (/19 AsIs: s.LnNum#1/21 HalfReuse: (/20 HalfReuse: # UnnamedADT/18 } )/30 )/31 Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_ParseResult.ref.function ) )
+    if( ! refalrts::alloc_name( context[23], ref_DoParseResult.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[24], context[25], "Expected name after \"[\"", 23 ) )
       return refalrts::cNoMemory;
@@ -5428,7 +5734,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # Open s.idx s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/20 s.OpenBracket#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Open/19 s.LnNum#1/20 s.OpenBracket#1/21 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5458,14 +5764,14 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: </13 } & Fetch/22 Tile{ HalfReuse: s.OpenBracket1 #21/14 HalfReuse: & ParseResult$10\1/17 HalfReuse: >/19 AsIs: s.LnNum#1/20 } </23 & Fetch/24 Tile{ AsIs: s.OpenBracket#1/21 } & ParseResult$10\2/25 >/26 Tile{ AsIs: e.Scanned#1/11 } )/27 )/28 (/29 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/7 HalfReuse: (/10 HalfReuse: </13 } & Fetch/22 Tile{ HalfReuse: s.OpenBracket1 #21/14 HalfReuse: & DoParseResult$10\1/17 HalfReuse: >/19 AsIs: s.LnNum#1/20 } </23 & Fetch/24 Tile{ AsIs: s.OpenBracket#1/21 } & DoParseResult$10\2/25 >/26 Tile{ AsIs: e.Scanned#1/11 } )/27 )/28 (/29 Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     if( ! refalrts::alloc_name( context[22], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[23] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[24], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[25], ref_gen_ParseResult_S10L2.ref.function ) )
+    if( ! refalrts::alloc_name( context[25], ref_gen_DoParseResult_S10L2.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[26] ) )
       return refalrts::cNoMemory;
@@ -5478,7 +5784,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
     refalrts::reinit_open_bracket( context[10] );
     refalrts::reinit_open_call( context[13] );
     refalrts::reinit_svar( context[14], context[21] );
-    refalrts::reinit_name( context[17], ref_gen_ParseResult_S10L1.ref.function );
+    refalrts::reinit_name( context[17], ref_gen_DoParseResult_S10L1.ref.function );
     refalrts::reinit_close_call( context[19] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
@@ -5506,7 +5812,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ( s.idx s.idx s.idx e.idx ) ) ( e.idx ) ( # Close s.idx s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.OpenLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/28 s.CloseBracket#1/27 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/22 s.BracketsSign#1/24 s.OpenLnNum#1/25 s.CloseBracket#1/26 e.Scanned#1/20 )/23 )/10 (/13 e.InnerScanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/28 s.CloseBracket#1/27 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5554,7 +5860,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} s.BracketsSign#1/24 s.OpenLnNum#1/25 s.CloseBracket#1/26 {REMOVED TILE} )/23 {REMOVED TILE} {REMOVED TILE} # Close/19 s.LnNum#1/28 s.CloseBracket#1/27 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/35(7) HalfReuse: )/22 } Tile{ AsIs: (/17 } Tile{ AsIs: e.Scanned#1/20 } Tile{ HalfReuse: (/10 HalfReuse: s.BracketsSign1 #24/13 AsIs: e.InnerScanned#1/11 AsIs: )/14 } Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 AsIs: t.ErrorList#1/5 AsIs: (/9 AsIs: e.MultiBracket#1/35(7) HalfReuse: )/22 } Tile{ AsIs: (/17 } Tile{ AsIs: e.Scanned#1/20 } Tile{ HalfReuse: (/10 HalfReuse: s.BracketsSign1 #24/13 AsIs: e.InnerScanned#1/11 AsIs: )/14 } Tile{ AsIs: )/18 AsIs: e.Tail#1/33(2) AsIs: >/1 ]] }
     refalrts::reinit_close_bracket( context[22] );
     refalrts::reinit_open_bracket( context[10] );
     refalrts::reinit_svar( context[13], context[24] );
@@ -5576,7 +5882,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ) ( e.idx ) ( # TkOpenBlock s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkOpenBlock/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 )/10 (/13 e.Scanned#1/11 )/14 (/17 # TkOpenBlock/19 s.LnNum#1/20 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5603,14 +5909,14 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LnNum#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </21 & Fetch/22 Tile{ AsIs: </0 Reuse: & ParseBlock/4 AsIs: t.ErrorList#1/5 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 } </23 Tile{ HalfReuse: & @create_closure@/18 } & ParseResult$12\1/24 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: >/17 HalfReuse: >/19 } Tile{ ]] }
+    //RESULT: Tile{ [[ } </21 & Fetch/22 Tile{ AsIs: </0 Reuse: & ParseBlock/4 AsIs: t.ErrorList#1/5 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 } </23 Tile{ HalfReuse: & @create_closure@/18 } & DoParseResult$12\1/24 Tile{ AsIs: (/9 AsIs: e.MultiBracket#1/7 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 HalfReuse: >/17 HalfReuse: >/19 } Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[21] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[22], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[23] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[24], ref_gen_ParseResult_S12L1.ref.function ) )
+    if( ! refalrts::alloc_name( context[24], ref_gen_DoParseResult_S12L1.ref.function ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_ParseBlock.ref.function );
     refalrts::reinit_name( context[18], refalrts::create_closure );
@@ -5642,7 +5948,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( e.idx ( s.idx s.idx s.idx e.idx ) ) ( e.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/17 s.BracketsSign#1/19 s.OpenLnNum#1/20 s.CloseBracket#1/21 e.Scanned#1/15 )/18 )/10 (/13 e.InnerScanned#1/11 )/14 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 e.MultiBracket#1/7 (/17 s.BracketsSign#1/19 s.OpenLnNum#1/20 s.CloseBracket#1/21 e.Scanned#1/15 )/18 )/10 (/13 e.InnerScanned#1/11 )/14 e.Tail#1/2 >/1
     context[33] = context[7];
     context[34] = context[8];
     context[15] = 0;
@@ -5672,10 +5978,10 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.OpenLnNum#1/20 s.CloseBracket#1/21 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </22 & ParseResult/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.OpenLnNum1 #20/9 }"Unbalanced bracket \""/24 </26 & StrFromBracket/27 s.BracketsSign#1/19/28 >/29 '\"'/30 >/31 (/32 Tile{ AsIs: e.MultiBracket#1/33(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/15 } Tile{ AsIs: (/17 AsIs: s.BracketsSign#1/19 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/18 } Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </22 & DoParseResult/23 Tile{ AsIs: </0 Reuse: & EL-AddErrorAt/4 AsIs: t.ErrorList#1/5 HalfReuse: s.OpenLnNum1 #20/9 }"Unbalanced bracket \""/24 </26 & StrFromBracket/27 s.BracketsSign#1/19/28 >/29 '\"'/30 >/31 (/32 Tile{ AsIs: e.MultiBracket#1/33(7) } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.Scanned#1/15 } Tile{ AsIs: (/17 AsIs: s.BracketsSign#1/19 } Tile{ AsIs: e.InnerScanned#1/11 } Tile{ AsIs: )/18 } Tile{ AsIs: )/14 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_ParseResult.ref.function ) )
+    if( ! refalrts::alloc_name( context[23], ref_DoParseResult.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_chars( context[24], context[25], "Unbalanced bracket \"", 20 ) )
       return refalrts::cNoMemory;
@@ -5723,7 +6029,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
   do {
     // t.idx ( ) ( e.idx ) ( # Close s.idx s.idx ) e.idx
-    // </0 & ParseResult/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/20 s.CloseBracket#1/21 )/18 e.Tail#1/2 >/1
+    // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Scanned#1/11 )/14 (/17 # Close/19 s.LnNum#1/20 s.CloseBracket#1/21 )/18 e.Tail#1/2 >/1
     context[33] = context[2];
     context[34] = context[3];
     context[15] = 0;
@@ -5755,7 +6061,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseResult/4 } </22 & EL-AddErrorAt/23 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 }"Unb"/24 Tile{ HalfReuse: 'a'/17 HalfReuse: 'l'/19 }"anced bracket \""/26 </28 & StrFromBracket/29 Tile{ AsIs: s.CloseBracket#1/21 HalfReuse: >/18 } '\"'/30 >/31 Tile{ AsIs: (/9 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoParseResult/4 } </22 & EL-AddErrorAt/23 Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: s.LnNum#1/20 }"Unb"/24 Tile{ HalfReuse: 'a'/17 HalfReuse: 'l'/19 }"anced bracket \""/26 </28 & StrFromBracket/29 Tile{ AsIs: s.CloseBracket#1/21 HalfReuse: >/18 } '\"'/30 >/31 Tile{ AsIs: (/9 AsIs: )/10 AsIs: (/13 AsIs: e.Scanned#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/33(2) } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[23], ref_ELm_AddErrorAt.ref.function ) )
@@ -5802,7 +6108,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
   refalrts::stop_sentence();
 
   // t.idx ( ) ( e.idx ) e.idx
-  // </0 & ParseResult/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Result#1/11 )/14 e.Tail#1/2 >/1
+  // </0 & DoParseResult/4 t.ErrorList#1/5 (/9 )/10 (/13 e.Result#1/11 )/14 e.Tail#1/2 >/1
   if( ! refalrts::empty_seq( context[7], context[8] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Result#1 as range 11
@@ -5812,7 +6118,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
   //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & ParseResult/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & DoParseResult/4 {REMOVED TILE} (/9 )/10 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#1/5 } Tile{ AsIs: (/13 AsIs: e.Result#1/11 AsIs: )/14 } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
   refalrts::link_brackets( context[13], context[14] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -5825,7 +6131,7 @@ static refalrts::FnResult func_ParseResult(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseResult("ParseResult", 697734020U, 3547692141U, func_ParseResult);
+static refalrts::NativeReference nat_ref_DoParseResult("DoParseResult", 2568837022U, 2201090173U, func_DoParseResult);
 
 
 //End of file
