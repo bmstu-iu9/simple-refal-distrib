@@ -111,11 +111,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdProfileFunction
     // </0 & NumberFromOpcode/4 # CmdProfileFunction/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdProfileFunction, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -133,11 +133,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdLoadConstants
     // </0 & NumberFromOpcode/4 # CmdLoadConstants/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdLoadConstants, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -155,11 +155,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdIssueMemory
     // </0 & NumberFromOpcode/4 # CmdIssueMemory/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIssueMemory, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -177,11 +177,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdReserveBacktrackStack
     // </0 & NumberFromOpcode/4 # CmdReserveBacktrackStack/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -199,11 +199,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdOnFailGoTo
     // </0 & NumberFromOpcode/4 # CmdOnFailGoTo/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdOnFailGoTo, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -221,11 +221,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdProfilerStopSentence
     // </0 & NumberFromOpcode/4 # CmdProfilerStopSentence/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdProfilerStopSentence, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -243,11 +243,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdInitB0
     // </0 & NumberFromOpcode/4 # CmdInitB0/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdInitB0, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -265,11 +265,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdInitB0-Lite
     // </0 & NumberFromOpcode/4 # CmdInitB0-Lite/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdInitB0m_Lite, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -286,19 +286,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdChar # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdChar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 8/1 ]] }
     refalrts::reinit_number( context[1], 8UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -311,19 +311,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdChar # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdChar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 9/1 ]] }
     refalrts::reinit_number( context[1], 9UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -336,19 +336,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdChar # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdChar/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdChar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 10/1 ]] }
     refalrts::reinit_number( context[1], 10UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -361,19 +361,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdCharSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdCharSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 11/1 ]] }
     refalrts::reinit_number( context[1], 11UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -386,19 +386,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdCharSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdCharSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 12/1 ]] }
     refalrts::reinit_number( context[1], 12UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -411,19 +411,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNum # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 13/1 ]] }
     refalrts::reinit_number( context[1], 13UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -436,19 +436,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNum # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 14/1 ]] }
     refalrts::reinit_number( context[1], 14UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -461,19 +461,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNum # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 15/1 ]] }
     refalrts::reinit_number( context[1], 15UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -486,19 +486,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNumSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNumSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 16/1 ]] }
     refalrts::reinit_number( context[1], 16UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -511,19 +511,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNumSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNumSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 17/1 ]] }
     refalrts::reinit_number( context[1], 17UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -536,19 +536,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdHugeNum # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdHugeNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 18/1 ]] }
     refalrts::reinit_number( context[1], 18UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -561,19 +561,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdHugeNum # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdHugeNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 19/1 ]] }
     refalrts::reinit_number( context[1], 19UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -586,19 +586,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdHugeNum # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdHugeNum, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 20/1 ]] }
     refalrts::reinit_number( context[1], 20UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -611,19 +611,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdHugeNumSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdHugeNumSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 21/1 ]] }
     refalrts::reinit_number( context[1], 21UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -636,19 +636,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdHugeNumSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdHugeNumSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 22/1 ]] }
     refalrts::reinit_number( context[1], 22UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -661,19 +661,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdName # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdName, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 23/1 ]] }
     refalrts::reinit_number( context[1], 23UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -686,19 +686,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdName # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdName, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 24/1 ]] }
     refalrts::reinit_number( context[1], 24UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -711,19 +711,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdName # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdName/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdName, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 25/1 ]] }
     refalrts::reinit_number( context[1], 25UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -736,19 +736,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNameSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNameSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 26/1 ]] }
     refalrts::reinit_number( context[1], 26UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -761,19 +761,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdNameSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNameSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 27/1 ]] }
     refalrts::reinit_number( context[1], 27UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -786,19 +786,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdIdent # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIdent, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 28/1 ]] }
     refalrts::reinit_number( context[1], 28UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -811,19 +811,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdIdent # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIdent, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 29/1 ]] }
     refalrts::reinit_number( context[1], 29UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -836,19 +836,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdIdent # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIdent, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 30/1 ]] }
     refalrts::reinit_number( context[1], 30UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -861,19 +861,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdIdentSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIdentSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 31/1 ]] }
     refalrts::reinit_number( context[1], 31UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -886,19 +886,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdIdentSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdIdentSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 32/1 ]] }
     refalrts::reinit_number( context[1], 32UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -911,19 +911,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdBrackets # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdBrackets, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 33/1 ]] }
     refalrts::reinit_number( context[1], 33UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -936,19 +936,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdBrackets # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdBrackets, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 34/1 ]] }
     refalrts::reinit_number( context[1], 34UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -961,19 +961,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdBrackets # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdBrackets, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 35/1 ]] }
     refalrts::reinit_number( context[1], 35UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -986,19 +986,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdBracketsSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdBracketsSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 36/1 ]] }
     refalrts::reinit_number( context[1], 36UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1011,19 +1011,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdBracketsSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdBracketsSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 37/1 ]] }
     refalrts::reinit_number( context[1], 37UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1036,19 +1036,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADT # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADT, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 38/1 ]] }
     refalrts::reinit_number( context[1], 38UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1061,19 +1061,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADT # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADT, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 39/1 ]] }
     refalrts::reinit_number( context[1], 39UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1086,19 +1086,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADT # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADT/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADT, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 40/1 ]] }
     refalrts::reinit_number( context[1], 40UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1111,19 +1111,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADTSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADTSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 41/1 ]] }
     refalrts::reinit_number( context[1], 41UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1136,19 +1136,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADTSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgRight/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgRight/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADTSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgRight/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 42/1 ]] }
     refalrts::reinit_number( context[1], 42UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1161,19 +1161,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdADTSave # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgTerm/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgTerm/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdADTSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgTerm/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 43/1 ]] }
     refalrts::reinit_number( context[1], 43UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1186,19 +1186,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # CmdCallSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdCallSave/5 # AlgLeft/6 >/1
+    // </0 & NumberFromOpcode/4 # CmdCallSave/5 # AlgLeft/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdCallSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCallSave/5 # AlgLeft/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCallSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 44/1 ]] }
     refalrts::reinit_number( context[1], 44UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1212,11 +1212,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdEmpty
     // </0 & NumberFromOpcode/4 # CmdEmpty/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdEmpty, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1234,11 +1234,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdNotEmpty
     // </0 & NumberFromOpcode/4 # CmdNotEmpty/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNotEmpty, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1255,22 +1255,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdVar # AlgLeft
-    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 47/1 ]] }
     refalrts::reinit_number( context[1], 47UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1283,22 +1283,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdVar # AlgRight
-    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 48/1 ]] }
     refalrts::reinit_number( context[1], 48UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1311,22 +1311,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdVar # AlgTerm
-    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgTerm/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgTerm/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/6 # AlgTerm/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdVar/8 # AlgTerm/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 49/1 ]] }
     refalrts::reinit_number( context[1], 49UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1339,22 +1339,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdVar # AlgLeft
-    // </0 & NumberFromOpcode/4 't'/5 # CmdVar/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdVar/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVar/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVar/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 50/1 ]] }
     refalrts::reinit_number( context[1], 50UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1367,22 +1367,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdVar # AlgRight
-    // </0 & NumberFromOpcode/4 't'/5 # CmdVar/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdVar/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVar/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVar/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 51/1 ]] }
     refalrts::reinit_number( context[1], 51UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1395,22 +1395,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdVarSave # AlgLeft
-    // </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVarSave, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVarSave, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 52/1 ]] }
     refalrts::reinit_number( context[1], 52UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1423,22 +1423,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdVarSave # AlgRight
-    // </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdVarSave, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdVarSave, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdVarSave/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 53/1 ]] }
     refalrts::reinit_number( context[1], 53UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1451,22 +1451,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 'e' # CmdRepeated # AlgLeft
-    // </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 'e', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 54/1 ]] }
     refalrts::reinit_number( context[1], 54UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1479,22 +1479,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 'e' # CmdRepeated # AlgRight
-    // </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 'e', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/5 # CmdRepeated/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 55/1 ]] }
     refalrts::reinit_number( context[1], 55UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1507,22 +1507,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdRepeated # AlgLeft
-    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 56/1 ]] }
     refalrts::reinit_number( context[1], 56UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1535,22 +1535,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdRepeated # AlgRight
-    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 57/1 ]] }
     refalrts::reinit_number( context[1], 57UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1563,22 +1563,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 's' # CmdRepeated # AlgTerm
-    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgTerm/7 >/1
+    // </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgTerm/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 's', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/6 # AlgTerm/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/5 # CmdRepeated/8 # AlgTerm/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 58/1 ]] }
     refalrts::reinit_number( context[1], 58UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1591,22 +1591,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdRepeated # AlgLeft
-    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 59/1 ]] }
     refalrts::reinit_number( context[1], 59UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1619,22 +1619,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdRepeated # AlgRight
-    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 60/1 ]] }
     refalrts::reinit_number( context[1], 60UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1647,22 +1647,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdRepeated # AlgTerm
-    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgTerm/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgTerm/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeated, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeated, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgTerm, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/6 # AlgTerm/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeated/8 # AlgTerm/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 61/1 ]] }
     refalrts::reinit_number( context[1], 61UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1675,22 +1675,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdRepeatedSave # AlgLeft
-    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/6 # AlgLeft/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/8 # AlgLeft/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeatedSave, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeatedSave, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgLeft, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/6 # AlgLeft/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/8 # AlgLeft/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 62/1 ]] }
     refalrts::reinit_number( context[1], 62UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1703,22 +1703,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // 't' # CmdRepeatedSave # AlgRight
-    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/6 # AlgRight/7 >/1
+    // </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/8 # AlgRight/9 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdRepeatedSave, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdRepeatedSave, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    context[7] = refalrts::ident_left(  ident_AlgRight, context[8], context[9] );
-    if( ! context[7] )
+    context[9] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
+    if( ! context[9] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/6 # AlgRight/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/5 # CmdRepeatedSave/8 # AlgRight/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 63/1 ]] }
     refalrts::reinit_number( context[1], 63UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1732,11 +1732,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdEPrepare
     // </0 & NumberFromOpcode/4 # CmdEPrepare/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdEPrepare, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1754,11 +1754,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdEStart
     // </0 & NumberFromOpcode/4 # CmdEStart/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdEStart, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1776,11 +1776,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSave
     // </0 & NumberFromOpcode/4 # CmdSave/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1798,11 +1798,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdResetAllocator
     // </0 & NumberFromOpcode/4 # CmdResetAllocator/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdResetAllocator, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1820,11 +1820,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSetResArgBegin
     // </0 & NumberFromOpcode/4 # CmdSetResArgBegin/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSetResArgBegin, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1842,11 +1842,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSetResRightEdge
     // </0 & NumberFromOpcode/4 # CmdSetResRightEdge/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSetResRightEdge, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1864,11 +1864,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSetRes
     // </0 & NumberFromOpcode/4 # CmdSetRes/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSetRes, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1886,11 +1886,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdCopyEVar
     // </0 & NumberFromOpcode/4 # CmdCopyEVar/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdCopyEVar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1908,11 +1908,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdCopySTVar
     // </0 & NumberFromOpcode/4 # CmdCopySTVar/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdCopySTVar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1930,11 +1930,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdReinitSVar
     // </0 & NumberFromOpcode/4 # CmdReinitSVar/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdReinitSVar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -1951,19 +1951,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElChar
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElChar/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElChar/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElChar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElChar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElChar/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElChar/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 74/1 ]] }
     refalrts::reinit_number( context[1], 74UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -1976,19 +1976,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElName
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElName/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElName/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElName, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElName, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElName/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElName/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 75/1 ]] }
     refalrts::reinit_number( context[1], 75UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2001,19 +2001,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElNumber
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 76/1 ]] }
     refalrts::reinit_number( context[1], 76UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2026,19 +2026,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElHugeNumber
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElHugeNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElHugeNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElHugeNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElHugeNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElHugeNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElHugeNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 77/1 ]] }
     refalrts::reinit_number( context[1], 77UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2051,19 +2051,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElIdent
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElIdent/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElIdent/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElIdent, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElIdent, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElIdent/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElIdent/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 78/1 ]] }
     refalrts::reinit_number( context[1], 78UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2076,19 +2076,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElBracket
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElBracket/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElBracket/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElBracket, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElBracket, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElBracket/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElBracket/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 79/1 ]] }
     refalrts::reinit_number( context[1], 79UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2101,19 +2101,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Allocate # ElString
-    // </0 & NumberFromOpcode/4 # Allocate/5 # ElString/6 >/1
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElString/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElString, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElString, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElString/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElString/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 80/1 ]] }
     refalrts::reinit_number( context[1], 80UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2126,19 +2126,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElChar
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElChar/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElChar/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElChar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElChar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElChar/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElChar/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 81/1 ]] }
     refalrts::reinit_number( context[1], 81UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2151,19 +2151,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElName
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElName/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElName/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElName, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElName, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElName/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElName/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 82/1 ]] }
     refalrts::reinit_number( context[1], 82UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2176,19 +2176,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElNumber
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 83/1 ]] }
     refalrts::reinit_number( context[1], 83UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2201,19 +2201,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElHugeNumber
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElHugeNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElHugeNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElHugeNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElHugeNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElHugeNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElHugeNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 84/1 ]] }
     refalrts::reinit_number( context[1], 84UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2226,19 +2226,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElIdent
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElIdent/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElIdent/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElIdent, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElIdent, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElIdent/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElIdent/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 85/1 ]] }
     refalrts::reinit_number( context[1], 85UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2251,19 +2251,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # ElBracket
-    // </0 & NumberFromOpcode/4 # Reinit/5 # ElBracket/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElBracket/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElBracket, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElBracket, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElBracket/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElBracket/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 86/1 ]] }
     refalrts::reinit_number( context[1], 86UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2276,19 +2276,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # CmdClosureHead
-    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdClosureHead, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdClosureHead, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 87/1 ]] }
     refalrts::reinit_number( context[1], 87UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2301,19 +2301,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Reinit # CmdUnwrappedClosure
-    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/6 >/1
+    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_CmdUnwrappedClosure, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_CmdUnwrappedClosure, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 88/1 ]] }
     refalrts::reinit_number( context[1], 88UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2326,19 +2326,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Update # ElChar
-    // </0 & NumberFromOpcode/4 # Update/5 # ElChar/6 >/1
+    // </0 & NumberFromOpcode/4 # Update/5 # ElChar/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Update, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElChar, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElChar, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElChar/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElChar/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 89/1 ]] }
     refalrts::reinit_number( context[1], 89UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2351,19 +2351,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Update # ElName
-    // </0 & NumberFromOpcode/4 # Update/5 # ElName/6 >/1
+    // </0 & NumberFromOpcode/4 # Update/5 # ElName/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Update, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElName, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElName, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElName/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElName/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 90/1 ]] }
     refalrts::reinit_number( context[1], 90UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2376,19 +2376,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Update # ElNumber
-    // </0 & NumberFromOpcode/4 # Update/5 # ElNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Update/5 # ElNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Update, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 91/1 ]] }
     refalrts::reinit_number( context[1], 91UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2401,19 +2401,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Update # ElHugeNumber
-    // </0 & NumberFromOpcode/4 # Update/5 # ElHugeNumber/6 >/1
+    // </0 & NumberFromOpcode/4 # Update/5 # ElHugeNumber/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Update, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElHugeNumber, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElHugeNumber, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElHugeNumber/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElHugeNumber/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 92/1 ]] }
     refalrts::reinit_number( context[1], 92UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2426,19 +2426,19 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   do {
     // # Update # ElIdent
-    // </0 & NumberFromOpcode/4 # Update/5 # ElIdent/6 >/1
+    // </0 & NumberFromOpcode/4 # Update/5 # ElIdent/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Update, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    context[6] = refalrts::ident_left(  ident_ElIdent, context[8], context[9] );
-    if( ! context[6] )
+    context[8] = refalrts::ident_left(  ident_ElIdent, context[6], context[7] );
+    if( ! context[8] )
       continue;
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElIdent/6 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/5 # ElIdent/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 93/1 ]] }
     refalrts::reinit_number( context[1], 93UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2452,11 +2452,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdLinkBrackets
     // </0 & NumberFromOpcode/4 # CmdLinkBrackets/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdLinkBrackets, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2474,11 +2474,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdPushStack
     // </0 & NumberFromOpcode/4 # CmdPushStack/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdPushStack, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2496,11 +2496,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceElem
     // </0 & NumberFromOpcode/4 # CmdSpliceElem/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceElem, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2518,11 +2518,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceEVar
     // </0 & NumberFromOpcode/4 # CmdSpliceEVar/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceEVar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2540,11 +2540,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceSTVar
     // </0 & NumberFromOpcode/4 # CmdSpliceSTVar/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceSTVar, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2562,11 +2562,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceRange
     // </0 & NumberFromOpcode/4 # CmdSpliceRange/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceRange, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2584,11 +2584,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceTile
     // </0 & NumberFromOpcode/4 # CmdSpliceTile/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceTile, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2606,11 +2606,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSpliceToFreeList
     // </0 & NumberFromOpcode/4 # CmdSpliceToFreeList/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSpliceToFreeList, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2628,11 +2628,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdNextStep
     // </0 & NumberFromOpcode/4 # CmdNextStep/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdNextStep, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2650,11 +2650,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdTrashLeftEdge
     // </0 & NumberFromOpcode/4 # CmdTrashLeftEdge/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdTrashLeftEdge, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2672,11 +2672,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdTrash
     // </0 & NumberFromOpcode/4 # CmdTrash/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdTrash, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2694,11 +2694,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdFail
     // </0 & NumberFromOpcode/4 # CmdFail/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdFail, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2716,11 +2716,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdFetchSwapHead
     // </0 & NumberFromOpcode/4 # CmdFetchSwapHead/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdFetchSwapHead, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2738,11 +2738,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdFetchSwapInfoBounds
     // </0 & NumberFromOpcode/4 # CmdFetchSwapInfoBounds/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdFetchSwapInfoBounds, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2760,11 +2760,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdSwapSave
     // </0 & NumberFromOpcode/4 # CmdSwapSave/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdSwapSave, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2782,11 +2782,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdPerformNative
     // </0 & NumberFromOpcode/4 # CmdPerformNative/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdPerformNative, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2804,11 +2804,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdWrapClosure
     // </0 & NumberFromOpcode/4 # CmdWrapClosure/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdWrapClosure, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2826,11 +2826,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   do {
     // # CmdEnd
     // </0 & NumberFromOpcode/4 # CmdEnd/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
     if( ! refalrts::ident_term(  ident_CmdEnd, context[5] ) )
       continue;
-    context[8] = context[2];
-    context[9] = context[3];
-    if( ! refalrts::empty_seq( context[8], context[9] ) )
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
@@ -2847,9 +2847,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 
   // # CmdVariableDebugOffset
   // </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 >/1
+  context[6] = context[2];
+  context[7] = context[3];
   if( ! refalrts::ident_term(  ident_CmdVariableDebugOffset, context[5] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
+  if( ! refalrts::empty_seq( context[6], context[7] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();

@@ -25,45 +25,47 @@ static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, r
   // closed e.idx#0 as range 2
   do {
     // '\357\273\277' e.idx
-    // </0 & SR-LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 e.Content#2/2 >/1
-    context[8] = context[2];
-    context[9] = context[3];
-    context[5] = refalrts::char_left( '\357', context[8], context[9] );
-    if( ! context[5] )
-      continue;
-    context[6] = refalrts::char_left( '\273', context[8], context[9] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_left( '\277', context[8], context[9] );
+    // </0 & SR-LoadSource\1/4 '\357'/7 '\273'/8 '\277'/9 e.Content#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_left( '\357', context[5], context[6] );
     if( ! context[7] )
       continue;
-    // closed e.Content#2 as range 8(2)
-    //DEBUG: e.Content#2: 2
+    context[8] = refalrts::char_left( '\273', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_left( '\277', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    // closed e.Content#2 as range 5
+    //DEBUG: e.Content#2: 5
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 '\357'/5 '\273'/6 '\277'/7 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/8(2) } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 '\357'/7 '\273'/8 '\277'/9 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/5 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[8], context[9] );
+    res = refalrts::splice_evar( res, context[5], context[6] );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
   // e.idx
-  // </0 & SR-LoadSource\1/4 e.Content#2/2 >/1
-  // closed e.Content#2 as range 2
-  //DEBUG: e.Content#2: 2
+  // </0 & SR-LoadSource\1/4 e.Content#2/5 >/1
+  context[5] = context[2];
+  context[6] = context[3];
+  // closed e.Content#2 as range 5
+  //DEBUG: e.Content#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/2 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/5 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }

@@ -205,17 +205,19 @@ static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::Iter arg
   refalrts::stop_sentence();
 
   // e.idx
-  // </0 & WriteAlternative-Aux$2\1/4 e.ResultNotEmpty#2/2 >/1
-  // closed e.ResultNotEmpty#2 as range 2
-  //DEBUG: e.ResultNotEmpty#2: 2
+  // </0 & WriteAlternative-Aux$2\1/4 e.ResultNotEmpty#2/5 >/1
+  context[5] = context[2];
+  context[6] = context[3];
+  // closed e.ResultNotEmpty#2 as range 5
+  //DEBUG: e.ResultNotEmpty#2: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & WriteAlternative-Aux$2\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.ResultNotEmpty#2/2 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.ResultNotEmpty#2/5 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
@@ -630,9 +632,9 @@ static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", 3016463358U
 
 static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 14 elems
+  refalrts::Iter context[14];
+  refalrts::zeros( context, 14 );
   //FAST GEN: t.$ e.$
   //GLOBAL GEN: t.$ e.$
   // </0 & NextState-R/4 t.idx#0/5 e.idxV#0/2 >/1
@@ -647,14 +649,16 @@ static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::
   // closed e.idxV#0 as range 2
   do {
     // # Finitive e.idx
-    // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1
+    // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/7 >/1
+    context[7] = context[2];
+    context[8] = context[3];
     if( ! refalrts::ident_term(  ident_Finitive, context[5] ) )
       continue;
-    // closed e.NextStateAccum#1 as range 2
-    //DEBUG: e.NextStateAccum#1: 2
+    // closed e.NextStateAccum#1 as range 7
+    //DEBUG: e.NextStateAccum#1: 7
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/7 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -665,22 +669,24 @@ static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::
   refalrts::stop_sentence();
 
   // ( e.idx ) e.idx
-  // </0 & NextState-R/4 (/5 e.NextStateName#1/7 )/6 e.NextStateAccum#1/2 >/1
-  context[7] = 0;
-  context[8] = 0;
-  if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
+  // </0 & NextState-R/4 (/5 e.NextStateName#1/9 )/6 e.NextStateAccum#1/7 >/1
+  context[7] = context[2];
+  context[8] = context[3];
+  context[9] = 0;
+  context[10] = 0;
+  if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.NextStateName#1 as range 7
-  // closed e.NextStateAccum#1 as range 2
-  //DEBUG: e.NextStateName#1: 7
-  //DEBUG: e.NextStateAccum#1: 2
+  // closed e.NextStateName#1 as range 9
+  // closed e.NextStateAccum#1 as range 7
+  //DEBUG: e.NextStateName#1: 9
+  //DEBUG: e.NextStateAccum#1: 7
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/4 HalfReuse: '<'/5 AsIs: e.NextStateName#1/7 HalfReuse: ' '/6 } '('/9 Tile{ AsIs: e.NextStateAccum#1/2 } Tile{ HalfReuse: ')'/0 }" e.Text"/10 Tile{ HalfReuse: '>'/1 ]] }
-  if( ! refalrts::alloc_char( context[9], '(' ) )
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/4 HalfReuse: '<'/5 AsIs: e.NextStateName#1/9 HalfReuse: ' '/6 } '('/11 Tile{ AsIs: e.NextStateAccum#1/7 } Tile{ HalfReuse: ')'/0 }" e.Text"/12 Tile{ HalfReuse: '>'/1 ]] }
+  if( ! refalrts::alloc_char( context[11], '(' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[10], context[11], " e.Text", 7 ) )
+  if( ! refalrts::alloc_chars( context[12], context[13], " e.Text", 7 ) )
     return refalrts::cNoMemory;
   refalrts::reinit_char( context[4], ' ' );
   refalrts::reinit_char( context[5], '<' );
@@ -690,10 +696,10 @@ static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[10], context[11] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
   res = refalrts::splice_evar( res, context[0], context[0] );
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
   res = refalrts::splice_evar( res, context[4], context[6] );
   refalrts::use( res );
   return refalrts::cSuccess;

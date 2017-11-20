@@ -1,80 +1,106 @@
+//==============================================================================
+// Предобъявления и определения встроенных функций Рефала-5λ
+//==============================================================================
+
+
+/********************************* REFACTORED *********************************/
+
+// 3. Arg
+
 //FROM Library
-$EXTERN Arg, Add, Sub, Mul, Div, Mod, Chr, Ord, WriteLine, Explode,
-  FOpen, FClose, FReadLine, FWriteLine, IntFromStr, StrFromInt,
-  SymbType, SymbCompare, Implode;
+$EXTERN Arg;
 
-Prout {
-  // В первом приближении достаточно
-  e.Text = <WriteLine e.Text>;
-}
 
-$SWAP __file_handles;
+// 5. Card
 
-Open {
-  s.Mode s.Number e.FileName
-    = <__Open-SwOpened
-        (s.Mode s.Number e.FileName)
-        <__read __file_handles>
-      >;
-}
+//FROM Library
+$EXTERN Card;
 
-__read {
-  s.Swap
-    = <s.Swap> : e.Content
-    = <s.Swap e.Content> e.Content;
-}
 
-__write {
-  s.Swap e.Content
-    = <s.Swap e.Content> : e.OldContent
-    = /* пусто */;
-}
+// 12. Explode
 
-__Open-SwOpened {
-  (s.Mode s.Number e.FileName) e.Handles-B (s.Number s.Handle) e.Handles-E
-    = <FClose s.Handle>
-      <Open s.Mode s.Number e.FileName>;
+//FROM Library
+$EXTERN Explode;
 
-  (s.Mode s.Number) e.Handles
-    = <Open s.Mode s.Number 'REFAL' <Symb s.Number> '.DAT'>;
 
-  (s.Mode s.Number e.FileName) e.Handles
-    = <FOpen s.Mode e.FileName> : s.Handle
-    = <__write __file_handles (s.Number s.Handle) e.Handles>;
-}
+// 14. Get
 
-__handle_for_num {
-  s.Mode s.Number
-    = <__handle_for_num_opened s.Mode s.Number <__read __file_handles>>;
-}
+//FROM Library
+$EXTERN Get;
 
-__handle_for_num_opened {
-  s.Mode s.Number e.Handles-B (s.Number s.Handle) e.Handles-E = s.Handle;
-  s.Mode s.Number e.Handles
-    = <Open s.Mode s.Number> <__handle_for_num s.Mode s.Number>;
-}
 
-Close {
-  s.Number = <__Close-SwOpened s.Number <__read __file_handles>>;
-}
+// 22. Open
 
-__Close-SwOpened {
-  s.Number e.Handles-B (s.Number s.Handle) e.Handles-E
-    = <FClose s.Handle>
-      <__write __file_handles e.Handles-B e.Handles-E>;
-}
+//FROM Library
+$EXTERN Open;
 
-Get {
-  s.Number
-    = <FReadLine <__handle_for_num 'r' s.Number>> : s.Handle e.Line
-    = e.Line;
-}
 
-Putout {
-  s.Number e.Line
-    = <FWriteLine <__handle_for_num 'w' s.Number> e.Line> : s.Handle
-    = /* пусто */;
-}
+// 24. Print
+
+//FROM
+$EXTERN Print;
+
+
+// 25. Prout
+
+//FROM Library
+$EXTERN Prout, Proud, Trout;
+
+
+// 26. Put
+
+//FROM Library
+$EXTERN Put;
+
+
+// 27. Putout
+
+//FROM Library
+$EXTERN Putout;
+
+
+// 33. Type
+
+//FROM Library
+$EXTERN Type;
+
+
+// 51. GetEnv
+
+//FROM Library
+$EXTERN GetEnv;
+
+
+// 54. Close
+
+//FROM Library
+$EXTERN Close;
+
+
+// 55. ExistFile
+
+//FROM Library
+$EXTERN ExistFile;
+
+
+// 59. Explode_Ext
+
+//FROM Library
+$EXTERN Explode_Ext;
+
+
+// 66. Write
+
+//FROM Library
+$EXTERN Write;
+
+
+/******************************* NOT REFACTORED *******************************/
+
+//FROM Library
+$EXTERN Add, Sub, Mul, Div, Mod, Chr, Ord,
+  IntFromStr, StrFromInt,
+  SymbCompare, Implode;
 
 Symb {
   s.Number = <StrFromInt s.Number>;
@@ -173,86 +199,6 @@ __ListOfBuiltin_2 {
     (71 #GetPPID #regular);
 }
 
-Type {
-  s.Symbol e.Tail = <__Type-SwSymbol <SymbType s.Symbol> s.Symbol> e.Tail;
-  (e.Brackets) e.Tail = 'B0' (e.Brackets) e.Tail;
-  /* пусто */ = '*0' /* пусто */;
-}
-
-__Type-SwSymbol {
-  #TypeCharacter s.Symbol
-    = <__Type-SwCharacter
-        ('L'
-          ('u' 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-          ('l' 'abcdefghijklmnopqrstuvwxyz')
-        )
-        ('D' ('0' '0123456789'))
-        ('P' ('l' ' '))
-        s.Symbol <SymbCompare ' ' s.Symbol> <SymbCompare s.Symbol '\x80'>
-      >;
-
-  #TypeIdentifier s.Symbol
-    = <__Type-SwIdentifier s.Symbol <Explode s.Symbol>>;
-
-  #TypeNumber s.Symbol = 'N0' s.Symbol;
-
-  // Остальные типы не поддерживаем
-}
-
-__Type-SwCharacter {
-  e.Types-B
-  (s.Type e.SubTypes-B (s.SubType e.Chars-B s.Char e.Chars-E) e.SubTypes-E)
-  e.Types-E
-  s.Char s.Cmp1 s.Cmp2
-    = s.Type s.SubType s.Char;
-
- e.Types s.Char '<' '<' = 'Pl' s.Char;
- e.Types s.Char s.Cmp1 s.Cmp2 = 'Ol' s.Char;
-}
-
-__fetch { e.Arg s.Func = <s.Func e.Arg>; }
-
-__Type-SwIdentifier {
-  // Повторяем поведение, описанное в refio.c
-  s.Symbol s.First e.Tail
-    = <__fetch
-        <Type s.First>
-        {
-          'L' s.SubType s.First
-            = <__Type-DoSwIdentifier s.Symbol e.Tail>;
-
-          s.Type s.SubType s.First = 'Wq' s.Symbol;
-        }
-      >;
-}
-
-__Type-DoSwIdentifier {
-  s.Symbol s.Next e.Tail
-    = <__fetch
-        <__IdentTail s.Next>
-        {
-          #True = <__Type-DoSwIdentifier s.Symbol e.Tail>;
-          #False = 'Wq' s.Symbol;
-        }
-      >;
-
-  s.Symbol = 'Wi' s.Symbol;
-}
-
-__IdentTail {
-  s.Char
-    = <__fetch
-        <Type s.Char>
-        {
-          'W' s.SubType s.Char^ = #True;
-          'D0' s.Char^ = #True;
-          s.Type s.SubType '-' = #True;
-          s.Type s.SubType '_' = #True;
-          s.Type s.SubType s.Char^ = #False;
-        }
-      >;
-}
-
 Compare {
   s.Num1 s.Num2
     = <{ '<' = '-'; '=' = '0'; '>' = '+'; } <SymbCompare s.Num1 s.Num2>>;
@@ -275,16 +221,11 @@ __Dg-SwExist {
   (e.Key) e.Store = /* пусто */ <__store e.Store>;
 }
 
-Explode_Ext {
-  s.Compound = <Explode s.Compound>;
-}
-
 Implode_Ext {
   e.String = <Implode e.String>;
 }
 
 // Не реализованные пока функции
-$ENUM Card;
 $ENUM Cp;
 $ENUM Dgall;
 $ENUM Divmod;
@@ -292,8 +233,6 @@ $ENUM Implode;
 $ENUM Last;
 $ENUM Lenw;
 $ENUM Lower;
-$ENUM Print;
-$ENUM Put;
 $ENUM Rp;
 $ENUM Step;
 $ENUM Time;
@@ -305,10 +244,8 @@ $ENUM Dn;
 $ENUM Up;
 $ENUM Ev-met;
 $ENUM Residue;
-$ENUM GetEnv;
 $ENUM System;
 $ENUM Exit;
-$ENUM ExistFile;
 $ENUM GetCurrentDirectory;
 $ENUM RemoveFile;
 $ENUM TimeElapsed;
@@ -316,7 +253,6 @@ $ENUM DeSysfun;
 $ENUM XMLParse;
 $ENUM Random;
 $ENUM RandomDigit;
-$ENUM Write;
 $ENUM SizeOf;
 $ENUM GetPID;
 $ENUM int4fab_1;
