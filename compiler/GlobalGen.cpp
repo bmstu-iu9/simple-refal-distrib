@@ -27,7 +27,7 @@ static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
 static refalrts::ExternalReference ref_Dec("Dec", 0U, 0U);
-static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
+static refalrts::ExternalReference ref_TermCompare("TermCompare", 0U, 0U);
 static refalrts::ExternalReference ref_Min("Min", 0U, 0U);
 static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
@@ -36,58 +36,58 @@ static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
 static refalrts::ExternalReference ref_FastGenm_Terms("FastGen-Terms", 0U, 0U);
 static refalrts::ExternalReference ref_CreateFastGen("CreateFastGen", 0U, 0U);
 static refalrts::ExternalReference ref_TextFromExpr("TextFromExpr", 0U, 0U);
-static refalrts::ExternalReference ref_gen_CreateGlobalGen_L1("CreateGlobalGen\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_CreateGlobalGen_L2("CreateGlobalGen\\2", 1539404379U, 1208821830U);
+static refalrts::ExternalReference ref_gen_CreateGlobalGen_L1("CreateGlobalGen\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_CreateGlobalGen_L2("CreateGlobalGen\\2", 3646879579U, 4124349541U);
 static refalrts::ExternalReference ref_CreateGlobalGen("CreateGlobalGen", 0U, 0U);
-static refalrts::ExternalReference ref_gen_InspectFastGen_S1L1("InspectFastGen$1\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_InspectFastGen("InspectFastGen", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_ReplacmentsCounter_S1L1("ReplacmentsCounter$1\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ReplacmentsCounter("ReplacmentsCounter", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_PrepRep("PrepRep", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_InList_S2L1("InList$2\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_InList("InList", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GlobalGen_S2L1("GlobalGen$2\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GlobalGen("GlobalGen", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L1("GlobalGen-Aux\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L2L1("GlobalGen-Aux\\2\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L2("GlobalGen-Aux\\2", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GlobalGenm_Aux("GlobalGen-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_ComputePossibleClasses_L1("ComputePossibleClasses\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ComputePossibleClasses("ComputePossibleClasses", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_ComputeClasses_L1("ComputeClasses\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ComputeClasses("ComputeClasses", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetMinKMN("GetMinKMN", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_ComputePossibleClassesm_Aux_S3L1("ComputePossibleClasses-Aux$3\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ComputePossibleClassesm_Aux("ComputePossibleClasses-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GetClasses_L1("GetClasses\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetClasses("GetClasses", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ComputeClassK("ComputeClassK", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ComputeClassMN("ComputeClassMN", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_Superposition("Superposition", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_CreateSuperpositionm_Aux("CreateSuperposition-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_CreateSuperposition("CreateSuperposition", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_Generalizationm_Aux("Generalization-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_Generalization("Generalization", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_CalcComplexitym_aux("CalcComplexity-aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_CalcComplexity("CalcComplexity", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_GetComplex_S1L1("GetComplex$1\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetComplex("GetComplex", 1539404379U, 1208821830U);
+static refalrts::ExternalReference ref_gen_InspectFastGen_S1L1("InspectFastGen$1\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_InspectFastGen("InspectFastGen", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_ReplacmentsCounter_S1L1("ReplacmentsCounter$1\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ReplacmentsCounter("ReplacmentsCounter", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_PrepRep("PrepRep", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_InList_S2L1("InList$2\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_InList("InList", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GlobalGen_S2L1("GlobalGen$2\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GlobalGen("GlobalGen", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L1("GlobalGen-Aux\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L2L1("GlobalGen-Aux\\2\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GlobalGenm_Aux_L2("GlobalGen-Aux\\2", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GlobalGenm_Aux("GlobalGen-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_ComputePossibleClasses_L1("ComputePossibleClasses\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ComputePossibleClasses("ComputePossibleClasses", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_ComputeClasses_L1("ComputeClasses\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ComputeClasses("ComputeClasses", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetMinKMN("GetMinKMN", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_ComputePossibleClassesm_Aux_S3L1("ComputePossibleClasses-Aux$3\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ComputePossibleClassesm_Aux("ComputePossibleClasses-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GetClasses_L1("GetClasses\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetClasses("GetClasses", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ComputeClassK("ComputeClassK", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ComputeClassMN("ComputeClassMN", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_Superposition("Superposition", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_CreateSuperpositionm_Aux("CreateSuperposition-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_CreateSuperposition("CreateSuperposition", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_Generalizationm_Aux("Generalization-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_Generalization("Generalization", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_CalcComplexitym_aux("CalcComplexity-aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_CalcComplexity("CalcComplexity", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_GetComplex_S1L1("GetComplex$1\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetComplex("GetComplex", 3646879579U, 4124349541U);
 static refalrts::ExternalReference ref_PatternComment("PatternComment", 0U, 0U);
-static refalrts::ExternalReference ref_gen_PatternCommentRec_L1("PatternCommentRec\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_PatternCommentRec("PatternCommentRec", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ModeFromTag("ModeFromTag", 1539404379U, 1208821830U);
+static refalrts::ExternalReference ref_gen_PatternCommentRec_L1("PatternCommentRec\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_PatternCommentRec("PatternCommentRec", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ModeFromTag("ModeFromTag", 3646879579U, 4124349541U);
 static refalrts::ExternalReference ref_ReverseGen("ReverseGen", 0U, 0U);
-static refalrts::ExternalReference ref_ReversePattern("ReversePattern", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_ReversePatternm_Aux_S6L1("ReversePattern-Aux$6\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_ReversePatternm_Aux("ReversePattern-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_SplitGen_S2L1("SplitGen$2\\1", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_gen_SplitGen_S2L2("SplitGen$2\\2", 1539404379U, 1208821830U);
+static refalrts::ExternalReference ref_ReversePattern("ReversePattern", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_ReversePatternm_Aux_S6L1("ReversePattern-Aux$6\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_ReversePatternm_Aux("ReversePattern-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_SplitGen_S2L1("SplitGen$2\\1", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_gen_SplitGen_S2L2("SplitGen$2\\2", 3646879579U, 4124349541U);
 static refalrts::ExternalReference ref_SplitGen("SplitGen", 0U, 0U);
-static refalrts::ExternalReference ref_SplitGenm_Empty("SplitGen-Empty", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_CreateIndexes("CreateIndexes", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetGeneralization("GetGeneralization", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetReplacementm_Aux("GetReplacement-Aux", 1539404379U, 1208821830U);
-static refalrts::ExternalReference ref_GetReplacement("GetReplacement", 1539404379U, 1208821830U);
+static refalrts::ExternalReference ref_SplitGenm_Empty("SplitGen-Empty", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_CreateIndexes("CreateIndexes", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetGeneralization("GetGeneralization", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetReplacementm_Aux("GetReplacement-Aux", 3646879579U, 4124349541U);
+static refalrts::ExternalReference ref_GetReplacement("GetReplacement", 3646879579U, 4124349541U);
 
 static refalrts::FnResult func_gen_CreateGlobalGen_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -140,7 +140,7 @@ static refalrts::FnResult func_gen_CreateGlobalGen_L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CreateGlobalGen_L1("CreateGlobalGen\\1", 1539404379U, 1208821830U, func_gen_CreateGlobalGen_L1);
+static refalrts::NativeReference nat_ref_gen_CreateGlobalGen_L1("CreateGlobalGen\\1", 3646879579U, 4124349541U, func_gen_CreateGlobalGen_L1);
 
 static refalrts::FnResult func_gen_CreateGlobalGen_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -192,7 +192,7 @@ static refalrts::FnResult func_gen_CreateGlobalGen_L2(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CreateGlobalGen_L2("CreateGlobalGen\\2", 1539404379U, 1208821830U, func_gen_CreateGlobalGen_L2);
+static refalrts::NativeReference nat_ref_gen_CreateGlobalGen_L2("CreateGlobalGen\\2", 3646879579U, 4124349541U, func_gen_CreateGlobalGen_L2);
 
 static refalrts::FnResult func_CreateGlobalGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -296,7 +296,7 @@ static refalrts::FnResult func_gen_InspectFastGen_S1L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_InspectFastGen_S1L1("InspectFastGen$1\\1", 1539404379U, 1208821830U, func_gen_InspectFastGen_S1L1);
+static refalrts::NativeReference nat_ref_gen_InspectFastGen_S1L1("InspectFastGen$1\\1", 3646879579U, 4124349541U, func_gen_InspectFastGen_S1L1);
 
 static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -544,7 +544,7 @@ static refalrts::FnResult func_InspectFastGen(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_InspectFastGen("InspectFastGen", 1539404379U, 1208821830U, func_InspectFastGen);
+static refalrts::NativeReference nat_ref_InspectFastGen("InspectFastGen", 3646879579U, 4124349541U, func_InspectFastGen);
 
 static refalrts::FnResult func_gen_ReplacmentsCounter_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -668,7 +668,7 @@ static refalrts::FnResult func_gen_ReplacmentsCounter_S1L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReplacmentsCounter_S1L1("ReplacmentsCounter$1\\1", 1539404379U, 1208821830U, func_gen_ReplacmentsCounter_S1L1);
+static refalrts::NativeReference nat_ref_gen_ReplacmentsCounter_S1L1("ReplacmentsCounter$1\\1", 3646879579U, 4124349541U, func_gen_ReplacmentsCounter_S1L1);
 
 static refalrts::FnResult func_ReplacmentsCounter(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -804,7 +804,7 @@ static refalrts::FnResult func_ReplacmentsCounter(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReplacmentsCounter("ReplacmentsCounter", 1539404379U, 1208821830U, func_ReplacmentsCounter);
+static refalrts::NativeReference nat_ref_ReplacmentsCounter("ReplacmentsCounter", 3646879579U, 4124349541U, func_ReplacmentsCounter);
 
 static refalrts::FnResult func_PrepRep(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1054,7 +1054,7 @@ static refalrts::FnResult func_PrepRep(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrepRep("PrepRep", 1539404379U, 1208821830U, func_PrepRep);
+static refalrts::NativeReference nat_ref_PrepRep("PrepRep", 3646879579U, 4124349541U, func_PrepRep);
 
 static refalrts::FnResult func_gen_InList_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1143,7 +1143,7 @@ static refalrts::FnResult func_gen_InList_S2L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_InList_S2L1("InList$2\\1", 1539404379U, 1208821830U, func_gen_InList_S2L1);
+static refalrts::NativeReference nat_ref_gen_InList_S2L1("InList$2\\1", 3646879579U, 4124349541U, func_gen_InList_S2L1);
 
 static refalrts::FnResult func_InList(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1217,14 +1217,14 @@ static refalrts::FnResult func_InList(refalrts::Iter arg_begin, refalrts::Iter a
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </19 & Fetch/20 </21 & Compare/22 (/23 Tile{ AsIs: t.ListElem#1/17 } )/24 (/25 e.Elem#1/13/26 )/28 >/29 </30 Tile{ HalfReuse: & @create_closure@/0 Reuse: & InList$2\1/4 AsIs: (/7 AsIs: e.Elem#1/13 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.List#1/15 } )/31 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </19 & Fetch/20 </21 & TermCompare/22 (/23 Tile{ AsIs: t.ListElem#1/17 } )/24 (/25 e.Elem#1/13/26 )/28 >/29 </30 Tile{ HalfReuse: & @create_closure@/0 Reuse: & InList$2\1/4 AsIs: (/7 AsIs: e.Elem#1/13 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.List#1/15 } )/31 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[19] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[20], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[22], ref_Compare.ref.function ) )
+  if( ! refalrts::alloc_name( context[22], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[23] ) )
     return refalrts::cNoMemory;
@@ -1268,7 +1268,7 @@ static refalrts::FnResult func_InList(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_InList("InList", 1539404379U, 1208821830U, func_InList);
+static refalrts::NativeReference nat_ref_InList("InList", 3646879579U, 4124349541U, func_InList);
 
 static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1453,7 +1453,7 @@ static refalrts::FnResult func_gen_GlobalGen_S2L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GlobalGen_S2L1("GlobalGen$2\\1", 1539404379U, 1208821830U, func_gen_GlobalGen_S2L1);
+static refalrts::NativeReference nat_ref_gen_GlobalGen_S2L1("GlobalGen$2\\1", 3646879579U, 4124349541U, func_gen_GlobalGen_S2L1);
 
 static refalrts::FnResult func_GlobalGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1515,7 +1515,7 @@ static refalrts::FnResult func_GlobalGen(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GlobalGen("GlobalGen", 1539404379U, 1208821830U, func_GlobalGen);
+static refalrts::NativeReference nat_ref_GlobalGen("GlobalGen", 3646879579U, 4124349541U, func_GlobalGen);
 
 static refalrts::FnResult func_gen_GlobalGenm_Aux_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1559,7 +1559,7 @@ static refalrts::FnResult func_gen_GlobalGenm_Aux_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L1("GlobalGen-Aux\\1", 1539404379U, 1208821830U, func_gen_GlobalGenm_Aux_L1);
+static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L1("GlobalGen-Aux\\1", 3646879579U, 4124349541U, func_gen_GlobalGenm_Aux_L1);
 
 static refalrts::FnResult func_gen_GlobalGenm_Aux_L2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1610,7 +1610,7 @@ static refalrts::FnResult func_gen_GlobalGenm_Aux_L2L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L2L1("GlobalGen-Aux\\2\\1", 1539404379U, 1208821830U, func_gen_GlobalGenm_Aux_L2L1);
+static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L2L1("GlobalGen-Aux\\2\\1", 3646879579U, 4124349541U, func_gen_GlobalGenm_Aux_L2L1);
 
 static refalrts::FnResult func_gen_GlobalGenm_Aux_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1680,7 +1680,7 @@ static refalrts::FnResult func_gen_GlobalGenm_Aux_L2(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L2("GlobalGen-Aux\\2", 1539404379U, 1208821830U, func_gen_GlobalGenm_Aux_L2);
+static refalrts::NativeReference nat_ref_gen_GlobalGenm_Aux_L2("GlobalGen-Aux\\2", 3646879579U, 4124349541U, func_gen_GlobalGenm_Aux_L2);
 
 static refalrts::FnResult func_GlobalGenm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1733,7 +1733,7 @@ static refalrts::FnResult func_GlobalGenm_Aux(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GlobalGenm_Aux("GlobalGen-Aux", 1539404379U, 1208821830U, func_GlobalGenm_Aux);
+static refalrts::NativeReference nat_ref_GlobalGenm_Aux("GlobalGen-Aux", 3646879579U, 4124349541U, func_GlobalGenm_Aux);
 
 static refalrts::FnResult func_gen_ComputePossibleClasses_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1775,7 +1775,7 @@ static refalrts::FnResult func_gen_ComputePossibleClasses_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ComputePossibleClasses_L1("ComputePossibleClasses\\1", 1539404379U, 1208821830U, func_gen_ComputePossibleClasses_L1);
+static refalrts::NativeReference nat_ref_gen_ComputePossibleClasses_L1("ComputePossibleClasses\\1", 3646879579U, 4124349541U, func_gen_ComputePossibleClasses_L1);
 
 static refalrts::FnResult func_ComputePossibleClasses(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1820,7 +1820,7 @@ static refalrts::FnResult func_ComputePossibleClasses(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ComputePossibleClasses("ComputePossibleClasses", 1539404379U, 1208821830U, func_ComputePossibleClasses);
+static refalrts::NativeReference nat_ref_ComputePossibleClasses("ComputePossibleClasses", 3646879579U, 4124349541U, func_ComputePossibleClasses);
 
 static refalrts::FnResult func_gen_ComputeClasses_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1931,7 +1931,7 @@ static refalrts::FnResult func_gen_ComputeClasses_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ComputeClasses_L1("ComputeClasses\\1", 1539404379U, 1208821830U, func_gen_ComputeClasses_L1);
+static refalrts::NativeReference nat_ref_gen_ComputeClasses_L1("ComputeClasses\\1", 3646879579U, 4124349541U, func_gen_ComputeClasses_L1);
 
 static refalrts::FnResult func_ComputeClasses(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1964,7 +1964,7 @@ static refalrts::FnResult func_ComputeClasses(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ComputeClasses("ComputeClasses", 1539404379U, 1208821830U, func_ComputeClasses);
+static refalrts::NativeReference nat_ref_ComputeClasses("ComputeClasses", 3646879579U, 4124349541U, func_ComputeClasses);
 
 static refalrts::FnResult func_GetMinKMN(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2127,7 +2127,7 @@ static refalrts::FnResult func_GetMinKMN(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetMinKMN("GetMinKMN", 1539404379U, 1208821830U, func_GetMinKMN);
+static refalrts::NativeReference nat_ref_GetMinKMN("GetMinKMN", 3646879579U, 4124349541U, func_GetMinKMN);
 
 static refalrts::FnResult func_gen_ComputePossibleClassesm_Aux_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2588,7 +2588,7 @@ static refalrts::FnResult func_gen_ComputePossibleClassesm_Aux_S3L1(refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ComputePossibleClassesm_Aux_S3L1("ComputePossibleClasses-Aux$3\\1", 1539404379U, 1208821830U, func_gen_ComputePossibleClassesm_Aux_S3L1);
+static refalrts::NativeReference nat_ref_gen_ComputePossibleClassesm_Aux_S3L1("ComputePossibleClasses-Aux$3\\1", 3646879579U, 4124349541U, func_gen_ComputePossibleClassesm_Aux_S3L1);
 
 static refalrts::FnResult func_ComputePossibleClassesm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2675,8 +2675,8 @@ static refalrts::FnResult func_ComputePossibleClassesm_Aux(refalrts::Iter arg_be
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & Compare/12 Tile{ AsIs: s.K#1/9 } </13 & Add/14 Tile{ AsIs: s.M#1/10 AsIs: s.N#1/11 HalfReuse: >/8 AsIs: >/1 } </15 & Compare/16 s.K#1/9/17 s.M#1/10/18 >/19 </20 & Compare/21 s.K#1/9/22 s.N#1/11/23 >/24 </25 & @create_closure@/26 & ComputePossibleClasses-Aux$3\1/27 s.M#1/10/28 s.N#1/11/29 s.K#1/9/30 >/31 >/32 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[12], ref_Compare.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & TermCompare/12 Tile{ AsIs: s.K#1/9 } </13 & Add/14 Tile{ AsIs: s.M#1/10 AsIs: s.N#1/11 HalfReuse: >/8 AsIs: >/1 } </15 & TermCompare/16 s.K#1/9/17 s.M#1/10/18 >/19 </20 & TermCompare/21 s.K#1/9/22 s.N#1/11/23 >/24 </25 & @create_closure@/26 & ComputePossibleClasses-Aux$3\1/27 s.M#1/10/28 s.N#1/11/29 s.K#1/9/30 >/31 >/32 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[12], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
@@ -2684,7 +2684,7 @@ static refalrts::FnResult func_ComputePossibleClassesm_Aux(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_Compare.ref.function ) )
+  if( ! refalrts::alloc_name( context[16], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[17], context[9]))
     return refalrts::cNoMemory;
@@ -2694,7 +2694,7 @@ static refalrts::FnResult func_ComputePossibleClassesm_Aux(refalrts::Iter arg_be
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[21], ref_Compare.ref.function ) )
+  if( ! refalrts::alloc_name( context[21], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[22], context[9]))
     return refalrts::cNoMemory;
@@ -2745,7 +2745,7 @@ static refalrts::FnResult func_ComputePossibleClassesm_Aux(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ComputePossibleClassesm_Aux("ComputePossibleClasses-Aux", 1539404379U, 1208821830U, func_ComputePossibleClassesm_Aux);
+static refalrts::NativeReference nat_ref_ComputePossibleClassesm_Aux("ComputePossibleClasses-Aux", 3646879579U, 4124349541U, func_ComputePossibleClassesm_Aux);
 
 static refalrts::FnResult func_gen_GetClasses_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2844,7 +2844,7 @@ static refalrts::FnResult func_gen_GetClasses_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GetClasses_L1("GetClasses\\1", 1539404379U, 1208821830U, func_gen_GetClasses_L1);
+static refalrts::NativeReference nat_ref_gen_GetClasses_L1("GetClasses\\1", 3646879579U, 4124349541U, func_gen_GetClasses_L1);
 
 static refalrts::FnResult func_GetClasses(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2871,7 +2871,7 @@ static refalrts::FnResult func_GetClasses(refalrts::Iter arg_begin, refalrts::It
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </8 & Fetch/9 Tile{ AsIs: </0 Reuse: & Compare/4 AsIs: s.M#1/5 AsIs: s.MaxM#1/6 } >/10 </11 & @create_closure@/12 & GetClasses\1/13 s.M#1/5/14 Tile{ AsIs: s.MplusN#1/7 } s.MaxM#1/6/15 >/16 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </8 & Fetch/9 Tile{ AsIs: </0 Reuse: & TermCompare/4 AsIs: s.M#1/5 AsIs: s.MaxM#1/6 } >/10 </11 & @create_closure@/12 & GetClasses\1/13 s.M#1/5/14 Tile{ AsIs: s.MplusN#1/7 } s.MaxM#1/6/15 >/16 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[9], ref_Fetch.ref.function ) )
@@ -2890,7 +2890,7 @@ static refalrts::FnResult func_GetClasses(refalrts::Iter arg_begin, refalrts::It
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Compare.ref.function );
+  refalrts::update_name( context[4], ref_TermCompare.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[16] );
@@ -2909,7 +2909,7 @@ static refalrts::FnResult func_GetClasses(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetClasses("GetClasses", 1539404379U, 1208821830U, func_GetClasses);
+static refalrts::NativeReference nat_ref_GetClasses("GetClasses", 3646879579U, 4124349541U, func_GetClasses);
 
 static refalrts::FnResult func_ComputeClassK(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2984,7 +2984,7 @@ static refalrts::FnResult func_ComputeClassK(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ComputeClassK("ComputeClassK", 1539404379U, 1208821830U, func_ComputeClassK);
+static refalrts::NativeReference nat_ref_ComputeClassK("ComputeClassK", 3646879579U, 4124349541U, func_ComputeClassK);
 
 static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3227,7 +3227,7 @@ static refalrts::FnResult func_ComputeClassMN(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ComputeClassMN("ComputeClassMN", 1539404379U, 1208821830U, func_ComputeClassMN);
+static refalrts::NativeReference nat_ref_ComputeClassMN("ComputeClassMN", 3646879579U, 4124349541U, func_ComputeClassMN);
 
 static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3894,7 +3894,7 @@ static refalrts::FnResult func_Superposition(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Superposition("Superposition", 1539404379U, 1208821830U, func_Superposition);
+static refalrts::NativeReference nat_ref_Superposition("Superposition", 3646879579U, 4124349541U, func_Superposition);
 
 static refalrts::FnResult func_CreateSuperpositionm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4008,7 +4008,7 @@ static refalrts::FnResult func_CreateSuperpositionm_Aux(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateSuperpositionm_Aux("CreateSuperposition-Aux", 1539404379U, 1208821830U, func_CreateSuperpositionm_Aux);
+static refalrts::NativeReference nat_ref_CreateSuperpositionm_Aux("CreateSuperposition-Aux", 3646879579U, 4124349541U, func_CreateSuperpositionm_Aux);
 
 static refalrts::FnResult func_CreateSuperposition(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4128,7 +4128,7 @@ static refalrts::FnResult func_CreateSuperposition(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateSuperposition("CreateSuperposition", 1539404379U, 1208821830U, func_CreateSuperposition);
+static refalrts::NativeReference nat_ref_CreateSuperposition("CreateSuperposition", 3646879579U, 4124349541U, func_CreateSuperposition);
 
 static refalrts::FnResult func_Generalizationm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4334,7 +4334,7 @@ static refalrts::FnResult func_Generalizationm_Aux(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Generalizationm_Aux("Generalization-Aux", 1539404379U, 1208821830U, func_Generalizationm_Aux);
+static refalrts::NativeReference nat_ref_Generalizationm_Aux("Generalization-Aux", 3646879579U, 4124349541U, func_Generalizationm_Aux);
 
 static refalrts::FnResult func_Generalization(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4447,7 +4447,7 @@ static refalrts::FnResult func_Generalization(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Generalization("Generalization", 1539404379U, 1208821830U, func_Generalization);
+static refalrts::NativeReference nat_ref_Generalization("Generalization", 3646879579U, 4124349541U, func_Generalization);
 
 static refalrts::FnResult func_CalcComplexitym_aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4761,7 +4761,7 @@ static refalrts::FnResult func_CalcComplexitym_aux(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcComplexitym_aux("CalcComplexity-aux", 1539404379U, 1208821830U, func_CalcComplexitym_aux);
+static refalrts::NativeReference nat_ref_CalcComplexitym_aux("CalcComplexity-aux", 3646879579U, 4124349541U, func_CalcComplexitym_aux);
 
 static refalrts::FnResult func_CalcComplexity(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4844,7 +4844,7 @@ static refalrts::FnResult func_CalcComplexity(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcComplexity("CalcComplexity", 1539404379U, 1208821830U, func_CalcComplexity);
+static refalrts::NativeReference nat_ref_CalcComplexity("CalcComplexity", 3646879579U, 4124349541U, func_CalcComplexity);
 
 static refalrts::FnResult func_gen_GetComplex_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4963,7 +4963,7 @@ static refalrts::FnResult func_gen_GetComplex_S1L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GetComplex_S1L1("GetComplex$1\\1", 1539404379U, 1208821830U, func_gen_GetComplex_S1L1);
+static refalrts::NativeReference nat_ref_gen_GetComplex_S1L1("GetComplex$1\\1", 3646879579U, 4124349541U, func_gen_GetComplex_S1L1);
 
 static refalrts::FnResult func_GetComplex(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5014,8 +5014,8 @@ static refalrts::FnResult func_GetComplex(refalrts::Iter arg_begin, refalrts::It
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & Compare/19 Tile{ AsIs: s.CurComplexity#1/9 } Tile{ AsIs: s.Complexity#1/18 } >/20 </21 & @create_closure@/22 & GetComplex$1\1/23 s.CurComplexity#1/9/24 (/25 Tile{ AsIs: e.CurBody#1/10 } Tile{ AsIs: )/8 AsIs: (/16 } Tile{ AsIs: e.Tail#1/12 } Tile{ AsIs: )/17 } s.Complexity#1/18/26 (/27 Tile{ AsIs: e.Body#1/14 } )/28 >/29 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[19], ref_Compare.ref.function ) )
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & TermCompare/19 Tile{ AsIs: s.CurComplexity#1/9 } Tile{ AsIs: s.Complexity#1/18 } >/20 </21 & @create_closure@/22 & GetComplex$1\1/23 s.CurComplexity#1/9/24 (/25 Tile{ AsIs: e.CurBody#1/10 } Tile{ AsIs: )/8 AsIs: (/16 } Tile{ AsIs: e.Tail#1/12 } Tile{ AsIs: )/17 } s.Complexity#1/18/26 (/27 Tile{ AsIs: e.Body#1/14 } )/28 >/29 Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_name( context[19], ref_TermCompare.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[20] ) )
       return refalrts::cNoMemory;
@@ -5090,7 +5090,7 @@ static refalrts::FnResult func_GetComplex(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetComplex("GetComplex", 1539404379U, 1208821830U, func_GetComplex);
+static refalrts::NativeReference nat_ref_GetComplex("GetComplex", 3646879579U, 4124349541U, func_GetComplex);
 
 static refalrts::FnResult func_PatternComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5625,7 +5625,7 @@ static refalrts::FnResult func_gen_PatternCommentRec_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatternCommentRec_L1("PatternCommentRec\\1", 1539404379U, 1208821830U, func_gen_PatternCommentRec_L1);
+static refalrts::NativeReference nat_ref_gen_PatternCommentRec_L1("PatternCommentRec\\1", 3646879579U, 4124349541U, func_gen_PatternCommentRec_L1);
 
 static refalrts::FnResult func_PatternCommentRec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5658,7 +5658,7 @@ static refalrts::FnResult func_PatternCommentRec(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatternCommentRec("PatternCommentRec", 1539404379U, 1208821830U, func_PatternCommentRec);
+static refalrts::NativeReference nat_ref_PatternCommentRec("PatternCommentRec", 3646879579U, 4124349541U, func_PatternCommentRec);
 
 static refalrts::FnResult func_ModeFromTag(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5729,7 +5729,7 @@ static refalrts::FnResult func_ModeFromTag(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ModeFromTag("ModeFromTag", 1539404379U, 1208821830U, func_ModeFromTag);
+static refalrts::NativeReference nat_ref_ModeFromTag("ModeFromTag", 3646879579U, 4124349541U, func_ModeFromTag);
 
 static refalrts::FnResult func_ReverseGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6088,7 +6088,7 @@ static refalrts::FnResult func_ReversePattern(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReversePattern("ReversePattern", 1539404379U, 1208821830U, func_ReversePattern);
+static refalrts::NativeReference nat_ref_ReversePattern("ReversePattern", 3646879579U, 4124349541U, func_ReversePattern);
 
 static refalrts::FnResult func_gen_ReversePatternm_Aux_S6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6159,7 +6159,7 @@ static refalrts::FnResult func_gen_ReversePatternm_Aux_S6L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReversePatternm_Aux_S6L1("ReversePattern-Aux$6\\1", 1539404379U, 1208821830U, func_gen_ReversePatternm_Aux_S6L1);
+static refalrts::NativeReference nat_ref_gen_ReversePatternm_Aux_S6L1("ReversePattern-Aux$6\\1", 3646879579U, 4124349541U, func_gen_ReversePatternm_Aux_S6L1);
 
 static refalrts::FnResult func_ReversePatternm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6645,7 +6645,7 @@ static refalrts::FnResult func_ReversePatternm_Aux(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReversePatternm_Aux("ReversePattern-Aux", 1539404379U, 1208821830U, func_ReversePatternm_Aux);
+static refalrts::NativeReference nat_ref_ReversePatternm_Aux("ReversePattern-Aux", 3646879579U, 4124349541U, func_ReversePatternm_Aux);
 
 static refalrts::FnResult func_gen_SplitGen_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6685,7 +6685,7 @@ static refalrts::FnResult func_gen_SplitGen_S2L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SplitGen_S2L1("SplitGen$2\\1", 1539404379U, 1208821830U, func_gen_SplitGen_S2L1);
+static refalrts::NativeReference nat_ref_gen_SplitGen_S2L1("SplitGen$2\\1", 3646879579U, 4124349541U, func_gen_SplitGen_S2L1);
 
 static refalrts::FnResult func_gen_SplitGen_S2L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6730,7 +6730,7 @@ static refalrts::FnResult func_gen_SplitGen_S2L2(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SplitGen_S2L2("SplitGen$2\\2", 1539404379U, 1208821830U, func_gen_SplitGen_S2L2);
+static refalrts::NativeReference nat_ref_gen_SplitGen_S2L2("SplitGen$2\\2", 3646879579U, 4124349541U, func_gen_SplitGen_S2L2);
 
 static refalrts::FnResult func_SplitGen(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6895,7 +6895,7 @@ static refalrts::FnResult func_SplitGenm_Empty(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SplitGenm_Empty("SplitGen-Empty", 1539404379U, 1208821830U, func_SplitGenm_Empty);
+static refalrts::NativeReference nat_ref_SplitGenm_Empty("SplitGen-Empty", 3646879579U, 4124349541U, func_SplitGenm_Empty);
 
 static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7360,7 +7360,7 @@ static refalrts::FnResult func_CreateIndexes(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateIndexes("CreateIndexes", 1539404379U, 1208821830U, func_CreateIndexes);
+static refalrts::NativeReference nat_ref_CreateIndexes("CreateIndexes", 3646879579U, 4124349541U, func_CreateIndexes);
 
 static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7659,7 +7659,7 @@ static refalrts::FnResult func_GetGeneralization(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetGeneralization("GetGeneralization", 1539404379U, 1208821830U, func_GetGeneralization);
+static refalrts::NativeReference nat_ref_GetGeneralization("GetGeneralization", 3646879579U, 4124349541U, func_GetGeneralization);
 
 static refalrts::FnResult func_GetReplacementm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -8049,7 +8049,7 @@ static refalrts::FnResult func_GetReplacementm_Aux(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetReplacementm_Aux("GetReplacement-Aux", 1539404379U, 1208821830U, func_GetReplacementm_Aux);
+static refalrts::NativeReference nat_ref_GetReplacementm_Aux("GetReplacement-Aux", 3646879579U, 4124349541U, func_GetReplacementm_Aux);
 
 static refalrts::FnResult func_GetReplacement(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -8090,7 +8090,7 @@ static refalrts::FnResult func_GetReplacement(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetReplacement("GetReplacement", 1539404379U, 1208821830U, func_GetReplacement);
+static refalrts::NativeReference nat_ref_GetReplacement("GetReplacement", 3646879579U, 4124349541U, func_GetReplacement);
 
 
 //End of file

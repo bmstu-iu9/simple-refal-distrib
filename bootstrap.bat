@@ -1,7 +1,7 @@
 @echo off
 setlocal
   mkdir bin >NUL 2>NUL
-  call c-plus-plus.conf.bat
+  call scripts\load-config.bat || exit /b 1
 
   %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
 

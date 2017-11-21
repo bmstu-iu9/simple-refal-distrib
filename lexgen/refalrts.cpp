@@ -551,10 +551,7 @@ void refalrts::call_pointers(
 bool refalrts::svar_term(
   refalrts::Iter /* svar */, refalrts::Iter pos
 ) {
-  if (! is_open_bracket(pos)) {
-    return true;
-  }
-  return false;
+  return ! is_open_bracket(pos);
 }
 
 bool refalrts::svar_left(
@@ -1005,7 +1002,7 @@ void reset_allocator();
 bool alloc_node(Iter& node);
 Iter free_ptr();
 void splice_to_freelist(Iter begin, Iter end);
-void splice_from_freelist(Iter pos);
+Iter splice_from_freelist(Iter pos);
 
 } // namespace allocator
 
@@ -1526,8 +1523,8 @@ extern void refalrts::splice_to_freelist_open(
   }
 }
 
-void refalrts::splice_from_freelist(refalrts::Iter pos) {
-  allocator::splice_from_freelist(pos);
+refalrts::Iter refalrts::splice_from_freelist(refalrts::Iter pos) {
+  return allocator::splice_from_freelist(pos);
 }
 
 namespace {
@@ -1814,9 +1811,11 @@ void refalrts::allocator::splice_to_freelist(
   g_free_ptr = list_splice(g_free_ptr, begin, end);
 }
 
-void refalrts::allocator::splice_from_freelist(refalrts::Iter pos) {
+refalrts::Iter refalrts::allocator::splice_from_freelist(refalrts::Iter pos) {
   if (g_free_ptr != g_first_marker.next) {
-    list_splice(pos, g_first_marker.next, g_free_ptr->prev);
+    return list_splice(pos, g_first_marker.next, g_free_ptr->prev);
+  } else {
+    return pos;
   }
 }
 
@@ -4377,10 +4376,6 @@ bool refalrts::debugger::RefalDebugger::quotation_mark_parse(
         write_byte(&from, &out, &str_p, '\v');
         continue;
 
-      case 'e':
-        write_byte(&from, &out, &str_p, '\e');
-        continue;
-
       case '"':
         write_byte(&from, &out, &str_p, '"');
         continue;
@@ -4389,7 +4384,7 @@ bool refalrts::debugger::RefalDebugger::quotation_mark_parse(
         {
           int hexval = parse2hex((unsigned char *)str_p + 2);
           if (hexval == cBadHexVal) {
-            return -1;
+            return false;
           }
           memmove(out, from, str_p - from);
           out += (str_p - from) + 1;

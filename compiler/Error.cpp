@@ -230,7 +230,7 @@ static refalrts::FnResult func_ELm_AddErrorAt(refalrts::Iter arg_begin, refalrts
     context[19] = context[6];
     context[20] = context[2];
     context[21] = context[3];
-    if( ! refalrts::svar_term( context[22], context[14] ) )
+    if( ! refalrts::svar_term( context[14], context[14] ) )
       continue;
     // closed e.FileName#1 as range 16
     // closed e.Errors#1 as range 18

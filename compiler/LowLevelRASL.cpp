@@ -74,7 +74,7 @@ static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
+static refalrts::ExternalReference ref_TermCompare("TermCompare", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_DelAccumulator("DelAccumulator", 0U, 0U);
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
@@ -83,48 +83,48 @@ static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
 static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
 static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U);
 static refalrts::ExternalReference ref_DisplayName("DisplayName", 0U, 0U);
-static refalrts::ExternalReference ref_gen_LowLevelRASL_L1("LowLevelRASL\\1", 597504055U, 1900162155U);
+static refalrts::ExternalReference ref_gen_LowLevelRASL_L1("LowLevelRASL\\1", 1810499389U, 1200846560U);
 static refalrts::ExternalReference ref_LowLevelRASL("LowLevelRASL", 0U, 0U);
-static refalrts::ExternalReference ref_Canonize("Canonize", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_CalcDigest("CalcDigest", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_HashFuncName("HashFuncName", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_CharFromScopeClass("CharFromScopeClass", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_MarkFunctionGenMode("MarkFunctionGenMode", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_LowLevelRASLm_RASL_L1("LowLevelRASL-RASL\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_LowLevelRASLm_RASL("LowLevelRASL-RASL", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_OverflowFailure("OverflowFailure", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ClassifyItemsm_RASL_S1L1("ClassifyItems-RASL$1\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ClassifyItemsm_RASL_S1L2("ClassifyItems-RASL$1\\2", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_ClassifyItemsm_RASL("ClassifyItems-RASL", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_RemoveDebugInfo("RemoveDebugInfo", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_RemoveDebugInfoRec("RemoveDebugInfoRec", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_ConvertInterpretCommands("ConvertInterpretCommands", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_Lengthm_T("Length-T", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_DoLength("DoLength", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S1L1("ConvertOneInterpretCommand$1\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S2L1("ConvertOneInterpretCommand$2\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S3L1("ConvertOneInterpretCommand$3\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S4L1("ConvertOneInterpretCommand$4\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S7L1("ConvertOneInterpretCommand$7\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S7A1("ConvertOneInterpretCommand$7=1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_ConvertOneInterpretCommand("ConvertOneInterpretCommand", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareRASL_L1("PrepareRASL\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareRASL_L2L1L1("PrepareRASL\\2\\1\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareRASL_L2L1("PrepareRASL\\2\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareRASL_L2("PrepareRASL\\2", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_PrepareRASL("PrepareRASL", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_RemoveNumber("RemoveNumber", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_OutlineConstants_S1L1("OutlineConstants$1\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_OutlineConstants("OutlineConstants", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareOpenEStack_L1("PrepareOpenEStack\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_PrepareOpenEStack_L2("PrepareOpenEStack\\2", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_PrepareOpenEStack("PrepareOpenEStack", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_gen_LowLevelRASLm_Native_L1("LowLevelRASL-Native\\1", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_LowLevelRASLm_Native("LowLevelRASL-Native", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_SetCookies("SetCookies", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_MingleName("MingleName", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_ClassifyItemsm_Native("ClassifyItems-Native", 597504055U, 1900162155U);
-static refalrts::ExternalReference ref_ConvertDirectCommands("ConvertDirectCommands", 597504055U, 1900162155U);
+static refalrts::ExternalReference ref_Canonize("Canonize", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_CalcDigest("CalcDigest", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_HashFuncName("HashFuncName", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_CharFromScopeClass("CharFromScopeClass", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_MarkFunctionGenMode("MarkFunctionGenMode", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_LowLevelRASLm_RASL_L1("LowLevelRASL-RASL\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_LowLevelRASLm_RASL("LowLevelRASL-RASL", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_OverflowFailure("OverflowFailure", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ClassifyItemsm_RASL_S1L1("ClassifyItems-RASL$1\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ClassifyItemsm_RASL_S1L2("ClassifyItems-RASL$1\\2", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_ClassifyItemsm_RASL("ClassifyItems-RASL", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_RemoveDebugInfo("RemoveDebugInfo", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_RemoveDebugInfoRec("RemoveDebugInfoRec", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_ConvertInterpretCommands("ConvertInterpretCommands", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_Lengthm_T("Length-T", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_DoLength("DoLength", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S1L1("ConvertOneInterpretCommand$1\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S2L1("ConvertOneInterpretCommand$2\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S3L1("ConvertOneInterpretCommand$3\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S4L1("ConvertOneInterpretCommand$4\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S7L1("ConvertOneInterpretCommand$7\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_ConvertOneInterpretCommand_S7A1("ConvertOneInterpretCommand$7=1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_ConvertOneInterpretCommand("ConvertOneInterpretCommand", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareRASL_L1("PrepareRASL\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareRASL_L2L1L1("PrepareRASL\\2\\1\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareRASL_L2L1("PrepareRASL\\2\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareRASL_L2("PrepareRASL\\2", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_PrepareRASL("PrepareRASL", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_RemoveNumber("RemoveNumber", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_OutlineConstants_S1L1("OutlineConstants$1\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_OutlineConstants("OutlineConstants", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareOpenEStack_L1("PrepareOpenEStack\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_PrepareOpenEStack_L2("PrepareOpenEStack\\2", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_PrepareOpenEStack("PrepareOpenEStack", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_gen_LowLevelRASLm_Native_L1("LowLevelRASL-Native\\1", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_LowLevelRASLm_Native("LowLevelRASL-Native", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_SetCookies("SetCookies", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_MingleName("MingleName", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_ClassifyItemsm_Native("ClassifyItems-Native", 1810499389U, 1200846560U);
+static refalrts::ExternalReference ref_ConvertDirectCommands("ConvertDirectCommands", 1810499389U, 1200846560U);
 
 static refalrts::FnResult func_gen_LowLevelRASL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -186,7 +186,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_L1("LowLevelRASL\\1", 597504055U, 1900162155U, func_gen_LowLevelRASL_L1);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_L1("LowLevelRASL\\1", 1810499389U, 1200846560U, func_gen_LowLevelRASL_L1);
 
 static refalrts::FnResult func_LowLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -372,7 +372,7 @@ static refalrts::FnResult func_Canonize(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Canonize("Canonize", 597504055U, 1900162155U, func_Canonize);
+static refalrts::NativeReference nat_ref_Canonize("Canonize", 1810499389U, 1200846560U, func_Canonize);
 
 static refalrts::FnResult func_CalcDigest(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -696,7 +696,7 @@ static refalrts::FnResult func_CalcDigest(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcDigest("CalcDigest", 597504055U, 1900162155U, func_CalcDigest);
+static refalrts::NativeReference nat_ref_CalcDigest("CalcDigest", 1810499389U, 1200846560U, func_CalcDigest);
 
 static refalrts::FnResult func_HashFuncName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -758,7 +758,7 @@ static refalrts::FnResult func_HashFuncName(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_HashFuncName("HashFuncName", 597504055U, 1900162155U, func_HashFuncName);
+static refalrts::NativeReference nat_ref_HashFuncName("HashFuncName", 1810499389U, 1200846560U, func_HashFuncName);
 
 static refalrts::FnResult func_CharFromScopeClass(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -811,7 +811,7 @@ static refalrts::FnResult func_CharFromScopeClass(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CharFromScopeClass("CharFromScopeClass", 597504055U, 1900162155U, func_CharFromScopeClass);
+static refalrts::NativeReference nat_ref_CharFromScopeClass("CharFromScopeClass", 1810499389U, 1200846560U, func_CharFromScopeClass);
 
 static refalrts::FnResult func_MarkFunctionGenMode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -936,7 +936,7 @@ static refalrts::FnResult func_MarkFunctionGenMode(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkFunctionGenMode("MarkFunctionGenMode", 597504055U, 1900162155U, func_MarkFunctionGenMode);
+static refalrts::NativeReference nat_ref_MarkFunctionGenMode("MarkFunctionGenMode", 1810499389U, 1200846560U, func_MarkFunctionGenMode);
 
 static refalrts::FnResult func_gen_LowLevelRASLm_RASL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -998,7 +998,7 @@ static refalrts::FnResult func_gen_LowLevelRASLm_RASL_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASLm_RASL_L1("LowLevelRASL-RASL\\1", 597504055U, 1900162155U, func_gen_LowLevelRASLm_RASL_L1);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASLm_RASL_L1("LowLevelRASL-RASL\\1", 1810499389U, 1200846560U, func_gen_LowLevelRASLm_RASL_L1);
 
 static refalrts::FnResult func_LowLevelRASLm_RASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1079,7 +1079,7 @@ static refalrts::FnResult func_LowLevelRASLm_RASL(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LowLevelRASLm_RASL("LowLevelRASL-RASL", 597504055U, 1900162155U, func_LowLevelRASLm_RASL);
+static refalrts::NativeReference nat_ref_LowLevelRASLm_RASL("LowLevelRASL-RASL", 1810499389U, 1200846560U, func_LowLevelRASLm_RASL);
 
 static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1243,7 +1243,7 @@ static refalrts::FnResult func_OverflowFailure(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OverflowFailure("OverflowFailure", 597504055U, 1900162155U, func_OverflowFailure);
+static refalrts::NativeReference nat_ref_OverflowFailure("OverflowFailure", 1810499389U, 1200846560U, func_OverflowFailure);
 
 static refalrts::FnResult func_gen_ClassifyItemsm_RASL_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1342,7 +1342,7 @@ static refalrts::FnResult func_gen_ClassifyItemsm_RASL_S1L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ClassifyItemsm_RASL_S1L1("ClassifyItems-RASL$1\\1", 597504055U, 1900162155U, func_gen_ClassifyItemsm_RASL_S1L1);
+static refalrts::NativeReference nat_ref_gen_ClassifyItemsm_RASL_S1L1("ClassifyItems-RASL$1\\1", 1810499389U, 1200846560U, func_gen_ClassifyItemsm_RASL_S1L1);
 
 static refalrts::FnResult func_gen_ClassifyItemsm_RASL_S1L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1409,7 +1409,7 @@ static refalrts::FnResult func_gen_ClassifyItemsm_RASL_S1L2(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ClassifyItemsm_RASL_S1L2("ClassifyItems-RASL$1\\2", 597504055U, 1900162155U, func_gen_ClassifyItemsm_RASL_S1L2);
+static refalrts::NativeReference nat_ref_gen_ClassifyItemsm_RASL_S1L2("ClassifyItems-RASL$1\\2", 1810499389U, 1200846560U, func_gen_ClassifyItemsm_RASL_S1L2);
 
 static refalrts::FnResult func_ClassifyItemsm_RASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1837,7 +1837,7 @@ static refalrts::FnResult func_ClassifyItemsm_RASL(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ClassifyItemsm_RASL("ClassifyItems-RASL", 597504055U, 1900162155U, func_ClassifyItemsm_RASL);
+static refalrts::NativeReference nat_ref_ClassifyItemsm_RASL("ClassifyItems-RASL", 1810499389U, 1200846560U, func_ClassifyItemsm_RASL);
 
 static refalrts::FnResult func_RemoveDebugInfo(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1900,7 +1900,7 @@ static refalrts::FnResult func_RemoveDebugInfo(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RemoveDebugInfo("RemoveDebugInfo", 597504055U, 1900162155U, func_RemoveDebugInfo);
+static refalrts::NativeReference nat_ref_RemoveDebugInfo("RemoveDebugInfo", 1810499389U, 1200846560U, func_RemoveDebugInfo);
 
 static refalrts::FnResult func_RemoveDebugInfoRec(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2152,7 +2152,7 @@ static refalrts::FnResult func_RemoveDebugInfoRec(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RemoveDebugInfoRec("RemoveDebugInfoRec", 597504055U, 1900162155U, func_RemoveDebugInfoRec);
+static refalrts::NativeReference nat_ref_RemoveDebugInfoRec("RemoveDebugInfoRec", 1810499389U, 1200846560U, func_RemoveDebugInfoRec);
 
 static refalrts::FnResult func_ConvertInterpretCommands(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2185,7 +2185,7 @@ static refalrts::FnResult func_ConvertInterpretCommands(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ConvertInterpretCommands("ConvertInterpretCommands", 597504055U, 1900162155U, func_ConvertInterpretCommands);
+static refalrts::NativeReference nat_ref_ConvertInterpretCommands("ConvertInterpretCommands", 1810499389U, 1200846560U, func_ConvertInterpretCommands);
 
 static refalrts::FnResult func_Lengthm_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2218,7 +2218,7 @@ static refalrts::FnResult func_Lengthm_T(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lengthm_T("Length-T", 597504055U, 1900162155U, func_Lengthm_T);
+static refalrts::NativeReference nat_ref_Lengthm_T("Length-T", 1810499389U, 1200846560U, func_Lengthm_T);
 
 static refalrts::FnResult func_DoLength(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2335,7 +2335,7 @@ static refalrts::FnResult func_DoLength(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoLength("DoLength", 597504055U, 1900162155U, func_DoLength);
+static refalrts::NativeReference nat_ref_DoLength("DoLength", 1810499389U, 1200846560U, func_DoLength);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2401,7 +2401,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S1L1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S1L1("ConvertOneInterpretCommand$1\\1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S1L1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S1L1("ConvertOneInterpretCommand$1\\1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S1L1);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2471,7 +2471,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S2L1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S2L1("ConvertOneInterpretCommand$2\\1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S2L1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S2L1("ConvertOneInterpretCommand$2\\1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S2L1);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2545,7 +2545,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S3L1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S3L1("ConvertOneInterpretCommand$3\\1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S3L1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S3L1("ConvertOneInterpretCommand$3\\1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S3L1);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2623,7 +2623,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S4L1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S4L1("ConvertOneInterpretCommand$4\\1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S4L1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S4L1("ConvertOneInterpretCommand$4\\1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S4L1);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2703,7 +2703,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S7L1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S7L1("ConvertOneInterpretCommand$7\\1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S7L1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S7L1("ConvertOneInterpretCommand$7\\1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S7L1);
 
 static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S7A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2724,10 +2724,10 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S7A1(refalrts::Ite
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </6 & Compare/7 s.Length#2/5/8 256/9 >/10 </11 & @create_closure@/12 & ConvertOneInterpretCommand$7\1/13 Tile{ AsIs: s.Length#2/5 } (/14 Tile{ AsIs: e.SubCommands#2/2 } )/15 >/16 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </6 & TermCompare/7 s.Length#2/5/8 256/9 >/10 </11 & @create_closure@/12 & ConvertOneInterpretCommand$7\1/13 Tile{ AsIs: s.Length#2/5 } (/14 Tile{ AsIs: e.SubCommands#2/2 } )/15 >/16 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], ref_Compare.ref.function ) )
+  if( ! refalrts::alloc_name( context[7], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[8], context[5]))
     return refalrts::cNoMemory;
@@ -2767,7 +2767,7 @@ static refalrts::FnResult func_gen_ConvertOneInterpretCommand_S7A1(refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S7A1("ConvertOneInterpretCommand$7=1", 597504055U, 1900162155U, func_gen_ConvertOneInterpretCommand_S7A1);
+static refalrts::NativeReference nat_ref_gen_ConvertOneInterpretCommand_S7A1("ConvertOneInterpretCommand$7=1", 1810499389U, 1200846560U, func_gen_ConvertOneInterpretCommand_S7A1);
 
 static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2805,7 +2805,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & Compare/9 AsIs: s.Memory#1/10 HalfReuse: 256/6 AsIs: >/1 } </11 & @create_closure@/12 & ConvertOneInterpretCommand$1\1/13 s.Memory#1/10/14 >/15 >/16 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & TermCompare/9 AsIs: s.Memory#1/10 HalfReuse: 256/6 AsIs: >/1 } </11 & @create_closure@/12 & ConvertOneInterpretCommand$1\1/13 s.Memory#1/10/14 >/15 >/16 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[11] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[12], refalrts::create_closure ) )
@@ -2820,7 +2820,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_Fetch.ref.function );
     refalrts::reinit_open_call( context[5] );
-    refalrts::reinit_name( context[9], ref_Compare.ref.function );
+    refalrts::reinit_name( context[9], ref_TermCompare.ref.function );
     refalrts::reinit_number( context[6], 256UL );
     refalrts::push_stack( context[16] );
     refalrts::push_stack( context[0] );
@@ -2861,14 +2861,14 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </13 & Fetch/14 </15 & Compare/16 s.Number#1/12/17 256/18 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & @create_closure@/5 HalfReuse: & ConvertOneInterpretCommand$2\1/9 AsIs: s.Direction#1/10 AsIs: s.BracketNumber#1/11 AsIs: s.Number#1/12 HalfReuse: >/6 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </13 & Fetch/14 </15 & TermCompare/16 s.Number#1/12/17 256/18 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & @create_closure@/5 HalfReuse: & ConvertOneInterpretCommand$2\1/9 AsIs: s.Direction#1/10 AsIs: s.BracketNumber#1/11 AsIs: s.Number#1/12 HalfReuse: >/6 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[13] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[14], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[15] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], ref_Compare.ref.function ) )
+    if( ! refalrts::alloc_name( context[16], ref_TermCompare.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[17], context[12]))
       return refalrts::cNoMemory;
@@ -2921,14 +2921,14 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </14 & Fetch/15 </16 & Compare/17 s.Number#1/13/18 256/19 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & @create_closure@/5 HalfReuse: & ConvertOneInterpretCommand$3\1/9 AsIs: s.Direction#1/10 AsIs: s.BracketNumber#1/11 AsIs: s.SaveOffset#1/12 AsIs: s.Number#1/13 HalfReuse: >/6 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </14 & Fetch/15 </16 & TermCompare/17 s.Number#1/13/18 256/19 Tile{ HalfReuse: >/0 HalfReuse: </4 HalfReuse: & @create_closure@/5 HalfReuse: & ConvertOneInterpretCommand$3\1/9 AsIs: s.Direction#1/10 AsIs: s.BracketNumber#1/11 AsIs: s.SaveOffset#1/12 AsIs: s.Number#1/13 HalfReuse: >/6 AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[14] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[15], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[17], ref_Compare.ref.function ) )
+    if( ! refalrts::alloc_name( context[17], ref_TermCompare.ref.function ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[18], context[13]))
       return refalrts::cNoMemory;
@@ -2981,7 +2981,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNo#1/11 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & Compare/9 } s.Number#1/13/14 256/15 >/16 </17 & @create_closure@/18 & ConvertOneInterpretCommand$4\1/19 Tile{ AsIs: s.CreateMode#1/10 } Tile{ HalfReuse: s.ElemNo1 #11/12 AsIs: s.Number#1/13 HalfReuse: >/6 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </5 HalfReuse: & TermCompare/9 } s.Number#1/13/14 256/15 >/16 </17 & @create_closure@/18 & ConvertOneInterpretCommand$4\1/19 Tile{ AsIs: s.CreateMode#1/10 } Tile{ HalfReuse: s.ElemNo1 #11/12 AsIs: s.Number#1/13 HalfReuse: >/6 AsIs: >/1 ]] }
     if (! refalrts::copy_stvar(context[14], context[13]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_number( context[15], 256UL ) )
@@ -2996,7 +2996,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_Fetch.ref.function );
     refalrts::reinit_open_call( context[5] );
-    refalrts::reinit_name( context[9], ref_Compare.ref.function );
+    refalrts::reinit_name( context[9], ref_TermCompare.ref.function );
     refalrts::reinit_svar( context[12], context[11] );
     refalrts::reinit_close_call( context[6] );
     refalrts::push_stack( context[1] );
@@ -3201,7 +3201,7 @@ static refalrts::FnResult func_ConvertOneInterpretCommand(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ConvertOneInterpretCommand("ConvertOneInterpretCommand", 597504055U, 1900162155U, func_ConvertOneInterpretCommand);
+static refalrts::NativeReference nat_ref_ConvertOneInterpretCommand("ConvertOneInterpretCommand", 1810499389U, 1200846560U, func_ConvertOneInterpretCommand);
 
 static refalrts::FnResult func_gen_PrepareRASL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3353,7 +3353,7 @@ static refalrts::FnResult func_gen_PrepareRASL_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareRASL_L1("PrepareRASL\\1", 597504055U, 1900162155U, func_gen_PrepareRASL_L1);
+static refalrts::NativeReference nat_ref_gen_PrepareRASL_L1("PrepareRASL\\1", 1810499389U, 1200846560U, func_gen_PrepareRASL_L1);
 
 static refalrts::FnResult func_gen_PrepareRASL_L2L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3464,7 +3464,7 @@ static refalrts::FnResult func_gen_PrepareRASL_L2L1L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2L1L1("PrepareRASL\\2\\1\\1", 597504055U, 1900162155U, func_gen_PrepareRASL_L2L1L1);
+static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2L1L1("PrepareRASL\\2\\1\\1", 1810499389U, 1200846560U, func_gen_PrepareRASL_L2L1L1);
 
 static refalrts::FnResult func_gen_PrepareRASL_L2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3603,7 +3603,7 @@ static refalrts::FnResult func_gen_PrepareRASL_L2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2L1("PrepareRASL\\2\\1", 597504055U, 1900162155U, func_gen_PrepareRASL_L2L1);
+static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2L1("PrepareRASL\\2\\1", 1810499389U, 1200846560U, func_gen_PrepareRASL_L2L1);
 
 static refalrts::FnResult func_gen_PrepareRASL_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3708,7 +3708,7 @@ static refalrts::FnResult func_gen_PrepareRASL_L2(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2("PrepareRASL\\2", 597504055U, 1900162155U, func_gen_PrepareRASL_L2);
+static refalrts::NativeReference nat_ref_gen_PrepareRASL_L2("PrepareRASL\\2", 1810499389U, 1200846560U, func_gen_PrepareRASL_L2);
 
 static refalrts::FnResult func_PrepareRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3786,7 +3786,7 @@ static refalrts::FnResult func_PrepareRASL(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrepareRASL("PrepareRASL", 597504055U, 1900162155U, func_PrepareRASL);
+static refalrts::NativeReference nat_ref_PrepareRASL("PrepareRASL", 1810499389U, 1200846560U, func_PrepareRASL);
 
 static refalrts::FnResult func_RemoveNumber(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3827,7 +3827,7 @@ static refalrts::FnResult func_RemoveNumber(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RemoveNumber("RemoveNumber", 597504055U, 1900162155U, func_RemoveNumber);
+static refalrts::NativeReference nat_ref_RemoveNumber("RemoveNumber", 1810499389U, 1200846560U, func_RemoveNumber);
 
 static refalrts::FnResult func_gen_OutlineConstants_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3868,7 +3868,7 @@ static refalrts::FnResult func_gen_OutlineConstants_S1L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstants_S1L1("OutlineConstants$1\\1", 597504055U, 1900162155U, func_gen_OutlineConstants_S1L1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstants_S1L1("OutlineConstants$1\\1", 1810499389U, 1200846560U, func_gen_OutlineConstants_S1L1);
 
 static refalrts::FnResult func_OutlineConstants(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6534,7 +6534,7 @@ static refalrts::FnResult func_OutlineConstants(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OutlineConstants("OutlineConstants", 597504055U, 1900162155U, func_OutlineConstants);
+static refalrts::NativeReference nat_ref_OutlineConstants("OutlineConstants", 1810499389U, 1200846560U, func_OutlineConstants);
 
 static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6657,7 +6657,7 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareOpenEStack_L1("PrepareOpenEStack\\1", 597504055U, 1900162155U, func_gen_PrepareOpenEStack_L1);
+static refalrts::NativeReference nat_ref_gen_PrepareOpenEStack_L1("PrepareOpenEStack\\1", 1810499389U, 1200846560U, func_gen_PrepareOpenEStack_L1);
 
 static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6729,7 +6729,7 @@ static refalrts::FnResult func_gen_PrepareOpenEStack_L2(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PrepareOpenEStack_L2("PrepareOpenEStack\\2", 597504055U, 1900162155U, func_gen_PrepareOpenEStack_L2);
+static refalrts::NativeReference nat_ref_gen_PrepareOpenEStack_L2("PrepareOpenEStack\\2", 1810499389U, 1200846560U, func_gen_PrepareOpenEStack_L2);
 
 static refalrts::FnResult func_PrepareOpenEStack(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6788,7 +6788,7 @@ static refalrts::FnResult func_PrepareOpenEStack(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrepareOpenEStack("PrepareOpenEStack", 597504055U, 1900162155U, func_PrepareOpenEStack);
+static refalrts::NativeReference nat_ref_PrepareOpenEStack("PrepareOpenEStack", 1810499389U, 1200846560U, func_PrepareOpenEStack);
 
 static refalrts::FnResult func_gen_LowLevelRASLm_Native_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6867,7 +6867,7 @@ static refalrts::FnResult func_gen_LowLevelRASLm_Native_L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASLm_Native_L1("LowLevelRASL-Native\\1", 597504055U, 1900162155U, func_gen_LowLevelRASLm_Native_L1);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASLm_Native_L1("LowLevelRASL-Native\\1", 1810499389U, 1200846560U, func_gen_LowLevelRASLm_Native_L1);
 
 static refalrts::FnResult func_LowLevelRASLm_Native(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6947,7 +6947,7 @@ static refalrts::FnResult func_LowLevelRASLm_Native(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LowLevelRASLm_Native("LowLevelRASL-Native", 597504055U, 1900162155U, func_LowLevelRASLm_Native);
+static refalrts::NativeReference nat_ref_LowLevelRASLm_Native("LowLevelRASL-Native", 1810499389U, 1200846560U, func_LowLevelRASLm_Native);
 
 static refalrts::FnResult func_SetCookies(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7303,7 +7303,7 @@ static refalrts::FnResult func_SetCookies(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetCookies("SetCookies", 597504055U, 1900162155U, func_SetCookies);
+static refalrts::NativeReference nat_ref_SetCookies("SetCookies", 1810499389U, 1200846560U, func_SetCookies);
 
 static refalrts::FnResult func_MingleName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7379,7 +7379,7 @@ static refalrts::FnResult func_MingleName(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MingleName("MingleName", 597504055U, 1900162155U, func_MingleName);
+static refalrts::NativeReference nat_ref_MingleName("MingleName", 1810499389U, 1200846560U, func_MingleName);
 
 static refalrts::FnResult func_ClassifyItemsm_Native(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7763,7 +7763,7 @@ static refalrts::FnResult func_ClassifyItemsm_Native(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ClassifyItemsm_Native("ClassifyItems-Native", 597504055U, 1900162155U, func_ClassifyItemsm_Native);
+static refalrts::NativeReference nat_ref_ClassifyItemsm_Native("ClassifyItems-Native", 1810499389U, 1200846560U, func_ClassifyItemsm_Native);
 
 static refalrts::FnResult func_ConvertDirectCommands(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -8039,7 +8039,7 @@ static refalrts::FnResult func_ConvertDirectCommands(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ConvertDirectCommands("ConvertDirectCommands", 597504055U, 1900162155U, func_ConvertDirectCommands);
+static refalrts::NativeReference nat_ref_ConvertDirectCommands("ConvertDirectCommands", 1810499389U, 1200846560U, func_ConvertDirectCommands);
 
 
 //End of file

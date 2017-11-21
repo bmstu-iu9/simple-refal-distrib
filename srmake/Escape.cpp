@@ -11,32 +11,32 @@ const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Suc
 static refalrts::ExternalReference ref_Div("Div", 0U, 0U);
 static refalrts::ExternalReference ref_Mod("Mod", 0U, 0U);
 static refalrts::ExternalReference ref_Ord("Ord", 0U, 0U);
-static refalrts::ExternalReference ref_Compare("Compare", 0U, 0U);
+static refalrts::ExternalReference ref_TermCompare("TermCompare", 0U, 0U);
 static refalrts::ExternalReference ref_Chr("Chr", 0U, 0U);
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
-static refalrts::ExternalReference ref_OctDigit("OctDigit", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1849391136U, 3091360646U);
+static refalrts::ExternalReference ref_OctDigit("OctDigit", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 397292677U, 655073233U);
 static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
 static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
-static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 1849391136U, 3091360646U);
+static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 397292677U, 655073233U);
 static refalrts::ExternalReference ref_CharFromNum("CharFromNum", 0U, 0U);
-static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 1849391136U, 3091360646U);
+static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 397292677U, 655073233U);
 static refalrts::ExternalReference ref_UnEscapeStringm_SR("UnEscapeString-SR", 0U, 0U);
-static refalrts::ExternalReference ref_OctDigits("OctDigits", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DecDigits("DecDigits", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_HexDigits("HexDigits", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DoUnEscapeStringm_SR("DoUnEscapeString-SR", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_Hex("DoUnEscapeString-SR-Hex", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_Prefix3("Prefix3", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_DecOct("DoUnEscapeString-SR-DecOct", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1("DoUnEscapeString-SR-Escape$2\\1", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_Escape("DoUnEscapeString-SR-Escape", 1849391136U, 3091360646U);
-static refalrts::ExternalReference ref_SingularEscape("SingularEscape", 1849391136U, 3091360646U);
+static refalrts::ExternalReference ref_OctDigits("OctDigits", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DecDigits("DecDigits", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_HexDigits("HexDigits", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DoUnEscapeStringm_SR("DoUnEscapeString-SR", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_Hex("DoUnEscapeString-SR-Hex", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_Prefix3("Prefix3", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_DecOct("DoUnEscapeString-SR-DecOct", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1("DoUnEscapeString-SR-Escape$2\\1", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_DoUnEscapeStringm_SRm_Escape("DoUnEscapeString-SR-Escape", 397292677U, 655073233U);
+static refalrts::ExternalReference ref_SingularEscape("SingularEscape", 397292677U, 655073233U);
 
 static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -197,7 +197,7 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OctDigit("OctDigit", 1849391136U, 3091360646U, func_OctDigit);
+static refalrts::NativeReference nat_ref_OctDigit("OctDigit", 397292677U, 655073233U, func_OctDigit);
 
 static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -325,7 +325,7 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 1849391136U, 3091360646U, func_gen_EscapeChar_S7L1);
+static refalrts::NativeReference nat_ref_gen_EscapeChar_S7L1("EscapeChar$7\\1", 397292677U, 655073233U, func_gen_EscapeChar_S7L1);
 
 static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -463,14 +463,14 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & Compare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
+  //RESULT: Tile{ [[ } </6 & Fetch/7 </8 & TermCompare/9 s.Other#1/5/10 ' '/11 >/12 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: s.Other#1/5 AsIs: >/1 } </13 & @create_closure@/14 & EscapeChar$7\1/15 s.Other#1/5/16 >/17 >/18 Tile{ ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], ref_Compare.ref.function ) )
+  if( ! refalrts::alloc_name( context[9], ref_TermCompare.ref.function ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(context[10], context[5]))
     return refalrts::cNoMemory;
@@ -592,7 +592,7 @@ static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 1849391136U, 3091360646U, func_gen_CharFromNum_L1);
+static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 397292677U, 655073233U, func_gen_CharFromNum_L1);
 
 static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -719,7 +719,7 @@ static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 1849391136U, 3091360646U, func_gen_DigitFromChar_L1);
+static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 397292677U, 655073233U, func_gen_DigitFromChar_L1);
 
 static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -909,7 +909,7 @@ static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 1849391136U, 3091360646U, func_DigitFromChar);
+static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 397292677U, 655073233U, func_DigitFromChar);
 
 static refalrts::FnResult func_UnEscapeStringm_SR(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -977,7 +977,7 @@ static refalrts::FnResult func_OctDigits(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OctDigits("OctDigits", 1849391136U, 3091360646U, func_OctDigits);
+static refalrts::NativeReference nat_ref_OctDigits("OctDigits", 397292677U, 655073233U, func_OctDigits);
 
 static refalrts::FnResult func_DecDigits(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1009,7 +1009,7 @@ static refalrts::FnResult func_DecDigits(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DecDigits("DecDigits", 1849391136U, 3091360646U, func_DecDigits);
+static refalrts::NativeReference nat_ref_DecDigits("DecDigits", 397292677U, 655073233U, func_DecDigits);
 
 static refalrts::FnResult func_HexDigits(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1041,7 +1041,7 @@ static refalrts::FnResult func_HexDigits(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_HexDigits("HexDigits", 1849391136U, 3091360646U, func_HexDigits);
+static refalrts::NativeReference nat_ref_HexDigits("HexDigits", 397292677U, 655073233U, func_HexDigits);
 
 static refalrts::FnResult func_DoUnEscapeStringm_SR(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1373,7 +1373,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SR(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SR("DoUnEscapeString-SR", 1849391136U, 3091360646U, func_DoUnEscapeStringm_SR);
+static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SR("DoUnEscapeString-SR", 397292677U, 655073233U, func_DoUnEscapeStringm_SR);
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1545,7 +1545,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_Hex("DoUnEscapeString-SR-Hex", 1849391136U, 3091360646U, func_DoUnEscapeStringm_SRm_Hex);
+static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_Hex("DoUnEscapeString-SR-Hex", 397292677U, 655073233U, func_DoUnEscapeStringm_SRm_Hex);
 
 static refalrts::FnResult func_Prefix3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1615,7 +1615,7 @@ static refalrts::FnResult func_Prefix3(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Prefix3("Prefix3", 1849391136U, 3091360646U, func_Prefix3);
+static refalrts::NativeReference nat_ref_Prefix3("Prefix3", 397292677U, 655073233U, func_Prefix3);
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1842,7 +1842,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_DecOct("DoUnEscapeString-SR-DecOct", 1849391136U, 3091360646U, func_DoUnEscapeStringm_SRm_DecOct);
+static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_DecOct("DoUnEscapeString-SR-DecOct", 397292677U, 655073233U, func_DoUnEscapeStringm_SRm_DecOct);
 
 static refalrts::FnResult func_gen_DoUnEscapeStringm_SRm_Escape_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1948,7 +1948,7 @@ static refalrts::FnResult func_gen_DoUnEscapeStringm_SRm_Escape_S2L1(refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1("DoUnEscapeString-SR-Escape$2\\1", 1849391136U, 3091360646U, func_gen_DoUnEscapeStringm_SRm_Escape_S2L1);
+static refalrts::NativeReference nat_ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1("DoUnEscapeString-SR-Escape$2\\1", 397292677U, 655073233U, func_gen_DoUnEscapeStringm_SRm_Escape_S2L1);
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_Escape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2125,7 +2125,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Escape(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_Escape("DoUnEscapeString-SR-Escape", 1849391136U, 3091360646U, func_DoUnEscapeStringm_SRm_Escape);
+static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_Escape("DoUnEscapeString-SR-Escape", 397292677U, 655073233U, func_DoUnEscapeStringm_SRm_Escape);
 
 static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2349,7 +2349,7 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SingularEscape("SingularEscape", 1849391136U, 3091360646U, func_SingularEscape);
+static refalrts::NativeReference nat_ref_SingularEscape("SingularEscape", 397292677U, 655073233U, func_SingularEscape);
 
 
 //End of file

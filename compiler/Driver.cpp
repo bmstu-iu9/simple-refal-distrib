@@ -3073,7 +3073,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPos_A1L1(refalrts::Iter arg_begin,
     // </0 & PatchASTSrcPos=1\1/4 (/7 e.FileName#1/11 )/8 s.LnNum#2/9 >/1
     context[11] = context[5];
     context[12] = context[6];
-    if( ! refalrts::svar_term( context[13], context[9] ) )
+    if( ! refalrts::svar_term( context[9], context[9] ) )
       continue;
     // closed e.FileName#1 as range 11
     //DEBUG: s.LnNum#2: 9

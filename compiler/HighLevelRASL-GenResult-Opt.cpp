@@ -3165,7 +3165,7 @@ static refalrts::FnResult func_BeginOffset(refalrts::Iter arg_begin, refalrts::I
   // </0 & BeginOffset/4 (/7 s.Tag#1/9 e.Info#1/12 s.Offset#1/10 )/8 >/1
   context[12] = context[5];
   context[13] = context[6];
-  if( ! refalrts::svar_term( context[14], context[10] ) )
+  if( ! refalrts::svar_term( context[10], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#1 as range 12
   //DEBUG: s.Offset#1: 10
@@ -3292,7 +3292,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariable/9 's'/14 e.Index#1/12 s.Depth#1/15 s.Offset#1/10 )/8 >/1
     context[12] = context[5];
     context[13] = context[6];
-    if( ! refalrts::svar_term( context[14], context[10] ) )
+    if( ! refalrts::svar_term( context[10], context[10] ) )
       continue;
     if( ! refalrts::ident_term(  ident_TkVariable, context[9] ) )
       continue;
@@ -3323,7 +3323,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariableCopy/9 's'/14 e.Index#1/12 s.Depth#1/16 s.Sample#1/15 s.Offset#1/10 )/8 >/1
     context[12] = context[5];
     context[13] = context[6];
-    if( ! refalrts::svar_term( context[14], context[10] ) )
+    if( ! refalrts::svar_term( context[10], context[10] ) )
       continue;
     if( ! refalrts::ident_term(  ident_TkVariableCopy, context[9] ) )
       continue;
@@ -3357,7 +3357,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariable/9 s.Mode#1/14 e.Index#1/12 s.Depth#1/15 s.Offset#1/10 )/8 >/1
     context[12] = context[5];
     context[13] = context[6];
-    if( ! refalrts::svar_term( context[14], context[10] ) )
+    if( ! refalrts::svar_term( context[10], context[10] ) )
       continue;
     if( ! refalrts::ident_term(  ident_TkVariable, context[9] ) )
       continue;
@@ -3392,7 +3392,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkVariableCopy/9 s.Mode#1/14 e.Index#1/12 s.Depth#1/16 s.Sample#1/15 s.Offset#1/10 )/8 >/1
     context[12] = context[5];
     context[13] = context[6];
-    if( ! refalrts::svar_term( context[14], context[10] ) )
+    if( ! refalrts::svar_term( context[10], context[10] ) )
       continue;
     if( ! refalrts::ident_term(  ident_TkVariableCopy, context[9] ) )
       continue;
@@ -3430,7 +3430,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
     // </0 & EndOffset/4 (/7 # TkString/9 e.String#1/12 s.Offset#1/10 )/8 >/1
     context[12] = context[5];
     context[13] = context[6];
-    if( ! refalrts::svar_term( context[14], context[10] ) )
+    if( ! refalrts::svar_term( context[10], context[10] ) )
       continue;
     if( ! refalrts::ident_term(  ident_TkString, context[9] ) )
       continue;
@@ -3458,7 +3458,7 @@ static refalrts::FnResult func_EndOffset(refalrts::Iter arg_begin, refalrts::Ite
   // </0 & EndOffset/4 (/7 s.Tag#1/9 e.Info#1/12 s.Offset#1/10 )/8 >/1
   context[12] = context[5];
   context[13] = context[6];
-  if( ! refalrts::svar_term( context[14], context[10] ) )
+  if( ! refalrts::svar_term( context[10], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Info#1 as range 12
   //DEBUG: s.Offset#1: 10

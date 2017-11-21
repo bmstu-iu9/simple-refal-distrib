@@ -1,8 +1,8 @@
 #!/bin/bash
 
 mkdir -p bin
-source ./c-plus-plus.conf.sh
-source ./bin/platform-specific.sh
+source ./scripts/load-config.sh
+source ./scripts/platform-specific.sh || exit 1
 
 APPENDER=rasl-appender/_rasl-appender$(platform_exe_suffix)
 $CPPLINEE$APPENDER rasl-appender/rasl-appender.cpp || exit 1

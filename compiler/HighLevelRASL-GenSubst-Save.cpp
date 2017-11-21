@@ -1700,7 +1700,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
 
       refalrts::reset_allocator();
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/20 AsIs: (/26 AsIs: # Junk/28 AsIs: e.Junk1#1/24 HalfReuse: (/27 HalfReuse: # TkVariable/31 HalfReuse: 's'/33 } e.Index#1/39/46 Tile{ HalfReuse: s.Num1 #45/36 HalfReuse: )/38 AsIs: e.Junk2#1/34 AsIs: )/37 AsIs: e.Substs-E#1/22 AsIs: (/11 AsIs: e.Vars#1/16 HalfReuse: (/12 HalfReuse: 's'/7 } Tile{ HalfReuse: (/44 AsIs: e.Index#1/39 AsIs: )/42 HalfReuse: s.Num1 #45/32 } )/48 )/49 (/50 Tile{ AsIs: e.Commands#1/18 } Tile{ AsIs: (/41 Reuse: # CmdVar/43 } # AlgTerm/51 Tile{ AsIs: s.Num#1/45 } 's'/52 s.ContextOffset#1/13/53 )/54 Tile{ AsIs: )/8 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/20 AsIs: (/26 AsIs: # Junk/28 AsIs: e.Junk1#1/24 HalfReuse: (/27 HalfReuse: # TkVariable/31 HalfReuse: 's'/33 } e.Index#1/39/46 Tile{ HalfReuse: s.Num1 #45/36 HalfReuse: )/38 AsIs: e.Junk2#1/34 AsIs: )/37 AsIs: e.Substs-E#1/22 AsIs: (/11 AsIs: e.Vars#1/16 HalfReuse: (/12 HalfReuse: 's'/7 } Tile{ HalfReuse: (/44 AsIs: e.Index#1/39 AsIs: )/42 HalfReuse: s.Num1 #45/32 } )/48 )/49 (/50 Tile{ AsIs: e.Commands#1/18 } Tile{ AsIs: (/41 Reuse: # CmdVar/43 } # AlgTerm/51 Tile{ AsIs: s.Num#1/45 } 's'/52 s.Num#1/45/53 )/54 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if (! refalrts::copy_evar(context[46], context[47], context[39], context[40]))
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[48] ) )
@@ -1713,7 +1713,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::Iter arg_begin, refalrts::It
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_char( context[52], 's' ) )
         return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(context[53], context[13]))
+      if (! refalrts::copy_stvar(context[53], context[45]))
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( context[54] ) )
         return refalrts::cNoMemory;

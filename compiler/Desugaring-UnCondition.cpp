@@ -25293,7 +25293,7 @@ static refalrts::FnResult func_Apply(refalrts::Iter arg_begin, refalrts::Iter ar
     // </0 & Apply/4 s.FuncName#1/5 e.Arg#1/7 >/1
     context[7] = context[2];
     context[8] = context[3];
-    if( ! refalrts::svar_term( context[9], context[5] ) )
+    if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
     // closed e.Arg#1 as range 7
     //DEBUG: s.FuncName#1: 5

@@ -3537,7 +3537,7 @@ static refalrts::FnResult func_PutCommand(refalrts::Iter arg_begin, refalrts::It
     // </0 & PutCommand/4 s.Symbolic#1/5 >/1
     context[7] = context[2];
     context[8] = context[3];
-    if( ! refalrts::svar_term( context[9], context[5] ) )
+    if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
@@ -3576,7 +3576,7 @@ static refalrts::FnResult func_PutCommand(refalrts::Iter arg_begin, refalrts::It
     // </0 & PutCommand/4 s.Symbolic#1/5 t.Arg1#1/9 t.Arg2#1/11 t.Arg3#1/13 >/1
     context[7] = context[2];
     context[8] = context[3];
-    if( ! refalrts::svar_term( context[9], context[5] ) )
+    if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
     context[10] = refalrts::tvar_left( context[9], context[7], context[8] );
     if( ! context[10] )
