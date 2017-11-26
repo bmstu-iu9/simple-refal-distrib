@@ -12,6 +12,8 @@ const refalrts::RefalIdentifier ident_CmdOpenELoop = refalrts::ident_from_static
 const refalrts::RefalIdentifier ident_CmdOpenedE = refalrts::ident_from_static("CmdOpenedE");
 const refalrts::RefalIdentifier ident_CmdSave = refalrts::ident_from_static("CmdSave");
 const refalrts::RefalIdentifier ident_CmdVariableDebugTable = refalrts::ident_from_static("CmdVariableDebugTable");
+const refalrts::RefalIdentifier ident_Cookie1 = refalrts::ident_from_static("Cookie1");
+const refalrts::RefalIdentifier ident_Cookie2 = refalrts::ident_from_static("Cookie2");
 const refalrts::RefalIdentifier ident_E = refalrts::ident_from_static("E");
 const refalrts::RefalIdentifier ident_HalfReuse = refalrts::ident_from_static("HalfReuse");
 const refalrts::RefalIdentifier ident_Junk = refalrts::ident_from_static("Junk");
@@ -753,6 +755,100 @@ static refalrts::FnResult func_gen_TextFromExpr_L1(refalrts::Iter arg_begin, ref
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[5], context[6] );
     refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # TkNumber # Cookie1 s.idx )
+    // </0 & TextFromExpr\1/4 (/5 # TkNumber/9 # Cookie1/10 s.Offset#2/11 )/6 >/1
+    context[7] = 0;
+    context[8] = 0;
+    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
+      continue;
+    context[9] = refalrts::ident_left(  ident_TkNumber, context[7], context[8] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::ident_left(  ident_Cookie1, context[7], context[8] );
+    if( ! context[10] )
+      continue;
+    if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[7], context[8] ) )
+      continue;
+    //DEBUG: s.Offset#2: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" <C"/12 Tile{ HalfReuse: 'o'/1 }"oki"/14 Tile{ HalfReuse: 'e'/0 HalfReuse: '1'/4 HalfReuse: '>'/5 HalfReuse: </9 HalfReuse: & Offset/10 AsIs: s.Offset#2/11 HalfReuse: >/6 } Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[12], context[13], " <C", 3 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[14], context[15], "oki", 3 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[1], 'o' );
+    refalrts::reinit_char( context[0], 'e' );
+    refalrts::reinit_char( context[4], '1' );
+    refalrts::reinit_char( context[5], '>' );
+    refalrts::reinit_open_call( context[9] );
+    refalrts::reinit_name( context[10], ref_Offset.ref.function );
+    refalrts::reinit_close_call( context[6] );
+    refalrts::push_stack( context[6] );
+    refalrts::push_stack( context[9] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[0], context[6] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # TkNumber # Cookie2 s.idx )
+    // </0 & TextFromExpr\1/4 (/5 # TkNumber/9 # Cookie2/10 s.Offset#2/11 )/6 >/1
+    context[7] = 0;
+    context[8] = 0;
+    if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
+      continue;
+    context[9] = refalrts::ident_left(  ident_TkNumber, context[7], context[8] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::ident_left(  ident_Cookie2, context[7], context[8] );
+    if( ! context[10] )
+      continue;
+    if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[7], context[8] ) )
+      continue;
+    //DEBUG: s.Offset#2: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" <C"/12 Tile{ HalfReuse: 'o'/1 }"oki"/14 Tile{ HalfReuse: 'e'/0 HalfReuse: '2'/4 HalfReuse: '>'/5 HalfReuse: </9 HalfReuse: & Offset/10 AsIs: s.Offset#2/11 HalfReuse: >/6 } Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[12], context[13], " <C", 3 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[14], context[15], "oki", 3 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[1], 'o' );
+    refalrts::reinit_char( context[0], 'e' );
+    refalrts::reinit_char( context[4], '2' );
+    refalrts::reinit_char( context[5], '>' );
+    refalrts::reinit_open_call( context[9] );
+    refalrts::reinit_name( context[10], ref_Offset.ref.function );
+    refalrts::reinit_close_call( context[6] );
+    refalrts::push_stack( context[6] );
+    refalrts::push_stack( context[9] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[0], context[6] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();

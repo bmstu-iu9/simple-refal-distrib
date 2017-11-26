@@ -5,10 +5,29 @@
 
 /********************************* REFACTORED *********************************/
 
+// 1. Mu
+
+Mu {
+  e.X = <_Mu e.X>;
+}
+
+
+// 2. Add
+
+//FROM Library
+$EXTERN Add;
+
+
 // 3. Arg
 
 //FROM Library
 $EXTERN Arg;
+
+
+// 4. Br
+
+//FROM Library
+$EXTERN Br;
 
 
 // 5. Card
@@ -17,10 +36,52 @@ $EXTERN Arg;
 $EXTERN Card;
 
 
+// 6. Chr
+
+//FROM Library
+$EXTERN Chr;
+
+
+// 7. Cp
+
+//FROM Library
+$EXTERN Cp;
+
+
+// 8. Dg
+
+//FROM Library
+$EXTERN Dg;
+
+
+// 9. Dgall
+
+//FROM Library
+$EXTERN Dgall;
+
+
+// 10. Div
+
+//FROM Library
+$EXTERN Div;
+
+
+// 11. Divmod
+
+//FROM Library
+$EXTERN Divmod;
+
+
 // 12. Explode
 
 //FROM Library
 $EXTERN Explode;
+
+
+// 13. First
+
+//FROM Library
+$EXTERN First;
 
 
 // 14. Get
@@ -29,10 +90,58 @@ $EXTERN Explode;
 $EXTERN Get;
 
 
+// 15. Implode
+
+//FROM Library
+$EXTERN Implode;
+
+
+// 16. Last
+
+//FROM Library
+$EXTERN Last;
+
+
+// 17. Lenw
+
+//FROM Library
+$EXTERN Lenw;
+
+
+// 18. Lower
+
+//FROM Library
+$EXTERN Lower;
+
+
+// 19. Mod
+
+//FROM Library
+$EXTERN Mod;
+
+
+// 20. Mul
+
+//FROM Library
+$EXTERN Mul;
+
+
+// 21. Numb
+
+//FROM Library
+$EXTERN Numb;
+
+
 // 22. Open
 
 //FROM Library
 $EXTERN Open;
+
+
+// 23. Ord
+
+//FROM Library
+$EXTERN Ord;
 
 
 // 24. Print
@@ -59,10 +168,34 @@ $EXTERN Put;
 $EXTERN Putout;
 
 
+// 28. Rp
+
+//FROM Library
+$EXTERN Rp;
+
+
+// 30. Sub
+
+//FROM Library
+$EXTERN Sub;
+
+
+// 31. Symb
+
+//FROM Library
+$EXTERN Symb;
+
+
 // 33. Type
 
 //FROM Library
 $EXTERN Type;
+
+
+// 34. Upper
+
+//FROM Library
+$EXTERN Upper;
 
 
 // 51. GetEnv
@@ -83,10 +216,22 @@ $EXTERN Close;
 $EXTERN ExistFile;
 
 
+// 58. Implode_Ext
+
+//FROM Library
+$EXTERN Implode_Ext;
+
+
 // 59. Explode_Ext
 
 //FROM Library
 $EXTERN Explode_Ext;
+
+
+// 61. Compare
+
+//FROM Library
+$EXTERN Compare;
 
 
 // 66. Write
@@ -96,32 +241,6 @@ $EXTERN Write;
 
 
 /******************************* NOT REFACTORED *******************************/
-
-//FROM Library
-$EXTERN Add, Sub, Mul, Div, Mod, Chr, Ord,
-  IntFromStr, StrFromInt,
-  SymbCompare, Implode;
-
-Symb {
-  s.Number = <StrFromInt s.Number>;
-}
-
-Numb {
-  // Пока пускай фейлится
-  e.String = <IntFromStr e.String> : #Success s.Number = s.Number;
-}
-
-First {
-  s.N e.Expr = <__DoFirst s.N () e.Expr>;
-}
-
-__DoFirst {
-  0 (e.Scanned) e.Expr = (e.Scanned) e.Expr;
-  s.N (e.Scanned) /* пусто */ = (e.Scanned) /* пусто */;
-
-  s.N (e.Scanned) t.Next e.Expr
-    = <__DoFirst <Sub s.N 1> (e.Scanned t.Next) e.Expr>;
-}
 
 // Функция слишком длинная для одного предложения
 ListOfBuiltin {
@@ -199,44 +318,9 @@ __ListOfBuiltin_2 {
     (71 #GetPPID #regular);
 }
 
-Compare {
-  s.Num1 s.Num2
-    = <{ '<' = '-'; '=' = '0'; '>' = '+'; } <SymbCompare s.Num1 s.Num2>>;
-}
-
-$SWAP __store;
-
-Br {
-  e.Key '=' e.Value = <__store ((e.Key) e.Value) <__store>>;
-}
-
-Dg {
-  e.Key = <__Dg-SwExist (e.Key) <__store>>;
-}
-
-__Dg-SwExist {
-  (e.Key) e.Store-B ((e.Key) e.Value) e.Store-E
-    = e.Value <__store e.Store-B e.Store-E>;
-
-  (e.Key) e.Store = /* пусто */ <__store e.Store>;
-}
-
-Implode_Ext {
-  e.String = <Implode e.String>;
-}
-
 // Не реализованные пока функции
-$ENUM Cp;
-$ENUM Dgall;
-$ENUM Divmod;
-$ENUM Implode;
-$ENUM Last;
-$ENUM Lenw;
-$ENUM Lower;
-$ENUM Rp;
 $ENUM Step;
 $ENUM Time;
-$ENUM Upper;
 $ENUM Sysfun;
 $ENUM Freeze;
 $ENUM Freezer;

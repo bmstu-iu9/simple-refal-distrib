@@ -3,6 +3,8 @@
 
 
 const refalrts::RefalIdentifier ident_Close = refalrts::ident_from_static("Close");
+const refalrts::RefalIdentifier ident_Cookie1 = refalrts::ident_from_static("Cookie1");
+const refalrts::RefalIdentifier ident_Cookie2 = refalrts::ident_from_static("Cookie2");
 const refalrts::RefalIdentifier ident_EEnum = refalrts::ident_from_static("EEnum");
 const refalrts::RefalIdentifier ident_ESwap = refalrts::ident_from_static("ESwap");
 const refalrts::RefalIdentifier ident_Entry = refalrts::ident_from_static("Entry");
@@ -722,6 +724,70 @@ static refalrts::FnResult func_SRm_StrFromToken(refalrts::Iter arg_begin, refalr
     res = refalrts::splice_evar( res, context[6], context[7] );
     res = refalrts::splice_evar( res, context[8], context[8] );
     res = refalrts::splice_evar( res, context[1], context[1] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # TkNumber # Cookie1
+    // </0 & SR-StrFromToken/4 # TkNumber/5 # Cookie1/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_TkNumber, context[5] ) )
+      continue;
+    context[8] = refalrts::ident_left(  ident_Cookie1, context[6], context[7] );
+    if( ! context[8] )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'N'/0 HalfReuse: 'u'/4 HalfReuse: 'm'/5 HalfReuse: 'b'/8 HalfReuse: 'e'/1 }"r <Cookie1>"/9 Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[9], context[10], "r <Cookie1>", 11 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'N' );
+    refalrts::reinit_char( context[4], 'u' );
+    refalrts::reinit_char( context[5], 'm' );
+    refalrts::reinit_char( context[8], 'b' );
+    refalrts::reinit_char( context[1], 'e' );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # TkNumber # Cookie2
+    // </0 & SR-StrFromToken/4 # TkNumber/5 # Cookie2/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_TkNumber, context[5] ) )
+      continue;
+    context[8] = refalrts::ident_left(  ident_Cookie2, context[6], context[7] );
+    if( ! context[8] )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'N'/0 HalfReuse: 'u'/4 HalfReuse: 'm'/5 HalfReuse: 'b'/8 HalfReuse: 'e'/1 }"r <Cookie2>"/9 Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[9], context[10], "r <Cookie2>", 11 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'N' );
+    refalrts::reinit_char( context[4], 'u' );
+    refalrts::reinit_char( context[5], 'm' );
+    refalrts::reinit_char( context[8], 'b' );
+    refalrts::reinit_char( context[1], 'e' );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[9], context[10] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -2231,6 +2297,56 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[16], context[18] );
     refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // 'SCOPEID'
+    // </0 & ValidDirective/4 'S'/7 'C'/8 'O'/9 'P'/10 'E'/11 'I'/12 'D'/13 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_left( 'S', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_left( 'C', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_left( 'O', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_left( 'P', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_left( 'E', context[5], context[6] );
+    if( ! context[11] )
+      continue;
+    context[12] = refalrts::char_left( 'I', context[5], context[6] );
+    if( ! context[12] )
+      continue;
+    context[13] = refalrts::char_left( 'D', context[5], context[6] );
+    if( ! context[13] )
+      continue;
+    if( ! refalrts::empty_seq( context[5], context[6] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & ValidDirective/4 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/7 HalfReuse: # TkNumber/8 HalfReuse: # Cookie1/9 HalfReuse: )/10 HalfReuse: (/11 HalfReuse: # TkNumber/12 HalfReuse: # Cookie2/13 HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[7] );
+    refalrts::reinit_ident( context[8], ident_TkNumber );
+    refalrts::reinit_ident( context[9], ident_Cookie1 );
+    refalrts::reinit_close_bracket( context[10] );
+    refalrts::reinit_open_bracket( context[11] );
+    refalrts::reinit_ident( context[12], ident_TkNumber );
+    refalrts::reinit_ident( context[13], ident_Cookie2 );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[11], context[1] );
+    refalrts::link_brackets( context[7], context[10] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[7];
+    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
