@@ -1,53 +1,54 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'DFA-Lexer.sref'
+// Don't edit! Edit 'DFA-Lexer.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_EOF = refalrts::ident_from_static("EOF");
-const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
-const refalrts::RefalIdentifier ident_TAlternative = refalrts::ident_from_static("TAlternative");
-const refalrts::RefalIdentifier ident_TDot = refalrts::ident_from_static("TDot");
-const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
-const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
-const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
-const refalrts::RefalIdentifier ident_TErrorFlush = refalrts::ident_from_static("TErrorFlush");
-const refalrts::RefalIdentifier ident_TFlush = refalrts::ident_from_static("TFlush");
-const refalrts::RefalIdentifier ident_TLiteral = refalrts::ident_from_static("TLiteral");
-const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
-const refalrts::RefalIdentifier ident_TNamedFlush = refalrts::ident_from_static("TNamedFlush");
-const refalrts::RefalIdentifier ident_TNewLine = refalrts::ident_from_static("TNewLine");
-const refalrts::RefalIdentifier ident_TPunctuation = refalrts::ident_from_static("TPunctuation");
-const refalrts::RefalIdentifier ident_TSetName = refalrts::ident_from_static("TSetName");
-const refalrts::RefalIdentifier ident_TUnexpectedChar = refalrts::ident_from_static("TUnexpectedChar");
-const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
-static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_IntFromStr("IntFromStr", 0U, 0U);
+static const refalrts::RefalIdentifier ident_EOF = refalrts::ident_from_static("EOF");
+static const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
+static const refalrts::RefalIdentifier ident_TAlternative = refalrts::ident_from_static("TAlternative");
+static const refalrts::RefalIdentifier ident_TDot = refalrts::ident_from_static("TDot");
+static const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
+static const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
+static const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
+static const refalrts::RefalIdentifier ident_TErrorFlush = refalrts::ident_from_static("TErrorFlush");
+static const refalrts::RefalIdentifier ident_TFlush = refalrts::ident_from_static("TFlush");
+static const refalrts::RefalIdentifier ident_TLiteral = refalrts::ident_from_static("TLiteral");
+static const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
+static const refalrts::RefalIdentifier ident_TNamedFlush = refalrts::ident_from_static("TNamedFlush");
+static const refalrts::RefalIdentifier ident_TNewLine = refalrts::ident_from_static("TNewLine");
+static const refalrts::RefalIdentifier ident_TPunctuation = refalrts::ident_from_static("TPunctuation");
+static const refalrts::RefalIdentifier ident_TSetName = refalrts::ident_from_static("TSetName");
+static const refalrts::RefalIdentifier ident_TUnexpectedChar = refalrts::ident_from_static("TUnexpectedChar");
+static const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
 static refalrts::ExternalReference ref_Chr("Chr", 0U, 0U);
 static refalrts::ExternalReference ref_DFAm_TextFromToken("DFA-TextFromToken", 0U, 0U);
-static refalrts::ExternalReference ref_gen_DFAm_Tokens_L1("DFA-Tokens\\1", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_gen_DFAm_Tokens_L2("DFA-Tokens\\2", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_gen_DFAm_Tokens_L3("DFA-Tokens\\3", 2065463025U, 228192413U);
 static refalrts::ExternalReference ref_DFAm_Tokens("DFA-Tokens", 0U, 0U);
-static refalrts::ExternalReference ref_LoTokens("LoTokens", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_gen_FilterTokens_L1("FilterTokens\\1", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_FilterTokens("FilterTokens", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_gen_Unescape_S6L1("Unescape$6\\1", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Unescape("Unescape", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Root("Root", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_SetName("SetName", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Flush("Flush", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Literal("Literal", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Name("Name", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_ErrorFlush("ErrorFlush", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_FlushName("FlushName", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Literalm_Escape("Literal-Escape", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Literalm_Quote("Literal-Quote", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_FlushNameTail("FlushNameTail", 2065463025U, 228192413U);
-static refalrts::ExternalReference ref_Literalm_DecCode("Literal-DecCode", 2065463025U, 228192413U);
+static refalrts::ExternalReference ref_gen_DFAm_Tokens_L1("DFA-Tokens\\1", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_gen_DFAm_Tokens_L2("DFA-Tokens\\2", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_gen_DFAm_Tokens_L3("DFA-Tokens\\3", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_ErrorFlush("ErrorFlush", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_FilterTokens("FilterTokens", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_gen_FilterTokens_L1("FilterTokens\\1", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Flush("Flush", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_FlushName("FlushName", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_FlushNameTail("FlushNameTail", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+static refalrts::ExternalReference ref_IntFromStr("IntFromStr", 0U, 0U);
+static refalrts::ExternalReference ref_Literal("Literal", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Literalm_DecCode("Literal-DecCode", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Literalm_Escape("Literal-Escape", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Literalm_Quote("Literal-Quote", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_LoTokens("LoTokens", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+static refalrts::ExternalReference ref_Name("Name", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Root("Root", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_SetName("SetName", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_Unescape("Unescape", 3951043167U, 4061451251U);
+static refalrts::ExternalReference ref_gen_Unescape_S6L1("Unescape$6\\1", 3951043167U, 4061451251U);
 
 static refalrts::FnResult func_DFAm_TextFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -350,6 +351,7 @@ static refalrts::FnResult func_DFAm_TextFromToken(refalrts::Iter arg_begin, refa
 
 static refalrts::NativeReference nat_ref_DFAm_TextFromToken("DFA-TextFromToken", 0U, 0U, func_DFAm_TextFromToken);
 
+
 static refalrts::FnResult func_gen_DFAm_Tokens_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
@@ -384,7 +386,8 @@ static refalrts::FnResult func_gen_DFAm_Tokens_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L1("DFA-Tokens\\1", 2065463025U, 228192413U, func_gen_DFAm_Tokens_L1);
+static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L1("DFA-Tokens\\1", 3951043167U, 4061451251U, func_gen_DFAm_Tokens_L1);
+
 
 static refalrts::FnResult func_gen_DFAm_Tokens_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -463,7 +466,8 @@ static refalrts::FnResult func_gen_DFAm_Tokens_L2(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L2("DFA-Tokens\\2", 2065463025U, 228192413U, func_gen_DFAm_Tokens_L2);
+static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L2("DFA-Tokens\\2", 3951043167U, 4061451251U, func_gen_DFAm_Tokens_L2);
+
 
 static refalrts::FnResult func_gen_DFAm_Tokens_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -543,7 +547,8 @@ static refalrts::FnResult func_gen_DFAm_Tokens_L3(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L3("DFA-Tokens\\3", 2065463025U, 228192413U, func_gen_DFAm_Tokens_L3);
+static refalrts::NativeReference nat_ref_gen_DFAm_Tokens_L3("DFA-Tokens\\3", 3951043167U, 4061451251U, func_gen_DFAm_Tokens_L3);
+
 
 static refalrts::FnResult func_DFAm_Tokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -619,6 +624,7 @@ static refalrts::FnResult func_DFAm_Tokens(refalrts::Iter arg_begin, refalrts::I
 
 static refalrts::NativeReference nat_ref_DFAm_Tokens("DFA-Tokens", 0U, 0U, func_DFAm_Tokens);
 
+
 static refalrts::FnResult func_LoTokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 10 elems
@@ -662,7 +668,8 @@ static refalrts::FnResult func_LoTokens(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LoTokens("LoTokens", 2065463025U, 228192413U, func_LoTokens);
+static refalrts::NativeReference nat_ref_LoTokens("LoTokens", 3951043167U, 4061451251U, func_LoTokens);
+
 
 static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1045,7 +1052,8 @@ static refalrts::FnResult func_gen_FilterTokens_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FilterTokens_L1("FilterTokens\\1", 2065463025U, 228192413U, func_gen_FilterTokens_L1);
+static refalrts::NativeReference nat_ref_gen_FilterTokens_L1("FilterTokens\\1", 3951043167U, 4061451251U, func_gen_FilterTokens_L1);
+
 
 static refalrts::FnResult func_FilterTokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1078,7 +1086,8 @@ static refalrts::FnResult func_FilterTokens(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FilterTokens("FilterTokens", 2065463025U, 228192413U, func_FilterTokens);
+static refalrts::NativeReference nat_ref_FilterTokens("FilterTokens", 3951043167U, 4061451251U, func_FilterTokens);
+
 
 static refalrts::FnResult func_gen_Unescape_S6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1124,7 +1133,8 @@ static refalrts::FnResult func_gen_Unescape_S6L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Unescape_S6L1("Unescape$6\\1", 2065463025U, 228192413U, func_gen_Unescape_S6L1);
+static refalrts::NativeReference nat_ref_gen_Unescape_S6L1("Unescape$6\\1", 3951043167U, 4061451251U, func_gen_Unescape_S6L1);
+
 
 static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1401,7 +1411,8 @@ static refalrts::FnResult func_Unescape(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Unescape("Unescape", 2065463025U, 228192413U, func_Unescape);
+static refalrts::NativeReference nat_ref_Unescape("Unescape", 3951043167U, 4061451251U, func_Unescape);
+
 
 static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2578,7 +2589,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Root("Root", 2065463025U, 228192413U, func_Root);
+static refalrts::NativeReference nat_ref_Root("Root", 3951043167U, 4061451251U, func_Root);
+
 
 static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4442,7 +4454,8 @@ static refalrts::FnResult func_SetName(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetName("SetName", 2065463025U, 228192413U, func_SetName);
+static refalrts::NativeReference nat_ref_SetName("SetName", 3951043167U, 4061451251U, func_SetName);
+
 
 static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4591,7 +4604,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Flush("Flush", 2065463025U, 228192413U, func_Flush);
+static refalrts::NativeReference nat_ref_Flush("Flush", 3951043167U, 4061451251U, func_Flush);
+
 
 static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4778,7 +4792,8 @@ static refalrts::FnResult func_Literal(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Literal("Literal", 2065463025U, 228192413U, func_Literal);
+static refalrts::NativeReference nat_ref_Literal("Literal", 3951043167U, 4061451251U, func_Literal);
+
 
 static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6565,7 +6580,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Name("Name", 2065463025U, 228192413U, func_Name);
+static refalrts::NativeReference nat_ref_Name("Name", 3951043167U, 4061451251U, func_Name);
+
 
 static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -9018,7 +9034,8 @@ static refalrts::FnResult func_ErrorFlush(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ErrorFlush("ErrorFlush", 2065463025U, 228192413U, func_ErrorFlush);
+static refalrts::NativeReference nat_ref_ErrorFlush("ErrorFlush", 3951043167U, 4061451251U, func_ErrorFlush);
+
 
 static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -9805,7 +9822,8 @@ static refalrts::FnResult func_FlushName(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FlushName("FlushName", 2065463025U, 228192413U, func_FlushName);
+static refalrts::NativeReference nat_ref_FlushName("FlushName", 3951043167U, 4061451251U, func_FlushName);
+
 
 static refalrts::FnResult func_Literalm_Escape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10032,7 +10050,8 @@ static refalrts::FnResult func_Literalm_Escape(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Literalm_Escape("Literal-Escape", 2065463025U, 228192413U, func_Literalm_Escape);
+static refalrts::NativeReference nat_ref_Literalm_Escape("Literal-Escape", 3951043167U, 4061451251U, func_Literalm_Escape);
+
 
 static refalrts::FnResult func_Literalm_Quote(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10119,7 +10138,8 @@ static refalrts::FnResult func_Literalm_Quote(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Literalm_Quote("Literal-Quote", 2065463025U, 228192413U, func_Literalm_Quote);
+static refalrts::NativeReference nat_ref_Literalm_Quote("Literal-Quote", 3951043167U, 4061451251U, func_Literalm_Quote);
+
 
 static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -11906,7 +11926,8 @@ static refalrts::FnResult func_FlushNameTail(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FlushNameTail("FlushNameTail", 2065463025U, 228192413U, func_FlushNameTail);
+static refalrts::NativeReference nat_ref_FlushNameTail("FlushNameTail", 3951043167U, 4061451251U, func_FlushNameTail);
+
 
 static refalrts::FnResult func_Literalm_DecCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -12277,7 +12298,7 @@ static refalrts::FnResult func_Literalm_DecCode(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Literalm_DecCode("Literal-DecCode", 2065463025U, 228192413U, func_Literalm_DecCode);
+static refalrts::NativeReference nat_ref_Literalm_DecCode("Literal-DecCode", 3951043167U, 4061451251U, func_Literalm_DecCode);
 
 
 //End of file

@@ -1,96 +1,97 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Opcodes.sref'
+// Don't edit! Edit 'Opcodes.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
-const refalrts::RefalIdentifier ident_AlgRight = refalrts::ident_from_static("AlgRight");
-const refalrts::RefalIdentifier ident_AlgTerm = refalrts::ident_from_static("AlgTerm");
-const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
-const refalrts::RefalIdentifier ident_CmdADT = refalrts::ident_from_static("CmdADT");
-const refalrts::RefalIdentifier ident_CmdADTSave = refalrts::ident_from_static("CmdADTSave");
-const refalrts::RefalIdentifier ident_CmdBrackets = refalrts::ident_from_static("CmdBrackets");
-const refalrts::RefalIdentifier ident_CmdBracketsSave = refalrts::ident_from_static("CmdBracketsSave");
-const refalrts::RefalIdentifier ident_CmdCallSave = refalrts::ident_from_static("CmdCallSave");
-const refalrts::RefalIdentifier ident_CmdChar = refalrts::ident_from_static("CmdChar");
-const refalrts::RefalIdentifier ident_CmdCharSave = refalrts::ident_from_static("CmdCharSave");
-const refalrts::RefalIdentifier ident_CmdClosureHead = refalrts::ident_from_static("CmdClosureHead");
-const refalrts::RefalIdentifier ident_CmdCopyEVar = refalrts::ident_from_static("CmdCopyEVar");
-const refalrts::RefalIdentifier ident_CmdCopySTVar = refalrts::ident_from_static("CmdCopySTVar");
-const refalrts::RefalIdentifier ident_CmdEPrepare = refalrts::ident_from_static("CmdEPrepare");
-const refalrts::RefalIdentifier ident_CmdEStart = refalrts::ident_from_static("CmdEStart");
-const refalrts::RefalIdentifier ident_CmdEmpty = refalrts::ident_from_static("CmdEmpty");
-const refalrts::RefalIdentifier ident_CmdEnd = refalrts::ident_from_static("CmdEnd");
-const refalrts::RefalIdentifier ident_CmdFail = refalrts::ident_from_static("CmdFail");
-const refalrts::RefalIdentifier ident_CmdFetchSwapHead = refalrts::ident_from_static("CmdFetchSwapHead");
-const refalrts::RefalIdentifier ident_CmdFetchSwapInfoBounds = refalrts::ident_from_static("CmdFetchSwapInfoBounds");
-const refalrts::RefalIdentifier ident_CmdHugeNum = refalrts::ident_from_static("CmdHugeNum");
-const refalrts::RefalIdentifier ident_CmdHugeNumSave = refalrts::ident_from_static("CmdHugeNumSave");
-const refalrts::RefalIdentifier ident_CmdIdent = refalrts::ident_from_static("CmdIdent");
-const refalrts::RefalIdentifier ident_CmdIdentSave = refalrts::ident_from_static("CmdIdentSave");
-const refalrts::RefalIdentifier ident_CmdInitB0 = refalrts::ident_from_static("CmdInitB0");
-const refalrts::RefalIdentifier ident_CmdInitB0m_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
-const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
-const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
-const refalrts::RefalIdentifier ident_CmdLoadConstants = refalrts::ident_from_static("CmdLoadConstants");
-const refalrts::RefalIdentifier ident_CmdName = refalrts::ident_from_static("CmdName");
-const refalrts::RefalIdentifier ident_CmdNameSave = refalrts::ident_from_static("CmdNameSave");
-const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
-const refalrts::RefalIdentifier ident_CmdNotEmpty = refalrts::ident_from_static("CmdNotEmpty");
-const refalrts::RefalIdentifier ident_CmdNum = refalrts::ident_from_static("CmdNum");
-const refalrts::RefalIdentifier ident_CmdNumSave = refalrts::ident_from_static("CmdNumSave");
-const refalrts::RefalIdentifier ident_CmdOnFailGoTo = refalrts::ident_from_static("CmdOnFailGoTo");
-const refalrts::RefalIdentifier ident_CmdPerformNative = refalrts::ident_from_static("CmdPerformNative");
-const refalrts::RefalIdentifier ident_CmdProfileFunction = refalrts::ident_from_static("CmdProfileFunction");
-const refalrts::RefalIdentifier ident_CmdProfilerStopSentence = refalrts::ident_from_static("CmdProfilerStopSentence");
-const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
-const refalrts::RefalIdentifier ident_CmdReinitSVar = refalrts::ident_from_static("CmdReinitSVar");
-const refalrts::RefalIdentifier ident_CmdRepeated = refalrts::ident_from_static("CmdRepeated");
-const refalrts::RefalIdentifier ident_CmdRepeatedSave = refalrts::ident_from_static("CmdRepeatedSave");
-const refalrts::RefalIdentifier ident_CmdReserveBacktrackStack = refalrts::ident_from_static("CmdReserveBacktrackStack");
-const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
-const refalrts::RefalIdentifier ident_CmdSave = refalrts::ident_from_static("CmdSave");
-const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
-const refalrts::RefalIdentifier ident_CmdSetResArgBegin = refalrts::ident_from_static("CmdSetResArgBegin");
-const refalrts::RefalIdentifier ident_CmdSetResRightEdge = refalrts::ident_from_static("CmdSetResRightEdge");
-const refalrts::RefalIdentifier ident_CmdSpliceEVar = refalrts::ident_from_static("CmdSpliceEVar");
-const refalrts::RefalIdentifier ident_CmdSpliceElem = refalrts::ident_from_static("CmdSpliceElem");
-const refalrts::RefalIdentifier ident_CmdSpliceRange = refalrts::ident_from_static("CmdSpliceRange");
-const refalrts::RefalIdentifier ident_CmdSpliceSTVar = refalrts::ident_from_static("CmdSpliceSTVar");
-const refalrts::RefalIdentifier ident_CmdSpliceTile = refalrts::ident_from_static("CmdSpliceTile");
-const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
-const refalrts::RefalIdentifier ident_CmdSwapSave = refalrts::ident_from_static("CmdSwapSave");
-const refalrts::RefalIdentifier ident_CmdTrash = refalrts::ident_from_static("CmdTrash");
-const refalrts::RefalIdentifier ident_CmdTrashLeftEdge = refalrts::ident_from_static("CmdTrashLeftEdge");
-const refalrts::RefalIdentifier ident_CmdUnwrappedClosure = refalrts::ident_from_static("CmdUnwrappedClosure");
-const refalrts::RefalIdentifier ident_CmdVar = refalrts::ident_from_static("CmdVar");
-const refalrts::RefalIdentifier ident_CmdVarSave = refalrts::ident_from_static("CmdVarSave");
-const refalrts::RefalIdentifier ident_CmdVariableDebugOffset = refalrts::ident_from_static("CmdVariableDebugOffset");
-const refalrts::RefalIdentifier ident_CmdWrapClosure = refalrts::ident_from_static("CmdWrapClosure");
-const refalrts::RefalIdentifier ident_ConstTable = refalrts::ident_from_static("ConstTable");
-const refalrts::RefalIdentifier ident_ElBracket = refalrts::ident_from_static("ElBracket");
-const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
-const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
-const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
-const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
-const refalrts::RefalIdentifier ident_ElHugeNumber = refalrts::ident_from_static("ElHugeNumber");
-const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
-const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
-const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
-const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
-const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
-const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
-const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
-const refalrts::RefalIdentifier ident_EmptyFunction = refalrts::ident_from_static("EmptyFunction");
-const refalrts::RefalIdentifier ident_NativeFunction = refalrts::ident_from_static("NativeFunction");
-const refalrts::RefalIdentifier ident_RefalFunction = refalrts::ident_from_static("RefalFunction");
-const refalrts::RefalIdentifier ident_Reference = refalrts::ident_from_static("Reference");
-const refalrts::RefalIdentifier ident_Reinit = refalrts::ident_from_static("Reinit");
-const refalrts::RefalIdentifier ident_Start = refalrts::ident_from_static("Start");
-const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
-const refalrts::RefalIdentifier ident_Update = refalrts::ident_from_static("Update");
-static refalrts::ExternalReference ref_NumberFromOpcode("NumberFromOpcode", 0U, 0U);
-static refalrts::ExternalReference ref_NumberFromBracket("NumberFromBracket", 0U, 0U);
+static const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
+static const refalrts::RefalIdentifier ident_AlgRight = refalrts::ident_from_static("AlgRight");
+static const refalrts::RefalIdentifier ident_AlgTerm = refalrts::ident_from_static("AlgTerm");
+static const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
+static const refalrts::RefalIdentifier ident_CmdADT = refalrts::ident_from_static("CmdADT");
+static const refalrts::RefalIdentifier ident_CmdADTSave = refalrts::ident_from_static("CmdADTSave");
+static const refalrts::RefalIdentifier ident_CmdBrackets = refalrts::ident_from_static("CmdBrackets");
+static const refalrts::RefalIdentifier ident_CmdBracketsSave = refalrts::ident_from_static("CmdBracketsSave");
+static const refalrts::RefalIdentifier ident_CmdCallSave = refalrts::ident_from_static("CmdCallSave");
+static const refalrts::RefalIdentifier ident_CmdChar = refalrts::ident_from_static("CmdChar");
+static const refalrts::RefalIdentifier ident_CmdCharSave = refalrts::ident_from_static("CmdCharSave");
+static const refalrts::RefalIdentifier ident_CmdCopyEVar = refalrts::ident_from_static("CmdCopyEVar");
+static const refalrts::RefalIdentifier ident_CmdCopySTVar = refalrts::ident_from_static("CmdCopySTVar");
+static const refalrts::RefalIdentifier ident_CmdEPrepare = refalrts::ident_from_static("CmdEPrepare");
+static const refalrts::RefalIdentifier ident_CmdEStart = refalrts::ident_from_static("CmdEStart");
+static const refalrts::RefalIdentifier ident_CmdEmpty = refalrts::ident_from_static("CmdEmpty");
+static const refalrts::RefalIdentifier ident_CmdFail = refalrts::ident_from_static("CmdFail");
+static const refalrts::RefalIdentifier ident_CmdFetchSwapHead = refalrts::ident_from_static("CmdFetchSwapHead");
+static const refalrts::RefalIdentifier ident_CmdFetchSwapInfoBounds = refalrts::ident_from_static("CmdFetchSwapInfoBounds");
+static const refalrts::RefalIdentifier ident_CmdHugeNum = refalrts::ident_from_static("CmdHugeNum");
+static const refalrts::RefalIdentifier ident_CmdHugeNumSave = refalrts::ident_from_static("CmdHugeNumSave");
+static const refalrts::RefalIdentifier ident_CmdIdent = refalrts::ident_from_static("CmdIdent");
+static const refalrts::RefalIdentifier ident_CmdIdentSave = refalrts::ident_from_static("CmdIdentSave");
+static const refalrts::RefalIdentifier ident_CmdInitB0 = refalrts::ident_from_static("CmdInitB0");
+static const refalrts::RefalIdentifier ident_CmdInitB0m_Lite = refalrts::ident_from_static("CmdInitB0-Lite");
+static const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
+static const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
+static const refalrts::RefalIdentifier ident_CmdLoadConstants = refalrts::ident_from_static("CmdLoadConstants");
+static const refalrts::RefalIdentifier ident_CmdName = refalrts::ident_from_static("CmdName");
+static const refalrts::RefalIdentifier ident_CmdNameSave = refalrts::ident_from_static("CmdNameSave");
+static const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
+static const refalrts::RefalIdentifier ident_CmdNotEmpty = refalrts::ident_from_static("CmdNotEmpty");
+static const refalrts::RefalIdentifier ident_CmdNumber = refalrts::ident_from_static("CmdNumber");
+static const refalrts::RefalIdentifier ident_CmdNumberSave = refalrts::ident_from_static("CmdNumberSave");
+static const refalrts::RefalIdentifier ident_CmdOnFailGoTo = refalrts::ident_from_static("CmdOnFailGoTo");
+static const refalrts::RefalIdentifier ident_CmdPerformNative = refalrts::ident_from_static("CmdPerformNative");
+static const refalrts::RefalIdentifier ident_CmdProfileFunction = refalrts::ident_from_static("CmdProfileFunction");
+static const refalrts::RefalIdentifier ident_CmdProfilerStopSentence = refalrts::ident_from_static("CmdProfilerStopSentence");
+static const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
+static const refalrts::RefalIdentifier ident_CmdReinitSVar = refalrts::ident_from_static("CmdReinitSVar");
+static const refalrts::RefalIdentifier ident_CmdRepeated = refalrts::ident_from_static("CmdRepeated");
+static const refalrts::RefalIdentifier ident_CmdRepeatedSave = refalrts::ident_from_static("CmdRepeatedSave");
+static const refalrts::RefalIdentifier ident_CmdReserveBacktrackStack = refalrts::ident_from_static("CmdReserveBacktrackStack");
+static const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
+static const refalrts::RefalIdentifier ident_CmdSave = refalrts::ident_from_static("CmdSave");
+static const refalrts::RefalIdentifier ident_CmdScale = refalrts::ident_from_static("CmdScale");
+static const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
+static const refalrts::RefalIdentifier ident_CmdSetResArgBegin = refalrts::ident_from_static("CmdSetResArgBegin");
+static const refalrts::RefalIdentifier ident_CmdSetResRightEdge = refalrts::ident_from_static("CmdSetResRightEdge");
+static const refalrts::RefalIdentifier ident_CmdSpliceEVar = refalrts::ident_from_static("CmdSpliceEVar");
+static const refalrts::RefalIdentifier ident_CmdSpliceElem = refalrts::ident_from_static("CmdSpliceElem");
+static const refalrts::RefalIdentifier ident_CmdSpliceRange = refalrts::ident_from_static("CmdSpliceRange");
+static const refalrts::RefalIdentifier ident_CmdSpliceSTVar = refalrts::ident_from_static("CmdSpliceSTVar");
+static const refalrts::RefalIdentifier ident_CmdSpliceTile = refalrts::ident_from_static("CmdSpliceTile");
+static const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
+static const refalrts::RefalIdentifier ident_CmdSwapSave = refalrts::ident_from_static("CmdSwapSave");
+static const refalrts::RefalIdentifier ident_CmdTrash = refalrts::ident_from_static("CmdTrash");
+static const refalrts::RefalIdentifier ident_CmdTrashLeftEdge = refalrts::ident_from_static("CmdTrashLeftEdge");
+static const refalrts::RefalIdentifier ident_CmdVar = refalrts::ident_from_static("CmdVar");
+static const refalrts::RefalIdentifier ident_CmdVarSave = refalrts::ident_from_static("CmdVarSave");
+static const refalrts::RefalIdentifier ident_CmdVariableDebugOffset = refalrts::ident_from_static("CmdVariableDebugOffset");
+static const refalrts::RefalIdentifier ident_CmdWrapClosure = refalrts::ident_from_static("CmdWrapClosure");
+static const refalrts::RefalIdentifier ident_ConstTable = refalrts::ident_from_static("ConstTable");
+static const refalrts::RefalIdentifier ident_ElBracket = refalrts::ident_from_static("ElBracket");
+static const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
+static const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
+static const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
+static const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
+static const refalrts::RefalIdentifier ident_ElClosureHead = refalrts::ident_from_static("ElClosureHead");
+static const refalrts::RefalIdentifier ident_ElHugeNumber = refalrts::ident_from_static("ElHugeNumber");
+static const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
+static const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
+static const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
+static const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
+static const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
+static const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
+static const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
+static const refalrts::RefalIdentifier ident_ElUnwrappedClosure = refalrts::ident_from_static("ElUnwrappedClosure");
+static const refalrts::RefalIdentifier ident_EmptyFunction = refalrts::ident_from_static("EmptyFunction");
+static const refalrts::RefalIdentifier ident_NativeFunction = refalrts::ident_from_static("NativeFunction");
+static const refalrts::RefalIdentifier ident_RefalFunction = refalrts::ident_from_static("RefalFunction");
+static const refalrts::RefalIdentifier ident_Reference = refalrts::ident_from_static("Reference");
+static const refalrts::RefalIdentifier ident_Reinit = refalrts::ident_from_static("Reinit");
+static const refalrts::RefalIdentifier ident_Start = refalrts::ident_from_static("Start");
+static const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
+static const refalrts::RefalIdentifier ident_Update = refalrts::ident_from_static("Update");
 static refalrts::ExternalReference ref_BlockTypeNumber("BlockTypeNumber", 0U, 0U);
+static refalrts::ExternalReference ref_NumberFromBracket("NumberFromBracket", 0U, 0U);
+static refalrts::ExternalReference ref_NumberFromOpcode("NumberFromOpcode", 0U, 0U);
 
 static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -410,11 +411,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdNum # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/8 >/1
+    // # CmdNumber # AlgLeft
+    // </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgLeft/8 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdNumber, context[5] ) )
       continue;
     context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
     if( ! context[8] )
@@ -423,7 +424,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgLeft/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 13/1 ]] }
     refalrts::reinit_number( context[1], 13UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -435,11 +436,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdNum # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/8 >/1
+    // # CmdNumber # AlgRight
+    // </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgRight/8 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdNumber, context[5] ) )
       continue;
     context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
     if( ! context[8] )
@@ -448,7 +449,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgRight/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 14/1 ]] }
     refalrts::reinit_number( context[1], 14UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -460,11 +461,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdNum # AlgTerm
-    // </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/8 >/1
+    // # CmdNumber # AlgTerm
+    // </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgTerm/8 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdNum, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdNumber, context[5] ) )
       continue;
     context[8] = refalrts::ident_left(  ident_AlgTerm, context[6], context[7] );
     if( ! context[8] )
@@ -473,7 +474,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNum/5 # AlgTerm/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/5 # AlgTerm/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 15/1 ]] }
     refalrts::reinit_number( context[1], 15UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -485,11 +486,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdNumSave # AlgLeft
-    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/8 >/1
+    // # CmdNumberSave # AlgLeft
+    // </0 & NumberFromOpcode/4 # CmdNumberSave/5 # AlgLeft/8 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdNumSave, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdNumberSave, context[5] ) )
       continue;
     context[8] = refalrts::ident_left(  ident_AlgLeft, context[6], context[7] );
     if( ! context[8] )
@@ -498,7 +499,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgLeft/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumberSave/5 # AlgLeft/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 16/1 ]] }
     refalrts::reinit_number( context[1], 16UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -510,11 +511,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdNumSave # AlgRight
-    // </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/8 >/1
+    // # CmdNumberSave # AlgRight
+    // </0 & NumberFromOpcode/4 # CmdNumberSave/5 # AlgRight/8 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdNumSave, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdNumberSave, context[5] ) )
       continue;
     context[8] = refalrts::ident_left(  ident_AlgRight, context[6], context[7] );
     if( ! context[8] )
@@ -523,7 +524,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumSave/5 # AlgRight/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumberSave/5 # AlgRight/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 17/1 ]] }
     refalrts::reinit_number( context[1], 17UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2125,6 +2126,56 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
+    // # Allocate # ElClosureHead
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElClosureHead/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
+      continue;
+    context[8] = refalrts::ident_left(  ident_ElClosureHead, context[6], context[7] );
+    if( ! context[8] )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElClosureHead/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 113/1 ]] }
+    refalrts::reinit_number( context[1], 113UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # Allocate # ElUnwrappedClosure
+    // </0 & NumberFromOpcode/4 # Allocate/5 # ElUnwrappedClosure/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_Allocate, context[5] ) )
+      continue;
+    context[8] = refalrts::ident_left(  ident_ElUnwrappedClosure, context[6], context[7] );
+    if( ! context[8] )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/5 # ElUnwrappedClosure/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 114/1 ]] }
+    refalrts::reinit_number( context[1], 114UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // # Reinit # ElChar
     // </0 & NumberFromOpcode/4 # Reinit/5 # ElChar/8 >/1
     context[6] = context[2];
@@ -2275,20 +2326,20 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # Reinit # CmdClosureHead
-    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/8 >/1
+    // # Reinit # ElClosureHead
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElClosureHead/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = refalrts::ident_left(  ident_CmdClosureHead, context[6], context[7] );
+    context[8] = refalrts::ident_left(  ident_ElClosureHead, context[6], context[7] );
     if( ! context[8] )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdClosureHead/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElClosureHead/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 87/1 ]] }
     refalrts::reinit_number( context[1], 87UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2300,20 +2351,20 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # Reinit # CmdUnwrappedClosure
-    // </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/8 >/1
+    // # Reinit # ElUnwrappedClosure
+    // </0 & NumberFromOpcode/4 # Reinit/5 # ElUnwrappedClosure/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term(  ident_Reinit, context[5] ) )
       continue;
-    context[8] = refalrts::ident_left(  ident_CmdUnwrappedClosure, context[6], context[7] );
+    context[8] = refalrts::ident_left(  ident_ElUnwrappedClosure, context[6], context[7] );
     if( ! context[8] )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # CmdUnwrappedClosure/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/5 # ElUnwrappedClosure/8 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 88/1 ]] }
     refalrts::reinit_number( context[1], 88UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2485,6 +2536,28 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPushStack/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 95/1 ]] }
     refalrts::reinit_number( context[1], 95UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # CmdWrapClosure
+    // </0 & NumberFromOpcode/4 # CmdWrapClosure/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_CmdWrapClosure, context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdWrapClosure/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 110/1 ]] }
+    refalrts::reinit_number( context[1], 110UL );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2802,39 +2875,17 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   refalrts::stop_sentence();
 
   do {
-    // # CmdWrapClosure
-    // </0 & NumberFromOpcode/4 # CmdWrapClosure/5 >/1
+    // # CmdScale
+    // </0 & NumberFromOpcode/4 # CmdScale/5 >/1
     context[6] = context[2];
     context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdWrapClosure, context[5] ) )
+    if( ! refalrts::ident_term(  ident_CmdScale, context[5] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdWrapClosure/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: 110/1 ]] }
-    refalrts::reinit_number( context[1], 110UL );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // # CmdEnd
-    // </0 & NumberFromOpcode/4 # CmdEnd/5 >/1
-    context[6] = context[2];
-    context[7] = context[3];
-    if( ! refalrts::ident_term(  ident_CmdEnd, context[5] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[6], context[7] ) )
-      continue;
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEnd/5 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdScale/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 111/1 ]] }
     refalrts::reinit_number( context[1], 111UL );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2866,6 +2917,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
 }
 
 static refalrts::NativeReference nat_ref_NumberFromOpcode("NumberFromOpcode", 0U, 0U, func_NumberFromOpcode);
+
 
 static refalrts::FnResult func_NumberFromBracket(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2991,6 +3043,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::Iter arg_begin, refal
 }
 
 static refalrts::NativeReference nat_ref_NumberFromBracket("NumberFromBracket", 0U, 0U, func_NumberFromBracket);
+
 
 static refalrts::FnResult func_BlockTypeNumber(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

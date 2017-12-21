@@ -1,65 +1,71 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'HighLevelRASL-GenResult-Simple.sref'
+// Don't edit! Edit 'HighLevelRASL-GenResult-Simple.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
-const refalrts::RefalIdentifier ident_ARGm_BEGIN = refalrts::ident_from_static("ARG-BEGIN");
-const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
-const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
-const refalrts::RefalIdentifier ident_CallBrackets = refalrts::ident_from_static("CallBrackets");
-const refalrts::RefalIdentifier ident_CloseCall = refalrts::ident_from_static("CloseCall");
-const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
-const refalrts::RefalIdentifier ident_CmdCopyVar = refalrts::ident_from_static("CmdCopyVar");
-const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
-const refalrts::RefalIdentifier ident_CmdInsertElem = refalrts::ident_from_static("CmdInsertElem");
-const refalrts::RefalIdentifier ident_CmdInsertRange = refalrts::ident_from_static("CmdInsertRange");
-const refalrts::RefalIdentifier ident_CmdInsertVar = refalrts::ident_from_static("CmdInsertVar");
-const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
-const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
-const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
-const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
-const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
-const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
-const refalrts::RefalIdentifier ident_CmdUseRes = refalrts::ident_from_static("CmdUseRes");
-const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
-const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
-const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
-const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
-const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
-const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
-const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
-const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
-const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
-const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
-const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
-const refalrts::RefalIdentifier ident_Offset = refalrts::ident_from_static("Offset");
-const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
-const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
-const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
-const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
-const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
-const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
-const refalrts::RefalIdentifier ident_TkString = refalrts::ident_from_static("TkString");
-const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
+static const refalrts::RefalIdentifier ident_ARGm_BEGIN = refalrts::ident_from_static("ARG-BEGIN");
+static const refalrts::RefalIdentifier ident_Allocate = refalrts::ident_from_static("Allocate");
+static const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+static const refalrts::RefalIdentifier ident_CallBrackets = refalrts::ident_from_static("CallBrackets");
+static const refalrts::RefalIdentifier ident_ClosureBrackets = refalrts::ident_from_static("ClosureBrackets");
+static const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+static const refalrts::RefalIdentifier ident_CmdCopyVar = refalrts::ident_from_static("CmdCopyVar");
+static const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
+static const refalrts::RefalIdentifier ident_CmdInsertElem = refalrts::ident_from_static("CmdInsertElem");
+static const refalrts::RefalIdentifier ident_CmdInsertRange = refalrts::ident_from_static("CmdInsertRange");
+static const refalrts::RefalIdentifier ident_CmdInsertVar = refalrts::ident_from_static("CmdInsertVar");
+static const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
+static const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
+static const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
+static const refalrts::RefalIdentifier ident_CmdResetAllocator = refalrts::ident_from_static("CmdResetAllocator");
+static const refalrts::RefalIdentifier ident_CmdSetRes = refalrts::ident_from_static("CmdSetRes");
+static const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
+static const refalrts::RefalIdentifier ident_CmdUseRes = refalrts::ident_from_static("CmdUseRes");
+static const refalrts::RefalIdentifier ident_CmdWrapClosure = refalrts::ident_from_static("CmdWrapClosure");
+static const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
+static const refalrts::RefalIdentifier ident_ElCloseADT = refalrts::ident_from_static("ElCloseADT");
+static const refalrts::RefalIdentifier ident_ElCloseBracket = refalrts::ident_from_static("ElCloseBracket");
+static const refalrts::RefalIdentifier ident_ElCloseCall = refalrts::ident_from_static("ElCloseCall");
+static const refalrts::RefalIdentifier ident_ElClosureHead = refalrts::ident_from_static("ElClosureHead");
+static const refalrts::RefalIdentifier ident_ElIdent = refalrts::ident_from_static("ElIdent");
+static const refalrts::RefalIdentifier ident_ElName = refalrts::ident_from_static("ElName");
+static const refalrts::RefalIdentifier ident_ElNumber = refalrts::ident_from_static("ElNumber");
+static const refalrts::RefalIdentifier ident_ElOpenADT = refalrts::ident_from_static("ElOpenADT");
+static const refalrts::RefalIdentifier ident_ElOpenBracket = refalrts::ident_from_static("ElOpenBracket");
+static const refalrts::RefalIdentifier ident_ElOpenCall = refalrts::ident_from_static("ElOpenCall");
+static const refalrts::RefalIdentifier ident_ElString = refalrts::ident_from_static("ElString");
+static const refalrts::RefalIdentifier ident_ElUnwrappedClosure = refalrts::ident_from_static("ElUnwrappedClosure");
+static const refalrts::RefalIdentifier ident_Offset = refalrts::ident_from_static("Offset");
+static const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+static const refalrts::RefalIdentifier ident_TkCloseADT = refalrts::ident_from_static("TkCloseADT");
+static const refalrts::RefalIdentifier ident_TkCloseBracket = refalrts::ident_from_static("TkCloseBracket");
+static const refalrts::RefalIdentifier ident_TkCloseCall = refalrts::ident_from_static("TkCloseCall");
+static const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
+static const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+static const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+static const refalrts::RefalIdentifier ident_TkString = refalrts::ident_from_static("TkString");
+static const refalrts::RefalIdentifier ident_TkUnwrappedClosure = refalrts::ident_from_static("TkUnwrappedClosure");
+static const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_CollectStrings("CollectStrings", 0U, 0U);
-static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
-static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
-static refalrts::ExternalReference ref_gen_GenResultm_Simple_B1("GenResult-Simple:1", 3139146091U, 3529284907U);
+static refalrts::ExternalReference ref_DoGenResult("DoGenResult", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_GenResult("GenResult", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_gen_GenResult_A1("GenResult=1", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_gen_GenResult_A1L1("GenResult=1\\1", 3373678874U, 1434211168U);
 static refalrts::ExternalReference ref_GenResultm_Simple("GenResult-Simple", 0U, 0U);
-static refalrts::ExternalReference ref_gen_GenResult_A1("GenResult=1", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_gen_GenResult_A1L1("GenResult=1\\1", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_GenResult("GenResult", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_DoGenResult("DoGenResult", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_MakeVariableCommentTable("MakeVariableCommentTable", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_gen_ReplicateVar_L1("ReplicateVar\\1", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_ReplicateVar("ReplicateVar", 3139146091U, 3529284907U);
-static refalrts::ExternalReference ref_MakeVariableComment("MakeVariableComment", 3139146091U, 3529284907U);
+static refalrts::ExternalReference ref_gen_GenResultm_Simple_B1("GenResult-Simple:1", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
+static refalrts::ExternalReference ref_MakeVariableComment("MakeVariableComment", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_MakeVariableCommentTable("MakeVariableCommentTable", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
+static refalrts::ExternalReference ref_ReplicateVar("ReplicateVar", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_gen_ReplicateVar_L1("ReplicateVar\\1", 3373678874U, 1434211168U);
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
 
 static refalrts::FnResult func_gen_GenResultm_Simple_B1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -198,7 +204,8 @@ static refalrts::FnResult func_gen_GenResultm_Simple_B1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenResultm_Simple_B1("GenResult-Simple:1", 3139146091U, 3529284907U, func_gen_GenResultm_Simple_B1);
+static refalrts::NativeReference nat_ref_gen_GenResultm_Simple_B1("GenResult-Simple:1", 3373678874U, 1434211168U, func_gen_GenResultm_Simple_B1);
+
 
 static refalrts::FnResult func_GenResultm_Simple(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -259,6 +266,7 @@ static refalrts::FnResult func_GenResultm_Simple(refalrts::Iter arg_begin, refal
 }
 
 static refalrts::NativeReference nat_ref_GenResultm_Simple("GenResult-Simple", 0U, 0U, func_GenResultm_Simple);
+
 
 static refalrts::FnResult func_gen_GenResult_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -325,7 +333,8 @@ static refalrts::FnResult func_gen_GenResult_A1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenResult_A1("GenResult=1", 3139146091U, 3529284907U, func_gen_GenResult_A1);
+static refalrts::NativeReference nat_ref_gen_GenResult_A1("GenResult=1", 3373678874U, 1434211168U, func_gen_GenResult_A1);
+
 
 static refalrts::FnResult func_gen_GenResult_A1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -379,13 +388,14 @@ static refalrts::FnResult func_gen_GenResult_A1L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenResult_A1L1("GenResult=1\\1", 3139146091U, 3529284907U, func_gen_GenResult_A1L1);
+static refalrts::NativeReference nat_ref_gen_GenResult_A1L1("GenResult=1\\1", 3373678874U, 1434211168U, func_gen_GenResult_A1L1);
+
 
 static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
+  // issue here memory for vars with 16 elems
+  refalrts::Iter context[16];
+  refalrts::zeros( context, 16 );
   // </0 & GenResult/4 s.ContextOffset#1/5 (/8 e.PatternVars#1/6 )/9 e.Result#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -408,45 +418,43 @@ static refalrts::FnResult func_GenResult(refalrts::Iter arg_begin, refalrts::Ite
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </10 </11 Tile{ HalfReuse: & @create_closure@/0 Reuse: & GenResult=1/4 AsIs: s.ContextOffset#1/5 AsIs: (/8 } Tile{ AsIs: e.Result#1/2 } Tile{ AsIs: )/9 } >/12 </13 & Map/14 & GenResult=1\1/15 Tile{ AsIs: e.PatternVars#1/6 } >/16 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </10 Tile{ HalfReuse: [*]/0 Reuse: & GenResult=1/4 AsIs: s.ContextOffset#1/5 AsIs: (/8 } Tile{ AsIs: e.Result#1/2 } Tile{ AsIs: )/9 } {*}/11 </12 & Map/13 & GenResult=1\1/14 Tile{ AsIs: e.PatternVars#1/6 } >/15 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[11] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[11], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[12] ) )
+  if( ! refalrts::alloc_open_call( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[13] ) )
+  if( ! refalrts::alloc_name( context[13], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_Map.ref.function ) )
+  if( ! refalrts::alloc_name( context[14], ref_gen_GenResult_A1L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], ref_gen_GenResult_A1L1.ref.function ) )
+  if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[16] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], refalrts::create_closure );
+  refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_GenResult_A1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[10] );
-  refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[15] );
   refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[11] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[16], context[16] );
+  res = refalrts::splice_evar( res, context[15], context[15] );
   res = refalrts::splice_evar( res, context[6], context[7] );
-  res = refalrts::splice_evar( res, context[12], context[15] );
+  res = refalrts::splice_evar( res, context[11], context[14] );
   res = refalrts::splice_evar( res, context[9], context[9] );
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[0], context[8] );
-  res = refalrts::splice_evar( res, context[10], context[11] );
+  res = refalrts::splice_evar( res, context[10], context[10] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[11] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenResult("GenResult", 3139146091U, 3529284907U, func_GenResult);
+static refalrts::NativeReference nat_ref_GenResult("GenResult", 3373678874U, 1434211168U, func_GenResult);
+
 
 static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1042,7 +1050,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/18 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/20 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } Tile{ HalfReuse: # Allocate/16 AsIs: s.Counter#1/17 HalfReuse: # ElOpenCall/28 HalfReuse: )/30 } )/31 (/32 (/33 # CmdInsertElem/34 s.Counter#1/17/35 )/36 Tile{ AsIs: e.Commands#1/22 } )/37 </38 & Inc/39 s.Counter#1/17/40 >/41 Tile{ AsIs: e.InBrackets#1/26 } (/42 # CloseCall/43 s.Counter#1/17/44 Tile{ AsIs: )/29 AsIs: e.Result#1/24 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/18 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/20 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } Tile{ HalfReuse: # Allocate/16 AsIs: s.Counter#1/17 HalfReuse: # ElOpenCall/28 HalfReuse: )/30 } )/31 (/32 (/33 # CmdInsertElem/34 s.Counter#1/17/35 )/36 Tile{ AsIs: e.Commands#1/22 } )/37 </38 & Inc/39 s.Counter#1/17/40 >/41 Tile{ AsIs: e.InBrackets#1/26 } (/42 # TkCloseCall/43 s.Counter#1/17/44 Tile{ AsIs: )/29 AsIs: e.Result#1/24 AsIs: >/1 ]] }
     if( ! refalrts::alloc_close_bracket( context[31] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[32] ) )
@@ -1067,7 +1075,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( context[42] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( context[43], ident_CloseCall ) )
+    if( ! refalrts::alloc_ident( context[43], ident_TkCloseCall ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(context[44], context[17]))
       return refalrts::cNoMemory;
@@ -1200,6 +1208,98 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     res = refalrts::splice_evar( res, context[45], context[46] );
     res = refalrts::splice_evar( res, context[22], context[23] );
     res = refalrts::splice_evar( res, context[35], context[44] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( e.idx ) ( e.idx ) s.idx ( # ClosureBrackets e.idx ) e.idx
+    // </0 & DoGenResult/4 (/7 e.Vars#1/18 )/8 (/11 e.AllocCommands#1/20 )/12 (/15 e.Commands#1/22 )/16 s.Counter#1/17 (/28 # ClosureBrackets/30 e.InBrackets#1/26 )/29 e.Result#1/24 >/1
+    context[18] = context[5];
+    context[19] = context[6];
+    context[20] = context[9];
+    context[21] = context[10];
+    context[22] = context[13];
+    context[23] = context[14];
+    context[24] = context[2];
+    context[25] = context[3];
+    context[26] = 0;
+    context[27] = 0;
+    context[28] = refalrts::brackets_left( context[26], context[27], context[24], context[25] );
+    if( ! context[28] )
+      continue;
+    refalrts::bracket_pointers(context[28], context[29]);
+    context[30] = refalrts::ident_left(  ident_ClosureBrackets, context[26], context[27] );
+    if( ! context[30] )
+      continue;
+    // closed e.Vars#1 as range 18
+    // closed e.AllocCommands#1 as range 20
+    // closed e.Commands#1 as range 22
+    // closed e.InBrackets#1 as range 26
+    // closed e.Result#1 as range 24
+    //DEBUG: s.Counter#1: 17
+    //DEBUG: e.Vars#1: 18
+    //DEBUG: e.AllocCommands#1: 20
+    //DEBUG: e.Commands#1: 22
+    //DEBUG: e.InBrackets#1: 26
+    //DEBUG: e.Result#1: 24
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/18 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/20 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } Tile{ HalfReuse: # Allocate/16 AsIs: s.Counter#1/17 HalfReuse: # ElClosureHead/28 HalfReuse: )/30 } )/31 (/32 (/33 # CmdInsertElem/34 s.Counter#1/17/35 )/36 Tile{ AsIs: e.Commands#1/22 } )/37 </38 & Inc/39 s.Counter#1/17/40 >/41 Tile{ AsIs: e.InBrackets#1/26 } (/42 # TkUnwrappedClosure/43 s.Counter#1/17/44 Tile{ AsIs: )/29 AsIs: e.Result#1/24 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_close_bracket( context[31] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[32] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[33] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[34], ident_CmdInsertElem ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[35], context[17]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[36] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[37] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[38] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[39], ref_Inc.ref.function ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[40], context[17]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[41] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[42] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[43], ident_TkUnwrappedClosure ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[44], context[17]))
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[12] );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[28], ident_ElClosureHead );
+    refalrts::reinit_close_bracket( context[30] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[42], context[29] );
+    refalrts::push_stack( context[41] );
+    refalrts::push_stack( context[38] );
+    refalrts::link_brackets( context[32], context[37] );
+    refalrts::link_brackets( context[33], context[36] );
+    refalrts::link_brackets( context[11], context[31] );
+    refalrts::link_brackets( context[12], context[30] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[29];
+    res = refalrts::splice_evar( res, context[42], context[44] );
+    res = refalrts::splice_evar( res, context[26], context[27] );
+    res = refalrts::splice_evar( res, context[37], context[41] );
+    res = refalrts::splice_evar( res, context[22], context[23] );
+    res = refalrts::splice_evar( res, context[31], context[36] );
+    res = refalrts::splice_evar( res, context[16], context[30] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -1398,8 +1498,8 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
   refalrts::stop_sentence();
 
   do {
-    // ( e.idx ) ( e.idx ) ( e.idx ) s.idx ( # CloseCall s.idx ) e.idx
-    // </0 & DoGenResult/4 (/7 e.Vars#1/18 )/8 (/11 e.AllocCommands#1/20 )/12 (/15 e.Commands#1/22 )/16 s.Counter#1/17 (/28 # CloseCall/30 s.OpenCounter#1/31 )/29 e.Result#1/24 >/1
+    // ( e.idx ) ( e.idx ) ( e.idx ) s.idx ( # TkCloseCall s.idx ) e.idx
+    // </0 & DoGenResult/4 (/7 e.Vars#1/18 )/8 (/11 e.AllocCommands#1/20 )/12 (/15 e.Commands#1/22 )/16 s.Counter#1/17 (/28 # TkCloseCall/30 s.OpenCounter#1/31 )/29 e.Result#1/24 >/1
     context[18] = context[5];
     context[19] = context[6];
     context[20] = context[9];
@@ -1414,7 +1514,7 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     if( ! context[28] )
       continue;
     refalrts::bracket_pointers(context[28], context[29]);
-    context[30] = refalrts::ident_left(  ident_CloseCall, context[26], context[27] );
+    context[30] = refalrts::ident_left(  ident_TkCloseCall, context[26], context[27] );
     if( ! context[30] )
       continue;
     // closed e.Vars#1 as range 18
@@ -1495,6 +1595,102 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
     res = refalrts::splice_evar( res, context[32], context[39] );
     res = refalrts::splice_evar( res, context[16], context[17] );
     refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( e.idx ) ( e.idx ) s.idx ( # TkUnwrappedClosure s.idx ) e.idx
+    // </0 & DoGenResult/4 (/7 e.Vars#1/18 )/8 (/11 e.AllocCommands#1/20 )/12 (/15 e.Commands#1/22 )/16 s.Counter#1/17 (/28 # TkUnwrappedClosure/30 s.HeadCounter#1/31 )/29 e.Result#1/24 >/1
+    context[18] = context[5];
+    context[19] = context[6];
+    context[20] = context[9];
+    context[21] = context[10];
+    context[22] = context[13];
+    context[23] = context[14];
+    context[24] = context[2];
+    context[25] = context[3];
+    context[26] = 0;
+    context[27] = 0;
+    context[28] = refalrts::brackets_left( context[26], context[27], context[24], context[25] );
+    if( ! context[28] )
+      continue;
+    refalrts::bracket_pointers(context[28], context[29]);
+    context[30] = refalrts::ident_left(  ident_TkUnwrappedClosure, context[26], context[27] );
+    if( ! context[30] )
+      continue;
+    // closed e.Vars#1 as range 18
+    // closed e.AllocCommands#1 as range 20
+    // closed e.Commands#1 as range 22
+    // closed e.Result#1 as range 24
+    if( ! refalrts::svar_left( context[31], context[26], context[27] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[26], context[27] ) )
+      continue;
+    //DEBUG: s.Counter#1: 17
+    //DEBUG: e.Vars#1: 18
+    //DEBUG: e.AllocCommands#1: 20
+    //DEBUG: e.Commands#1: 22
+    //DEBUG: e.Result#1: 24
+    //DEBUG: s.HeadCounter#1: 31
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.HeadCounter#1/31 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenResult/4 AsIs: (/7 AsIs: e.Vars#1/18 AsIs: )/8 AsIs: (/11 AsIs: e.AllocCommands#1/20 HalfReuse: (/12 HalfReuse: # CmdCreateElem/15 } Tile{ HalfReuse: # Allocate/16 AsIs: s.Counter#1/17 HalfReuse: # ElUnwrappedClosure/28 HalfReuse: s.HeadCounter1 #31/30 } )/32 )/33 (/34 (/35 # CmdInsertElem/36 s.Counter#1/17/37 )/38 Tile{ AsIs: e.Commands#1/22 } (/39 # CmdWrapClosure/40 s.Counter#1/17/41 )/42 )/43 </44 & Inc/45 s.Counter#1/17/46 Tile{ HalfReuse: >/29 AsIs: e.Result#1/24 AsIs: >/1 ]] }
+    if( ! refalrts::alloc_close_bracket( context[32] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[33] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[34] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[35] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[36], ident_CmdInsertElem ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[37], context[17]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[38] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[39] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( context[40], ident_CmdWrapClosure ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[41], context[17]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[42] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[43] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( context[44] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[45], ref_Inc.ref.function ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(context[46], context[17]))
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[12] );
+    refalrts::reinit_ident( context[15], ident_CmdCreateElem );
+    refalrts::reinit_ident( context[16], ident_Allocate );
+    refalrts::reinit_ident( context[28], ident_ElUnwrappedClosure );
+    refalrts::reinit_svar( context[30], context[31] );
+    refalrts::reinit_close_call( context[29] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::push_stack( context[29] );
+    refalrts::push_stack( context[44] );
+    refalrts::link_brackets( context[34], context[43] );
+    refalrts::link_brackets( context[39], context[42] );
+    refalrts::link_brackets( context[35], context[38] );
+    refalrts::link_brackets( context[11], context[33] );
+    refalrts::link_brackets( context[12], context[32] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[29];
+    res = refalrts::splice_evar( res, context[39], context[46] );
+    res = refalrts::splice_evar( res, context[22], context[23] );
+    res = refalrts::splice_evar( res, context[32], context[38] );
+    res = refalrts::splice_evar( res, context[16], context[30] );
+    refalrts::splice_to_freelist_open( context[15], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
@@ -1779,7 +1975,8 @@ static refalrts::FnResult func_DoGenResult(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoGenResult("DoGenResult", 3139146091U, 3529284907U, func_DoGenResult);
+static refalrts::NativeReference nat_ref_DoGenResult("DoGenResult", 3373678874U, 1434211168U, func_DoGenResult);
+
 
 static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1838,7 +2035,8 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MakeVariableCommentTable("MakeVariableCommentTable", 3139146091U, 3529284907U, func_MakeVariableCommentTable);
+static refalrts::NativeReference nat_ref_MakeVariableCommentTable("MakeVariableCommentTable", 3373678874U, 1434211168U, func_MakeVariableCommentTable);
+
 
 static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1883,7 +2081,8 @@ static refalrts::FnResult func_gen_ReplicateVar_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReplicateVar_L1("ReplicateVar\\1", 3139146091U, 3529284907U, func_gen_ReplicateVar_L1);
+static refalrts::NativeReference nat_ref_gen_ReplicateVar_L1("ReplicateVar\\1", 3373678874U, 1434211168U, func_gen_ReplicateVar_L1);
+
 
 static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1927,17 +2126,15 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
   //DEBUG: e.PatternOccurences#1: 5
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } Tile{ HalfReuse: & Map/17 } Tile{ AsIs: </0 Reuse: & @create_closure@/4 HalfReuse: & ReplicateVar\1/7 AsIs: s.Mode#1/9 AsIs: (/12 AsIs: e.Index#1/10 AsIs: )/13 HalfReuse: >/16 } Tile{ AsIs: e.ResultOccurences#1/14 } Tile{ AsIs: e.PatternOccurences#1/5 } Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 } Tile{ HalfReuse: & Map/0 HalfReuse: [*]/4 HalfReuse: & ReplicateVar\1/7 AsIs: s.Mode#1/9 AsIs: (/12 AsIs: e.Index#1/10 AsIs: )/13 HalfReuse: {*}/16 } Tile{ AsIs: e.ResultOccurences#1/14 } Tile{ AsIs: e.PatternOccurences#1/5 } Tile{ AsIs: >/1 ]] }
   refalrts::reinit_open_call( context[8] );
-  refalrts::reinit_name( context[17], ref_Map.ref.function );
-  refalrts::update_name( context[4], refalrts::create_closure );
+  refalrts::reinit_name( context[0], ref_Map.ref.function );
+  refalrts::reinit_closure_head( context[4] );
   refalrts::reinit_name( context[7], ref_gen_ReplicateVar_L1.ref.function );
-  refalrts::reinit_close_call( context[16] );
+  refalrts::reinit_unwrapped_closure( context[16], context[4] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[8] );
-  refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[0] );
   refalrts::link_brackets( context[12], context[13] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -1945,13 +2142,14 @@ static refalrts::FnResult func_ReplicateVar(refalrts::Iter arg_begin, refalrts::
   res = refalrts::splice_evar( res, context[5], context[6] );
   res = refalrts::splice_evar( res, context[14], context[15] );
   res = refalrts::splice_evar( res, context[0], context[16] );
-  res = refalrts::splice_evar( res, context[17], context[17] );
   res = refalrts::splice_evar( res, context[8], context[8] );
-  refalrts::use( res );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::wrap_closure( context[16] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReplicateVar("ReplicateVar", 3139146091U, 3529284907U, func_ReplicateVar);
+static refalrts::NativeReference nat_ref_ReplicateVar("ReplicateVar", 3373678874U, 1434211168U, func_ReplicateVar);
+
 
 static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2009,7 +2207,7 @@ static refalrts::FnResult func_MakeVariableComment(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MakeVariableComment("MakeVariableComment", 3139146091U, 3529284907U, func_MakeVariableComment);
+static refalrts::NativeReference nat_ref_MakeVariableComment("MakeVariableComment", 3373678874U, 1434211168U, func_MakeVariableComment);
 
 
 //End of file

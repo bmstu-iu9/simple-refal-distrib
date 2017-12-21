@@ -3,13 +3,36 @@
 //==============================================================================
 
 
-/********************************* REFACTORED *********************************/
-
-// 1. Mu
-
+/**
+  1. <Mu s.FuncName e.Arg> == <s.FuncName-Ptr e.Arg>
+     <Mu (e.FuncName) e.Arg> == <s.FuncName-Ptr e.Arg>
+  extension:
+     <Mu s.FuncPtr e.Arg> == <s.FuncPtr e.Arg>
+*/
 Mu {
-  e.X = <_Mu e.X>;
+  // TODO: заменить на условия!!!
+  t.Function e.Arg
+    = <__Step-Start> <__Mu-Aux t.Function> : s.Function-Ptr
+    = <__Step-End> <s.Function-Ptr e.Arg>;
 }
+
+__Mu-Aux {
+  '+' = Add; '/' = Div; '%' = Mod; '*' = Mul; '?' = Residue; '-' = Sub;
+  "+" = Add; "/" = Div; "%" = Mod; "*" = Mul; "?" = Residue; "-" = Sub;
+
+  t.Function
+    = <Type t.Function>
+    : {
+        'F' s.SubType s.FnPtr = s.FnPtr;
+
+        'W' s.SubType s.FnName = <__FindMuPtr $SCOPEID s.FnName>;
+
+        'B' s.0 (e.FnName) = <__FindMuPtr $SCOPEID e.FnName>;
+      };
+}
+
+//FROM Library
+$EXTERN __FindMuPtr, __Step-Start, __Step-End;
 
 
 // 2. Add
@@ -174,6 +197,12 @@ $EXTERN Putout;
 $EXTERN Rp;
 
 
+// 29. Step
+
+//FROM Library
+$EXTERN Step;
+
+
 // 30. Sub
 
 //FROM Library
@@ -184,6 +213,12 @@ $EXTERN Sub;
 
 //FROM Library
 $EXTERN Symb;
+
+
+// 32. Time
+
+//FROM Library
+$EXTERN Time;
 
 
 // 33. Type
@@ -198,10 +233,72 @@ $EXTERN Type;
 $EXTERN Upper;
 
 
+// 35. Sysfun
+
+//FROM Library
+$EXTERN Sysfun;
+
+
+// 45. Freeze
+
+//FROM Library
+$EXTERN Freeze;
+
+
+// 46. Freezer
+
+//FROM Library
+$EXTERN Freezer;
+
+
+// 47. Dn
+
+//FROM Library
+$EXTERN Dn;
+
+
+/**
+  48. Up — not implemented yet
+*/
+$ENUM Up;
+
+
+/**
+  49. Ev-met — not implemented yet
+*/
+$ENUM Ev-met;
+
+
+/**
+  50. <Residue s.FuncName e.Arg> == <s.FuncName-Ptr e.Arg>
+      <Residue (e.FuncName) e.Arg> == <s.FuncName-Ptr e.Arg>
+  extension:
+      <Residue s.FuncPtr e.Arg> == <s.FuncPtr e.Arg>
+*/
+Residue {
+  // TODO: заменить на условия!!!
+  t.Function e.Arg
+    = <__Step-Start> <__Mu-Aux t.Function> : s.Function-Ptr
+    = <__Step-End> <s.Function-Ptr e.Arg>;
+}
+
+
 // 51. GetEnv
 
 //FROM Library
 $EXTERN GetEnv;
+
+
+// 52. System
+
+//FROM Library
+$EXTERN System;
+
+
+// 53. Exit
+
+//FROM Library
+$EXTERN Exit;
 
 
 // 54. Close
@@ -216,6 +313,18 @@ $EXTERN Close;
 $EXTERN ExistFile;
 
 
+// 56. GetCurrentDirectory
+
+//FROM Library
+$EXTERN GetCurrentDirectory;
+
+
+// 57. RemoveFile
+
+//FROM Library
+$EXTERN RemoveFile;
+
+
 // 58. Implode_Ext
 
 //FROM Library
@@ -228,10 +337,40 @@ $EXTERN Implode_Ext;
 $EXTERN Explode_Ext;
 
 
+// 60. TimeElapsed
+
+//FROM Library
+$EXTERN TimeElapsed;
+
+
 // 61. Compare
 
 //FROM Library
 $EXTERN Compare;
+
+
+// 62. DeSysfun
+
+//FROM Library
+$EXTERN DeSysfun;
+
+
+// 63. XMLParse
+
+//FROM Library
+$EXTERN XMLParse;
+
+
+// 64. Random
+
+//FROM Library
+$EXTERN Random;
+
+
+// 65. RandomDigit
+
+//FROM Library
+$EXTERN RandomDigit;
 
 
 // 66. Write
@@ -240,104 +379,25 @@ $EXTERN Compare;
 $EXTERN Write;
 
 
-/******************************* NOT REFACTORED *******************************/
+// 67. ListOfBuiltin
 
-// Функция слишком длинная для одного предложения
-ListOfBuiltin {
-  = <__ListOfBuiltin_1> <__ListOfBuiltin_2>;
-}
+//FROM Library
+$EXTERN ListOfBuiltin;
 
-__ListOfBuiltin_1 {
-  = (1 #Mu #special)
-    (2 #Add #regular)
-    (3 #Arg #regular)
-    (4 #Br #regular)
-    (5 #Card #regular)
-    (6 #Chr #regular)
-    (7 #Cp #regular)
-    (8 #Dg #regular)
-    (9 #Dgall #regular)
-    (10 #Div #regular)
-    (11 #Divmod #regular)
-    (12 #Explode #regular)
-    (13 #First #regular)
-    (14 #Get #regular)
-    (15 #Implode #regular)
-    (16 #Last #regular)
-    (17 #Lenw #regular)
-    (18 #Lower #regular)
-    (19 #Mod #regular)
-    (20 #Mul #regular)
-    (21 #Numb #regular)
-    (22 #Open #regular)
-    (23 #Ord #regular)
-    (24 #Print #regular)
-    (25 #Prout #regular)
-    (26 #Put #regular)
-    (27 #Putout #regular)
-    (28 #Rp #regular)
-    (29 #Step #regular)
-    (30 #Sub #regular)
-    (31 #Symb #regular)
-    (32 #Time #regular)
-    (33 #Type #regular)
-    (34 #Upper #regular)
-    (35 #Sysfun #regular);
-}
 
-__ListOfBuiltin_2 {
-  = (42 "Imp$$" #regular)
-    (43 "Stop$$" #regular)
-    (44 "" #regular)
-    (45 #Freeze #regular)
-    (46 #Freezer #regular)
-    (47 #Dn #regular)
-    (48 #Up #special)
-    (49 #Ev-met #special)
-    (50 #Residue #special)
-    (51 #GetEnv #regular)
-    (52 #System #regular)
-    (53 #Exit #regular)
-    (54 #Close #regular)
-    (55 #ExistFile #regular)
-    (56 #GetCurrentDirectory #regular)
-    (57 #RemoveFile #regular)
-    (58 #Implode_Ext #regular)
-    (59 #Explode_Ext #regular)
-    (60 #TimeElapsed #regular)
-    (61 #Compare #regular)
-    (62 #DeSysfun #regular)
-    (63 #XMLParse #regular)
-    (64 #Random #regular)
-    (65 #RandomDigit #regular)
-    (66 #Write #regular)
-    (67 #ListOfBuiltin #regular)
-    (68 #SizeOf #regular)
-    (69 #GetPID #regular)
-    (70 #int4fab_1 #regular)
-    (71 #GetPPID #regular);
-}
+// 68. SizeOf
 
-// Не реализованные пока функции
-$ENUM Step;
-$ENUM Time;
-$ENUM Sysfun;
-$ENUM Freeze;
-$ENUM Freezer;
-$ENUM Dn;
-$ENUM Up;
-$ENUM Ev-met;
-$ENUM Residue;
-$ENUM System;
-$ENUM Exit;
-$ENUM GetCurrentDirectory;
-$ENUM RemoveFile;
-$ENUM TimeElapsed;
-$ENUM DeSysfun;
-$ENUM XMLParse;
-$ENUM Random;
-$ENUM RandomDigit;
-$ENUM SizeOf;
-$ENUM GetPID;
-$ENUM int4fab_1;
-$ENUM GetPPID;
+//FROM Library
+$EXTERN SizeOf;
+
+
+// 69. GetPID
+
+//FROM Library
+$EXTERN GetPID;
+
+
+// 71. GetPPID
+
+//FROM Library
+$EXTERN GetPPID;

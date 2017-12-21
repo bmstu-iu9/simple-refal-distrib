@@ -3,8 +3,10 @@
 
 #include "refalrts-platform-specific.h"
 
-bool refalrts::platform_specific::get_main_module_name(
-  char (&module_name)[refalrts::platform_specific::cModuleNameBufferLen]
+//FROM refalrts-platform-POSIX
+
+bool refalrts::api::get_main_module_name(
+  char (&module_name)[refalrts::api::cModuleNameBufferLen]
 ) {
   // https://developer.apple.com/legacy/library/documentation/Darwin\
   //   /Reference/ManPages/man3/dyld.3.html

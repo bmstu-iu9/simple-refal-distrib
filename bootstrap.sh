@@ -14,6 +14,7 @@ make_dir() {
   $CPPLINEE$TARGET -Isrlib/scratch -DDONT_PRINT_STATISTICS \
     $DIR/*.cpp \
     $(platform_subdir_lookup srlib/scratch)/refalrts-platform-specific.cpp \
+    srlib/scratch/platform-POSIX/refalrts-platform-POSIX.cpp
 
   if [ ! -e $TARGET ]; then
     echo "Can't create file $TARGET, aborting"

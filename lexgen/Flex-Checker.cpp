@@ -1,13 +1,14 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Flex-Checker.sref'
+// Don't edit! Edit 'Flex-Checker.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
+static refalrts::ExternalReference ref_CheckUniqueNames("CheckUniqueNames", 3997484342U, 2282157194U);
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Flexm_Check_L1("Flex-Check\\1", 239279271U, 450572082U);
 static refalrts::ExternalReference ref_Flexm_Check("Flex-Check", 0U, 0U);
-static refalrts::ExternalReference ref_CheckUniqueNames("CheckUniqueNames", 239279271U, 450572082U);
+static refalrts::ExternalReference ref_gen_Flexm_Check_L1("Flex-Check\\1", 3997484342U, 2282157194U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 
 static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -78,7 +79,8 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Flexm_Check_L1("Flex-Check\\1", 239279271U, 450572082U, func_gen_Flexm_Check_L1);
+static refalrts::NativeReference nat_ref_gen_Flexm_Check_L1("Flex-Check\\1", 3997484342U, 2282157194U, func_gen_Flexm_Check_L1);
+
 
 static refalrts::FnResult func_Flexm_Check(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -122,6 +124,7 @@ static refalrts::FnResult func_Flexm_Check(refalrts::Iter arg_begin, refalrts::I
 }
 
 static refalrts::NativeReference nat_ref_Flexm_Check("Flex-Check", 0U, 0U, func_Flexm_Check);
+
 
 static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -231,7 +234,7 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CheckUniqueNames("CheckUniqueNames", 239279271U, 450572082U, func_CheckUniqueNames);
+static refalrts::NativeReference nat_ref_CheckUniqueNames("CheckUniqueNames", 3997484342U, 2282157194U, func_CheckUniqueNames);
 
 
 //End of file

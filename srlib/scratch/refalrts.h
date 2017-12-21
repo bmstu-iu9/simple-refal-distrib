@@ -31,7 +31,8 @@ enum DataTag {
   cDataFile,
   cDataClosure,
   cDataUnwrappedClosure,
-  cDataClosureHead
+  cDataClosureHead,
+  cData_COUNT
 };
 
 typedef FnResult (*RefalFunctionPtr) (Iter begin, Iter end);
@@ -173,11 +174,11 @@ enum iCmd { /*NumberFromOpcode:Cmd+ic;Alg+Left,Alg+Right,Alg+Term*/
   icCharTerm = 10,
   icCharSaveLeft = 11,
   icCharSaveRight = 12,
-  icNumLeft = 13,
-  icNumRight = 14,
-  icNumTerm = 15,
-  icNumSaveLeft = 16,
-  icNumSaveRight = 17,
+  icNumberLeft = 13,
+  icNumberRight = 14,
+  icNumberTerm = 15,
+  icNumberSaveLeft = 16,
+  icNumberSaveRight = 17,
   icHugeNumLeft = 18,
   icHugeNumRight = 19,
   icHugeNumTerm = 20,
@@ -236,6 +237,7 @@ enum iCmd { /*NumberFromOpcode:Cmd+ic;Alg+Left,Alg+Right,Alg+Term*/
   icReinitSVar = 73,
   /*+WORDS:Allocate,Reinit,Update*/
   /*+WORDS:El+Char,El+Name,El+Number,El+HugeNumber,El+Ident,El+Bracket,El+String*/
+  /*+WORDS:El+ClosureHead,El+UnwrappedClosure*/
   icAllocateChar = 74,
   icAllocateName = 75,
   icAllocateNumber = 76,
@@ -243,6 +245,8 @@ enum iCmd { /*NumberFromOpcode:Cmd+ic;Alg+Left,Alg+Right,Alg+Term*/
   icAllocateIdent = 78,
   icAllocateBracket = 79,
   icAllocateString = 80,
+  icAllocateClosureHead = 113,
+  icAllocateUnwrappedClosure = 114,
   icReinitChar = 81,
   icReinitName = 82,
   icReinitNumber = 83,
@@ -258,6 +262,7 @@ enum iCmd { /*NumberFromOpcode:Cmd+ic;Alg+Left,Alg+Right,Alg+Term*/
   icUpdateIdent = 93,
   icLinkBrackets = 94,
   icPushStack = 95,
+  icWrapClosure = 110,
   icSpliceElem = 96,
   icSpliceEVar = 97,
   icSpliceSTVar = 98,
@@ -272,8 +277,7 @@ enum iCmd { /*NumberFromOpcode:Cmd+ic;Alg+Left,Alg+Right,Alg+Term*/
   icFetchSwapInfoBounds = 107,
   icSwapSave = 108,
   icPerformNative = 109,
-  icWrapClosure = 110,
-  icEnd = 111,
+  icScale = 111,
   icVariableDebugOffset = 112,
 };
 
@@ -310,6 +314,12 @@ union FunctionTableItem {
 
   FunctionTableItem(const char *func_name)
     : func_name(func_name)
+  {
+    /* пусто */
+  }
+
+  FunctionTableItem(RefalFunction *function)
+    : function(function)
   {
     /* пусто */
   }
@@ -357,6 +367,9 @@ extern void reinit_close_adt(Iter res);
 
 extern void reinit_open_call(Iter res);
 extern void reinit_close_call(Iter res);
+
+extern void reinit_closure_head(Iter res);
+extern void reinit_unwrapped_closure(Iter res, Iter head);
 
 
 // Операции распознавания образца
@@ -471,6 +484,8 @@ extern bool alloc_open_bracket(Iter& res);
 extern bool alloc_close_bracket(Iter& res);
 extern bool alloc_open_call(Iter& res);
 extern bool alloc_close_call(Iter& res);
+extern bool alloc_closure_head(Iter& res);
+extern bool alloc_unwrapped_closure(Iter& res, Iter head);
 
 #ifndef alloc_copy_svar
 #define alloc_copy_svar alloc_copy_svar_
@@ -500,7 +515,6 @@ extern void splice_to_freelist(Iter first, Iter last);
 extern void splice_to_freelist_open(Iter before_first, Iter after_last);
 extern Iter splice_from_freelist(Iter pos);
 
-extern RefalFunction *create_closure;
 Iter unwrap_closure(Iter closure); // Развернуть замыкание
 Iter wrap_closure(Iter closure); // Свернуть замыкание
 

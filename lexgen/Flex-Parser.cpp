@@ -1,126 +1,127 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Flex-Parser.sref'
+// Don't edit! Edit 'Flex-Parser.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_Alt = refalrts::ident_from_static("Alt");
-const refalrts::RefalIdentifier ident_AnyChar = refalrts::ident_from_static("AnyChar");
-const refalrts::RefalIdentifier ident_Char = refalrts::ident_from_static("Char");
-const refalrts::RefalIdentifier ident_ComplexTermSYMBOL = refalrts::ident_from_static("ComplexTermSYMBOL");
-const refalrts::RefalIdentifier ident_Direct = refalrts::ident_from_static("Direct");
-const refalrts::RefalIdentifier ident_Domain = refalrts::ident_from_static("Domain");
-const refalrts::RefalIdentifier ident_ErrorDomain = refalrts::ident_from_static("ErrorDomain");
-const refalrts::RefalIdentifier ident_Inverted = refalrts::ident_from_static("Inverted");
-const refalrts::RefalIdentifier ident_ManyOne = refalrts::ident_from_static("ManyOne");
-const refalrts::RefalIdentifier ident_ManyZero = refalrts::ident_from_static("ManyZero");
-const refalrts::RefalIdentifier ident_Name = refalrts::ident_from_static("Name");
-const refalrts::RefalIdentifier ident_NamedDomain = refalrts::ident_from_static("NamedDomain");
-const refalrts::RefalIdentifier ident_NamedGroup = refalrts::ident_from_static("NamedGroup");
-const refalrts::RefalIdentifier ident_NamedRegexp = refalrts::ident_from_static("NamedRegexp");
-const refalrts::RefalIdentifier ident_NextState = refalrts::ident_from_static("NextState");
-const refalrts::RefalIdentifier ident_NoNextState = refalrts::ident_from_static("NoNextState");
-const refalrts::RefalIdentifier ident_Optional = refalrts::ident_from_static("Optional");
-const refalrts::RefalIdentifier ident_Regexp = refalrts::ident_from_static("Regexp");
-const refalrts::RefalIdentifier ident_SkippedDomain = refalrts::ident_from_static("SkippedDomain");
-const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
-const refalrts::RefalIdentifier ident_TAlt = refalrts::ident_from_static("TAlt");
-const refalrts::RefalIdentifier ident_TAny = refalrts::ident_from_static("TAny");
-const refalrts::RefalIdentifier ident_TArrow = refalrts::ident_from_static("TArrow");
-const refalrts::RefalIdentifier ident_TChar = refalrts::ident_from_static("TChar");
-const refalrts::RefalIdentifier ident_TCloseBracket = refalrts::ident_from_static("TCloseBracket");
-const refalrts::RefalIdentifier ident_TComma = refalrts::ident_from_static("TComma");
-const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
-const refalrts::RefalIdentifier ident_TEndGroup = refalrts::ident_from_static("TEndGroup");
-const refalrts::RefalIdentifier ident_TEndRegexp = refalrts::ident_from_static("TEndRegexp");
-const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
-const refalrts::RefalIdentifier ident_TErrorMessage = refalrts::ident_from_static("TErrorMessage");
-const refalrts::RefalIdentifier ident_TFlush = refalrts::ident_from_static("TFlush");
-const refalrts::RefalIdentifier ident_TGroupRange = refalrts::ident_from_static("TGroupRange");
-const refalrts::RefalIdentifier ident_TInclude = refalrts::ident_from_static("TInclude");
-const refalrts::RefalIdentifier ident_TInvertGroup = refalrts::ident_from_static("TInvertGroup");
-const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
-const refalrts::RefalIdentifier ident_TOneMany = refalrts::ident_from_static("TOneMany");
-const refalrts::RefalIdentifier ident_TOpenBracket = refalrts::ident_from_static("TOpenBracket");
-const refalrts::RefalIdentifier ident_TOptional = refalrts::ident_from_static("TOptional");
-const refalrts::RefalIdentifier ident_TSkip = refalrts::ident_from_static("TSkip");
-const refalrts::RefalIdentifier ident_TStartGroup = refalrts::ident_from_static("TStartGroup");
-const refalrts::RefalIdentifier ident_TStartRegexp = refalrts::ident_from_static("TStartRegexp");
-const refalrts::RefalIdentifier ident_TStateEnd = refalrts::ident_from_static("TStateEnd");
-const refalrts::RefalIdentifier ident_TStateStart = refalrts::ident_from_static("TStateStart");
-const refalrts::RefalIdentifier ident_TZeroMany = refalrts::ident_from_static("TZeroMany");
-const refalrts::RefalIdentifier ident_Term = refalrts::ident_from_static("Term");
-const refalrts::RefalIdentifier ident_TermSYMBOL = refalrts::ident_from_static("TermSYMBOL");
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Flexm_TextFromToken("Flex-TextFromToken", 0U, 0U);
+static const refalrts::RefalIdentifier ident_Alt = refalrts::ident_from_static("Alt");
+static const refalrts::RefalIdentifier ident_AnyChar = refalrts::ident_from_static("AnyChar");
+static const refalrts::RefalIdentifier ident_Char = refalrts::ident_from_static("Char");
+static const refalrts::RefalIdentifier ident_ComplexTermSYMBOL = refalrts::ident_from_static("ComplexTermSYMBOL");
+static const refalrts::RefalIdentifier ident_Direct = refalrts::ident_from_static("Direct");
+static const refalrts::RefalIdentifier ident_Domain = refalrts::ident_from_static("Domain");
+static const refalrts::RefalIdentifier ident_ErrorDomain = refalrts::ident_from_static("ErrorDomain");
+static const refalrts::RefalIdentifier ident_Inverted = refalrts::ident_from_static("Inverted");
+static const refalrts::RefalIdentifier ident_ManyOne = refalrts::ident_from_static("ManyOne");
+static const refalrts::RefalIdentifier ident_ManyZero = refalrts::ident_from_static("ManyZero");
+static const refalrts::RefalIdentifier ident_Name = refalrts::ident_from_static("Name");
+static const refalrts::RefalIdentifier ident_NamedDomain = refalrts::ident_from_static("NamedDomain");
+static const refalrts::RefalIdentifier ident_NamedGroup = refalrts::ident_from_static("NamedGroup");
+static const refalrts::RefalIdentifier ident_NamedRegexp = refalrts::ident_from_static("NamedRegexp");
+static const refalrts::RefalIdentifier ident_NextState = refalrts::ident_from_static("NextState");
+static const refalrts::RefalIdentifier ident_NoNextState = refalrts::ident_from_static("NoNextState");
+static const refalrts::RefalIdentifier ident_Optional = refalrts::ident_from_static("Optional");
+static const refalrts::RefalIdentifier ident_Regexp = refalrts::ident_from_static("Regexp");
+static const refalrts::RefalIdentifier ident_SkippedDomain = refalrts::ident_from_static("SkippedDomain");
+static const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
+static const refalrts::RefalIdentifier ident_TAlt = refalrts::ident_from_static("TAlt");
+static const refalrts::RefalIdentifier ident_TAny = refalrts::ident_from_static("TAny");
+static const refalrts::RefalIdentifier ident_TArrow = refalrts::ident_from_static("TArrow");
+static const refalrts::RefalIdentifier ident_TChar = refalrts::ident_from_static("TChar");
+static const refalrts::RefalIdentifier ident_TCloseBracket = refalrts::ident_from_static("TCloseBracket");
+static const refalrts::RefalIdentifier ident_TComma = refalrts::ident_from_static("TComma");
+static const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
+static const refalrts::RefalIdentifier ident_TEndGroup = refalrts::ident_from_static("TEndGroup");
+static const refalrts::RefalIdentifier ident_TEndRegexp = refalrts::ident_from_static("TEndRegexp");
+static const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
+static const refalrts::RefalIdentifier ident_TErrorMessage = refalrts::ident_from_static("TErrorMessage");
+static const refalrts::RefalIdentifier ident_TFlush = refalrts::ident_from_static("TFlush");
+static const refalrts::RefalIdentifier ident_TGroupRange = refalrts::ident_from_static("TGroupRange");
+static const refalrts::RefalIdentifier ident_TInclude = refalrts::ident_from_static("TInclude");
+static const refalrts::RefalIdentifier ident_TInvertGroup = refalrts::ident_from_static("TInvertGroup");
+static const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
+static const refalrts::RefalIdentifier ident_TOneMany = refalrts::ident_from_static("TOneMany");
+static const refalrts::RefalIdentifier ident_TOpenBracket = refalrts::ident_from_static("TOpenBracket");
+static const refalrts::RefalIdentifier ident_TOptional = refalrts::ident_from_static("TOptional");
+static const refalrts::RefalIdentifier ident_TSkip = refalrts::ident_from_static("TSkip");
+static const refalrts::RefalIdentifier ident_TStartGroup = refalrts::ident_from_static("TStartGroup");
+static const refalrts::RefalIdentifier ident_TStartRegexp = refalrts::ident_from_static("TStartRegexp");
+static const refalrts::RefalIdentifier ident_TStateEnd = refalrts::ident_from_static("TStateEnd");
+static const refalrts::RefalIdentifier ident_TStateStart = refalrts::ident_from_static("TStateStart");
+static const refalrts::RefalIdentifier ident_TZeroMany = refalrts::ident_from_static("TZeroMany");
+static const refalrts::RefalIdentifier ident_Term = refalrts::ident_from_static("Term");
+static const refalrts::RefalIdentifier ident_TermSYMBOL = refalrts::ident_from_static("TermSYMBOL");
+static refalrts::ExternalReference ref_Current("Current", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_Current_L1("Current\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_CurrentAttr("CurrentAttr", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_CurrentAttr_L1("CurrentAttr\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_CurrentPos("CurrentPos", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_CurrentPos_L1("CurrentPos\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_CurrentTag("CurrentTag", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_CurrentTag_L1("CurrentTag\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_Error("Error", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_Error_L1("Error\\1", 855477224U, 3357112823U);
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
-static refalrts::ExternalReference ref_Gu_Tokens("G_Tokens", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_Current_L1("Current\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_Current("Current", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_MoveNext_L1("MoveNext\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_MoveNext("MoveNext", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_CurrentTag_L1("CurrentTag\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_CurrentTag("CurrentTag", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_CurrentAttr_L1("CurrentAttr\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_CurrentAttr("CurrentAttr", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_CurrentPos_L1("CurrentPos\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_CurrentPos("CurrentPos", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_Expect_L1("Expect\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_Expect("Expect", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_Generalize("Generalize", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_Error_L1("Error\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_Error("Error", 1355077894U, 3783808575U);
+static refalrts::ExternalReference ref_Expect("Expect", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_Expect_L1("Expect\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Flexm_Parse("Flex-Parse", 0U, 0U);
-static refalrts::ExternalReference ref_gen_ParseDescription_L1("ParseDescription\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseDescription("ParseDescription", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseDescriptions_L1("ParseDescriptions\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseDescriptions("ParseDescriptions", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseSubexpr_L1("ParseSubexpr\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseSubexpr("ParseSubexpr", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseDomain_L1("ParseDomain\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseDomain("ParseDomain", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseDomainFrom_L1("ParseDomainFrom\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseDomainFrom("ParseDomainFrom", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseStatesOpt_L1("ParseStatesOpt\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseStatesOpt("ParseStatesOpt", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseDomainTo_L1("ParseDomainTo\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseDomainTo("ParseDomainTo", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseFlush_L1("ParseFlush\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseFlush("ParseFlush", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseNextStateOpt_L1("ParseNextStateOpt\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseNextStateOpt("ParseNextStateOpt", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseState_L1("ParseState\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseState("ParseState", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseNameOpt_L1("ParseNameOpt\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseNameOpt("ParseNameOpt", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseRegexp_L1("ParseRegexp\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseRegexp("ParseRegexp", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseComplexTerm_L1("ParseComplexTerm\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseComplexTerm("ParseComplexTerm", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseTerm_L1("ParseTerm\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseTerm("ParseTerm", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseRepeater_L1("ParseRepeater\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseRepeater("ParseRepeater", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseSimpleTerm_L1("ParseSimpleTerm\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseSimpleTerm("ParseSimpleTerm", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseSet_L1("ParseSet\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseSet("ParseSet", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseInvertOpt_L1("ParseInvertOpt\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseInvertOpt("ParseInvertOpt", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseComplexSYMBOLSETS_L1("ParseComplexSYMBOLSETS\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseComplexSYMBOLSETS("ParseComplexSYMBOLSETS", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseComplexSYMBOLSET_L1("ParseComplexSYMBOLSET\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseComplexSYMBOLSET("ParseComplexSYMBOLSET", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseOptSYMBOL_L1("ParseOptSYMBOL\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseOptSYMBOL("ParseOptSYMBOL", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseStates_L1("ParseStates\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseStates("ParseStates", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseStateNames_L1("ParseStateNames\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseStateNames("ParseStateNames", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseNextName_L1("ParseNextName\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseNextName("ParseNextName", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseAlt_L1("ParseAlt\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseAlt("ParseAlt", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_gen_ParseAltTail_L1("ParseAltTail\\1", 1355077894U, 3783808575U);
-static refalrts::ExternalReference ref_ParseAltTail("ParseAltTail", 1355077894U, 3783808575U);
+static refalrts::ExternalReference ref_Flexm_TextFromToken("Flex-TextFromToken", 0U, 0U);
+static refalrts::ExternalReference ref_Gu_Tokens("G_Tokens", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_Generalize("Generalize", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_MoveNext("MoveNext", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_MoveNext_L1("MoveNext\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseAlt("ParseAlt", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseAlt_L1("ParseAlt\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseAltTail("ParseAltTail", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseAltTail_L1("ParseAltTail\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseComplexSYMBOLSET("ParseComplexSYMBOLSET", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseComplexSYMBOLSET_L1("ParseComplexSYMBOLSET\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseComplexSYMBOLSETS("ParseComplexSYMBOLSETS", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseComplexSYMBOLSETS_L1("ParseComplexSYMBOLSETS\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseComplexTerm("ParseComplexTerm", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseComplexTerm_L1("ParseComplexTerm\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseDescription("ParseDescription", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseDescription_L1("ParseDescription\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseDescriptions("ParseDescriptions", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseDescriptions_L1("ParseDescriptions\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseDomain("ParseDomain", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseDomain_L1("ParseDomain\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseDomainFrom("ParseDomainFrom", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseDomainFrom_L1("ParseDomainFrom\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseDomainTo("ParseDomainTo", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseDomainTo_L1("ParseDomainTo\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseFlush("ParseFlush", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseFlush_L1("ParseFlush\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseInvertOpt("ParseInvertOpt", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseInvertOpt_L1("ParseInvertOpt\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseNameOpt("ParseNameOpt", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseNameOpt_L1("ParseNameOpt\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseNextName("ParseNextName", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseNextName_L1("ParseNextName\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseNextStateOpt("ParseNextStateOpt", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseNextStateOpt_L1("ParseNextStateOpt\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseOptSYMBOL("ParseOptSYMBOL", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseOptSYMBOL_L1("ParseOptSYMBOL\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseRegexp("ParseRegexp", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseRegexp_L1("ParseRegexp\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseRepeater("ParseRepeater", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseRepeater_L1("ParseRepeater\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseSet("ParseSet", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseSet_L1("ParseSet\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseSimpleTerm("ParseSimpleTerm", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseSimpleTerm_L1("ParseSimpleTerm\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseState("ParseState", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseState_L1("ParseState\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseStateNames("ParseStateNames", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseStateNames_L1("ParseStateNames\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseStates("ParseStates", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseStates_L1("ParseStates\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseStatesOpt("ParseStatesOpt", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseStatesOpt_L1("ParseStatesOpt\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseSubexpr("ParseSubexpr", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseSubexpr_L1("ParseSubexpr\\1", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_ParseTerm("ParseTerm", 855477224U, 3357112823U);
+static refalrts::ExternalReference ref_gen_ParseTerm_L1("ParseTerm\\1", 855477224U, 3357112823U);
 
 static refalrts::FnResult func_gen_Current_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -177,7 +178,8 @@ static refalrts::FnResult func_gen_Current_L1(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Current_L1("Current\\1", 1355077894U, 3783808575U, func_gen_Current_L1);
+static refalrts::NativeReference nat_ref_gen_Current_L1("Current\\1", 855477224U, 3357112823U, func_gen_Current_L1);
+
 
 static refalrts::FnResult func_Current(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -218,7 +220,8 @@ static refalrts::FnResult func_Current(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Current("Current", 1355077894U, 3783808575U, func_Current);
+static refalrts::NativeReference nat_ref_Current("Current", 855477224U, 3357112823U, func_Current);
+
 
 static refalrts::FnResult func_gen_MoveNext_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -252,7 +255,8 @@ static refalrts::FnResult func_gen_MoveNext_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_MoveNext_L1("MoveNext\\1", 1355077894U, 3783808575U, func_gen_MoveNext_L1);
+static refalrts::NativeReference nat_ref_gen_MoveNext_L1("MoveNext\\1", 855477224U, 3357112823U, func_gen_MoveNext_L1);
+
 
 static refalrts::FnResult func_MoveNext(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -293,7 +297,8 @@ static refalrts::FnResult func_MoveNext(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MoveNext("MoveNext", 1355077894U, 3783808575U, func_MoveNext);
+static refalrts::NativeReference nat_ref_MoveNext("MoveNext", 855477224U, 3357112823U, func_MoveNext);
+
 
 static refalrts::FnResult func_gen_CurrentTag_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -335,7 +340,8 @@ static refalrts::FnResult func_gen_CurrentTag_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CurrentTag_L1("CurrentTag\\1", 1355077894U, 3783808575U, func_gen_CurrentTag_L1);
+static refalrts::NativeReference nat_ref_gen_CurrentTag_L1("CurrentTag\\1", 855477224U, 3357112823U, func_gen_CurrentTag_L1);
+
 
 static refalrts::FnResult func_CurrentTag(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -376,7 +382,8 @@ static refalrts::FnResult func_CurrentTag(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CurrentTag("CurrentTag", 1355077894U, 3783808575U, func_CurrentTag);
+static refalrts::NativeReference nat_ref_CurrentTag("CurrentTag", 855477224U, 3357112823U, func_CurrentTag);
+
 
 static refalrts::FnResult func_gen_CurrentAttr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -418,7 +425,8 @@ static refalrts::FnResult func_gen_CurrentAttr_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CurrentAttr_L1("CurrentAttr\\1", 1355077894U, 3783808575U, func_gen_CurrentAttr_L1);
+static refalrts::NativeReference nat_ref_gen_CurrentAttr_L1("CurrentAttr\\1", 855477224U, 3357112823U, func_gen_CurrentAttr_L1);
+
 
 static refalrts::FnResult func_CurrentAttr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -459,7 +467,8 @@ static refalrts::FnResult func_CurrentAttr(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CurrentAttr("CurrentAttr", 1355077894U, 3783808575U, func_CurrentAttr);
+static refalrts::NativeReference nat_ref_CurrentAttr("CurrentAttr", 855477224U, 3357112823U, func_CurrentAttr);
+
 
 static refalrts::FnResult func_gen_CurrentPos_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -501,7 +510,8 @@ static refalrts::FnResult func_gen_CurrentPos_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CurrentPos_L1("CurrentPos\\1", 1355077894U, 3783808575U, func_gen_CurrentPos_L1);
+static refalrts::NativeReference nat_ref_gen_CurrentPos_L1("CurrentPos\\1", 855477224U, 3357112823U, func_gen_CurrentPos_L1);
+
 
 static refalrts::FnResult func_CurrentPos(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -542,7 +552,8 @@ static refalrts::FnResult func_CurrentPos(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CurrentPos("CurrentPos", 1355077894U, 3783808575U, func_CurrentPos);
+static refalrts::NativeReference nat_ref_CurrentPos("CurrentPos", 855477224U, 3357112823U, func_CurrentPos);
+
 
 static refalrts::FnResult func_gen_Expect_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -643,13 +654,14 @@ static refalrts::FnResult func_gen_Expect_L1(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Expect_L1("Expect\\1", 1355077894U, 3783808575U, func_gen_Expect_L1);
+static refalrts::NativeReference nat_ref_gen_Expect_L1("Expect\\1", 855477224U, 3357112823U, func_gen_Expect_L1);
+
 
 static refalrts::FnResult func_Expect(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
+  // issue here memory for vars with 14 elems
+  refalrts::Iter context[14];
+  refalrts::zeros( context, 14 );
   // </0 & Expect/4 s.Expected#1/5 e.ExpectedDescription#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -664,46 +676,44 @@ static refalrts::FnResult func_Expect(refalrts::Iter arg_begin, refalrts::Iter a
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </6 & CurrentTag/7 >/8 </9 & @create_closure@/10 & Expect\1/11 Tile{ AsIs: s.Expected#1/5 } (/12 Tile{ AsIs: e.ExpectedDescription#1/2 } )/13 >/14 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </6 & CurrentTag/7 >/8 [*]/9 & Expect\1/10 Tile{ AsIs: s.Expected#1/5 } (/11 Tile{ AsIs: e.ExpectedDescription#1/2 } )/12 {*}/13 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], ref_CurrentTag.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[9] ) )
+  if( ! refalrts::alloc_closure_head( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[10], ref_gen_Expect_L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], ref_gen_Expect_L1.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[12] ) )
+  if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[13] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[14] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[13], context[9] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[14] );
-  refalrts::push_stack( context[9] );
-  refalrts::link_brackets( context[12], context[13] );
+  refalrts::link_brackets( context[11], context[12] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[6] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[13], context[14] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
   res = refalrts::splice_evar( res, context[5], context[5] );
-  res = refalrts::splice_evar( res, context[6], context[11] );
+  res = refalrts::splice_evar( res, context[6], context[10] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[13] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Expect("Expect", 1355077894U, 3783808575U, func_Expect);
+static refalrts::NativeReference nat_ref_Expect("Expect", 855477224U, 3357112823U, func_Expect);
+
 
 static refalrts::FnResult func_Generalize(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -790,7 +800,8 @@ static refalrts::FnResult func_Generalize(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Generalize("Generalize", 1355077894U, 3783808575U, func_Generalize);
+static refalrts::NativeReference nat_ref_Generalize("Generalize", 855477224U, 3357112823U, func_Generalize);
+
 
 static refalrts::FnResult func_gen_Error_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -844,13 +855,14 @@ static refalrts::FnResult func_gen_Error_L1(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Error_L1("Error\\1", 1355077894U, 3783808575U, func_gen_Error_L1);
+static refalrts::NativeReference nat_ref_gen_Error_L1("Error\\1", 855477224U, 3357112823U, func_gen_Error_L1);
+
 
 static refalrts::FnResult func_Error(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
+  // issue here memory for vars with 13 elems
+  refalrts::Iter context[13];
+  refalrts::zeros( context, 13 );
   // </0 & Error/4 e.Message#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -862,44 +874,42 @@ static refalrts::FnResult func_Error(refalrts::Iter arg_begin, refalrts::Iter ar
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & Current/6 >/7 </8 & @create_closure@/9 & Error\1/10 (/11 Tile{ AsIs: e.Message#1/2 } )/12 >/13 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & Current/6 >/7 [*]/8 & Error\1/9 (/10 Tile{ AsIs: e.Message#1/2 } )/11 {*}/12 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_Current.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[8] ) )
+  if( ! refalrts::alloc_closure_head( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[9], ref_gen_Error_L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], ref_gen_Error_L1.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[11] ) )
+  if( ! refalrts::alloc_close_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[13] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[12], context[8] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[13] );
-  refalrts::push_stack( context[8] );
-  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[10], context[11] );
   refalrts::push_stack( context[7] );
   refalrts::push_stack( context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[12], context[13] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[11] );
+  res = refalrts::splice_evar( res, context[5], context[10] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[12] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Error("Error", 1355077894U, 3783808575U, func_Error);
+static refalrts::NativeReference nat_ref_Error("Error", 855477224U, 3357112823U, func_Error);
+
 
 static refalrts::FnResult func_Flexm_Parse(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -946,6 +956,7 @@ static refalrts::FnResult func_Flexm_Parse(refalrts::Iter arg_begin, refalrts::I
 }
 
 static refalrts::NativeReference nat_ref_Flexm_Parse("Flex-Parse", 0U, 0U, func_Flexm_Parse);
+
 
 static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1080,7 +1091,8 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseDescription_L1("ParseDescription\\1", 1355077894U, 3783808575U, func_gen_ParseDescription_L1);
+static refalrts::NativeReference nat_ref_gen_ParseDescription_L1("ParseDescription\\1", 855477224U, 3357112823U, func_gen_ParseDescription_L1);
+
 
 static refalrts::FnResult func_ParseDescription(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1121,7 +1133,8 @@ static refalrts::FnResult func_ParseDescription(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseDescription("ParseDescription", 1355077894U, 3783808575U, func_ParseDescription);
+static refalrts::NativeReference nat_ref_ParseDescription("ParseDescription", 855477224U, 3357112823U, func_ParseDescription);
+
 
 static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1280,7 +1293,8 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseDescriptions_L1("ParseDescriptions\\1", 1355077894U, 3783808575U, func_gen_ParseDescriptions_L1);
+static refalrts::NativeReference nat_ref_gen_ParseDescriptions_L1("ParseDescriptions\\1", 855477224U, 3357112823U, func_gen_ParseDescriptions_L1);
+
 
 static refalrts::FnResult func_ParseDescriptions(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1321,7 +1335,8 @@ static refalrts::FnResult func_ParseDescriptions(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseDescriptions("ParseDescriptions", 1355077894U, 3783808575U, func_ParseDescriptions);
+static refalrts::NativeReference nat_ref_ParseDescriptions("ParseDescriptions", 855477224U, 3357112823U, func_ParseDescriptions);
+
 
 static refalrts::FnResult func_gen_ParseSubexpr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1440,7 +1455,8 @@ static refalrts::FnResult func_gen_ParseSubexpr_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseSubexpr_L1("ParseSubexpr\\1", 1355077894U, 3783808575U, func_gen_ParseSubexpr_L1);
+static refalrts::NativeReference nat_ref_gen_ParseSubexpr_L1("ParseSubexpr\\1", 855477224U, 3357112823U, func_gen_ParseSubexpr_L1);
+
 
 static refalrts::FnResult func_ParseSubexpr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1481,7 +1497,8 @@ static refalrts::FnResult func_ParseSubexpr(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseSubexpr("ParseSubexpr", 1355077894U, 3783808575U, func_ParseSubexpr);
+static refalrts::NativeReference nat_ref_ParseSubexpr("ParseSubexpr", 855477224U, 3357112823U, func_ParseSubexpr);
+
 
 static refalrts::FnResult func_gen_ParseDomain_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1648,7 +1665,8 @@ static refalrts::FnResult func_gen_ParseDomain_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseDomain_L1("ParseDomain\\1", 1355077894U, 3783808575U, func_gen_ParseDomain_L1);
+static refalrts::NativeReference nat_ref_gen_ParseDomain_L1("ParseDomain\\1", 855477224U, 3357112823U, func_gen_ParseDomain_L1);
+
 
 static refalrts::FnResult func_ParseDomain(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1689,7 +1707,8 @@ static refalrts::FnResult func_ParseDomain(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseDomain("ParseDomain", 1355077894U, 3783808575U, func_ParseDomain);
+static refalrts::NativeReference nat_ref_ParseDomain("ParseDomain", 855477224U, 3357112823U, func_ParseDomain);
+
 
 static refalrts::FnResult func_gen_ParseDomainFrom_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1812,7 +1831,8 @@ static refalrts::FnResult func_gen_ParseDomainFrom_L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseDomainFrom_L1("ParseDomainFrom\\1", 1355077894U, 3783808575U, func_gen_ParseDomainFrom_L1);
+static refalrts::NativeReference nat_ref_gen_ParseDomainFrom_L1("ParseDomainFrom\\1", 855477224U, 3357112823U, func_gen_ParseDomainFrom_L1);
+
 
 static refalrts::FnResult func_ParseDomainFrom(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1853,7 +1873,8 @@ static refalrts::FnResult func_ParseDomainFrom(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseDomainFrom("ParseDomainFrom", 1355077894U, 3783808575U, func_ParseDomainFrom);
+static refalrts::NativeReference nat_ref_ParseDomainFrom("ParseDomainFrom", 855477224U, 3357112823U, func_ParseDomainFrom);
+
 
 static refalrts::FnResult func_gen_ParseStatesOpt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1907,7 +1928,8 @@ static refalrts::FnResult func_gen_ParseStatesOpt_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseStatesOpt_L1("ParseStatesOpt\\1", 1355077894U, 3783808575U, func_gen_ParseStatesOpt_L1);
+static refalrts::NativeReference nat_ref_gen_ParseStatesOpt_L1("ParseStatesOpt\\1", 855477224U, 3357112823U, func_gen_ParseStatesOpt_L1);
+
 
 static refalrts::FnResult func_ParseStatesOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1948,7 +1970,8 @@ static refalrts::FnResult func_ParseStatesOpt(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseStatesOpt("ParseStatesOpt", 1355077894U, 3783808575U, func_ParseStatesOpt);
+static refalrts::NativeReference nat_ref_ParseStatesOpt("ParseStatesOpt", 855477224U, 3357112823U, func_ParseStatesOpt);
+
 
 static refalrts::FnResult func_gen_ParseDomainTo_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2032,7 +2055,8 @@ static refalrts::FnResult func_gen_ParseDomainTo_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseDomainTo_L1("ParseDomainTo\\1", 1355077894U, 3783808575U, func_gen_ParseDomainTo_L1);
+static refalrts::NativeReference nat_ref_gen_ParseDomainTo_L1("ParseDomainTo\\1", 855477224U, 3357112823U, func_gen_ParseDomainTo_L1);
+
 
 static refalrts::FnResult func_ParseDomainTo(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2094,7 +2118,8 @@ static refalrts::FnResult func_ParseDomainTo(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseDomainTo("ParseDomainTo", 1355077894U, 3783808575U, func_ParseDomainTo);
+static refalrts::NativeReference nat_ref_ParseDomainTo("ParseDomainTo", 855477224U, 3357112823U, func_ParseDomainTo);
+
 
 static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2239,7 +2264,8 @@ static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseFlush_L1("ParseFlush\\1", 1355077894U, 3783808575U, func_gen_ParseFlush_L1);
+static refalrts::NativeReference nat_ref_gen_ParseFlush_L1("ParseFlush\\1", 855477224U, 3357112823U, func_gen_ParseFlush_L1);
+
 
 static refalrts::FnResult func_ParseFlush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2280,7 +2306,8 @@ static refalrts::FnResult func_ParseFlush(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseFlush("ParseFlush", 1355077894U, 3783808575U, func_ParseFlush);
+static refalrts::NativeReference nat_ref_ParseFlush("ParseFlush", 855477224U, 3357112823U, func_ParseFlush);
+
 
 static refalrts::FnResult func_gen_ParseNextStateOpt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2350,7 +2377,8 @@ static refalrts::FnResult func_gen_ParseNextStateOpt_L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseNextStateOpt_L1("ParseNextStateOpt\\1", 1355077894U, 3783808575U, func_gen_ParseNextStateOpt_L1);
+static refalrts::NativeReference nat_ref_gen_ParseNextStateOpt_L1("ParseNextStateOpt\\1", 855477224U, 3357112823U, func_gen_ParseNextStateOpt_L1);
+
 
 static refalrts::FnResult func_ParseNextStateOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2391,7 +2419,8 @@ static refalrts::FnResult func_ParseNextStateOpt(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNextStateOpt("ParseNextStateOpt", 1355077894U, 3783808575U, func_ParseNextStateOpt);
+static refalrts::NativeReference nat_ref_ParseNextStateOpt("ParseNextStateOpt", 855477224U, 3357112823U, func_ParseNextStateOpt);
+
 
 static refalrts::FnResult func_gen_ParseState_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2492,7 +2521,8 @@ static refalrts::FnResult func_gen_ParseState_L1(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseState_L1("ParseState\\1", 1355077894U, 3783808575U, func_gen_ParseState_L1);
+static refalrts::NativeReference nat_ref_gen_ParseState_L1("ParseState\\1", 855477224U, 3357112823U, func_gen_ParseState_L1);
+
 
 static refalrts::FnResult func_ParseState(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2533,7 +2563,8 @@ static refalrts::FnResult func_ParseState(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseState("ParseState", 1355077894U, 3783808575U, func_ParseState);
+static refalrts::NativeReference nat_ref_ParseState("ParseState", 855477224U, 3357112823U, func_ParseState);
+
 
 static refalrts::FnResult func_gen_ParseNameOpt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2595,7 +2626,8 @@ static refalrts::FnResult func_gen_ParseNameOpt_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseNameOpt_L1("ParseNameOpt\\1", 1355077894U, 3783808575U, func_gen_ParseNameOpt_L1);
+static refalrts::NativeReference nat_ref_gen_ParseNameOpt_L1("ParseNameOpt\\1", 855477224U, 3357112823U, func_gen_ParseNameOpt_L1);
+
 
 static refalrts::FnResult func_ParseNameOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2636,7 +2668,8 @@ static refalrts::FnResult func_ParseNameOpt(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNameOpt("ParseNameOpt", 1355077894U, 3783808575U, func_ParseNameOpt);
+static refalrts::NativeReference nat_ref_ParseNameOpt("ParseNameOpt", 855477224U, 3357112823U, func_ParseNameOpt);
+
 
 static refalrts::FnResult func_gen_ParseRegexp_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2739,7 +2772,8 @@ static refalrts::FnResult func_gen_ParseRegexp_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseRegexp_L1("ParseRegexp\\1", 1355077894U, 3783808575U, func_gen_ParseRegexp_L1);
+static refalrts::NativeReference nat_ref_gen_ParseRegexp_L1("ParseRegexp\\1", 855477224U, 3357112823U, func_gen_ParseRegexp_L1);
+
 
 static refalrts::FnResult func_ParseRegexp(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2780,7 +2814,8 @@ static refalrts::FnResult func_ParseRegexp(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseRegexp("ParseRegexp", 1355077894U, 3783808575U, func_ParseRegexp);
+static refalrts::NativeReference nat_ref_ParseRegexp("ParseRegexp", 855477224U, 3357112823U, func_ParseRegexp);
+
 
 static refalrts::FnResult func_gen_ParseComplexTerm_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2842,7 +2877,8 @@ static refalrts::FnResult func_gen_ParseComplexTerm_L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseComplexTerm_L1("ParseComplexTerm\\1", 1355077894U, 3783808575U, func_gen_ParseComplexTerm_L1);
+static refalrts::NativeReference nat_ref_gen_ParseComplexTerm_L1("ParseComplexTerm\\1", 855477224U, 3357112823U, func_gen_ParseComplexTerm_L1);
+
 
 static refalrts::FnResult func_ParseComplexTerm(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2908,7 +2944,8 @@ static refalrts::FnResult func_ParseComplexTerm(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseComplexTerm("ParseComplexTerm", 1355077894U, 3783808575U, func_ParseComplexTerm);
+static refalrts::NativeReference nat_ref_ParseComplexTerm("ParseComplexTerm", 855477224U, 3357112823U, func_ParseComplexTerm);
+
 
 static refalrts::FnResult func_gen_ParseTerm_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2999,7 +3036,8 @@ static refalrts::FnResult func_gen_ParseTerm_L1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseTerm_L1("ParseTerm\\1", 1355077894U, 3783808575U, func_gen_ParseTerm_L1);
+static refalrts::NativeReference nat_ref_gen_ParseTerm_L1("ParseTerm\\1", 855477224U, 3357112823U, func_gen_ParseTerm_L1);
+
 
 static refalrts::FnResult func_ParseTerm(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3065,7 +3103,8 @@ static refalrts::FnResult func_ParseTerm(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseTerm("ParseTerm", 1355077894U, 3783808575U, func_ParseTerm);
+static refalrts::NativeReference nat_ref_ParseTerm("ParseTerm", 855477224U, 3357112823U, func_ParseTerm);
+
 
 static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3152,7 +3191,8 @@ static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseRepeater_L1("ParseRepeater\\1", 1355077894U, 3783808575U, func_gen_ParseRepeater_L1);
+static refalrts::NativeReference nat_ref_gen_ParseRepeater_L1("ParseRepeater\\1", 855477224U, 3357112823U, func_gen_ParseRepeater_L1);
+
 
 static refalrts::FnResult func_ParseRepeater(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3193,7 +3233,8 @@ static refalrts::FnResult func_ParseRepeater(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseRepeater("ParseRepeater", 1355077894U, 3783808575U, func_ParseRepeater);
+static refalrts::NativeReference nat_ref_ParseRepeater("ParseRepeater", 855477224U, 3357112823U, func_ParseRepeater);
+
 
 static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3407,7 +3448,8 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseSimpleTerm_L1("ParseSimpleTerm\\1", 1355077894U, 3783808575U, func_gen_ParseSimpleTerm_L1);
+static refalrts::NativeReference nat_ref_gen_ParseSimpleTerm_L1("ParseSimpleTerm\\1", 855477224U, 3357112823U, func_gen_ParseSimpleTerm_L1);
+
 
 static refalrts::FnResult func_ParseSimpleTerm(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3448,7 +3490,8 @@ static refalrts::FnResult func_ParseSimpleTerm(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseSimpleTerm("ParseSimpleTerm", 1355077894U, 3783808575U, func_ParseSimpleTerm);
+static refalrts::NativeReference nat_ref_ParseSimpleTerm("ParseSimpleTerm", 855477224U, 3357112823U, func_ParseSimpleTerm);
+
 
 static refalrts::FnResult func_gen_ParseSet_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3567,7 +3610,8 @@ static refalrts::FnResult func_gen_ParseSet_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseSet_L1("ParseSet\\1", 1355077894U, 3783808575U, func_gen_ParseSet_L1);
+static refalrts::NativeReference nat_ref_gen_ParseSet_L1("ParseSet\\1", 855477224U, 3357112823U, func_gen_ParseSet_L1);
+
 
 static refalrts::FnResult func_ParseSet(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3608,7 +3652,8 @@ static refalrts::FnResult func_ParseSet(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseSet("ParseSet", 1355077894U, 3783808575U, func_ParseSet);
+static refalrts::NativeReference nat_ref_ParseSet("ParseSet", 855477224U, 3357112823U, func_ParseSet);
+
 
 static refalrts::FnResult func_gen_ParseInvertOpt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3660,7 +3705,8 @@ static refalrts::FnResult func_gen_ParseInvertOpt_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseInvertOpt_L1("ParseInvertOpt\\1", 1355077894U, 3783808575U, func_gen_ParseInvertOpt_L1);
+static refalrts::NativeReference nat_ref_gen_ParseInvertOpt_L1("ParseInvertOpt\\1", 855477224U, 3357112823U, func_gen_ParseInvertOpt_L1);
+
 
 static refalrts::FnResult func_ParseInvertOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3701,7 +3747,8 @@ static refalrts::FnResult func_ParseInvertOpt(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseInvertOpt("ParseInvertOpt", 1355077894U, 3783808575U, func_ParseInvertOpt);
+static refalrts::NativeReference nat_ref_ParseInvertOpt("ParseInvertOpt", 855477224U, 3357112823U, func_ParseInvertOpt);
+
 
 static refalrts::FnResult func_gen_ParseComplexSYMBOLSETS_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3763,7 +3810,8 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSETS_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseComplexSYMBOLSETS_L1("ParseComplexSYMBOLSETS\\1", 1355077894U, 3783808575U, func_gen_ParseComplexSYMBOLSETS_L1);
+static refalrts::NativeReference nat_ref_gen_ParseComplexSYMBOLSETS_L1("ParseComplexSYMBOLSETS\\1", 855477224U, 3357112823U, func_gen_ParseComplexSYMBOLSETS_L1);
+
 
 static refalrts::FnResult func_ParseComplexSYMBOLSETS(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3804,7 +3852,8 @@ static refalrts::FnResult func_ParseComplexSYMBOLSETS(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseComplexSYMBOLSETS("ParseComplexSYMBOLSETS", 1355077894U, 3783808575U, func_ParseComplexSYMBOLSETS);
+static refalrts::NativeReference nat_ref_ParseComplexSYMBOLSETS("ParseComplexSYMBOLSETS", 855477224U, 3357112823U, func_ParseComplexSYMBOLSETS);
+
 
 static refalrts::FnResult func_gen_ParseComplexSYMBOLSET_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3901,7 +3950,8 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSET_L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseComplexSYMBOLSET_L1("ParseComplexSYMBOLSET\\1", 1355077894U, 3783808575U, func_gen_ParseComplexSYMBOLSET_L1);
+static refalrts::NativeReference nat_ref_gen_ParseComplexSYMBOLSET_L1("ParseComplexSYMBOLSET\\1", 855477224U, 3357112823U, func_gen_ParseComplexSYMBOLSET_L1);
+
 
 static refalrts::FnResult func_ParseComplexSYMBOLSET(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3942,7 +3992,8 @@ static refalrts::FnResult func_ParseComplexSYMBOLSET(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseComplexSYMBOLSET("ParseComplexSYMBOLSET", 1355077894U, 3783808575U, func_ParseComplexSYMBOLSET);
+static refalrts::NativeReference nat_ref_ParseComplexSYMBOLSET("ParseComplexSYMBOLSET", 855477224U, 3357112823U, func_ParseComplexSYMBOLSET);
+
 
 static refalrts::FnResult func_gen_ParseOptSYMBOL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4013,7 +4064,8 @@ static refalrts::FnResult func_gen_ParseOptSYMBOL_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseOptSYMBOL_L1("ParseOptSYMBOL\\1", 1355077894U, 3783808575U, func_gen_ParseOptSYMBOL_L1);
+static refalrts::NativeReference nat_ref_gen_ParseOptSYMBOL_L1("ParseOptSYMBOL\\1", 855477224U, 3357112823U, func_gen_ParseOptSYMBOL_L1);
+
 
 static refalrts::FnResult func_ParseOptSYMBOL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4054,7 +4106,8 @@ static refalrts::FnResult func_ParseOptSYMBOL(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseOptSYMBOL("ParseOptSYMBOL", 1355077894U, 3783808575U, func_ParseOptSYMBOL);
+static refalrts::NativeReference nat_ref_ParseOptSYMBOL("ParseOptSYMBOL", 855477224U, 3357112823U, func_ParseOptSYMBOL);
+
 
 static refalrts::FnResult func_gen_ParseStates_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4155,7 +4208,8 @@ static refalrts::FnResult func_gen_ParseStates_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseStates_L1("ParseStates\\1", 1355077894U, 3783808575U, func_gen_ParseStates_L1);
+static refalrts::NativeReference nat_ref_gen_ParseStates_L1("ParseStates\\1", 855477224U, 3357112823U, func_gen_ParseStates_L1);
+
 
 static refalrts::FnResult func_ParseStates(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4196,7 +4250,8 @@ static refalrts::FnResult func_ParseStates(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseStates("ParseStates", 1355077894U, 3783808575U, func_ParseStates);
+static refalrts::NativeReference nat_ref_ParseStates("ParseStates", 855477224U, 3357112823U, func_ParseStates);
+
 
 static refalrts::FnResult func_gen_ParseStateNames_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4278,7 +4333,8 @@ static refalrts::FnResult func_gen_ParseStateNames_L1(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseStateNames_L1("ParseStateNames\\1", 1355077894U, 3783808575U, func_gen_ParseStateNames_L1);
+static refalrts::NativeReference nat_ref_gen_ParseStateNames_L1("ParseStateNames\\1", 855477224U, 3357112823U, func_gen_ParseStateNames_L1);
+
 
 static refalrts::FnResult func_ParseStateNames(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4319,7 +4375,8 @@ static refalrts::FnResult func_ParseStateNames(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseStateNames("ParseStateNames", 1355077894U, 3783808575U, func_ParseStateNames);
+static refalrts::NativeReference nat_ref_ParseStateNames("ParseStateNames", 855477224U, 3357112823U, func_ParseStateNames);
+
 
 static refalrts::FnResult func_gen_ParseNextName_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4396,7 +4453,8 @@ static refalrts::FnResult func_gen_ParseNextName_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseNextName_L1("ParseNextName\\1", 1355077894U, 3783808575U, func_gen_ParseNextName_L1);
+static refalrts::NativeReference nat_ref_gen_ParseNextName_L1("ParseNextName\\1", 855477224U, 3357112823U, func_gen_ParseNextName_L1);
+
 
 static refalrts::FnResult func_ParseNextName(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4437,7 +4495,8 @@ static refalrts::FnResult func_ParseNextName(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseNextName("ParseNextName", 1355077894U, 3783808575U, func_ParseNextName);
+static refalrts::NativeReference nat_ref_ParseNextName("ParseNextName", 855477224U, 3357112823U, func_ParseNextName);
+
 
 static refalrts::FnResult func_gen_ParseAlt_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4526,7 +4585,8 @@ static refalrts::FnResult func_gen_ParseAlt_L1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseAlt_L1("ParseAlt\\1", 1355077894U, 3783808575U, func_gen_ParseAlt_L1);
+static refalrts::NativeReference nat_ref_gen_ParseAlt_L1("ParseAlt\\1", 855477224U, 3357112823U, func_gen_ParseAlt_L1);
+
 
 static refalrts::FnResult func_ParseAlt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4594,7 +4654,8 @@ static refalrts::FnResult func_ParseAlt(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseAlt("ParseAlt", 1355077894U, 3783808575U, func_ParseAlt);
+static refalrts::NativeReference nat_ref_ParseAlt("ParseAlt", 855477224U, 3357112823U, func_ParseAlt);
+
 
 static refalrts::FnResult func_gen_ParseAltTail_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4669,7 +4730,8 @@ static refalrts::FnResult func_gen_ParseAltTail_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseAltTail_L1("ParseAltTail\\1", 1355077894U, 3783808575U, func_gen_ParseAltTail_L1);
+static refalrts::NativeReference nat_ref_gen_ParseAltTail_L1("ParseAltTail\\1", 855477224U, 3357112823U, func_gen_ParseAltTail_L1);
+
 
 static refalrts::FnResult func_ParseAltTail(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4710,7 +4772,7 @@ static refalrts::FnResult func_ParseAltTail(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseAltTail("ParseAltTail", 1355077894U, 3783808575U, func_ParseAltTail);
+static refalrts::NativeReference nat_ref_ParseAltTail("ParseAltTail", 855477224U, 3357112823U, func_ParseAltTail);
 
 
 //End of file

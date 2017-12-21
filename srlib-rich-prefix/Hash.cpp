@@ -1,9 +1,9 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Hash.sref'
+// Don't edit! Edit 'Hash.sref' and recompile it
+
 #include "refalrts.h"
 
-
 static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U);
-
 #line 2 "Hash.sref"
 /*
   Следующие манипуляции нужны для того, чтобы, оставаясь в рамках C++98,
@@ -14,6 +14,7 @@ static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0
 using refalrts::UInt32;
 
 #line 17 "Hash.cpp"
+
 static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #line 14 "Hash.sref"
   refalrts::Iter content_b = 0;
@@ -173,7 +174,7 @@ static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refa
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 177 "Hash.cpp"
+#line 178 "Hash.cpp"
 }
 
 static refalrts::NativeReference nat_ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2m_Chars);

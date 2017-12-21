@@ -1,84 +1,84 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Flex-Lexer.sref'
+// Don't edit! Edit 'Flex-Lexer.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_TAlt = refalrts::ident_from_static("TAlt");
-const refalrts::RefalIdentifier ident_TAny = refalrts::ident_from_static("TAny");
-const refalrts::RefalIdentifier ident_TArrow = refalrts::ident_from_static("TArrow");
-const refalrts::RefalIdentifier ident_TBegin = refalrts::ident_from_static("TBegin");
-const refalrts::RefalIdentifier ident_TChar = refalrts::ident_from_static("TChar");
-const refalrts::RefalIdentifier ident_TCloseBracket = refalrts::ident_from_static("TCloseBracket");
-const refalrts::RefalIdentifier ident_TComma = refalrts::ident_from_static("TComma");
-const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
-const refalrts::RefalIdentifier ident_TEnd = refalrts::ident_from_static("TEnd");
-const refalrts::RefalIdentifier ident_TEndGroup = refalrts::ident_from_static("TEndGroup");
-const refalrts::RefalIdentifier ident_TEndRegexp = refalrts::ident_from_static("TEndRegexp");
-const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
-const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
-const refalrts::RefalIdentifier ident_TErrorMessage = refalrts::ident_from_static("TErrorMessage");
-const refalrts::RefalIdentifier ident_TGenericEscChar = refalrts::ident_from_static("TGenericEscChar");
-const refalrts::RefalIdentifier ident_TGroupRange = refalrts::ident_from_static("TGroupRange");
-const refalrts::RefalIdentifier ident_TInclude = refalrts::ident_from_static("TInclude");
-const refalrts::RefalIdentifier ident_TInvertGroup = refalrts::ident_from_static("TInvertGroup");
-const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
-const refalrts::RefalIdentifier ident_TNewLine = refalrts::ident_from_static("TNewLine");
-const refalrts::RefalIdentifier ident_TOneMany = refalrts::ident_from_static("TOneMany");
-const refalrts::RefalIdentifier ident_TOpenBracket = refalrts::ident_from_static("TOpenBracket");
-const refalrts::RefalIdentifier ident_TOptional = refalrts::ident_from_static("TOptional");
-const refalrts::RefalIdentifier ident_TQuantifier = refalrts::ident_from_static("TQuantifier");
-const refalrts::RefalIdentifier ident_TSkip = refalrts::ident_from_static("TSkip");
-const refalrts::RefalIdentifier ident_TSpecChar = refalrts::ident_from_static("TSpecChar");
-const refalrts::RefalIdentifier ident_TStartGroup = refalrts::ident_from_static("TStartGroup");
-const refalrts::RefalIdentifier ident_TStartRegexp = refalrts::ident_from_static("TStartRegexp");
-const refalrts::RefalIdentifier ident_TStateEnd = refalrts::ident_from_static("TStateEnd");
-const refalrts::RefalIdentifier ident_TStateStart = refalrts::ident_from_static("TStateStart");
-const refalrts::RefalIdentifier ident_TUnexpecteChar = refalrts::ident_from_static("TUnexpecteChar");
-const refalrts::RefalIdentifier ident_TZeroMany = refalrts::ident_from_static("TZeroMany");
-const refalrts::RefalIdentifier ident_TkHexNumber = refalrts::ident_from_static("TkHexNumber");
-const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
-const refalrts::RefalIdentifier ident_TkOctNumber = refalrts::ident_from_static("TkOctNumber");
-const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
+static const refalrts::RefalIdentifier ident_TAlt = refalrts::ident_from_static("TAlt");
+static const refalrts::RefalIdentifier ident_TAny = refalrts::ident_from_static("TAny");
+static const refalrts::RefalIdentifier ident_TArrow = refalrts::ident_from_static("TArrow");
+static const refalrts::RefalIdentifier ident_TBegin = refalrts::ident_from_static("TBegin");
+static const refalrts::RefalIdentifier ident_TChar = refalrts::ident_from_static("TChar");
+static const refalrts::RefalIdentifier ident_TCloseBracket = refalrts::ident_from_static("TCloseBracket");
+static const refalrts::RefalIdentifier ident_TComma = refalrts::ident_from_static("TComma");
+static const refalrts::RefalIdentifier ident_TEOF = refalrts::ident_from_static("TEOF");
+static const refalrts::RefalIdentifier ident_TEnd = refalrts::ident_from_static("TEnd");
+static const refalrts::RefalIdentifier ident_TEndGroup = refalrts::ident_from_static("TEndGroup");
+static const refalrts::RefalIdentifier ident_TEndRegexp = refalrts::ident_from_static("TEndRegexp");
+static const refalrts::RefalIdentifier ident_TEquals = refalrts::ident_from_static("TEquals");
+static const refalrts::RefalIdentifier ident_TError = refalrts::ident_from_static("TError");
+static const refalrts::RefalIdentifier ident_TErrorMessage = refalrts::ident_from_static("TErrorMessage");
+static const refalrts::RefalIdentifier ident_TGenericEscChar = refalrts::ident_from_static("TGenericEscChar");
+static const refalrts::RefalIdentifier ident_TGroupRange = refalrts::ident_from_static("TGroupRange");
+static const refalrts::RefalIdentifier ident_TInclude = refalrts::ident_from_static("TInclude");
+static const refalrts::RefalIdentifier ident_TInvertGroup = refalrts::ident_from_static("TInvertGroup");
+static const refalrts::RefalIdentifier ident_TName = refalrts::ident_from_static("TName");
+static const refalrts::RefalIdentifier ident_TNewLine = refalrts::ident_from_static("TNewLine");
+static const refalrts::RefalIdentifier ident_TOneMany = refalrts::ident_from_static("TOneMany");
+static const refalrts::RefalIdentifier ident_TOpenBracket = refalrts::ident_from_static("TOpenBracket");
+static const refalrts::RefalIdentifier ident_TOptional = refalrts::ident_from_static("TOptional");
+static const refalrts::RefalIdentifier ident_TQuantifier = refalrts::ident_from_static("TQuantifier");
+static const refalrts::RefalIdentifier ident_TSkip = refalrts::ident_from_static("TSkip");
+static const refalrts::RefalIdentifier ident_TSpecChar = refalrts::ident_from_static("TSpecChar");
+static const refalrts::RefalIdentifier ident_TStartGroup = refalrts::ident_from_static("TStartGroup");
+static const refalrts::RefalIdentifier ident_TStartRegexp = refalrts::ident_from_static("TStartRegexp");
+static const refalrts::RefalIdentifier ident_TStateEnd = refalrts::ident_from_static("TStateEnd");
+static const refalrts::RefalIdentifier ident_TStateStart = refalrts::ident_from_static("TStateStart");
+static const refalrts::RefalIdentifier ident_TUnexpecteChar = refalrts::ident_from_static("TUnexpecteChar");
+static const refalrts::RefalIdentifier ident_TZeroMany = refalrts::ident_from_static("TZeroMany");
+static const refalrts::RefalIdentifier ident_TkHexNumber = refalrts::ident_from_static("TkHexNumber");
+static const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+static const refalrts::RefalIdentifier ident_TkOctNumber = refalrts::ident_from_static("TkOctNumber");
+static const refalrts::RefalIdentifier ident_TokenError = refalrts::ident_from_static("TokenError");
+static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
+static refalrts::ExternalReference ref_CharFromNum("CharFromNum", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Chr("Chr", 0U, 0U);
+static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ErrorMessage("ErrorMessage", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscGroup("EscGroup", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscGroupm_OCode("EscGroup-OCode", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscGroupm_OCodem_C1("EscGroup-OCode-C1", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscGroupm_XCode("EscGroup-XCode", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscRegexp("EscRegexp", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscRegexpm_OCode("EscRegexp-OCode", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscRegexpm_OCodem_C1("EscRegexp-OCode-C1", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscRegexpm_XCode("EscRegexp-XCode", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
+static refalrts::ExternalReference ref_Flexm_TextFromToken("Flex-TextFromToken", 0U, 0U);
+static refalrts::ExternalReference ref_Flexm_Tokens("Flex-Tokens", 0U, 0U);
+static refalrts::ExternalReference ref_gen_Flexm_Tokens_L1("Flex-Tokens\\1", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_gen_Flexm_Tokens_L2("Flex-Tokens\\2", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_gen_Flexm_Tokens_L3("Flex-Tokens\\3", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_gen_Flexm_Tokens_L4("Flex-Tokens\\4", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
+static refalrts::ExternalReference ref_LowLevelTokens("LowLevelTokens", 405128457U, 1869093596U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_EscapeString("EscapeString", 0U, 0U);
-static refalrts::ExternalReference ref_Chr("Chr", 0U, 0U);
-static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
 static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
-static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
-static refalrts::ExternalReference ref_Flexm_TextFromToken("Flex-TextFromToken", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Flexm_Tokens_L1("Flex-Tokens\\1", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_gen_Flexm_Tokens_L2("Flex-Tokens\\2", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_gen_Flexm_Tokens_L3("Flex-Tokens\\3", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_gen_Flexm_Tokens_L4("Flex-Tokens\\4", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_Flexm_Tokens("Flex-Tokens", 0U, 0U);
-static refalrts::ExternalReference ref_LowLevelTokens("LowLevelTokens", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_SecondPass("SecondPass", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_gen_CharFromNum_L1("CharFromNum\\1", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_CharFromNum("CharFromNum", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_gen_DigitFromChar_L1("DigitFromChar\\1", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_DigitFromChar("DigitFromChar", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_Root("Root", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ReadRegexp("ReadRegexp", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ReadArrow("ReadArrow", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_Number("Number", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_Name("Name", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ErrorMessage("ErrorMessage", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscRegexp("EscRegexp", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_StartGroup("StartGroup", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ReadInclude("ReadInclude", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscRegexpm_XCode("EscRegexp-XCode", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscRegexpm_OCode("EscRegexp-OCode", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ReadGroup("ReadGroup", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_ReadBody("ReadBody", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscRegexpm_OCodem_C1("EscRegexp-OCode-C1", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscGroup("EscGroup", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscGroupm_XCode("EscGroup-XCode", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscGroupm_OCode("EscGroup-OCode", 1232960728U, 2878557512U);
-static refalrts::ExternalReference ref_EscGroupm_OCodem_C1("EscGroup-OCode-C1", 1232960728U, 2878557512U);
+static refalrts::ExternalReference ref_Name("Name", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Number("Number", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ReadArrow("ReadArrow", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ReadBody("ReadBody", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ReadGroup("ReadGroup", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ReadInclude("ReadInclude", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_ReadRegexp("ReadRegexp", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
+static refalrts::ExternalReference ref_Root("Root", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_SecondPass("SecondPass", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_StartGroup("StartGroup", 405128457U, 1869093596U);
 
 static refalrts::FnResult func_Flexm_TextFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -900,6 +900,7 @@ static refalrts::FnResult func_Flexm_TextFromToken(refalrts::Iter arg_begin, ref
 
 static refalrts::NativeReference nat_ref_Flexm_TextFromToken("Flex-TextFromToken", 0U, 0U, func_Flexm_TextFromToken);
 
+
 static refalrts::FnResult func_gen_Flexm_Tokens_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
@@ -934,7 +935,8 @@ static refalrts::FnResult func_gen_Flexm_Tokens_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L1("Flex-Tokens\\1", 1232960728U, 2878557512U, func_gen_Flexm_Tokens_L1);
+static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L1("Flex-Tokens\\1", 405128457U, 1869093596U, func_gen_Flexm_Tokens_L1);
+
 
 static refalrts::FnResult func_gen_Flexm_Tokens_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1006,7 +1008,8 @@ static refalrts::FnResult func_gen_Flexm_Tokens_L2(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L2("Flex-Tokens\\2", 1232960728U, 2878557512U, func_gen_Flexm_Tokens_L2);
+static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L2("Flex-Tokens\\2", 405128457U, 1869093596U, func_gen_Flexm_Tokens_L2);
+
 
 static refalrts::FnResult func_gen_Flexm_Tokens_L3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1088,7 +1091,8 @@ static refalrts::FnResult func_gen_Flexm_Tokens_L3(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L3("Flex-Tokens\\3", 1232960728U, 2878557512U, func_gen_Flexm_Tokens_L3);
+static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L3("Flex-Tokens\\3", 405128457U, 1869093596U, func_gen_Flexm_Tokens_L3);
+
 
 static refalrts::FnResult func_gen_Flexm_Tokens_L4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1118,7 +1122,8 @@ static refalrts::FnResult func_gen_Flexm_Tokens_L4(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L4("Flex-Tokens\\4", 1232960728U, 2878557512U, func_gen_Flexm_Tokens_L4);
+static refalrts::NativeReference nat_ref_gen_Flexm_Tokens_L4("Flex-Tokens\\4", 405128457U, 1869093596U, func_gen_Flexm_Tokens_L4);
+
 
 static refalrts::FnResult func_Flexm_Tokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1205,6 +1210,7 @@ static refalrts::FnResult func_Flexm_Tokens(refalrts::Iter arg_begin, refalrts::
 
 static refalrts::NativeReference nat_ref_Flexm_Tokens("Flex-Tokens", 0U, 0U, func_Flexm_Tokens);
 
+
 static refalrts::FnResult func_LowLevelTokens(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
@@ -1239,7 +1245,8 @@ static refalrts::FnResult func_LowLevelTokens(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LowLevelTokens("LowLevelTokens", 1232960728U, 2878557512U, func_LowLevelTokens);
+static refalrts::NativeReference nat_ref_LowLevelTokens("LowLevelTokens", 405128457U, 1869093596U, func_LowLevelTokens);
+
 
 static refalrts::FnResult func_SecondPass(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2232,7 +2239,8 @@ static refalrts::FnResult func_SecondPass(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SecondPass("SecondPass", 1232960728U, 2878557512U, func_SecondPass);
+static refalrts::NativeReference nat_ref_SecondPass("SecondPass", 405128457U, 1869093596U, func_SecondPass);
+
 
 static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2282,13 +2290,14 @@ static refalrts::FnResult func_gen_CharFromNum_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 1232960728U, 2878557512U, func_gen_CharFromNum_L1);
+static refalrts::NativeReference nat_ref_gen_CharFromNum_L1("CharFromNum\\1", 405128457U, 1869093596U, func_gen_CharFromNum_L1);
+
 
 static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 18 elems
-  refalrts::Iter context[18];
-  refalrts::zeros( context, 18 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
   // </0 & CharFromNum/4 s.Base#1/5 e.Chars#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2303,53 +2312,51 @@ static refalrts::FnResult func_CharFromNum(refalrts::Iter arg_begin, refalrts::I
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 </8 & @create_closure@/9 & CharFromNum\1/10 Tile{ AsIs: s.Base#1/5 } >/11 0/12 </13 & Map/14 & DigitFromChar/15 Tile{ AsIs: e.Chars#1/2 } >/16 >/17 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Chr/4 } </6 & Reduce/7 [*]/8 & CharFromNum\1/9 Tile{ AsIs: s.Base#1/5 } {*}/10 0/11 </12 & Map/13 & DigitFromChar/14 Tile{ AsIs: e.Chars#1/2 } >/15 >/16 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[7], ref_Reduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[8] ) )
+  if( ! refalrts::alloc_closure_head( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], refalrts::create_closure ) )
+  if( ! refalrts::alloc_name( context[9], ref_gen_CharFromNum_L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], ref_gen_CharFromNum_L1.ref.function ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[10], context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[11] ) )
+  if( ! refalrts::alloc_number( context[11], 0UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[12], 0UL ) )
+  if( ! refalrts::alloc_open_call( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[13] ) )
+  if( ! refalrts::alloc_name( context[13], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_Map.ref.function ) )
+  if( ! refalrts::alloc_name( context[14], ref_DigitFromChar.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], ref_DigitFromChar.ref.function ) )
+  if( ! refalrts::alloc_close_call( context[15] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[16] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[17] ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Chr.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[17] );
-  refalrts::push_stack( context[6] );
   refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[13] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[8] );
+  refalrts::push_stack( context[6] );
+  refalrts::push_stack( context[15] );
+  refalrts::push_stack( context[12] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[16], context[17] );
+  res = refalrts::splice_evar( res, context[15], context[16] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[11], context[15] );
+  res = refalrts::splice_evar( res, context[10], context[14] );
   res = refalrts::splice_evar( res, context[5], context[5] );
-  res = refalrts::splice_evar( res, context[6], context[10] );
+  res = refalrts::splice_evar( res, context[6], context[9] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[10] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CharFromNum("CharFromNum", 1232960728U, 2878557512U, func_CharFromNum);
+static refalrts::NativeReference nat_ref_CharFromNum("CharFromNum", 405128457U, 1869093596U, func_CharFromNum);
+
 
 static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2409,13 +2416,14 @@ static refalrts::FnResult func_gen_DigitFromChar_L1(refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 1232960728U, 2878557512U, func_gen_DigitFromChar_L1);
+static refalrts::NativeReference nat_ref_gen_DigitFromChar_L1("DigitFromChar\\1", 405128457U, 1869093596U, func_gen_DigitFromChar_L1);
+
 
 static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 80 elems
-  refalrts::Iter context[80];
-  refalrts::zeros( context, 80 );
+  // issue here memory for vars with 79 elems
+  refalrts::Iter context[79];
+  refalrts::zeros( context, 79 );
   // </0 & DigitFromChar/4 s.Char#1/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2430,176 +2438,173 @@ static refalrts::FnResult func_DigitFromChar(refalrts::Iter arg_begin, refalrts:
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & Fetch/7 (/8 0/9 '0'/10 )/11 (/12 1/13 '1'/14 )/15 (/16 2/17 '2'/18 )/19 (/20 3/21 '3'/22 )/23 (/24 4/25 '4'/26 )/27 (/28 5/29 '5'/30 )/31 (/32 6/33 '6'/34 )/35 (/36 7/37 '7'/38 )/39 (/40 8/41 '8'/42 )/43 (/44 9/45 '9'/46 )/47 (/48 10/49"Aa"/50 )/52 (/53 11/54"Bb"/55 )/57 (/58 12/59"Cc"/60 )/62 (/63 13/64"Dd"/65 )/67 (/68 14/69"Ee"/70 )/72 (/73 15/74"Ff"/75 )/77 </78 Tile{ HalfReuse: & @create_closure@/0 Reuse: & DigitFromChar\1/4 AsIs: s.Char#1/5 AsIs: >/1 } >/79 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[6] ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } (/6 0/7 '0'/8 )/9 (/10 1/11 '1'/12 )/13 (/14 2/15 '2'/16 )/17 (/18 3/19 '3'/20 )/21 (/22 4/23 '4'/24 )/25 (/26 5/27 '5'/28 )/29 (/30 6/31 '6'/32 )/33 (/34 7/35 '7'/36 )/37 (/38 8/39 '8'/40 )/41 (/42 9/43 '9'/44 )/45 (/46 10/47"Aa"/48 )/50 (/51 11/52"Bb"/53 )/55 (/56 12/57"Cc"/58 )/60 (/61 13/62"Dd"/63 )/65 (/66 14/67"Ee"/68 )/70 (/71 15/72"Ff"/73 )/75 [*]/76 & DigitFromChar\1/77 Tile{ AsIs: s.Char#1/5 } {*}/78 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], ref_Fetch.ref.function ) )
+  if( ! refalrts::alloc_number( context[7], 0UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[8] ) )
+  if( ! refalrts::alloc_char( context[8], '0' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[9], 0UL ) )
+  if( ! refalrts::alloc_close_bracket( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[10], '0' ) )
+  if( ! refalrts::alloc_open_bracket( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[11] ) )
+  if( ! refalrts::alloc_number( context[11], 1UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[12] ) )
+  if( ! refalrts::alloc_char( context[12], '1' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[13], 1UL ) )
+  if( ! refalrts::alloc_close_bracket( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[14], '1' ) )
+  if( ! refalrts::alloc_open_bracket( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[15] ) )
+  if( ! refalrts::alloc_number( context[15], 2UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[16] ) )
+  if( ! refalrts::alloc_char( context[16], '2' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[17], 2UL ) )
+  if( ! refalrts::alloc_close_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[18], '2' ) )
+  if( ! refalrts::alloc_open_bracket( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[19] ) )
+  if( ! refalrts::alloc_number( context[19], 3UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[20] ) )
+  if( ! refalrts::alloc_char( context[20], '3' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[21], 3UL ) )
+  if( ! refalrts::alloc_close_bracket( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[22], '3' ) )
+  if( ! refalrts::alloc_open_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[23] ) )
+  if( ! refalrts::alloc_number( context[23], 4UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[24] ) )
+  if( ! refalrts::alloc_char( context[24], '4' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[25], 4UL ) )
+  if( ! refalrts::alloc_close_bracket( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[26], '4' ) )
+  if( ! refalrts::alloc_open_bracket( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[27] ) )
+  if( ! refalrts::alloc_number( context[27], 5UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[28] ) )
+  if( ! refalrts::alloc_char( context[28], '5' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[29], 5UL ) )
+  if( ! refalrts::alloc_close_bracket( context[29] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[30], '5' ) )
+  if( ! refalrts::alloc_open_bracket( context[30] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[31] ) )
+  if( ! refalrts::alloc_number( context[31], 6UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[32] ) )
+  if( ! refalrts::alloc_char( context[32], '6' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[33], 6UL ) )
+  if( ! refalrts::alloc_close_bracket( context[33] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[34], '6' ) )
+  if( ! refalrts::alloc_open_bracket( context[34] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[35] ) )
+  if( ! refalrts::alloc_number( context[35], 7UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[36] ) )
+  if( ! refalrts::alloc_char( context[36], '7' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[37], 7UL ) )
+  if( ! refalrts::alloc_close_bracket( context[37] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[38], '7' ) )
+  if( ! refalrts::alloc_open_bracket( context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[39] ) )
+  if( ! refalrts::alloc_number( context[39], 8UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[40] ) )
+  if( ! refalrts::alloc_char( context[40], '8' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[41], 8UL ) )
+  if( ! refalrts::alloc_close_bracket( context[41] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[42], '8' ) )
+  if( ! refalrts::alloc_open_bracket( context[42] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[43] ) )
+  if( ! refalrts::alloc_number( context[43], 9UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[44] ) )
+  if( ! refalrts::alloc_char( context[44], '9' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[45], 9UL ) )
+  if( ! refalrts::alloc_close_bracket( context[45] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_char( context[46], '9' ) )
+  if( ! refalrts::alloc_open_bracket( context[46] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[47] ) )
+  if( ! refalrts::alloc_number( context[47], 10UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[48] ) )
+  if( ! refalrts::alloc_chars( context[48], context[49], "Aa", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[49], 10UL ) )
+  if( ! refalrts::alloc_close_bracket( context[50] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[50], context[51], "Aa", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[51] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[52] ) )
+  if( ! refalrts::alloc_number( context[52], 11UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[53] ) )
+  if( ! refalrts::alloc_chars( context[53], context[54], "Bb", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[54], 11UL ) )
+  if( ! refalrts::alloc_close_bracket( context[55] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[55], context[56], "Bb", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[56] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[57] ) )
+  if( ! refalrts::alloc_number( context[57], 12UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[58] ) )
+  if( ! refalrts::alloc_chars( context[58], context[59], "Cc", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[59], 12UL ) )
+  if( ! refalrts::alloc_close_bracket( context[60] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[60], context[61], "Cc", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[61] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[62] ) )
+  if( ! refalrts::alloc_number( context[62], 13UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[63] ) )
+  if( ! refalrts::alloc_chars( context[63], context[64], "Dd", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[64], 13UL ) )
+  if( ! refalrts::alloc_close_bracket( context[65] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[65], context[66], "Dd", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[66] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[67] ) )
+  if( ! refalrts::alloc_number( context[67], 14UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[68] ) )
+  if( ! refalrts::alloc_chars( context[68], context[69], "Ee", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[69], 14UL ) )
+  if( ! refalrts::alloc_close_bracket( context[70] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[70], context[71], "Ee", 2 ) )
+  if( ! refalrts::alloc_open_bracket( context[71] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[72] ) )
+  if( ! refalrts::alloc_number( context[72], 15UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[73] ) )
+  if( ! refalrts::alloc_chars( context[73], context[74], "Ff", 2 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[74], 15UL ) )
+  if( ! refalrts::alloc_close_bracket( context[75] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[75], context[76], "Ff", 2 ) )
+  if( ! refalrts::alloc_closure_head( context[76] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[77] ) )
+  if( ! refalrts::alloc_name( context[77], ref_gen_DigitFromChar_L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[78] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[78], context[76] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[79] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], refalrts::create_closure );
-  refalrts::update_name( context[4], ref_gen_DigitFromChar_L1.ref.function );
-  refalrts::push_stack( context[79] );
-  refalrts::push_stack( context[6] );
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[78] );
-  refalrts::link_brackets( context[73], context[77] );
-  refalrts::link_brackets( context[68], context[72] );
-  refalrts::link_brackets( context[63], context[67] );
-  refalrts::link_brackets( context[58], context[62] );
-  refalrts::link_brackets( context[53], context[57] );
-  refalrts::link_brackets( context[48], context[52] );
-  refalrts::link_brackets( context[44], context[47] );
-  refalrts::link_brackets( context[40], context[43] );
-  refalrts::link_brackets( context[36], context[39] );
-  refalrts::link_brackets( context[32], context[35] );
-  refalrts::link_brackets( context[28], context[31] );
-  refalrts::link_brackets( context[24], context[27] );
-  refalrts::link_brackets( context[20], context[23] );
-  refalrts::link_brackets( context[16], context[19] );
-  refalrts::link_brackets( context[12], context[15] );
-  refalrts::link_brackets( context[8], context[11] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[71], context[75] );
+  refalrts::link_brackets( context[66], context[70] );
+  refalrts::link_brackets( context[61], context[65] );
+  refalrts::link_brackets( context[56], context[60] );
+  refalrts::link_brackets( context[51], context[55] );
+  refalrts::link_brackets( context[46], context[50] );
+  refalrts::link_brackets( context[42], context[45] );
+  refalrts::link_brackets( context[38], context[41] );
+  refalrts::link_brackets( context[34], context[37] );
+  refalrts::link_brackets( context[30], context[33] );
+  refalrts::link_brackets( context[26], context[29] );
+  refalrts::link_brackets( context[22], context[25] );
+  refalrts::link_brackets( context[18], context[21] );
+  refalrts::link_brackets( context[14], context[17] );
+  refalrts::link_brackets( context[10], context[13] );
+  refalrts::link_brackets( context[6], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[79], context[79] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[6], context[78] );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[78], context[78] );
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  res = refalrts::splice_evar( res, context[6], context[77] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[78] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 1232960728U, 2878557512U, func_DigitFromChar);
+static refalrts::NativeReference nat_ref_DigitFromChar("DigitFromChar", 405128457U, 1869093596U, func_DigitFromChar);
+
 
 static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4112,7 +4117,8 @@ static refalrts::FnResult func_Root(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Root("Root", 1232960728U, 2878557512U, func_Root);
+static refalrts::NativeReference nat_ref_Root("Root", 405128457U, 1869093596U, func_Root);
+
 
 static refalrts::FnResult func_ReadRegexp(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4794,7 +4800,8 @@ static refalrts::FnResult func_ReadRegexp(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReadRegexp("ReadRegexp", 1232960728U, 2878557512U, func_ReadRegexp);
+static refalrts::NativeReference nat_ref_ReadRegexp("ReadRegexp", 405128457U, 1869093596U, func_ReadRegexp);
+
 
 static refalrts::FnResult func_ReadArrow(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -4898,7 +4905,8 @@ static refalrts::FnResult func_ReadArrow(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReadArrow("ReadArrow", 1232960728U, 2878557512U, func_ReadArrow);
+static refalrts::NativeReference nat_ref_ReadArrow("ReadArrow", 405128457U, 1869093596U, func_ReadArrow);
+
 
 static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -5227,7 +5235,8 @@ static refalrts::FnResult func_Number(refalrts::Iter arg_begin, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Number("Number", 1232960728U, 2878557512U, func_Number);
+static refalrts::NativeReference nat_ref_Number("Number", 405128457U, 1869093596U, func_Number);
+
 
 static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -6960,7 +6969,8 @@ static refalrts::FnResult func_Name(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Name("Name", 1232960728U, 2878557512U, func_Name);
+static refalrts::NativeReference nat_ref_Name("Name", 405128457U, 1869093596U, func_Name);
+
 
 static refalrts::FnResult func_ErrorMessage(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7092,7 +7102,8 @@ static refalrts::FnResult func_ErrorMessage(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ErrorMessage("ErrorMessage", 1232960728U, 2878557512U, func_ErrorMessage);
+static refalrts::NativeReference nat_ref_ErrorMessage("ErrorMessage", 405128457U, 1869093596U, func_ErrorMessage);
+
 
 static refalrts::FnResult func_EscRegexp(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -7972,7 +7983,8 @@ static refalrts::FnResult func_EscRegexp(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscRegexp("EscRegexp", 1232960728U, 2878557512U, func_EscRegexp);
+static refalrts::NativeReference nat_ref_EscRegexp("EscRegexp", 405128457U, 1869093596U, func_EscRegexp);
+
 
 static refalrts::FnResult func_StartGroup(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -8061,7 +8073,8 @@ static refalrts::FnResult func_StartGroup(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_StartGroup("StartGroup", 1232960728U, 2878557512U, func_StartGroup);
+static refalrts::NativeReference nat_ref_StartGroup("StartGroup", 405128457U, 1869093596U, func_StartGroup);
+
 
 static refalrts::FnResult func_ReadInclude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -8886,7 +8899,8 @@ static refalrts::FnResult func_ReadInclude(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReadInclude("ReadInclude", 1232960728U, 2878557512U, func_ReadInclude);
+static refalrts::NativeReference nat_ref_ReadInclude("ReadInclude", 405128457U, 1869093596U, func_ReadInclude);
+
 
 static refalrts::FnResult func_EscRegexpm_XCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -9539,7 +9553,8 @@ static refalrts::FnResult func_EscRegexpm_XCode(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscRegexpm_XCode("EscRegexp-XCode", 1232960728U, 2878557512U, func_EscRegexpm_XCode);
+static refalrts::NativeReference nat_ref_EscRegexpm_XCode("EscRegexp-XCode", 405128457U, 1869093596U, func_EscRegexpm_XCode);
+
 
 static refalrts::FnResult func_EscRegexpm_OCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -9822,7 +9837,8 @@ static refalrts::FnResult func_EscRegexpm_OCode(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscRegexpm_OCode("EscRegexp-OCode", 1232960728U, 2878557512U, func_EscRegexpm_OCode);
+static refalrts::NativeReference nat_ref_EscRegexpm_OCode("EscRegexp-OCode", 405128457U, 1869093596U, func_EscRegexpm_OCode);
+
 
 static refalrts::FnResult func_ReadGroup(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -10038,7 +10054,8 @@ static refalrts::FnResult func_ReadGroup(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReadGroup("ReadGroup", 1232960728U, 2878557512U, func_ReadGroup);
+static refalrts::NativeReference nat_ref_ReadGroup("ReadGroup", 405128457U, 1869093596U, func_ReadGroup);
+
 
 static refalrts::FnResult func_ReadBody(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -11816,7 +11833,8 @@ static refalrts::FnResult func_ReadBody(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReadBody("ReadBody", 1232960728U, 2878557512U, func_ReadBody);
+static refalrts::NativeReference nat_ref_ReadBody("ReadBody", 405128457U, 1869093596U, func_ReadBody);
+
 
 static refalrts::FnResult func_EscRegexpm_OCodem_C1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -12235,7 +12253,8 @@ static refalrts::FnResult func_EscRegexpm_OCodem_C1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscRegexpm_OCodem_C1("EscRegexp-OCode-C1", 1232960728U, 2878557512U, func_EscRegexpm_OCodem_C1);
+static refalrts::NativeReference nat_ref_EscRegexpm_OCodem_C1("EscRegexp-OCode-C1", 405128457U, 1869093596U, func_EscRegexpm_OCodem_C1);
+
 
 static refalrts::FnResult func_EscGroup(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -12890,7 +12909,8 @@ static refalrts::FnResult func_EscGroup(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscGroup("EscGroup", 1232960728U, 2878557512U, func_EscGroup);
+static refalrts::NativeReference nat_ref_EscGroup("EscGroup", 405128457U, 1869093596U, func_EscGroup);
+
 
 static refalrts::FnResult func_EscGroupm_XCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13543,7 +13563,8 @@ static refalrts::FnResult func_EscGroupm_XCode(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscGroupm_XCode("EscGroup-XCode", 1232960728U, 2878557512U, func_EscGroupm_XCode);
+static refalrts::NativeReference nat_ref_EscGroupm_XCode("EscGroup-XCode", 405128457U, 1869093596U, func_EscGroupm_XCode);
+
 
 static refalrts::FnResult func_EscGroupm_OCode(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -13826,7 +13847,8 @@ static refalrts::FnResult func_EscGroupm_OCode(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscGroupm_OCode("EscGroup-OCode", 1232960728U, 2878557512U, func_EscGroupm_OCode);
+static refalrts::NativeReference nat_ref_EscGroupm_OCode("EscGroup-OCode", 405128457U, 1869093596U, func_EscGroupm_OCode);
+
 
 static refalrts::FnResult func_EscGroupm_OCodem_C1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -14245,7 +14267,7 @@ static refalrts::FnResult func_EscGroupm_OCodem_C1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EscGroupm_OCodem_C1("EscGroup-OCode-C1", 1232960728U, 2878557512U, func_EscGroupm_OCodem_C1);
+static refalrts::NativeReference nat_ref_EscGroupm_OCodem_C1("EscGroup-OCode-C1", 405128457U, 1869093596U, func_EscGroupm_OCodem_C1);
 
 
 //End of file

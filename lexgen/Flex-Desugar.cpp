@@ -1,13 +1,14 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Flex-Desugar.sref'
+// Don't edit! Edit 'Flex-Desugar.sref' and recompile it
+
 #include "refalrts.h"
 
-
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Flexm_Desugar("Flex-Desugar", 0U, 0U);
-static refalrts::ExternalReference ref_Passm_RemoveRange("Pass-RemoveRange", 91402305U, 2381093440U);
-static refalrts::ExternalReference ref_Passm_RemoveOpt("Pass-RemoveOpt", 91402305U, 2381093440U);
-static refalrts::ExternalReference ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 91402305U, 2381093440U);
+static refalrts::ExternalReference ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 200899581U, 2741309241U);
+static refalrts::ExternalReference ref_Passm_RemoveOpt("Pass-RemoveOpt", 200899581U, 2741309241U);
+static refalrts::ExternalReference ref_Passm_RemoveRange("Pass-RemoveRange", 200899581U, 2741309241U);
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 
 static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -54,6 +55,7 @@ static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts:
 
 static refalrts::NativeReference nat_ref_Flexm_Desugar("Flex-Desugar", 0U, 0U, func_Flexm_Desugar);
 
+
 static refalrts::FnResult func_Passm_RemoveRange(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 5 elems
@@ -79,7 +81,8 @@ static refalrts::FnResult func_Passm_RemoveRange(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveRange("Pass-RemoveRange", 91402305U, 2381093440U, func_Passm_RemoveRange);
+static refalrts::NativeReference nat_ref_Passm_RemoveRange("Pass-RemoveRange", 200899581U, 2741309241U, func_Passm_RemoveRange);
+
 
 static refalrts::FnResult func_Passm_RemoveOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -106,7 +109,8 @@ static refalrts::FnResult func_Passm_RemoveOpt(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveOpt("Pass-RemoveOpt", 91402305U, 2381093440U, func_Passm_RemoveOpt);
+static refalrts::NativeReference nat_ref_Passm_RemoveOpt("Pass-RemoveOpt", 200899581U, 2741309241U, func_Passm_RemoveOpt);
+
 
 static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -133,7 +137,7 @@ static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 91402305U, 2381093440U, func_Passm_RemoveOneMany);
+static refalrts::NativeReference nat_ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 200899581U, 2741309241U, func_Passm_RemoveOneMany);
 
 
 //End of file

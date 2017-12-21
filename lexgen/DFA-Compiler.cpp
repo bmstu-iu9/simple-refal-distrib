@@ -1,52 +1,53 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'DFA-Compiler.sref'
+// Don't edit! Edit 'DFA-Compiler.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
-const refalrts::RefalIdentifier ident_Changed = refalrts::ident_from_static("Changed");
-const refalrts::RefalIdentifier ident_Chars = refalrts::ident_from_static("Chars");
-const refalrts::RefalIdentifier ident_EOFm_Catched = refalrts::ident_from_static("EOF-Catched");
-const refalrts::RefalIdentifier ident_EOFm_NotCatched = refalrts::ident_from_static("EOF-NotCatched");
-const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
-const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
-const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
-const refalrts::RefalIdentifier ident_NotChanged = refalrts::ident_from_static("NotChanged");
-const refalrts::RefalIdentifier ident_NotUsed = refalrts::ident_from_static("NotUsed");
-const refalrts::RefalIdentifier ident_Sentence = refalrts::ident_from_static("Sentence");
-const refalrts::RefalIdentifier ident_Set = refalrts::ident_from_static("Set");
-const refalrts::RefalIdentifier ident_Used = refalrts::ident_from_static("Used");
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
-static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
-static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
-static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
-static refalrts::ExternalReference ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U);
+static const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
+static const refalrts::RefalIdentifier ident_Changed = refalrts::ident_from_static("Changed");
+static const refalrts::RefalIdentifier ident_Chars = refalrts::ident_from_static("Chars");
+static const refalrts::RefalIdentifier ident_EOFm_Catched = refalrts::ident_from_static("EOF-Catched");
+static const refalrts::RefalIdentifier ident_EOFm_NotCatched = refalrts::ident_from_static("EOF-NotCatched");
+static const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
+static const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
+static const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
+static const refalrts::RefalIdentifier ident_NotChanged = refalrts::ident_from_static("NotChanged");
+static const refalrts::RefalIdentifier ident_NotUsed = refalrts::ident_from_static("NotUsed");
+static const refalrts::RefalIdentifier ident_Sentence = refalrts::ident_from_static("Sentence");
+static const refalrts::RefalIdentifier ident_Set = refalrts::ident_from_static("Set");
+static const refalrts::RefalIdentifier ident_Used = refalrts::ident_from_static("Used");
 static refalrts::ExternalReference ref_DFAm_Compile("DFA-Compile", 0U, 0U);
-static refalrts::ExternalReference ref_UniqueSet("UniqueSet", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_ResolvingSets_L1("ResolvingSets\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_ResolvingSets_L2("ResolvingSets\\2", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_ResolvingSets("ResolvingSets", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_NormalizeContent("NormalizeContent", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_SetCheckRecursion("SetCheckRecursion", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_SetSubstitute("SetSubstitute", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_SubstituteSetsToRules("SubstituteSetsToRules", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_SetDiff("SetDiff", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_NormalizeAlternative("NormalizeAlternative", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_SplitAlternatives("SplitAlternatives", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_NormalizeRule_L1("NormalizeRule\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_NormalizeRule_L2("NormalizeRule\\2", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_NormalizeRule("NormalizeRule", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_WarningIfUncatched("WarningIfUncatched", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_DefaultCatchAnyChar("DefaultCatchAnyChar", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_DefaultCatchEOF("DefaultCatchEOF", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_PrepareFunctions("PrepareFunctions", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_ExtractExpected("ExtractExpected", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S2L1("DoPrepareFunctions$2\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S4L1("DoPrepareFunctions$4\\1", 3121760693U, 3999690326U);
-static refalrts::ExternalReference ref_DoPrepareFunctions("DoPrepareFunctions", 3121760693U, 3999690326U);
+static refalrts::ExternalReference ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_DefaultCatchAnyChar("DefaultCatchAnyChar", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_DefaultCatchEOF("DefaultCatchEOF", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_DoPrepareFunctions("DoPrepareFunctions", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S2L1("DoPrepareFunctions$2\\1", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_DoPrepareFunctions_S4L1("DoPrepareFunctions$4\\1", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
+static refalrts::ExternalReference ref_ExtractExpected("ExtractExpected", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+static refalrts::ExternalReference ref_NormalizeAlternative("NormalizeAlternative", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_NormalizeContent("NormalizeContent", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_NormalizeRule("NormalizeRule", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_NormalizeRule_L1("NormalizeRule\\1", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_NormalizeRule_L2("NormalizeRule\\2", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_PrepareFunctions("PrepareFunctions", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
+static refalrts::ExternalReference ref_ResolvingSets("ResolvingSets", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_ResolvingSets_L1("ResolvingSets\\1", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_gen_ResolvingSets_L2("ResolvingSets\\2", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_SetCheckRecursion("SetCheckRecursion", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_SetDiff("SetDiff", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_SetSubstitute("SetSubstitute", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_SplitAlternatives("SplitAlternatives", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_SubstituteSetsToRules("SubstituteSetsToRules", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_UniqueSet("UniqueSet", 1750850198U, 1789610235U);
+static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
+static refalrts::ExternalReference ref_WarningIfUncatched("WarningIfUncatched", 1750850198U, 1789610235U);
 
 static refalrts::FnResult func_gen_DFAm_Compile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -195,7 +196,8 @@ static refalrts::FnResult func_gen_DFAm_Compile_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 3121760693U, 3999690326U, func_gen_DFAm_Compile_L1);
+static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L1("DFA-Compile\\1", 1750850198U, 1789610235U, func_gen_DFAm_Compile_L1);
+
 
 static refalrts::FnResult func_gen_DFAm_Compile_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -255,7 +257,8 @@ static refalrts::FnResult func_gen_DFAm_Compile_L2(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 3121760693U, 3999690326U, func_gen_DFAm_Compile_L2);
+static refalrts::NativeReference nat_ref_gen_DFAm_Compile_L2("DFA-Compile\\2", 1750850198U, 1789610235U, func_gen_DFAm_Compile_L2);
+
 
 static refalrts::FnResult func_DFAm_Compile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -334,6 +337,7 @@ static refalrts::FnResult func_DFAm_Compile(refalrts::Iter arg_begin, refalrts::
 }
 
 static refalrts::NativeReference nat_ref_DFAm_Compile("DFA-Compile", 0U, 0U, func_DFAm_Compile);
+
 
 static refalrts::FnResult func_UniqueSet(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -414,7 +418,8 @@ static refalrts::FnResult func_UniqueSet(refalrts::Iter arg_begin, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UniqueSet("UniqueSet", 3121760693U, 3999690326U, func_UniqueSet);
+static refalrts::NativeReference nat_ref_UniqueSet("UniqueSet", 1750850198U, 1789610235U, func_UniqueSet);
+
 
 static refalrts::FnResult func_gen_ResolvingSets_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -520,7 +525,8 @@ static refalrts::FnResult func_gen_ResolvingSets_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ResolvingSets_L1("ResolvingSets\\1", 3121760693U, 3999690326U, func_gen_ResolvingSets_L1);
+static refalrts::NativeReference nat_ref_gen_ResolvingSets_L1("ResolvingSets\\1", 1750850198U, 1789610235U, func_gen_ResolvingSets_L1);
+
 
 static refalrts::FnResult func_gen_ResolvingSets_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -583,7 +589,8 @@ static refalrts::FnResult func_gen_ResolvingSets_L2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ResolvingSets_L2("ResolvingSets\\2", 3121760693U, 3999690326U, func_gen_ResolvingSets_L2);
+static refalrts::NativeReference nat_ref_gen_ResolvingSets_L2("ResolvingSets\\2", 1750850198U, 1789610235U, func_gen_ResolvingSets_L2);
+
 
 static refalrts::FnResult func_ResolvingSets(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -637,7 +644,8 @@ static refalrts::FnResult func_ResolvingSets(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolvingSets("ResolvingSets", 3121760693U, 3999690326U, func_ResolvingSets);
+static refalrts::NativeReference nat_ref_ResolvingSets("ResolvingSets", 1750850198U, 1789610235U, func_ResolvingSets);
+
 
 static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -803,7 +811,8 @@ static refalrts::FnResult func_NormalizeContent(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeContent("NormalizeContent", 3121760693U, 3999690326U, func_NormalizeContent);
+static refalrts::NativeReference nat_ref_NormalizeContent("NormalizeContent", 1750850198U, 1789610235U, func_NormalizeContent);
+
 
 static refalrts::FnResult func_SetCheckRecursion(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -936,7 +945,8 @@ static refalrts::FnResult func_SetCheckRecursion(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetCheckRecursion("SetCheckRecursion", 3121760693U, 3999690326U, func_SetCheckRecursion);
+static refalrts::NativeReference nat_ref_SetCheckRecursion("SetCheckRecursion", 1750850198U, 1789610235U, func_SetCheckRecursion);
+
 
 static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1402,7 +1412,8 @@ static refalrts::FnResult func_SetSubstitute(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetSubstitute("SetSubstitute", 3121760693U, 3999690326U, func_SetSubstitute);
+static refalrts::NativeReference nat_ref_SetSubstitute("SetSubstitute", 1750850198U, 1789610235U, func_SetSubstitute);
+
 
 static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2086,7 +2097,8 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SubstituteSetsToRules("SubstituteSetsToRules", 3121760693U, 3999690326U, func_SubstituteSetsToRules);
+static refalrts::NativeReference nat_ref_SubstituteSetsToRules("SubstituteSetsToRules", 1750850198U, 1789610235U, func_SubstituteSetsToRules);
+
 
 static refalrts::FnResult func_SetDiff(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2220,7 +2232,8 @@ static refalrts::FnResult func_SetDiff(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetDiff("SetDiff", 3121760693U, 3999690326U, func_SetDiff);
+static refalrts::NativeReference nat_ref_SetDiff("SetDiff", 1750850198U, 1789610235U, func_SetDiff);
+
 
 static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2418,7 +2431,8 @@ static refalrts::FnResult func_NormalizeAlternative(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeAlternative("NormalizeAlternative", 3121760693U, 3999690326U, func_NormalizeAlternative);
+static refalrts::NativeReference nat_ref_NormalizeAlternative("NormalizeAlternative", 1750850198U, 1789610235U, func_NormalizeAlternative);
+
 
 static refalrts::FnResult func_SplitAlternatives(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2642,7 +2656,8 @@ static refalrts::FnResult func_SplitAlternatives(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SplitAlternatives("SplitAlternatives", 3121760693U, 3999690326U, func_SplitAlternatives);
+static refalrts::NativeReference nat_ref_SplitAlternatives("SplitAlternatives", 1750850198U, 1789610235U, func_SplitAlternatives);
+
 
 static refalrts::FnResult func_gen_NormalizeRule_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2720,7 +2735,8 @@ static refalrts::FnResult func_gen_NormalizeRule_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_NormalizeRule_L1("NormalizeRule\\1", 3121760693U, 3999690326U, func_gen_NormalizeRule_L1);
+static refalrts::NativeReference nat_ref_gen_NormalizeRule_L1("NormalizeRule\\1", 1750850198U, 1789610235U, func_gen_NormalizeRule_L1);
+
 
 static refalrts::FnResult func_gen_NormalizeRule_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2762,13 +2778,14 @@ static refalrts::FnResult func_gen_NormalizeRule_L2(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_NormalizeRule_L2("NormalizeRule\\2", 3121760693U, 3999690326U, func_gen_NormalizeRule_L2);
+static refalrts::NativeReference nat_ref_gen_NormalizeRule_L2("NormalizeRule\\2", 1750850198U, 1789610235U, func_gen_NormalizeRule_L2);
+
 
 static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 49 elems
-  refalrts::Iter context[49];
-  refalrts::zeros( context, 49 );
+  // issue here memory for vars with 47 elems
+  refalrts::Iter context[47];
+  refalrts::zeros( context, 47 );
   // </0 & NormalizeRule/4 (/7 t.SentNamePos#1/9 (/13 e.Name#1/11 )/14 e.Alternatives#1/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2800,7 +2817,7 @@ static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts:
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </15 & Fetch/16 Tile{ AsIs: e.Alternatives#1/5 } </17 & Seq/18 (/19 & MapReduce/20 & NormalizeAlternative/21 (/22 # EOF-NotCatched/23 )/24 )/25 Tile{ AsIs: </0 Reuse: & @create_closure@/4 HalfReuse: & NormalizeRule\1/7 AsIs: t.SentNamePos#1/9 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 } >/26 (/27 & Map/28 (/29 & SplitAlternatives/30 t.SentNamePos#1/9/31 (/33 e.Name#1/11/34 )/36 )/37 )/38 </39 & @create_closure@/40 & NormalizeRule\2/41 t.SentNamePos#1/9/42 (/44 e.Name#1/11/45 )/47 >/48 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </15 & Fetch/16 Tile{ AsIs: e.Alternatives#1/5 } </17 & Seq/18 (/19 & MapReduce/20 & NormalizeAlternative/21 (/22 # EOF-NotCatched/23 )/24 Tile{ HalfReuse: )/0 HalfReuse: [*]/4 HalfReuse: & NormalizeRule\1/7 AsIs: t.SentNamePos#1/9 AsIs: (/13 AsIs: e.Name#1/11 AsIs: )/14 } {*}/25 (/26 & Map/27 (/28 & SplitAlternatives/29 t.SentNamePos#1/9/30 (/32 e.Name#1/11/33 )/35 )/36 )/37 [*]/38 & NormalizeRule\2/39 t.SentNamePos#1/9/40 (/42 e.Name#1/11/43 )/45 {*}/46 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[16], ref_Fetch.ref.function ) )
@@ -2821,77 +2838,73 @@ static refalrts::FnResult func_NormalizeRule(refalrts::Iter arg_begin, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[25] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[25], context[4] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[26] ) )
+  if( ! refalrts::alloc_open_bracket( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[27] ) )
+  if( ! refalrts::alloc_name( context[27], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[28], ref_Map.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[28] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[29] ) )
+  if( ! refalrts::alloc_name( context[29], ref_SplitAlternatives.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[30], ref_SplitAlternatives.ref.function ) )
+  if (! refalrts::copy_evar(context[30], context[31], context[9], context[10]))
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[31], context[32], context[9], context[10]))
+  if( ! refalrts::alloc_open_bracket( context[32] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[33] ) )
+  if (! refalrts::copy_evar(context[33], context[34], context[11], context[12]))
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[34], context[35], context[11], context[12]))
+  if( ! refalrts::alloc_close_bracket( context[35] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[36] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[37] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[38] ) )
+  if( ! refalrts::alloc_closure_head( context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[39] ) )
+  if( ! refalrts::alloc_name( context[39], ref_gen_NormalizeRule_L2.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[40], refalrts::create_closure ) )
+  if (! refalrts::copy_evar(context[40], context[41], context[9], context[10]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[41], ref_gen_NormalizeRule_L2.ref.function ) )
+  if( ! refalrts::alloc_open_bracket( context[42] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[42], context[43], context[9], context[10]))
+  if (! refalrts::copy_evar(context[43], context[44], context[11], context[12]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[44] ) )
+  if( ! refalrts::alloc_close_bracket( context[45] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[45], context[46], context[11], context[12]))
+  if( ! refalrts::alloc_unwrapped_closure( context[46], context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[47] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[48] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], refalrts::create_closure );
+  refalrts::reinit_close_bracket( context[0] );
+  refalrts::reinit_closure_head( context[4] );
   refalrts::reinit_name( context[7], ref_gen_NormalizeRule_L1.ref.function );
   refalrts::reinit_close_call( context[8] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[15] );
   refalrts::push_stack( context[8] );
   refalrts::push_stack( context[17] );
-  refalrts::push_stack( context[48] );
-  refalrts::push_stack( context[39] );
-  refalrts::link_brackets( context[44], context[47] );
-  refalrts::link_brackets( context[27], context[38] );
-  refalrts::link_brackets( context[29], context[37] );
-  refalrts::link_brackets( context[33], context[36] );
-  refalrts::push_stack( context[26] );
-  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[42], context[45] );
+  refalrts::link_brackets( context[26], context[37] );
+  refalrts::link_brackets( context[28], context[36] );
+  refalrts::link_brackets( context[32], context[35] );
   refalrts::link_brackets( context[13], context[14] );
-  refalrts::link_brackets( context[19], context[25] );
+  refalrts::link_brackets( context[19], context[0] );
   refalrts::link_brackets( context[22], context[24] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[8];
-  res = refalrts::splice_evar( res, context[26], context[48] );
+  res = refalrts::splice_evar( res, context[25], context[46] );
   res = refalrts::splice_evar( res, context[0], context[14] );
-  res = refalrts::splice_evar( res, context[17], context[25] );
+  res = refalrts::splice_evar( res, context[17], context[24] );
   res = refalrts::splice_evar( res, context[5], context[6] );
   res = refalrts::splice_evar( res, context[15], context[16] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[25] );
+  refalrts::wrap_closure( context[46] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NormalizeRule("NormalizeRule", 3121760693U, 3999690326U, func_NormalizeRule);
+static refalrts::NativeReference nat_ref_NormalizeRule("NormalizeRule", 1750850198U, 1789610235U, func_NormalizeRule);
+
 
 static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3065,7 +3078,8 @@ static refalrts::FnResult func_WarningIfUncatched(refalrts::Iter arg_begin, refa
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_WarningIfUncatched("WarningIfUncatched", 3121760693U, 3999690326U, func_WarningIfUncatched);
+static refalrts::NativeReference nat_ref_WarningIfUncatched("WarningIfUncatched", 1750850198U, 1789610235U, func_WarningIfUncatched);
+
 
 static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3148,7 +3162,8 @@ static refalrts::FnResult func_DefaultCatchAnyChar(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DefaultCatchAnyChar("DefaultCatchAnyChar", 3121760693U, 3999690326U, func_DefaultCatchAnyChar);
+static refalrts::NativeReference nat_ref_DefaultCatchAnyChar("DefaultCatchAnyChar", 1750850198U, 1789610235U, func_DefaultCatchAnyChar);
+
 
 static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3216,7 +3231,8 @@ static refalrts::FnResult func_DefaultCatchEOF(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DefaultCatchEOF("DefaultCatchEOF", 3121760693U, 3999690326U, func_DefaultCatchEOF);
+static refalrts::NativeReference nat_ref_DefaultCatchEOF("DefaultCatchEOF", 1750850198U, 1789610235U, func_DefaultCatchEOF);
+
 
 static refalrts::FnResult func_PrepareFunctions(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3273,7 +3289,8 @@ static refalrts::FnResult func_PrepareFunctions(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrepareFunctions("PrepareFunctions", 3121760693U, 3999690326U, func_PrepareFunctions);
+static refalrts::NativeReference nat_ref_PrepareFunctions("PrepareFunctions", 1750850198U, 1789610235U, func_PrepareFunctions);
+
 
 static refalrts::FnResult func_ExtractExpected(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3353,7 +3370,8 @@ static refalrts::FnResult func_ExtractExpected(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ExtractExpected("ExtractExpected", 3121760693U, 3999690326U, func_ExtractExpected);
+static refalrts::NativeReference nat_ref_ExtractExpected("ExtractExpected", 1750850198U, 1789610235U, func_ExtractExpected);
+
 
 static refalrts::FnResult func_gen_DoPrepareFunctions_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3414,7 +3432,8 @@ static refalrts::FnResult func_gen_DoPrepareFunctions_S2L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoPrepareFunctions_S2L1("DoPrepareFunctions$2\\1", 3121760693U, 3999690326U, func_gen_DoPrepareFunctions_S2L1);
+static refalrts::NativeReference nat_ref_gen_DoPrepareFunctions_S2L1("DoPrepareFunctions$2\\1", 1750850198U, 1789610235U, func_gen_DoPrepareFunctions_S2L1);
+
 
 static refalrts::FnResult func_gen_DoPrepareFunctions_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3499,7 +3518,8 @@ static refalrts::FnResult func_gen_DoPrepareFunctions_S4L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoPrepareFunctions_S4L1("DoPrepareFunctions$4\\1", 3121760693U, 3999690326U, func_gen_DoPrepareFunctions_S4L1);
+static refalrts::NativeReference nat_ref_gen_DoPrepareFunctions_S4L1("DoPrepareFunctions$4\\1", 1750850198U, 1789610235U, func_gen_DoPrepareFunctions_S4L1);
+
 
 static refalrts::FnResult func_DoPrepareFunctions(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -3824,7 +3844,7 @@ static refalrts::FnResult func_DoPrepareFunctions(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoPrepareFunctions("DoPrepareFunctions", 3121760693U, 3999690326U, func_DoPrepareFunctions);
+static refalrts::NativeReference nat_ref_DoPrepareFunctions("DoPrepareFunctions", 1750850198U, 1789610235U, func_DoPrepareFunctions);
 
 
 //End of file

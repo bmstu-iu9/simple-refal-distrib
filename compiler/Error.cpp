@@ -1,29 +1,30 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Error.sref'
+// Don't edit! Edit 'Error.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_ELm_HasErrors = refalrts::ident_from_static("EL-HasErrors");
-const refalrts::RefalIdentifier ident_ELm_NoErrors = refalrts::ident_from_static("EL-NoErrors");
-const refalrts::RefalIdentifier ident_FileLine = refalrts::ident_from_static("FileLine");
-const refalrts::RefalIdentifier ident_FileRowCol = refalrts::ident_from_static("FileRowCol");
-const refalrts::RefalIdentifier ident_MuGenm_NoPos = refalrts::ident_from_static("MuGen-NoPos");
-const refalrts::RefalIdentifier ident_NoPos = refalrts::ident_from_static("NoPos");
-const refalrts::RefalIdentifier ident_RowCol = refalrts::ident_from_static("RowCol");
-const refalrts::RefalIdentifier ident_TkError = refalrts::ident_from_static("TkError");
-const refalrts::RefalIdentifier ident_TkUnexpected = refalrts::ident_from_static("TkUnexpected");
-static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
-static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
-static refalrts::ExternalReference ref_SRm_StrFromToken("SR-StrFromToken", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
-static refalrts::ExternalReference ref_ErrorList("ErrorList", 1626067036U, 1786150088U);
-static refalrts::ExternalReference ref_ELm_Create("EL-Create", 0U, 0U);
+static const refalrts::RefalIdentifier ident_ELm_HasErrors = refalrts::ident_from_static("EL-HasErrors");
+static const refalrts::RefalIdentifier ident_ELm_NoErrors = refalrts::ident_from_static("EL-NoErrors");
+static const refalrts::RefalIdentifier ident_FileLine = refalrts::ident_from_static("FileLine");
+static const refalrts::RefalIdentifier ident_FileRowCol = refalrts::ident_from_static("FileRowCol");
+static const refalrts::RefalIdentifier ident_MuGenm_NoPos = refalrts::ident_from_static("MuGen-NoPos");
+static const refalrts::RefalIdentifier ident_NoPos = refalrts::ident_from_static("NoPos");
+static const refalrts::RefalIdentifier ident_RowCol = refalrts::ident_from_static("RowCol");
+static const refalrts::RefalIdentifier ident_TkError = refalrts::ident_from_static("TkError");
+static const refalrts::RefalIdentifier ident_TkUnexpected = refalrts::ident_from_static("TkUnexpected");
 static refalrts::ExternalReference ref_ELm_AddError("EL-AddError", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_AddErrorAt("EL-AddErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_AddUnexpected("EL-AddUnexpected", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_Concat("EL-Concat", 0U, 0U);
-static refalrts::ExternalReference ref_gen_ELm_Destroy_S2L1("EL-Destroy$2\\1", 1626067036U, 1786150088U);
+static refalrts::ExternalReference ref_ELm_Create("EL-Create", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_Destroy("EL-Destroy", 0U, 0U);
+static refalrts::ExternalReference ref_gen_ELm_Destroy_S2L1("EL-Destroy$2\\1", 1148481089U, 3811928586U);
+static refalrts::ExternalReference ref_ErrorList("ErrorList", 1148481089U, 3811928586U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_SRm_StrFromToken("SR-StrFromToken", 0U, 0U);
+static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
+static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
+static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
 
 static refalrts::FnResult func_ELm_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -62,6 +63,7 @@ static refalrts::FnResult func_ELm_Create(refalrts::Iter arg_begin, refalrts::It
 }
 
 static refalrts::NativeReference nat_ref_ELm_Create("EL-Create", 0U, 0U, func_ELm_Create);
+
 
 static refalrts::FnResult func_ELm_AddError(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -115,6 +117,7 @@ static refalrts::FnResult func_ELm_AddError(refalrts::Iter arg_begin, refalrts::
 }
 
 static refalrts::NativeReference nat_ref_ELm_AddError("EL-AddError", 0U, 0U, func_ELm_AddError);
+
 
 static refalrts::FnResult func_ELm_AddErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -371,6 +374,7 @@ static refalrts::FnResult func_ELm_AddErrorAt(refalrts::Iter arg_begin, refalrts
 
 static refalrts::NativeReference nat_ref_ELm_AddErrorAt("EL-AddErrorAt", 0U, 0U, func_ELm_AddErrorAt);
 
+
 static refalrts::FnResult func_ELm_AddUnexpected(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 24 elems
@@ -522,6 +526,7 @@ static refalrts::FnResult func_ELm_AddUnexpected(refalrts::Iter arg_begin, refal
 
 static refalrts::NativeReference nat_ref_ELm_AddUnexpected("EL-AddUnexpected", 0U, 0U, func_ELm_AddUnexpected);
 
+
 static refalrts::FnResult func_ELm_Concat(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 23 elems
@@ -585,6 +590,7 @@ static refalrts::FnResult func_ELm_Concat(refalrts::Iter arg_begin, refalrts::It
 }
 
 static refalrts::NativeReference nat_ref_ELm_Concat("EL-Concat", 0U, 0U, func_ELm_Concat);
+
 
 static refalrts::FnResult func_gen_ELm_Destroy_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -801,7 +807,8 @@ static refalrts::FnResult func_gen_ELm_Destroy_S2L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ELm_Destroy_S2L1("EL-Destroy$2\\1", 1626067036U, 1786150088U, func_gen_ELm_Destroy_S2L1);
+static refalrts::NativeReference nat_ref_gen_ELm_Destroy_S2L1("EL-Destroy$2\\1", 1148481089U, 3811928586U, func_gen_ELm_Destroy_S2L1);
+
 
 static refalrts::FnResult func_ELm_Destroy(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

@@ -1,39 +1,40 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'HighLevelRASL.sref'
+// Don't edit! Edit 'HighLevelRASL.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_CmdDeclaration = refalrts::ident_from_static("CmdDeclaration");
-const refalrts::RefalIdentifier ident_CmdDefineIdent = refalrts::ident_from_static("CmdDefineIdent");
-const refalrts::RefalIdentifier ident_CmdEmitNativeCode = refalrts::ident_from_static("CmdEmitNativeCode");
-const refalrts::RefalIdentifier ident_CmdEnum = refalrts::ident_from_static("CmdEnum");
-const refalrts::RefalIdentifier ident_CmdNativeFunction = refalrts::ident_from_static("CmdNativeFunction");
-const refalrts::RefalIdentifier ident_CmdSwap = refalrts::ident_from_static("CmdSwap");
-const refalrts::RefalIdentifier ident_Conjoint = refalrts::ident_from_static("Conjoint");
-const refalrts::RefalIdentifier ident_Declaration = refalrts::ident_from_static("Declaration");
-const refalrts::RefalIdentifier ident_Disjoint = refalrts::ident_from_static("Disjoint");
-const refalrts::RefalIdentifier ident_Enum = refalrts::ident_from_static("Enum");
-const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
-const refalrts::RefalIdentifier ident_Ident = refalrts::ident_from_static("Ident");
-const refalrts::RefalIdentifier ident_NativeBlock = refalrts::ident_from_static("NativeBlock");
-const refalrts::RefalIdentifier ident_NativeBody = refalrts::ident_from_static("NativeBody");
-const refalrts::RefalIdentifier ident_NoOpt = refalrts::ident_from_static("NoOpt");
-const refalrts::RefalIdentifier ident_OptResult = refalrts::ident_from_static("OptResult");
-const refalrts::RefalIdentifier ident_Sentences = refalrts::ident_from_static("Sentences");
-const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_HighLevelRASLm_Functionm_Disjoint("HighLevelRASL-Function-Disjoint", 0U, 0U);
-static refalrts::ExternalReference ref_HighLevelRASLm_Functionm_Conjoint("HighLevelRASL-Function-Conjoint", 0U, 0U);
-static refalrts::ExternalReference ref_GenInitSubstm_Simple("GenInitSubst-Simple", 0U, 0U);
-static refalrts::ExternalReference ref_GenSubstm_Simple("GenSubst-Simple", 0U, 0U);
-static refalrts::ExternalReference ref_GenResultm_Simple("GenResult-Simple", 0U, 0U);
+static const refalrts::RefalIdentifier ident_CmdDeclaration = refalrts::ident_from_static("CmdDeclaration");
+static const refalrts::RefalIdentifier ident_CmdDefineIdent = refalrts::ident_from_static("CmdDefineIdent");
+static const refalrts::RefalIdentifier ident_CmdEmitNativeCode = refalrts::ident_from_static("CmdEmitNativeCode");
+static const refalrts::RefalIdentifier ident_CmdEnum = refalrts::ident_from_static("CmdEnum");
+static const refalrts::RefalIdentifier ident_CmdNativeFunction = refalrts::ident_from_static("CmdNativeFunction");
+static const refalrts::RefalIdentifier ident_CmdSwap = refalrts::ident_from_static("CmdSwap");
+static const refalrts::RefalIdentifier ident_Conjoint = refalrts::ident_from_static("Conjoint");
+static const refalrts::RefalIdentifier ident_Declaration = refalrts::ident_from_static("Declaration");
+static const refalrts::RefalIdentifier ident_Disjoint = refalrts::ident_from_static("Disjoint");
+static const refalrts::RefalIdentifier ident_Enum = refalrts::ident_from_static("Enum");
+static const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
+static const refalrts::RefalIdentifier ident_Ident = refalrts::ident_from_static("Ident");
+static const refalrts::RefalIdentifier ident_NativeBlock = refalrts::ident_from_static("NativeBlock");
+static const refalrts::RefalIdentifier ident_NativeBody = refalrts::ident_from_static("NativeBody");
+static const refalrts::RefalIdentifier ident_NoOpt = refalrts::ident_from_static("NoOpt");
+static const refalrts::RefalIdentifier ident_OptResult = refalrts::ident_from_static("OptResult");
+static const refalrts::RefalIdentifier ident_Sentences = refalrts::ident_from_static("Sentences");
+static const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
 static refalrts::ExternalReference ref_GenInitSubstm_Save("GenInitSubst-Save", 0U, 0U);
-static refalrts::ExternalReference ref_GenSubstm_Save("GenSubst-Save", 0U, 0U);
+static refalrts::ExternalReference ref_GenInitSubstm_Simple("GenInitSubst-Simple", 0U, 0U);
 static refalrts::ExternalReference ref_GenResultm_Opt("GenResult-Opt", 0U, 0U);
-static refalrts::ExternalReference ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 656936134U, 33269278U);
+static refalrts::ExternalReference ref_GenResultm_Simple("GenResult-Simple", 0U, 0U);
+static refalrts::ExternalReference ref_GenResultFuncs("GenResultFuncs", 3795736367U, 597226056U);
+static refalrts::ExternalReference ref_GenSentenceFunc("GenSentenceFunc", 3795736367U, 597226056U);
+static refalrts::ExternalReference ref_GenSubstm_Save("GenSubst-Save", 0U, 0U);
+static refalrts::ExternalReference ref_GenSubstm_Simple("GenSubst-Simple", 0U, 0U);
 static refalrts::ExternalReference ref_HighLevelRASL("HighLevelRASL", 0U, 0U);
-static refalrts::ExternalReference ref_HighLevelRASLm_Function("HighLevelRASL-Function", 656936134U, 33269278U);
-static refalrts::ExternalReference ref_GenSentenceFunc("GenSentenceFunc", 656936134U, 33269278U);
-static refalrts::ExternalReference ref_GenResultFuncs("GenResultFuncs", 656936134U, 33269278U);
+static refalrts::ExternalReference ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 3795736367U, 597226056U);
+static refalrts::ExternalReference ref_HighLevelRASLm_Function("HighLevelRASL-Function", 3795736367U, 597226056U);
+static refalrts::ExternalReference ref_HighLevelRASLm_Functionm_Conjoint("HighLevelRASL-Function-Conjoint", 0U, 0U);
+static refalrts::ExternalReference ref_HighLevelRASLm_Functionm_Disjoint("HighLevelRASL-Function-Disjoint", 0U, 0U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 
 static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -312,13 +313,14 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 656936134U, 33269278U, func_gen_HighLevelRASL_L1);
+static refalrts::NativeReference nat_ref_gen_HighLevelRASL_L1("HighLevelRASL\\1", 3795736367U, 597226056U, func_gen_HighLevelRASL_L1);
+
 
 static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 11 elems
-  refalrts::Iter context[11];
-  refalrts::zeros( context, 11 );
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
   // </0 & HighLevelRASL/4 s.Joint#1/5 s.OptResult#1/6 e.ProgramElements#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -336,33 +338,31 @@ static refalrts::FnResult func_HighLevelRASL(refalrts::Iter arg_begin, refalrts:
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </7 & Map/8 </9 Tile{ HalfReuse: & @create_closure@/0 Reuse: & HighLevelRASL\1/4 AsIs: s.Joint#1/5 AsIs: s.OptResult#1/6 } >/10 Tile{ AsIs: e.ProgramElements#1/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </7 & Map/8 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL\1/4 AsIs: s.Joint#1/5 AsIs: s.OptResult#1/6 } {*}/9 Tile{ AsIs: e.ProgramElements#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[7] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[8], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[9] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[9], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[10] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], refalrts::create_closure );
+  refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASL_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[7] );
-  refalrts::push_stack( context[10] );
-  refalrts::push_stack( context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[10], context[10] );
+  res = refalrts::splice_evar( res, context[9], context[9] );
   res = refalrts::splice_evar( res, context[0], context[6] );
-  res = refalrts::splice_evar( res, context[7], context[9] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
+  refalrts::wrap_closure( context[9] );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_HighLevelRASL("HighLevelRASL", 0U, 0U, func_HighLevelRASL);
+
 
 static refalrts::FnResult func_HighLevelRASLm_Function(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -494,7 +494,8 @@ static refalrts::FnResult func_HighLevelRASLm_Function(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_HighLevelRASLm_Function("HighLevelRASL-Function", 656936134U, 33269278U, func_HighLevelRASLm_Function);
+static refalrts::NativeReference nat_ref_HighLevelRASLm_Function("HighLevelRASL-Function", 3795736367U, 597226056U, func_HighLevelRASLm_Function);
+
 
 static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -547,7 +548,8 @@ static refalrts::FnResult func_GenSentenceFunc(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenSentenceFunc("GenSentenceFunc", 656936134U, 33269278U, func_GenSentenceFunc);
+static refalrts::NativeReference nat_ref_GenSentenceFunc("GenSentenceFunc", 3795736367U, 597226056U, func_GenSentenceFunc);
+
 
 static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -604,7 +606,7 @@ static refalrts::FnResult func_GenResultFuncs(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenResultFuncs("GenResultFuncs", 656936134U, 33269278U, func_GenResultFuncs);
+static refalrts::NativeReference nat_ref_GenResultFuncs("GenResultFuncs", 3795736367U, 597226056U, func_GenResultFuncs);
 
 
 //End of file

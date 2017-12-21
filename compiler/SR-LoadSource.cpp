@@ -1,13 +1,14 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'SR-LoadSource.sref'
+// Don't edit! Edit 'SR-LoadSource.sref' and recompile it
+
 #include "refalrts.h"
 
-
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 1086688698U, 434048907U);
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-static refalrts::ExternalReference ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1299759681U, 1153380958U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_SRm_LoadSource("SR-LoadSource", 0U, 0U);
-static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 1299759681U, 1153380958U);
+static refalrts::ExternalReference ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1086688698U, 434048907U);
 
 static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -70,7 +71,8 @@ static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1299759681U, 1153380958U, func_gen_SRm_LoadSource_L1);
+static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1086688698U, 434048907U, func_gen_SRm_LoadSource_L1);
+
 
 static refalrts::FnResult func_SRm_LoadSource(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -124,6 +126,7 @@ static refalrts::FnResult func_SRm_LoadSource(refalrts::Iter arg_begin, refalrts
 
 static refalrts::NativeReference nat_ref_SRm_LoadSource("SR-LoadSource", 0U, 0U, func_SRm_LoadSource);
 
+
 static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
@@ -158,7 +161,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 1299759681U, 1153380958U, func_LinearizeLine);
+static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 1086688698U, 434048907U, func_LinearizeLine);
 
 
 //End of file

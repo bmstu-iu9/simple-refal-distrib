@@ -1,32 +1,33 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'GetOpt.sref'
+// Don't edit! Edit 'GetOpt.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
-const refalrts::RefalIdentifier ident_Long = refalrts::ident_from_static("Long");
-const refalrts::RefalIdentifier ident_Longm_Param = refalrts::ident_from_static("Long-Param");
-const refalrts::RefalIdentifier ident_NoParam = refalrts::ident_from_static("NoParam");
-const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
-const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
-const refalrts::RefalIdentifier ident_Optional = refalrts::ident_from_static("Optional");
-const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Required");
-const refalrts::RefalIdentifier ident_Short = refalrts::ident_from_static("Short");
-const refalrts::RefalIdentifier ident_UnexpectedLongOptionParam = refalrts::ident_from_static("UnexpectedLongOptionParam");
-const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
-const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
-const refalrts::RefalIdentifier ident_Word = refalrts::ident_from_static("Word");
-static refalrts::ExternalReference ref_GetOpt("GetOpt", 0U, 0U);
+static const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
+static const refalrts::RefalIdentifier ident_Long = refalrts::ident_from_static("Long");
+static const refalrts::RefalIdentifier ident_Longm_Param = refalrts::ident_from_static("Long-Param");
+static const refalrts::RefalIdentifier ident_NoParam = refalrts::ident_from_static("NoParam");
+static const refalrts::RefalIdentifier ident_NoRequiredParam = refalrts::ident_from_static("NoRequiredParam");
+static const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
+static const refalrts::RefalIdentifier ident_Optional = refalrts::ident_from_static("Optional");
+static const refalrts::RefalIdentifier ident_Required = refalrts::ident_from_static("Required");
+static const refalrts::RefalIdentifier ident_Short = refalrts::ident_from_static("Short");
+static const refalrts::RefalIdentifier ident_UnexpectedLongOptionParam = refalrts::ident_from_static("UnexpectedLongOptionParam");
+static const refalrts::RefalIdentifier ident_UnknownLongOption = refalrts::ident_from_static("UnknownLongOption");
+static const refalrts::RefalIdentifier ident_UnknownShortOption = refalrts::ident_from_static("UnknownShortOption");
+static const refalrts::RefalIdentifier ident_Word = refalrts::ident_from_static("Word");
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_MarkupArguments("MarkupArguments", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_MarkupAllFiles("MarkupAllFiles", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOpts("ResolveOpts", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_Error("Error", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOptsm_Long("ResolveOpts-Long", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_ResolveOptsm_Short("ResolveOpts-Short", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_FoldErrors("FoldErrors", 1591052355U, 3146445571U);
-static refalrts::ExternalReference ref_DoFoldErrors("DoFoldErrors", 1591052355U, 3146445571U);
+static refalrts::ExternalReference ref_DoFoldErrors("DoFoldErrors", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_Error("Error", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_FoldErrors("FoldErrors", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_GetOpt("GetOpt", 0U, 0U);
+static refalrts::ExternalReference ref_Inc("Inc", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_MarkupAllFiles("MarkupAllFiles", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_MarkupArguments("MarkupArguments", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_ResolveOpts("ResolveOpts", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_ResolveOptsm_Long("ResolveOpts-Long", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_ResolveOptsm_Short("ResolveOpts-Short", 284475041U, 2488733831U);
 
 static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -89,6 +90,7 @@ static refalrts::FnResult func_GetOpt(refalrts::Iter arg_begin, refalrts::Iter a
 
 static refalrts::NativeReference nat_ref_GetOpt("GetOpt", 0U, 0U, func_GetOpt);
 
+
 static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
@@ -123,7 +125,8 @@ static refalrts::FnResult func_Inc(refalrts::Iter arg_begin, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 1591052355U, 3146445571U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", 284475041U, 2488733831U, func_Inc);
+
 
 static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -431,7 +434,8 @@ static refalrts::FnResult func_MarkupArguments(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", 1591052355U, 3146445571U, func_MarkupArguments);
+static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", 284475041U, 2488733831U, func_MarkupArguments);
+
 
 static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -517,7 +521,8 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", 1591052355U, 3146445571U, func_MarkupAllFiles);
+static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", 284475041U, 2488733831U, func_MarkupAllFiles);
+
 
 static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1106,7 +1111,8 @@ static refalrts::FnResult func_ResolveOpts(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 1591052355U, 3146445571U, func_ResolveOpts);
+static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 284475041U, 2488733831U, func_ResolveOpts);
+
 
 static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1297,7 +1303,8 @@ static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1591052355U, 3146445571U, func_ResolveOptsm_LongParam);
+static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 284475041U, 2488733831U, func_ResolveOptsm_LongParam);
+
 
 static refalrts::FnResult func_ResolveOptsm_Long(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1583,7 +1590,8 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::Iter arg_begin, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 1591052355U, 3146445571U, func_ResolveOptsm_Long);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 284475041U, 2488733831U, func_ResolveOptsm_Long);
+
 
 static refalrts::FnResult func_ResolveOptsm_Short(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2015,7 +2023,8 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 1591052355U, 3146445571U, func_ResolveOptsm_Short);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 284475041U, 2488733831U, func_ResolveOptsm_Short);
+
 
 static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2051,7 +2060,8 @@ static refalrts::FnResult func_FoldErrors(refalrts::Iter arg_begin, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", 1591052355U, 3146445571U, func_FoldErrors);
+static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", 284475041U, 2488733831U, func_FoldErrors);
+
 
 static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -2156,7 +2166,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", 1591052355U, 3146445571U, func_DoFoldErrors);
+static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", 284475041U, 2488733831U, func_DoFoldErrors);
 
 
 //End of file

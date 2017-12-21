@@ -1,25 +1,26 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'HardSent.sref'
+// Don't edit! Edit 'HardSent.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
-const refalrts::RefalIdentifier ident_Atom = refalrts::ident_from_static("Atom");
-const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
-const refalrts::RefalIdentifier ident_E = refalrts::ident_from_static("E");
-const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
-const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
-const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
-const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
-const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
-const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
-const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 4049383299U, 2111946739U);
-static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 4049383299U, 2111946739U);
-static refalrts::ExternalReference ref_PreparePatternHardSent("PreparePatternHardSent", 4049383299U, 2111946739U);
-static refalrts::ExternalReference ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 4049383299U, 2111946739U);
+static const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
+static const refalrts::RefalIdentifier ident_Atom = refalrts::ident_from_static("Atom");
+static const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
+static const refalrts::RefalIdentifier ident_E = refalrts::ident_from_static("E");
+static const refalrts::RefalIdentifier ident_S = refalrts::ident_from_static("S");
+static const refalrts::RefalIdentifier ident_T = refalrts::ident_from_static("T");
+static const refalrts::RefalIdentifier ident_TkChar = refalrts::ident_from_static("TkChar");
+static const refalrts::RefalIdentifier ident_TkIdentifier = refalrts::ident_from_static("TkIdentifier");
+static const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
+static const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
+static const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 static refalrts::ExternalReference ref_CreateHardPattern("CreateHardPattern", 0U, 0U);
+static refalrts::ExternalReference ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2220305181U, 2413366995U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_PreparePatternHardSent("PreparePatternHardSent", 2220305181U, 2413366995U);
+static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2220305181U, 2413366995U);
+static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2220305181U, 2413366995U);
 
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -90,7 +91,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 4049383299U, 2111946739U, func_gen_PreparePatternHardSent_L1S5L1);
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2220305181U, 2413366995U, func_gen_PreparePatternHardSent_L1S5L1);
+
 
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -332,7 +334,8 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 4049383299U, 2111946739U, func_gen_PreparePatternHardSent_L1);
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2220305181U, 2413366995U, func_gen_PreparePatternHardSent_L1);
+
 
 static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -365,7 +368,8 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PreparePatternHardSent("PreparePatternHardSent", 4049383299U, 2111946739U, func_PreparePatternHardSent);
+static refalrts::NativeReference nat_ref_PreparePatternHardSent("PreparePatternHardSent", 2220305181U, 2413366995U, func_PreparePatternHardSent);
+
 
 static refalrts::FnResult func_CreateHardPatternm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -1113,7 +1117,8 @@ static refalrts::FnResult func_CreateHardPatternm_Aux(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 4049383299U, 2111946739U, func_CreateHardPatternm_Aux);
+static refalrts::NativeReference nat_ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2220305181U, 2413366995U, func_CreateHardPatternm_Aux);
+
 
 static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();

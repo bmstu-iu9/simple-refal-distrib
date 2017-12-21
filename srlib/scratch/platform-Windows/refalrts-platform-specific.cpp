@@ -1,8 +1,10 @@
+#include <stdlib.h>
 #include <windows.h>
+
 #include "refalrts-platform-specific.h"
 
-bool refalrts::platform_specific::get_main_module_name(
-  char (&module_name)[refalrts::platform_specific::cModuleNameBufferLen]
+bool refalrts::api::get_main_module_name(
+  char (&module_name)[refalrts::api::cModuleNameBufferLen]
 ) {
   DWORD length = GetModuleFileName(NULL, module_name, cModuleNameBufferLen);
 
@@ -18,4 +20,22 @@ bool refalrts::platform_specific::get_main_module_name(
         && module_name[cModuleNameBufferLen - 1] == '\0'
       )
     );
+}
+
+int refalrts::api::system(const char *command) {
+  return ::system(command);
+}
+
+bool refalrts::api::get_current_directory(char buffer[], size_t size) {
+  DWORD result = GetCurrentDirectory(size, buffer);
+
+  return (0 != result && result < size);
+}
+
+refalrts::RefalNumber refalrts::api::get_pid() {
+  return static_cast<refalrts::RefalNumber>(GetCurrentProcessId());
+}
+
+refalrts::RefalNumber refalrts::api::get_ppid() {
+  return static_cast<refalrts::RefalNumber>(GetCurrentProcessId());
 }

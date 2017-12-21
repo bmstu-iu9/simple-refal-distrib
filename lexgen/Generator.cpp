@@ -1,26 +1,27 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from 'Generator.sref'
+// Don't edit! Edit 'Generator.sref' and recompile it
+
 #include "refalrts.h"
 
-
-const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
-const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
-const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
-const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
-const refalrts::RefalIdentifier ident_FlushError = refalrts::ident_from_static("FlushError");
-const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
-const refalrts::RefalIdentifier ident_Unnamed = refalrts::ident_from_static("Unnamed");
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static const refalrts::RefalIdentifier ident_Any = refalrts::ident_from_static("Any");
+static const refalrts::RefalIdentifier ident_Empty = refalrts::ident_from_static("Empty");
+static const refalrts::RefalIdentifier ident_Finitive = refalrts::ident_from_static("Finitive");
+static const refalrts::RefalIdentifier ident_Flush = refalrts::ident_from_static("Flush");
+static const refalrts::RefalIdentifier ident_FlushError = refalrts::ident_from_static("FlushError");
+static const refalrts::RefalIdentifier ident_None = refalrts::ident_from_static("None");
+static const refalrts::RefalIdentifier ident_Unnamed = refalrts::ident_from_static("Unnamed");
 static refalrts::ExternalReference ref_EscapeChar("EscapeChar", 0U, 0U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_Flush("Flush", 1512465600U, 4235920184U);
 static refalrts::ExternalReference ref_GenerateFromDFA("GenerateFromDFA", 0U, 0U);
-static refalrts::ExternalReference ref_WriteFunction("WriteFunction", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_WriteAlternative("WriteAlternative", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_WriteAlternativem_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_Head("Head", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_Flush("Flush", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_NextStatem_L("NextState-L", 3016463358U, 4232659796U);
-static refalrts::ExternalReference ref_NextStatem_R("NextState-R", 3016463358U, 4232659796U);
+static refalrts::ExternalReference ref_Head("Head", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_NextStatem_L("NextState-L", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_NextStatem_R("NextState-R", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_WriteAlternative("WriteAlternative", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_WriteAlternativem_Aux("WriteAlternative-Aux", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 1512465600U, 4235920184U);
+static refalrts::ExternalReference ref_WriteFunction("WriteFunction", 1512465600U, 4235920184U);
 
 static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -54,6 +55,7 @@ static refalrts::FnResult func_GenerateFromDFA(refalrts::Iter arg_begin, refalrt
 }
 
 static refalrts::NativeReference nat_ref_GenerateFromDFA("GenerateFromDFA", 0U, 0U, func_GenerateFromDFA);
+
 
 static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -123,7 +125,8 @@ static refalrts::FnResult func_WriteFunction(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteFunction("WriteFunction", 3016463358U, 4232659796U, func_WriteFunction);
+static refalrts::NativeReference nat_ref_WriteFunction("WriteFunction", 1512465600U, 4235920184U, func_WriteFunction);
+
 
 static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -168,7 +171,8 @@ static refalrts::FnResult func_WriteAlternative(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteAlternative("WriteAlternative", 3016463358U, 4232659796U, func_WriteAlternative);
+static refalrts::NativeReference nat_ref_WriteAlternative("WriteAlternative", 1512465600U, 4235920184U, func_WriteAlternative);
+
 
 static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -222,7 +226,8 @@ static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 3016463358U, 4232659796U, func_gen_WriteAlternativem_Aux_S2L1);
+static refalrts::NativeReference nat_ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 1512465600U, 4235920184U, func_gen_WriteAlternativem_Aux_S2L1);
+
 
 static refalrts::FnResult func_WriteAlternativem_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -368,7 +373,8 @@ static refalrts::FnResult func_WriteAlternativem_Aux(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteAlternativem_Aux("WriteAlternative-Aux", 3016463358U, 4232659796U, func_WriteAlternativem_Aux);
+static refalrts::NativeReference nat_ref_WriteAlternativem_Aux("WriteAlternative-Aux", 1512465600U, 4235920184U, func_WriteAlternativem_Aux);
+
 
 static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -452,7 +458,8 @@ static refalrts::FnResult func_Head(refalrts::Iter arg_begin, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Head("Head", 3016463358U, 4232659796U, func_Head);
+static refalrts::NativeReference nat_ref_Head("Head", 1512465600U, 4235920184U, func_Head);
+
 
 static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -562,7 +569,8 @@ static refalrts::FnResult func_Flush(refalrts::Iter arg_begin, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Flush("Flush", 3016463358U, 4232659796U, func_Flush);
+static refalrts::NativeReference nat_ref_Flush("Flush", 1512465600U, 4235920184U, func_Flush);
+
 
 static refalrts::FnResult func_NextStatem_L(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -628,7 +636,8 @@ static refalrts::FnResult func_NextStatem_L(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", 3016463358U, 4232659796U, func_NextStatem_L);
+static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", 1512465600U, 4235920184U, func_NextStatem_L);
+
 
 static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -705,7 +714,7 @@ static refalrts::FnResult func_NextStatem_R(refalrts::Iter arg_begin, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextStatem_R("NextState-R", 3016463358U, 4232659796U, func_NextStatem_R);
+static refalrts::NativeReference nat_ref_NextStatem_R("NextState-R", 1512465600U, 4235920184U, func_NextStatem_R);
 
 
 //End of file
