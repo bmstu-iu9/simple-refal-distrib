@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE hrc PUBLIC "-//Cail Lomecb//DTD Colorer HRC take5//EN"
+  "http://colorer.sf.net/2003/hrc.dtd">
+<hrc version="take5" xmlns="http://colorer.sf.net/2003/hrc"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://colorer.sf.net/2003/hrc http://colorer.sf.net/2003/hrc.xsd">
+  <type name="SimpleRefal">
+    <import type="def"/>
+
+    <region name="simpleRefalComment" parent="def:CommentContent"/>
+    <region name="simpleRefalOpenStruct" parent="PairStart"/>
+    <region name="simpleRefalCloseStruct" parent="PairEnd"/>
+
+    <region name="simpleRefalCharacter" parent="def:Character"/>
+    <region name="simpleRefalString" parent="def:String"/>
+
+    <region name="simpleRefalLineComment" parent="def:LineComment"/>
+
+    <region name="simpleRefalSymbol" parent="def:SymbolStrong"/>
+
+    <region name="simpleRefalDirective" parent="def:Directive"/>
+
+    <region name="simpleRefalVariable" parent="def:Function"/>
+    <region name="simpleRefalFunction" parent="def:Keyword"/>
+
+    <region name="simpleRefalInlineNative" parent="def:StringEdge"/>
+
+    <scheme name="simpleRefalSymbolsCore">
+      <regexp match='/\\\\$/' region0="def:Error"/>
+      <regexp match='/\\[^xX0-7]/' region0="cString2"/>
+      <regexp match='/\\$/' region0="cString2"/>
+      <regexp match='/\\x|X[\da-fA-F]{1,8}/' region0="cString2"/>
+      <regexp match='/\\[0-7]{1,12}/' region0="cString2"/>
+      <regexp match="/[^\\\']$/" region0="def:Error"/>
+    </scheme>
+
+    <scheme name="simpleRefalStringCore">
+      <regexp match='/\\\\$/' region0="def:Error"/>
+      <regexp match='/\\[^xX0-7]/' region0="cString2"/>
+      <regexp match='/\\$/' region0="cString2"/>
+      <regexp match='/\\x|X[\da-fA-F]{1,8}/' region0="cString2"/>
+      <regexp match='/\\[0-7]{1,12}/' region0="cString2"/>
+      <regexp match='/[^\\\"]$/' region0="def:Error"/>
+    </scheme>
+
+    <scheme name="SimpleRefal">
+      <inherit scheme="CString"/>
+      <inherit scheme="DecNumber"/>
+      <!-- Шестнадцатиричные константы и вещественные числа не поддерживаются -->
+      <!--
+        <inherit scheme="HexNumb"/>
+        <inherit scheme="FloatNumb"/>
+      -->
+      <inherit scheme="PairedBrackets">
+        <virtual scheme="PairedBrackets" subst-scheme="SimpleRefal"/>
+      </inherit>
+
+      <!-- угловые скобки -->
+      <block start="/(&lt;)/" end="/(&gt;)/" scheme="SimpleRefal"
+             region00="simpleRefalSymbol" region01="simpleRefalOpenStruct"
+             region10="simpleRefalSymbol" region11="simpleRefalCloseStruct"/>
+
+      <block start="/\/\*/" end="/\*\//" scheme="Comment"
+             region="simpleRefalComment"
+             region00="simpleRefalOpenStruct"
+             region10="simpleRefalCloseStruct"/>
+      <block start="/\/\//" end="/$/" scheme="Comment"
+             region="simpleRefalComment"
+             region00="simpleRefalOpenStruct"
+             region10="simpleRefalCloseStruct"/>
+      <!-- Шестнадцатиричные константы и вещественные числа не поддерживаются -->
+      <!--
+      <regexp match="/\c(0x[\da-fA-F]*?([^\s\W\da-fA-F]).*?)\B/i"
+              region0="def:Error"/>
+      -->
+      <keywords region="simpleRefalDirective">
+        <word name="$ENTRY"/>
+        <word name="$SWAP"/>
+        <word name="$ESWAP"/>
+        <word name="$EXTERN"/>
+        <word name="$FORWARD"/>
+        <word name="$LABEL"/>
+        <word name="$ENUM"/>
+        <word name="$EENUM"/>
+        <word name="$EASTEREGG"/>
+        <word name="$INCLUDE"/>
+        <word name="$SCOPEID"/>
+      </keywords>
+      <keywords region="simpleRefalSymbol">
+        <symb name="="/>
+        <symb name=","/>
+        <symb name=":"/>
+        <symb name="::"/>
+        <symb name=";"/>
+
+        <symb name="."/>
+
+        <symb name="#"/>
+        <symb name="&amp;"/>
+      </keywords>
+      <regexp match='/\$\w*/' region0="def:Error"/>
+      <keywords region="def:Error">
+        <symb name="["/><symb name="]"/>
+        <symb name="{"/><symb name="}"/>
+        <symb name="("/><symb name=")"/>
+        <symb name='&lt;'/><symb name="&gt;"/>
+        <symb name="*/"/>
+      </keywords>
+
+      <regexp match='/\b[stev]\.[\w_\-\d]+\M(\W|$)/'
+              region0="simpleRefalVariable"/>
+      <regexp match='/\b*[A-Za-z_][\w_\-\d]*\M(\W|$)/'
+              region0="simpleRefalFunction"/>
+
+      <block start="/'/" end="/'|$/"
+             scheme="simpleRefalSymbolsCore" region="simpleRefalString"/>
+      <block start='/"/' end='/"|$/'
+             scheme="simpleRefalStringCore" region="simpleRefalString"/>
+
+      <block start="/^%%$/" end="/^%%$/" scheme="cpp:cpp"
+             region00="simpleRefalInlineNative"
+             region10="simpleRefalInlineNative"/>
+    </scheme>
+  </type>
+</hrc>

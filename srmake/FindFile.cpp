@@ -1,153 +1,179 @@
-// Automatically generated file. Don't edit!
+// This file automatically generated from '../common/FindFile.sref'
+// Don't edit! Edit '../common/FindFile.sref' and recompile it
+
 #include "refalrts.h"
 
+static const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
+static const refalrts::RefalIdentifier ident_False = refalrts::ident_from_static("False");
+static const refalrts::RefalIdentifier ident_NotFound = refalrts::ident_from_static("NotFound");
+static const refalrts::RefalIdentifier ident_Output = refalrts::ident_from_static("Output");
+static const refalrts::RefalIdentifier ident_OutputWithNative = refalrts::ident_from_static("OutputWithNative");
+static const refalrts::RefalIdentifier ident_R5 = refalrts::ident_from_static("R5");
+static const refalrts::RefalIdentifier ident_SR = refalrts::ident_from_static("SR");
+static const refalrts::RefalIdentifier ident_Source = refalrts::ident_from_static("Source");
+static const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
+static const refalrts::RefalIdentifier ident_True = refalrts::ident_from_static("True");
+static refalrts::ExternalReference ref_AnalyzeFile("AnalyzeFile", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeFile_S1L1("AnalyzeFile$1\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeFile_S2L1("AnalyzeFile$2\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeFile_S3L1("AnalyzeFile$3\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeFile_S3L1S1L1("AnalyzeFile$3\\1$1\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeFile_S4L1("AnalyzeFile$4\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_AnalyzeFilem_CheckNotFound("AnalyzeFile-CheckNotFound", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_AnalyzeInclude("AnalyzeInclude", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeInclude_S1L1("AnalyzeInclude$1\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeInclude_S2L1("AnalyzeInclude$2\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_AnalyzeInclude_S3L1("AnalyzeInclude$3\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_ExistFile("ExistFile", 0U, 0U);
+static refalrts::ExternalReference ref_ExistFilem_T("ExistFile-T", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
+static refalrts::ExternalReference ref_FindFiles("FindFiles", 0U, 0U);
+static refalrts::ExternalReference ref_gen_FindFiles_L1("FindFiles\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_FindFiles_L1L1("FindFiles\\1\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_FindInclude("FindInclude", 0U, 0U);
+static refalrts::ExternalReference ref_gen_FindInclude_L1("FindInclude\\1", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_gen_FindInclude_L2("FindInclude\\2", 2597197058U, 3940932122U);
+static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 
-// identifier #Current
-template <typename SREFAL_PARAM_INT>
-struct ident_Current {
-  static const char *name() {
-    return "Current";
-  }
-};
+static refalrts::FnResult func_gen_FindFiles_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 13 elems
+  refalrts::Iter context[13];
+  refalrts::zeros( context, 13 );
+  // </0 & FindFiles\1\1/4 (/7 e.FileName#2/5 )/8 (/11 e.Folder#3/9 )/12 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.FileName#2 as range 5
+  // closed e.Folder#3 as range 9
+  //DEBUG: e.FileName#2: 5
+  //DEBUG: e.Folder#3: 9
 
-// identifier #False
-template <typename SREFAL_PARAM_INT>
-struct ident_False {
-  static const char *name() {
-    return "False";
-  }
-};
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} )/12 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#3/9 } Tile{ HalfReuse: '/'/11 } Tile{ AsIs: e.FileName#2/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::update_name( context[4], ref_AnalyzeFile.ref.function );
+  refalrts::reinit_char( context[11], '/' );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  refalrts::splice_to_freelist_open( context[4], res );
+  return refalrts::cSuccess;
+}
 
-// identifier #NotFound
-template <typename SREFAL_PARAM_INT>
-struct ident_NotFound {
-  static const char *name() {
-    return "NotFound";
-  }
-};
-
-// identifier #Output
-template <typename SREFAL_PARAM_INT>
-struct ident_Output {
-  static const char *name() {
-    return "Output";
-  }
-};
-
-// identifier #Source
-template <typename SREFAL_PARAM_INT>
-struct ident_Source {
-  static const char *name() {
-    return "Source";
-  }
-};
-
-// identifier #True
-template <typename SREFAL_PARAM_INT>
-struct ident_True {
-  static const char *name() {
-    return "True";
-  }
-};
-
-extern refalrts::RefalFunction& Map;
-extern refalrts::RefalFunction& FindFiles;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_ByFolders;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeInFolder;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile_CheckNotFound;
-} // unnamed namespace
-
-extern refalrts::RefalFunction& ExistFile;
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& ExistFile_T;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeFile;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeSource_CheckExist;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeOutput_CheckExist;
-} // unnamed namespace
-
-namespace /* unnamed */ {
-extern refalrts::RefalFunction& AnalyzeBoth_CheckExist;
-} // unnamed namespace
+static refalrts::NativeReference nat_ref_gen_FindFiles_L1L1("FindFiles\\1\\1", 2597197058U, 3940932122U, func_gen_FindFiles_L1L1);
 
 
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_FindFiles {
-    static const char *filename = "..\\common/FindFile.cpp";
-    static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile_ByFolders,
-      & Map
-    };
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_Current<int>::name
-    };
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 11, 0, 0},
-      // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icBracketLeftSave, 0, 5, 2},
-      // closed e.Folders#1 as range 5
-      // closed e.Files#1 as range 2
-      //DEBUG: e.Folders#1: 5
-      //DEBUG: e.Files#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
-      {refalrts::icAllocFunc, 0, 1, 10},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitIdent, 0, 0, 7},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 9},
-      {refalrts::icLinkBrackets, 0, 8, 0},
-      {refalrts::icSetRes, 0, 0, 0},
-      {refalrts::icSpliceTile, 9, 10, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_FindFiles
+static refalrts::FnResult func_gen_FindFiles_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
+  // </0 & FindFiles\1/4 (/7 e.Folders#1/5 )/8 (/11 e.FileName#2/9 )/12 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Folders#1 as range 5
+  // closed e.FileName#2 as range 9
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.FileName#2: 9
 
-} // unnamed namespace
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & AnalyzeFile-CheckNotFound/8 AsIs: (/11 AsIs: e.FileName#2/9 AsIs: )/12 HalfReuse: </1 } & AnalyzeFile/13 e.FileName#2/9/14 >/16 </17 & Map/18 [*]/19 Tile{ Reuse: & FindFiles\1\1/4 AsIs: (/7 } e.FileName#2/9/20 )/22 {*}/23 Tile{ AsIs: e.Folders#1/5 } >/24 >/25 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[13], ref_AnalyzeFile.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[14], context[15], context[9], context[10]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[16] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[17] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[18], ref_Map.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_closure_head( context[19] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[20], context[21], context[9], context[10]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[22] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_unwrapped_closure( context[23], context[19] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[24] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[25] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_name( context[8], ref_AnalyzeFilem_CheckNotFound.ref.function );
+  refalrts::reinit_open_call( context[1] );
+  refalrts::update_name( context[4], ref_gen_FindFiles_L1L1.ref.function );
+  refalrts::push_stack( context[25] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[24] );
+  refalrts::push_stack( context[17] );
+  refalrts::link_brackets( context[7], context[22] );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[1] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[24], context[25] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[22], context[23] );
+  res = refalrts::splice_evar( res, context[20], context[21] );
+  res = refalrts::splice_evar( res, context[4], context[7] );
+  res = refalrts::splice_evar( res, context[13], context[19] );
+  res = refalrts::splice_evar( res, context[8], context[1] );
+  refalrts::use( res );
+  refalrts::wrap_closure( context[23] );
+  return refalrts::cSuccess;
+}
 
-refalrts::RASLFunction descr_FindFiles(
-  "FindFiles",
-  scope_FindFiles::raa,
-  scope_FindFiles::functions,
-  scope_FindFiles::idents,
-  scope_FindFiles::numbers,
-  scope_FindFiles::strings,
-  scope_FindFiles::filename
-);
-refalrts::RefalFunction& FindFiles = descr_FindFiles;
+static refalrts::NativeReference nat_ref_gen_FindFiles_L1("FindFiles\\1", 2597197058U, 3940932122U, func_gen_FindFiles_L1);
 
-#else
+
 static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 11 elems
-  refalrts::Iter context[11];
-  refalrts::zeros( context, 11 );
+  // issue here memory for vars with 12 elems
+  refalrts::Iter context[12];
+  refalrts::zeros( context, 12 );
   // </0 & FindFiles/4 (/7 e.Folders#1/5 )/8 e.Files#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -166,458 +192,39 @@ static refalrts::FnResult func_FindFiles(refalrts::Iter arg_begin, refalrts::Ite
   //DEBUG: e.Files#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: (/0 Reuse: & AnalyzeFile-ByFolders/4 HalfReuse: # Current/7 AsIs: e.Folders#1/5 AsIs: )/8 AsIs: e.Files#1/2 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </9 & Map/10 Tile{ HalfReuse: [*]/0 Reuse: & FindFiles\1/4 AsIs: (/7 AsIs: e.Folders#1/5 AsIs: )/8 } {*}/11 Tile{ AsIs: e.Files#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], & Map ) )
+  if( ! refalrts::alloc_name( context[10], ref_Map.ref.function ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::update_name( context[4], & AnalyzeFile_ByFolders );
-  refalrts::reinit_ident( context[7], & ident_Current<int>::name );
+  if( ! refalrts::alloc_unwrapped_closure( context[11], context[0] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_closure_head( context[0] );
+  refalrts::update_name( context[4], ref_gen_FindFiles_L1.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[9] );
-  refalrts::link_brackets( context[0], context[8] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[0];
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-refalrts::RefalNativeFunction descr_FindFiles(func_FindFiles, "FindFiles");
-refalrts::RefalFunction& FindFiles = descr_FindFiles;
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeFile_ByFolders {
-    static const char *filename = "..\\common/FindFile.cpp";
-    static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile_CheckNotFound,
-      & AnalyzeInFolder,
-      & Map
-    };
-    using refalrts::idents;
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 17, 0, 0},
-      // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icBracketRightSave, 0, 5, 2},
-      // closed e.Folders#1 as range 2
-      // closed e.FileName#1 as range 5
-      //DEBUG: e.Folders#1: 2
-      //DEBUG: e.FileName#1: 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
-      {refalrts::icAllocFunc, 0, 2, 9},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 10},
-      {refalrts::icAllocFunc, 0, 1, 11},
-      {refalrts::icCopyEVar, 12, 5, 0},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 14},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 15},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 16},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenCall, 1},
-      {refalrts::icPushStack, 0, 0, 16},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icPushStack, 0, 0, 15},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icLinkBrackets, 10, 14, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 15, 16, 0},
-      {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceTile, 9, 14, 0},
-      {refalrts::icSpliceTile, 7, 1, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeFile_ByFolders
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile_ByFolders(
-  "AnalyzeFile-ByFolders",
-  scope_AnalyzeFile_ByFolders::raa,
-  scope_AnalyzeFile_ByFolders::functions,
-  scope_AnalyzeFile_ByFolders::idents,
-  scope_AnalyzeFile_ByFolders::numbers,
-  scope_AnalyzeFile_ByFolders::strings,
-  scope_AnalyzeFile_ByFolders::filename
-);
-refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeFile_ByFolders(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  // </0 & AnalyzeFile-ByFolders/4 e.Folders#1/2 (/7 e.FileName#1/5 )/8 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.Folders#1 as range 2
-  // closed e.FileName#1 as range 5
-  //DEBUG: e.Folders#1: 2
-  //DEBUG: e.FileName#1: 5
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile-CheckNotFound/4 } Tile{ AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 HalfReuse: </1 } & Map/9 (/10 & AnalyzeInFolder/11 e.FileName#1/5/12 )/14 Tile{ AsIs: e.Folders#1/2 } >/15 >/16 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[9], & Map ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[11], & AnalyzeInFolder ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[12], context[13], context[5], context[6]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[14] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[15] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[16] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & AnalyzeFile_CheckNotFound );
-  refalrts::reinit_open_call( context[1] );
-  refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[1] );
-  refalrts::link_brackets( context[10], context[14] );
   refalrts::link_brackets( context[7], context[8] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[15], context[16] );
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[14] );
-  res = refalrts::splice_evar( res, context[7], context[1] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile_ByFolders(func_AnalyzeFile_ByFolders, "AnalyzeFile-ByFolders");
-refalrts::RefalFunction& AnalyzeFile_ByFolders = descr_AnalyzeFile_ByFolders;
-
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeInFolder {
-    static const char *filename = "..\\common/FindFile.cpp";
-    static refalrts::RefalFunction *functions[] = {
-      & AnalyzeFile
-    };
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_Current<int>::name
-    };
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 1, 0, 0},
-      {refalrts::icIssueMemory, 9, 0, 0},
-      //FAST GEN: e.$ t.$
-      //GLOBAL GEN: e.$ t.$
-      // </0 & AnalyzeInFolder/4 e.idx#0/2 t.idxV#0/5 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::ictVarRightSave, 0, 5, 2},
-      // closed e.idx#0 as range 2
-      {refalrts::icOnFailGoTo, +9, 0, 0},
-      // e.idx # Current
-      // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
-      {refalrts::icIdentTerm, 0, 0, 5},
-      // closed e.FileName#1 as range 2
-      //DEBUG: e.FileName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseCall, 5},
-      {refalrts::icPushStack, 0, 0, 5},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icTrash, 0, 0, 5},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // e.idx ( e.idx )
-      // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
-      {refalrts::icBracketTerm, 0, 7, 5},
-      // closed e.FileName#1 as range 2
-      // closed e.Folder#1 as range 7
-      //DEBUG: e.FileName#1: 2
-      //DEBUG: e.Folder#1: 7
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitChar, 0, '/', 5},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceTile, 5, 5, 0},
-      {refalrts::icSpliceEVar, 0, 0, 7},
-      {refalrts::icTrash, 0, 0, 4},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeInFolder
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeInFolder(
-  "AnalyzeInFolder",
-  scope_AnalyzeInFolder::raa,
-  scope_AnalyzeInFolder::functions,
-  scope_AnalyzeInFolder::idents,
-  scope_AnalyzeInFolder::numbers,
-  scope_AnalyzeInFolder::strings,
-  scope_AnalyzeInFolder::filename
-);
-refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeInFolder(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 9 elems
-  refalrts::Iter context[9];
-  refalrts::zeros( context, 9 );
-  //FAST GEN: e.$ t.$
-  //GLOBAL GEN: e.$ t.$
-  // </0 & AnalyzeInFolder/4 e.idx#0/2 t.idxV#0/5 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_right( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idx#0 as range 2
-  do {
-    // e.idx # Current
-    // </0 & AnalyzeInFolder/4 e.FileName#1/2 # Current/5 >/1
-    if( ! refalrts::ident_term(  & ident_Current<int>::name, context[5] ) )
-      continue;
-    // closed e.FileName#1 as range 2
-    //DEBUG: e.FileName#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 AsIs: e.FileName#1/2 HalfReuse: >/5 } Tile{ ]] }
-    refalrts::update_name( context[4], & AnalyzeFile );
-    refalrts::reinit_close_call( context[5] );
-    refalrts::push_stack( context[5] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    refalrts::use( res );
-    refalrts::splice_to_freelist_open( context[5], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // e.idx ( e.idx )
-  // </0 & AnalyzeInFolder/4 e.FileName#1/2 (/5 e.Folder#1/7 )/6 >/1
-  context[7] = 0;
-  context[8] = 0;
-  if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.FileName#1 as range 2
-  // closed e.Folder#1 as range 7
-  //DEBUG: e.FileName#1: 2
-  //DEBUG: e.Folder#1: 7
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile/4 } Tile{ AsIs: e.Folder#1/7 } Tile{ HalfReuse: '/'/5 } Tile{ AsIs: e.FileName#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], & AnalyzeFile );
-  refalrts::reinit_char( context[5], '/' );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[5] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[0], context[8] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
   refalrts::use( res );
-  refalrts::splice_to_freelist_open( context[4], res );
+  refalrts::wrap_closure( context[11] );
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeInFolder(func_AnalyzeInFolder, "AnalyzeInFolder");
-refalrts::RefalFunction& AnalyzeInFolder = descr_AnalyzeInFolder;
+static refalrts::NativeReference nat_ref_FindFiles("FindFiles", 0U, 0U, func_FindFiles);
 
-} // unnamed namespace
 
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeFile_CheckNotFound {
-    static const char *filename = "..\\common/FindFile.cpp";
-    using refalrts::functions;
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_NotFound<int>::name,
-      & ident_Output<int>::name,
-      & ident_Source<int>::name
-    };
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 3, 0, 0},
-      {refalrts::icIssueMemory, 20, 0, 0},
-      //FAST GEN: e.$
-      //GLOBAL GEN: ( e.$ ) e.$
-      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icBracketLeftSave, 0, 5, 2},
-      // closed e.idxB#0 as range 5
-      // closed e.idxT#0 as range 2
-      {refalrts::icOnFailGoTo, +11, 0, 0},
-      // ( e.idx ) ( # Source ( e.idx ) e.idx ) e.idx
-      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Source/13 (/16 e.Source#1/14 )/17 e.Output#1/9 )/12 e.Variants#1/2 >/1
-      {refalrts::icSave, 0, 18, 2},
-      {refalrts::icBracketLeftSave, 0, 9, 18},
-      {refalrts::icIdentLeftSave, 13, 2, 9},
-      {refalrts::icBracketLeftSave, 0, 14, 9},
-      // closed e.FileName#1 as range 5
-      // closed e.Source#1 as range 14
-      // closed e.Output#1 as range 9
-      // closed e.Variants#1 as range 18(2)
-      //DEBUG: e.FileName#1: 5
-      //DEBUG: e.Source#1: 14
-      //DEBUG: e.Output#1: 9
-      //DEBUG: e.Variants#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Source/13 AsIs: (/16 AsIs: e.Source#1/14 AsIs: )/17 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-      {refalrts::icLinkBrackets, 11, 12, 0},
-      {refalrts::icLinkBrackets, 16, 17, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 11, 12, 0},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +9, 0, 0},
-      // ( e.idx ) ( # Output e.idx ) e.idx
-      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
-      {refalrts::icSave, 0, 18, 2},
-      {refalrts::icBracketLeftSave, 0, 9, 18},
-      {refalrts::icIdentLeftSave, 13, 1, 9},
-      // closed e.FileName#1 as range 5
-      // closed e.Output#1 as range 9
-      // closed e.Variants#1 as range 18(2)
-      //DEBUG: e.FileName#1: 5
-      //DEBUG: e.Output#1: 9
-      //DEBUG: e.Variants#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Output/13 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-      {refalrts::icLinkBrackets, 11, 12, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 11, 12, 0},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +11, 0, 0},
-      // ( e.idx ) ( # NotFound e.idx ) e.idx
-      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
-      {refalrts::icSave, 0, 18, 2},
-      {refalrts::icBracketLeftSave, 0, 9, 18},
-      {refalrts::icIdentLeftSave, 13, 0, 9},
-      // closed e.FileName#1 as range 5
-      // closed e.NotFoundPath#1 as range 9
-      // closed e.Variants#1 as range 18(2)
-      //DEBUG: e.FileName#1: 5
-      //DEBUG: e.NotFoundPath#1: 9
-      //DEBUG: e.Variants#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ AsIs: e.Variants#1/18(2) } Tile{ AsIs: >/1 ]] }
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icLinkBrackets, 7, 8, 0},
-      {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceEVar, 0, 0, 18},
-      {refalrts::icTrash, 0, 0, 8},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // ( e.idx )
-      // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
-      {refalrts::icEmpty, 0, 0, 2},
-      // closed e.FileName#1 as range 5
-      //DEBUG: e.FileName#1: 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-      {refalrts::icReinitIdent, 0, 0, 7},
-      {refalrts::icLinkBrackets, 4, 8, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 4, 8, 0},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeFile_CheckNotFound
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile_CheckNotFound(
-  "AnalyzeFile-CheckNotFound",
-  scope_AnalyzeFile_CheckNotFound::raa,
-  scope_AnalyzeFile_CheckNotFound::functions,
-  scope_AnalyzeFile_CheckNotFound::idents,
-  scope_AnalyzeFile_CheckNotFound::numbers,
-  scope_AnalyzeFile_CheckNotFound::strings,
-  scope_AnalyzeFile_CheckNotFound::filename
-);
-refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_AnalyzeFilem_CheckNotFound(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
+  // issue here memory for vars with 23 elems
+  refalrts::Iter context[23];
+  refalrts::zeros( context, 23 );
   //FAST GEN: e.$
   //GLOBAL GEN: ( e.$ ) e.$
   // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
@@ -635,44 +242,48 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
   // closed e.idxB#0 as range 5
   // closed e.idxT#0 as range 2
   do {
-    // ( e.idx ) ( # Source ( e.idx ) e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Source/13 (/16 e.Source#1/14 )/17 e.Output#1/9 )/12 e.Variants#1/2 >/1
-    context[18] = context[2];
-    context[19] = context[3];
-    context[9] = 0;
-    context[10] = 0;
-    context[11] = refalrts::brackets_left( context[9], context[10], context[18], context[19] );
-    if( ! context[11] )
-      continue;
-    refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Source<int>::name, context[9], context[10] );
-    if( ! context[13] )
-      continue;
+    // ( e.idx ) ( # Source ( s.idx e.idx ) e.idx ) e.idx
+    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 (/15 # Source/17 (/20 s.Dialect#1/22 e.Source#1/18 )/21 e.Output#1/13 )/16 e.Variants#1/11 >/1
+    context[9] = context[5];
+    context[10] = context[6];
+    context[11] = context[2];
+    context[12] = context[3];
+    context[13] = 0;
     context[14] = 0;
-    context[15] = 0;
-    context[16] = refalrts::brackets_left( context[14], context[15], context[9], context[10] );
-    if( ! context[16] )
+    context[15] = refalrts::brackets_left( context[13], context[14], context[11], context[12] );
+    if( ! context[15] )
       continue;
-    refalrts::bracket_pointers(context[16], context[17]);
-    // closed e.FileName#1 as range 5
-    // closed e.Source#1 as range 14
-    // closed e.Output#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    //DEBUG: e.FileName#1: 5
-    //DEBUG: e.Source#1: 14
-    //DEBUG: e.Output#1: 9
-    //DEBUG: e.Variants#1: 2
+    refalrts::bracket_pointers(context[15], context[16]);
+    context[17] = refalrts::ident_left(  ident_Source, context[13], context[14] );
+    if( ! context[17] )
+      continue;
+    context[18] = 0;
+    context[19] = 0;
+    context[20] = refalrts::brackets_left( context[18], context[19], context[13], context[14] );
+    if( ! context[20] )
+      continue;
+    refalrts::bracket_pointers(context[20], context[21]);
+    // closed e.FileName#1 as range 9
+    // closed e.Output#1 as range 13
+    // closed e.Variants#1 as range 11
+    if( ! refalrts::svar_left( context[22], context[18], context[19] ) )
+      continue;
+    // closed e.Source#1 as range 18
+    //DEBUG: e.FileName#1: 9
+    //DEBUG: e.Output#1: 13
+    //DEBUG: e.Variants#1: 11
+    //DEBUG: s.Dialect#1: 22
+    //DEBUG: e.Source#1: 18
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Source/13 AsIs: (/16 AsIs: e.Source#1/14 AsIs: )/17 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-    refalrts::link_brackets( context[11], context[12] );
-    refalrts::link_brackets( context[16], context[17] );
+    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 {REMOVED TILE} e.Variants#1/11 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/15 AsIs: # Source/17 AsIs: (/20 AsIs: s.Dialect#1/22 AsIs: e.Source#1/18 AsIs: )/21 AsIs: e.Output#1/13 AsIs: )/16 } Tile{ ]] }
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::link_brackets( context[20], context[21] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::use( res );
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -680,34 +291,80 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
 
   do {
     // ( e.idx ) ( # Output e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # Output/13 e.Output#1/9 )/12 e.Variants#1/2 >/1
-    context[18] = context[2];
-    context[19] = context[3];
-    context[9] = 0;
-    context[10] = 0;
-    context[11] = refalrts::brackets_left( context[9], context[10], context[18], context[19] );
-    if( ! context[11] )
+    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 (/15 # Output/17 e.Output#1/13 )/16 e.Variants#1/11 >/1
+    context[9] = context[5];
+    context[10] = context[6];
+    context[11] = context[2];
+    context[12] = context[3];
+    context[13] = 0;
+    context[14] = 0;
+    context[15] = refalrts::brackets_left( context[13], context[14], context[11], context[12] );
+    if( ! context[15] )
       continue;
-    refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_Output<int>::name, context[9], context[10] );
-    if( ! context[13] )
+    refalrts::bracket_pointers(context[15], context[16]);
+    context[17] = refalrts::ident_left(  ident_Output, context[13], context[14] );
+    if( ! context[17] )
       continue;
-    // closed e.FileName#1 as range 5
-    // closed e.Output#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    //DEBUG: e.FileName#1: 5
-    //DEBUG: e.Output#1: 9
-    //DEBUG: e.Variants#1: 2
+    // closed e.FileName#1 as range 9
+    // closed e.Output#1 as range 13
+    // closed e.Variants#1 as range 11
+    //DEBUG: e.FileName#1: 9
+    //DEBUG: e.Output#1: 13
+    //DEBUG: e.Variants#1: 11
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 {REMOVED TILE} e.Variants#1/18(2) >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/11 AsIs: # Output/13 AsIs: e.Output#1/9 AsIs: )/12 } Tile{ ]] }
-    refalrts::link_brackets( context[11], context[12] );
+    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 {REMOVED TILE} e.Variants#1/11 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/15 AsIs: # Output/17 AsIs: e.Output#1/13 AsIs: )/16 } Tile{ ]] }
+    refalrts::link_brackets( context[15], context[16] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::use( res );
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # OutputWithNative ( e.idx ) e.idx ) e.idx
+    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 (/15 # OutputWithNative/17 (/20 e.Output#1/18 )/21 e.Native#1/13 )/16 e.Variants#1/11 >/1
+    context[9] = context[5];
+    context[10] = context[6];
+    context[11] = context[2];
+    context[12] = context[3];
+    context[13] = 0;
+    context[14] = 0;
+    context[15] = refalrts::brackets_left( context[13], context[14], context[11], context[12] );
+    if( ! context[15] )
+      continue;
+    refalrts::bracket_pointers(context[15], context[16]);
+    context[17] = refalrts::ident_left(  ident_OutputWithNative, context[13], context[14] );
+    if( ! context[17] )
+      continue;
+    context[18] = 0;
+    context[19] = 0;
+    context[20] = refalrts::brackets_left( context[18], context[19], context[13], context[14] );
+    if( ! context[20] )
+      continue;
+    refalrts::bracket_pointers(context[20], context[21]);
+    // closed e.FileName#1 as range 9
+    // closed e.Output#1 as range 18
+    // closed e.Native#1 as range 13
+    // closed e.Variants#1 as range 11
+    //DEBUG: e.FileName#1: 9
+    //DEBUG: e.Output#1: 18
+    //DEBUG: e.Native#1: 13
+    //DEBUG: e.Variants#1: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 {REMOVED TILE} e.Variants#1/11 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/15 AsIs: # OutputWithNative/17 AsIs: (/20 AsIs: e.Output#1/18 AsIs: )/21 AsIs: e.Native#1/13 AsIs: )/16 } Tile{ ]] }
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::link_brackets( context[20], context[21] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[16] );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -715,121 +372,71 @@ static refalrts::FnResult func_AnalyzeFile_CheckNotFound(refalrts::Iter arg_begi
 
   do {
     // ( e.idx ) ( # NotFound e.idx ) e.idx
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 e.Variants#1/2 >/1
-    context[18] = context[2];
-    context[19] = context[3];
-    context[9] = 0;
-    context[10] = 0;
-    context[11] = refalrts::brackets_left( context[9], context[10], context[18], context[19] );
-    if( ! context[11] )
+    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 (/15 # NotFound/17 e.NotFoundPath#1/13 )/16 e.Variants#1/11 >/1
+    context[9] = context[5];
+    context[10] = context[6];
+    context[11] = context[2];
+    context[12] = context[3];
+    context[13] = 0;
+    context[14] = 0;
+    context[15] = refalrts::brackets_left( context[13], context[14], context[11], context[12] );
+    if( ! context[15] )
       continue;
-    refalrts::bracket_pointers(context[11], context[12]);
-    context[13] = refalrts::ident_left(  & ident_NotFound<int>::name, context[9], context[10] );
-    if( ! context[13] )
+    refalrts::bracket_pointers(context[15], context[16]);
+    context[17] = refalrts::ident_left(  ident_NotFound, context[13], context[14] );
+    if( ! context[17] )
       continue;
-    // closed e.FileName#1 as range 5
-    // closed e.NotFoundPath#1 as range 9
-    // closed e.Variants#1 as range 18(2)
-    //DEBUG: e.FileName#1: 5
-    //DEBUG: e.NotFoundPath#1: 9
-    //DEBUG: e.Variants#1: 2
+    // closed e.FileName#1 as range 9
+    // closed e.NotFoundPath#1 as range 13
+    // closed e.Variants#1 as range 11
+    //DEBUG: e.FileName#1: 9
+    //DEBUG: e.NotFoundPath#1: 13
+    //DEBUG: e.Variants#1: 11
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} (/11 # NotFound/13 e.NotFoundPath#1/9 )/12 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ AsIs: e.Variants#1/18(2) } Tile{ AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} (/15 # NotFound/17 e.NotFoundPath#1/13 )/16 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & AnalyzeFile-CheckNotFound/4 AsIs: (/7 AsIs: e.FileName#1/9 AsIs: )/8 } Tile{ AsIs: e.Variants#1/11 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[18], context[19] );
-    refalrts::use( res );
+    res = refalrts::splice_evar( res, context[11], context[12] );
     refalrts::splice_to_freelist_open( context[8], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
   // ( e.idx )
-  // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/5 )/8 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
+  // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/9 )/8 >/1
+  context[9] = context[5];
+  context[10] = context[6];
+  context[11] = context[2];
+  context[12] = context[3];
+  if( ! refalrts::empty_seq( context[11], context[12] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.FileName#1 as range 5
-  //DEBUG: e.FileName#1: 5
+  // closed e.FileName#1 as range 9
+  //DEBUG: e.FileName#1: 9
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/5 AsIs: )/8 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # NotFound/7 AsIs: e.FileName#1/9 AsIs: )/8 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_ident( context[7], & ident_NotFound<int>::name );
+  refalrts::reinit_ident( context[7], ident_NotFound );
   refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[4], context[8] );
-  refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile_CheckNotFound(func_AnalyzeFile_CheckNotFound, "AnalyzeFile-CheckNotFound");
-refalrts::RefalFunction& AnalyzeFile_CheckNotFound = descr_AnalyzeFile_CheckNotFound;
+static refalrts::NativeReference nat_ref_AnalyzeFilem_CheckNotFound("AnalyzeFile-CheckNotFound", 2597197058U, 3940932122U, func_AnalyzeFilem_CheckNotFound);
 
-} // unnamed namespace
 
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_ExistFile_T {
-    static const char *filename = "..\\common/FindFile.cpp";
-    static refalrts::RefalFunction *functions[] = {
-      & ExistFile
-    };
-    using refalrts::idents;
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icIssueMemory, 7, 0, 0},
-      // </0 & ExistFile-T/4 e.FileName#1/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      // closed e.FileName#1 as range 2
-      //DEBUG: e.FileName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
-      {refalrts::icCopyEVar, 5, 2, 0},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 5, 6, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_ExistFile_T
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_ExistFile_T(
-  "ExistFile-T",
-  scope_ExistFile_T::raa,
-  scope_ExistFile_T::functions,
-  scope_ExistFile_T::idents,
-  scope_ExistFile_T::numbers,
-  scope_ExistFile_T::strings,
-  scope_ExistFile_T::filename
-);
-refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_ExistFilem_T(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
@@ -848,7 +455,7 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } e.FileName#1/2/5 Tile{ ]] }
   if (! refalrts::copy_evar(context[5], context[6], context[2], context[3]))
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ExistFile );
+  refalrts::update_name( context[4], ref_ExistFile.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -859,414 +466,110 @@ static refalrts::FnResult func_ExistFile_T(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_ExistFile_T(func_ExistFile_T, "ExistFile-T");
-refalrts::RefalFunction& ExistFile_T = descr_ExistFile_T;
+static refalrts::NativeReference nat_ref_ExistFilem_T("ExistFile-T", 2597197058U, 3940932122U, func_ExistFilem_T);
 
-} // unnamed namespace
 
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeFile {
-    static const char *filename = "..\\common/FindFile.cpp";
-    static refalrts::RefalFunction *functions[] = {
-      & ExistFile_T,
-      & AnalyzeBoth_CheckExist,
-      & AnalyzeOutput_CheckExist,
-      & AnalyzeSource_CheckExist
-    };
-    using refalrts::idents;
-    using refalrts::numbers;
-    static const refalrts::StringItem strings[] = {
-      {".cpp", 4},
-      {"sref", 4}
-    };
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 2, 0, 0},
-      {refalrts::icIssueMemory, 22, 0, 0},
-      //FAST GEN: e.$
-      //GLOBAL GEN: e.$
-      // </0 & AnalyzeFile/4 e.idx#0/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      // closed e.idx#0 as range 2
-      {refalrts::icOnFailGoTo, +20, 0, 0},
-      // e.idx '.sref'
-      // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/9 's'/8 'r'/7 'e'/6 'f'/5 >/1
-      {refalrts::icSave, 0, 20, 2},
-      {refalrts::icCharRightSave, 5, static_cast<unsigned char>('f'), 20},
-      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('e'), 20},
-      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('r'), 20},
-      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('s'), 20},
-      {refalrts::icCharRightSave, 9, static_cast<unsigned char>('.'), 20},
-      // closed e.FileName#1 as range 20(2)
-      //DEBUG: e.FileName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 10},
-      {refalrts::icAllocFunc, 0, 3, 11},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 12},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icPushStack, 0, 0, 12},
-      {refalrts::icPushStack, 0, 0, 10},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 12, 12, 0},
-      {refalrts::icSpliceTile, 0, 1, 0},
-      {refalrts::icSpliceTile, 10, 11, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +19, 0, 0},
-      // e.idx '.cpp'
-      // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
-      {refalrts::icSave, 0, 20, 2},
-      {refalrts::icCharRightSave, 5, static_cast<unsigned char>('p'), 20},
-      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('p'), 20},
-      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('c'), 20},
-      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('.'), 20},
-      // closed e.FileName#1 as range 20(2)
-      //DEBUG: e.FileName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 9},
-      {refalrts::icAllocFunc, 0, 2, 10},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 11},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icPushStack, 0, 0, 11},
-      {refalrts::icPushStack, 0, 0, 9},
-      {refalrts::icPushStack, 0, 0, 1},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 11, 11, 0},
-      {refalrts::icSpliceTile, 0, 1, 0},
-      {refalrts::icSpliceTile, 9, 10, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // e.idx
-      // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
-      // closed e.FileName#1 as range 2
-      //DEBUG: e.FileName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 5},
-      {refalrts::icAllocFunc, 0, 1, 6},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenBracket, 7},
-      {refalrts::icAllocString, 0, 1, 8},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 10},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 11},
-      {refalrts::icAllocBracket, 0, refalrts::ibOpenCall, 12},
-      {refalrts::icAllocFunc, 0, 0, 13},
-      {refalrts::icCopyEVar, 14, 2, 0},
-      {refalrts::icAllocString, 0, 0, 16},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 18},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseCall, 19},
-      {refalrts::icUpdateFunc, 0, 0, 4},
-      {refalrts::icReinitChar, 0, '.', 1},
-      {refalrts::icPushStack, 0, 0, 19},
-      {refalrts::icPushStack, 0, 0, 5},
-      {refalrts::icPushStack, 0, 0, 18},
-      {refalrts::icPushStack, 0, 0, 12},
-      {refalrts::icLinkBrackets, 7, 11, 0},
-      {refalrts::icPushStack, 0, 0, 10},
-      {refalrts::icPushStack, 0, 0, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 8, 19, 0},
-      {refalrts::icSpliceTile, 0, 1, 0},
-      {refalrts::icSpliceTile, 5, 7, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeFile
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeFile(
-  "AnalyzeFile",
-  scope_AnalyzeFile::raa,
-  scope_AnalyzeFile::functions,
-  scope_AnalyzeFile::idents,
-  scope_AnalyzeFile::numbers,
-  scope_AnalyzeFile::strings,
-  scope_AnalyzeFile::filename
-);
-refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: e.$
-  // </0 & AnalyzeFile/4 e.idx#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
-  do {
-    // e.idx '.sref'
-    // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/9 's'/8 'r'/7 'e'/6 'f'/5 >/1
-    context[20] = context[2];
-    context[21] = context[3];
-    context[5] = refalrts::char_right( 'f', context[20], context[21] );
-    if( ! context[5] )
-      continue;
-    context[6] = refalrts::char_right( 'e', context[20], context[21] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_right( 'r', context[20], context[21] );
-    if( ! context[7] )
-      continue;
-    context[8] = refalrts::char_right( 's', context[20], context[21] );
-    if( ! context[8] )
-      continue;
-    context[9] = refalrts::char_right( '.', context[20], context[21] );
-    if( ! context[9] )
-      continue;
-    // closed e.FileName#1 as range 20(2)
-    //DEBUG: e.FileName#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </10 & AnalyzeSource-CheckExist/11 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/9 AsIs: 's'/8 AsIs: 'r'/7 AsIs: 'e'/6 AsIs: 'f'/5 AsIs: >/1 } >/12 Tile{ ]] }
-    if( ! refalrts::alloc_open_call( context[10] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[11], & AnalyzeSource_CheckExist ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[12] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ExistFile_T );
-    refalrts::push_stack( context[12] );
-    refalrts::push_stack( context[10] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[12], context[12] );
-    res = refalrts::splice_evar( res, context[0], context[1] );
-    res = refalrts::splice_evar( res, context[10], context[11] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // e.idx '.cpp'
-    // </0 & AnalyzeFile/4 e.FileName#1/2 '.'/8 'c'/7 'p'/6 'p'/5 >/1
-    context[20] = context[2];
-    context[21] = context[3];
-    context[5] = refalrts::char_right( 'p', context[20], context[21] );
-    if( ! context[5] )
-      continue;
-    context[6] = refalrts::char_right( 'p', context[20], context[21] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_right( 'c', context[20], context[21] );
-    if( ! context[7] )
-      continue;
-    context[8] = refalrts::char_right( '.', context[20], context[21] );
-    if( ! context[8] )
-      continue;
-    // closed e.FileName#1 as range 20(2)
-    //DEBUG: e.FileName#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </9 & AnalyzeOutput-CheckExist/10 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/20(2) AsIs: '.'/8 AsIs: 'c'/7 AsIs: 'p'/6 AsIs: 'p'/5 AsIs: >/1 } >/11 Tile{ ]] }
-    if( ! refalrts::alloc_open_call( context[9] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[10], & AnalyzeOutput_CheckExist ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[11] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], & ExistFile_T );
-    refalrts::push_stack( context[11] );
-    refalrts::push_stack( context[9] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[11], context[11] );
-    res = refalrts::splice_evar( res, context[0], context[1] );
-    res = refalrts::splice_evar( res, context[9], context[10] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // e.idx
-  // </0 & AnalyzeFile/4 e.FileName#1/2 >/1
-  // closed e.FileName#1 as range 2
-  //DEBUG: e.FileName#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & AnalyzeBoth-CheckExist/6 (/7 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/2 HalfReuse: '.'/1 }"sref"/8 >/10 )/11 </12 & ExistFile-T/13 e.FileName#1/2/14".cpp"/16 >/18 >/19 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[5] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], & AnalyzeBoth_CheckExist ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[7] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[8], context[9], "sref", 4 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[11] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[13], & ExistFile_T ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[16], context[17], ".cpp", 4 ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[18] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[19] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], & ExistFile_T );
-  refalrts::reinit_char( context[1], '.' );
-  refalrts::push_stack( context[19] );
-  refalrts::push_stack( context[5] );
-  refalrts::push_stack( context[18] );
-  refalrts::push_stack( context[12] );
-  refalrts::link_brackets( context[7], context[11] );
-  refalrts::push_stack( context[10] );
-  refalrts::push_stack( context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[8], context[19] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[7] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeFile(func_AnalyzeFile, "AnalyzeFile");
-refalrts::RefalFunction& AnalyzeFile = descr_AnalyzeFile;
-
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeSource_CheckExist {
-    static const char *filename = "..\\common/FindFile.cpp";
-    using refalrts::functions;
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_NotFound<int>::name,
-      & ident_False<int>::name,
-      & ident_Source<int>::name,
-      & ident_True<int>::name
-    };
-    using refalrts::numbers;
-    static const refalrts::StringItem strings[] = {
-      {".cpp", 4}
-    };
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 1, 0, 0},
-      {refalrts::icIssueMemory, 18, 0, 0},
-      //FAST GEN: s.$ e.$
-      //GLOBAL GEN: s.$ e.$
-      // </0 & AnalyzeSource-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icsVarLeft, 0, 5, 2},
-      // closed e.idxV#0 as range 2
-      {refalrts::icOnFailGoTo, +21, 0, 0},
-      // # True e.idx '.sref'
-      // </0 & AnalyzeSource-CheckExist/4 # True/5 e.UnitName#1/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
-      {refalrts::icIdentTerm, 0, 3, 5},
-      {refalrts::icSave, 0, 16, 2},
-      {refalrts::icCharRightSave, 6, static_cast<unsigned char>('f'), 16},
-      {refalrts::icCharRightSave, 7, static_cast<unsigned char>('e'), 16},
-      {refalrts::icCharRightSave, 8, static_cast<unsigned char>('r'), 16},
-      {refalrts::icCharRightSave, 9, static_cast<unsigned char>('s'), 16},
-      {refalrts::icCharRightSave, 10, static_cast<unsigned char>('.'), 16},
-      // closed e.UnitName#1 as range 16(2)
-      //DEBUG: e.UnitName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 HalfReuse: (/5 AsIs: e.UnitName#1/16(2) AsIs: '.'/10 AsIs: 's'/9 AsIs: 'r'/8 AsIs: 'e'/7 AsIs: 'f'/6 HalfReuse: )/1 } e.UnitName#1/16(2)/11".cpp"/13 )/15 Tile{ ]] }
-      {refalrts::icCopyEVar, 11, 16, 0},
-      {refalrts::icAllocString, 0, 0, 13},
-      {refalrts::icAllocBracket, 0, refalrts::ibCloseBracket, 15},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 0},
-      {refalrts::icReinitIdent, 0, 2, 4},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 5},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 0, 15, 0},
-      {refalrts::icLinkBrackets, 5, 1, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 13, 15, 0},
-      {refalrts::icSpliceTile, 11, 12, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // # False e.idx
-      // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 1, 5},
-      // closed e.SourceName#1 as range 2
-      //DEBUG: e.SourceName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#1/2 HalfReuse: )/1 ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-      {refalrts::icUpdateIdent, 0, 0, 5},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icSetRes, 0, 0, 4},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeSource_CheckExist
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeSource_CheckExist(
-  "AnalyzeSource-CheckExist",
-  scope_AnalyzeSource_CheckExist::raa,
-  scope_AnalyzeSource_CheckExist::functions,
-  scope_AnalyzeSource_CheckExist::idents,
-  scope_AnalyzeSource_CheckExist::numbers,
-  scope_AnalyzeSource_CheckExist::strings,
-  scope_AnalyzeSource_CheckExist::filename
-);
-refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_AnalyzeFile_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
   //FAST GEN: s.$ e.$
   //GLOBAL GEN: s.$ e.$
-  // </0 & AnalyzeSource-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
+  // </0 & AnalyzeFile$1\1/4 s.idx#0/5 e.idxV#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxV#0 as range 2
+  do {
+    // # True e.idx '.ref'
+    // </0 & AnalyzeFile$1\1/4 # True/5 e.UnitName#2/6 '.'/11 'r'/10 'e'/9 'f'/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[5] ) )
+      continue;
+    context[8] = refalrts::char_right( 'f', context[6], context[7] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'e', context[6], context[7] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( 'r', context[6], context[7] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_right( '.', context[6], context[7] );
+    if( ! context[11] )
+      continue;
+    // closed e.UnitName#2 as range 6
+    //DEBUG: e.UnitName#2: 6
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } (/12 Tile{ HalfReuse: # Source/0 HalfReuse: (/4 Reuse: # R5/5 AsIs: e.UnitName#2/6 AsIs: '.'/11 AsIs: 'r'/10 AsIs: 'e'/9 AsIs: 'f'/8 HalfReuse: )/1 } e.UnitName#2/6/13".rasl"/15 )/17 Tile{ ]] }
+    if( ! refalrts::alloc_open_bracket( context[12] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[13], context[14], context[6], context[7]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[15], context[16], ".rasl", 5 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[17] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_ident( context[0], ident_Source );
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::update_ident( context[5], ident_R5 );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[12], context[17] );
+    refalrts::link_brackets( context[4], context[1] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[17] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # False e.idx
+  // </0 & AnalyzeFile$1\1/4 # False/5 e.SourceName#2/6 >/1
+  context[6] = context[2];
+  context[7] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[5] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.SourceName#2 as range 6
+  //DEBUG: e.SourceName#2: 6
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#2/6 HalfReuse: )/1 ]] }
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::update_ident( context[5], ident_NotFound );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[4], context[1] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[4];
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S1L1("AnalyzeFile$1\\1", 2597197058U, 3940932122U, func_gen_AnalyzeFile_S1L1);
+
+
+static refalrts::FnResult func_gen_AnalyzeFile_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  //FAST GEN: s.$ e.$
+  //GLOBAL GEN: s.$ e.$
+  // </0 & AnalyzeFile$2\1/4 s.idx#0/5 e.idxV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1277,359 +580,92 @@ static refalrts::FnResult func_AnalyzeSource_CheckExist(refalrts::Iter arg_begin
   // closed e.idxV#0 as range 2
   do {
     // # True e.idx '.sref'
-    // </0 & AnalyzeSource-CheckExist/4 # True/5 e.UnitName#1/2 '.'/10 's'/9 'r'/8 'e'/7 'f'/6 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
+    // </0 & AnalyzeFile$2\1/4 # True/5 e.UnitName#2/6 '.'/12 's'/11 'r'/10 'e'/9 'f'/8 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[5] ) )
       continue;
-    context[16] = context[2];
-    context[17] = context[3];
-    context[6] = refalrts::char_right( 'f', context[16], context[17] );
-    if( ! context[6] )
-      continue;
-    context[7] = refalrts::char_right( 'e', context[16], context[17] );
-    if( ! context[7] )
-      continue;
-    context[8] = refalrts::char_right( 'r', context[16], context[17] );
+    context[8] = refalrts::char_right( 'f', context[6], context[7] );
     if( ! context[8] )
       continue;
-    context[9] = refalrts::char_right( 's', context[16], context[17] );
+    context[9] = refalrts::char_right( 'e', context[6], context[7] );
     if( ! context[9] )
       continue;
-    context[10] = refalrts::char_right( '.', context[16], context[17] );
+    context[10] = refalrts::char_right( 'r', context[6], context[7] );
     if( ! context[10] )
       continue;
-    // closed e.UnitName#1 as range 16(2)
-    //DEBUG: e.UnitName#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 HalfReuse: (/5 AsIs: e.UnitName#1/16(2) AsIs: '.'/10 AsIs: 's'/9 AsIs: 'r'/8 AsIs: 'e'/7 AsIs: 'f'/6 HalfReuse: )/1 } e.UnitName#1/16(2)/11".cpp"/13 )/15 Tile{ ]] }
-    if (! refalrts::copy_evar(context[11], context[12], context[16], context[17]))
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( context[13], context[14], ".cpp", 4 ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[15] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_open_bracket( context[0] );
-    refalrts::reinit_ident( context[4], & ident_Source<int>::name );
-    refalrts::reinit_open_bracket( context[5] );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[0], context[15] );
-    refalrts::link_brackets( context[5], context[1] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[13], context[15] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // # False e.idx
-  // </0 & AnalyzeSource-CheckExist/4 # False/5 e.SourceName#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[5] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.SourceName#1 as range 2
-  //DEBUG: e.SourceName#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#1/2 HalfReuse: )/1 ]] }
-  refalrts::reinit_open_bracket( context[4] );
-  refalrts::update_ident( context[5], & ident_NotFound<int>::name );
-  refalrts::reinit_close_bracket( context[1] );
-  refalrts::link_brackets( context[4], context[1] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[4];
-  refalrts::use( res );
-  refalrts::splice_to_freelist_open( trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeSource_CheckExist(func_AnalyzeSource_CheckExist, "AnalyzeSource-CheckExist");
-refalrts::RefalFunction& AnalyzeSource_CheckExist = descr_AnalyzeSource_CheckExist;
-
-} // unnamed namespace
-
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeOutput_CheckExist {
-    static const char *filename = "..\\common/FindFile.cpp";
-    using refalrts::functions;
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_NotFound<int>::name,
-      & ident_False<int>::name,
-      & ident_Output<int>::name,
-      & ident_True<int>::name
-    };
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 1, 0, 0},
-      {refalrts::icIssueMemory, 6, 0, 0},
-      //FAST GEN: s.$ e.$
-      //GLOBAL GEN: s.$ e.$
-      // </0 & AnalyzeOutput-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icsVarLeft, 0, 5, 2},
-      // closed e.idxV#0 as range 2
-      {refalrts::icOnFailGoTo, +9, 0, 0},
-      // # True e.idx
-      // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 3, 5},
-      // closed e.OutName#1 as range 2
-      //DEBUG: e.OutName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # Output/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-      {refalrts::icUpdateIdent, 0, 2, 5},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icSetRes, 0, 0, 4},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // # False e.idx
-      // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 1, 5},
-      // closed e.OutName#1 as range 2
-      //DEBUG: e.OutName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-      {refalrts::icUpdateIdent, 0, 0, 5},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icSetRes, 0, 0, 4},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeOutput_CheckExist
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeOutput_CheckExist(
-  "AnalyzeOutput-CheckExist",
-  scope_AnalyzeOutput_CheckExist::raa,
-  scope_AnalyzeOutput_CheckExist::functions,
-  scope_AnalyzeOutput_CheckExist::idents,
-  scope_AnalyzeOutput_CheckExist::numbers,
-  scope_AnalyzeOutput_CheckExist::strings,
-  scope_AnalyzeOutput_CheckExist::filename
-);
-refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeOutput_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 6 elems
-  refalrts::Iter context[6];
-  refalrts::zeros( context, 6 );
-  //FAST GEN: s.$ e.$
-  //GLOBAL GEN: s.$ e.$
-  // </0 & AnalyzeOutput-CheckExist/4 s.idx#0/5 e.idxV#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxV#0 as range 2
-  do {
-    // # True e.idx
-    // </0 & AnalyzeOutput-CheckExist/4 # True/5 e.OutName#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[5] ) )
+    context[11] = refalrts::char_right( 's', context[6], context[7] );
+    if( ! context[11] )
       continue;
-    // closed e.OutName#1 as range 2
-    //DEBUG: e.OutName#1: 2
+    context[12] = refalrts::char_right( '.', context[6], context[7] );
+    if( ! context[12] )
+      continue;
+    // closed e.UnitName#2 as range 6
+    //DEBUG: e.UnitName#2: 6
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # Output/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } (/13 Tile{ HalfReuse: # Source/0 HalfReuse: (/4 Reuse: # SR/5 AsIs: e.UnitName#2/6 AsIs: '.'/12 AsIs: 's'/11 AsIs: 'r'/10 AsIs: 'e'/9 AsIs: 'f'/8 HalfReuse: )/1 } e.UnitName#2/6/14".rasl"/16 )/18 Tile{ ]] }
+    if( ! refalrts::alloc_open_bracket( context[13] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[14], context[15], context[6], context[7]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[16], context[17], ".rasl", 5 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[18] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_ident( context[0], ident_Source );
     refalrts::reinit_open_bracket( context[4] );
-    refalrts::update_ident( context[5], & ident_Output<int>::name );
+    refalrts::update_ident( context[5], ident_SR );
     refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[13], context[18] );
     refalrts::link_brackets( context[4], context[1] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[4];
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[16], context[18] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[13], context[13] );
     refalrts::use( res );
-    refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
   // # False e.idx
-  // </0 & AnalyzeOutput-CheckExist/4 # False/5 e.OutName#1/2 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[5] ) )
+  // </0 & AnalyzeFile$2\1/4 # False/5 e.SourceName#2/6 >/1
+  context[6] = context[2];
+  context[7] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.OutName#1 as range 2
-  //DEBUG: e.OutName#1: 2
+  // closed e.SourceName#2 as range 6
+  //DEBUG: e.SourceName#2: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 Reuse: # NotFound/5 AsIs: e.SourceName#2/6 HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket( context[4] );
-  refalrts::update_ident( context[5], & ident_NotFound<int>::name );
+  refalrts::update_ident( context[5], ident_NotFound );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[4], context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[4];
-  refalrts::use( res );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeOutput_CheckExist(func_AnalyzeOutput_CheckExist, "AnalyzeOutput-CheckExist");
-refalrts::RefalFunction& AnalyzeOutput_CheckExist = descr_AnalyzeOutput_CheckExist;
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2L1("AnalyzeFile$2\\1", 2597197058U, 3940932122U, func_gen_AnalyzeFile_S2L1);
 
-} // unnamed namespace
 
-#endif
-#ifdef INTERPRET
-namespace /* unnamed */ {
-  namespace scope_AnalyzeBoth_CheckExist {
-    static const char *filename = "..\\common/FindFile.cpp";
-    using refalrts::functions;
-    static const refalrts::RefalIdentifier idents[] = {
-      & ident_NotFound<int>::name,
-      & ident_False<int>::name,
-      & ident_Output<int>::name,
-      & ident_True<int>::name,
-      & ident_Source<int>::name
-    };
-    using refalrts::numbers;
-    using refalrts::strings;
-    static const refalrts::RASLCommand raa[] = {
-      {refalrts::icThisIsGeneratedFunction, 0, 0, 0},
-      {refalrts::icLoadConstants, 0, 0, 0},
-      {refalrts::icReserveBacktrackStack, 2, 0, 0},
-      {refalrts::icIssueMemory, 22, 0, 0},
-      //FAST GEN: ( s.$ e.$ ) s.$ e.$
-      //GLOBAL GEN: ( s.$ e.$ ) s.$ e.$
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 s.idxT#0/10 e.idxTV#0/2 >/1
-      {refalrts::icInitB0_Lite, 0, 0, 0},
-      {refalrts::icCallSaveLeft, 0, 2, 0},
-      {refalrts::icBracketLeftSave, 0, 5, 2},
-      {refalrts::icsVarLeft, 0, 9, 5},
-      // closed e.idxBV#0 as range 5
-      {refalrts::icsVarLeft, 0, 10, 2},
-      // closed e.idxTV#0 as range 2
-      {refalrts::icOnFailGoTo, +13, 0, 0},
-      // ( # True e.idx ) s.idx e.idx
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/9 e.SourceName#1/5 )/8 s.Res#1/10 e.OutName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 3, 9},
-      // closed e.SourceName#1 as range 5
-      // closed e.OutName#1 as range 2
-      //DEBUG: s.Res#1: 10
-      //DEBUG: e.SourceName#1: 5
-      //DEBUG: e.OutName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#1/5 AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 4},
-      {refalrts::icReinitIdent, 0, 4, 7},
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 9},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 4, 1, 0},
-      {refalrts::icLinkBrackets, 9, 8, 0},
-      {refalrts::icSetRes, 0, 0, 1},
-      {refalrts::icSpliceEVar, 0, 0, 2},
-      {refalrts::icSpliceTile, 4, 8, 0},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      {refalrts::icOnFailGoTo, +10, 0, 0},
-      // ( # False e.idx ) # True e.idx
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 )/8 # True/10 e.OutName#1/2 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 3, 10},
-      // closed e.SourceName#1 as range 5
-      // closed e.OutName#1 as range 2
-      //DEBUG: e.SourceName#1: 5
-      //DEBUG: e.OutName#1: 2
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-      {refalrts::icReinitBracket, 0, refalrts::ibOpenBracket, 8},
-      {refalrts::icUpdateIdent, 0, 2, 10},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 1},
-      {refalrts::icLinkBrackets, 8, 1, 0},
-      {refalrts::icSetRes, 0, 0, 8},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icProfilerStopSentence, 0, 0, 0},
-      // ( # False e.idx '.sref' ) # False e.idx '.cpp'
-      // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
-      {refalrts::icIdentTerm, 0, 1, 9},
-      {refalrts::icIdentTerm, 0, 1, 10},
-      {refalrts::icCharRightSave, 11, static_cast<unsigned char>('f'), 5},
-      {refalrts::icCharRightSave, 12, static_cast<unsigned char>('e'), 5},
-      {refalrts::icCharRightSave, 13, static_cast<unsigned char>('r'), 5},
-      {refalrts::icCharRightSave, 14, static_cast<unsigned char>('s'), 5},
-      {refalrts::icCharRightSave, 15, static_cast<unsigned char>('.'), 5},
-      {refalrts::icCharRightSave, 16, static_cast<unsigned char>('p'), 2},
-      {refalrts::icCharRightSave, 17, static_cast<unsigned char>('p'), 2},
-      {refalrts::icCharRightSave, 18, static_cast<unsigned char>('c'), 2},
-      {refalrts::icCharRightSave, 19, static_cast<unsigned char>('.'), 2},
-      // closed e.UnitName#1 as range 5
-      {refalrts::iceRepeatLeft, 20, 5, 2},
-      {refalrts::icEmpty, 0, 0, 2},
-      //DEBUG: e.UnitName#1: 5
-      {refalrts::icEmptyResult, 0, 0, 0},
-      //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
-      {refalrts::icUpdateIdent, 0, 0, 9},
-      {refalrts::icReinitBracket, 0, refalrts::ibCloseBracket, 15},
-      {refalrts::icLinkBrackets, 7, 15, 0},
-      {refalrts::icSetResRightEdge, 0, 0, 0},
-      {refalrts::icSpliceTile, 7, 15, 0},
-      {refalrts::icTrashLeftEdge, 0, 0, 0},
-      {refalrts::icNextStep, 0, 0, 0},
-      {refalrts::icEnd, 0, 0, 0}
-    };
-  } // namespace scope_AnalyzeBoth_CheckExist
-
-} // unnamed namespace
-
-namespace /* unnamed */ {
-refalrts::RASLFunction descr_AnalyzeBoth_CheckExist(
-  "AnalyzeBoth-CheckExist",
-  scope_AnalyzeBoth_CheckExist::raa,
-  scope_AnalyzeBoth_CheckExist::functions,
-  scope_AnalyzeBoth_CheckExist::idents,
-  scope_AnalyzeBoth_CheckExist::numbers,
-  scope_AnalyzeBoth_CheckExist::strings,
-  scope_AnalyzeBoth_CheckExist::filename
-);
-refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
-
-} // unnamed namespace
-
-#else
-static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_AnalyzeFile_S3L1S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  //FAST GEN: ( s.$ e.$ ) s.$ e.$
-  //GLOBAL GEN: ( s.$ e.$ ) s.$ e.$
-  // </0 & AnalyzeBoth-CheckExist/4 (/7 s.idxB#0/9 e.idxBV#0/5 )/8 s.idxT#0/10 e.idxTV#0/2 >/1
+  // issue here memory for vars with 14 elems
+  refalrts::Iter context[14];
+  refalrts::zeros( context, 14 );
+  //FAST GEN: ( e.$ ) s.$ e.$
+  //GLOBAL GEN: ( e.$ ) s.$ e.$
+  // </0 & AnalyzeFile$3\1$1\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1641,132 +677,1413 @@ static refalrts::FnResult func_AnalyzeBoth_CheckExist(refalrts::Iter arg_begin, 
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxBV#0 as range 5
-  if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
+  // closed e.idxB#0 as range 5
+  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.idxTV#0 as range 2
   do {
-    // ( # True e.idx ) s.idx e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # True/9 e.SourceName#1/5 )/8 s.Res#1/10 e.OutName#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[9] ) )
+    // ( e.idx ) # True e.idx
+    // </0 & AnalyzeFile$3\1$1\1/4 (/7 e.OutName#2/10 )/8 # True/9 e.NativeName#3/12 >/1
+    context[10] = context[5];
+    context[11] = context[6];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[9] ) )
       continue;
-    // closed e.SourceName#1 as range 5
-    // closed e.OutName#1 as range 2
-    //DEBUG: s.Res#1: 10
-    //DEBUG: e.SourceName#1: 5
-    //DEBUG: e.OutName#1: 2
+    // closed e.OutName#2 as range 10
+    // closed e.NativeName#3 as range 12
+    //DEBUG: e.OutName#2: 10
+    //DEBUG: e.NativeName#3: 12
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.Res#1/10 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Source/7 HalfReuse: (/9 AsIs: e.SourceName#1/5 AsIs: )/8 } Tile{ AsIs: e.OutName#1/2 } Tile{ HalfReuse: )/1 ]] }
-    refalrts::reinit_open_bracket( context[4] );
-    refalrts::reinit_ident( context[7], & ident_Source<int>::name );
-    refalrts::reinit_open_bracket( context[9] );
+    //TRASH: {REMOVED TILE} # True/9 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # OutputWithNative/4 AsIs: (/7 AsIs: e.OutName#2/10 AsIs: )/8 } Tile{ AsIs: e.NativeName#3/12 } Tile{ HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_OutputWithNative );
     refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[4], context[1] );
-    refalrts::link_brackets( context[9], context[8] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[4], context[8] );
-    refalrts::use( res );
-    refalrts::splice_to_freelist_open( trash_prev, res );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::splice_to_freelist_open( context[8], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
-  do {
-    // ( # False e.idx ) # True e.idx
-    // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 )/8 # True/10 e.OutName#1/2 >/1
-    if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
-      continue;
-    if( ! refalrts::ident_term(  & ident_True<int>::name, context[10] ) )
-      continue;
-    // closed e.SourceName#1 as range 5
-    // closed e.OutName#1 as range 2
-    //DEBUG: e.SourceName#1: 5
-    //DEBUG: e.OutName#1: 2
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.SourceName#1/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # Output/10 AsIs: e.OutName#1/2 HalfReuse: )/1 ]] }
-    refalrts::reinit_open_bracket( context[8] );
-    refalrts::update_ident( context[10], & ident_Output<int>::name );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[8], context[1] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[8];
-    refalrts::use( res );
-    refalrts::splice_to_freelist_open( trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  // ( # False e.idx '.sref' ) # False e.idx '.cpp'
-  // </0 & AnalyzeBoth-CheckExist/4 (/7 # False/9 e.UnitName#1/5 '.'/15 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[9] ) )
+  // ( e.idx ) # False e.idx
+  // </0 & AnalyzeFile$3\1$1\1/4 (/7 e.OutName#2/10 )/8 # False/9 e.NativeName#3/12 >/1
+  context[10] = context[5];
+  context[11] = context[6];
+  context[12] = context[2];
+  context[13] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[9] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::ident_term(  & ident_False<int>::name, context[10] ) )
-    return refalrts::cRecognitionImpossible;
-  context[11] = refalrts::char_right( 'f', context[5], context[6] );
-  if( ! context[11] )
-    return refalrts::cRecognitionImpossible;
-  context[12] = refalrts::char_right( 'e', context[5], context[6] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  context[13] = refalrts::char_right( 'r', context[5], context[6] );
-  if( ! context[13] )
-    return refalrts::cRecognitionImpossible;
-  context[14] = refalrts::char_right( 's', context[5], context[6] );
-  if( ! context[14] )
-    return refalrts::cRecognitionImpossible;
-  context[15] = refalrts::char_right( '.', context[5], context[6] );
-  if( ! context[15] )
-    return refalrts::cRecognitionImpossible;
-  context[16] = refalrts::char_right( 'p', context[2], context[3] );
-  if( ! context[16] )
-    return refalrts::cRecognitionImpossible;
-  context[17] = refalrts::char_right( 'p', context[2], context[3] );
-  if( ! context[17] )
-    return refalrts::cRecognitionImpossible;
-  context[18] = refalrts::char_right( 'c', context[2], context[3] );
-  if( ! context[18] )
-    return refalrts::cRecognitionImpossible;
-  context[19] = refalrts::char_right( '.', context[2], context[3] );
-  if( ! context[19] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.UnitName#1 as range 5
-  if( ! refalrts::repeated_evar_left( context[20], context[21], context[5], context[6], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  //DEBUG: e.UnitName#1: 5
+  // closed e.OutName#2 as range 10
+  // closed e.NativeName#3 as range 12
+  //DEBUG: e.OutName#2: 10
+  //DEBUG: e.NativeName#3: 12
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & AnalyzeBoth-CheckExist/4 {REMOVED TILE} 's'/14 'r'/13 'e'/12 'f'/11 )/8 # False/10 e.UnitName#1/20 '.'/19 'c'/18 'p'/17 'p'/16 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # NotFound/9 AsIs: e.UnitName#1/5 HalfReuse: )/15 } Tile{ ]] }
-  refalrts::update_ident( context[9], & ident_NotFound<int>::name );
-  refalrts::reinit_close_bracket( context[15] );
-  refalrts::link_brackets( context[7], context[15] );
+  //TRASH: {REMOVED TILE} </0 {REMOVED TILE} # False/9 e.NativeName#3/12 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Output/7 AsIs: e.OutName#2/10 AsIs: )/8 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[4] );
+  refalrts::reinit_ident( context[7], ident_Output );
+  refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[15] );
-  refalrts::use( res );
+  res = refalrts::splice_evar( res, context[4], context[8] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
 
-namespace /* unnamed */ {
-refalrts::RefalNativeFunction descr_AnalyzeBoth_CheckExist(func_AnalyzeBoth_CheckExist, "AnalyzeBoth-CheckExist");
-refalrts::RefalFunction& AnalyzeBoth_CheckExist = descr_AnalyzeBoth_CheckExist;
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S3L1S1L1("AnalyzeFile$3\\1$1\\1", 2597197058U, 3940932122U, func_gen_AnalyzeFile_S3L1S1L1);
 
-} // unnamed namespace
 
-#endif
+static refalrts::FnResult func_gen_AnalyzeFile_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  //FAST GEN: ( e.$ ) s.$ e.$
+  //GLOBAL GEN: ( e.$ ) s.$ e.$
+  // </0 & AnalyzeFile$3\1/4 (/7 e.idxB#0/5 )/8 s.idxT#0/9 e.idxTV#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.idxB#0 as range 5
+  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxTV#0 as range 2
+  do {
+    // ( e.idx ) # True e.idx
+    // </0 & AnalyzeFile$3\1/4 (/7 e.FileName#1/10 )/8 # True/9 e.OutName#2/12 >/1
+    context[10] = context[5];
+    context[11] = context[6];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[9] ) )
+      continue;
+    // closed e.FileName#1 as range 10
+    // closed e.OutName#2 as range 12
+    //DEBUG: e.FileName#1: 10
+    //DEBUG: e.OutName#2: 12
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & ExistFile-T/14 Tile{ AsIs: e.FileName#1/10 }".cpp"/15 >/17 [*]/18 Tile{ HalfReuse: & AnalyzeFile$3\1$1\1/8 HalfReuse: (/9 AsIs: e.OutName#2/12 HalfReuse: )/1 } {*}/19 >/20 Tile{ ]] }
+    if( ! refalrts::alloc_name( context[14], ref_ExistFilem_T.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_chars( context[15], context[16], ".cpp", 4 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[17] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_closure_head( context[18] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_unwrapped_closure( context[19], context[18] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[20] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_Fetch.ref.function );
+    refalrts::reinit_open_call( context[7] );
+    refalrts::reinit_name( context[8], ref_gen_AnalyzeFile_S3L1S1L1.ref.function );
+    refalrts::reinit_open_bracket( context[9] );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::push_stack( context[20] );
+    refalrts::push_stack( context[0] );
+    refalrts::link_brackets( context[9], context[1] );
+    refalrts::push_stack( context[17] );
+    refalrts::push_stack( context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    res = refalrts::splice_evar( res, context[8], context[1] );
+    res = refalrts::splice_evar( res, context[15], context[18] );
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[14], context[14] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[19] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( e.idx ) # False e.idx
+  // </0 & AnalyzeFile$3\1/4 (/7 e.FileName#1/10 )/8 # False/9 e.OutName#2/12 >/1
+  context[10] = context[5];
+  context[11] = context[6];
+  context[12] = context[2];
+  context[13] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[9] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.FileName#1 as range 10
+  // closed e.OutName#2 as range 12
+  //DEBUG: e.FileName#1: 10
+  //DEBUG: e.OutName#2: 12
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & AnalyzeFile$3\1/4 (/7 e.FileName#1/10 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 Reuse: # NotFound/9 AsIs: e.OutName#2/12 HalfReuse: )/1 ]] }
+  refalrts::reinit_open_bracket( context[8] );
+  refalrts::update_ident( context[9], ident_NotFound );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[8], context[1] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[8];
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S3L1("AnalyzeFile$3\\1", 2597197058U, 3940932122U, func_gen_AnalyzeFile_S3L1);
+
+
+static refalrts::FnResult func_gen_AnalyzeFile_S4L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 57 elems
+  refalrts::Iter context[57];
+  refalrts::zeros( context, 57 );
+  //FAST GEN: ( s.$ e.$ ) ( s.$ e.$ ) ( s.$ e.$ ) ( s.$ e.$ )
+  //GLOBAL GEN: ( s.$ e.$ ) ( s.$ e.$ ) ( s.$ e.$ ) ( s.$ e.$ )
+  // </0 & AnalyzeFile$4\1/4 (/7 s.idxB#0/21 e.idxBV#0/5 )/8 (/11 s.idxTB#0/22 e.idxTBV#0/9 )/12 (/15 s.idxTTB#0/23 e.idxTTBV#0/13 )/16 (/19 s.idxTTTB#0/24 e.idxTTTBV#0/17 )/20 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  context[17] = 0;
+  context[18] = 0;
+  context[19] = refalrts::brackets_left( context[17], context[18], context[2], context[3] );
+  if( ! context[19] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[19], context[20]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[21], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxBV#0 as range 5
+  if( ! refalrts::svar_left( context[22], context[9], context[10] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxTBV#0 as range 9
+  if( ! refalrts::svar_left( context[23], context[13], context[14] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxTTBV#0 as range 13
+  if( ! refalrts::svar_left( context[24], context[17], context[18] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxTTTBV#0 as range 17
+  do {
+    // ( # True e.idx ) ( s.idx e.idx ) ( s.idx e.idx ) ( s.idx e.idx )
+    // </0 & AnalyzeFile$4\1/4 (/7 # True/21 e.R5-SourceName#2/25 )/8 (/11 s.ResSR#2/22 e.SR-SourceName#2/27 )/12 (/15 s.ResOut#2/23 e.OutName#2/29 )/16 (/19 s.ResNat#2/24 e.Native#2/31 )/20 >/1
+    context[25] = context[5];
+    context[26] = context[6];
+    context[27] = context[9];
+    context[28] = context[10];
+    context[29] = context[13];
+    context[30] = context[14];
+    context[31] = context[17];
+    context[32] = context[18];
+    if( ! refalrts::ident_term(  ident_True, context[21] ) )
+      continue;
+    // closed e.R5-SourceName#2 as range 25
+    // closed e.SR-SourceName#2 as range 27
+    // closed e.OutName#2 as range 29
+    // closed e.Native#2 as range 31
+    //DEBUG: s.ResSR#2: 22
+    //DEBUG: s.ResOut#2: 23
+    //DEBUG: s.ResNat#2: 24
+    //DEBUG: e.R5-SourceName#2: 25
+    //DEBUG: e.SR-SourceName#2: 27
+    //DEBUG: e.OutName#2: 29
+    //DEBUG: e.Native#2: 31
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} (/11 s.ResSR#2/22 e.SR-SourceName#2/27 )/12 (/15 s.ResOut#2/23 {REMOVED TILE} )/16 (/19 s.ResNat#2/24 e.Native#2/31 )/20 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Source/4 AsIs: (/7 Reuse: # R5/21 AsIs: e.R5-SourceName#2/25 AsIs: )/8 } Tile{ AsIs: e.OutName#2/29 } Tile{ HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_Source );
+    refalrts::update_ident( context[21], ident_R5 );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[29], context[30] );
+    refalrts::splice_to_freelist_open( context[8], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # False e.idx ) ( # True e.idx ) ( s.idx e.idx ) ( s.idx e.idx )
+    // </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 )/8 (/11 # True/22 e.SR-SourceName#2/27 )/12 (/15 s.ResOut#2/23 e.OutName#2/29 )/16 (/19 s.ResNat#2/24 e.Native#2/31 )/20 >/1
+    context[25] = context[5];
+    context[26] = context[6];
+    context[27] = context[9];
+    context[28] = context[10];
+    context[29] = context[13];
+    context[30] = context[14];
+    context[31] = context[17];
+    context[32] = context[18];
+    if( ! refalrts::ident_term(  ident_False, context[21] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_True, context[22] ) )
+      continue;
+    // closed e.R5-SourceName#2 as range 25
+    // closed e.SR-SourceName#2 as range 27
+    // closed e.OutName#2 as range 29
+    // closed e.Native#2 as range 31
+    //DEBUG: s.ResOut#2: 23
+    //DEBUG: s.ResNat#2: 24
+    //DEBUG: e.R5-SourceName#2: 25
+    //DEBUG: e.SR-SourceName#2: 27
+    //DEBUG: e.OutName#2: 29
+    //DEBUG: e.Native#2: 31
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 {REMOVED TILE} (/15 s.ResOut#2/23 {REMOVED TILE} )/16 (/19 s.ResNat#2/24 e.Native#2/31 )/20 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ HalfReuse: # Source/8 AsIs: (/11 Reuse: # SR/22 AsIs: e.SR-SourceName#2/27 AsIs: )/12 } Tile{ AsIs: e.OutName#2/29 } Tile{ HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[8], ident_Source );
+    refalrts::update_ident( context[22], ident_SR );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[29], context[30] );
+    res = refalrts::splice_evar( res, context[8], context[12] );
+    refalrts::splice_to_freelist_open( context[0], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # False e.idx ) ( # False e.idx ) ( # True e.idx ) ( # True e.idx )
+    // </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 )/8 (/11 # False/22 e.SR-SourceName#2/27 )/12 (/15 # True/23 e.OutName#2/29 )/16 (/19 # True/24 e.Native#2/31 )/20 >/1
+    context[25] = context[5];
+    context[26] = context[6];
+    context[27] = context[9];
+    context[28] = context[10];
+    context[29] = context[13];
+    context[30] = context[14];
+    context[31] = context[17];
+    context[32] = context[18];
+    if( ! refalrts::ident_term(  ident_False, context[21] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_False, context[22] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_True, context[23] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_True, context[24] ) )
+      continue;
+    // closed e.R5-SourceName#2 as range 25
+    // closed e.SR-SourceName#2 as range 27
+    // closed e.OutName#2 as range 29
+    // closed e.Native#2 as range 31
+    //DEBUG: e.R5-SourceName#2: 25
+    //DEBUG: e.SR-SourceName#2: 27
+    //DEBUG: e.OutName#2: 29
+    //DEBUG: e.Native#2: 31
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 )/8 (/11 # False/22 e.SR-SourceName#2/27 {REMOVED TILE} (/19 # True/24 {REMOVED TILE} )/20 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 HalfReuse: # OutputWithNative/15 HalfReuse: (/23 AsIs: e.OutName#2/29 AsIs: )/16 } Tile{ AsIs: e.Native#2/31 } Tile{ HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[12] );
+    refalrts::reinit_ident( context[15], ident_OutputWithNative );
+    refalrts::reinit_open_bracket( context[23] );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[12], context[1] );
+    refalrts::link_brackets( context[23], context[16] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[31], context[32] );
+    res = refalrts::splice_evar( res, context[12], context[16] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # False e.idx ) ( # False e.idx ) ( # True e.idx ) ( # False e.idx )
+    // </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 )/8 (/11 # False/22 e.SR-SourceName#2/27 )/12 (/15 # True/23 e.OutName#2/29 )/16 (/19 # False/24 e.Native#2/31 )/20 >/1
+    context[25] = context[5];
+    context[26] = context[6];
+    context[27] = context[9];
+    context[28] = context[10];
+    context[29] = context[13];
+    context[30] = context[14];
+    context[31] = context[17];
+    context[32] = context[18];
+    if( ! refalrts::ident_term(  ident_False, context[21] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_False, context[22] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_True, context[23] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_False, context[24] ) )
+      continue;
+    // closed e.R5-SourceName#2 as range 25
+    // closed e.SR-SourceName#2 as range 27
+    // closed e.OutName#2 as range 29
+    // closed e.Native#2 as range 31
+    //DEBUG: e.R5-SourceName#2: 25
+    //DEBUG: e.SR-SourceName#2: 27
+    //DEBUG: e.OutName#2: 29
+    //DEBUG: e.Native#2: 31
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.R5-SourceName#2/25 )/8 (/11 # False/22 e.SR-SourceName#2/27 )/12 {REMOVED TILE} (/19 # False/24 e.Native#2/31 )/20 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/15 Reuse: # Output/23 AsIs: e.OutName#2/29 AsIs: )/16 } Tile{ ]] }
+    refalrts::update_ident( context[23], ident_Output );
+    refalrts::link_brackets( context[15], context[16] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( # False e.idx '.ref' ) ( # False e.idx '.sref' ) ( # False e.idx '.rasl' ) ( # False e.idx '.cpp' )
+  // </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.UnitName#2/25 '.'/36 'r'/35 'e'/34 'f'/33 )/8 (/11 # False/22 e.UnitName#2/51 '.'/41 's'/40 'r'/39 'e'/38 'f'/37 )/12 (/15 # False/23 e.UnitName#2/53 '.'/46 'r'/45 'a'/44 's'/43 'l'/42 )/16 (/19 # False/24 e.UnitName#2/55 '.'/50 'c'/49 'p'/48 'p'/47 )/20 >/1
+  context[25] = context[5];
+  context[26] = context[6];
+  context[27] = context[9];
+  context[28] = context[10];
+  context[29] = context[13];
+  context[30] = context[14];
+  context[31] = context[17];
+  context[32] = context[18];
+  if( ! refalrts::ident_term(  ident_False, context[21] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::ident_term(  ident_False, context[22] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::ident_term(  ident_False, context[23] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::ident_term(  ident_False, context[24] ) )
+    return refalrts::cRecognitionImpossible;
+  context[33] = refalrts::char_right( 'f', context[25], context[26] );
+  if( ! context[33] )
+    return refalrts::cRecognitionImpossible;
+  context[34] = refalrts::char_right( 'e', context[25], context[26] );
+  if( ! context[34] )
+    return refalrts::cRecognitionImpossible;
+  context[35] = refalrts::char_right( 'r', context[25], context[26] );
+  if( ! context[35] )
+    return refalrts::cRecognitionImpossible;
+  context[36] = refalrts::char_right( '.', context[25], context[26] );
+  if( ! context[36] )
+    return refalrts::cRecognitionImpossible;
+  context[37] = refalrts::char_right( 'f', context[27], context[28] );
+  if( ! context[37] )
+    return refalrts::cRecognitionImpossible;
+  context[38] = refalrts::char_right( 'e', context[27], context[28] );
+  if( ! context[38] )
+    return refalrts::cRecognitionImpossible;
+  context[39] = refalrts::char_right( 'r', context[27], context[28] );
+  if( ! context[39] )
+    return refalrts::cRecognitionImpossible;
+  context[40] = refalrts::char_right( 's', context[27], context[28] );
+  if( ! context[40] )
+    return refalrts::cRecognitionImpossible;
+  context[41] = refalrts::char_right( '.', context[27], context[28] );
+  if( ! context[41] )
+    return refalrts::cRecognitionImpossible;
+  context[42] = refalrts::char_right( 'l', context[29], context[30] );
+  if( ! context[42] )
+    return refalrts::cRecognitionImpossible;
+  context[43] = refalrts::char_right( 's', context[29], context[30] );
+  if( ! context[43] )
+    return refalrts::cRecognitionImpossible;
+  context[44] = refalrts::char_right( 'a', context[29], context[30] );
+  if( ! context[44] )
+    return refalrts::cRecognitionImpossible;
+  context[45] = refalrts::char_right( 'r', context[29], context[30] );
+  if( ! context[45] )
+    return refalrts::cRecognitionImpossible;
+  context[46] = refalrts::char_right( '.', context[29], context[30] );
+  if( ! context[46] )
+    return refalrts::cRecognitionImpossible;
+  context[47] = refalrts::char_right( 'p', context[31], context[32] );
+  if( ! context[47] )
+    return refalrts::cRecognitionImpossible;
+  context[48] = refalrts::char_right( 'p', context[31], context[32] );
+  if( ! context[48] )
+    return refalrts::cRecognitionImpossible;
+  context[49] = refalrts::char_right( 'c', context[31], context[32] );
+  if( ! context[49] )
+    return refalrts::cRecognitionImpossible;
+  context[50] = refalrts::char_right( '.', context[31], context[32] );
+  if( ! context[50] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.UnitName#2 as range 25
+  if( ! refalrts::repeated_evar_left( context[51], context[52], context[25], context[26], context[27], context[28] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[27], context[28] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::repeated_evar_left( context[53], context[54], context[51], context[52], context[29], context[30] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[29], context[30] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::repeated_evar_left( context[55], context[56], context[53], context[54], context[31], context[32] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[31], context[32] ) )
+    return refalrts::cRecognitionImpossible;
+  //DEBUG: e.UnitName#2: 25
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & AnalyzeFile$4\1/4 (/7 # False/21 e.UnitName#2/25 '.'/36 'r'/35 'e'/34 'f'/33 )/8 (/11 # False/22 e.UnitName#2/51 '.'/41 's'/40 'r'/39 'e'/38 'f'/37 )/12 (/15 # False/23 e.UnitName#2/53 '.'/46 'r'/45 'a'/44 's'/43 'l'/42 )/16 {REMOVED TILE} 'c'/49 'p'/48 'p'/47 )/20 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/19 Reuse: # NotFound/24 AsIs: e.UnitName#2/55 HalfReuse: )/50 } Tile{ ]] }
+  refalrts::update_ident( context[24], ident_NotFound );
+  refalrts::reinit_close_bracket( context[50] );
+  refalrts::link_brackets( context[19], context[50] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[19], context[50] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S4L1("AnalyzeFile$4\\1", 2597197058U, 3940932122U, func_gen_AnalyzeFile_S4L1);
+
+
+static refalrts::FnResult func_AnalyzeFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 43 elems
+  refalrts::Iter context[43];
+  refalrts::zeros( context, 43 );
+  //FAST GEN: e.$
+  //GLOBAL GEN: e.$
+  // </0 & AnalyzeFile/4 e.idx#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.idx#0 as range 2
+  do {
+    // e.idx '.ref'
+    // </0 & AnalyzeFile/4 e.FileName#1/5 '.'/10 'r'/9 'e'/8 'f'/7 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_right( 'f', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_right( 'e', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'r', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( '.', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </11 & Fetch/12 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/10 AsIs: 'r'/9 AsIs: 'e'/8 AsIs: 'f'/7 AsIs: >/1 } & AnalyzeFile$1\1/13 >/14 Tile{ ]] }
+    if( ! refalrts::alloc_open_call( context[11] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[12], ref_Fetch.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ref_gen_AnalyzeFile_S1L1.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[14] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+    refalrts::push_stack( context[14] );
+    refalrts::push_stack( context[11] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // e.idx '.sref'
+    // </0 & AnalyzeFile/4 e.FileName#1/5 '.'/11 's'/10 'r'/9 'e'/8 'f'/7 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_right( 'f', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_right( 'e', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'r', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( 's', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_right( '.', context[5], context[6] );
+    if( ! context[11] )
+      continue;
+    // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </12 & Fetch/13 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/11 AsIs: 's'/10 AsIs: 'r'/9 AsIs: 'e'/8 AsIs: 'f'/7 AsIs: >/1 } & AnalyzeFile$2\1/14 >/15 Tile{ ]] }
+    if( ! refalrts::alloc_open_call( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ref_Fetch.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[14], ref_gen_AnalyzeFile_S2L1.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[12] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // e.idx '.rasl'
+    // </0 & AnalyzeFile/4 e.FileName#1/5 '.'/11 'r'/10 'a'/9 's'/8 'l'/7 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_right( 'l', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_right( 's', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'a', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( 'r', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_right( '.', context[5], context[6] );
+    if( ! context[11] )
+      continue;
+    // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </12 & Fetch/13 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/11 AsIs: 'r'/10 AsIs: 'a'/9 AsIs: 's'/8 AsIs: 'l'/7 AsIs: >/1 } [*]/14 & AnalyzeFile$3\1/15 (/16 e.FileName#1/5/17 )/19 {*}/20 >/21 Tile{ ]] }
+    if( ! refalrts::alloc_open_call( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ref_Fetch.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_closure_head( context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[15], ref_gen_AnalyzeFile_S3L1.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[19] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_unwrapped_closure( context[20], context[14] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[21] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+    refalrts::push_stack( context[21] );
+    refalrts::push_stack( context[12] );
+    refalrts::link_brackets( context[16], context[19] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[21] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // e.idx
+  // </0 & AnalyzeFile/4 e.FileName#1/5 >/1
+  context[5] = context[2];
+  context[6] = context[3];
+  // closed e.FileName#1 as range 5
+  //DEBUG: e.FileName#1: 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 & Fetch/8 (/9 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 HalfReuse: '.'/1 }"ref"/10 >/12 )/13 (/14 </15 & ExistFile-T/16 e.FileName#1/5/17".sref"/19 >/21 )/22 (/23 </24 & ExistFile-T/25 e.FileName#1/5/26".rasl"/28 >/30 )/31 (/32 </33 & ExistFile-T/34 e.FileName#1/5/35".cpp"/37 >/39 )/40 & AnalyzeFile$4\1/41 >/42 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[9] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[10], context[11], "ref", 3 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[14] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[15] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[16], ref_ExistFilem_T.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[19], context[20], ".sref", 5 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[21] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[22] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[23] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[24] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[25], ref_ExistFilem_T.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[26], context[27], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[28], context[29], ".rasl", 5 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[30] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[31] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[32] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[33] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[34], ref_ExistFilem_T.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[35], context[36], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[37], context[38], ".cpp", 4 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[39] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[40] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[41], ref_gen_AnalyzeFile_S4L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[42] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+  refalrts::reinit_char( context[1], '.' );
+  refalrts::push_stack( context[42] );
+  refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[32], context[40] );
+  refalrts::push_stack( context[39] );
+  refalrts::push_stack( context[33] );
+  refalrts::link_brackets( context[23], context[31] );
+  refalrts::push_stack( context[30] );
+  refalrts::push_stack( context[24] );
+  refalrts::link_brackets( context[14], context[22] );
+  refalrts::push_stack( context[21] );
+  refalrts::push_stack( context[15] );
+  refalrts::link_brackets( context[9], context[13] );
+  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[10], context[42] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[7], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_AnalyzeFile("AnalyzeFile", 2597197058U, 3940932122U, func_AnalyzeFile);
+
+
+static refalrts::FnResult func_gen_FindInclude_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 13 elems
+  refalrts::Iter context[13];
+  refalrts::zeros( context, 13 );
+  // </0 & FindInclude\1/4 (/7 e.FileName#1/5 )/8 (/11 e.Folder#2/9 )/12 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.FileName#1 as range 5
+  // closed e.Folder#2 as range 9
+  //DEBUG: e.FileName#1: 5
+  //DEBUG: e.Folder#2: 9
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} )/12 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeInclude/4 } Tile{ AsIs: e.Folder#2/9 } Tile{ HalfReuse: '/'/11 } Tile{ AsIs: e.FileName#1/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::update_name( context[4], ref_AnalyzeInclude.ref.function );
+  refalrts::reinit_char( context[11], '/' );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  refalrts::splice_to_freelist_open( context[4], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_FindInclude_L1("FindInclude\\1", 2597197058U, 3940932122U, func_gen_FindInclude_L1);
+
+
+static refalrts::FnResult func_gen_FindInclude_L2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
+  //FAST GEN: e.$
+  //GLOBAL GEN: e.$
+  // </0 & FindInclude\2/4 e.idx#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.idx#0 as range 2
+  do {
+    // e.idx
+    // </0 & FindInclude\2/4 e.Variants-B#2/7 (/13 # Success/15 s.Dialect#2/16 e.FullPath#2/11 )/14 e.Variants-E#2/9 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = 0;
+    context[8] = 0;
+    refalrts::start_e_loop();
+    do {
+      context[9] = context[5];
+      context[10] = context[6];
+      context[11] = 0;
+      context[12] = 0;
+      context[13] = refalrts::brackets_left( context[11], context[12], context[9], context[10] );
+      if( ! context[13] )
+        continue;
+      refalrts::bracket_pointers(context[13], context[14]);
+      context[15] = refalrts::ident_left(  ident_Success, context[11], context[12] );
+      if( ! context[15] )
+        continue;
+      // closed e.Variants-E#2 as range 9
+      if( ! refalrts::svar_left( context[16], context[11], context[12] ) )
+        continue;
+      // closed e.FullPath#2 as range 11
+      //DEBUG: e.Variants-B#2: 7
+      //DEBUG: e.Variants-E#2: 9
+      //DEBUG: s.Dialect#2: 16
+      //DEBUG: e.FullPath#2: 11
+
+      refalrts::reset_allocator();
+      //TRASH: {REMOVED TILE} </0 & FindInclude\2/4 e.Variants-B#2/7 (/13 {REMOVED TILE} {REMOVED TILE} )/14 e.Variants-E#2/9 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: # Success/15 AsIs: s.Dialect#2/16 } Tile{ AsIs: e.FullPath#2/11 } Tile{ ]] }
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[11], context[12] );
+      res = refalrts::splice_evar( res, context[15], context[16] );
+      refalrts::splice_to_freelist_open( trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( refalrts::open_evar_advance( context[7], context[8], context[5], context[6] ) );
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // e.idx
+  // </0 & FindInclude\2/4 e.Variants#2/5 >/1
+  context[5] = context[2];
+  context[6] = context[3];
+  // closed e.Variants#2 as range 5
+  //DEBUG: e.Variants#2: 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} </0 & FindInclude\2/4 e.Variants#2/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
+  refalrts::reinit_ident( context[1], ident_Fails );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_FindInclude_L2("FindInclude\\2", 2597197058U, 3940932122U, func_gen_FindInclude_L2);
+
+
+static refalrts::FnResult func_FindInclude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & FindInclude/4 (/7 e.Folders#1/5 )/8 e.FileName#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.Folders#1 as range 5
+  // closed e.FileName#1 as range 2
+  //DEBUG: e.Folders#1: 5
+  //DEBUG: e.FileName#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } Tile{ HalfReuse: & AnalyzeInclude/8 AsIs: e.FileName#1/2 AsIs: >/1 } </9 & Map/10 [*]/11 & FindInclude\1/12 (/13 e.FileName#1/2/14 )/16 {*}/17 Tile{ AsIs: e.Folders#1/5 } >/18 & FindInclude\2/19 >/20 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[9] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[10], ref_Map.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_closure_head( context[11] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[12], ref_gen_FindInclude_L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[13] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[14], context[15], context[2], context[3]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[16] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_unwrapped_closure( context[17], context[11] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[18] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[19], ref_gen_FindInclude_L2.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[20] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::reinit_open_call( context[7] );
+  refalrts::reinit_name( context[8], ref_AnalyzeInclude.ref.function );
+  refalrts::push_stack( context[20] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[9] );
+  refalrts::link_brackets( context[13], context[16] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[7] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[18], context[20] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[9], context[17] );
+  res = refalrts::splice_evar( res, context[8], context[1] );
+  refalrts::use( res );
+  refalrts::wrap_closure( context[17] );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_FindInclude("FindInclude", 0U, 0U, func_FindInclude);
+
+
+static refalrts::FnResult func_gen_AnalyzeInclude_S1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
+  //FAST GEN: s.$ e.$
+  //GLOBAL GEN: s.$ e.$
+  // </0 & AnalyzeInclude$1\1/4 s.idx#0/5 e.idxV#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxV#0 as range 2
+  do {
+    // # True e.idx
+    // </0 & AnalyzeInclude$1\1/4 # True/5 e.FullPath#2/6 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[5] ) )
+      continue;
+    // closed e.FullPath#2 as range 6
+    //DEBUG: e.FullPath#2: 6
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Success/4 Reuse: # R5/5 AsIs: e.FullPath#2/6 HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_Success );
+    refalrts::update_ident( context[5], ident_R5 );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # False e.idx
+  // </0 & AnalyzeInclude$1\1/4 # False/5 e.FullPath#2/6 >/1
+  context[6] = context[2];
+  context[7] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[5] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.FullPath#2 as range 6
+  //DEBUG: e.FullPath#2: 6
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} e.FullPath#2/6 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Fails/4 HalfReuse: )/5 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_ident( context[4], ident_Fails );
+  refalrts::reinit_close_bracket( context[5] );
+  refalrts::link_brackets( context[0], context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::splice_to_freelist_open( context[5], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S1L1("AnalyzeInclude$1\\1", 2597197058U, 3940932122U, func_gen_AnalyzeInclude_S1L1);
+
+
+static refalrts::FnResult func_gen_AnalyzeInclude_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
+  //FAST GEN: s.$ e.$
+  //GLOBAL GEN: s.$ e.$
+  // </0 & AnalyzeInclude$2\1/4 s.idx#0/5 e.idxV#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxV#0 as range 2
+  do {
+    // # True e.idx
+    // </0 & AnalyzeInclude$2\1/4 # True/5 e.FullPath#2/6 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_True, context[5] ) )
+      continue;
+    // closed e.FullPath#2 as range 6
+    //DEBUG: e.FullPath#2: 6
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Success/4 Reuse: # SR/5 AsIs: e.FullPath#2/6 HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_Success );
+    refalrts::update_ident( context[5], ident_SR );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # False e.idx
+  // </0 & AnalyzeInclude$2\1/4 # False/5 e.FullPath#2/6 >/1
+  context[6] = context[2];
+  context[7] = context[3];
+  if( ! refalrts::ident_term(  ident_False, context[5] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.FullPath#2 as range 6
+  //DEBUG: e.FullPath#2: 6
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} e.FullPath#2/6 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Fails/4 HalfReuse: )/5 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_ident( context[4], ident_Fails );
+  refalrts::reinit_close_bracket( context[5] );
+  refalrts::link_brackets( context[0], context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::splice_to_freelist_open( context[5], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S2L1("AnalyzeInclude$2\\1", 2597197058U, 3940932122U, func_gen_AnalyzeInclude_S2L1);
+
+
+static refalrts::FnResult func_gen_AnalyzeInclude_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  //FAST GEN: ( s.$ e.$ ) ( s.$ e.$ )
+  //GLOBAL GEN: ( s.$ e.$ ) ( s.$ e.$ )
+  // </0 & AnalyzeInclude$3\1/4 (/7 s.idxB#0/13 e.idxBV#0/5 )/8 (/11 s.idxTB#0/14 e.idxTBV#0/9 )/12 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[9] = 0;
+  context[10] = 0;
+  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[11], context[12]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[13], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxBV#0 as range 5
+  if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.idxTBV#0 as range 9
+  do {
+    // ( # True e.idx ) ( s.idx e.idx )
+    // </0 & AnalyzeInclude$3\1/4 (/7 # True/13 e.R5-FullPath#2/15 )/8 (/11 s.ResSR#2/14 e.SR-FullPath#2/17 )/12 >/1
+    context[15] = context[5];
+    context[16] = context[6];
+    context[17] = context[9];
+    context[18] = context[10];
+    if( ! refalrts::ident_term(  ident_True, context[13] ) )
+      continue;
+    // closed e.R5-FullPath#2 as range 15
+    // closed e.SR-FullPath#2 as range 17
+    //DEBUG: s.ResSR#2: 14
+    //DEBUG: e.R5-FullPath#2: 15
+    //DEBUG: e.SR-FullPath#2: 17
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} (/11 s.ResSR#2/14 e.SR-FullPath#2/17 )/12 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/4 HalfReuse: # Success/7 Reuse: # R5/13 AsIs: e.R5-FullPath#2/15 AsIs: )/8 } Tile{ ]] }
+    refalrts::reinit_open_bracket( context[4] );
+    refalrts::reinit_ident( context[7], ident_Success );
+    refalrts::update_ident( context[13], ident_R5 );
+    refalrts::link_brackets( context[4], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[4], context[8] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( # False e.idx ) ( # True e.idx )
+    // </0 & AnalyzeInclude$3\1/4 (/7 # False/13 e.R5-FullPath#2/15 )/8 (/11 # True/14 e.SR-FullPath#2/17 )/12 >/1
+    context[15] = context[5];
+    context[16] = context[6];
+    context[17] = context[9];
+    context[18] = context[10];
+    if( ! refalrts::ident_term(  ident_False, context[13] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_True, context[14] ) )
+      continue;
+    // closed e.R5-FullPath#2 as range 15
+    // closed e.SR-FullPath#2 as range 17
+    //DEBUG: e.R5-FullPath#2: 15
+    //DEBUG: e.SR-FullPath#2: 17
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & AnalyzeInclude$3\1/4 (/7 # False/13 e.R5-FullPath#2/15 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/8 HalfReuse: # Success/11 Reuse: # SR/14 AsIs: e.SR-FullPath#2/17 AsIs: )/12 } Tile{ ]] }
+    refalrts::reinit_open_bracket( context[8] );
+    refalrts::reinit_ident( context[11], ident_Success );
+    refalrts::update_ident( context[14], ident_SR );
+    refalrts::link_brackets( context[8], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[8], context[12] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // ( # False e.idx ) ( # False e.idx )
+  // </0 & AnalyzeInclude$3\1/4 (/7 # False/13 e.R5-FullPath#2/15 )/8 (/11 # False/14 e.SR-FullPath#2/17 )/12 >/1
+  context[15] = context[5];
+  context[16] = context[6];
+  context[17] = context[9];
+  context[18] = context[10];
+  if( ! refalrts::ident_term(  ident_False, context[13] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::ident_term(  ident_False, context[14] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.R5-FullPath#2 as range 15
+  // closed e.SR-FullPath#2 as range 17
+  //DEBUG: e.R5-FullPath#2: 15
+  //DEBUG: e.SR-FullPath#2: 17
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} # False/13 e.R5-FullPath#2/15 )/8 (/11 # False/14 e.SR-FullPath#2/17 )/12 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Fails/4 HalfReuse: )/7 } Tile{ ]] }
+  refalrts::reinit_open_bracket( context[0] );
+  refalrts::reinit_ident( context[4], ident_Fails );
+  refalrts::reinit_close_bracket( context[7] );
+  refalrts::link_brackets( context[0], context[7] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  refalrts::splice_to_freelist_open( context[7], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S3L1("AnalyzeInclude$3\\1", 2597197058U, 3940932122U, func_gen_AnalyzeInclude_S3L1);
+
+
+static refalrts::FnResult func_AnalyzeInclude(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 25 elems
+  refalrts::Iter context[25];
+  refalrts::zeros( context, 25 );
+  //FAST GEN: e.$
+  //GLOBAL GEN: e.$
+  // </0 & AnalyzeInclude/4 e.idx#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.idx#0 as range 2
+  do {
+    // e.idx '.refi'
+    // </0 & AnalyzeInclude/4 e.FileName#1/5 '.'/11 'r'/10 'e'/9 'f'/8 'i'/7 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_right( 'i', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_right( 'f', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'e', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( 'r', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_right( '.', context[5], context[6] );
+    if( ! context[11] )
+      continue;
+    // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </12 & Fetch/13 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/11 AsIs: 'r'/10 AsIs: 'e'/9 AsIs: 'f'/8 AsIs: 'i'/7 AsIs: >/1 } & AnalyzeInclude$1\1/14 >/15 Tile{ ]] }
+    if( ! refalrts::alloc_open_call( context[12] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[13], ref_Fetch.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[14], ref_gen_AnalyzeInclude_S1L1.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[12] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // e.idx '.srefi'
+    // </0 & AnalyzeInclude/4 e.FileName#1/5 '.'/12 's'/11 'r'/10 'e'/9 'f'/8 'i'/7 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = refalrts::char_right( 'i', context[5], context[6] );
+    if( ! context[7] )
+      continue;
+    context[8] = refalrts::char_right( 'f', context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    context[9] = refalrts::char_right( 'e', context[5], context[6] );
+    if( ! context[9] )
+      continue;
+    context[10] = refalrts::char_right( 'r', context[5], context[6] );
+    if( ! context[10] )
+      continue;
+    context[11] = refalrts::char_right( 's', context[5], context[6] );
+    if( ! context[11] )
+      continue;
+    context[12] = refalrts::char_right( '.', context[5], context[6] );
+    if( ! context[12] )
+      continue;
+    // closed e.FileName#1 as range 5
+    //DEBUG: e.FileName#1: 5
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </13 & Fetch/14 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/12 AsIs: 's'/11 AsIs: 'r'/10 AsIs: 'e'/9 AsIs: 'f'/8 AsIs: 'i'/7 AsIs: >/1 } & AnalyzeInclude$2\1/15 >/16 Tile{ ]] }
+    if( ! refalrts::alloc_open_call( context[13] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[14], ref_Fetch.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( context[15], ref_gen_AnalyzeInclude_S2L1.ref.function ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+    refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[13] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // e.idx
+  // </0 & AnalyzeInclude/4 e.FileName#1/5 >/1
+  context[5] = context[2];
+  context[6] = context[3];
+  // closed e.FileName#1 as range 5
+  //DEBUG: e.FileName#1: 5
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 & Fetch/8 (/9 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 HalfReuse: '.'/1 }"refi"/10 >/12 )/13 (/14 </15 & ExistFile-T/16 e.FileName#1/5/17".srefi"/19 >/21 )/22 & AnalyzeInclude$3\1/23 >/24 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[7] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[8], ref_Fetch.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[9] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[10], context[11], "refi", 4 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[12] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[14] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[15] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[16], ref_ExistFilem_T.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_chars( context[19], context[20], ".srefi", 6 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[21] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[22] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[23], ref_gen_AnalyzeInclude_S3L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[24] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_ExistFilem_T.ref.function );
+  refalrts::reinit_char( context[1], '.' );
+  refalrts::push_stack( context[24] );
+  refalrts::push_stack( context[7] );
+  refalrts::link_brackets( context[14], context[22] );
+  refalrts::push_stack( context[21] );
+  refalrts::push_stack( context[15] );
+  refalrts::link_brackets( context[9], context[13] );
+  refalrts::push_stack( context[12] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[10], context[24] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[7], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_AnalyzeInclude("AnalyzeInclude", 2597197058U, 3940932122U, func_AnalyzeInclude);
+
 
 //End of file
