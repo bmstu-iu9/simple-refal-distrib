@@ -28,24 +28,25 @@ static const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_stat
 static const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
 static const refalrts::RefalIdentifier ident_TkNewVariable = refalrts::ident_from_static("TkNewVariable");
 static const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
-static refalrts::ExternalReference ref_BackEnd("BackEnd", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEnd_A1("BackEnd=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEnd_A2("BackEnd=2", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEnd_A3("BackEnd=3", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEnd_A4("BackEnd=4", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEnd_L1("BackEnd\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_BackEndm_NativeModule("BackEnd-NativeModule", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_BackEndm_RASLModule("BackEnd-RASLModule", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_BackEndm_RASLModule_L1("BackEnd-RASLModule\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_BackEnd("BackEnd", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEnd_A1("BackEnd=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEnd_A2("BackEnd=2", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEnd_A3("BackEnd=3", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEnd_A4("BackEnd=4", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEnd_L1("BackEnd\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_BackEndm_NativeModule("BackEnd-NativeModule", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_BackEndm_RASLModule("BackEnd-RASLModule", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_BackEndm_RASLModule_L1("BackEnd-RASLModule\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_CheckProgram("CheckProgram", 0U, 0U);
 static refalrts::ExternalReference ref_CompileFile("CompileFile", 0U, 0U);
-static refalrts::ExternalReference ref_gen_CompileFile_L1("CompileFile\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_gen_CompileFile_L1("CompileFile\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_Configm_GetDebugMode("Config-GetDebugMode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetGenMode("Config-GetGenMode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetOptPattern("Config-GetOptPattern", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetOptResult("Config-GetOptResult", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetPrelude("Config-GetPrelude", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetR5Mode("Config-GetR5Mode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetSearchFolders("Config-GetSearchFolders", 0U, 0U);
 static refalrts::ExternalReference ref_Desugar("Desugar", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_AddErrorAt("EL-AddErrorAt", 0U, 0U);
@@ -54,53 +55,54 @@ static refalrts::ExternalReference ref_ELm_Create("EL-Create", 0U, 0U);
 static refalrts::ExternalReference ref_ELm_Destroy("EL-Destroy", 0U, 0U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_FindInclude("FindInclude", 0U, 0U);
-static refalrts::ExternalReference ref_FrontEnd("FrontEnd", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_FrontEnd_A1("FrontEnd=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_FrontEnd_A2("FrontEnd=2", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_FrontEnd_A3("FrontEnd=3", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_FrontEnd("FrontEnd", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_FrontEnd_A1("FrontEnd=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_FrontEnd_A2("FrontEnd=2", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_FrontEnd_A3("FrontEnd=3", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_GenProgramm_Native("GenProgram-Native", 0U, 0U);
 static refalrts::ExternalReference ref_GenProgramm_RASL("GenProgram-RASL", 0U, 0U);
-static refalrts::ExternalReference ref_GlueErrorListsAndASTs("GlueErrorListsAndASTs", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_GlueErrorListsAndASTs_L1("GlueErrorListsAndASTs\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_GlueErrorListsAndASTs("GlueErrorListsAndASTs", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_GlueErrorListsAndASTs_L1("GlueErrorListsAndASTs\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_GrammarCheck("GrammarCheck", 0U, 0U);
-static refalrts::ExternalReference ref_gen_GrammarCheck_L1("GrammarCheck\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_GrammarCheck_L1L1("GrammarCheck\\1\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_gen_GrammarCheck_L1("GrammarCheck\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_GrammarCheck_L1L1("GrammarCheck\\1\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_HighLevelRASL("HighLevelRASL", 0U, 0U);
-static refalrts::ExternalReference ref_LoadAST("LoadAST", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_LoadAST_S1A1("LoadAST$1=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_LoadAST_S1A2("LoadAST$1=2", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_LoadAST_S2A1("LoadAST$2=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_LoadAST_S2A2("LoadAST$2=2", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_LoadAST("LoadAST", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_LoadAST_S1A1("LoadAST$1=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_LoadAST_S1A2("LoadAST$1=2", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_LoadAST_S1A3("LoadAST$1=3", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_LoadAST_S2A1("LoadAST$2=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_LoadAST_S2A2("LoadAST$2=2", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_LowLevelRASL("LowLevelRASL", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
-static refalrts::ExternalReference ref_PatchASTSrcPos("PatchASTSrcPos", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPos_A1("PatchASTSrcPos=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPos_A1L1("PatchASTSrcPos=1\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPos_L1("PatchASTSrcPos\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PatchASTSrcPosm_Blocks("PatchASTSrcPos-Blocks", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Blocks_L1("PatchASTSrcPos-Blocks\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PatchASTSrcPosm_Body("PatchASTSrcPos-Body", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PatchASTSrcPosm_Chain("PatchASTSrcPos-Chain", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Chain_L1("PatchASTSrcPos-Chain\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PatchASTSrcPosm_Expr("PatchASTSrcPos-Expr", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Expr_L1("PatchASTSrcPos-Expr\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PatchASTSrcPosm_Sentence("PatchASTSrcPos-Sentence", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Sentence_A1("PatchASTSrcPos-Sentence=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Sentence_A1L1("PatchASTSrcPos-Sentence=1\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_PreludeIncludeLine("PreludeIncludeLine", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_PreludeIncludeLine_L1("PreludeIncludeLine\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_PatchASTSrcPos("PatchASTSrcPos", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPos_A1("PatchASTSrcPos=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPos_A1L1("PatchASTSrcPos=1\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPos_L1("PatchASTSrcPos\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PatchASTSrcPosm_Blocks("PatchASTSrcPos-Blocks", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Blocks_L1("PatchASTSrcPos-Blocks\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PatchASTSrcPosm_Body("PatchASTSrcPos-Body", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PatchASTSrcPosm_Chain("PatchASTSrcPos-Chain", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Chain_L1("PatchASTSrcPos-Chain\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PatchASTSrcPosm_Expr("PatchASTSrcPos-Expr", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Expr_L1("PatchASTSrcPos-Expr\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PatchASTSrcPosm_Sentence("PatchASTSrcPos-Sentence", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Sentence_A1("PatchASTSrcPos-Sentence=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PatchASTSrcPosm_Sentence_A1L1("PatchASTSrcPos-Sentence=1\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_PreludeIncludeLine("PreludeIncludeLine", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_PreludeIncludeLine_L1("PreludeIncludeLine\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_R5m_Parse("R5-Parse", 0U, 0U);
-static refalrts::ExternalReference ref_R5m_Parsem_Wrapped("R5-Parse-Wrapped", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_A1("R5-Parse-Wrapped=1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_A2("R5-Parse-Wrapped=2", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_L1("R5-Parse-Wrapped\\1", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_R5m_Parsem_Wrapped("R5-Parse-Wrapped", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_A1("R5-Parse-Wrapped=1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_A2("R5-Parse-Wrapped=2", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_R5m_Parsem_Wrapped_L1("R5-Parse-Wrapped\\1", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_R5m_Scan("R5-Scan", 0U, 0U);
-static refalrts::ExternalReference ref_ResolveIncludes("ResolveIncludes", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_gen_ResolveIncludes_S3L1("ResolveIncludes$3\\1", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_ResolveIncludesm_CheckAlias("ResolveIncludes-CheckAlias", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_ResolveIncludesm_CheckEqualAST("ResolveIncludes-CheckEqualAST", 1074372438U, 3153511759U);
-static refalrts::ExternalReference ref_ResolveIncludesm_CheckValid("ResolveIncludes-CheckValid", 1074372438U, 3153511759U);
+static refalrts::ExternalReference ref_ResolveIncludes("ResolveIncludes", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_gen_ResolveIncludes_S3L1("ResolveIncludes$3\\1", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_ResolveIncludesm_CheckAlias("ResolveIncludes-CheckAlias", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_ResolveIncludesm_CheckEqualAST("ResolveIncludes-CheckEqualAST", 3379042430U, 3149069343U);
+static refalrts::ExternalReference ref_ResolveIncludesm_CheckValid("ResolveIncludes-CheckValid", 3379042430U, 3149069343U);
 static refalrts::ExternalReference ref_SRm_LexFolding("SR-LexFolding", 0U, 0U);
 static refalrts::ExternalReference ref_SRm_LoadSource("SR-LoadSource", 0U, 0U);
 static refalrts::ExternalReference ref_SRm_ParseProgram("SR-ParseProgram", 0U, 0U);
@@ -222,7 +224,7 @@ static refalrts::FnResult func_gen_CompileFile_L1L1(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 1074372438U, 3153511759U, func_gen_CompileFile_L1L1);
+static refalrts::NativeReference nat_ref_gen_CompileFile_L1L1("CompileFile\\1\\1", 3379042430U, 3149069343U, func_gen_CompileFile_L1L1);
 
 
 static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -304,7 +306,7 @@ static refalrts::FnResult func_gen_CompileFile_L1(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFile_L1("CompileFile\\1", 1074372438U, 3153511759U, func_gen_CompileFile_L1);
+static refalrts::NativeReference nat_ref_gen_CompileFile_L1("CompileFile\\1", 3379042430U, 3149069343U, func_gen_CompileFile_L1);
 
 
 static refalrts::FnResult func_CompileFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -437,7 +439,7 @@ static refalrts::FnResult func_gen_FrontEnd_A3(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FrontEnd_A3("FrontEnd=3", 1074372438U, 3153511759U, func_gen_FrontEnd_A3);
+static refalrts::NativeReference nat_ref_gen_FrontEnd_A3("FrontEnd=3", 3379042430U, 3149069343U, func_gen_FrontEnd_A3);
 
 
 static refalrts::FnResult func_gen_FrontEnd_A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -487,7 +489,7 @@ static refalrts::FnResult func_gen_FrontEnd_A2(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FrontEnd_A2("FrontEnd=2", 1074372438U, 3153511759U, func_gen_FrontEnd_A2);
+static refalrts::NativeReference nat_ref_gen_FrontEnd_A2("FrontEnd=2", 3379042430U, 3149069343U, func_gen_FrontEnd_A2);
 
 
 static refalrts::FnResult func_gen_FrontEnd_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -595,7 +597,7 @@ static refalrts::FnResult func_gen_FrontEnd_A1(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FrontEnd_A1("FrontEnd=1", 1074372438U, 3153511759U, func_gen_FrontEnd_A1);
+static refalrts::NativeReference nat_ref_gen_FrontEnd_A1("FrontEnd=1", 3379042430U, 3149069343U, func_gen_FrontEnd_A1);
 
 
 static refalrts::FnResult func_FrontEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -659,7 +661,7 @@ static refalrts::FnResult func_FrontEnd(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FrontEnd("FrontEnd", 1074372438U, 3153511759U, func_FrontEnd);
+static refalrts::NativeReference nat_ref_FrontEnd("FrontEnd", 3379042430U, 3149069343U, func_FrontEnd);
 
 
 static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -734,7 +736,7 @@ static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_L1("R5-Parse-Wrapped\\1", 1074372438U, 3153511759U, func_gen_R5m_Parsem_Wrapped_L1);
+static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_L1("R5-Parse-Wrapped\\1", 3379042430U, 3149069343U, func_gen_R5m_Parsem_Wrapped_L1);
 
 
 static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -799,15 +801,15 @@ static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_A2(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_A2("R5-Parse-Wrapped=2", 1074372438U, 3153511759U, func_gen_R5m_Parsem_Wrapped_A2);
+static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_A2("R5-Parse-Wrapped=2", 3379042430U, 3149069343U, func_gen_R5m_Parsem_Wrapped_A2);
 
 
 static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 18 elems
-  refalrts::Iter context[18];
-  refalrts::zeros( context, 18 );
-  // </0 & R5-Parse-Wrapped=1/4 (/7 e.SrcName#1/5 )/8 (/11 e.Tokens#1/9 )/12 t.ErrorList#2/13 >/1
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
+  // </0 & R5-Parse-Wrapped=1/4 (/7 e.SrcName#1/5 )/8 s.Mode#1/9 (/12 e.Tokens#1/10 )/13 t.ErrorList#2/14 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -819,120 +821,128 @@ static refalrts::FnResult func_gen_R5m_Parsem_Wrapped_A1(refalrts::Iter arg_begi
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  context[9] = 0;
-  context[10] = 0;
-  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
-  if( ! context[11] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[11], context[12]);
   // closed e.SrcName#1 as range 5
-  // closed e.Tokens#1 as range 9
-  context[14] = refalrts::tvar_left( context[13], context[2], context[3] );
-  if( ! context[14] )
+  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  context[10] = 0;
+  context[11] = 0;
+  context[12] = refalrts::brackets_left( context[10], context[11], context[2], context[3] );
+  if( ! context[12] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[12], context[13]);
+  // closed e.Tokens#1 as range 10
+  context[15] = refalrts::tvar_left( context[14], context[2], context[3] );
+  if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   //DEBUG: e.SrcName#1: 5
-  //DEBUG: e.Tokens#1: 9
-  //DEBUG: t.ErrorList#2: 13
+  //DEBUG: s.Mode#1: 9
+  //DEBUG: e.Tokens#1: 10
+  //DEBUG: t.ErrorList#2: 14
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </15 Tile{ HalfReuse: [*]/0 Reuse: & R5-Parse-Wrapped=2/4 AsIs: (/7 AsIs: e.SrcName#1/5 AsIs: )/8 } Tile{ AsIs: t.ErrorList#2/13 } {*}/16 </17 Tile{ HalfReuse: & R5-Parse/11 AsIs: e.Tokens#1/9 HalfReuse: >/12 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} s.Mode#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </16 Tile{ HalfReuse: [*]/0 Reuse: & R5-Parse-Wrapped=2/4 AsIs: (/7 AsIs: e.SrcName#1/5 AsIs: )/8 } Tile{ AsIs: t.ErrorList#2/14 } {*}/17 </18 & R5-Parse/19 Tile{ HalfReuse: s.Mode1 #9/12 AsIs: e.Tokens#1/10 HalfReuse: >/13 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[16], context[0] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[17], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[17] ) )
+  if( ! refalrts::alloc_open_call( context[18] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[19], ref_R5m_Parse.ref.function ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_R5m_Parsem_Wrapped_A2.ref.function );
-  refalrts::reinit_name( context[11], ref_R5m_Parse.ref.function );
-  refalrts::reinit_close_call( context[12] );
+  refalrts::reinit_svar( context[12], context[9] );
+  refalrts::reinit_close_call( context[13] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[16] );
+  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[18] );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[11], context[12] );
-  res = refalrts::splice_evar( res, context[16], context[17] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
+  res = refalrts::splice_evar( res, context[17], context[19] );
+  res = refalrts::splice_evar( res, context[14], context[15] );
   res = refalrts::splice_evar( res, context[0], context[8] );
-  res = refalrts::splice_evar( res, context[15], context[15] );
-  refalrts::use( res );
-  refalrts::wrap_closure( context[16] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::wrap_closure( context[17] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_A1("R5-Parse-Wrapped=1", 1074372438U, 3153511759U, func_gen_R5m_Parsem_Wrapped_A1);
+static refalrts::NativeReference nat_ref_gen_R5m_Parsem_Wrapped_A1("R5-Parse-Wrapped=1", 3379042430U, 3149069343U, func_gen_R5m_Parsem_Wrapped_A1);
 
 
 static refalrts::FnResult func_R5m_Parsem_Wrapped(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 18 elems
-  refalrts::Iter context[18];
-  refalrts::zeros( context, 18 );
-  // </0 & R5-Parse-Wrapped/4 (/7 e.SrcName#1/5 )/8 e.Tokens#1/2 >/1
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & R5-Parse-Wrapped/4 s.Mode#1/5 (/8 e.SrcName#1/6 )/9 e.Tokens#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.SrcName#1 as range 5
+  context[6] = 0;
+  context[7] = 0;
+  context[8] = refalrts::brackets_left( context[6], context[7], context[2], context[3] );
+  if( ! context[8] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[8], context[9]);
+  // closed e.SrcName#1 as range 6
   // closed e.Tokens#1 as range 2
-  //DEBUG: e.SrcName#1: 5
+  //DEBUG: s.Mode#1: 5
+  //DEBUG: e.SrcName#1: 6
   //DEBUG: e.Tokens#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </9 Tile{ HalfReuse: [*]/0 Reuse: & R5-Parse-Wrapped=1/4 AsIs: (/7 AsIs: e.SrcName#1/5 AsIs: )/8 } (/10 Tile{ AsIs: e.Tokens#1/2 } )/11 {*}/12 </13 & EL-Create/14 e.SrcName#1/5/15 >/17 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[9] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & R5-Parse-Wrapped=1/10 Tile{ AsIs: (/8 AsIs: e.SrcName#1/6 AsIs: )/9 } Tile{ AsIs: s.Mode#1/5 } (/11 Tile{ AsIs: e.Tokens#1/2 } )/12 {*}/13 </14 & EL-Create/15 e.SrcName#1/6/16 >/18 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_name( context[10], ref_gen_R5m_Parsem_Wrapped_A1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[10] ) )
+  if( ! refalrts::alloc_open_bracket( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[11] ) )
+  if( ! refalrts::alloc_close_bracket( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[12], context[0] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[13], context[4] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[13] ) )
+  if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_ELm_Create.ref.function ) )
+  if( ! refalrts::alloc_name( context[15], ref_ELm_Create.ref.function ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[15], context[16], context[5], context[6]))
+  if (! refalrts::copy_evar(context[16], context[17], context[6], context[7]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[17] ) )
+  if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_R5m_Parsem_Wrapped_A1.ref.function );
+  refalrts::reinit_closure_head( context[4] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[9] );
-  refalrts::push_stack( context[17] );
-  refalrts::push_stack( context[13] );
-  refalrts::link_brackets( context[10], context[11] );
-  refalrts::link_brackets( context[7], context[8] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[14] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[11], context[17] );
+  res = refalrts::splice_evar( res, context[12], context[18] );
   res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  res = refalrts::splice_evar( res, context[8], context[9] );
   res = refalrts::splice_evar( res, context[10], context[10] );
-  res = refalrts::splice_evar( res, context[0], context[8] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[12] );
+  refalrts::wrap_closure( context[13] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_R5m_Parsem_Wrapped("R5-Parse-Wrapped", 1074372438U, 3153511759U, func_R5m_Parsem_Wrapped);
+static refalrts::NativeReference nat_ref_R5m_Parsem_Wrapped("R5-Parse-Wrapped", 3379042430U, 3149069343U, func_R5m_Parsem_Wrapped);
 
 
 static refalrts::FnResult func_gen_PreludeIncludeLine_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -992,7 +1002,7 @@ static refalrts::FnResult func_gen_PreludeIncludeLine_L1(refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreludeIncludeLine_L1("PreludeIncludeLine\\1", 1074372438U, 3153511759U, func_gen_PreludeIncludeLine_L1);
+static refalrts::NativeReference nat_ref_gen_PreludeIncludeLine_L1("PreludeIncludeLine\\1", 3379042430U, 3149069343U, func_gen_PreludeIncludeLine_L1);
 
 
 static refalrts::FnResult func_PreludeIncludeLine(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1039,15 +1049,15 @@ static refalrts::FnResult func_PreludeIncludeLine(refalrts::Iter arg_begin, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PreludeIncludeLine("PreludeIncludeLine", 1074372438U, 3153511759U, func_PreludeIncludeLine);
+static refalrts::NativeReference nat_ref_PreludeIncludeLine("PreludeIncludeLine", 3379042430U, 3149069343U, func_PreludeIncludeLine);
 
 
-static refalrts::FnResult func_gen_LoadAST_S1A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_LoadAST_S1A3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & LoadAST$1=2/4 t.Config#1/5 t.ErrorList#3/7 e.AST#3/2 >/1
+  // </0 & LoadAST$1=3/4 t.Config#1/5 t.ErrorList#4/7 e.AST#4/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1059,14 +1069,14 @@ static refalrts::FnResult func_gen_LoadAST_S1A2(refalrts::Iter arg_begin, refalr
   context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
-  // closed e.AST#3 as range 2
+  // closed e.AST#4 as range 2
   //DEBUG: t.Config#1: 5
-  //DEBUG: t.ErrorList#3: 7
-  //DEBUG: e.AST#3: 2
+  //DEBUG: t.ErrorList#4: 7
+  //DEBUG: e.AST#4: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#3/7 } Tile{ AsIs: </0 Reuse: & PreludeIncludeLine/4 AsIs: t.Config#1/5 } Tile{ AsIs: >/1 } Tile{ AsIs: e.AST#3/2 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#4/7 } Tile{ AsIs: </0 Reuse: & PreludeIncludeLine/4 AsIs: t.Config#1/5 } Tile{ AsIs: >/1 } Tile{ AsIs: e.AST#4/2 } Tile{ ]] }
   refalrts::update_name( context[4], ref_PreludeIncludeLine.ref.function );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
@@ -1081,14 +1091,87 @@ static refalrts::FnResult func_gen_LoadAST_S1A2(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LoadAST_S1A2("LoadAST$1=2", 1074372438U, 3153511759U, func_gen_LoadAST_S1A2);
+static refalrts::NativeReference nat_ref_gen_LoadAST_S1A3("LoadAST$1=3", 3379042430U, 3149069343U, func_gen_LoadAST_S1A3);
+
+
+static refalrts::FnResult func_gen_LoadAST_S1A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & LoadAST$1=2/4 t.Config#1/5 (/9 e.SrcName#1/7 )/10 (/13 e.Tokens#2/11 )/14 s.Mode#3/15 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  context[7] = 0;
+  context[8] = 0;
+  context[9] = refalrts::brackets_left( context[7], context[8], context[2], context[3] );
+  if( ! context[9] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[9], context[10]);
+  context[11] = 0;
+  context[12] = 0;
+  context[13] = refalrts::brackets_left( context[11], context[12], context[2], context[3] );
+  if( ! context[13] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[13], context[14]);
+  // closed e.SrcName#1 as range 7
+  // closed e.Tokens#2 as range 11
+  if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  //DEBUG: t.Config#1: 5
+  //DEBUG: e.SrcName#1: 7
+  //DEBUG: e.Tokens#2: 11
+  //DEBUG: s.Mode#3: 15
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & LoadAST$1=3/16 Tile{ AsIs: t.Config#1/5 } {*}/17 Tile{ HalfReuse: </13 } Tile{ HalfReuse: & R5-Parse-Wrapped/14 AsIs: s.Mode#3/15 } Tile{ AsIs: (/9 AsIs: e.SrcName#1/7 AsIs: )/10 } Tile{ AsIs: e.Tokens#2/11 } >/18 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_name( context[16], ref_gen_LoadAST_S1A3.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_unwrapped_closure( context[17], context[4] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[18] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_closure_head( context[4] );
+  refalrts::reinit_open_call( context[13] );
+  refalrts::reinit_name( context[14], ref_R5m_Parsem_Wrapped.ref.function );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[13] );
+  refalrts::link_brackets( context[9], context[10] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[18], context[18] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[14], context[15] );
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[17], context[17] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
+  refalrts::use( res );
+  refalrts::wrap_closure( context[17] );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_LoadAST_S1A2("LoadAST$1=2", 3379042430U, 3149069343U, func_gen_LoadAST_S1A2);
 
 
 static refalrts::FnResult func_gen_LoadAST_S1A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
   // </0 & LoadAST$1=1/4 t.Config#1/5 (/9 e.SrcName#1/7 )/10 e.Tokens#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1112,37 +1195,45 @@ static refalrts::FnResult func_gen_LoadAST_S1A1(refalrts::Iter arg_begin, refalr
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & LoadAST$1=2/11 Tile{ AsIs: t.Config#1/5 } {*}/12 </13 & R5-Parse-Wrapped/14 Tile{ AsIs: (/9 AsIs: e.SrcName#1/7 AsIs: )/10 AsIs: e.Tokens#2/2 AsIs: >/1 } >/15 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[11], ref_gen_LoadAST_S1A2.ref.function ) )
+  //RESULT: Tile{ [[ } </11 Tile{ HalfReuse: [*]/0 Reuse: & LoadAST$1=2/4 AsIs: t.Config#1/5 AsIs: (/9 AsIs: e.SrcName#1/7 AsIs: )/10 } (/12 Tile{ AsIs: e.Tokens#2/2 } )/13 {*}/14 </15 & Config-GetR5Mode/16 t.Config#1/5/17 >/19 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[12], context[4] ) )
+  if( ! refalrts::alloc_open_bracket( context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[13] ) )
+  if( ! refalrts::alloc_close_bracket( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_R5m_Parsem_Wrapped.ref.function ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[14], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[15] ) )
+  if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_closure_head( context[4] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[0] );
+  if( ! refalrts::alloc_name( context[16], ref_Configm_GetR5Mode.ref.function ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_evar(context[17], context[18], context[5], context[6]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[19] ) )
+    return refalrts::cNoMemory;
+  refalrts::reinit_closure_head( context[0] );
+  refalrts::update_name( context[4], ref_gen_LoadAST_S1A2.ref.function );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[13] );
+  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[19] );
+  refalrts::push_stack( context[15] );
+  refalrts::link_brackets( context[12], context[13] );
   refalrts::link_brackets( context[9], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[15], context[15] );
-  res = refalrts::splice_evar( res, context[9], context[1] );
-  res = refalrts::splice_evar( res, context[12], context[14] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[13], context[19] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[0], context[10] );
   res = refalrts::splice_evar( res, context[11], context[11] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[12] );
+  refalrts::wrap_closure( context[14] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LoadAST_S1A1("LoadAST$1=1", 1074372438U, 3153511759U, func_gen_LoadAST_S1A1);
+static refalrts::NativeReference nat_ref_gen_LoadAST_S1A1("LoadAST$1=1", 3379042430U, 3149069343U, func_gen_LoadAST_S1A1);
 
 
 static refalrts::FnResult func_gen_LoadAST_S2A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1188,7 +1279,7 @@ static refalrts::FnResult func_gen_LoadAST_S2A2(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LoadAST_S2A2("LoadAST$2=2", 1074372438U, 3153511759U, func_gen_LoadAST_S2A2);
+static refalrts::NativeReference nat_ref_gen_LoadAST_S2A2("LoadAST$2=2", 3379042430U, 3149069343U, func_gen_LoadAST_S2A2);
 
 
 static refalrts::FnResult func_gen_LoadAST_S2A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1246,7 +1337,7 @@ static refalrts::FnResult func_gen_LoadAST_S2A1(refalrts::Iter arg_begin, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LoadAST_S2A1("LoadAST$2=1", 1074372438U, 3153511759U, func_gen_LoadAST_S2A1);
+static refalrts::NativeReference nat_ref_gen_LoadAST_S2A1("LoadAST$2=1", 3379042430U, 3149069343U, func_gen_LoadAST_S2A1);
 
 
 static refalrts::FnResult func_LoadAST(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1362,7 +1453,7 @@ static refalrts::FnResult func_LoadAST(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LoadAST("LoadAST", 1074372438U, 3153511759U, func_LoadAST);
+static refalrts::NativeReference nat_ref_LoadAST("LoadAST", 3379042430U, 3149069343U, func_LoadAST);
 
 
 static refalrts::FnResult func_gen_ResolveIncludes_S3L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1443,7 +1534,7 @@ static refalrts::FnResult func_gen_ResolveIncludes_S3L1(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ResolveIncludes_S3L1("ResolveIncludes$3\\1", 1074372438U, 3153511759U, func_gen_ResolveIncludes_S3L1);
+static refalrts::NativeReference nat_ref_gen_ResolveIncludes_S3L1("ResolveIncludes$3\\1", 3379042430U, 3149069343U, func_gen_ResolveIncludes_S3L1);
 
 
 static refalrts::FnResult func_ResolveIncludes(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1764,7 +1855,7 @@ static refalrts::FnResult func_ResolveIncludes(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveIncludes("ResolveIncludes", 1074372438U, 3153511759U, func_ResolveIncludes);
+static refalrts::NativeReference nat_ref_ResolveIncludes("ResolveIncludes", 3379042430U, 3149069343U, func_ResolveIncludes);
 
 
 static refalrts::FnResult func_ResolveIncludesm_CheckAlias(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2009,7 +2100,7 @@ static refalrts::FnResult func_ResolveIncludesm_CheckAlias(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckAlias("ResolveIncludes-CheckAlias", 1074372438U, 3153511759U, func_ResolveIncludesm_CheckAlias);
+static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckAlias("ResolveIncludes-CheckAlias", 3379042430U, 3149069343U, func_ResolveIncludesm_CheckAlias);
 
 
 static refalrts::FnResult func_ResolveIncludesm_CheckValid(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2280,7 +2371,7 @@ static refalrts::FnResult func_ResolveIncludesm_CheckValid(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckValid("ResolveIncludes-CheckValid", 1074372438U, 3153511759U, func_ResolveIncludesm_CheckValid);
+static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckValid("ResolveIncludes-CheckValid", 3379042430U, 3149069343U, func_ResolveIncludesm_CheckValid);
 
 
 static refalrts::FnResult func_ResolveIncludesm_CheckEqualAST(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2549,7 +2640,7 @@ static refalrts::FnResult func_ResolveIncludesm_CheckEqualAST(refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckEqualAST("ResolveIncludes-CheckEqualAST", 1074372438U, 3153511759U, func_ResolveIncludesm_CheckEqualAST);
+static refalrts::NativeReference nat_ref_ResolveIncludesm_CheckEqualAST("ResolveIncludes-CheckEqualAST", 3379042430U, 3149069343U, func_ResolveIncludesm_CheckEqualAST);
 
 
 static refalrts::FnResult func_gen_GlueErrorListsAndASTs_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2615,7 +2706,7 @@ static refalrts::FnResult func_gen_GlueErrorListsAndASTs_L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GlueErrorListsAndASTs_L1("GlueErrorListsAndASTs\\1", 1074372438U, 3153511759U, func_gen_GlueErrorListsAndASTs_L1);
+static refalrts::NativeReference nat_ref_gen_GlueErrorListsAndASTs_L1("GlueErrorListsAndASTs\\1", 3379042430U, 3149069343U, func_gen_GlueErrorListsAndASTs_L1);
 
 
 static refalrts::FnResult func_GlueErrorListsAndASTs(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2663,7 +2754,7 @@ static refalrts::FnResult func_GlueErrorListsAndASTs(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GlueErrorListsAndASTs("GlueErrorListsAndASTs", 1074372438U, 3153511759U, func_GlueErrorListsAndASTs);
+static refalrts::NativeReference nat_ref_GlueErrorListsAndASTs("GlueErrorListsAndASTs", 3379042430U, 3149069343U, func_GlueErrorListsAndASTs);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPos_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2874,7 +2965,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPos_L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_L1("PatchASTSrcPos\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPos_L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_L1("PatchASTSrcPos\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPos_L1);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPos_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2923,7 +3014,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPos_A1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_A1("PatchASTSrcPos=1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPos_A1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_A1("PatchASTSrcPos=1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPos_A1);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPos_A1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3061,7 +3152,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPos_A1L1(refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_A1L1("PatchASTSrcPos=1\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPos_A1L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPos_A1L1("PatchASTSrcPos=1\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPos_A1L1);
 
 
 static refalrts::FnResult func_PatchASTSrcPos(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3123,7 +3214,7 @@ static refalrts::FnResult func_PatchASTSrcPos(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPos("PatchASTSrcPos", 1074372438U, 3153511759U, func_PatchASTSrcPos);
+static refalrts::NativeReference nat_ref_PatchASTSrcPos("PatchASTSrcPos", 3379042430U, 3149069343U, func_PatchASTSrcPos);
 
 
 static refalrts::FnResult func_PatchASTSrcPosm_Body(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3210,7 +3301,7 @@ static refalrts::FnResult func_PatchASTSrcPosm_Body(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Body("PatchASTSrcPos-Body", 1074372438U, 3153511759U, func_PatchASTSrcPosm_Body);
+static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Body("PatchASTSrcPos-Body", 3379042430U, 3149069343U, func_PatchASTSrcPosm_Body);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPosm_Sentence_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3326,7 +3417,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPosm_Sentence_A1(refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Sentence_A1("PatchASTSrcPos-Sentence=1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPosm_Sentence_A1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Sentence_A1("PatchASTSrcPos-Sentence=1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPosm_Sentence_A1);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPosm_Sentence_A1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3355,7 +3446,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPosm_Sentence_A1L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Sentence_A1L1("PatchASTSrcPos-Sentence=1\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPosm_Sentence_A1L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Sentence_A1L1("PatchASTSrcPos-Sentence=1\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPosm_Sentence_A1L1);
 
 
 static refalrts::FnResult func_PatchASTSrcPosm_Sentence(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3448,7 +3539,7 @@ static refalrts::FnResult func_PatchASTSrcPosm_Sentence(refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Sentence("PatchASTSrcPos-Sentence", 1074372438U, 3153511759U, func_PatchASTSrcPosm_Sentence);
+static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Sentence("PatchASTSrcPos-Sentence", 3379042430U, 3149069343U, func_PatchASTSrcPosm_Sentence);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPosm_Chain_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3551,7 +3642,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPosm_Chain_L1(refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Chain_L1("PatchASTSrcPos-Chain\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPosm_Chain_L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Chain_L1("PatchASTSrcPos-Chain\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPosm_Chain_L1);
 
 
 static refalrts::FnResult func_PatchASTSrcPosm_Chain(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3599,7 +3690,7 @@ static refalrts::FnResult func_PatchASTSrcPosm_Chain(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Chain("PatchASTSrcPos-Chain", 1074372438U, 3153511759U, func_PatchASTSrcPosm_Chain);
+static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Chain("PatchASTSrcPos-Chain", 3379042430U, 3149069343U, func_PatchASTSrcPosm_Chain);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPosm_Blocks_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3648,7 +3739,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPosm_Blocks_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Blocks_L1("PatchASTSrcPos-Blocks\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPosm_Blocks_L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Blocks_L1("PatchASTSrcPos-Blocks\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPosm_Blocks_L1);
 
 
 static refalrts::FnResult func_PatchASTSrcPosm_Blocks(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3692,7 +3783,7 @@ static refalrts::FnResult func_PatchASTSrcPosm_Blocks(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Blocks("PatchASTSrcPos-Blocks", 1074372438U, 3153511759U, func_PatchASTSrcPosm_Blocks);
+static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Blocks("PatchASTSrcPos-Blocks", 3379042430U, 3149069343U, func_PatchASTSrcPosm_Blocks);
 
 
 static refalrts::FnResult func_gen_PatchASTSrcPosm_Expr_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4023,7 +4114,7 @@ static refalrts::FnResult func_gen_PatchASTSrcPosm_Expr_L1(refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Expr_L1("PatchASTSrcPos-Expr\\1", 1074372438U, 3153511759U, func_gen_PatchASTSrcPosm_Expr_L1);
+static refalrts::NativeReference nat_ref_gen_PatchASTSrcPosm_Expr_L1("PatchASTSrcPos-Expr\\1", 3379042430U, 3149069343U, func_gen_PatchASTSrcPosm_Expr_L1);
 
 
 static refalrts::FnResult func_PatchASTSrcPosm_Expr(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4067,7 +4158,7 @@ static refalrts::FnResult func_PatchASTSrcPosm_Expr(refalrts::Iter arg_begin, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Expr("PatchASTSrcPos-Expr", 1074372438U, 3153511759U, func_PatchASTSrcPosm_Expr);
+static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Expr("PatchASTSrcPos-Expr", 3379042430U, 3149069343U, func_PatchASTSrcPosm_Expr);
 
 
 static refalrts::FnResult func_gen_BackEnd_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4209,7 +4300,7 @@ static refalrts::FnResult func_gen_BackEnd_L1(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_L1("BackEnd\\1", 1074372438U, 3153511759U, func_gen_BackEnd_L1);
+static refalrts::NativeReference nat_ref_gen_BackEnd_L1("BackEnd\\1", 3379042430U, 3149069343U, func_gen_BackEnd_L1);
 
 
 static refalrts::FnResult func_gen_BackEnd_A4(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4319,7 +4410,7 @@ static refalrts::FnResult func_gen_BackEnd_A4(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_A4("BackEnd=4", 1074372438U, 3153511759U, func_gen_BackEnd_A4);
+static refalrts::NativeReference nat_ref_gen_BackEnd_A4("BackEnd=4", 3379042430U, 3149069343U, func_gen_BackEnd_A4);
 
 
 static refalrts::FnResult func_gen_BackEnd_A3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4404,7 +4495,7 @@ static refalrts::FnResult func_gen_BackEnd_A3(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_A3("BackEnd=3", 1074372438U, 3153511759U, func_gen_BackEnd_A3);
+static refalrts::NativeReference nat_ref_gen_BackEnd_A3("BackEnd=3", 3379042430U, 3149069343U, func_gen_BackEnd_A3);
 
 
 static refalrts::FnResult func_gen_BackEnd_A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4485,7 +4576,7 @@ static refalrts::FnResult func_gen_BackEnd_A2(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_A2("BackEnd=2", 1074372438U, 3153511759U, func_gen_BackEnd_A2);
+static refalrts::NativeReference nat_ref_gen_BackEnd_A2("BackEnd=2", 3379042430U, 3149069343U, func_gen_BackEnd_A2);
 
 
 static refalrts::FnResult func_gen_BackEnd_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4566,7 +4657,7 @@ static refalrts::FnResult func_gen_BackEnd_A1(refalrts::Iter arg_begin, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEnd_A1("BackEnd=1", 1074372438U, 3153511759U, func_gen_BackEnd_A1);
+static refalrts::NativeReference nat_ref_gen_BackEnd_A1("BackEnd=1", 3379042430U, 3149069343U, func_gen_BackEnd_A1);
 
 
 static refalrts::FnResult func_BackEnd(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4636,7 +4727,7 @@ static refalrts::FnResult func_BackEnd(refalrts::Iter arg_begin, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEnd("BackEnd", 1074372438U, 3153511759U, func_BackEnd);
+static refalrts::NativeReference nat_ref_BackEnd("BackEnd", 3379042430U, 3149069343U, func_BackEnd);
 
 
 static refalrts::FnResult func_gen_BackEndm_RASLModule_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4671,7 +4762,7 @@ static refalrts::FnResult func_gen_BackEndm_RASLModule_L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_BackEndm_RASLModule_L1("BackEnd-RASLModule\\1", 1074372438U, 3153511759U, func_gen_BackEndm_RASLModule_L1);
+static refalrts::NativeReference nat_ref_gen_BackEndm_RASLModule_L1("BackEnd-RASLModule\\1", 3379042430U, 3149069343U, func_gen_BackEndm_RASLModule_L1);
 
 
 static refalrts::FnResult func_BackEndm_RASLModule(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4736,7 +4827,7 @@ static refalrts::FnResult func_BackEndm_RASLModule(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEndm_RASLModule("BackEnd-RASLModule", 1074372438U, 3153511759U, func_BackEndm_RASLModule);
+static refalrts::NativeReference nat_ref_BackEndm_RASLModule("BackEnd-RASLModule", 3379042430U, 3149069343U, func_BackEndm_RASLModule);
 
 
 static refalrts::FnResult func_BackEndm_NativeModule(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4815,7 +4906,7 @@ static refalrts::FnResult func_BackEndm_NativeModule(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_BackEndm_NativeModule("BackEnd-NativeModule", 1074372438U, 3153511759U, func_BackEndm_NativeModule);
+static refalrts::NativeReference nat_ref_BackEndm_NativeModule("BackEnd-NativeModule", 3379042430U, 3149069343U, func_BackEndm_NativeModule);
 
 
 static refalrts::FnResult func_gen_GrammarCheck_L1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4869,7 +4960,7 @@ static refalrts::FnResult func_gen_GrammarCheck_L1L1(refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GrammarCheck_L1L1("GrammarCheck\\1\\1", 1074372438U, 3153511759U, func_gen_GrammarCheck_L1L1);
+static refalrts::NativeReference nat_ref_gen_GrammarCheck_L1L1("GrammarCheck\\1\\1", 3379042430U, 3149069343U, func_gen_GrammarCheck_L1L1);
 
 
 static refalrts::FnResult func_gen_GrammarCheck_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4916,7 +5007,7 @@ static refalrts::FnResult func_gen_GrammarCheck_L1(refalrts::Iter arg_begin, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GrammarCheck_L1("GrammarCheck\\1", 1074372438U, 3153511759U, func_gen_GrammarCheck_L1);
+static refalrts::NativeReference nat_ref_gen_GrammarCheck_L1("GrammarCheck\\1", 3379042430U, 3149069343U, func_gen_GrammarCheck_L1);
 
 
 static refalrts::FnResult func_GrammarCheck(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
