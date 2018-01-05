@@ -25,6 +25,8 @@
     <region name="refal5LambdaVariable" parent="def:Function"/>
     <region name="refal5LambdaFunction" parent="def:Keyword"/>
 
+    <region name="refal5LambdaInlineNative" parent="def:StringEdge"/>
+
     <scheme name="refal5LambdaSymbolsCore">
       <regexp match='/\\[nrt\\&apos;"&lt;&gt;()]/' region0="refal5LambdaStringEscape"/>
       <regexp match='/\\x[\da-fA-F]{2}/' region0="refal5LambdaStringEscape"/>
@@ -73,6 +75,12 @@
         <word name="$EXTRN"/>
         <word name="$EXTERNAL"/>
         <word name="$EASTEREGG"/>
+        <word name="$ENUM"/>
+        <word name="$EENUM"/>
+        <word name="$SWAP"/>
+        <word name="$ESWAP"/>
+        <word name="$INCLUDE"/>
+        <word name="$SCOPEID"/>
       </keywords>
       <keywords region="refal5LambdaSymbol">
         <symb name="="/>
@@ -80,6 +88,7 @@
         <symb name=":"/>
         <symb name=";"/>
         <symb name='&amp;'/>
+        <symb name='^'/>
       </keywords>
       <regexp match='/\$\w*/' region0="def:Error"/>
       <keywords region="def:Error">
@@ -102,6 +111,10 @@
       <regexp match='/\\[nrt\\&apos;"&lt;&gt;()]/' region0="refal5LambdaString"/>
       <regexp match='/\\[xX][\da-fA-F]{2}/' region0="refal5LambdaString"/>
       <regexp match="/\\./" region0="def:Error"/>
+
+      <block start="/^%%$/" end="/^%%$/" scheme="cpp:cpp"
+             region00="refal5LambdaInlineNative"
+             region10="refal5LambdaInlineNative"/>
     </scheme>
   </type>
 </hrc>

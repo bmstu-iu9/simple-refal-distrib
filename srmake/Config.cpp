@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_2591998108_1462205015
 static const refalrts::RefalIdentifier ident_CppCompilerExe = refalrts::ident_from_static("CppCompilerExe");
 static const refalrts::RefalIdentifier ident_CppCompilerLib = refalrts::ident_from_static("CppCompilerLib");
 static const refalrts::RefalIdentifier ident_DefaultEXE = refalrts::ident_from_static("DefaultEXE");

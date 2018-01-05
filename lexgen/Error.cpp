@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_3896251539_2754278698
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_Exit("Exit", 0U, 0U);
 static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);

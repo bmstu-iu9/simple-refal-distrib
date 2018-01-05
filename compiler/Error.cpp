@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_1148481089_3811928586
 static const refalrts::RefalIdentifier ident_ELm_HasErrors = refalrts::ident_from_static("EL-HasErrors");
 static const refalrts::RefalIdentifier ident_ELm_NoErrors = refalrts::ident_from_static("EL-NoErrors");
 static const refalrts::RefalIdentifier ident_FileLine = refalrts::ident_from_static("FileLine");

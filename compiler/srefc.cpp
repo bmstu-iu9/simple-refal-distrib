@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_3580506076_3531916058
 static const refalrts::RefalIdentifier ident_Collision = refalrts::ident_from_static("Collision");
 static const refalrts::RefalIdentifier ident_CommandLine = refalrts::ident_from_static("CommandLine");
 static const refalrts::RefalIdentifier ident_CompileOnly = refalrts::ident_from_static("CompileOnly");

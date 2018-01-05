@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_855477224_3357112823
 static const refalrts::RefalIdentifier ident_Alt = refalrts::ident_from_static("Alt");
 static const refalrts::RefalIdentifier ident_AnyChar = refalrts::ident_from_static("AnyChar");
 static const refalrts::RefalIdentifier ident_Char = refalrts::ident_from_static("Char");

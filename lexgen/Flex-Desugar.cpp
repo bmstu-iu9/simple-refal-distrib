@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_200899581_2741309241
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Flexm_Desugar("Flex-Desugar", 0U, 0U);
 static refalrts::ExternalReference ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 200899581U, 2741309241U);

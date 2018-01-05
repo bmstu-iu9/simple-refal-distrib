@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_284475041_2488733831
 static const refalrts::RefalIdentifier ident_FILE = refalrts::ident_from_static("FILE");
 static const refalrts::RefalIdentifier ident_Long = refalrts::ident_from_static("Long");
 static const refalrts::RefalIdentifier ident_Longm_Param = refalrts::ident_from_static("Long-Param");

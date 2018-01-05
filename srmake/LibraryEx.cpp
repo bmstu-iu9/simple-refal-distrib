@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_3630882651_3068495760
 static const refalrts::RefalIdentifier ident_Success = refalrts::ident_from_static("Success");
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
 static refalrts::ExternalReference ref_AppendBytes("AppendBytes", 0U, 0U);

@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_333308156_4218385117
 static const refalrts::RefalIdentifier ident_BadValuem_Opt = refalrts::ident_from_static("BadValue-Opt");
 static const refalrts::RefalIdentifier ident_ChmodXCommand = refalrts::ident_from_static("ChmodXCommand");
 static const refalrts::RefalIdentifier ident_CompileOnly = refalrts::ident_from_static("CompileOnly");

@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_3997484342_2282157194
 static const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
 static refalrts::ExternalReference ref_CheckUniqueNames("CheckUniqueNames", 3997484342U, 2282157194U);
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);

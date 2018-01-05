@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_1683294634_2084243894
 static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U);
 #line 2 "Hash.sref"
 /*
@@ -13,7 +14,7 @@ static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0
 
 using refalrts::UInt32;
 
-#line 17 "Hash.cpp"
+#line 18 "Hash.cpp"
 
 static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
 #line 14 "Hash.sref"
@@ -174,7 +175,7 @@ static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refa
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 178 "Hash.cpp"
+#line 179 "Hash.cpp"
 }
 
 static refalrts::NativeReference nat_ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2m_Chars);

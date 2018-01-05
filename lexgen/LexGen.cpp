@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_2443115455_4265422081
 static const refalrts::RefalIdentifier ident_BadCommandLine = refalrts::ident_from_static("BadCommandLine");
 static const refalrts::RefalIdentifier ident_From = refalrts::ident_from_static("From");
 static const refalrts::RefalIdentifier ident_InPlace = refalrts::ident_from_static("InPlace");

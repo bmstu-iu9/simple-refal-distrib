@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_2261772542_950257080
 static const refalrts::RefalIdentifier ident_AsIs = refalrts::ident_from_static("AsIs");
 static const refalrts::RefalIdentifier ident_AsIsE = refalrts::ident_from_static("AsIsE");
 static const refalrts::RefalIdentifier ident_HalfReuse = refalrts::ident_from_static("HalfReuse");

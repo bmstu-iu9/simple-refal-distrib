@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_1086688698_434048907
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 1086688698U, 434048907U);
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);

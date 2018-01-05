@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_2896966701_3378406771
 static const refalrts::RefalIdentifier ident_BadEscapeCode = refalrts::ident_from_static("BadEscapeCode");
 static const refalrts::RefalIdentifier ident_BadEscapeSymbol = refalrts::ident_from_static("BadEscapeSymbol");
 static const refalrts::RefalIdentifier ident_EOLAfterSlash = refalrts::ident_from_static("EOLAfterSlash");

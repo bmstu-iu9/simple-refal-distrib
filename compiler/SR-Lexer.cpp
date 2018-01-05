@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_1691662140_3358877394
 static const refalrts::RefalIdentifier ident_Close = refalrts::ident_from_static("Close");
 static const refalrts::RefalIdentifier ident_Cookie1 = refalrts::ident_from_static("Cookie1");
 static const refalrts::RefalIdentifier ident_Cookie2 = refalrts::ident_from_static("Cookie2");

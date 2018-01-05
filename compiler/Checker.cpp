@@ -3,6 +3,7 @@
 
 #include "refalrts.h"
 
+#define cookie_ns cookie_ns_3152405636_2131064537
 static const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
 static const refalrts::RefalIdentifier ident_AlreadyBounded = refalrts::ident_from_static("AlreadyBounded");
 static const refalrts::RefalIdentifier ident_AlreadyDefined = refalrts::ident_from_static("AlreadyDefined");
