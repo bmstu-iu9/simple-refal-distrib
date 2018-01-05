@@ -31,6 +31,7 @@ static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
+static refalrts::ExternalReference ref_PrintVersion("PrintVersion", 0U, 0U);
 static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Transform("Transform", 2443115455U, 4265422081U);
@@ -274,9 +275,9 @@ static refalrts::NativeReference nat_ref_gen_Go_L2("Go\\2", 2443115455U, 4265422
 
 static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 13 elems
-  refalrts::Iter context[13];
-  refalrts::zeros( context, 13 );
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
   // </0 & Go/4 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -288,35 +289,47 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </1 } & ArgList/5 >/6 </7 & Seq/8 & Go\1/9 & Go\2/10 >/11 >/12 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_ArgList.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintVersion/4 HalfReuse: 'L'/1 }"exGen"/5 >/7 </8 & Fetch/9 </10 & ArgList/11 >/12 </13 & Seq/14 & Go\1/15 & Go\2/16 >/17 >/18 Tile{ ]] }
+  if( ! refalrts::alloc_chars( context[5], context[6], "exGen", 5 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[6] ) )
+  if( ! refalrts::alloc_close_call( context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[7] ) )
+  if( ! refalrts::alloc_open_call( context[8] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[9], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[9], ref_gen_Go_L1.ref.function ) )
+  if( ! refalrts::alloc_open_call( context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[10], ref_gen_Go_L2.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[11] ) )
+  if( ! refalrts::alloc_name( context[11], ref_ArgList.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Fetch.ref.function );
-  refalrts::reinit_open_call( context[1] );
+  if( ! refalrts::alloc_open_call( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[14], ref_Seq.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[15], ref_gen_Go_L1.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[16], ref_gen_Go_L2.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[17] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[18] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_PrintVersion.ref.function );
+  refalrts::reinit_char( context[1], 'L' );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[8] );
+  refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[13] );
   refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[11] );
+  refalrts::push_stack( context[10] );
   refalrts::push_stack( context[7] );
-  refalrts::push_stack( context[6] );
-  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[12] );
+  res = refalrts::splice_evar( res, context[5], context[18] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
