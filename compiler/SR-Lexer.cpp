@@ -90,13 +90,13 @@ static refalrts::ExternalReference ref_NormalizeToken("NormalizeToken", 16916621
 static refalrts::ExternalReference ref_gen_NormalizeToken_S14A1("NormalizeToken$14=1", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_NormalizeTokens("NormalizeTokens", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_Number("Number", 1691662140U, 3358877394U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_Root("Root", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_SLm_Em_C1("SL-E-C1", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_SLm_Em_C2("SL-E-C2", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_SLm_Em_OC1("SL-E-OC1", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_SRm_LexFolding("SR-LexFolding", 0U, 0U);
 static refalrts::ExternalReference ref_SRm_StrFromToken("SR-StrFromToken", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_StartComment("StartComment", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_StartNativem_NewLine("StartNative-NewLine", 1691662140U, 3358877394U);
 static refalrts::ExternalReference ref_StartNativem_Percent("StartNative-Percent", 1691662140U, 3358877394U);
@@ -2282,22 +2282,22 @@ static refalrts::FnResult func_ValidDirective(refalrts::Iter arg_begin, refalrts
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$10\1/7 Reuse: '\320'/8 Reuse: '\237'/9 Reuse: '\320'/10 Reuse: '\240'/11 Reuse: '\320'/12 Reuse: '\225'/13 Reuse: '\320'/14 Reuse: '\222'/15 HalfReuse: '\320'/1 }"\225\320\224! \320\223\320\263 ^Y"/16 >/18 Tile{ ]] }
-    if( ! refalrts::alloc_chars( context[16], context[17], "\225\320\224! \320\223\320\263 ^Y", 12 ) )
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$10\1/7 Reuse: 'M'/8 Reuse: 'e'/9 Reuse: 'd'/10 Reuse: 'v'/11 Reuse: 'e'/12 Reuse: 'd'/13 Reuse: 'n'/14 Reuse: 'o'/15 HalfReuse: '-'/1 }"orientirovannoe programmirovanie"/16 >/18 Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[16], context[17], "orientirovannoe programmirovanie", 32 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[18] ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_Map.ref.function );
     refalrts::reinit_name( context[7], ref_gen_ValidDirective_S10L1.ref.function );
-    refalrts::update_char( context[8], '\320' );
-    refalrts::update_char( context[9], '\237' );
-    refalrts::update_char( context[10], '\320' );
-    refalrts::update_char( context[11], '\240' );
-    refalrts::update_char( context[12], '\320' );
-    refalrts::update_char( context[13], '\225' );
-    refalrts::update_char( context[14], '\320' );
-    refalrts::update_char( context[15], '\222' );
-    refalrts::reinit_char( context[1], '\320' );
+    refalrts::update_char( context[8], 'M' );
+    refalrts::update_char( context[9], 'e' );
+    refalrts::update_char( context[10], 'd' );
+    refalrts::update_char( context[11], 'v' );
+    refalrts::update_char( context[12], 'e' );
+    refalrts::update_char( context[13], 'd' );
+    refalrts::update_char( context[14], 'n' );
+    refalrts::update_char( context[15], 'o' );
+    refalrts::reinit_char( context[1], '-' );
     refalrts::push_stack( context[18] );
     refalrts::push_stack( context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -2791,8 +2791,8 @@ static refalrts::FnResult func_NormalizeTokens(refalrts::Iter arg_begin, refalrt
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Tokens#1/2 HalfReuse: </1 } & Seq/5 (/6 & Map/7 & NormalizeToken/8 )/9 (/10 & MapReduce/11 & AddLineNumber/12 1/13 )/14 & DelAccumulator/15 & CollectNativeLines/16 >/17 >/18 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Tokens#1/2 HalfReuse: </1 } & Pipe/5 (/6 & Map/7 & NormalizeToken/8 )/9 (/10 & MapReduce/11 & AddLineNumber/12 1/13 )/14 & DelAccumulator/15 & CollectNativeLines/16 >/17 >/18 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;

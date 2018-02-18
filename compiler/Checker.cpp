@@ -67,8 +67,8 @@ static refalrts::ExternalReference ref_FlatExpr("FlatExpr", 3152405636U, 2131064
 static refalrts::ExternalReference ref_gen_FlatExpr_L1("FlatExpr\\1", 3152405636U, 2131064537U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 
 static refalrts::FnResult func_gen_CheckProgram_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -818,8 +818,8 @@ static refalrts::FnResult func_FindErrors(refalrts::Iter arg_begin, refalrts::It
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Seq/5 (/6 & MapReduce/7 & FindErrors\1/8 (/9 )/10 )/11 & FindErrors\2/12 >/13 >/14 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Pipe/5 (/6 & MapReduce/7 & FindErrors\1/8 (/9 )/10 )/11 & FindErrors\2/12 >/13 >/14 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;
@@ -874,8 +874,8 @@ static refalrts::FnResult func_CheckDeclarations(refalrts::Iter arg_begin, refal
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Declarations#1/2 HalfReuse: </1 } & Seq/5 & CleanupValidForwards/6 & FindInvalidForwards/7 & CheckRedefinitions/8 >/9 >/10 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Declarations#1/2 HalfReuse: </1 } & Pipe/5 & CleanupValidForwards/6 & FindInvalidForwards/7 & CheckRedefinitions/8 >/9 >/10 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_CleanupValidForwards.ref.function ) )
     return refalrts::cNoMemory;

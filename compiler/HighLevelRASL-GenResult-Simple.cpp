@@ -62,10 +62,10 @@ static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
 static refalrts::ExternalReference ref_MakeVariableComment("MakeVariableComment", 3373678874U, 1434211168U);
 static refalrts::ExternalReference ref_MakeVariableCommentTable("MakeVariableCommentTable", 3373678874U, 1434211168U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
 static refalrts::ExternalReference ref_ReplicateVar("ReplicateVar", 3373678874U, 1434211168U);
 static refalrts::ExternalReference ref_gen_ReplicateVar_L1("ReplicateVar\\1", 3373678874U, 1434211168U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
 
 static refalrts::FnResult func_gen_GenResultm_Simple_B1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1995,8 +1995,8 @@ static refalrts::FnResult func_MakeVariableCommentTable(refalrts::Iter arg_begin
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Vars#1/2 HalfReuse: </1 } & Seq/5 (/6 & Map/7 & ReplicateVar/8 )/9 & Sort/10 (/11 & Map/12 & MakeVariableComment/13 )/14 >/15 >/16 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.Vars#1/2 HalfReuse: </1 } & Pipe/5 (/6 & Map/7 & ReplicateVar/8 )/9 & Sort/10 (/11 & Map/12 & MakeVariableComment/13 )/14 >/15 >/16 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[6] ) )
     return refalrts::cNoMemory;

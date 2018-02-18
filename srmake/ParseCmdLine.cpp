@@ -57,7 +57,7 @@ static refalrts::ExternalReference ref_gen_ParseCommandLine_L1("ParseCommandLine
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 3074024378U, 3751715418U);
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 3074024378U, 3751715418U);
 static refalrts::ExternalReference ref_gen_ParseCommandLine_L3S2L1("ParseCommandLine\\3$2\\1", 3074024378U, 3751715418U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_Update("Update", 3074024378U, 3751715418U);
 static refalrts::ExternalReference ref_gen_Update_L1("Update\\1", 3074024378U, 3751715418U);
 
@@ -1154,7 +1154,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompilerExe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompilerLib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # Prefix/30 # Required/31 'p'/32 (/33"prefix"/34 )/36 )/37 (/38 # Reference/39 # Required/40 'r'/41 (/42"reference"/43 )/45 )/46 (/47 # RuntimeFolder/48 # Required/49 'D'/50 (/51"runtime-dir"/52 )/54 (/55"runtime-directory"/56 )/58 )/59 (/60 # SearchFolder/61 # Required/62 'd'/63 (/64"dir"/65 )/67 (/68"directory"/69 )/71 )/72 (/73 # SrefCompiler/74 # Required/75 's'/76 (/77"sref-command"/78 )/80 )/81 (/82 # SrefCompilerOption/83 # Required/84 'X'/85 (/86"thru"/87 )/89 (/90"through"/91 )/93 )/94 (/95 # TargetFileName/96 # Required/97 'o'/98 (/99"target-file"/100 )/102 )/103 (/104 # TargetMode-Exe/105 # None/106 'x'/107 (/108"makeexe"/109 )/111 )/112 (/113 # TargetMode-Lib/114 # None/115 'l'/116 (/117"makelib"/118 )/120 )/121 (/122 # TargetMode-R/123 # None/124 'R'/125 )/126 (/127 # TargetMode-C/128 # None/129 'C'/130 (/131"compile-only"/132 )/134 )/135 (/136 # Prelude/137 # Required/138 (/139"prelude"/140 )/142 )/143 )/144 Tile{ AsIs: e.Arguments#1/2 } >/145 </146 & Seq/147 (/148 & CheckRequiredOptions/149 (/150 # FILE/151 )/152 )/153 & ParseCommandLine\1/154 (/155 & MapReduce/156 & ParseCommandLine\2/157 )/158 & ParseCommandLine\3/159 >/160 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompilerExe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompilerLib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # Prefix/30 # Required/31 'p'/32 (/33"prefix"/34 )/36 )/37 (/38 # Reference/39 # Required/40 'r'/41 (/42"reference"/43 )/45 )/46 (/47 # RuntimeFolder/48 # Required/49 'D'/50 (/51"runtime-dir"/52 )/54 (/55"runtime-directory"/56 )/58 )/59 (/60 # SearchFolder/61 # Required/62 'd'/63 (/64"dir"/65 )/67 (/68"directory"/69 )/71 )/72 (/73 # SrefCompiler/74 # Required/75 's'/76 (/77"sref-command"/78 )/80 )/81 (/82 # SrefCompilerOption/83 # Required/84 'X'/85 (/86"thru"/87 )/89 (/90"through"/91 )/93 )/94 (/95 # TargetFileName/96 # Required/97 'o'/98 (/99"target-file"/100 )/102 )/103 (/104 # TargetMode-Exe/105 # None/106 'x'/107 (/108"makeexe"/109 )/111 )/112 (/113 # TargetMode-Lib/114 # None/115 'l'/116 (/117"makelib"/118 )/120 )/121 (/122 # TargetMode-R/123 # None/124 'R'/125 )/126 (/127 # TargetMode-C/128 # None/129 'C'/130 (/131"compile-only"/132 )/134 )/135 (/136 # Prelude/137 # Required/138 (/139"prelude"/140 )/142 )/143 )/144 Tile{ AsIs: e.Arguments#1/2 } >/145 </146 & Pipe/147 (/148 & CheckRequiredOptions/149 (/150 # FILE/151 )/152 )/153 & ParseCommandLine\1/154 (/155 & MapReduce/156 & ParseCommandLine\2/157 )/158 & ParseCommandLine\3/159 >/160 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[5] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_GetOpt.ref.function ) )
@@ -1405,7 +1405,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::Iter arg_begin, refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[146] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[147], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[147], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[148] ) )
     return refalrts::cNoMemory;

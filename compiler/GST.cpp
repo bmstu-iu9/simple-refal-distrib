@@ -50,12 +50,12 @@ static refalrts::ExternalReference ref_Modify("Modify", 2261772542U, 950257080U)
 static refalrts::ExternalReference ref_gen_Modify_L1("Modify\\1", 2261772542U, 950257080U);
 static refalrts::ExternalReference ref_OverlapChain("OverlapChain", 2261772542U, 950257080U);
 static refalrts::ExternalReference ref_OverlapItem("OverlapItem", 2261772542U, 950257080U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
 static refalrts::ExternalReference ref_RejectTile("RejectTile", 2261772542U, 950257080U);
 static refalrts::ExternalReference ref_gen_RejectTile_L1("RejectTile\\1", 2261772542U, 950257080U);
 static refalrts::ExternalReference ref_gen_RejectTile_L1L1("RejectTile\\1\\1", 2261772542U, 950257080U);
 static refalrts::ExternalReference ref_ReplaceTile("ReplaceTile", 2261772542U, 950257080U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Sub("Sub", 0U, 0U);
 static refalrts::ExternalReference ref_TermCompare("TermCompare", 0U, 0U);
 static refalrts::ExternalReference ref_TileCandidates("TileCandidates", 2261772542U, 950257080U);
@@ -303,8 +303,8 @@ static refalrts::FnResult func_GST(refalrts::Iter arg_begin, refalrts::Iter arg_
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 HalfReuse: </1 } & Seq/13 & TileCandidates/14 & FilterOverlapped/15 [*]/16 & GST\1/17 (/18 e.Pattern#1/5/19 )/21 (/22 e.Result#1/9/23 )/25 {*}/26 (/27 & Reduce/28 & GST\2/29 )/30 & GST\3/31 >/32 >/33 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[13], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: (/7 AsIs: e.Pattern#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 HalfReuse: </1 } & Pipe/13 & TileCandidates/14 & FilterOverlapped/15 [*]/16 & GST\1/17 (/18 e.Pattern#1/5/19 )/21 (/22 e.Result#1/9/23 )/25 {*}/26 (/27 & Reduce/28 & GST\2/29 )/30 & GST\3/31 >/32 >/33 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[13], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[14], ref_TileCandidates.ref.function ) )
     return refalrts::cNoMemory;
@@ -2534,10 +2534,10 @@ static refalrts::FnResult func_gen_RejectTile_L1(refalrts::Iter arg_begin, refal
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ItemWeight#2/15 s.Ident#2/16 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Tiles#2/5 } </17 & Seq/18 Tile{ AsIs: (/7 } & Map/19 (/20 & FilterPatternPos/21 Tile{ AsIs: s.CurIndexP#2/13 } )/22 Tile{ AsIs: )/8 AsIs: (/11 } & Map/23 (/24 & FilterResultPos/25 Tile{ AsIs: s.CurIndexR#2/14 } )/26 )/27 & RejectTile\1\1/28 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.Tiles#2/5 } </17 & Pipe/18 Tile{ AsIs: (/7 } & Map/19 (/20 & FilterPatternPos/21 Tile{ AsIs: s.CurIndexP#2/13 } )/22 Tile{ AsIs: )/8 AsIs: (/11 } & Map/23 (/24 & FilterResultPos/25 Tile{ AsIs: s.CurIndexR#2/14 } )/26 )/27 & RejectTile\1\1/28 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[18], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[19], ref_Map.ref.function ) )
     return refalrts::cNoMemory;

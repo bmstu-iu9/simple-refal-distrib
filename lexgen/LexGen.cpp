@@ -31,9 +31,9 @@ static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_ParseCommandLine("ParseCommandLine", 0U, 0U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_PrintVersion("PrintVersion", 0U, 0U);
 static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Transform("Transform", 2443115455U, 4265422081U);
 static refalrts::ExternalReference ref_gen_Transform_L1("Transform\\1", 2443115455U, 4265422081U);
 static refalrts::ExternalReference ref_gen_Transform_L2("Transform\\2", 2443115455U, 4265422081U);
@@ -289,7 +289,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintVersion/4 HalfReuse: 'L'/1 }"exGen"/5 >/7 </8 & Fetch/9 </10 & ArgList/11 >/12 </13 & Seq/14 & Go\1/15 & Go\2/16 >/17 >/18 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintVersion/4 HalfReuse: 'L'/1 }"exGen"/5 >/7 </8 & Fetch/9 </10 & ArgList/11 >/12 </13 & Pipe/14 & Go\1/15 & Go\2/16 >/17 >/18 Tile{ ]] }
   if( ! refalrts::alloc_chars( context[5], context[6], "exGen", 5 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[7] ) )
@@ -306,7 +306,7 @@ static refalrts::FnResult func_Go(refalrts::Iter arg_begin, refalrts::Iter arg_e
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[14], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[14], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[15], ref_gen_Go_L1.ref.function ) )
     return refalrts::cNoMemory;
@@ -1105,10 +1105,10 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} s.Length#2/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </32 Tile{ HalfReuse: & Fetch/31 HalfReuse: s.Length2 #17/16 AsIs: e.Description#2/24 HalfReuse: </1 } & Seq/33 & DFA-Tokens/34 (/35 & Map/36 Tile{ HalfReuse: [*]/0 Reuse: & Transform\3$1\1/4 AsIs: (/7 AsIs: e.Source#1/18 AsIs: )/8 HalfReuse: {*}/11 } Tile{ AsIs: )/12 HalfReuse: & DFA-Parse/15 HalfReuse: & DFA-Compile/26 HalfReuse: & GenerateFromDFA/27 HalfReuse: [*]/28 HalfReuse: & Transform\3$1\2/29 HalfReuse: (/30 } Tile{ AsIs: e.LinesBefore#2/20 } )/37 (/38 e.Description#2/24/39 )/41 {*}/42 >/43 >/44 Tile{ ]] }
+    //RESULT: Tile{ [[ } </32 Tile{ HalfReuse: & Fetch/31 HalfReuse: s.Length2 #17/16 AsIs: e.Description#2/24 HalfReuse: </1 } & Pipe/33 & DFA-Tokens/34 (/35 & Map/36 Tile{ HalfReuse: [*]/0 Reuse: & Transform\3$1\1/4 AsIs: (/7 AsIs: e.Source#1/18 AsIs: )/8 HalfReuse: {*}/11 } Tile{ AsIs: )/12 HalfReuse: & DFA-Parse/15 HalfReuse: & DFA-Compile/26 HalfReuse: & GenerateFromDFA/27 HalfReuse: [*]/28 HalfReuse: & Transform\3$1\2/29 HalfReuse: (/30 } Tile{ AsIs: e.LinesBefore#2/20 } )/37 (/38 e.Description#2/24/39 )/41 {*}/42 >/43 >/44 Tile{ ]] }
     if( ! refalrts::alloc_open_call( context[32] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[33], ref_Seq.ref.function ) )
+    if( ! refalrts::alloc_name( context[33], ref_Pipe.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[34], ref_DFAm_Tokens.ref.function ) )
       return refalrts::cNoMemory;
@@ -1202,14 +1202,14 @@ static refalrts::FnResult func_gen_Transform_L3(refalrts::Iter arg_begin, refalr
 
     refalrts::reset_allocator();
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </30 & Fetch/31 Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Description#2/24 } </32 & Seq/33 & Flex-Tokens/34 (/35 & Map/36 Tile{ HalfReuse: [*]/0 Reuse: & Transform\3$2\1/4 AsIs: (/7 AsIs: e.Source#1/18 AsIs: )/8 HalfReuse: {*}/11 } Tile{ AsIs: )/12 HalfReuse: & Flex-Parse/15 HalfReuse: & Transform\3$2\2/26 HalfReuse: & Flex-Desugar/27 HalfReuse: & Flex-Compile/28 HalfReuse: [*]/29 HalfReuse: & Transform\3$2\3/16 } (/37 Tile{ AsIs: e.LinesBefore#2/20 } )/38 (/39 e.Description#2/24/40 )/42 {*}/43 >/44 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </30 & Fetch/31 Tile{ AsIs: s.Length#2/17 } Tile{ AsIs: e.Description#2/24 } </32 & Pipe/33 & Flex-Tokens/34 (/35 & Map/36 Tile{ HalfReuse: [*]/0 Reuse: & Transform\3$2\1/4 AsIs: (/7 AsIs: e.Source#1/18 AsIs: )/8 HalfReuse: {*}/11 } Tile{ AsIs: )/12 HalfReuse: & Flex-Parse/15 HalfReuse: & Transform\3$2\2/26 HalfReuse: & Flex-Desugar/27 HalfReuse: & Flex-Compile/28 HalfReuse: [*]/29 HalfReuse: & Transform\3$2\3/16 } (/37 Tile{ AsIs: e.LinesBefore#2/20 } )/38 (/39 e.Description#2/24/40 )/42 {*}/43 >/44 Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_call( context[30] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[31], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( context[32] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[33], ref_Seq.ref.function ) )
+    if( ! refalrts::alloc_name( context[33], ref_Pipe.ref.function ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_name( context[34], ref_Flexm_Tokens.ref.function ) )
       return refalrts::cNoMemory;
@@ -1341,14 +1341,14 @@ static refalrts::FnResult func_Transform(refalrts::Iter arg_begin, refalrts::Ite
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Lines#1/2 } </11 & Seq/12 Tile{ HalfReuse: [*]/0 Reuse: & Transform\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 } {*}/13 [*]/14 & Transform\2/15 (/16 e.Source#1/5/17 )/19 {*}/20 [*]/21 & Transform\3/22 (/23 e.Source#1/5/24 )/26 {*}/27 >/28 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </9 & Fetch/10 Tile{ AsIs: e.Lines#1/2 } </11 & Pipe/12 Tile{ HalfReuse: [*]/0 Reuse: & Transform\1/4 AsIs: (/7 AsIs: e.Source#1/5 AsIs: )/8 } {*}/13 [*]/14 & Transform\2/15 (/16 e.Source#1/5/17 )/19 {*}/20 [*]/21 & Transform\3/22 (/23 e.Source#1/5/24 )/26 {*}/27 >/28 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[9] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[10], ref_Fetch.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[12], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[12], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_unwrapped_closure( context[13], context[0] ) )
     return refalrts::cNoMemory;

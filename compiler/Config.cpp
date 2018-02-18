@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_333308156_4218385117
+#define cookie_ns cookie_ns_1960443052_1169432825
 static const refalrts::RefalIdentifier ident_BadValuem_Opt = refalrts::ident_from_static("BadValue-Opt");
 static const refalrts::RefalIdentifier ident_ChmodXCommand = refalrts::ident_from_static("ChmodXCommand");
 static const refalrts::RefalIdentifier ident_CompileOnly = refalrts::ident_from_static("CompileOnly");
@@ -23,6 +23,7 @@ static const refalrts::RefalIdentifier ident_Folders = refalrts::ident_from_stat
 static const refalrts::RefalIdentifier ident_GrammarCheck = refalrts::ident_from_static("GrammarCheck");
 static const refalrts::RefalIdentifier ident_Incorporateds = refalrts::ident_from_static("Incorporateds");
 static const refalrts::RefalIdentifier ident_LIB = refalrts::ident_from_static("LIB");
+static const refalrts::RefalIdentifier ident_LogFile = refalrts::ident_from_static("LogFile");
 static const refalrts::RefalIdentifier ident_MarkupContext = refalrts::ident_from_static("MarkupContext");
 static const refalrts::RefalIdentifier ident_NoCppCompiler = refalrts::ident_from_static("NoCppCompiler");
 static const refalrts::RefalIdentifier ident_NoCppCompilerExe = refalrts::ident_from_static("NoCppCompilerExe");
@@ -48,7 +49,7 @@ static const refalrts::RefalIdentifier ident_TargetFileName = refalrts::ident_fr
 static const refalrts::RefalIdentifier ident_TargetMode = refalrts::ident_from_static("TargetMode");
 static const refalrts::RefalIdentifier ident_TargetModeAlreadySet = refalrts::ident_from_static("TargetModeAlreadySet");
 static const refalrts::RefalIdentifier ident_TargetSuffix = refalrts::ident_from_static("TargetSuffix");
-static refalrts::ExternalReference ref_Config("Config", 333308156U, 4218385117U);
+static refalrts::ExternalReference ref_Config("Config", 1960443052U, 1169432825U);
 static refalrts::ExternalReference ref_Configm_AddIncorporated("Config-AddIncorporated", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_AddReference("Config-AddReference", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_Create("Config-Create", 0U, 0U);
@@ -59,6 +60,7 @@ static refalrts::ExternalReference ref_Configm_GetErrorFile("Config-GetErrorFile
 static refalrts::ExternalReference ref_Configm_GetGenMode("Config-GetGenMode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetGrammarCheck("Config-GetGrammarCheck", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetIncorporateds("Config-GetIncorporateds", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_GetLogFile("Config-GetLogFile", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetOptPattern("Config-GetOptPattern", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetOptResult("Config-GetOptResult", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_GetPrefix("Config-GetPrefix", 0U, 0U);
@@ -75,9 +77,10 @@ static refalrts::ExternalReference ref_Configm_SetCppCompiler("Config-SetCppComp
 static refalrts::ExternalReference ref_Configm_SetDebugInfo("Config-SetDebugInfo", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetErrorFile("Config-SetErrorFile", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetGrammarCheck("Config-SetGrammarCheck", 0U, 0U);
+static refalrts::ExternalReference ref_Configm_SetLogFile("Config-SetLogFile", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetMarkupContext("Config-SetMarkupContext", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetOptFlags("Config-SetOptFlags", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Configm_SetOptFlags_L1("Config-SetOptFlags\\1", 333308156U, 4218385117U);
+static refalrts::ExternalReference ref_gen_Configm_SetOptFlags_B1("Config-SetOptFlags:1", 1960443052U, 1169432825U);
 static refalrts::ExternalReference ref_Configm_SetPrefix("Config-SetPrefix", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetPrelude("Config-SetPrelude", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetR5Mode("Config-SetR5Mode", 0U, 0U);
@@ -85,19 +88,18 @@ static refalrts::ExternalReference ref_Configm_SetSearchFolder("Config-SetSearch
 static refalrts::ExternalReference ref_Configm_SetTargetFileName("Config-SetTargetFileName", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetTargetMode("Config-SetTargetMode", 0U, 0U);
 static refalrts::ExternalReference ref_Configm_SetTargetSuffix("Config-SetTargetSuffix", 0U, 0U);
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_Flagsm_Unique("Flags-Unique", 333308156U, 4218385117U);
-static refalrts::ExternalReference ref_Optm_Add("Opt-Add", 333308156U, 4218385117U);
-static refalrts::ExternalReference ref_Optm_Assign("Opt-Assign", 333308156U, 4218385117U);
-static refalrts::ExternalReference ref_Optm_Remove("Opt-Remove", 333308156U, 4218385117U);
-static refalrts::ExternalReference ref_ParseOptFlags("ParseOptFlags", 333308156U, 4218385117U);
-static refalrts::ExternalReference ref_ParseOptLetters("ParseOptLetters", 333308156U, 4218385117U);
+static refalrts::ExternalReference ref_Flagsm_Unique("Flags-Unique", 1960443052U, 1169432825U);
+static refalrts::ExternalReference ref_Optm_Add("Opt-Add", 1960443052U, 1169432825U);
+static refalrts::ExternalReference ref_Optm_Assign("Opt-Assign", 1960443052U, 1169432825U);
+static refalrts::ExternalReference ref_Optm_Remove("Opt-Remove", 1960443052U, 1169432825U);
+static refalrts::ExternalReference ref_ParseOptFlags("ParseOptFlags", 1960443052U, 1169432825U);
+static refalrts::ExternalReference ref_ParseOptLetters("ParseOptLetters", 1960443052U, 1169432825U);
 
 static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 66 elems
-  refalrts::Iter context[66];
-  refalrts::zeros( context, 66 );
+  // issue here memory for vars with 69 elems
+  refalrts::Iter context[69];
+  refalrts::zeros( context, 69 );
   // </0 & Config-Create/4 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -109,7 +111,7 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: [/0 Reuse: & Config/4 HalfReuse: (/1 } # CppCompiler/5 # NoCppCompilerExe/6 # NoCppCompilerLib/7 )/8 (/9 # Optimize/10 )/11 (/12 # ErrorFile/13 )/14 (/15 # DebugMode/16 # NoMarkupContext/17 # NoDebugInfo/18 )/19 (/20 # GrammarCheck/21 # NormalRun/22 )/23 (/24 # TargetFileName/25 # DefaultTargetFileName/26 )/27 (/28 # TargetMode/29 # DefaultEXE/30 )/31 (/32 # TargetSuffix/33 (/34".EXE"/35 )/37 (/38".DLL"/39 )/41 )/42 (/43 # Folders/44 )/45 (/46 # Prefix/47 )/48 (/49 # References/50 )/51 (/52 # Incorporateds/53 )/54 (/55 # ChmodXCommand/56 )/57 (/58 # Prelude/59 )/60 (/61 # Refal5Mode/62 # Extended/63 )/64 ]/65 Tile{ ]] }
+  //RESULT: Tile{ [[ HalfReuse: [/0 Reuse: & Config/4 HalfReuse: (/1 } # CppCompiler/5 # NoCppCompilerExe/6 # NoCppCompilerLib/7 )/8 (/9 # Optimize/10 )/11 (/12 # ErrorFile/13 )/14 (/15 # DebugMode/16 # NoMarkupContext/17 # NoDebugInfo/18 )/19 (/20 # GrammarCheck/21 # NormalRun/22 )/23 (/24 # TargetFileName/25 # DefaultTargetFileName/26 )/27 (/28 # TargetMode/29 # DefaultEXE/30 )/31 (/32 # TargetSuffix/33 (/34".EXE"/35 )/37 (/38".DLL"/39 )/41 )/42 (/43 # Folders/44 )/45 (/46 # Prefix/47 )/48 (/49 # References/50 )/51 (/52 # Incorporateds/53 )/54 (/55 # ChmodXCommand/56 )/57 (/58 # Prelude/59 )/60 (/61 # Refal5Mode/62 # Extended/63 )/64 (/65 # LogFile/66 )/67 ]/68 Tile{ ]] }
   if( ! refalrts::alloc_ident( context[5], ident_CppCompiler ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( context[6], ident_NoCppCompilerExe ) )
@@ -226,12 +228,19 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( context[64] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_adt( context[65] ) )
+  if( ! refalrts::alloc_open_bracket( context[65] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_ident( context[66], ident_LogFile ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[67] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_adt( context[68] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_adt( context[0] );
   refalrts::update_name( context[4], ref_Config.ref.function );
   refalrts::reinit_open_bracket( context[1] );
-  refalrts::link_brackets( context[0], context[65] );
+  refalrts::link_brackets( context[0], context[68] );
+  refalrts::link_brackets( context[65], context[67] );
   refalrts::link_brackets( context[61], context[64] );
   refalrts::link_brackets( context[58], context[60] );
   refalrts::link_brackets( context[55], context[57] );
@@ -252,7 +261,7 @@ static refalrts::FnResult func_Configm_Create(refalrts::Iter arg_begin, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[65] );
+  res = refalrts::splice_evar( res, context[5], context[68] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -985,14 +994,14 @@ static refalrts::FnResult func_Configm_GetOptResult(refalrts::Iter arg_begin, re
 static refalrts::NativeReference nat_ref_Configm_GetOptResult("Config-GetOptResult", 0U, 0U, func_Configm_GetOptResult);
 
 
-static refalrts::FnResult func_gen_Configm_SetOptFlags_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_Configm_SetOptFlags_B1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
   // issue here memory for vars with 28 elems
   refalrts::Iter context[28];
   refalrts::zeros( context, 28 );
   //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$ s.$
   //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) s.$ e.$ s.$
-  // </0 & Config-SetOptFlags\1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 s.idxTTT#0/17 e.idxTTTV#0/2 s.idxTTTVV#0/18 >/1
+  // </0 & Config-SetOptFlags:1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 s.idxTTT#0/17 e.idxTTTV#0/2 s.idxTTTVV#0/18 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1026,7 +1035,7 @@ static refalrts::FnResult func_gen_Configm_SetOptFlags_L1(refalrts::Iter arg_beg
   // closed e.idxTTTV#0 as range 2
   do {
     // ( e.idx ) ( e.idx ) ( e.idx ) # Success e.idx s.idx
-    // </0 & Config-SetOptFlags\1/4 (/7 e.Params-B#1/19 )/8 (/11 e.OldFlags#1/21 )/12 (/15 e.Params-E#1/23 )/16 # Success/17 e.NewFlags#2/25 s.FnChange#2/18 >/1
+    // </0 & Config-SetOptFlags:1/4 (/7 e.Params-B#1/19 )/8 (/11 e.OldFlags#1/21 )/12 (/15 e.Params-E#1/23 )/16 # Success/17 e.NewFlags#2/25 s.FnChange#2/18 >/1
     context[19] = context[5];
     context[20] = context[6];
     context[21] = context[9];
@@ -1082,7 +1091,7 @@ static refalrts::FnResult func_gen_Configm_SetOptFlags_L1(refalrts::Iter arg_beg
   refalrts::stop_sentence();
 
   // ( e.idx ) ( e.idx ) ( e.idx ) # Fails e.idx s.idx
-  // </0 & Config-SetOptFlags\1/4 (/7 e.Params-B#1/19 )/8 (/11 e.OldFlags#1/21 )/12 (/15 e.Params-E#1/23 )/16 # Fails/17 e.NotParsed#2/25 s.FnChange#2/18 >/1
+  // </0 & Config-SetOptFlags:1/4 (/7 e.Params-B#1/19 )/8 (/11 e.OldFlags#1/21 )/12 (/15 e.Params-E#1/23 )/16 # Fails/17 e.NotParsed#2/25 s.FnChange#2/18 >/1
   context[19] = context[5];
   context[20] = context[6];
   context[21] = context[9];
@@ -1116,14 +1125,14 @@ static refalrts::FnResult func_gen_Configm_SetOptFlags_L1(refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Configm_SetOptFlags_L1("Config-SetOptFlags\\1", 333308156U, 4218385117U, func_gen_Configm_SetOptFlags_L1);
+static refalrts::NativeReference nat_ref_gen_Configm_SetOptFlags_B1("Config-SetOptFlags:1", 1960443052U, 1169432825U, func_gen_Configm_SetOptFlags_B1);
 
 
 static refalrts::FnResult func_Configm_SetOptFlags(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 25 elems
-  refalrts::Iter context[25];
-  refalrts::zeros( context, 25 );
+  // issue here memory for vars with 24 elems
+  refalrts::Iter context[24];
+  refalrts::zeros( context, 24 );
   // </0 & Config-SetOptFlags/4 [/7Config/8 e.Params-B#1/10 (/16 # Optimize/18 e.OldFlags#1/14 )/17 e.Params-E#1/12 ]/9 e.NewFlags#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1160,46 +1169,41 @@ static refalrts::FnResult func_Configm_SetOptFlags(refalrts::Iter arg_begin, ref
     //DEBUG: e.Params-E#1: 12
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </19 & Fetch/20 </21 Tile{ HalfReuse: & ParseOptFlags/9 } Tile{ AsIs: e.NewFlags#1/2 } Tile{ HalfReuse: >/0 HalfReuse: [*]/4 HalfReuse: & Config-SetOptFlags\1/7 HalfReuse: (/8 AsIs: e.Params-B#1/10 HalfReuse: )/16 HalfReuse: (/18 AsIs: e.OldFlags#1/14 AsIs: )/17 } (/22 Tile{ AsIs: e.Params-E#1/12 } )/23 {*}/24 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[19] ) )
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 HalfReuse: & Config-SetOptFlags:1/7 HalfReuse: (/8 AsIs: e.Params-B#1/10 HalfReuse: )/16 HalfReuse: (/18 AsIs: e.OldFlags#1/14 AsIs: )/17 } (/19 Tile{ AsIs: e.Params-E#1/12 } )/20 {*}/21 </22 Tile{ HalfReuse: & ParseOptFlags/9 AsIs: e.NewFlags#1/2 AsIs: >/1 } >/23 Tile{ ]] }
+    if( ! refalrts::alloc_open_bracket( context[19] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[20], ref_Fetch.ref.function ) )
+    if( ! refalrts::alloc_close_bracket( context[20] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[21] ) )
+    if( ! refalrts::alloc_unwrapped_closure( context[21], context[4] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[22] ) )
+    if( ! refalrts::alloc_open_call( context[22] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[23] ) )
+    if( ! refalrts::alloc_close_call( context[23] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_unwrapped_closure( context[24], context[4] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_name( context[9], ref_ParseOptFlags.ref.function );
-    refalrts::reinit_close_call( context[0] );
     refalrts::reinit_closure_head( context[4] );
-    refalrts::reinit_name( context[7], ref_gen_Configm_SetOptFlags_L1.ref.function );
+    refalrts::reinit_name( context[7], ref_gen_Configm_SetOptFlags_B1.ref.function );
     refalrts::reinit_open_bracket( context[8] );
     refalrts::reinit_close_bracket( context[16] );
     refalrts::reinit_open_bracket( context[18] );
+    refalrts::reinit_name( context[9], ref_ParseOptFlags.ref.function );
+    refalrts::push_stack( context[23] );
+    refalrts::push_stack( context[0] );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[19] );
-    refalrts::link_brackets( context[22], context[23] );
+    refalrts::push_stack( context[22] );
+    refalrts::link_brackets( context[19], context[20] );
     refalrts::link_brackets( context[18], context[17] );
     refalrts::link_brackets( context[8], context[16] );
-    refalrts::push_stack( context[0] );
-    refalrts::push_stack( context[21] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[23], context[24] );
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[23], context[23] );
+    res = refalrts::splice_evar( res, context[9], context[1] );
+    res = refalrts::splice_evar( res, context[20], context[22] );
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[22], context[22] );
-    res = refalrts::splice_evar( res, context[0], context[17] );
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
-    res = refalrts::splice_evar( res, context[19], context[21] );
+    res = refalrts::splice_evar( res, context[19], context[19] );
     refalrts::use( res );
-    refalrts::wrap_closure( context[24] );
+    refalrts::wrap_closure( context[21] );
     return refalrts::cSuccess;
   } while ( refalrts::open_evar_advance( context[10], context[11], context[5], context[6] ) );
   return refalrts::cRecognitionImpossible;
@@ -1355,7 +1359,7 @@ static refalrts::FnResult func_ParseOptFlags(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseOptFlags("ParseOptFlags", 333308156U, 4218385117U, func_ParseOptFlags);
+static refalrts::NativeReference nat_ref_ParseOptFlags("ParseOptFlags", 1960443052U, 1169432825U, func_ParseOptFlags);
 
 
 static refalrts::FnResult func_ParseOptLetters(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1553,7 +1557,7 @@ static refalrts::FnResult func_ParseOptLetters(refalrts::Iter arg_begin, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseOptLetters("ParseOptLetters", 333308156U, 4218385117U, func_ParseOptLetters);
+static refalrts::NativeReference nat_ref_ParseOptLetters("ParseOptLetters", 1960443052U, 1169432825U, func_ParseOptLetters);
 
 
 static refalrts::FnResult func_Flagsm_Unique(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1625,7 +1629,7 @@ static refalrts::FnResult func_Flagsm_Unique(refalrts::Iter arg_begin, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Flagsm_Unique("Flags-Unique", 333308156U, 4218385117U, func_Flagsm_Unique);
+static refalrts::NativeReference nat_ref_Flagsm_Unique("Flags-Unique", 1960443052U, 1169432825U, func_Flagsm_Unique);
 
 
 static refalrts::FnResult func_Optm_Add(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1745,7 +1749,7 @@ static refalrts::FnResult func_Optm_Add(refalrts::Iter arg_begin, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Add("Opt-Add", 333308156U, 4218385117U, func_Optm_Add);
+static refalrts::NativeReference nat_ref_Optm_Add("Opt-Add", 1960443052U, 1169432825U, func_Optm_Add);
 
 
 static refalrts::FnResult func_Optm_Remove(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1864,7 +1868,7 @@ static refalrts::FnResult func_Optm_Remove(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Remove("Opt-Remove", 333308156U, 4218385117U, func_Optm_Remove);
+static refalrts::NativeReference nat_ref_Optm_Remove("Opt-Remove", 1960443052U, 1169432825U, func_Optm_Remove);
 
 
 static refalrts::FnResult func_Optm_Assign(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1900,7 +1904,7 @@ static refalrts::FnResult func_Optm_Assign(refalrts::Iter arg_begin, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Assign("Opt-Assign", 333308156U, 4218385117U, func_Optm_Assign);
+static refalrts::NativeReference nat_ref_Optm_Assign("Opt-Assign", 1960443052U, 1169432825U, func_Optm_Assign);
 
 
 static refalrts::FnResult func_Configm_GetErrorFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4124,6 +4128,123 @@ static refalrts::FnResult func_Configm_SetR5Mode(refalrts::Iter arg_begin, refal
 }
 
 static refalrts::NativeReference nat_ref_Configm_SetR5Mode("Config-SetR5Mode", 0U, 0U, func_Configm_SetR5Mode);
+
+
+static refalrts::FnResult func_Configm_GetLogFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & Config-GetLogFile/4 [/7Config/8 e.Params-B#1/10 (/16 # LogFile/18 e.LogFile#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::adt_left( context[5], context[6], ref_Config.ref.function, context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::adt_pointers(context[7], context[8], context[9]);
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  context[10] = 0;
+  context[11] = 0;
+  refalrts::start_e_loop();
+  do {
+    context[12] = context[5];
+    context[13] = context[6];
+    context[14] = 0;
+    context[15] = 0;
+    context[16] = refalrts::brackets_left( context[14], context[15], context[12], context[13] );
+    if( ! context[16] )
+      continue;
+    refalrts::bracket_pointers(context[16], context[17]);
+    context[18] = refalrts::ident_left(  ident_LogFile, context[14], context[15] );
+    if( ! context[18] )
+      continue;
+    // closed e.LogFile#1 as range 14
+    // closed e.Params-E#1 as range 12
+    //DEBUG: e.Params-B#1: 10
+    //DEBUG: e.LogFile#1: 14
+    //DEBUG: e.Params-E#1: 12
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & Config-GetLogFile/4 [/7Config/8 e.Params-B#1/10 (/16 # LogFile/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.LogFile#1/14 } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( refalrts::open_evar_advance( context[10], context[11], context[5], context[6] ) );
+  return refalrts::cRecognitionImpossible;
+}
+
+static refalrts::NativeReference nat_ref_Configm_GetLogFile("Config-GetLogFile", 0U, 0U, func_Configm_GetLogFile);
+
+
+static refalrts::FnResult func_Configm_SetLogFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 19 elems
+  refalrts::Iter context[19];
+  refalrts::zeros( context, 19 );
+  // </0 & Config-SetLogFile/4 [/7Config/8 e.Params-B#1/10 (/16 # LogFile/18 e.OldLogFile#1/14 )/17 e.Params-E#1/12 ]/9 e.NewLogFile#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::adt_left( context[5], context[6], ref_Config.ref.function, context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::adt_pointers(context[7], context[8], context[9]);
+  // closed e.NewLogFile#1 as range 2
+  context[10] = 0;
+  context[11] = 0;
+  refalrts::start_e_loop();
+  do {
+    context[12] = context[5];
+    context[13] = context[6];
+    context[14] = 0;
+    context[15] = 0;
+    context[16] = refalrts::brackets_left( context[14], context[15], context[12], context[13] );
+    if( ! context[16] )
+      continue;
+    refalrts::bracket_pointers(context[16], context[17]);
+    context[18] = refalrts::ident_left(  ident_LogFile, context[14], context[15] );
+    if( ! context[18] )
+      continue;
+    // closed e.OldLogFile#1 as range 14
+    // closed e.Params-E#1 as range 12
+    //DEBUG: e.NewLogFile#1: 2
+    //DEBUG: e.Params-B#1: 10
+    //DEBUG: e.OldLogFile#1: 14
+    //DEBUG: e.Params-E#1: 12
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldLogFile#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # LogFile/18 } Tile{ AsIs: e.NewLogFile#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    refalrts::reinit_ident( context[4], ident_Success );
+    refalrts::link_brackets( context[7], context[9] );
+    refalrts::link_brackets( context[16], context[17] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[17], context[9] );
+    res = refalrts::splice_evar( res, context[2], context[3] );
+    res = refalrts::splice_evar( res, context[4], context[18] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( refalrts::open_evar_advance( context[10], context[11], context[5], context[6] ) );
+  return refalrts::cRecognitionImpossible;
+}
+
+static refalrts::NativeReference nat_ref_Configm_SetLogFile("Config-SetLogFile", 0U, 0U, func_Configm_SetLogFile);
 
 
 //End of file

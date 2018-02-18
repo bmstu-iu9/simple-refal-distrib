@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2220305181_2413366995
+#define cookie_ns cookie_ns_2868726444_1644946798
 static const refalrts::RefalIdentifier ident_ADTm_Brackets = refalrts::ident_from_static("ADT-Brackets");
 static const refalrts::RefalIdentifier ident_Atom = refalrts::ident_from_static("Atom");
 static const refalrts::RefalIdentifier ident_Brackets = refalrts::ident_from_static("Brackets");
@@ -16,12 +16,53 @@ static const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_stati
 static const refalrts::RefalIdentifier ident_TkNumber = refalrts::ident_from_static("TkNumber");
 static const refalrts::RefalIdentifier ident_TkVariable = refalrts::ident_from_static("TkVariable");
 static refalrts::ExternalReference ref_CreateHardPattern("CreateHardPattern", 0U, 0U);
-static refalrts::ExternalReference ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2220305181U, 2413366995U);
+static refalrts::ExternalReference ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2868726444U, 1644946798U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_PreparePatternHardSent("PreparePatternHardSent", 2220305181U, 2413366995U);
-static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2220305181U, 2413366995U);
-static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2220305181U, 2413366995U);
+static refalrts::ExternalReference ref_PreparePatternHardSent("PreparePatternHardSent", 2868726444U, 1644946798U);
+static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2868726444U, 1644946798U);
+static refalrts::ExternalReference ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2868726444U, 1644946798U);
+
+static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  refalrts::this_is_generated_function();
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
+  // </0 & CreateHardPattern/4 e.pattern#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.pattern#1 as range 2
+  //DEBUG: e.pattern#1: 2
+
+  refalrts::reset_allocator();
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & CreateHardPattern-Aux/6 Tile{ AsIs: </0 Reuse: & PreparePatternHardSent/4 AsIs: e.pattern#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[5] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[6], ref_CreateHardPatternm_Aux.ref.function ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[7] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_PreparePatternHardSent.ref.function );
+  refalrts::push_stack( context[7] );
+  refalrts::push_stack( context[5] );
+  refalrts::push_stack( context[1] );
+  refalrts::push_stack( context[0] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_CreateHardPattern("CreateHardPattern", 0U, 0U, func_CreateHardPattern);
+
 
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -92,7 +133,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1S5L1(refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2220305181U, 2413366995U, func_gen_PreparePatternHardSent_L1S5L1);
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1S5L1("PreparePatternHardSent\\1$5\\1", 2868726444U, 1644946798U, func_gen_PreparePatternHardSent_L1S5L1);
 
 
 static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -335,7 +376,7 @@ static refalrts::FnResult func_gen_PreparePatternHardSent_L1(refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2220305181U, 2413366995U, func_gen_PreparePatternHardSent_L1);
+static refalrts::NativeReference nat_ref_gen_PreparePatternHardSent_L1("PreparePatternHardSent\\1", 2868726444U, 1644946798U, func_gen_PreparePatternHardSent_L1);
 
 
 static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -369,7 +410,7 @@ static refalrts::FnResult func_PreparePatternHardSent(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PreparePatternHardSent("PreparePatternHardSent", 2220305181U, 2413366995U, func_PreparePatternHardSent);
+static refalrts::NativeReference nat_ref_PreparePatternHardSent("PreparePatternHardSent", 2868726444U, 1644946798U, func_PreparePatternHardSent);
 
 
 static refalrts::FnResult func_CreateHardPatternm_Aux(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1118,48 +1159,7 @@ static refalrts::FnResult func_CreateHardPatternm_Aux(refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2220305181U, 2413366995U, func_CreateHardPatternm_Aux);
-
-
-static refalrts::FnResult func_CreateHardPattern(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
-  // issue here memory for vars with 8 elems
-  refalrts::Iter context[8];
-  refalrts::zeros( context, 8 );
-  // </0 & CreateHardPattern/4 e.pattern#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.pattern#1 as range 2
-  //DEBUG: e.pattern#1: 2
-
-  refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & CreateHardPattern-Aux/6 Tile{ AsIs: </0 Reuse: & PreparePatternHardSent/4 AsIs: e.pattern#1/2 AsIs: >/1 } >/7 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[5] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], ref_CreateHardPatternm_Aux.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[7] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_PreparePatternHardSent.ref.function );
-  refalrts::push_stack( context[7] );
-  refalrts::push_stack( context[5] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[7] );
-  res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_CreateHardPattern("CreateHardPattern", 0U, 0U, func_CreateHardPattern);
+static refalrts::NativeReference nat_ref_CreateHardPatternm_Aux("CreateHardPattern-Aux", 2868726444U, 1644946798U, func_CreateHardPatternm_Aux);
 
 
 //End of file

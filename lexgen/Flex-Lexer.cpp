@@ -70,6 +70,7 @@ static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
 static refalrts::ExternalReference ref_Name("Name", 405128457U, 1869093596U);
 static refalrts::ExternalReference ref_Number("Number", 405128457U, 1869093596U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 static refalrts::ExternalReference ref_ReadArrow("ReadArrow", 405128457U, 1869093596U);
 static refalrts::ExternalReference ref_ReadBody("ReadBody", 405128457U, 1869093596U);
 static refalrts::ExternalReference ref_ReadGroup("ReadGroup", 405128457U, 1869093596U);
@@ -78,7 +79,6 @@ static refalrts::ExternalReference ref_ReadRegexp("ReadRegexp", 405128457U, 1869
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
 static refalrts::ExternalReference ref_Root("Root", 405128457U, 1869093596U);
 static refalrts::ExternalReference ref_SecondPass("SecondPass", 405128457U, 1869093596U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_StartGroup("StartGroup", 405128457U, 1869093596U);
 
 static refalrts::FnResult func_Flexm_TextFromToken(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1145,10 +1145,10 @@ static refalrts::FnResult func_Flexm_Tokens(refalrts::Iter arg_begin, refalrts::
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.DescriptionLines#1/2 } </6 & Seq/7 (/8 & Map/9 & Flex-Tokens\1/10 )/11 & LowLevelTokens/12 (/13 & Map/14 & SecondPass/15 )/16 & Flex-Tokens\2/17 (/18 & MapReduce/19 & Flex-Tokens\3/20 </21 & Inc/22 Tile{ AsIs: s.FirstLineNumber#1/5 } >/23 )/24 & Flex-Tokens\4/25 >/26 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } Tile{ AsIs: e.DescriptionLines#1/2 } </6 & Pipe/7 (/8 & Map/9 & Flex-Tokens\1/10 )/11 & LowLevelTokens/12 (/13 & Map/14 & SecondPass/15 )/16 & Flex-Tokens\2/17 (/18 & MapReduce/19 & Flex-Tokens\3/20 </21 & Inc/22 Tile{ AsIs: s.FirstLineNumber#1/5 } >/23 )/24 & Flex-Tokens\4/25 >/26 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[6] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], ref_Seq.ref.function ) )
+  if( ! refalrts::alloc_name( context[7], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( context[8] ) )
     return refalrts::cNoMemory;

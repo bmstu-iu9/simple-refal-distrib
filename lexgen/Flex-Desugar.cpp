@@ -9,7 +9,7 @@ static refalrts::ExternalReference ref_Flexm_Desugar("Flex-Desugar", 0U, 0U);
 static refalrts::ExternalReference ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 200899581U, 2741309241U);
 static refalrts::ExternalReference ref_Passm_RemoveOpt("Pass-RemoveOpt", 200899581U, 2741309241U);
 static refalrts::ExternalReference ref_Passm_RemoveRange("Pass-RemoveRange", 200899581U, 2741309241U);
-static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
+static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 
 static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
@@ -27,8 +27,8 @@ static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts:
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Seq/5 & Pass-RemoveRange/6 & Pass-RemoveOpt/7 & Pass-RemoveOneMany/8 >/9 >/10 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Seq.ref.function ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Pipe/5 & Pass-RemoveRange/6 & Pass-RemoveOpt/7 & Pass-RemoveOneMany/8 >/9 >/10 Tile{ ]] }
+  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[6], ref_Passm_RemoveRange.ref.function ) )
     return refalrts::cNoMemory;
