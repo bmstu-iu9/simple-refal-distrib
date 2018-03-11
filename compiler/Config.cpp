@@ -15,7 +15,7 @@ static const refalrts::RefalIdentifier ident_DefaultEXE = refalrts::ident_from_s
 static const refalrts::RefalIdentifier ident_DefaultTargetFileName = refalrts::ident_from_static("DefaultTargetFileName");
 static const refalrts::RefalIdentifier ident_Disjoint = refalrts::ident_from_static("Disjoint");
 static const refalrts::RefalIdentifier ident_EXE = refalrts::ident_from_static("EXE");
-static const refalrts::RefalIdentifier ident_EmptyErrorFile = refalrts::ident_from_static("EmptyErrorFile");
+static const refalrts::RefalIdentifier ident_EmptyErrorFileName = refalrts::ident_from_static("EmptyErrorFileName");
 static const refalrts::RefalIdentifier ident_ErrorFile = refalrts::ident_from_static("ErrorFile");
 static const refalrts::RefalIdentifier ident_Extended = refalrts::ident_from_static("Extended");
 static const refalrts::RefalIdentifier ident_Fails = refalrts::ident_from_static("Fails");
@@ -2012,12 +2012,12 @@ static refalrts::NativeReference nat_ref_Configm_GetErrorFile("Config-GetErrorFi
 
 static refalrts::FnResult func_Configm_SetErrorFile(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 24 elems
-  refalrts::Iter context[24];
-  refalrts::zeros( context, 24 );
+  // issue here memory for vars with 23 elems
+  refalrts::Iter context[23];
+  refalrts::zeros( context, 23 );
   //FAST GEN: e.$
-  //GLOBAL GEN: [Config e.$ ] s.$ e.$
-  // </0 & Config-SetErrorFile/4 [/7Config/8 e.idxD#0/5 ]/9 s.idxt#0/10 e.idxtV#0/2 >/1
+  //GLOBAL GEN: [Config e.$ ] e.$
+  // </0 & Config-SetErrorFile/4 [/7Config/8 e.idxD#0/5 ]/9 e.idxt#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2030,131 +2030,76 @@ static refalrts::FnResult func_Configm_SetErrorFile(refalrts::Iter arg_begin, re
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
   // closed e.idxD#0 as range 5
-  if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.idxtV#0 as range 2
+  // closed e.idxt#0 as range 2
   do {
-    // [Config e.idx ] # NoErrorFile
-    // </0 & Config-SetErrorFile/4 [/7Config/8 e.Params-B#1/15 (/21 # ErrorFile/23 e.OldErrorFile#1/19 )/22 e.Params-E#1/17 ]/9 # NoErrorFile/10 >/1
-    context[11] = context[5];
-    context[12] = context[6];
-    context[13] = context[2];
-    context[14] = context[3];
-    if( ! refalrts::ident_term(  ident_NoErrorFile, context[10] ) )
+    // [Config e.idx ]
+    // </0 & Config-SetErrorFile/4 [/7Config/8 e.Params#1/10 ]/9 >/1
+    context[10] = context[5];
+    context[11] = context[6];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
-    if( ! refalrts::empty_seq( context[13], context[14] ) )
-      continue;
-    context[15] = 0;
-    context[16] = 0;
-    refalrts::start_e_loop();
-    do {
-      context[17] = context[11];
-      context[18] = context[12];
-      context[19] = 0;
-      context[20] = 0;
-      context[21] = refalrts::brackets_left( context[19], context[20], context[17], context[18] );
-      if( ! context[21] )
-        continue;
-      refalrts::bracket_pointers(context[21], context[22]);
-      context[23] = refalrts::ident_left(  ident_ErrorFile, context[19], context[20] );
-      if( ! context[23] )
-        continue;
-      // closed e.OldErrorFile#1 as range 19
-      // closed e.Params-E#1 as range 17
-      //DEBUG: e.Params-B#1: 15
-      //DEBUG: e.OldErrorFile#1: 19
-      //DEBUG: e.Params-E#1: 17
-
-      refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldErrorFile#1/19 {REMOVED TILE} # NoErrorFile/10 >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/15 AsIs: (/21 AsIs: # ErrorFile/23 } Tile{ AsIs: )/22 AsIs: e.Params-E#1/17 AsIs: ]/9 } Tile{ ]] }
-      refalrts::reinit_ident( context[4], ident_Success );
-      refalrts::link_brackets( context[7], context[9] );
-      refalrts::link_brackets( context[21], context[22] );
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[22], context[9] );
-      res = refalrts::splice_evar( res, context[4], context[23] );
-      refalrts::splice_to_freelist_open( trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( refalrts::open_evar_advance( context[15], context[16], context[11], context[12] ) );
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // [Config e.idx ] # ErrorFile
-    // </0 & Config-SetErrorFile/4 [/7Config/8 e.Params#1/11 ]/9 # ErrorFile/10 >/1
-    context[11] = context[5];
-    context[12] = context[6];
-    context[13] = context[2];
-    context[14] = context[3];
-    if( ! refalrts::ident_term(  ident_ErrorFile, context[10] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[13], context[14] ) )
-      continue;
-    // closed e.Params#1 as range 11
-    //DEBUG: e.Params#1: 11
+    // closed e.Params#1 as range 10
+    //DEBUG: e.Params#1: 10
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 & Config-SetErrorFile/4 [/7Config/8 e.Params#1/11 ]/9 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ Reuse: # Fails/10 HalfReuse: # EmptyErrorFile/1 ]] }
-    refalrts::update_ident( context[10], ident_Fails );
-    refalrts::reinit_ident( context[1], ident_EmptyErrorFile );
+    //TRASH: {REMOVED TILE} </0 & Config-SetErrorFile/4 [/7Config/8 e.Params#1/10 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/9 HalfReuse: # EmptyErrorFileName/1 ]] }
+    refalrts::reinit_ident( context[9], ident_Fails );
+    refalrts::reinit_ident( context[1], ident_EmptyErrorFileName );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[10];
+    refalrts::Iter res = context[9];
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // [Config e.idx ] # ErrorFile e.idx
-  // </0 & Config-SetErrorFile/4 [/7Config/8 e.Params-B#1/15 (/21 # ErrorFile/23 e.OldErrorFile#1/19 )/22 e.Params-E#1/17 ]/9 # ErrorFile/10 e.NewErrorFile#1/13 >/1
-  context[11] = context[5];
-  context[12] = context[6];
-  context[13] = context[2];
-  context[14] = context[3];
-  if( ! refalrts::ident_term(  ident_ErrorFile, context[10] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.NewErrorFile#1 as range 13
+  // [Config e.idx ] e.idx
+  // </0 & Config-SetErrorFile/4 [/7Config/8 e.Params-B#1/14 (/20 # ErrorFile/22 e.OldErrorFile#1/18 )/21 e.Params-E#1/16 ]/9 e.NewErrorFile#1/12 >/1
+  context[10] = context[5];
+  context[11] = context[6];
+  context[12] = context[2];
+  context[13] = context[3];
+  // closed e.NewErrorFile#1 as range 12
+  context[14] = 0;
   context[15] = 0;
-  context[16] = 0;
   refalrts::start_e_loop();
   do {
+    context[16] = context[10];
     context[17] = context[11];
-    context[18] = context[12];
+    context[18] = 0;
     context[19] = 0;
-    context[20] = 0;
-    context[21] = refalrts::brackets_left( context[19], context[20], context[17], context[18] );
-    if( ! context[21] )
+    context[20] = refalrts::brackets_left( context[18], context[19], context[16], context[17] );
+    if( ! context[20] )
       continue;
-    refalrts::bracket_pointers(context[21], context[22]);
-    context[23] = refalrts::ident_left(  ident_ErrorFile, context[19], context[20] );
-    if( ! context[23] )
+    refalrts::bracket_pointers(context[20], context[21]);
+    context[22] = refalrts::ident_left(  ident_ErrorFile, context[18], context[19] );
+    if( ! context[22] )
       continue;
-    // closed e.OldErrorFile#1 as range 19
-    // closed e.Params-E#1 as range 17
-    //DEBUG: e.NewErrorFile#1: 13
-    //DEBUG: e.Params-B#1: 15
-    //DEBUG: e.OldErrorFile#1: 19
-    //DEBUG: e.Params-E#1: 17
+    // closed e.OldErrorFile#1 as range 18
+    // closed e.Params-E#1 as range 16
+    //DEBUG: e.NewErrorFile#1: 12
+    //DEBUG: e.Params-B#1: 14
+    //DEBUG: e.OldErrorFile#1: 18
+    //DEBUG: e.Params-E#1: 16
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldErrorFile#1/19 {REMOVED TILE} # ErrorFile/10 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/15 AsIs: (/21 AsIs: # ErrorFile/23 } Tile{ AsIs: e.NewErrorFile#1/13 } Tile{ AsIs: )/22 AsIs: e.Params-E#1/17 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldErrorFile#1/18 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/14 AsIs: (/20 AsIs: # ErrorFile/22 } Tile{ AsIs: e.NewErrorFile#1/12 } Tile{ AsIs: )/21 AsIs: e.Params-E#1/16 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident( context[4], ident_Success );
     refalrts::link_brackets( context[7], context[9] );
-    refalrts::link_brackets( context[21], context[22] );
+    refalrts::link_brackets( context[20], context[21] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[22], context[9] );
-    res = refalrts::splice_evar( res, context[13], context[14] );
-    res = refalrts::splice_evar( res, context[4], context[23] );
+    res = refalrts::splice_evar( res, context[21], context[9] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[4], context[22] );
     refalrts::splice_to_freelist_open( trash_prev, res );
     return refalrts::cSuccess;
-  } while ( refalrts::open_evar_advance( context[15], context[16], context[11], context[12] ) );
+  } while ( refalrts::open_evar_advance( context[14], context[15], context[10], context[11] ) );
   return refalrts::cRecognitionImpossible;
 }
 
