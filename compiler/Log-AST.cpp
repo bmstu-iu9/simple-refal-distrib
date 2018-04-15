@@ -27,8 +27,8 @@ static const refalrts::RefalIdentifier ident_GNm_Entry = refalrts::ident_from_st
 static const refalrts::RefalIdentifier ident_GNm_Local = refalrts::ident_from_static("GN-Local");
 static const refalrts::RefalIdentifier ident_Ident = refalrts::ident_from_static("Ident");
 static const refalrts::RefalIdentifier ident_NEXT = refalrts::ident_from_static("NEXT");
-static const refalrts::RefalIdentifier ident_Native = refalrts::ident_from_static("Native");
 static const refalrts::RefalIdentifier ident_NativeBlock = refalrts::ident_from_static("NativeBlock");
+static const refalrts::RefalIdentifier ident_NativeBody = refalrts::ident_from_static("NativeBody");
 static const refalrts::RefalIdentifier ident_Sentences = refalrts::ident_from_static("Sentences");
 static const refalrts::RefalIdentifier ident_Swap = refalrts::ident_from_static("Swap");
 static const refalrts::RefalIdentifier ident_TkName = refalrts::ident_from_static("TkName");
@@ -1602,13 +1602,13 @@ static refalrts::FnResult func_Function(refalrts::Iter arg_begin, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) s.idx # Native t.idx e.idx
-  // </0 & Function/4 (/7 e.Name#1/11 )/8 s.Scope#1/9 # Native/10 t.SrcPos#1/15 e.NativeBody#1/13 >/1
+  // ( e.idx ) s.idx # NativeBody t.idx e.idx
+  // </0 & Function/4 (/7 e.Name#1/11 )/8 s.Scope#1/9 # NativeBody/10 t.SrcPos#1/15 e.NativeBody#1/13 >/1
   context[11] = context[5];
   context[12] = context[6];
   context[13] = context[2];
   context[14] = context[3];
-  if( ! refalrts::ident_term(  ident_Native, context[10] ) )
+  if( ! refalrts::ident_term(  ident_NativeBody, context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Name#1 as range 11
   context[16] = refalrts::tvar_left( context[15], context[13], context[14] );

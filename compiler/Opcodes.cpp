@@ -32,6 +32,7 @@ static const refalrts::RefalIdentifier ident_CmdInitB0m_Lite = refalrts::ident_f
 static const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
 static const refalrts::RefalIdentifier ident_CmdLinkBrackets = refalrts::ident_from_static("CmdLinkBrackets");
 static const refalrts::RefalIdentifier ident_CmdLoadConstants = refalrts::ident_from_static("CmdLoadConstants");
+static const refalrts::RefalIdentifier ident_CmdMainLoopReturnSuccess = refalrts::ident_from_static("CmdMainLoopReturnSuccess");
 static const refalrts::RefalIdentifier ident_CmdName = refalrts::ident_from_static("CmdName");
 static const refalrts::RefalIdentifier ident_CmdNameSave = refalrts::ident_from_static("CmdNameSave");
 static const refalrts::RefalIdentifier ident_CmdNextStep = refalrts::ident_from_static("CmdNextStep");
@@ -40,9 +41,11 @@ static const refalrts::RefalIdentifier ident_CmdNumber = refalrts::ident_from_st
 static const refalrts::RefalIdentifier ident_CmdNumberSave = refalrts::ident_from_static("CmdNumberSave");
 static const refalrts::RefalIdentifier ident_CmdOnFailGoTo = refalrts::ident_from_static("CmdOnFailGoTo");
 static const refalrts::RefalIdentifier ident_CmdPerformNative = refalrts::ident_from_static("CmdPerformNative");
+static const refalrts::RefalIdentifier ident_CmdPopState = refalrts::ident_from_static("CmdPopState");
 static const refalrts::RefalIdentifier ident_CmdProfileFunction = refalrts::ident_from_static("CmdProfileFunction");
 static const refalrts::RefalIdentifier ident_CmdProfilerStopSentence = refalrts::ident_from_static("CmdProfilerStopSentence");
 static const refalrts::RefalIdentifier ident_CmdPushStack = refalrts::ident_from_static("CmdPushStack");
+static const refalrts::RefalIdentifier ident_CmdPushState = refalrts::ident_from_static("CmdPushState");
 static const refalrts::RefalIdentifier ident_CmdReinitSVar = refalrts::ident_from_static("CmdReinitSVar");
 static const refalrts::RefalIdentifier ident_CmdRepeated = refalrts::ident_from_static("CmdRepeated");
 static const refalrts::RefalIdentifier ident_CmdRepeatedSave = refalrts::ident_from_static("CmdRepeatedSave");
@@ -59,6 +62,7 @@ static const refalrts::RefalIdentifier ident_CmdSpliceRange = refalrts::ident_fr
 static const refalrts::RefalIdentifier ident_CmdSpliceSTVar = refalrts::ident_from_static("CmdSpliceSTVar");
 static const refalrts::RefalIdentifier ident_CmdSpliceTile = refalrts::ident_from_static("CmdSpliceTile");
 static const refalrts::RefalIdentifier ident_CmdSpliceToFreeList = refalrts::ident_from_static("CmdSpliceToFreeList");
+static const refalrts::RefalIdentifier ident_CmdSpliceToFreeListm_Range = refalrts::ident_from_static("CmdSpliceToFreeList-Range");
 static const refalrts::RefalIdentifier ident_CmdSwapSave = refalrts::ident_from_static("CmdSwapSave");
 static const refalrts::RefalIdentifier ident_CmdTrash = refalrts::ident_from_static("CmdTrash");
 static const refalrts::RefalIdentifier ident_CmdTrashLeftEdge = refalrts::ident_from_static("CmdTrashLeftEdge");
@@ -66,6 +70,8 @@ static const refalrts::RefalIdentifier ident_CmdVar = refalrts::ident_from_stati
 static const refalrts::RefalIdentifier ident_CmdVarSave = refalrts::ident_from_static("CmdVarSave");
 static const refalrts::RefalIdentifier ident_CmdVariableDebugOffset = refalrts::ident_from_static("CmdVariableDebugOffset");
 static const refalrts::RefalIdentifier ident_CmdWrapClosure = refalrts::ident_from_static("CmdWrapClosure");
+static const refalrts::RefalIdentifier ident_ConditionNative = refalrts::ident_from_static("ConditionNative");
+static const refalrts::RefalIdentifier ident_ConditionRasl = refalrts::ident_from_static("ConditionRasl");
 static const refalrts::RefalIdentifier ident_ConstTable = refalrts::ident_from_static("ConstTable");
 static const refalrts::RefalIdentifier ident_ElBracket = refalrts::ident_from_static("ElBracket");
 static const refalrts::RefalIdentifier ident_ElChar = refalrts::ident_from_static("ElChar");
@@ -2897,19 +2903,107 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::Iter arg_begin, refalr
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // # CmdVariableDebugOffset
-  // </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 >/1
+  do {
+    // # CmdVariableDebugOffset
+    // </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_CmdVariableDebugOffset, context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 112/1 ]] }
+    refalrts::reinit_number( context[1], 112UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # CmdSpliceToFreeList-Range
+    // </0 & NumberFromOpcode/4 # CmdSpliceToFreeList-Range/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_CmdSpliceToFreeListm_Range, context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceToFreeList-Range/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 115/1 ]] }
+    refalrts::reinit_number( context[1], 115UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # CmdPushState
+    // </0 & NumberFromOpcode/4 # CmdPushState/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_CmdPushState, context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPushState/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 116/1 ]] }
+    refalrts::reinit_number( context[1], 116UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # CmdPopState
+    // </0 & NumberFromOpcode/4 # CmdPopState/5 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term(  ident_CmdPopState, context[5] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[6], context[7] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPopState/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 117/1 ]] }
+    refalrts::reinit_number( context[1], 117UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # CmdMainLoopReturnSuccess
+  // </0 & NumberFromOpcode/4 # CmdMainLoopReturnSuccess/5 >/1
   context[6] = context[2];
   context[7] = context[3];
-  if( ! refalrts::ident_term(  ident_CmdVariableDebugOffset, context[5] ) )
+  if( ! refalrts::ident_term(  ident_CmdMainLoopReturnSuccess, context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[6], context[7] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: 112/1 ]] }
-  refalrts::reinit_number( context[1], 112UL );
+  //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdMainLoopReturnSuccess/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: 118/1 ]] }
+  refalrts::reinit_number( context[1], 118UL );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -3171,15 +3265,51 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::Iter arg_begin, refalrt
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // # Reference
-  // </0 & BlockTypeNumber/4 # Reference/5 >/1
-  if( ! refalrts::ident_term(  ident_Reference, context[5] ) )
+  do {
+    // # Reference
+    // </0 & BlockTypeNumber/4 # Reference/5 >/1
+    if( ! refalrts::ident_term(  ident_Reference, context[5] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Reference/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 7/1 ]] }
+    refalrts::reinit_number( context[1], 7UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # ConditionRasl
+    // </0 & BlockTypeNumber/4 # ConditionRasl/5 >/1
+    if( ! refalrts::ident_term(  ident_ConditionRasl, context[5] ) )
+      continue;
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # ConditionRasl/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 8/1 ]] }
+    refalrts::reinit_number( context[1], 8UL );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  // # ConditionNative
+  // </0 & BlockTypeNumber/4 # ConditionNative/5 >/1
+  if( ! refalrts::ident_term(  ident_ConditionNative, context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Reference/5 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: 7/1 ]] }
-  refalrts::reinit_number( context[1], 7UL );
+  //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # ConditionNative/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: 9/1 ]] }
+  refalrts::reinit_number( context[1], 9UL );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];

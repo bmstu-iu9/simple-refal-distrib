@@ -8,6 +8,8 @@ static const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_stat
 static const refalrts::RefalIdentifier ident_CmdADT = refalrts::ident_from_static("CmdADT");
 static const refalrts::RefalIdentifier ident_CmdADTSave = refalrts::ident_from_static("CmdADTSave");
 static const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+static const refalrts::RefalIdentifier ident_CmdConditionFuncm_ToNative = refalrts::ident_from_static("CmdConditionFunc-ToNative");
+static const refalrts::RefalIdentifier ident_CmdConditionFuncm_ToRASL = refalrts::ident_from_static("CmdConditionFunc-ToRASL");
 static const refalrts::RefalIdentifier ident_CmdCookieNS = refalrts::ident_from_static("CmdCookieNS");
 static const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
 static const refalrts::RefalIdentifier ident_CmdDeclaration = refalrts::ident_from_static("CmdDeclaration");
@@ -671,6 +673,88 @@ static refalrts::FnResult func_SetCookies(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
+    // s.idx s.idx ( # CmdConditionFunc-ToRASL s.idx e.idx )
+    // </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # CmdConditionFunc-ToRASL/11 s.ScopeClass#1/14 e.Name#1/12 )/8 >/1
+    context[12] = context[5];
+    context[13] = context[6];
+    if( ! refalrts::ident_term(  ident_CmdConditionFuncm_ToRASL, context[11] ) )
+      continue;
+    if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
+      continue;
+    // closed e.Name#1 as range 12
+    //DEBUG: s.Hash1#1: 9
+    //DEBUG: s.Hash2#1: 10
+    //DEBUG: s.ScopeClass#1: 14
+    //DEBUG: e.Name#1: 12
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} s.Hash1#1/9 s.Hash2#1/10 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdConditionFunc-ToRASL/4 } Tile{ HalfReuse: </7 HalfReuse: & MingleName/11 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/12 HalfReuse: s.Hash11 #9/8 HalfReuse: s.Hash21 #10/1 } >/15 )/16 Tile{ ]] }
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_CmdConditionFuncm_ToRASL );
+    refalrts::reinit_open_call( context[7] );
+    refalrts::reinit_name( context[11], ref_MingleName.ref.function );
+    refalrts::reinit_svar( context[8], context[9] );
+    refalrts::reinit_svar( context[1], context[10] );
+    refalrts::link_brackets( context[0], context[16] );
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[7], context[1] );
+    refalrts::splice_to_freelist_open( context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // s.idx s.idx ( # CmdConditionFunc-ToNative s.idx e.idx )
+    // </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # CmdConditionFunc-ToNative/11 s.ScopeClass#1/14 e.Name#1/12 )/8 >/1
+    context[12] = context[5];
+    context[13] = context[6];
+    if( ! refalrts::ident_term(  ident_CmdConditionFuncm_ToNative, context[11] ) )
+      continue;
+    if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
+      continue;
+    // closed e.Name#1 as range 12
+    //DEBUG: s.Hash1#1: 9
+    //DEBUG: s.Hash2#1: 10
+    //DEBUG: s.ScopeClass#1: 14
+    //DEBUG: e.Name#1: 12
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} s.Hash1#1/9 s.Hash2#1/10 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # CmdConditionFunc-ToNative/4 } Tile{ HalfReuse: </7 HalfReuse: & MingleName/11 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/12 HalfReuse: s.Hash11 #9/8 HalfReuse: s.Hash21 #10/1 } >/15 )/16 Tile{ ]] }
+    if( ! refalrts::alloc_close_call( context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_bracket( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_ident( context[4], ident_CmdConditionFuncm_ToNative );
+    refalrts::reinit_open_call( context[7] );
+    refalrts::reinit_name( context[11], ref_MingleName.ref.function );
+    refalrts::reinit_svar( context[8], context[9] );
+    refalrts::reinit_svar( context[1], context[10] );
+    refalrts::link_brackets( context[0], context[16] );
+    refalrts::push_stack( context[15] );
+    refalrts::push_stack( context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[7], context[1] );
+    refalrts::splice_to_freelist_open( context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
     // s.idx s.idx ( # CmdDeclaration s.idx e.idx )
     // </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # CmdDeclaration/11 s.ScopeClass#1/14 e.Name#1/12 )/8 >/1
     context[12] = context[5];
@@ -1054,6 +1138,68 @@ static refalrts::FnResult func_ClassifyItemsm_Native(refalrts::Iter arg_begin, r
     context[16] = context[9];
     context[17] = context[10];
     if( ! refalrts::ident_term(  ident_CmdSwap, context[13] ) )
+      continue;
+    // closed e.Declarations#1 as range 14
+    // closed e.Name#1 as range 16
+    //DEBUG: e.Declarations#1: 14
+    //DEBUG: e.Name#1: 16
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} & ClassifyItems-Native/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Declarations#1/14 } Tile{ AsIs: (/11 Reuse: # CmdExtern/13 AsIs: e.Name#1/16 AsIs: )/12 HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::update_ident( context[13], ident_CmdExtern );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[11];
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    refalrts::splice_to_freelist_open( context[0], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdConditionFunc-ToRASL e.idx )
+    // </0 & ClassifyItems-Native/4 (/7 e.Declarations#1/14 )/8 (/11 # CmdConditionFunc-ToRASL/13 e.Name#1/16 )/12 >/1
+    context[14] = context[5];
+    context[15] = context[6];
+    context[16] = context[9];
+    context[17] = context[10];
+    if( ! refalrts::ident_term(  ident_CmdConditionFuncm_ToRASL, context[13] ) )
+      continue;
+    // closed e.Declarations#1 as range 14
+    // closed e.Name#1 as range 16
+    //DEBUG: e.Declarations#1: 14
+    //DEBUG: e.Name#1: 16
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} & ClassifyItems-Native/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Declarations#1/14 } Tile{ AsIs: (/11 Reuse: # CmdExtern/13 AsIs: e.Name#1/16 AsIs: )/12 HalfReuse: )/1 ]] }
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::update_ident( context[13], ident_CmdExtern );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[0], context[1] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[11];
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    refalrts::splice_to_freelist_open( context[0], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( e.idx ) ( # CmdConditionFunc-ToNative e.idx )
+    // </0 & ClassifyItems-Native/4 (/7 e.Declarations#1/14 )/8 (/11 # CmdConditionFunc-ToNative/13 e.Name#1/16 )/12 >/1
+    context[14] = context[5];
+    context[15] = context[6];
+    context[16] = context[9];
+    context[17] = context[10];
+    if( ! refalrts::ident_term(  ident_CmdConditionFuncm_ToNative, context[13] ) )
       continue;
     // closed e.Declarations#1 as range 14
     // closed e.Name#1 as range 16

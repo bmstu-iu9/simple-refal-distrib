@@ -5,6 +5,9 @@
 
 #define cookie_ns cookie_ns_3079895392_1396489177
 static const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
+static const refalrts::RefalIdentifier ident_CmdConditionFunc = refalrts::ident_from_static("CmdConditionFunc");
+static const refalrts::RefalIdentifier ident_CmdConditionFuncm_ToNative = refalrts::ident_from_static("CmdConditionFunc-ToNative");
+static const refalrts::RefalIdentifier ident_CmdConditionFuncm_ToRASL = refalrts::ident_from_static("CmdConditionFunc-ToRASL");
 static const refalrts::RefalIdentifier ident_CmdCreateElem = refalrts::ident_from_static("CmdCreateElem");
 static const refalrts::RefalIdentifier ident_CmdDeclaration = refalrts::ident_from_static("CmdDeclaration");
 static const refalrts::RefalIdentifier ident_CmdDefineIdent = refalrts::ident_from_static("CmdDefineIdent");
@@ -617,6 +620,48 @@ static refalrts::FnResult func_CalcDigest(refalrts::Iter arg_begin, refalrts::It
     if (! refalrts::copy_evar(context[20], context[21], context[16], context[17]))
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_char( context[22], 'S' ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_open_bracket( context[0] );
+    refalrts::reinit_open_call( context[4] );
+    refalrts::reinit_name( context[7], ref_HashFuncName.ref.function );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[0], context[8] );
+    refalrts::push_stack( context[1] );
+    refalrts::push_stack( context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[8], context[12] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[19], context[22] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // ( s.idx s.idx ) ( # CmdConditionFunc s.idx e.idx )
+    // </0 & CalcDigest/4 (/7 s.Hash1#1/13 s.Hash2#1/14 )/8 (/11 # CmdConditionFunc/15 s.ScopeClass#1/18 e.Name#1/16 )/12 >/1
+    context[16] = context[9];
+    context[17] = context[10];
+    if( ! refalrts::ident_term(  ident_CmdConditionFunc, context[15] ) )
+      continue;
+    if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
+      continue;
+    // closed e.Name#1 as range 16
+    //DEBUG: s.Hash1#1: 13
+    //DEBUG: s.Hash2#1: 14
+    //DEBUG: s.ScopeClass#1: 18
+    //DEBUG: e.Name#1: 16
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & HashFuncName/7 AsIs: s.Hash1#1/13 AsIs: s.Hash2#1/14 } s.ScopeClass#1/18/19 e.Name#1/16/20 'C'/22 Tile{ AsIs: >/1 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # CmdConditionFunc/15 AsIs: s.ScopeClass#1/18 AsIs: e.Name#1/16 AsIs: )/12 } Tile{ ]] }
+    if (! refalrts::copy_stvar(context[19], context[18]))
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_evar(context[20], context[21], context[16], context[17]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_char( context[22], 'C' ) )
       return refalrts::cNoMemory;
     refalrts::reinit_open_bracket( context[0] );
     refalrts::reinit_open_call( context[4] );
@@ -1425,6 +1470,64 @@ static refalrts::FnResult func_MarkFunctionGenMode(refalrts::Iter arg_begin, ref
     refalrts::update_ident( context[10], ident_Functionm_ToNative );
     refalrts::link_brackets( context[7], context[8] );
     refalrts::link_brackets( context[16], context[17] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # OnlyInterpret ( # CmdConditionFunc s.idx e.idx )
+    // </0 & MarkFunctionGenMode/4 # OnlyInterpret/9 (/7 # CmdConditionFunc/10 s.ScopeClass#1/13 e.Name#1/11 )/8 >/1
+    context[11] = context[5];
+    context[12] = context[6];
+    if( ! refalrts::ident_term(  ident_OnlyInterpret, context[9] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_CmdConditionFunc, context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
+      continue;
+    // closed e.Name#1 as range 11
+    //DEBUG: s.ScopeClass#1: 13
+    //DEBUG: e.Name#1: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & MarkFunctionGenMode/4 # OnlyInterpret/9 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdConditionFunc-ToRASL/10 AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/11 AsIs: )/8 } Tile{ ]] }
+    refalrts::update_ident( context[10], ident_CmdConditionFuncm_ToRASL );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::splice_to_freelist_open( trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // # OnlyDirect ( # CmdConditionFunc s.idx e.idx )
+    // </0 & MarkFunctionGenMode/4 # OnlyDirect/9 (/7 # CmdConditionFunc/10 s.ScopeClass#1/13 e.Name#1/11 )/8 >/1
+    context[11] = context[5];
+    context[12] = context[6];
+    if( ! refalrts::ident_term(  ident_OnlyDirect, context[9] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_CmdConditionFunc, context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
+      continue;
+    // closed e.Name#1 as range 11
+    //DEBUG: s.ScopeClass#1: 13
+    //DEBUG: e.Name#1: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} </0 & MarkFunctionGenMode/4 # OnlyDirect/9 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdConditionFunc-ToNative/10 AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/11 AsIs: )/8 } Tile{ ]] }
+    refalrts::update_ident( context[10], ident_CmdConditionFuncm_ToNative );
+    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;

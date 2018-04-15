@@ -6,6 +6,7 @@
 #define cookie_ns cookie_ns_2188486219_963143225
 static const refalrts::RefalIdentifier ident_AlgLeft = refalrts::ident_from_static("AlgLeft");
 static const refalrts::RefalIdentifier ident_CmdComment = refalrts::ident_from_static("CmdComment");
+static const refalrts::RefalIdentifier ident_CmdConditionFunc = refalrts::ident_from_static("CmdConditionFunc");
 static const refalrts::RefalIdentifier ident_CmdDeclaration = refalrts::ident_from_static("CmdDeclaration");
 static const refalrts::RefalIdentifier ident_CmdDefineIdent = refalrts::ident_from_static("CmdDefineIdent");
 static const refalrts::RefalIdentifier ident_CmdEmitNativeCode = refalrts::ident_from_static("CmdEmitNativeCode");
@@ -1257,6 +1258,45 @@ static refalrts::FnResult func_PutProgramElement(refalrts::Iter arg_begin, refal
     //TRASH: {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & Putout/4 AsIs: s.FileHandle#1/9 HalfReuse: </7 HalfReuse: & FnName/10 AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/11 HalfReuse: >/8 HalfReuse: ' '/1 }":: swap"/14 >/16 Tile{ ]] }
     if( ! refalrts::alloc_chars( context[14], context[15], ":: swap", 7 ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::update_name( context[4], ref_Putout.ref.function );
+    refalrts::reinit_open_call( context[7] );
+    refalrts::reinit_name( context[10], ref_FnName.ref.function );
+    refalrts::reinit_close_call( context[8] );
+    refalrts::reinit_char( context[1], ' ' );
+    refalrts::push_stack( context[16] );
+    refalrts::push_stack( context[0] );
+    refalrts::push_stack( context[8] );
+    refalrts::push_stack( context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[14], context[16] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence();
+
+  do {
+    // s.idx ( # CmdConditionFunc s.idx e.idx )
+    // </0 & PutProgramElement/4 s.FileHandle#1/9 (/7 # CmdConditionFunc/10 s.ScopeClass#1/13 e.Name#1/11 )/8 >/1
+    context[11] = context[5];
+    context[12] = context[6];
+    if( ! refalrts::ident_term(  ident_CmdConditionFunc, context[10] ) )
+      continue;
+    if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
+      continue;
+    // closed e.Name#1 as range 11
+    //DEBUG: s.FileHandle#1: 9
+    //DEBUG: s.ScopeClass#1: 13
+    //DEBUG: e.Name#1: 11
+
+    refalrts::reset_allocator();
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Putout/4 AsIs: s.FileHandle#1/9 HalfReuse: </7 HalfReuse: & FnName/10 AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/11 HalfReuse: >/8 HalfReuse: ' '/1 }":: condition"/14 >/16 Tile{ ]] }
+    if( ! refalrts::alloc_chars( context[14], context[15], ":: condition", 12 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( context[16] ) )
       return refalrts::cNoMemory;

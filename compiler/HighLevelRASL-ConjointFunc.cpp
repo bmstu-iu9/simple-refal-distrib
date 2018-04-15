@@ -312,10 +312,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 28 elems
-  refalrts::Iter context[28];
-  refalrts::zeros( context, 28 );
-  // </0 & HighLevelRASL-Function-Conjoint=6\1=2/4 s.MaxMemory#7/5 (/8 e.HardGenComment#7/6 )/9 s.FnGenResult#1/10 (/13 e.Result#7/11 )/14 s.FnGenSubst#1/15 s.ContextSize#9/16 (/19 e.CmdSaves#9/17 )/20 e.SubstitutesAnsJunks#9/2 >/1
+  // issue here memory for vars with 34 elems
+  refalrts::Iter context[34];
+  refalrts::zeros( context, 34 );
+  // </0 & HighLevelRASL-Function-Conjoint=6\1=2/4 s.MaxMemory#7/5 (/8 e.HardGenComment#7/6 )/9 s.FnGenResult#1/10 (/13 e.Conditions#7/11 )/14 (/17 e.Result#7/15 )/18 s.FnGenSubst#1/19 s.ContextSize#9/20 (/23 e.CmdSaves#9/21 )/24 e.SubstitutesAnsJunks#9/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -338,70 +338,87 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A2(refa
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[13], context[14]);
-  // closed e.Result#7 as range 11
-  if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
+  context[15] = 0;
+  context[16] = 0;
+  context[17] = refalrts::brackets_left( context[15], context[16], context[2], context[3] );
+  if( ! context[17] )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[16], context[2], context[3] ) )
+  refalrts::bracket_pointers(context[17], context[18]);
+  // closed e.Conditions#7 as range 11
+  // closed e.Result#7 as range 15
+  if( ! refalrts::svar_left( context[19], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  context[17] = 0;
-  context[18] = 0;
-  context[19] = refalrts::brackets_left( context[17], context[18], context[2], context[3] );
-  if( ! context[19] )
+  if( ! refalrts::svar_left( context[20], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[19], context[20]);
-  // closed e.CmdSaves#9 as range 17
+  context[21] = 0;
+  context[22] = 0;
+  context[23] = refalrts::brackets_left( context[21], context[22], context[2], context[3] );
+  if( ! context[23] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[23], context[24]);
+  // closed e.CmdSaves#9 as range 21
   // closed e.SubstitutesAnsJunks#9 as range 2
   //DEBUG: s.MaxMemory#7: 5
   //DEBUG: e.HardGenComment#7: 6
   //DEBUG: s.FnGenResult#1: 10
-  //DEBUG: e.Result#7: 11
-  //DEBUG: s.FnGenSubst#1: 15
-  //DEBUG: s.ContextSize#9: 16
-  //DEBUG: e.CmdSaves#9: 17
+  //DEBUG: e.Conditions#7: 11
+  //DEBUG: e.Result#7: 15
+  //DEBUG: s.FnGenSubst#1: 19
+  //DEBUG: s.ContextSize#9: 20
+  //DEBUG: e.CmdSaves#9: 21
   //DEBUG: e.SubstitutesAnsJunks#9: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </21 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=6\1=3/4 AsIs: s.MaxMemory#7/5 AsIs: (/8 AsIs: e.HardGenComment#7/6 AsIs: )/9 } {*}/22 </23 & GenResult/24 Tile{ AsIs: s.FnGenResult#1/10 AsIs: (/13 AsIs: e.Result#7/11 AsIs: )/14 } </25 Tile{ AsIs: s.FnGenSubst#1/15 AsIs: s.ContextSize#9/16 } Tile{ AsIs: e.SubstitutesAnsJunks#9/2 } Tile{ AsIs: (/19 AsIs: e.CmdSaves#9/17 AsIs: )/20 } >/26 >/27 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[21] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[22], context[0] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[23] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[24], ref_GenResult.ref.function ) )
-    return refalrts::cNoMemory;
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </25 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=6\1=3/4 AsIs: s.MaxMemory#7/5 AsIs: (/8 } Tile{ AsIs: e.HardGenComment#7/6 } )/26 {*}/27 </28 Tile{ HalfReuse: & GenResult/9 AsIs: s.FnGenResult#1/10 AsIs: (/13 AsIs: e.Conditions#7/11 AsIs: )/14 AsIs: (/17 AsIs: e.Result#7/15 AsIs: )/18 } </29 Tile{ AsIs: s.FnGenSubst#1/19 AsIs: s.ContextSize#9/20 } Tile{ AsIs: e.SubstitutesAnsJunks#9/2 } (/30 )/31 Tile{ AsIs: (/23 AsIs: e.CmdSaves#9/21 AsIs: )/24 } >/32 >/33 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_call( context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[26] ) )
+  if( ! refalrts::alloc_close_bracket( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[27] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[27], context[0] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[28] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[29] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_bracket( context[30] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_bracket( context[31] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[32] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[33] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A3.ref.function );
+  refalrts::reinit_name( context[9], ref_GenResult.ref.function );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[21] );
-  refalrts::push_stack( context[27] );
-  refalrts::push_stack( context[23] );
-  refalrts::push_stack( context[26] );
   refalrts::push_stack( context[25] );
-  refalrts::link_brackets( context[19], context[20] );
+  refalrts::push_stack( context[33] );
+  refalrts::push_stack( context[28] );
+  refalrts::push_stack( context[32] );
+  refalrts::push_stack( context[29] );
+  refalrts::link_brackets( context[23], context[24] );
+  refalrts::link_brackets( context[30], context[31] );
+  refalrts::link_brackets( context[17], context[18] );
   refalrts::link_brackets( context[13], context[14] );
-  refalrts::link_brackets( context[8], context[9] );
+  refalrts::link_brackets( context[8], context[26] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[26], context[27] );
-  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[32], context[33] );
+  res = refalrts::splice_evar( res, context[23], context[24] );
+  res = refalrts::splice_evar( res, context[30], context[31] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[15], context[16] );
+  res = refalrts::splice_evar( res, context[19], context[20] );
+  res = refalrts::splice_evar( res, context[29], context[29] );
+  res = refalrts::splice_evar( res, context[9], context[18] );
+  res = refalrts::splice_evar( res, context[26], context[28] );
+  res = refalrts::splice_evar( res, context[6], context[7] );
+  res = refalrts::splice_evar( res, context[0], context[8] );
   res = refalrts::splice_evar( res, context[25], context[25] );
-  res = refalrts::splice_evar( res, context[10], context[14] );
-  res = refalrts::splice_evar( res, context[22], context[24] );
-  res = refalrts::splice_evar( res, context[0], context[9] );
-  res = refalrts::splice_evar( res, context[21], context[21] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[22] );
+  refalrts::wrap_closure( context[27] );
   return refalrts::cSuccess;
 }
 
@@ -410,10 +427,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  // </0 & HighLevelRASL-Function-Conjoint=6\1=1/4 s.MaxMemory#7/5 (/8 e.HardGenComment#7/6 )/9 s.FnGenResult#1/10 (/13 e.Result#7/11 )/14 s.FnGenSubst#1/15 s.ContextSize#5/16 e.SubstitutesAnsJunks#8/2 >/1
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
+  // </0 & HighLevelRASL-Function-Conjoint=6\1=1/4 s.MaxMemory#7/5 (/8 e.HardGenComment#7/6 )/9 s.FnGenResult#1/10 (/13 e.Conditions#7/11 )/14 (/17 e.Result#7/15 )/18 s.FnGenSubst#1/19 s.ContextSize#5/20 e.SubstitutesAnsJunks#8/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -436,51 +453,60 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A1(refa
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[13], context[14]);
-  // closed e.Result#7 as range 11
-  if( ! refalrts::svar_left( context[15], context[2], context[3] ) )
+  context[15] = 0;
+  context[16] = 0;
+  context[17] = refalrts::brackets_left( context[15], context[16], context[2], context[3] );
+  if( ! context[17] )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[16], context[2], context[3] ) )
+  refalrts::bracket_pointers(context[17], context[18]);
+  // closed e.Conditions#7 as range 11
+  // closed e.Result#7 as range 15
+  if( ! refalrts::svar_left( context[19], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_left( context[20], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.SubstitutesAnsJunks#8 as range 2
   //DEBUG: s.MaxMemory#7: 5
   //DEBUG: e.HardGenComment#7: 6
   //DEBUG: s.FnGenResult#1: 10
-  //DEBUG: e.Result#7: 11
-  //DEBUG: s.FnGenSubst#1: 15
-  //DEBUG: s.ContextSize#5: 16
+  //DEBUG: e.Conditions#7: 11
+  //DEBUG: e.Result#7: 15
+  //DEBUG: s.FnGenSubst#1: 19
+  //DEBUG: s.ContextSize#5: 20
   //DEBUG: e.SubstitutesAnsJunks#8: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </17 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=6\1=2/4 AsIs: s.MaxMemory#7/5 AsIs: (/8 AsIs: e.HardGenComment#7/6 AsIs: )/9 AsIs: s.FnGenResult#1/10 AsIs: (/13 AsIs: e.Result#7/11 AsIs: )/14 AsIs: s.FnGenSubst#1/15 } {*}/18 </19 & MakeSavers/20 Tile{ AsIs: s.ContextSize#5/16 AsIs: e.SubstitutesAnsJunks#8/2 AsIs: >/1 } >/21 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[17] ) )
+  //RESULT: Tile{ [[ } </21 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=6\1=2/4 AsIs: s.MaxMemory#7/5 AsIs: (/8 AsIs: e.HardGenComment#7/6 AsIs: )/9 AsIs: s.FnGenResult#1/10 AsIs: (/13 AsIs: e.Conditions#7/11 AsIs: )/14 AsIs: (/17 AsIs: e.Result#7/15 AsIs: )/18 AsIs: s.FnGenSubst#1/19 } {*}/22 </23 & MakeSavers/24 Tile{ AsIs: s.ContextSize#5/20 AsIs: e.SubstitutesAnsJunks#8/2 AsIs: >/1 } >/25 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[18], context[0] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[22], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[19] ) )
+  if( ! refalrts::alloc_open_call( context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[20], ref_MakeSavers.ref.function ) )
+  if( ! refalrts::alloc_name( context[24], ref_MakeSavers.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[21] ) )
+  if( ! refalrts::alloc_close_call( context[25] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A2.ref.function );
+  refalrts::push_stack( context[25] );
   refalrts::push_stack( context[21] );
-  refalrts::push_stack( context[17] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[19] );
+  refalrts::push_stack( context[23] );
+  refalrts::link_brackets( context[17], context[18] );
   refalrts::link_brackets( context[13], context[14] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[25], context[25] );
+  res = refalrts::splice_evar( res, context[20], context[1] );
+  res = refalrts::splice_evar( res, context[22], context[24] );
+  res = refalrts::splice_evar( res, context[0], context[19] );
   res = refalrts::splice_evar( res, context[21], context[21] );
-  res = refalrts::splice_evar( res, context[16], context[1] );
-  res = refalrts::splice_evar( res, context[18], context[20] );
-  res = refalrts::splice_evar( res, context[0], context[15] );
-  res = refalrts::splice_evar( res, context[17], context[17] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[18] );
+  refalrts::wrap_closure( context[22] );
   return refalrts::cSuccess;
 }
 
@@ -489,10 +515,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 40 elems
-  refalrts::Iter context[40];
-  refalrts::zeros( context, 40 );
-  // </0 & HighLevelRASL-Function-Conjoint=6\1/4 s.FnGenResult#1/21 s.FnGenSubst#1/22 s.ContextSize#5/23 (/26 e.MarkedPattern#5/24 )/27 (/30 e.Vars#5/28 )/31 s.MaxMemory#7/32 (/7 (/11 e.Substitute#7/9 )/12 (/15 e.HardGenComment#7/13 )/16 (/19 e.Result#7/17 )/20 )/8 >/1
+  // issue here memory for vars with 41 elems
+  refalrts::Iter context[41];
+  refalrts::zeros( context, 41 );
+  // </0 & HighLevelRASL-Function-Conjoint=6\1/4 s.FnGenResult#1/21 s.FnGenSubst#1/22 s.ContextSize#5/23 (/26 e.MarkedPattern#5/24 )/27 (/30 e.Vars#5/28 )/31 s.MaxMemory#7/32 (/7 (/11 e.Substitute#7/9 )/12 (/15 e.HardGenComment#7/13 )/16 e.Conditions#7/5 (/19 e.Result#7/17 )/20 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -518,14 +544,13 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1(refalr
   refalrts::bracket_pointers(context[15], context[16]);
   context[17] = 0;
   context[18] = 0;
-  context[19] = refalrts::brackets_left( context[17], context[18], context[5], context[6] );
+  context[19] = refalrts::brackets_right( context[17], context[18], context[5], context[6] );
   if( ! context[19] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[19], context[20]);
-  if( ! refalrts::empty_seq( context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
   // closed e.Substitute#7 as range 9
   // closed e.HardGenComment#7 as range 13
+  // closed e.Conditions#7 as range 5
   // closed e.Result#7 as range 17
   if( ! refalrts::svar_left( context[21], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
@@ -553,6 +578,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1(refalr
     return refalrts::cRecognitionImpossible;
   //DEBUG: e.Substitute#7: 9
   //DEBUG: e.HardGenComment#7: 13
+  //DEBUG: e.Conditions#7: 5
   //DEBUG: e.Result#7: 17
   //DEBUG: s.FnGenResult#1: 21
   //DEBUG: s.FnGenSubst#1: 22
@@ -562,8 +588,8 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1(refalr
   //DEBUG: s.MaxMemory#7: 32
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} s.FnGenResult#1/21 s.FnGenSubst#1/22 s.ContextSize#5/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.MaxMemory#7/32 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & HighLevelRASL-Function-Conjoint=6\1=1/33 Tile{ HalfReuse: s.MaxMemory7 #32/27 AsIs: (/30 } Tile{ AsIs: e.HardGenComment#7/13 } Tile{ AsIs: )/31 } Tile{ HalfReuse: s.FnGenResult1 #21/16 AsIs: (/19 AsIs: e.Result#7/17 AsIs: )/20 HalfReuse: s.FnGenSubst1 #22/8 HalfReuse: s.ContextSize5 #23/1 } {*}/34 </35 & ComposeVars/36 Tile{ AsIs: (/26 } Tile{ AsIs: e.MarkedPattern#5/24 } Tile{ HalfReuse: )/7 AsIs: (/11 AsIs: e.Substitute#7/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars#5/28 } )/37 >/38 >/39 Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} s.FnGenSubst#1/22 s.ContextSize#5/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.MaxMemory#7/32 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & HighLevelRASL-Function-Conjoint=6\1=1/33 Tile{ HalfReuse: s.MaxMemory7 #32/27 AsIs: (/30 } Tile{ AsIs: e.HardGenComment#7/13 } Tile{ AsIs: )/16 } Tile{ AsIs: s.FnGenResult#1/21 } Tile{ AsIs: (/26 } Tile{ AsIs: e.Conditions#7/5 } Tile{ AsIs: )/31 } Tile{ AsIs: (/19 AsIs: e.Result#7/17 AsIs: )/20 HalfReuse: s.FnGenSubst1 #22/8 HalfReuse: s.ContextSize5 #23/1 } {*}/34 </35 & ComposeVars/36 (/37 Tile{ AsIs: e.MarkedPattern#5/24 } Tile{ HalfReuse: )/7 AsIs: (/11 AsIs: e.Substitute#7/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Vars#5/28 } )/38 >/39 >/40 Tile{ ]] }
   if( ! refalrts::alloc_name( context[33], ref_gen_HighLevelRASLm_Functionm_Conjoint_A6L1A1.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_unwrapped_closure( context[34], context[4] ) )
@@ -572,38 +598,43 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A6L1(refalr
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( context[36], ref_ComposeVars.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[37] ) )
+  if( ! refalrts::alloc_open_bracket( context[37] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[38] ) )
+  if( ! refalrts::alloc_close_bracket( context[38] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[39] ) )
     return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[40] ) )
+    return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[4] );
   refalrts::reinit_svar( context[27], context[32] );
-  refalrts::reinit_svar( context[16], context[21] );
   refalrts::reinit_svar( context[8], context[22] );
   refalrts::reinit_svar( context[1], context[23] );
   refalrts::reinit_close_bracket( context[7] );
-  refalrts::push_stack( context[39] );
+  refalrts::push_stack( context[40] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[38] );
+  refalrts::push_stack( context[39] );
   refalrts::push_stack( context[35] );
-  refalrts::link_brackets( context[15], context[37] );
+  refalrts::link_brackets( context[15], context[38] );
   refalrts::link_brackets( context[11], context[12] );
-  refalrts::link_brackets( context[26], context[7] );
+  refalrts::link_brackets( context[37], context[7] );
   refalrts::link_brackets( context[19], context[20] );
-  refalrts::link_brackets( context[30], context[31] );
+  refalrts::link_brackets( context[26], context[31] );
+  refalrts::link_brackets( context[30], context[16] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[37], context[39] );
+  res = refalrts::splice_evar( res, context[38], context[40] );
   res = refalrts::splice_evar( res, context[28], context[29] );
   res = refalrts::splice_evar( res, context[7], context[15] );
   res = refalrts::splice_evar( res, context[24], context[25] );
-  res = refalrts::splice_evar( res, context[26], context[26] );
-  res = refalrts::splice_evar( res, context[34], context[36] );
-  res = refalrts::splice_evar( res, context[16], context[1] );
+  res = refalrts::splice_evar( res, context[34], context[37] );
+  res = refalrts::splice_evar( res, context[19], context[1] );
   res = refalrts::splice_evar( res, context[31], context[31] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[26], context[26] );
+  res = refalrts::splice_evar( res, context[21], context[21] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
   res = refalrts::splice_evar( res, context[13], context[14] );
   res = refalrts::splice_evar( res, context[27], context[30] );
   res = refalrts::splice_evar( res, context[33], context[33] );
@@ -750,7 +781,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A5L1(refalr
   // issue here memory for vars with 25 elems
   refalrts::Iter context[25];
   refalrts::zeros( context, 25 );
-  // </0 & HighLevelRASL-Function-Conjoint=5\1/4 (/7 (/11 e.Substitute#6/9 )/12 e.Substs#6/5 )/8 (/15 (/19 e.HardGenComment#6/17 )/20 (/23 e.Result#6/21 )/24 )/16 >/1
+  // </0 & HighLevelRASL-Function-Conjoint=5\1/4 (/7 (/11 e.Substitute#6/9 )/12 e.Substs#6/5 )/8 (/15 (/19 e.HardGenComment#6/17 )/20 e.Conditions#6/13 (/23 e.Result#6/21 )/24 )/16 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -782,26 +813,26 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A5L1(refalr
   refalrts::bracket_pointers(context[19], context[20]);
   context[21] = 0;
   context[22] = 0;
-  context[23] = refalrts::brackets_left( context[21], context[22], context[13], context[14] );
+  context[23] = refalrts::brackets_right( context[21], context[22], context[13], context[14] );
   if( ! context[23] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[23], context[24]);
-  if( ! refalrts::empty_seq( context[13], context[14] ) )
-    return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Substitute#6 as range 9
   // closed e.Substs#6 as range 5
   // closed e.HardGenComment#6 as range 17
+  // closed e.Conditions#6 as range 13
   // closed e.Result#6 as range 21
   //DEBUG: e.Substitute#6: 9
   //DEBUG: e.Substs#6: 5
   //DEBUG: e.HardGenComment#6: 17
+  //DEBUG: e.Conditions#6: 13
   //DEBUG: e.Result#6: 21
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Conjoint=5\1/4 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 AsIs: e.Substs#6/5 AsIs: )/8 } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Substitute#6/9 } Tile{ HalfReuse: )/15 AsIs: (/19 AsIs: e.HardGenComment#6/17 AsIs: )/20 AsIs: (/23 AsIs: e.Result#6/21 AsIs: )/24 AsIs: )/16 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 AsIs: e.Substs#6/5 AsIs: )/8 } Tile{ AsIs: (/7 AsIs: (/11 } Tile{ AsIs: e.Substitute#6/9 } Tile{ HalfReuse: )/15 AsIs: (/19 AsIs: e.HardGenComment#6/17 AsIs: )/20 AsIs: e.Conditions#6/13 AsIs: (/23 AsIs: e.Result#6/21 AsIs: )/24 AsIs: )/16 } Tile{ ]] }
   refalrts::reinit_open_bracket( context[12] );
   refalrts::reinit_close_bracket( context[15] );
   refalrts::link_brackets( context[7], context[16] );
@@ -963,10 +994,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A3(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 39 elems
-  refalrts::Iter context[39];
-  refalrts::zeros( context, 39 );
-  // </0 & HighLevelRASL-Function-Conjoint=3/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 (/12 e.FastGen#3/10 )/13 (/16 e.GlobalGen#3/14 )/17 s.FnGenResult#1/18 s.FnGenSubst#1/19 (/22 e.SentenceTails#2/20 )/23 s.FnGenInitSubst#1/24 (/27 e.CommonPattern#4/25 )/28 e.SentSubsts#4/2 >/1
+  // issue here memory for vars with 38 elems
+  refalrts::Iter context[38];
+  refalrts::zeros( context, 38 );
+  // </0 & HighLevelRASL-Function-Conjoint=3/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 (/12 e.FastGen#3/10 )/13 (/16 e.GlobalGen#3/14 )/17 s.FnGenResult#1/18 s.FnGenSubst#1/19 (/22 e.SentenceTails#2/20 )/23 (/26 e.CommonPattern#4/24 )/27 e.SentSubsts#4/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1005,16 +1036,14 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A3(refalrts
   if( ! context[22] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[22], context[23]);
-  // closed e.SentenceTails#2 as range 20
-  if( ! refalrts::svar_left( context[24], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  context[24] = 0;
   context[25] = 0;
-  context[26] = 0;
-  context[27] = refalrts::brackets_left( context[25], context[26], context[2], context[3] );
-  if( ! context[27] )
+  context[26] = refalrts::brackets_left( context[24], context[25], context[2], context[3] );
+  if( ! context[26] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[27], context[28]);
-  // closed e.CommonPattern#4 as range 25
+  refalrts::bracket_pointers(context[26], context[27]);
+  // closed e.SentenceTails#2 as range 20
+  // closed e.CommonPattern#4 as range 24
   // closed e.SentSubsts#4 as range 2
   //DEBUG: s.ScopeClass#1: 5
   //DEBUG: e.Name#1: 6
@@ -1023,61 +1052,56 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A3(refalrts
   //DEBUG: s.FnGenResult#1: 18
   //DEBUG: s.FnGenSubst#1: 19
   //DEBUG: e.SentenceTails#2: 20
-  //DEBUG: s.FnGenInitSubst#1: 24
-  //DEBUG: e.CommonPattern#4: 25
+  //DEBUG: e.CommonPattern#4: 24
   //DEBUG: e.SentSubsts#4: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </29 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=4/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 AsIs: (/12 AsIs: e.FastGen#3/10 AsIs: )/13 AsIs: (/16 AsIs: e.GlobalGen#3/14 AsIs: )/17 AsIs: s.FnGenResult#1/18 AsIs: s.FnGenSubst#1/19 AsIs: (/22 } Tile{ AsIs: e.SentSubsts#4/2 } )/30 (/31 Tile{ AsIs: e.SentenceTails#2/20 } Tile{ AsIs: )/28 } {*}/32 </33 Tile{ HalfReuse: & GenPattern/23 AsIs: s.FnGenInitSubst#1/24 HalfReuse: s.FnGenSubst1 #19/27 } (/34 e.Name#1/6/35 )/37 Tile{ AsIs: e.CommonPattern#4/25 } >/38 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[29] ) )
+  //RESULT: Tile{ [[ } </28 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=4/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 AsIs: (/12 AsIs: e.FastGen#3/10 AsIs: )/13 AsIs: (/16 AsIs: e.GlobalGen#3/14 AsIs: )/17 AsIs: s.FnGenResult#1/18 AsIs: s.FnGenSubst#1/19 AsIs: (/22 } Tile{ AsIs: e.SentSubsts#4/2 } Tile{ AsIs: )/23 AsIs: (/26 } Tile{ AsIs: e.SentenceTails#2/20 } Tile{ AsIs: )/27 } {*}/29 </30 & GenPattern/31 s.FnGenSubst#1/19/32 (/33 e.Name#1/6/34 )/36 Tile{ AsIs: e.CommonPattern#4/24 } >/37 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[28] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[30] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[29], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[31] ) )
+  if( ! refalrts::alloc_open_call( context[30] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[32], context[0] ) )
+  if( ! refalrts::alloc_name( context[31], ref_GenPattern.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[33] ) )
+  if (! refalrts::copy_stvar(context[32], context[19]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[34] ) )
+  if( ! refalrts::alloc_open_bracket( context[33] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[35], context[36], context[6], context[7]))
+  if (! refalrts::copy_evar(context[34], context[35], context[6], context[7]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[37] ) )
+  if( ! refalrts::alloc_close_bracket( context[36] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[38] ) )
+  if( ! refalrts::alloc_close_call( context[37] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A4.ref.function );
-  refalrts::reinit_name( context[23], ref_GenPattern.ref.function );
-  refalrts::reinit_svar( context[27], context[19] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[29] );
-  refalrts::push_stack( context[38] );
-  refalrts::push_stack( context[33] );
-  refalrts::link_brackets( context[34], context[37] );
-  refalrts::link_brackets( context[31], context[28] );
-  refalrts::link_brackets( context[22], context[30] );
+  refalrts::push_stack( context[28] );
+  refalrts::push_stack( context[37] );
+  refalrts::push_stack( context[30] );
+  refalrts::link_brackets( context[33], context[36] );
+  refalrts::link_brackets( context[26], context[27] );
+  refalrts::link_brackets( context[22], context[23] );
   refalrts::link_brackets( context[16], context[17] );
   refalrts::link_brackets( context[12], context[13] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[38], context[38] );
-  res = refalrts::splice_evar( res, context[25], context[26] );
-  res = refalrts::splice_evar( res, context[34], context[37] );
-  res = refalrts::splice_evar( res, context[23], context[27] );
-  res = refalrts::splice_evar( res, context[32], context[33] );
-  res = refalrts::splice_evar( res, context[28], context[28] );
+  res = refalrts::splice_evar( res, context[37], context[37] );
+  res = refalrts::splice_evar( res, context[24], context[25] );
+  res = refalrts::splice_evar( res, context[29], context[36] );
+  res = refalrts::splice_evar( res, context[27], context[27] );
   res = refalrts::splice_evar( res, context[20], context[21] );
-  res = refalrts::splice_evar( res, context[30], context[31] );
+  res = refalrts::splice_evar( res, context[23], context[26] );
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[0], context[22] );
-  res = refalrts::splice_evar( res, context[29], context[29] );
+  res = refalrts::splice_evar( res, context[28], context[28] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[32] );
+  refalrts::wrap_closure( context[29] );
   return refalrts::cSuccess;
 }
 
@@ -1089,7 +1113,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A2(refalrts
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
-  // </0 & HighLevelRASL-Function-Conjoint=2/4 s.ScopeClass#1/13 (/16 e.Name#1/14 )/17 s.FnGenResult#1/18 s.FnGenSubst#1/19 (/22 e.SentenceTails#2/20 )/23 s.FnGenInitSubst#1/24 (/11 e.FastGen#3/9 )/12 (/7 e.GlobalGen#3/5 )/8 >/1
+  // </0 & HighLevelRASL-Function-Conjoint=2/4 s.ScopeClass#1/17 (/20 e.Name#1/18 )/21 s.FnGenResult#1/22 s.FnGenSubst#1/23 (/15 e.SentenceTails#2/13 )/16 (/11 e.FastGen#3/9 )/12 (/7 e.GlobalGen#3/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1107,92 +1131,86 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A2(refalrts
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_right( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
+  // closed e.SentenceTails#2 as range 13
   // closed e.FastGen#3 as range 9
   // closed e.GlobalGen#3 as range 5
-  if( ! refalrts::svar_left( context[13], context[2], context[3] ) )
+  if( ! refalrts::svar_left( context[17], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  context[14] = 0;
-  context[15] = 0;
-  context[16] = refalrts::brackets_left( context[14], context[15], context[2], context[3] );
-  if( ! context[16] )
+  context[18] = 0;
+  context[19] = 0;
+  context[20] = refalrts::brackets_left( context[18], context[19], context[2], context[3] );
+  if( ! context[20] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[16], context[17]);
-  // closed e.Name#1 as range 14
-  if( ! refalrts::svar_left( context[18], context[2], context[3] ) )
+  refalrts::bracket_pointers(context[20], context[21]);
+  // closed e.Name#1 as range 18
+  if( ! refalrts::svar_left( context[22], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[19], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  context[20] = 0;
-  context[21] = 0;
-  context[22] = refalrts::brackets_left( context[20], context[21], context[2], context[3] );
-  if( ! context[22] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[22], context[23]);
-  // closed e.SentenceTails#2 as range 20
-  if( ! refalrts::svar_left( context[24], context[2], context[3] ) )
+  if( ! refalrts::svar_left( context[23], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  //DEBUG: e.SentenceTails#2: 13
   //DEBUG: e.FastGen#3: 9
   //DEBUG: e.GlobalGen#3: 5
-  //DEBUG: s.ScopeClass#1: 13
-  //DEBUG: e.Name#1: 14
-  //DEBUG: s.FnGenResult#1: 18
-  //DEBUG: s.FnGenSubst#1: 19
-  //DEBUG: e.SentenceTails#2: 20
-  //DEBUG: s.FnGenInitSubst#1: 24
+  //DEBUG: s.ScopeClass#1: 17
+  //DEBUG: e.Name#1: 18
+  //DEBUG: s.FnGenResult#1: 22
+  //DEBUG: s.FnGenSubst#1: 23
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </25 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=3/4 AsIs: s.ScopeClass#1/13 AsIs: (/16 } Tile{ AsIs: e.Name#1/14 } )/26 (/27 Tile{ AsIs: e.FastGen#3/9 } )/28 (/29 e.GlobalGen#3/5/30 Tile{ AsIs: )/17 AsIs: s.FnGenResult#1/18 AsIs: s.FnGenSubst#1/19 AsIs: (/22 AsIs: e.SentenceTails#2/20 AsIs: )/23 AsIs: s.FnGenInitSubst#1/24 HalfReuse: {*}/11 } </32 Tile{ HalfReuse: & SplitGen/12 AsIs: (/7 AsIs: e.GlobalGen#3/5 AsIs: )/8 } e.SentenceTails#2/20/33 >/35 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[25] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.FnGenResult#1/22 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </24 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=3/4 AsIs: s.ScopeClass#1/17 AsIs: (/20 } Tile{ AsIs: e.Name#1/18 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.FastGen#3/9 AsIs: )/12 AsIs: (/7 AsIs: e.GlobalGen#3/5 AsIs: )/8 HalfReuse: s.FnGenResult1 #22/1 } Tile{ AsIs: s.FnGenSubst#1/23 AsIs: (/15 } Tile{ AsIs: e.SentenceTails#2/13 } Tile{ AsIs: )/21 } {*}/25 </26 & SplitGen/27 (/28 e.GlobalGen#3/5/29 )/31 e.SentenceTails#2/13/32 >/34 >/35 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[26] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[25], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[27] ) )
+  if( ! refalrts::alloc_open_call( context[26] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[28] ) )
+  if( ! refalrts::alloc_name( context[27], ref_SplitGen.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[29] ) )
+  if( ! refalrts::alloc_open_bracket( context[28] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[30], context[31], context[5], context[6]))
+  if (! refalrts::copy_evar(context[29], context[30], context[5], context[6]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[32] ) )
+  if( ! refalrts::alloc_close_bracket( context[31] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[33], context[34], context[20], context[21]))
+  if (! refalrts::copy_evar(context[32], context[33], context[13], context[14]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[34] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( context[35] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A3.ref.function );
-  refalrts::reinit_unwrapped_closure( context[11], context[0] );
-  refalrts::reinit_name( context[12], ref_SplitGen.ref.function );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[25] );
+  refalrts::reinit_svar( context[1], context[22] );
   refalrts::push_stack( context[35] );
-  refalrts::push_stack( context[32] );
+  refalrts::push_stack( context[24] );
+  refalrts::push_stack( context[34] );
+  refalrts::push_stack( context[26] );
+  refalrts::link_brackets( context[28], context[31] );
+  refalrts::link_brackets( context[15], context[21] );
   refalrts::link_brackets( context[7], context[8] );
-  refalrts::link_brackets( context[22], context[23] );
-  refalrts::link_brackets( context[29], context[17] );
-  refalrts::link_brackets( context[27], context[28] );
-  refalrts::link_brackets( context[16], context[26] );
+  refalrts::link_brackets( context[11], context[12] );
+  refalrts::link_brackets( context[20], context[16] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[35], context[35] );
-  res = refalrts::splice_evar( res, context[33], context[34] );
-  res = refalrts::splice_evar( res, context[12], context[8] );
-  res = refalrts::splice_evar( res, context[32], context[32] );
-  res = refalrts::splice_evar( res, context[17], context[11] );
-  res = refalrts::splice_evar( res, context[30], context[31] );
-  res = refalrts::splice_evar( res, context[28], context[29] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[26], context[27] );
-  res = refalrts::splice_evar( res, context[14], context[15] );
-  res = refalrts::splice_evar( res, context[0], context[16] );
-  res = refalrts::splice_evar( res, context[25], context[25] );
-  refalrts::use( res );
-  refalrts::wrap_closure( context[11] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[25], context[35] );
+  res = refalrts::splice_evar( res, context[21], context[21] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
+  res = refalrts::splice_evar( res, context[23], context[15] );
+  res = refalrts::splice_evar( res, context[16], context[1] );
+  res = refalrts::splice_evar( res, context[18], context[19] );
+  res = refalrts::splice_evar( res, context[0], context[20] );
+  res = refalrts::splice_evar( res, context[24], context[24] );
+  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::wrap_closure( context[25] );
   return refalrts::cSuccess;
 }
 
@@ -1201,10 +1219,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  // </0 & HighLevelRASL-Function-Conjoint=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 s.FnGenResult#1/10 s.FnGenSubst#1/11 s.FnGenInitSubst#1/12 (/15 e.HardPatterns#2/13 )/16 e.SentenceTails#2/2 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & HighLevelRASL-Function-Conjoint=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 s.FnGenResult#1/10 s.FnGenSubst#1/11 (/14 e.HardPatterns#2/12 )/15 e.SentenceTails#2/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1223,60 +1241,54 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1(refalrts
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[11], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[12], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  context[12] = 0;
   context[13] = 0;
-  context[14] = 0;
-  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
-  if( ! context[15] )
+  context[14] = refalrts::brackets_left( context[12], context[13], context[2], context[3] );
+  if( ! context[14] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[15], context[16]);
-  // closed e.HardPatterns#2 as range 13
+  refalrts::bracket_pointers(context[14], context[15]);
+  // closed e.HardPatterns#2 as range 12
   // closed e.SentenceTails#2 as range 2
   //DEBUG: s.ScopeClass#1: 5
   //DEBUG: e.Name#1: 6
   //DEBUG: s.FnGenResult#1: 10
   //DEBUG: s.FnGenSubst#1: 11
-  //DEBUG: s.FnGenInitSubst#1: 12
-  //DEBUG: e.HardPatterns#2: 13
+  //DEBUG: e.HardPatterns#2: 12
   //DEBUG: e.SentenceTails#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </17 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=2/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 AsIs: s.FnGenResult#1/10 AsIs: s.FnGenSubst#1/11 } (/18 Tile{ AsIs: e.SentenceTails#2/2 } )/19 Tile{ AsIs: s.FnGenInitSubst#1/12 } {*}/20 </21 Tile{ HalfReuse: & CreateGlobalGen/15 AsIs: e.HardPatterns#2/13 HalfReuse: >/16 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_open_call( context[17] ) )
+  //RESULT: Tile{ [[ } </16 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=2/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 AsIs: s.FnGenResult#1/10 AsIs: s.FnGenSubst#1/11 AsIs: (/14 } Tile{ AsIs: e.SentenceTails#2/2 } Tile{ AsIs: )/15 } {*}/17 </18 & CreateGlobalGen/19 Tile{ AsIs: e.HardPatterns#2/12 } >/20 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_open_call( context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[18] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[17], context[0] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[19] ) )
+  if( ! refalrts::alloc_open_call( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[20], context[0] ) )
+  if( ! refalrts::alloc_name( context[19], ref_CreateGlobalGen.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[21] ) )
+  if( ! refalrts::alloc_close_call( context[20] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A2.ref.function );
-  refalrts::reinit_name( context[15], ref_CreateGlobalGen.ref.function );
-  refalrts::reinit_close_call( context[16] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[17] );
   refalrts::push_stack( context[16] );
-  refalrts::push_stack( context[21] );
-  refalrts::link_brackets( context[18], context[19] );
+  refalrts::push_stack( context[20] );
+  refalrts::push_stack( context[18] );
+  refalrts::link_brackets( context[14], context[15] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[15], context[16] );
-  res = refalrts::splice_evar( res, context[20], context[21] );
-  res = refalrts::splice_evar( res, context[12], context[12] );
-  res = refalrts::splice_evar( res, context[19], context[19] );
+  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
+  res = refalrts::splice_evar( res, context[17], context[19] );
+  res = refalrts::splice_evar( res, context[15], context[15] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[18], context[18] );
-  res = refalrts::splice_evar( res, context[0], context[11] );
-  res = refalrts::splice_evar( res, context[17], context[17] );
+  res = refalrts::splice_evar( res, context[0], context[14] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[20] );
+  refalrts::wrap_closure( context[17] );
   return refalrts::cSuccess;
 }
 
@@ -1285,10 +1297,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1L1A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 21 elems
-  refalrts::Iter context[21];
-  refalrts::zeros( context, 21 );
-  // </0 & HighLevelRASL-Function-Conjoint=1\1=1/4 (/7 e.HardPatterns#2/5 )/8 (/11 e.Result#2/9 )/12 e.HardPattern#3/2 >/1
+  // issue here memory for vars with 23 elems
+  refalrts::Iter context[23];
+  refalrts::zeros( context, 23 );
+  // </0 & HighLevelRASL-Function-Conjoint=1\1=1/4 (/7 e.HardPatterns#2/5 )/8 (/11 e.Conditions#2/9 )/12 (/15 e.Result#2/13 )/16 e.HardPattern#3/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1306,52 +1318,58 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1L1A1(refa
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
+  context[13] = 0;
+  context[14] = 0;
+  context[15] = refalrts::brackets_left( context[13], context[14], context[2], context[3] );
+  if( ! context[15] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[15], context[16]);
   // closed e.HardPatterns#2 as range 5
-  // closed e.Result#2 as range 9
+  // closed e.Conditions#2 as range 9
+  // closed e.Result#2 as range 13
   // closed e.HardPattern#3 as range 2
   //DEBUG: e.HardPatterns#2: 5
-  //DEBUG: e.Result#2: 9
+  //DEBUG: e.Conditions#2: 9
+  //DEBUG: e.Result#2: 13
   //DEBUG: e.HardPattern#3: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } (/13 Tile{ AsIs: e.HardPatterns#2/5 } (/14 e.HardPattern#3/2/15 Tile{ HalfReuse: )/0 HalfReuse: )/4 AsIs: (/7 } (/17 </18 & PatternComment/19 Tile{ AsIs: e.HardPattern#3/2 } >/20 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#2/9 AsIs: )/12 } Tile{ HalfReuse: )/1 ]] }
-  if( ! refalrts::alloc_open_bracket( context[13] ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.HardPatterns#2/5 HalfReuse: (/8 } e.HardPattern#3/2/17 )/19 Tile{ AsIs: )/12 } (/20 Tile{ AsIs: (/11 } Tile{ AsIs: </0 Reuse: & PatternComment/4 } Tile{ AsIs: e.HardPattern#3/2 } >/21 )/22 Tile{ AsIs: e.Conditions#2/9 } Tile{ AsIs: (/15 AsIs: e.Result#2/13 AsIs: )/16 } Tile{ HalfReuse: )/1 ]] }
+  if (! refalrts::copy_evar(context[17], context[18], context[2], context[3]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[14] ) )
+  if( ! refalrts::alloc_close_bracket( context[19] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[15], context[16], context[2], context[3]))
+  if( ! refalrts::alloc_open_bracket( context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[17] ) )
+  if( ! refalrts::alloc_close_call( context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[18] ) )
+  if( ! refalrts::alloc_close_bracket( context[22] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[19], ref_PatternComment.ref.function ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[20] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_close_bracket( context[0] );
-  refalrts::reinit_close_bracket( context[4] );
+  refalrts::reinit_open_bracket( context[8] );
+  refalrts::update_name( context[4], ref_PatternComment.ref.function );
   refalrts::reinit_close_bracket( context[1] );
-  refalrts::link_brackets( context[7], context[1] );
-  refalrts::link_brackets( context[11], context[12] );
-  refalrts::link_brackets( context[17], context[8] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[18] );
-  refalrts::link_brackets( context[13], context[4] );
-  refalrts::link_brackets( context[14], context[0] );
+  refalrts::link_brackets( context[20], context[1] );
+  refalrts::link_brackets( context[15], context[16] );
+  refalrts::link_brackets( context[11], context[22] );
+  refalrts::push_stack( context[21] );
+  refalrts::push_stack( context[0] );
+  refalrts::link_brackets( context[7], context[12] );
+  refalrts::link_brackets( context[8], context[19] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[8], context[12] );
-  res = refalrts::splice_evar( res, context[20], context[20] );
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[17], context[19] );
-  res = refalrts::splice_evar( res, context[0], context[7] );
   res = refalrts::splice_evar( res, context[15], context[16] );
-  res = refalrts::splice_evar( res, context[14], context[14] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[21], context[22] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[0], context[4] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[19], context[19] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -1361,10 +1379,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  // </0 & HighLevelRASL-Function-Conjoint=1\1/4 (/7 e.HardPatterns#2/5 )/8 (/11 (/15 e.Pattern#2/13 )/16 (/19 e.Result#2/17 )/20 )/12 >/1
+  // issue here memory for vars with 24 elems
+  refalrts::Iter context[24];
+  refalrts::zeros( context, 24 );
+  // </0 & HighLevelRASL-Function-Conjoint=1\1/4 (/7 e.HardPatterns#2/5 )/8 (/11 (/15 e.Pattern#2/13 )/16 e.Conditions#2/9 (/19 e.Result#2/17 )/20 )/12 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1390,50 +1408,55 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Conjoint_A1L1(refalr
   refalrts::bracket_pointers(context[15], context[16]);
   context[17] = 0;
   context[18] = 0;
-  context[19] = refalrts::brackets_left( context[17], context[18], context[9], context[10] );
+  context[19] = refalrts::brackets_right( context[17], context[18], context[9], context[10] );
   if( ! context[19] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[19], context[20]);
-  if( ! refalrts::empty_seq( context[9], context[10] ) )
-    return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.HardPatterns#2 as range 5
   // closed e.Pattern#2 as range 13
+  // closed e.Conditions#2 as range 9
   // closed e.Result#2 as range 17
   //DEBUG: e.HardPatterns#2: 5
   //DEBUG: e.Pattern#2: 13
+  //DEBUG: e.Conditions#2: 9
   //DEBUG: e.Result#2: 17
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: </20 } Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=1\1=1/4 AsIs: (/7 AsIs: e.HardPatterns#2/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Result#2/17 } Tile{ AsIs: )/16 HalfReuse: {*}/19 } Tile{ HalfReuse: </15 } & CreateHardPattern/21 Tile{ AsIs: e.Pattern#2/13 } Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[21], ref_CreateHardPattern.ref.function ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </21 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Conjoint=1\1=1/4 AsIs: (/7 AsIs: e.HardPatterns#2/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Conditions#2/9 } )/22 Tile{ AsIs: (/19 AsIs: e.Result#2/17 AsIs: )/20 HalfReuse: {*}/12 HalfReuse: </1 } Tile{ HalfReuse: & CreateHardPattern/15 AsIs: e.Pattern#2/13 HalfReuse: >/16 } >/23 Tile{ ]] }
+  if( ! refalrts::alloc_open_call( context[21] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_open_call( context[20] );
+  if( ! refalrts::alloc_close_bracket( context[22] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( context[23] ) )
+    return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
   refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Conjoint_A1L1A1.ref.function );
-  refalrts::reinit_unwrapped_closure( context[19], context[0] );
-  refalrts::reinit_open_call( context[15] );
-  refalrts::reinit_close_call( context[12] );
+  refalrts::reinit_unwrapped_closure( context[12], context[0] );
+  refalrts::reinit_open_call( context[1] );
+  refalrts::reinit_name( context[15], ref_CreateHardPattern.ref.function );
+  refalrts::reinit_close_call( context[16] );
+  refalrts::push_stack( context[23] );
+  refalrts::push_stack( context[21] );
+  refalrts::push_stack( context[16] );
   refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[15] );
-  refalrts::link_brackets( context[11], context[16] );
+  refalrts::link_brackets( context[19], context[20] );
+  refalrts::link_brackets( context[11], context[22] );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[12];
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  res = refalrts::splice_evar( res, context[21], context[21] );
-  res = refalrts::splice_evar( res, context[15], context[15] );
-  res = refalrts::splice_evar( res, context[16], context[19] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[23], context[23] );
+  res = refalrts::splice_evar( res, context[15], context[16] );
+  res = refalrts::splice_evar( res, context[19], context[1] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
   res = refalrts::splice_evar( res, context[0], context[11] );
-  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[21], context[21] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[19] );
+  refalrts::wrap_closure( context[12] );
   return refalrts::cSuccess;
 }
 
@@ -1442,10 +1465,10 @@ static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Conjoint_A
 
 static refalrts::FnResult func_HighLevelRASLm_Functionm_Conjoint(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 21 elems
-  refalrts::Iter context[21];
-  refalrts::zeros( context, 21 );
-  // </0 & HighLevelRASL-Function-Conjoint/4 s.FnGenInitSubst#1/5 s.FnGenSubst#1/6 s.FnGenResult#1/7 s.ScopeClass#1/8 (/11 e.Name#1/9 )/12 e.Sentences#1/2 >/1
+  // issue here memory for vars with 20 elems
+  refalrts::Iter context[20];
+  refalrts::zeros( context, 20 );
+  // </0 & HighLevelRASL-Function-Conjoint/4 s.FnGenSubst#1/5 s.FnGenResult#1/6 s.ScopeClass#1/7 (/10 e.Name#1/8 )/11 e.Sentences#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1457,62 +1480,58 @@ static refalrts::FnResult func_HighLevelRASLm_Functionm_Conjoint(refalrts::Iter 
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[7], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[8], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  context[8] = 0;
   context[9] = 0;
-  context[10] = 0;
-  context[11] = refalrts::brackets_left( context[9], context[10], context[2], context[3] );
-  if( ! context[11] )
+  context[10] = refalrts::brackets_left( context[8], context[9], context[2], context[3] );
+  if( ! context[10] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.Name#1 as range 9
+  refalrts::bracket_pointers(context[10], context[11]);
+  // closed e.Name#1 as range 8
   // closed e.Sentences#1 as range 2
-  //DEBUG: s.FnGenInitSubst#1: 5
-  //DEBUG: s.FnGenSubst#1: 6
-  //DEBUG: s.FnGenResult#1: 7
-  //DEBUG: s.ScopeClass#1: 8
-  //DEBUG: e.Name#1: 9
+  //DEBUG: s.FnGenSubst#1: 5
+  //DEBUG: s.FnGenResult#1: 6
+  //DEBUG: s.ScopeClass#1: 7
+  //DEBUG: e.Name#1: 8
   //DEBUG: e.Sentences#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & HighLevelRASL-Function-Conjoint=1/13 Tile{ AsIs: s.ScopeClass#1/8 AsIs: (/11 AsIs: e.Name#1/9 AsIs: )/12 } Tile{ AsIs: s.FnGenResult#1/7 } Tile{ AsIs: s.FnGenSubst#1/6 } Tile{ AsIs: s.FnGenInitSubst#1/5 } {*}/14 </15 & MapReduce/16 & HighLevelRASL-Function-Conjoint=1\1/17 (/18 )/19 Tile{ AsIs: e.Sentences#1/2 } >/20 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[13], ref_gen_HighLevelRASLm_Functionm_Conjoint_A1.ref.function ) )
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & HighLevelRASL-Function-Conjoint=1/12 Tile{ AsIs: s.ScopeClass#1/7 AsIs: (/10 AsIs: e.Name#1/8 AsIs: )/11 } Tile{ AsIs: s.FnGenResult#1/6 } Tile{ AsIs: s.FnGenSubst#1/5 } {*}/13 </14 & MapReduce/15 & HighLevelRASL-Function-Conjoint=1\1/16 (/17 )/18 Tile{ AsIs: e.Sentences#1/2 } >/19 Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_name( context[12], ref_gen_HighLevelRASLm_Functionm_Conjoint_A1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[14], context[4] ) )
+  if( ! refalrts::alloc_unwrapped_closure( context[13], context[4] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  if( ! refalrts::alloc_open_call( context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_MapReduce.ref.function ) )
+  if( ! refalrts::alloc_name( context[15], ref_MapReduce.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_gen_HighLevelRASLm_Functionm_Conjoint_A1L1.ref.function ) )
+  if( ! refalrts::alloc_name( context[16], ref_gen_HighLevelRASLm_Functionm_Conjoint_A1L1.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[18] ) )
+  if( ! refalrts::alloc_open_bracket( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[19] ) )
+  if( ! refalrts::alloc_close_bracket( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[20] ) )
+  if( ! refalrts::alloc_close_call( context[19] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[4] );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[15] );
-  refalrts::link_brackets( context[18], context[19] );
-  refalrts::link_brackets( context[11], context[12] );
+  refalrts::push_stack( context[19] );
+  refalrts::push_stack( context[14] );
+  refalrts::link_brackets( context[17], context[18] );
+  refalrts::link_brackets( context[10], context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[20], context[20] );
+  res = refalrts::splice_evar( res, context[19], context[19] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[14], context[19] );
+  res = refalrts::splice_evar( res, context[13], context[18] );
   res = refalrts::splice_evar( res, context[5], context[5] );
   res = refalrts::splice_evar( res, context[6], context[6] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
-  res = refalrts::splice_evar( res, context[8], context[12] );
-  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[7], context[11] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[14] );
+  refalrts::wrap_closure( context[13] );
   return refalrts::cSuccess;
 }
 
