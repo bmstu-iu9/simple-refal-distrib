@@ -45,20 +45,19 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & OctDigit/4 s.idx#0/5 >/1
+  // </0 & OctDigit/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & OctDigit/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // 0
     // </0 & OctDigit/4 0/5 >/1
     if( ! refalrts::number_term( 0UL, context[5] ) )
       continue;
@@ -76,7 +75,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 1
     // </0 & OctDigit/4 1/5 >/1
     if( ! refalrts::number_term( 1UL, context[5] ) )
       continue;
@@ -94,7 +92,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 2
     // </0 & OctDigit/4 2/5 >/1
     if( ! refalrts::number_term( 2UL, context[5] ) )
       continue;
@@ -112,7 +109,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 3
     // </0 & OctDigit/4 3/5 >/1
     if( ! refalrts::number_term( 3UL, context[5] ) )
       continue;
@@ -130,7 +126,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 4
     // </0 & OctDigit/4 4/5 >/1
     if( ! refalrts::number_term( 4UL, context[5] ) )
       continue;
@@ -148,7 +143,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 5
     // </0 & OctDigit/4 5/5 >/1
     if( ! refalrts::number_term( 5UL, context[5] ) )
       continue;
@@ -166,7 +160,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   refalrts::stop_sentence();
 
   do {
-    // 6
     // </0 & OctDigit/4 6/5 >/1
     if( ! refalrts::number_term( 6UL, context[5] ) )
       continue;
@@ -183,7 +176,6 @@ static refalrts::FnResult func_OctDigit(refalrts::Iter arg_begin, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // 7
   // </0 & OctDigit/4 7/5 >/1
   if( ! refalrts::number_term( 7UL, context[5] ) )
     return refalrts::cRecognitionImpossible;
@@ -207,14 +199,14 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 32 elems
   refalrts::Iter context[32];
   refalrts::zeros( context, 32 );
-  //FAST GEN: s.$ s.$ s.$
-  //GLOBAL GEN: s.$ s.$ s.$
-  // </0 & EscapeChar$7\1/4 s.idx#0/5 s.idxV#0/6 s.idxVV#0/7 >/1
+  // </0 & EscapeChar$7\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & EscapeChar$7\1/4 s.new#1/5 s.new#2/6 s.new#3/7 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
@@ -224,7 +216,6 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // s.idx '<' s.idx
     // </0 & EscapeChar$7\1/4 s.Other#1/5 '<'/6 s.Code#2/7 >/1
     if( ! refalrts::char_term( '<', context[6] ) )
       continue;
@@ -311,7 +302,6 @@ static refalrts::FnResult func_gen_EscapeChar_S7L1(refalrts::Iter arg_begin, ref
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx s.idx s.idx
   // </0 & EscapeChar$7\1/4 s.Other#1/5 s.Compare#2/6 s.Code#2/7 >/1
   //DEBUG: s.Other#1: 5
   //DEBUG: s.Compare#2: 6
@@ -336,20 +326,19 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & EscapeChar/4 s.idx#0/5 >/1
+  // </0 & EscapeChar/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & EscapeChar/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // '\n'
     // </0 & EscapeChar/4 '\n'/5 >/1
     if( ! refalrts::char_term( '\n', context[5] ) )
       continue;
@@ -368,7 +357,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
-    // '\t'
     // </0 & EscapeChar/4 '\t'/5 >/1
     if( ! refalrts::char_term( '\t', context[5] ) )
       continue;
@@ -387,7 +375,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
-    // '\r'
     // </0 & EscapeChar/4 '\r'/5 >/1
     if( ! refalrts::char_term( '\r', context[5] ) )
       continue;
@@ -406,7 +393,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
-    // '\''
     // </0 & EscapeChar/4 '\''/5 >/1
     if( ! refalrts::char_term( '\'', context[5] ) )
       continue;
@@ -425,7 +411,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
-    // '\"'
     // </0 & EscapeChar/4 '\"'/5 >/1
     if( ! refalrts::char_term( '\"', context[5] ) )
       continue;
@@ -444,7 +429,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   refalrts::stop_sentence();
 
   do {
-    // '\\'
     // </0 & EscapeChar/4 '\\'/5 >/1
     if( ! refalrts::char_term( '\\', context[5] ) )
       continue;
@@ -461,7 +445,6 @@ static refalrts::FnResult func_EscapeChar(refalrts::Iter arg_begin, refalrts::It
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & EscapeChar/4 s.Other#1/5 >/1
   //DEBUG: s.Other#1: 5
 
@@ -1052,327 +1035,290 @@ static refalrts::FnResult func_DoUnEscapeStringm_SR(refalrts::Iter arg_begin, re
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) e.$
-  // </0 & DoUnEscapeString-SR/4 (/7 e.idxB#0/5 )/8 e.idxT#0/2 >/1
+  // </0 & DoUnEscapeString-SR/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoUnEscapeString-SR/4 (/7 e.new#1/5 )/8 e.new#2/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxT#0 as range 2
+  // closed e.new#1 as range 5
+  // closed e.new#2 as range 2
   do {
-    // ( e.idx ) '\\x' e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 '\\'/13 'x'/14 e.HexAndTail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    context[13] = refalrts::char_left( '\\', context[11], context[12] );
-    if( ! context[13] )
+    // </0 & DoUnEscapeString-SR/4 (/7 e.new#3/5 )/8 s.new#4/11 e.new#5/9 >/1
+    context[9] = context[2];
+    context[10] = context[3];
+    // closed e.new#3 as range 5
+    if( ! refalrts::svar_left( context[11], context[9], context[10] ) )
       continue;
-    context[14] = refalrts::char_left( 'x', context[11], context[12] );
-    if( ! context[14] )
-      continue;
-    // closed e.Scanned#1 as range 9
-    // closed e.HexAndTail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: e.HexAndTail#1: 11
+    // closed e.new#5 as range 9
+    do {
+      // </0 & DoUnEscapeString-SR/4 (/7 e.new#6/5 )/8 '\\'/11 e.new#7/9 >/1
+      if( ! refalrts::char_term( '\\', context[11] ) )
+        continue;
+      // closed e.new#6 as range 5
+      // closed e.new#7 as range 9
+      do {
+        // </0 & DoUnEscapeString-SR/4 (/7 e.new#8/5 )/8 '\\'/11 s.new#9/14 e.new#10/12 >/1
+        context[12] = context[9];
+        context[13] = context[10];
+        // closed e.new#8 as range 5
+        if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
+          continue;
+        // closed e.new#10 as range 12
+        do {
+          // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 '\\'/11 'x'/14 e.HexAndTail#1/12 >/1
+          if( ! refalrts::char_term( 'x', context[14] ) )
+            continue;
+          // closed e.Scanned#1 as range 5
+          // closed e.HexAndTail#1 as range 12
+          //DEBUG: e.Scanned#1: 5
+          //DEBUG: e.HexAndTail#1: 12
+
+          refalrts::reset_allocator();
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 HalfReuse: (/11 HalfReuse: </14 } & HexDigits/15 >/16 )/17 (/18 )/19 Tile{ AsIs: e.HexAndTail#1/12 } Tile{ AsIs: >/1 ]] }
+          if( ! refalrts::alloc_name( context[15], ref_HexDigits.ref.function ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_call( context[16] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[17] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_open_bracket( context[18] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[19] ) )
+            return refalrts::cNoMemory;
+          refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Hex.ref.function );
+          refalrts::reinit_open_bracket( context[11] );
+          refalrts::reinit_open_call( context[14] );
+          refalrts::push_stack( context[1] );
+          refalrts::push_stack( context[0] );
+          refalrts::link_brackets( context[18], context[19] );
+          refalrts::link_brackets( context[11], context[17] );
+          refalrts::push_stack( context[16] );
+          refalrts::push_stack( context[14] );
+          refalrts::link_brackets( context[7], context[8] );
+          refalrts::Iter trash_prev = arg_begin->prev;
+          refalrts::use(trash_prev);
+          refalrts::Iter res = context[1];
+          res = refalrts::splice_evar( res, context[12], context[13] );
+          res = refalrts::splice_evar( res, context[15], context[19] );
+          refalrts::use( res );
+          return refalrts::cSuccess;
+        } while ( 0 );
+        refalrts::stop_sentence();
+
+        do {
+          // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 '\\'/11 'X'/14 e.HexAndTail#1/12 >/1
+          if( ! refalrts::char_term( 'X', context[14] ) )
+            continue;
+          // closed e.Scanned#1 as range 5
+          // closed e.HexAndTail#1 as range 12
+          //DEBUG: e.Scanned#1: 5
+          //DEBUG: e.HexAndTail#1: 12
+
+          refalrts::reset_allocator();
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 HalfReuse: (/11 HalfReuse: </14 } & HexDigits/15 >/16 )/17 (/18 )/19 Tile{ AsIs: e.HexAndTail#1/12 } Tile{ AsIs: >/1 ]] }
+          if( ! refalrts::alloc_name( context[15], ref_HexDigits.ref.function ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_call( context[16] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[17] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_open_bracket( context[18] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[19] ) )
+            return refalrts::cNoMemory;
+          refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Hex.ref.function );
+          refalrts::reinit_open_bracket( context[11] );
+          refalrts::reinit_open_call( context[14] );
+          refalrts::push_stack( context[1] );
+          refalrts::push_stack( context[0] );
+          refalrts::link_brackets( context[18], context[19] );
+          refalrts::link_brackets( context[11], context[17] );
+          refalrts::push_stack( context[16] );
+          refalrts::push_stack( context[14] );
+          refalrts::link_brackets( context[7], context[8] );
+          refalrts::Iter trash_prev = arg_begin->prev;
+          refalrts::use(trash_prev);
+          refalrts::Iter res = context[1];
+          res = refalrts::splice_evar( res, context[12], context[13] );
+          res = refalrts::splice_evar( res, context[15], context[19] );
+          refalrts::use( res );
+          return refalrts::cSuccess;
+        } while ( 0 );
+        refalrts::stop_sentence();
+
+        do {
+          // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 '\\'/11 'd'/14 e.DecAndTail#1/12 >/1
+          if( ! refalrts::char_term( 'd', context[14] ) )
+            continue;
+          // closed e.Scanned#1 as range 5
+          // closed e.DecAndTail#1 as range 12
+          //DEBUG: e.Scanned#1: 5
+          //DEBUG: e.DecAndTail#1: 12
+
+          refalrts::reset_allocator();
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 HalfReuse: (/11 HalfReuse: 10/14 } </15 & DecDigits/16 >/17 )/18 (/19 )/20 Tile{ AsIs: e.DecAndTail#1/12 } Tile{ AsIs: >/1 ]] }
+          if( ! refalrts::alloc_open_call( context[15] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_name( context[16], ref_DecDigits.ref.function ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_call( context[17] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[18] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_open_bracket( context[19] ) )
+            return refalrts::cNoMemory;
+          if( ! refalrts::alloc_close_bracket( context[20] ) )
+            return refalrts::cNoMemory;
+          refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
+          refalrts::reinit_open_bracket( context[11] );
+          refalrts::reinit_number( context[14], 10UL );
+          refalrts::push_stack( context[1] );
+          refalrts::push_stack( context[0] );
+          refalrts::link_brackets( context[19], context[20] );
+          refalrts::link_brackets( context[11], context[18] );
+          refalrts::push_stack( context[17] );
+          refalrts::push_stack( context[15] );
+          refalrts::link_brackets( context[7], context[8] );
+          refalrts::Iter trash_prev = arg_begin->prev;
+          refalrts::use(trash_prev);
+          refalrts::Iter res = context[1];
+          res = refalrts::splice_evar( res, context[12], context[13] );
+          res = refalrts::splice_evar( res, context[15], context[20] );
+          refalrts::use( res );
+          return refalrts::cSuccess;
+        } while ( 0 );
+        refalrts::stop_sentence();
+
+        // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 '\\'/11 'D'/14 e.DecAndTail#1/12 >/1
+        if( ! refalrts::char_term( 'D', context[14] ) )
+          continue;
+        // closed e.Scanned#1 as range 5
+        // closed e.DecAndTail#1 as range 12
+        //DEBUG: e.Scanned#1: 5
+        //DEBUG: e.DecAndTail#1: 12
+
+        refalrts::reset_allocator();
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 HalfReuse: (/11 HalfReuse: 10/14 } </15 & DecDigits/16 >/17 )/18 (/19 )/20 Tile{ AsIs: e.DecAndTail#1/12 } Tile{ AsIs: >/1 ]] }
+        if( ! refalrts::alloc_open_call( context[15] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_name( context[16], ref_DecDigits.ref.function ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_call( context[17] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[18] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[19] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[20] ) )
+          return refalrts::cNoMemory;
+        refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
+        refalrts::reinit_open_bracket( context[11] );
+        refalrts::reinit_number( context[14], 10UL );
+        refalrts::push_stack( context[1] );
+        refalrts::push_stack( context[0] );
+        refalrts::link_brackets( context[19], context[20] );
+        refalrts::link_brackets( context[11], context[18] );
+        refalrts::push_stack( context[17] );
+        refalrts::push_stack( context[15] );
+        refalrts::link_brackets( context[7], context[8] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[1];
+        res = refalrts::splice_evar( res, context[12], context[13] );
+        res = refalrts::splice_evar( res, context[15], context[20] );
+        refalrts::use( res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence();
+
+      // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 '\\'/11 e.EscapedAndTail#1/9 >/1
+      // closed e.Scanned#1 as range 5
+      // closed e.EscapedAndTail#1 as range 9
+      //DEBUG: e.Scanned#1: 5
+      //DEBUG: e.EscapedAndTail#1: 9
+
+      refalrts::reset_allocator();
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Escape/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 HalfReuse: (/11 } </12 & OctDigits/13 >/14 )/15 Tile{ AsIs: e.EscapedAndTail#1/9 } Tile{ AsIs: >/1 ]] }
+      if( ! refalrts::alloc_open_call( context[12] ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_name( context[13], ref_OctDigits.ref.function ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_close_call( context[14] ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_close_bracket( context[15] ) )
+        return refalrts::cNoMemory;
+      refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Escape.ref.function );
+      refalrts::reinit_open_bracket( context[11] );
+      refalrts::push_stack( context[1] );
+      refalrts::push_stack( context[0] );
+      refalrts::link_brackets( context[11], context[15] );
+      refalrts::push_stack( context[14] );
+      refalrts::push_stack( context[12] );
+      refalrts::link_brackets( context[7], context[8] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      res = refalrts::splice_evar( res, context[9], context[10] );
+      res = refalrts::splice_evar( res, context[12], context[15] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence();
+
+    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 s.SimpleChar#1/11 e.Tail#1/9 >/1
+    // closed e.Scanned#1 as range 5
+    // closed e.Tail#1 as range 9
+    //DEBUG: s.SimpleChar#1: 11
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.Tail#1: 9
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/9 AsIs: )/8 HalfReuse: (/13 HalfReuse: </14 } & HexDigits/15 >/16 )/17 (/18 )/19 Tile{ AsIs: e.HexAndTail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[15], ref_HexDigits.ref.function ) )
+    //TRASH: {REMOVED TILE} s.SimpleChar#1/11 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/5 HalfReuse: s.SimpleChar1 #11/8 } )/12 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_close_bracket( context[12] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[17] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[19] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Hex.ref.function );
-    refalrts::reinit_open_bracket( context[13] );
-    refalrts::reinit_open_call( context[14] );
+    refalrts::reinit_svar( context[8], context[11] );
     refalrts::push_stack( context[1] );
     refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[18], context[19] );
-    refalrts::link_brackets( context[13], context[17] );
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::link_brackets( context[7], context[8] );
+    refalrts::link_brackets( context[7], context[12] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[15], context[19] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '\\X' e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 '\\'/13 'X'/14 e.HexAndTail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    context[13] = refalrts::char_left( '\\', context[11], context[12] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'X', context[11], context[12] );
-    if( ! context[14] )
-      continue;
-    // closed e.Scanned#1 as range 9
-    // closed e.HexAndTail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: e.HexAndTail#1: 11
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/9 AsIs: )/8 HalfReuse: (/13 HalfReuse: </14 } & HexDigits/15 >/16 )/17 (/18 )/19 Tile{ AsIs: e.HexAndTail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_name( context[15], ref_HexDigits.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[17] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[19] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Hex.ref.function );
-    refalrts::reinit_open_bracket( context[13] );
-    refalrts::reinit_open_call( context[14] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[18], context[19] );
-    refalrts::link_brackets( context[13], context[17] );
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[15], context[19] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '\\d' e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 '\\'/13 'd'/14 e.DecAndTail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    context[13] = refalrts::char_left( '\\', context[11], context[12] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'd', context[11], context[12] );
-    if( ! context[14] )
-      continue;
-    // closed e.Scanned#1 as range 9
-    // closed e.DecAndTail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: e.DecAndTail#1: 11
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/9 AsIs: )/8 HalfReuse: (/13 HalfReuse: 10/14 } </15 & DecDigits/16 >/17 )/18 (/19 )/20 Tile{ AsIs: e.DecAndTail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[15] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], ref_DecDigits.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[17] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[19] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[20] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
-    refalrts::reinit_open_bracket( context[13] );
-    refalrts::reinit_number( context[14], 10UL );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[19], context[20] );
-    refalrts::link_brackets( context[13], context[18] );
-    refalrts::push_stack( context[17] );
-    refalrts::push_stack( context[15] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[15], context[20] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '\\D' e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 '\\'/13 'D'/14 e.DecAndTail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    context[13] = refalrts::char_left( '\\', context[11], context[12] );
-    if( ! context[13] )
-      continue;
-    context[14] = refalrts::char_left( 'D', context[11], context[12] );
-    if( ! context[14] )
-      continue;
-    // closed e.Scanned#1 as range 9
-    // closed e.DecAndTail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: e.DecAndTail#1: 11
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/9 AsIs: )/8 HalfReuse: (/13 HalfReuse: 10/14 } </15 & DecDigits/16 >/17 )/18 (/19 )/20 Tile{ AsIs: e.DecAndTail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[15] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[16], ref_DecDigits.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[17] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[18] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_bracket( context[19] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[20] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
-    refalrts::reinit_open_bracket( context[13] );
-    refalrts::reinit_number( context[14], 10UL );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[19], context[20] );
-    refalrts::link_brackets( context[13], context[18] );
-    refalrts::push_stack( context[17] );
-    refalrts::push_stack( context[15] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[15], context[20] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) '\\' e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 '\\'/13 e.EscapedAndTail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    context[13] = refalrts::char_left( '\\', context[11], context[12] );
-    if( ! context[13] )
-      continue;
-    // closed e.Scanned#1 as range 9
-    // closed e.EscapedAndTail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: e.EscapedAndTail#1: 11
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-Escape/4 AsIs: (/7 AsIs: e.Scanned#1/9 AsIs: )/8 HalfReuse: (/13 } </14 & OctDigits/15 >/16 )/17 Tile{ AsIs: e.EscapedAndTail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[14] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[15], ref_OctDigits.ref.function ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[16] ) )
-      return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_bracket( context[17] ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_Escape.ref.function );
-    refalrts::reinit_open_bracket( context[13] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[13], context[17] );
-    refalrts::push_stack( context[16] );
-    refalrts::push_stack( context[14] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[14], context[17] );
-    refalrts::use( res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence();
-
-  do {
-    // ( e.idx ) s.idx e.idx
-    // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 s.SimpleChar#1/13 e.Tail#1/11 >/1
-    context[9] = context[5];
-    context[10] = context[6];
-    context[11] = context[2];
-    context[12] = context[3];
-    // closed e.Scanned#1 as range 9
-    if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
-      continue;
-    // closed e.Tail#1 as range 11
-    //DEBUG: e.Scanned#1: 9
-    //DEBUG: s.SimpleChar#1: 13
-    //DEBUG: e.Tail#1: 11
-
-    refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} s.SimpleChar#1/13 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/9 HalfReuse: s.SimpleChar1 #13/8 } )/14 Tile{ AsIs: e.Tail#1/11 } Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_close_bracket( context[14] ) )
-      return refalrts::cNoMemory;
-    refalrts::reinit_svar( context[8], context[13] );
-    refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[0] );
-    refalrts::link_brackets( context[7], context[14] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[14], context[14] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[12], context[12] );
     refalrts::splice_to_freelist_open( context[8], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx )
-  // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/9 )/8 >/1
-  context[9] = context[5];
-  context[10] = context[6];
-  context[11] = context[2];
-  context[12] = context[3];
-  if( ! refalrts::empty_seq( context[11], context[12] ) )
+  // </0 & DoUnEscapeString-SR/4 (/7 e.Scanned#1/5 )/8 >/1
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 9
-  //DEBUG: e.Scanned#1: 9
+  // closed e.Scanned#1 as range 5
+  //DEBUG: e.Scanned#1: 5
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} & DoUnEscapeString-SR/4 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: # Success/0 } Tile{ AsIs: e.Scanned#1/9 } Tile{ ]] }
+  //RESULT: Tile{ [[ HalfReuse: # Success/0 } Tile{ AsIs: e.Scanned#1/5 } Tile{ ]] }
   refalrts::reinit_ident( context[0], ident_Success );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[10] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
   refalrts::splice_to_freelist_open( context[0], res );
   return refalrts::cSuccess;
 }
@@ -1382,17 +1328,17 @@ static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SR("DoUnEscapeString-
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 32 elems
-  refalrts::Iter context[32];
-  refalrts::zeros( context, 32 );
-  //FAST GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
-  //GLOBAL GEN: ( e.$ ) ( e.$ ) ( e.$ ) e.$
-  // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
+  // issue here memory for vars with 28 elems
+  refalrts::Iter context[28];
+  refalrts::zeros( context, 28 );
+  // </0 & DoUnEscapeString-SR-Hex/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 (/15 e.new#3/13 )/16 e.new#4/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -1411,87 +1357,73 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begi
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[15], context[16]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTB#0 as range 9
-  // closed e.idxTTB#0 as range 13
-  // closed e.idxTTT#0 as range 2
+  // closed e.new#1 as range 5
+  // closed e.new#2 as range 9
+  // closed e.new#3 as range 13
+  // closed e.new#4 as range 2
   do {
-    // ( e.idx ) ( e.idx ) ( e.idx ) s.idx e.idx
-    // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/17 )/8 (/11 e.ValidDigits-B#1/26 s.Digit#1/30 e.ValidDigits-E#1/28 )/12 (/15 e.ScannedNumber#1/21 )/16 s.Digit#1/25 e.Tail#1/23 >/1
-    context[17] = context[5];
-    context[18] = context[6];
-    context[19] = context[9];
-    context[20] = context[10];
-    context[21] = context[13];
-    context[22] = context[14];
-    context[23] = context[2];
-    context[24] = context[3];
-    // closed e.Scanned#1 as range 17
-    // closed e.ScannedNumber#1 as range 21
-    if( ! refalrts::svar_left( context[25], context[23], context[24] ) )
+    // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/5 )/8 (/11 e.ValidDigits-B#1/22 s.Digit#1/26 e.ValidDigits-E#1/24 )/12 (/15 e.ScannedNumber#1/13 )/16 s.Digit#1/21 e.Tail#1/19 >/1
+    context[17] = context[9];
+    context[18] = context[10];
+    context[19] = context[2];
+    context[20] = context[3];
+    // closed e.Scanned#1 as range 5
+    // closed e.ScannedNumber#1 as range 13
+    if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
       continue;
-    // closed e.Tail#1 as range 23
-    context[26] = 0;
-    context[27] = 0;
+    // closed e.Tail#1 as range 19
+    context[22] = 0;
+    context[23] = 0;
     refalrts::start_e_loop();
     do {
-      context[28] = context[19];
-      context[29] = context[20];
-      if( ! refalrts::repeated_stvar_left( context[30], context[25], context[28], context[29] ) )
+      context[24] = context[17];
+      context[25] = context[18];
+      if( ! refalrts::repeated_stvar_left( context[26], context[21], context[24], context[25] ) )
         continue;
-      // closed e.ValidDigits-E#1 as range 28
-      //DEBUG: e.Scanned#1: 17
-      //DEBUG: e.ScannedNumber#1: 21
-      //DEBUG: s.Digit#1: 25
-      //DEBUG: e.Tail#1: 23
-      //DEBUG: e.ValidDigits-B#1: 26
-      //DEBUG: e.ValidDigits-E#1: 28
+      // closed e.ValidDigits-E#1 as range 24
+      //DEBUG: e.Scanned#1: 5
+      //DEBUG: e.ScannedNumber#1: 13
+      //DEBUG: s.Digit#1: 21
+      //DEBUG: e.Tail#1: 19
+      //DEBUG: e.ValidDigits-B#1: 22
+      //DEBUG: e.ValidDigits-E#1: 24
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE} s.Digit#1/25 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/17 AsIs: )/8 AsIs: (/11 AsIs: e.ValidDigits-B#1/26 AsIs: s.Digit#1/30 AsIs: e.ValidDigits-E#1/28 AsIs: )/12 AsIs: (/15 AsIs: e.ScannedNumber#1/21 HalfReuse: s.Digit1 #30/16 } )/31 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
-      if( ! refalrts::alloc_close_bracket( context[31] ) )
+      //TRASH: {REMOVED TILE} s.Digit#1/21 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR-Hex/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.ValidDigits-B#1/22 AsIs: s.Digit#1/26 AsIs: e.ValidDigits-E#1/24 AsIs: )/12 AsIs: (/15 AsIs: e.ScannedNumber#1/13 HalfReuse: s.Digit1 #26/16 } )/27 Tile{ AsIs: e.Tail#1/19 } Tile{ AsIs: >/1 ]] }
+      if( ! refalrts::alloc_close_bracket( context[27] ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_svar( context[16], context[30] );
+      refalrts::reinit_svar( context[16], context[26] );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
-      refalrts::link_brackets( context[15], context[31] );
+      refalrts::link_brackets( context[15], context[27] );
       refalrts::link_brackets( context[11], context[12] );
       refalrts::link_brackets( context[7], context[8] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
-      res = refalrts::splice_evar( res, context[23], context[24] );
-      res = refalrts::splice_evar( res, context[31], context[31] );
+      res = refalrts::splice_evar( res, context[19], context[20] );
+      res = refalrts::splice_evar( res, context[27], context[27] );
       refalrts::splice_to_freelist_open( context[16], res );
       return refalrts::cSuccess;
-    } while ( refalrts::open_evar_advance( context[26], context[27], context[19], context[20] ) );
+    } while ( refalrts::open_evar_advance( context[22], context[23], context[17], context[18] ) );
   } while ( 0 );
   refalrts::stop_sentence();
 
   do {
-    // ( e.idx ) ( e.idx ) ( ) e.idx
-    // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/17 )/8 (/11 e.ValidDigits#1/19 )/12 (/15 )/16 e.Tail#1/23 >/1
-    context[17] = context[5];
-    context[18] = context[6];
-    context[19] = context[9];
-    context[20] = context[10];
-    context[21] = context[13];
-    context[22] = context[14];
-    context[23] = context[2];
-    context[24] = context[3];
-    if( ! refalrts::empty_seq( context[21], context[22] ) )
+    // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/5 )/8 (/11 e.ValidDigits#1/9 )/12 (/15 )/16 e.Tail#1/2 >/1
+    if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
-    // closed e.Scanned#1 as range 17
-    // closed e.ValidDigits#1 as range 19
-    // closed e.Tail#1 as range 23
-    //DEBUG: e.Scanned#1: 17
-    //DEBUG: e.ValidDigits#1: 19
-    //DEBUG: e.Tail#1: 23
+    // closed e.Scanned#1 as range 5
+    // closed e.ValidDigits#1 as range 9
+    // closed e.Tail#1 as range 2
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.ValidDigits#1: 9
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} e.Scanned#1/17 )/8 (/11 e.ValidDigits#1/19 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: # Fail/0 HalfReuse: # BadEscapeCode/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: 'x'/12 HalfReuse: </15 HalfReuse: & Prefix3/16 AsIs: e.Tail#1/23 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} e.Scanned#1/5 )/8 (/11 e.ValidDigits#1/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: # Fail/0 HalfReuse: # BadEscapeCode/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: 'x'/12 HalfReuse: </15 HalfReuse: & Prefix3/16 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     refalrts::reinit_ident( context[0], ident_Fail );
     refalrts::reinit_ident( context[4], ident_BadEscapeCode );
     refalrts::reinit_char( context[7], '\\' );
@@ -1508,28 +1440,19 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begi
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) ( e.idx ) ( e.idx ) e.idx
-  // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/17 )/8 (/11 e.ValidDitits#1/19 )/12 (/15 e.ScannedHex#1/21 )/16 e.Tail#1/23 >/1
-  context[17] = context[5];
-  context[18] = context[6];
-  context[19] = context[9];
-  context[20] = context[10];
-  context[21] = context[13];
-  context[22] = context[14];
-  context[23] = context[2];
-  context[24] = context[3];
-  // closed e.Scanned#1 as range 17
-  // closed e.ValidDitits#1 as range 19
-  // closed e.ScannedHex#1 as range 21
-  // closed e.Tail#1 as range 23
-  //DEBUG: e.Scanned#1: 17
-  //DEBUG: e.ValidDitits#1: 19
-  //DEBUG: e.ScannedHex#1: 21
-  //DEBUG: e.Tail#1: 23
+  // </0 & DoUnEscapeString-SR-Hex/4 (/7 e.Scanned#1/5 )/8 (/11 e.ValidDitits#1/9 )/12 (/15 e.ScannedHex#1/13 )/16 e.Tail#1/2 >/1
+  // closed e.Scanned#1 as range 5
+  // closed e.ValidDitits#1 as range 9
+  // closed e.ScannedHex#1 as range 13
+  // closed e.Tail#1 as range 2
+  //DEBUG: e.Scanned#1: 5
+  //DEBUG: e.ValidDitits#1: 9
+  //DEBUG: e.ScannedHex#1: 13
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} e.ValidDitits#1/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/17 HalfReuse: </8 HalfReuse: & CharFromNum/11 } Tile{ HalfReuse: 16/15 } Tile{ AsIs: e.ScannedHex#1/21 } Tile{ HalfReuse: >/12 } Tile{ AsIs: )/16 AsIs: e.Tail#1/23 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} e.ValidDitits#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/5 HalfReuse: </8 HalfReuse: & CharFromNum/11 } Tile{ HalfReuse: 16/15 } Tile{ AsIs: e.ScannedHex#1/13 } Tile{ HalfReuse: >/12 } Tile{ AsIs: )/16 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
   refalrts::update_name( context[4], ref_DoUnEscapeStringm_SR.ref.function );
   refalrts::reinit_open_call( context[8] );
   refalrts::reinit_name( context[11], ref_CharFromNum.ref.function );
@@ -1544,7 +1467,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Hex(refalrts::Iter arg_begi
   refalrts::use(trash_prev);
   refalrts::Iter res = context[16];
   res = refalrts::splice_evar( res, context[12], context[12] );
-  res = refalrts::splice_evar( res, context[21], context[22] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
   res = refalrts::splice_evar( res, context[15], context[15] );
   refalrts::splice_to_freelist_open( context[11], res );
   return refalrts::cSuccess;
@@ -1558,17 +1481,14 @@ static refalrts::FnResult func_Prefix3(refalrts::Iter arg_begin, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: e.$
-  // </0 & Prefix3/4 e.idx#0/2 >/1
+  // </0 & Prefix3/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
+  // closed e.new#0 as range 2
   do {
-    // s.idx s.idx s.idx s.idx e.idx
     // </0 & Prefix3/4 s.1#1/7 s.2#1/8 s.3#1/9 s.4#1/10 e.Tail#1/5 >/1
     context[5] = context[2];
     context[6] = context[3];
@@ -1603,20 +1523,17 @@ static refalrts::FnResult func_Prefix3(refalrts::Iter arg_begin, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // e.idx
-  // </0 & Prefix3/4 e.ShortExpr#1/5 >/1
-  context[5] = context[2];
-  context[6] = context[3];
-  // closed e.ShortExpr#1 as range 5
-  //DEBUG: e.ShortExpr#1: 5
+  // </0 & Prefix3/4 e.ShortExpr#1/2 >/1
+  // closed e.ShortExpr#1 as range 2
+  //DEBUG: e.ShortExpr#1: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & Prefix3/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.ShortExpr#1/5 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.ShortExpr#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }
@@ -1626,17 +1543,17 @@ static refalrts::NativeReference nat_ref_Prefix3("Prefix3", 2896966701U, 3378406
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 33 elems
-  refalrts::Iter context[33];
-  refalrts::zeros( context, 33 );
-  //FAST GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
-  //GLOBAL GEN: ( e.$ ) ( s.$ e.$ ) ( e.$ ) e.$
-  // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.idxB#0/5 )/8 (/11 s.idxTB#0/17 e.idxTBV#0/9 )/12 (/15 e.idxTTB#0/13 )/16 e.idxTTT#0/2 >/1
+  // issue here memory for vars with 29 elems
+  refalrts::Iter context[29];
+  refalrts::zeros( context, 29 );
+  // </0 & DoUnEscapeString-SR-DecOct/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.new#1/5 )/8 (/11 s.new#2/17 e.new#3/9 )/12 (/15 e.new#4/13 )/16 e.new#5/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -1655,45 +1572,38 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_b
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[15], context[16]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTTB#0 as range 13
-  // closed e.idxTTT#0 as range 2
+  // closed e.new#1 as range 5
+  // closed e.new#4 as range 13
+  // closed e.new#5 as range 2
   if( ! refalrts::svar_left( context[17], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTBV#0 as range 9
+  // closed e.new#3 as range 9
   do {
-    // ( e.idx ) ( s.idx e.idx ) ( s.idx s.idx s.idx ) e.idx
-    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/18 )/8 (/11 s.Base#1/17 e.ValidDigits#1/20 )/12 (/15 s.D1#1/26 s.D2#1/27 s.D3#1/28 )/16 e.Tail#1/24 >/1
-    context[18] = context[5];
-    context[19] = context[6];
-    context[20] = context[9];
-    context[21] = context[10];
-    context[22] = context[13];
-    context[23] = context[14];
-    context[24] = context[2];
-    context[25] = context[3];
-    // closed e.Scanned#1 as range 18
-    // closed e.ValidDigits#1 as range 20
-    // closed e.Tail#1 as range 24
-    if( ! refalrts::svar_left( context[26], context[22], context[23] ) )
+    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/5 )/8 (/11 s.Base#1/17 e.ValidDigits#1/9 )/12 (/15 s.D1#1/20 s.D2#1/21 s.D3#1/22 )/16 e.Tail#1/2 >/1
+    context[18] = context[13];
+    context[19] = context[14];
+    // closed e.Scanned#1 as range 5
+    // closed e.ValidDigits#1 as range 9
+    // closed e.Tail#1 as range 2
+    if( ! refalrts::svar_left( context[20], context[18], context[19] ) )
       continue;
-    if( ! refalrts::svar_left( context[27], context[22], context[23] ) )
+    if( ! refalrts::svar_left( context[21], context[18], context[19] ) )
       continue;
-    if( ! refalrts::svar_left( context[28], context[22], context[23] ) )
+    if( ! refalrts::svar_left( context[22], context[18], context[19] ) )
       continue;
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    if( ! refalrts::empty_seq( context[18], context[19] ) )
       continue;
     //DEBUG: s.Base#1: 17
-    //DEBUG: e.Scanned#1: 18
-    //DEBUG: e.ValidDigits#1: 20
-    //DEBUG: e.Tail#1: 24
-    //DEBUG: s.D1#1: 26
-    //DEBUG: s.D2#1: 27
-    //DEBUG: s.D3#1: 28
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.ValidDigits#1: 9
+    //DEBUG: e.Tail#1: 2
+    //DEBUG: s.D1#1: 20
+    //DEBUG: s.D2#1: 21
+    //DEBUG: s.D3#1: 22
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} e.ValidDigits#1/20 )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/18 HalfReuse: </8 HalfReuse: & CharFromNum/11 AsIs: s.Base#1/17 } Tile{ AsIs: s.D1#1/26 AsIs: s.D2#1/27 AsIs: s.D3#1/28 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/16 AsIs: e.Tail#1/24 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} e.ValidDigits#1/9 )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/5 HalfReuse: </8 HalfReuse: & CharFromNum/11 AsIs: s.Base#1/17 } Tile{ AsIs: s.D1#1/20 AsIs: s.D2#1/21 AsIs: s.D3#1/22 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/16 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     refalrts::update_name( context[4], ref_DoUnEscapeStringm_SR.ref.function );
     refalrts::reinit_open_call( context[8] );
     refalrts::reinit_name( context[11], ref_CharFromNum.ref.function );
@@ -1707,91 +1617,77 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_b
     refalrts::use(trash_prev);
     refalrts::Iter res = context[16];
     res = refalrts::splice_evar( res, context[15], context[15] );
-    res = refalrts::splice_evar( res, context[26], context[28] );
+    res = refalrts::splice_evar( res, context[20], context[22] );
     refalrts::splice_to_freelist_open( context[17], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
   do {
-    // ( e.idx ) ( s.idx e.idx ) ( e.idx ) s.idx e.idx
-    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/18 )/8 (/11 s.Base#1/17 e.ValidDigits-B#1/27 s.Digit#1/31 e.ValidDigits-E#1/29 )/12 (/15 e.ScannedNumber#1/22 )/16 s.Digit#1/26 e.Tail#1/24 >/1
-    context[18] = context[5];
-    context[19] = context[6];
-    context[20] = context[9];
-    context[21] = context[10];
-    context[22] = context[13];
-    context[23] = context[14];
-    context[24] = context[2];
-    context[25] = context[3];
-    // closed e.Scanned#1 as range 18
-    // closed e.ScannedNumber#1 as range 22
-    if( ! refalrts::svar_left( context[26], context[24], context[25] ) )
+    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/5 )/8 (/11 s.Base#1/17 e.ValidDigits-B#1/23 s.Digit#1/27 e.ValidDigits-E#1/25 )/12 (/15 e.ScannedNumber#1/13 )/16 s.Digit#1/22 e.Tail#1/20 >/1
+    context[18] = context[9];
+    context[19] = context[10];
+    context[20] = context[2];
+    context[21] = context[3];
+    // closed e.Scanned#1 as range 5
+    // closed e.ScannedNumber#1 as range 13
+    if( ! refalrts::svar_left( context[22], context[20], context[21] ) )
       continue;
-    // closed e.Tail#1 as range 24
-    context[27] = 0;
-    context[28] = 0;
+    // closed e.Tail#1 as range 20
+    context[23] = 0;
+    context[24] = 0;
     refalrts::start_e_loop();
     do {
-      context[29] = context[20];
-      context[30] = context[21];
-      if( ! refalrts::repeated_stvar_left( context[31], context[26], context[29], context[30] ) )
+      context[25] = context[18];
+      context[26] = context[19];
+      if( ! refalrts::repeated_stvar_left( context[27], context[22], context[25], context[26] ) )
         continue;
-      // closed e.ValidDigits-E#1 as range 29
+      // closed e.ValidDigits-E#1 as range 25
       //DEBUG: s.Base#1: 17
-      //DEBUG: e.Scanned#1: 18
-      //DEBUG: e.ScannedNumber#1: 22
-      //DEBUG: s.Digit#1: 26
-      //DEBUG: e.Tail#1: 24
-      //DEBUG: e.ValidDigits-B#1: 27
-      //DEBUG: e.ValidDigits-E#1: 29
+      //DEBUG: e.Scanned#1: 5
+      //DEBUG: e.ScannedNumber#1: 13
+      //DEBUG: s.Digit#1: 22
+      //DEBUG: e.Tail#1: 20
+      //DEBUG: e.ValidDigits-B#1: 23
+      //DEBUG: e.ValidDigits-E#1: 25
 
       refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE} s.Digit#1/26 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/18 AsIs: )/8 AsIs: (/11 AsIs: s.Base#1/17 AsIs: e.ValidDigits-B#1/27 AsIs: s.Digit#1/31 AsIs: e.ValidDigits-E#1/29 AsIs: )/12 AsIs: (/15 AsIs: e.ScannedNumber#1/22 HalfReuse: s.Digit1 #31/16 } )/32 Tile{ AsIs: e.Tail#1/24 } Tile{ AsIs: >/1 ]] }
-      if( ! refalrts::alloc_close_bracket( context[32] ) )
+      //TRASH: {REMOVED TILE} s.Digit#1/22 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: (/11 AsIs: s.Base#1/17 AsIs: e.ValidDigits-B#1/23 AsIs: s.Digit#1/27 AsIs: e.ValidDigits-E#1/25 AsIs: )/12 AsIs: (/15 AsIs: e.ScannedNumber#1/13 HalfReuse: s.Digit1 #27/16 } )/28 Tile{ AsIs: e.Tail#1/20 } Tile{ AsIs: >/1 ]] }
+      if( ! refalrts::alloc_close_bracket( context[28] ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_svar( context[16], context[31] );
+      refalrts::reinit_svar( context[16], context[27] );
       refalrts::push_stack( context[1] );
       refalrts::push_stack( context[0] );
-      refalrts::link_brackets( context[15], context[32] );
+      refalrts::link_brackets( context[15], context[28] );
       refalrts::link_brackets( context[11], context[12] );
       refalrts::link_brackets( context[7], context[8] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
-      res = refalrts::splice_evar( res, context[24], context[25] );
-      res = refalrts::splice_evar( res, context[32], context[32] );
+      res = refalrts::splice_evar( res, context[20], context[21] );
+      res = refalrts::splice_evar( res, context[28], context[28] );
       refalrts::splice_to_freelist_open( context[16], res );
       return refalrts::cSuccess;
-    } while ( refalrts::open_evar_advance( context[27], context[28], context[20], context[21] ) );
+    } while ( refalrts::open_evar_advance( context[23], context[24], context[18], context[19] ) );
   } while ( 0 );
   refalrts::stop_sentence();
 
   do {
-    // ( e.idx ) ( s.idx e.idx ) ( ) e.idx
-    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/18 )/8 (/11 s.Base#1/17 e.ValidDigits#1/20 )/12 (/15 )/16 e.Tail#1/24 >/1
-    context[18] = context[5];
-    context[19] = context[6];
-    context[20] = context[9];
-    context[21] = context[10];
-    context[22] = context[13];
-    context[23] = context[14];
-    context[24] = context[2];
-    context[25] = context[3];
-    if( ! refalrts::empty_seq( context[22], context[23] ) )
+    // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/5 )/8 (/11 s.Base#1/17 e.ValidDigits#1/9 )/12 (/15 )/16 e.Tail#1/2 >/1
+    if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
-    // closed e.Scanned#1 as range 18
-    // closed e.ValidDigits#1 as range 20
-    // closed e.Tail#1 as range 24
+    // closed e.Scanned#1 as range 5
+    // closed e.ValidDigits#1 as range 9
+    // closed e.Tail#1 as range 2
     //DEBUG: s.Base#1: 17
-    //DEBUG: e.Scanned#1: 18
-    //DEBUG: e.ValidDigits#1: 20
-    //DEBUG: e.Tail#1: 24
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.ValidDigits#1: 9
+    //DEBUG: e.Tail#1: 2
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} e.Scanned#1/18 )/8 (/11 s.Base#1/17 e.ValidDigits#1/20 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: # Fail/0 HalfReuse: # BadEscapeCode/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: 'd'/12 HalfReuse: </15 HalfReuse: & Prefix3/16 AsIs: e.Tail#1/24 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} e.Scanned#1/5 )/8 (/11 s.Base#1/17 e.ValidDigits#1/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: # Fail/0 HalfReuse: # BadEscapeCode/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: 'd'/12 HalfReuse: </15 HalfReuse: & Prefix3/16 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
     refalrts::reinit_ident( context[0], ident_Fail );
     refalrts::reinit_ident( context[4], ident_BadEscapeCode );
     refalrts::reinit_char( context[7], '\\' );
@@ -1808,29 +1704,20 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) ( s.idx e.idx ) ( e.idx ) e.idx
-  // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/18 )/8 (/11 s.Base#1/17 e.ValidDigits#1/20 )/12 (/15 e.ScannedNumber#1/22 )/16 e.Tail#1/24 >/1
-  context[18] = context[5];
-  context[19] = context[6];
-  context[20] = context[9];
-  context[21] = context[10];
-  context[22] = context[13];
-  context[23] = context[14];
-  context[24] = context[2];
-  context[25] = context[3];
-  // closed e.Scanned#1 as range 18
-  // closed e.ValidDigits#1 as range 20
-  // closed e.ScannedNumber#1 as range 22
-  // closed e.Tail#1 as range 24
+  // </0 & DoUnEscapeString-SR-DecOct/4 (/7 e.Scanned#1/5 )/8 (/11 s.Base#1/17 e.ValidDigits#1/9 )/12 (/15 e.ScannedNumber#1/13 )/16 e.Tail#1/2 >/1
+  // closed e.Scanned#1 as range 5
+  // closed e.ValidDigits#1 as range 9
+  // closed e.ScannedNumber#1 as range 13
+  // closed e.Tail#1 as range 2
   //DEBUG: s.Base#1: 17
-  //DEBUG: e.Scanned#1: 18
-  //DEBUG: e.ValidDigits#1: 20
-  //DEBUG: e.ScannedNumber#1: 22
-  //DEBUG: e.Tail#1: 24
+  //DEBUG: e.Scanned#1: 5
+  //DEBUG: e.ValidDigits#1: 9
+  //DEBUG: e.ScannedNumber#1: 13
+  //DEBUG: e.Tail#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} e.ValidDigits#1/20 )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/18 HalfReuse: </8 HalfReuse: & CharFromNum/11 AsIs: s.Base#1/17 } Tile{ AsIs: e.ScannedNumber#1/22 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/16 AsIs: e.Tail#1/24 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} e.ValidDigits#1/9 )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/5 HalfReuse: </8 HalfReuse: & CharFromNum/11 AsIs: s.Base#1/17 } Tile{ AsIs: e.ScannedNumber#1/13 } Tile{ HalfReuse: >/15 } Tile{ AsIs: )/16 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
   refalrts::update_name( context[4], ref_DoUnEscapeStringm_SR.ref.function );
   refalrts::reinit_open_call( context[8] );
   refalrts::reinit_name( context[11], ref_CharFromNum.ref.function );
@@ -1844,7 +1731,7 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_DecOct(refalrts::Iter arg_b
   refalrts::use(trash_prev);
   refalrts::Iter res = context[16];
   res = refalrts::splice_evar( res, context[15], context[15] );
-  res = refalrts::splice_evar( res, context[22], context[23] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
   refalrts::splice_to_freelist_open( context[17], res );
   return refalrts::cSuccess;
 }
@@ -1854,17 +1741,17 @@ static refalrts::NativeReference nat_ref_DoUnEscapeStringm_SRm_DecOct("DoUnEscap
 
 static refalrts::FnResult func_gen_DoUnEscapeStringm_SRm_Escape_S2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 22 elems
-  refalrts::Iter context[22];
-  refalrts::zeros( context, 22 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) ( e.$ ) s.$ s.$ e.$
-  // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 s.idxTT#0/13 s.idxTTV#0/14 e.idxTTVV#0/2 >/1
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
+  // </0 & DoUnEscapeString-SR-Escape$2\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 s.new#4/14 s.new#5/13 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -1877,40 +1764,35 @@ static refalrts::FnResult func_gen_DoUnEscapeStringm_SRm_Escape_S2L1(refalrts::I
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTB#0 as range 9
-  if( ! refalrts::svar_left( context[13], context[2], context[3] ) )
+  // closed e.new#1 as range 5
+  // closed e.new#2 as range 9
+  if( ! refalrts::svar_right( context[13], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[14], context[2], context[3] ) )
+  if( ! refalrts::svar_right( context[14], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxTTVV#0 as range 2
+  // closed e.new#3 as range 2
   do {
-    // ( e.idx ) ( e.idx ) s.idx # Success s.idx
-    // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.Scanned#1/15 )/8 (/11 e.Tail#1/17 )/12 s.Next#1/13 # Success/14 s.Char#2/21 >/1
-    context[15] = context[5];
-    context[16] = context[6];
-    context[17] = context[9];
-    context[18] = context[10];
-    context[19] = context[2];
-    context[20] = context[3];
+    // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.Scanned#1/5 )/8 (/11 e.Tail#1/9 )/12 s.Next#1/17 # Success/14 s.Char#2/13 >/1
+    context[15] = context[2];
+    context[16] = context[3];
     if( ! refalrts::ident_term(  ident_Success, context[14] ) )
       continue;
-    // closed e.Scanned#1 as range 15
-    // closed e.Tail#1 as range 17
-    if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
+    // closed e.Scanned#1 as range 5
+    // closed e.Tail#1 as range 9
+    if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
       continue;
-    if( ! refalrts::empty_seq( context[19], context[20] ) )
+    if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
-    //DEBUG: s.Next#1: 13
-    //DEBUG: e.Scanned#1: 15
-    //DEBUG: e.Tail#1: 17
-    //DEBUG: s.Char#2: 21
+    //DEBUG: s.Char#2: 13
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.Tail#1: 9
+    //DEBUG: s.Next#1: 17
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} s.Next#1/13 # Success/14 s.Char#2/21 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/15 HalfReuse: s.Char2 #21/8 HalfReuse: )/11 AsIs: e.Tail#1/17 HalfReuse: >/12 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} s.Next#1/17 # Success/14 s.Char#2/13 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR/4 AsIs: (/7 AsIs: e.Scanned#1/5 HalfReuse: s.Char2 #13/8 HalfReuse: )/11 AsIs: e.Tail#1/9 HalfReuse: >/12 } Tile{ ]] }
     refalrts::update_name( context[4], ref_DoUnEscapeStringm_SR.ref.function );
-    refalrts::reinit_svar( context[8], context[21] );
+    refalrts::reinit_svar( context[8], context[13] );
     refalrts::reinit_close_bracket( context[11] );
     refalrts::reinit_close_call( context[12] );
     refalrts::push_stack( context[12] );
@@ -1924,31 +1806,24 @@ static refalrts::FnResult func_gen_DoUnEscapeStringm_SRm_Escape_S2L1(refalrts::I
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) ( e.idx ) s.idx # Fails
-  // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.Scanned#1/15 )/8 (/11 e.Tail#1/17 )/12 s.Next#1/13 # Fails/14 >/1
-  context[15] = context[5];
-  context[16] = context[6];
-  context[17] = context[9];
-  context[18] = context[10];
-  context[19] = context[2];
-  context[20] = context[3];
-  if( ! refalrts::ident_term(  ident_Fails, context[14] ) )
+  // </0 & DoUnEscapeString-SR-Escape$2\1/4 (/7 e.Scanned#1/5 )/8 (/11 e.Tail#1/9 )/12 s.Next#1/14 # Fails/13 >/1
+  if( ! refalrts::ident_term(  ident_Fails, context[13] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[19], context[20] ) )
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 15
-  // closed e.Tail#1 as range 17
-  //DEBUG: s.Next#1: 13
-  //DEBUG: e.Scanned#1: 15
-  //DEBUG: e.Tail#1: 17
+  // closed e.Scanned#1 as range 5
+  // closed e.Tail#1 as range 9
+  //DEBUG: s.Next#1: 14
+  //DEBUG: e.Scanned#1: 5
+  //DEBUG: e.Tail#1: 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} e.Scanned#1/15 )/8 (/11 e.Tail#1/17 )/12 s.Next#1/13 # Fails/14 {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: # Fails/0 HalfReuse: # BadEscapeSymbol/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: s.Next1 #13/1 ]] }
+  //TRASH: {REMOVED TILE} e.Scanned#1/5 )/8 (/11 e.Tail#1/9 )/12 s.Next#1/14 # Fails/13 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: # Fails/0 HalfReuse: # BadEscapeSymbol/4 HalfReuse: '\\'/7 } Tile{ HalfReuse: s.Next1 #14/1 ]] }
   refalrts::reinit_ident( context[0], ident_Fails );
   refalrts::reinit_ident( context[4], ident_BadEscapeSymbol );
   refalrts::reinit_char( context[7], '\\' );
-  refalrts::reinit_svar( context[1], context[13] );
+  refalrts::reinit_svar( context[1], context[14] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -1961,17 +1836,17 @@ static refalrts::NativeReference nat_ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1("
 
 static refalrts::FnResult func_DoUnEscapeStringm_SRm_Escape(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 28 elems
-  refalrts::Iter context[28];
-  refalrts::zeros( context, 28 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: ( e.$ ) ( e.$ ) e.$
-  // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.idxB#0/5 )/8 (/11 e.idxTB#0/9 )/12 e.idxTT#0/2 >/1
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
+  // </0 & DoUnEscapeString-SR-Escape/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -1984,143 +1859,128 @@ static refalrts::FnResult func_DoUnEscapeStringm_SRm_Escape(refalrts::Iter arg_b
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.idxB#0 as range 5
-  // closed e.idxTB#0 as range 9
-  // closed e.idxTT#0 as range 2
+  // closed e.new#1 as range 5
+  // closed e.new#2 as range 9
+  // closed e.new#3 as range 2
   do {
-    // ( e.idx ) ( e.idx ) s.idx e.idx
-    // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/13 )/8 (/11 e.Octs-B#1/20 s.Oct#1/24 e.Octs-E#1/22 )/12 s.Oct#1/19 e.Tail#1/17 >/1
-    context[13] = context[5];
-    context[14] = context[6];
-    context[15] = context[9];
-    context[16] = context[10];
-    context[17] = context[2];
-    context[18] = context[3];
-    // closed e.Scanned#1 as range 13
-    if( ! refalrts::svar_left( context[19], context[17], context[18] ) )
+    // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.new#4/5 )/8 (/11 e.new#5/9 )/12 s.new#6/15 e.new#7/13 >/1
+    context[13] = context[2];
+    context[14] = context[3];
+    // closed e.new#4 as range 5
+    // closed e.new#5 as range 9
+    if( ! refalrts::svar_left( context[15], context[13], context[14] ) )
       continue;
-    // closed e.Tail#1 as range 17
-    context[20] = 0;
-    context[21] = 0;
-    refalrts::start_e_loop();
+    // closed e.new#7 as range 13
     do {
-      context[22] = context[15];
-      context[23] = context[16];
-      if( ! refalrts::repeated_stvar_left( context[24], context[19], context[22], context[23] ) )
-        continue;
-      // closed e.Octs-E#1 as range 22
-      //DEBUG: e.Scanned#1: 13
-      //DEBUG: s.Oct#1: 19
-      //DEBUG: e.Tail#1: 17
-      //DEBUG: e.Octs-B#1: 20
-      //DEBUG: e.Octs-E#1: 22
+      // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/5 )/8 (/11 e.Octs-B#1/18 s.Oct#1/22 e.Octs-E#1/20 )/12 s.Oct#1/15 e.Tail#1/13 >/1
+      context[16] = context[9];
+      context[17] = context[10];
+      // closed e.Scanned#1 as range 5
+      // closed e.Tail#1 as range 13
+      context[18] = 0;
+      context[19] = 0;
+      refalrts::start_e_loop();
+      do {
+        context[20] = context[16];
+        context[21] = context[17];
+        if( ! refalrts::repeated_stvar_left( context[22], context[15], context[20], context[21] ) )
+          continue;
+        // closed e.Octs-E#1 as range 20
+        //DEBUG: s.Oct#1: 15
+        //DEBUG: e.Scanned#1: 5
+        //DEBUG: e.Tail#1: 13
+        //DEBUG: e.Octs-B#1: 18
+        //DEBUG: e.Octs-E#1: 20
 
-      refalrts::reset_allocator();
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/13 AsIs: )/8 AsIs: (/11 } 8/25 Tile{ AsIs: e.Octs-B#1/20 } Tile{ AsIs: s.Oct#1/24 AsIs: e.Octs-E#1/22 AsIs: )/12 } (/26 Tile{ AsIs: s.Oct#1/19 } )/27 Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: >/1 ]] }
-      if( ! refalrts::alloc_number( context[25], 8UL ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_open_bracket( context[26] ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( context[27] ) )
-        return refalrts::cNoMemory;
-      refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
-      refalrts::push_stack( context[1] );
-      refalrts::push_stack( context[0] );
-      refalrts::link_brackets( context[26], context[27] );
-      refalrts::link_brackets( context[11], context[12] );
-      refalrts::link_brackets( context[7], context[8] );
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      res = refalrts::splice_evar( res, context[17], context[18] );
-      res = refalrts::splice_evar( res, context[27], context[27] );
-      res = refalrts::splice_evar( res, context[19], context[19] );
-      res = refalrts::splice_evar( res, context[26], context[26] );
-      res = refalrts::splice_evar( res, context[24], context[12] );
-      res = refalrts::splice_evar( res, context[20], context[21] );
-      res = refalrts::splice_evar( res, context[25], context[25] );
-      refalrts::use( res );
-      return refalrts::cSuccess;
-    } while ( refalrts::open_evar_advance( context[20], context[21], context[15], context[16] ) );
-  } while ( 0 );
-  refalrts::stop_sentence();
+        refalrts::reset_allocator();
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoUnEscapeString-SR-DecOct/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: (/11 } 8/23 Tile{ AsIs: e.Octs-B#1/18 } Tile{ AsIs: s.Oct#1/22 AsIs: e.Octs-E#1/20 AsIs: )/12 } (/24 Tile{ AsIs: s.Oct#1/15 } )/25 Tile{ AsIs: e.Tail#1/13 } Tile{ AsIs: >/1 ]] }
+        if( ! refalrts::alloc_number( context[23], 8UL ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_open_bracket( context[24] ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_bracket( context[25] ) )
+          return refalrts::cNoMemory;
+        refalrts::update_name( context[4], ref_DoUnEscapeStringm_SRm_DecOct.ref.function );
+        refalrts::push_stack( context[1] );
+        refalrts::push_stack( context[0] );
+        refalrts::link_brackets( context[24], context[25] );
+        refalrts::link_brackets( context[11], context[12] );
+        refalrts::link_brackets( context[7], context[8] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[1];
+        res = refalrts::splice_evar( res, context[13], context[14] );
+        res = refalrts::splice_evar( res, context[25], context[25] );
+        res = refalrts::splice_evar( res, context[15], context[15] );
+        res = refalrts::splice_evar( res, context[24], context[24] );
+        res = refalrts::splice_evar( res, context[22], context[12] );
+        res = refalrts::splice_evar( res, context[18], context[19] );
+        res = refalrts::splice_evar( res, context[23], context[23] );
+        refalrts::use( res );
+        return refalrts::cSuccess;
+      } while ( refalrts::open_evar_advance( context[18], context[19], context[16], context[17] ) );
+    } while ( 0 );
+    refalrts::stop_sentence();
 
-  do {
-    // ( e.idx ) ( e.idx ) s.idx e.idx
-    // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/13 )/8 (/11 e.Octs#1/15 )/12 s.Next#1/19 e.Tail#1/17 >/1
-    context[13] = context[5];
-    context[14] = context[6];
-    context[15] = context[9];
-    context[16] = context[10];
-    context[17] = context[2];
-    context[18] = context[3];
-    // closed e.Scanned#1 as range 13
-    // closed e.Octs#1 as range 15
-    if( ! refalrts::svar_left( context[19], context[17], context[18] ) )
-      continue;
-    // closed e.Tail#1 as range 17
-    //DEBUG: e.Scanned#1: 13
-    //DEBUG: e.Octs#1: 15
-    //DEBUG: s.Next#1: 19
-    //DEBUG: e.Tail#1: 17
+    // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/5 )/8 (/11 e.Octs#1/9 )/12 s.Next#1/15 e.Tail#1/13 >/1
+    // closed e.Scanned#1 as range 5
+    // closed e.Octs#1 as range 9
+    // closed e.Tail#1 as range 13
+    //DEBUG: s.Next#1: 15
+    //DEBUG: e.Scanned#1: 5
+    //DEBUG: e.Octs#1: 9
+    //DEBUG: e.Tail#1: 13
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Octs#1/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </20 & Fetch/21 </22 & SingularEscape/23 s.Next#1/19/24 >/25 Tile{ HalfReuse: [*]/0 Reuse: & DoUnEscapeString-SR-Escape$2\1/4 AsIs: (/7 AsIs: e.Scanned#1/13 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: )/12 AsIs: s.Next#1/19 } {*}/26 Tile{ AsIs: >/1 ]] }
-    if( ! refalrts::alloc_open_call( context[20] ) )
+    //TRASH: {REMOVED TILE} {REMOVED TILE} e.Octs#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </16 & Fetch/17 </18 & SingularEscape/19 s.Next#1/15/20 >/21 Tile{ HalfReuse: [*]/0 Reuse: & DoUnEscapeString-SR-Escape$2\1/4 AsIs: (/7 AsIs: e.Scanned#1/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.Tail#1/13 } Tile{ AsIs: )/12 AsIs: s.Next#1/15 } {*}/22 Tile{ AsIs: >/1 ]] }
+    if( ! refalrts::alloc_open_call( context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[21], ref_Fetch.ref.function ) )
+    if( ! refalrts::alloc_name( context[17], ref_Fetch.ref.function ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_open_call( context[22] ) )
+    if( ! refalrts::alloc_open_call( context[18] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( context[23], ref_SingularEscape.ref.function ) )
+    if( ! refalrts::alloc_name( context[19], ref_SingularEscape.ref.function ) )
       return refalrts::cNoMemory;
-    if (! refalrts::copy_stvar(context[24], context[19]))
+    if (! refalrts::copy_stvar(context[20], context[15]))
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_close_call( context[25] ) )
+    if( ! refalrts::alloc_close_call( context[21] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_unwrapped_closure( context[26], context[0] ) )
+    if( ! refalrts::alloc_unwrapped_closure( context[22], context[0] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_closure_head( context[0] );
     refalrts::update_name( context[4], ref_gen_DoUnEscapeStringm_SRm_Escape_S2L1.ref.function );
     refalrts::push_stack( context[1] );
-    refalrts::push_stack( context[20] );
+    refalrts::push_stack( context[16] );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::link_brackets( context[7], context[8] );
-    refalrts::push_stack( context[25] );
-    refalrts::push_stack( context[22] );
+    refalrts::push_stack( context[21] );
+    refalrts::push_stack( context[18] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[26], context[26] );
-    res = refalrts::splice_evar( res, context[12], context[19] );
-    res = refalrts::splice_evar( res, context[17], context[18] );
+    res = refalrts::splice_evar( res, context[22], context[22] );
+    res = refalrts::splice_evar( res, context[12], context[15] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
     res = refalrts::splice_evar( res, context[0], context[11] );
-    res = refalrts::splice_evar( res, context[20], context[25] );
+    res = refalrts::splice_evar( res, context[16], context[21] );
     refalrts::splice_to_freelist_open( trash_prev, res );
-    refalrts::wrap_closure( context[26] );
+    refalrts::wrap_closure( context[22] );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // ( e.idx ) ( e.idx )
-  // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/13 )/8 (/11 e.Octs#1/15 )/12 >/1
-  context[13] = context[5];
-  context[14] = context[6];
-  context[15] = context[9];
-  context[16] = context[10];
-  context[17] = context[2];
-  context[18] = context[3];
-  if( ! refalrts::empty_seq( context[17], context[18] ) )
+  // </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/5 )/8 (/11 e.Octs#1/9 )/12 >/1
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 13
-  // closed e.Octs#1 as range 15
-  //DEBUG: e.Scanned#1: 13
-  //DEBUG: e.Octs#1: 15
+  // closed e.Scanned#1 as range 5
+  // closed e.Octs#1 as range 9
+  //DEBUG: e.Scanned#1: 5
+  //DEBUG: e.Octs#1: 9
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/13 )/8 (/11 e.Octs#1/15 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & DoUnEscapeString-SR-Escape/4 (/7 e.Scanned#1/5 )/8 (/11 e.Octs#1/9 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/12 HalfReuse: # EOLAfterSlash/1 ]] }
   refalrts::reinit_ident( context[12], ident_Fails );
   refalrts::reinit_ident( context[1], ident_EOLAfterSlash );
@@ -2139,20 +1999,19 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & SingularEscape/4 s.idx#0/5 >/1
+  // </0 & SingularEscape/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & SingularEscape/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // 'r'
     // </0 & SingularEscape/4 'r'/5 >/1
     if( ! refalrts::char_term( 'r', context[5] ) )
       continue;
@@ -2171,7 +2030,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 'n'
     // </0 & SingularEscape/4 'n'/5 >/1
     if( ! refalrts::char_term( 'n', context[5] ) )
       continue;
@@ -2190,7 +2048,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 't'
     // </0 & SingularEscape/4 't'/5 >/1
     if( ! refalrts::char_term( 't', context[5] ) )
       continue;
@@ -2209,7 +2066,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 'a'
     // </0 & SingularEscape/4 'a'/5 >/1
     if( ! refalrts::char_term( 'a', context[5] ) )
       continue;
@@ -2228,7 +2084,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 'b'
     // </0 & SingularEscape/4 'b'/5 >/1
     if( ! refalrts::char_term( 'b', context[5] ) )
       continue;
@@ -2247,7 +2102,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 'f'
     // </0 & SingularEscape/4 'f'/5 >/1
     if( ! refalrts::char_term( 'f', context[5] ) )
       continue;
@@ -2266,7 +2120,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // 'v'
     // </0 & SingularEscape/4 'v'/5 >/1
     if( ! refalrts::char_term( 'v', context[5] ) )
       continue;
@@ -2285,7 +2138,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // '\\'
     // </0 & SingularEscape/4 '\\'/5 >/1
     if( ! refalrts::char_term( '\\', context[5] ) )
       continue;
@@ -2304,7 +2156,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // '\''
     // </0 & SingularEscape/4 '\''/5 >/1
     if( ! refalrts::char_term( '\'', context[5] ) )
       continue;
@@ -2323,7 +2174,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   refalrts::stop_sentence();
 
   do {
-    // '\"'
     // </0 & SingularEscape/4 '\"'/5 >/1
     if( ! refalrts::char_term( '\"', context[5] ) )
       continue;
@@ -2341,7 +2191,6 @@ static refalrts::FnResult func_SingularEscape(refalrts::Iter arg_begin, refalrts
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & SingularEscape/4 s.Other#1/5 >/1
   //DEBUG: s.Other#1: 5
 

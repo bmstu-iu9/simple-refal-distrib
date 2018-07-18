@@ -16,17 +16,14 @@ static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, r
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: e.$
-  // </0 & SR-LoadSource\1/4 e.idx#0/2 >/1
+  // </0 & SR-LoadSource\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
+  // closed e.new#0 as range 2
   do {
-    // '\357\273\277' e.idx
     // </0 & SR-LoadSource\1/4 '\357'/7 '\273'/8 '\277'/9 e.Content#2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
@@ -54,20 +51,17 @@ static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // e.idx
-  // </0 & SR-LoadSource\1/4 e.Content#2/5 >/1
-  context[5] = context[2];
-  context[6] = context[3];
-  // closed e.Content#2 as range 5
-  //DEBUG: e.Content#2: 5
+  // </0 & SR-LoadSource\1/4 e.Content#2/2 >/1
+  // closed e.Content#2 as range 2
+  //DEBUG: e.Content#2: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & SR-LoadSource\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/5 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Content#2/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }

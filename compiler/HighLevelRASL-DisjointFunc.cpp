@@ -27,17 +27,14 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: e.$
-  // </0 & HighLevelRASL-Function-Disjoint\1/4 e.idx#0/2 >/1
+  // </0 & HighLevelRASL-Function-Disjoint\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
+  // closed e.new#0 as range 2
   do {
-    // e.idx ( # CmdOpenELoop e.idx )
     // </0 & HighLevelRASL-Function-Disjoint\1/4 e.Commands#4/5 (/9 # CmdOpenELoop/11 e.OpenELoop#4/7 )/10 >/1
     context[5] = context[2];
     context[6] = context[3];
@@ -74,20 +71,17 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // e.idx
-  // </0 & HighLevelRASL-Function-Disjoint\1/4 e.LastSentence#4/5 >/1
-  context[5] = context[2];
-  context[6] = context[3];
-  // closed e.LastSentence#4 as range 5
-  //DEBUG: e.LastSentence#4: 5
+  // </0 & HighLevelRASL-Function-Disjoint\1/4 e.LastSentence#4/2 >/1
+  // closed e.LastSentence#4 as range 2
+  //DEBUG: e.LastSentence#4: 2
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Disjoint\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.LastSentence#4/5 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.LastSentence#4/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
   refalrts::splice_to_freelist_open( trash_prev, res );
   return refalrts::cSuccess;
 }

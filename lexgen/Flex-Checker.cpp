@@ -16,21 +16,20 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: t.$
-  //GLOBAL GEN: t.$
-  // </0 & Flex-Check\1/4 t.idx#0/5 >/1
+  // </0 & Flex-Check\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & Flex-Check\1/4 t.new#1/5 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // ( # Subexpr t.idx e.idx t.idx )
     // </0 & Flex-Check\1/4 (/5 # Subexpr/9 t.Pos#2/10 e.Name#2/7 t.Regexp#2/12 )/6 >/1
     context[7] = 0;
     context[8] = 0;
@@ -66,7 +65,6 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // t.idx
   // </0 & Flex-Check\1/4 t.OtherItem#2/5 >/1
   //DEBUG: t.OtherItem#2: 5
 
@@ -132,17 +130,14 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
   // issue here memory for vars with 31 elems
   refalrts::Iter context[31];
   refalrts::zeros( context, 31 );
-  //FAST GEN: e.$
-  //GLOBAL GEN: e.$
-  // </0 & CheckUniqueNames/4 e.idx#0/2 >/1
+  // </0 & CheckUniqueNames/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.idx#0 as range 2
+  // closed e.new#0 as range 2
   do {
-    // e.idx
     // </0 & CheckUniqueNames/4 e.Names-B#1/7 (/13 t.Pos1#1/15 e.Name#1/11 )/14 e.Names-M#1/17 (/23 t.Pos2#1/27 e.Name#1/25 )/24 e.Names-E#1/19 >/1
     context[5] = context[2];
     context[6] = context[3];
@@ -218,15 +213,12 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // e.idx
-  // </0 & CheckUniqueNames/4 e.Names#1/5 >/1
-  context[5] = context[2];
-  context[6] = context[3];
-  // closed e.Names#1 as range 5
-  //DEBUG: e.Names#1: 5
+  // </0 & CheckUniqueNames/4 e.Names#1/2 >/1
+  // closed e.Names#1 as range 2
+  //DEBUG: e.Names#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & CheckUniqueNames/4 e.Names#1/5 >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & CheckUniqueNames/4 e.Names#1/2 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);

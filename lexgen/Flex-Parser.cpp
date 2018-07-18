@@ -558,17 +558,17 @@ static refalrts::NativeReference nat_ref_CurrentPos("CurrentPos", 855477224U, 33
 
 static refalrts::FnResult func_gen_Expect_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   refalrts::this_is_generated_function();
-  // issue here memory for vars with 23 elems
-  refalrts::Iter context[23];
-  refalrts::zeros( context, 23 );
-  //FAST GEN: s.$ ( e.$ ) s.$
-  //GLOBAL GEN: s.$ ( e.$ ) s.$
-  // </0 & Expect\1/4 s.idx#0/5 (/8 e.idxVB#0/6 )/9 s.idxVT#0/10 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & Expect\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & Expect\1/4 s.new#1/5 (/8 e.new#2/6 )/9 s.new#3/10 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[6] = 0;
@@ -577,24 +577,21 @@ static refalrts::FnResult func_gen_Expect_L1(refalrts::Iter arg_begin, refalrts:
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[8], context[9]);
-  // closed e.idxVB#0 as range 6
+  // closed e.new#2 as range 6
   if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // s.idx ( e.idx ) s.idx
-    // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/11 )/9 s.Expected#1/10 >/1
-    context[11] = context[6];
-    context[12] = context[7];
+    // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/6 )/9 s.Expected#1/10 >/1
     if( ! refalrts::repeated_stvar_term( context[10], context[5] ) )
       continue;
-    // closed e.ExpectedDescription#1 as range 11
+    // closed e.ExpectedDescription#1 as range 6
     //DEBUG: s.Expected#1: 5
-    //DEBUG: e.ExpectedDescription#1: 11
+    //DEBUG: e.ExpectedDescription#1: 6
 
     refalrts::reset_allocator();
-    //TRASH: {REMOVED TILE} s.Expected#1/5 (/8 e.ExpectedDescription#1/11 )/9 s.Expected#1/10 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} s.Expected#1/5 (/8 e.ExpectedDescription#1/6 )/9 s.Expected#1/10 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & MoveNext/4 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name( context[4], ref_MoveNext.ref.function );
     refalrts::push_stack( context[1] );
@@ -607,48 +604,45 @@ static refalrts::FnResult func_gen_Expect_L1(refalrts::Iter arg_begin, refalrts:
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx ( e.idx ) s.idx
-  // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/11 )/9 s.Unexpected#2/10 >/1
-  context[11] = context[6];
-  context[12] = context[7];
-  // closed e.ExpectedDescription#1 as range 11
+  // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/6 )/9 s.Unexpected#2/10 >/1
+  // closed e.ExpectedDescription#1 as range 6
   //DEBUG: s.Expected#1: 5
   //DEBUG: s.Unexpected#2: 10
-  //DEBUG: e.ExpectedDescription#1: 11
+  //DEBUG: e.ExpectedDescription#1: 6
 
   refalrts::reset_allocator();
   //TRASH: {REMOVED TILE} s.Expected#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Unexpected#2/10 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Error/4 } Tile{ HalfReuse: 'U'/8 } Tile{ HalfReuse: 'n'/9 }"expected "/13 </15 & Flex-TextFromToken/16 </17 & Current/18 >/19 >/20", but expected "/21 Tile{ AsIs: e.ExpectedDescription#1/11 } Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_chars( context[13], context[14], "expected ", 9 ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Error/4 } Tile{ HalfReuse: 'U'/8 } Tile{ HalfReuse: 'n'/9 }"expected "/11 </13 & Flex-TextFromToken/14 </15 & Current/16 >/17 >/18", but expected "/19 Tile{ AsIs: e.ExpectedDescription#1/6 } Tile{ AsIs: >/1 ]] }
+  if( ! refalrts::alloc_chars( context[11], context[12], "expected ", 9 ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_open_call( context[13] ) )
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_name( context[14], ref_Flexm_TextFromToken.ref.function ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_Flexm_TextFromToken.ref.function ) )
+  if( ! refalrts::alloc_name( context[16], ref_Current.ref.function ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[17] ) )
+  if( ! refalrts::alloc_close_call( context[17] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], ref_Current.ref.function ) )
+  if( ! refalrts::alloc_close_call( context[18] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[19] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[20] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[21], context[22], ", but expected ", 15 ) )
+  if( ! refalrts::alloc_chars( context[19], context[20], ", but expected ", 15 ) )
     return refalrts::cNoMemory;
   refalrts::update_name( context[4], ref_Error.ref.function );
   refalrts::reinit_char( context[8], 'U' );
   refalrts::reinit_char( context[9], 'n' );
   refalrts::push_stack( context[1] );
   refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[19] );
+  refalrts::push_stack( context[18] );
+  refalrts::push_stack( context[13] );
   refalrts::push_stack( context[17] );
+  refalrts::push_stack( context[15] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[11], context[12] );
-  res = refalrts::splice_evar( res, context[13], context[22] );
+  res = refalrts::splice_evar( res, context[6], context[7] );
+  res = refalrts::splice_evar( res, context[11], context[20] );
   res = refalrts::splice_evar( res, context[9], context[9] );
   res = refalrts::splice_evar( res, context[8], context[8] );
   refalrts::splice_to_freelist_open( context[4], res );
@@ -721,19 +715,18 @@ static refalrts::FnResult func_Generalize(refalrts::Iter arg_begin, refalrts::It
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  //FAST GEN: s.$ e.$
-  //GLOBAL GEN: s.$ e.$
-  // </0 & Generalize/4 s.idx#0/5 e.idxV#0/2 >/1
+  // </0 & Generalize/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & Generalize/4 s.new#1/5 e.new#2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.idxV#0 as range 2
+  // closed e.new#2 as range 2
   do {
-    // s.idx e.idx
     // </0 & Generalize/4 s.Tag#1/5 e.Generics-B#1/8 (/14 s.GenericTag#1/16 e.Tags-B#1/17 s.Tag#1/21 e.Tags-E#1/19 )/15 e.Generics-E#1/10 >/1
     context[6] = context[2];
     context[7] = context[3];
@@ -782,16 +775,13 @@ static refalrts::FnResult func_Generalize(refalrts::Iter arg_begin, refalrts::It
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx e.idx
-  // </0 & Generalize/4 s.Tag#1/5 e.Generics#1/6 >/1
-  context[6] = context[2];
-  context[7] = context[3];
-  // closed e.Generics#1 as range 6
+  // </0 & Generalize/4 s.Tag#1/5 e.Generics#1/2 >/1
+  // closed e.Generics#1 as range 2
   //DEBUG: s.Tag#1: 5
-  //DEBUG: e.Generics#1: 6
+  //DEBUG: e.Generics#1: 2
 
   refalrts::reset_allocator();
-  //TRASH: {REMOVED TILE} </0 & Generalize/4 s.Tag#1/5 e.Generics#1/6 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & Generalize/4 s.Tag#1/5 e.Generics#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Tag1 #5/1 ]] }
   refalrts::reinit_svar( context[1], context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -964,20 +954,19 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseDescription\1/4 s.idx#0/5 >/1
+  // </0 & ParseDescription\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseDescription\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseDescription\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -998,7 +987,6 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   refalrts::stop_sentence();
 
   do {
-    // # TStateStart
     // </0 & ParseDescription\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -1019,7 +1007,6 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   refalrts::stop_sentence();
 
   do {
-    // # TStartRegexp
     // </0 & ParseDescription\1/4 # TStartRegexp/5 >/1
     if( ! refalrts::ident_term(  ident_TStartRegexp, context[5] ) )
       continue;
@@ -1040,7 +1027,6 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   refalrts::stop_sentence();
 
   do {
-    // # TEOF
     // </0 & ParseDescription\1/4 # TEOF/5 >/1
     if( ! refalrts::ident_term(  ident_TEOF, context[5] ) )
       continue;
@@ -1056,7 +1042,6 @@ static refalrts::FnResult func_gen_ParseDescription_L1(refalrts::Iter arg_begin,
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseDescription\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1142,20 +1127,19 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseDescriptions\1/4 s.idx#0/5 >/1
+  // </0 & ParseDescriptions\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseDescriptions\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseDescriptions\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -1184,7 +1168,6 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   refalrts::stop_sentence();
 
   do {
-    // # TStateStart
     // </0 & ParseDescriptions\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -1213,7 +1196,6 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   refalrts::stop_sentence();
 
   do {
-    // # TStartRegexp
     // </0 & ParseDescriptions\1/4 # TStartRegexp/5 >/1
     if( ! refalrts::ident_term(  ident_TStartRegexp, context[5] ) )
       continue;
@@ -1242,7 +1224,6 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   refalrts::stop_sentence();
 
   do {
-    // # TEOF
     // </0 & ParseDescriptions\1/4 # TEOF/5 >/1
     if( ! refalrts::ident_term(  ident_TEOF, context[5] ) )
       continue;
@@ -1258,7 +1239,6 @@ static refalrts::FnResult func_gen_ParseDescriptions_L1(refalrts::Iter arg_begin
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseDescriptions\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1344,20 +1324,19 @@ static refalrts::FnResult func_gen_ParseSubexpr_L1(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseSubexpr\1/4 s.idx#0/5 >/1
+  // </0 & ParseSubexpr\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseSubexpr\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseSubexpr\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -1420,7 +1399,6 @@ static refalrts::FnResult func_gen_ParseSubexpr_L1(refalrts::Iter arg_begin, ref
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseSubexpr\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1506,20 +1484,19 @@ static refalrts::FnResult func_gen_ParseDomain_L1(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseDomain\1/4 s.idx#0/5 >/1
+  // </0 & ParseDomain\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseDomain\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStateStart
     // </0 & ParseDomain\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -1575,7 +1552,6 @@ static refalrts::FnResult func_gen_ParseDomain_L1(refalrts::Iter arg_begin, refa
   refalrts::stop_sentence();
 
   do {
-    // # TStartRegexp
     // </0 & ParseDomain\1/4 # TStartRegexp/5 >/1
     if( ! refalrts::ident_term(  ident_TStartRegexp, context[5] ) )
       continue;
@@ -1630,7 +1606,6 @@ static refalrts::FnResult func_gen_ParseDomain_L1(refalrts::Iter arg_begin, refa
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseDomain\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1716,20 +1691,19 @@ static refalrts::FnResult func_gen_ParseDomainFrom_L1(refalrts::Iter arg_begin, 
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseDomainFrom\1/4 s.idx#0/5 >/1
+  // </0 & ParseDomainFrom\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseDomainFrom\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStateStart
     // </0 & ParseDomainFrom\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -1763,7 +1737,6 @@ static refalrts::FnResult func_gen_ParseDomainFrom_L1(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   do {
-    // # TStartRegexp
     // </0 & ParseDomainFrom\1/4 # TStartRegexp/5 >/1
     if( ! refalrts::ident_term(  ident_TStartRegexp, context[5] ) )
       continue;
@@ -1796,7 +1769,6 @@ static refalrts::FnResult func_gen_ParseDomainFrom_L1(refalrts::Iter arg_begin, 
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseDomainFrom\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1882,20 +1854,19 @@ static refalrts::FnResult func_gen_ParseStatesOpt_L1(refalrts::Iter arg_begin, r
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseStatesOpt\1/4 s.idx#0/5 >/1
+  // </0 & ParseStatesOpt\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseStatesOpt\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStateStart
     // </0 & ParseStatesOpt\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -1915,7 +1886,6 @@ static refalrts::FnResult func_gen_ParseStatesOpt_L1(refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseStatesOpt\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -1979,20 +1949,19 @@ static refalrts::FnResult func_gen_ParseDomainTo_L1(refalrts::Iter arg_begin, re
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseDomainTo\1/4 s.idx#0/5 >/1
+  // </0 & ParseDomainTo\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseDomainTo\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TFlush
     // </0 & ParseDomainTo\1/4 # TFlush/5 >/1
     if( ! refalrts::ident_term(  ident_TFlush, context[5] ) )
       continue;
@@ -2020,7 +1989,6 @@ static refalrts::FnResult func_gen_ParseDomainTo_L1(refalrts::Iter arg_begin, re
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseDomainTo\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2127,20 +2095,19 @@ static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refal
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseFlush\1/4 s.idx#0/5 >/1
+  // </0 & ParseFlush\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseFlush\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseFlush\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -2176,7 +2143,6 @@ static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refal
   refalrts::stop_sentence();
 
   do {
-    // # TSkip
     // </0 & ParseFlush\1/4 # TSkip/5 >/1
     if( ! refalrts::ident_term(  ident_TSkip, context[5] ) )
       continue;
@@ -2194,7 +2160,6 @@ static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refal
   refalrts::stop_sentence();
 
   do {
-    // # TErrorMessage
     // </0 & ParseFlush\1/4 # TErrorMessage/5 >/1
     if( ! refalrts::ident_term(  ident_TErrorMessage, context[5] ) )
       continue;
@@ -2229,7 +2194,6 @@ static refalrts::FnResult func_gen_ParseFlush_L1(refalrts::Iter arg_begin, refal
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseFlush\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2315,20 +2279,19 @@ static refalrts::FnResult func_gen_ParseNextStateOpt_L1(refalrts::Iter arg_begin
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseNextStateOpt\1/4 s.idx#0/5 >/1
+  // </0 & ParseNextStateOpt\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseNextStateOpt\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TComma
     // </0 & ParseNextStateOpt\1/4 # TComma/5 >/1
     if( ! refalrts::ident_term(  ident_TComma, context[5] ) )
       continue;
@@ -2363,7 +2326,6 @@ static refalrts::FnResult func_gen_ParseNextStateOpt_L1(refalrts::Iter arg_begin
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseNextStateOpt\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2428,20 +2390,19 @@ static refalrts::FnResult func_gen_ParseState_L1(refalrts::Iter arg_begin, refal
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseState\1/4 s.idx#0/5 >/1
+  // </0 & ParseState\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseState\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStateStart
     // </0 & ParseState\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -2486,7 +2447,6 @@ static refalrts::FnResult func_gen_ParseState_L1(refalrts::Iter arg_begin, refal
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseState\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2572,20 +2532,19 @@ static refalrts::FnResult func_gen_ParseNameOpt_L1(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseNameOpt\1/4 s.idx#0/5 >/1
+  // </0 & ParseNameOpt\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseNameOpt\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseNameOpt\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -2613,7 +2572,6 @@ static refalrts::FnResult func_gen_ParseNameOpt_L1(refalrts::Iter arg_begin, ref
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseNameOpt\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2677,20 +2635,19 @@ static refalrts::FnResult func_gen_ParseRegexp_L1(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseRegexp\1/4 s.idx#0/5 >/1
+  // </0 & ParseRegexp\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseRegexp\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStartRegexp
     // </0 & ParseRegexp\1/4 # TStartRegexp/5 >/1
     if( ! refalrts::ident_term(  ident_TStartRegexp, context[5] ) )
       continue;
@@ -2737,7 +2694,6 @@ static refalrts::FnResult func_gen_ParseRegexp_L1(refalrts::Iter arg_begin, refa
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseRegexp\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2823,20 +2779,19 @@ static refalrts::FnResult func_gen_ParseComplexTerm_L1(refalrts::Iter arg_begin,
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseComplexTerm\1/4 s.idx#0/5 >/1
+  // </0 & ParseComplexTerm\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseComplexTerm\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # ComplexTermSYMBOL
     // </0 & ParseComplexTerm\1/4 # ComplexTermSYMBOL/5 >/1
     if( ! refalrts::ident_term(  ident_ComplexTermSYMBOL, context[5] ) )
       continue;
@@ -2864,7 +2819,6 @@ static refalrts::FnResult func_gen_ParseComplexTerm_L1(refalrts::Iter arg_begin,
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseComplexTerm\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -2953,20 +2907,19 @@ static refalrts::FnResult func_gen_ParseTerm_L1(refalrts::Iter arg_begin, refalr
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseTerm\1/4 s.idx#0/5 >/1
+  // </0 & ParseTerm\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseTerm\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TermSYMBOL
     // </0 & ParseTerm\1/4 # TermSYMBOL/5 >/1
     if( ! refalrts::ident_term(  ident_TermSYMBOL, context[5] ) )
       continue;
@@ -3001,7 +2954,6 @@ static refalrts::FnResult func_gen_ParseTerm_L1(refalrts::Iter arg_begin, refalr
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseTerm\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3112,20 +3064,19 @@ static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, re
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseRepeater\1/4 s.idx#0/5 >/1
+  // </0 & ParseRepeater\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseRepeater\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TZeroMany
     // </0 & ParseRepeater\1/4 # TZeroMany/5 >/1
     if( ! refalrts::ident_term(  ident_TZeroMany, context[5] ) )
       continue;
@@ -3143,7 +3094,6 @@ static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, re
   refalrts::stop_sentence();
 
   do {
-    // # TOneMany
     // </0 & ParseRepeater\1/4 # TOneMany/5 >/1
     if( ! refalrts::ident_term(  ident_TOneMany, context[5] ) )
       continue;
@@ -3161,7 +3111,6 @@ static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, re
   refalrts::stop_sentence();
 
   do {
-    // # TOptional
     // </0 & ParseRepeater\1/4 # TOptional/5 >/1
     if( ! refalrts::ident_term(  ident_TOptional, context[5] ) )
       continue;
@@ -3178,7 +3127,6 @@ static refalrts::FnResult func_gen_ParseRepeater_L1(refalrts::Iter arg_begin, re
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseRepeater\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3242,20 +3190,19 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseSimpleTerm\1/4 s.idx#0/5 >/1
+  // </0 & ParseSimpleTerm\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseSimpleTerm\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TAny
     // </0 & ParseSimpleTerm\1/4 # TAny/5 >/1
     if( ! refalrts::ident_term(  ident_TAny, context[5] ) )
       continue;
@@ -3273,7 +3220,6 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   do {
-    // # TStartGroup
     // </0 & ParseSimpleTerm\1/4 # TStartGroup/5 >/1
     if( ! refalrts::ident_term(  ident_TStartGroup, context[5] ) )
       continue;
@@ -3294,7 +3240,6 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   do {
-    // # TInclude
     // </0 & ParseSimpleTerm\1/4 # TInclude/5 >/1
     if( ! refalrts::ident_term(  ident_TInclude, context[5] ) )
       continue;
@@ -3330,7 +3275,6 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   do {
-    // # TChar
     // </0 & ParseSimpleTerm\1/4 # TChar/5 >/1
     if( ! refalrts::ident_term(  ident_TChar, context[5] ) )
       continue;
@@ -3366,7 +3310,6 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   refalrts::stop_sentence();
 
   do {
-    // # TOpenBracket
     // </0 & ParseSimpleTerm\1/4 # TOpenBracket/5 >/1
     if( ! refalrts::ident_term(  ident_TOpenBracket, context[5] ) )
       continue;
@@ -3413,7 +3356,6 @@ static refalrts::FnResult func_gen_ParseSimpleTerm_L1(refalrts::Iter arg_begin, 
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseSimpleTerm\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3499,20 +3441,19 @@ static refalrts::FnResult func_gen_ParseSet_L1(refalrts::Iter arg_begin, refalrt
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseSet\1/4 s.idx#0/5 >/1
+  // </0 & ParseSet\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseSet\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStartGroup
     // </0 & ParseSet\1/4 # TStartGroup/5 >/1
     if( ! refalrts::ident_term(  ident_TStartGroup, context[5] ) )
       continue;
@@ -3575,7 +3516,6 @@ static refalrts::FnResult func_gen_ParseSet_L1(refalrts::Iter arg_begin, refalrt
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseSet\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3661,20 +3601,19 @@ static refalrts::FnResult func_gen_ParseInvertOpt_L1(refalrts::Iter arg_begin, r
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseInvertOpt\1/4 s.idx#0/5 >/1
+  // </0 & ParseInvertOpt\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseInvertOpt\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TInvertGroup
     // </0 & ParseInvertOpt\1/4 # TInvertGroup/5 >/1
     if( ! refalrts::ident_term(  ident_TInvertGroup, context[5] ) )
       continue;
@@ -3691,7 +3630,6 @@ static refalrts::FnResult func_gen_ParseInvertOpt_L1(refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseInvertOpt\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3756,20 +3694,19 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSETS_L1(refalrts::Iter arg_
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseComplexSYMBOLSETS\1/4 s.idx#0/5 >/1
+  // </0 & ParseComplexSYMBOLSETS\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseComplexSYMBOLSETS\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TChar
     // </0 & ParseComplexSYMBOLSETS\1/4 # TChar/5 >/1
     if( ! refalrts::ident_term(  ident_TChar, context[5] ) )
       continue;
@@ -3797,7 +3734,6 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSETS_L1(refalrts::Iter arg_
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseComplexSYMBOLSETS\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -3861,20 +3797,19 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSET_L1(refalrts::Iter arg_b
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseComplexSYMBOLSET\1/4 s.idx#0/5 >/1
+  // </0 & ParseComplexSYMBOLSET\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseComplexSYMBOLSET\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TChar
     // </0 & ParseComplexSYMBOLSET\1/4 # TChar/5 >/1
     if( ! refalrts::ident_term(  ident_TChar, context[5] ) )
       continue;
@@ -3915,7 +3850,6 @@ static refalrts::FnResult func_gen_ParseComplexSYMBOLSET_L1(refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseComplexSYMBOLSET\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4001,20 +3935,19 @@ static refalrts::FnResult func_gen_ParseOptSYMBOL_L1(refalrts::Iter arg_begin, r
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseOptSYMBOL\1/4 s.idx#0/5 >/1
+  // </0 & ParseOptSYMBOL\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseOptSYMBOL\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TGroupRange
     // </0 & ParseOptSYMBOL\1/4 # TGroupRange/5 >/1
     if( ! refalrts::ident_term(  ident_TGroupRange, context[5] ) )
       continue;
@@ -4051,7 +3984,6 @@ static refalrts::FnResult func_gen_ParseOptSYMBOL_L1(refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseOptSYMBOL\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4115,20 +4047,19 @@ static refalrts::FnResult func_gen_ParseStates_L1(refalrts::Iter arg_begin, refa
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseStates\1/4 s.idx#0/5 >/1
+  // </0 & ParseStates\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseStates\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TStateStart
     // </0 & ParseStates\1/4 # TStateStart/5 >/1
     if( ! refalrts::ident_term(  ident_TStateStart, context[5] ) )
       continue;
@@ -4173,7 +4104,6 @@ static refalrts::FnResult func_gen_ParseStates_L1(refalrts::Iter arg_begin, refa
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseStates\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4259,20 +4189,19 @@ static refalrts::FnResult func_gen_ParseStateNames_L1(refalrts::Iter arg_begin, 
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseStateNames\1/4 s.idx#0/5 >/1
+  // </0 & ParseStateNames\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseStateNames\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TName
     // </0 & ParseStateNames\1/4 # TName/5 >/1
     if( ! refalrts::ident_term(  ident_TName, context[5] ) )
       continue;
@@ -4320,7 +4249,6 @@ static refalrts::FnResult func_gen_ParseStateNames_L1(refalrts::Iter arg_begin, 
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseStateNames\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4384,20 +4312,19 @@ static refalrts::FnResult func_gen_ParseNextName_L1(refalrts::Iter arg_begin, re
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseNextName\1/4 s.idx#0/5 >/1
+  // </0 & ParseNextName\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseNextName\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TComma
     // </0 & ParseNextName\1/4 # TComma/5 >/1
     if( ! refalrts::ident_term(  ident_TComma, context[5] ) )
       continue;
@@ -4440,7 +4367,6 @@ static refalrts::FnResult func_gen_ParseNextName_L1(refalrts::Iter arg_begin, re
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseNextName\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4504,20 +4430,19 @@ static refalrts::FnResult func_gen_ParseAlt_L1(refalrts::Iter arg_begin, refalrt
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseAlt\1/4 s.idx#0/5 >/1
+  // </0 & ParseAlt\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseAlt\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # ComplexTermSYMBOL
     // </0 & ParseAlt\1/4 # ComplexTermSYMBOL/5 >/1
     if( ! refalrts::ident_term(  ident_ComplexTermSYMBOL, context[5] ) )
       continue;
@@ -4550,7 +4475,6 @@ static refalrts::FnResult func_gen_ParseAlt_L1(refalrts::Iter arg_begin, refalrt
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseAlt\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
@@ -4663,20 +4587,19 @@ static refalrts::FnResult func_gen_ParseAltTail_L1(refalrts::Iter arg_begin, ref
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  //FAST GEN: s.$
-  //GLOBAL GEN: s.$
-  // </0 & ParseAltTail\1/4 s.idx#0/5 >/1
+  // </0 & ParseAltTail\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & ParseAltTail\1/4 s.new#1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // # TAlt
     // </0 & ParseAltTail\1/4 # TAlt/5 >/1
     if( ! refalrts::ident_term(  ident_TAlt, context[5] ) )
       continue;
@@ -4717,7 +4640,6 @@ static refalrts::FnResult func_gen_ParseAltTail_L1(refalrts::Iter arg_begin, ref
   } while ( 0 );
   refalrts::stop_sentence();
 
-  // s.idx
   // </0 & ParseAltTail\1/4 s.Other#2/5 >/1
   //DEBUG: s.Other#2: 5
 
