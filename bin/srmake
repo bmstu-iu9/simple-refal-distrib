@@ -46,7 +46,17 @@ set_default_flags() {
       shift
       ;;
 
+    "--rich-debug")
+      set_rich_flags
+      shift
+      ;;
+
     "--slim")
+      shift
+      set_slim_flags
+      ;;
+
+    "--slim-debug")
       shift
       set_slim_flags
       ;;
