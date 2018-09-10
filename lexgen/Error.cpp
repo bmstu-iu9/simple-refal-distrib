@@ -10,8 +10,9 @@ static refalrts::ExternalReference ref_StrFromInt("StrFromInt", 0U, 0U);
 static refalrts::ExternalReference ref_WarningAt("WarningAt", 0U, 0U);
 static refalrts::ExternalReference ref_WriteLine("WriteLine", 0U, 0U);
 
-static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_ErrorAt(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
@@ -35,34 +36,34 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
   //DEBUG: s.Number#1: 9
   //DEBUG: e.File#1: 5
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & StrFromInt/7 AsIs: s.Number#1/9 } >/12":ERROR:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Text#1/2 AsIs: >/1 } </15 & Exit/16 1/17 >/18 Tile{ ]] }
-  if( ! refalrts::alloc_char( context[10], ':' ) )
+  if( ! refalrts::alloc_char( vm, context[10], ':' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[11] ) )
+  if( ! refalrts::alloc_open_call( vm, context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[12] ) )
+  if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[13], context[14], ":ERROR:", 7 ) )
+  if( ! refalrts::alloc_chars( vm, context[13], context[14], ":ERROR:", 7 ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[15] ) )
+  if( ! refalrts::alloc_open_call( vm, context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[16], ref_Exit.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[16], ref_Exit.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_number( context[17], 1UL ) )
+  if( ! refalrts::alloc_number( vm, context[17], 1UL ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[18] ) )
+  if( ! refalrts::alloc_close_call( vm, context[18] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_WriteLine.ref.function );
-  refalrts::reinit_name( context[7], ref_StrFromInt.ref.function );
+  refalrts::update_name( context[4], ref_WriteLine.ref(vm) );
+  refalrts::reinit_name( context[7], ref_StrFromInt.ref(vm) );
   refalrts::reinit_char( context[8], ' ' );
-  refalrts::push_stack( context[18] );
-  refalrts::push_stack( context[15] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[11] );
+  refalrts::push_stack( vm, context[18] );
+  refalrts::push_stack( vm, context[15] );
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[12] );
+  refalrts::push_stack( vm, context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -79,8 +80,9 @@ static refalrts::FnResult func_ErrorAt(refalrts::Iter arg_begin, refalrts::Iter 
 static refalrts::NativeReference nat_ref_ErrorAt("ErrorAt", 0U, 0U, func_ErrorAt);
 
 
-static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_WarningAt(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
@@ -104,24 +106,24 @@ static refalrts::FnResult func_WarningAt(refalrts::Iter arg_begin, refalrts::Ite
   //DEBUG: s.Number#1: 9
   //DEBUG: e.File#1: 5
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & WriteLine/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & StrFromInt/7 AsIs: s.Number#1/9 } >/12":WARNING:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Message#1/2 AsIs: >/1 ]] }
-  if( ! refalrts::alloc_char( context[10], ':' ) )
+  if( ! refalrts::alloc_char( vm, context[10], ':' ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[11] ) )
+  if( ! refalrts::alloc_open_call( vm, context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[12] ) )
+  if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( context[13], context[14], ":WARNING:", 9 ) )
+  if( ! refalrts::alloc_chars( vm, context[13], context[14], ":WARNING:", 9 ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_WriteLine.ref.function );
-  refalrts::reinit_name( context[7], ref_StrFromInt.ref.function );
+  refalrts::update_name( context[4], ref_WriteLine.ref(vm) );
+  refalrts::reinit_name( context[7], ref_StrFromInt.ref(vm) );
   refalrts::reinit_char( context[8], ' ' );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[12] );
-  refalrts::push_stack( context[11] );
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[12] );
+  refalrts::push_stack( vm, context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[8];

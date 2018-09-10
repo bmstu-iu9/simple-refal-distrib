@@ -4,15 +4,16 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_3997484342_2282157194
-static const refalrts::RefalIdentifier ident_Subexpr = refalrts::ident_from_static("Subexpr");
+static const refalrts::IdentReference ident_Subexpr("Subexpr");
 static refalrts::ExternalReference ref_CheckUniqueNames("CheckUniqueNames", 3997484342U, 2282157194U);
 static refalrts::ExternalReference ref_ErrorAt("ErrorAt", 0U, 0U);
 static refalrts::ExternalReference ref_Flexm_Check("Flex-Check", 0U, 0U);
 static refalrts::ExternalReference ref_gen_Flexm_Check_L1("Flex-Check\\1", 3997484342U, 2282157194U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 
-static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
@@ -35,7 +36,7 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
     context[8] = 0;
     if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
       continue;
-    context[9] = refalrts::ident_left(  ident_Subexpr, context[7], context[8] );
+    context[9] = refalrts::ident_left(  ident_Subexpr.ref(vm), context[7], context[8] );
     if( ! context[9] )
       continue;
     context[11] = refalrts::tvar_left( context[10], context[7], context[8] );
@@ -49,7 +50,7 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
     //DEBUG: t.Regexp#2: 12
     //DEBUG: e.Name#2: 7
 
-    refalrts::reset_allocator();
+    refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & Flex-Check\1/4 (/5 {REMOVED TILE} {REMOVED TILE} t.Regexp#2/12 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 AsIs: t.Pos#2/10 } Tile{ AsIs: e.Name#2/7 } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
@@ -60,29 +61,30 @@ static refalrts::FnResult func_gen_Flexm_Check_L1(refalrts::Iter arg_begin, refa
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[7], context[8] );
     res = refalrts::splice_evar( res, context[9], context[11] );
-    refalrts::splice_to_freelist_open( trash_prev, res );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
-  refalrts::stop_sentence();
+  refalrts::stop_sentence(vm);
 
   // </0 & Flex-Check\1/4 t.OtherItem#2/5 >/1
   //DEBUG: t.OtherItem#2: 5
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Flex-Check\1/4 t.OtherItem#2/5 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_gen_Flexm_Check_L1("Flex-Check\\1", 3997484342U, 2282157194U, func_gen_Flexm_Check_L1);
 
 
-static refalrts::FnResult func_Flexm_Check(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_Flexm_Check(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
@@ -95,23 +97,23 @@ static refalrts::FnResult func_Flexm_Check(refalrts::Iter arg_begin, refalrts::I
   // closed e.AST#1 as range 2
   //DEBUG: e.AST#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </5 & CheckUniqueNames/6 </7 Tile{ HalfReuse: & Map/0 Reuse: & Flex-Check\1/4 AsIs: e.AST#1/2 AsIs: >/1 } >/8 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[5] ) )
+  if( ! refalrts::alloc_open_call( vm, context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], ref_CheckUniqueNames.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[6], ref_CheckUniqueNames.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[7] ) )
+  if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[8] ) )
+  if( ! refalrts::alloc_close_call( vm, context[8] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], ref_Map.ref.function );
-  refalrts::update_name( context[4], ref_gen_Flexm_Check_L1.ref.function );
-  refalrts::push_stack( context[8] );
-  refalrts::push_stack( context[5] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[7] );
+  refalrts::reinit_name( context[0], ref_Map.ref(vm) );
+  refalrts::update_name( context[4], ref_gen_Flexm_Check_L1.ref(vm) );
+  refalrts::push_stack( vm, context[8] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[7] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -125,8 +127,9 @@ static refalrts::FnResult func_Flexm_Check(refalrts::Iter arg_begin, refalrts::I
 static refalrts::NativeReference nat_ref_Flexm_Check("Flex-Check", 0U, 0U, func_Flexm_Check);
 
 
-static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_CheckUniqueNames(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 31 elems
   refalrts::Iter context[31];
   refalrts::zeros( context, 31 );
@@ -143,7 +146,7 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
     context[6] = context[3];
     context[7] = 0;
     context[8] = 0;
-    refalrts::start_e_loop();
+    refalrts::start_e_loop(vm);
     do {
       context[9] = context[5];
       context[10] = context[6];
@@ -159,7 +162,7 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
       // closed e.Name#1 as range 11
       context[17] = 0;
       context[18] = 0;
-      refalrts::start_e_loop();
+      refalrts::start_e_loop(vm);
       do {
         context[19] = context[9];
         context[20] = context[10];
@@ -169,7 +172,7 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
         if( ! context[23] )
           continue;
         refalrts::bracket_pointers(context[23], context[24]);
-        if( ! refalrts::repeated_evar_right( context[25], context[26], context[11], context[12], context[21], context[22] ) )
+        if( ! refalrts::repeated_evar_right( vm, context[25], context[26], context[11], context[12], context[21], context[22] ) )
           continue;
         // closed e.Names-E#1 as range 19
         context[28] = refalrts::tvar_left( context[27], context[21], context[22] );
@@ -184,18 +187,18 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
         //DEBUG: e.Names-E#1: 19
         //DEBUG: t.Pos2#1: 27
 
-        refalrts::reset_allocator();
+        refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} e.Names-B#1/7 {REMOVED TILE} t.Pos1#1/15 e.Name#1/11 {REMOVED TILE} e.Names-M#1/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Names-E#1/19 {REMOVED TILE}
         //RESULT: Tile{ [[ AsIs: </0 Reuse: & ErrorAt/4 } Tile{ AsIs: t.Pos2#1/27 } Tile{ HalfReuse: 'R'/23 } Tile{ HalfReuse: 'e'/14 } Tile{ HalfReuse: 'd'/24 } Tile{ HalfReuse: 'e'/13 }"fined subexpr name "/29 Tile{ AsIs: e.Name#1/25 } Tile{ AsIs: >/1 ]] }
-        if( ! refalrts::alloc_chars( context[29], context[30], "fined subexpr name ", 19 ) )
+        if( ! refalrts::alloc_chars( vm, context[29], context[30], "fined subexpr name ", 19 ) )
           return refalrts::cNoMemory;
-        refalrts::update_name( context[4], ref_ErrorAt.ref.function );
+        refalrts::update_name( context[4], ref_ErrorAt.ref(vm) );
         refalrts::reinit_char( context[23], 'R' );
         refalrts::reinit_char( context[14], 'e' );
         refalrts::reinit_char( context[24], 'd' );
         refalrts::reinit_char( context[13], 'e' );
-        refalrts::push_stack( context[1] );
-        refalrts::push_stack( context[0] );
+        refalrts::push_stack( vm, context[1] );
+        refalrts::push_stack( vm, context[0] );
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -206,24 +209,24 @@ static refalrts::FnResult func_CheckUniqueNames(refalrts::Iter arg_begin, refalr
         res = refalrts::splice_evar( res, context[14], context[14] );
         res = refalrts::splice_evar( res, context[23], context[23] );
         res = refalrts::splice_evar( res, context[27], context[28] );
-        refalrts::splice_to_freelist_open( context[4], res );
+        refalrts::splice_to_freelist_open( vm, context[4], res );
         return refalrts::cSuccess;
       } while ( refalrts::open_evar_advance( context[17], context[18], context[9], context[10] ) );
     } while ( refalrts::open_evar_advance( context[7], context[8], context[5], context[6] ) );
   } while ( 0 );
-  refalrts::stop_sentence();
+  refalrts::stop_sentence(vm);
 
   // </0 & CheckUniqueNames/4 e.Names#1/2 >/1
   // closed e.Names#1 as range 2
   //DEBUG: e.Names#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & CheckUniqueNames/4 e.Names#1/2 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 

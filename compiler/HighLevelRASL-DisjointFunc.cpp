@@ -4,11 +4,11 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_489263093_1433179658
-static const refalrts::RefalIdentifier ident_CmdFail = refalrts::ident_from_static("CmdFail");
-static const refalrts::RefalIdentifier ident_CmdIssueMemory = refalrts::ident_from_static("CmdIssueMemory");
-static const refalrts::RefalIdentifier ident_CmdOpenELoop = refalrts::ident_from_static("CmdOpenELoop");
-static const refalrts::RefalIdentifier ident_CmdSentence = refalrts::ident_from_static("CmdSentence");
-static const refalrts::RefalIdentifier ident_Function = refalrts::ident_from_static("Function");
+static const refalrts::IdentReference ident_CmdFail("CmdFail");
+static const refalrts::IdentReference ident_CmdIssueMemory("CmdIssueMemory");
+static const refalrts::IdentReference ident_CmdOpenELoop("CmdOpenELoop");
+static const refalrts::IdentReference ident_CmdSentence("CmdSentence");
+static const refalrts::IdentReference ident_Function("Function");
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_GenPattern("GenPattern", 0U, 0U);
 static refalrts::ExternalReference ref_GenResult("GenResult", 0U, 0U);
@@ -22,8 +22,9 @@ static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
 
-static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
@@ -44,7 +45,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts
     if( ! context[9] )
       continue;
     refalrts::bracket_pointers(context[9], context[10]);
-    context[11] = refalrts::ident_left(  ident_CmdOpenELoop, context[7], context[8] );
+    context[11] = refalrts::ident_left(  ident_CmdOpenELoop.ref(vm), context[7], context[8] );
     if( ! context[11] )
       continue;
     // closed e.Commands#4 as range 5
@@ -52,11 +53,11 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts
     //DEBUG: e.Commands#4: 5
     //DEBUG: e.OpenELoop#4: 7
 
-    refalrts::reset_allocator();
+    refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ AsIs: e.Commands#4/5 } Tile{ AsIs: (/9 AsIs: # CmdOpenELoop/11 AsIs: e.OpenELoop#4/7 AsIs: )/10 HalfReuse: (/1 } Tile{ HalfReuse: # CmdFail/0 HalfReuse: )/4 } Tile{ ]] }
     refalrts::reinit_open_bracket( context[1] );
-    refalrts::reinit_ident( context[0], ident_CmdFail );
+    refalrts::reinit_ident( context[0], ident_CmdFail.ref(vm) );
     refalrts::reinit_close_bracket( context[4] );
     refalrts::link_brackets( context[1], context[4] );
     refalrts::link_brackets( context[9], context[10] );
@@ -69,28 +70,29 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_L1(refalrts
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
-  refalrts::stop_sentence();
+  refalrts::stop_sentence(vm);
 
   // </0 & HighLevelRASL-Function-Disjoint\1/4 e.LastSentence#4/2 >/1
   // closed e.LastSentence#4 as range 2
   //DEBUG: e.LastSentence#4: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & HighLevelRASL-Function-Disjoint\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.LastSentence#4/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Disjoint_L1("HighLevelRASL-Function-Disjoint\\1", 489263093U, 1433179658U, func_gen_HighLevelRASLm_Functionm_Disjoint_L1);
 
 
-static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
@@ -125,26 +127,26 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2(refalrts
   //DEBUG: s.MaxMemory#3: 14
   //DEBUG: e.Sentences#3: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: # Function/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 AsIs: (/12 } Tile{ HalfReuse: # CmdIssueMemory/13 AsIs: s.MaxMemory#3/14 } )/15 Tile{ AsIs: e.Sentences#3/2 } </16 & Fetch/17 Tile{ AsIs: e.LastSentence#2/10 } & HighLevelRASL-Function-Disjoint\1/18 >/19 Tile{ HalfReuse: )/1 ]] }
-  if( ! refalrts::alloc_close_bracket( context[15] ) )
+  if( ! refalrts::alloc_close_bracket( vm, context[15] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[16] ) )
+  if( ! refalrts::alloc_open_call( vm, context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_Fetch.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[17], ref_Fetch.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[18], ref_gen_HighLevelRASLm_Functionm_Disjoint_L1.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[18], ref_gen_HighLevelRASLm_Functionm_Disjoint_L1.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[19] ) )
+  if( ! refalrts::alloc_close_call( vm, context[19] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_ident( context[4], ident_Function );
-  refalrts::reinit_ident( context[13], ident_CmdIssueMemory );
+  refalrts::reinit_ident( context[4], ident_Function.ref(vm) );
+  refalrts::reinit_ident( context[13], ident_CmdIssueMemory.ref(vm) );
   refalrts::reinit_close_bracket( context[1] );
   refalrts::link_brackets( context[0], context[1] );
-  refalrts::push_stack( context[19] );
-  refalrts::push_stack( context[16] );
+  refalrts::push_stack( vm, context[19] );
+  refalrts::push_stack( vm, context[16] );
   refalrts::link_brackets( context[12], context[15] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -163,8 +165,9 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2(refalrts
 static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Disjoint_A2("HighLevelRASL-Function-Disjoint=2", 489263093U, 1433179658U, func_gen_HighLevelRASLm_Functionm_Disjoint_A2);
 
 
-static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 16 elems
   refalrts::Iter context[16];
   refalrts::zeros( context, 16 );
@@ -186,7 +189,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2L1(refalr
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  context[13] = refalrts::ident_left(  ident_CmdIssueMemory, context[9], context[10] );
+  context[13] = refalrts::ident_left(  ident_CmdIssueMemory.ref(vm), context[9], context[10] );
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   // closed e.Sentence#3 as range 5
@@ -202,30 +205,31 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A2L1(refalr
   //DEBUG: s.MaxMemory#3: 14
   //DEBUG: s.Memory#3: 15
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.Memory#3/15 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Max/4 AsIs: s.MaxMemory#3/14 HalfReuse: s.Memory3 #15/7 HalfReuse: >/11 HalfReuse: (/13 } Tile{ HalfReuse: # CmdSentence/12 AsIs: e.Sentence#3/5 AsIs: )/8 } Tile{ ]] }
-  refalrts::update_name( context[4], ref_Max.ref.function );
+  refalrts::update_name( context[4], ref_Max.ref(vm) );
   refalrts::reinit_svar( context[7], context[15] );
   refalrts::reinit_close_call( context[11] );
   refalrts::reinit_open_bracket( context[13] );
-  refalrts::reinit_ident( context[12], ident_CmdSentence );
+  refalrts::reinit_ident( context[12], ident_CmdSentence.ref(vm) );
   refalrts::link_brackets( context[13], context[8] );
-  refalrts::push_stack( context[11] );
-  refalrts::push_stack( context[0] );
+  refalrts::push_stack( vm, context[11] );
+  refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[12], context[8] );
-  refalrts::splice_to_freelist_open( context[13], res );
+  refalrts::splice_to_freelist_open( vm, context[13], res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Disjoint_A2L1("HighLevelRASL-Function-Disjoint=2\\1", 489263093U, 1433179658U, func_gen_HighLevelRASLm_Functionm_Disjoint_A2L1);
 
 
-static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
@@ -247,7 +251,7 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1(refalrts
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  context[13] = refalrts::ident_left(  ident_CmdIssueMemory, context[9], context[10] );
+  context[13] = refalrts::ident_left(  ident_CmdIssueMemory.ref(vm), context[9], context[10] );
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   // closed e.LastSentence#2 as range 5
@@ -271,26 +275,26 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1(refalrts
   //DEBUG: e.Sentences#2: 2
   //DEBUG: s.LastMemory#2: 19
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </20 Tile{ HalfReuse: [*]/0 Reuse: & HighLevelRASL-Function-Disjoint=2/4 AsIs: s.ScopeClass#1/14 AsIs: (/17 AsIs: e.Name#1/15 AsIs: )/18 } Tile{ HalfReuse: (/12 AsIs: e.LastSentence#2/5 AsIs: )/8 HalfReuse: {*}/1 } Tile{ HalfReuse: </7 HalfReuse: & MapReduce/11 HalfReuse: & HighLevelRASL-Function-Disjoint=2\1/13 AsIs: s.LastMemory#2/19 } Tile{ AsIs: e.Sentences#2/2 } >/21 >/22 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( context[20] ) )
+  if( ! refalrts::alloc_open_call( vm, context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[21] ) )
+  if( ! refalrts::alloc_close_call( vm, context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[22] ) )
+  if( ! refalrts::alloc_close_call( vm, context[22] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Disjoint_A2.ref.function );
+  refalrts::update_name( context[4], ref_gen_HighLevelRASLm_Functionm_Disjoint_A2.ref(vm) );
   refalrts::reinit_open_bracket( context[12] );
   refalrts::reinit_unwrapped_closure( context[1], context[0] );
   refalrts::reinit_open_call( context[7] );
-  refalrts::reinit_name( context[11], ref_MapReduce.ref.function );
-  refalrts::reinit_name( context[13], ref_gen_HighLevelRASLm_Functionm_Disjoint_A2L1.ref.function );
-  refalrts::push_stack( context[22] );
-  refalrts::push_stack( context[20] );
-  refalrts::push_stack( context[21] );
-  refalrts::push_stack( context[7] );
+  refalrts::reinit_name( context[11], ref_MapReduce.ref(vm) );
+  refalrts::reinit_name( context[13], ref_gen_HighLevelRASLm_Functionm_Disjoint_A2L1.ref(vm) );
+  refalrts::push_stack( vm, context[22] );
+  refalrts::push_stack( vm, context[20] );
+  refalrts::push_stack( vm, context[21] );
+  refalrts::push_stack( vm, context[7] );
   refalrts::link_brackets( context[12], context[8] );
   refalrts::link_brackets( context[17], context[18] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -310,8 +314,9 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1(refalrts
 static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Disjoint_A1("HighLevelRASL-Function-Disjoint=1", 489263093U, 1433179658U, func_gen_HighLevelRASLm_Functionm_Disjoint_A1);
 
 
-static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1L1(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
@@ -362,23 +367,23 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1L1(refalr
   //DEBUG: s.FnGenResult#1: 21
   //DEBUG: s.FnGenSubst#1: 22
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: (/11 } Tile{ AsIs: </0 Reuse: & GenResult/4 AsIs: s.FnGenResult#1/21 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Conditions#2/5 } Tile{ AsIs: )/12 } Tile{ AsIs: (/19 AsIs: e.Result#2/17 AsIs: )/20 HalfReuse: </8 HalfReuse: & GenPattern/1 } Tile{ AsIs: s.FnGenSubst#1/22 AsIs: (/15 AsIs: e.Name#1/13 AsIs: )/16 } Tile{ AsIs: e.Pattern#2/9 } >/23 >/24 )/25 Tile{ ]] }
-  if( ! refalrts::alloc_close_call( context[23] ) )
+  if( ! refalrts::alloc_close_call( vm, context[23] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[24] ) )
+  if( ! refalrts::alloc_close_call( vm, context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[25] ) )
+  if( ! refalrts::alloc_close_bracket( vm, context[25] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_GenResult.ref.function );
+  refalrts::update_name( context[4], ref_GenResult.ref(vm) );
   refalrts::reinit_open_call( context[8] );
-  refalrts::reinit_name( context[1], ref_GenPattern.ref.function );
+  refalrts::reinit_name( context[1], ref_GenPattern.ref(vm) );
   refalrts::link_brackets( context[11], context[25] );
-  refalrts::push_stack( context[24] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[23] );
-  refalrts::push_stack( context[8] );
+  refalrts::push_stack( vm, context[24] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[23] );
+  refalrts::push_stack( vm, context[8] );
   refalrts::link_brackets( context[15], context[16] );
   refalrts::link_brackets( context[19], context[20] );
   refalrts::link_brackets( context[7], context[12] );
@@ -401,8 +406,9 @@ static refalrts::FnResult func_gen_HighLevelRASLm_Functionm_Disjoint_A1L1(refalr
 static refalrts::NativeReference nat_ref_gen_HighLevelRASLm_Functionm_Disjoint_A1L1("HighLevelRASL-Function-Disjoint=1\\1", 489263093U, 1433179658U, func_gen_HighLevelRASLm_Functionm_Disjoint_A1L1);
 
 
-static refalrts::FnResult func_HighLevelRASLm_Functionm_Disjoint(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_HighLevelRASLm_Functionm_Disjoint(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
@@ -432,36 +438,36 @@ static refalrts::FnResult func_HighLevelRASLm_Functionm_Disjoint(refalrts::Iter 
   //DEBUG: e.Name#1: 8
   //DEBUG: e.Sentences#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & HighLevelRASL-Function-Disjoint=1/12 Tile{ AsIs: s.ScopeClass#1/7 AsIs: (/10 AsIs: e.Name#1/8 AsIs: )/11 } {*}/13 </14 & Map/15 [*]/16 & HighLevelRASL-Function-Disjoint=1\1/17 Tile{ AsIs: s.FnGenResult#1/6 } Tile{ AsIs: s.FnGenSubst#1/5 } (/18 e.Name#1/8/19 )/21 {*}/22 Tile{ AsIs: e.Sentences#1/2 } >/23 Tile{ AsIs: >/1 ]] }
-  if( ! refalrts::alloc_name( context[12], ref_gen_HighLevelRASLm_Functionm_Disjoint_A1.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[12], ref_gen_HighLevelRASLm_Functionm_Disjoint_A1.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[13], context[4] ) )
+  if( ! refalrts::alloc_unwrapped_closure( vm, context[13], context[4] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( context[14] ) )
+  if( ! refalrts::alloc_open_call( vm, context[14] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[15], ref_Map.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[15], ref_Map.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_closure_head( context[16] ) )
+  if( ! refalrts::alloc_closure_head( vm, context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[17], ref_gen_HighLevelRASLm_Functionm_Disjoint_A1L1.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[17], ref_gen_HighLevelRASLm_Functionm_Disjoint_A1L1.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_bracket( context[18] ) )
+  if( ! refalrts::alloc_open_bracket( vm, context[18] ) )
     return refalrts::cNoMemory;
-  if (! refalrts::copy_evar(context[19], context[20], context[8], context[9]))
+  if (! refalrts::copy_evar(vm, context[19], context[20], context[8], context[9]))
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_bracket( context[21] ) )
+  if( ! refalrts::alloc_close_bracket( vm, context[21] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_unwrapped_closure( context[22], context[16] ) )
+  if( ! refalrts::alloc_unwrapped_closure( vm, context[22], context[16] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[23] ) )
+  if( ! refalrts::alloc_close_call( vm, context[23] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[4] );
-  refalrts::push_stack( context[1] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[23] );
-  refalrts::push_stack( context[14] );
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[23] );
+  refalrts::push_stack( vm, context[14] );
   refalrts::link_brackets( context[18], context[21] );
   refalrts::link_brackets( context[10], context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;

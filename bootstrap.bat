@@ -10,8 +10,12 @@ setlocal
   call :MAKE_DIR srmake srmake-core || exit /b 1
   call :MAKE_DIR srlib-rich-prefix srlib-rich-prefix || exit /b 1
   move bin\srlib-rich-prefix.exe srlib\rich\rich.exe-prefix
+  call :MAKE_DIR srlib-rich-debug-prefix srlib-rich-debug-prefix || exit /b 1
+  move bin\srlib-rich-debug-prefix.exe srlib\rich-debug\rich-debug.exe-prefix
   call :MAKE_DIR srlib-slim-prefix srlib-slim-prefix || exit /b 1
   move bin\srlib-slim-prefix.exe srlib\slim\slim.exe-prefix
+  call :MAKE_DIR srlib-slim-debug-prefix srlib-slim-debug-prefix || exit /b 1
+  move bin\srlib-slim-debug-prefix.exe srlib\slim-debug\slim-debug.exe-prefix
 
   if exist *.obj erase *.obj
   erase rasl-appender\_rasl-appender.*

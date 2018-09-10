@@ -16,7 +16,8 @@ using refalrts::UInt32;
 
 #line 18 "Hash.cpp"
 
-static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_HashLittle2m_Chars(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
 #line 14 "Hash.sref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
@@ -167,15 +168,15 @@ static refalrts::FnResult func_HashLittle2m_Chars(refalrts::Iter arg_begin, refa
   sPrimInitval->number_info = c;
   sSecInitval->number_info = b;
 
-  refalrts::splice_to_freelist(arg_begin, func_name);
+  refalrts::splice_to_freelist(vm, arg_begin, func_name);
   refalrts::Iter start_garbage =
     content_b != 0 ? content_b : arg_end;
-  refalrts::splice_to_freelist(start_garbage, arg_end);
+  refalrts::splice_to_freelist(vm, start_garbage, arg_end);
 
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 179 "Hash.cpp"
+#line 180 "Hash.cpp"
 }
 
 static refalrts::NativeReference nat_ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2m_Chars);

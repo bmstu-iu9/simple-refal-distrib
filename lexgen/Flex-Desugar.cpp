@@ -11,8 +11,9 @@ static refalrts::ExternalReference ref_Passm_RemoveOpt("Pass-RemoveOpt", 2008995
 static refalrts::ExternalReference ref_Passm_RemoveRange("Pass-RemoveRange", 200899581U, 2741309241U);
 static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
 
-static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_Flexm_Desugar(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
@@ -25,27 +26,27 @@ static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts:
   // closed e.AST#1 as range 2
   //DEBUG: e.AST#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 AsIs: e.AST#1/2 HalfReuse: </1 } & Pipe/5 & Pass-RemoveRange/6 & Pass-RemoveOpt/7 & Pass-RemoveOneMany/8 >/9 >/10 Tile{ ]] }
-  if( ! refalrts::alloc_name( context[5], ref_Pipe.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[5], ref_Pipe.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[6], ref_Passm_RemoveRange.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[6], ref_Passm_RemoveRange.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[7], ref_Passm_RemoveOpt.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[7], ref_Passm_RemoveOpt.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( context[8], ref_Passm_RemoveOneMany.ref.function ) )
+  if( ! refalrts::alloc_name( vm, context[8], ref_Passm_RemoveOneMany.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[9] ) )
+  if( ! refalrts::alloc_close_call( vm, context[9] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( context[10] ) )
+  if( ! refalrts::alloc_close_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Fetch.ref.function );
+  refalrts::update_name( context[4], ref_Fetch.ref(vm) );
   refalrts::reinit_open_call( context[1] );
-  refalrts::push_stack( context[10] );
-  refalrts::push_stack( context[0] );
-  refalrts::push_stack( context[9] );
-  refalrts::push_stack( context[1] );
+  refalrts::push_stack( vm, context[10] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[9] );
+  refalrts::push_stack( vm, context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -57,8 +58,9 @@ static refalrts::FnResult func_Flexm_Desugar(refalrts::Iter arg_begin, refalrts:
 static refalrts::NativeReference nat_ref_Flexm_Desugar("Flex-Desugar", 0U, 0U, func_Flexm_Desugar);
 
 
-static refalrts::FnResult func_Passm_RemoveRange(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_Passm_RemoveRange(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
@@ -71,22 +73,23 @@ static refalrts::FnResult func_Passm_RemoveRange(refalrts::Iter arg_begin, refal
   // closed e.AST#1 as range 2
   //DEBUG: e.AST#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Pass-RemoveRange/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_Passm_RemoveRange("Pass-RemoveRange", 200899581U, 2741309241U, func_Passm_RemoveRange);
 
 
-static refalrts::FnResult func_Passm_RemoveOpt(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_Passm_RemoveOpt(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
@@ -99,22 +102,23 @@ static refalrts::FnResult func_Passm_RemoveOpt(refalrts::Iter arg_begin, refalrt
   // closed e.AST#1 as range 2
   //DEBUG: e.AST#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Pass-RemoveOpt/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_Passm_RemoveOpt("Pass-RemoveOpt", 200899581U, 2741309241U, func_Passm_RemoveOpt);
 
 
-static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  refalrts::this_is_generated_function();
+static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
@@ -127,14 +131,14 @@ static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::Iter arg_begin, ref
   // closed e.AST#1 as range 2
   //DEBUG: e.AST#1: 2
 
-  refalrts::reset_allocator();
+  refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Pass-RemoveOneMany/4 {REMOVED TILE} >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( trash_prev, res );
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }
 

@@ -29,8 +29,12 @@ make_dir lexgen lexgen
 make_dir srmake srmake-core
 make_dir srlib-rich-prefix srlib-rich-prefix
 mv bin/srlib-rich-prefix$(platform_exe_suffix) srlib/rich/rich.exe-prefix
+make_dir srlib-rich-debug-prefix srlib-rich-debug-prefix
+mv bin/srlib-rich-debug-prefix$(platform_exe_suffix) srlib/rich-debug/rich-debug.exe-prefix
 make_dir srlib-slim-prefix srlib-slim-prefix
 mv bin/srlib-slim-prefix$(platform_exe_suffix) srlib/slim/slim.exe-prefix
+make_dir srlib-slim-debug-prefix srlib-slim-debug-prefix
+mv bin/srlib-slim-debug-prefix$(platform_exe_suffix) srlib/slim-debug/slim-debug.exe-prefix
 chmod -x srlib/*/*.exe-prefix
 
 rm -f $APPENDER
