@@ -1,6 +1,11 @@
 #!/bin/bash
 
-mkdir -p bin
+if [ "$1" == "--debug" ]; then
+  DEBUG=ON
+else
+  DEBUG=OFF
+fi
+
 source ./scripts/load-config.sh . || exit 1
 source ./scripts/platform-specific.sh
 
@@ -11,8 +16,17 @@ make_dir() {
   DIR=$1
   TARGET=bin/$2$(platform_exe_suffix)
 
-  $CPPLINEE$TARGET -Isrlib/scratch -DDONT_PRINT_STATISTICS \
-    $DIR/*.cpp \
+  if [ $DEBUG == ON ]; then
+    FILELIST=$(ls $DIR/*.cpp)
+  else
+    FILELIST=$(
+      ls $DIR/*.cpp | \
+      grep -v refalrts-diagnostic-initializer | \
+      grep -v refalrts-debugger \
+    )
+  fi
+
+  $CPPLINEE$TARGET -Isrlib/scratch $FILELIST \
     $(platform_subdir_lookup srlib/scratch)/refalrts-platform-specific.cpp \
     srlib/scratch/platform-POSIX/refalrts-platform-POSIX.cpp
 

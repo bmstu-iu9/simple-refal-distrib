@@ -1,6 +1,11 @@
 @echo off
 setlocal
-  mkdir bin >NUL 2>NUL
+  if {%1}=={--debug} (
+    set DEBUG=ON
+  ) else (
+    set DEBUG=OFF
+  )
+
   call scripts\load-config.bat || exit /b 1
 
   %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
@@ -31,8 +36,8 @@ setlocal
   pushd %DIR%
   set FILELIST=
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINEE%%TARGET% -I..\srlib\scratch -DDONT_PRINT_STATISTICS ^
-    %FILELIST% ..\srlib\scratch\platform-Windows\refalrts-platform-specific.cpp
+  %CPPLINEE%%TARGET% -I..\srlib\scratch %FILELIST% ^
+    ..\srlib\scratch\platform-Windows\refalrts-platform-specific.cpp
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
 
@@ -50,6 +55,14 @@ goto :EOF
 
 :ADD_FILE_TO_LIST
 :: без setlocal
-  set FILELIST=%FILELIST% %1
+  if {%DEBUG%}=={OFF} (
+    if /I not {%1}=={refalrts-diagnostic-initializer.cpp} (
+      if /I not {%1}=={refalrts-debugger.cpp} (
+        set FILELIST=%FILELIST% %1
+      )
+    )
+  ) else (
+    set FILELIST=%FILELIST% %1
+  )
 :: без endlocal
 goto :EOF
