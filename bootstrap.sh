@@ -6,6 +6,8 @@ else
   DEBUG=OFF
 fi
 
+chmod +x bootstrap.sh clear.sh bin/sr{efc,make}
+
 source ./scripts/load-config.sh . || exit 1
 source ./scripts/platform-specific.sh
 
