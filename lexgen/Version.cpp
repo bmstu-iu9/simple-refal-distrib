@@ -618,8 +618,8 @@ static refalrts::FnResult func_PrintVersion(refalrts::VM *vm, refalrts::Iter arg
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 AsIs: e.Product#1/2 HalfReuse: ','/1 }" a part of Refal-5-lambda compiler toolkit, version 2.2.2"/5 >/7 </8 & Prout/9"Copyright (c) 2008-2016, Alexander Konovalov, 2016-2018, BMSTU IU9 Department"/10 >/12 </13 & Prout/14"All rights reserved.\n"/15 >/17 Tile{ ]] }
-  if( ! refalrts::alloc_chars( vm, context[5], context[6], " a part of Refal-5-lambda compiler toolkit, version 2.2.2", 57 ) )
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 AsIs: e.Product#1/2 HalfReuse: ','/1 }" a part of Refal-5-lambda compiler toolkit, version 2.2.3"/5 >/7 </8 & Prout/9"Copyright (c) 2008-2016, Alexander Konovalov, 2016-2018, BMSTU IU9 Department"/10 >/12 </13 & Prout/14"All rights reserved.\n"/15 >/17 Tile{ ]] }
+  if( ! refalrts::alloc_chars( vm, context[5], context[6], " a part of Refal-5-lambda compiler toolkit, version 2.2.3", 57 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[7] ) )
     return refalrts::cNoMemory;

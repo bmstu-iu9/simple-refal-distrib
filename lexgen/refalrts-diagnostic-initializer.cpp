@@ -56,10 +56,6 @@ void parse_config_line(
   ) {
     type = cString;
   } else if (
-    sscanf(line, "%[-_" AZaz "] = \"%[^\"]\"", param_name, string_value) == 2
-  ) {
-    type = cString;
-  } else if (
     sscanf(line, "%[-_" AZaz "] = %li", param_name, &number_value) == 2
   ) {
     type = cNumber;
@@ -128,6 +124,7 @@ void parse_config_line(
   set_boolean_param(print_statistics);
   set_boolean_param(dump_free_list);
   set_boolean_param(show_cookies);
+  set_boolean_param(show_hidden_steps);
 
   if (strcmp(param_name, "enable_debugger") == 0) {
     if (type == cNumber) {
