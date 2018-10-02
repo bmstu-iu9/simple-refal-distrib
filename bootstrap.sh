@@ -18,6 +18,7 @@ make_dir() {
   DIR=$1
   TARGET=bin/$2$(platform_exe_suffix)
 
+  echo ... compile $2
   if [ $DEBUG == ON ]; then
     FILELIST=$(ls $DIR/*.cpp)
   else

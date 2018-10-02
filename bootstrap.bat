@@ -37,6 +37,7 @@ setlocal
   set DIR=%1
   set TARGET=..\bin\%2.exe
 
+  echo ... compile %2.exe
   pushd %DIR%
   set FILELIST=
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
