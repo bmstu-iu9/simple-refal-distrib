@@ -26,6 +26,7 @@ static const refalrts::IdentReference ident_NativeBody("NativeBody");
 static const refalrts::IdentReference ident_NoMarkupContext("NoMarkupContext");
 static const refalrts::IdentReference ident_SUF("SUF");
 static const refalrts::IdentReference ident_Sentences("Sentences");
+static const refalrts::IdentReference ident_Spec("Spec");
 static const refalrts::IdentReference ident_Swap("Swap");
 static const refalrts::IdentReference ident_TkIdentifier("TkIdentifier");
 static const refalrts::IdentReference ident_TkName("TkName");
@@ -420,13 +421,54 @@ static refalrts::FnResult func_gen_Passm_RemovePos_L1(refalrts::VM *vm, refalrts
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
+  // </0 & Pass-RemovePos\1/4 (/7 s.new#4/9 t.new#5/10 t.new#6/12 e.new#7/5 )/8 >/1
+  context[13] = refalrts::tvar_left( context[12], context[5], context[6] );
+  if( ! context[13] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.new#7 as range 5
+  do {
+    // </0 & Pass-RemovePos\1/4 (/7 # Spec/9 t.SrcPos#2/10 (/12 e.Name#2/14 )/13 e.Pattern#2/5 )/8 >/1
+    context[14] = 0;
+    context[15] = 0;
+    if( ! refalrts::brackets_term( context[14], context[15], context[12] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_Spec.ref(vm), context[9] ) )
+      continue;
+    // closed e.Name#2 as range 14
+    // closed e.Pattern#2 as range 5
+    //DEBUG: t.SrcPos#2: 10
+    //DEBUG: e.Name#2: 14
+    //DEBUG: e.Pattern#2: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.SrcPos#2/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # Spec/9 } Tile{ AsIs: (/12 AsIs: e.Name#2/14 AsIs: )/13 } Tile{ AsIs: </0 Reuse: & RemovePos-Expr/4 } Tile{ AsIs: e.Pattern#2/5 } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
+    refalrts::update_name( context[4], ref_RemovePosm_Expr.ref(vm) );
+    refalrts::reinit_close_call( context[8] );
+    refalrts::reinit_close_bracket( context[1] );
+    refalrts::link_brackets( context[7], context[1] );
+    refalrts::push_stack( vm, context[8] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[12], context[13] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[5], context[6] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[7], context[9] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
   // </0 & Pass-RemovePos\1/4 (/7 s.EnumSwapDeclaration#2/9 t.SrcPos#2/10 s.ScopeClass#2/12 e.Name#2/5 )/8 >/1
-  if( ! refalrts::svar_left( context[12], context[5], context[6] ) )
+  if( ! refalrts::svar_term( context[12], context[12] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Name#2 as range 5
   //DEBUG: t.SrcPos#2: 10
-  //DEBUG: s.EnumSwapDeclaration#2: 9
   //DEBUG: s.ScopeClass#2: 12
+  //DEBUG: s.EnumSwapDeclaration#2: 9
   //DEBUG: e.Name#2: 5
 
   refalrts::reset_allocator(vm);
@@ -1793,26 +1835,62 @@ static refalrts::FnResult func_Passm_AttachEntries(refalrts::VM *vm, refalrts::I
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Pass-AttachEntries/4 (/9 # NativeBlock/11 t.SrcPos#1/14 e.Code#1/12 )/10 e.Items#1/5 >/1
+    // </0 & Pass-AttachEntries/4 (/9 s.new#4/11 t.new#5/14 e.new#6/12 )/10 e.new#7/5 >/1
     context[12] = context[7];
     context[13] = context[8];
-    if( ! refalrts::ident_term(  ident_NativeBlock.ref(vm), context[11] ) )
-      continue;
-    // closed e.Items#1 as range 5
+    // closed e.new#7 as range 5
     context[15] = refalrts::tvar_left( context[14], context[12], context[13] );
     if( ! context[15] )
       continue;
-    // closed e.Code#1 as range 12
+    // closed e.new#6 as range 12
+    do {
+      // </0 & Pass-AttachEntries/4 (/9 # NativeBlock/11 t.SrcPos#1/14 e.Code#1/12 )/10 e.Items#1/5 >/1
+      if( ! refalrts::ident_term(  ident_NativeBlock.ref(vm), context[11] ) )
+        continue;
+      // closed e.Code#1 as range 12
+      // closed e.Items#1 as range 5
+      //DEBUG: t.SrcPos#1: 14
+      //DEBUG: e.Code#1: 12
+      //DEBUG: e.Items#1: 5
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # NativeBlock/11 AsIs: t.SrcPos#1/14 AsIs: e.Code#1/12 AsIs: )/10 } Tile{ AsIs: </0 AsIs: & Pass-AttachEntries/4 } Tile{ AsIs: e.Items#1/5 } Tile{ AsIs: >/1 ]] }
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[0] );
+      refalrts::link_brackets( context[9], context[10] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      res = refalrts::splice_evar( res, context[5], context[6] );
+      res = refalrts::splice_evar( res, context[0], context[4] );
+      res = refalrts::splice_evar( res, context[9], context[10] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & Pass-AttachEntries/4 (/9 # Spec/11 (/14 e.Name#1/16 )/15 e.Pattern#1/12 )/10 e.Items#1/5 >/1
+    context[16] = 0;
+    context[17] = 0;
+    if( ! refalrts::brackets_term( context[16], context[17], context[14] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_Spec.ref(vm), context[11] ) )
+      continue;
+    // closed e.Name#1 as range 16
+    // closed e.Pattern#1 as range 12
+    // closed e.Items#1 as range 5
+    //DEBUG: e.Name#1: 16
+    //DEBUG: e.Pattern#1: 12
     //DEBUG: e.Items#1: 5
-    //DEBUG: t.SrcPos#1: 14
-    //DEBUG: e.Code#1: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # NativeBlock/11 AsIs: t.SrcPos#1/14 AsIs: e.Code#1/12 AsIs: )/10 } Tile{ AsIs: </0 AsIs: & Pass-AttachEntries/4 } Tile{ AsIs: e.Items#1/5 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # Spec/11 AsIs: (/14 AsIs: e.Name#1/16 AsIs: )/15 AsIs: e.Pattern#1/12 AsIs: )/10 } Tile{ AsIs: </0 AsIs: & Pass-AttachEntries/4 } Tile{ AsIs: e.Items#1/5 } Tile{ AsIs: >/1 ]] }
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::link_brackets( context[9], context[10] );
+    refalrts::link_brackets( context[14], context[15] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];

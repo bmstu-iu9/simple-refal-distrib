@@ -9255,10 +9255,10 @@ static refalrts::FnResult func_DoTokenChainm_AfterCall(refalrts::VM *vm, refalrt
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.Pos#1/28 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: # Pattern/6 HalfReuse: </9 } Tile{ HalfReuse: & EL-AddErrorAt/16 AsIs: t.ErrorList#1/17 } Tile{ AsIs: t.CallPos#1/11 HalfReuse: 'u'/15 }"ne"/30 Tile{ HalfReuse: 'x'/10 }"pected \'<\' in pattern expression, maybe missed \'=\'"/32 >/34 Tile{ AsIs: (/21 } Tile{ AsIs: e.Collected#1/7 } Tile{ AsIs: (/25 Reuse: # Brackets/27 } Tile{ AsIs: e.OptionalFuncName#1/13 } Tile{ AsIs: e.BracketTerms#1/19 } Tile{ AsIs: )/22 } Tile{ AsIs: )/26 AsIs: e.Tokens#1/2 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: # Pattern/6 HalfReuse: </9 } Tile{ HalfReuse: & EL-AddErrorAt/16 AsIs: t.ErrorList#1/17 } Tile{ AsIs: t.CallPos#1/11 HalfReuse: 'u'/15 }"ne"/30 Tile{ HalfReuse: 'x'/10 }"pected \'<\' in pattern expression, probably missed \'=\'"/32 >/34 Tile{ AsIs: (/21 } Tile{ AsIs: e.Collected#1/7 } Tile{ AsIs: (/25 Reuse: # Brackets/27 } Tile{ AsIs: e.OptionalFuncName#1/13 } Tile{ AsIs: e.BracketTerms#1/19 } Tile{ AsIs: )/22 } Tile{ AsIs: )/26 AsIs: e.Tokens#1/2 AsIs: >/1 ]] }
     if( ! refalrts::alloc_chars( vm, context[30], context[31], "ne", 2 ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_chars( vm, context[32], context[33], "pected \'<\' in pattern expression, maybe missed \'=\'", 50 ) )
+    if( ! refalrts::alloc_chars( vm, context[32], context[33], "pected \'<\' in pattern expression, probably missed \'=\'", 53 ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_close_call( vm, context[34] ) )
       return refalrts::cNoMemory;
@@ -9372,7 +9372,7 @@ static refalrts::FnResult func_DoTokenChainm_AfterCall(refalrts::VM *vm, refalrt
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.Mode#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Type#1/27 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & DoTokenChain-AfterCall$4=1/30 Tile{ HalfReuse: s.Mode1 #5/6 AsIs: (/9 AsIs: e.Collected#1/7 AsIs: )/10 } Tile{ AsIs: (/15 AsIs: e.OptionalFuncName#1/13 AsIs: )/16 } Tile{ AsIs: (/21 AsIs: e.BracketTerms#1/19 AsIs: )/22 HalfReuse: s.Type1 #27/25 } Tile{ AsIs: t.Pos#1/28 } (/31 Tile{ AsIs: e.Value#1/23 } Tile{ AsIs: )/26 } (/32 Tile{ AsIs: e.Tokens#1/2 } )/33 {*}/34 </35 & EL-AddErrorAt/36 Tile{ AsIs: t.ErrorList#1/17 } Tile{ AsIs: t.CallPos#1/11 }"unexpected \'<\' in pattern expression, maybe missed \'=\'"/37 >/39 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & DoTokenChain-AfterCall$4=1/30 Tile{ HalfReuse: s.Mode1 #5/6 AsIs: (/9 AsIs: e.Collected#1/7 AsIs: )/10 } Tile{ AsIs: (/15 AsIs: e.OptionalFuncName#1/13 AsIs: )/16 } Tile{ AsIs: (/21 AsIs: e.BracketTerms#1/19 AsIs: )/22 HalfReuse: s.Type1 #27/25 } Tile{ AsIs: t.Pos#1/28 } (/31 Tile{ AsIs: e.Value#1/23 } Tile{ AsIs: )/26 } (/32 Tile{ AsIs: e.Tokens#1/2 } )/33 {*}/34 </35 & EL-AddErrorAt/36 Tile{ AsIs: t.ErrorList#1/17 } Tile{ AsIs: t.CallPos#1/11 }"unexpected \'<\' in pattern expression, probably missed \'=\'"/37 >/39 Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_name( vm, context[30], ref_gen_DoTokenChainm_AfterCall_S4A1.ref(vm) ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[31] ) )
@@ -9387,7 +9387,7 @@ static refalrts::FnResult func_DoTokenChainm_AfterCall(refalrts::VM *vm, refalrt
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_name( vm, context[36], ref_ELm_AddErrorAt.ref(vm) ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_chars( vm, context[37], context[38], "unexpected \'<\' in pattern expression, maybe missed \'=\'", 54 ) )
+  if( ! refalrts::alloc_chars( vm, context[37], context[38], "unexpected \'<\' in pattern expression, probably missed \'=\'", 57 ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[39] ) )
     return refalrts::cNoMemory;
@@ -10642,13 +10642,13 @@ static refalrts::FnResult func_TokName(refalrts::VM *vm, refalrts::Iter arg_begi
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 'e'/0 HalfReuse: 'n'/4 HalfReuse: 'd'/5 HalfReuse: ' '/1 }"of file"/6 Tile{ ]] }
-    if( ! refalrts::alloc_chars( vm, context[6], context[7], "of file", 7 ) )
+    //RESULT: Tile{ [[ HalfReuse: 'e'/0 HalfReuse: 'n'/4 HalfReuse: 'd'/5 HalfReuse: '-'/1 }"of-file"/6 Tile{ ]] }
+    if( ! refalrts::alloc_chars( vm, context[6], context[7], "of-file", 7 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], 'e' );
     refalrts::reinit_char( context[4], 'n' );
     refalrts::reinit_char( context[5], 'd' );
-    refalrts::reinit_char( context[1], ' ' );
+    refalrts::reinit_char( context[1], '-' );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;

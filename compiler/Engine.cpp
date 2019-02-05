@@ -29,6 +29,7 @@ static const refalrts::IdentReference ident_R5("R5");
 static const refalrts::IdentReference ident_RowCol("RowCol");
 static const refalrts::IdentReference ident_SR("SR");
 static const refalrts::IdentReference ident_Sentences("Sentences");
+static const refalrts::IdentReference ident_Spec("Spec");
 static const refalrts::IdentReference ident_Success("Success");
 static const refalrts::IdentReference ident_Swap("Swap");
 static const refalrts::IdentReference ident_TkName("TkName");
@@ -2655,9 +2656,9 @@ static refalrts::NativeReference nat_ref_PatchASTSrcPos("PatchASTSrcPos", 993357
 static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
-  // issue here memory for vars with 25 elems
-  refalrts::Iter context[25];
-  refalrts::zeros( context, 25 );
+  // issue here memory for vars with 26 elems
+  refalrts::Iter context[26];
+  refalrts::zeros( context, 26 );
   // </0 & PatchASTSrcPos-Item/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2819,106 +2820,159 @@ static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 (/7 s.EnumSwapDeclEntry#1/10 t.SrcPos#1/11 s.ScopeClass#1/13 e.Name#1/5 )/8 >/1
-  if( ! refalrts::svar_left( context[13], context[5], context[6] ) )
+  // </0 & PatchASTSrcPos-Item/4 s.new#5/9 (/7 s.new#6/10 t.new#7/11 t.new#8/13 e.new#9/5 )/8 >/1
+  context[14] = refalrts::tvar_left( context[13], context[5], context[6] );
+  if( ! context[14] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Name#1 as range 5
-  //DEBUG: t.SrcPos#1: 11
-  //DEBUG: s.FnPatch#1: 9
-  //DEBUG: s.EnumSwapDeclEntry#1: 10
-  //DEBUG: s.ScopeClass#1: 13
-  //DEBUG: e.Name#1: 5
-  //5: e.Name#1
-  //9: s.FnPatch#1
-  //10: s.EnumSwapDeclEntry#1
-  //11: t.SrcPos#1
-  //13: s.ScopeClass#1
-  //19: s.EnumSwapDeclEntry#1
-
-  refalrts::reset_allocator(vm);
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  if( ! refalrts::alloc_open_call( vm, context[14] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[16], ref_gen_PatchASTSrcPosm_Item_S5C1.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[17] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[18], ref_OneOf.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_stvar(vm, context[19], context[10]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[20], ident_Enum.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[21], ident_Swap.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[22], ident_Declaration.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[23], ident_Entry.ref(vm) ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[24] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[15] ) )
-    return refalrts::cNoMemory;
-  refalrts::push_stack( vm, context[15] );
-  refalrts::push_stack( vm, context[14] );
-  res = refalrts::splice_elem( res, context[15] );
-  refalrts::push_stack( vm, context[24] );
-  refalrts::push_stack( vm, context[17] );
-  res = refalrts::splice_elem( res, context[24] );
-  res = refalrts::splice_elem( res, context[23] );
-  res = refalrts::splice_elem( res, context[22] );
-  res = refalrts::splice_elem( res, context[21] );
-  res = refalrts::splice_elem( res, context[20] );
-  res = refalrts::splice_stvar( res, context[19] );
-  res = refalrts::splice_elem( res, context[18] );
-  res = refalrts::splice_elem( res, context[17] );
-  res = refalrts::splice_elem( res, context[16] );
-  res = refalrts::splice_elem( res, context[14] );
-  refalrts::use( res );
-  refalrts::FnResult rec_res = refalrts::recursive_call_main_loop(vm);
-  if (rec_res != refalrts::cSuccess)
-    return rec_res;
-  refalrts::this_is_generated_function(vm);
+  // closed e.new#9 as range 5
   do {
-    // </14 & PatchASTSrcPos-Item$5?1/18 # True/19 >/15
-    context[16] = 0;
-    context[17] = 0;
-    context[18] = refalrts::call_left( context[16], context[17], context[14], context[15] );
-    context[19] = refalrts::ident_left(  ident_True.ref(vm), context[16], context[17] );
-    if( ! context[19] )
+    // </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 (/7 s.EnumSwapDeclEntry#1/10 t.SrcPos#1/11 s.ScopeClass#1/13 e.Name#1/5 )/8 >/1
+    if( ! refalrts::svar_term( context[13], context[13] ) )
       continue;
-    if( ! refalrts::empty_seq( context[16], context[17] ) )
-      continue;
+    // closed e.Name#1 as range 5
     //DEBUG: t.SrcPos#1: 11
+    //DEBUG: s.ScopeClass#1: 13
     //DEBUG: s.FnPatch#1: 9
     //DEBUG: s.EnumSwapDeclEntry#1: 10
-    //DEBUG: s.ScopeClass#1: 13
     //DEBUG: e.Name#1: 5
+    //5: e.Name#1
+    //9: s.FnPatch#1
+    //10: s.EnumSwapDeclEntry#1
+    //11: t.SrcPos#1
+    //13: s.ScopeClass#1
+    //20: s.EnumSwapDeclEntry#1
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # True/19 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.EnumSwapDeclEntry#1/10 } Tile{ AsIs: </14 HalfReuse: s.FnPatch1 #9/18 } Tile{ AsIs: t.SrcPos#1/11 } Tile{ AsIs: >/15 } Tile{ AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/5 AsIs: )/8 } Tile{ ]] }
-    refalrts::reinit_svar( context[18], context[9] );
-    refalrts::link_brackets( context[7], context[8] );
-    refalrts::push_stack( vm, context[15] );
-    refalrts::push_stack( vm, context[14] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[13], context[8] );
-    res = refalrts::splice_evar( res, context[15], context[15] );
-    res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[14], context[18] );
-    res = refalrts::splice_evar( res, context[7], context[10] );
-    refalrts::splice_to_freelist_open( vm, trash_prev, res );
-    return refalrts::cSuccess;
+    refalrts::Iter res = context[1];
+    if( ! refalrts::alloc_open_call( vm, context[15] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( vm, context[17], ref_gen_PatchASTSrcPosm_Item_S5C1.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_open_call( vm, context[18] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_name( vm, context[19], ref_OneOf.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if (! refalrts::copy_stvar(vm, context[20], context[10]))
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( vm, context[21], ident_Enum.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( vm, context[22], ident_Swap.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( vm, context[23], ident_Declaration.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_ident( vm, context[24], ident_Entry.ref(vm) ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( vm, context[25] ) )
+      return refalrts::cNoMemory;
+    if( ! refalrts::alloc_close_call( vm, context[16] ) )
+      return refalrts::cNoMemory;
+    refalrts::push_stack( vm, context[16] );
+    refalrts::push_stack( vm, context[15] );
+    res = refalrts::splice_elem( res, context[16] );
+    refalrts::push_stack( vm, context[25] );
+    refalrts::push_stack( vm, context[18] );
+    res = refalrts::splice_elem( res, context[25] );
+    res = refalrts::splice_elem( res, context[24] );
+    res = refalrts::splice_elem( res, context[23] );
+    res = refalrts::splice_elem( res, context[22] );
+    res = refalrts::splice_elem( res, context[21] );
+    res = refalrts::splice_stvar( res, context[20] );
+    res = refalrts::splice_elem( res, context[19] );
+    res = refalrts::splice_elem( res, context[18] );
+    res = refalrts::splice_elem( res, context[17] );
+    res = refalrts::splice_elem( res, context[15] );
+    refalrts::use( res );
+    refalrts::FnResult rec_res = refalrts::recursive_call_main_loop(vm);
+    if (rec_res != refalrts::cSuccess)
+      return rec_res;
+    refalrts::this_is_generated_function(vm);
+    do {
+      // </15 & PatchASTSrcPos-Item$5?1/19 # True/20 >/16
+      context[17] = 0;
+      context[18] = 0;
+      context[19] = refalrts::call_left( context[17], context[18], context[15], context[16] );
+      context[20] = refalrts::ident_left(  ident_True.ref(vm), context[17], context[18] );
+      if( ! context[20] )
+        continue;
+      if( ! refalrts::empty_seq( context[17], context[18] ) )
+        continue;
+      //DEBUG: t.SrcPos#1: 11
+      //DEBUG: s.ScopeClass#1: 13
+      //DEBUG: s.FnPatch#1: 9
+      //DEBUG: s.EnumSwapDeclEntry#1: 10
+      //DEBUG: e.Name#1: 5
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # True/20 {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.EnumSwapDeclEntry#1/10 } Tile{ AsIs: </15 HalfReuse: s.FnPatch1 #9/19 } Tile{ AsIs: t.SrcPos#1/11 } Tile{ AsIs: >/16 } Tile{ AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/5 AsIs: )/8 } Tile{ ]] }
+      refalrts::reinit_svar( context[19], context[9] );
+      refalrts::link_brackets( context[7], context[8] );
+      refalrts::push_stack( vm, context[16] );
+      refalrts::push_stack( vm, context[15] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[13], context[8] );
+      res = refalrts::splice_evar( res, context[16], context[16] );
+      res = refalrts::splice_evar( res, context[11], context[12] );
+      res = refalrts::splice_evar( res, context[15], context[19] );
+      res = refalrts::splice_evar( res, context[7], context[10] );
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    refalrts::splice_to_freelist(vm, context[15], context[16]);
+    continue;
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  refalrts::splice_to_freelist(vm, context[14], context[15]);
-  return refalrts::cRecognitionImpossible;
+  // </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 (/7 # Spec/10 t.SrcPos#1/11 (/13 e.Name#1/15 )/14 e.Pattern#1/5 )/8 >/1
+  context[15] = 0;
+  context[16] = 0;
+  if( ! refalrts::brackets_term( context[15], context[16], context[13] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::ident_term(  ident_Spec.ref(vm), context[10] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Name#1 as range 15
+  // closed e.Pattern#1 as range 5
+  //DEBUG: t.SrcPos#1: 11
+  //DEBUG: s.FnPatch#1: 9
+  //DEBUG: e.Name#1: 15
+  //DEBUG: e.Pattern#1: 5
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # Spec/10 } </17 s.FnPatch#1/9/18 Tile{ AsIs: t.SrcPos#1/11 } >/19 Tile{ AsIs: (/13 AsIs: e.Name#1/15 AsIs: )/14 } Tile{ AsIs: </0 Reuse: & PatchASTSrcPos-Expr/4 AsIs: s.FnPatch#1/9 } Tile{ AsIs: e.Pattern#1/5 } Tile{ HalfReuse: >/8 HalfReuse: )/1 ]] }
+  if( ! refalrts::alloc_open_call( vm, context[17] ) )
+    return refalrts::cNoMemory;
+  if (! refalrts::copy_stvar(vm, context[18], context[9]))
+    return refalrts::cNoMemory;
+  if( ! refalrts::alloc_close_call( vm, context[19] ) )
+    return refalrts::cNoMemory;
+  refalrts::update_name( context[4], ref_PatchASTSrcPosm_Expr.ref(vm) );
+  refalrts::reinit_close_call( context[8] );
+  refalrts::reinit_close_bracket( context[1] );
+  refalrts::link_brackets( context[7], context[1] );
+  refalrts::push_stack( vm, context[8] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[13], context[14] );
+  refalrts::push_stack( vm, context[19] );
+  refalrts::push_stack( vm, context[17] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[8];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[0], context[9] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
+  res = refalrts::splice_evar( res, context[19], context[19] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[17], context[18] );
+  res = refalrts::splice_evar( res, context[7], context[10] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_PatchASTSrcPosm_Item("PatchASTSrcPos-Item", 993357003U, 1858274993U, func_PatchASTSrcPosm_Item);

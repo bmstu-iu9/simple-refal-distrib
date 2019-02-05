@@ -16,6 +16,7 @@ static const refalrts::IdentReference ident_Forward("Forward");
 static const refalrts::IdentReference ident_Ident("Ident");
 static const refalrts::IdentReference ident_Include("Include");
 static const refalrts::IdentReference ident_Open("Open");
+static const refalrts::IdentReference ident_Spec("Spec");
 static const refalrts::IdentReference ident_Success("Success");
 static const refalrts::IdentReference ident_Swap("Swap");
 static const refalrts::IdentReference ident_TkChar("TkChar");
@@ -354,24 +355,40 @@ static refalrts::FnResult func_StrDirective(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & StrDirective/4 # Include/5 >/1
-  if( ! refalrts::ident_term(  ident_Include.ref(vm), context[5] ) )
+  do {
+    // </0 & StrDirective/4 # Include/5 >/1
+    if( ! refalrts::ident_term(  ident_Include.ref(vm), context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'I'/0 HalfReuse: 'N'/4 HalfReuse: 'C'/5 HalfReuse: 'L'/1 }"UDE"/6 Tile{ ]] }
+    if( ! refalrts::alloc_chars( vm, context[6], context[7], "UDE", 3 ) )
+      return refalrts::cNoMemory;
+    refalrts::reinit_char( context[0], 'I' );
+    refalrts::reinit_char( context[4], 'N' );
+    refalrts::reinit_char( context[5], 'C' );
+    refalrts::reinit_char( context[1], 'L' );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[6], context[7] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & StrDirective/4 # Spec/5 >/1
+  if( ! refalrts::ident_term(  ident_Spec.ref(vm), context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: 'I'/0 HalfReuse: 'N'/4 HalfReuse: 'C'/5 HalfReuse: 'L'/1 }"UDE"/6 Tile{ ]] }
-  if( ! refalrts::alloc_chars( vm, context[6], context[7], "UDE", 3 ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_char( context[0], 'I' );
-  refalrts::reinit_char( context[4], 'N' );
-  refalrts::reinit_char( context[5], 'C' );
-  refalrts::reinit_char( context[1], 'L' );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[6], context[7] );
-  refalrts::use( res );
+  //TRASH: {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: 'S'/0 HalfReuse: 'P'/4 HalfReuse: 'E'/5 HalfReuse: 'C'/1 ]] }
+  refalrts::reinit_char( context[0], 'S' );
+  refalrts::reinit_char( context[4], 'P' );
+  refalrts::reinit_char( context[5], 'E' );
+  refalrts::reinit_char( context[1], 'C' );
   return refalrts::cSuccess;
 }
 
@@ -594,13 +611,13 @@ static refalrts::FnResult func_SRm_StrFromToken(refalrts::VM *vm, refalrts::Iter
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 'e'/0 HalfReuse: 'n'/4 HalfReuse: 'd'/5 HalfReuse: ' '/1 }"of file"/6 Tile{ ]] }
-    if( ! refalrts::alloc_chars( vm, context[6], context[7], "of file", 7 ) )
+    //RESULT: Tile{ [[ HalfReuse: 'e'/0 HalfReuse: 'n'/4 HalfReuse: 'd'/5 HalfReuse: '-'/1 }"of-file"/6 Tile{ ]] }
+    if( ! refalrts::alloc_chars( vm, context[6], context[7], "of-file", 7 ) )
       return refalrts::cNoMemory;
     refalrts::reinit_char( context[0], 'e' );
     refalrts::reinit_char( context[4], 'n' );
     refalrts::reinit_char( context[5], 'd' );
-    refalrts::reinit_char( context[1], ' ' );
+    refalrts::reinit_char( context[1], '-' );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1941,174 +1958,203 @@ static refalrts::FnResult func_ValidDirective(refalrts::VM *vm, refalrts::Iter a
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & ValidDirective/4 e.new#10/11 s.new#11/13 s.new#9/10 s.new#8/9 s.new#7/8 s.new#6/7 >/1
-    context[11] = context[5];
-    context[12] = context[6];
-    if( ! refalrts::svar_right( context[13], context[11], context[12] ) )
-      continue;
-    // closed e.new#10 as range 11
     do {
-      // </0 & ValidDirective/4 'L'/13 'A'/10 'B'/9 'E'/8 'L'/7 >/1
-      if( ! refalrts::char_term( 'L', context[13] ) )
+      // </0 & ValidDirective/4 e.new#10/11 s.new#11/13 s.new#9/10 s.new#8/9 s.new#7/8 s.new#6/7 >/1
+      context[11] = context[5];
+      context[12] = context[6];
+      if( ! refalrts::svar_right( context[13], context[11], context[12] ) )
         continue;
-      if( ! refalrts::char_term( 'A', context[10] ) )
-        continue;
-      if( ! refalrts::char_term( 'B', context[9] ) )
-        continue;
-      if( ! refalrts::char_term( 'E', context[8] ) )
-        continue;
-      if( ! refalrts::char_term( 'L', context[7] ) )
-        continue;
-      if( ! refalrts::empty_seq( context[11], context[12] ) )
-        continue;
+      // closed e.new#10 as range 11
+      do {
+        // </0 & ValidDirective/4 'L'/13 'A'/10 'B'/9 'E'/8 'L'/7 >/1
+        if( ! refalrts::char_term( 'L', context[13] ) )
+          continue;
+        if( ! refalrts::char_term( 'A', context[10] ) )
+          continue;
+        if( ! refalrts::char_term( 'B', context[9] ) )
+          continue;
+        if( ! refalrts::char_term( 'E', context[8] ) )
+          continue;
+        if( ! refalrts::char_term( 'L', context[7] ) )
+          continue;
+        if( ! refalrts::empty_seq( context[11], context[12] ) )
+          continue;
 
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'L'/13 'A'/10 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/8 HalfReuse: # Ident/7 HalfReuse: )/1 ]] }
-      refalrts::reinit_open_bracket( context[9] );
-      refalrts::reinit_ident( context[8], ident_TkDirective.ref(vm) );
-      refalrts::reinit_ident( context[7], ident_Ident.ref(vm) );
-      refalrts::reinit_close_bracket( context[1] );
-      refalrts::link_brackets( context[9], context[1] );
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[9];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'L'/13 'A'/10 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/8 HalfReuse: # Ident/7 HalfReuse: )/1 ]] }
+        refalrts::reinit_open_bracket( context[9] );
+        refalrts::reinit_ident( context[8], ident_TkDirective.ref(vm) );
+        refalrts::reinit_ident( context[7], ident_Ident.ref(vm) );
+        refalrts::reinit_close_bracket( context[1] );
+        refalrts::link_brackets( context[9], context[1] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[9];
+        refalrts::splice_to_freelist_open( vm, trash_prev, res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
 
-    // </0 & ValidDirective/4 e.new#17/14 s.new#18/17 s.new#19/16 s.new#16/13 s.new#15/10 s.new#14/9 s.new#13/8 s.new#12/7 >/1
-    context[14] = context[11];
-    context[15] = context[12];
-    if( ! refalrts::svar_right( context[16], context[14], context[15] ) )
-      continue;
-    if( ! refalrts::svar_right( context[17], context[14], context[15] ) )
-      continue;
-    // closed e.new#17 as range 14
-    do {
-      // </0 & ValidDirective/4 'I'/17 'N'/16 'C'/13 'L'/10 'U'/9 'D'/8 'E'/7 >/1
-      if( ! refalrts::char_term( 'I', context[17] ) )
+      // </0 & ValidDirective/4 e.new#17/14 s.new#18/17 s.new#19/16 s.new#16/13 s.new#15/10 s.new#14/9 s.new#13/8 s.new#12/7 >/1
+      context[14] = context[11];
+      context[15] = context[12];
+      if( ! refalrts::svar_right( context[16], context[14], context[15] ) )
         continue;
-      if( ! refalrts::char_term( 'N', context[16] ) )
+      if( ! refalrts::svar_right( context[17], context[14], context[15] ) )
         continue;
-      if( ! refalrts::char_term( 'C', context[13] ) )
+      // closed e.new#17 as range 14
+      do {
+        // </0 & ValidDirective/4 'I'/17 'N'/16 'C'/13 'L'/10 'U'/9 'D'/8 'E'/7 >/1
+        if( ! refalrts::char_term( 'I', context[17] ) )
+          continue;
+        if( ! refalrts::char_term( 'N', context[16] ) )
+          continue;
+        if( ! refalrts::char_term( 'C', context[13] ) )
+          continue;
+        if( ! refalrts::char_term( 'L', context[10] ) )
+          continue;
+        if( ! refalrts::char_term( 'U', context[9] ) )
+          continue;
+        if( ! refalrts::char_term( 'D', context[8] ) )
+          continue;
+        if( ! refalrts::char_term( 'E', context[7] ) )
+          continue;
+        if( ! refalrts::empty_seq( context[14], context[15] ) )
+          continue;
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'I'/17 'N'/16 'C'/13 'L'/10 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/8 HalfReuse: # Include/7 HalfReuse: )/1 ]] }
+        refalrts::reinit_open_bracket( context[9] );
+        refalrts::reinit_ident( context[8], ident_TkDirective.ref(vm) );
+        refalrts::reinit_ident( context[7], ident_Include.ref(vm) );
+        refalrts::reinit_close_bracket( context[1] );
+        refalrts::link_brackets( context[9], context[1] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[9];
+        refalrts::splice_to_freelist_open( vm, trash_prev, res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & ValidDirective/4 e.new#25/14 'S'/17 s.new#24/16 s.new#23/13 s.new#22/10 'E'/9 s.new#21/8 s.new#20/7 >/1
+      if( ! refalrts::char_term( 'S', context[17] ) )
         continue;
-      if( ! refalrts::char_term( 'L', context[10] ) )
+      if( ! refalrts::char_term( 'E', context[9] ) )
         continue;
-      if( ! refalrts::char_term( 'U', context[9] ) )
+      // closed e.new#25 as range 14
+      do {
+        // </0 & ValidDirective/4 'E'/20 'A'/21 'S'/17 'T'/16 'E'/13 'R'/10 'E'/9 'G'/8 'G'/7 >/1
+        context[18] = context[14];
+        context[19] = context[15];
+        if( ! refalrts::char_term( 'T', context[16] ) )
+          continue;
+        if( ! refalrts::char_term( 'E', context[13] ) )
+          continue;
+        if( ! refalrts::char_term( 'R', context[10] ) )
+          continue;
+        if( ! refalrts::char_term( 'G', context[8] ) )
+          continue;
+        if( ! refalrts::char_term( 'G', context[7] ) )
+          continue;
+        context[20] = refalrts::char_left( 'E', context[18], context[19] );
+        if( ! context[20] )
+          continue;
+        context[21] = refalrts::char_left( 'A', context[18], context[19] );
+        if( ! context[21] )
+          continue;
+        if( ! refalrts::empty_seq( context[18], context[19] ) )
+          continue;
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$10\1/20 Reuse: 'M'/21 Reuse: 'e'/17 Reuse: 'd'/16 Reuse: 'v'/13 Reuse: 'e'/10 Reuse: 'd'/9 Reuse: 'n'/8 Reuse: 'o'/7 HalfReuse: '-'/1 }"orientirovannoe programmirovanie"/22 >/24 Tile{ ]] }
+        if( ! refalrts::alloc_chars( vm, context[22], context[23], "orientirovannoe programmirovanie", 32 ) )
+          return refalrts::cNoMemory;
+        if( ! refalrts::alloc_close_call( vm, context[24] ) )
+          return refalrts::cNoMemory;
+        refalrts::update_name( context[4], ref_Map.ref(vm) );
+        refalrts::reinit_name( context[20], ref_gen_ValidDirective_S10L1.ref(vm) );
+        refalrts::update_char( context[21], 'M' );
+        refalrts::update_char( context[17], 'e' );
+        refalrts::update_char( context[16], 'd' );
+        refalrts::update_char( context[13], 'v' );
+        refalrts::update_char( context[10], 'e' );
+        refalrts::update_char( context[9], 'd' );
+        refalrts::update_char( context[8], 'n' );
+        refalrts::update_char( context[7], 'o' );
+        refalrts::reinit_char( context[1], '-' );
+        refalrts::push_stack( vm, context[24] );
+        refalrts::push_stack( vm, context[0] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = arg_end->next;
+        res = refalrts::splice_evar( res, context[22], context[24] );
+        refalrts::use( res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & ValidDirective/4 'S'/17 'C'/16 'O'/13 'P'/10 'E'/9 'I'/8 'D'/7 >/1
+      if( ! refalrts::char_term( 'C', context[16] ) )
         continue;
-      if( ! refalrts::char_term( 'D', context[8] ) )
+      if( ! refalrts::char_term( 'O', context[13] ) )
         continue;
-      if( ! refalrts::char_term( 'E', context[7] ) )
+      if( ! refalrts::char_term( 'P', context[10] ) )
+        continue;
+      if( ! refalrts::char_term( 'I', context[8] ) )
+        continue;
+      if( ! refalrts::char_term( 'D', context[7] ) )
         continue;
       if( ! refalrts::empty_seq( context[14], context[15] ) )
         continue;
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'I'/17 'N'/16 'C'/13 'L'/10 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/8 HalfReuse: # Include/7 HalfReuse: )/1 ]] }
+      //TRASH: {REMOVED TILE} </0 & ValidDirective/4 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: (/17 HalfReuse: # TkNumber/16 HalfReuse: # Cookie1/13 HalfReuse: )/10 HalfReuse: (/9 HalfReuse: # TkNumber/8 HalfReuse: # Cookie2/7 HalfReuse: )/1 ]] }
+      refalrts::reinit_open_bracket( context[17] );
+      refalrts::reinit_ident( context[16], ident_TkNumber.ref(vm) );
+      refalrts::reinit_ident( context[13], ident_Cookie1.ref(vm) );
+      refalrts::reinit_close_bracket( context[10] );
       refalrts::reinit_open_bracket( context[9] );
-      refalrts::reinit_ident( context[8], ident_TkDirective.ref(vm) );
-      refalrts::reinit_ident( context[7], ident_Include.ref(vm) );
+      refalrts::reinit_ident( context[8], ident_TkNumber.ref(vm) );
+      refalrts::reinit_ident( context[7], ident_Cookie2.ref(vm) );
       refalrts::reinit_close_bracket( context[1] );
       refalrts::link_brackets( context[9], context[1] );
+      refalrts::link_brackets( context[17], context[10] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[9];
+      refalrts::Iter res = context[17];
       refalrts::splice_to_freelist_open( vm, trash_prev, res );
       return refalrts::cSuccess;
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & ValidDirective/4 e.new#25/14 'S'/17 s.new#24/16 s.new#23/13 s.new#22/10 'E'/9 s.new#21/8 s.new#20/7 >/1
-    if( ! refalrts::char_term( 'S', context[17] ) )
+    // </0 & ValidDirective/4 'S'/10 'P'/9 'E'/8 'C'/7 >/1
+    if( ! refalrts::char_term( 'S', context[10] ) )
       continue;
-    if( ! refalrts::char_term( 'E', context[9] ) )
+    if( ! refalrts::char_term( 'P', context[9] ) )
       continue;
-    // closed e.new#25 as range 14
-    do {
-      // </0 & ValidDirective/4 'E'/20 'A'/21 'S'/17 'T'/16 'E'/13 'R'/10 'E'/9 'G'/8 'G'/7 >/1
-      context[18] = context[14];
-      context[19] = context[15];
-      if( ! refalrts::char_term( 'T', context[16] ) )
-        continue;
-      if( ! refalrts::char_term( 'E', context[13] ) )
-        continue;
-      if( ! refalrts::char_term( 'R', context[10] ) )
-        continue;
-      if( ! refalrts::char_term( 'G', context[8] ) )
-        continue;
-      if( ! refalrts::char_term( 'G', context[7] ) )
-        continue;
-      context[20] = refalrts::char_left( 'E', context[18], context[19] );
-      if( ! context[20] )
-        continue;
-      context[21] = refalrts::char_left( 'A', context[18], context[19] );
-      if( ! context[21] )
-        continue;
-      if( ! refalrts::empty_seq( context[18], context[19] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map/4 HalfReuse: & ValidDirective$10\1/20 Reuse: 'M'/21 Reuse: 'e'/17 Reuse: 'd'/16 Reuse: 'v'/13 Reuse: 'e'/10 Reuse: 'd'/9 Reuse: 'n'/8 Reuse: 'o'/7 HalfReuse: '-'/1 }"orientirovannoe programmirovanie"/22 >/24 Tile{ ]] }
-      if( ! refalrts::alloc_chars( vm, context[22], context[23], "orientirovannoe programmirovanie", 32 ) )
-        return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_call( vm, context[24] ) )
-        return refalrts::cNoMemory;
-      refalrts::update_name( context[4], ref_Map.ref(vm) );
-      refalrts::reinit_name( context[20], ref_gen_ValidDirective_S10L1.ref(vm) );
-      refalrts::update_char( context[21], 'M' );
-      refalrts::update_char( context[17], 'e' );
-      refalrts::update_char( context[16], 'd' );
-      refalrts::update_char( context[13], 'v' );
-      refalrts::update_char( context[10], 'e' );
-      refalrts::update_char( context[9], 'd' );
-      refalrts::update_char( context[8], 'n' );
-      refalrts::update_char( context[7], 'o' );
-      refalrts::reinit_char( context[1], '-' );
-      refalrts::push_stack( vm, context[24] );
-      refalrts::push_stack( vm, context[0] );
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[22], context[24] );
-      refalrts::use( res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    // </0 & ValidDirective/4 'S'/17 'C'/16 'O'/13 'P'/10 'E'/9 'I'/8 'D'/7 >/1
-    if( ! refalrts::char_term( 'C', context[16] ) )
+    if( ! refalrts::char_term( 'E', context[8] ) )
       continue;
-    if( ! refalrts::char_term( 'O', context[13] ) )
+    if( ! refalrts::char_term( 'C', context[7] ) )
       continue;
-    if( ! refalrts::char_term( 'P', context[10] ) )
-      continue;
-    if( ! refalrts::char_term( 'I', context[8] ) )
-      continue;
-    if( ! refalrts::char_term( 'D', context[7] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[14], context[15] ) )
+    if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & ValidDirective/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/17 HalfReuse: # TkNumber/16 HalfReuse: # Cookie1/13 HalfReuse: )/10 HalfReuse: (/9 HalfReuse: # TkNumber/8 HalfReuse: # Cookie2/7 HalfReuse: )/1 ]] }
-    refalrts::reinit_open_bracket( context[17] );
-    refalrts::reinit_ident( context[16], ident_TkNumber.ref(vm) );
-    refalrts::reinit_ident( context[13], ident_Cookie1.ref(vm) );
-    refalrts::reinit_close_bracket( context[10] );
+    //TRASH: {REMOVED TILE} </0 & ValidDirective/4 'S'/10 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: (/9 HalfReuse: # TkDirective/8 HalfReuse: # Spec/7 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_ident( context[8], ident_TkNumber.ref(vm) );
-    refalrts::reinit_ident( context[7], ident_Cookie2.ref(vm) );
+    refalrts::reinit_ident( context[8], ident_TkDirective.ref(vm) );
+    refalrts::reinit_ident( context[7], ident_Spec.ref(vm) );
     refalrts::reinit_close_bracket( context[1] );
     refalrts::link_brackets( context[9], context[1] );
-    refalrts::link_brackets( context[17], context[10] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[17];
+    refalrts::Iter res = context[9];
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );

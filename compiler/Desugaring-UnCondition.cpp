@@ -30,6 +30,7 @@ static const refalrts::IdentReference ident_OpenE("OpenE");
 static const refalrts::IdentReference ident_RightADT("RightADT");
 static const refalrts::IdentReference ident_RightBracket("RightBracket");
 static const refalrts::IdentReference ident_Sentences("Sentences");
+static const refalrts::IdentReference ident_Spec("Spec");
 static const refalrts::IdentReference ident_TkChar("TkChar");
 static const refalrts::IdentReference ident_TkIdentifier("TkIdentifier");
 static const refalrts::IdentReference ident_TkName("TkName");
@@ -872,6 +873,31 @@ static refalrts::FnResult func_Transformm_Unit(refalrts::VM *vm, refalrts::Iter 
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & Transform-Unit/4 s.MarkupContext#1/9 (/7 # Spec/10 (/11 e.Name#1/13 )/12 e.Pattern#1/5 )/8 >/1
+    context[13] = 0;
+    context[14] = 0;
+    if( ! refalrts::brackets_term( context[13], context[14], context[11] ) )
+      continue;
+    if( ! refalrts::ident_term(  ident_Spec.ref(vm), context[10] ) )
+      continue;
+    // closed e.Name#1 as range 13
+    // closed e.Pattern#1 as range 5
+    //DEBUG: s.MarkupContext#1: 9
+    //DEBUG: e.Name#1: 13
+    //DEBUG: e.Pattern#1: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Transform-Unit/4 s.MarkupContext#1/9 (/7 # Spec/10 (/11 e.Name#1/13 )/12 e.Pattern#1/5 )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
