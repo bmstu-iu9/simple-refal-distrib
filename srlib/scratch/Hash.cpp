@@ -1,11 +1,11 @@
-// This file automatically generated from 'Hash.sref'
-// Don't edit! Edit 'Hash.sref' and recompile it
+// This file automatically generated from 'Hash.ref'
+// Don't edit! Edit 'Hash.ref' and recompile it
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1683294634_2084243894
+#define cookie_ns cookie_ns_2835852153_894198459
 static refalrts::ExternalReference ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U);
-#line 2 "Hash.sref"
+#line 2 "Hash.ref"
 /*
   Следующие манипуляции нужны для того, чтобы, оставаясь в рамках C++98,
   переносимо получить тип uint32_t.
@@ -18,7 +18,7 @@ using refalrts::UInt32;
 
 static refalrts::FnResult func_HashLittle2m_Chars(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
-#line 14 "Hash.sref"
+#line 14 "Hash.ref"
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::Iter func_name =

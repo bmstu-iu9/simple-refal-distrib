@@ -11,11 +11,17 @@ static const refalrts::IdentReference ident_m_("-");
 static const refalrts::IdentReference ident_k47_("/");
 static const refalrts::IdentReference ident_k63_("?");
 static const refalrts::IdentReference ident_ADTm_Brackets("ADT-Brackets");
+static const refalrts::IdentReference ident_Add("Add");
 static const refalrts::IdentReference ident_Brackets("Brackets");
 static const refalrts::IdentReference ident_Closure("Closure");
+static const refalrts::IdentReference ident_Div("Div");
 static const refalrts::IdentReference ident_False("False");
 static const refalrts::IdentReference ident_K("K");
 static const refalrts::IdentReference ident_MN("MN");
+static const refalrts::IdentReference ident_Mod("Mod");
+static const refalrts::IdentReference ident_Mul("Mul");
+static const refalrts::IdentReference ident_Residue("Residue");
+static const refalrts::IdentReference ident_Sub("Sub");
 static const refalrts::IdentReference ident_TkChar("TkChar");
 static const refalrts::IdentReference ident_TkIdentifier("TkIdentifier");
 static const refalrts::IdentReference ident_TkName("TkName");
@@ -41,7 +47,6 @@ static refalrts::ExternalReference ref_Collapsem_Term("Collapse-Term", 0U, 0U);
 static refalrts::ExternalReference ref_gen_Collapsem_Term_S1C1("Collapse-Term$1?1", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_Collapsem_Terms("Collapse-Terms", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_CutE("CutE", 2197579236U, 3716672253U);
-static refalrts::ExternalReference ref_Div("Div", 0U, 0U);
 static refalrts::ExternalReference ref_DoLocalGen("DoLocalGen", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_gen_DoLocalGen_S1A1("DoLocalGen$1=1", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_gen_DoLocalGen_S1A2("DoLocalGen$1=2", 2197579236U, 3716672253U);
@@ -79,10 +84,8 @@ static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
 static refalrts::ExternalReference ref_Min("Min", 0U, 0U);
-static refalrts::ExternalReference ref_Mod("Mod", 0U, 0U);
 static refalrts::ExternalReference ref_Mu("Mu", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 2197579236U, 3716672253U);
-static refalrts::ExternalReference ref_Mul("Mul", 0U, 0U);
 static refalrts::ExternalReference ref_Residue("Residue", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 2197579236U, 3716672253U);
 static refalrts::ExternalReference ref_Sub("Sub", 0U, 0U);
@@ -332,8 +335,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name( context[1], ref_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -349,8 +352,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name( context[1], ref_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -366,8 +369,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name( context[1], ref_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -383,8 +386,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name( context[1], ref_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -400,8 +403,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name( context[1], ref_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -417,8 +420,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-      refalrts::reinit_name( context[1], ref_Sub.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -434,8 +437,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name( context[1], ref_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -451,8 +454,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name( context[1], ref_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -468,8 +471,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name( context[1], ref_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -485,8 +488,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name( context[1], ref_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -502,8 +505,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name( context[1], ref_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
+      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -518,8 +521,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-    refalrts::reinit_name( context[1], ref_Sub.ref(vm) );
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
+    refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];

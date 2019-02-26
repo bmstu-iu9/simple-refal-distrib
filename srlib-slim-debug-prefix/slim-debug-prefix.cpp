@@ -1,9 +1,9 @@
-// This file automatically generated from 'OptTree-Spec.ref'
-// Don't edit! Edit 'OptTree-Spec.ref' and recompile it
+// This file automatically generated from 'slim-debug-prefix.ref'
+// Don't edit! Edit 'slim-debug-prefix.ref' and recompile it
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1581151196_2180691721
+#define cookie_ns cookie_ns_4206728285_3433090950
 static const refalrts::IdentReference ident_k37_("%");
 static const refalrts::IdentReference ident_k42_("*");
 static const refalrts::IdentReference ident_k43_("+");
@@ -16,19 +16,16 @@ static const refalrts::IdentReference ident_Mod("Mod");
 static const refalrts::IdentReference ident_Mul("Mul");
 static const refalrts::IdentReference ident_Residue("Residue");
 static const refalrts::IdentReference ident_Sub("Sub");
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 1581151196U, 2180691721U);
-static refalrts::ExternalReference ref_Mu("Mu", 1581151196U, 2180691721U);
-static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 1581151196U, 2180691721U);
-static refalrts::ExternalReference ref_OptTreem_Spec("OptTree-Spec", 0U, 0U);
-static refalrts::ExternalReference ref_OptTreem_Specm_ExtractOptInfo("OptTree-Spec-ExtractOptInfo", 0U, 0U);
-static refalrts::ExternalReference ref_OptTreem_Specm_Finalize("OptTree-Spec-Finalize", 0U, 0U);
-static refalrts::ExternalReference ref_Residue("Residue", 1581151196U, 2180691721U);
-static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 1581151196U, 2180691721U);
+static refalrts::ExternalReference ref_Evm_met("Ev-met", 4206728285U, 3433090950U);
+static refalrts::ExternalReference ref_Mu("Mu", 4206728285U, 3433090950U);
+static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 4206728285U, 3433090950U);
+static refalrts::ExternalReference ref_Residue("Residue", 4206728285U, 3433090950U);
+static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 4206728285U, 3433090950U);
 static refalrts::ExternalReference ref_Type("Type", 0U, 0U);
-static refalrts::ExternalReference ref_Up("Up", 1581151196U, 2180691721U);
+static refalrts::ExternalReference ref_Up("Up", 4206728285U, 3433090950U);
 static refalrts::ExternalReference ref_u_u_FindMuPtr("__FindMuPtr", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 1581151196U, 2180691721U);
-static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 1581151196U, 2180691721U);
+static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 4206728285U, 3433090950U);
+static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 4206728285U, 3433090950U);
 static refalrts::ExternalReference ref_u_u_Stepm_End("__Step-End", 0U, 0U);
 static refalrts::ExternalReference ref_u_u_Stepm_Start("__Step-Start", 0U, 0U);
 
@@ -136,7 +133,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 1581151196U, 2180691721U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 4206728285U, 3433090950U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -194,10 +191,10 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_number( vm, context[9], 2180691721UL ) )
+    if( ! refalrts::alloc_number( vm, context[9], 3433090950UL ) )
       return refalrts::cNoMemory;
     refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
-    refalrts::reinit_number( context[5], 1581151196UL );
+    refalrts::reinit_number( context[5], 4206728285UL );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -224,8 +221,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
-  refalrts::reinit_number( context[5], 1581151196UL );
-  refalrts::reinit_number( context[7], 2180691721UL );
+  refalrts::reinit_number( context[5], 4206728285UL );
+  refalrts::reinit_number( context[7], 3433090950UL );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -237,7 +234,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 1581151196U, 2180691721U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 4206728285U, 3433090950U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -493,7 +490,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 1581151196U, 2180691721U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 4206728285U, 3433090950U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -600,138 +597,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 1581151196U, 2180691721U, func_Residue);
-
-
-static refalrts::FnResult func_OptTreem_Specm_ExtractOptInfo(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  // issue here memory for vars with 7 elems
-  refalrts::Iter context[7];
-  refalrts::zeros( context, 7 );
-  // </0 & OptTree-Spec-ExtractOptInfo/4 s.OptSpec#1/5 e.AST#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.AST#1 as range 2
-  //DEBUG: s.OptSpec#1: 5
-  //DEBUG: e.AST#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} s.OptSpec#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 } Tile{ HalfReuse: )/1 } )/6 Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
-  if( ! refalrts::alloc_close_bracket( vm, context[6] ) )
-    return refalrts::cNoMemory;
-  refalrts::reinit_open_bracket( context[0] );
-  refalrts::reinit_open_bracket( context[4] );
-  refalrts::reinit_close_bracket( context[1] );
-  refalrts::link_brackets( context[0], context[6] );
-  refalrts::link_brackets( context[4], context[1] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[6], context[6] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
-  refalrts::splice_to_freelist_open( vm, context[4], res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_OptTreem_Specm_ExtractOptInfo("OptTree-Spec-ExtractOptInfo", 0U, 0U, func_OptTreem_Specm_ExtractOptInfo);
-
-
-static refalrts::FnResult func_OptTreem_Spec(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  // issue here memory for vars with 10 elems
-  refalrts::Iter context[10];
-  refalrts::zeros( context, 10 );
-  // </0 & OptTree-Spec/4 s.OptSpec#1/5 (/8 e.SpecInfo#1/6 )/9 e.AST#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  context[6] = 0;
-  context[7] = 0;
-  context[8] = refalrts::brackets_left( context[6], context[7], context[2], context[3] );
-  if( ! context[8] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[8], context[9]);
-  // closed e.SpecInfo#1 as range 6
-  // closed e.AST#1 as range 2
-  //DEBUG: s.OptSpec#1: 5
-  //DEBUG: e.SpecInfo#1: 6
-  //DEBUG: e.AST#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & OptTree-Spec/4 s.OptSpec#1/5 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/8 AsIs: e.SpecInfo#1/6 AsIs: )/9 } Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
-  refalrts::link_brackets( context[8], context[9] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[8], context[9] );
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_OptTreem_Spec("OptTree-Spec", 0U, 0U, func_OptTreem_Spec);
-
-
-static refalrts::FnResult func_OptTreem_Specm_Finalize(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
-  // </0 & OptTree-Spec-Finalize/4 s.OptSpec#1/5 (/8 (/12 )/13 )/9 e.AST#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  context[6] = 0;
-  context[7] = 0;
-  context[8] = refalrts::brackets_left( context[6], context[7], context[2], context[3] );
-  if( ! context[8] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[8], context[9]);
-  context[10] = 0;
-  context[11] = 0;
-  context[12] = refalrts::brackets_left( context[10], context[11], context[6], context[7] );
-  if( ! context[12] )
-    return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[12], context[13]);
-  if( ! refalrts::empty_seq( context[10], context[11] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[6], context[7] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.AST#1 as range 2
-  //DEBUG: s.OptSpec#1: 5
-  //DEBUG: e.AST#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & OptTree-Spec-Finalize/4 s.OptSpec#1/5 (/8 (/12 )/13 )/9 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.AST#1/2 } Tile{ ]] }
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_OptTreem_Specm_Finalize("OptTree-Spec-Finalize", 0U, 0U, func_OptTreem_Specm_Finalize);
+static refalrts::NativeReference nat_ref_Residue("Residue", 4206728285U, 3433090950U, func_Residue);
 
 
 //End of file

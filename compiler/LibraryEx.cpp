@@ -1,9 +1,9 @@
-// This file automatically generated from 'LibraryEx.sref'
-// Don't edit! Edit 'LibraryEx.sref' and recompile it
+// This file automatically generated from 'LibraryEx.ref'
+// Don't edit! Edit 'LibraryEx.ref' and recompile it
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2725472327_784206804
+#define cookie_ns cookie_ns_12902985_2451996668
 static const refalrts::IdentReference ident_False("False");
 static const refalrts::IdentReference ident_Success("Success");
 static const refalrts::IdentReference ident_True("True");
@@ -15,12 +15,12 @@ static refalrts::ExternalReference ref_Arg("Arg", 0U, 0U);
 static refalrts::ExternalReference ref_ArgList("ArgList", 0U, 0U);
 static refalrts::ExternalReference ref_Dec("Dec", 0U, 0U);
 static refalrts::ExternalReference ref_DelAccumulator("DelAccumulator", 0U, 0U);
-static refalrts::ExternalReference ref_DoArgList("DoArgList", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_DoLoadBytes("DoLoadBytes", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_DoLoadBytes_B1("DoLoadBytes:1", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_DoLoadFile("DoLoadFile", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_DoMapAccum("DoMapAccum", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_DoMapAccum_S1A1("DoMapAccum$1=1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_DoArgList("DoArgList", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_DoLoadBytes("DoLoadBytes", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_DoLoadBytes_B1("DoLoadBytes:1", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_DoLoadFile("DoLoadFile", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_DoMapAccum("DoMapAccum", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_DoMapAccum_S1A1("DoMapAccum$1=1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_FClose("FClose", 0U, 0U);
 static refalrts::ExternalReference ref_FOpen("FOpen", 0U, 0U);
 static refalrts::ExternalReference ref_FReadBytes("FReadBytes", 0U, 0U);
@@ -28,40 +28,40 @@ static refalrts::ExternalReference ref_FReadLine("FReadLine", 0U, 0U);
 static refalrts::ExternalReference ref_FWriteBytes("FWriteBytes", 0U, 0U);
 static refalrts::ExternalReference ref_FWriteLine("FWriteLine", 0U, 0U);
 static refalrts::ExternalReference ref_FastIntFromStr("FastIntFromStr", 0U, 0U);
-static refalrts::ExternalReference ref_gen_FastIntFromStr_A1("FastIntFromStr=1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_FastIntFromStr_A1("FastIntFromStr=1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
 static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
 static refalrts::ExternalReference ref_IntFromStr("IntFromStr", 0U, 0U);
-static refalrts::ExternalReference ref_Lexicon("Lexicon", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_Lexiconm_Aux("Lexicon-Aux", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_Lexiconm_T("Lexicon-T", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_Lexiconm_Tm_Aux("Lexicon-T-Aux", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_Lexicon("Lexicon", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_Lexiconm_Aux("Lexicon-Aux", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_Lexiconm_T("Lexicon-T", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_Lexiconm_Tm_Aux("Lexicon-T-Aux", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_LoadBytes("LoadBytes", 0U, 0U);
 static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
 static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
 static refalrts::ExternalReference ref_MapAccum("MapAccum", 0U, 0U);
 static refalrts::ExternalReference ref_MapReduce("MapReduce", 0U, 0U);
 static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Max_S1B1("Max$1:1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_Max_S1B1("Max$1:1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_Min("Min", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Min_S1B1("Min$1:1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_Min_S1B1("Min$1:1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_OneOf("OneOf", 0U, 0U);
 static refalrts::ExternalReference ref_Pipe("Pipe", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Pipe_S2L1("Pipe$2\\1", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_Pipe_S3L1("Pipe$3\\1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_Pipe_S2L1("Pipe$2\\1", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_Pipe_S3L1("Pipe$3\\1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_Reduce("Reduce", 0U, 0U);
 static refalrts::ExternalReference ref_SaveBytes("SaveBytes", 0U, 0U);
-static refalrts::ExternalReference ref_SaveBytesm_Handle("SaveBytes-Handle", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_SaveBytesm_Handle("SaveBytes-Handle", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_SaveFile("SaveFile", 0U, 0U);
-static refalrts::ExternalReference ref_SaveFilem_Handle("SaveFile-Handle", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_SaveFilem_Handle_L1("SaveFile-Handle\\1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_SaveFilem_Handle("SaveFile-Handle", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_SaveFilem_Handle_L1("SaveFile-Handle\\1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_Seq("Seq", 0U, 0U);
 static refalrts::ExternalReference ref_Sort("Sort", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Sort_S2A1("Sort$2=1", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_Sort_S2A1L1("Sort$2=1\\1", 2725472327U, 784206804U);
-static refalrts::ExternalReference ref_gen_Sort_S2A1L1B1("Sort$2=1\\1:1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_Sort_S2A1("Sort$2=1", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_Sort_S2A1L1("Sort$2=1\\1", 12902985U, 2451996668U);
+static refalrts::ExternalReference ref_gen_Sort_S2A1L1B1("Sort$2=1\\1:1", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_Sub("Sub", 0U, 0U);
-static refalrts::ExternalReference ref_SwDoArgList("SwDoArgList", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_SwDoArgList("SwDoArgList", 12902985U, 2451996668U);
 static refalrts::ExternalReference ref_SymbCompare("SymbCompare", 0U, 0U);
 static refalrts::ExternalReference ref_TermCompare("TermCompare", 0U, 0U);
 static refalrts::ExternalReference ref_TermComparem_T("TermCompare-T", 0U, 0U);
@@ -71,7 +71,7 @@ static refalrts::ExternalReference ref_Trimm_R("Trim-R", 0U, 0U);
 static refalrts::ExternalReference ref_UnBracket("UnBracket", 0U, 0U);
 static refalrts::ExternalReference ref_Unique("Unique", 0U, 0U);
 static refalrts::ExternalReference ref_Y("Y", 0U, 0U);
-static refalrts::ExternalReference ref_gen_Y_L1("Y\\1", 2725472327U, 784206804U);
+static refalrts::ExternalReference ref_gen_Y_L1("Y\\1", 12902985U, 2451996668U);
 
 static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -385,7 +385,7 @@ static refalrts::FnResult func_gen_Y_L1(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Y_L1("Y\\1", 2725472327U, 784206804U, func_gen_Y_L1);
+static refalrts::NativeReference nat_ref_gen_Y_L1("Y\\1", 12902985U, 2451996668U, func_gen_Y_L1);
 
 
 static refalrts::FnResult func_Y(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -524,7 +524,7 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccum_S1A1("DoMapAccum$1=1", 2725472327U, 784206804U, func_gen_DoMapAccum_S1A1);
+static refalrts::NativeReference nat_ref_gen_DoMapAccum_S1A1("DoMapAccum$1=1", 12902985U, 2451996668U, func_gen_DoMapAccum_S1A1);
 
 
 static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -633,7 +633,7 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 2725472327U, 784206804U, func_DoMapAccum);
+static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 12902985U, 2451996668U, func_DoMapAccum);
 
 
 static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -903,7 +903,7 @@ static refalrts::FnResult func_DoLoadFile(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoLoadFile("DoLoadFile", 2725472327U, 784206804U, func_DoLoadFile);
+static refalrts::NativeReference nat_ref_DoLoadFile("DoLoadFile", 12902985U, 2451996668U, func_DoLoadFile);
 
 
 static refalrts::FnResult func_SaveFile(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1042,7 +1042,7 @@ static refalrts::FnResult func_gen_SaveFilem_Handle_L1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SaveFilem_Handle_L1("SaveFile-Handle\\1", 2725472327U, 784206804U, func_gen_SaveFilem_Handle_L1);
+static refalrts::NativeReference nat_ref_gen_SaveFilem_Handle_L1("SaveFile-Handle\\1", 12902985U, 2451996668U, func_gen_SaveFilem_Handle_L1);
 
 
 static refalrts::FnResult func_SaveFilem_Handle(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1090,7 +1090,7 @@ static refalrts::FnResult func_SaveFilem_Handle(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SaveFilem_Handle("SaveFile-Handle", 2725472327U, 784206804U, func_SaveFilem_Handle);
+static refalrts::NativeReference nat_ref_SaveFilem_Handle("SaveFile-Handle", 12902985U, 2451996668U, func_SaveFilem_Handle);
 
 
 static refalrts::FnResult func_LoadBytes(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1195,7 +1195,7 @@ static refalrts::FnResult func_gen_DoLoadBytes_B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoLoadBytes_B1("DoLoadBytes:1", 2725472327U, 784206804U, func_gen_DoLoadBytes_B1);
+static refalrts::NativeReference nat_ref_gen_DoLoadBytes_B1("DoLoadBytes:1", 12902985U, 2451996668U, func_gen_DoLoadBytes_B1);
 
 
 static refalrts::FnResult func_DoLoadBytes(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1250,7 +1250,7 @@ static refalrts::FnResult func_DoLoadBytes(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoLoadBytes("DoLoadBytes", 2725472327U, 784206804U, func_DoLoadBytes);
+static refalrts::NativeReference nat_ref_DoLoadBytes("DoLoadBytes", 12902985U, 2451996668U, func_DoLoadBytes);
 
 
 static refalrts::FnResult func_SaveBytes(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1407,7 +1407,7 @@ static refalrts::FnResult func_SaveBytesm_Handle(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SaveBytesm_Handle("SaveBytes-Handle", 2725472327U, 784206804U, func_SaveBytesm_Handle);
+static refalrts::NativeReference nat_ref_SaveBytesm_Handle("SaveBytes-Handle", 12902985U, 2451996668U, func_SaveBytesm_Handle);
 
 
 static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1518,7 +1518,7 @@ static refalrts::FnResult func_gen_FastIntFromStr_A1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FastIntFromStr_A1("FastIntFromStr=1", 2725472327U, 784206804U, func_gen_FastIntFromStr_A1);
+static refalrts::NativeReference nat_ref_gen_FastIntFromStr_A1("FastIntFromStr=1", 12902985U, 2451996668U, func_gen_FastIntFromStr_A1);
 
 
 static refalrts::FnResult func_FastIntFromStr(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1650,7 +1650,7 @@ static refalrts::FnResult func_DoArgList(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoArgList("DoArgList", 2725472327U, 784206804U, func_DoArgList);
+static refalrts::NativeReference nat_ref_DoArgList("DoArgList", 12902985U, 2451996668U, func_DoArgList);
 
 
 static refalrts::FnResult func_SwDoArgList(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1714,7 +1714,7 @@ static refalrts::FnResult func_SwDoArgList(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SwDoArgList("SwDoArgList", 2725472327U, 784206804U, func_SwDoArgList);
+static refalrts::NativeReference nat_ref_SwDoArgList("SwDoArgList", 12902985U, 2451996668U, func_SwDoArgList);
 
 
 static refalrts::FnResult func_TermCompare(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1967,7 +1967,7 @@ static refalrts::FnResult func_Lexicon(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lexicon("Lexicon", 2725472327U, 784206804U, func_Lexicon);
+static refalrts::NativeReference nat_ref_Lexicon("Lexicon", 12902985U, 2451996668U, func_Lexicon);
 
 
 static refalrts::FnResult func_Lexiconm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2068,7 +2068,7 @@ static refalrts::FnResult func_Lexiconm_Aux(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lexiconm_Aux("Lexicon-Aux", 2725472327U, 784206804U, func_Lexiconm_Aux);
+static refalrts::NativeReference nat_ref_Lexiconm_Aux("Lexicon-Aux", 12902985U, 2451996668U, func_Lexiconm_Aux);
 
 
 static refalrts::FnResult func_TermComparem_T(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2403,7 +2403,7 @@ static refalrts::FnResult func_Lexiconm_T(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lexiconm_T("Lexicon-T", 2725472327U, 784206804U, func_Lexiconm_T);
+static refalrts::NativeReference nat_ref_Lexiconm_T("Lexicon-T", 12902985U, 2451996668U, func_Lexiconm_T);
 
 
 static refalrts::FnResult func_Lexiconm_Tm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2573,7 +2573,7 @@ static refalrts::FnResult func_Lexiconm_Tm_Aux(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Lexiconm_Tm_Aux("Lexicon-T-Aux", 2725472327U, 784206804U, func_Lexiconm_Tm_Aux);
+static refalrts::NativeReference nat_ref_Lexiconm_Tm_Aux("Lexicon-T-Aux", 12902985U, 2451996668U, func_Lexiconm_Tm_Aux);
 
 
 static refalrts::FnResult func_Trim(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2923,7 +2923,7 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 2725472327U, 784206804U, func_gen_Pipe_S2L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 12902985U, 2451996668U, func_gen_Pipe_S2L1);
 
 
 static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2952,7 +2952,7 @@ static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 2725472327U, 784206804U, func_gen_Pipe_S3L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 12902985U, 2451996668U, func_gen_Pipe_S3L1);
 
 
 static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3135,7 +3135,7 @@ static refalrts::FnResult func_gen_Sort_S2A1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Sort_S2A1("Sort$2=1", 2725472327U, 784206804U, func_gen_Sort_S2A1);
+static refalrts::NativeReference nat_ref_gen_Sort_S2A1("Sort$2=1", 12902985U, 2451996668U, func_gen_Sort_S2A1);
 
 
 static refalrts::FnResult func_gen_Sort_S2A1L1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3280,7 +3280,7 @@ static refalrts::FnResult func_gen_Sort_S2A1L1B1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Sort_S2A1L1B1("Sort$2=1\\1:1", 2725472327U, 784206804U, func_gen_Sort_S2A1L1B1);
+static refalrts::NativeReference nat_ref_gen_Sort_S2A1L1B1("Sort$2=1\\1:1", 12902985U, 2451996668U, func_gen_Sort_S2A1L1B1);
 
 
 static refalrts::FnResult func_gen_Sort_S2A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3374,7 +3374,7 @@ static refalrts::FnResult func_gen_Sort_S2A1L1(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Sort_S2A1L1("Sort$2=1\\1", 2725472327U, 784206804U, func_gen_Sort_S2A1L1);
+static refalrts::NativeReference nat_ref_gen_Sort_S2A1L1("Sort$2=1\\1", 12902985U, 2451996668U, func_gen_Sort_S2A1L1);
 
 
 static refalrts::FnResult func_Sort(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3531,7 +3531,7 @@ static refalrts::FnResult func_gen_Min_S1B1(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Min_S1B1("Min$1:1", 2725472327U, 784206804U, func_gen_Min_S1B1);
+static refalrts::NativeReference nat_ref_gen_Min_S1B1("Min$1:1", 12902985U, 2451996668U, func_gen_Min_S1B1);
 
 
 static refalrts::FnResult func_Min(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3681,7 +3681,7 @@ static refalrts::FnResult func_gen_Max_S1B1(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Max_S1B1("Max$1:1", 2725472327U, 784206804U, func_gen_Max_S1B1);
+static refalrts::NativeReference nat_ref_gen_Max_S1B1("Max$1:1", 12902985U, 2451996668U, func_gen_Max_S1B1);
 
 
 static refalrts::FnResult func_Max(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {

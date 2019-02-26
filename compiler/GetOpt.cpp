@@ -1,9 +1,10 @@
-// This file automatically generated from 'GetOpt.sref'
-// Don't edit! Edit 'GetOpt.sref' and recompile it
+// This file automatically generated from 'GetOpt.ref'
+// Don't edit! Edit 'GetOpt.ref' and recompile it
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_284475041_2488733831
+#define cookie_ns cookie_ns_1765506893_1451192809
+static const refalrts::IdentReference ident_Error("Error");
 static const refalrts::IdentReference ident_FILE("FILE");
 static const refalrts::IdentReference ident_Long("Long");
 static const refalrts::IdentReference ident_Longm_Param("Long-Param");
@@ -18,17 +19,17 @@ static const refalrts::IdentReference ident_UnknownLongOption("UnknownLongOption
 static const refalrts::IdentReference ident_UnknownShortOption("UnknownShortOption");
 static const refalrts::IdentReference ident_Word("Word");
 static refalrts::ExternalReference ref_Add("Add", 0U, 0U);
-static refalrts::ExternalReference ref_DoFoldErrors("DoFoldErrors", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_Error("Error", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_FoldErrors("FoldErrors", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_DoFoldErrors("DoFoldErrors", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_Error("Error", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_FoldErrors("FoldErrors", 1765506893U, 1451192809U);
 static refalrts::ExternalReference ref_GetOpt("GetOpt", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_MarkupAllFiles("MarkupAllFiles", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_MarkupArguments("MarkupArguments", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_ResolveOpts("ResolveOpts", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_ResolveOptsm_Long("ResolveOpts-Long", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 284475041U, 2488733831U);
-static refalrts::ExternalReference ref_ResolveOptsm_Short("ResolveOpts-Short", 284475041U, 2488733831U);
+static refalrts::ExternalReference ref_Inc("Inc", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_MarkupAllFiles("MarkupAllFiles", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_MarkupArguments("MarkupArguments", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_ResolveOpts("ResolveOpts", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_ResolveOptsm_Long("ResolveOpts-Long", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1765506893U, 1451192809U);
+static refalrts::ExternalReference ref_ResolveOptsm_Short("ResolveOpts-Short", 1765506893U, 1451192809U);
 
 static refalrts::FnResult func_GetOpt(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -128,7 +129,7 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 284475041U, 2488733831U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", 1765506893U, 1451192809U, func_Inc);
 
 
 static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -395,7 +396,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", 284475041U, 2488733831U, func_MarkupArguments);
+static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", 1765506893U, 1451192809U, func_MarkupArguments);
 
 
 static refalrts::FnResult func_MarkupAllFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -479,7 +480,7 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", 284475041U, 2488733831U, func_MarkupAllFiles);
+static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", 1765506893U, 1451192809U, func_MarkupAllFiles);
 
 
 static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -634,8 +635,8 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Param#1/17 )/14 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 HalfReuse: & Error/15 AsIs: s.Num#1/16 HalfReuse: # UnknownLongOption/21 AsIs: e.Long#1/19 AsIs: )/22 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
-      refalrts::reinit_name( context[15], ref_Error.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 Reuse: # Error/15 AsIs: s.Num#1/16 HalfReuse: # UnknownLongOption/21 AsIs: e.Long#1/19 AsIs: )/22 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
+      refalrts::update_ident( context[15], ident_Error.ref(vm) );
       refalrts::reinit_ident( context[21], ident_UnknownLongOption.ref(vm) );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
@@ -748,10 +749,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 HalfReuse: & Error/15 AsIs: s.Num#1/16 } # UnknownLongOption/17 Tile{ AsIs: e.Long#1/11 } Tile{ AsIs: )/14 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 Reuse: # Error/15 AsIs: s.Num#1/16 } # UnknownLongOption/17 Tile{ AsIs: e.Long#1/11 } Tile{ AsIs: )/14 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_ident( vm, context[17], ident_UnknownLongOption.ref(vm) ) )
         return refalrts::cNoMemory;
-      refalrts::reinit_name( context[15], ref_Error.ref(vm) );
+      refalrts::update_ident( context[15], ident_Error.ref(vm) );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[8] );
@@ -866,10 +867,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ AsIs: (/13 HalfReuse: & Error/15 AsIs: s.Num#1/16 } # UnknownShortOption/20 Tile{ AsIs: s.Short#1/19 AsIs: )/14 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ } Tile{ AsIs: (/13 Reuse: # Error/15 AsIs: s.Num#1/16 } # UnknownShortOption/20 Tile{ AsIs: s.Short#1/19 AsIs: )/14 } Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/9 } Tile{ AsIs: >/1 ]] }
         if( ! refalrts::alloc_ident( vm, context[20], ident_UnknownShortOption.ref(vm) ) )
           return refalrts::cNoMemory;
-        refalrts::reinit_name( context[15], ref_Error.ref(vm) );
+        refalrts::update_ident( context[15], ident_Error.ref(vm) );
         refalrts::push_stack( vm, context[1] );
         refalrts::push_stack( vm, context[0] );
         refalrts::link_brackets( context[7], context[8] );
@@ -899,10 +900,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/20 & Error/21 s.Num#1/16/22 # UnknownShortOption/23 Tile{ AsIs: s.Short#1/19 } )/24 Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 AsIs: (/13 AsIs: # Short/15 AsIs: s.Num#1/16 } Tile{ AsIs: e.OptTail#1/17 } Tile{ AsIs: )/14 AsIs: e.ArgsTail#1/9 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } (/20 # Error/21 s.Num#1/16/22 # UnknownShortOption/23 Tile{ AsIs: s.Short#1/19 } )/24 Tile{ AsIs: </0 AsIs: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 AsIs: (/13 AsIs: # Short/15 AsIs: s.Num#1/16 } Tile{ AsIs: e.OptTail#1/17 } Tile{ AsIs: )/14 AsIs: e.ArgsTail#1/9 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[20] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[21], ref_Error.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[21], ident_Error.ref(vm) ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[22], context[16]))
         return refalrts::cNoMemory;
@@ -974,7 +975,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 284475041U, 2488733831U, func_ResolveOpts);
+static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 1765506893U, 1451192809U, func_ResolveOpts);
 
 
 static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1109,10 +1110,10 @@ static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } (/20 & Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } (/20 # Error/21 Tile{ AsIs: s.Num#1/9 } # UnexpectedLongOptionParam/22 Tile{ AsIs: (/18 } Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: e.Param#1/16 } Tile{ AsIs: )/19 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
   if( ! refalrts::alloc_open_bracket( vm, context[20] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[21], ref_Error.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[21], ident_Error.ref(vm) ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_ident( vm, context[22], ident_UnexpectedLongOptionParam.ref(vm) ) )
     return refalrts::cNoMemory;
@@ -1140,7 +1141,7 @@ static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 284475041U, 2488733831U, func_ResolveOptsm_LongParam);
+static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 1765506893U, 1451192809U, func_ResolveOptsm_LongParam);
 
 
 static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1247,10 +1248,10 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } (/16 & Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } (/16 # Error/17 Tile{ AsIs: s.Num#1/9 } # NoRequiredParam/18 Tile{ HalfReuse: '-'/11 HalfReuse: '-'/14 AsIs: e.Long#1/12 AsIs: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
     if( ! refalrts::alloc_open_bracket( vm, context[16] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( vm, context[17], ref_Error.ref(vm) ) )
+    if( ! refalrts::alloc_ident( vm, context[17], ident_Error.ref(vm) ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_ident( vm, context[18], ident_NoRequiredParam.ref(vm) ) )
       return refalrts::cNoMemory;
@@ -1401,7 +1402,7 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 284475041U, 2488733831U, func_ResolveOptsm_Long);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 1765506893U, 1451192809U, func_ResolveOptsm_Long);
 
 
 static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1514,10 +1515,10 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Tag#1/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/17 & Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } (/17 # Error/18 Tile{ AsIs: s.Num#1/9 } Tile{ HalfReuse: # NoRequiredParam/16 } Tile{ HalfReuse: '-'/11 AsIs: s.Short#1/12 HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & ResolveOpts/4 AsIs: (/7 AsIs: e.Description#1/5 AsIs: )/8 } Tile{ AsIs: e.ArgsTail#1/2 } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[17] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[18], ref_Error.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[18], ident_Error.ref(vm) ) )
         return refalrts::cNoMemory;
       refalrts::reinit_ident( context[16], ident_NoRequiredParam.ref(vm) );
       refalrts::reinit_char( context[11], '-' );
@@ -1787,7 +1788,7 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 284475041U, 2488733831U, func_ResolveOptsm_Short);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 1765506893U, 1451192809U, func_ResolveOptsm_Short);
 
 
 static refalrts::FnResult func_FoldErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1825,7 +1826,7 @@ static refalrts::FnResult func_FoldErrors(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", 284475041U, 2488733831U, func_FoldErrors);
+static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", 1765506893U, 1451192809U, func_FoldErrors);
 
 
 static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1851,7 +1852,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/11 (/17 & Error/19 s.Num#1/20 s.ErrorCode#1/21 e.Info#1/15 )/18 e.OptionsAndErrors#1/13 >/1
+    // </0 & DoFoldErrors/4 (/7 e.Errors#1/5 )/8 e.Options#1/11 (/17 # Error/19 s.Num#1/20 s.ErrorCode#1/21 e.Info#1/15 )/18 e.OptionsAndErrors#1/13 >/1
     context[9] = context[2];
     context[10] = context[3];
     // closed e.Errors#1 as range 5
@@ -1867,7 +1868,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg
       if( ! context[17] )
         continue;
       refalrts::bracket_pointers(context[17], context[18]);
-      context[19] = refalrts::function_left( ref_Error.ref(vm), context[15], context[16] );
+      context[19] = refalrts::ident_left(  ident_Error.ref(vm), context[15], context[16] );
       if( ! context[19] )
         continue;
       // closed e.OptionsAndErrors#1 as range 13
@@ -1884,7 +1885,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg
       //DEBUG: e.Info#1: 15
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} & Error/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # Error/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoFoldErrors/4 AsIs: (/7 AsIs: e.Errors#1/5 HalfReuse: (/8 } Tile{ AsIs: s.Num#1/20 AsIs: s.ErrorCode#1/21 AsIs: e.Info#1/15 AsIs: )/18 } Tile{ HalfReuse: )/17 } Tile{ AsIs: e.Options#1/11 } Tile{ AsIs: e.OptionsAndErrors#1/13 } Tile{ AsIs: >/1 ]] }
       refalrts::reinit_open_bracket( context[8] );
       refalrts::reinit_close_bracket( context[17] );
@@ -1924,7 +1925,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", 284475041U, 2488733831U, func_DoFoldErrors);
+static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", 1765506893U, 1451192809U, func_DoFoldErrors);
 
 
 //End of file
