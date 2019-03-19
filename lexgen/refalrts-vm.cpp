@@ -1388,8 +1388,9 @@ JUMP_FROM_SCALE:
               m_hide_steps = true;
             }
 
-            bool init_final =
-              (strcmp(name->name, "INIT") == 0 || strcmp(name->name, "FINAL") == 0)
+            bool init_final = name
+              && (strcmp(name->name, "INIT") == 0
+                  || strcmp(name->name, "FINAL") == 0)
               && (name->cookie1 != 0 && name->cookie2 != 0);
             bool hidden_step = m_hide_steps || init_final;
 
@@ -1443,7 +1444,6 @@ JUMP_FROM_SCALE:
             }
 
             if (res == cSuccess) {
-              ++ m_step_counter;
               function = next(begin);
               assert(cDataFunction == function->tag);
               callee = function->function_info;
