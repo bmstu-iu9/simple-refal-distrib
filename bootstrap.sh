@@ -44,6 +44,7 @@ make_dir() {
 make_dir compiler srefc-core
 make_dir lexgen lexgen
 make_dir srmake srmake-core
+make_dir rsl-decompiler rsl-decompiler
 
 DEBUG=OFF
 make_dir srlib-rich-prefix srlib-rich-prefix

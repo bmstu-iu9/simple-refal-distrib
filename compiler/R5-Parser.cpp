@@ -15,6 +15,7 @@ static const refalrts::IdentReference ident_Add("Add");
 static const refalrts::IdentReference ident_Assign("Assign");
 static const refalrts::IdentReference ident_Brackets("Brackets");
 static const refalrts::IdentReference ident_CallBrackets("CallBrackets");
+static const refalrts::IdentReference ident_Char("Char");
 static const refalrts::IdentReference ident_Classic("Classic");
 static const refalrts::IdentReference ident_Closure("Closure");
 static const refalrts::IdentReference ident_Condition("Condition");
@@ -29,17 +30,21 @@ static const refalrts::IdentReference ident_Function("Function");
 static const refalrts::IdentReference ident_GNm_Entry("GN-Entry");
 static const refalrts::IdentReference ident_GNm_Local("GN-Local");
 static const refalrts::IdentReference ident_Ident("Ident");
+static const refalrts::IdentReference ident_Identifier("Identifier");
 static const refalrts::IdentReference ident_Include("Include");
 static const refalrts::IdentReference ident_Mod("Mod");
 static const refalrts::IdentReference ident_Mul("Mul");
+static const refalrts::IdentReference ident_Name("Name");
 static const refalrts::IdentReference ident_NativeBlock("NativeBlock");
 static const refalrts::IdentReference ident_NativeBody("NativeBody");
+static const refalrts::IdentReference ident_Number("Number");
 static const refalrts::IdentReference ident_Pattern("Pattern");
 static const refalrts::IdentReference ident_Residue("Residue");
 static const refalrts::IdentReference ident_Result("Result");
 static const refalrts::IdentReference ident_Sentences("Sentences");
 static const refalrts::IdentReference ident_Sub("Sub");
 static const refalrts::IdentReference ident_Swap("Swap");
+static const refalrts::IdentReference ident_Symbol("Symbol");
 static const refalrts::IdentReference ident_TkAmpersand("TkAmpersand");
 static const refalrts::IdentReference ident_TkAssign("TkAssign");
 static const refalrts::IdentReference ident_TkChar("TkChar");
@@ -57,14 +62,12 @@ static const refalrts::IdentReference ident_TkEntry("TkEntry");
 static const refalrts::IdentReference ident_TkEnum("TkEnum");
 static const refalrts::IdentReference ident_TkError("TkError");
 static const refalrts::IdentReference ident_TkExtern("TkExtern");
-static const refalrts::IdentReference ident_TkIdentifier("TkIdentifier");
 static const refalrts::IdentReference ident_TkInclude("TkInclude");
 static const refalrts::IdentReference ident_TkLabel("TkLabel");
 static const refalrts::IdentReference ident_TkMacroDigit("TkMacroDigit");
 static const refalrts::IdentReference ident_TkName("TkName");
 static const refalrts::IdentReference ident_TkNativeCode("TkNativeCode");
 static const refalrts::IdentReference ident_TkNewVariable("TkNewVariable");
-static const refalrts::IdentReference ident_TkNumber("TkNumber");
 static const refalrts::IdentReference ident_TkOpenADT("TkOpenADT");
 static const refalrts::IdentReference ident_TkOpenBlock("TkOpenBlock");
 static const refalrts::IdentReference ident_TkOpenBracket("TkOpenBracket");
@@ -7774,18 +7777,22 @@ static refalrts::FnResult func_gen_DoTokenChain_B1S11A1B1(refalrts::VM *vm, refa
     //DEBUG: e.Name#3: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & DoTokenChain:1$11=1:1/4 {REMOVED TILE} t.Pos#2/7 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#1/5 } Tile{ HalfReuse: (/9 AsIs: (/14 AsIs: # TkName/16 AsIs: t.Pos#3/17 AsIs: e.Name#3/12 AsIs: )/15 } Tile{ HalfReuse: )/1 } Tile{ AsIs: e.Tokens#3/10 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} t.Pos#2/7 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.ErrorList#1/5 } Tile{ HalfReuse: (/1 } Tile{ HalfReuse: (/9 HalfReuse: # Symbol/14 Reuse: # Name/16 AsIs: t.Pos#3/17 AsIs: e.Name#3/12 AsIs: )/15 } Tile{ HalfReuse: )/4 } Tile{ AsIs: e.Tokens#3/10 } Tile{ ]] }
+    refalrts::reinit_open_bracket( context[1] );
     refalrts::reinit_open_bracket( context[9] );
-    refalrts::reinit_close_bracket( context[1] );
-    refalrts::link_brackets( context[9], context[1] );
-    refalrts::link_brackets( context[14], context[15] );
+    refalrts::reinit_ident( context[14], ident_Symbol.ref(vm) );
+    refalrts::update_ident( context[16], ident_Name.ref(vm) );
+    refalrts::reinit_close_bracket( context[4] );
+    refalrts::link_brackets( context[1], context[4] );
+    refalrts::link_brackets( context[9], context[15] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[10], context[11] );
-    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[4], context[4] );
     res = refalrts::splice_evar( res, context[9], context[15] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
     res = refalrts::splice_evar( res, context[5], context[6] );
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
@@ -8063,11 +8070,12 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
       //DEBUG: e.Name#2: 19
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TkName/21 t.Pos#2/22 {REMOVED TILE} )/18 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # TkIdentifier/15 } Tile{ AsIs: e.Name#2/19 } Tile{ AsIs: )/16 HalfReuse: )/17 } Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.Pos#2/22 {REMOVED TILE} )/18 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # Symbol/15 } Tile{ Reuse: # Identifier/21 } Tile{ AsIs: e.Name#2/19 } Tile{ AsIs: )/16 HalfReuse: )/17 } Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
       refalrts::update_name( context[4], ref_DoTokenChain.ref(vm) );
       refalrts::reinit_open_bracket( context[12] );
-      refalrts::reinit_ident( context[15], ident_TkIdentifier.ref(vm) );
+      refalrts::reinit_ident( context[15], ident_Symbol.ref(vm) );
+      refalrts::update_ident( context[21], ident_Identifier.ref(vm) );
       refalrts::reinit_close_bracket( context[17] );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
@@ -8079,6 +8087,7 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
       res = refalrts::splice_evar( res, context[13], context[14] );
       res = refalrts::splice_evar( res, context[16], context[17] );
       res = refalrts::splice_evar( res, context[19], context[20] );
+      res = refalrts::splice_evar( res, context[21], context[21] );
       refalrts::splice_to_freelist_open( vm, context[15], res );
       return refalrts::cSuccess;
     } while ( 0 );
@@ -8100,11 +8109,12 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
       //DEBUG: e.Symbols#2: 19
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TkCompound/21 t.Pos#2/22 {REMOVED TILE} )/18 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # TkIdentifier/15 } Tile{ AsIs: e.Symbols#2/19 } Tile{ AsIs: )/16 HalfReuse: )/17 } Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} t.Pos#2/22 {REMOVED TILE} )/18 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # Symbol/15 } Tile{ Reuse: # Identifier/21 } Tile{ AsIs: e.Symbols#2/19 } Tile{ AsIs: )/16 HalfReuse: )/17 } Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
       refalrts::update_name( context[4], ref_DoTokenChain.ref(vm) );
       refalrts::reinit_open_bracket( context[12] );
-      refalrts::reinit_ident( context[15], ident_TkIdentifier.ref(vm) );
+      refalrts::reinit_ident( context[15], ident_Symbol.ref(vm) );
+      refalrts::update_ident( context[21], ident_Identifier.ref(vm) );
       refalrts::reinit_close_bracket( context[17] );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
@@ -8116,6 +8126,7 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
       res = refalrts::splice_evar( res, context[13], context[14] );
       res = refalrts::splice_evar( res, context[16], context[17] );
       res = refalrts::splice_evar( res, context[19], context[20] );
+      res = refalrts::splice_evar( res, context[21], context[21] );
       refalrts::splice_to_freelist_open( vm, context[15], res );
       return refalrts::cSuccess;
     } while ( 0 );
@@ -8151,11 +8162,12 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
           //DEBUG: e.Tokens#1: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} # TkMacroDigit/21 t.Pos#2/22 {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # TkNumber/15 } Tile{ AsIs: s.Number#2/26 AsIs: )/18 HalfReuse: )/1 } Tile{ AsIs: e.Tokens#1/13 } Tile{ HalfReuse: >/17 } Tile{ ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} {REMOVED TILE} t.Pos#2/22 {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # Symbol/15 } Tile{ Reuse: # Number/21 } Tile{ AsIs: s.Number#2/26 AsIs: )/18 HalfReuse: )/1 } Tile{ AsIs: e.Tokens#1/13 } Tile{ HalfReuse: >/17 } Tile{ ]] }
           refalrts::update_name( context[4], ref_DoTokenChain.ref(vm) );
           refalrts::reinit_open_bracket( context[12] );
-          refalrts::reinit_ident( context[15], ident_TkNumber.ref(vm) );
+          refalrts::reinit_ident( context[15], ident_Symbol.ref(vm) );
+          refalrts::update_ident( context[21], ident_Number.ref(vm) );
           refalrts::reinit_close_bracket( context[1] );
           refalrts::reinit_close_call( context[17] );
           refalrts::push_stack( vm, context[17] );
@@ -8168,6 +8180,7 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
           res = refalrts::splice_evar( res, context[17], context[17] );
           res = refalrts::splice_evar( res, context[13], context[14] );
           res = refalrts::splice_evar( res, context[26], context[1] );
+          res = refalrts::splice_evar( res, context[21], context[21] );
           refalrts::splice_to_freelist_open( vm, context[15], res );
           return refalrts::cSuccess;
         } while ( 0 );
@@ -8187,11 +8200,12 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
         //DEBUG: e.Tokens#1: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} # TkChar/21 t.Pos#2/22 {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # TkChar/15 } Tile{ AsIs: s.Char#2/26 AsIs: )/18 HalfReuse: )/1 } Tile{ AsIs: e.Tokens#1/13 } Tile{ HalfReuse: >/17 } Tile{ ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} )/16 {REMOVED TILE} {REMOVED TILE} t.Pos#2/22 {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 AsIs: t.ErrorList#1/7 AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # Symbol/15 } Tile{ Reuse: # Char/21 } Tile{ AsIs: s.Char#2/26 AsIs: )/18 HalfReuse: )/1 } Tile{ AsIs: e.Tokens#1/13 } Tile{ HalfReuse: >/17 } Tile{ ]] }
         refalrts::update_name( context[4], ref_DoTokenChain.ref(vm) );
         refalrts::reinit_open_bracket( context[12] );
-        refalrts::reinit_ident( context[15], ident_TkChar.ref(vm) );
+        refalrts::reinit_ident( context[15], ident_Symbol.ref(vm) );
+        refalrts::update_ident( context[21], ident_Char.ref(vm) );
         refalrts::reinit_close_bracket( context[1] );
         refalrts::reinit_close_call( context[17] );
         refalrts::push_stack( vm, context[17] );
@@ -8204,6 +8218,7 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
         res = refalrts::splice_evar( res, context[17], context[17] );
         res = refalrts::splice_evar( res, context[13], context[14] );
         res = refalrts::splice_evar( res, context[26], context[1] );
+        res = refalrts::splice_evar( res, context[21], context[21] );
         refalrts::splice_to_freelist_open( vm, context[15], res );
         return refalrts::cSuccess;
       } while ( 0 );
@@ -8372,41 +8387,43 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain-AfterCall/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 } Tile{ AsIs: (/11 AsIs: e.Collected#1/9 AsIs: )/12 } t.Pos#2/22/24 Tile{ HalfReuse: (/16 AsIs: (/17 Reuse: # TkName/21 AsIs: t.Pos#2/22 AsIs: e.FuncName#2/19 AsIs: )/18 HalfReuse: )/1 } </26 & TokenChain/27 Tile{ AsIs: t.ErrorList#1/7 } Tile{ HalfReuse: s.Mode1 #5/15 } s.Kind#1/6/28 Tile{ AsIs: e.Tokens#1/13 } >/29 >/30 Tile{ ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain-AfterCall/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 } Tile{ AsIs: (/11 AsIs: e.Collected#1/9 AsIs: )/12 } t.Pos#2/22/24 Tile{ AsIs: (/15 } Tile{ HalfReuse: (/16 HalfReuse: # Symbol/17 Reuse: # Name/21 AsIs: t.Pos#2/22 AsIs: e.FuncName#2/19 AsIs: )/18 HalfReuse: )/1 } </26 & TokenChain/27 Tile{ AsIs: t.ErrorList#1/7 } s.Mode#1/5/28 s.Kind#1/6/29 Tile{ AsIs: e.Tokens#1/13 } >/30 >/31 Tile{ ]] }
       if (! refalrts::copy_evar(vm, context[24], context[25], context[22], context[23]))
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( vm, context[26] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_name( vm, context[27], ref_TokenChain.ref(vm) ) )
         return refalrts::cNoMemory;
-      if (! refalrts::copy_stvar(vm, context[28], context[6]))
+      if (! refalrts::copy_stvar(vm, context[28], context[5]))
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_call( vm, context[29] ) )
+      if (! refalrts::copy_stvar(vm, context[29], context[6]))
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[30] ) )
         return refalrts::cNoMemory;
+      if( ! refalrts::alloc_close_call( vm, context[31] ) )
+        return refalrts::cNoMemory;
       refalrts::update_name( context[4], ref_DoTokenChainm_AfterCall.ref(vm) );
       refalrts::reinit_open_bracket( context[16] );
-      refalrts::update_ident( context[21], ident_TkName.ref(vm) );
+      refalrts::reinit_ident( context[17], ident_Symbol.ref(vm) );
+      refalrts::update_ident( context[21], ident_Name.ref(vm) );
       refalrts::reinit_close_bracket( context[1] );
-      refalrts::reinit_svar( context[15], context[5] );
-      refalrts::push_stack( vm, context[30] );
+      refalrts::push_stack( vm, context[31] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::push_stack( vm, context[29] );
+      refalrts::push_stack( vm, context[30] );
       refalrts::push_stack( vm, context[26] );
-      refalrts::link_brackets( context[16], context[1] );
-      refalrts::link_brackets( context[17], context[18] );
+      refalrts::link_brackets( context[15], context[1] );
+      refalrts::link_brackets( context[16], context[18] );
       refalrts::link_brackets( context[11], context[12] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[29], context[30] );
+      res = refalrts::splice_evar( res, context[30], context[31] );
       res = refalrts::splice_evar( res, context[13], context[14] );
-      res = refalrts::splice_evar( res, context[28], context[28] );
-      res = refalrts::splice_evar( res, context[15], context[15] );
+      res = refalrts::splice_evar( res, context[28], context[29] );
       res = refalrts::splice_evar( res, context[7], context[8] );
       res = refalrts::splice_evar( res, context[26], context[27] );
       res = refalrts::splice_evar( res, context[16], context[1] );
+      res = refalrts::splice_evar( res, context[15], context[15] );
       res = refalrts::splice_evar( res, context[24], context[25] );
       res = refalrts::splice_evar( res, context[11], context[12] );
       refalrts::use( res );
@@ -8759,7 +8776,7 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 } </24 & ClassicError/25 Tile{ AsIs: t.ErrorList#1/7 } s.Mode#1/5/26 Tile{ AsIs: t.Pos#2/22 HalfReuse: '$'/18 }"SCOPEID is not supported in classic REFAL-5"/27 >/29 Tile{ AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # TkNumber/15 } # Cookie1/30 Tile{ AsIs: )/16 AsIs: (/17 Reuse: # TkNumber/21 } # Cookie2/31 )/32 )/33 Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoTokenChain/4 AsIs: s.Mode#1/5 AsIs: s.Kind#1/6 } </24 & ClassicError/25 Tile{ AsIs: t.ErrorList#1/7 } s.Mode#1/5/26 Tile{ AsIs: t.Pos#2/22 HalfReuse: '$'/18 }"SCOPEID is not supported in classic REFAL-5"/27 >/29 Tile{ AsIs: (/11 AsIs: e.Collected#1/9 HalfReuse: (/12 HalfReuse: # Symbol/15 } # Number/30 # Cookie1/31 Tile{ AsIs: )/16 AsIs: (/17 Reuse: # Symbol/21 } # Number/32 # Cookie2/33 )/34 )/35 Tile{ AsIs: e.Tokens#1/13 } Tile{ AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( vm, context[24] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_name( vm, context[25], ref_ClassicError.ref(vm) ) )
@@ -8770,23 +8787,27 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[29] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[30], ident_Cookie1.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[30], ident_Number.ref(vm) ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[31], ident_Cookie2.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[31], ident_Cookie1.ref(vm) ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( vm, context[32] ) )
+      if( ! refalrts::alloc_ident( vm, context[32], ident_Number.ref(vm) ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_close_bracket( vm, context[33] ) )
+      if( ! refalrts::alloc_ident( vm, context[33], ident_Cookie2.ref(vm) ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_close_bracket( vm, context[34] ) )
+        return refalrts::cNoMemory;
+      if( ! refalrts::alloc_close_bracket( vm, context[35] ) )
         return refalrts::cNoMemory;
       refalrts::update_name( context[4], ref_DoTokenChain.ref(vm) );
       refalrts::reinit_char( context[18], '$' );
       refalrts::reinit_open_bracket( context[12] );
-      refalrts::reinit_ident( context[15], ident_TkNumber.ref(vm) );
-      refalrts::update_ident( context[21], ident_TkNumber.ref(vm) );
+      refalrts::reinit_ident( context[15], ident_Symbol.ref(vm) );
+      refalrts::update_ident( context[21], ident_Symbol.ref(vm) );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[11], context[33] );
-      refalrts::link_brackets( context[17], context[32] );
+      refalrts::link_brackets( context[11], context[35] );
+      refalrts::link_brackets( context[17], context[34] );
       refalrts::link_brackets( context[12], context[16] );
       refalrts::push_stack( vm, context[29] );
       refalrts::push_stack( vm, context[24] );
@@ -8794,9 +8815,9 @@ static refalrts::FnResult func_gen_DoTokenChain_B1(refalrts::VM *vm, refalrts::I
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
       res = refalrts::splice_evar( res, context[13], context[14] );
-      res = refalrts::splice_evar( res, context[31], context[33] );
+      res = refalrts::splice_evar( res, context[32], context[35] );
       res = refalrts::splice_evar( res, context[16], context[21] );
-      res = refalrts::splice_evar( res, context[30], context[30] );
+      res = refalrts::splice_evar( res, context[30], context[31] );
       res = refalrts::splice_evar( res, context[11], context[15] );
       res = refalrts::splice_evar( res, context[27], context[29] );
       res = refalrts::splice_evar( res, context[22], context[18] );

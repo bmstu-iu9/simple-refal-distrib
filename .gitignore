@@ -1,5 +1,6 @@
 /bin/*-core*
 /bin/lexgen*
+/bin/rsl-decompiler*
 *.exe-prefix
 c-plus-plus.conf.bat
 c-plus-plus.conf.sh

@@ -13,6 +13,7 @@ setlocal
   call :MAKE_DIR compiler srefc-core || exit /b 1
   call :MAKE_DIR lexgen lexgen || exit /b 1
   call :MAKE_DIR srmake srmake-core || exit /b 1
+  call :MAKE_DIR rsl-decompiler rsl-decompiler || exit /b 1
 
   set DEBUG=OFF
   call :MAKE_DIR srlib-rich-prefix srlib-rich-prefix || exit /b 1
