@@ -4,58 +4,68 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_3850630974_3697851451
-static const refalrts::IdentReference ident_k37_("%");
-static const refalrts::IdentReference ident_k42_("*");
-static const refalrts::IdentReference ident_k43_("+");
-static const refalrts::IdentReference ident_m_("-");
-static const refalrts::IdentReference ident_k47_("/");
-static const refalrts::IdentReference ident_k63_("?");
-static const refalrts::IdentReference ident_ADTm_Brackets("ADT-Brackets");
-static const refalrts::IdentReference ident_Add("Add");
-static const refalrts::IdentReference ident_Brackets("Brackets");
-static const refalrts::IdentReference ident_CallBrackets("CallBrackets");
-static const refalrts::IdentReference ident_Clear("Clear");
-static const refalrts::IdentReference ident_Closure("Closure");
-static const refalrts::IdentReference ident_Div("Div");
-static const refalrts::IdentReference ident_Failure("Failure");
-static const refalrts::IdentReference ident_False("False");
-static const refalrts::IdentReference ident_Mod("Mod");
-static const refalrts::IdentReference ident_Mul("Mul");
-static const refalrts::IdentReference ident_Residue("Residue");
-static const refalrts::IdentReference ident_Sub("Sub");
-static const refalrts::IdentReference ident_Symbol("Symbol");
-static const refalrts::IdentReference ident_TkVariable("TkVariable");
-static const refalrts::IdentReference ident_True("True");
-static const refalrts::IdentReference ident_Undefined("Undefined");
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_GenericMatch("GenericMatch", 0U, 0U);
-static refalrts::ExternalReference ref_GenericMatchm_Aux("GenericMatch-Aux", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S1B1("GenericMatch-Aux$1:1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S1C1("GenericMatch-Aux$1?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S1C2("GenericMatch-Aux$1?2", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S2B1("GenericMatch-Aux$2:1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S2C1("GenericMatch-Aux$2?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_GenericMatchm_Aux_S2C2("GenericMatch-Aux$2?2", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_IsSVarSubset("IsSVarSubset", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_IsTerm("IsTerm", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_Mu("Mu", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_Residue("Residue", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_TermMatch("TermMatch", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_TermMatch_S1C1("TermMatch$1?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_TermMatch_S3C1("TermMatch$3?1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_Type("Type", 0U, 0U);
-static refalrts::ExternalReference ref_Up("Up", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_u_u_FindMuPtr("__FindMuPtr", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3850630974U, 3697851451U);
-static refalrts::ExternalReference ref_u_u_Stepm_End("__Step-End", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Stepm_Start("__Step-Start", 0U, 0U);
+
+enum efunc {
+  efunc_gen_Mu_C1 = 0,
+  efunc_Mu = 1,
+  efunc_u_u_Stepm_Start = 2,
+  efunc_u_u_Mum_Aux = 3,
+  efunc_u_u_Stepm_End = 4,
+  efunc_gen_u_u_Mum_Aux_S13B1 = 5,
+  efunc_u_u_FindMuPtr = 6,
+  efunc_Add = 7,
+  efunc_Div = 8,
+  efunc_Mod = 9,
+  efunc_Mul = 10,
+  efunc_Residue = 11,
+  efunc_Sub = 12,
+  efunc_Type = 13,
+  efunc_Up = 14,
+  efunc_Evm_met = 15,
+  efunc_gen_Residue_C1 = 16,
+  efunc_GenericMatch = 17,
+  efunc_GenericMatchm_Aux = 18,
+  efunc_gen_GenericMatchm_Aux_S1B1 = 19,
+  efunc_gen_GenericMatchm_Aux_S2B1 = 20,
+  efunc_gen_GenericMatchm_Aux_S1C1 = 21,
+  efunc_gen_GenericMatchm_Aux_S1C2 = 22,
+  efunc_gen_GenericMatchm_Aux_S2C1 = 23,
+  efunc_gen_GenericMatchm_Aux_S2C2 = 24,
+  efunc_IsTerm = 25,
+  efunc_TermMatch = 26,
+  efunc_gen_TermMatch_S1C1 = 27,
+  efunc_gen_TermMatch_S3C1 = 28,
+  efunc_IsSVarSubset = 29,
+};
+
+
+enum ident {
+  ident_k43_ = 0,
+  ident_k47_ = 1,
+  ident_k37_ = 2,
+  ident_k42_ = 3,
+  ident_k63_ = 4,
+  ident_m_ = 5,
+  ident_Clear = 6,
+  ident_Failure = 7,
+  ident_Undefined = 8,
+  ident_True = 9,
+  ident_TkVariable = 10,
+  ident_Symbol = 11,
+  ident_Brackets = 12,
+  ident_ADTm_Brackets = 13,
+  ident_Closure = 14,
+  ident_False = 15,
+  ident_CallBrackets = 16,
+};
+
 
 static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -81,17 +91,17 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Mu_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Mu_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -136,7 +146,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -163,6 +173,9 @@ static refalrts::NativeReference nat_ref_Mu("Mu", 3850630974U, 3697851451U, func
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
@@ -217,7 +230,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
     if( ! refalrts::alloc_number( vm, context[9], 3697851451UL ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
     refalrts::reinit_number( context[5], 3850630974UL );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -244,7 +257,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
   refalrts::reinit_number( context[5], 3850630974UL );
   refalrts::reinit_number( context[7], 3697851451UL );
   refalrts::push_stack( vm, context[1] );
@@ -264,6 +277,9 @@ static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -291,8 +307,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -308,8 +324,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -325,8 +341,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -342,8 +358,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -359,8 +375,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -376,8 +392,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Sub] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -388,13 +404,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # +/5 >/1
-      if( ! refalrts::ident_term(  ident_k43_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k43_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -405,13 +421,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # //5 >/1
-      if( ! refalrts::ident_term(  ident_k47_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k47_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -422,13 +438,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # %/5 >/1
-      if( ! refalrts::ident_term(  ident_k37_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k37_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -439,13 +455,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # */5 >/1
-      if( ! refalrts::ident_term(  ident_k42_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k42_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -456,13 +472,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # ?/5 >/1
-      if( ! refalrts::ident_term(  ident_k63_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k63_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -472,13 +488,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     // </0 & __Mu-Aux/4 # -/5 >/1
-    if( ! refalrts::ident_term(  ident_m_.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_m_], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+    refalrts::reinit_name( context[1], functions[efunc_Sub] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -495,11 +511,11 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], ref_gen_u_u_Mum_Aux_S13B1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Type.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_Type] );
   refalrts::push_stack( vm, context[9] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
@@ -520,6 +536,9 @@ static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3850630974U, 36
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -545,17 +564,17 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Residue_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Residue_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -600,7 +619,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -627,6 +646,9 @@ static refalrts::NativeReference nat_ref_Residue("Residue", 3850630974U, 3697851
 static refalrts::FnResult func_GenericMatch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
@@ -662,7 +684,7 @@ static refalrts::FnResult func_GenericMatch(refalrts::VM *vm, refalrts::Iter arg
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[14] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_GenericMatchm_Aux.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_GenericMatchm_Aux] );
   refalrts::reinit_open_bracket( context[1] );
   refalrts::push_stack( vm, context[14] );
   refalrts::push_stack( vm, context[0] );
@@ -683,6 +705,9 @@ static refalrts::NativeReference nat_ref_GenericMatch("GenericMatch", 0U, 0U, fu
 static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
@@ -720,7 +745,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
   // closed e.new#5 as range 2
   do {
     // </0 & GenericMatch-Aux$1:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Clear/17 e.TermSubsts#4/2 >/1
-    if( ! refalrts::ident_term(  ident_Clear.ref(vm), context[17] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Clear], context[17] ) )
       continue;
     // closed e.Pe#1 as range 5
     // closed e.He#1 as range 9
@@ -734,7 +759,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # Clear/17 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenericMatch-Aux/4 AsIs: (/7 AsIs: e.Pe#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.He#1/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Substs#1/13 } Tile{ AsIs: e.TermSubsts#4/2 } Tile{ AsIs: )/16 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_GenericMatchm_Aux.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_GenericMatchm_Aux] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::link_brackets( context[15], context[16] );
@@ -759,7 +784,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
   // closed e.new#8 as range 13
   do {
     // </0 & GenericMatch-Aux$1:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Failure/17 >/1
-    if( ! refalrts::ident_term(  ident_Failure.ref(vm), context[17] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Failure], context[17] ) )
       continue;
     // closed e.Pe#1 as range 5
     // closed e.He#1 as range 9
@@ -771,7 +796,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux$1:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Failure/17 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Failure/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Failure.ref(vm) );
+    refalrts::reinit_ident( context[1], identifiers[ident_Failure] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -781,7 +806,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   // </0 & GenericMatch-Aux$1:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Undefined/17 >/1
-  if( ! refalrts::ident_term(  ident_Undefined.ref(vm), context[17] ) )
+  if( ! refalrts::ident_term( identifiers[ident_Undefined], context[17] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Pe#1 as range 5
   // closed e.He#1 as range 9
@@ -793,7 +818,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S1B1(refalrts::VM *vm, refa
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux$1:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Undefined/17 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Undefined/1 ]] }
-  refalrts::reinit_ident( context[1], ident_Undefined.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_Undefined] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -807,6 +832,9 @@ static refalrts::NativeReference nat_ref_gen_GenericMatchm_Aux_S1B1("GenericMatc
 static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
@@ -844,7 +872,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
   // closed e.new#5 as range 2
   do {
     // </0 & GenericMatch-Aux$2:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Clear/17 e.TermSubsts#4/2 >/1
-    if( ! refalrts::ident_term(  ident_Clear.ref(vm), context[17] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Clear], context[17] ) )
       continue;
     // closed e.Pe#1 as range 5
     // closed e.He#1 as range 9
@@ -858,7 +886,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # Clear/17 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenericMatch-Aux/4 AsIs: (/7 AsIs: e.Pe#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.He#1/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.Substs#1/13 } Tile{ AsIs: e.TermSubsts#4/2 } Tile{ AsIs: )/16 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_GenericMatchm_Aux.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_GenericMatchm_Aux] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::link_brackets( context[15], context[16] );
@@ -883,7 +911,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
   // closed e.new#8 as range 13
   do {
     // </0 & GenericMatch-Aux$2:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Failure/17 >/1
-    if( ! refalrts::ident_term(  ident_Failure.ref(vm), context[17] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Failure], context[17] ) )
       continue;
     // closed e.Pe#1 as range 5
     // closed e.He#1 as range 9
@@ -895,7 +923,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux$2:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Failure/17 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Failure/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Failure.ref(vm) );
+    refalrts::reinit_ident( context[1], identifiers[ident_Failure] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -905,7 +933,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   // </0 & GenericMatch-Aux$2:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Undefined/17 >/1
-  if( ! refalrts::ident_term(  ident_Undefined.ref(vm), context[17] ) )
+  if( ! refalrts::ident_term( identifiers[ident_Undefined], context[17] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Pe#1 as range 5
   // closed e.He#1 as range 9
@@ -917,7 +945,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Aux_S2B1(refalrts::VM *vm, refa
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux$2:1/4 (/7 e.Pe#1/5 )/8 (/11 e.He#1/9 )/12 (/15 e.Substs#1/13 )/16 # Undefined/17 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Undefined/1 ]] }
-  refalrts::reinit_ident( context[1], ident_Undefined.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_Undefined] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -931,6 +959,9 @@ static refalrts::NativeReference nat_ref_gen_GenericMatchm_Aux_S2B1("GenericMatc
 static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 40 elems
   refalrts::Iter context[40];
   refalrts::zeros( context, 40 );
@@ -1001,11 +1032,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
       refalrts::Iter res = context[1];
       if( ! refalrts::alloc_open_call( vm, context[27] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[29], ref_gen_GenericMatchm_Aux_S1C1.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[29], functions[efunc_gen_GenericMatchm_Aux_S1C1] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( vm, context[30] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[31], ref_IsTerm.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[31], functions[efunc_IsTerm] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[32], context[25]))
         return refalrts::cNoMemory;
@@ -1034,7 +1065,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
         context[29] = 0;
         context[30] = 0;
         context[31] = refalrts::call_left( context[29], context[30], context[27], context[28] );
-        context[32] = refalrts::ident_left(  ident_True.ref(vm), context[29], context[30] );
+        context[32] = refalrts::ident_left( identifiers[ident_True], context[29], context[30] );
         if( ! context[32] )
           continue;
         if( ! refalrts::empty_seq( context[29], context[30] ) )
@@ -1057,11 +1088,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
         refalrts::Iter res = context[1];
         if( ! refalrts::alloc_open_call( vm, context[33] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( vm, context[35], ref_gen_GenericMatchm_Aux_S1C2.ref(vm) ) )
+        if( ! refalrts::alloc_name( vm, context[35], functions[efunc_gen_GenericMatchm_Aux_S1C2] ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_call( vm, context[36] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( vm, context[37], ref_IsTerm.ref(vm) ) )
+        if( ! refalrts::alloc_name( vm, context[37], functions[efunc_IsTerm] ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(vm, context[38], context[23]))
           return refalrts::cNoMemory;
@@ -1090,7 +1121,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
           context[35] = 0;
           context[36] = 0;
           context[37] = refalrts::call_left( context[35], context[36], context[33], context[34] );
-          context[38] = refalrts::ident_left(  ident_True.ref(vm), context[35], context[36] );
+          context[38] = refalrts::ident_left( identifiers[ident_True], context[35], context[36] );
           if( ! context[38] )
             continue;
           if( ! refalrts::empty_seq( context[35], context[36] ) )
@@ -1105,11 +1136,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} >/28 </33 & GenericMatch-Aux$1?2/37 {REMOVED TILE} {REMOVED TILE}
           //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 HalfReuse: & GenericMatch-Aux$1:1/9 } Tile{ HalfReuse: (/38 } Tile{ AsIs: e.Pe#1/19 } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.He#1/21 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: e.Substs#1/15 AsIs: )/18 HalfReuse: {*}/27 HalfReuse: </31 HalfReuse: & TermMatch/32 } Tile{ AsIs: t.Pt#1/23 } Tile{ AsIs: t.Ht#1/25 } Tile{ AsIs: >/34 AsIs: >/1 ]] }
           refalrts::reinit_closure_head( context[4] );
-          refalrts::reinit_name( context[9], ref_gen_GenericMatchm_Aux_S1B1.ref(vm) );
+          refalrts::reinit_name( context[9], functions[efunc_gen_GenericMatchm_Aux_S1B1] );
           refalrts::reinit_open_bracket( context[38] );
           refalrts::reinit_unwrapped_closure( context[27], context[4] );
           refalrts::reinit_open_call( context[31] );
-          refalrts::reinit_name( context[32], ref_TermMatch.ref(vm) );
+          refalrts::reinit_name( context[32], functions[efunc_TermMatch] );
           refalrts::push_stack( vm, context[1] );
           refalrts::push_stack( vm, context[0] );
           refalrts::push_stack( vm, context[34] );
@@ -1176,11 +1207,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
       refalrts::Iter res = context[1];
       if( ! refalrts::alloc_open_call( vm, context[27] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[29], ref_gen_GenericMatchm_Aux_S2C1.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[29], functions[efunc_gen_GenericMatchm_Aux_S2C1] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( vm, context[30] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[31], ref_IsTerm.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[31], functions[efunc_IsTerm] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[32], context[25]))
         return refalrts::cNoMemory;
@@ -1209,7 +1240,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
         context[29] = 0;
         context[30] = 0;
         context[31] = refalrts::call_left( context[29], context[30], context[27], context[28] );
-        context[32] = refalrts::ident_left(  ident_True.ref(vm), context[29], context[30] );
+        context[32] = refalrts::ident_left( identifiers[ident_True], context[29], context[30] );
         if( ! context[32] )
           continue;
         if( ! refalrts::empty_seq( context[29], context[30] ) )
@@ -1232,11 +1263,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
         refalrts::Iter res = context[1];
         if( ! refalrts::alloc_open_call( vm, context[33] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( vm, context[35], ref_gen_GenericMatchm_Aux_S2C2.ref(vm) ) )
+        if( ! refalrts::alloc_name( vm, context[35], functions[efunc_gen_GenericMatchm_Aux_S2C2] ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_call( vm, context[36] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( vm, context[37], ref_IsTerm.ref(vm) ) )
+        if( ! refalrts::alloc_name( vm, context[37], functions[efunc_IsTerm] ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(vm, context[38], context[23]))
           return refalrts::cNoMemory;
@@ -1265,7 +1296,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
           context[35] = 0;
           context[36] = 0;
           context[37] = refalrts::call_left( context[35], context[36], context[33], context[34] );
-          context[38] = refalrts::ident_left(  ident_True.ref(vm), context[35], context[36] );
+          context[38] = refalrts::ident_left( identifiers[ident_True], context[35], context[36] );
           if( ! context[38] )
             continue;
           if( ! refalrts::empty_seq( context[35], context[36] ) )
@@ -1280,11 +1311,11 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} </33 & GenericMatch-Aux$2?2/37 # True/38 {REMOVED TILE}
           //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 HalfReuse: & GenericMatch-Aux$2:1/9 } Tile{ HalfReuse: (/28 } Tile{ AsIs: e.Pe#1/19 } Tile{ AsIs: )/10 AsIs: (/13 } Tile{ AsIs: e.He#1/21 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: e.Substs#1/15 AsIs: )/18 HalfReuse: {*}/27 HalfReuse: </31 HalfReuse: & TermMatch/32 } Tile{ AsIs: t.Pt#1/23 } Tile{ AsIs: t.Ht#1/25 } Tile{ AsIs: >/34 AsIs: >/1 ]] }
           refalrts::reinit_closure_head( context[4] );
-          refalrts::reinit_name( context[9], ref_gen_GenericMatchm_Aux_S2B1.ref(vm) );
+          refalrts::reinit_name( context[9], functions[efunc_gen_GenericMatchm_Aux_S2B1] );
           refalrts::reinit_open_bracket( context[28] );
           refalrts::reinit_unwrapped_closure( context[27], context[4] );
           refalrts::reinit_open_call( context[31] );
-          refalrts::reinit_name( context[32], ref_TermMatch.ref(vm) );
+          refalrts::reinit_name( context[32], functions[efunc_TermMatch] );
           refalrts::push_stack( vm, context[1] );
           refalrts::push_stack( vm, context[0] );
           refalrts::push_stack( vm, context[34] );
@@ -1330,7 +1361,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} & GenericMatch-Aux/4 (/9 )/10 (/13 )/14 (/17 {REMOVED TILE} )/18 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ HalfReuse: # Clear/0 } Tile{ AsIs: e.Substs#1/15 } Tile{ ]] }
-      refalrts::reinit_ident( context[0], ident_Clear.ref(vm) );
+      refalrts::reinit_ident( context[0], identifiers[ident_Clear] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = arg_end->next;
@@ -1349,7 +1380,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
     if( ! context[23] )
       continue;
     refalrts::bracket_pointers(context[23], context[24]);
-    context[25] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[21], context[22] );
+    context[25] = refalrts::ident_left( identifiers[ident_TkVariable], context[21], context[22] );
     if( ! context[25] )
       continue;
     context[26] = refalrts::char_left( 'e', context[21], context[22] );
@@ -1367,7 +1398,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux/4 (/9 {REMOVED TILE} )/10 (/13 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # Clear/17 AsIs: e.Substs#1/15 HalfReuse: (/18 } Tile{ AsIs: e.P#1/7 } Tile{ HalfReuse: ':'/23 HalfReuse: (/25 AsIs: 'e'/26 AsIs: e.Index#1/21 AsIs: )/24 AsIs: )/14 } Tile{ ]] }
-    refalrts::reinit_ident( context[17], ident_Clear.ref(vm) );
+    refalrts::reinit_ident( context[17], identifiers[ident_Clear] );
     refalrts::reinit_open_bracket( context[18] );
     refalrts::reinit_char( context[23], ':' );
     refalrts::reinit_open_bracket( context[25] );
@@ -1391,7 +1422,7 @@ static refalrts::FnResult func_GenericMatchm_Aux(refalrts::VM *vm, refalrts::Ite
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & GenericMatch-Aux/4 e.Else#1/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Undefined/1 ]] }
-  refalrts::reinit_ident( context[1], ident_Undefined.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_Undefined] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -1405,6 +1436,9 @@ static refalrts::NativeReference nat_ref_GenericMatchm_Aux("GenericMatch-Aux", 3
 static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 29 elems
   refalrts::Iter context[29];
   refalrts::zeros( context, 29 );
@@ -1439,7 +1473,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
     refalrts::Iter res = context[1];
     if( ! refalrts::alloc_open_call( vm, context[9] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( vm, context[11], ref_gen_TermMatch_S1C1.ref(vm) ) )
+    if( ! refalrts::alloc_name( vm, context[11], functions[efunc_gen_TermMatch_S1C1] ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(vm, context[12], context[7]))
       return refalrts::cNoMemory;
@@ -1467,7 +1501,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
       if( ! context[16] )
         continue;
       refalrts::bracket_pointers(context[16], context[17]);
-      context[18] = refalrts::ident_left(  ident_Symbol.ref(vm), context[14], context[15] );
+      context[18] = refalrts::ident_left( identifiers[ident_Symbol], context[14], context[15] );
       if( ! context[18] )
         continue;
       if( ! refalrts::empty_seq( context[11], context[12] ) )
@@ -1482,7 +1516,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & TermMatch/4 t.Symbol#1/5 t.Symbol#1/7 </9 & TermMatch$1?1/13 (/16 # Symbol/18 s.Type#2/19 e.Info#2/14 )/17 >/10 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # Clear/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Clear.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_Clear] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1509,7 +1543,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
       // </0 & TermMatch/4 t.new#6/5 (/7 # TkVariable/11 s.new#7/14 e.new#8/12 )/8 >/1
       context[12] = context[9];
       context[13] = context[10];
-      if( ! refalrts::ident_term(  ident_TkVariable.ref(vm), context[11] ) )
+      if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[11] ) )
         continue;
       if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
         continue;
@@ -1525,7 +1559,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE}
         //RESULT: Tile{ [[ HalfReuse: # Clear/0 HalfReuse: (/4 AsIs: t.TVar#1/5 HalfReuse: ':'/7 HalfReuse: (/11 AsIs: 't'/14 AsIs: e.HIndex#1/12 AsIs: )/8 HalfReuse: )/1 ]] }
-        refalrts::reinit_ident( context[0], ident_Clear.ref(vm) );
+        refalrts::reinit_ident( context[0], identifiers[ident_Clear] );
         refalrts::reinit_open_bracket( context[4] );
         refalrts::reinit_char( context[7], ':' );
         refalrts::reinit_open_bracket( context[11] );
@@ -1552,11 +1586,11 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
       refalrts::Iter res = context[1];
       if( ! refalrts::alloc_open_call( vm, context[15] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[17], ref_gen_TermMatch_S3C1.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[17], functions[efunc_gen_TermMatch_S3C1] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_call( vm, context[18] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[19], ref_IsSVarSubset.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[19], functions[efunc_IsSVarSubset] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[20], context[5]))
         return refalrts::cNoMemory;
@@ -1585,7 +1619,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
         context[17] = 0;
         context[18] = 0;
         context[19] = refalrts::call_left( context[17], context[18], context[15], context[16] );
-        context[20] = refalrts::ident_left(  ident_True.ref(vm), context[17], context[18] );
+        context[20] = refalrts::ident_left( identifiers[ident_True], context[17], context[18] );
         if( ! context[20] )
           continue;
         if( ! refalrts::empty_seq( context[17], context[18] ) )
@@ -1596,7 +1630,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} & TermMatch$3?1/19 # True/20 >/16 >/1 {REMOVED TILE}
         //RESULT: Tile{ [[ HalfReuse: # Clear/0 HalfReuse: (/4 AsIs: t.SVar#1/5 HalfReuse: ':'/7 HalfReuse: (/11 AsIs: 's'/14 AsIs: e.HIndex#1/12 AsIs: )/8 HalfReuse: )/15 } Tile{ ]] }
-        refalrts::reinit_ident( context[0], ident_Clear.ref(vm) );
+        refalrts::reinit_ident( context[0], identifiers[ident_Clear] );
         refalrts::reinit_open_bracket( context[4] );
         refalrts::reinit_char( context[7], ':' );
         refalrts::reinit_open_bracket( context[11] );
@@ -1627,9 +1661,9 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
     // closed e.new#7 as range 12
     do {
       // </0 & TermMatch/4 (/5 # Brackets/14 e.TBody#1/12 )/6 (/7 # Brackets/11 e.HBody#1/9 )/8 >/1
-      if( ! refalrts::ident_term(  ident_Brackets.ref(vm), context[14] ) )
+      if( ! refalrts::ident_term( identifiers[ident_Brackets], context[14] ) )
         continue;
-      if( ! refalrts::ident_term(  ident_Brackets.ref(vm), context[11] ) )
+      if( ! refalrts::ident_term( identifiers[ident_Brackets], context[11] ) )
         continue;
       // closed e.TBody#1 as range 12
       // closed e.HBody#1 as range 9
@@ -1639,7 +1673,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} # Brackets/14 {REMOVED TILE} )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenericMatch/4 AsIs: (/5 } Tile{ AsIs: e.TBody#1/12 } Tile{ HalfReuse: )/7 HalfReuse: (/11 AsIs: e.HBody#1/9 AsIs: )/8 AsIs: >/1 ]] }
-      refalrts::update_name( context[4], ref_GenericMatch.ref(vm) );
+      refalrts::update_name( context[4], functions[efunc_GenericMatch] );
       refalrts::reinit_close_bracket( context[7] );
       refalrts::reinit_open_bracket( context[11] );
       refalrts::push_stack( vm, context[1] );
@@ -1660,9 +1694,9 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
     context[16] = context[13];
     context[17] = context[9];
     context[18] = context[10];
-    if( ! refalrts::ident_term(  ident_ADTm_Brackets.ref(vm), context[14] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ADTm_Brackets], context[14] ) )
       continue;
-    if( ! refalrts::ident_term(  ident_ADTm_Brackets.ref(vm), context[11] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ADTm_Brackets], context[11] ) )
       continue;
     context[19] = 0;
     context[20] = 0;
@@ -1690,7 +1724,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} # ADT-Brackets/14 (/21 e.Name#1/19 {REMOVED TILE} {REMOVED TILE} )/6 (/7 # ADT-Brackets/11 (/25 e.Name#1/27 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenericMatch/4 AsIs: (/5 } Tile{ AsIs: e.TBody#1/15 } Tile{ AsIs: )/22 } Tile{ HalfReuse: (/26 AsIs: e.HBody#1/17 AsIs: )/8 AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_GenericMatch.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_GenericMatch] );
     refalrts::reinit_open_bracket( context[26] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -1713,7 +1747,7 @@ static refalrts::FnResult func_TermMatch(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & TermMatch/4 t.T#1/5 t.H#1/7 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Failure/1 ]] }
-  refalrts::reinit_ident( context[1], ident_Failure.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_Failure] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -1727,6 +1761,9 @@ static refalrts::NativeReference nat_ref_TermMatch("TermMatch", 3850630974U, 369
 static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
@@ -1761,7 +1798,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
       // closed e.new#6 as range 10
       do {
         // </0 & IsSVarSubset/4 (/5 # Symbol/9 s.Type#1/12 e.Info#1/10 )/6 >/1
-        if( ! refalrts::ident_term(  ident_Symbol.ref(vm), context[9] ) )
+        if( ! refalrts::ident_term( identifiers[ident_Symbol], context[9] ) )
           continue;
         // closed e.Info#1 as range 10
         //DEBUG: s.Type#1: 12
@@ -1770,7 +1807,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & IsSVarSubset/4 (/5 # Symbol/9 s.Type#1/12 e.Info#1/10 )/6 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
-        refalrts::reinit_ident( context[1], ident_True.ref(vm) );
+        refalrts::reinit_ident( context[1], identifiers[ident_True] );
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1782,7 +1819,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
       // </0 & IsSVarSubset/4 (/5 # TkVariable/9 's'/12 e.Tindex#1/10 )/6 >/1
       if( ! refalrts::char_term( 's', context[12] ) )
         continue;
-      if( ! refalrts::ident_term(  ident_TkVariable.ref(vm), context[9] ) )
+      if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[9] ) )
         continue;
       // closed e.Tindex#1 as range 10
       //DEBUG: e.Tindex#1: 10
@@ -1790,7 +1827,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & IsSVarSubset/4 (/5 # TkVariable/9 's'/12 e.Tindex#1/10 )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
-      refalrts::reinit_ident( context[1], ident_True.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_True] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1800,7 +1837,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
     refalrts::stop_sentence(vm);
 
     // </0 & IsSVarSubset/4 (/5 # Closure/9 e.Body#1/7 )/6 >/1
-    if( ! refalrts::ident_term(  ident_Closure.ref(vm), context[9] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Closure], context[9] ) )
       continue;
     // closed e.Body#1 as range 7
     //DEBUG: e.Body#1: 7
@@ -1808,7 +1845,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & IsSVarSubset/4 (/5 # Closure/9 e.Body#1/7 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
-    refalrts::reinit_ident( context[1], ident_True.ref(vm) );
+    refalrts::reinit_ident( context[1], identifiers[ident_True] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1823,7 +1860,7 @@ static refalrts::FnResult func_IsSVarSubset(refalrts::VM *vm, refalrts::Iter arg
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & IsSVarSubset/4 t.OtherTerm#1/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # False/1 ]] }
-  refalrts::reinit_ident( context[1], ident_False.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_False] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -1837,6 +1874,9 @@ static refalrts::NativeReference nat_ref_IsSVarSubset("IsSVarSubset", 3850630974
 static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
@@ -1866,7 +1906,7 @@ static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin
       // </0 & IsTerm/4 (/5 # TkVariable/9 'e'/12 e.Index#1/10 )/6 >/1
       context[10] = context[7];
       context[11] = context[8];
-      if( ! refalrts::ident_term(  ident_TkVariable.ref(vm), context[9] ) )
+      if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[9] ) )
         continue;
       context[12] = refalrts::char_left( 'e', context[10], context[11] );
       if( ! context[12] )
@@ -1877,7 +1917,7 @@ static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & IsTerm/4 (/5 # TkVariable/9 'e'/12 e.Index#1/10 )/6 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # False/1 ]] }
-      refalrts::reinit_ident( context[1], ident_False.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_False] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1887,7 +1927,7 @@ static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin
     refalrts::stop_sentence(vm);
 
     // </0 & IsTerm/4 (/5 # CallBrackets/9 e.Nested#1/7 )/6 >/1
-    if( ! refalrts::ident_term(  ident_CallBrackets.ref(vm), context[9] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CallBrackets], context[9] ) )
       continue;
     // closed e.Nested#1 as range 7
     //DEBUG: e.Nested#1: 7
@@ -1895,7 +1935,7 @@ static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & IsTerm/4 (/5 # CallBrackets/9 e.Nested#1/7 )/6 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # False/1 ]] }
-    refalrts::reinit_ident( context[1], ident_False.ref(vm) );
+    refalrts::reinit_ident( context[1], identifiers[ident_False] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1910,7 +1950,7 @@ static refalrts::FnResult func_IsTerm(refalrts::VM *vm, refalrts::Iter arg_begin
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & IsTerm/4 t.OtherTerm#1/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
-  refalrts::reinit_ident( context[1], ident_True.ref(vm) );
+  refalrts::reinit_ident( context[1], identifiers[ident_True] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];

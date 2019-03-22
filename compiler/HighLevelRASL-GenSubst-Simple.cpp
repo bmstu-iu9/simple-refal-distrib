@@ -4,77 +4,87 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_669499381_267302098
-static const refalrts::IdentReference ident_k37_("%");
-static const refalrts::IdentReference ident_k42_("*");
-static const refalrts::IdentReference ident_k43_("+");
-static const refalrts::IdentReference ident_m_("-");
-static const refalrts::IdentReference ident_k47_("/");
-static const refalrts::IdentReference ident_k63_("?");
-static const refalrts::IdentReference ident_ADTm_Brackets("ADT-Brackets");
-static const refalrts::IdentReference ident_Add("Add");
-static const refalrts::IdentReference ident_AlgLeft("AlgLeft");
-static const refalrts::IdentReference ident_AlgRight("AlgRight");
-static const refalrts::IdentReference ident_AlgTerm("AlgTerm");
-static const refalrts::IdentReference ident_Brackets("Brackets");
-static const refalrts::IdentReference ident_Char("Char");
-static const refalrts::IdentReference ident_CmdADT("CmdADT");
-static const refalrts::IdentReference ident_CmdBrackets("CmdBrackets");
-static const refalrts::IdentReference ident_CmdChar("CmdChar");
-static const refalrts::IdentReference ident_CmdComment("CmdComment");
-static const refalrts::IdentReference ident_CmdEmpty("CmdEmpty");
-static const refalrts::IdentReference ident_CmdIdent("CmdIdent");
-static const refalrts::IdentReference ident_CmdName("CmdName");
-static const refalrts::IdentReference ident_CmdNumber("CmdNumber");
-static const refalrts::IdentReference ident_CmdOpenedE("CmdOpenedE");
-static const refalrts::IdentReference ident_CmdRepeated("CmdRepeated");
-static const refalrts::IdentReference ident_CmdVar("CmdVar");
-static const refalrts::IdentReference ident_Div("Div");
-static const refalrts::IdentReference ident_E("E");
-static const refalrts::IdentReference ident_Identifier("Identifier");
-static const refalrts::IdentReference ident_Junk("Junk");
-static const refalrts::IdentReference ident_Mod("Mod");
-static const refalrts::IdentReference ident_Mul("Mul");
-static const refalrts::IdentReference ident_Name("Name");
-static const refalrts::IdentReference ident_NoOffset("NoOffset");
-static const refalrts::IdentReference ident_Number("Number");
-static const refalrts::IdentReference ident_Offset("Offset");
-static const refalrts::IdentReference ident_Residue("Residue");
-static const refalrts::IdentReference ident_S("S");
-static const refalrts::IdentReference ident_Sub("Sub");
-static const refalrts::IdentReference ident_Symbol("Symbol");
-static const refalrts::IdentReference ident_T("T");
-static const refalrts::IdentReference ident_TkCloseADT("TkCloseADT");
-static const refalrts::IdentReference ident_TkCloseBracket("TkCloseBracket");
-static const refalrts::IdentReference ident_TkOpenADT("TkOpenADT");
-static const refalrts::IdentReference ident_TkOpenBracket("TkOpenBracket");
-static const refalrts::IdentReference ident_TkVariable("TkVariable");
-static refalrts::ExternalReference ref_DoGenSubst("DoGenSubst", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_DoGenSubst_S36A1("DoGenSubst$36=1", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_DoGenSubst_S36A2("DoGenSubst$36=2", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_DoGenSubst_S36A3("DoGenSubst$36=3", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_GenSubstm_Simple("GenSubst-Simple", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_Inc2("Inc2", 0U, 0U);
-static refalrts::ExternalReference ref_IncVarOffset("IncVarOffset", 0U, 0U);
-static refalrts::ExternalReference ref_MakeSavers("MakeSavers", 0U, 0U);
-static refalrts::ExternalReference ref_Mu("Mu", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_PrintVar("PrintVar", 0U, 0U);
-static refalrts::ExternalReference ref_Residue("Residue", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_TextFromExpr("TextFromExpr", 0U, 0U);
-static refalrts::ExternalReference ref_Type("Type", 0U, 0U);
-static refalrts::ExternalReference ref_Up("Up", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_u_u_FindMuPtr("__FindMuPtr", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 669499381U, 267302098U);
-static refalrts::ExternalReference ref_u_u_Stepm_End("__Step-End", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Stepm_Start("__Step-Start", 0U, 0U);
+
+enum efunc {
+  efunc_gen_Mu_C1 = 0,
+  efunc_Mu = 1,
+  efunc_u_u_Stepm_Start = 2,
+  efunc_u_u_Mum_Aux = 3,
+  efunc_u_u_Stepm_End = 4,
+  efunc_gen_u_u_Mum_Aux_S13B1 = 5,
+  efunc_u_u_FindMuPtr = 6,
+  efunc_Add = 7,
+  efunc_Div = 8,
+  efunc_Mod = 9,
+  efunc_Mul = 10,
+  efunc_Residue = 11,
+  efunc_Sub = 12,
+  efunc_Type = 13,
+  efunc_Up = 14,
+  efunc_Evm_met = 15,
+  efunc_gen_Residue_C1 = 16,
+  efunc_GenSubstm_Simple = 17,
+  efunc_DoGenSubst = 18,
+  efunc_gen_DoGenSubst_S36A3 = 19,
+  efunc_gen_DoGenSubst_S36A2 = 20,
+  efunc_MakeSavers = 21,
+  efunc_Inc2 = 22,
+  efunc_gen_DoGenSubst_S36A1 = 23,
+  efunc_IncVarOffset = 24,
+  efunc_PrintVar = 25,
+  efunc_Inc = 26,
+  efunc_TextFromExpr = 27,
+};
+
+
+enum ident {
+  ident_k43_ = 0,
+  ident_k47_ = 1,
+  ident_k37_ = 2,
+  ident_k42_ = 3,
+  ident_k63_ = 4,
+  ident_m_ = 5,
+  ident_TkVariable = 6,
+  ident_E = 7,
+  ident_Junk = 8,
+  ident_CmdOpenedE = 9,
+  ident_AlgLeft = 10,
+  ident_T = 11,
+  ident_Symbol = 12,
+  ident_Char = 13,
+  ident_NoOffset = 14,
+  ident_CmdChar = 15,
+  ident_AlgTerm = 16,
+  ident_Name = 17,
+  ident_CmdName = 18,
+  ident_Identifier = 19,
+  ident_CmdIdent = 20,
+  ident_Number = 21,
+  ident_CmdNumber = 22,
+  ident_Brackets = 23,
+  ident_TkOpenBracket = 24,
+  ident_TkCloseBracket = 25,
+  ident_CmdBrackets = 26,
+  ident_ADTm_Brackets = 27,
+  ident_TkOpenADT = 28,
+  ident_TkCloseADT = 29,
+  ident_CmdADT = 30,
+  ident_CmdRepeated = 31,
+  ident_CmdVar = 32,
+  ident_S = 33,
+  ident_AlgRight = 34,
+  ident_CmdEmpty = 35,
+  ident_CmdComment = 36,
+  ident_Offset = 37,
+};
+
 
 static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -100,17 +110,17 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Mu_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Mu_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -155,7 +165,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -182,6 +192,9 @@ static refalrts::NativeReference nat_ref_Mu("Mu", 669499381U, 267302098U, func_M
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
@@ -236,7 +249,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
     if( ! refalrts::alloc_number( vm, context[9], 267302098UL ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
     refalrts::reinit_number( context[5], 669499381UL );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -263,7 +276,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
   refalrts::reinit_number( context[5], 669499381UL );
   refalrts::reinit_number( context[7], 267302098UL );
   refalrts::push_stack( vm, context[1] );
@@ -283,6 +296,9 @@ static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -310,8 +326,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -327,8 +343,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -344,8 +360,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -361,8 +377,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -378,8 +394,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -395,8 +411,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Sub] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -407,13 +423,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # +/5 >/1
-      if( ! refalrts::ident_term(  ident_k43_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k43_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -424,13 +440,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # //5 >/1
-      if( ! refalrts::ident_term(  ident_k47_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k47_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -441,13 +457,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # %/5 >/1
-      if( ! refalrts::ident_term(  ident_k37_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k37_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -458,13 +474,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # */5 >/1
-      if( ! refalrts::ident_term(  ident_k42_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k42_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -475,13 +491,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # ?/5 >/1
-      if( ! refalrts::ident_term(  ident_k63_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k63_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -491,13 +507,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     // </0 & __Mu-Aux/4 # -/5 >/1
-    if( ! refalrts::ident_term(  ident_m_.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_m_], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+    refalrts::reinit_name( context[1], functions[efunc_Sub] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -514,11 +530,11 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], ref_gen_u_u_Mum_Aux_S13B1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Type.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_Type] );
   refalrts::push_stack( vm, context[9] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
@@ -539,6 +555,9 @@ static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 669499381U, 267
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -564,17 +583,17 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Residue_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Residue_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -619,7 +638,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -646,6 +665,9 @@ static refalrts::NativeReference nat_ref_Residue("Residue", 669499381U, 26730209
 static refalrts::FnResult func_GenSubstm_Simple(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
@@ -680,7 +702,7 @@ static refalrts::FnResult func_GenSubstm_Simple(refalrts::VM *vm, refalrts::Iter
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoGenSubst/4 AsIs: s.ContextTop#1/13 AsIs: e.Substitutes#1/2 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.PrefixCommands#1/5 AsIs: )/8 AsIs: >/1 ]] }
-  refalrts::update_name( context[4], ref_DoGenSubst.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_DoGenSubst] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::link_brackets( context[7], context[8] );
@@ -694,6 +716,9 @@ static refalrts::NativeReference nat_ref_GenSubstm_Simple("GenSubst-Simple", 0U,
 static refalrts::FnResult func_gen_DoGenSubst_S36A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
   refalrts::zeros( context, 27 );
@@ -755,7 +780,7 @@ static refalrts::FnResult func_gen_DoGenSubst_S36A3(refalrts::VM *vm, refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[26] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_DoGenSubst.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_DoGenSubst] );
   refalrts::reinit_svar( context[7], context[20] );
   refalrts::reinit_char( context[8], 'e' );
   refalrts::reinit_close_bracket( context[16] );
@@ -789,6 +814,9 @@ static refalrts::NativeReference nat_ref_gen_DoGenSubst_S36A3("DoGenSubst$36=3",
 static refalrts::FnResult func_gen_DoGenSubst_S36A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 50 elems
   refalrts::Iter context[50];
   refalrts::zeros( context, 50 );
@@ -871,15 +899,15 @@ static refalrts::FnResult func_gen_DoGenSubst_S36A2(refalrts::VM *vm, refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[36] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[37], ref_MakeSavers.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[37], functions[efunc_MakeSavers] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[38] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[39], ref_Inc2.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[39], functions[efunc_Inc2] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[40] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[41], ident_TkVariable.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[41], identifiers[ident_TkVariable] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_char( vm, context[42], 'e' ) )
     return refalrts::cNoMemory;
@@ -891,13 +919,13 @@ static refalrts::FnResult func_gen_DoGenSubst_S36A2(refalrts::VM *vm, refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[47] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[48], ident_E.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[48], identifiers[ident_E] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[49] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_DoGenSubst_S36A3.ref(vm) );
-  refalrts::reinit_ident( context[21], ident_Junk.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_DoGenSubst_S36A3] );
+  refalrts::reinit_ident( context[21], identifiers[ident_Junk] );
   refalrts::reinit_open_bracket( context[22] );
   refalrts::reinit_svar( context[26], context[23] );
   refalrts::push_stack( vm, context[1] );
@@ -940,6 +968,9 @@ static refalrts::NativeReference nat_ref_gen_DoGenSubst_S36A2("DoGenSubst$36=2",
 static refalrts::FnResult func_gen_DoGenSubst_S36A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 40 elems
   refalrts::Iter context[40];
   refalrts::zeros( context, 40 );
@@ -1020,16 +1051,16 @@ static refalrts::FnResult func_gen_DoGenSubst_S36A1(refalrts::VM *vm, refalrts::
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[35] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[36], ident_CmdOpenedE.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[36], identifiers[ident_CmdOpenedE] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[37], ident_AlgLeft.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[37], identifiers[ident_AlgLeft] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[38], context[22]))
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( vm, context[39] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_DoGenSubst_S36A2.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_DoGenSubst_S36A2] );
   refalrts::reinit_svar( context[12], context[31] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[32] );
@@ -1062,6 +1093,9 @@ static refalrts::NativeReference nat_ref_gen_DoGenSubst_S36A1("DoGenSubst$36=1",
 static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 71 elems
   refalrts::Iter context[71];
   refalrts::zeros( context, 71 );
@@ -1108,7 +1142,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1117,7 +1151,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1126,7 +1160,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1135,10 +1169,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Char.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Char], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -1168,14 +1202,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[43] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[38], ident_Char.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[38], identifiers[ident_Char] );
       refalrts::reinit_svar( context[28], context[42] );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdChar.ref(vm) );
-      refalrts::update_ident( context[29], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdChar] );
+      refalrts::update_ident( context[29], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[37], context[42] );
       refalrts::reinit_close_bracket( context[39] );
       refalrts::reinit_close_bracket( context[40] );
@@ -1216,7 +1250,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1225,7 +1259,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1234,7 +1268,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1243,10 +1277,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Name.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Name], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -1273,13 +1307,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if (! refalrts::copy_evar(vm, context[42], context[43], context[35], context[36]))
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Name.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Name] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdName.ref(vm) );
-      refalrts::update_ident( context[39], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdName] );
+      refalrts::update_ident( context[39], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[40], context[41] );
       refalrts::reinit_close_call( context[37] );
       refalrts::push_stack( vm, context[37] );
@@ -1320,7 +1354,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1329,7 +1363,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1338,7 +1372,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1347,10 +1381,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Identifier.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Identifier], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -1377,13 +1411,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if (! refalrts::copy_evar(vm, context[42], context[43], context[35], context[36]))
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Identifier.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Identifier] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdIdent.ref(vm) );
-      refalrts::update_ident( context[39], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdIdent] );
+      refalrts::update_ident( context[39], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[40], context[41] );
       refalrts::reinit_close_call( context[37] );
       refalrts::push_stack( vm, context[37] );
@@ -1424,7 +1458,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1433,7 +1467,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1442,7 +1476,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1451,10 +1485,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Number.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Number], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -1484,14 +1518,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[43] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[38], ident_Number.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[38], identifiers[ident_Number] );
       refalrts::reinit_svar( context[28], context[42] );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdNumber.ref(vm) );
-      refalrts::update_ident( context[29], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdNumber] );
+      refalrts::update_ident( context[29], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[37], context[42] );
       refalrts::reinit_close_bracket( context[39] );
       refalrts::reinit_close_bracket( context[40] );
@@ -1532,7 +1566,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1541,7 +1575,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1550,7 +1584,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1559,7 +1593,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Brackets.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Brackets], context[35], context[36] );
       if( ! context[39] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -1585,7 +1619,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </41 & Inc2/42 Tile{ AsIs: s.ContextOffset#1/13 } >/43 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk1#1/20 HalfReuse: (/23 HalfReuse: # TkOpenBracket/27 Reuse: # NoOffset/29 } )/44 )/45 Tile{ AsIs: (/37 Reuse: # E/39 } s.ContextOffset#1/13/46 Tile{ AsIs: e.SubRange#1/35 } )/47 (/48 # Junk/49 Tile{ HalfReuse: (/38 HalfReuse: # TkCloseBracket/28 HalfReuse: # NoOffset/32 HalfReuse: )/34 AsIs: e.Junk2#1/30 AsIs: )/33 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgTerm/50 Tile{ AsIs: s.Num#1/40 } s.ContextOffset#1/13/51 )/52 )/53 >/54 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[41] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[42], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[42], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[43] ) )
         return refalrts::cNoMemory;
@@ -1599,9 +1633,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[48] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[49], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[49], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[50], ident_AlgTerm.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[50], identifiers[ident_AlgTerm] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[51], context[13]))
         return refalrts::cNoMemory;
@@ -1612,15 +1646,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[54] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkOpenBracket.ref(vm) );
-      refalrts::update_ident( context[29], ident_NoOffset.ref(vm) );
-      refalrts::update_ident( context[39], ident_E.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkOpenBracket] );
+      refalrts::update_ident( context[29], identifiers[ident_NoOffset] );
+      refalrts::update_ident( context[39], identifiers[ident_E] );
       refalrts::reinit_open_bracket( context[38] );
-      refalrts::reinit_ident( context[28], ident_TkCloseBracket.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[28], identifiers[ident_TkCloseBracket] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdBrackets.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdBrackets] );
       refalrts::push_stack( vm, context[54] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[53] );
@@ -1674,7 +1708,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1683,7 +1717,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -1692,7 +1726,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -1701,7 +1735,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_ADTm_Brackets.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_ADTm_Brackets], context[35], context[36] );
       if( ! context[39] )
         continue;
       context[40] = 0;
@@ -1735,7 +1769,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </45 & Inc2/46 Tile{ AsIs: s.ContextOffset#1/13 } >/47 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk1#1/20 HalfReuse: (/23 HalfReuse: # TkOpenADT/27 Reuse: # NoOffset/29 } )/48 Tile{ AsIs: (/37 Reuse: # Symbol/39 HalfReuse: # Name/42 AsIs: e.Name#1/40 HalfReuse: # NoOffset/43 } )/49 )/50 (/51 # E/52 s.ContextOffset#1/13/53 Tile{ AsIs: e.SubRange#1/35 } )/54 (/55 # Junk/56 Tile{ HalfReuse: (/38 HalfReuse: # TkCloseADT/28 HalfReuse: # NoOffset/32 HalfReuse: )/34 AsIs: e.Junk2#1/30 AsIs: )/33 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } # AlgTerm/57 Tile{ AsIs: s.Num#1/44 } s.ContextOffset#1/13/58 e.Name#1/40/59 )/61 )/62 >/63 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[45] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[46], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[46], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[47] ) )
         return refalrts::cNoMemory;
@@ -1747,7 +1781,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[51] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[52], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[52], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[53], context[13]))
         return refalrts::cNoMemory;
@@ -1755,9 +1789,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[55] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[56], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[56], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[57], ident_AlgTerm.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[57], identifiers[ident_AlgTerm] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[58], context[13]))
         return refalrts::cNoMemory;
@@ -1770,17 +1804,17 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[63] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkOpenADT.ref(vm) );
-      refalrts::update_ident( context[29], ident_NoOffset.ref(vm) );
-      refalrts::update_ident( context[39], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[42], ident_Name.ref(vm) );
-      refalrts::reinit_ident( context[43], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkOpenADT] );
+      refalrts::update_ident( context[29], identifiers[ident_NoOffset] );
+      refalrts::update_ident( context[39], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[42], identifiers[ident_Name] );
+      refalrts::reinit_ident( context[43], identifiers[ident_NoOffset] );
       refalrts::reinit_open_bracket( context[38] );
-      refalrts::reinit_ident( context[28], ident_TkCloseADT.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[28], identifiers[ident_TkCloseADT] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdADT.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdADT] );
       refalrts::push_stack( vm, context[63] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[62] );
@@ -1838,7 +1872,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[26] )
         continue;
       refalrts::bracket_pointers(context[26], context[27]);
-      context[28] = refalrts::ident_left(  ident_Junk.ref(vm), context[24], context[25] );
+      context[28] = refalrts::ident_left( identifiers[ident_Junk], context[24], context[25] );
       if( ! context[28] )
         continue;
       context[29] = 0;
@@ -1847,7 +1881,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[31] )
         continue;
       refalrts::bracket_pointers(context[31], context[32]);
-      context[33] = refalrts::ident_left(  ident_T.ref(vm), context[29], context[30] );
+      context[33] = refalrts::ident_left( identifiers[ident_T], context[29], context[30] );
       if( ! context[33] )
         continue;
       context[34] = 0;
@@ -1856,7 +1890,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[36] )
         continue;
       refalrts::bracket_pointers(context[36], context[37]);
-      context[38] = refalrts::ident_left(  ident_Junk.ref(vm), context[34], context[35] );
+      context[38] = refalrts::ident_left( identifiers[ident_Junk], context[34], context[35] );
       if( ! context[38] )
         continue;
       context[39] = 0;
@@ -1865,7 +1899,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[41] )
         continue;
       refalrts::bracket_pointers(context[41], context[42]);
-      context[43] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[39], context[40] );
+      context[43] = refalrts::ident_left( identifiers[ident_TkVariable], context[39], context[40] );
       if( ! context[43] )
         continue;
       // closed e.Junk1#1 as range 24
@@ -1930,14 +1964,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         if( ! refalrts::alloc_close_call( vm, context[64] ) )
           return refalrts::cNoMemory;
         refalrts::reinit_open_bracket( context[27] );
-        refalrts::reinit_ident( context[31], ident_TkVariable.ref(vm) );
+        refalrts::reinit_ident( context[31], identifiers[ident_TkVariable] );
         refalrts::reinit_svar( context[33], context[54] );
         refalrts::reinit_svar( context[36], context[44] );
         refalrts::reinit_close_bracket( context[38] );
         refalrts::reinit_svar( context[53], context[44] );
         refalrts::reinit_open_bracket( context[8] );
-        refalrts::reinit_ident( context[1], ident_CmdRepeated.ref(vm) );
-        refalrts::reinit_ident( context[41], ident_AlgTerm.ref(vm) );
+        refalrts::reinit_ident( context[1], identifiers[ident_CmdRepeated] );
+        refalrts::reinit_ident( context[41], identifiers[ident_AlgTerm] );
         refalrts::reinit_svar( context[43], context[44] );
         refalrts::push_stack( vm, context[64] );
         refalrts::push_stack( vm, context[0] );
@@ -1986,7 +2020,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -1995,7 +2029,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2004,7 +2038,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2013,7 +2047,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_TkVariable], context[35], context[36] );
       if( ! context[39] )
         continue;
       context[40] = refalrts::char_left( 't', context[35], context[36] );
@@ -2045,7 +2079,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_bracket( vm, context[44] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 't' );
       refalrts::reinit_svar( context[32], context[41] );
       refalrts::reinit_close_bracket( context[34] );
@@ -2096,7 +2130,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2105,7 +2139,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_T.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_T], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2114,7 +2148,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2123,7 +2157,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_TkVariable], context[35], context[36] );
       if( ! context[39] )
         continue;
       context[40] = refalrts::char_left( 's', context[35], context[36] );
@@ -2158,7 +2192,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[46] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[47], ident_AlgTerm.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[47], identifiers[ident_AlgTerm] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_char( vm, context[48], 's' ) )
         return refalrts::cNoMemory;
@@ -2167,7 +2201,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_bracket( vm, context[50] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 's' );
       refalrts::reinit_svar( context[32], context[41] );
       refalrts::reinit_close_bracket( context[34] );
@@ -2175,7 +2209,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::reinit_char( context[7], 's' );
       refalrts::reinit_open_bracket( context[40] );
       refalrts::reinit_svar( context[28], context[41] );
-      refalrts::update_ident( context[39], ident_CmdVar.ref(vm) );
+      refalrts::update_ident( context[39], identifiers[ident_CmdVar] );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[46], context[8] );
@@ -2221,7 +2255,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2230,7 +2264,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_S.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_S], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2239,7 +2273,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2248,10 +2282,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Char.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Char], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -2281,14 +2315,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[43] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[38], ident_Char.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[38], identifiers[ident_Char] );
       refalrts::reinit_svar( context[28], context[42] );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdChar.ref(vm) );
-      refalrts::update_ident( context[29], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdChar] );
+      refalrts::update_ident( context[29], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[37], context[42] );
       refalrts::reinit_close_bracket( context[39] );
       refalrts::reinit_close_bracket( context[40] );
@@ -2329,7 +2363,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2338,7 +2372,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_S.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_S], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2347,7 +2381,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2356,10 +2390,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Name.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Name], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -2386,13 +2420,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if (! refalrts::copy_evar(vm, context[42], context[43], context[35], context[36]))
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Name.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Name] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdName.ref(vm) );
-      refalrts::update_ident( context[39], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdName] );
+      refalrts::update_ident( context[39], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[40], context[41] );
       refalrts::reinit_close_call( context[37] );
       refalrts::push_stack( vm, context[37] );
@@ -2433,7 +2467,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2442,7 +2476,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_S.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_S], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2451,7 +2485,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2460,10 +2494,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Identifier.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Identifier], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -2490,13 +2524,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if (! refalrts::copy_evar(vm, context[42], context[43], context[35], context[36]))
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Identifier.ref(vm) );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Identifier] );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdIdent.ref(vm) );
-      refalrts::update_ident( context[39], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdIdent] );
+      refalrts::update_ident( context[39], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[40], context[41] );
       refalrts::reinit_close_call( context[37] );
       refalrts::push_stack( vm, context[37] );
@@ -2537,7 +2571,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2546,7 +2580,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_S.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_S], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2555,7 +2589,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2564,10 +2598,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_Symbol.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_Symbol], context[35], context[36] );
       if( ! context[39] )
         continue;
-      context[40] = refalrts::ident_left(  ident_Number.ref(vm), context[35], context[36] );
+      context[40] = refalrts::ident_left( identifiers[ident_Number], context[35], context[36] );
       if( ! context[40] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -2597,14 +2631,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[43] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[38], ident_Number.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[38], identifiers[ident_Number] );
       refalrts::reinit_svar( context[28], context[42] );
-      refalrts::reinit_ident( context[32], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[32], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdNumber.ref(vm) );
-      refalrts::update_ident( context[29], ident_AlgTerm.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdNumber] );
+      refalrts::update_ident( context[29], identifiers[ident_AlgTerm] );
       refalrts::reinit_svar( context[37], context[42] );
       refalrts::reinit_close_bracket( context[39] );
       refalrts::reinit_close_bracket( context[40] );
@@ -2648,7 +2682,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[26] )
         continue;
       refalrts::bracket_pointers(context[26], context[27]);
-      context[28] = refalrts::ident_left(  ident_Junk.ref(vm), context[24], context[25] );
+      context[28] = refalrts::ident_left( identifiers[ident_Junk], context[24], context[25] );
       if( ! context[28] )
         continue;
       context[29] = 0;
@@ -2657,7 +2691,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[31] )
         continue;
       refalrts::bracket_pointers(context[31], context[32]);
-      context[33] = refalrts::ident_left(  ident_S.ref(vm), context[29], context[30] );
+      context[33] = refalrts::ident_left( identifiers[ident_S], context[29], context[30] );
       if( ! context[33] )
         continue;
       context[34] = 0;
@@ -2666,7 +2700,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[36] )
         continue;
       refalrts::bracket_pointers(context[36], context[37]);
-      context[38] = refalrts::ident_left(  ident_Junk.ref(vm), context[34], context[35] );
+      context[38] = refalrts::ident_left( identifiers[ident_Junk], context[34], context[35] );
       if( ! context[38] )
         continue;
       context[39] = 0;
@@ -2675,7 +2709,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[41] )
         continue;
       refalrts::bracket_pointers(context[41], context[42]);
-      context[43] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[39], context[40] );
+      context[43] = refalrts::ident_left( identifiers[ident_TkVariable], context[39], context[40] );
       if( ! context[43] )
         continue;
       // closed e.Junk1#1 as range 24
@@ -2740,14 +2774,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         if( ! refalrts::alloc_close_call( vm, context[64] ) )
           return refalrts::cNoMemory;
         refalrts::reinit_open_bracket( context[27] );
-        refalrts::reinit_ident( context[31], ident_TkVariable.ref(vm) );
+        refalrts::reinit_ident( context[31], identifiers[ident_TkVariable] );
         refalrts::reinit_svar( context[33], context[54] );
         refalrts::reinit_svar( context[36], context[44] );
         refalrts::reinit_close_bracket( context[38] );
         refalrts::reinit_svar( context[53], context[44] );
         refalrts::reinit_open_bracket( context[8] );
-        refalrts::reinit_ident( context[1], ident_CmdRepeated.ref(vm) );
-        refalrts::reinit_ident( context[41], ident_AlgTerm.ref(vm) );
+        refalrts::reinit_ident( context[1], identifiers[ident_CmdRepeated] );
+        refalrts::reinit_ident( context[41], identifiers[ident_AlgTerm] );
         refalrts::reinit_svar( context[43], context[44] );
         refalrts::push_stack( vm, context[64] );
         refalrts::push_stack( vm, context[0] );
@@ -2796,7 +2830,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2805,7 +2839,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_S.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_S], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -2814,7 +2848,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -2823,7 +2857,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_TkVariable], context[35], context[36] );
       if( ! context[39] )
         continue;
       context[40] = refalrts::char_left( 's', context[35], context[36] );
@@ -2855,7 +2889,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_bracket( vm, context[44] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 's' );
       refalrts::reinit_svar( context[32], context[41] );
       refalrts::reinit_close_bracket( context[34] );
@@ -2906,7 +2940,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -2915,7 +2949,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -2928,10 +2962,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_Symbol.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_Symbol], context[31], context[32] );
       if( ! context[35] )
         continue;
-      context[36] = refalrts::ident_left(  ident_Char.ref(vm), context[31], context[32] );
+      context[36] = refalrts::ident_left( identifiers[ident_Char], context[31], context[32] );
       if( ! context[36] )
         continue;
       // closed e.Range#1 as range 25
@@ -2954,13 +2988,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # Symbol/27 Reuse: # Char/29 } s.Char#1/37/38 # NoOffset/39 )/40 )/41 Tile{ AsIs: (/33 } # E/42 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } Tile{ Reuse: # AlgLeft/35 HalfReuse: s.Num1 #30/36 AsIs: s.Char#1/37 } )/43 )/44 >/45 Tile{ ]] }
       if (! refalrts::copy_stvar(vm, context[38], context[37]))
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[40] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[41] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[42], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[42], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
@@ -2969,12 +3003,12 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[45] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Char.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Char] );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdChar.ref(vm) );
-      refalrts::update_ident( context[35], ident_AlgLeft.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdChar] );
+      refalrts::update_ident( context[35], identifiers[ident_AlgLeft] );
       refalrts::reinit_svar( context[36], context[30] );
       refalrts::push_stack( vm, context[45] );
       refalrts::push_stack( vm, context[0] );
@@ -3017,7 +3051,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3026,7 +3060,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -3039,10 +3073,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_Symbol.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_Symbol], context[31], context[32] );
       if( ! context[35] )
         continue;
-      context[36] = refalrts::ident_left(  ident_Number.ref(vm), context[31], context[32] );
+      context[36] = refalrts::ident_left( identifiers[ident_Number], context[31], context[32] );
       if( ! context[36] )
         continue;
       // closed e.Range#1 as range 25
@@ -3065,13 +3099,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # Symbol/27 Reuse: # Number/29 } s.Number#1/37/38 # NoOffset/39 )/40 )/41 Tile{ AsIs: (/33 } # E/42 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } Tile{ Reuse: # AlgLeft/35 HalfReuse: s.Num1 #30/36 AsIs: s.Number#1/37 } )/43 )/44 >/45 Tile{ ]] }
       if (! refalrts::copy_stvar(vm, context[38], context[37]))
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[40] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[41] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[42], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[42], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
@@ -3080,12 +3114,12 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[45] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Number.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Number] );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdNumber.ref(vm) );
-      refalrts::update_ident( context[35], ident_AlgLeft.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdNumber] );
+      refalrts::update_ident( context[35], identifiers[ident_AlgLeft] );
       refalrts::reinit_svar( context[36], context[30] );
       refalrts::push_stack( vm, context[45] );
       refalrts::push_stack( vm, context[0] );
@@ -3128,7 +3162,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3137,7 +3171,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -3150,10 +3184,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_Symbol.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_Symbol], context[31], context[32] );
       if( ! context[35] )
         continue;
-      context[36] = refalrts::ident_left(  ident_Name.ref(vm), context[31], context[32] );
+      context[36] = refalrts::ident_left( identifiers[ident_Name], context[31], context[32] );
       if( ! context[36] )
         continue;
       // closed e.Name#1 as range 31
@@ -3171,11 +3205,11 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} e.Junk#1/20 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # Junk/24 } Tile{ AsIs: (/33 AsIs: # Symbol/35 AsIs: # Name/36 } Tile{ AsIs: e.Name#1/31 } # NoOffset/37 )/38 Tile{ AsIs: )/23 AsIs: (/27 AsIs: # E/29 } Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } # AlgLeft/39 Tile{ AsIs: s.Num#1/30 } e.Name#1/31/40 )/42 )/43 >/44 Tile{ ]] }
-      if( ! refalrts::alloc_ident( vm, context[37], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[37], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[38] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_AlgLeft.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_AlgLeft] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_evar(vm, context[40], context[41], context[31], context[32]))
         return refalrts::cNoMemory;
@@ -3187,7 +3221,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdName.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdName] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[43] );
@@ -3232,7 +3266,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3241,7 +3275,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -3254,10 +3288,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_Symbol.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_Symbol], context[31], context[32] );
       if( ! context[35] )
         continue;
-      context[36] = refalrts::ident_left(  ident_Identifier.ref(vm), context[31], context[32] );
+      context[36] = refalrts::ident_left( identifiers[ident_Identifier], context[31], context[32] );
       if( ! context[36] )
         continue;
       // closed e.Name#1 as range 31
@@ -3275,7 +3309,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # Symbol/27 Reuse: # Identifier/29 } Tile{ AsIs: e.Name#1/31 } # NoOffset/37 )/38 )/39 Tile{ AsIs: (/33 Reuse: # E/35 } Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } Tile{ Reuse: # AlgLeft/36 } Tile{ AsIs: s.Num#1/30 } e.Name#1/31/40 )/42 )/43 >/44 Tile{ ]] }
-      if( ! refalrts::alloc_ident( vm, context[37], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[37], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[38] ) )
         return refalrts::cNoMemory;
@@ -3290,13 +3324,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[44] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_Symbol.ref(vm) );
-      refalrts::update_ident( context[29], ident_Identifier.ref(vm) );
-      refalrts::update_ident( context[35], ident_E.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_Symbol] );
+      refalrts::update_ident( context[29], identifiers[ident_Identifier] );
+      refalrts::update_ident( context[35], identifiers[ident_E] );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdIdent.ref(vm) );
-      refalrts::update_ident( context[36], ident_AlgLeft.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdIdent] );
+      refalrts::update_ident( context[36], identifiers[ident_AlgLeft] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[43] );
@@ -3340,7 +3374,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3349,7 +3383,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -3358,10 +3392,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Symbol.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Symbol], context[30], context[31] );
       if( ! context[34] )
         continue;
-      context[35] = refalrts::ident_left(  ident_Char.ref(vm), context[30], context[31] );
+      context[35] = refalrts::ident_left( identifiers[ident_Char], context[30], context[31] );
       if( ! context[35] )
         continue;
       // closed e.Junk#1 as range 25
@@ -3388,9 +3422,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 Reuse: # Junk/35 } (/38 # Symbol/39 Tile{ HalfReuse: # Char/33 HalfReuse: s.Char1 #37/23 HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdChar/1 } # AlgRight/40 s.Num#1/36/41 Tile{ AsIs: s.Char#1/37 } )/42 )/43 >/44 Tile{ ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[38] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_Symbol.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_Symbol] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[40], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[40], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[41], context[36]))
         return refalrts::cNoMemory;
@@ -3402,13 +3436,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::update_ident( context[35], ident_Junk.ref(vm) );
-      refalrts::reinit_ident( context[33], ident_Char.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_Junk] );
+      refalrts::reinit_ident( context[33], identifiers[ident_Char] );
       refalrts::reinit_svar( context[23], context[37] );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdChar.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdChar] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[43] );
@@ -3449,7 +3483,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3458,7 +3492,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -3467,10 +3501,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Symbol.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Symbol], context[30], context[31] );
       if( ! context[34] )
         continue;
-      context[35] = refalrts::ident_left(  ident_Number.ref(vm), context[30], context[31] );
+      context[35] = refalrts::ident_left( identifiers[ident_Number], context[30], context[31] );
       if( ! context[35] )
         continue;
       // closed e.Junk#1 as range 25
@@ -3497,9 +3531,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 Reuse: # Junk/35 } (/38 # Symbol/39 Tile{ HalfReuse: # Number/33 HalfReuse: s.Number1 #37/23 HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdNumber/1 } # AlgRight/40 s.Num#1/36/41 Tile{ AsIs: s.Number#1/37 } )/42 )/43 >/44 Tile{ ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[38] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_Symbol.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_Symbol] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[40], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[40], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[41], context[36]))
         return refalrts::cNoMemory;
@@ -3511,13 +3545,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::update_ident( context[35], ident_Junk.ref(vm) );
-      refalrts::reinit_ident( context[33], ident_Number.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_Junk] );
+      refalrts::reinit_ident( context[33], identifiers[ident_Number] );
       refalrts::reinit_svar( context[23], context[37] );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdNumber.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdNumber] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[43] );
@@ -3558,7 +3592,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3567,7 +3601,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -3576,10 +3610,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Symbol.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Symbol], context[30], context[31] );
       if( ! context[34] )
         continue;
-      context[35] = refalrts::ident_left(  ident_Name.ref(vm), context[30], context[31] );
+      context[35] = refalrts::ident_left( identifiers[ident_Name], context[30], context[31] );
       if( ! context[35] )
         continue;
       // closed e.Name#1 as range 30
@@ -3603,13 +3637,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 Reuse: # Junk/35 } (/37 # Symbol/38 # Name/39 e.Name#1/30/40 Tile{ HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdName/1 } # AlgRight/42 s.Num#1/36/43 Tile{ AsIs: e.Name#1/30 } Tile{ AsIs: )/33 AsIs: )/23 } >/44 Tile{ ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[38], ident_Symbol.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[38], identifiers[ident_Symbol] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_Name.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_Name] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_evar(vm, context[40], context[41], context[30], context[31]))
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[42], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[42], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[43], context[36]))
         return refalrts::cNoMemory;
@@ -3617,11 +3651,11 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::update_ident( context[35], ident_Junk.ref(vm) );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_Junk] );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdName.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdName] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[23] );
@@ -3664,7 +3698,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3673,7 +3707,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -3682,10 +3716,10 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Symbol.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Symbol], context[30], context[31] );
       if( ! context[34] )
         continue;
-      context[35] = refalrts::ident_left(  ident_Identifier.ref(vm), context[30], context[31] );
+      context[35] = refalrts::ident_left( identifiers[ident_Identifier], context[30], context[31] );
       if( ! context[35] )
         continue;
       // closed e.Name#1 as range 30
@@ -3709,13 +3743,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 Reuse: # Junk/35 } (/37 # Symbol/38 # Identifier/39 e.Name#1/30/40 Tile{ HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdIdent/1 } # AlgRight/42 s.Num#1/36/43 Tile{ AsIs: e.Name#1/30 } Tile{ AsIs: )/33 AsIs: )/23 } >/44 Tile{ ]] }
       if( ! refalrts::alloc_open_bracket( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[38], ident_Symbol.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[38], identifiers[ident_Symbol] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_Identifier.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_Identifier] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_evar(vm, context[40], context[41], context[30], context[31]))
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[42], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[42], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[43], context[36]))
         return refalrts::cNoMemory;
@@ -3723,11 +3757,11 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::update_ident( context[35], ident_Junk.ref(vm) );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_Junk] );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdIdent.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdIdent] );
       refalrts::push_stack( vm, context[44] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[23] );
@@ -3770,7 +3804,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3779,7 +3813,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -3792,7 +3826,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_Brackets.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_Brackets], context[31], context[32] );
       if( ! context[35] )
         continue;
       // closed e.SubRange#1 as range 31
@@ -3812,7 +3846,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Inc2/37 s.ContextOffset#1/13/38 >/39 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # TkOpenBracket/27 Reuse: # NoOffset/29 } )/40 )/41 Tile{ AsIs: (/33 Reuse: # E/35 } Tile{ AsIs: s.ContextOffset#1/13 } Tile{ AsIs: e.SubRange#1/31 } )/42 (/43 # Junk/44 (/45 # TkCloseBracket/46 # NoOffset/47 )/48 )/49 (/50 # E/51 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgLeft/52 Tile{ AsIs: s.Num#1/30 } s.ContextOffset#1/13/53 )/54 )/55 >/56 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[36] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[37], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[37], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[38], context[13]))
         return refalrts::cNoMemory;
@@ -3826,13 +3860,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[44], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[44], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[45] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[46], ident_TkCloseBracket.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[46], identifiers[ident_TkCloseBracket] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[47], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[47], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[48] ) )
         return refalrts::cNoMemory;
@@ -3840,9 +3874,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[50] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[51], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[51], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[52], ident_AlgLeft.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[52], identifiers[ident_AlgLeft] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[53], context[13]))
         return refalrts::cNoMemory;
@@ -3853,12 +3887,12 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[56] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkOpenBracket.ref(vm) );
-      refalrts::update_ident( context[29], ident_NoOffset.ref(vm) );
-      refalrts::update_ident( context[35], ident_E.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkOpenBracket] );
+      refalrts::update_ident( context[29], identifiers[ident_NoOffset] );
+      refalrts::update_ident( context[35], identifiers[ident_E] );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdBrackets.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdBrackets] );
       refalrts::push_stack( vm, context[56] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[55] );
@@ -3911,7 +3945,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -3920,7 +3954,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -3929,7 +3963,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Brackets.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Brackets], context[30], context[31] );
       if( ! context[34] )
         continue;
       // closed e.SubRange#1 as range 30
@@ -3953,17 +3987,17 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </36 & Inc2/37 Tile{ AsIs: s.ContextOffset#1/13 } >/38 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/35 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 } # Junk/39 (/40 # TkOpenBracket/41 # NoOffset/42 )/43 )/44 (/45 # E/46 s.ContextOffset#1/13/47 Tile{ AsIs: e.SubRange#1/30 } )/48 (/49 # Junk/50 Tile{ HalfReuse: (/33 HalfReuse: # TkCloseBracket/23 HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdBrackets/1 } # AlgRight/51 s.Num#1/35/52 s.ContextOffset#1/13/53 )/54 )/55 >/56 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[36] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[37], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[37], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[38] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[39], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[39], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[41], ident_TkOpenBracket.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[41], identifiers[ident_TkOpenBracket] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[42], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[42], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
@@ -3971,7 +4005,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[45] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[46], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[46], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[47], context[13]))
         return refalrts::cNoMemory;
@@ -3979,9 +4013,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[49] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[50], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[50], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[51], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[51], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[52], context[35]))
         return refalrts::cNoMemory;
@@ -3996,11 +4030,11 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
       refalrts::reinit_open_bracket( context[33] );
-      refalrts::reinit_ident( context[23], ident_TkCloseBracket.ref(vm) );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[23], identifiers[ident_TkCloseBracket] );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdBrackets.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdBrackets] );
       refalrts::push_stack( vm, context[56] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[55] );
@@ -4051,7 +4085,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -4060,7 +4094,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -4073,7 +4107,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_ADTm_Brackets.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_ADTm_Brackets], context[31], context[32] );
       if( ! context[35] )
         continue;
       context[36] = 0;
@@ -4101,7 +4135,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </40 & Inc2/41 Tile{ AsIs: s.ContextOffset#1/13 } >/42 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # TkOpenADT/27 Reuse: # NoOffset/29 } )/43 Tile{ AsIs: (/33 Reuse: # Symbol/35 HalfReuse: # Name/38 AsIs: e.Name#1/36 HalfReuse: # NoOffset/39 } )/44 )/45 (/46 # E/47 s.ContextOffset#1/13/48 Tile{ AsIs: e.SubRange#1/31 } )/49 (/50 # Junk/51 (/52 # TkCloseADT/53 # NoOffset/54 )/55 )/56 (/57 # E/58 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } # AlgLeft/59 Tile{ AsIs: s.Num#1/30 } s.ContextOffset#1/13/60 e.Name#1/36/61 )/63 )/64 >/65 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[41], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[41], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[42] ) )
         return refalrts::cNoMemory;
@@ -4113,7 +4147,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[46] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[47], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[47], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[48], context[13]))
         return refalrts::cNoMemory;
@@ -4121,13 +4155,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[50] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[51], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[51], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[52] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[53], ident_TkCloseADT.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[53], identifiers[ident_TkCloseADT] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[54], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[54], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[55] ) )
         return refalrts::cNoMemory;
@@ -4135,9 +4169,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[57] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[58], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[58], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[59], ident_AlgLeft.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[59], identifiers[ident_AlgLeft] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[60], context[13]))
         return refalrts::cNoMemory;
@@ -4150,14 +4184,14 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_call( vm, context[65] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkOpenADT.ref(vm) );
-      refalrts::update_ident( context[29], ident_NoOffset.ref(vm) );
-      refalrts::update_ident( context[35], ident_Symbol.ref(vm) );
-      refalrts::reinit_ident( context[38], ident_Name.ref(vm) );
-      refalrts::reinit_ident( context[39], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkOpenADT] );
+      refalrts::update_ident( context[29], identifiers[ident_NoOffset] );
+      refalrts::update_ident( context[35], identifiers[ident_Symbol] );
+      refalrts::reinit_ident( context[38], identifiers[ident_Name] );
+      refalrts::reinit_ident( context[39], identifiers[ident_NoOffset] );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdADT.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdADT] );
       refalrts::push_stack( vm, context[65] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[64] );
@@ -4213,7 +4247,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -4222,7 +4256,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -4231,7 +4265,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_ADTm_Brackets.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_ADTm_Brackets], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -4263,23 +4297,23 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </40 & Inc2/41 Tile{ AsIs: s.ContextOffset#1/13 } >/42 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/39 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 HalfReuse: # Junk/37 } (/43 # TkOpenADT/44 # NoOffset/45 Tile{ AsIs: )/38 } (/46 # Symbol/47 # Name/48 Tile{ AsIs: e.Name#1/35 } # NoOffset/49 )/50 )/51 (/52 # E/53 s.ContextOffset#1/13/54 Tile{ AsIs: e.SubRange#1/30 } )/55 (/56 # Junk/57 Tile{ HalfReuse: (/33 HalfReuse: # TkCloseADT/23 HalfReuse: # NoOffset/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdADT/1 } # AlgRight/58 s.Num#1/39/59 s.ContextOffset#1/13/60 e.Name#1/35/61 )/63 )/64 >/65 Tile{ ]] }
       if( ! refalrts::alloc_open_call( vm, context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[41], ref_Inc2.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[41], functions[efunc_Inc2] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[42] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[44], ident_TkOpenADT.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[44], identifiers[ident_TkOpenADT] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[45], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[45], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[46] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[47], ident_Symbol.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[47], identifiers[ident_Symbol] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[48], ident_Name.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[48], identifiers[ident_Name] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[49], ident_NoOffset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[49], identifiers[ident_NoOffset] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[50] ) )
         return refalrts::cNoMemory;
@@ -4287,7 +4321,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[52] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[53], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[53], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[54], context[13]))
         return refalrts::cNoMemory;
@@ -4295,9 +4329,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[56] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[57], ident_Junk.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[57], identifiers[ident_Junk] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[58], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[58], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[59], context[39]))
         return refalrts::cNoMemory;
@@ -4313,13 +4347,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::reinit_ident( context[37], ident_Junk.ref(vm) );
+      refalrts::reinit_ident( context[37], identifiers[ident_Junk] );
       refalrts::reinit_open_bracket( context[33] );
-      refalrts::reinit_ident( context[23], ident_TkCloseADT.ref(vm) );
-      refalrts::reinit_ident( context[27], ident_NoOffset.ref(vm) );
+      refalrts::reinit_ident( context[23], identifiers[ident_TkCloseADT] );
+      refalrts::reinit_ident( context[27], identifiers[ident_NoOffset] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdADT.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdADT] );
       refalrts::push_stack( vm, context[65] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[64] );
@@ -4375,7 +4409,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -4384,7 +4418,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -4393,7 +4427,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       // closed e.Junk1#1 as range 20
@@ -4416,8 +4450,8 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //TRASH: {REMOVED TILE} {REMOVED TILE} )/23 (/27 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 AsIs: s.ContextOffset#1/13 AsIs: e.Substs-B#1/16 AsIs: (/22 AsIs: # Junk/24 } Tile{ AsIs: e.Junk1#1/20 } Tile{ AsIs: e.Junk2#1/30 } Tile{ AsIs: )/33 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdEmpty/1 } Tile{ Reuse: # AlgLeft/29 AsIs: s.Num#1/35 AsIs: )/28 HalfReuse: )/32 HalfReuse: >/34 } Tile{ ]] }
       refalrts::reinit_open_bracket( context[8] );
-      refalrts::reinit_ident( context[1], ident_CmdEmpty.ref(vm) );
-      refalrts::update_ident( context[29], ident_AlgLeft.ref(vm) );
+      refalrts::reinit_ident( context[1], identifiers[ident_CmdEmpty] );
+      refalrts::update_ident( context[29], identifiers[ident_AlgLeft] );
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_close_call( context[34] );
       refalrts::push_stack( vm, context[34] );
@@ -4460,7 +4494,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[26] )
         continue;
       refalrts::bracket_pointers(context[26], context[27]);
-      context[28] = refalrts::ident_left(  ident_Junk.ref(vm), context[24], context[25] );
+      context[28] = refalrts::ident_left( identifiers[ident_Junk], context[24], context[25] );
       if( ! context[28] )
         continue;
       context[29] = 0;
@@ -4469,7 +4503,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[31] )
         continue;
       refalrts::bracket_pointers(context[31], context[32]);
-      context[33] = refalrts::ident_left(  ident_E.ref(vm), context[29], context[30] );
+      context[33] = refalrts::ident_left( identifiers[ident_E], context[29], context[30] );
       if( ! context[33] )
         continue;
       // closed e.Junk#1 as range 24
@@ -4482,7 +4516,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_TkVariable], context[35], context[36] );
       if( ! context[39] )
         continue;
       // closed e.Range#1 as range 29
@@ -4544,11 +4578,11 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( vm, context[61] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_ident( vm, context[62], ident_E.ref(vm) ) )
+        if( ! refalrts::alloc_ident( vm, context[62], identifiers[ident_E] ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( vm, context[63] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_ident( vm, context[64], ident_AlgLeft.ref(vm) ) )
+        if( ! refalrts::alloc_ident( vm, context[64], identifiers[ident_AlgLeft] ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(vm, context[65], context[49]))
           return refalrts::cNoMemory;
@@ -4562,15 +4596,15 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( vm, context[70] ) )
           return refalrts::cNoMemory;
-        refalrts::reinit_name( context[37], ref_IncVarOffset.ref(vm) );
+        refalrts::reinit_name( context[37], functions[efunc_IncVarOffset] );
         refalrts::reinit_svar( context[39], context[13] );
         refalrts::reinit_open_bracket( context[27] );
-        refalrts::reinit_ident( context[31], ident_TkVariable.ref(vm) );
+        refalrts::reinit_ident( context[31], identifiers[ident_TkVariable] );
         refalrts::reinit_svar( context[33], context[49] );
         refalrts::reinit_svar( context[38], context[34] );
         refalrts::reinit_svar( context[48], context[13] );
         refalrts::reinit_open_bracket( context[8] );
-        refalrts::reinit_ident( context[1], ident_CmdRepeated.ref(vm) );
+        refalrts::reinit_ident( context[1], identifiers[ident_CmdRepeated] );
         refalrts::push_stack( vm, context[70] );
         refalrts::push_stack( vm, context[0] );
         refalrts::link_brackets( context[7], context[69] );
@@ -4629,7 +4663,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[26] )
         continue;
       refalrts::bracket_pointers(context[26], context[27]);
-      context[28] = refalrts::ident_left(  ident_E.ref(vm), context[24], context[25] );
+      context[28] = refalrts::ident_left( identifiers[ident_E], context[24], context[25] );
       if( ! context[28] )
         continue;
       context[29] = 0;
@@ -4638,7 +4672,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[31] )
         continue;
       refalrts::bracket_pointers(context[31], context[32]);
-      context[33] = refalrts::ident_left(  ident_Junk.ref(vm), context[29], context[30] );
+      context[33] = refalrts::ident_left( identifiers[ident_Junk], context[29], context[30] );
       if( ! context[33] )
         continue;
       context[34] = 0;
@@ -4647,7 +4681,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[36] )
         continue;
       refalrts::bracket_pointers(context[36], context[37]);
-      context[38] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[34], context[35] );
+      context[38] = refalrts::ident_left( identifiers[ident_TkVariable], context[34], context[35] );
       if( ! context[38] )
         continue;
       // closed e.Junk#1 as range 29
@@ -4705,21 +4739,21 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </57 & IncVarOffset/58 Tile{ AsIs: s.ContextOffset#1/13 } Tile{ AsIs: s.Mode#1/40 } >/59 Tile{ AsIs: e.Substs-B#1/18 } Tile{ AsIs: (/26 AsIs: # E/28 AsIs: s.Num#1/39 AsIs: e.Range#1/24 HalfReuse: )/36 HalfReuse: (/38 } # Junk/60 (/61 # TkVariable/62 s.Mode#1/49/63 Tile{ AsIs: e.Index#1/34 } Tile{ HalfReuse: s.ContextOffset1 #13/31 HalfReuse: )/33 AsIs: e.Junk#1/29 AsIs: )/32 AsIs: e.Substs-E#1/20 AsIs: (/11 AsIs: e.Vars-B#1/41 AsIs: (/47 AsIs: s.Mode#1/49 AsIs: (/52 AsIs: e.Index#1/54 AsIs: )/53 AsIs: e.Offsets#1/45 AsIs: s.SampleOffset#1/56 HalfReuse: s.ContextOffset1 #13/48 } )/64 Tile{ AsIs: e.Vars-E#1/43 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 HalfReuse: (/8 HalfReuse: # CmdRepeated/1 } # AlgRight/65 s.Num#1/39/66 s.Mode#1/49/67 s.ContextOffset#1/13/68 s.SampleOffset#1/56/69 Tile{ AsIs: )/37 AsIs: )/27 } >/70 Tile{ ]] }
         if( ! refalrts::alloc_open_call( vm, context[57] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_name( vm, context[58], ref_IncVarOffset.ref(vm) ) )
+        if( ! refalrts::alloc_name( vm, context[58], functions[efunc_IncVarOffset] ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_call( vm, context[59] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_ident( vm, context[60], ident_Junk.ref(vm) ) )
+        if( ! refalrts::alloc_ident( vm, context[60], identifiers[ident_Junk] ) )
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_open_bracket( vm, context[61] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_ident( vm, context[62], ident_TkVariable.ref(vm) ) )
+        if( ! refalrts::alloc_ident( vm, context[62], identifiers[ident_TkVariable] ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(vm, context[63], context[49]))
           return refalrts::cNoMemory;
         if( ! refalrts::alloc_close_bracket( vm, context[64] ) )
           return refalrts::cNoMemory;
-        if( ! refalrts::alloc_ident( vm, context[65], ident_AlgRight.ref(vm) ) )
+        if( ! refalrts::alloc_ident( vm, context[65], identifiers[ident_AlgRight] ) )
           return refalrts::cNoMemory;
         if (! refalrts::copy_stvar(vm, context[66], context[39]))
           return refalrts::cNoMemory;
@@ -4737,7 +4771,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::reinit_close_bracket( context[33] );
         refalrts::reinit_svar( context[48], context[13] );
         refalrts::reinit_open_bracket( context[8] );
-        refalrts::reinit_ident( context[1], ident_CmdRepeated.ref(vm) );
+        refalrts::reinit_ident( context[1], identifiers[ident_CmdRepeated] );
         refalrts::push_stack( vm, context[70] );
         refalrts::push_stack( vm, context[0] );
         refalrts::link_brackets( context[7], context[27] );
@@ -4793,7 +4827,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -4802,7 +4836,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -4811,7 +4845,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_Junk.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_Junk], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = 0;
@@ -4820,7 +4854,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[37] )
         continue;
       refalrts::bracket_pointers(context[37], context[38]);
-      context[39] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[35], context[36] );
+      context[39] = refalrts::ident_left( identifiers[ident_TkVariable], context[35], context[36] );
       if( ! context[39] )
         continue;
       context[40] = refalrts::char_left( 'e', context[35], context[36] );
@@ -4863,27 +4897,27 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[51] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[52], ident_CmdComment.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[52], identifiers[ident_CmdComment] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_chars( vm, context[53], context[54], " closed ", 8 ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_chars( vm, context[55], context[56], "as range ", 9 ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[57], ident_Offset.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[57], identifiers[ident_Offset] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[58], context[41]))
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_bracket( vm, context[59] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 'e' );
       refalrts::reinit_svar( context[32], context[41] );
       refalrts::reinit_close_bracket( context[34] );
       refalrts::reinit_open_bracket( context[12] );
       refalrts::reinit_char( context[7], 'e' );
       refalrts::reinit_open_call( context[37] );
-      refalrts::reinit_name( context[39], ref_PrintVar.ref(vm) );
+      refalrts::reinit_name( context[39], functions[efunc_PrintVar] );
       refalrts::reinit_close_call( context[38] );
       refalrts::reinit_char( context[28], ' ' );
       refalrts::push_stack( vm, context[1] );
@@ -4933,7 +4967,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -4942,7 +4976,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -4955,7 +4989,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_TkVariable], context[31], context[32] );
       if( ! context[35] )
         continue;
       context[36] = refalrts::char_left( 's', context[31], context[32] );
@@ -4978,7 +5012,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # TkVariable/27 HalfReuse: 's'/29 } Tile{ AsIs: e.Index#1/31 } s.ContextOffset#1/13/40 )/41 )/42 (/43 # E/44 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/45 e.Index#1/31/46 )/48 s.ContextOffset#1/13/49 )/50 )/51 (/52 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/33 Reuse: # CmdVar/35 HalfReuse: # AlgLeft/36 } Tile{ AsIs: s.Num#1/30 } 's'/53 s.ContextOffset#1/13/54 )/55 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[38], ref_Inc.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[38], functions[efunc_Inc] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[39] ) )
         return refalrts::cNoMemory;
@@ -4990,7 +5024,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[44], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[44], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[45] ) )
         return refalrts::cNoMemory;
@@ -5013,13 +5047,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_bracket( vm, context[55] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 's' );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[12] );
       refalrts::reinit_char( context[7], 's' );
-      refalrts::update_ident( context[35], ident_CmdVar.ref(vm) );
-      refalrts::reinit_ident( context[36], ident_AlgLeft.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_CmdVar] );
+      refalrts::reinit_ident( context[36], identifiers[ident_AlgLeft] );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[52], context[8] );
@@ -5072,7 +5106,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_Junk.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_Junk], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -5081,7 +5115,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_E.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_E], context[25], context[26] );
       if( ! context[29] )
         continue;
       // closed e.Junk#1 as range 20
@@ -5094,7 +5128,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[33] )
         continue;
       refalrts::bracket_pointers(context[33], context[34]);
-      context[35] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[31], context[32] );
+      context[35] = refalrts::ident_left( identifiers[ident_TkVariable], context[31], context[32] );
       if( ! context[35] )
         continue;
       context[36] = refalrts::char_left( 't', context[31], context[32] );
@@ -5117,7 +5151,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # Junk/24 AsIs: e.Junk#1/20 HalfReuse: (/23 HalfReuse: # TkVariable/27 HalfReuse: 't'/29 } Tile{ AsIs: e.Index#1/31 } s.ContextOffset#1/13/40 )/41 )/42 (/43 # E/44 Tile{ HalfReuse: s.Num1 #30/34 AsIs: e.Range#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/45 e.Index#1/31/46 )/48 s.ContextOffset#1/13/49 )/50 )/51 (/52 Tile{ AsIs: e.Commands#1/5 } Tile{ AsIs: (/33 Reuse: # CmdVar/35 HalfReuse: # AlgLeft/36 } Tile{ AsIs: s.Num#1/30 } 't'/53 s.ContextOffset#1/13/54 )/55 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[38], ref_Inc.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[38], functions[efunc_Inc] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[39] ) )
         return refalrts::cNoMemory;
@@ -5129,7 +5163,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[43] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[44], ident_E.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[44], identifiers[ident_E] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[45] ) )
         return refalrts::cNoMemory;
@@ -5152,13 +5186,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::alloc_close_bracket( vm, context[55] ) )
         return refalrts::cNoMemory;
       refalrts::reinit_open_bracket( context[23] );
-      refalrts::reinit_ident( context[27], ident_TkVariable.ref(vm) );
+      refalrts::reinit_ident( context[27], identifiers[ident_TkVariable] );
       refalrts::reinit_char( context[29], 't' );
       refalrts::reinit_svar( context[34], context[30] );
       refalrts::reinit_open_bracket( context[12] );
       refalrts::reinit_char( context[7], 't' );
-      refalrts::update_ident( context[35], ident_CmdVar.ref(vm) );
-      refalrts::reinit_ident( context[36], ident_AlgLeft.ref(vm) );
+      refalrts::update_ident( context[35], identifiers[ident_CmdVar] );
+      refalrts::reinit_ident( context[36], identifiers[ident_AlgLeft] );
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[52], context[8] );
@@ -5211,7 +5245,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -5220,7 +5254,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -5229,7 +5263,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_TkVariable], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = refalrts::char_left( 's', context[30], context[31] );
@@ -5256,13 +5290,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 HalfReuse: # Junk/35 } (/40 # TkVariable/41 's'/42 Tile{ AsIs: e.Index#1/30 } Tile{ HalfReuse: s.ContextOffset1 #13/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 's'/7 } (/43 e.Index#1/30/44 )/46 s.ContextOffset#1/13/47 Tile{ AsIs: )/33 AsIs: )/23 } (/48 Tile{ AsIs: e.Commands#1/5 } (/49 # CmdVar/50 # AlgRight/51 s.Num#1/36/52 's'/53 s.ContextOffset#1/13/54 )/55 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[38], ref_Inc.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[38], functions[efunc_Inc] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[39] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[41], ident_TkVariable.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[41], identifiers[ident_TkVariable] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_char( vm, context[42], 's' ) )
         return refalrts::cNoMemory;
@@ -5278,9 +5312,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[49] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[50], ident_CmdVar.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[50], identifiers[ident_CmdVar] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[51], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[51], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[52], context[36]))
         return refalrts::cNoMemory;
@@ -5292,7 +5326,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::reinit_ident( context[35], ident_Junk.ref(vm) );
+      refalrts::reinit_ident( context[35], identifiers[ident_Junk] );
       refalrts::reinit_svar( context[27], context[13] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[12] );
@@ -5349,7 +5383,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[22] )
         continue;
       refalrts::bracket_pointers(context[22], context[23]);
-      context[24] = refalrts::ident_left(  ident_E.ref(vm), context[20], context[21] );
+      context[24] = refalrts::ident_left( identifiers[ident_E], context[20], context[21] );
       if( ! context[24] )
         continue;
       context[25] = 0;
@@ -5358,7 +5392,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      context[29] = refalrts::ident_left(  ident_Junk.ref(vm), context[25], context[26] );
+      context[29] = refalrts::ident_left( identifiers[ident_Junk], context[25], context[26] );
       if( ! context[29] )
         continue;
       context[30] = 0;
@@ -5367,7 +5401,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[32] )
         continue;
       refalrts::bracket_pointers(context[32], context[33]);
-      context[34] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[30], context[31] );
+      context[34] = refalrts::ident_left( identifiers[ident_TkVariable], context[30], context[31] );
       if( ! context[34] )
         continue;
       context[35] = refalrts::char_left( 't', context[30], context[31] );
@@ -5394,13 +5428,13 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
       //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoGenSubst/4 } </37 & Inc/38 Tile{ AsIs: s.ContextOffset#1/13 } >/39 Tile{ AsIs: e.Substs-B#1/16 } Tile{ AsIs: (/22 AsIs: # E/24 AsIs: s.Num#1/36 AsIs: e.Range#1/20 HalfReuse: )/32 HalfReuse: (/34 HalfReuse: # Junk/35 } (/40 # TkVariable/41 't'/42 Tile{ AsIs: e.Index#1/30 } Tile{ HalfReuse: s.ContextOffset1 #13/27 HalfReuse: )/29 AsIs: e.Junk#1/25 AsIs: )/28 AsIs: e.Substs-E#1/18 AsIs: (/11 AsIs: e.Vars#1/9 HalfReuse: (/12 HalfReuse: 't'/7 } (/43 e.Index#1/30/44 )/46 s.ContextOffset#1/13/47 Tile{ AsIs: )/33 AsIs: )/23 } (/48 Tile{ AsIs: e.Commands#1/5 } (/49 # CmdVar/50 # AlgRight/51 s.Num#1/36/52 't'/53 s.ContextOffset#1/13/54 )/55 Tile{ AsIs: )/8 AsIs: >/1 ]] }
       if( ! refalrts::alloc_open_call( vm, context[37] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_name( vm, context[38], ref_Inc.ref(vm) ) )
+      if( ! refalrts::alloc_name( vm, context[38], functions[efunc_Inc] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_close_call( vm, context[39] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[40] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[41], ident_TkVariable.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[41], identifiers[ident_TkVariable] ) )
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_char( vm, context[42], 't' ) )
         return refalrts::cNoMemory;
@@ -5416,9 +5450,9 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       if( ! refalrts::alloc_open_bracket( vm, context[49] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[50], ident_CmdVar.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[50], identifiers[ident_CmdVar] ) )
         return refalrts::cNoMemory;
-      if( ! refalrts::alloc_ident( vm, context[51], ident_AlgRight.ref(vm) ) )
+      if( ! refalrts::alloc_ident( vm, context[51], identifiers[ident_AlgRight] ) )
         return refalrts::cNoMemory;
       if (! refalrts::copy_stvar(vm, context[52], context[36]))
         return refalrts::cNoMemory;
@@ -5430,7 +5464,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
         return refalrts::cNoMemory;
       refalrts::reinit_close_bracket( context[32] );
       refalrts::reinit_open_bracket( context[34] );
-      refalrts::reinit_ident( context[35], ident_Junk.ref(vm) );
+      refalrts::reinit_ident( context[35], identifiers[ident_Junk] );
       refalrts::reinit_svar( context[27], context[13] );
       refalrts::reinit_close_bracket( context[29] );
       refalrts::reinit_open_bracket( context[12] );
@@ -5476,7 +5510,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[16], context[17]);
-  context[18] = refalrts::ident_left(  ident_Junk.ref(vm), context[14], context[15] );
+  context[18] = refalrts::ident_left( identifiers[ident_Junk], context[14], context[15] );
   if( ! context[18] )
     return refalrts::cRecognitionImpossible;
   // closed e.new#8 as range 14
@@ -5493,7 +5527,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! context[23] )
       continue;
     refalrts::bracket_pointers(context[23], context[24]);
-    context[25] = refalrts::ident_left(  ident_E.ref(vm), context[21], context[22] );
+    context[25] = refalrts::ident_left( identifiers[ident_E], context[21], context[22] );
     if( ! context[25] )
       continue;
     // closed e.Junk#1 as range 14
@@ -5508,7 +5542,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! context[29] )
       continue;
     refalrts::bracket_pointers(context[29], context[30]);
-    context[31] = refalrts::ident_left(  ident_TkVariable.ref(vm), context[27], context[28] );
+    context[31] = refalrts::ident_left( identifiers[ident_TkVariable], context[27], context[28] );
     if( ! context[31] )
       continue;
     context[32] = refalrts::char_left( 'e', context[27], context[28] );
@@ -5528,7 +5562,7 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Num#1/26 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 } & DoGenSubst$36=1/33 Tile{ AsIs: (/29 } Tile{ AsIs: e.Vars#1/9 } Tile{ HalfReuse: )/31 HalfReuse: (/32 } Tile{ AsIs: e.Index#1/27 } Tile{ AsIs: )/12 AsIs: (/7 AsIs: e.Commands#1/5 AsIs: )/8 HalfReuse: s.ContextOffset1 #13/1 } Tile{ HalfReuse: (/18 AsIs: e.Junk#1/14 AsIs: )/17 HalfReuse: s.Num1 #26/23 HalfReuse: (/25 } Tile{ AsIs: e.Range#1/21 } Tile{ AsIs: )/30 } Tile{ HalfReuse: (/24 AsIs: e.SubstitutesAnsJunks#1/19 HalfReuse: )/11 } {*}/34 Tile{ AsIs: s.ContextOffset#1/13 HalfReuse: >/16 } Tile{ ]] }
-    if( ! refalrts::alloc_name( vm, context[33], ref_gen_DoGenSubst_S36A1.ref(vm) ) )
+    if( ! refalrts::alloc_name( vm, context[33], functions[efunc_gen_DoGenSubst_S36A1] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_unwrapped_closure( vm, context[34], context[4] ) )
       return refalrts::cNoMemory;
@@ -5590,8 +5624,8 @@ static refalrts::FnResult func_DoGenSubst(refalrts::VM *vm, refalrts::Iter arg_b
   if (! refalrts::copy_evar(vm, context[20], context[21], context[14], context[15]))
     return refalrts::cNoMemory;
   refalrts::reinit_svar( context[17], context[13] );
-  refalrts::update_ident( context[18], ident_CmdComment.ref(vm) );
-  refalrts::update_name( context[4], ref_TextFromExpr.ref(vm) );
+  refalrts::update_ident( context[18], identifiers[ident_CmdComment] );
+  refalrts::update_name( context[4], functions[efunc_TextFromExpr] );
   refalrts::link_brackets( context[16], context[8] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );

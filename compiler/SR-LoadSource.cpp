@@ -4,16 +4,23 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_1086688698_434048907
-static refalrts::ExternalReference ref_Fetch("Fetch", 0U, 0U);
-static refalrts::ExternalReference ref_LinearizeLine("LinearizeLine", 1086688698U, 434048907U);
-static refalrts::ExternalReference ref_LoadFile("LoadFile", 0U, 0U);
-static refalrts::ExternalReference ref_Map("Map", 0U, 0U);
-static refalrts::ExternalReference ref_SRm_LoadSource("SR-LoadSource", 0U, 0U);
-static refalrts::ExternalReference ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1086688698U, 434048907U);
+
+enum efunc {
+  efunc_gen_SRm_LoadSource_L1 = 0,
+  efunc_SRm_LoadSource = 1,
+  efunc_Fetch = 2,
+  efunc_Map = 3,
+  efunc_LinearizeLine = 4,
+  efunc_LoadFile = 5,
+};
+
 
 static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -73,6 +80,9 @@ static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1
 static refalrts::FnResult func_SRm_LoadSource(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
@@ -90,21 +100,21 @@ static refalrts::FnResult func_SRm_LoadSource(refalrts::VM *vm, refalrts::Iter a
   //RESULT: Tile{ [[ } </5 & Fetch/6 </7 & Map/8 & LinearizeLine/9 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/10 & SR-LoadSource\1/11 >/12 Tile{ ]] }
   if( ! refalrts::alloc_open_call( vm, context[5] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[6], ref_Fetch.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[6], functions[efunc_Fetch] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], ref_Map.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_Map] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_LinearizeLine.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_LinearizeLine] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_gen_SRm_LoadSource_L1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_gen_SRm_LoadSource_L1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_LoadFile.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_LoadFile] );
   refalrts::push_stack( vm, context[12] );
   refalrts::push_stack( vm, context[5] );
   refalrts::push_stack( vm, context[10] );
@@ -127,6 +137,9 @@ static refalrts::NativeReference nat_ref_SRm_LoadSource("SR-LoadSource", 0U, 0U,
 static refalrts::FnResult func_LinearizeLine(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );

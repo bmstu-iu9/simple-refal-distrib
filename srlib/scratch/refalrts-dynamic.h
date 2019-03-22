@@ -25,10 +25,6 @@ namespace refalrts {
 // инициализация:
 //   X x = { ... };
 struct NativeModule {
-  IdentReference *list_idents;
-  unsigned int next_ident_id;
-  ExternalReference *list_externals;
-  unsigned int next_external_id;
   size_t global_variables_memory;
   NativeReference *native_references;
 };
@@ -82,7 +78,8 @@ private:
   struct ConstTable {
     UInt32 cookie1;
     UInt32 cookie2;
-    std::vector<FunctionTableItem> externals;
+    std::vector<std::string> externals_names;
+    std::vector<RefalFunction*> externals_pointers;
     std::vector<RefalIdentifier> idents;
     std::vector<RefalNumber> numbers;
     std::vector<StringItem> strings;
@@ -156,8 +153,6 @@ private:
   std::list<ConstTable*> m_unresolved_func_tables;
   FuncsMap m_funcs_table;
   std::list<ConstTable> m_tables;
-  std::vector<RefalIdentifier> m_native_identifiers;
-  std::vector<RefalFunction*> m_native_externals;
   NativeModule *m_native;
   std::vector<char> m_global_variables;
   Domain *m_domain;
@@ -181,15 +176,7 @@ public:
 
   bool find_unresolved_externals(LoadModuleEvent event, void *callback_data);
 
-  RefalIdentifier operator[](const IdentReference& ref) const {
-    return m_native_identifiers[ref.id];
-  }
-
   RefalFunction *lookup_function(const RefalFuncName& name);
-
-  RefalFunction* operator[](const ExternalReference& ref) const {
-    return m_native_externals[ref.id];
-  }
 
   void *global_variable(size_t offset) {
     return &m_global_variables[offset];
@@ -233,12 +220,9 @@ public:
 
 private:
   RefalFunction *lookup_function_aux(const RefalFuncName& name);
-  void load_native_identifiers();
   void register_function(RefalFunction *func);
+  void collect_indirect_references();
   bool find_unresolved_externals_rasl(
-    LoadModuleEvent event, void *callback_data
-  );
-  bool find_unresolved_externals_native(
     LoadModuleEvent event, void *callback_data
   );
   bool resolve_native_functions(LoadModuleEvent event, void *callback_data);

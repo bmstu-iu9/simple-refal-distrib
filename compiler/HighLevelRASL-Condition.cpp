@@ -4,61 +4,71 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_4061694695_3614634187
-static const refalrts::IdentReference ident_k37_("%");
-static const refalrts::IdentReference ident_k42_("*");
-static const refalrts::IdentReference ident_k43_("+");
-static const refalrts::IdentReference ident_m_("-");
-static const refalrts::IdentReference ident_k47_("/");
-static const refalrts::IdentReference ident_k63_("?");
-static const refalrts::IdentReference ident_Add("Add");
-static const refalrts::IdentReference ident_CmdCallCondition("CmdCallCondition");
-static const refalrts::IdentReference ident_CmdFail("CmdFail");
-static const refalrts::IdentReference ident_CmdProfileFunction("CmdProfileFunction");
-static const refalrts::IdentReference ident_CmdSentence("CmdSentence");
-static const refalrts::IdentReference ident_CmdSpliceToFreeListm_Range("CmdSpliceToFreeList-Range");
-static const refalrts::IdentReference ident_Condition("Condition");
-static const refalrts::IdentReference ident_Div("Div");
-static const refalrts::IdentReference ident_Mod("Mod");
-static const refalrts::IdentReference ident_Mul("Mul");
-static const refalrts::IdentReference ident_Name("Name");
-static const refalrts::IdentReference ident_Residue("Residue");
-static const refalrts::IdentReference ident_Sub("Sub");
-static const refalrts::IdentReference ident_Symbol("Symbol");
-static const refalrts::IdentReference ident_TkCloseCallCond("TkCloseCallCond");
-static const refalrts::IdentReference ident_TkOpenCallCond("TkOpenCallCond");
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_FoldOpenELoops("FoldOpenELoops", 0U, 0U);
-static refalrts::ExternalReference ref_GenInitSubst("GenInitSubst", 0U, 0U);
-static refalrts::ExternalReference ref_GenResultm_Condition("GenResult-Condition", 0U, 0U);
-static refalrts::ExternalReference ref_GenSubstm_Save("GenSubst-Save", 0U, 0U);
-static refalrts::ExternalReference ref_Inc("Inc", 0U, 0U);
-static refalrts::ExternalReference ref_Inc2("Inc2", 0U, 0U);
-static refalrts::ExternalReference ref_Max("Max", 0U, 0U);
-static refalrts::ExternalReference ref_Mu("Mu", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_PutVariableDebugTable("PutVariableDebugTable", 0U, 0U);
-static refalrts::ExternalReference ref_Residue("Residue", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_SentenceTail("SentenceTail", 0U, 0U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A1("SentenceTail$1=1", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A2("SentenceTail$1=2", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A3("SentenceTail$1=3", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A4("SentenceTail$1=4", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A5("SentenceTail$1=5", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A6("SentenceTail$1=6", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A7("SentenceTail$1=7", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_SentenceTail_S1A8("SentenceTail$1=8", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_Type("Type", 0U, 0U);
-static refalrts::ExternalReference ref_Up("Up", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_u_u_FindMuPtr("__FindMuPtr", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 4061694695U, 3614634187U);
-static refalrts::ExternalReference ref_u_u_Stepm_End("__Step-End", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Stepm_Start("__Step-Start", 0U, 0U);
+
+enum efunc {
+  efunc_gen_Mu_C1 = 0,
+  efunc_Mu = 1,
+  efunc_u_u_Stepm_Start = 2,
+  efunc_u_u_Mum_Aux = 3,
+  efunc_u_u_Stepm_End = 4,
+  efunc_gen_u_u_Mum_Aux_S13B1 = 5,
+  efunc_u_u_FindMuPtr = 6,
+  efunc_Add = 7,
+  efunc_Div = 8,
+  efunc_Mod = 9,
+  efunc_Mul = 10,
+  efunc_Residue = 11,
+  efunc_Sub = 12,
+  efunc_Type = 13,
+  efunc_Up = 14,
+  efunc_Evm_met = 15,
+  efunc_gen_Residue_C1 = 16,
+  efunc_gen_SentenceTail_S1A8 = 17,
+  efunc_gen_SentenceTail_S1A7 = 18,
+  efunc_FoldOpenELoops = 19,
+  efunc_PutVariableDebugTable = 20,
+  efunc_Inc = 21,
+  efunc_gen_SentenceTail_S1A6 = 22,
+  efunc_Max = 23,
+  efunc_gen_SentenceTail_S1A5 = 24,
+  efunc_SentenceTail = 25,
+  efunc_gen_SentenceTail_S1A4 = 26,
+  efunc_gen_SentenceTail_S1A3 = 27,
+  efunc_gen_SentenceTail_S1A2 = 28,
+  efunc_GenSubstm_Save = 29,
+  efunc_gen_SentenceTail_S1A1 = 30,
+  efunc_GenInitSubst = 31,
+  efunc_GenResultm_Condition = 32,
+  efunc_Inc2 = 33,
+};
+
+
+enum ident {
+  ident_k43_ = 0,
+  ident_k47_ = 1,
+  ident_k37_ = 2,
+  ident_k42_ = 3,
+  ident_k63_ = 4,
+  ident_m_ = 5,
+  ident_CmdCallCondition = 6,
+  ident_CmdProfileFunction = 7,
+  ident_CmdFail = 8,
+  ident_CmdSentence = 9,
+  ident_CmdSpliceToFreeListm_Range = 10,
+  ident_Condition = 11,
+  ident_TkOpenCallCond = 12,
+  ident_TkCloseCallCond = 13,
+  ident_Symbol = 14,
+  ident_Name = 15,
+};
+
 
 static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -84,17 +94,17 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Mu_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Mu_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -139,7 +149,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -166,6 +176,9 @@ static refalrts::NativeReference nat_ref_Mu("Mu", 4061694695U, 3614634187U, func
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
@@ -220,7 +233,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
     if( ! refalrts::alloc_number( vm, context[9], 3614634187UL ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
     refalrts::reinit_number( context[5], 4061694695UL );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -247,7 +260,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
   refalrts::reinit_number( context[5], 4061694695UL );
   refalrts::reinit_number( context[7], 3614634187UL );
   refalrts::push_stack( vm, context[1] );
@@ -267,6 +280,9 @@ static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -294,8 +310,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -311,8 +327,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -328,8 +344,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -345,8 +361,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -362,8 +378,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -379,8 +395,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Sub] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -391,13 +407,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # +/5 >/1
-      if( ! refalrts::ident_term(  ident_k43_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k43_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -408,13 +424,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # //5 >/1
-      if( ! refalrts::ident_term(  ident_k47_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k47_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -425,13 +441,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # %/5 >/1
-      if( ! refalrts::ident_term(  ident_k37_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k37_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -442,13 +458,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # */5 >/1
-      if( ! refalrts::ident_term(  ident_k42_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k42_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -459,13 +475,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # ?/5 >/1
-      if( ! refalrts::ident_term(  ident_k63_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k63_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -475,13 +491,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     // </0 & __Mu-Aux/4 # -/5 >/1
-    if( ! refalrts::ident_term(  ident_m_.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_m_], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+    refalrts::reinit_name( context[1], functions[efunc_Sub] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -498,11 +514,11 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], ref_gen_u_u_Mum_Aux_S13B1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Type.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_Type] );
   refalrts::push_stack( vm, context[9] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
@@ -523,6 +539,9 @@ static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 4061694695U, 36
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -548,17 +567,17 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Residue_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Residue_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -603,7 +622,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -630,6 +649,9 @@ static refalrts::NativeReference nat_ref_Residue("Residue", 4061694695U, 3614634
 static refalrts::FnResult func_gen_SentenceTail_S1A8(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
@@ -656,13 +678,13 @@ static refalrts::FnResult func_gen_SentenceTail_S1A8(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} s.StackTop#8/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: s.StackTop8 #5/0 } Tile{ AsIs: e.CondResultCommands#2/6 } Tile{ AsIs: (/8 } # CmdCallCondition/10 Tile{ HalfReuse: )/4 } (/11 # CmdProfileFunction/12 Tile{ AsIs: )/9 AsIs: e.CmdSentenceCommands#9/2 HalfReuse: (/1 } # CmdFail/13 )/14 Tile{ ]] }
-  if( ! refalrts::alloc_ident( vm, context[10], ident_CmdCallCondition.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[10], identifiers[ident_CmdCallCondition] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[11] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[12], ident_CmdProfileFunction.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[12], identifiers[ident_CmdProfileFunction] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[13], ident_CmdFail.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[13], identifiers[ident_CmdFail] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( vm, context[14] ) )
     return refalrts::cNoMemory;
@@ -692,6 +714,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A8("SentenceTail$1=8
 static refalrts::FnResult func_gen_SentenceTail_S1A7(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
@@ -751,17 +776,17 @@ static refalrts::FnResult func_gen_SentenceTail_S1A7(refalrts::VM *vm, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[25] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[26], ident_CmdSentence.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[26], identifiers[ident_CmdSentence] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[27] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[28], ref_FoldOpenELoops.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[28], functions[efunc_FoldOpenELoops] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[29] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( vm, context[30] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_ident( vm, context[31], ident_CmdSpliceToFreeListm_Range.ref(vm) ) )
+  if( ! refalrts::alloc_ident( vm, context[31], identifiers[ident_CmdSpliceToFreeListm_Range] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[32], context[21]))
     return refalrts::cNoMemory;
@@ -771,13 +796,13 @@ static refalrts::FnResult func_gen_SentenceTail_S1A7(refalrts::VM *vm, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_bracket( vm, context[35] ) )
     return refalrts::cNoMemory;
-  refalrts::reinit_name( context[0], ref_gen_SentenceTail_S1A8.ref(vm) );
+  refalrts::reinit_name( context[0], functions[efunc_gen_SentenceTail_S1A8] );
   refalrts::reinit_svar( context[4], context[22] );
   refalrts::reinit_unwrapped_closure( context[11], context[24] );
   refalrts::reinit_open_call( context[12] );
-  refalrts::reinit_name( context[15], ref_PutVariableDebugTable.ref(vm) );
+  refalrts::reinit_name( context[15], functions[efunc_PutVariableDebugTable] );
   refalrts::reinit_close_call( context[16] );
-  refalrts::reinit_name( context[20], ref_Inc.ref(vm) );
+  refalrts::reinit_name( context[20], functions[efunc_Inc] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[23] );
   refalrts::link_brackets( context[19], context[35] );
@@ -814,6 +839,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A7("SentenceTail$1=7
 static refalrts::FnResult func_gen_SentenceTail_S1A6(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
   refalrts::zeros( context, 27 );
@@ -872,12 +900,12 @@ static refalrts::FnResult func_gen_SentenceTail_S1A6(refalrts::VM *vm, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[24] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[25], ref_Max.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[25], functions[efunc_Max] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[26] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_SentenceTail_S1A7.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A7] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[20] );
   refalrts::push_stack( vm, context[26] );
@@ -909,6 +937,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A6("SentenceTail$1=6
 static refalrts::FnResult func_gen_SentenceTail_S1A5(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
@@ -979,7 +1010,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A5(refalrts::VM *vm, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[30] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[31], ref_SentenceTail.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[31], functions[efunc_SentenceTail] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_evar(vm, context[32], context[33], context[13], context[14]))
     return refalrts::cNoMemory;
@@ -990,7 +1021,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A5(refalrts::VM *vm, refalrts:
   if( ! refalrts::alloc_close_call( vm, context[36] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_SentenceTail_S1A6.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A6] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[28] );
   refalrts::push_stack( vm, context[36] );
@@ -1027,6 +1058,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A5("SentenceTail$1=5
 static refalrts::FnResult func_gen_SentenceTail_S1A4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 34 elems
   refalrts::Iter context[34];
   refalrts::zeros( context, 34 );
@@ -1105,7 +1139,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A4(refalrts::VM *vm, refalrts:
   //RESULT: Tile{ [[ } Tile{ HalfReuse: </31 } Tile{ HalfReuse: [*]/0 Reuse: & SentenceTail$1=5/4 AsIs: (/7 AsIs: e.CondResultCommands#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.CondPatternCommands#4/9 AsIs: )/12 AsIs: (/15 AsIs: e.PatternVars#4/13 AsIs: )/16 AsIs: s.StartOffsetCond#1/17 AsIs: s.EndOffsetCond-Res#2/18 AsIs: s.StartOffsetCondNext#4/19 AsIs: (/22 AsIs: e.ConditionsTail#1/20 AsIs: )/23 AsIs: (/26 AsIs: e.ResultSentence#1/24 AsIs: )/27 HalfReuse: {*}/30 } Tile{ AsIs: e.MarkedPatternPrefix#5/2 } Tile{ AsIs: e.MarkedPatternCond#4/28 } Tile{ AsIs: t.CloseCall#5/32 AsIs: >/1 ]] }
   refalrts::reinit_open_call( context[31] );
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_SentenceTail_S1A5.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A5] );
   refalrts::reinit_unwrapped_closure( context[30], context[0] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[31] );
@@ -1132,6 +1166,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A4("SentenceTail$1=4
 static refalrts::FnResult func_gen_SentenceTail_S1A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
@@ -1213,7 +1250,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A3(refalrts::VM *vm, refalrts:
   if( ! refalrts::alloc_unwrapped_closure( vm, context[35], context[0] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_SentenceTail_S1A4.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A4] );
   refalrts::reinit_svar( context[30], context[9] );
   refalrts::reinit_svar( context[22], context[10] );
   refalrts::push_stack( vm, context[1] );
@@ -1249,6 +1286,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A3("SentenceTail$1=3
 static refalrts::FnResult func_gen_SentenceTail_S1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
@@ -1332,9 +1372,9 @@ static refalrts::FnResult func_gen_SentenceTail_S1A2(refalrts::VM *vm, refalrts:
   if( ! refalrts::alloc_close_call( vm, context[36] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_closure_head( context[0] );
-  refalrts::update_name( context[4], ref_gen_SentenceTail_S1A3.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A3] );
   refalrts::reinit_unwrapped_closure( context[29], context[0] );
-  refalrts::reinit_name( context[30], ref_GenSubstm_Save.ref(vm) );
+  refalrts::reinit_name( context[30], functions[efunc_GenSubstm_Save] );
   refalrts::push_stack( vm, context[36] );
   refalrts::push_stack( vm, context[32] );
   refalrts::push_stack( vm, context[1] );
@@ -1369,6 +1409,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A2("SentenceTail$1=2
 static refalrts::FnResult func_gen_SentenceTail_S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
@@ -1442,7 +1485,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A1(refalrts::VM *vm, refalrts:
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_closure_head( vm, context[32] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[33], ref_gen_SentenceTail_S1A2.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[33], functions[efunc_gen_SentenceTail_S1A2] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_bracket( vm, context[34] ) )
     return refalrts::cNoMemory;
@@ -1451,7 +1494,7 @@ static refalrts::FnResult func_gen_SentenceTail_S1A1(refalrts::VM *vm, refalrts:
   if( ! refalrts::alloc_open_bracket( vm, context[36] ) )
     return refalrts::cNoMemory;
   refalrts::reinit_unwrapped_closure( context[24], context[32] );
-  refalrts::update_name( context[4], ref_GenInitSubst.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_GenInitSubst] );
   refalrts::reinit_close_bracket( context[28] );
   refalrts::reinit_close_call( context[29] );
   refalrts::push_stack( vm, context[1] );
@@ -1488,6 +1531,9 @@ static refalrts::NativeReference nat_ref_gen_SentenceTail_S1A1("SentenceTail$1=1
 static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 66 elems
   refalrts::Iter context[66];
   refalrts::zeros( context, 66 );
@@ -1531,7 +1577,7 @@ static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg
     context[20] = context[15];
     context[21] = context[2];
     context[22] = context[3];
-    if( ! refalrts::ident_term(  ident_Condition.ref(vm), context[18] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Condition], context[18] ) )
       continue;
     context[23] = 0;
     context[24] = 0;
@@ -1590,11 +1636,11 @@ static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( vm, context[45] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( vm, context[46], ref_GenResultm_Condition.ref(vm) ) )
+    if( ! refalrts::alloc_name( vm, context[46], functions[efunc_GenResultm_Condition] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( vm, context[47] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( vm, context[48], ref_Inc2.ref(vm) ) )
+    if( ! refalrts::alloc_name( vm, context[48], functions[efunc_Inc2] ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(vm, context[49], context[5]))
       return refalrts::cNoMemory;
@@ -1606,7 +1652,7 @@ static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( vm, context[54] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( vm, context[55], ident_TkOpenCallCond.ref(vm) ) )
+    if( ! refalrts::alloc_ident( vm, context[55], identifiers[ident_TkOpenCallCond] ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(vm, context[56], context[5]))
       return refalrts::cNoMemory;
@@ -1616,11 +1662,11 @@ static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_bracket( vm, context[59] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_ident( vm, context[60], ident_TkCloseCallCond.ref(vm) ) )
+    if( ! refalrts::alloc_ident( vm, context[60], identifiers[ident_TkCloseCallCond] ) )
       return refalrts::cNoMemory;
     if( ! refalrts::alloc_open_call( vm, context[61] ) )
       return refalrts::cNoMemory;
-    if( ! refalrts::alloc_name( vm, context[62], ref_Inc.ref(vm) ) )
+    if( ! refalrts::alloc_name( vm, context[62], functions[efunc_Inc] ) )
       return refalrts::cNoMemory;
     if (! refalrts::copy_stvar(vm, context[63], context[5]))
       return refalrts::cNoMemory;
@@ -1629,10 +1675,10 @@ static refalrts::FnResult func_SentenceTail(refalrts::VM *vm, refalrts::Iter arg
     if( ! refalrts::alloc_close_bracket( vm, context[65] ) )
       return refalrts::cNoMemory;
     refalrts::reinit_closure_head( context[0] );
-    refalrts::update_name( context[4], ref_gen_SentenceTail_S1A1.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_gen_SentenceTail_S1A1] );
     refalrts::reinit_unwrapped_closure( context[17], context[0] );
-    refalrts::update_ident( context[18], ident_Symbol.ref(vm) );
-    refalrts::reinit_ident( context[25], ident_Name.ref(vm) );
+    refalrts::update_ident( context[18], identifiers[ident_Symbol] );
+    refalrts::reinit_ident( context[25], identifiers[ident_Name] );
     refalrts::reinit_close_call( context[38] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[39] );

@@ -21,7 +21,7 @@
 //FROM refalrts-platform-specific
 #include "refalrts-platform-specific.h"
 
-struct refalrts::NativeModule g_module = { 0, 0, 0, 0, 0, 0 };
+struct refalrts::NativeModule g_module = { 0, 0 };
 
 namespace refalrts {
 
@@ -44,6 +44,23 @@ void refalrts::zeros(refalrts::Iter context[], int size){
   for (int i = 0; i < size; i++) {
     context[i] = 0;
   }
+}
+
+void refalrts::load_constants(
+  refalrts::Iter arg_begin,
+  refalrts::RefalFunction ***functions,
+  const refalrts::RefalIdentifier **identifiers
+) {
+  Iter callee = arg_begin->next;
+  assert(callee->tag == cDataFunction);
+
+  RefalFunction *func = callee->function_info;
+  assert(func->rasl == RefalNativeFunction::run);
+
+  RefalNativeFunction *nat_func = static_cast<RefalNativeFunction*>(func);
+
+  *functions = nat_func->functions;
+  *identifiers = nat_func->idents;
 }
 
 void refalrts::use_counter(unsigned&) {
@@ -678,19 +695,6 @@ refalrts::RefalIdentifier refalrts::ident_implode(
   return ident_implode(vm->domain(), name);
 }
 
-refalrts::IdentReference::IdentReference(const char *name)
-  : name(name)
-  , next(g_module.list_idents)
-  , id(g_module.next_ident_id++)
-{
-  g_module.list_idents = this;
-}
-
-refalrts::RefalIdentifier
-refalrts::IdentReference::ref(refalrts::VM *vm) const {
-  return (*vm->module())[*this];
-}
-
 //------------------------------------------------------------------------------
 
 // Функции
@@ -715,23 +719,6 @@ const refalrts::RefalFuncName *refalrts::function_name(
   return &func->name;
 }
 
-
-refalrts::ExternalReference::ExternalReference(
-  const char *name, refalrts::UInt32 cookie1, refalrts::UInt32 cookie2
-)
-  : name(name)
-  , next(g_module.list_externals)
-  , cookie1(cookie1)
-  , cookie2(cookie2)
-  , id(g_module.next_external_id++)
-{
-  g_module.list_externals = this;
-}
-
-refalrts::RefalFunction *
-refalrts::ExternalReference::ref(refalrts::VM *vm) const {
-  return (*vm->module())[*this];
-}
 
 //------------------------------------------------------------------------------
 

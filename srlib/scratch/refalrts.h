@@ -113,16 +113,6 @@ inline RefalIdentifier ident_implode(Domain *domain, const char *name) {
 
 RefalIdentifier ident_implode(VM *vm, const char *name);
 
-struct IdentReference {
-  const char *const name;
-  IdentReference *const next;
-  unsigned int const id;
-
-  IdentReference(const char *name);
-
-  RefalIdentifier ref(VM *vm) const;
-};
-
 struct Node {
   NodePtr prev;
   NodePtr next;
@@ -145,21 +135,15 @@ struct Node {
   }
 };
 
-struct ExternalReference {
-  const char *const name;
-  const ExternalReference *next;
-  const UInt32 cookie1;
-  const UInt32 cookie2;
-  const unsigned int id;
-
-  ExternalReference(const char *name, UInt32 cookie1, UInt32 cookie2);
-
-  RefalFunction *ref(VM *vm) const;
-};
-
 extern void use(Iter&);
 
 void zeros(Iter context[], int size);
+
+void load_constants(
+  Iter arg_begin,
+  RefalFunction ***functions,
+  const RefalIdentifier **identifiers
+);
 
 // Операции реинициализации
 

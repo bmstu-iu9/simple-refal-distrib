@@ -29,8 +29,6 @@ refalrts::Module::Module(
   : m_unresolved_func_tables()
   , m_funcs_table()
   , m_tables()
-  , m_native_identifiers()
-  , m_native_externals()
   , m_native(native)
   , m_global_variables()
   , m_domain(domain)
@@ -52,7 +50,6 @@ refalrts::Module::Module(
     Loader loader(this, module_name.c_str());
     loader.enumerate_blocks();
     if (m_native) {
-      load_native_identifiers();
       alloc_global_variables();
       success = resolve_native_functions(event, callback_data);
     } else {
@@ -87,23 +84,6 @@ refalrts::Module::~Module() {
   }
 }
 
-
-//------------------------------------------------------------------------------
-// Идентификаторы
-//------------------------------------------------------------------------------
-
-void refalrts::Module::load_native_identifiers() {
-  m_native_identifiers.resize(m_native->next_ident_id);
-
-  for (IdentReference *p = m_native->list_idents; p != 0; p = p->next) {
-    assert(p->id < m_native->next_ident_id);
-    RefalIdentifier ident = ident_implode(m_domain, p->name);
-    if (! ident) {
-      throw AllocIdentifierError();
-    }
-    m_native_identifiers[p->id] = ident;
-  }
-}
 
 //------------------------------------------------------------------------------
 // Функции
@@ -152,6 +132,11 @@ void refalrts::Module::register_function(refalrts::RefalFunction *func) {
 bool refalrts::Module::find_unresolved_externals(
   refalrts::LoadModuleEvent event, void *callback_data
 ) {
+  collect_indirect_references();
+  return find_unresolved_externals_rasl(event, callback_data);
+}
+
+void refalrts::Module::collect_indirect_references() {
   m_indirect_references.push_back(this);
   ModuleList::iterator unscanned = m_indirect_references.begin();
 
@@ -177,9 +162,6 @@ bool refalrts::Module::find_unresolved_externals(
 
     ++unscanned;
   }
-
-  return find_unresolved_externals_rasl(event, callback_data)
-    && (! m_native || find_unresolved_externals_native(event, callback_data));
 }
 
 bool refalrts::Module::find_unresolved_externals_rasl(
@@ -189,9 +171,11 @@ bool refalrts::Module::find_unresolved_externals_rasl(
 
   while (! m_unresolved_func_tables.empty()) {
     ConstTable *table = m_unresolved_func_tables.front();
-    std::vector<FunctionTableItem>& items = table->externals;
-    for (size_t i = 0; i < items.size(); ++i) {
-      const char *str_name = items[i].func_name;
+    std::vector<std::string>& items_names = table->externals_names;
+    std::vector<RefalFunction*>& items_pointers = table->externals_pointers;
+    assert(items_names.size() == items_pointers.size());
+    for (size_t i = 0; i < items_names.size(); ++i) {
+      const char *str_name = items_names[i].c_str();
       char type = *str_name;
 
       UInt32 cookie1, cookie2;
@@ -210,7 +194,7 @@ bool refalrts::Module::find_unresolved_externals_rasl(
 
       RefalFuncName name(str_name + 1, cookie1, cookie2);
       RefalFunction *function = lookup_function(name);
-      items[i].function = function;
+      items_pointers[i] = function;
       if (! function) {
         ModuleLoadingErrorDetail detail;
         detail.func_name = name;
@@ -220,32 +204,6 @@ bool refalrts::Module::find_unresolved_externals_rasl(
     }
 
     m_unresolved_func_tables.pop_front();
-  }
-
-  return success;
-}
-
-bool refalrts::Module::find_unresolved_externals_native(
-  refalrts::LoadModuleEvent event, void *callback_data
-) {
-  bool success = true;
-
-  m_native_externals.resize(m_native->next_external_id);
-  for (
-    const ExternalReference *er = m_native->list_externals;
-    er != 0;
-    er = er->next
-  ) {
-    RefalFuncName name(er->name, er->cookie1, er->cookie2);
-    RefalFunction *function = lookup_function(name);
-    assert(er->id < m_native->next_external_id);
-    m_native_externals[er->id] = function;
-    if (! function) {
-      ModuleLoadingErrorDetail detail;
-      detail.func_name = name;
-      event(cModuleLoadingError_UnresolvedExternal, &detail, callback_data);
-      success = false;
-    }
   }
 
   return success;
@@ -474,7 +432,8 @@ refalrts::Module::Loader::read_const_table() {
   new_table->cookie1 = fixed_part.cookie1;
   new_table->cookie2 = fixed_part.cookie2;
 
-  new_table->externals.resize(fixed_part.external_count);
+  new_table->externals_names.resize(fixed_part.external_count);
+  new_table->externals_pointers.resize(fixed_part.external_count);
   new_table->external_memory.resize(fixed_part.external_size);
   read = fread(&new_table->external_memory[0], 1, fixed_part.external_size);
   PARSE_ASSERT(
@@ -483,7 +442,7 @@ refalrts::Module::Loader::read_const_table() {
   );
   const char *next_external_name = &new_table->external_memory[0];
   for (size_t i = 0; i < fixed_part.external_count; ++i) {
-    new_table->externals[i].func_name = next_external_name;
+    new_table->externals_names[i] = next_external_name;
     PARSE_ASSERT(
       next_external_name < &*new_table->external_memory.end(),
       "bad count of external names in CONST_TABLE"
@@ -582,7 +541,7 @@ void refalrts::Module::Loader::enumerate_blocks() {
             new RASLFunction(
               table->make_name(name),
               &table->rasl[offset],
-              &table->externals[0],
+              &table->externals_pointers[0],
               &table->idents[0],
               &table->numbers[0],
               &table->strings[0],
@@ -596,7 +555,12 @@ void refalrts::Module::Loader::enumerate_blocks() {
         {
           PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
           RefalNativeFunction *func =
-            new RefalNativeFunction(0, table->make_name(read_asciiz()));
+            new RefalNativeFunction(
+              0, /* указатель на нативный код */
+              &table->externals_pointers[0],
+              &table->idents[0],
+              table->make_name(read_asciiz())
+            );
           register_(func);
           m_module->m_unresolved_native_functions.push_back(func);
         }

@@ -4,130 +4,140 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_35760015_2997675368
-static const refalrts::IdentReference ident_k37_("%");
-static const refalrts::IdentReference ident_k42_("*");
-static const refalrts::IdentReference ident_k43_("+");
-static const refalrts::IdentReference ident_m_("-");
-static const refalrts::IdentReference ident_k47_("/");
-static const refalrts::IdentReference ident_k63_("?");
-static const refalrts::IdentReference ident_Add("Add");
-static const refalrts::IdentReference ident_AlgLeft("AlgLeft");
-static const refalrts::IdentReference ident_AlgRight("AlgRight");
-static const refalrts::IdentReference ident_AlgTerm("AlgTerm");
-static const refalrts::IdentReference ident_Allocate("Allocate");
-static const refalrts::IdentReference ident_CmdADT("CmdADT");
-static const refalrts::IdentReference ident_CmdADTSave("CmdADTSave");
-static const refalrts::IdentReference ident_CmdBrackets("CmdBrackets");
-static const refalrts::IdentReference ident_CmdBracketsSave("CmdBracketsSave");
-static const refalrts::IdentReference ident_CmdCallSave("CmdCallSave");
-static const refalrts::IdentReference ident_CmdChar("CmdChar");
-static const refalrts::IdentReference ident_CmdCharSave("CmdCharSave");
-static const refalrts::IdentReference ident_CmdCopyEVar("CmdCopyEVar");
-static const refalrts::IdentReference ident_CmdCopySTVar("CmdCopySTVar");
-static const refalrts::IdentReference ident_CmdEPrepare("CmdEPrepare");
-static const refalrts::IdentReference ident_CmdEStart("CmdEStart");
-static const refalrts::IdentReference ident_CmdEmpty("CmdEmpty");
-static const refalrts::IdentReference ident_CmdFail("CmdFail");
-static const refalrts::IdentReference ident_CmdFetchSwapHead("CmdFetchSwapHead");
-static const refalrts::IdentReference ident_CmdFetchSwapInfoBounds("CmdFetchSwapInfoBounds");
-static const refalrts::IdentReference ident_CmdHugeNum("CmdHugeNum");
-static const refalrts::IdentReference ident_CmdHugeNumSave("CmdHugeNumSave");
-static const refalrts::IdentReference ident_CmdIdent("CmdIdent");
-static const refalrts::IdentReference ident_CmdIdentSave("CmdIdentSave");
-static const refalrts::IdentReference ident_CmdInitB0("CmdInitB0");
-static const refalrts::IdentReference ident_CmdInitB0m_Lite("CmdInitB0-Lite");
-static const refalrts::IdentReference ident_CmdIssueMemory("CmdIssueMemory");
-static const refalrts::IdentReference ident_CmdLinkBrackets("CmdLinkBrackets");
-static const refalrts::IdentReference ident_CmdLoadConstants("CmdLoadConstants");
-static const refalrts::IdentReference ident_CmdMainLoopReturnSuccess("CmdMainLoopReturnSuccess");
-static const refalrts::IdentReference ident_CmdName("CmdName");
-static const refalrts::IdentReference ident_CmdNameSave("CmdNameSave");
-static const refalrts::IdentReference ident_CmdNextStep("CmdNextStep");
-static const refalrts::IdentReference ident_CmdNotEmpty("CmdNotEmpty");
-static const refalrts::IdentReference ident_CmdNumber("CmdNumber");
-static const refalrts::IdentReference ident_CmdNumberSave("CmdNumberSave");
-static const refalrts::IdentReference ident_CmdOnFailGoTo("CmdOnFailGoTo");
-static const refalrts::IdentReference ident_CmdPerformNative("CmdPerformNative");
-static const refalrts::IdentReference ident_CmdPopState("CmdPopState");
-static const refalrts::IdentReference ident_CmdProfileFunction("CmdProfileFunction");
-static const refalrts::IdentReference ident_CmdProfilerStopSentence("CmdProfilerStopSentence");
-static const refalrts::IdentReference ident_CmdPushStack("CmdPushStack");
-static const refalrts::IdentReference ident_CmdPushState("CmdPushState");
-static const refalrts::IdentReference ident_CmdReinitSVar("CmdReinitSVar");
-static const refalrts::IdentReference ident_CmdRepeated("CmdRepeated");
-static const refalrts::IdentReference ident_CmdRepeatedSave("CmdRepeatedSave");
-static const refalrts::IdentReference ident_CmdReserveBacktrackStack("CmdReserveBacktrackStack");
-static const refalrts::IdentReference ident_CmdResetAllocator("CmdResetAllocator");
-static const refalrts::IdentReference ident_CmdSave("CmdSave");
-static const refalrts::IdentReference ident_CmdScale("CmdScale");
-static const refalrts::IdentReference ident_CmdSetRes("CmdSetRes");
-static const refalrts::IdentReference ident_CmdSetResArgBegin("CmdSetResArgBegin");
-static const refalrts::IdentReference ident_CmdSetResRightEdge("CmdSetResRightEdge");
-static const refalrts::IdentReference ident_CmdSpliceEVar("CmdSpliceEVar");
-static const refalrts::IdentReference ident_CmdSpliceElem("CmdSpliceElem");
-static const refalrts::IdentReference ident_CmdSpliceRange("CmdSpliceRange");
-static const refalrts::IdentReference ident_CmdSpliceSTVar("CmdSpliceSTVar");
-static const refalrts::IdentReference ident_CmdSpliceTile("CmdSpliceTile");
-static const refalrts::IdentReference ident_CmdSpliceToFreeList("CmdSpliceToFreeList");
-static const refalrts::IdentReference ident_CmdSpliceToFreeListm_Range("CmdSpliceToFreeList-Range");
-static const refalrts::IdentReference ident_CmdSwapSave("CmdSwapSave");
-static const refalrts::IdentReference ident_CmdTrash("CmdTrash");
-static const refalrts::IdentReference ident_CmdTrashLeftEdge("CmdTrashLeftEdge");
-static const refalrts::IdentReference ident_CmdVar("CmdVar");
-static const refalrts::IdentReference ident_CmdVarSave("CmdVarSave");
-static const refalrts::IdentReference ident_CmdVariableDebugOffset("CmdVariableDebugOffset");
-static const refalrts::IdentReference ident_CmdWrapClosure("CmdWrapClosure");
-static const refalrts::IdentReference ident_ConditionNative("ConditionNative");
-static const refalrts::IdentReference ident_ConditionRasl("ConditionRasl");
-static const refalrts::IdentReference ident_ConstTable("ConstTable");
-static const refalrts::IdentReference ident_Div("Div");
-static const refalrts::IdentReference ident_ElBracket("ElBracket");
-static const refalrts::IdentReference ident_ElChar("ElChar");
-static const refalrts::IdentReference ident_ElCloseADT("ElCloseADT");
-static const refalrts::IdentReference ident_ElCloseBracket("ElCloseBracket");
-static const refalrts::IdentReference ident_ElCloseCall("ElCloseCall");
-static const refalrts::IdentReference ident_ElClosureHead("ElClosureHead");
-static const refalrts::IdentReference ident_ElHugeNumber("ElHugeNumber");
-static const refalrts::IdentReference ident_ElIdent("ElIdent");
-static const refalrts::IdentReference ident_ElName("ElName");
-static const refalrts::IdentReference ident_ElNumber("ElNumber");
-static const refalrts::IdentReference ident_ElOpenADT("ElOpenADT");
-static const refalrts::IdentReference ident_ElOpenBracket("ElOpenBracket");
-static const refalrts::IdentReference ident_ElOpenCall("ElOpenCall");
-static const refalrts::IdentReference ident_ElString("ElString");
-static const refalrts::IdentReference ident_ElUnwrappedClosure("ElUnwrappedClosure");
-static const refalrts::IdentReference ident_EmptyFunction("EmptyFunction");
-static const refalrts::IdentReference ident_Incorporated("Incorporated");
-static const refalrts::IdentReference ident_Mod("Mod");
-static const refalrts::IdentReference ident_Mul("Mul");
-static const refalrts::IdentReference ident_NativeFunction("NativeFunction");
-static const refalrts::IdentReference ident_RefalFunction("RefalFunction");
-static const refalrts::IdentReference ident_Reference("Reference");
-static const refalrts::IdentReference ident_Reinit("Reinit");
-static const refalrts::IdentReference ident_Residue("Residue");
-static const refalrts::IdentReference ident_Start("Start");
-static const refalrts::IdentReference ident_Sub("Sub");
-static const refalrts::IdentReference ident_Swap("Swap");
-static const refalrts::IdentReference ident_Update("Update");
-static refalrts::ExternalReference ref_BlockTypeNumber("BlockTypeNumber", 0U, 0U);
-static refalrts::ExternalReference ref_Evm_met("Ev-met", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_Mu("Mu", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_gen_Mu_C1("Mu?1", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_NumberFromBracket("NumberFromBracket", 0U, 0U);
-static refalrts::ExternalReference ref_NumberFromOpcode("NumberFromOpcode", 0U, 0U);
-static refalrts::ExternalReference ref_Residue("Residue", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_gen_Residue_C1("Residue?1", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_Type("Type", 0U, 0U);
-static refalrts::ExternalReference ref_Up("Up", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_u_u_FindMuPtr("__FindMuPtr", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Mum_Aux("__Mu-Aux", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 35760015U, 2997675368U);
-static refalrts::ExternalReference ref_u_u_Stepm_End("__Step-End", 0U, 0U);
-static refalrts::ExternalReference ref_u_u_Stepm_Start("__Step-Start", 0U, 0U);
+
+enum efunc {
+  efunc_gen_Mu_C1 = 0,
+  efunc_Mu = 1,
+  efunc_u_u_Stepm_Start = 2,
+  efunc_u_u_Mum_Aux = 3,
+  efunc_u_u_Stepm_End = 4,
+  efunc_gen_u_u_Mum_Aux_S13B1 = 5,
+  efunc_u_u_FindMuPtr = 6,
+  efunc_Add = 7,
+  efunc_Div = 8,
+  efunc_Mod = 9,
+  efunc_Mul = 10,
+  efunc_Residue = 11,
+  efunc_Sub = 12,
+  efunc_Type = 13,
+  efunc_Up = 14,
+  efunc_Evm_met = 15,
+  efunc_gen_Residue_C1 = 16,
+  efunc_NumberFromOpcode = 17,
+  efunc_NumberFromBracket = 18,
+  efunc_BlockTypeNumber = 19,
+};
+
+
+enum ident {
+  ident_k43_ = 0,
+  ident_k47_ = 1,
+  ident_k37_ = 2,
+  ident_k42_ = 3,
+  ident_k63_ = 4,
+  ident_m_ = 5,
+  ident_CmdProfileFunction = 6,
+  ident_CmdLoadConstants = 7,
+  ident_CmdIssueMemory = 8,
+  ident_CmdReserveBacktrackStack = 9,
+  ident_CmdOnFailGoTo = 10,
+  ident_CmdProfilerStopSentence = 11,
+  ident_CmdInitB0 = 12,
+  ident_CmdInitB0m_Lite = 13,
+  ident_CmdChar = 14,
+  ident_AlgLeft = 15,
+  ident_AlgRight = 16,
+  ident_AlgTerm = 17,
+  ident_CmdCharSave = 18,
+  ident_CmdNumber = 19,
+  ident_CmdNumberSave = 20,
+  ident_CmdHugeNum = 21,
+  ident_CmdHugeNumSave = 22,
+  ident_CmdName = 23,
+  ident_CmdNameSave = 24,
+  ident_CmdIdent = 25,
+  ident_CmdIdentSave = 26,
+  ident_CmdBrackets = 27,
+  ident_CmdBracketsSave = 28,
+  ident_CmdADT = 29,
+  ident_CmdADTSave = 30,
+  ident_CmdCallSave = 31,
+  ident_CmdEmpty = 32,
+  ident_CmdNotEmpty = 33,
+  ident_CmdVar = 34,
+  ident_CmdVarSave = 35,
+  ident_CmdRepeated = 36,
+  ident_CmdRepeatedSave = 37,
+  ident_CmdEPrepare = 38,
+  ident_CmdEStart = 39,
+  ident_CmdSave = 40,
+  ident_CmdResetAllocator = 41,
+  ident_CmdSetResArgBegin = 42,
+  ident_CmdSetResRightEdge = 43,
+  ident_CmdSetRes = 44,
+  ident_CmdCopyEVar = 45,
+  ident_CmdCopySTVar = 46,
+  ident_CmdReinitSVar = 47,
+  ident_Allocate = 48,
+  ident_ElChar = 49,
+  ident_ElName = 50,
+  ident_ElNumber = 51,
+  ident_ElHugeNumber = 52,
+  ident_ElIdent = 53,
+  ident_ElBracket = 54,
+  ident_ElString = 55,
+  ident_ElClosureHead = 56,
+  ident_ElUnwrappedClosure = 57,
+  ident_Reinit = 58,
+  ident_Update = 59,
+  ident_CmdLinkBrackets = 60,
+  ident_CmdPushStack = 61,
+  ident_CmdWrapClosure = 62,
+  ident_CmdSpliceElem = 63,
+  ident_CmdSpliceEVar = 64,
+  ident_CmdSpliceSTVar = 65,
+  ident_CmdSpliceRange = 66,
+  ident_CmdSpliceTile = 67,
+  ident_CmdSpliceToFreeList = 68,
+  ident_CmdNextStep = 69,
+  ident_CmdTrashLeftEdge = 70,
+  ident_CmdTrash = 71,
+  ident_CmdFail = 72,
+  ident_CmdFetchSwapHead = 73,
+  ident_CmdFetchSwapInfoBounds = 74,
+  ident_CmdSwapSave = 75,
+  ident_CmdPerformNative = 76,
+  ident_CmdScale = 77,
+  ident_CmdVariableDebugOffset = 78,
+  ident_CmdSpliceToFreeListm_Range = 79,
+  ident_CmdPushState = 80,
+  ident_CmdPopState = 81,
+  ident_CmdMainLoopReturnSuccess = 82,
+  ident_ElOpenADT = 83,
+  ident_ElOpenBracket = 84,
+  ident_ElOpenCall = 85,
+  ident_ElCloseADT = 86,
+  ident_ElCloseBracket = 87,
+  ident_ElCloseCall = 88,
+  ident_Start = 89,
+  ident_ConstTable = 90,
+  ident_RefalFunction = 91,
+  ident_NativeFunction = 92,
+  ident_EmptyFunction = 93,
+  ident_Swap = 94,
+  ident_Reference = 95,
+  ident_ConditionRasl = 96,
+  ident_ConditionNative = 97,
+  ident_Incorporated = 98,
+};
+
 
 static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -153,17 +163,17 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Mu_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Mu_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -208,7 +218,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -235,6 +245,9 @@ static refalrts::NativeReference nat_ref_Mu("Mu", 35760015U, 2997675368U, func_M
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
@@ -289,7 +302,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
     if( ! refalrts::alloc_number( vm, context[9], 2997675368UL ) )
       return refalrts::cNoMemory;
-    refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
     refalrts::reinit_number( context[5], 35760015UL );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -316,7 +329,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], ref_u_u_FindMuPtr.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
   refalrts::reinit_number( context[5], 35760015UL );
   refalrts::reinit_number( context[7], 2997675368UL );
   refalrts::push_stack( vm, context[1] );
@@ -336,6 +349,9 @@ static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -363,8 +379,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -380,8 +396,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -397,8 +413,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -414,8 +430,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -431,8 +447,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -448,8 +464,8 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Sub] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -460,13 +476,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # +/5 >/1
-      if( ! refalrts::ident_term(  ident_k43_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k43_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Add/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Add.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Add] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -477,13 +493,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # //5 >/1
-      if( ! refalrts::ident_term(  ident_k47_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k47_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Div/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Div.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Div] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -494,13 +510,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # %/5 >/1
-      if( ! refalrts::ident_term(  ident_k37_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k37_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mod/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mod.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mod] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -511,13 +527,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # */5 >/1
-      if( ! refalrts::ident_term(  ident_k42_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k42_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Mul/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Mul.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Mul] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -528,13 +544,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
 
     do {
       // </0 & __Mu-Aux/4 # ?/5 >/1
-      if( ! refalrts::ident_term(  ident_k63_.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_k63_], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Residue/1 ]] }
-      refalrts::reinit_ident( context[1], ident_Residue.ref(vm) );
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
+      refalrts::reinit_name( context[1], functions[efunc_Residue] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -544,13 +560,13 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     // </0 & __Mu-Aux/4 # -/5 >/1
-    if( ! refalrts::ident_term(  ident_m_.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_m_], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Sub/1 ]] }
-    refalrts::reinit_ident( context[1], ident_Sub.ref(vm) );
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
+    refalrts::reinit_name( context[1], functions[efunc_Sub] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -567,11 +583,11 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], ref_gen_u_u_Mum_Aux_S13B1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[9] ) )
     return refalrts::cNoMemory;
-  refalrts::update_name( context[4], ref_Type.ref(vm) );
+  refalrts::update_name( context[4], functions[efunc_Type] );
   refalrts::push_stack( vm, context[9] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
@@ -592,6 +608,9 @@ static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 35760015U, 2997
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
@@ -617,17 +636,17 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::Iter res = context[1];
   if( ! refalrts::alloc_open_call( vm, context[7] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], ref_gen_Residue_C1.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Residue_C1] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[10] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], ref_u_u_Stepm_Start.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_close_call( vm, context[12] ) )
     return refalrts::cNoMemory;
   if( ! refalrts::alloc_open_call( vm, context[13] ) )
     return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], ref_u_u_Mum_Aux.ref(vm) ) )
+  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
     return refalrts::cNoMemory;
   if (! refalrts::copy_stvar(vm, context[15], context[5]))
     return refalrts::cNoMemory;
@@ -672,7 +691,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], ref_u_u_Stepm_End.ref(vm) );
+    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
     refalrts::reinit_close_call( context[7] );
     refalrts::reinit_open_call( context[11] );
     refalrts::push_stack( vm, context[1] );
@@ -699,6 +718,9 @@ static refalrts::NativeReference nat_ref_Residue("Residue", 35760015U, 299767536
 static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
@@ -719,7 +741,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 # CmdProfileFunction/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdProfileFunction.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdProfileFunction], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -736,7 +758,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdLoadConstants/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdLoadConstants.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdLoadConstants], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -753,7 +775,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdIssueMemory/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdIssueMemory.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdIssueMemory], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -770,7 +792,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdReserveBacktrackStack/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdReserveBacktrackStack.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdReserveBacktrackStack], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -787,7 +809,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdOnFailGoTo/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdOnFailGoTo.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdOnFailGoTo], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -804,7 +826,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdProfilerStopSentence/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdProfilerStopSentence.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdProfilerStopSentence], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -821,7 +843,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdInitB0/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdInitB0.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdInitB0], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -837,7 +859,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # CmdInitB0-Lite/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdInitB0m_Lite.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdInitB0m_Lite], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -862,11 +884,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 # CmdChar/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdChar.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdChar], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdChar/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -883,7 +905,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdChar/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -899,7 +921,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdChar/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -916,11 +938,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdCharSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdCharSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdCharSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdCharSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -936,7 +958,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdCharSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -953,11 +975,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdNumber/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdNumber.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdNumber], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -974,7 +996,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -990,7 +1012,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1007,11 +1029,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdNumberSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdNumberSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdNumberSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdNumberSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1027,7 +1049,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdNumberSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1044,11 +1066,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdHugeNum/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdHugeNum.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdHugeNum], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1065,7 +1087,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1081,7 +1103,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1098,11 +1120,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdHugeNumSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdHugeNumSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdHugeNumSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdHugeNumSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1118,7 +1140,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdHugeNumSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1135,11 +1157,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdName/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdName.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdName], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdName/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1156,7 +1178,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdName/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1172,7 +1194,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdName/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1189,11 +1211,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdNameSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdNameSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdNameSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdNameSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1209,7 +1231,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdNameSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1226,11 +1248,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdIdent/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdIdent.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdIdent], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1247,7 +1269,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1263,7 +1285,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1280,11 +1302,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdIdentSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdIdentSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdIdentSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdIdentSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1300,7 +1322,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdIdentSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1317,11 +1339,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdBrackets/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdBrackets.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdBrackets], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1338,7 +1360,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1354,7 +1376,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1371,11 +1393,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdBracketsSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdBracketsSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdBracketsSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdBracketsSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1391,7 +1413,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdBracketsSave/8 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1408,11 +1430,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdADT/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdADT.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdADT], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdADT/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1429,7 +1451,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdADT/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1445,7 +1467,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdADT/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1462,11 +1484,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdADTSave/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdADTSave.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdADTSave], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1483,7 +1505,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1499,7 +1521,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1515,9 +1537,9 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # CmdCallSave/8 # AlgLeft/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdCallSave.ref(vm), context[8] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdCallSave], context[8] ) )
       continue;
-    if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -1538,7 +1560,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 # CmdEmpty/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdEmpty.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdEmpty], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1554,7 +1576,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # CmdNotEmpty/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdNotEmpty.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdNotEmpty], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -1581,7 +1603,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 s.new#7/8 # CmdVar/9 s.new#6/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdVar.ref(vm), context[9] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdVar], context[9] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 s.new#8/5 >/1
@@ -1589,7 +1611,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           continue;
         do {
           // </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgLeft/5 >/1
-          if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+          if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
             continue;
 
           refalrts::reset_allocator(vm);
@@ -1606,7 +1628,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
         do {
           // </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgRight/5 >/1
-          if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+          if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
             continue;
 
           refalrts::reset_allocator(vm);
@@ -1622,7 +1644,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         // </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgTerm/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1642,7 +1664,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         continue;
       do {
         // </0 & NumberFromOpcode/4 't'/8 # CmdVar/9 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1658,7 +1680,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 't'/8 # CmdVar/9 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1677,11 +1699,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       // </0 & NumberFromOpcode/4 't'/8 # CmdVarSave/9 s.new#6/5 >/1
       if( ! refalrts::char_term( 't', context[8] ) )
         continue;
-      if( ! refalrts::ident_term(  ident_CmdVarSave.ref(vm), context[9] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdVarSave], context[9] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 't'/8 # CmdVarSave/9 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1697,7 +1719,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 't'/8 # CmdVarSave/9 # AlgRight/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1714,7 +1736,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 s.new#7/8 # CmdRepeated/9 s.new#6/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdRepeated.ref(vm), context[9] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdRepeated], context[9] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 'e'/8 # CmdRepeated/9 s.new#8/5 >/1
@@ -1722,7 +1744,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           continue;
         do {
           // </0 & NumberFromOpcode/4 'e'/8 # CmdRepeated/9 # AlgLeft/5 >/1
-          if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+          if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
             continue;
 
           refalrts::reset_allocator(vm);
@@ -1738,7 +1760,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         // </0 & NumberFromOpcode/4 'e'/8 # CmdRepeated/9 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1759,7 +1781,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           continue;
         do {
           // </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgLeft/5 >/1
-          if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+          if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
             continue;
 
           refalrts::reset_allocator(vm);
@@ -1776,7 +1798,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
         do {
           // </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgRight/5 >/1
-          if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+          if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
             continue;
 
           refalrts::reset_allocator(vm);
@@ -1792,7 +1814,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         // </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgTerm/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1812,7 +1834,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         continue;
       do {
         // </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgLeft/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1829,7 +1851,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgRight/5 >/1
-        if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -1845,7 +1867,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgTerm/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgTerm.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1863,11 +1885,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     // </0 & NumberFromOpcode/4 't'/8 # CmdRepeatedSave/9 s.new#6/5 >/1
     if( ! refalrts::char_term( 't', context[8] ) )
       continue;
-    if( ! refalrts::ident_term(  ident_CmdRepeatedSave.ref(vm), context[9] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdRepeatedSave], context[9] ) )
       continue;
     do {
       // </0 & NumberFromOpcode/4 't'/8 # CmdRepeatedSave/9 # AlgLeft/5 >/1
-      if( ! refalrts::ident_term(  ident_AlgLeft.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1883,7 +1905,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 't'/8 # CmdRepeatedSave/9 # AlgRight/5 >/1
-    if( ! refalrts::ident_term(  ident_AlgRight.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -1904,7 +1926,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 # CmdEPrepare/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdEPrepare.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdEPrepare], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1921,7 +1943,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdEStart/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdEStart.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdEStart], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1938,7 +1960,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdSave/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdSave.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdSave], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1955,7 +1977,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdResetAllocator/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdResetAllocator.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdResetAllocator], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1972,7 +1994,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdSetResArgBegin/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdSetResArgBegin.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdSetResArgBegin], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -1989,7 +2011,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdSetResRightEdge/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdSetResRightEdge.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdSetResRightEdge], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2006,7 +2028,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdSetRes/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdSetRes.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdSetRes], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2023,7 +2045,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdCopyEVar/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdCopyEVar.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdCopyEVar], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2040,7 +2062,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # CmdCopySTVar/5 >/1
-      if( ! refalrts::ident_term(  ident_CmdCopySTVar.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CmdCopySTVar], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2056,7 +2078,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # CmdReinitSVar/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdReinitSVar.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdReinitSVar], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2081,11 +2103,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       continue;
     do {
       // </0 & NumberFromOpcode/4 # Allocate/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_Allocate.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_Allocate], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElChar/5 >/1
-        if( ! refalrts::ident_term(  ident_ElChar.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElChar], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2102,7 +2124,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElName/5 >/1
-        if( ! refalrts::ident_term(  ident_ElName.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElName], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2119,7 +2141,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElNumber/5 >/1
-        if( ! refalrts::ident_term(  ident_ElNumber.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2136,7 +2158,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElHugeNumber/5 >/1
-        if( ! refalrts::ident_term(  ident_ElHugeNumber.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2153,7 +2175,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElIdent/5 >/1
-        if( ! refalrts::ident_term(  ident_ElIdent.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2170,7 +2192,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElBracket/5 >/1
-        if( ! refalrts::ident_term(  ident_ElBracket.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElBracket], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2187,7 +2209,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElString/5 >/1
-        if( ! refalrts::ident_term(  ident_ElString.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElString], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2204,7 +2226,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Allocate/8 # ElClosureHead/5 >/1
-        if( ! refalrts::ident_term(  ident_ElClosureHead.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElClosureHead], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2220,7 +2242,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # Allocate/8 # ElUnwrappedClosure/5 >/1
-      if( ! refalrts::ident_term(  ident_ElUnwrappedClosure.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2237,11 +2259,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # Reinit/8 s.new#5/5 >/1
-      if( ! refalrts::ident_term(  ident_Reinit.ref(vm), context[8] ) )
+      if( ! refalrts::ident_term( identifiers[ident_Reinit], context[8] ) )
         continue;
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElChar/5 >/1
-        if( ! refalrts::ident_term(  ident_ElChar.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElChar], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2258,7 +2280,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElName/5 >/1
-        if( ! refalrts::ident_term(  ident_ElName.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElName], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2275,7 +2297,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElNumber/5 >/1
-        if( ! refalrts::ident_term(  ident_ElNumber.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2292,7 +2314,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElHugeNumber/5 >/1
-        if( ! refalrts::ident_term(  ident_ElHugeNumber.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2309,7 +2331,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElIdent/5 >/1
-        if( ! refalrts::ident_term(  ident_ElIdent.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2326,7 +2348,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElBracket/5 >/1
-        if( ! refalrts::ident_term(  ident_ElBracket.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElBracket], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2343,7 +2365,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
       do {
         // </0 & NumberFromOpcode/4 # Reinit/8 # ElClosureHead/5 >/1
-        if( ! refalrts::ident_term(  ident_ElClosureHead.ref(vm), context[5] ) )
+        if( ! refalrts::ident_term( identifiers[ident_ElClosureHead], context[5] ) )
           continue;
 
         refalrts::reset_allocator(vm);
@@ -2359,7 +2381,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       // </0 & NumberFromOpcode/4 # Reinit/8 # ElUnwrappedClosure/5 >/1
-      if( ! refalrts::ident_term(  ident_ElUnwrappedClosure.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2375,11 +2397,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # Update/8 s.new#5/5 >/1
-    if( ! refalrts::ident_term(  ident_Update.ref(vm), context[8] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Update], context[8] ) )
       continue;
     do {
       // </0 & NumberFromOpcode/4 # Update/8 # ElChar/5 >/1
-      if( ! refalrts::ident_term(  ident_ElChar.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElChar], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2396,7 +2418,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # Update/8 # ElName/5 >/1
-      if( ! refalrts::ident_term(  ident_ElName.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElName], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2413,7 +2435,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # Update/8 # ElNumber/5 >/1
-      if( ! refalrts::ident_term(  ident_ElNumber.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2430,7 +2452,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
     do {
       // </0 & NumberFromOpcode/4 # Update/8 # ElHugeNumber/5 >/1
-      if( ! refalrts::ident_term(  ident_ElHugeNumber.ref(vm), context[5] ) )
+      if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[5] ) )
         continue;
 
       refalrts::reset_allocator(vm);
@@ -2446,7 +2468,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     // </0 & NumberFromOpcode/4 # Update/8 # ElIdent/5 >/1
-    if( ! refalrts::ident_term(  ident_ElIdent.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2466,7 +2488,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   do {
     // </0 & NumberFromOpcode/4 # CmdLinkBrackets/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdLinkBrackets.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdLinkBrackets], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2483,7 +2505,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdPushStack/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdPushStack.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdPushStack], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2500,7 +2522,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdWrapClosure/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdWrapClosure.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdWrapClosure], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2517,7 +2539,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceElem/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceElem.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceElem], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2534,7 +2556,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceEVar/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceEVar.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceEVar], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2551,7 +2573,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceSTVar/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceSTVar.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceSTVar], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2568,7 +2590,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceRange/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceRange.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceRange], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2585,7 +2607,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceTile/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceTile.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceTile], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2602,7 +2624,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceToFreeList/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceToFreeList.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeList], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2619,7 +2641,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdNextStep/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdNextStep.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdNextStep], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2636,7 +2658,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdTrashLeftEdge/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdTrashLeftEdge.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdTrashLeftEdge], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2653,7 +2675,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdTrash/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdTrash.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdTrash], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2670,7 +2692,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdFail/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdFail.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdFail], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2687,7 +2709,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdFetchSwapHead/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdFetchSwapHead.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapHead], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2704,7 +2726,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdFetchSwapInfoBounds/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdFetchSwapInfoBounds.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapInfoBounds], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2721,7 +2743,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSwapSave/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSwapSave.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSwapSave], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2738,7 +2760,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdPerformNative/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdPerformNative.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdPerformNative], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2755,7 +2777,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdScale/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdScale.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdScale], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2772,7 +2794,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdVariableDebugOffset.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdVariableDebugOffset], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2789,7 +2811,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdSpliceToFreeList-Range/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdSpliceToFreeListm_Range.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeListm_Range], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2806,7 +2828,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdPushState/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdPushState.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdPushState], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2823,7 +2845,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
 
   do {
     // </0 & NumberFromOpcode/4 # CmdPopState/5 >/1
-    if( ! refalrts::ident_term(  ident_CmdPopState.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_CmdPopState], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2839,7 +2861,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   // </0 & NumberFromOpcode/4 # CmdMainLoopReturnSuccess/5 >/1
-  if( ! refalrts::ident_term(  ident_CmdMainLoopReturnSuccess.ref(vm), context[5] ) )
+  if( ! refalrts::ident_term( identifiers[ident_CmdMainLoopReturnSuccess], context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator(vm);
@@ -2859,6 +2881,9 @@ static refalrts::NativeReference nat_ref_NumberFromOpcode("NumberFromOpcode", 0U
 static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
@@ -2876,7 +2901,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   do {
     // </0 & NumberFromBracket/4 # ElOpenADT/5 >/1
-    if( ! refalrts::ident_term(  ident_ElOpenADT.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElOpenADT], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2893,7 +2918,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
 
   do {
     // </0 & NumberFromBracket/4 # ElOpenBracket/5 >/1
-    if( ! refalrts::ident_term(  ident_ElOpenBracket.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElOpenBracket], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2910,7 +2935,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
 
   do {
     // </0 & NumberFromBracket/4 # ElOpenCall/5 >/1
-    if( ! refalrts::ident_term(  ident_ElOpenCall.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElOpenCall], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2927,7 +2952,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
 
   do {
     // </0 & NumberFromBracket/4 # ElCloseADT/5 >/1
-    if( ! refalrts::ident_term(  ident_ElCloseADT.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElCloseADT], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2944,7 +2969,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
 
   do {
     // </0 & NumberFromBracket/4 # ElCloseBracket/5 >/1
-    if( ! refalrts::ident_term(  ident_ElCloseBracket.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ElCloseBracket], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -2960,7 +2985,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   // </0 & NumberFromBracket/4 # ElCloseCall/5 >/1
-  if( ! refalrts::ident_term(  ident_ElCloseCall.ref(vm), context[5] ) )
+  if( ! refalrts::ident_term( identifiers[ident_ElCloseCall], context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator(vm);
@@ -2980,6 +3005,9 @@ static refalrts::NativeReference nat_ref_NumberFromBracket("NumberFromBracket", 
 static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
@@ -2997,7 +3025,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     return refalrts::cRecognitionImpossible;
   do {
     // </0 & BlockTypeNumber/4 # Start/5 >/1
-    if( ! refalrts::ident_term(  ident_Start.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Start], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3014,7 +3042,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # ConstTable/5 >/1
-    if( ! refalrts::ident_term(  ident_ConstTable.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ConstTable], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3031,7 +3059,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # RefalFunction/5 >/1
-    if( ! refalrts::ident_term(  ident_RefalFunction.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_RefalFunction], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3048,7 +3076,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # NativeFunction/5 >/1
-    if( ! refalrts::ident_term(  ident_NativeFunction.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_NativeFunction], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3065,7 +3093,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # EmptyFunction/5 >/1
-    if( ! refalrts::ident_term(  ident_EmptyFunction.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_EmptyFunction], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3082,7 +3110,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # Swap/5 >/1
-    if( ! refalrts::ident_term(  ident_Swap.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Swap], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3099,7 +3127,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # Reference/5 >/1
-    if( ! refalrts::ident_term(  ident_Reference.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_Reference], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3116,7 +3144,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # ConditionRasl/5 >/1
-    if( ! refalrts::ident_term(  ident_ConditionRasl.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ConditionRasl], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3133,7 +3161,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
 
   do {
     // </0 & BlockTypeNumber/4 # ConditionNative/5 >/1
-    if( ! refalrts::ident_term(  ident_ConditionNative.ref(vm), context[5] ) )
+    if( ! refalrts::ident_term( identifiers[ident_ConditionNative], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
@@ -3149,7 +3177,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
   refalrts::stop_sentence(vm);
 
   // </0 & BlockTypeNumber/4 # Incorporated/5 >/1
-  if( ! refalrts::ident_term(  ident_Incorporated.ref(vm), context[5] ) )
+  if( ! refalrts::ident_term( identifiers[ident_Incorporated], context[5] ) )
     return refalrts::cRecognitionImpossible;
 
   refalrts::reset_allocator(vm);
