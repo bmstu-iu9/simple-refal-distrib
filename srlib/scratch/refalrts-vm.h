@@ -2,6 +2,7 @@
 #define RefalRTS_VM_H_
 
 #include <assert.h>
+#include <setjmp.h>
 #include <stdio.h>
 
 #include "refalrts.h"
@@ -16,7 +17,6 @@
 
 namespace refalrts {
 
-class Allocator;
 class Domain;
 class Module;
 class Profiler;
@@ -33,14 +33,28 @@ class VM {
   Node m_first_marker;
   Node m_swap_hedge;
   Node m_last_marker;
+  Node m_begin_free_list;
+  Node m_end_free_list;
   Iter m_error_begin;
   Iter m_error_end;
+  Iter m_free_ptr;
   unsigned m_step_counter;
   NodePtr m_stack_ptr;
   StateRefalMachine *m_private_state_stack_free;
   StateRefalMachine *m_private_state_stack_stack;
 
 public:
+  struct StackState {
+    size_t top;
+    size_t bottom;
+
+    StackState(size_t top = 0, size_t bottom = 0)
+      : top(top), bottom(bottom)
+    {
+      /* пусто */
+    }
+  };
+
   template <typename T>
   class Stack {
     // Запрет копирования
@@ -48,40 +62,48 @@ public:
     Stack& operator=(const Stack<T> &obj);
 
   public:
-    Stack()
-      :m_memory(new T[1]), m_size(0), m_capacity(1)
+    Stack(const char *name)
+      : m_memory(0)
+      , m_bottom(0)
+      , m_top(0)
+      , m_capacity(0)
+      , m_name(name)
     {
       /* пусто */
     }
 
     ~Stack() {
-      delete[] m_memory;
+      free(m_memory);
     }
 
-    T& operator[](size_t offset) {
-      return m_memory[offset];
+    T* reserve(size_t size);
+
+    void push_state(StackState& state) {
+      state.top = m_top;
+      state.bottom = m_bottom;
+      m_bottom = m_top;
     }
 
-    void reserve(size_t size);
-
-    void swap(Stack<T>& other) {
-      swap(m_memory, other.m_memory);
-      swap(m_size, other.m_size);
-      swap(m_capacity, other.m_capacity);
+    T* pop_state(StackState state) {
+      m_top = state.top;
+      m_bottom = state.bottom;
+      return m_memory + m_bottom;
     }
 
   private:
     T *m_memory;
-    size_t m_size;
+    size_t m_bottom;
+    size_t m_top;
     size_t m_capacity;
+    const char *m_name;
 
-    template <typename U>
-    static void swap(U& x, U& y) {
-      U old_x = x;
-      x = y;
-      y = old_x;
+    size_t max(size_t x, size_t y) {
+      return (x > y ? x : y);
     }
   };
+
+  Stack<const RASLCommand*> m_open_e_stack;
+  Stack<Iter> m_context;
 
 private:
   struct StateRefalMachine {
@@ -93,10 +115,8 @@ private:
     const refalrts::RefalIdentifier *idents;
     const refalrts::RefalNumber *numbers;
     const refalrts::StringItem *strings;
-
-    Stack<const refalrts::RASLCommand*> open_e_stack;
-    Stack<refalrts::Iter> context;
-
+    StackState open_e_stack_state;
+    StackState context_state;
     refalrts::Iter res;
     refalrts::Iter trash_prev;
     int stack_top;
@@ -119,11 +139,11 @@ private:
   void states_stack_push(StateRefalMachine *state);
 
   DebuggerFactory m_create_debugger;
+  Debugger *m_debugger;
 
   class NullDebugger;
   static Debugger* create_null_debugger(VM *vm);
 
-  Allocator *m_allocator;
   Profiler *m_profiler;
   Domain *m_domain;
   Module *m_module;
@@ -131,11 +151,10 @@ private:
   FILE *m_dump_stream;
   bool m_hide_steps;
 
+  jmp_buf *m_memory_fail;
+
 public:
-  VM(
-    Allocator *allocator, Profiler *profiler, Domain *domain,
-    DiagnosticConfig *diagnostic_config
-  );
+  VM(Profiler *profiler, Domain *domain, DiagnosticConfig *diagnostic_config);
   ~VM();
 
   int get_return_code() const {
@@ -185,11 +204,7 @@ public:
     m_create_debugger = debugger_factory;
   }
 
-  void read_counters(unsigned long counters[]);
-
-  Allocator *allocator() const {
-    return m_allocator;
-  }
+  void read_counters(double counters[]);
 
   Profiler *profiler() const {
     return m_profiler;
@@ -764,161 +779,144 @@ public:
   // Операции построения результата
 
   void reset_allocator();
-  bool copy_node(Iter& res, Iter sample);
+  void copy_node(Iter& res, Iter sample);
 
 private:
 
-  bool copy_nonempty_evar(
+  void reset_allocator_aux() {
+    m_free_ptr = m_begin_free_list.next;
+  }
+
+  void copy_nonempty_evar(
     Iter& evar_res_b, Iter& evar_res_e, Iter evar_b_sample, Iter evar_e_sample
   );
 
 public:
 
-  bool copy_evar(
+  void copy_evar(
     Iter& evar_res_b, Iter& evar_res_e,
     Iter evar_b_sample, Iter evar_e_sample
   ) {
     if (empty_seq(evar_b_sample, evar_e_sample)) {
       evar_res_b = 0;
       evar_res_e = 0;
-      return true;
     } else {
-      return copy_nonempty_evar(
-        evar_res_b, evar_res_e, evar_b_sample, evar_e_sample
-      );
+      copy_nonempty_evar(evar_res_b, evar_res_e, evar_b_sample, evar_e_sample);
     }
   }
 
-  bool copy_stvar(Iter& stvar_res, Iter stvar_sample) {
+  void copy_stvar(Iter& stvar_res, Iter stvar_sample) {
     if (is_open_bracket(stvar_sample)) {
       Iter end_of_sample = stvar_sample->link_info;
       Iter end_of_res;
-      return copy_evar(stvar_res, end_of_res, stvar_sample, end_of_sample);
+      copy_evar(stvar_res, end_of_res, stvar_sample, end_of_sample);
     } else {
-      return copy_node(stvar_res, stvar_sample);
+      copy_node(stvar_res, stvar_sample);
     }
   }
 
   // TODO: а нафига она нужна?
-  bool alloc_copy_evar(Iter& res, Iter evar_b_sample, Iter evar_e_sample) {
+  void alloc_copy_evar(Iter& res, Iter evar_b_sample, Iter evar_e_sample) {
     if (empty_seq(evar_b_sample, evar_e_sample)) {
       res = 0;
-      return true;
     } else {
       Iter res_e = 0;
-      return copy_nonempty_evar(res, res_e, evar_b_sample, evar_e_sample);
+      copy_nonempty_evar(res, res_e, evar_b_sample, evar_e_sample);
     }
   }
 
 private:
 
-  bool alloc_node(Iter& res);
+  void alloc_node(Iter& res);
+  void ensure_memory() {
+    if ((m_free_ptr == & m_end_free_list) && ! create_nodes()) {
+      longjmp (*m_memory_fail, 1);
+    }
+  }
+  bool create_nodes();
 
 public:
 
-  bool alloc_char(Iter& res, char ch) {
-    if (alloc_node(res)) {
-      res->tag = cDataChar;
-      res->char_info = ch;
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_char(Iter& res, char ch) {
+    alloc_node(res);
+    res->tag = cDataChar;
+    res->char_info = ch;
   }
 
-  bool alloc_number(Iter& res, RefalNumber num) {
-    if (alloc_node(res)) {
-      res->tag = cDataNumber;
-      res->number_info = num;
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_number(Iter& res, RefalNumber num) {
+    alloc_node(res);
+    res->tag = cDataNumber;
+    res->number_info = num;
   }
 
-  bool alloc_name(Iter& res, RefalFunction *fn) {
-    if (alloc_node(res)) {
-      res->tag = cDataFunction;
-      res->function_info = fn;
-      fn->add_ref();
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_name(Iter& res, RefalFunction *fn) {
+    alloc_node(res);
+    res->tag = cDataFunction;
+    res->function_info = fn;
   }
 
-  bool alloc_ident(Iter& res, RefalIdentifier ident) {
-    if (alloc_node(res)) {
-      res->tag = cDataIdentifier;
-      res->ident_info = ident;
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_ident(Iter& res, RefalIdentifier ident) {
+    alloc_node(res);
+    res->tag = cDataIdentifier;
+    res->ident_info = ident;
   }
 
 private:
 
-  bool alloc_some_bracket(Iter& res, DataTag tag) {
-    if (alloc_node(res)) {
-      res->tag = tag;
-      return true;
-    } else {
-      return false;
-    }
-  }
+  void alloc_some_bracket(Iter& res, DataTag tag) {
+    alloc_node(res);
+    res->tag = tag;
+}
 
 public:
 
-  bool alloc_open_adt(Iter& res) {
-    return alloc_some_bracket(res, cDataOpenADT);
+  void alloc_open_adt(Iter& res) {
+    alloc_some_bracket(res, cDataOpenADT);
   }
 
-  bool alloc_close_adt(Iter& res) {
-    return alloc_some_bracket(res, cDataCloseADT);
+  void alloc_close_adt(Iter& res) {
+    alloc_some_bracket(res, cDataCloseADT);
   }
 
-  bool alloc_open_bracket(Iter& res) {
-    return alloc_some_bracket(res, cDataOpenBracket);
+  void alloc_open_bracket(Iter& res) {
+    alloc_some_bracket(res, cDataOpenBracket);
   }
 
-  bool alloc_close_bracket(Iter& res) {
-    return alloc_some_bracket(res, cDataCloseBracket);
+  void alloc_close_bracket(Iter& res) {
+    alloc_some_bracket(res, cDataCloseBracket);
   }
 
-  bool alloc_open_call(Iter& res) {
-    return alloc_some_bracket(res, cDataOpenCall);
+  void alloc_open_call(Iter& res) {
+    alloc_some_bracket(res, cDataOpenCall);
   }
 
-  bool alloc_close_call(Iter& res) {
-    return alloc_some_bracket(res, cDataCloseCall);
+  void alloc_close_call(Iter& res) {
+    alloc_some_bracket(res, cDataCloseCall);
   }
 
-  bool alloc_closure_head(Iter& res) {
-    if (alloc_node(res)) {
-      res->tag = cDataClosureHead;
-      res->number_info = 1;
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_closure_head(Iter& res) {
+    alloc_node(res);
+    res->tag = cDataClosureHead;
+    res->number_info = 1;
   }
 
-  bool alloc_unwrapped_closure(Iter& res, Iter head) {
-    if (alloc_node(res)) {
-      res->tag = cDataUnwrappedClosure;
-      res->link_info = head;
-      return true;
-    } else {
-      return false;
-    }
+  void alloc_unwrapped_closure(Iter& res, Iter head) {
+    alloc_node(res);
+    res->tag = cDataUnwrappedClosure;
+    res->link_info = head;
   }
 
-  bool alloc_chars(
+  void alloc_chars(
     Iter& res_b, Iter& res_e, const char buffer[], unsigned buflen
   );
 
-  bool alloc_string(Iter& res_b, Iter& res_e, const char *string);
+  void alloc_string(Iter& res_b, Iter& res_e, const char *string);
+
+  jmp_buf* reset_memory_fail(jmp_buf *new_buf) {
+    jmp_buf *old = m_memory_fail;
+    m_memory_fail = new_buf;
+    return old;
+  }
 
   void push_stack(Iter call_bracket) {
     call_bracket->link_info = m_stack_ptr;
@@ -933,7 +931,6 @@ public:
   static void reinit_svar(Iter res, Iter sample);
 
   static void reinit_char(Iter res, char ch) {
-    cleanup_node(res);
     res->tag = cDataChar;
     res->char_info = ch;
   }
@@ -943,7 +940,6 @@ public:
   }
 
   static void reinit_number(Iter res, RefalNumber num) {
-    cleanup_node(res);
     res->tag = cDataNumber;
     res->number_info = num;
   }
@@ -953,20 +949,15 @@ public:
   }
 
   static void reinit_name(Iter res, RefalFunction *func) {
-    func->add_ref();
-    cleanup_node(res);
     res->tag = cDataFunction;
     res->function_info = func;
   }
 
   static void update_name(Iter res, RefalFunction *func) {
-    func->add_ref();
-    res->function_info->release();
     res->function_info = func;
   }
 
   static void reinit_ident(Iter res, RefalIdentifier ident) {
-    cleanup_node(res);
     res->tag = cDataIdentifier;
     res->ident_info = ident;
   }
@@ -976,43 +967,35 @@ public:
   }
 
   static void reinit_open_bracket(Iter res) {
-    cleanup_node(res);
     res->tag = cDataOpenBracket;
   }
 
   static void reinit_close_bracket(Iter res) {
-    cleanup_node(res);
     res->tag = cDataCloseBracket;
   }
 
   static void reinit_open_adt(Iter res) {
-    cleanup_node(res);
     res->tag = cDataOpenADT;
   }
 
   static void reinit_close_adt(Iter res) {
-    cleanup_node(res);
     res->tag = cDataCloseADT;
   }
 
   static void reinit_open_call(Iter res) {
-    cleanup_node(res);
     res->tag = cDataOpenCall;
   }
 
   static void reinit_close_call(Iter res) {
-    cleanup_node(res);
     res->tag = cDataCloseCall;
   }
 
   static void reinit_closure_head(Iter res) {
-    cleanup_node(res);
     res->tag = cDataClosureHead;
     res->number_info = 1;
   }
 
   static void reinit_unwrapped_closure(Iter res, Iter head) {
-    cleanup_node(res);
     res->tag = cDataUnwrappedClosure;
     res->link_info = head;
   }
@@ -1035,13 +1018,16 @@ public:
   static Iter splice_evar(Iter res, Iter begin, Iter end) {
     return list_splice(res, begin, end);
   }
+
+  void splice_to_freelist(Iter begin, Iter end);
+  Iter splice_from_freelist(Iter pos);
 };
 
 class Debugger {
 public:
   virtual ~Debugger() {}
 
-  virtual void set_context(VM::Stack<Iter>& context) = 0;
+  virtual void set_context(Iter *context) = 0;
   virtual void set_string_items(const StringItem *items) = 0;
   virtual void insert_var(const RASLCommand *next) = 0;
 
@@ -1051,7 +1037,7 @@ public:
 };
 
 inline VM::VM(
-  Allocator *allocator, Profiler *profiler, Domain *domain,
+  Profiler *profiler, Domain *domain,
   DiagnosticConfig *diagnostic_config
 )
   : m_ret_code(0)
@@ -1060,25 +1046,33 @@ inline VM::VM(
   , m_first_marker(0, & m_swap_hedge)
   , m_swap_hedge(& m_first_marker, & m_last_marker)
   , m_last_marker(& m_swap_hedge, 0)
+  , m_begin_free_list(0, & m_end_free_list)
+  , m_end_free_list(& m_begin_free_list, 0)
   , m_error_begin(& m_first_marker)
   , m_error_end(& m_last_marker)
+  , m_free_ptr(& m_end_free_list)
   , m_step_counter(0)
   , m_stack_ptr(0)
   , m_private_state_stack_free(0)
   , m_private_state_stack_stack(0)
+  , m_open_e_stack("m_open_e_stack")
+  , m_context("m_context")
   , m_create_debugger(create_null_debugger)
-  , m_allocator(allocator)
+  , m_debugger(0)
   , m_profiler(profiler)
   , m_domain(domain)
   , m_module(0)
   , m_diagnostic_config(diagnostic_config)
   , m_dump_stream(0)
   , m_hide_steps(false)
+  , m_memory_fail(0)
 {
   m_swap_hedge.tag = cDataSwapHead;
 }
 
 inline VM::~VM() {
+  delete m_debugger;
+
   if (m_dump_stream != 0 && m_dump_stream != stderr) {
     fclose(m_dump_stream);
     m_dump_stream = 0;

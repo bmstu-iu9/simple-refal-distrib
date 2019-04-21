@@ -5,8 +5,6 @@
 #include "refalrts-commands.h"
 #include "refalrts-utils.h"
 
-//FROM refalrts-allocator
-#include "refalrts-allocator.h"
 //FROM refalrts-dynamic
 #include "refalrts-dynamic.h"
 //FROM refalrts-functions
@@ -34,19 +32,22 @@ const char* refalrts::VM::arg(unsigned int param) {
 //==============================================================================
 
 template <typename T>
-void refalrts::VM::Stack<T>::reserve(size_t size) {
+T* refalrts::VM::Stack<T>::reserve(size_t size) {
   assert (size > 0);
+  m_top = size + m_bottom;
 
-  if (m_capacity < size) {
-    T *new_memory = new T[size];
-    delete[] m_memory;
-    m_memory = new_memory;
-    m_capacity = size;
+  if (m_top > m_capacity) {
+    m_capacity = max(m_top, 2 * m_capacity);
+    T* new_memory = static_cast<T*>(realloc(m_memory, sizeof(T) * m_capacity));
+
+    if (new_memory) {
+      m_memory = new_memory;
+    } else {
+      return 0;
+    }
   }
-  m_size = size;
-  for (size_t i = 0; i < m_size; ++i) {
-    m_memory[i] = T();
-  }
+
+  return m_memory + m_bottom;
 }
 
 refalrts::Iter refalrts::VM::pop_stack() {
@@ -153,6 +154,10 @@ refalrts::VM::free_states_stack() {
 refalrts::FnResult refalrts::VM::execute_zero_arity_function(
   refalrts::RefalFunction *func, refalrts::Iter pos
 ) {
+  if (! m_debugger) {
+    m_debugger = m_create_debugger(this);
+  }
+
   if (! pos) {
     pos = & m_swap_hedge;
   }
@@ -477,11 +482,7 @@ void refalrts::VM::make_dump(refalrts::Iter begin, refalrts::Iter end) {
 
   if (m_diagnostic_config->dump_free_list) {
     fprintf(dump_stream(), "\nFREE LIST:\n");
-    print_seq(
-      dump_stream(),
-      m_allocator->first_marker(),
-      m_allocator->last_marker()
-    );
+    print_seq(dump_stream(), & m_begin_free_list, & m_end_free_list);
   }
 
   fflush(dump_stream());
@@ -504,17 +505,14 @@ FILE *refalrts::VM::dump_stream() {
 }
 
 void refalrts::VM::free_view_field() {
-  refalrts::Iter begin = m_first_marker.next;
-  refalrts::Iter end = & m_last_marker;
-
-  if (begin != end) {
-    end = end->prev;
-    m_allocator->splice_to_freelist(begin, end);
-  } else {
-    /*
-      Поле зрения пустое -- его не нужно освобождать.
-    */;
-  }
+  splice_to_freelist_open(this, &m_first_marker, &m_swap_hedge);
+  splice_to_freelist_open(this, &m_swap_hedge, &m_last_marker);
+  /*
+    TODO: по-хорошему, вся выделенная память должна передаваться домену,
+    TODO: но это как-нибудь потом. При освобождении памяти нужно будет обойти
+    TODO: поле зрения и статические ящики и развернуть все замыкания.
+    TODO: Либо деактивацию замыканий нужно реализовать в домене.
+  */
 
   if (m_diagnostic_config->print_statistics) {
     fprintf(stderr, "Step count %d\n", m_step_counter);
@@ -528,7 +526,7 @@ void refalrts::VM::free_view_field() {
 
 class refalrts::VM::NullDebugger: public refalrts::Debugger {
 public:
-  virtual void set_context(Stack<Iter>& /*context*/) {
+  virtual void set_context(Iter* /*context*/) {
     /* пусто */
   }
 
@@ -558,11 +556,41 @@ refalrts::VM::create_null_debugger(refalrts::VM * /*vm*/) {
 
 void refalrts::VM::reset_allocator() {
   profiler()->start_result();
-  allocator()->reset_allocator();
+  reset_allocator_aux();
 }
 
-bool refalrts::VM::alloc_node(Iter& res) {
-  return allocator()->alloc_node(res);
+void refalrts::VM::alloc_node(Iter& res) {
+  ensure_memory();
+
+  if (refalrts::cDataClosure == m_free_ptr->tag) {
+    refalrts::Iter head = m_free_ptr->link_info;
+    -- head->number_info;
+
+    if (0 == head->number_info) {
+      unwrap_closure(m_free_ptr);
+      // теперь перед m_free_ptr находится "развёрнутое" замыкание
+      m_free_ptr->tag = refalrts::cDataClosureHead;
+      m_free_ptr->number_info = 407193; // :-)
+
+      m_free_ptr = head;
+    }
+  }
+
+  res = m_free_ptr;
+  m_free_ptr = next(m_free_ptr);
+  res->tag = refalrts::cDataIllegal;
+}
+
+bool refalrts::VM::create_nodes() {
+  Iter begin, end;
+  if (m_domain->alloc_nodes(begin, end)) {
+    weld(m_end_free_list.prev, begin);
+    weld(end, & m_end_free_list);
+    m_free_ptr = begin;
+    return true;
+  } else {
+    return false;
+  }
 }
 
 refalrts::FnResult refalrts::VM::main_loop(const RASLCommand *rasl) {
@@ -573,16 +601,20 @@ refalrts::FnResult refalrts::VM::main_loop(const RASLCommand *rasl) {
   const RefalIdentifier *idents = 0;
   const RefalNumber *numbers = 0;
   const StringItem *strings = 0;
-  Stack<const RASLCommand*> open_e_stack;
-  Stack<Iter> context;
 
-#if __cplusplus >= 201103L
-  std::unique_ptr<Debugger> debugger(m_create_debugger(this));
-#else
-  std::auto_ptr<Debugger> debugger(m_create_debugger(this));
-#endif
-  debugger->set_context(context);
-  debugger->set_string_items(strings);
+  const RASLCommand **open_e_stack = m_open_e_stack.reserve(1);
+  Iter *context = m_context.reserve(1);
+
+  if (open_e_stack == 0 || context == 0) {
+    return cNoMemory;
+  }
+
+  jmp_buf memory_fail;
+  m_memory_fail = &memory_fail;
+  if (setjmp(*m_memory_fail)) {
+    profiler()->stop_allocation_abnormal();
+    return cNoMemory;
+  }
 
   Iter res = 0;
   Iter trash_prev = 0;
@@ -637,8 +669,8 @@ JUMP_FROM_SCALE:
           cur_state->idents = idents;
           cur_state->numbers = numbers;
           cur_state->strings = strings;
-          cur_state->open_e_stack.swap(open_e_stack);
-          cur_state->context.swap(context);
+          m_open_e_stack.push_state(cur_state->open_e_stack_state);
+          m_context.push_state(cur_state->context_state);
           cur_state->res = res;
           cur_state->trash_prev = trash_prev;
           cur_state->stack_top = stack_top;
@@ -657,17 +689,21 @@ JUMP_FROM_SCALE:
           idents = prev_state->idents;
           numbers = prev_state->numbers;
           strings = prev_state->strings;
-          open_e_stack.swap(prev_state->open_e_stack);
-          context.swap(prev_state->context);
+          open_e_stack =
+            m_open_e_stack.pop_state(prev_state->open_e_stack_state);
+          context = m_context.pop_state(prev_state->context_state);
           res = prev_state->res;
           trash_prev = prev_state->trash_prev;
           stack_top = prev_state->stack_top;
           states_stack_free(prev_state);
+
+          m_debugger->set_context(context);
+          m_debugger->set_string_items(strings);
         }
         continue;  // пропускаем ++rasl в конце
 
       case icProfileFunction:
-        this_is_generated_function(this);
+        profiler()->start_generated_function();
         break;
 
       case icLoadConstants:
@@ -677,16 +713,23 @@ JUMP_FROM_SCALE:
           idents = descr->idents;
           numbers = descr->numbers;
           strings = descr->strings;
-          debugger->set_string_items(strings);
+          m_debugger->set_string_items(strings);
         }
         break;
 
       case icIssueMemory:
-        context.reserve(val1);
+        context = m_context.reserve(val1);
+        if (context == 0) {
+          return cNoMemory;
+        }
+        m_debugger->set_context(context);
         break;
 
       case icReserveBacktrackStack:
-        open_e_stack.reserve(val1);
+        open_e_stack = m_open_e_stack.reserve(val1);
+        if (open_e_stack == 0) {
+          return cNoMemory;
+        }
         break;
 
       case icOnFailGoTo:
@@ -694,7 +737,7 @@ JUMP_FROM_SCALE:
         break;
 
       case icProfilerStopSentence:
-        stop_sentence(this);
+        profiler()->stop_sentence();
         break;
 
       case icInitB0:
@@ -1130,7 +1173,7 @@ JUMP_FROM_SCALE:
         res_b = 0;
         res_e = 0;
         open_e_stack[stack_top++] = ++rasl;
-        start_e_loop(this);
+        profiler()->start_e_loop();
         break;
 
       case icEStart:
@@ -1148,11 +1191,11 @@ JUMP_FROM_SCALE:
         break;
 
       case icVariableDebugOffset:
-        debugger->insert_var(rasl);
+        m_debugger->insert_var(rasl);
         break;
 
       case icResetAllocator:
-        if (debugger->handle_function_call(begin, end, callee) == cExit) {
+        if (m_debugger->handle_function_call(begin, end, callee) == cExit) {
           return cExit;
         }
         reset_allocator();
@@ -1176,14 +1219,10 @@ JUMP_FROM_SCALE:
         {
           unsigned int target = val1;
           unsigned int sample = val2;
-          if (
-            ! copy_evar(
-              context[target], context[target + 1],
-              context[sample], context[sample + 1]
-            )
-          ) {
-            return cNoMemory;
-          }
+          copy_evar(
+            context[target], context[target + 1],
+            context[sample], context[sample + 1]
+          );
         }
         break;
 
@@ -1191,9 +1230,7 @@ JUMP_FROM_SCALE:
         {
           unsigned int target = val1;
           unsigned int sample = val2;
-          if (! copy_stvar(context[target], context[sample])) {
-            return cNoMemory;
-          }
+          copy_stvar(context[target], context[sample]);
         }
         break;
 
@@ -1202,64 +1239,40 @@ JUMP_FROM_SCALE:
         break;
 
       case icAllocateChar:
-        if (! alloc_char(elem, static_cast<char>(val2))) {
-          return cNoMemory;
-        }
+        alloc_char(elem, static_cast<char>(val2));
         break;
 
       case icAllocateName:
-        if (! alloc_name(elem, functions[val2])) {
-          return cNoMemory;
-        }
+        alloc_name(elem, functions[val2]);
         break;
 
       case icAllocateNumber:
-        if (! alloc_number(elem, static_cast<RefalNumber>(val2))) {
-          return cNoMemory;
-        }
+        alloc_number(elem, static_cast<RefalNumber>(val2));
         break;
 
       case icAllocateHugeNumber:
-        if (! alloc_number(elem, numbers[val2])) {
-          return cNoMemory;
-        }
+        alloc_number(elem, numbers[val2]);
         break;
 
       case icAllocateIdent:
-        if (! alloc_ident(elem, idents[val2])) {
-          return cNoMemory;
-        }
+        alloc_ident(elem, idents[val2]);
         break;
 
       case icAllocateBracket:
         assert(val2 <= ibCloseCall);
-        if (! alloc_some_bracket(elem, bracket_tag[val2])) {
-          return cNoMemory;
-        }
+        alloc_some_bracket(elem, bracket_tag[val2]);
         break;
 
       case icAllocateString:
-        {
-          if (
-            ! alloc_chars(
-              bb, be, strings[val2].string, strings[val2].string_len
-            )
-          ) {
-            return cNoMemory;
-          }
-        }
+        alloc_chars(bb, be, strings[val2].string, strings[val2].string_len);
         break;
 
       case icAllocateClosureHead:
-        if (! alloc_closure_head(elem)) {
-          return cNoMemory;
-        }
+        alloc_closure_head(elem);
         break;
 
       case icAllocateUnwrappedClosure:
-        if (! alloc_unwrapped_closure(elem, context[val2])) {
-          return cNoMemory;
-        }
+        alloc_unwrapped_closure(elem, context[val2]);
         break;
 
       case icReinitChar:
@@ -1344,11 +1357,11 @@ JUMP_FROM_SCALE:
         break;
 
       case icSpliceToFreeList:
-        splice_to_freelist(this, begin, end);
+        splice_to_freelist(begin, end);
         break;
 
       case icSpliceToFreeList_Range:
-        splice_to_freelist(this, context[val1], context[val2]);
+        splice_to_freelist(context[val1], context[val2]);
         break;
 
       case icMainLoopReturnSuccess:
@@ -1408,7 +1421,7 @@ JUMP_FROM_SCALE:
           } else if (cDataClosure == function->tag) {
             refalrts::Iter head = function->link_info;
 
-            if (debugger->handle_function_call(begin, end, 0) == cExit) {
+            if (m_debugger->handle_function_call(begin, end, 0) == cExit) {
               return cExit;
             }
 
@@ -1424,21 +1437,18 @@ JUMP_FROM_SCALE:
               unwrap_closure(function);
               function->tag = cDataClosureHead;
               function->number_info = 73501505; // :-)
-              splice_to_freelist(this, function, function);
-              splice_to_freelist(this, head, head);
+              splice_to_freelist(function, function);
+              splice_to_freelist(head, head);
               res = cSuccess;
             } else {
               refalrts::Iter begin_argument = next(function);
               refalrts::Iter closure_b = 0;
               refalrts::Iter closure_e = 0;
 
-              if (! copy_evar(closure_b, closure_e, next(head), prev(head))) {
-                res = cNoMemory;
-              } else {
-                list_splice(begin_argument, closure_b, closure_e);
-                splice_to_freelist(this, function, function);
-                res = cSuccess;
-              }
+              copy_evar(closure_b, closure_e, next(head), prev(head));
+              list_splice(begin_argument, closure_b, closure_e);
+              splice_to_freelist(function, function);
+              res = cSuccess;
             }
 
             if (res == cSuccess) {
@@ -1501,7 +1511,7 @@ JUMP_FROM_SCALE:
 
       case icPerformNative:
         {
-          if (debugger->handle_function_call(begin, end, callee) == cExit) {
+          if (m_debugger->handle_function_call(begin, end, callee) == cExit) {
             return cExit;
           }
           RefalNativeFunction *native_callee =
@@ -1539,7 +1549,7 @@ JUMP_FROM_SCALE:
   }
 }
 
-void refalrts::VM::read_counters(unsigned long counters[]) {
+void refalrts::VM::read_counters(double counters[]) {
   counters[cPerformanceCounter_TotalSteps] = step_counter();
 }
 
@@ -1772,7 +1782,10 @@ bool refalrts::VM::repeated_evar_right(
   while (
     // порядок перечисления условий важен
     ! empty_seq(evar_b_sample, cur_sample)
-    && ! (empty_seq(copy_first, current) || ! VM::equal_nodes(current, cur_sample))
+    && ! (
+      empty_seq(copy_first, current)
+      || ! VM::equal_nodes(current, cur_sample)
+    )
   ) {
     move_right(copy_first, current);
     move_right(evar_b_sample, cur_sample);
@@ -1811,55 +1824,55 @@ bool refalrts::VM::repeated_evar_right(
   }
 }
 
-bool refalrts::VM::copy_node(refalrts::Iter& res, refalrts::Iter sample) {
+void refalrts::VM::copy_node(refalrts::Iter& res, refalrts::Iter sample) {
   switch(sample->tag) {
     case refalrts::cDataChar:
-      return alloc_char(res, sample->char_info);
+      alloc_char(res, sample->char_info);
+      break;
 
     case refalrts::cDataNumber:
-      return alloc_number(res, sample->number_info);
+      alloc_number(res, sample->number_info);
+      break;
 
     case refalrts::cDataFunction:
-      return alloc_name(res, sample->function_info);
+      alloc_name(res, sample->function_info);
+      break;
 
     case refalrts::cDataIdentifier:
-      return alloc_ident(res, sample->ident_info);
+      alloc_ident(res, sample->ident_info);
+      break;
 
     case refalrts::cDataOpenBracket:
-      return alloc_open_bracket(res);
+      alloc_open_bracket(res);
+      break;
 
     case refalrts::cDataCloseBracket:
-      return alloc_close_bracket(res);
+      alloc_close_bracket(res);
+      break;
 
     case refalrts::cDataOpenADT:
-      return alloc_open_adt(res);
+      alloc_open_adt(res);
+      break;
 
     case refalrts::cDataCloseADT:
-      return alloc_close_adt(res);
+      alloc_close_adt(res);
+      break;
 
-    case refalrts::cDataClosure: {
-      bool allocated = allocator()->alloc_node(res);
-      if (allocated) {
+    case refalrts::cDataClosure:
+      {
+        alloc_node(res);
         res->tag = refalrts::cDataClosure;
         refalrts::Iter head = sample->link_info;
         res->link_info = head;
         ++ (head->number_info);
-        return true;
-      } else {
-        return false;
       }
-    }
+      break;
 
-    case refalrts::cDataFile: {
-      bool allocated = allocator()->alloc_node(res);
-      if (allocated) {
-        res->tag = refalrts::cDataFile;
-        res->file_info = sample->file_info;
-        return true;
-      } else {
-        return false;
-      }
-    }
+    case refalrts::cDataFile:
+      alloc_node(res);
+      res->tag = refalrts::cDataFile;
+      res->file_info = sample->file_info;
+      break;
 
     /*
       Копируем только объектное выражение -- никаких вызовов функций
@@ -1870,7 +1883,7 @@ bool refalrts::VM::copy_node(refalrts::Iter& res, refalrts::Iter sample) {
   }
 }
 
-bool refalrts::VM::copy_nonempty_evar(
+void refalrts::VM::copy_nonempty_evar(
   refalrts::Iter& evar_res_b, refalrts::Iter& evar_res_e,
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample
 ) {
@@ -1879,13 +1892,10 @@ bool refalrts::VM::copy_nonempty_evar(
   refalrts::Iter res = 0;
   refalrts::Iter bracket_stack = 0;
 
-  refalrts::Iter prev_res_begin = prev(allocator()->free_ptr());
+  refalrts::Iter prev_res_begin = prev(m_free_ptr);
 
   while (! refalrts::empty_seq(evar_b_sample, evar_e_sample)) {
-    if (! copy_node(res, evar_b_sample)) {
-      profiler()->stop_copy();
-      return false;
-    }
+    copy_node(res, evar_b_sample);
 
     if (is_open_bracket(res)) {
       res->link_info = bracket_stack;
@@ -1907,62 +1917,48 @@ bool refalrts::VM::copy_nonempty_evar(
   evar_res_e = res;
 
   profiler()->stop_copy();
-
-  return true;
 }
 
-bool refalrts::VM::alloc_chars(
+void refalrts::VM::alloc_chars(
   refalrts::Iter& res_b, refalrts::Iter& res_e,
   const char buffer[], unsigned buflen
 ) {
   if (buflen == 0) {
     res_b = 0;
     res_e = 0;
-    return true;
   } else {
-    refalrts::Iter before_begin_seq = prev(allocator()->free_ptr());
+    refalrts::Iter before_begin_seq = prev(m_free_ptr);
     refalrts::Iter end_seq = 0;
 
     for (unsigned i = 0; i < buflen; ++ i) {
-      if (! alloc_char(end_seq, buffer[i])) {
-        return false;
-      }
+      alloc_char(end_seq, buffer[i]);
     }
 
     res_b = next(before_begin_seq);
     res_e = end_seq;
-
-    return true;
   }
 }
 
-bool refalrts::VM::alloc_string(
+void refalrts::VM::alloc_string(
   refalrts::Iter& res_b, refalrts::Iter& res_e, const char *string
 ) {
   if (*string == '\0') {
     res_b = 0;
     res_e = 0;
-    return true;
   } else {
-    refalrts::Iter before_begin_seq = prev(allocator()->free_ptr());
+    refalrts::Iter before_begin_seq = prev(m_free_ptr);
     refalrts::Iter end_seq = 0;
 
     for (const char *p = string; *p != '\0'; ++ p) {
-      if (! alloc_char(end_seq, *p)) {
-        return false;
-      }
+      alloc_char(end_seq, *p);
     }
 
     res_b = next(before_begin_seq);
     res_e = end_seq;
-
-    return true;
   }
 }
 
 void refalrts::VM::reinit_svar(refalrts::Iter res, refalrts::Iter sample) {
-  cleanup_node(res);
-
   res->tag = sample->tag;
 
   switch(sample->tag) {
@@ -1976,7 +1972,6 @@ void refalrts::VM::reinit_svar(refalrts::Iter res, refalrts::Iter sample) {
 
     case refalrts::cDataFunction:
       res->function_info = sample->function_info;
-      res->function_info->add_ref();
       break;
 
     case refalrts::cDataIdentifier:
@@ -2000,5 +1995,20 @@ void refalrts::VM::reinit_svar(refalrts::Iter res, refalrts::Iter sample) {
     */
     default:
       refalrts_switch_default_violation(sample->tag);
+  }
+}
+
+void refalrts::VM::splice_to_freelist(
+  refalrts::Iter begin, refalrts::Iter end
+) {
+  reset_allocator_aux();
+  list_splice(m_free_ptr, begin, end);
+}
+
+refalrts::Iter refalrts::VM::splice_from_freelist(refalrts::Iter pos) {
+  if (m_free_ptr != m_begin_free_list.next) {
+    return list_splice(pos, m_begin_free_list.next, m_free_ptr->prev);
+  } else {
+    return pos;
   }
 }

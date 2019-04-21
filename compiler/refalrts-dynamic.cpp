@@ -38,7 +38,7 @@ refalrts::Module::Module(
   , m_stat(stat)
   , m_indirect_references()
   , m_aliases()
-  , m_representant(new ModuleRepresentant(module_name, this))
+  , m_representant(domain->new_module_representant(module_name, this))
   , m_refcounter(0)
   , m_initialized_scopes()
 {
@@ -72,7 +72,6 @@ refalrts::Module::Module(
 
 refalrts::Module::~Module() {
   m_representant->module = 0;
-  m_representant->release();
   api::stat_destroy(m_stat);
   while (m_funcs_table.size() > 0) {
     FuncsMap::iterator p = m_funcs_table.begin();
@@ -80,7 +79,6 @@ refalrts::Module::~Module() {
     m_funcs_table.erase(p);
     /* TODO: продумать освобождение статических ящиков */
     function->deactivate();
-    function->release();
   }
 }
 
@@ -122,10 +120,7 @@ void refalrts::Module::register_function(refalrts::RefalFunction *func) {
   FuncsMap::value_type new_value(func->name, func);
   std::pair<FuncsMap::iterator, bool> res = m_funcs_table.insert(new_value);
   if (! res.second) {
-    // Если сначала удалить func, то не удастся из него извлечь имя
-    RedeclarationError error(func->name);
-    func->release();
-    throw error;
+    throw RedeclarationError(func->name);
   }
 }
 
@@ -538,7 +533,7 @@ void refalrts::Module::Loader::enumerate_blocks() {
           PARSE_ASSERT(read == 1, "can't read offset in REFAL_FUNCTION");
 
           register_(
-            new RASLFunction(
+            domain()->new_RASL_function(
               table->make_name(name),
               &table->rasl[offset],
               &table->externals_pointers[0],
@@ -555,8 +550,7 @@ void refalrts::Module::Loader::enumerate_blocks() {
         {
           PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
           RefalNativeFunction *func =
-            new RefalNativeFunction(
-              0, /* указатель на нативный код */
+            domain()->new_native_function(
               &table->externals_pointers[0],
               &table->idents[0],
               table->make_name(read_asciiz())
@@ -568,12 +562,12 @@ void refalrts::Module::Loader::enumerate_blocks() {
 
       case cBlockTypeEmptyFunction:
         PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
-        register_(new RefalEmptyFunction(table->make_name(read_asciiz())));
+        register_(domain()->new_empty_function(table->make_name(read_asciiz())));
         break;
 
       case cBlockTypeSwap:
         PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
-        register_(new RefalSwap(table->make_name(read_asciiz())));
+        register_(domain()->new_swap(table->make_name(read_asciiz())));
         break;
 
       case cBlockTypeReference:
@@ -582,12 +576,12 @@ void refalrts::Module::Loader::enumerate_blocks() {
 
       case cBlockTypeConditionRasl:
         PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
-        register_(new RefalCondFunctionRasl(table->make_name(read_asciiz())));
+        register_(domain()->new_cond_func_rasl(table->make_name(read_asciiz())));
         break;
 
       case cBlockTypeConditionNative:
         PARSE_ASSERT(table != 0, "CONST_TABLE must precede any function");
-        register_(new RefalCondFunctionNative(table->make_name(read_asciiz())));
+        register_(domain()->new_cond_func_nat(table->make_name(read_asciiz())));
         break;
 
       case cBlockTypeIncorporated:
@@ -875,6 +869,9 @@ refalrts::Domain::Domain(refalrts::DiagnosticConfig *diagnostic_config)
   , m_storage(this)
   , m_dangerous(false)
   , m_diagnostic_config(diagnostic_config)
+  , m_allocated_functions()
+  , m_chunks(0)
+  , m_memory_use(0)
 {
   /* пусто */
 }
@@ -928,6 +925,32 @@ refalrts::Domain::load_module(
   }
 }
 
+bool refalrts::Domain::alloc_nodes(refalrts::Iter& begin, refalrts::Iter& end) {
+  if (m_memory_use + Chunk::cSize >= m_diagnostic_config->memory_limit) {
+    return false;
+  }
+
+  Chunk *new_chunk = new (std::nothrow) Chunk(m_chunks);
+  if (! new_chunk) {
+    return false;
+  }
+
+  m_memory_use += Chunk::cSize;
+
+  m_chunks = new_chunk;
+  new_chunk->elems[0].tag = cDataIllegal;
+  for (size_t i = 1; i < Chunk::cSize; ++i) {
+    new_chunk->elems[i].tag = cDataIllegal;
+    new_chunk->elems[i].prev = &new_chunk->elems[i - 1];
+    new_chunk->elems[i - 1].next = &new_chunk->elems[i];
+  }
+
+  begin = &new_chunk->elems[0];
+  end = &new_chunk->elems[Chunk::cSize - 1];
+
+  return true;
+}
+
 bool refalrts::Domain::initialize(
   refalrts::VM *vm, refalrts::Iter pos, refalrts::Module *new_module,
   refalrts::Domain::ModuleStorage& new_storage,
@@ -976,7 +999,16 @@ void refalrts::Domain::unload(refalrts::VM *vm, refalrts::FnResult& result) {
 
   DangerousRAII dang(&m_dangerous);
   m_storage.unload(vm, result);
+}
+
+void refalrts::Domain::free_domain_memory() {
   free_idents_table();
+
+  for (size_t i = 0; i < m_allocated_functions.size(); ++i) {
+    delete m_allocated_functions[i];
+  }
+
+  free_nodes();
 }
 
 //------------------------------------------------------------------------------
@@ -1029,9 +1061,9 @@ bool refalrts::Domain::register_ident(RefalIdentifier ident) {
   }
 }
 
-void refalrts::Domain::read_counters(unsigned long counters[]) {
-  counters[cPerformanceCounter_IdentsAllocated] =
-    static_cast<unsigned long>(idents_count());
+void refalrts::Domain::read_counters(double counters[]) {
+  counters[cPerformanceCounter_HeapSize] = memory_use() * double(sizeof(Node));
+  counters[cPerformanceCounter_IdentsAllocated] = idents_count();
 }
 
 const refalrts::api::stat *
@@ -1109,4 +1141,23 @@ refalrts::Domain::lookup_module_by_name(
   }
 
   return result;
+}
+
+void refalrts::Domain::free_nodes() {
+  if (m_diagnostic_config->print_statistics) {
+    fprintf(
+      stderr,
+      "Memory used %d nodes, %d * %lu = %lu bytes\n",
+      m_memory_use,
+      m_memory_use,
+      static_cast<unsigned long>(sizeof(Node)),
+      static_cast<unsigned long>(m_memory_use * sizeof(Node))
+    );
+  }
+
+  while (m_chunks != 0) {
+    Chunk *next = m_chunks->next;
+    delete m_chunks;
+    m_chunks = next;
+  }
 }

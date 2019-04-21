@@ -7,8 +7,6 @@
 #include "refalrts-commands.h"
 #include "refalrts-utils.h"
 
-//FROM refalrts-allocator
-#include "refalrts-allocator.h"
 //FROM refalrts-dynamic
 #include "refalrts-dynamic.h"
 //FROM refalrts-functions
@@ -328,102 +326,117 @@ void refalrts::reset_allocator(refalrts::VM *vm) {
   vm->reset_allocator();
 }
 
-bool refalrts::copy_evar(
+void refalrts::copy_evar(
   refalrts::VM *vm, refalrts::Iter& evar_res_b, refalrts::Iter& evar_res_e,
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample
 ) {
-  return vm->copy_evar(evar_res_b, evar_res_e, evar_b_sample, evar_e_sample);
+  vm->copy_evar(evar_res_b, evar_res_e, evar_b_sample, evar_e_sample);
 }
 
-bool refalrts::copy_stvar(
+void refalrts::copy_stvar(
   refalrts::VM *vm, refalrts::Iter& stvar_res, refalrts::Iter stvar_sample
 ) {
-  return vm->copy_stvar(stvar_res, stvar_sample);
+  vm->copy_stvar(stvar_res, stvar_sample);
 }
 
-bool refalrts::alloc_copy_evar(
+void refalrts::alloc_copy_evar(
   refalrts::VM *vm, refalrts::Iter& res,
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample
 ) {
-  return vm->alloc_copy_evar(res, evar_b_sample, evar_e_sample);
+  vm->alloc_copy_evar(res, evar_b_sample, evar_e_sample);
 }
 
-bool refalrts::alloc_copy_svar_(
+void refalrts::alloc_copy_svar_(
   refalrts::VM *vm, refalrts::Iter& svar_res, refalrts::Iter svar_sample
 ) {
-  return vm->copy_node(svar_res, svar_sample);
+  vm->copy_node(svar_res, svar_sample);
 }
 
 
-bool refalrts::alloc_char(refalrts::VM *vm, refalrts::Iter& res, char ch) {
-  return vm->alloc_char(res, ch);
+void refalrts::alloc_char(refalrts::VM *vm, refalrts::Iter& res, char ch) {
+  vm->alloc_char(res, ch);
 }
 
-bool refalrts::alloc_number(
+void refalrts::alloc_number(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalNumber num
 ) {
-  return vm->alloc_number(res, num);
+  vm->alloc_number(res, num);
 }
 
-bool refalrts::alloc_name(
+void refalrts::alloc_name(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalFunction *fn
 ) {
-  return vm->alloc_name(res, fn);
+  vm->alloc_name(res, fn);
 }
 
-bool refalrts::alloc_ident(
+void refalrts::alloc_ident(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalIdentifier ident
 ) {
-  return vm->alloc_ident(res, ident);
+  vm->alloc_ident(res, ident);
 }
 
-bool refalrts::alloc_open_adt(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_open_adt(res);
+void refalrts::alloc_open_adt(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_open_adt(res);
 }
 
-bool refalrts::alloc_close_adt(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_close_adt(res);
+void refalrts::alloc_close_adt(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_close_adt(res);
 }
 
-bool refalrts::alloc_open_bracket(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_open_bracket(res);
+void refalrts::alloc_open_bracket(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_open_bracket(res);
 }
 
-bool refalrts::alloc_close_bracket(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_close_bracket(res);
+void refalrts::alloc_close_bracket(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_close_bracket(res);
 }
 
-bool refalrts::alloc_open_call(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_open_call(res);
+void refalrts::alloc_open_call(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_open_call(res);
 }
 
-bool refalrts::alloc_close_call(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_close_call(res);
+void refalrts::alloc_close_call(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_close_call(res);
 }
 
-bool refalrts::alloc_closure_head(refalrts::VM *vm, refalrts::Iter& res) {
-  return vm->alloc_closure_head(res);
+void refalrts::alloc_closure_head(refalrts::VM *vm, refalrts::Iter& res) {
+  vm->alloc_closure_head(res);
 }
 
-bool refalrts::alloc_unwrapped_closure(
+void refalrts::alloc_unwrapped_closure(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::Iter head
 ) {
-  return vm->alloc_unwrapped_closure(res, head);
+  vm->alloc_unwrapped_closure(res, head);
 }
 
-bool refalrts::alloc_chars(
+void refalrts::alloc_chars(
   refalrts::VM *vm,
   refalrts::Iter& res_b, refalrts::Iter& res_e,
   const char buffer[], unsigned buflen
 ) {
-  return vm->alloc_chars(res_b, res_e, buffer, buflen);
+  vm->alloc_chars(res_b, res_e, buffer, buflen);
 }
 
-bool refalrts::alloc_string(
+void refalrts::alloc_string(
   refalrts::VM *vm,
   refalrts::Iter& res_b, refalrts::Iter& res_e, const char *string
 ) {
-  return vm->alloc_string(res_b, res_e, string);
+  vm->alloc_string(res_b, res_e, string);
+}
+
+refalrts::FnResult refalrts::checked_alloc(
+  refalrts::VM *vm, refalrts::CheckedAllocFn function, void *data
+) {
+  jmp_buf on_memory_fail;
+  jmp_buf *old = vm->reset_memory_fail(&on_memory_fail);
+  if (setjmp(on_memory_fail)) {
+    vm->reset_memory_fail(old);
+    return cNoMemory;
+  }
+
+  FnResult res = function(vm, data);
+  vm->reset_memory_fail(old);
+  return res;
 }
 
 void refalrts::push_stack(refalrts::VM *vm, refalrts::Iter call_bracket) {
@@ -525,7 +538,7 @@ refalrts::Iter refalrts::splice_evar(
 void refalrts::splice_to_freelist(
   refalrts::VM *vm, refalrts::Iter begin, refalrts::Iter end
 ) {
-  vm->allocator()->splice_to_freelist(begin, end);
+  vm->splice_to_freelist(begin, end);
 }
 
 extern void refalrts::splice_to_freelist_open(
@@ -539,7 +552,7 @@ extern void refalrts::splice_to_freelist_open(
 refalrts::Iter refalrts::splice_from_freelist(
   refalrts::VM *vm, refalrts::Iter pos
 ) {
-  return vm->allocator()->splice_from_freelist(pos);
+  return vm->splice_from_freelist(pos);
 }
 
 /*
@@ -554,19 +567,19 @@ refalrts::Iter refalrts::splice_from_freelist(
 refalrts::Iter refalrts::unwrap_closure(refalrts::Iter closure) {
   assert(closure->tag == refalrts::cDataClosure);
 
-  refalrts::Iter before_closure = prev(closure);
+  refalrts::Iter before_closure = closure->prev;
   refalrts::Iter head = closure->link_info;
-  refalrts::Iter end_of_closure = prev(head);
+  refalrts::Iter end_of_closure = head->prev;
 
-  assert(head != prev(head));
-  assert(head != next(head));
+  assert(head != head->prev);
+  assert(head != head->next);
 
-  link_adjacent(before_closure, head);
-  link_adjacent(end_of_closure, closure);
+  weld(before_closure, head);
+  weld(end_of_closure, closure);
 
   closure->tag = refalrts::cDataUnwrappedClosure;
 
-  return prev(head);
+  return head->prev;
 }
 
 // Свернуть замыкание
@@ -574,27 +587,18 @@ refalrts::Iter refalrts::wrap_closure(refalrts::Iter closure) {
   assert(closure->tag == refalrts::cDataUnwrappedClosure);
 
   refalrts::Iter head = closure->link_info;
-  refalrts::Iter before_closure = prev(head);
-  refalrts::Iter end_of_closure = prev(closure);
+  refalrts::Iter before_closure = head->prev;
+  refalrts::Iter end_of_closure = closure->prev;
 
-  assert(head != prev(head));
-  assert(head != next(head));
+  assert(head != head->prev);
+  assert(head != head->next);
 
-  link_adjacent(before_closure, closure);
-  link_adjacent(end_of_closure, head);
+  weld(before_closure, closure);
+  weld(end_of_closure, head);
 
   closure->tag = refalrts::cDataClosure;
 
-  return next(closure);
-}
-
-void refalrts::cleanup_node(refalrts::Iter node) {
-  if (node->tag == refalrts::cDataFunction) {
-    node->function_info->release();
-
-    node->tag = refalrts::cDataIllegal;
-    node->function_info = 0;
-  }
+  return closure->next;
 }
 
 //------------------------------------------------------------------------------
@@ -604,16 +608,15 @@ void refalrts::this_is_generated_function(refalrts::VM *vm) {
   vm->profiler()->start_generated_function();
 }
 
-unsigned long refalrts::ticks_per_second() {
-  return CLOCKS_PER_SEC;
+double refalrts::ticks_per_second() {
+  return 1e9;
 }
 
 void refalrts::read_performance_counters(
-  refalrts::VM *vm, unsigned long counters[]
+  refalrts::VM *vm, double counters[]
 ) {
   vm->profiler()->read_counters(counters);
   vm->read_counters(counters);
-  vm->allocator()->read_counters(counters);
   vm->domain()->read_counters(counters);
 }
 
@@ -744,10 +747,16 @@ refalrts::NativeReference::NativeReference(
 //==============================================================================
 
 refalrts::FnResult refalrts::recursive_call_main_loop(refalrts::VM *vm) {
+  jmp_buf *old = vm->reset_memory_fail(0);
+
   const  refalrts::RASLCommand rasl[] = {
+    { refalrts::icPushState, 0, 0, 0 },
     { refalrts::icNextStep, 0, 0, 0 },
+    { refalrts::icMainLoopReturnSuccess, 0, 0, 0 }
   };
-  return vm->main_loop(rasl);
+  FnResult res = vm->main_loop(rasl);
+  vm->reset_memory_fail(old);
+  return res;
 }
 
 

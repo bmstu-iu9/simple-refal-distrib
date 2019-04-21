@@ -3,15 +3,14 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1086688698_434048907
+#define cookie_ns cookie_ns_1299759681_1153380958
 
 enum efunc {
-  efunc_gen_SRm_LoadSource_L1 = 0,
-  efunc_SRm_LoadSource = 1,
-  efunc_Fetch = 2,
-  efunc_Map = 3,
-  efunc_LinearizeLine = 4,
-  efunc_LoadFile = 5,
+  efunc_Fetch = 0,
+  efunc_Map = 1,
+  efunc_LinearizeLine = 2,
+  efunc_gen_SRm_LoadSource_L1 = 3,
+  efunc_LoadFile = 4,
 };
 
 
@@ -74,7 +73,7 @@ static refalrts::FnResult func_gen_SRm_LoadSource_L1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1086688698U, 434048907U, func_gen_SRm_LoadSource_L1);
+static refalrts::NativeReference nat_ref_gen_SRm_LoadSource_L1("SR-LoadSource\\1", 1299759681U, 1153380958U, func_gen_SRm_LoadSource_L1);
 
 
 static refalrts::FnResult func_SRm_LoadSource(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -98,23 +97,15 @@ static refalrts::FnResult func_SRm_LoadSource(refalrts::VM *vm, refalrts::Iter a
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </5 & Fetch/6 </7 & Map/8 & LinearizeLine/9 Tile{ AsIs: </0 Reuse: & LoadFile/4 AsIs: e.FileName#1/2 AsIs: >/1 } >/10 & SR-LoadSource\1/11 >/12 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( vm, context[5] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[6], functions[efunc_Fetch] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[7] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_Map] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_LinearizeLine] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_gen_SRm_LoadSource_L1] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[12] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], functions[efunc_LoadFile] );
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_Fetch]);
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::alloc_name(vm, context[8], functions[efunc_Map]);
+  refalrts::alloc_name(vm, context[9], functions[efunc_LinearizeLine]);
+  refalrts::alloc_close_call(vm, context[10]);
+  refalrts::alloc_name(vm, context[11], functions[efunc_gen_SRm_LoadSource_L1]);
+  refalrts::alloc_close_call(vm, context[12]);
+  refalrts::update_name(context[4], functions[efunc_LoadFile]);
   refalrts::push_stack( vm, context[12] );
   refalrts::push_stack( vm, context[5] );
   refalrts::push_stack( vm, context[10] );
@@ -163,7 +154,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::VM *vm, refalrts::Iter ar
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & LinearizeLine/4 (/7 {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: e.Line#1/5 } Tile{ HalfReuse: '\n'/1 ]] }
-  refalrts::reinit_char( context[1], '\n' );
+  refalrts::reinit_char(context[1], '\n');
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -172,7 +163,7 @@ static refalrts::FnResult func_LinearizeLine(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 1086688698U, 434048907U, func_LinearizeLine);
+static refalrts::NativeReference nat_ref_LinearizeLine("LinearizeLine", 1299759681U, 1153380958U, func_LinearizeLine);
 
 
 //End of file

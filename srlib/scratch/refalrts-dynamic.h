@@ -136,6 +136,10 @@ private:
       return ::fread(ptr, size, count, m_stream);
     }
 
+    Domain *domain() const {
+      return m_module->domain();
+    }
+
     bool seek_rasl_signature();
     std::string read_asciiz();
     void read_start_block(size_t datalen);
@@ -286,6 +290,18 @@ class Domain {
 
   friend class ModuleStorage;
 
+  struct Chunk {
+    enum { cSize = 1000 };
+    Node elems[cSize];
+    Chunk *next;
+
+    Chunk(Chunk *next)
+      : next(next)
+    {
+      /* пусто */
+    }
+  };
+
   typedef std::map<StringRef, RefalIdentifier> IdentsMap;
 
   IdentsMap m_idents_table;
@@ -293,6 +309,11 @@ class Domain {
   ModuleStorage m_storage;
   bool m_dangerous;
   DiagnosticConfig *m_diagnostic_config;
+
+  std::vector<RefalFunction*> m_allocated_functions;
+
+  Chunk *m_chunks;
+  size_t m_memory_use;
 
   class DangerousRAII {
     bool *m_dangerous;
@@ -322,6 +343,8 @@ public:
   void unload_module(VM *vm, Iter pos, Module *module, FnResult& result);
   void unload(VM *vm, FnResult& result);
 
+  void free_domain_memory();
+
   size_t idents_count();
 
   RefalFunction *lookup_function(const RefalFuncName& name) {
@@ -337,10 +360,74 @@ public:
   RefalIdentifier lookup_ident(const char *name);
   bool register_ident(RefalIdentifier ident);
 
-  void read_counters(unsigned long counters[]);
+  void read_counters(double counters[]);
 
   bool dangerous_state() const {
     return m_dangerous;
+  }
+
+  ModuleRepresentant *new_module_representant(
+    const std::string& module_name, Module *module
+  ) {
+    ModuleRepresentant *res = new ModuleRepresentant(module_name, module);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalFunction *new_RASL_function(
+    RefalFuncName name,
+    const RASLCommand *rasl,
+    RefalFunction **functions,
+    const RefalIdentifier *idents,
+    const RefalNumber *numbers,
+    const StringItem *strings,
+    const char *filename
+  ) {
+    RefalFunction *res = new RASLFunction(
+      name, rasl, functions, idents, numbers, strings, filename
+    );
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalNativeFunction *new_native_function(
+    RefalFunction **functions,
+    const RefalIdentifier *idents,
+    RefalFuncName name
+  ) {
+    RefalNativeFunction *res = new RefalNativeFunction(functions, idents, name);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalFunction *new_empty_function(RefalFuncName name) {
+    RefalFunction *res = new RefalEmptyFunction(name);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalFunction *new_swap(RefalFuncName name) {
+    RefalFunction *res = new RefalSwap(name);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalFunction *new_cond_func_rasl(RefalFuncName name) {
+    RefalFunction *res = new RefalCondFunctionRasl(name);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  RefalFunction *new_cond_func_nat(RefalFuncName name) {
+    RefalFunction *res = new RefalCondFunctionNative(name);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
+  bool alloc_nodes(Iter& begin, Iter& end);
+
+  size_t memory_use() const {
+    return m_memory_use;
   }
 
 private:
@@ -358,6 +445,7 @@ private:
   );
 
   void free_idents_table();
+  void free_nodes();
 };
 
 }  // namespace refalrts

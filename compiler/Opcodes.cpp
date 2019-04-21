@@ -3,29 +3,23 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_35760015_2997675368
+#define cookie_ns cookie_ns_2119586367_3227668518
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
-  efunc_Mu = 1,
-  efunc_u_u_Stepm_Start = 2,
-  efunc_u_u_Mum_Aux = 3,
-  efunc_u_u_Stepm_End = 4,
-  efunc_gen_u_u_Mum_Aux_S13B1 = 5,
-  efunc_u_u_FindMuPtr = 6,
-  efunc_Add = 7,
-  efunc_Div = 8,
-  efunc_Mod = 9,
-  efunc_Mul = 10,
-  efunc_Residue = 11,
-  efunc_Sub = 12,
-  efunc_Type = 13,
-  efunc_Up = 14,
-  efunc_Evm_met = 15,
-  efunc_gen_Residue_C1 = 16,
-  efunc_NumberFromOpcode = 17,
-  efunc_NumberFromBracket = 18,
-  efunc_BlockTypeNumber = 19,
+  efunc_u_u_Stepm_Start = 1,
+  efunc_u_u_Mum_Aux = 2,
+  efunc_u_u_Stepm_End = 3,
+  efunc_u_u_FindMuPtr = 4,
+  efunc_Add = 5,
+  efunc_Div = 6,
+  efunc_Mod = 7,
+  efunc_Mul = 8,
+  efunc_Residue = 9,
+  efunc_Sub = 10,
+  efunc_gen_u_u_Mum_Aux_S13B1 = 11,
+  efunc_Type = 12,
+  efunc_gen_Residue_C1 = 13,
 };
 
 
@@ -161,26 +155,16 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  if( ! refalrts::alloc_open_call( vm, context[7] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Mu_C1] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[13] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_stvar(vm, context[15], context[5]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[16] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[8] ) )
-    return refalrts::cNoMemory;
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::alloc_name(vm, context[9], functions[efunc_gen_Mu_C1]);
+  refalrts::alloc_open_call(vm, context[10]);
+  refalrts::alloc_name(vm, context[11], functions[efunc_u_u_Stepm_Start]);
+  refalrts::alloc_close_call(vm, context[12]);
+  refalrts::alloc_open_call(vm, context[13]);
+  refalrts::alloc_name(vm, context[14], functions[efunc_u_u_Mum_Aux]);
+  refalrts::copy_stvar(vm, context[15], context[5]);
+  refalrts::alloc_close_call(vm, context[16]);
+  refalrts::alloc_close_call(vm, context[8]);
   refalrts::push_stack( vm, context[8] );
   refalrts::push_stack( vm, context[7] );
   res = refalrts::splice_elem( res, context[8] );
@@ -218,9 +202,9 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
-    refalrts::reinit_close_call( context[7] );
-    refalrts::reinit_open_call( context[11] );
+    refalrts::update_name(context[4], functions[efunc_u_u_Stepm_End]);
+    refalrts::reinit_close_call(context[7]);
+    refalrts::reinit_open_call(context[11]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[11] );
     refalrts::push_stack( vm, context[7] );
@@ -239,7 +223,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 35760015U, 2997675368U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 2119586367U, 3227668518U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -300,10 +284,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    if( ! refalrts::alloc_number( vm, context[9], 2997675368UL ) )
-      return refalrts::cNoMemory;
-    refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
-    refalrts::reinit_number( context[5], 35760015UL );
+    refalrts::alloc_number(vm, context[9], 3227668518UL);
+    refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
+    refalrts::reinit_number(context[5], 2119586367UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -329,9 +312,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name( context[4], functions[efunc_u_u_FindMuPtr] );
-  refalrts::reinit_number( context[5], 35760015UL );
-  refalrts::reinit_number( context[7], 2997675368UL );
+  refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
+  refalrts::reinit_number(context[5], 2119586367UL);
+  refalrts::reinit_number(context[7], 3227668518UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -343,7 +326,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 35760015U, 2997675368U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 2119586367U, 3227668518U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -380,7 +363,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Add] );
+      refalrts::reinit_name(context[1], functions[efunc_Add]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -397,7 +380,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Div] );
+      refalrts::reinit_name(context[1], functions[efunc_Div]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -414,7 +397,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Mod] );
+      refalrts::reinit_name(context[1], functions[efunc_Mod]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -431,7 +414,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Mul] );
+      refalrts::reinit_name(context[1], functions[efunc_Mul]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -448,7 +431,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Residue] );
+      refalrts::reinit_name(context[1], functions[efunc_Residue]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -465,7 +448,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Sub] );
+      refalrts::reinit_name(context[1], functions[efunc_Sub]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -482,7 +465,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Add] );
+      refalrts::reinit_name(context[1], functions[efunc_Add]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -499,7 +482,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Div] );
+      refalrts::reinit_name(context[1], functions[efunc_Div]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -516,7 +499,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Mod] );
+      refalrts::reinit_name(context[1], functions[efunc_Mod]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -533,7 +516,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Mul] );
+      refalrts::reinit_name(context[1], functions[efunc_Mul]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -550,7 +533,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name( context[1], functions[efunc_Residue] );
+      refalrts::reinit_name(context[1], functions[efunc_Residue]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -566,7 +549,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-    refalrts::reinit_name( context[1], functions[efunc_Sub] );
+    refalrts::reinit_name(context[1], functions[efunc_Sub]);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -581,13 +564,10 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
   //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
-  if( ! refalrts::alloc_open_call( vm, context[7] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[9] ) )
-    return refalrts::cNoMemory;
-  refalrts::update_name( context[4], functions[efunc_Type] );
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::alloc_name(vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1]);
+  refalrts::alloc_close_call(vm, context[9]);
+  refalrts::update_name(context[4], functions[efunc_Type]);
   refalrts::push_stack( vm, context[9] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
@@ -602,7 +582,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 35760015U, 2997675368U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 2119586367U, 3227668518U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -634,26 +614,16 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  if( ! refalrts::alloc_open_call( vm, context[7] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[9], functions[efunc_gen_Residue_C1] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[10] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[11], functions[efunc_u_u_Stepm_Start] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[12] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_open_call( vm, context[13] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_name( vm, context[14], functions[efunc_u_u_Mum_Aux] ) )
-    return refalrts::cNoMemory;
-  if (! refalrts::copy_stvar(vm, context[15], context[5]))
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[16] ) )
-    return refalrts::cNoMemory;
-  if( ! refalrts::alloc_close_call( vm, context[8] ) )
-    return refalrts::cNoMemory;
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::alloc_name(vm, context[9], functions[efunc_gen_Residue_C1]);
+  refalrts::alloc_open_call(vm, context[10]);
+  refalrts::alloc_name(vm, context[11], functions[efunc_u_u_Stepm_Start]);
+  refalrts::alloc_close_call(vm, context[12]);
+  refalrts::alloc_open_call(vm, context[13]);
+  refalrts::alloc_name(vm, context[14], functions[efunc_u_u_Mum_Aux]);
+  refalrts::copy_stvar(vm, context[15], context[5]);
+  refalrts::alloc_close_call(vm, context[16]);
+  refalrts::alloc_close_call(vm, context[8]);
   refalrts::push_stack( vm, context[8] );
   refalrts::push_stack( vm, context[7] );
   res = refalrts::splice_elem( res, context[8] );
@@ -691,9 +661,9 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name( context[4], functions[efunc_u_u_Stepm_End] );
-    refalrts::reinit_close_call( context[7] );
-    refalrts::reinit_open_call( context[11] );
+    refalrts::update_name(context[4], functions[efunc_u_u_Stepm_End]);
+    refalrts::reinit_close_call(context[7]);
+    refalrts::reinit_open_call(context[11]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[11] );
     refalrts::push_stack( vm, context[7] );
@@ -712,7 +682,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 35760015U, 2997675368U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", 2119586367U, 3227668518U, func_Residue);
 
 
 static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -747,7 +717,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdProfileFunction/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 0/1 ]] }
-      refalrts::reinit_number( context[1], 0UL );
+      refalrts::reinit_number(context[1], 0UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -764,7 +734,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdLoadConstants/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/1 ]] }
-      refalrts::reinit_number( context[1], 1UL );
+      refalrts::reinit_number(context[1], 1UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -781,7 +751,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIssueMemory/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/1 ]] }
-      refalrts::reinit_number( context[1], 2UL );
+      refalrts::reinit_number(context[1], 2UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -798,7 +768,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdReserveBacktrackStack/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/1 ]] }
-      refalrts::reinit_number( context[1], 3UL );
+      refalrts::reinit_number(context[1], 3UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -815,7 +785,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdOnFailGoTo/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 4/1 ]] }
-      refalrts::reinit_number( context[1], 4UL );
+      refalrts::reinit_number(context[1], 4UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -832,7 +802,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdProfilerStopSentence/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 5/1 ]] }
-      refalrts::reinit_number( context[1], 5UL );
+      refalrts::reinit_number(context[1], 5UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -849,7 +819,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdInitB0/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 6/1 ]] }
-      refalrts::reinit_number( context[1], 6UL );
+      refalrts::reinit_number(context[1], 6UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -865,7 +835,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdInitB0-Lite/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 7/1 ]] }
-    refalrts::reinit_number( context[1], 7UL );
+    refalrts::reinit_number(context[1], 7UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -894,7 +864,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 8/1 ]] }
-        refalrts::reinit_number( context[1], 8UL );
+        refalrts::reinit_number(context[1], 8UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -911,7 +881,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 9/1 ]] }
-        refalrts::reinit_number( context[1], 9UL );
+        refalrts::reinit_number(context[1], 9UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -927,7 +897,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdChar/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 10/1 ]] }
-      refalrts::reinit_number( context[1], 10UL );
+      refalrts::reinit_number(context[1], 10UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -948,7 +918,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 11/1 ]] }
-        refalrts::reinit_number( context[1], 11UL );
+        refalrts::reinit_number(context[1], 11UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -964,7 +934,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCharSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 12/1 ]] }
-      refalrts::reinit_number( context[1], 12UL );
+      refalrts::reinit_number(context[1], 12UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -985,7 +955,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 13/1 ]] }
-        refalrts::reinit_number( context[1], 13UL );
+        refalrts::reinit_number(context[1], 13UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1002,7 +972,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 14/1 ]] }
-        refalrts::reinit_number( context[1], 14UL );
+        refalrts::reinit_number(context[1], 14UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1018,7 +988,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumber/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 15/1 ]] }
-      refalrts::reinit_number( context[1], 15UL );
+      refalrts::reinit_number(context[1], 15UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1039,7 +1009,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumberSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 16/1 ]] }
-        refalrts::reinit_number( context[1], 16UL );
+        refalrts::reinit_number(context[1], 16UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1055,7 +1025,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNumberSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 17/1 ]] }
-      refalrts::reinit_number( context[1], 17UL );
+      refalrts::reinit_number(context[1], 17UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1076,7 +1046,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 18/1 ]] }
-        refalrts::reinit_number( context[1], 18UL );
+        refalrts::reinit_number(context[1], 18UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1093,7 +1063,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 19/1 ]] }
-        refalrts::reinit_number( context[1], 19UL );
+        refalrts::reinit_number(context[1], 19UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1109,7 +1079,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNum/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 20/1 ]] }
-      refalrts::reinit_number( context[1], 20UL );
+      refalrts::reinit_number(context[1], 20UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1130,7 +1100,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 21/1 ]] }
-        refalrts::reinit_number( context[1], 21UL );
+        refalrts::reinit_number(context[1], 21UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1146,7 +1116,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdHugeNumSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 22/1 ]] }
-      refalrts::reinit_number( context[1], 22UL );
+      refalrts::reinit_number(context[1], 22UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1167,7 +1137,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 23/1 ]] }
-        refalrts::reinit_number( context[1], 23UL );
+        refalrts::reinit_number(context[1], 23UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1184,7 +1154,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 24/1 ]] }
-        refalrts::reinit_number( context[1], 24UL );
+        refalrts::reinit_number(context[1], 24UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1200,7 +1170,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdName/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 25/1 ]] }
-      refalrts::reinit_number( context[1], 25UL );
+      refalrts::reinit_number(context[1], 25UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1221,7 +1191,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 26/1 ]] }
-        refalrts::reinit_number( context[1], 26UL );
+        refalrts::reinit_number(context[1], 26UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1237,7 +1207,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNameSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 27/1 ]] }
-      refalrts::reinit_number( context[1], 27UL );
+      refalrts::reinit_number(context[1], 27UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1258,7 +1228,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 28/1 ]] }
-        refalrts::reinit_number( context[1], 28UL );
+        refalrts::reinit_number(context[1], 28UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1275,7 +1245,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 29/1 ]] }
-        refalrts::reinit_number( context[1], 29UL );
+        refalrts::reinit_number(context[1], 29UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1291,7 +1261,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdent/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 30/1 ]] }
-      refalrts::reinit_number( context[1], 30UL );
+      refalrts::reinit_number(context[1], 30UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1312,7 +1282,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 31/1 ]] }
-        refalrts::reinit_number( context[1], 31UL );
+        refalrts::reinit_number(context[1], 31UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1328,7 +1298,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdIdentSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 32/1 ]] }
-      refalrts::reinit_number( context[1], 32UL );
+      refalrts::reinit_number(context[1], 32UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1349,7 +1319,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 33/1 ]] }
-        refalrts::reinit_number( context[1], 33UL );
+        refalrts::reinit_number(context[1], 33UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1366,7 +1336,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 34/1 ]] }
-        refalrts::reinit_number( context[1], 34UL );
+        refalrts::reinit_number(context[1], 34UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1382,7 +1352,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBrackets/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 35/1 ]] }
-      refalrts::reinit_number( context[1], 35UL );
+      refalrts::reinit_number(context[1], 35UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1403,7 +1373,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 36/1 ]] }
-        refalrts::reinit_number( context[1], 36UL );
+        refalrts::reinit_number(context[1], 36UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1419,7 +1389,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdBracketsSave/8 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 37/1 ]] }
-      refalrts::reinit_number( context[1], 37UL );
+      refalrts::reinit_number(context[1], 37UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1440,7 +1410,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 38/1 ]] }
-        refalrts::reinit_number( context[1], 38UL );
+        refalrts::reinit_number(context[1], 38UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1457,7 +1427,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 39/1 ]] }
-        refalrts::reinit_number( context[1], 39UL );
+        refalrts::reinit_number(context[1], 39UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1473,7 +1443,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADT/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 40/1 ]] }
-      refalrts::reinit_number( context[1], 40UL );
+      refalrts::reinit_number(context[1], 40UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1494,7 +1464,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 41/1 ]] }
-        refalrts::reinit_number( context[1], 41UL );
+        refalrts::reinit_number(context[1], 41UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1511,7 +1481,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 42/1 ]] }
-        refalrts::reinit_number( context[1], 42UL );
+        refalrts::reinit_number(context[1], 42UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1527,7 +1497,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdADTSave/8 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 43/1 ]] }
-      refalrts::reinit_number( context[1], 43UL );
+      refalrts::reinit_number(context[1], 43UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1545,7 +1515,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCallSave/8 # AlgLeft/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 44/1 ]] }
-    refalrts::reinit_number( context[1], 44UL );
+    refalrts::reinit_number(context[1], 44UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1566,7 +1536,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEmpty/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 45/1 ]] }
-      refalrts::reinit_number( context[1], 45UL );
+      refalrts::reinit_number(context[1], 45UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1582,7 +1552,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNotEmpty/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 46/1 ]] }
-    refalrts::reinit_number( context[1], 46UL );
+    refalrts::reinit_number(context[1], 46UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1617,7 +1587,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgLeft/5 {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: 47/1 ]] }
-          refalrts::reinit_number( context[1], 47UL );
+          refalrts::reinit_number(context[1], 47UL);
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
           refalrts::Iter res = context[1];
@@ -1634,7 +1604,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgRight/5 {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: 48/1 ]] }
-          refalrts::reinit_number( context[1], 48UL );
+          refalrts::reinit_number(context[1], 48UL);
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
           refalrts::Iter res = context[1];
@@ -1650,7 +1620,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdVar/9 # AlgTerm/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 49/1 ]] }
-        refalrts::reinit_number( context[1], 49UL );
+        refalrts::reinit_number(context[1], 49UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1670,7 +1640,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdVar/9 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 50/1 ]] }
-        refalrts::reinit_number( context[1], 50UL );
+        refalrts::reinit_number(context[1], 50UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1686,7 +1656,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdVar/9 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 51/1 ]] }
-      refalrts::reinit_number( context[1], 51UL );
+      refalrts::reinit_number(context[1], 51UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1709,7 +1679,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdVarSave/9 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 52/1 ]] }
-        refalrts::reinit_number( context[1], 52UL );
+        refalrts::reinit_number(context[1], 52UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1725,7 +1695,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdVarSave/9 # AlgRight/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 53/1 ]] }
-      refalrts::reinit_number( context[1], 53UL );
+      refalrts::reinit_number(context[1], 53UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1750,7 +1720,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/8 # CmdRepeated/9 # AlgLeft/5 {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: 54/1 ]] }
-          refalrts::reinit_number( context[1], 54UL );
+          refalrts::reinit_number(context[1], 54UL);
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
           refalrts::Iter res = context[1];
@@ -1766,7 +1736,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 'e'/8 # CmdRepeated/9 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 55/1 ]] }
-        refalrts::reinit_number( context[1], 55UL );
+        refalrts::reinit_number(context[1], 55UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1787,7 +1757,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgLeft/5 {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: 56/1 ]] }
-          refalrts::reinit_number( context[1], 56UL );
+          refalrts::reinit_number(context[1], 56UL);
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
           refalrts::Iter res = context[1];
@@ -1804,7 +1774,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgRight/5 {REMOVED TILE}
           //RESULT: Tile{ [[ } Tile{ HalfReuse: 57/1 ]] }
-          refalrts::reinit_number( context[1], 57UL );
+          refalrts::reinit_number(context[1], 57UL);
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
           refalrts::Iter res = context[1];
@@ -1820,7 +1790,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 's'/8 # CmdRepeated/9 # AlgTerm/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 58/1 ]] }
-        refalrts::reinit_number( context[1], 58UL );
+        refalrts::reinit_number(context[1], 58UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1840,7 +1810,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgLeft/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 59/1 ]] }
-        refalrts::reinit_number( context[1], 59UL );
+        refalrts::reinit_number(context[1], 59UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1857,7 +1827,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgRight/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 60/1 ]] }
-        refalrts::reinit_number( context[1], 60UL );
+        refalrts::reinit_number(context[1], 60UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -1873,7 +1843,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdRepeated/9 # AlgTerm/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 61/1 ]] }
-      refalrts::reinit_number( context[1], 61UL );
+      refalrts::reinit_number(context[1], 61UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1895,7 +1865,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdRepeatedSave/9 # AlgLeft/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 62/1 ]] }
-      refalrts::reinit_number( context[1], 62UL );
+      refalrts::reinit_number(context[1], 62UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1911,7 +1881,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 't'/8 # CmdRepeatedSave/9 # AlgRight/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 63/1 ]] }
-    refalrts::reinit_number( context[1], 63UL );
+    refalrts::reinit_number(context[1], 63UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -1932,7 +1902,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEPrepare/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 64/1 ]] }
-      refalrts::reinit_number( context[1], 64UL );
+      refalrts::reinit_number(context[1], 64UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1949,7 +1919,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdEStart/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 65/1 ]] }
-      refalrts::reinit_number( context[1], 65UL );
+      refalrts::reinit_number(context[1], 65UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1966,7 +1936,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSave/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 66/1 ]] }
-      refalrts::reinit_number( context[1], 66UL );
+      refalrts::reinit_number(context[1], 66UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -1983,7 +1953,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdResetAllocator/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 67/1 ]] }
-      refalrts::reinit_number( context[1], 67UL );
+      refalrts::reinit_number(context[1], 67UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2000,7 +1970,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSetResArgBegin/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 68/1 ]] }
-      refalrts::reinit_number( context[1], 68UL );
+      refalrts::reinit_number(context[1], 68UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2017,7 +1987,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSetResRightEdge/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 69/1 ]] }
-      refalrts::reinit_number( context[1], 69UL );
+      refalrts::reinit_number(context[1], 69UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2034,7 +2004,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSetRes/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 70/1 ]] }
-      refalrts::reinit_number( context[1], 70UL );
+      refalrts::reinit_number(context[1], 70UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2051,7 +2021,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCopyEVar/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 71/1 ]] }
-      refalrts::reinit_number( context[1], 71UL );
+      refalrts::reinit_number(context[1], 71UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2068,7 +2038,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdCopySTVar/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 72/1 ]] }
-      refalrts::reinit_number( context[1], 72UL );
+      refalrts::reinit_number(context[1], 72UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2084,7 +2054,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdReinitSVar/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 73/1 ]] }
-    refalrts::reinit_number( context[1], 73UL );
+    refalrts::reinit_number(context[1], 73UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2113,7 +2083,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElChar/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 74/1 ]] }
-        refalrts::reinit_number( context[1], 74UL );
+        refalrts::reinit_number(context[1], 74UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2130,7 +2100,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElName/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 75/1 ]] }
-        refalrts::reinit_number( context[1], 75UL );
+        refalrts::reinit_number(context[1], 75UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2147,7 +2117,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElNumber/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 76/1 ]] }
-        refalrts::reinit_number( context[1], 76UL );
+        refalrts::reinit_number(context[1], 76UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2164,7 +2134,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElHugeNumber/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 77/1 ]] }
-        refalrts::reinit_number( context[1], 77UL );
+        refalrts::reinit_number(context[1], 77UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2181,7 +2151,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElIdent/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 78/1 ]] }
-        refalrts::reinit_number( context[1], 78UL );
+        refalrts::reinit_number(context[1], 78UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2198,7 +2168,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElBracket/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 79/1 ]] }
-        refalrts::reinit_number( context[1], 79UL );
+        refalrts::reinit_number(context[1], 79UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2215,7 +2185,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElString/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 80/1 ]] }
-        refalrts::reinit_number( context[1], 80UL );
+        refalrts::reinit_number(context[1], 80UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2232,7 +2202,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElClosureHead/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 113/1 ]] }
-        refalrts::reinit_number( context[1], 113UL );
+        refalrts::reinit_number(context[1], 113UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2248,7 +2218,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Allocate/8 # ElUnwrappedClosure/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 114/1 ]] }
-      refalrts::reinit_number( context[1], 114UL );
+      refalrts::reinit_number(context[1], 114UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2269,7 +2239,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElChar/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 81/1 ]] }
-        refalrts::reinit_number( context[1], 81UL );
+        refalrts::reinit_number(context[1], 81UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2286,7 +2256,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElName/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 82/1 ]] }
-        refalrts::reinit_number( context[1], 82UL );
+        refalrts::reinit_number(context[1], 82UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2303,7 +2273,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElNumber/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 83/1 ]] }
-        refalrts::reinit_number( context[1], 83UL );
+        refalrts::reinit_number(context[1], 83UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2320,7 +2290,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElHugeNumber/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 84/1 ]] }
-        refalrts::reinit_number( context[1], 84UL );
+        refalrts::reinit_number(context[1], 84UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2337,7 +2307,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElIdent/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 85/1 ]] }
-        refalrts::reinit_number( context[1], 85UL );
+        refalrts::reinit_number(context[1], 85UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2354,7 +2324,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElBracket/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 86/1 ]] }
-        refalrts::reinit_number( context[1], 86UL );
+        refalrts::reinit_number(context[1], 86UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2371,7 +2341,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElClosureHead/5 {REMOVED TILE}
         //RESULT: Tile{ [[ } Tile{ HalfReuse: 87/1 ]] }
-        refalrts::reinit_number( context[1], 87UL );
+        refalrts::reinit_number(context[1], 87UL);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
         refalrts::Iter res = context[1];
@@ -2387,7 +2357,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Reinit/8 # ElUnwrappedClosure/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 88/1 ]] }
-      refalrts::reinit_number( context[1], 88UL );
+      refalrts::reinit_number(context[1], 88UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2407,7 +2377,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/8 # ElChar/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 89/1 ]] }
-      refalrts::reinit_number( context[1], 89UL );
+      refalrts::reinit_number(context[1], 89UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2424,7 +2394,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/8 # ElName/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 90/1 ]] }
-      refalrts::reinit_number( context[1], 90UL );
+      refalrts::reinit_number(context[1], 90UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2441,7 +2411,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/8 # ElNumber/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 91/1 ]] }
-      refalrts::reinit_number( context[1], 91UL );
+      refalrts::reinit_number(context[1], 91UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2458,7 +2428,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/8 # ElHugeNumber/5 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: 92/1 ]] }
-      refalrts::reinit_number( context[1], 92UL );
+      refalrts::reinit_number(context[1], 92UL);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
@@ -2474,7 +2444,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # Update/8 # ElIdent/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 93/1 ]] }
-    refalrts::reinit_number( context[1], 93UL );
+    refalrts::reinit_number(context[1], 93UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2494,7 +2464,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdLinkBrackets/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 94/1 ]] }
-    refalrts::reinit_number( context[1], 94UL );
+    refalrts::reinit_number(context[1], 94UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2511,7 +2481,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPushStack/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 95/1 ]] }
-    refalrts::reinit_number( context[1], 95UL );
+    refalrts::reinit_number(context[1], 95UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2528,7 +2498,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdWrapClosure/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 110/1 ]] }
-    refalrts::reinit_number( context[1], 110UL );
+    refalrts::reinit_number(context[1], 110UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2545,7 +2515,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceElem/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 96/1 ]] }
-    refalrts::reinit_number( context[1], 96UL );
+    refalrts::reinit_number(context[1], 96UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2562,7 +2532,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceEVar/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 97/1 ]] }
-    refalrts::reinit_number( context[1], 97UL );
+    refalrts::reinit_number(context[1], 97UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2579,7 +2549,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceSTVar/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 98/1 ]] }
-    refalrts::reinit_number( context[1], 98UL );
+    refalrts::reinit_number(context[1], 98UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2596,7 +2566,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceRange/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 99/1 ]] }
-    refalrts::reinit_number( context[1], 99UL );
+    refalrts::reinit_number(context[1], 99UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2613,7 +2583,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceTile/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 100/1 ]] }
-    refalrts::reinit_number( context[1], 100UL );
+    refalrts::reinit_number(context[1], 100UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2630,7 +2600,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceToFreeList/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 101/1 ]] }
-    refalrts::reinit_number( context[1], 101UL );
+    refalrts::reinit_number(context[1], 101UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2647,7 +2617,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdNextStep/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 102/1 ]] }
-    refalrts::reinit_number( context[1], 102UL );
+    refalrts::reinit_number(context[1], 102UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2664,7 +2634,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdTrashLeftEdge/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 103/1 ]] }
-    refalrts::reinit_number( context[1], 103UL );
+    refalrts::reinit_number(context[1], 103UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2681,7 +2651,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdTrash/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 104/1 ]] }
-    refalrts::reinit_number( context[1], 104UL );
+    refalrts::reinit_number(context[1], 104UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2698,7 +2668,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdFail/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 105/1 ]] }
-    refalrts::reinit_number( context[1], 105UL );
+    refalrts::reinit_number(context[1], 105UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2715,7 +2685,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdFetchSwapHead/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 106/1 ]] }
-    refalrts::reinit_number( context[1], 106UL );
+    refalrts::reinit_number(context[1], 106UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2732,7 +2702,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdFetchSwapInfoBounds/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 107/1 ]] }
-    refalrts::reinit_number( context[1], 107UL );
+    refalrts::reinit_number(context[1], 107UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2749,7 +2719,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSwapSave/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 108/1 ]] }
-    refalrts::reinit_number( context[1], 108UL );
+    refalrts::reinit_number(context[1], 108UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2766,7 +2736,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPerformNative/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 109/1 ]] }
-    refalrts::reinit_number( context[1], 109UL );
+    refalrts::reinit_number(context[1], 109UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2783,7 +2753,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdScale/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 111/1 ]] }
-    refalrts::reinit_number( context[1], 111UL );
+    refalrts::reinit_number(context[1], 111UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2800,7 +2770,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdVariableDebugOffset/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 112/1 ]] }
-    refalrts::reinit_number( context[1], 112UL );
+    refalrts::reinit_number(context[1], 112UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2817,7 +2787,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdSpliceToFreeList-Range/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 115/1 ]] }
-    refalrts::reinit_number( context[1], 115UL );
+    refalrts::reinit_number(context[1], 115UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2834,7 +2804,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPushState/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 116/1 ]] }
-    refalrts::reinit_number( context[1], 116UL );
+    refalrts::reinit_number(context[1], 116UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2851,7 +2821,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdPopState/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 117/1 ]] }
-    refalrts::reinit_number( context[1], 117UL );
+    refalrts::reinit_number(context[1], 117UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2867,7 +2837,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & NumberFromOpcode/4 # CmdMainLoopReturnSuccess/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: 118/1 ]] }
-  refalrts::reinit_number( context[1], 118UL );
+  refalrts::reinit_number(context[1], 118UL);
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -2907,7 +2877,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElOpenADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 0/1 ]] }
-    refalrts::reinit_number( context[1], 0UL );
+    refalrts::reinit_number(context[1], 0UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2924,7 +2894,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElOpenBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/1 ]] }
-    refalrts::reinit_number( context[1], 1UL );
+    refalrts::reinit_number(context[1], 1UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2941,7 +2911,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElOpenCall/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/1 ]] }
-    refalrts::reinit_number( context[1], 2UL );
+    refalrts::reinit_number(context[1], 2UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2958,7 +2928,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElCloseADT/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/1 ]] }
-    refalrts::reinit_number( context[1], 3UL );
+    refalrts::reinit_number(context[1], 3UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2975,7 +2945,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElCloseBracket/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 4/1 ]] }
-    refalrts::reinit_number( context[1], 4UL );
+    refalrts::reinit_number(context[1], 4UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -2991,7 +2961,7 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & NumberFromBracket/4 # ElCloseCall/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: 5/1 ]] }
-  refalrts::reinit_number( context[1], 5UL );
+  refalrts::reinit_number(context[1], 5UL);
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
@@ -3031,7 +3001,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Start/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/1 ]] }
-    refalrts::reinit_number( context[1], 1UL );
+    refalrts::reinit_number(context[1], 1UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3048,7 +3018,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # ConstTable/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/1 ]] }
-    refalrts::reinit_number( context[1], 2UL );
+    refalrts::reinit_number(context[1], 2UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3065,7 +3035,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # RefalFunction/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/1 ]] }
-    refalrts::reinit_number( context[1], 3UL );
+    refalrts::reinit_number(context[1], 3UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3082,7 +3052,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # NativeFunction/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 4/1 ]] }
-    refalrts::reinit_number( context[1], 4UL );
+    refalrts::reinit_number(context[1], 4UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3099,7 +3069,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # EmptyFunction/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 5/1 ]] }
-    refalrts::reinit_number( context[1], 5UL );
+    refalrts::reinit_number(context[1], 5UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3116,7 +3086,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Swap/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 6/1 ]] }
-    refalrts::reinit_number( context[1], 6UL );
+    refalrts::reinit_number(context[1], 6UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3133,7 +3103,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Reference/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 7/1 ]] }
-    refalrts::reinit_number( context[1], 7UL );
+    refalrts::reinit_number(context[1], 7UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3150,7 +3120,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # ConditionRasl/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 8/1 ]] }
-    refalrts::reinit_number( context[1], 8UL );
+    refalrts::reinit_number(context[1], 8UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3167,7 +3137,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # ConditionNative/5 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: 9/1 ]] }
-    refalrts::reinit_number( context[1], 9UL );
+    refalrts::reinit_number(context[1], 9UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
@@ -3183,7 +3153,7 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & BlockTypeNumber/4 # Incorporated/5 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: 10/1 ]] }
-  refalrts::reinit_number( context[1], 10UL );
+  refalrts::reinit_number(context[1], 10UL);
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];

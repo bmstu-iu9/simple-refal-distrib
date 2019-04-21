@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <windows.h>
 
 #include "refalrts-platform-specific.h"
@@ -118,3 +119,64 @@ bool refalrts::api::is_single_file_name(const char *name) {
 }
 
 const char *refalrts::api::default_lib_extension = ".dll";
+
+
+#if defined(REFAL_5_LAMBDA_USE_QPC)
+
+struct refalrts::api::ClockNs {
+  LARGE_INTEGER start_of_program;
+  double frequency_in_ns;
+};
+
+refalrts::api::ClockNs *refalrts::api::init_clock_ns() {
+  LARGE_INTEGER frequency;
+  QueryPerformanceFrequency(&frequency);
+
+  ClockNs *res = new ClockNs;
+  QueryPerformanceCounter(&res->start_of_program);
+  res->frequency_in_ns = 1.0e9 / frequency.QuadPart;
+  return res;
+}
+
+double refalrts::api::clock_ns(refalrts::api::ClockNs *clk) {
+  LARGE_INTEGER now;
+  LARGE_INTEGER start = clk->start_of_program;
+
+  QueryPerformanceCounter(&now);
+
+#if defined(REFAL_5_LAMBDA_COMPILER_DONT_SUPPORT_64)
+
+  double hi_diff =
+    (now.u.LowPart >= start.u.LowPart)
+    ? (now.u.HighPart - start.u.HighPart)
+    : (now.u.HighPart - start.u.HighPart - 1);
+  double low_diff = now.u.LowPart - start.u.LowPart;
+
+  return (hi_diff * 4294967296 + low_diff) * clk->frequency_in_ns;
+
+#else /* defined(REFAL_5_LAMBDA_COMPILER_DONT_SUPPORT_64) */
+
+  return (now.QuadPart - start.QuadPart) * clk->frequency_in_ns;
+
+#endif /* defined(REFAL_5_LAMBDA_COMPILER_DONT_SUPPORT_64) */
+}
+
+void refalrts::api::free_clock_ns(refalrts::api::ClockNs *clk) {
+  delete clk;
+}
+
+#else /* defined(REFAL_5_LAMBDA_USE_QPC) */
+
+refalrts::api::ClockNs *refalrts::api::init_clock_ns() {
+  return 0;
+}
+
+double refalrts::api::clock_ns(refalrts::api::ClockNs *) {
+  return clock() * 1e9 / CLOCKS_PER_SEC;
+}
+
+void refalrts::api::free_clock_ns(refalrts::api::ClockNs *) {
+  /* ничего не делаем */
+}
+
+#endif /* defined(REFAL_5_LAMBDA_USE_QPC) */
