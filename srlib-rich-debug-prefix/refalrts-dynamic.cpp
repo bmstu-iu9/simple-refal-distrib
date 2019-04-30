@@ -71,15 +71,8 @@ refalrts::Module::Module(
 }
 
 refalrts::Module::~Module() {
-  m_representant->module = 0;
   api::stat_destroy(m_stat);
-  while (m_funcs_table.size() > 0) {
-    FuncsMap::iterator p = m_funcs_table.begin();
-    RefalFunction *function = p->second;
-    m_funcs_table.erase(p);
-    /* TODO: продумать освобождение статических ящиков */
-    function->deactivate();
-  }
+  assert(m_funcs_table.empty());
 }
 
 
@@ -283,6 +276,16 @@ void refalrts::Module::finalize(
     if (result == cSuccess) {
       m_initialized_scopes.pop_front();
     }
+  }
+}
+
+void refalrts::Module::deactivate() {
+  while (m_funcs_table.size() > 0) {
+    FuncsMap::iterator p = m_funcs_table.begin();
+    RefalFunction *function = p->second;
+    m_funcs_table.erase(p);
+    /* TODO: продумать освобождение статических ящиков */
+    function->deactivate();
   }
 }
 
@@ -728,7 +731,7 @@ bool refalrts::Domain::ModuleStorage::find_unresolved_externals(
 }
 
 void refalrts::Domain::ModuleStorage::unload(
-  refalrts::VM *vm, refalrts::FnResult& result
+  refalrts::VM *vm, refalrts::Iter pos, refalrts::FnResult& result
 ) {
   result = cSuccess;
   for (
@@ -736,10 +739,11 @@ void refalrts::Domain::ModuleStorage::unload(
     p != m_modules.rend();
     ++p
   ) {
-    (*p)->finalize(vm, 0, result);
+    (*p)->finalize(vm, pos, result);
   }
 
   while (! m_modules.empty()) {
+    m_modules.front()->deactivate();
     delete m_modules.front();
     m_modules.pop_front();
   }
@@ -789,25 +793,6 @@ refalrts::Domain::ModuleStorage::find_known(
     0;
 }
 
-namespace {
-
-struct InSet {
-  std::set<refalrts::Module*> *m_set;
-
-  InSet(std::set<refalrts::Module*> *set)
-    : m_set(set)
-  {
-    /* пусто */
-  }
-
-  bool operator()(refalrts::Module* module) const {
-    // Open Watcom не знает метода множества std::set<>::count
-    return m_set->find(module) != m_set->end();
-  }
-};
-
-}  // unnamed namespace
-
 void refalrts::Domain::ModuleStorage::gc(
   refalrts::VM *vm, refalrts::Iter pos, refalrts::FnResult& result
 ) {
@@ -855,12 +840,17 @@ void refalrts::Domain::ModuleStorage::gc(
     }
   }
 
-  // Написать с
-  // std::bind1st(std::mem_fun(&std::set<Module*>::count), &unreached)
-  // не получилось
-  ModuleList::iterator end = std::remove_if(
-    m_modules.begin(), m_modules.end(), InSet(&unreached)
-  );
+  for (ModuleList::iterator p = m_modules.begin(); p != m_modules.end(); ++p) {
+    // Open Watcom не знает метода множества std::set<>::count
+    if (unreached.find(*p) != unreached.end()) {
+      (*p)->deactivate();
+      delete (*p);
+      (*p) = 0;
+    }
+  }
+
+  ModuleList::iterator end =
+    std::remove(m_modules.begin(), m_modules.end(), static_cast<Module*>(0));
   m_modules.erase(end, m_modules.end());
 }
 
@@ -961,10 +951,12 @@ bool refalrts::Domain::initialize(
   if (new_module) {
     new_module->add_ref();
   } else {
+    new_storage.unload(vm, 0, result);
     return false;
   }
 
   if (! new_storage.find_unresolved_externals(event, callback_data)) {
+    new_storage.unload(vm, 0, result);
     return false;
   }
 
@@ -974,7 +966,7 @@ bool refalrts::Domain::initialize(
   }
 
   FnResult unload_result;
-  unload_module(vm, pos, new_module, unload_result);
+  new_storage.unload(vm, 0, unload_result);
   if (unload_result != cSuccess) {
     result = unload_result;
   }
@@ -994,11 +986,13 @@ void refalrts::Domain::unload_module(
   m_storage.unload_module(vm, pos, module, result);
 }
 
-void refalrts::Domain::unload(refalrts::VM *vm, refalrts::FnResult& result) {
+void refalrts::Domain::unload(
+  refalrts::VM *vm, refalrts::Iter pos, refalrts::FnResult& result
+) {
   assert(this == vm->domain());
 
   DangerousRAII dang(&m_dangerous);
-  m_storage.unload(vm, result);
+  m_storage.unload(vm, pos, result);
 }
 
 void refalrts::Domain::free_domain_memory() {

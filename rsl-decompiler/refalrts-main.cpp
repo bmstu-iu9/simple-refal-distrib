@@ -137,7 +137,7 @@ int main(int argc, char **argv) {
     fflush(stdout);
   } catch (refalrts::SwitchDefaultViolation& error) {
     error.print();
-    return 151;
+    exit(151);
   } catch (std::exception& e) {
     fprintf(stderr, "INTERNAL ERROR: std::exception %s\n", e.what());
     return 152;
@@ -148,8 +148,10 @@ int main(int argc, char **argv) {
 
   // TODO: правильный порядок финализации
   profiler.end_profiler();
+  refalrts::FnResult res_unload;
+  domain.unload(&vm, res_unload);
   if (res == refalrts::cSuccess) {
-    domain.unload(&vm, res);
+    res = res_unload;
   }
   vm.free_view_field();
   vm.free_states_stack();
