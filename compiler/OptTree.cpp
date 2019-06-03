@@ -63,8 +63,8 @@ enum efunc {
   efunc_gen_OptSentence_L1 = 54,
   efunc_gen_OptResult_A1 = 55,
   efunc_OptResultRec = 56,
-  efunc_OptResultTerm = 57,
-  efunc_MapReduce = 58,
+  efunc_MapReduce = 57,
+  efunc_OptResultTerm = 58,
   efunc_gen_OptResultTerm_S1A1 = 59,
   efunc_gen_OptResultTerm_S2A1 = 60,
   efunc_gen_OptResultTerm_S3A1 = 61,
@@ -2731,9 +2731,9 @@ static refalrts::FnResult func_OptResultRec(refalrts::VM *vm, refalrts::Iter arg
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
   // </0 & OptResultRec/4 (/7 e.OptimizableFunctions#1/5 )/8 s.Temp#1/9 e.Result#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2755,23 +2755,20 @@ static refalrts::FnResult func_OptResultRec(refalrts::VM *vm, refalrts::Iter arg
   //DEBUG: e.Result#1: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Temp#1/9 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapReduce/4 AsIs: (/7 } & OptResultTerm/10 Tile{ AsIs: e.OptimizableFunctions#1/5 } Tile{ AsIs: )/8 } # Cold/11 Tile{ AsIs: e.Result#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::alloc_name(vm, context[10], functions[efunc_OptResultTerm]);
-  refalrts::alloc_ident(vm, context[11], identifiers[ident_Cold]);
-  refalrts::update_name(context[4], functions[efunc_MapReduce]);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </10 Tile{ HalfReuse: & MapReduce/0 HalfReuse: (/4 HalfReuse: & OptResultTerm/7 AsIs: e.OptimizableFunctions#1/5 AsIs: )/8 AsIs: s.Temp#1/9 AsIs: e.Result#1/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[10]);
+  refalrts::reinit_name(context[0], functions[efunc_MapReduce]);
+  refalrts::reinit_open_bracket(context[4]);
+  refalrts::reinit_name(context[7], functions[efunc_OptResultTerm]);
   refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[7], context[8] );
+  refalrts::push_stack( vm, context[10] );
+  refalrts::link_brackets( context[4], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[11], context[11] );
-  res = refalrts::splice_evar( res, context[8], context[8] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  refalrts::Iter res = context[0];
   res = refalrts::splice_evar( res, context[10], context[10] );
-  refalrts::splice_to_freelist_open( vm, context[7], res );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 

@@ -158,20 +158,22 @@ enum ident {
   ident_Swap = 25,
   ident_Declaration = 26,
   ident_Entry = 27,
-  ident_Spec = 28,
-  ident_Sentences = 29,
-  ident_NativeBody = 30,
-  ident_TkVariable = 31,
-  ident_TkNewVariable = 32,
-  ident_Name = 33,
-  ident_Symbol = 34,
-  ident_Brackets = 35,
-  ident_ADTm_Brackets = 36,
-  ident_CallBrackets = 37,
-  ident_Closure = 38,
-  ident_NoNative = 39,
-  ident_OptTree = 40,
-  ident_NoOpt = 41,
+  ident_Inline = 28,
+  ident_Drive = 29,
+  ident_Spec = 30,
+  ident_Sentences = 31,
+  ident_NativeBody = 32,
+  ident_TkVariable = 33,
+  ident_TkNewVariable = 34,
+  ident_Name = 35,
+  ident_Symbol = 36,
+  ident_Brackets = 37,
+  ident_ADTm_Brackets = 38,
+  ident_CallBrackets = 39,
+  ident_Closure = 40,
+  ident_NoNative = 41,
+  ident_OptTree = 42,
+  ident_NoOpt = 43,
 };
 
 
@@ -4156,9 +4158,9 @@ static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 26 elems
-  refalrts::Iter context[26];
-  refalrts::zeros( context, 26 );
+  // issue here memory for vars with 28 elems
+  refalrts::Iter context[28];
+  refalrts::zeros( context, 28 );
   // </0 & PatchASTSrcPos-Item/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4323,21 +4325,21 @@ static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::
     return refalrts::cRecognitionImpossible;
   // closed e.new#9 as range 5
   do {
-    // </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 (/7 s.EnumSwapDeclEntry#1/10 t.SrcPos#1/11 s.ScopeClass#1/13 e.Name#1/5 )/8 >/1
+    // </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 (/7 s.Label#1/10 t.SrcPos#1/11 s.ScopeClass#1/13 e.Name#1/5 )/8 >/1
     if( ! refalrts::svar_term( context[13], context[13] ) )
       continue;
     // closed e.Name#1 as range 5
     //DEBUG: t.SrcPos#1: 11
     //DEBUG: s.ScopeClass#1: 13
     //DEBUG: s.FnPatch#1: 9
-    //DEBUG: s.EnumSwapDeclEntry#1: 10
+    //DEBUG: s.Label#1: 10
     //DEBUG: e.Name#1: 5
     //5: e.Name#1
     //9: s.FnPatch#1
-    //10: s.EnumSwapDeclEntry#1
+    //10: s.Label#1
     //11: t.SrcPos#1
     //13: s.ScopeClass#1
-    //20: s.EnumSwapDeclEntry#1
+    //20: s.Label#1
 
     refalrts::reset_allocator(vm);
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -4352,13 +4354,17 @@ static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::
     refalrts::alloc_ident(vm, context[22], identifiers[ident_Swap]);
     refalrts::alloc_ident(vm, context[23], identifiers[ident_Declaration]);
     refalrts::alloc_ident(vm, context[24], identifiers[ident_Entry]);
-    refalrts::alloc_close_call(vm, context[25]);
+    refalrts::alloc_ident(vm, context[25], identifiers[ident_Inline]);
+    refalrts::alloc_ident(vm, context[26], identifiers[ident_Drive]);
+    refalrts::alloc_close_call(vm, context[27]);
     refalrts::alloc_close_call(vm, context[16]);
     refalrts::push_stack( vm, context[16] );
     refalrts::push_stack( vm, context[15] );
     res = refalrts::splice_elem( res, context[16] );
-    refalrts::push_stack( vm, context[25] );
+    refalrts::push_stack( vm, context[27] );
     refalrts::push_stack( vm, context[18] );
+    res = refalrts::splice_elem( res, context[27] );
+    res = refalrts::splice_elem( res, context[26] );
     res = refalrts::splice_elem( res, context[25] );
     res = refalrts::splice_elem( res, context[24] );
     res = refalrts::splice_elem( res, context[23] );
@@ -4387,12 +4393,12 @@ static refalrts::FnResult func_PatchASTSrcPosm_Item(refalrts::VM *vm, refalrts::
       //DEBUG: t.SrcPos#1: 11
       //DEBUG: s.ScopeClass#1: 13
       //DEBUG: s.FnPatch#1: 9
-      //DEBUG: s.EnumSwapDeclEntry#1: 10
+      //DEBUG: s.Label#1: 10
       //DEBUG: e.Name#1: 5
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & PatchASTSrcPos-Item/4 s.FnPatch#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # True/20 {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.EnumSwapDeclEntry#1/10 } Tile{ AsIs: </15 HalfReuse: s.FnPatch1 #9/19 } Tile{ AsIs: t.SrcPos#1/11 } Tile{ AsIs: >/16 } Tile{ AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/5 AsIs: )/8 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: s.Label#1/10 } Tile{ AsIs: </15 HalfReuse: s.FnPatch1 #9/19 } Tile{ AsIs: t.SrcPos#1/11 } Tile{ AsIs: >/16 } Tile{ AsIs: s.ScopeClass#1/13 AsIs: e.Name#1/5 AsIs: )/8 } Tile{ ]] }
       refalrts::reinit_svar( context[19], context[9] );
       refalrts::link_brackets( context[7], context[8] );
       refalrts::push_stack( vm, context[16] );

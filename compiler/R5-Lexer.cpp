@@ -128,11 +128,13 @@ enum ident {
   ident_TkInclude = 38,
   ident_TkScopeId = 39,
   ident_TkLabel = 40,
-  ident_TkChar = 41,
-  ident_TkMacroDigit = 42,
-  ident_TkNativeCode = 43,
-  ident_TkWarning = 44,
-  ident_TkCompound = 45,
+  ident_TkInline = 41,
+  ident_TkDrive = 42,
+  ident_TkChar = 43,
+  ident_TkMacroDigit = 44,
+  ident_TkNativeCode = 45,
+  ident_TkWarning = 46,
+  ident_TkCompound = 47,
 };
 
 
@@ -3713,9 +3715,9 @@ static refalrts::FnResult func_DoScanm_BuildKeyword(refalrts::VM *vm, refalrts::
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 73 elems
-  refalrts::Iter context[73];
-  refalrts::zeros( context, 73 );
+  // issue here memory for vars with 83 elems
+  refalrts::Iter context[83];
+  refalrts::zeros( context, 83 );
   // </0 & DoScan-BuildKeyword/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3902,10 +3904,28 @@ static refalrts::FnResult func_DoScanm_BuildKeyword(refalrts::VM *vm, refalrts::
     refalrts::alloc_ident(vm, context[69], identifiers[ident_TkLabel]);
     refalrts::alloc_chars(vm, context[70], context[71], "$LABEL", 6);
     refalrts::alloc_close_bracket(vm, context[72]);
+    refalrts::alloc_open_bracket(vm, context[73]);
+    refalrts::alloc_ident(vm, context[74], identifiers[ident_TkInline]);
+    refalrts::alloc_chars(vm, context[75], context[76], "$INLINE", 7);
+    refalrts::alloc_close_bracket(vm, context[77]);
+    refalrts::alloc_open_bracket(vm, context[78]);
+    refalrts::alloc_ident(vm, context[79], identifiers[ident_TkDrive]);
+    refalrts::alloc_chars(vm, context[80], context[81], "$DRIVE", 6);
+    refalrts::alloc_close_bracket(vm, context[82]);
     refalrts::alloc_close_call(vm, context[16]);
     refalrts::push_stack( vm, context[16] );
     refalrts::push_stack( vm, context[15] );
     res = refalrts::splice_elem( res, context[16] );
+    refalrts::link_brackets( context[78], context[82] );
+    res = refalrts::splice_elem( res, context[82] );
+    res = refalrts::splice_evar( res, context[80], context[81] );
+    res = refalrts::splice_elem( res, context[79] );
+    res = refalrts::splice_elem( res, context[78] );
+    refalrts::link_brackets( context[73], context[77] );
+    res = refalrts::splice_elem( res, context[77] );
+    res = refalrts::splice_evar( res, context[75], context[76] );
+    res = refalrts::splice_elem( res, context[74] );
+    res = refalrts::splice_elem( res, context[73] );
     refalrts::link_brackets( context[68], context[72] );
     res = refalrts::splice_elem( res, context[72] );
     res = refalrts::splice_evar( res, context[70], context[71] );

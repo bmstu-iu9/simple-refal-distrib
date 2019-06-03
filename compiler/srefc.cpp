@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1058933882_3440598329
+#define cookie_ns cookie_ns_52442882_1826840892
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -20,150 +20,149 @@ enum efunc {
   efunc_gen_u_u_Mum_Aux_S13B1 = 11,
   efunc_Type = 12,
   efunc_gen_Residue_C1 = 13,
-  efunc_Main = 14,
-  efunc_ArgList = 15,
-  efunc_PrintVersion = 16,
-  efunc_Mainm_SwValidCommandLine = 17,
-  efunc_ParseCommandLine = 18,
-  efunc_LoadFile = 19,
-  efunc_ReportErrors = 20,
-  efunc_Logm_Init = 21,
-  efunc_Configm_GetLogFile = 22,
-  efunc_Logm_Final = 23,
-  efunc_Mainm_SwFoundFiles = 24,
-  efunc_LookupSourceFiles = 25,
-  efunc_ReportMessages = 26,
-  efunc_OnErrors = 27,
-  efunc_Exit = 28,
-  efunc_CreateErrorFileMark = 29,
-  efunc_OnWarnings = 30,
-  efunc_Symb = 31,
-  efunc_Prout = 32,
-  efunc_Map = 33,
-  efunc_gen_ReportMessages_L1 = 34,
-  efunc_gen_ReportMessages_A1 = 35,
-  efunc_gen_ReportMessages_A1B1 = 36,
-  efunc_CreateErrorFileMarkm_SwFile = 37,
-  efunc_Configm_GetErrorFile = 38,
-  efunc_SaveFile = 39,
-  efunc_gen_Mainm_SwFoundFiles_S1L1 = 40,
-  efunc_RenameTargets = 41,
-  efunc_Configm_GetTargetMode = 42,
-  efunc_Mainm_SwRenamedTargets = 43,
-  efunc_Link = 44,
-  efunc_CompileFiles = 45,
-  efunc_gen_Mainm_SwRenamedTargets_S2B1 = 46,
-  efunc_gen_Mainm_SwRenamedTargets_S1L1 = 47,
-  efunc_gen_Mainm_SwRenamedTargets_S2A1 = 48,
-  efunc_Configm_GetGrammarCheck = 49,
-  efunc_Configm_GetTargetSuffix = 50,
-  efunc_gen_CalcTargetFileName_B1S1A4 = 51,
-  efunc_Lower = 52,
-  efunc_gen_CalcTargetFileName_B1S1A3 = 53,
-  efunc_gen_CalcTargetFileName_B1S1A2 = 54,
-  efunc_GetLastPartName = 55,
-  efunc_gen_CalcTargetFileName_B1S1A1 = 56,
-  efunc_gen_CalcTargetFileName_B1 = 57,
-  efunc_Configm_GetTargetFileName = 58,
-  efunc_gen_LookupSourceFiles_L1B1 = 59,
-  efunc_FindFiles = 60,
-  efunc_gen_LookupSourceFiles_L1 = 61,
-  efunc_Configm_GetSearchFolders = 62,
-  efunc_gen_LookupSourceFiles_A2 = 63,
-  efunc_gen_LookupSourceFiles_A1 = 64,
-  efunc_RenameTargetsm_WithCpp = 65,
-  efunc_RenameTargetsm_Stub = 66,
-  efunc_gen_RenameTargetsm_Stub_L1 = 67,
-  efunc_ScanCollisions = 68,
-  efunc_GetFileName = 69,
-  efunc_GetBaseNameLowerCase = 70,
-  efunc_RenameLocations = 71,
-  efunc_RenameLocationsm_Aux = 72,
-  efunc_Inc = 73,
-  efunc_gen_RenameLocationsm_Aux_A1 = 74,
-  efunc_MapReduce = 75,
-  efunc_gen_RenameLocationsm_Aux_A1L1 = 76,
-  efunc_gen_CompileFiles_S1L1S3B1 = 77,
-  efunc_CompileFile = 78,
-  efunc_gen_CompileFiles_S1L1S3A1 = 79,
-  efunc_GrammarCheck = 80,
-  efunc_gen_CompileFiles_S1L1 = 81,
-  efunc_gen_CompileFiles_S2L1 = 82,
-  efunc_Configm_GetCppCompiler = 83,
-  efunc_Configm_GetPrefix = 84,
-  efunc_Linkm_Exe = 85,
-  efunc_Linkm_Lib = 86,
-  efunc_Linkm_R = 87,
-  efunc_gen_Link_B1 = 88,
-  efunc_Linkm_WithPrefix = 89,
-  efunc_Linkm_CppCompile = 90,
-  efunc_FindPrefix = 91,
-  efunc_gen_Linkm_Exe_S4B1 = 92,
-  efunc_ReportWarnings = 93,
-  efunc_gen_Linkm_Lib_S5B1 = 94,
-  efunc_gen_Linkm_R_S2L1 = 95,
-  efunc_Linkm_Aux = 96,
-  efunc_Chmodm_Xm_Prefix = 97,
-  efunc_CopyPrefix = 98,
-  efunc_gen_Linkm_WithPrefix_L1 = 99,
-  efunc_CheckReturnCode = 100,
-  efunc_gen_Chmodm_Xm_Prefix_B1S2A1 = 101,
-  efunc_System = 102,
-  efunc_gen_Chmodm_Xm_Prefix_B1 = 103,
-  efunc_Configm_GetChmodXCommand = 104,
-  efunc_LinkError = 105,
-  efunc_CheckCppCompilationSuccessed = 106,
-  efunc_EnsureAligned4096 = 107,
-  efunc_gen_Linkm_CppCompile_L1A1 = 108,
-  efunc_gen_Linkm_CppCompile_L1A1L1 = 109,
-  efunc_gen_Linkm_CppCompile_L1 = 110,
-  efunc_PreLinkCleanupTemporary = 111,
-  efunc_AppendRASLToBinary = 112,
-  efunc_AppendReferencesToBinary = 113,
-  efunc_AppendIncorporatedToBinary = 114,
-  efunc_PostLinkRename = 115,
-  efunc_Configm_GetIncorporateds = 116,
-  efunc_gen_Linkm_Aux_A4 = 117,
-  efunc_gen_Linkm_Aux_A3 = 118,
-  efunc_Configm_GetReferences = 119,
-  efunc_gen_Linkm_Aux_A2 = 120,
-  efunc_gen_Linkm_Aux_A1 = 121,
-  efunc_CalcTargetFileName = 122,
-  efunc_RemoveFile = 123,
-  efunc_gen_PreLinkCleanupTemporary_B1S2B1 = 124,
-  efunc_gen_PreLinkCleanupTemporary_B1 = 125,
-  efunc_ExistFile = 126,
-  efunc_gen_CheckCppCompilationSuccessed_B1 = 127,
-  efunc_FClose = 128,
-  efunc_AlignToPage = 129,
-  efunc_FOpen = 130,
-  efunc_gen_EnsureAligned4096_A1 = 131,
-  efunc_FWriteBytes = 132,
-  efunc_gen_AlignToPage_B1 = 133,
-  efunc_FTell = 134,
-  efunc_gen_AlignToPage_A1 = 135,
-  efunc_FSeek = 136,
-  efunc_LoadBytes = 137,
-  efunc_gen_AppendRASLToBinary_L1 = 138,
-  efunc_gen_AppendRASLToBinary_A1 = 139,
-  efunc_AppendSimpleBlock = 140,
-  efunc_PutBlockReference = 141,
-  efunc_PutBlockIncorporated = 142,
-  efunc_gen_AppendSimpleBlock_L1 = 143,
-  efunc_gen_AppendSimpleBlock_A1 = 144,
-  efunc_RenameFile = 145,
-  efunc_gen_PostLinkRename_B1 = 146,
-  efunc_gen_PostLinkRename_A1B1S1B1 = 147,
-  efunc_gen_PostLinkRename_A1B1 = 148,
-  efunc_gen_PostLinkRename_A1 = 149,
-  efunc_DoFindPrefix = 150,
-  efunc_gen_FindPrefix_A1 = 151,
-  efunc_gen_FindPrefix_A1B1 = 152,
-  efunc_gen_DoFindPrefix_S1B1 = 153,
-  efunc_GlueNames = 154,
-  efunc_gen_DoFindPrefix_S1A1 = 155,
-  efunc_SaveBytes = 156,
-  efunc_DoGetFileName = 157,
+  efunc_ArgList = 14,
+  efunc_Main = 15,
+  efunc_Mainm_SwValidCommandLine = 16,
+  efunc_ParseCommandLine = 17,
+  efunc_LoadFile = 18,
+  efunc_ReportErrors = 19,
+  efunc_Logm_Init = 20,
+  efunc_Configm_GetLogFile = 21,
+  efunc_Logm_Final = 22,
+  efunc_Mainm_SwFoundFiles = 23,
+  efunc_LookupSourceFiles = 24,
+  efunc_ReportMessages = 25,
+  efunc_OnErrors = 26,
+  efunc_Exit = 27,
+  efunc_CreateErrorFileMark = 28,
+  efunc_OnWarnings = 29,
+  efunc_Symb = 30,
+  efunc_Prout = 31,
+  efunc_Map = 32,
+  efunc_gen_ReportMessages_L1 = 33,
+  efunc_gen_ReportMessages_A1 = 34,
+  efunc_gen_ReportMessages_A1B1 = 35,
+  efunc_CreateErrorFileMarkm_SwFile = 36,
+  efunc_Configm_GetErrorFile = 37,
+  efunc_SaveFile = 38,
+  efunc_gen_Mainm_SwFoundFiles_S1L1 = 39,
+  efunc_RenameTargets = 40,
+  efunc_Configm_GetTargetMode = 41,
+  efunc_Mainm_SwRenamedTargets = 42,
+  efunc_Link = 43,
+  efunc_CompileFiles = 44,
+  efunc_gen_Mainm_SwRenamedTargets_S2B1 = 45,
+  efunc_gen_Mainm_SwRenamedTargets_S1L1 = 46,
+  efunc_gen_Mainm_SwRenamedTargets_S2A1 = 47,
+  efunc_Configm_GetGrammarCheck = 48,
+  efunc_Configm_GetTargetSuffix = 49,
+  efunc_gen_CalcTargetFileName_B1S1A4 = 50,
+  efunc_Lower = 51,
+  efunc_gen_CalcTargetFileName_B1S1A3 = 52,
+  efunc_gen_CalcTargetFileName_B1S1A2 = 53,
+  efunc_GetLastPartName = 54,
+  efunc_gen_CalcTargetFileName_B1S1A1 = 55,
+  efunc_gen_CalcTargetFileName_B1 = 56,
+  efunc_Configm_GetTargetFileName = 57,
+  efunc_gen_LookupSourceFiles_L1B1 = 58,
+  efunc_FindFiles = 59,
+  efunc_gen_LookupSourceFiles_L1 = 60,
+  efunc_Configm_GetSearchFolders = 61,
+  efunc_gen_LookupSourceFiles_A2 = 62,
+  efunc_gen_LookupSourceFiles_A1 = 63,
+  efunc_RenameTargetsm_WithCpp = 64,
+  efunc_RenameTargetsm_Stub = 65,
+  efunc_gen_RenameTargetsm_Stub_L1 = 66,
+  efunc_ScanCollisions = 67,
+  efunc_GetFileName = 68,
+  efunc_GetBaseNameLowerCase = 69,
+  efunc_RenameLocations = 70,
+  efunc_RenameLocationsm_Aux = 71,
+  efunc_Inc = 72,
+  efunc_gen_RenameLocationsm_Aux_A1 = 73,
+  efunc_MapReduce = 74,
+  efunc_gen_RenameLocationsm_Aux_A1L1 = 75,
+  efunc_gen_CompileFiles_S1L1S3B1 = 76,
+  efunc_CompileFile = 77,
+  efunc_gen_CompileFiles_S1L1S3A1 = 78,
+  efunc_GrammarCheck = 79,
+  efunc_gen_CompileFiles_S1L1 = 80,
+  efunc_gen_CompileFiles_S2L1 = 81,
+  efunc_Configm_GetCppCompiler = 82,
+  efunc_Configm_GetPrefix = 83,
+  efunc_Linkm_Exe = 84,
+  efunc_Linkm_Lib = 85,
+  efunc_Linkm_R = 86,
+  efunc_gen_Link_B1 = 87,
+  efunc_Linkm_WithPrefix = 88,
+  efunc_Linkm_CppCompile = 89,
+  efunc_FindPrefix = 90,
+  efunc_gen_Linkm_Exe_S4B1 = 91,
+  efunc_ReportWarnings = 92,
+  efunc_gen_Linkm_Lib_S5B1 = 93,
+  efunc_gen_Linkm_R_S2L1 = 94,
+  efunc_Linkm_Aux = 95,
+  efunc_Chmodm_Xm_Prefix = 96,
+  efunc_CopyPrefix = 97,
+  efunc_gen_Linkm_WithPrefix_L1 = 98,
+  efunc_CheckReturnCode = 99,
+  efunc_gen_Chmodm_Xm_Prefix_B1S2A1 = 100,
+  efunc_System = 101,
+  efunc_gen_Chmodm_Xm_Prefix_B1 = 102,
+  efunc_Configm_GetChmodXCommand = 103,
+  efunc_LinkError = 104,
+  efunc_CheckCppCompilationSuccessed = 105,
+  efunc_EnsureAligned4096 = 106,
+  efunc_gen_Linkm_CppCompile_L1A1 = 107,
+  efunc_gen_Linkm_CppCompile_L1A1L1 = 108,
+  efunc_gen_Linkm_CppCompile_L1 = 109,
+  efunc_PreLinkCleanupTemporary = 110,
+  efunc_AppendRASLToBinary = 111,
+  efunc_AppendReferencesToBinary = 112,
+  efunc_AppendIncorporatedToBinary = 113,
+  efunc_PostLinkRename = 114,
+  efunc_Configm_GetIncorporateds = 115,
+  efunc_gen_Linkm_Aux_A4 = 116,
+  efunc_gen_Linkm_Aux_A3 = 117,
+  efunc_Configm_GetReferences = 118,
+  efunc_gen_Linkm_Aux_A2 = 119,
+  efunc_gen_Linkm_Aux_A1 = 120,
+  efunc_CalcTargetFileName = 121,
+  efunc_RemoveFile = 122,
+  efunc_gen_PreLinkCleanupTemporary_B1S2B1 = 123,
+  efunc_gen_PreLinkCleanupTemporary_B1 = 124,
+  efunc_ExistFile = 125,
+  efunc_gen_CheckCppCompilationSuccessed_B1 = 126,
+  efunc_FClose = 127,
+  efunc_AlignToPage = 128,
+  efunc_FOpen = 129,
+  efunc_gen_EnsureAligned4096_A1 = 130,
+  efunc_FWriteBytes = 131,
+  efunc_gen_AlignToPage_B1 = 132,
+  efunc_FTell = 133,
+  efunc_gen_AlignToPage_A1 = 134,
+  efunc_FSeek = 135,
+  efunc_LoadBytes = 136,
+  efunc_gen_AppendRASLToBinary_L1 = 137,
+  efunc_gen_AppendRASLToBinary_A1 = 138,
+  efunc_AppendSimpleBlock = 139,
+  efunc_PutBlockReference = 140,
+  efunc_PutBlockIncorporated = 141,
+  efunc_gen_AppendSimpleBlock_L1 = 142,
+  efunc_gen_AppendSimpleBlock_A1 = 143,
+  efunc_RenameFile = 144,
+  efunc_gen_PostLinkRename_B1 = 145,
+  efunc_gen_PostLinkRename_A1B1S1B1 = 146,
+  efunc_gen_PostLinkRename_A1B1 = 147,
+  efunc_gen_PostLinkRename_A1 = 148,
+  efunc_DoFindPrefix = 149,
+  efunc_gen_FindPrefix_A1 = 150,
+  efunc_gen_FindPrefix_A1B1 = 151,
+  efunc_gen_DoFindPrefix_S1B1 = 152,
+  efunc_GlueNames = 153,
+  efunc_gen_DoFindPrefix_S1A1 = 154,
+  efunc_SaveBytes = 155,
+  efunc_DoGetFileName = 156,
 };
 
 
@@ -300,7 +299,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 1058933882U, 3440598329U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 52442882U, 1826840892U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -361,9 +360,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 3440598329UL);
+    refalrts::alloc_number(vm, context[9], 1826840892UL);
     refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 1058933882UL);
+    refalrts::reinit_number(context[5], 52442882UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -390,8 +389,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 1058933882UL);
-  refalrts::reinit_number(context[7], 3440598329UL);
+  refalrts::reinit_number(context[5], 52442882UL);
+  refalrts::reinit_number(context[7], 1826840892UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -403,7 +402,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 1058933882U, 3440598329U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 52442882U, 1826840892U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -659,7 +658,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 1058933882U, 3440598329U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 52442882U, 1826840892U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -759,7 +758,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 1058933882U, 3440598329U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", 52442882U, 1826840892U, func_Residue);
 
 
 static refalrts::FnResult func_Go(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -768,9 +767,9 @@ static refalrts::FnResult func_Go(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
   // </0 & Go/4 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -782,27 +781,20 @@ static refalrts::FnResult func_Go(refalrts::VM *vm, refalrts::Iter arg_begin, re
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintVersion/4 HalfReuse: 'S'/1 }"refc"/5 >/7 </8 & Main/9 </10 & ArgList/11 >/12 >/13 Tile{ ]] }
-  refalrts::alloc_chars(vm, context[5], context[6], "refc", 4);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Main/4 HalfReuse: </1 } & ArgList/5 >/6 >/7 Tile{ ]] }
+  refalrts::alloc_name(vm, context[5], functions[efunc_ArgList]);
+  refalrts::alloc_close_call(vm, context[6]);
   refalrts::alloc_close_call(vm, context[7]);
-  refalrts::alloc_open_call(vm, context[8]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_Main]);
-  refalrts::alloc_open_call(vm, context[10]);
-  refalrts::alloc_name(vm, context[11], functions[efunc_ArgList]);
-  refalrts::alloc_close_call(vm, context[12]);
-  refalrts::alloc_close_call(vm, context[13]);
-  refalrts::update_name(context[4], functions[efunc_PrintVersion]);
-  refalrts::reinit_char(context[1], 'S');
-  refalrts::push_stack( vm, context[13] );
-  refalrts::push_stack( vm, context[8] );
-  refalrts::push_stack( vm, context[12] );
-  refalrts::push_stack( vm, context[10] );
+  refalrts::update_name(context[4], functions[efunc_Main]);
+  refalrts::reinit_open_call(context[1]);
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[6] );
+  refalrts::push_stack( vm, context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[5], context[13] );
+  res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -914,7 +906,7 @@ static refalrts::FnResult func_Main(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Main("Main", 1058933882U, 3440598329U, func_Main);
+static refalrts::NativeReference nat_ref_Main("Main", 52442882U, 1826840892U, func_Main);
 
 
 static refalrts::FnResult func_Mainm_SwValidCommandLine(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1044,7 +1036,7 @@ static refalrts::FnResult func_Mainm_SwValidCommandLine(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Mainm_SwValidCommandLine("Main-SwValidCommandLine", 1058933882U, 3440598329U, func_Mainm_SwValidCommandLine);
+static refalrts::NativeReference nat_ref_Mainm_SwValidCommandLine("Main-SwValidCommandLine", 52442882U, 1826840892U, func_Mainm_SwValidCommandLine);
 
 
 static refalrts::FnResult func_ReportErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1094,7 +1086,7 @@ static refalrts::FnResult func_ReportErrors(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReportErrors("ReportErrors", 1058933882U, 3440598329U, func_ReportErrors);
+static refalrts::NativeReference nat_ref_ReportErrors("ReportErrors", 52442882U, 1826840892U, func_ReportErrors);
 
 
 static refalrts::FnResult func_OnErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1139,7 +1131,7 @@ static refalrts::FnResult func_OnErrors(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OnErrors("OnErrors", 1058933882U, 3440598329U, func_OnErrors);
+static refalrts::NativeReference nat_ref_OnErrors("OnErrors", 52442882U, 1826840892U, func_OnErrors);
 
 
 static refalrts::FnResult func_ReportWarnings(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1189,7 +1181,7 @@ static refalrts::FnResult func_ReportWarnings(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReportWarnings("ReportWarnings", 1058933882U, 3440598329U, func_ReportWarnings);
+static refalrts::NativeReference nat_ref_ReportWarnings("ReportWarnings", 52442882U, 1826840892U, func_ReportWarnings);
 
 
 static refalrts::FnResult func_OnWarnings(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1224,7 +1216,7 @@ static refalrts::FnResult func_OnWarnings(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OnWarnings("OnWarnings", 1058933882U, 3440598329U, func_OnWarnings);
+static refalrts::NativeReference nat_ref_OnWarnings("OnWarnings", 52442882U, 1826840892U, func_OnWarnings);
 
 
 static refalrts::FnResult func_gen_ReportMessages_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1301,7 +1293,7 @@ static refalrts::FnResult func_gen_ReportMessages_L1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReportMessages_L1("ReportMessages\\1", 1058933882U, 3440598329U, func_gen_ReportMessages_L1);
+static refalrts::NativeReference nat_ref_gen_ReportMessages_L1("ReportMessages\\1", 52442882U, 1826840892U, func_gen_ReportMessages_L1);
 
 
 static refalrts::FnResult func_gen_ReportMessages_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1375,7 +1367,7 @@ static refalrts::FnResult func_gen_ReportMessages_A1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReportMessages_A1("ReportMessages=1", 1058933882U, 3440598329U, func_gen_ReportMessages_A1);
+static refalrts::NativeReference nat_ref_gen_ReportMessages_A1("ReportMessages=1", 52442882U, 1826840892U, func_gen_ReportMessages_A1);
 
 
 static refalrts::FnResult func_gen_ReportMessages_A1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1442,7 +1434,7 @@ static refalrts::FnResult func_gen_ReportMessages_A1B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ReportMessages_A1B1("ReportMessages=1:1", 1058933882U, 3440598329U, func_gen_ReportMessages_A1B1);
+static refalrts::NativeReference nat_ref_gen_ReportMessages_A1B1("ReportMessages=1:1", 52442882U, 1826840892U, func_gen_ReportMessages_A1B1);
 
 
 static refalrts::FnResult func_ReportMessages(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1519,7 +1511,7 @@ static refalrts::FnResult func_ReportMessages(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ReportMessages("ReportMessages", 1058933882U, 3440598329U, func_ReportMessages);
+static refalrts::NativeReference nat_ref_ReportMessages("ReportMessages", 52442882U, 1826840892U, func_ReportMessages);
 
 
 static refalrts::FnResult func_CreateErrorFileMark(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1584,7 +1576,7 @@ static refalrts::FnResult func_CreateErrorFileMark(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateErrorFileMark("CreateErrorFileMark", 1058933882U, 3440598329U, func_CreateErrorFileMark);
+static refalrts::NativeReference nat_ref_CreateErrorFileMark("CreateErrorFileMark", 52442882U, 1826840892U, func_CreateErrorFileMark);
 
 
 static refalrts::FnResult func_CreateErrorFileMarkm_SwFile(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1649,7 +1641,7 @@ static refalrts::FnResult func_CreateErrorFileMarkm_SwFile(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CreateErrorFileMarkm_SwFile("CreateErrorFileMark-SwFile", 1058933882U, 3440598329U, func_CreateErrorFileMarkm_SwFile);
+static refalrts::NativeReference nat_ref_CreateErrorFileMarkm_SwFile("CreateErrorFileMark-SwFile", 52442882U, 1826840892U, func_CreateErrorFileMarkm_SwFile);
 
 
 static refalrts::FnResult func_gen_Mainm_SwFoundFiles_S1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1792,7 +1784,7 @@ static refalrts::FnResult func_gen_Mainm_SwFoundFiles_S1L1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Mainm_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 1058933882U, 3440598329U, func_gen_Mainm_SwFoundFiles_S1L1);
+static refalrts::NativeReference nat_ref_gen_Mainm_SwFoundFiles_S1L1("Main-SwFoundFiles$1\\1", 52442882U, 1826840892U, func_gen_Mainm_SwFoundFiles_S1L1);
 
 
 static refalrts::FnResult func_Mainm_SwFoundFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1907,7 +1899,7 @@ static refalrts::FnResult func_Mainm_SwFoundFiles(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Mainm_SwFoundFiles("Main-SwFoundFiles", 1058933882U, 3440598329U, func_Mainm_SwFoundFiles);
+static refalrts::NativeReference nat_ref_Mainm_SwFoundFiles("Main-SwFoundFiles", 52442882U, 1826840892U, func_Mainm_SwFoundFiles);
 
 
 static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2061,7 +2053,7 @@ static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S1L1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 1058933882U, 3440598329U, func_gen_Mainm_SwRenamedTargets_S1L1);
+static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S1L1("Main-SwRenamedTargets$1\\1", 52442882U, 1826840892U, func_gen_Mainm_SwRenamedTargets_S1L1);
 
 
 static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2184,7 +2176,7 @@ static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S2B1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S2B1("Main-SwRenamedTargets$2:1", 1058933882U, 3440598329U, func_gen_Mainm_SwRenamedTargets_S2B1);
+static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S2B1("Main-SwRenamedTargets$2:1", 52442882U, 1826840892U, func_gen_Mainm_SwRenamedTargets_S2B1);
 
 
 static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2256,7 +2248,7 @@ static refalrts::FnResult func_gen_Mainm_SwRenamedTargets_S2A1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S2A1("Main-SwRenamedTargets$2=1", 1058933882U, 3440598329U, func_gen_Mainm_SwRenamedTargets_S2A1);
+static refalrts::NativeReference nat_ref_gen_Mainm_SwRenamedTargets_S2A1("Main-SwRenamedTargets$2=1", 52442882U, 1826840892U, func_gen_Mainm_SwRenamedTargets_S2A1);
 
 
 static refalrts::FnResult func_Mainm_SwRenamedTargets(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2376,7 +2368,7 @@ static refalrts::FnResult func_Mainm_SwRenamedTargets(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Mainm_SwRenamedTargets("Main-SwRenamedTargets", 1058933882U, 3440598329U, func_Mainm_SwRenamedTargets);
+static refalrts::NativeReference nat_ref_Mainm_SwRenamedTargets("Main-SwRenamedTargets", 52442882U, 1826840892U, func_Mainm_SwRenamedTargets);
 
 
 static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2434,7 +2426,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A4(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A4("CalcTargetFileName:1$1=4", 1058933882U, 3440598329U, func_gen_CalcTargetFileName_B1S1A4);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A4("CalcTargetFileName:1$1=4", 52442882U, 1826840892U, func_gen_CalcTargetFileName_B1S1A4);
 
 
 static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2505,7 +2497,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A3(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A3("CalcTargetFileName:1$1=3", 1058933882U, 3440598329U, func_gen_CalcTargetFileName_B1S1A3);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A3("CalcTargetFileName:1$1=3", 52442882U, 1826840892U, func_gen_CalcTargetFileName_B1S1A3);
 
 
 static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2564,7 +2556,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A2(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A2("CalcTargetFileName:1$1=2", 1058933882U, 3440598329U, func_gen_CalcTargetFileName_B1S1A2);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A2("CalcTargetFileName:1$1=2", 52442882U, 1826840892U, func_gen_CalcTargetFileName_B1S1A2);
 
 
 static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2630,7 +2622,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_B1S1A1(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A1("CalcTargetFileName:1$1=1", 1058933882U, 3440598329U, func_gen_CalcTargetFileName_B1S1A1);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1S1A1("CalcTargetFileName:1$1=1", 52442882U, 1826840892U, func_gen_CalcTargetFileName_B1S1A1);
 
 
 static refalrts::FnResult func_gen_CalcTargetFileName_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2717,7 +2709,7 @@ static refalrts::FnResult func_gen_CalcTargetFileName_B1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1("CalcTargetFileName:1", 1058933882U, 3440598329U, func_gen_CalcTargetFileName_B1);
+static refalrts::NativeReference nat_ref_gen_CalcTargetFileName_B1("CalcTargetFileName:1", 52442882U, 1826840892U, func_gen_CalcTargetFileName_B1);
 
 
 static refalrts::FnResult func_CalcTargetFileName(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2777,7 +2769,7 @@ static refalrts::FnResult func_CalcTargetFileName(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcTargetFileName("CalcTargetFileName", 1058933882U, 3440598329U, func_CalcTargetFileName);
+static refalrts::NativeReference nat_ref_CalcTargetFileName("CalcTargetFileName", 52442882U, 1826840892U, func_CalcTargetFileName);
 
 
 static refalrts::FnResult func_gen_LookupSourceFiles_L1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2826,7 +2818,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1B1(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1B1("LookupSourceFiles\\1:1", 1058933882U, 3440598329U, func_gen_LookupSourceFiles_L1B1);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1B1("LookupSourceFiles\\1:1", 52442882U, 1826840892U, func_gen_LookupSourceFiles_L1B1);
 
 
 static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2899,7 +2891,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_L1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 1058933882U, 3440598329U, func_gen_LookupSourceFiles_L1);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_L1("LookupSourceFiles\\1", 52442882U, 1826840892U, func_gen_LookupSourceFiles_L1);
 
 
 static refalrts::FnResult func_gen_LookupSourceFiles_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2956,7 +2948,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_A2(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_A2("LookupSourceFiles=2", 1058933882U, 3440598329U, func_gen_LookupSourceFiles_A2);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_A2("LookupSourceFiles=2", 52442882U, 1826840892U, func_gen_LookupSourceFiles_A2);
 
 
 static refalrts::FnResult func_gen_LookupSourceFiles_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3021,7 +3013,7 @@ static refalrts::FnResult func_gen_LookupSourceFiles_A1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_A1("LookupSourceFiles=1", 1058933882U, 3440598329U, func_gen_LookupSourceFiles_A1);
+static refalrts::NativeReference nat_ref_gen_LookupSourceFiles_A1("LookupSourceFiles=1", 52442882U, 1826840892U, func_gen_LookupSourceFiles_A1);
 
 
 static refalrts::FnResult func_LookupSourceFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3076,7 +3068,7 @@ static refalrts::FnResult func_LookupSourceFiles(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LookupSourceFiles("LookupSourceFiles", 1058933882U, 3440598329U, func_LookupSourceFiles);
+static refalrts::NativeReference nat_ref_LookupSourceFiles("LookupSourceFiles", 52442882U, 1826840892U, func_LookupSourceFiles);
 
 
 static refalrts::FnResult func_RenameTargets(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3185,7 +3177,7 @@ static refalrts::FnResult func_RenameTargets(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameTargets("RenameTargets", 1058933882U, 3440598329U, func_RenameTargets);
+static refalrts::NativeReference nat_ref_RenameTargets("RenameTargets", 52442882U, 1826840892U, func_RenameTargets);
 
 
 static refalrts::FnResult func_gen_RenameTargetsm_Stub_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3302,7 +3294,7 @@ static refalrts::FnResult func_gen_RenameTargetsm_Stub_L1(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_RenameTargetsm_Stub_L1("RenameTargets-Stub\\1", 1058933882U, 3440598329U, func_gen_RenameTargetsm_Stub_L1);
+static refalrts::NativeReference nat_ref_gen_RenameTargetsm_Stub_L1("RenameTargets-Stub\\1", 52442882U, 1826840892U, func_gen_RenameTargetsm_Stub_L1);
 
 
 static refalrts::FnResult func_RenameTargetsm_Stub(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3339,7 +3331,7 @@ static refalrts::FnResult func_RenameTargetsm_Stub(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameTargetsm_Stub("RenameTargets-Stub", 1058933882U, 3440598329U, func_RenameTargetsm_Stub);
+static refalrts::NativeReference nat_ref_RenameTargetsm_Stub("RenameTargets-Stub", 52442882U, 1826840892U, func_RenameTargetsm_Stub);
 
 
 static refalrts::FnResult func_RenameTargetsm_WithCpp(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3383,7 +3375,7 @@ static refalrts::FnResult func_RenameTargetsm_WithCpp(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameTargetsm_WithCpp("RenameTargets-WithCpp", 1058933882U, 3440598329U, func_RenameTargetsm_WithCpp);
+static refalrts::NativeReference nat_ref_RenameTargetsm_WithCpp("RenameTargets-WithCpp", 52442882U, 1826840892U, func_RenameTargetsm_WithCpp);
 
 
 static refalrts::FnResult func_GetFileName(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3544,7 +3536,7 @@ static refalrts::FnResult func_GetFileName(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetFileName("GetFileName", 1058933882U, 3440598329U, func_GetFileName);
+static refalrts::NativeReference nat_ref_GetFileName("GetFileName", 52442882U, 1826840892U, func_GetFileName);
 
 
 static refalrts::FnResult func_ScanCollisions(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3681,7 +3673,7 @@ static refalrts::FnResult func_ScanCollisions(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ScanCollisions("ScanCollisions", 1058933882U, 3440598329U, func_ScanCollisions);
+static refalrts::NativeReference nat_ref_ScanCollisions("ScanCollisions", 52442882U, 1826840892U, func_ScanCollisions);
 
 
 static refalrts::FnResult func_RenameLocations(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3850,7 +3842,7 @@ static refalrts::FnResult func_RenameLocations(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameLocations("RenameLocations", 1058933882U, 3440598329U, func_RenameLocations);
+static refalrts::NativeReference nat_ref_RenameLocations("RenameLocations", 52442882U, 1826840892U, func_RenameLocations);
 
 
 static refalrts::FnResult func_gen_RenameLocationsm_Aux_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3885,7 +3877,7 @@ static refalrts::FnResult func_gen_RenameLocationsm_Aux_A1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_RenameLocationsm_Aux_A1("RenameLocations-Aux=1", 1058933882U, 3440598329U, func_gen_RenameLocationsm_Aux_A1);
+static refalrts::NativeReference nat_ref_gen_RenameLocationsm_Aux_A1("RenameLocations-Aux=1", 52442882U, 1826840892U, func_gen_RenameLocationsm_Aux_A1);
 
 
 static refalrts::FnResult func_gen_RenameLocationsm_Aux_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4043,7 +4035,7 @@ static refalrts::FnResult func_gen_RenameLocationsm_Aux_A1L1(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_RenameLocationsm_Aux_A1L1("RenameLocations-Aux=1\\1", 1058933882U, 3440598329U, func_gen_RenameLocationsm_Aux_A1L1);
+static refalrts::NativeReference nat_ref_gen_RenameLocationsm_Aux_A1L1("RenameLocations-Aux=1\\1", 52442882U, 1826840892U, func_gen_RenameLocationsm_Aux_A1L1);
 
 
 static refalrts::FnResult func_RenameLocationsm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4090,7 +4082,7 @@ static refalrts::FnResult func_RenameLocationsm_Aux(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RenameLocationsm_Aux("RenameLocations-Aux", 1058933882U, 3440598329U, func_RenameLocationsm_Aux);
+static refalrts::NativeReference nat_ref_RenameLocationsm_Aux("RenameLocations-Aux", 52442882U, 1826840892U, func_RenameLocationsm_Aux);
 
 
 static refalrts::FnResult func_gen_CompileFiles_S1L1S3B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4202,7 +4194,7 @@ static refalrts::FnResult func_gen_CompileFiles_S1L1S3B1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1S3B1("CompileFiles$1\\1$3:1", 1058933882U, 3440598329U, func_gen_CompileFiles_S1L1S3B1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1S3B1("CompileFiles$1\\1$3:1", 52442882U, 1826840892U, func_gen_CompileFiles_S1L1S3B1);
 
 
 static refalrts::FnResult func_gen_CompileFiles_S1L1S3A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4272,7 +4264,7 @@ static refalrts::FnResult func_gen_CompileFiles_S1L1S3A1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1S3A1("CompileFiles$1\\1$3=1", 1058933882U, 3440598329U, func_gen_CompileFiles_S1L1S3A1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1S3A1("CompileFiles$1\\1$3=1", 52442882U, 1826840892U, func_gen_CompileFiles_S1L1S3A1);
 
 
 static refalrts::FnResult func_gen_CompileFiles_S1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4455,7 +4447,7 @@ static refalrts::FnResult func_gen_CompileFiles_S1L1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1("CompileFiles$1\\1", 1058933882U, 3440598329U, func_gen_CompileFiles_S1L1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_S1L1("CompileFiles$1\\1", 52442882U, 1826840892U, func_gen_CompileFiles_S1L1);
 
 
 static refalrts::FnResult func_gen_CompileFiles_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4579,7 +4571,7 @@ static refalrts::FnResult func_gen_CompileFiles_S2L1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CompileFiles_S2L1("CompileFiles$2\\1", 1058933882U, 3440598329U, func_gen_CompileFiles_S2L1);
+static refalrts::NativeReference nat_ref_gen_CompileFiles_S2L1("CompileFiles$2\\1", 52442882U, 1826840892U, func_gen_CompileFiles_S2L1);
 
 
 static refalrts::FnResult func_CompileFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4659,7 +4651,7 @@ static refalrts::FnResult func_CompileFiles(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CompileFiles("CompileFiles", 1058933882U, 3440598329U, func_CompileFiles);
+static refalrts::NativeReference nat_ref_CompileFiles("CompileFiles", 52442882U, 1826840892U, func_CompileFiles);
 
 
 static refalrts::FnResult func_gen_Link_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4828,7 +4820,7 @@ static refalrts::FnResult func_gen_Link_B1(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Link_B1("Link:1", 1058933882U, 3440598329U, func_gen_Link_B1);
+static refalrts::NativeReference nat_ref_gen_Link_B1("Link:1", 52442882U, 1826840892U, func_gen_Link_B1);
 
 
 static refalrts::FnResult func_Link(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4888,7 +4880,7 @@ static refalrts::FnResult func_Link(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Link("Link", 1058933882U, 3440598329U, func_Link);
+static refalrts::NativeReference nat_ref_Link("Link", 52442882U, 1826840892U, func_Link);
 
 
 static refalrts::FnResult func_gen_Linkm_Exe_S4B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4990,7 +4982,7 @@ static refalrts::FnResult func_gen_Linkm_Exe_S4B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Exe_S4B1("Link-Exe$4:1", 1058933882U, 3440598329U, func_gen_Linkm_Exe_S4B1);
+static refalrts::NativeReference nat_ref_gen_Linkm_Exe_S4B1("Link-Exe$4:1", 52442882U, 1826840892U, func_gen_Linkm_Exe_S4B1);
 
 
 static refalrts::FnResult func_Linkm_Exe(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5212,7 +5204,7 @@ static refalrts::FnResult func_Linkm_Exe(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_Exe("Link-Exe", 1058933882U, 3440598329U, func_Linkm_Exe);
+static refalrts::NativeReference nat_ref_Linkm_Exe("Link-Exe", 52442882U, 1826840892U, func_Linkm_Exe);
 
 
 static refalrts::FnResult func_gen_Linkm_Lib_S5B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5326,7 +5318,7 @@ static refalrts::FnResult func_gen_Linkm_Lib_S5B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Lib_S5B1("Link-Lib$5:1", 1058933882U, 3440598329U, func_gen_Linkm_Lib_S5B1);
+static refalrts::NativeReference nat_ref_gen_Linkm_Lib_S5B1("Link-Lib$5:1", 52442882U, 1826840892U, func_gen_Linkm_Lib_S5B1);
 
 
 static refalrts::FnResult func_Linkm_Lib(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5613,7 +5605,7 @@ static refalrts::FnResult func_Linkm_Lib(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_Lib("Link-Lib", 1058933882U, 3440598329U, func_Linkm_Lib);
+static refalrts::NativeReference nat_ref_Linkm_Lib("Link-Lib", 52442882U, 1826840892U, func_Linkm_Lib);
 
 
 static refalrts::FnResult func_gen_Linkm_R_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5644,7 +5636,7 @@ static refalrts::FnResult func_gen_Linkm_R_S2L1(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_R_S2L1("Link-R$2\\1", 1058933882U, 3440598329U, func_gen_Linkm_R_S2L1);
+static refalrts::NativeReference nat_ref_gen_Linkm_R_S2L1("Link-R$2\\1", 52442882U, 1826840892U, func_gen_Linkm_R_S2L1);
 
 
 static refalrts::FnResult func_Linkm_R(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5747,7 +5739,7 @@ static refalrts::FnResult func_Linkm_R(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_R("Link-R", 1058933882U, 3440598329U, func_Linkm_R);
+static refalrts::NativeReference nat_ref_Linkm_R("Link-R", 52442882U, 1826840892U, func_Linkm_R);
 
 
 static refalrts::FnResult func_gen_Linkm_WithPrefix_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5804,7 +5796,7 @@ static refalrts::FnResult func_gen_Linkm_WithPrefix_L1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_WithPrefix_L1("Link-WithPrefix\\1", 1058933882U, 3440598329U, func_gen_Linkm_WithPrefix_L1);
+static refalrts::NativeReference nat_ref_gen_Linkm_WithPrefix_L1("Link-WithPrefix\\1", 52442882U, 1826840892U, func_gen_Linkm_WithPrefix_L1);
 
 
 static refalrts::FnResult func_Linkm_WithPrefix(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5867,7 +5859,7 @@ static refalrts::FnResult func_Linkm_WithPrefix(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_WithPrefix("Link-WithPrefix", 1058933882U, 3440598329U, func_Linkm_WithPrefix);
+static refalrts::NativeReference nat_ref_Linkm_WithPrefix("Link-WithPrefix", 52442882U, 1826840892U, func_Linkm_WithPrefix);
 
 
 static refalrts::FnResult func_gen_Chmodm_Xm_Prefix_B1S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5912,7 +5904,7 @@ static refalrts::FnResult func_gen_Chmodm_Xm_Prefix_B1S2A1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Chmodm_Xm_Prefix_B1S2A1("Chmod-X-Prefix:1$2=1", 1058933882U, 3440598329U, func_gen_Chmodm_Xm_Prefix_B1S2A1);
+static refalrts::NativeReference nat_ref_gen_Chmodm_Xm_Prefix_B1S2A1("Chmod-X-Prefix:1$2=1", 52442882U, 1826840892U, func_gen_Chmodm_Xm_Prefix_B1S2A1);
 
 
 static refalrts::FnResult func_gen_Chmodm_Xm_Prefix_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6000,7 +5992,7 @@ static refalrts::FnResult func_gen_Chmodm_Xm_Prefix_B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Chmodm_Xm_Prefix_B1("Chmod-X-Prefix:1", 1058933882U, 3440598329U, func_gen_Chmodm_Xm_Prefix_B1);
+static refalrts::NativeReference nat_ref_gen_Chmodm_Xm_Prefix_B1("Chmod-X-Prefix:1", 52442882U, 1826840892U, func_gen_Chmodm_Xm_Prefix_B1);
 
 
 static refalrts::FnResult func_Chmodm_Xm_Prefix(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6055,7 +6047,7 @@ static refalrts::FnResult func_Chmodm_Xm_Prefix(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Chmodm_Xm_Prefix("Chmod-X-Prefix", 1058933882U, 3440598329U, func_Chmodm_Xm_Prefix);
+static refalrts::NativeReference nat_ref_Chmodm_Xm_Prefix("Chmod-X-Prefix", 52442882U, 1826840892U, func_Chmodm_Xm_Prefix);
 
 
 static refalrts::FnResult func_CheckReturnCode(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6139,7 +6131,7 @@ static refalrts::FnResult func_CheckReturnCode(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CheckReturnCode("CheckReturnCode", 1058933882U, 3440598329U, func_CheckReturnCode);
+static refalrts::NativeReference nat_ref_CheckReturnCode("CheckReturnCode", 52442882U, 1826840892U, func_CheckReturnCode);
 
 
 static refalrts::FnResult func_gen_Linkm_CppCompile_L1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6205,7 +6197,7 @@ static refalrts::FnResult func_gen_Linkm_CppCompile_L1A1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1A1("Link-CppCompile\\1=1", 1058933882U, 3440598329U, func_gen_Linkm_CppCompile_L1A1);
+static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1A1("Link-CppCompile\\1=1", 52442882U, 1826840892U, func_gen_Linkm_CppCompile_L1A1);
 
 
 static refalrts::FnResult func_gen_Linkm_CppCompile_L1A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6274,7 +6266,7 @@ static refalrts::FnResult func_gen_Linkm_CppCompile_L1A1L1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1A1L1("Link-CppCompile\\1=1\\1", 1058933882U, 3440598329U, func_gen_Linkm_CppCompile_L1A1L1);
+static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1A1L1("Link-CppCompile\\1=1\\1", 52442882U, 1826840892U, func_gen_Linkm_CppCompile_L1A1L1);
 
 
 static refalrts::FnResult func_gen_Linkm_CppCompile_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6364,7 +6356,7 @@ static refalrts::FnResult func_gen_Linkm_CppCompile_L1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1("Link-CppCompile\\1", 1058933882U, 3440598329U, func_gen_Linkm_CppCompile_L1);
+static refalrts::NativeReference nat_ref_gen_Linkm_CppCompile_L1("Link-CppCompile\\1", 52442882U, 1826840892U, func_gen_Linkm_CppCompile_L1);
 
 
 static refalrts::FnResult func_Linkm_CppCompile(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6448,7 +6440,7 @@ static refalrts::FnResult func_Linkm_CppCompile(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_CppCompile("Link-CppCompile", 1058933882U, 3440598329U, func_Linkm_CppCompile);
+static refalrts::NativeReference nat_ref_Linkm_CppCompile("Link-CppCompile", 52442882U, 1826840892U, func_Linkm_CppCompile);
 
 
 static refalrts::FnResult func_gen_Linkm_Aux_A4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6579,7 +6571,7 @@ static refalrts::FnResult func_gen_Linkm_Aux_A4(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A4("Link-Aux=4", 1058933882U, 3440598329U, func_gen_Linkm_Aux_A4);
+static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A4("Link-Aux=4", 52442882U, 1826840892U, func_gen_Linkm_Aux_A4);
 
 
 static refalrts::FnResult func_gen_Linkm_Aux_A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6667,7 +6659,7 @@ static refalrts::FnResult func_gen_Linkm_Aux_A3(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A3("Link-Aux=3", 1058933882U, 3440598329U, func_gen_Linkm_Aux_A3);
+static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A3("Link-Aux=3", 52442882U, 1826840892U, func_gen_Linkm_Aux_A3);
 
 
 static refalrts::FnResult func_gen_Linkm_Aux_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6745,7 +6737,7 @@ static refalrts::FnResult func_gen_Linkm_Aux_A2(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A2("Link-Aux=2", 1058933882U, 3440598329U, func_gen_Linkm_Aux_A2);
+static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A2("Link-Aux=2", 52442882U, 1826840892U, func_gen_Linkm_Aux_A2);
 
 
 static refalrts::FnResult func_gen_Linkm_Aux_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6809,7 +6801,7 @@ static refalrts::FnResult func_gen_Linkm_Aux_A1(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A1("Link-Aux=1", 1058933882U, 3440598329U, func_gen_Linkm_Aux_A1);
+static refalrts::NativeReference nat_ref_gen_Linkm_Aux_A1("Link-Aux=1", 52442882U, 1826840892U, func_gen_Linkm_Aux_A1);
 
 
 static refalrts::FnResult func_Linkm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6872,7 +6864,7 @@ static refalrts::FnResult func_Linkm_Aux(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Linkm_Aux("Link-Aux", 1058933882U, 3440598329U, func_Linkm_Aux);
+static refalrts::NativeReference nat_ref_Linkm_Aux("Link-Aux", 52442882U, 1826840892U, func_Linkm_Aux);
 
 
 static refalrts::FnResult func_gen_PreLinkCleanupTemporary_B1S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6987,7 +6979,7 @@ static refalrts::FnResult func_gen_PreLinkCleanupTemporary_B1S2B1(refalrts::VM *
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_B1S2B1("PreLinkCleanupTemporary:1$2:1", 1058933882U, 3440598329U, func_gen_PreLinkCleanupTemporary_B1S2B1);
+static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_B1S2B1("PreLinkCleanupTemporary:1$2:1", 52442882U, 1826840892U, func_gen_PreLinkCleanupTemporary_B1S2B1);
 
 
 static refalrts::FnResult func_gen_PreLinkCleanupTemporary_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7075,7 +7067,7 @@ static refalrts::FnResult func_gen_PreLinkCleanupTemporary_B1(refalrts::VM *vm, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_B1("PreLinkCleanupTemporary:1", 1058933882U, 3440598329U, func_gen_PreLinkCleanupTemporary_B1);
+static refalrts::NativeReference nat_ref_gen_PreLinkCleanupTemporary_B1("PreLinkCleanupTemporary:1", 52442882U, 1826840892U, func_gen_PreLinkCleanupTemporary_B1);
 
 
 static refalrts::FnResult func_PreLinkCleanupTemporary(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7130,7 +7122,7 @@ static refalrts::FnResult func_PreLinkCleanupTemporary(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PreLinkCleanupTemporary("PreLinkCleanupTemporary", 1058933882U, 3440598329U, func_PreLinkCleanupTemporary);
+static refalrts::NativeReference nat_ref_PreLinkCleanupTemporary("PreLinkCleanupTemporary", 52442882U, 1826840892U, func_PreLinkCleanupTemporary);
 
 
 static refalrts::FnResult func_gen_CheckCppCompilationSuccessed_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7197,7 +7189,7 @@ static refalrts::FnResult func_gen_CheckCppCompilationSuccessed_B1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_CheckCppCompilationSuccessed_B1("CheckCppCompilationSuccessed:1", 1058933882U, 3440598329U, func_gen_CheckCppCompilationSuccessed_B1);
+static refalrts::NativeReference nat_ref_gen_CheckCppCompilationSuccessed_B1("CheckCppCompilationSuccessed:1", 52442882U, 1826840892U, func_gen_CheckCppCompilationSuccessed_B1);
 
 
 static refalrts::FnResult func_CheckCppCompilationSuccessed(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7248,7 +7240,7 @@ static refalrts::FnResult func_CheckCppCompilationSuccessed(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CheckCppCompilationSuccessed("CheckCppCompilationSuccessed", 1058933882U, 3440598329U, func_CheckCppCompilationSuccessed);
+static refalrts::NativeReference nat_ref_CheckCppCompilationSuccessed("CheckCppCompilationSuccessed", 52442882U, 1826840892U, func_CheckCppCompilationSuccessed);
 
 
 static refalrts::FnResult func_gen_EnsureAligned4096_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7292,7 +7284,7 @@ static refalrts::FnResult func_gen_EnsureAligned4096_A1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_EnsureAligned4096_A1("EnsureAligned4096=1", 1058933882U, 3440598329U, func_gen_EnsureAligned4096_A1);
+static refalrts::NativeReference nat_ref_gen_EnsureAligned4096_A1("EnsureAligned4096=1", 52442882U, 1826840892U, func_gen_EnsureAligned4096_A1);
 
 
 static refalrts::FnResult func_EnsureAligned4096(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7338,7 +7330,7 @@ static refalrts::FnResult func_EnsureAligned4096(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_EnsureAligned4096("EnsureAligned4096", 1058933882U, 3440598329U, func_EnsureAligned4096);
+static refalrts::NativeReference nat_ref_EnsureAligned4096("EnsureAligned4096", 52442882U, 1826840892U, func_EnsureAligned4096);
 
 
 static refalrts::FnResult func_gen_AlignToPage_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7406,7 +7398,7 @@ static refalrts::FnResult func_gen_AlignToPage_B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AlignToPage_B1("AlignToPage:1", 1058933882U, 3440598329U, func_gen_AlignToPage_B1);
+static refalrts::NativeReference nat_ref_gen_AlignToPage_B1("AlignToPage:1", 52442882U, 1826840892U, func_gen_AlignToPage_B1);
 
 
 static refalrts::FnResult func_gen_AlignToPage_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7461,7 +7453,7 @@ static refalrts::FnResult func_gen_AlignToPage_A1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AlignToPage_A1("AlignToPage=1", 1058933882U, 3440598329U, func_gen_AlignToPage_A1);
+static refalrts::NativeReference nat_ref_gen_AlignToPage_A1("AlignToPage=1", 52442882U, 1826840892U, func_gen_AlignToPage_A1);
 
 
 static refalrts::FnResult func_AlignToPage(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7514,7 +7506,7 @@ static refalrts::FnResult func_AlignToPage(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AlignToPage("AlignToPage", 1058933882U, 3440598329U, func_AlignToPage);
+static refalrts::NativeReference nat_ref_AlignToPage("AlignToPage", 52442882U, 1826840892U, func_AlignToPage);
 
 
 static refalrts::FnResult func_gen_AppendRASLToBinary_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7587,7 +7579,7 @@ static refalrts::FnResult func_gen_AppendRASLToBinary_L1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AppendRASLToBinary_L1("AppendRASLToBinary\\1", 1058933882U, 3440598329U, func_gen_AppendRASLToBinary_L1);
+static refalrts::NativeReference nat_ref_gen_AppendRASLToBinary_L1("AppendRASLToBinary\\1", 52442882U, 1826840892U, func_gen_AppendRASLToBinary_L1);
 
 
 static refalrts::FnResult func_gen_AppendRASLToBinary_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7645,7 +7637,7 @@ static refalrts::FnResult func_gen_AppendRASLToBinary_A1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AppendRASLToBinary_A1("AppendRASLToBinary=1", 1058933882U, 3440598329U, func_gen_AppendRASLToBinary_A1);
+static refalrts::NativeReference nat_ref_gen_AppendRASLToBinary_A1("AppendRASLToBinary=1", 52442882U, 1826840892U, func_gen_AppendRASLToBinary_A1);
 
 
 static refalrts::FnResult func_AppendRASLToBinary(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7707,7 +7699,7 @@ static refalrts::FnResult func_AppendRASLToBinary(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AppendRASLToBinary("AppendRASLToBinary", 1058933882U, 3440598329U, func_AppendRASLToBinary);
+static refalrts::NativeReference nat_ref_AppendRASLToBinary("AppendRASLToBinary", 52442882U, 1826840892U, func_AppendRASLToBinary);
 
 
 static refalrts::FnResult func_AppendReferencesToBinary(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7753,7 +7745,7 @@ static refalrts::FnResult func_AppendReferencesToBinary(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AppendReferencesToBinary("AppendReferencesToBinary", 1058933882U, 3440598329U, func_AppendReferencesToBinary);
+static refalrts::NativeReference nat_ref_AppendReferencesToBinary("AppendReferencesToBinary", 52442882U, 1826840892U, func_AppendReferencesToBinary);
 
 
 static refalrts::FnResult func_AppendIncorporatedToBinary(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7799,7 +7791,7 @@ static refalrts::FnResult func_AppendIncorporatedToBinary(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AppendIncorporatedToBinary("AppendIncorporatedToBinary", 1058933882U, 3440598329U, func_AppendIncorporatedToBinary);
+static refalrts::NativeReference nat_ref_AppendIncorporatedToBinary("AppendIncorporatedToBinary", 52442882U, 1826840892U, func_AppendIncorporatedToBinary);
 
 
 static refalrts::FnResult func_gen_AppendSimpleBlock_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7853,7 +7845,7 @@ static refalrts::FnResult func_gen_AppendSimpleBlock_L1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AppendSimpleBlock_L1("AppendSimpleBlock\\1", 1058933882U, 3440598329U, func_gen_AppendSimpleBlock_L1);
+static refalrts::NativeReference nat_ref_gen_AppendSimpleBlock_L1("AppendSimpleBlock\\1", 52442882U, 1826840892U, func_gen_AppendSimpleBlock_L1);
 
 
 static refalrts::FnResult func_gen_AppendSimpleBlock_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7915,7 +7907,7 @@ static refalrts::FnResult func_gen_AppendSimpleBlock_A1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AppendSimpleBlock_A1("AppendSimpleBlock=1", 1058933882U, 3440598329U, func_gen_AppendSimpleBlock_A1);
+static refalrts::NativeReference nat_ref_gen_AppendSimpleBlock_A1("AppendSimpleBlock=1", 52442882U, 1826840892U, func_gen_AppendSimpleBlock_A1);
 
 
 static refalrts::FnResult func_AppendSimpleBlock(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7981,7 +7973,7 @@ static refalrts::FnResult func_AppendSimpleBlock(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AppendSimpleBlock("AppendSimpleBlock", 1058933882U, 3440598329U, func_AppendSimpleBlock);
+static refalrts::NativeReference nat_ref_AppendSimpleBlock("AppendSimpleBlock", 52442882U, 1826840892U, func_AppendSimpleBlock);
 
 
 static refalrts::FnResult func_gen_PostLinkRename_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8092,7 +8084,7 @@ static refalrts::FnResult func_gen_PostLinkRename_B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PostLinkRename_B1("PostLinkRename:1", 1058933882U, 3440598329U, func_gen_PostLinkRename_B1);
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_B1("PostLinkRename:1", 52442882U, 1826840892U, func_gen_PostLinkRename_B1);
 
 
 static refalrts::FnResult func_gen_PostLinkRename_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8169,7 +8161,7 @@ static refalrts::FnResult func_gen_PostLinkRename_A1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1("PostLinkRename=1", 1058933882U, 3440598329U, func_gen_PostLinkRename_A1);
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1("PostLinkRename=1", 52442882U, 1826840892U, func_gen_PostLinkRename_A1);
 
 
 static refalrts::FnResult func_gen_PostLinkRename_A1B1S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8270,7 +8262,7 @@ static refalrts::FnResult func_gen_PostLinkRename_A1B1S1B1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1B1S1B1("PostLinkRename=1:1$1:1", 1058933882U, 3440598329U, func_gen_PostLinkRename_A1B1S1B1);
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1B1S1B1("PostLinkRename=1:1$1:1", 52442882U, 1826840892U, func_gen_PostLinkRename_A1B1S1B1);
 
 
 static refalrts::FnResult func_gen_PostLinkRename_A1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8358,7 +8350,7 @@ static refalrts::FnResult func_gen_PostLinkRename_A1B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1B1("PostLinkRename=1:1", 1058933882U, 3440598329U, func_gen_PostLinkRename_A1B1);
+static refalrts::NativeReference nat_ref_gen_PostLinkRename_A1B1("PostLinkRename=1:1", 52442882U, 1826840892U, func_gen_PostLinkRename_A1B1);
 
 
 static refalrts::FnResult func_PostLinkRename(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8441,7 +8433,7 @@ static refalrts::FnResult func_PostLinkRename(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PostLinkRename("PostLinkRename", 1058933882U, 3440598329U, func_PostLinkRename);
+static refalrts::NativeReference nat_ref_PostLinkRename("PostLinkRename", 52442882U, 1826840892U, func_PostLinkRename);
 
 
 static refalrts::FnResult func_gen_FindPrefix_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8503,7 +8495,7 @@ static refalrts::FnResult func_gen_FindPrefix_A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindPrefix_A1("FindPrefix=1", 1058933882U, 3440598329U, func_gen_FindPrefix_A1);
+static refalrts::NativeReference nat_ref_gen_FindPrefix_A1("FindPrefix=1", 52442882U, 1826840892U, func_gen_FindPrefix_A1);
 
 
 static refalrts::FnResult func_gen_FindPrefix_A1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8569,7 +8561,7 @@ static refalrts::FnResult func_gen_FindPrefix_A1B1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindPrefix_A1B1("FindPrefix=1:1", 1058933882U, 3440598329U, func_gen_FindPrefix_A1B1);
+static refalrts::NativeReference nat_ref_gen_FindPrefix_A1B1("FindPrefix=1:1", 52442882U, 1826840892U, func_gen_FindPrefix_A1B1);
 
 
 static refalrts::FnResult func_FindPrefix(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8629,7 +8621,7 @@ static refalrts::FnResult func_FindPrefix(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindPrefix("FindPrefix", 1058933882U, 3440598329U, func_FindPrefix);
+static refalrts::NativeReference nat_ref_FindPrefix("FindPrefix", 52442882U, 1826840892U, func_FindPrefix);
 
 
 static refalrts::FnResult func_gen_DoFindPrefix_S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8725,7 +8717,7 @@ static refalrts::FnResult func_gen_DoFindPrefix_S1B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoFindPrefix_S1B1("DoFindPrefix$1:1", 1058933882U, 3440598329U, func_gen_DoFindPrefix_S1B1);
+static refalrts::NativeReference nat_ref_gen_DoFindPrefix_S1B1("DoFindPrefix$1:1", 52442882U, 1826840892U, func_gen_DoFindPrefix_S1B1);
 
 
 static refalrts::FnResult func_gen_DoFindPrefix_S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8795,7 +8787,7 @@ static refalrts::FnResult func_gen_DoFindPrefix_S1A1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoFindPrefix_S1A1("DoFindPrefix$1=1", 1058933882U, 3440598329U, func_gen_DoFindPrefix_S1A1);
+static refalrts::NativeReference nat_ref_gen_DoFindPrefix_S1A1("DoFindPrefix$1=1", 52442882U, 1826840892U, func_gen_DoFindPrefix_S1A1);
 
 
 static refalrts::FnResult func_DoFindPrefix(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8897,7 +8889,7 @@ static refalrts::FnResult func_DoFindPrefix(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoFindPrefix("DoFindPrefix", 1058933882U, 3440598329U, func_DoFindPrefix);
+static refalrts::NativeReference nat_ref_DoFindPrefix("DoFindPrefix", 52442882U, 1826840892U, func_DoFindPrefix);
 
 
 static refalrts::FnResult func_GlueNames(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8977,7 +8969,7 @@ static refalrts::FnResult func_GlueNames(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GlueNames("GlueNames", 1058933882U, 3440598329U, func_GlueNames);
+static refalrts::NativeReference nat_ref_GlueNames("GlueNames", 52442882U, 1826840892U, func_GlueNames);
 
 
 static refalrts::FnResult func_CopyPrefix(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9039,7 +9031,7 @@ static refalrts::FnResult func_CopyPrefix(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CopyPrefix("CopyPrefix", 1058933882U, 3440598329U, func_CopyPrefix);
+static refalrts::NativeReference nat_ref_CopyPrefix("CopyPrefix", 52442882U, 1826840892U, func_CopyPrefix);
 
 
 static refalrts::FnResult func_LinkError(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9094,7 +9086,7 @@ static refalrts::FnResult func_LinkError(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_LinkError("LinkError", 1058933882U, 3440598329U, func_LinkError);
+static refalrts::NativeReference nat_ref_LinkError("LinkError", 52442882U, 1826840892U, func_LinkError);
 
 
 static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9151,7 +9143,7 @@ static refalrts::FnResult func_GetBaseNameLowerCase(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 1058933882U, 3440598329U, func_GetBaseNameLowerCase);
+static refalrts::NativeReference nat_ref_GetBaseNameLowerCase("GetBaseNameLowerCase", 52442882U, 1826840892U, func_GetBaseNameLowerCase);
 
 
 static refalrts::FnResult func_GetLastPartName(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9181,7 +9173,7 @@ static refalrts::FnResult func_GetLastPartName(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GetLastPartName("GetLastPartName", 1058933882U, 3440598329U, func_GetLastPartName);
+static refalrts::NativeReference nat_ref_GetLastPartName("GetLastPartName", 52442882U, 1826840892U, func_GetLastPartName);
 
 
 static refalrts::FnResult func_DoGetFileName(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9279,7 +9271,7 @@ static refalrts::FnResult func_DoGetFileName(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoGetFileName("DoGetFileName", 1058933882U, 3440598329U, func_DoGetFileName);
+static refalrts::NativeReference nat_ref_DoGetFileName("DoGetFileName", 52442882U, 1826840892U, func_DoGetFileName);
 
 
 //End of file

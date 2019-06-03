@@ -91,29 +91,31 @@ enum ident {
   ident_GNm_Local = 9,
   ident_Swap = 10,
   ident_Declaration = 11,
-  ident_Ident = 12,
-  ident_NativeBlock = 13,
-  ident_False = 14,
-  ident_True = 15,
-  ident_Sentences = 16,
-  ident_NativeBody = 17,
-  ident_Comment = 18,
-  ident_Condition = 19,
-  ident_FIRST = 20,
-  ident_NEXT = 21,
-  ident_Brackets = 22,
-  ident_ADTm_Brackets = 23,
-  ident_CallBrackets = 24,
-  ident_Symbol = 25,
-  ident_Name = 26,
-  ident_TkVariable = 27,
-  ident_ClosureBrackets = 28,
-  ident_ColdCallBrackets = 29,
-  ident_Char = 30,
-  ident_Number = 31,
-  ident_Cookie1 = 32,
-  ident_Cookie2 = 33,
-  ident_Identifier = 34,
+  ident_Inline = 12,
+  ident_Drive = 13,
+  ident_Ident = 14,
+  ident_NativeBlock = 15,
+  ident_False = 16,
+  ident_True = 17,
+  ident_Sentences = 18,
+  ident_NativeBody = 19,
+  ident_Comment = 20,
+  ident_Condition = 21,
+  ident_FIRST = 22,
+  ident_NEXT = 23,
+  ident_Brackets = 24,
+  ident_ADTm_Brackets = 25,
+  ident_CallBrackets = 26,
+  ident_Symbol = 27,
+  ident_Name = 28,
+  ident_TkVariable = 29,
+  ident_ClosureBrackets = 30,
+  ident_ColdCallBrackets = 31,
+  ident_Char = 32,
+  ident_Number = 33,
+  ident_Cookie1 = 34,
+  ident_Cookie2 = 35,
+  ident_Identifier = 36,
 };
 
 
@@ -1162,6 +1164,72 @@ static refalrts::FnResult func_Element(refalrts::VM *vm, refalrts::Iter arg_begi
     res = refalrts::splice_evar( res, context[16], context[16] );
     res = refalrts::splice_evar( res, context[0], context[1] );
     res = refalrts::splice_evar( res, context[13], context[15] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & Element/4 (/7 # Inline/9 e.Name#1/5 )/8 >/1
+    if( ! refalrts::ident_term( identifiers[ident_Inline], context[9] ) )
+      continue;
+    // closed e.Name#1 as range 5
+    //DEBUG: e.Name#1: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } (/10"$INLIN"/11 Tile{ HalfReuse: 'E'/0 HalfReuse: ' '/4 HalfReuse: </7 HalfReuse: & DisplayName/9 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: ';'/1 } )/13 Tile{ ]] }
+    refalrts::alloc_open_bracket(vm, context[10]);
+    refalrts::alloc_chars(vm, context[11], context[12], "$INLIN", 6);
+    refalrts::alloc_close_bracket(vm, context[13]);
+    refalrts::reinit_char(context[0], 'E');
+    refalrts::reinit_char(context[4], ' ');
+    refalrts::reinit_open_call(context[7]);
+    refalrts::reinit_name(context[9], functions[efunc_DisplayName]);
+    refalrts::reinit_close_call(context[8]);
+    refalrts::reinit_char(context[1], ';');
+    refalrts::link_brackets( context[10], context[13] );
+    refalrts::push_stack( vm, context[8] );
+    refalrts::push_stack( vm, context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[13], context[13] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[10], context[12] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & Element/4 (/7 # Drive/9 e.Name#1/5 )/8 >/1
+    if( ! refalrts::ident_term( identifiers[ident_Drive], context[9] ) )
+      continue;
+    // closed e.Name#1 as range 5
+    //DEBUG: e.Name#1: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } (/10"$DRIV"/11 Tile{ HalfReuse: 'E'/0 HalfReuse: ' '/4 HalfReuse: </7 HalfReuse: & DisplayName/9 AsIs: e.Name#1/5 HalfReuse: >/8 HalfReuse: ';'/1 } )/13 Tile{ ]] }
+    refalrts::alloc_open_bracket(vm, context[10]);
+    refalrts::alloc_chars(vm, context[11], context[12], "$DRIV", 5);
+    refalrts::alloc_close_bracket(vm, context[13]);
+    refalrts::reinit_char(context[0], 'E');
+    refalrts::reinit_char(context[4], ' ');
+    refalrts::reinit_open_call(context[7]);
+    refalrts::reinit_name(context[9], functions[efunc_DisplayName]);
+    refalrts::reinit_close_call(context[8]);
+    refalrts::reinit_char(context[1], ';');
+    refalrts::link_brackets( context[10], context[13] );
+    refalrts::push_stack( vm, context[8] );
+    refalrts::push_stack( vm, context[7] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[13], context[13] );
+    res = refalrts::splice_evar( res, context[0], context[1] );
+    res = refalrts::splice_evar( res, context[10], context[12] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
