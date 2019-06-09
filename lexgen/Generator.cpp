@@ -1029,9 +1029,9 @@ static refalrts::FnResult func_Flush(refalrts::VM *vm, refalrts::Iter arg_begin,
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 13 elems
-  refalrts::Iter context[13];
-  refalrts::zeros( context, 13 );
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
   // </0 & Flush/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1073,17 +1073,19 @@ static refalrts::FnResult func_Flush(refalrts::VM *vm, refalrts::Iter arg_begin,
     return refalrts::cRecognitionImpossible;
   // closed e.new#5 as range 8
   do {
-    // </0 & Flush/4 s.Head#1/5 (/6 # Flush/10 e.FlushName#1/8 )/7 >/1
+    // </0 & Flush/4 s.Head#1/5 (/6 # Flush/10 e.FlushName#1/11 )/7 >/1
+    context[11] = context[8];
+    context[12] = context[9];
     if( ! refalrts::ident_term( identifiers[ident_Flush], context[10] ) )
       continue;
-    // closed e.FlushName#1 as range 8
+    // closed e.FlushName#1 as range 11
     //DEBUG: s.Head#1: 5
-    //DEBUG: e.FlushName#1: 8
+    //DEBUG: e.FlushName#1: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '('/1 } Tile{ AsIs: e.FlushName#1/8 }" e.Accum"/11 Tile{ AsIs: </0 Reuse: & Head/4 AsIs: s.Head#1/5 HalfReuse: >/6 HalfReuse: ')'/10 } Tile{ ]] }
-    refalrts::alloc_chars(vm, context[11], context[12], " e.Accum", 8);
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '('/1 } Tile{ AsIs: e.FlushName#1/11 }" e.Accum"/13 Tile{ AsIs: </0 Reuse: & Head/4 AsIs: s.Head#1/5 HalfReuse: >/6 HalfReuse: ')'/10 } Tile{ ]] }
+    refalrts::alloc_chars(vm, context[13], context[14], " e.Accum", 8);
     refalrts::reinit_char(context[7], ' ');
     refalrts::reinit_char(context[1], '(');
     refalrts::update_name(context[4], functions[efunc_Head]);
@@ -1095,8 +1097,8 @@ static refalrts::FnResult func_Flush(refalrts::VM *vm, refalrts::Iter arg_begin,
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[0], context[10] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
     res = refalrts::splice_evar( res, context[11], context[12] );
-    res = refalrts::splice_evar( res, context[8], context[9] );
     res = refalrts::splice_evar( res, context[7], context[1] );
     refalrts::use( res );
     return refalrts::cSuccess;
@@ -1221,14 +1223,16 @@ static refalrts::FnResult func_NextStatem_R(refalrts::VM *vm, refalrts::Iter arg
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 2
   do {
-    // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1
+    // </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/7 >/1
+    context[7] = context[2];
+    context[8] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Finitive], context[5] ) )
       continue;
-    // closed e.NextStateAccum#1 as range 2
-    //DEBUG: e.NextStateAccum#1: 2
+    // closed e.NextStateAccum#1 as range 7
+    //DEBUG: e.NextStateAccum#1: 7
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/2 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & NextState-R/4 # Finitive/5 e.NextStateAccum#1/7 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);

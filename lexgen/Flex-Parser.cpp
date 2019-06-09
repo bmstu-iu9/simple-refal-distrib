@@ -1188,15 +1188,17 @@ static refalrts::FnResult func_gen_Expect_L1(refalrts::VM *vm, refalrts::Iter ar
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/6 )/9 s.Expected#1/10 >/1
+    // </0 & Expect\1/4 s.Expected#1/5 (/8 e.ExpectedDescription#1/11 )/9 s.Expected#1/10 >/1
+    context[11] = context[6];
+    context[12] = context[7];
     if( ! refalrts::repeated_stvar_term( vm, context[10], context[5] ) )
       continue;
-    // closed e.ExpectedDescription#1 as range 6
+    // closed e.ExpectedDescription#1 as range 11
     //DEBUG: s.Expected#1: 5
-    //DEBUG: e.ExpectedDescription#1: 6
+    //DEBUG: e.ExpectedDescription#1: 11
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.Expected#1/5 (/8 e.ExpectedDescription#1/6 )/9 s.Expected#1/10 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} s.Expected#1/5 (/8 e.ExpectedDescription#1/11 )/9 s.Expected#1/10 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & MoveNext/4 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_MoveNext]);
     refalrts::push_stack( vm, context[1] );

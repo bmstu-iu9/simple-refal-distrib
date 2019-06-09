@@ -719,9 +719,9 @@ static refalrts::FnResult func_Main(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 49 elems
-  refalrts::Iter context[49];
-  refalrts::zeros( context, 49 );
+  // issue here memory for vars with 51 elems
+  refalrts::Iter context[51];
+  refalrts::zeros( context, 51 );
   // </0 & Main/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -739,72 +739,74 @@ static refalrts::FnResult func_Main(refalrts::VM *vm, refalrts::Iter arg_begin, 
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & Main/4 (/7 e.Program#1/5 )/8 >/1
+    // </0 & Main/4 (/7 e.Program#1/9 )/8 >/1
+    context[9] = context[5];
+    context[10] = context[6];
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // closed e.Program#1 as range 5
-    //DEBUG: e.Program#1: 5
+    // closed e.Program#1 as range 9
+    //DEBUG: e.Program#1: 9
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} e.Program#1/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: 'U'/7 }"sage:"/9 >/11 </12 & Prout/13"  srmake flags... MainFileName[.sref]"/14 >/16 </17 & Prout/18 >/19 </20 & Prout/21"flags:"/22 >/24 </25 & Prout/26"   [-s path\\to\\srefc.exe]"/27 >/29 </30 & Prout/31"   -c c++compiler"/32 >/34 </35 & Prout/36"   {-d search-dir}"/37 >/39 </40 & Prout/41"   [-o target]"/42 >/44 </45 & Prout/46"   -X flags-for-sref"/47 Tile{ HalfReuse: 'c'/8 AsIs: >/1 ]] }
-    refalrts::alloc_chars(vm, context[9], context[10], "sage:", 5);
-    refalrts::alloc_close_call(vm, context[11]);
-    refalrts::alloc_open_call(vm, context[12]);
-    refalrts::alloc_name(vm, context[13], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[14], context[15], "  srmake flags... MainFileName[.sref]", 37);
-    refalrts::alloc_close_call(vm, context[16]);
-    refalrts::alloc_open_call(vm, context[17]);
-    refalrts::alloc_name(vm, context[18], functions[efunc_Prout]);
-    refalrts::alloc_close_call(vm, context[19]);
-    refalrts::alloc_open_call(vm, context[20]);
-    refalrts::alloc_name(vm, context[21], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[22], context[23], "flags:", 6);
-    refalrts::alloc_close_call(vm, context[24]);
-    refalrts::alloc_open_call(vm, context[25]);
-    refalrts::alloc_name(vm, context[26], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[27], context[28], "   [-s path\\to\\srefc.exe]", 25);
-    refalrts::alloc_close_call(vm, context[29]);
-    refalrts::alloc_open_call(vm, context[30]);
-    refalrts::alloc_name(vm, context[31], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[32], context[33], "   -c c++compiler", 17);
-    refalrts::alloc_close_call(vm, context[34]);
-    refalrts::alloc_open_call(vm, context[35]);
-    refalrts::alloc_name(vm, context[36], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[37], context[38], "   {-d search-dir}", 18);
-    refalrts::alloc_close_call(vm, context[39]);
-    refalrts::alloc_open_call(vm, context[40]);
-    refalrts::alloc_name(vm, context[41], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[42], context[43], "   [-o target]", 14);
-    refalrts::alloc_close_call(vm, context[44]);
-    refalrts::alloc_open_call(vm, context[45]);
-    refalrts::alloc_name(vm, context[46], functions[efunc_Prout]);
-    refalrts::alloc_chars(vm, context[47], context[48], "   -X flags-for-sref", 20);
+    //TRASH: {REMOVED TILE} e.Program#1/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: 'U'/7 }"sage:"/11 >/13 </14 & Prout/15"  srmake flags... MainFileName[.sref]"/16 >/18 </19 & Prout/20 >/21 </22 & Prout/23"flags:"/24 >/26 </27 & Prout/28"   [-s path\\to\\srefc.exe]"/29 >/31 </32 & Prout/33"   -c c++compiler"/34 >/36 </37 & Prout/38"   {-d search-dir}"/39 >/41 </42 & Prout/43"   [-o target]"/44 >/46 </47 & Prout/48"   -X flags-for-sref"/49 Tile{ HalfReuse: 'c'/8 AsIs: >/1 ]] }
+    refalrts::alloc_chars(vm, context[11], context[12], "sage:", 5);
+    refalrts::alloc_close_call(vm, context[13]);
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[16], context[17], "  srmake flags... MainFileName[.sref]", 37);
+    refalrts::alloc_close_call(vm, context[18]);
+    refalrts::alloc_open_call(vm, context[19]);
+    refalrts::alloc_name(vm, context[20], functions[efunc_Prout]);
+    refalrts::alloc_close_call(vm, context[21]);
+    refalrts::alloc_open_call(vm, context[22]);
+    refalrts::alloc_name(vm, context[23], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[24], context[25], "flags:", 6);
+    refalrts::alloc_close_call(vm, context[26]);
+    refalrts::alloc_open_call(vm, context[27]);
+    refalrts::alloc_name(vm, context[28], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[29], context[30], "   [-s path\\to\\srefc.exe]", 25);
+    refalrts::alloc_close_call(vm, context[31]);
+    refalrts::alloc_open_call(vm, context[32]);
+    refalrts::alloc_name(vm, context[33], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[34], context[35], "   -c c++compiler", 17);
+    refalrts::alloc_close_call(vm, context[36]);
+    refalrts::alloc_open_call(vm, context[37]);
+    refalrts::alloc_name(vm, context[38], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[39], context[40], "   {-d search-dir}", 18);
+    refalrts::alloc_close_call(vm, context[41]);
+    refalrts::alloc_open_call(vm, context[42]);
+    refalrts::alloc_name(vm, context[43], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[44], context[45], "   [-o target]", 14);
+    refalrts::alloc_close_call(vm, context[46]);
+    refalrts::alloc_open_call(vm, context[47]);
+    refalrts::alloc_name(vm, context[48], functions[efunc_Prout]);
+    refalrts::alloc_chars(vm, context[49], context[50], "   -X flags-for-sref", 20);
     refalrts::update_name(context[4], functions[efunc_Prout]);
     refalrts::reinit_char(context[7], 'U');
     refalrts::reinit_char(context[8], 'c');
     refalrts::push_stack( vm, context[1] );
-    refalrts::push_stack( vm, context[45] );
-    refalrts::push_stack( vm, context[44] );
-    refalrts::push_stack( vm, context[40] );
-    refalrts::push_stack( vm, context[39] );
-    refalrts::push_stack( vm, context[35] );
-    refalrts::push_stack( vm, context[34] );
-    refalrts::push_stack( vm, context[30] );
-    refalrts::push_stack( vm, context[29] );
-    refalrts::push_stack( vm, context[25] );
-    refalrts::push_stack( vm, context[24] );
-    refalrts::push_stack( vm, context[20] );
+    refalrts::push_stack( vm, context[47] );
+    refalrts::push_stack( vm, context[46] );
+    refalrts::push_stack( vm, context[42] );
+    refalrts::push_stack( vm, context[41] );
+    refalrts::push_stack( vm, context[37] );
+    refalrts::push_stack( vm, context[36] );
+    refalrts::push_stack( vm, context[32] );
+    refalrts::push_stack( vm, context[31] );
+    refalrts::push_stack( vm, context[27] );
+    refalrts::push_stack( vm, context[26] );
+    refalrts::push_stack( vm, context[22] );
+    refalrts::push_stack( vm, context[21] );
     refalrts::push_stack( vm, context[19] );
-    refalrts::push_stack( vm, context[17] );
-    refalrts::push_stack( vm, context[16] );
-    refalrts::push_stack( vm, context[12] );
-    refalrts::push_stack( vm, context[11] );
+    refalrts::push_stack( vm, context[18] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::push_stack( vm, context[13] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
-    res = refalrts::splice_evar( res, context[9], context[48] );
+    res = refalrts::splice_evar( res, context[11], context[50] );
     refalrts::splice_to_freelist_open( vm, context[7], res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -1316,9 +1318,9 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S1L1(refalrts::VM *vm, refalr
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 19 elems
-  refalrts::Iter context[19];
-  refalrts::zeros( context, 19 );
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
   // </0 & RunSrefCompiler$1\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1377,14 +1379,16 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S1L1(refalrts::VM *vm, refalr
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & RunSrefCompiler$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1
+    // </0 & RunSrefCompiler$1\1/4 (/7 # Output/9 e.Output#2/10 )/8 >/1
+    context[10] = context[5];
+    context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_Output], context[9] ) )
       continue;
-    // closed e.Output#2 as range 5
-    //DEBUG: e.Output#2: 5
+    // closed e.Output#2 as range 10
+    //DEBUG: e.Output#2: 10
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Output/9 e.Output#2/5 )/8 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Output/9 e.Output#2/10 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1407,16 +1411,20 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S1L1(refalrts::VM *vm, refalr
     // closed e.new#4 as range 12
     // closed e.new#5 as range 10
     do {
-      // </0 & RunSrefCompiler$1\1/4 (/7 # OutputWithNative/9 (/14 e.Output#2/12 )/15 e.Native#2/10 )/8 >/1
+      // </0 & RunSrefCompiler$1\1/4 (/7 # OutputWithNative/9 (/14 e.Output#2/16 )/15 e.Native#2/18 )/8 >/1
+      context[16] = context[12];
+      context[17] = context[13];
+      context[18] = context[10];
+      context[19] = context[11];
       if( ! refalrts::ident_term( identifiers[ident_OutputWithNative], context[9] ) )
         continue;
-      // closed e.Output#2 as range 12
-      // closed e.Native#2 as range 10
-      //DEBUG: e.Output#2: 12
-      //DEBUG: e.Native#2: 10
+      // closed e.Output#2 as range 16
+      // closed e.Native#2 as range 18
+      //DEBUG: e.Output#2: 16
+      //DEBUG: e.Native#2: 18
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # OutputWithNative/9 (/14 e.Output#2/12 )/15 e.Native#2/10 )/8 >/1 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # OutputWithNative/9 (/14 e.Output#2/16 )/15 e.Native#2/18 )/8 >/1 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ ]] }
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
@@ -1426,21 +1434,23 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S1L1(refalrts::VM *vm, refalr
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/14 s.Dialect#2/18 e.Source#2/16 )/15 e.Output#2/10 )/8 >/1
+    // </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/14 s.Dialect#2/20 e.Source#2/16 )/15 e.Output#2/18 )/8 >/1
     context[16] = context[12];
     context[17] = context[13];
+    context[18] = context[10];
+    context[19] = context[11];
     if( ! refalrts::ident_term( identifiers[ident_Source], context[9] ) )
       continue;
-    // closed e.Output#2 as range 10
-    if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
+    // closed e.Output#2 as range 18
+    if( ! refalrts::svar_left( context[20], context[16], context[17] ) )
       continue;
     // closed e.Source#2 as range 16
-    //DEBUG: e.Output#2: 10
-    //DEBUG: s.Dialect#2: 18
+    //DEBUG: e.Output#2: 18
+    //DEBUG: s.Dialect#2: 20
     //DEBUG: e.Source#2: 16
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/14 s.Dialect#2/18 e.Source#2/16 )/15 e.Output#2/10 )/8 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$1\1/4 (/7 # Source/9 (/14 s.Dialect#2/20 e.Source#2/16 )/15 e.Output#2/18 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1647,9 +1657,9 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2L3(refalrts::VM *vm, refalr
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 19 elems
-  refalrts::Iter context[19];
-  refalrts::zeros( context, 19 );
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
   // </0 & RunSrefCompiler$2\3/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1670,15 +1680,17 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2L3(refalrts::VM *vm, refalr
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 5
   do {
-    // </0 & RunSrefCompiler$2\3/4 (/7 # Output/9 e.Output#12/5 )/8 >/1
+    // </0 & RunSrefCompiler$2\3/4 (/7 # Output/9 e.Output#12/10 )/8 >/1
+    context[10] = context[5];
+    context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_Output], context[9] ) )
       continue;
-    // closed e.Output#12 as range 5
-    //DEBUG: e.Output#12: 5
+    // closed e.Output#12 as range 10
+    //DEBUG: e.Output#12: 10
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\3/4 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '\"'/9 AsIs: e.Output#12/5 HalfReuse: '\"'/8 } Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/7 HalfReuse: '\"'/9 AsIs: e.Output#12/10 HalfReuse: '\"'/8 } Tile{ ]] }
     refalrts::reinit_char(context[7], ' ');
     refalrts::reinit_char(context[9], '\"');
     refalrts::reinit_char(context[8], '\"');
@@ -1704,17 +1716,21 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2L3(refalrts::VM *vm, refalr
     // closed e.new#4 as range 12
     // closed e.new#5 as range 10
     do {
-      // </0 & RunSrefCompiler$2\3/4 (/7 # OutputWithNative/9 (/14 e.Output#12/12 )/15 e.Native#12/10 )/8 >/1
+      // </0 & RunSrefCompiler$2\3/4 (/7 # OutputWithNative/9 (/14 e.Output#12/16 )/15 e.Native#12/18 )/8 >/1
+      context[16] = context[12];
+      context[17] = context[13];
+      context[18] = context[10];
+      context[19] = context[11];
       if( ! refalrts::ident_term( identifiers[ident_OutputWithNative], context[9] ) )
         continue;
-      // closed e.Output#12 as range 12
-      // closed e.Native#12 as range 10
-      //DEBUG: e.Output#12: 12
-      //DEBUG: e.Native#12: 10
+      // closed e.Output#12 as range 16
+      // closed e.Native#12 as range 18
+      //DEBUG: e.Output#12: 16
+      //DEBUG: e.Native#12: 18
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\3/4 (/7 {REMOVED TILE} e.Native#12/10 )/8 >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/14 AsIs: e.Output#12/12 HalfReuse: '\"'/15 } Tile{ ]] }
+      //TRASH: {REMOVED TILE} </0 & RunSrefCompiler$2\3/4 (/7 {REMOVED TILE} e.Native#12/18 )/8 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: ' '/9 HalfReuse: '\"'/14 AsIs: e.Output#12/16 HalfReuse: '\"'/15 } Tile{ ]] }
       refalrts::reinit_char(context[9], ' ');
       refalrts::reinit_char(context[14], '\"');
       refalrts::reinit_char(context[15], '\"');
@@ -1727,21 +1743,23 @@ static refalrts::FnResult func_gen_RunSrefCompiler_S2L3(refalrts::VM *vm, refalr
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & RunSrefCompiler$2\3/4 (/7 # Source/9 (/14 s.Dialect#12/18 e.Source#12/16 )/15 e.Output#12/10 )/8 >/1
+    // </0 & RunSrefCompiler$2\3/4 (/7 # Source/9 (/14 s.Dialect#12/20 e.Source#12/16 )/15 e.Output#12/18 )/8 >/1
     context[16] = context[12];
     context[17] = context[13];
+    context[18] = context[10];
+    context[19] = context[11];
     if( ! refalrts::ident_term( identifiers[ident_Source], context[9] ) )
       continue;
-    // closed e.Output#12 as range 10
-    if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
+    // closed e.Output#12 as range 18
+    if( ! refalrts::svar_left( context[20], context[16], context[17] ) )
       continue;
     // closed e.Source#12 as range 16
-    //DEBUG: e.Output#12: 10
-    //DEBUG: s.Dialect#12: 18
+    //DEBUG: e.Output#12: 18
+    //DEBUG: s.Dialect#12: 20
     //DEBUG: e.Source#12: 16
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} (/7 # Source/9 (/14 s.Dialect#12/18 {REMOVED TILE} )/15 e.Output#12/10 )/8 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} (/7 # Source/9 (/14 s.Dialect#12/20 {REMOVED TILE} )/15 e.Output#12/18 )/8 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: ' '/0 HalfReuse: '\"'/4 } Tile{ AsIs: e.Source#12/16 } Tile{ HalfReuse: '\"'/1 ]] }
     refalrts::reinit_char(context[0], ' ');
     refalrts::reinit_char(context[4], '\"');
@@ -3001,9 +3019,9 @@ static refalrts::FnResult func_gen_MakeOptionalFlag_B1(refalrts::VM *vm, refalrt
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 10 elems
-  refalrts::Iter context[10];
-  refalrts::zeros( context, 10 );
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
   // </0 & MakeOptionalFlag:1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3021,14 +3039,16 @@ static refalrts::FnResult func_gen_MakeOptionalFlag_B1(refalrts::VM *vm, refalrt
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & MakeOptionalFlag:1/4 (/7 e.LongOptionName#1/5 )/8 >/1
+    // </0 & MakeOptionalFlag:1/4 (/7 e.LongOptionName#1/9 )/8 >/1
+    context[9] = context[5];
+    context[10] = context[6];
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // closed e.LongOptionName#1 as range 5
-    //DEBUG: e.LongOptionName#1: 5
+    // closed e.LongOptionName#1 as range 9
+    //DEBUG: e.LongOptionName#1: 9
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1/4 (/7 e.LongOptionName#1/5 )/8 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1/4 (/7 e.LongOptionName#1/9 )/8 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -3402,9 +3422,9 @@ static refalrts::FnResult func_gen_MakeSearchFolderFlags_L1(refalrts::VM *vm, re
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 14 elems
-  refalrts::Iter context[14];
-  refalrts::zeros( context, 14 );
+  // issue here memory for vars with 16 elems
+  refalrts::Iter context[16];
+  refalrts::zeros( context, 16 );
   // </0 & MakeSearchFolderFlags\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3425,17 +3445,19 @@ static refalrts::FnResult func_gen_MakeSearchFolderFlags_L1(refalrts::VM *vm, re
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 5
   do {
-    // </0 & MakeSearchFolderFlags\1/4 (/7 # Search/9 e.Folder#2/5 )/8 >/1
+    // </0 & MakeSearchFolderFlags\1/4 (/7 # Search/9 e.Folder#2/10 )/8 >/1
+    context[10] = context[5];
+    context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_Search], context[9] ) )
       continue;
-    // closed e.Folder#2 as range 5
-    //DEBUG: e.Folder#2: 5
+    // closed e.Folder#2 as range 10
+    //DEBUG: e.Folder#2: 10
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ }" --"/10 Tile{ HalfReuse: 'd'/1 }"irecto"/12 Tile{ HalfReuse: 'r'/0 HalfReuse: 'y'/4 HalfReuse: '='/7 HalfReuse: '\"'/9 AsIs: e.Folder#2/5 HalfReuse: '\"'/8 } Tile{ ]] }
-    refalrts::alloc_chars(vm, context[10], context[11], " --", 3);
-    refalrts::alloc_chars(vm, context[12], context[13], "irecto", 6);
+    //RESULT: Tile{ [[ }" --"/12 Tile{ HalfReuse: 'd'/1 }"irecto"/14 Tile{ HalfReuse: 'r'/0 HalfReuse: 'y'/4 HalfReuse: '='/7 HalfReuse: '\"'/9 AsIs: e.Folder#2/10 HalfReuse: '\"'/8 } Tile{ ]] }
+    refalrts::alloc_chars(vm, context[12], context[13], " --", 3);
+    refalrts::alloc_chars(vm, context[14], context[15], "irecto", 6);
     refalrts::reinit_char(context[1], 'd');
     refalrts::reinit_char(context[0], 'r');
     refalrts::reinit_char(context[4], 'y');
@@ -3446,9 +3468,9 @@ static refalrts::FnResult func_gen_MakeSearchFolderFlags_L1(refalrts::VM *vm, re
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[0], context[8] );
-    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
     res = refalrts::splice_evar( res, context[1], context[1] );
-    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[12], context[13] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
