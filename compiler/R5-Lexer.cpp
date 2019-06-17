@@ -130,11 +130,12 @@ enum ident {
   ident_TkLabel = 40,
   ident_TkInline = 41,
   ident_TkDrive = 42,
-  ident_TkChar = 43,
-  ident_TkMacroDigit = 44,
-  ident_TkNativeCode = 45,
-  ident_TkWarning = 46,
-  ident_TkCompound = 47,
+  ident_TkSpec = 43,
+  ident_TkChar = 44,
+  ident_TkMacroDigit = 45,
+  ident_TkNativeCode = 46,
+  ident_TkWarning = 47,
+  ident_TkCompound = 48,
 };
 
 
@@ -3839,9 +3840,9 @@ static refalrts::FnResult func_DoScanm_BuildKeyword(refalrts::VM *vm, refalrts::
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 89 elems
-  refalrts::Iter context[89];
-  refalrts::zeros( context, 89 );
+  // issue here memory for vars with 94 elems
+  refalrts::Iter context[94];
+  refalrts::zeros( context, 94 );
   // </0 & DoScan-BuildKeyword/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4046,10 +4047,19 @@ static refalrts::FnResult func_DoScanm_BuildKeyword(refalrts::VM *vm, refalrts::
     refalrts::alloc_ident(vm, context[85], identifiers[ident_TkDrive]);
     refalrts::alloc_chars(vm, context[86], context[87], "$DRIVE", 6);
     refalrts::alloc_close_bracket(vm, context[88]);
+    refalrts::alloc_open_bracket(vm, context[89]);
+    refalrts::alloc_ident(vm, context[90], identifiers[ident_TkSpec]);
+    refalrts::alloc_chars(vm, context[91], context[92], "$SPEC", 5);
+    refalrts::alloc_close_bracket(vm, context[93]);
     refalrts::alloc_close_call(vm, context[22]);
     refalrts::push_stack( vm, context[22] );
     refalrts::push_stack( vm, context[21] );
     res = refalrts::splice_elem( res, context[22] );
+    refalrts::link_brackets( context[89], context[93] );
+    res = refalrts::splice_elem( res, context[93] );
+    res = refalrts::splice_evar( res, context[91], context[92] );
+    res = refalrts::splice_elem( res, context[90] );
+    res = refalrts::splice_elem( res, context[89] );
     refalrts::link_brackets( context[84], context[88] );
     res = refalrts::splice_elem( res, context[88] );
     res = refalrts::splice_evar( res, context[86], context[87] );

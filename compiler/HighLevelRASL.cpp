@@ -60,10 +60,11 @@ enum ident {
   ident_CmdDefineIdent = 20,
   ident_NativeBlock = 21,
   ident_CmdEmitNativeCode = 22,
-  ident_Conjoint = 23,
-  ident_Disjoint = 24,
-  ident_NoOpt = 25,
-  ident_OptResult = 26,
+  ident_Spec = 23,
+  ident_Conjoint = 24,
+  ident_Disjoint = 25,
+  ident_NoOpt = 26,
+  ident_OptResult = 27,
 };
 
 
@@ -1006,27 +1007,52 @@ static refalrts::FnResult func_gen_HighLevelRASL_L1(refalrts::VM *vm, refalrts::
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 (/7 # NativeBlock/11 t.SrcPos#2/12 e.Code#2/5 )/8 >/1
-  if( ! refalrts::ident_term( identifiers[ident_NativeBlock], context[11] ) )
-    return refalrts::cRecognitionImpossible;
+  // </0 & HighLevelRASL\1/4 s.new#5/9 s.new#6/10 (/7 s.new#7/11 t.new#8/12 e.new#9/5 )/8 >/1
   context[13] = refalrts::tvar_left( context[12], context[5], context[6] );
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Code#2 as range 5
+  // closed e.new#9 as range 5
+  do {
+    // </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 (/7 # NativeBlock/11 t.SrcPos#2/12 e.Code#2/14 )/8 >/1
+    context[14] = context[5];
+    context[15] = context[6];
+    if( ! refalrts::ident_term( identifiers[ident_NativeBlock], context[11] ) )
+      continue;
+    // closed e.Code#2 as range 14
+    //DEBUG: t.SrcPos#2: 12
+    //DEBUG: s.Joint#1: 9
+    //DEBUG: s.OptResult#1: 10
+    //DEBUG: e.Code#2: 14
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdEmitNativeCode/11 AsIs: t.SrcPos#2/12 AsIs: e.Code#2/14 AsIs: )/8 } Tile{ ]] }
+    refalrts::update_ident(context[11], identifiers[ident_CmdEmitNativeCode]);
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 (/7 # Spec/11 t.Name#2/12 e.Pattern#2/5 )/8 >/1
+  if( ! refalrts::ident_term( identifiers[ident_Spec], context[11] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Pattern#2 as range 5
+  //DEBUG: t.Name#2: 12
   //DEBUG: s.Joint#1: 9
   //DEBUG: s.OptResult#1: 10
-  //DEBUG: t.SrcPos#2: 12
-  //DEBUG: e.Code#2: 5
+  //DEBUG: e.Pattern#2: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 Reuse: # CmdEmitNativeCode/11 AsIs: t.SrcPos#2/12 AsIs: e.Code#2/5 AsIs: )/8 } Tile{ ]] }
-  refalrts::update_ident(context[11], identifiers[ident_CmdEmitNativeCode]);
-  refalrts::link_brackets( context[7], context[8] );
+  //TRASH: {REMOVED TILE} </0 & HighLevelRASL\1/4 s.Joint#1/9 s.OptResult#1/10 (/7 # Spec/11 t.Name#2/12 e.Pattern#2/5 )/8 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
 }

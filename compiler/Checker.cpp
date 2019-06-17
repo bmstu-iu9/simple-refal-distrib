@@ -1216,44 +1216,52 @@ static refalrts::FnResult func_PrepareMessage(refalrts::VM *vm, refalrts::Iter a
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    do {
-      // </0 & PrepareMessage/4 # BadSpecForFunction/5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_BadSpecForFunction], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: 'B'/0 HalfReuse: 'a'/4 HalfReuse: 'd'/5 HalfReuse: ' '/1 }"fucntion specialization"/6 Tile{ ]] }
-      refalrts::alloc_chars(vm, context[6], context[7], "fucntion specialization", 23);
-      refalrts::reinit_char(context[0], 'B');
-      refalrts::reinit_char(context[4], 'a');
-      refalrts::reinit_char(context[5], 'd');
-      refalrts::reinit_char(context[1], ' ');
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[6], context[7] );
-      refalrts::use( res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    // </0 & PrepareMessage/4 # OrphanSpec/5 >/1
-    if( ! refalrts::ident_term( identifiers[ident_OrphanSpec], context[5] ) )
+    // </0 & PrepareMessage/4 # BadSpecForFunction/5 >/1
+    if( ! refalrts::ident_term( identifiers[ident_BadSpecForFunction], context[5] ) )
       continue;
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 'O'/0 HalfReuse: 'r'/4 HalfReuse: 'p'/5 HalfReuse: 'h'/1 }"an function specialization"/6 Tile{ ]] }
-    refalrts::alloc_chars(vm, context[6], context[7], "an function specialization", 26);
-    refalrts::reinit_char(context[0], 'O');
-    refalrts::reinit_char(context[4], 'r');
-    refalrts::reinit_char(context[5], 'p');
-    refalrts::reinit_char(context[1], 'h');
+    //RESULT: Tile{ [[ HalfReuse: 'B'/0 HalfReuse: 'a'/4 HalfReuse: 'd'/5 HalfReuse: ' '/1 }"fucntion specialization"/6 Tile{ ]] }
+    refalrts::alloc_chars(vm, context[6], context[7], "fucntion specialization", 23);
+    refalrts::reinit_char(context[0], 'B');
+    refalrts::reinit_char(context[4], 'a');
+    refalrts::reinit_char(context[5], 'd');
+    refalrts::reinit_char(context[1], ' ');
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[6], context[7] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & PrepareMessage/4 # OrphanSpec/5 e.FuncName#1/6 >/1
+    context[6] = context[2];
+    context[7] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_OrphanSpec], context[5] ) )
+      continue;
+    // closed e.FuncName#1 as range 6
+    //DEBUG: e.FuncName#1: 6
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: 'O'/0 HalfReuse: 'r'/4 HalfReuse: 'p'/5 }"ha"/8 Tile{ HalfReuse: 'n'/1 }" function specialization for "/10 Tile{ AsIs: e.FuncName#1/6 } Tile{ ]] }
+    refalrts::alloc_chars(vm, context[8], context[9], "ha", 2);
+    refalrts::alloc_chars(vm, context[10], context[11], " function specialization for ", 29);
+    refalrts::reinit_char(context[0], 'O');
+    refalrts::reinit_char(context[4], 'r');
+    refalrts::reinit_char(context[5], 'p');
+    refalrts::reinit_char(context[1], 'n');
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[6], context[7] );
+    res = refalrts::splice_evar( res, context[10], context[11] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[8], context[9] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );

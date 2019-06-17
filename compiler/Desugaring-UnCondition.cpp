@@ -887,11 +887,14 @@ static refalrts::FnResult func_Transformm_Unit(refalrts::VM *vm, refalrts::Iter 
     //DEBUG: e.Pattern#1: 13
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Transform-Unit/4 s.MarkupContext#1/9 (/7 # Spec/10 (/11 e.Name#1/15 )/12 e.Pattern#1/13 )/8 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Transform-Unit/4 s.MarkupContext#1/9 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: # Spec/10 AsIs: (/11 AsIs: e.Name#1/15 AsIs: )/12 AsIs: e.Pattern#1/13 AsIs: )/8 } Tile{ ]] }
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::link_brackets( context[11], context[12] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[7], context[8] );
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
