@@ -1230,18 +1230,18 @@ static refalrts::FnResult func_NormalizeContent(refalrts::VM *vm, refalrts::Iter
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & NormalizeContent/4 (/7 e.new#3/9 )/8 t.new#4/13 e.new#5/11 >/1
+    // </0 & NormalizeContent/4 (/7 e.new#5/9 )/8 t.new#3/13 e.new#4/11 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
     context[12] = context[3];
-    // closed e.new#3 as range 9
+    // closed e.new#5 as range 9
     context[14] = refalrts::tvar_left( context[13], context[11], context[12] );
     if( ! context[14] )
       continue;
-    // closed e.new#5 as range 11
+    // closed e.new#4 as range 11
     do {
-      // </0 & NormalizeContent/4 (/7 e.new#6/15 )/8 (/13 s.new#7/21 e.new#8/19 )/14 e.new#9/17 >/1
+      // </0 & NormalizeContent/4 (/7 e.new#9/15 )/8 (/13 s.new#6/21 e.new#7/19 )/14 e.new#8/17 >/1
       context[15] = context[9];
       context[16] = context[10];
       context[17] = context[11];
@@ -1250,11 +1250,11 @@ static refalrts::FnResult func_NormalizeContent(refalrts::VM *vm, refalrts::Iter
       context[20] = 0;
       if( ! refalrts::brackets_term( context[19], context[20], context[13] ) )
         continue;
-      // closed e.new#6 as range 15
-      // closed e.new#9 as range 17
+      // closed e.new#9 as range 15
+      // closed e.new#8 as range 17
       if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
         continue;
-      // closed e.new#8 as range 19
+      // closed e.new#7 as range 19
       do {
         // </0 & NormalizeContent/4 (/7 e.Chars#1/22 )/8 (/13 # Chars/21 e.Symbols#1/24 )/14 e.Tail#1/26 >/1
         context[22] = context[15];
@@ -2029,7 +2029,7 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::VM *vm, refalrts:
       continue;
     // closed e.new#6 as range 17
     do {
-      // </0 & SubstituteSetsToRules/4 (/7 (/19 t.new#9/21 (/25 e.new#10/28 )/26 s.new#11/27 t.new#12/36 )/20 e.new#13/32 )/8 (/11 e.new#14/34 )/12 >/1
+      // </0 & SubstituteSetsToRules/4 (/7 (/19 t.new#10/21 (/25 e.new#13/28 )/26 s.new#11/27 t.new#12/36 )/20 e.new#9/32 )/8 (/11 e.new#14/34 )/12 >/1
       context[28] = context[23];
       context[29] = context[24];
       context[30] = context[17];
@@ -2038,8 +2038,8 @@ static refalrts::FnResult func_SubstituteSetsToRules(refalrts::VM *vm, refalrts:
       context[33] = context[14];
       context[34] = context[15];
       context[35] = context[16];
-      // closed e.new#10 as range 28
-      // closed e.new#13 as range 32
+      // closed e.new#13 as range 28
+      // closed e.new#9 as range 32
       // closed e.new#14 as range 34
       context[37] = refalrts::tvar_left( context[36], context[30], context[31] );
       if( ! context[37] )
@@ -4010,15 +4010,15 @@ static refalrts::FnResult func_DoPrepareFunctions(refalrts::VM *vm, refalrts::It
   // closed e.new#2 as range 9
   // closed e.new#3 as range 2
   do {
-    // </0 & DoPrepareFunctions/4 (/7 e.new#4/13 )/8 (/11 )/12 e.new#5/15 >/1
+    // </0 & DoPrepareFunctions/4 (/7 e.new#5/13 )/8 (/11 )/12 e.new#4/15 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[2];
     context[16] = context[3];
     if( ! refalrts::empty_seq( context[9], context[10] ) )
       continue;
-    // closed e.new#4 as range 13
-    // closed e.new#5 as range 15
+    // closed e.new#5 as range 13
+    // closed e.new#4 as range 15
     do {
       // </0 & DoPrepareFunctions/4 (/7 e.Written#1/17 )/8 (/11 )/12 >/1
       context[17] = context[13];
@@ -4065,20 +4065,20 @@ static refalrts::FnResult func_DoPrepareFunctions(refalrts::VM *vm, refalrts::It
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoPrepareFunctions/4 (/7 e.new#4/5 )/8 (/11 (/15 t.new#5/17 e.new#6/13 )/16 e.new#7/9 )/12 e.new#8/2 >/1
+  // </0 & DoPrepareFunctions/4 (/7 e.new#5/5 )/8 (/11 (/15 t.new#6/17 e.new#7/13 )/16 e.new#8/9 )/12 e.new#4/2 >/1
   context[13] = 0;
   context[14] = 0;
   context[15] = refalrts::brackets_left( context[13], context[14], context[9], context[10] );
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[15], context[16]);
-  // closed e.new#4 as range 5
-  // closed e.new#7 as range 9
-  // closed e.new#8 as range 2
+  // closed e.new#5 as range 5
+  // closed e.new#8 as range 9
+  // closed e.new#4 as range 2
   context[18] = refalrts::tvar_left( context[17], context[13], context[14] );
   if( ! context[18] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#6 as range 13
+  // closed e.new#7 as range 13
   do {
     // </0 & DoPrepareFunctions/4 (/7 e.Written-B#1/27 (/33 e.Next#1/35 )/34 e.Written-E#1/29 )/8 (/11 (/15 t.SrcPos#1/17 e.Next#1/21 )/16 e.Expected#1/23 )/12 e.Rules#1/25 >/1
     context[19] = context[5];

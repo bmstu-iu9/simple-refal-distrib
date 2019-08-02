@@ -761,7 +761,7 @@ static refalrts::FnResult func_ParseElements(refalrts::VM *vm, refalrts::Iter ar
     return refalrts::cRecognitionImpossible;
   // closed e.new#4 as range 2
   do {
-    // </0 & ParseElements/4 (/7 e.new#5/15 )/8 (/11 e.new#6/17 )/12 (/13 s.new#7/23 t.new#8/24 e.new#9/21 )/14 e.new#10/19 >/1
+    // </0 & ParseElements/4 (/7 e.new#9/15 )/8 (/11 e.new#10/17 )/12 (/13 s.new#5/23 t.new#6/24 e.new#7/21 )/14 e.new#8/19 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
@@ -772,17 +772,17 @@ static refalrts::FnResult func_ParseElements(refalrts::VM *vm, refalrts::Iter ar
     context[22] = 0;
     if( ! refalrts::brackets_term( context[21], context[22], context[13] ) )
       continue;
-    // closed e.new#5 as range 15
-    // closed e.new#6 as range 17
-    // closed e.new#10 as range 19
+    // closed e.new#9 as range 15
+    // closed e.new#10 as range 17
+    // closed e.new#8 as range 19
     if( ! refalrts::svar_left( context[23], context[21], context[22] ) )
       continue;
     context[25] = refalrts::tvar_left( context[24], context[21], context[22] );
     if( ! context[25] )
       continue;
-    // closed e.new#9 as range 21
+    // closed e.new#7 as range 21
     do {
-      // </0 & ParseElements/4 (/7 e.new#11/26 )/8 (/11 e.new#12/28 )/12 (/13 # TSetName/23 t.new#13/24 e.new#14/30 )/14 e.new#15/32 >/1
+      // </0 & ParseElements/4 (/7 e.new#14/26 )/8 (/11 e.new#15/28 )/12 (/13 # TSetName/23 t.new#11/24 e.new#12/30 )/14 e.new#13/32 >/1
       context[26] = context[15];
       context[27] = context[16];
       context[28] = context[17];
@@ -793,10 +793,10 @@ static refalrts::FnResult func_ParseElements(refalrts::VM *vm, refalrts::Iter ar
       context[33] = context[20];
       if( ! refalrts::ident_term( identifiers[ident_TSetName], context[23] ) )
         continue;
-      // closed e.new#11 as range 26
-      // closed e.new#12 as range 28
-      // closed e.new#14 as range 30
-      // closed e.new#15 as range 32
+      // closed e.new#14 as range 26
+      // closed e.new#15 as range 28
+      // closed e.new#12 as range 30
+      // closed e.new#13 as range 32
       do {
         // </0 & ParseElements/4 (/7 e.SetNames-B#1/42 (/48 e.Name#1/50 )/49 e.SetNames-E#1/44 )/8 (/11 e.RuleNames#1/36 )/12 (/13 # TSetName/23 t.SrcPos#1/24 e.Name#1/38 )/14 e.Tail#1/40 >/1
         context[34] = context[26];
@@ -917,7 +917,7 @@ static refalrts::FnResult func_ParseElements(refalrts::VM *vm, refalrts::Iter ar
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & ParseElements/4 (/7 e.new#11/26 )/8 (/11 e.new#12/28 )/12 (/13 # TName/23 t.new#13/24 e.new#14/30 )/14 e.new#15/32 >/1
+      // </0 & ParseElements/4 (/7 e.new#14/26 )/8 (/11 e.new#15/28 )/12 (/13 # TName/23 t.new#11/24 e.new#12/30 )/14 e.new#13/32 >/1
       context[26] = context[15];
       context[27] = context[16];
       context[28] = context[17];
@@ -928,10 +928,10 @@ static refalrts::FnResult func_ParseElements(refalrts::VM *vm, refalrts::Iter ar
       context[33] = context[20];
       if( ! refalrts::ident_term( identifiers[ident_TName], context[23] ) )
         continue;
-      // closed e.new#11 as range 26
-      // closed e.new#12 as range 28
-      // closed e.new#14 as range 30
-      // closed e.new#15 as range 32
+      // closed e.new#14 as range 26
+      // closed e.new#15 as range 28
+      // closed e.new#12 as range 30
+      // closed e.new#13 as range 32
       do {
         // </0 & ParseElements/4 (/7 e.SetNames#1/34 )/8 (/11 e.RuleNames-B#1/42 (/48 e.Name#1/50 )/49 e.RuleNames-E#1/44 )/12 (/13 # TName/23 t.SrcPos#1/24 e.Name#1/38 )/14 e.Tail#1/40 >/1
         context[34] = context[26];
@@ -1167,7 +1167,7 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::VM *vm, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.new#7 as range 2
   do {
-    // </0 & ParseSetDescr$1\1/4 (/7 e.new#8/25 )/8 t.new#9/9 (/13 e.new#10/27 )/14 (/17 e.new#11/29 )/18 (/21 e.new#12/31 )/22 (/23 # TDot/37 t.new#13/38 )/24 e.new#14/33 >/1
+    // </0 & ParseSetDescr$1\1/4 (/7 e.new#11/25 )/8 t.new#8/9 (/13 e.new#12/27 )/14 (/17 e.new#13/29 )/18 (/21 e.new#14/31 )/22 (/23 # TDot/37 t.new#9/38 )/24 e.new#10/33 >/1
     context[25] = context[5];
     context[26] = context[6];
     context[27] = context[11];
@@ -1185,11 +1185,11 @@ static refalrts::FnResult func_gen_ParseSetDescr_S1L1(refalrts::VM *vm, refalrts
     context[37] = refalrts::ident_left( identifiers[ident_TDot], context[35], context[36] );
     if( ! context[37] )
       continue;
-    // closed e.new#8 as range 25
-    // closed e.new#10 as range 27
-    // closed e.new#11 as range 29
-    // closed e.new#12 as range 31
-    // closed e.new#14 as range 33
+    // closed e.new#11 as range 25
+    // closed e.new#12 as range 27
+    // closed e.new#13 as range 29
+    // closed e.new#14 as range 31
+    // closed e.new#10 as range 33
     context[39] = refalrts::tvar_left( context[38], context[35], context[36] );
     if( ! context[39] )
       continue;
@@ -1525,7 +1525,7 @@ static refalrts::FnResult func_ExtractSets(refalrts::VM *vm, refalrts::Iter arg_
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & ExtractSets/4 (/7 e.new#3/9 )/8 (/15 s.new#4/17 t.new#5/18 e.new#6/13 )/16 e.new#7/11 >/1
+    // </0 & ExtractSets/4 (/7 e.new#7/9 )/8 (/15 s.new#3/17 t.new#4/18 e.new#5/13 )/16 e.new#6/11 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
@@ -1536,14 +1536,14 @@ static refalrts::FnResult func_ExtractSets(refalrts::VM *vm, refalrts::Iter arg_
     if( ! context[15] )
       continue;
     refalrts::bracket_pointers(context[15], context[16]);
-    // closed e.new#3 as range 9
-    // closed e.new#7 as range 11
+    // closed e.new#7 as range 9
+    // closed e.new#6 as range 11
     if( ! refalrts::svar_left( context[17], context[13], context[14] ) )
       continue;
     context[19] = refalrts::tvar_left( context[18], context[13], context[14] );
     if( ! context[19] )
       continue;
-    // closed e.new#6 as range 13
+    // closed e.new#5 as range 13
     do {
       // </0 & ExtractSets/4 (/7 e.Found#1/20 )/8 (/15 # TLiteral/17 t.SrcPos#1/18 e.Content#1/22 )/16 e.Tail#1/24 >/1
       context[20] = context[9];

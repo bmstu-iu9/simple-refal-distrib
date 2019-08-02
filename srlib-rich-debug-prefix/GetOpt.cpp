@@ -169,7 +169,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter 
     // closed e.new#4 as range 8
     // closed e.new#5 as range 6
     do {
-      // </0 & MarkupArguments/4 s.new#6/5 (/10 '-'/16 s.new#7/17 e.new#8/12 )/11 e.new#9/14 >/1
+      // </0 & MarkupArguments/4 s.new#6/5 (/10 '-'/16 s.new#8/17 e.new#9/12 )/11 e.new#7/14 >/1
       context[12] = context[8];
       context[13] = context[9];
       context[14] = context[6];
@@ -177,20 +177,20 @@ static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter 
       context[16] = refalrts::char_left( '-', context[12], context[13] );
       if( ! context[16] )
         continue;
-      // closed e.new#9 as range 14
+      // closed e.new#7 as range 14
       if( ! refalrts::svar_left( context[17], context[12], context[13] ) )
         continue;
-      // closed e.new#8 as range 12
+      // closed e.new#9 as range 12
       do {
-        // </0 & MarkupArguments/4 s.new#10/5 (/10 '-'/16 '-'/17 e.new#11/18 )/11 e.new#12/20 >/1
+        // </0 & MarkupArguments/4 s.new#10/5 (/10 '-'/16 '-'/17 e.new#12/18 )/11 e.new#11/20 >/1
         context[18] = context[12];
         context[19] = context[13];
         context[20] = context[14];
         context[21] = context[15];
         if( ! refalrts::char_term( '-', context[17] ) )
           continue;
-        // closed e.new#11 as range 18
-        // closed e.new#12 as range 20
+        // closed e.new#12 as range 18
+        // closed e.new#11 as range 20
         do {
           // </0 & MarkupArguments/4 s.Num#1/5 (/10 '-'/16 '-'/17 )/11 e.Tail#1/22 >/1
           context[22] = context[20];
@@ -520,7 +520,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & ResolveOpts/4 (/7 e.new#3/9 )/8 (/15 s.new#4/17 s.new#5/18 e.new#6/13 )/16 e.new#7/11 >/1
+    // </0 & ResolveOpts/4 (/7 e.new#7/9 )/8 (/15 s.new#3/17 s.new#4/18 e.new#5/13 )/16 e.new#6/11 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
@@ -531,15 +531,15 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
     if( ! context[15] )
       continue;
     refalrts::bracket_pointers(context[15], context[16]);
-    // closed e.new#3 as range 9
-    // closed e.new#7 as range 11
+    // closed e.new#7 as range 9
+    // closed e.new#6 as range 11
     if( ! refalrts::svar_left( context[17], context[13], context[14] ) )
       continue;
     if( ! refalrts::svar_left( context[18], context[13], context[14] ) )
       continue;
-    // closed e.new#6 as range 13
+    // closed e.new#5 as range 13
     do {
-      // </0 & ResolveOpts/4 (/7 e.new#8/19 )/8 (/15 # Long-Param/17 s.new#9/18 (/27 e.new#10/25 )/28 e.new#11/21 )/16 e.new#12/23 >/1
+      // </0 & ResolveOpts/4 (/7 e.new#12/19 )/8 (/15 # Long-Param/17 s.new#9/18 (/27 e.new#10/25 )/28 e.new#11/21 )/16 e.new#8/23 >/1
       context[19] = context[9];
       context[20] = context[10];
       context[21] = context[13];
@@ -554,10 +554,10 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
       if( ! context[27] )
         continue;
       refalrts::bracket_pointers(context[27], context[28]);
-      // closed e.new#8 as range 19
+      // closed e.new#12 as range 19
       // closed e.new#10 as range 25
       // closed e.new#11 as range 21
-      // closed e.new#12 as range 23
+      // closed e.new#8 as range 23
       do {
         // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/37 (/43 s.Tag#1/45 s.HasArg#1/46 e.Opts-B#1/47 (/53 e.Long#1/55 )/54 e.Opts-E#1/49 )/44 e.Descrs-E#1/39 )/8 (/15 # Long-Param/17 s.Num#1/18 (/27 e.Long#1/31 )/28 e.Param#1/33 )/16 e.ArgsTail#1/35 >/1
         context[29] = context[19];
@@ -686,7 +686,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & ResolveOpts/4 (/7 e.new#8/19 )/8 (/15 # Long/17 s.new#9/18 e.new#10/21 )/16 e.new#11/23 >/1
+      // </0 & ResolveOpts/4 (/7 e.new#11/19 )/8 (/15 # Long/17 s.new#9/18 e.new#10/21 )/16 e.new#8/23 >/1
       context[19] = context[9];
       context[20] = context[10];
       context[21] = context[13];
@@ -695,9 +695,9 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
       context[24] = context[12];
       if( ! refalrts::ident_term( identifiers[ident_Long], context[17] ) )
         continue;
-      // closed e.new#8 as range 19
+      // closed e.new#11 as range 19
       // closed e.new#10 as range 21
-      // closed e.new#11 as range 23
+      // closed e.new#8 as range 23
       do {
         // </0 & ResolveOpts/4 (/7 e.Descrs-B#1/31 (/37 s.Tag#1/39 s.HasArg#1/40 e.Opts-B#1/41 (/47 e.Long#1/49 )/48 e.Opts-E#1/43 )/38 e.Descrs-E#1/33 )/8 (/15 # Long/17 s.Num#1/18 e.Long#1/27 )/16 e.ArgsTail#1/29 >/1
         context[25] = context[19];
@@ -817,7 +817,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & ResolveOpts/4 (/7 e.new#8/19 )/8 (/15 # Short/17 s.new#9/18 s.new#10/25 e.new#11/21 )/16 e.new#12/23 >/1
+      // </0 & ResolveOpts/4 (/7 e.new#12/19 )/8 (/15 # Short/17 s.new#9/18 s.new#10/25 e.new#11/21 )/16 e.new#8/23 >/1
       context[19] = context[9];
       context[20] = context[10];
       context[21] = context[13];
@@ -826,8 +826,8 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
       context[24] = context[12];
       if( ! refalrts::ident_term( identifiers[ident_Short], context[17] ) )
         continue;
-      // closed e.new#8 as range 19
-      // closed e.new#12 as range 23
+      // closed e.new#12 as range 19
+      // closed e.new#8 as range 23
       if( ! refalrts::svar_left( context[25], context[21], context[22] ) )
         continue;
       // closed e.new#11 as range 21
@@ -1260,7 +1260,7 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
   // closed e.new#5 as range 12
   // closed e.new#6 as range 2
   do {
-    // </0 & ResolveOpts-Long/4 (/7 e.new#7/16 )/8 s.new#8/9 s.new#9/10 # Required/11 (/14 e.new#10/18 )/15 e.new#11/20 >/1
+    // </0 & ResolveOpts-Long/4 (/7 e.new#10/16 )/8 s.new#7/9 s.new#8/10 # Required/11 (/14 e.new#11/18 )/15 e.new#9/20 >/1
     context[16] = context[5];
     context[17] = context[6];
     context[18] = context[12];
@@ -1269,9 +1269,9 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
     context[21] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Required], context[11] ) )
       continue;
-    // closed e.new#7 as range 16
-    // closed e.new#10 as range 18
-    // closed e.new#11 as range 20
+    // closed e.new#10 as range 16
+    // closed e.new#11 as range 18
+    // closed e.new#9 as range 20
     do {
       // </0 & ResolveOpts-Long/4 (/7 e.Description#1/22 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 (/14 e.Long#1/24 )/15 (/30 # Word/32 s.WordNum#1/33 e.Param#1/28 )/31 e.ArgsTail#1/26 >/1
       context[22] = context[16];
@@ -1370,7 +1370,7 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & ResolveOpts-Long/4 (/7 e.new#7/16 )/8 s.new#8/9 s.new#9/10 # Optional/11 (/14 e.new#10/18 )/15 e.new#11/20 >/1
+    // </0 & ResolveOpts-Long/4 (/7 e.new#10/16 )/8 s.new#7/9 s.new#8/10 # Optional/11 (/14 e.new#11/18 )/15 e.new#9/20 >/1
     context[16] = context[5];
     context[17] = context[6];
     context[18] = context[12];
@@ -1379,9 +1379,9 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
     context[21] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Optional], context[11] ) )
       continue;
-    // closed e.new#7 as range 16
-    // closed e.new#10 as range 18
-    // closed e.new#11 as range 20
+    // closed e.new#10 as range 16
+    // closed e.new#11 as range 18
+    // closed e.new#9 as range 20
     do {
       // </0 & ResolveOpts-Long/4 (/7 e.Description#1/22 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 (/14 e.Long#1/24 )/15 (/30 # Word/32 s.WordNum#1/33 e.Param#1/28 )/31 e.ArgsTail#1/26 >/1
       context[22] = context[16];
@@ -1554,7 +1554,7 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
   // closed e.new#6 as range 13
   // closed e.new#7 as range 2
   do {
-    // </0 & ResolveOpts-Short/4 (/7 e.new#8/17 )/8 s.new#9/9 s.new#10/10 # Required/11 s.new#11/12 (/15 e.new#12/19 )/16 e.new#13/21 >/1
+    // </0 & ResolveOpts-Short/4 (/7 e.new#12/17 )/8 s.new#8/9 s.new#9/10 # Required/11 s.new#10/12 (/15 e.new#13/19 )/16 e.new#11/21 >/1
     context[17] = context[5];
     context[18] = context[6];
     context[19] = context[13];
@@ -1563,19 +1563,19 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
     context[22] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Required], context[11] ) )
       continue;
-    // closed e.new#8 as range 17
-    // closed e.new#12 as range 19
-    // closed e.new#13 as range 21
+    // closed e.new#12 as range 17
+    // closed e.new#13 as range 19
+    // closed e.new#11 as range 21
     do {
-      // </0 & ResolveOpts-Short/4 (/7 e.new#14/23 )/8 s.new#15/9 s.new#16/10 # Required/11 s.new#17/12 (/15 )/16 e.new#18/25 >/1
+      // </0 & ResolveOpts-Short/4 (/7 e.new#18/23 )/8 s.new#14/9 s.new#15/10 # Required/11 s.new#16/12 (/15 )/16 e.new#17/25 >/1
       context[23] = context[17];
       context[24] = context[18];
       context[25] = context[21];
       context[26] = context[22];
       if( ! refalrts::empty_seq( context[19], context[20] ) )
         continue;
-      // closed e.new#14 as range 23
-      // closed e.new#18 as range 25
+      // closed e.new#18 as range 23
+      // closed e.new#17 as range 25
       do {
         // </0 & ResolveOpts-Short/4 (/7 e.Description#1/27 )/8 s.Num#1/9 s.Tag#1/10 # Required/11 s.Short#1/12 (/15 )/16 (/33 # Word/35 s.WordNum#1/36 e.Param#1/31 )/34 e.ArgsTail#1/29 >/1
         context[27] = context[23];
@@ -1708,7 +1708,7 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & ResolveOpts-Short/4 (/7 e.new#8/17 )/8 s.new#9/9 s.new#10/10 # Optional/11 s.new#11/12 (/15 e.new#12/19 )/16 e.new#13/21 >/1
+    // </0 & ResolveOpts-Short/4 (/7 e.new#12/17 )/8 s.new#8/9 s.new#9/10 # Optional/11 s.new#10/12 (/15 e.new#13/19 )/16 e.new#11/21 >/1
     context[17] = context[5];
     context[18] = context[6];
     context[19] = context[13];
@@ -1717,19 +1717,19 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
     context[22] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Optional], context[11] ) )
       continue;
-    // closed e.new#8 as range 17
-    // closed e.new#12 as range 19
-    // closed e.new#13 as range 21
+    // closed e.new#12 as range 17
+    // closed e.new#13 as range 19
+    // closed e.new#11 as range 21
     do {
-      // </0 & ResolveOpts-Short/4 (/7 e.new#14/23 )/8 s.new#15/9 s.new#16/10 # Optional/11 s.new#17/12 (/15 )/16 e.new#18/25 >/1
+      // </0 & ResolveOpts-Short/4 (/7 e.new#18/23 )/8 s.new#14/9 s.new#15/10 # Optional/11 s.new#16/12 (/15 )/16 e.new#17/25 >/1
       context[23] = context[17];
       context[24] = context[18];
       context[25] = context[21];
       context[26] = context[22];
       if( ! refalrts::empty_seq( context[19], context[20] ) )
         continue;
-      // closed e.new#14 as range 23
-      // closed e.new#18 as range 25
+      // closed e.new#18 as range 23
+      // closed e.new#17 as range 25
       do {
         // </0 & ResolveOpts-Short/4 (/7 e.Description#1/27 )/8 s.Num#1/9 s.Tag#1/10 # Optional/11 s.Short#1/12 (/15 )/16 (/33 # Word/35 s.WordNum#1/36 e.Param#1/31 )/34 e.ArgsTail#1/29 >/1
         context[27] = context[23];
@@ -1858,12 +1858,12 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & ResolveOpts-Short/4 (/7 e.new#8/5 )/8 s.new#9/9 s.new#10/10 # None/11 s.new#11/12 (/15 e.new#12/13 )/16 e.new#13/2 >/1
+  // </0 & ResolveOpts-Short/4 (/7 e.new#12/5 )/8 s.new#8/9 s.new#9/10 # None/11 s.new#10/12 (/15 e.new#13/13 )/16 e.new#11/2 >/1
   if( ! refalrts::ident_term( identifiers[ident_None], context[11] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#8 as range 5
-  // closed e.new#12 as range 13
-  // closed e.new#13 as range 2
+  // closed e.new#12 as range 5
+  // closed e.new#13 as range 13
+  // closed e.new#11 as range 2
   do {
     // </0 & ResolveOpts-Short/4 (/7 e.Description#1/17 )/8 s.Num#1/9 s.Tag#1/10 # None/11 s.Short#1/12 (/15 )/16 e.ArgsTail#1/19 >/1
     context[17] = context[5];

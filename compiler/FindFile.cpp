@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_4068349913_770554282
+#define cookie_ns cookie_ns_3661875570_4253635416
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -25,8 +25,8 @@ enum efunc {
   efunc_AnalyzeFilem_CheckNotFound = 16,
   efunc_gen_FindFiles_L1L1 = 17,
   efunc_gen_FindFiles_L1 = 18,
-  efunc_gen_FindFiles_A1 = 19,
-  efunc_gen_FindFiles_A1B1 = 20,
+  efunc_gen_FindFiles_A1B1D5 = 19,
+  efunc_gen_FindFiles_A1 = 20,
   efunc_ExistFile = 21,
   efunc_ExistFilem_T = 22,
   efunc_gen_AnalyzeFile_S2B1S1B1 = 23,
@@ -170,7 +170,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 4068349913U, 770554282U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 3661875570U, 4253635416U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -231,9 +231,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 770554282UL);
+    refalrts::alloc_number(vm, context[9], 4253635416UL);
     refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 4068349913UL);
+    refalrts::reinit_number(context[5], 3661875570UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -260,8 +260,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 4068349913UL);
-  refalrts::reinit_number(context[7], 770554282UL);
+  refalrts::reinit_number(context[5], 3661875570UL);
+  refalrts::reinit_number(context[7], 4253635416UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -273,7 +273,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 4068349913U, 770554282U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3661875570U, 4253635416U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -529,7 +529,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 4068349913U, 770554282U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3661875570U, 4253635416U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -629,7 +629,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 4068349913U, 770554282U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", 3661875570U, 4253635416U, func_Residue);
 
 
 static refalrts::FnResult func_gen_FindFiles_L1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -705,7 +705,7 @@ static refalrts::FnResult func_gen_FindFiles_L1L1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindFiles_L1L1("FindFiles\\1\\1", 4068349913U, 770554282U, func_gen_FindFiles_L1L1);
+static refalrts::NativeReference nat_ref_gen_FindFiles_L1L1("FindFiles\\1\\1", 3661875570U, 4253635416U, func_gen_FindFiles_L1L1);
 
 
 static refalrts::FnResult func_gen_FindFiles_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -801,7 +801,7 @@ static refalrts::FnResult func_gen_FindFiles_L1(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindFiles_L1("FindFiles\\1", 4068349913U, 770554282U, func_gen_FindFiles_L1);
+static refalrts::NativeReference nat_ref_gen_FindFiles_L1("FindFiles\\1", 3661875570U, 4253635416U, func_gen_FindFiles_L1);
 
 
 static refalrts::FnResult func_gen_FindFiles_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -864,7 +864,7 @@ static refalrts::FnResult func_gen_FindFiles_A1(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindFiles_A1("FindFiles=1", 4068349913U, 770554282U, func_gen_FindFiles_A1);
+static refalrts::NativeReference nat_ref_gen_FindFiles_A1("FindFiles=1", 3661875570U, 4253635416U, func_gen_FindFiles_A1);
 
 
 static refalrts::FnResult func_gen_FindFiles_A1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -981,7 +981,7 @@ static refalrts::FnResult func_gen_FindFiles_A1B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindFiles_A1B1("FindFiles=1:1", 4068349913U, 770554282U, func_gen_FindFiles_A1B1);
+static refalrts::NativeReference nat_ref_gen_FindFiles_A1B1("FindFiles=1:1", 3661875570U, 4253635416U, func_gen_FindFiles_A1B1);
 
 
 static refalrts::FnResult func_FindFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -990,15 +990,17 @@ static refalrts::FnResult func_FindFiles(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  // </0 & FindFiles/4 s.TargetMode#1/5 (/8 e.Folders#1/6 )/9 e.Files#1/2 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & FindFiles/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & FindFiles/4 s.new#1/5 (/8 e.new#2/6 )/9 e.new#3/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[6] = 0;
@@ -1007,6 +1009,224 @@ static refalrts::FnResult func_FindFiles(refalrts::VM *vm, refalrts::Iter arg_be
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[8], context[9]);
+  // closed e.new#2 as range 6
+  // closed e.new#3 as range 2
+  do {
+    // </0 & FindFiles/4 # DefaultEXE/5 (/8 e.Folders#1/10 )/9 e.Files#1/12 >/1
+    context[10] = context[6];
+    context[11] = context[7];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_DefaultEXE], context[5] ) )
+      continue;
+    // closed e.Folders#1 as range 10
+    // closed e.Files#1 as range 12
+    //DEBUG: e.Folders#1: 10
+    //DEBUG: e.Files#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </14 & Map/15 [*]/16 & FindFiles\1/17 (/18 'e'/19 Tile{ HalfReuse: 'x'/0 HalfReuse: 'e'/4 HalfReuse: )/5 AsIs: (/8 AsIs: e.Folders#1/10 AsIs: )/9 } {*}/20 Tile{ AsIs: e.Files#1/12 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
+    refalrts::alloc_closure_head(vm, context[16]);
+    refalrts::alloc_name(vm, context[17], functions[efunc_gen_FindFiles_L1]);
+    refalrts::alloc_open_bracket(vm, context[18]);
+    refalrts::alloc_char(vm, context[19], 'e');
+    refalrts::alloc_unwrapped_closure(vm, context[20], context[16]);
+    refalrts::reinit_char(context[0], 'x');
+    refalrts::reinit_char(context[4], 'e');
+    refalrts::reinit_close_bracket(context[5]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[18], context[5] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[14], context[19] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & FindFiles/4 # EXE/5 (/8 e.Folders#1/10 )/9 e.Files#1/12 >/1
+    context[10] = context[6];
+    context[11] = context[7];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_EXE], context[5] ) )
+      continue;
+    // closed e.Folders#1 as range 10
+    // closed e.Files#1 as range 12
+    //DEBUG: e.Folders#1: 10
+    //DEBUG: e.Files#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </14 & Map/15 [*]/16 & FindFiles\1/17 (/18 'e'/19 Tile{ HalfReuse: 'x'/0 HalfReuse: 'e'/4 HalfReuse: )/5 AsIs: (/8 AsIs: e.Folders#1/10 AsIs: )/9 } {*}/20 Tile{ AsIs: e.Files#1/12 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
+    refalrts::alloc_closure_head(vm, context[16]);
+    refalrts::alloc_name(vm, context[17], functions[efunc_gen_FindFiles_L1]);
+    refalrts::alloc_open_bracket(vm, context[18]);
+    refalrts::alloc_char(vm, context[19], 'e');
+    refalrts::alloc_unwrapped_closure(vm, context[20], context[16]);
+    refalrts::reinit_char(context[0], 'x');
+    refalrts::reinit_char(context[4], 'e');
+    refalrts::reinit_close_bracket(context[5]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[18], context[5] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[14], context[19] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & FindFiles/4 # LIB/5 (/8 e.Folders#1/10 )/9 e.Files#1/12 >/1
+    context[10] = context[6];
+    context[11] = context[7];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_LIB], context[5] ) )
+      continue;
+    // closed e.Folders#1 as range 10
+    // closed e.Files#1 as range 12
+    //DEBUG: e.Folders#1: 10
+    //DEBUG: e.Files#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </14 & Map/15 [*]/16 & FindFiles\1/17 (/18 'l'/19 Tile{ HalfReuse: 'i'/0 HalfReuse: 'b'/4 HalfReuse: )/5 AsIs: (/8 AsIs: e.Folders#1/10 AsIs: )/9 } {*}/20 Tile{ AsIs: e.Files#1/12 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
+    refalrts::alloc_closure_head(vm, context[16]);
+    refalrts::alloc_name(vm, context[17], functions[efunc_gen_FindFiles_L1]);
+    refalrts::alloc_open_bracket(vm, context[18]);
+    refalrts::alloc_char(vm, context[19], 'l');
+    refalrts::alloc_unwrapped_closure(vm, context[20], context[16]);
+    refalrts::reinit_char(context[0], 'i');
+    refalrts::reinit_char(context[4], 'b');
+    refalrts::reinit_close_bracket(context[5]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[18], context[5] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[14], context[19] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & FindFiles/4 # R/5 (/8 e.Folders#1/10 )/9 e.Files#1/12 >/1
+    context[10] = context[6];
+    context[11] = context[7];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_R], context[5] ) )
+      continue;
+    // closed e.Folders#1 as range 10
+    // closed e.Files#1 as range 12
+    //DEBUG: e.Folders#1: 10
+    //DEBUG: e.Files#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </14 & Map/15 [*]/16 & FindFiles\1/17 (/18 'l'/19 Tile{ HalfReuse: 'i'/0 HalfReuse: 'b'/4 HalfReuse: )/5 AsIs: (/8 AsIs: e.Folders#1/10 AsIs: )/9 } {*}/20 Tile{ AsIs: e.Files#1/12 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
+    refalrts::alloc_closure_head(vm, context[16]);
+    refalrts::alloc_name(vm, context[17], functions[efunc_gen_FindFiles_L1]);
+    refalrts::alloc_open_bracket(vm, context[18]);
+    refalrts::alloc_char(vm, context[19], 'l');
+    refalrts::alloc_unwrapped_closure(vm, context[20], context[16]);
+    refalrts::reinit_char(context[0], 'i');
+    refalrts::reinit_char(context[4], 'b');
+    refalrts::reinit_close_bracket(context[5]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[18], context[5] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[14], context[19] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & FindFiles/4 # CompileOnly/5 (/8 e.Folders#1/10 )/9 e.Files#1/12 >/1
+    context[10] = context[6];
+    context[11] = context[7];
+    context[12] = context[2];
+    context[13] = context[3];
+    if( ! refalrts::ident_term( identifiers[ident_CompileOnly], context[5] ) )
+      continue;
+    // closed e.Folders#1 as range 10
+    // closed e.Files#1 as range 12
+    //DEBUG: e.Folders#1: 10
+    //DEBUG: e.Files#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </14 & Map/15 [*]/16 & FindFiles\1/17 (/18 'e'/19 Tile{ HalfReuse: 'x'/0 HalfReuse: 'e'/4 HalfReuse: )/5 AsIs: (/8 AsIs: e.Folders#1/10 AsIs: )/9 } {*}/20 Tile{ AsIs: e.Files#1/12 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_call(vm, context[14]);
+    refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
+    refalrts::alloc_closure_head(vm, context[16]);
+    refalrts::alloc_name(vm, context[17], functions[efunc_gen_FindFiles_L1]);
+    refalrts::alloc_open_bracket(vm, context[18]);
+    refalrts::alloc_char(vm, context[19], 'e');
+    refalrts::alloc_unwrapped_closure(vm, context[20], context[16]);
+    refalrts::reinit_char(context[0], 'x');
+    refalrts::reinit_char(context[4], 'e');
+    refalrts::reinit_close_bracket(context[5]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[14] );
+    refalrts::link_brackets( context[8], context[9] );
+    refalrts::link_brackets( context[18], context[5] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[12], context[13] );
+    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[0], context[9] );
+    res = refalrts::splice_evar( res, context[14], context[19] );
+    refalrts::use( res );
+    refalrts::wrap_closure( context[20] );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & FindFiles/4 s.TargetMode#1/5 (/8 e.Folders#1/6 )/9 e.Files#1/2 >/1
   // closed e.Folders#1 as range 6
   // closed e.Files#1 as range 2
   //DEBUG: s.TargetMode#1: 5
@@ -1015,33 +1235,29 @@ static refalrts::FnResult func_FindFiles(refalrts::VM *vm, refalrts::Iter arg_be
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </10 [*]/11 & FindFiles=1/12 Tile{ AsIs: (/8 AsIs: e.Folders#1/6 AsIs: )/9 } (/13 Tile{ AsIs: e.Files#1/2 } )/14 {*}/15 Tile{ AsIs: </0 Reuse: & FindFiles=1:1/4 AsIs: s.TargetMode#1/5 } >/16 Tile{ AsIs: >/1 ]] }
-  refalrts::alloc_open_call(vm, context[10]);
-  refalrts::alloc_closure_head(vm, context[11]);
-  refalrts::alloc_name(vm, context[12], functions[efunc_gen_FindFiles_A1]);
-  refalrts::alloc_open_bracket(vm, context[13]);
-  refalrts::alloc_close_bracket(vm, context[14]);
-  refalrts::alloc_unwrapped_closure(vm, context[15], context[11]);
-  refalrts::alloc_close_call(vm, context[16]);
-  refalrts::update_name(context[4], functions[efunc_gen_FindFiles_A1B1]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindFiles=1/4 } Tile{ AsIs: (/8 AsIs: e.Folders#1/6 AsIs: )/9 } (/10 Tile{ AsIs: e.Files#1/2 } )/11 </12 & FindFiles=1:1*5/13 Tile{ AsIs: s.TargetMode#1/5 } >/14 Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_open_bracket(vm, context[10]);
+  refalrts::alloc_close_bracket(vm, context[11]);
+  refalrts::alloc_open_call(vm, context[12]);
+  refalrts::alloc_name(vm, context[13], functions[efunc_gen_FindFiles_A1B1D5]);
+  refalrts::alloc_close_call(vm, context[14]);
+  refalrts::update_name(context[4], functions[efunc_gen_FindFiles_A1]);
   refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[10] );
-  refalrts::push_stack( vm, context[16] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[13], context[14] );
+  refalrts::push_stack( vm, context[14] );
+  refalrts::push_stack( vm, context[12] );
+  refalrts::link_brackets( context[10], context[11] );
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[16], context[16] );
-  res = refalrts::splice_evar( res, context[0], context[5] );
-  res = refalrts::splice_evar( res, context[14], context[15] );
+  res = refalrts::splice_evar( res, context[14], context[14] );
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  res = refalrts::splice_evar( res, context[11], context[13] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[10], context[10] );
   res = refalrts::splice_evar( res, context[8], context[9] );
-  res = refalrts::splice_evar( res, context[10], context[12] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[15] );
   return refalrts::cSuccess;
 }
 
@@ -1074,7 +1290,7 @@ static refalrts::FnResult func_AnalyzeFilem_CheckNotFound(refalrts::VM *vm, refa
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.new#3/9 )/8 (/15 s.new#4/17 e.new#5/13 )/16 e.new#6/11 >/1
+    // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.new#6/9 )/8 (/15 s.new#3/17 e.new#4/13 )/16 e.new#5/11 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
@@ -1085,11 +1301,11 @@ static refalrts::FnResult func_AnalyzeFilem_CheckNotFound(refalrts::VM *vm, refa
     if( ! context[15] )
       continue;
     refalrts::bracket_pointers(context[15], context[16]);
-    // closed e.new#3 as range 9
-    // closed e.new#6 as range 11
+    // closed e.new#6 as range 9
+    // closed e.new#5 as range 11
     if( ! refalrts::svar_left( context[17], context[13], context[14] ) )
       continue;
-    // closed e.new#5 as range 13
+    // closed e.new#4 as range 13
     do {
       // </0 & AnalyzeFile-CheckNotFound/4 (/7 e.FileName#1/18 )/8 (/15 # Source/17 (/26 s.Dialect#1/28 e.Source#1/24 )/27 e.Output#1/20 )/16 e.Variants#1/22 >/1
       context[18] = context[9];
@@ -1252,7 +1468,7 @@ static refalrts::FnResult func_AnalyzeFilem_CheckNotFound(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AnalyzeFilem_CheckNotFound("AnalyzeFile-CheckNotFound", 4068349913U, 770554282U, func_AnalyzeFilem_CheckNotFound);
+static refalrts::NativeReference nat_ref_AnalyzeFilem_CheckNotFound("AnalyzeFile-CheckNotFound", 3661875570U, 4253635416U, func_AnalyzeFilem_CheckNotFound);
 
 
 static refalrts::FnResult func_ExistFilem_T(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1288,7 +1504,7 @@ static refalrts::FnResult func_ExistFilem_T(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ExistFilem_T("ExistFile-T", 4068349913U, 770554282U, func_ExistFilem_T);
+static refalrts::NativeReference nat_ref_ExistFilem_T("ExistFile-T", 3661875570U, 4253635416U, func_ExistFilem_T);
 
 
 static refalrts::FnResult func_SourceSuffixes(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1336,7 +1552,7 @@ static refalrts::FnResult func_SourceSuffixes(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SourceSuffixes("SourceSuffixes", 4068349913U, 770554282U, func_SourceSuffixes);
+static refalrts::NativeReference nat_ref_SourceSuffixes("SourceSuffixes", 3661875570U, 4253635416U, func_SourceSuffixes);
 
 
 static refalrts::FnResult func_gen_AnalyzeFile_S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1439,7 +1655,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S1B1(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S1B1("AnalyzeFile$1:1", 4068349913U, 770554282U, func_gen_AnalyzeFile_S1B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S1B1("AnalyzeFile$1:1", 3661875570U, 4253635416U, func_gen_AnalyzeFile_S1B1);
 
 
 static refalrts::FnResult func_gen_AnalyzeFile_S2B1S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1521,7 +1737,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2B1S1B1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2B1S1B1("AnalyzeFile$2:1$1:1", 4068349913U, 770554282U, func_gen_AnalyzeFile_S2B1S1B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2B1S1B1("AnalyzeFile$2:1$1:1", 3661875570U, 4253635416U, func_gen_AnalyzeFile_S2B1S1B1);
 
 
 static refalrts::FnResult func_gen_AnalyzeFile_S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1530,9 +1746,9 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2B1(refalrts::VM *vm, refalrts::
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
   // </0 & AnalyzeFile$2:1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1566,31 +1782,26 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2B1(refalrts::VM *vm, refalrts::
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 HalfReuse: [*]/4 HalfReuse: & AnalyzeFile$2:1$1:1/7 } (/14 Tile{ AsIs: e.OutName#2/12 } Tile{ AsIs: )/8 HalfReuse: {*}/9 } </15 & ExistFile-T/16 Tile{ AsIs: e.FileName#1/10 }".cpp"/17 >/19 Tile{ AsIs: >/1 ]] }
-    refalrts::alloc_open_bracket(vm, context[14]);
-    refalrts::alloc_open_call(vm, context[15]);
-    refalrts::alloc_name(vm, context[16], functions[efunc_ExistFilem_T]);
-    refalrts::alloc_chars(vm, context[17], context[18], ".cpp", 4);
-    refalrts::alloc_close_call(vm, context[19]);
-    refalrts::reinit_closure_head(context[4]);
-    refalrts::reinit_name(context[7], functions[efunc_gen_AnalyzeFile_S2B1S1B1]);
-    refalrts::reinit_unwrapped_closure(context[9], context[4]);
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & AnalyzeFile$2:1$1:1/4 AsIs: (/7 } Tile{ AsIs: e.OutName#2/12 } Tile{ AsIs: )/8 HalfReuse: </9 } & ExistFile-T/14 Tile{ AsIs: e.FileName#1/10 }".cpp"/15 >/17 Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_name(vm, context[14], functions[efunc_ExistFilem_T]);
+    refalrts::alloc_chars(vm, context[15], context[16], ".cpp", 4);
+    refalrts::alloc_close_call(vm, context[17]);
+    refalrts::update_name(context[4], functions[efunc_gen_AnalyzeFile_S2B1S1B1]);
+    refalrts::reinit_open_call(context[9]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::push_stack( vm, context[19] );
-    refalrts::push_stack( vm, context[15] );
-    refalrts::link_brackets( context[14], context[8] );
+    refalrts::push_stack( vm, context[17] );
+    refalrts::push_stack( vm, context[9] );
+    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[17], context[19] );
+    res = refalrts::splice_evar( res, context[15], context[17] );
     res = refalrts::splice_evar( res, context[10], context[11] );
-    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[14], context[14] );
     res = refalrts::splice_evar( res, context[8], context[9] );
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[14], context[14] );
     refalrts::use( res );
-    refalrts::wrap_closure( context[9] );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
@@ -1617,7 +1828,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S2B1(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2B1("AnalyzeFile$2:1", 4068349913U, 770554282U, func_gen_AnalyzeFile_S2B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S2B1("AnalyzeFile$2:1", 3661875570U, 4253635416U, func_gen_AnalyzeFile_S2B1);
 
 
 static refalrts::FnResult func_gen_AnalyzeFile_S4B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1778,7 +1989,7 @@ static refalrts::FnResult func_gen_AnalyzeFile_S4B1(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S4B1("AnalyzeFile$4:1", 4068349913U, 770554282U, func_gen_AnalyzeFile_S4B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeFile_S4B1("AnalyzeFile$4:1", 3661875570U, 4253635416U, func_gen_AnalyzeFile_S4B1);
 
 
 static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1787,9 +1998,9 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 35 elems
-  refalrts::Iter context[35];
-  refalrts::zeros( context, 35 );
+  // issue here memory for vars with 34 elems
+  refalrts::Iter context[34];
+  refalrts::zeros( context, 34 );
   // </0 & AnalyzeFile/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -1920,15 +2131,12 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_
             //DEBUG: s.Dialect#3: 31
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Suffix#2/14 {REMOVED TILE} {REMOVED TILE} e.Suffixes-B#3/21 {REMOVED TILE} e.Suffix#2/29 {REMOVED TILE} e.Suffixes-E#3/23 {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ } Tile{ AsIs: </16 HalfReuse: [*]/20 } Tile{ HalfReuse: & AnalyzeFile$1:1/27 AsIs: s.Dialect#3/31 } Tile{ HalfReuse: (/8 } e.FileName#1/5/32 Tile{ HalfReuse: )/17 HalfReuse: (/1 } Tile{ AsIs: e.UnitName#2/12 } Tile{ AsIs: )/28 } {*}/34 Tile{ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/5 HalfReuse: >/7 HalfReuse: >/11 } Tile{ ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Suffix#2/14 {REMOVED TILE} {REMOVED TILE} e.Suffixes-B#3/21 {REMOVED TILE} {REMOVED TILE} e.Suffix#2/29 {REMOVED TILE} e.Suffixes-E#3/23 >/17 {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ } Tile{ AsIs: </16 Reuse: & AnalyzeFile$1:1/20 } Tile{ AsIs: s.Dialect#3/31 } Tile{ AsIs: (/27 } e.FileName#1/5/32 Tile{ AsIs: )/28 } Tile{ HalfReuse: (/1 } Tile{ AsIs: e.UnitName#2/12 } Tile{ HalfReuse: )/8 } Tile{ AsIs: </0 Reuse: & ExistFile/4 AsIs: e.FileName#1/5 HalfReuse: >/7 HalfReuse: >/11 } Tile{ ]] }
             refalrts::copy_evar(vm, context[32], context[33], context[5], context[6]);
-            refalrts::alloc_unwrapped_closure(vm, context[34], context[20]);
-            refalrts::reinit_closure_head(context[20]);
-            refalrts::reinit_name(context[27], functions[efunc_gen_AnalyzeFile_S1B1]);
-            refalrts::reinit_open_bracket(context[8]);
-            refalrts::reinit_close_bracket(context[17]);
+            refalrts::update_name(context[20], functions[efunc_gen_AnalyzeFile_S1B1]);
             refalrts::reinit_open_bracket(context[1]);
+            refalrts::reinit_close_bracket(context[8]);
             refalrts::update_name(context[4], functions[efunc_ExistFile]);
             refalrts::reinit_close_call(context[7]);
             refalrts::reinit_close_call(context[11]);
@@ -1936,22 +2144,21 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_
             refalrts::push_stack( vm, context[16] );
             refalrts::push_stack( vm, context[7] );
             refalrts::push_stack( vm, context[0] );
-            refalrts::link_brackets( context[1], context[28] );
-            refalrts::link_brackets( context[8], context[17] );
+            refalrts::link_brackets( context[1], context[8] );
+            refalrts::link_brackets( context[27], context[28] );
             refalrts::Iter trash_prev = arg_begin->prev;
             refalrts::use(trash_prev);
             refalrts::Iter res = arg_end->next;
             res = refalrts::splice_evar( res, context[0], context[11] );
-            res = refalrts::splice_evar( res, context[34], context[34] );
-            res = refalrts::splice_evar( res, context[28], context[28] );
-            res = refalrts::splice_evar( res, context[12], context[13] );
-            res = refalrts::splice_evar( res, context[17], context[1] );
-            res = refalrts::splice_evar( res, context[32], context[33] );
             res = refalrts::splice_evar( res, context[8], context[8] );
-            res = refalrts::splice_evar( res, context[27], context[31] );
+            res = refalrts::splice_evar( res, context[12], context[13] );
+            res = refalrts::splice_evar( res, context[1], context[1] );
+            res = refalrts::splice_evar( res, context[28], context[28] );
+            res = refalrts::splice_evar( res, context[32], context[33] );
+            res = refalrts::splice_evar( res, context[27], context[27] );
+            res = refalrts::splice_evar( res, context[31], context[31] );
             res = refalrts::splice_evar( res, context[16], context[20] );
             refalrts::splice_to_freelist_open( vm, trash_prev, res );
-            refalrts::wrap_closure( context[34] );
             return refalrts::cSuccess;
           } while ( refalrts::open_evar_advance( context[21], context[22], context[18], context[19] ) );
         } while ( 0 );
@@ -1992,29 +2199,26 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </12 [*]/13 & AnalyzeFile$2:1/14 (/15 e.FileName#1/5/16 )/18 {*}/19 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/11 AsIs: 'r'/10 AsIs: 'a'/9 AsIs: 's'/8 AsIs: 'l'/7 AsIs: >/1 } >/20 Tile{ ]] }
+    //RESULT: Tile{ [[ } </12 & AnalyzeFile$2:1/13 (/14 e.FileName#1/5/15 )/17 Tile{ AsIs: </0 Reuse: & ExistFile-T/4 AsIs: e.FileName#1/5 AsIs: '.'/11 AsIs: 'r'/10 AsIs: 'a'/9 AsIs: 's'/8 AsIs: 'l'/7 AsIs: >/1 } >/18 Tile{ ]] }
     refalrts::alloc_open_call(vm, context[12]);
-    refalrts::alloc_closure_head(vm, context[13]);
-    refalrts::alloc_name(vm, context[14], functions[efunc_gen_AnalyzeFile_S2B1]);
-    refalrts::alloc_open_bracket(vm, context[15]);
-    refalrts::copy_evar(vm, context[16], context[17], context[5], context[6]);
-    refalrts::alloc_close_bracket(vm, context[18]);
-    refalrts::alloc_unwrapped_closure(vm, context[19], context[13]);
-    refalrts::alloc_close_call(vm, context[20]);
+    refalrts::alloc_name(vm, context[13], functions[efunc_gen_AnalyzeFile_S2B1]);
+    refalrts::alloc_open_bracket(vm, context[14]);
+    refalrts::copy_evar(vm, context[15], context[16], context[5], context[6]);
+    refalrts::alloc_close_bracket(vm, context[17]);
+    refalrts::alloc_close_call(vm, context[18]);
     refalrts::update_name(context[4], functions[efunc_ExistFilem_T]);
-    refalrts::push_stack( vm, context[20] );
+    refalrts::push_stack( vm, context[18] );
     refalrts::push_stack( vm, context[12] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[15], context[18] );
+    refalrts::link_brackets( context[14], context[17] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[20], context[20] );
+    res = refalrts::splice_evar( res, context[18], context[18] );
     res = refalrts::splice_evar( res, context[0], context[1] );
-    res = refalrts::splice_evar( res, context[12], context[19] );
+    res = refalrts::splice_evar( res, context[12], context[17] );
     refalrts::use( res );
-    refalrts::wrap_closure( context[19] );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
@@ -2212,7 +2416,7 @@ static refalrts::FnResult func_AnalyzeFile(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AnalyzeFile("AnalyzeFile", 4068349913U, 770554282U, func_AnalyzeFile);
+static refalrts::NativeReference nat_ref_AnalyzeFile("AnalyzeFile", 3661875570U, 4253635416U, func_AnalyzeFile);
 
 
 static refalrts::FnResult func_gen_FindInclude_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2288,7 +2492,7 @@ static refalrts::FnResult func_gen_FindInclude_B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindInclude_B1("FindInclude:1", 4068349913U, 770554282U, func_gen_FindInclude_B1);
+static refalrts::NativeReference nat_ref_gen_FindInclude_B1("FindInclude:1", 3661875570U, 4253635416U, func_gen_FindInclude_B1);
 
 
 static refalrts::FnResult func_gen_FindInclude_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2342,7 +2546,7 @@ static refalrts::FnResult func_gen_FindInclude_L1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindInclude_L1("FindInclude\\1", 4068349913U, 770554282U, func_gen_FindInclude_L1);
+static refalrts::NativeReference nat_ref_gen_FindInclude_L1("FindInclude\\1", 3661875570U, 4253635416U, func_gen_FindInclude_L1);
 
 
 static refalrts::FnResult func_FindInclude(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2470,7 +2674,7 @@ static refalrts::FnResult func_gen_AnalyzeInclude_S1B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S1B1("AnalyzeInclude$1:1", 4068349913U, 770554282U, func_gen_AnalyzeInclude_S1B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S1B1("AnalyzeInclude$1:1", 3661875570U, 4253635416U, func_gen_AnalyzeInclude_S1B1);
 
 
 static refalrts::FnResult func_gen_AnalyzeInclude_S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2534,7 +2738,7 @@ static refalrts::FnResult func_gen_AnalyzeInclude_S2B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S2B1("AnalyzeInclude$2:1", 4068349913U, 770554282U, func_gen_AnalyzeInclude_S2B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S2B1("AnalyzeInclude$2:1", 3661875570U, 4253635416U, func_gen_AnalyzeInclude_S2B1);
 
 
 static refalrts::FnResult func_gen_AnalyzeInclude_S3B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2660,7 +2864,7 @@ static refalrts::FnResult func_gen_AnalyzeInclude_S3B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S3B1("AnalyzeInclude$3:1", 4068349913U, 770554282U, func_gen_AnalyzeInclude_S3B1);
+static refalrts::NativeReference nat_ref_gen_AnalyzeInclude_S3B1("AnalyzeInclude$3:1", 3661875570U, 4253635416U, func_gen_AnalyzeInclude_S3B1);
 
 
 static refalrts::FnResult func_AnalyzeInclude(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2803,7 +3007,7 @@ static refalrts::FnResult func_AnalyzeInclude(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AnalyzeInclude("AnalyzeInclude", 4068349913U, 770554282U, func_AnalyzeInclude);
+static refalrts::NativeReference nat_ref_AnalyzeInclude("AnalyzeInclude", 3661875570U, 4253635416U, func_AnalyzeInclude);
 
 
 //End of file

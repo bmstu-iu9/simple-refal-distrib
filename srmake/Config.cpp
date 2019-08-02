@@ -2016,12 +2016,12 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
   // closed e.new#1 as range 5
   // closed e.new#2 as range 2
   do {
-    // </0 & Config-SetTargetMode/4 [/7Config/8 e.new#3/10 ]/9 s.new#4/14 >/1
+    // </0 & Config-SetTargetMode/4 [/7Config/8 e.new#4/10 ]/9 s.new#3/14 >/1
     context[10] = context[5];
     context[11] = context[6];
     context[12] = context[2];
     context[13] = context[3];
-    // closed e.new#3 as range 10
+    // closed e.new#4 as range 10
     if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
       continue;
     if( ! refalrts::empty_seq( context[12], context[13] ) )
