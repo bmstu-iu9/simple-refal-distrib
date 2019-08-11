@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_3316339153_252455384
+#define cookie_ns cookie_ns_4257791294_4125625950
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -31,41 +31,42 @@ enum efunc {
   efunc_gen_Pipe_S2L1 = 22,
   efunc_gen_Pipe_S3L1 = 23,
   efunc_Configm_Create = 24,
-  efunc_Update = 25,
-  efunc_Configm_SetCppCompiler = 26,
-  efunc_Configm_SetCompilerFlags = 27,
-  efunc_Configm_SetDebugInfo = 28,
-  efunc_Configm_SetErrorFile = 29,
-  efunc_Configm_SetGrammarCheck = 30,
-  efunc_Configm_AddIncorporated = 31,
-  efunc_Configm_SetMarkupContext = 32,
-  efunc_Configm_SetOptFlags = 33,
-  efunc_Configm_SetPrefix = 34,
-  efunc_Configm_AddReference = 35,
-  efunc_Configm_SetTargetFileName = 36,
-  efunc_Configm_SetTargetMode = 37,
-  efunc_Configm_SetTargetSuffix = 38,
-  efunc_Configm_SetChmodXCommand = 39,
-  efunc_Configm_SetPrelude = 40,
-  efunc_Configm_SetR5Mode = 41,
-  efunc_Configm_SetLogFile = 42,
-  efunc_Configm_SetTreeOptCycles = 43,
-  efunc_PrintHelp = 44,
-  efunc_PrintVersion = 45,
-  efunc_Configm_KeepRasls = 46,
-  efunc_Configm_TempDir = 47,
-  efunc_Configm_RenameExistRasls = 48,
-  efunc_Configm_SetSearchFolder = 49,
-  efunc_gen_Map_Z1 = 50,
-  efunc_GetOpt = 51,
-  efunc_gen_ParseCommandLine_L1 = 52,
-  efunc_MapReduce = 53,
-  efunc_gen_ParseCommandLine_L2 = 54,
-  efunc_gen_ParseCommandLine_L3 = 55,
-  efunc_gen_ParseCommandLine_L4 = 56,
-  efunc_gen_Update_L1 = 57,
-  efunc_Prout = 58,
-  efunc_gen_ParseCommandLine_L4S2L1D7 = 59,
+  efunc_Configm_KeepRasls = 25,
+  efunc_Update = 26,
+  efunc_Configm_SetCppCompiler = 27,
+  efunc_Configm_SetCompilerFlags = 28,
+  efunc_Configm_SetDebugInfo = 29,
+  efunc_Configm_SetErrorFile = 30,
+  efunc_Configm_SetGrammarCheck = 31,
+  efunc_Configm_AddIncorporated = 32,
+  efunc_Configm_SetMarkupContext = 33,
+  efunc_Configm_SetOptFlags = 34,
+  efunc_Configm_SetPrefix = 35,
+  efunc_Configm_AddReference = 36,
+  efunc_Configm_SetTargetFileName = 37,
+  efunc_Configm_SetTargetMode = 38,
+  efunc_gen_ParseCommandLine_L2S18A1 = 39,
+  efunc_Configm_SetTargetSuffix = 40,
+  efunc_Configm_SetChmodXCommand = 41,
+  efunc_Configm_SetPrelude = 42,
+  efunc_Configm_SetR5Mode = 43,
+  efunc_Configm_SetLogFile = 44,
+  efunc_Configm_SetTreeOptCycles = 45,
+  efunc_PrintHelp = 46,
+  efunc_PrintVersion = 47,
+  efunc_Configm_TempDir = 48,
+  efunc_Configm_OverwriteExistRasls = 49,
+  efunc_Configm_SetSearchFolder = 50,
+  efunc_gen_Map_Z1 = 51,
+  efunc_GetOpt = 52,
+  efunc_gen_ParseCommandLine_L1 = 53,
+  efunc_MapReduce = 54,
+  efunc_gen_ParseCommandLine_L2 = 55,
+  efunc_gen_ParseCommandLine_L3 = 56,
+  efunc_gen_ParseCommandLine_L4 = 57,
+  efunc_gen_Update_B1 = 58,
+  efunc_Prout = 59,
+  efunc_gen_ParseCommandLine_L4S2L1D7 = 60,
 };
 
 
@@ -76,49 +77,49 @@ enum ident {
   ident_k42_ = 3,
   ident_k63_ = 4,
   ident_m_ = 5,
-  ident_CppCompilerm_Exe = 6,
-  ident_EXE = 7,
-  ident_CppCompilerm_Lib = 8,
-  ident_LIB = 9,
-  ident_CppFlag = 10,
-  ident_CppFlags = 11,
-  ident_DebugInfo = 12,
-  ident_ErrorFile = 13,
-  ident_GrammarCheck = 14,
-  ident_Incorporated = 15,
-  ident_MarkupContext = 16,
-  ident_Opt = 17,
-  ident_Prefix = 18,
-  ident_Reference = 19,
-  ident_RuntimeFolder = 20,
-  ident_SearchFolder = 21,
-  ident_TargetFileName = 22,
-  ident_TargetModem_Exe = 23,
-  ident_TargetModem_Lib = 24,
-  ident_TargetModem_R = 25,
-  ident_R = 26,
-  ident_TargetModem_C = 27,
-  ident_CompileOnly = 28,
-  ident_TargetSuffixm_Exe = 29,
-  ident_TargetSuffixm_Lib = 30,
-  ident_ChmodXCommand = 31,
-  ident_Prelude = 32,
-  ident_ClassicMode = 33,
-  ident_Classic = 34,
-  ident_ExtendedMode = 35,
-  ident_Extended = 36,
-  ident_Log = 37,
-  ident_TreeOptCycles = 38,
-  ident_Help = 39,
-  ident_Version = 40,
-  ident_KeepRasls = 41,
-  ident_True = 42,
+  ident_True = 6,
+  ident_CppCompilerm_Exe = 7,
+  ident_EXE = 8,
+  ident_CppCompilerm_Lib = 9,
+  ident_LIB = 10,
+  ident_CppFlag = 11,
+  ident_CppFlags = 12,
+  ident_DebugInfo = 13,
+  ident_ErrorFile = 14,
+  ident_GrammarCheck = 15,
+  ident_Incorporated = 16,
+  ident_MarkupContext = 17,
+  ident_Opt = 18,
+  ident_Prefix = 19,
+  ident_Reference = 20,
+  ident_RuntimeFolder = 21,
+  ident_SearchFolder = 22,
+  ident_TargetFileName = 23,
+  ident_TargetModem_Exe = 24,
+  ident_TargetModem_Lib = 25,
+  ident_TargetModem_R = 26,
+  ident_R = 27,
+  ident_TargetModem_C = 28,
+  ident_CompileOnly = 29,
+  ident_TargetSuffixm_Exe = 30,
+  ident_TargetSuffixm_Lib = 31,
+  ident_ChmodXCommand = 32,
+  ident_Prelude = 33,
+  ident_ClassicMode = 34,
+  ident_Classic = 35,
+  ident_ExtendedMode = 36,
+  ident_Extended = 37,
+  ident_Log = 38,
+  ident_TreeOptCycles = 39,
+  ident_Help = 40,
+  ident_Version = 41,
+  ident_KeepRasls = 42,
   ident_DontKeepRasls = 43,
   ident_False = 44,
   ident_TempDir = 45,
   ident_REF5RSLm_Env = 46,
-  ident_RenameExistRasls = 47,
-  ident_DontRenameExistRasls = 48,
+  ident_OverwriteExistRasls = 47,
+  ident_DontOverwriteExistRasls = 48,
   ident_REF5RSL = 49,
   ident_FILE = 50,
   ident_NoRequiredParam = 51,
@@ -232,7 +233,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 3316339153U, 252455384U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 4257791294U, 4125625950U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -293,9 +294,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 252455384UL);
+    refalrts::alloc_number(vm, context[9], 4125625950UL);
     refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 3316339153UL);
+    refalrts::reinit_number(context[5], 4257791294UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -322,8 +323,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 3316339153UL);
-  refalrts::reinit_number(context[7], 252455384UL);
+  refalrts::reinit_number(context[5], 4257791294UL);
+  refalrts::reinit_number(context[7], 4125625950UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -335,7 +336,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3316339153U, 252455384U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 4257791294U, 4125625950U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -591,7 +592,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3316339153U, 252455384U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 4257791294U, 4125625950U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -691,7 +692,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 3316339153U, 252455384U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", 4257791294U, 4125625950U, func_Residue);
 
 
 static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -768,7 +769,7 @@ static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Apply("Apply", 3316339153U, 252455384U, func_Apply);
+static refalrts::NativeReference nat_ref_Apply("Apply", 4257791294U, 4125625950U, func_Apply);
 
 
 static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -841,7 +842,7 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Map("Map", 3316339153U, 252455384U, func_Map);
+static refalrts::NativeReference nat_ref_Map("Map", 4257791294U, 4125625950U, func_Map);
 
 
 static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -922,7 +923,7 @@ static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Reduce("Reduce", 3316339153U, 252455384U, func_Reduce);
+static refalrts::NativeReference nat_ref_Reduce("Reduce", 4257791294U, 4125625950U, func_Reduce);
 
 
 static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -962,7 +963,7 @@ static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Fetch("Fetch", 3316339153U, 252455384U, func_Fetch);
+static refalrts::NativeReference nat_ref_Fetch("Fetch", 4257791294U, 4125625950U, func_Fetch);
 
 
 static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1009,7 +1010,7 @@ static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapAccum("MapAccum", 3316339153U, 252455384U, func_MapAccum);
+static refalrts::NativeReference nat_ref_MapAccum("MapAccum", 4257791294U, 4125625950U, func_MapAccum);
 
 
 static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1110,7 +1111,7 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 3316339153U, 252455384U, func_DoMapAccum);
+static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 4257791294U, 4125625950U, func_DoMapAccum);
 
 
 static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1173,7 +1174,7 @@ static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", 3316339153U, 252455384U, func_DoMapAccumm_Aux);
+static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", 4257791294U, 4125625950U, func_DoMapAccumm_Aux);
 
 
 static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1211,7 +1212,7 @@ static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapReduce("MapReduce", 3316339153U, 252455384U, func_MapReduce);
+static refalrts::NativeReference nat_ref_MapReduce("MapReduce", 4257791294U, 4125625950U, func_MapReduce);
 
 
 static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1251,7 +1252,7 @@ static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UnBracket("UnBracket", 3316339153U, 252455384U, func_UnBracket);
+static refalrts::NativeReference nat_ref_UnBracket("UnBracket", 4257791294U, 4125625950U, func_UnBracket);
 
 
 static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1287,7 +1288,7 @@ static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", 3316339153U, 252455384U, func_DelAccumulator);
+static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", 4257791294U, 4125625950U, func_DelAccumulator);
 
 
 static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1324,7 +1325,7 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 3316339153U, 252455384U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", 4257791294U, 4125625950U, func_Inc);
 
 
 static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1394,7 +1395,7 @@ static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Dec("Dec", 3316339153U, 252455384U, func_Dec);
+static refalrts::NativeReference nat_ref_Dec("Dec", 4257791294U, 4125625950U, func_Dec);
 
 
 static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1455,7 +1456,7 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 3316339153U, 252455384U, func_gen_Pipe_S2L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 4257791294U, 4125625950U, func_gen_Pipe_S2L1);
 
 
 static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1487,7 +1488,7 @@ static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 3316339153U, 252455384U, func_gen_Pipe_S3L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 4257791294U, 4125625950U, func_gen_Pipe_S3L1);
 
 
 static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1575,7 +1576,7 @@ static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Pipe("Pipe", 3316339153U, 252455384U, func_Pipe);
+static refalrts::NativeReference nat_ref_Pipe("Pipe", 4257791294U, 4125625950U, func_Pipe);
 
 
 static refalrts::FnResult func_Seq(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1605,7 +1606,7 @@ static refalrts::FnResult func_Seq(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Seq("Seq", 3316339153U, 252455384U, func_Seq);
+static refalrts::NativeReference nat_ref_Seq("Seq", 4257791294U, 4125625950U, func_Seq);
 
 
 static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1653,7 +1654,65 @@ static refalrts::FnResult func_gen_ParseCommandLine_L1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 3316339153U, 252455384U, func_gen_ParseCommandLine_L1);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L1("ParseCommandLine\\1", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L1);
+
+
+static refalrts::FnResult func_gen_ParseCommandLine_L2S18A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 14 elems
+  refalrts::Iter context[14];
+  refalrts::zeros( context, 14 );
+  // </0 & ParseCommandLine\2$18=1/4 s.Num#2/9 (/7 t.Config#3/10 e.Errors#3/5 )/8 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  context[11] = refalrts::tvar_left( context[10], context[5], context[6] );
+  if( ! context[11] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Errors#3 as range 5
+  //DEBUG: s.Num#2: 9
+  //DEBUG: t.Config#3: 10
+  //DEBUG: e.Errors#3: 5
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#3/10 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#3/5 } )/12 & Config-KeepRasls/13 Tile{ AsIs: s.Num#2/9 } Tile{ HalfReuse: # True/8 AsIs: >/1 ]] }
+  refalrts::alloc_close_bracket(vm, context[12]);
+  refalrts::alloc_name(vm, context[13], functions[efunc_Configm_KeepRasls]);
+  refalrts::update_name(context[4], functions[efunc_Update]);
+  refalrts::reinit_ident(context[8], identifiers[ident_True]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[7], context[12] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[8];
+  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[10], context[11] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2S18A1("ParseCommandLine\\2$18=1", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L2S18A1);
 
 
 static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2345,22 +2404,33 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
       //DEBUG: e.Errors#2: 21
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-SetTargetMode/17 AsIs: s.Num#2/18 HalfReuse: # CompileOnly/12 AsIs: >/1 ]] }
-      refalrts::update_name(context[4], functions[efunc_Update]);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ParseCommandLine\2$18=1/4 HalfReuse: s.Num2 #18/7 } Tile{ HalfReuse: </8 } & Update/23 Tile{ AsIs: t.Config#2/9 } (/24 Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-SetTargetMode/17 AsIs: s.Num#2/18 HalfReuse: # CompileOnly/12 AsIs: >/1 } >/25 Tile{ ]] }
+      refalrts::alloc_name(vm, context[23], functions[efunc_Update]);
+      refalrts::alloc_open_bracket(vm, context[24]);
+      refalrts::alloc_close_call(vm, context[25]);
+      refalrts::update_name(context[4], functions[efunc_gen_ParseCommandLine_L2S18A1]);
+      refalrts::reinit_svar( context[7], context[18] );
+      refalrts::reinit_open_call(context[8]);
       refalrts::reinit_close_bracket(context[11]);
       refalrts::reinit_name(context[17], functions[efunc_Configm_SetTargetMode]);
       refalrts::reinit_ident(context[12], identifiers[ident_CompileOnly]);
-      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[25] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[7], context[11] );
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[8] );
+      refalrts::link_brackets( context[24], context[11] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[11];
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[25], context[25] );
+      res = refalrts::splice_evar( res, context[11], context[1] );
       res = refalrts::splice_evar( res, context[21], context[22] );
-      res = refalrts::splice_evar( res, context[7], context[7] );
+      res = refalrts::splice_evar( res, context[24], context[24] );
       res = refalrts::splice_evar( res, context[9], context[10] );
-      refalrts::splice_to_freelist_open( vm, context[4], res );
+      res = refalrts::splice_evar( res, context[23], context[23] );
+      res = refalrts::splice_evar( res, context[8], context[8] );
+      refalrts::use( res );
       return refalrts::cSuccess;
     } while ( 0 );
     refalrts::stop_sentence(vm);
@@ -2785,18 +2855,18 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
         //DEBUG: e.Errors#2: 21
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # KeepRasls/17 s.Num#2/18 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ AsIs: )/8 HalfReuse: & Config-KeepRasls/11 } Tile{ HalfReuse: # True/12 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-KeepRasls/17 AsIs: s.Num#2/18 HalfReuse: # True/12 AsIs: >/1 ]] }
         refalrts::update_name(context[4], functions[efunc_Update]);
-        refalrts::reinit_name(context[11], functions[efunc_Configm_KeepRasls]);
+        refalrts::reinit_close_bracket(context[11]);
+        refalrts::reinit_name(context[17], functions[efunc_Configm_KeepRasls]);
         refalrts::reinit_ident(context[12], identifiers[ident_True]);
         refalrts::push_stack( vm, context[1] );
         refalrts::push_stack( vm, context[0] );
-        refalrts::link_brackets( context[7], context[8] );
+        refalrts::link_brackets( context[7], context[11] );
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
-        refalrts::Iter res = context[12];
-        res = refalrts::splice_evar( res, context[8], context[11] );
+        refalrts::Iter res = context[11];
         res = refalrts::splice_evar( res, context[21], context[22] );
         res = refalrts::splice_evar( res, context[7], context[7] );
         res = refalrts::splice_evar( res, context[9], context[10] );
@@ -2816,18 +2886,18 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
       //DEBUG: e.Errors#2: 21
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # DontKeepRasls/17 s.Num#2/18 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ AsIs: )/8 HalfReuse: & Config-KeepRasls/11 } Tile{ HalfReuse: # False/12 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-KeepRasls/17 AsIs: s.Num#2/18 HalfReuse: # False/12 AsIs: >/1 ]] }
       refalrts::update_name(context[4], functions[efunc_Update]);
-      refalrts::reinit_name(context[11], functions[efunc_Configm_KeepRasls]);
+      refalrts::reinit_close_bracket(context[11]);
+      refalrts::reinit_name(context[17], functions[efunc_Configm_KeepRasls]);
       refalrts::reinit_ident(context[12], identifiers[ident_False]);
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::link_brackets( context[7], context[11] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[12];
-      res = refalrts::splice_evar( res, context[8], context[11] );
+      refalrts::Iter res = context[11];
       res = refalrts::splice_evar( res, context[21], context[22] );
       res = refalrts::splice_evar( res, context[7], context[7] );
       res = refalrts::splice_evar( res, context[9], context[10] );
@@ -2852,18 +2922,19 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
       //DEBUG: e.Name#2: 21
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # TempDir/17 s.Num#2/18 {REMOVED TILE} )/12 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/19 } Tile{ AsIs: )/8 HalfReuse: & Config-TempDir/11 } Tile{ AsIs: e.Name#2/21 } Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/19 } Tile{ HalfReuse: )/11 HalfReuse: & Config-TempDir/17 AsIs: s.Num#2/18 AsIs: e.Name#2/21 HalfReuse: >/12 } Tile{ ]] }
       refalrts::update_name(context[4], functions[efunc_Update]);
-      refalrts::reinit_name(context[11], functions[efunc_Configm_TempDir]);
-      refalrts::push_stack( vm, context[1] );
+      refalrts::reinit_close_bracket(context[11]);
+      refalrts::reinit_name(context[17], functions[efunc_Configm_TempDir]);
+      refalrts::reinit_close_call(context[12]);
+      refalrts::push_stack( vm, context[12] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::link_brackets( context[7], context[11] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      res = refalrts::splice_evar( res, context[21], context[22] );
-      res = refalrts::splice_evar( res, context[8], context[11] );
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[11], context[12] );
       res = refalrts::splice_evar( res, context[19], context[20] );
       res = refalrts::splice_evar( res, context[7], context[7] );
       res = refalrts::splice_evar( res, context[9], context[10] );
@@ -2904,10 +2975,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/21 )/8 (/11 # RenameExistRasls/17 s.Num#2/18 )/12 >/1
+      // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/21 )/8 (/11 # OverwriteExistRasls/17 s.Num#2/18 )/12 >/1
       context[21] = context[19];
       context[22] = context[20];
-      if( ! refalrts::ident_term( identifiers[ident_RenameExistRasls], context[17] ) )
+      if( ! refalrts::ident_term( identifiers[ident_OverwriteExistRasls], context[17] ) )
         continue;
       // closed e.Errors#2 as range 21
       //DEBUG: t.Config#2: 9
@@ -2915,18 +2986,18 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
       //DEBUG: e.Errors#2: 21
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # RenameExistRasls/17 s.Num#2/18 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ AsIs: )/8 HalfReuse: & Config-RenameExistRasls/11 } Tile{ HalfReuse: # True/12 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-OverwriteExistRasls/17 AsIs: s.Num#2/18 HalfReuse: # True/12 AsIs: >/1 ]] }
       refalrts::update_name(context[4], functions[efunc_Update]);
-      refalrts::reinit_name(context[11], functions[efunc_Configm_RenameExistRasls]);
+      refalrts::reinit_close_bracket(context[11]);
+      refalrts::reinit_name(context[17], functions[efunc_Configm_OverwriteExistRasls]);
       refalrts::reinit_ident(context[12], identifiers[ident_True]);
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::link_brackets( context[7], context[11] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[12];
-      res = refalrts::splice_evar( res, context[8], context[11] );
+      refalrts::Iter res = context[11];
       res = refalrts::splice_evar( res, context[21], context[22] );
       res = refalrts::splice_evar( res, context[7], context[7] );
       res = refalrts::splice_evar( res, context[9], context[10] );
@@ -2935,10 +3006,10 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/21 )/8 (/11 # DontRenameExistRasls/17 s.Num#2/18 )/12 >/1
+    // </0 & ParseCommandLine\2/4 (/7 t.Config#2/9 e.Errors#2/21 )/8 (/11 # DontOverwriteExistRasls/17 s.Num#2/18 )/12 >/1
     context[21] = context[19];
     context[22] = context[20];
-    if( ! refalrts::ident_term( identifiers[ident_DontRenameExistRasls], context[17] ) )
+    if( ! refalrts::ident_term( identifiers[ident_DontOverwriteExistRasls], context[17] ) )
       continue;
     // closed e.Errors#2 as range 21
     //DEBUG: t.Config#2: 9
@@ -2946,18 +3017,18 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
     //DEBUG: e.Errors#2: 21
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # DontRenameExistRasls/17 s.Num#2/18 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ AsIs: )/8 HalfReuse: & Config-RenameExistRasls/11 } Tile{ HalfReuse: # False/12 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update/4 } Tile{ AsIs: t.Config#2/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Errors#2/21 } Tile{ HalfReuse: )/11 HalfReuse: & Config-OverwriteExistRasls/17 AsIs: s.Num#2/18 HalfReuse: # False/12 AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_Update]);
-    refalrts::reinit_name(context[11], functions[efunc_Configm_RenameExistRasls]);
+    refalrts::reinit_close_bracket(context[11]);
+    refalrts::reinit_name(context[17], functions[efunc_Configm_OverwriteExistRasls]);
     refalrts::reinit_ident(context[12], identifiers[ident_False]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[7], context[8] );
+    refalrts::link_brackets( context[7], context[11] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[12];
-    res = refalrts::splice_evar( res, context[8], context[11] );
+    refalrts::Iter res = context[11];
     res = refalrts::splice_evar( res, context[21], context[22] );
     res = refalrts::splice_evar( res, context[7], context[7] );
     res = refalrts::splice_evar( res, context[9], context[10] );
@@ -2984,7 +3055,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L2(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 3316339153U, 252455384U, func_gen_ParseCommandLine_L2);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L2("ParseCommandLine\\2", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L2);
 
 
 static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3124,7 +3195,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L3(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 3316339153U, 252455384U, func_gen_ParseCommandLine_L3);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L3("ParseCommandLine\\3", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L3);
 
 
 static refalrts::FnResult func_gen_ParseCommandLine_L4S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3385,7 +3456,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L4S2L1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L4S2L1("ParseCommandLine\\4$2\\1", 3316339153U, 252455384U, func_gen_ParseCommandLine_L4S2L1);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L4S2L1("ParseCommandLine\\4$2\\1", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L4S2L1);
 
 
 static refalrts::FnResult func_gen_ParseCommandLine_L4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3463,7 +3534,7 @@ static refalrts::FnResult func_gen_ParseCommandLine_L4(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L4("ParseCommandLine\\4", 3316339153U, 252455384U, func_gen_ParseCommandLine_L4);
+static refalrts::NativeReference nat_ref_gen_ParseCommandLine_L4("ParseCommandLine\\4", 4257791294U, 4125625950U, func_gen_ParseCommandLine_L4);
 
 
 static refalrts::FnResult func_ParseCommandLine(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3472,9 +3543,9 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::VM *vm, refalrts::Iter
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 369 elems
-  refalrts::Iter context[369];
-  refalrts::zeros( context, 369 );
+  // issue here memory for vars with 379 elems
+  refalrts::Iter context[379];
+  refalrts::zeros( context, 379 );
   // </0 & ParseCommandLine/4 e.Arguments#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -3486,7 +3557,7 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::VM *vm, refalrts::Iter
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler-Exe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompiler-Lib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # CppFlag/30 # Required/31 'f'/32 (/33"cppflag"/34 )/36 )/37 (/38 # CppFlags/39 # Required/40 'F'/41 (/42"cppflags"/43 )/45 )/46 (/47 # DebugInfo/48 # None/49 'g'/50 (/51"debug-info"/52 )/54 )/55 (/56 # ErrorFile/57 # Required/58 'e'/59 (/60"error-file"/61 )/63 )/64 (/65 # GrammarCheck/66 # None/67 (/68"grammar-check"/69 )/71 )/72 (/73 # Incorporated/74 # Required/75 (/76"incorporated"/77 )/79 )/80 (/81 # MarkupContext/82 # None/83 (/84"markup-context"/85 )/87 )/88 (/89 # Opt/90 # Required/91 'O'/92 )/93 (/94 # Prefix/95 # Required/96 'p'/97 (/98"prefix"/99 )/101 )/102 (/103 # Reference/104 # Required/105 'r'/106 (/107"reference"/108 )/110 )/111 (/112 # RuntimeFolder/113 # Required/114 'D'/115 (/116"runtime-dir"/117 )/119 (/120"runtime-directory"/121 )/123 )/124 (/125 # SearchFolder/126 # Required/127 'd'/128 (/129"dir"/130 )/132 (/133"directory"/134 )/136 )/137 (/138 # TargetFileName/139 # Required/140 'o'/141 (/142"target-file"/143 )/145 )/146 (/147 # TargetMode-Exe/148 # None/149 'x'/150 (/151"makeexe"/152 )/154 )/155 (/156 # TargetMode-Lib/157 # None/158 'l'/159 (/160"makelib"/161 )/163 )/164 (/165 # TargetMode-R/166 # None/167 'R'/168 )/169 (/170 # TargetMode-C/171 # None/172 'C'/173 (/174"compile-only"/175 )/177 )/178 (/179 # TargetSuffix-Exe/180 # Required/181 (/182"targsuffix"/183 )/185 (/186"targetsuffix"/187 )/189 (/190"targsuf"/191 )/193 (/194"exesuffix"/195 )/197 (/198"exesuf"/199 )/201 )/202 (/203 # TargetSuffix-Lib/204 # Required/205 (/206"libsuffix"/207 )/209 (/210"libsuf"/211 )/213 )/214 (/215 # ChmodXCommand/216 # Required/217 (/218"chmod-x"/219 )/221 (/222"chmod-x-command"/223 )/225 )/226 (/227 # Prelude/228 # Required/229 (/230"prelude"/231 )/233 )/234 (/235 # ClassicMode/236 # None/237 (/238"classic"/239 )/241 )/242 (/243 # ExtendedMode/244 # None/245 (/246"extended"/247 )/249 )/250 (/251 # Log/252 # Required/253 (/254"log"/255 )/257 )/258 (/259 # TreeOptCycles/260 # Required/261 (/262"opt-tree-cycles"/263 )/265 )/266 (/267 # Incorporated/268 # Required/269 (/270"incorporated"/271 )/273 )/274 (/275 # Help/276 # None/277"h?"/278 (/280"help"/281 )/283 )/284 (/285 # Version/286 # None/287 'v'/288 (/289"version"/290 )/292 )/293 (/294 # KeepRasls/295 # None/296 (/297"keep-rasl"/298 )/300 (/301"keep-rasls"/302 )/304 )/305 (/306 # DontKeepRasls/307 # None/308 (/309"dont-keep-rasl"/310 )/312 (/313"dont-keep-rasls"/314 )/316 )/317 (/318 # TempDir/319 # Required/320 (/321"tmp-dir"/322 )/324 (/325"temp-dir"/326 )/328 )/329 (/330 # REF5RSL-Env/331 # None/332 (/333"ref5rsl"/334 )/336 )/337 (/338 # RenameExistRasls/339 (/340"rename-exist-rasls"/341 )/343 )/344 (/345 # DontRenameExistRasls/346 (/347"dont-rename-exist-rasls"/348 )/350 )/351 )/352 Tile{ AsIs: e.Arguments#1/2 } >/353 [*]/354 & Pipe$2\1/355 & ParseCommandLine\1/356 (/357 (/358 & MapReduce/359 & ParseCommandLine\2/360 )/361 (/362 & MapReduce/363 & ParseCommandLine\3/364 )/365 & ParseCommandLine\4/366 )/367 {*}/368 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </5 & GetOpt/6 (/7 (/8 # CppCompiler-Exe/9 # Required/10 'c'/11 (/12"cpp-command"/13 )/15 (/16"cpp-command-exe"/17 )/19 )/20 (/21 # CppCompiler-Lib/22 # Required/23 (/24"cpp-command-lib"/25 )/27 )/28 (/29 # CppFlag/30 # Required/31 'f'/32 (/33"cppflag"/34 )/36 )/37 (/38 # CppFlags/39 # Required/40 'F'/41 (/42"cppflags"/43 )/45 )/46 (/47 # DebugInfo/48 # None/49 'g'/50 (/51"debug-info"/52 )/54 )/55 (/56 # ErrorFile/57 # Required/58 'e'/59 (/60"error-file"/61 )/63 )/64 (/65 # GrammarCheck/66 # None/67 (/68"grammar-check"/69 )/71 )/72 (/73 # Incorporated/74 # Required/75 (/76"incorporated"/77 )/79 )/80 (/81 # MarkupContext/82 # None/83 (/84"markup-context"/85 )/87 )/88 (/89 # Opt/90 # Required/91 'O'/92 )/93 (/94 # Prefix/95 # Required/96 'p'/97 (/98"prefix"/99 )/101 )/102 (/103 # Reference/104 # Required/105 'r'/106 (/107"reference"/108 )/110 )/111 (/112 # RuntimeFolder/113 # Required/114 'D'/115 (/116"runtime-dir"/117 )/119 (/120"runtime-directory"/121 )/123 )/124 (/125 # SearchFolder/126 # Required/127 'd'/128 (/129"dir"/130 )/132 (/133"directory"/134 )/136 )/137 (/138 # TargetFileName/139 # Required/140 'o'/141 (/142"target-file"/143 )/145 )/146 (/147 # TargetMode-Exe/148 # None/149 'x'/150 (/151"makeexe"/152 )/154 )/155 (/156 # TargetMode-Lib/157 # None/158 'l'/159 (/160"makelib"/161 )/163 )/164 (/165 # TargetMode-R/166 # None/167 'R'/168 )/169 (/170 # TargetMode-C/171 # None/172 'C'/173 (/174"compile-only"/175 )/177 )/178 (/179 # TargetSuffix-Exe/180 # Required/181 (/182"targsuffix"/183 )/185 (/186"targetsuffix"/187 )/189 (/190"targsuf"/191 )/193 (/194"exesuffix"/195 )/197 (/198"exesuf"/199 )/201 )/202 (/203 # TargetSuffix-Lib/204 # Required/205 (/206"libsuffix"/207 )/209 (/210"libsuf"/211 )/213 )/214 (/215 # ChmodXCommand/216 # Required/217 (/218"chmod-x"/219 )/221 (/222"chmod-x-command"/223 )/225 )/226 (/227 # Prelude/228 # Required/229 (/230"prelude"/231 )/233 )/234 (/235 # ClassicMode/236 # None/237 (/238"classic"/239 )/241 )/242 (/243 # ExtendedMode/244 # None/245 (/246"extended"/247 )/249 )/250 (/251 # Log/252 # Required/253 (/254"log"/255 )/257 )/258 (/259 # TreeOptCycles/260 # Required/261 (/262"opt-tree-cycles"/263 )/265 )/266 (/267 # Incorporated/268 # Required/269 (/270"incorporated"/271 )/273 )/274 (/275 # Help/276 # None/277"h?"/278 (/280"help"/281 )/283 )/284 (/285 # Version/286 # None/287 'v'/288 (/289"version"/290 )/292 )/293 (/294 # KeepRasls/295 # None/296 (/297"keep-rasl"/298 )/300 (/301"keep-rasls"/302 )/304 )/305 (/306 # DontKeepRasls/307 # None/308 (/309"dont-keep-rasl"/310 )/312 (/313"dont-keep-rasls"/314 )/316 )/317 (/318 # TempDir/319 # Required/320 (/321"tmp-dir"/322 )/324 (/325"temp-dir"/326 )/328 )/329 (/330 # REF5RSL-Env/331 # None/332 (/333"ref5rsl"/334 )/336 )/337 (/338 # OverwriteExistRasls/339 # None/340 (/341"overwrite-exist-rasls"/342 )/344 (/345"overwrite-exist-rasl"/346 )/348 )/349 (/350 # DontOverwriteExistRasls/351 # None/352 (/353"dont-overwrite-exist-rasls"/354 )/356 (/357"dont-overwrite-exist-rasl"/358 )/360 )/361 )/362 Tile{ AsIs: e.Arguments#1/2 } >/363 [*]/364 & Pipe$2\1/365 & ParseCommandLine\1/366 (/367 (/368 & MapReduce/369 & ParseCommandLine\2/370 )/371 (/372 & MapReduce/373 & ParseCommandLine\3/374 )/375 & ParseCommandLine\4/376 )/377 {*}/378 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_GetOpt]);
   refalrts::alloc_open_bracket(vm, context[7]);
@@ -3776,47 +3847,57 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::VM *vm, refalrts::Iter
   refalrts::alloc_close_bracket(vm, context[336]);
   refalrts::alloc_close_bracket(vm, context[337]);
   refalrts::alloc_open_bracket(vm, context[338]);
-  refalrts::alloc_ident(vm, context[339], identifiers[ident_RenameExistRasls]);
-  refalrts::alloc_open_bracket(vm, context[340]);
-  refalrts::alloc_chars(vm, context[341], context[342], "rename-exist-rasls", 18);
-  refalrts::alloc_close_bracket(vm, context[343]);
+  refalrts::alloc_ident(vm, context[339], identifiers[ident_OverwriteExistRasls]);
+  refalrts::alloc_ident(vm, context[340], identifiers[ident_None]);
+  refalrts::alloc_open_bracket(vm, context[341]);
+  refalrts::alloc_chars(vm, context[342], context[343], "overwrite-exist-rasls", 21);
   refalrts::alloc_close_bracket(vm, context[344]);
   refalrts::alloc_open_bracket(vm, context[345]);
-  refalrts::alloc_ident(vm, context[346], identifiers[ident_DontRenameExistRasls]);
-  refalrts::alloc_open_bracket(vm, context[347]);
-  refalrts::alloc_chars(vm, context[348], context[349], "dont-rename-exist-rasls", 23);
-  refalrts::alloc_close_bracket(vm, context[350]);
-  refalrts::alloc_close_bracket(vm, context[351]);
-  refalrts::alloc_close_bracket(vm, context[352]);
-  refalrts::alloc_close_call(vm, context[353]);
-  refalrts::alloc_closure_head(vm, context[354]);
-  refalrts::alloc_name(vm, context[355], functions[efunc_gen_Pipe_S2L1]);
-  refalrts::alloc_name(vm, context[356], functions[efunc_gen_ParseCommandLine_L1]);
+  refalrts::alloc_chars(vm, context[346], context[347], "overwrite-exist-rasl", 20);
+  refalrts::alloc_close_bracket(vm, context[348]);
+  refalrts::alloc_close_bracket(vm, context[349]);
+  refalrts::alloc_open_bracket(vm, context[350]);
+  refalrts::alloc_ident(vm, context[351], identifiers[ident_DontOverwriteExistRasls]);
+  refalrts::alloc_ident(vm, context[352], identifiers[ident_None]);
+  refalrts::alloc_open_bracket(vm, context[353]);
+  refalrts::alloc_chars(vm, context[354], context[355], "dont-overwrite-exist-rasls", 26);
+  refalrts::alloc_close_bracket(vm, context[356]);
   refalrts::alloc_open_bracket(vm, context[357]);
-  refalrts::alloc_open_bracket(vm, context[358]);
-  refalrts::alloc_name(vm, context[359], functions[efunc_MapReduce]);
-  refalrts::alloc_name(vm, context[360], functions[efunc_gen_ParseCommandLine_L2]);
+  refalrts::alloc_chars(vm, context[358], context[359], "dont-overwrite-exist-rasl", 25);
+  refalrts::alloc_close_bracket(vm, context[360]);
   refalrts::alloc_close_bracket(vm, context[361]);
-  refalrts::alloc_open_bracket(vm, context[362]);
-  refalrts::alloc_name(vm, context[363], functions[efunc_MapReduce]);
-  refalrts::alloc_name(vm, context[364], functions[efunc_gen_ParseCommandLine_L3]);
-  refalrts::alloc_close_bracket(vm, context[365]);
-  refalrts::alloc_name(vm, context[366], functions[efunc_gen_ParseCommandLine_L4]);
-  refalrts::alloc_close_bracket(vm, context[367]);
-  refalrts::alloc_unwrapped_closure(vm, context[368], context[354]);
+  refalrts::alloc_close_bracket(vm, context[362]);
+  refalrts::alloc_close_call(vm, context[363]);
+  refalrts::alloc_closure_head(vm, context[364]);
+  refalrts::alloc_name(vm, context[365], functions[efunc_gen_Pipe_S2L1]);
+  refalrts::alloc_name(vm, context[366], functions[efunc_gen_ParseCommandLine_L1]);
+  refalrts::alloc_open_bracket(vm, context[367]);
+  refalrts::alloc_open_bracket(vm, context[368]);
+  refalrts::alloc_name(vm, context[369], functions[efunc_MapReduce]);
+  refalrts::alloc_name(vm, context[370], functions[efunc_gen_ParseCommandLine_L2]);
+  refalrts::alloc_close_bracket(vm, context[371]);
+  refalrts::alloc_open_bracket(vm, context[372]);
+  refalrts::alloc_name(vm, context[373], functions[efunc_MapReduce]);
+  refalrts::alloc_name(vm, context[374], functions[efunc_gen_ParseCommandLine_L3]);
+  refalrts::alloc_close_bracket(vm, context[375]);
+  refalrts::alloc_name(vm, context[376], functions[efunc_gen_ParseCommandLine_L4]);
+  refalrts::alloc_close_bracket(vm, context[377]);
+  refalrts::alloc_unwrapped_closure(vm, context[378], context[364]);
   refalrts::update_name(context[4], functions[efunc_Fetch]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[357], context[367] );
-  refalrts::link_brackets( context[362], context[365] );
-  refalrts::link_brackets( context[358], context[361] );
-  refalrts::push_stack( vm, context[353] );
+  refalrts::link_brackets( context[367], context[377] );
+  refalrts::link_brackets( context[372], context[375] );
+  refalrts::link_brackets( context[368], context[371] );
+  refalrts::push_stack( vm, context[363] );
   refalrts::push_stack( vm, context[5] );
-  refalrts::link_brackets( context[7], context[352] );
-  refalrts::link_brackets( context[345], context[351] );
-  refalrts::link_brackets( context[347], context[350] );
-  refalrts::link_brackets( context[338], context[344] );
-  refalrts::link_brackets( context[340], context[343] );
+  refalrts::link_brackets( context[7], context[362] );
+  refalrts::link_brackets( context[350], context[361] );
+  refalrts::link_brackets( context[357], context[360] );
+  refalrts::link_brackets( context[353], context[356] );
+  refalrts::link_brackets( context[338], context[349] );
+  refalrts::link_brackets( context[345], context[348] );
+  refalrts::link_brackets( context[341], context[344] );
   refalrts::link_brackets( context[330], context[337] );
   refalrts::link_brackets( context[333], context[336] );
   refalrts::link_brackets( context[318], context[329] );
@@ -3898,18 +3979,18 @@ static refalrts::FnResult func_ParseCommandLine(refalrts::VM *vm, refalrts::Iter
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[353], context[368] );
+  res = refalrts::splice_evar( res, context[363], context[378] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[352] );
+  res = refalrts::splice_evar( res, context[5], context[362] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[368] );
+  refalrts::wrap_closure( context[378] );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_ParseCommandLine("ParseCommandLine", 0U, 0U, func_ParseCommandLine);
 
 
-static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_Update_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3918,14 +3999,14 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter ar
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Update\1/4 e.new#0/2 >/1
+  // </0 & Update:1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & Update\1/4 (/7 e.new#1/5 )/8 t.new#2/9 s.new#3/11 s.new#4/12 e.new#5/2 >/1
+  // </0 & Update:1/4 (/7 e.new#1/5 )/8 t.new#2/9 s.new#3/11 s.new#4/12 e.new#5/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -3942,7 +4023,7 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter ar
     return refalrts::cRecognitionImpossible;
   // closed e.new#5 as range 2
   do {
-    // </0 & Update\1/4 (/7 e.Errors#1/13 )/8 t.Config#1/9 s.LineNum#1/11 # Success/12 t.Config#2/17 >/1
+    // </0 & Update:1/4 (/7 e.Errors#1/13 )/8 t.Config#1/9 s.LineNum#1/11 # Success/12 t.Config#2/17 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[2];
@@ -3961,7 +4042,7 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter ar
     //DEBUG: t.Config#2: 17
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Update\1/4 (/7 {REMOVED TILE} )/8 t.Config#1/9 s.LineNum#1/11 {REMOVED TILE} {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & Update:1/4 (/7 {REMOVED TILE} )/8 t.Config#1/9 s.LineNum#1/11 {REMOVED TILE} {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: (/12 AsIs: t.Config#2/17 } Tile{ AsIs: e.Errors#1/13 } Tile{ HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket(context[12]);
     refalrts::reinit_close_bracket(context[1]);
@@ -3976,7 +4057,7 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter ar
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Update\1/4 (/7 e.Errors#1/5 )/8 t.Config#1/9 s.LineNum#1/11 # Fails/12 e.ErrorMessage#2/2 >/1
+  // </0 & Update:1/4 (/7 e.Errors#1/5 )/8 t.Config#1/9 s.LineNum#1/11 # Fails/12 e.ErrorMessage#2/2 >/1
   if( ! refalrts::ident_term( identifiers[ident_Fails], context[12] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.Errors#1 as range 5
@@ -4007,7 +4088,7 @@ static refalrts::FnResult func_gen_Update_L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Update_L1("Update\\1", 3316339153U, 252455384U, func_gen_Update_L1);
+static refalrts::NativeReference nat_ref_gen_Update_B1("Update:1", 4257791294U, 4125625950U, func_gen_Update_B1);
 
 
 static refalrts::FnResult func_Update(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4016,9 +4097,9 @@ static refalrts::FnResult func_Update(refalrts::VM *vm, refalrts::Iter arg_begin
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 20 elems
-  refalrts::Iter context[20];
-  refalrts::zeros( context, 20 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
   // </0 & Update/4 t.Config#1/5 (/9 e.Errors#1/7 )/10 s.Updater#1/11 s.LineNum#1/12 e.Option#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -4048,37 +4129,32 @@ static refalrts::FnResult func_Update(refalrts::VM *vm, refalrts::Iter arg_begin
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </13 Tile{ AsIs: s.Updater#1/11 } Tile{ AsIs: t.Config#1/5 } Tile{ AsIs: e.Option#1/2 } >/14 [*]/15 & Update\1/16 Tile{ AsIs: (/9 AsIs: e.Errors#1/7 AsIs: )/10 } t.Config#1/5/17 Tile{ AsIs: s.LineNum#1/12 } {*}/19 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Update:1/4 } Tile{ AsIs: (/9 AsIs: e.Errors#1/7 AsIs: )/10 } Tile{ AsIs: t.Config#1/5 } Tile{ AsIs: s.LineNum#1/12 } </13 Tile{ AsIs: s.Updater#1/11 } t.Config#1/5/14 Tile{ AsIs: e.Option#1/2 } >/16 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[13]);
-  refalrts::alloc_close_call(vm, context[14]);
-  refalrts::alloc_closure_head(vm, context[15]);
-  refalrts::alloc_name(vm, context[16], functions[efunc_gen_Update_L1]);
-  refalrts::copy_evar(vm, context[17], context[18], context[5], context[6]);
-  refalrts::alloc_unwrapped_closure(vm, context[19], context[15]);
-  refalrts::update_name(context[4], functions[efunc_Fetch]);
+  refalrts::copy_evar(vm, context[14], context[15], context[5], context[6]);
+  refalrts::alloc_close_call(vm, context[16]);
+  refalrts::update_name(context[4], functions[efunc_gen_Update_B1]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[9], context[10] );
-  refalrts::push_stack( vm, context[14] );
+  refalrts::push_stack( vm, context[16] );
   refalrts::push_stack( vm, context[13] );
+  refalrts::link_brackets( context[9], context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[19], context[19] );
-  res = refalrts::splice_evar( res, context[12], context[12] );
-  res = refalrts::splice_evar( res, context[17], context[18] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[14], context[16] );
+  res = refalrts::splice_evar( res, context[16], context[16] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[14], context[15] );
   res = refalrts::splice_evar( res, context[11], context[11] );
   res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_evar( res, context[12], context[12] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
   refalrts::use( res );
-  refalrts::wrap_closure( context[19] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Update("Update", 3316339153U, 252455384U, func_Update);
+static refalrts::NativeReference nat_ref_Update("Update", 4257791294U, 4125625950U, func_Update);
 
 
 static refalrts::FnResult func_PrintHelp(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4101,8 +4177,8 @@ static refalrts::FnResult func_PrintHelp(refalrts::VM *vm, refalrts::Iter arg_be
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: 's'/1 }"refc-core flags... filenames...\nsrefc-core @flag-list-file.txt\n\n-c, --cpp-command, --cpp-command-exe command-line\n        C++ command line prefix for building executable module\n--cpp-command-lib command-line\n        C++ command line prefix for building library module\n-f, --cpp-flag flag\n        Additional flag for C++ compiler, quoted in command line\n-F, --cpp-flags flags\n        Additional flags for C++ compiler, don\'t quoted in command line\n-g, --debug-info\n        Information of variable table for step-by-step debugger\n-e, --error-file filename\n        Compiler creates empty file with this name if compilation failed\n--grammar-check\n        Dont compile sources, only syntax (w/o semantic) check for sources\n--incorporated filename\n        Marks that a module with the name is statically linked to this module\n--markup-context\n        Save catched variable names in closure content\n-O keys[change]\n        Optimization keys:\n          -OP - conjoint pattern optimization\n          -OQ - extended conjoint pattern optimization\n          -OR - building result optimization\n          -Od - use direct code generation instead interpretation code,\n                compile functions to C++ instead RASL\n          -OT - tree optimization (expands direct calls for closures)\n          -OD - drive functions with $DRIVE, inline functions with $INLINE\n          -OI - inline functions with $DRIVE and $INLINE\n          -OS - specialize functions with $SPEC\n        Flags D, I, S implicitly contain T\n        Change key mode (optional):\n          -O...+ - set the flags with previous setted\n          -O...- - reject the flags from previous setted\n          -O...= - assign the flags, previous setted will be skipped\n-p, --prefix prefix-name\n        set prefix file name\n-r, --reference reference-name\n        Compiled module depends from the reference\n-D, --runtime-dir, --runtime-directory dir\n        Add the directory to search list and include list for C++ compiler\n-d, --dir, --directory dir\n        Add the directory to search list\n-o, --target-file target-file-name\n        Name of target file\n-x, --makeexe\n        Compile to executable file\n-l, --makelib\n        Compile to library file (with or w/o native code)\n-R      Compile to library RASL module (w/o native code)\n-C, --compile-only\n        Compile sources w/o linking\n--targsuffix, --targetsuffix, --targsuf, --exesuffix, --exesuf suffix\n        Suffix for executable file (for example, .exe)\n--libsuffix, --libsuf suffix\n        Suffix for library file (for example, .dll or .so)\n--chmod-x, --chmod-x-command command\n        Must be empty on Windws, \"chmod +x\" on POSIX\n--prelude filename.refi\n        Prelude file with builtin functions declarations\n--classic, --extended\n        Switch Refal-5-lambda syntax analyzer to full compatibility\n        with classic Refal-5 or not. Default is --extended\n--log logfile.log\n        Logs compilation process. Compiler writes to log syntax tree\n        after desugaring, after tree optimization, high-leve RASL\n--opt-tree-cycles number\n        Max number of tree optimization passes\n--help  Print this help\n--version\n        Print version\n--keep-rasl, --keep-rasls, --dont-keep-rasl, --dont-keep-rasls\n        Save or don\'t save temporary .rasl after compilation\n--tmp-dir, --temp-dir directory\n        Directory for intermediate .rasl files, current is default\n--ref5rsl\n        Use environment variable REF5RSL as search path\n--rename-exist-rasls, --dont-rename-exist-rasls\n        If tmp-dir already contain file with name that being produced\n        new file use new name\n\nLong keys with params may be used with equation:\n--tmp-dir dirname or --tmp-dir=dirname\n\nEach line of arg-list-file.txt is interpreted as independed key\n"/5 >/7 Tile{ ]] }
-  refalrts::alloc_chars(vm, context[5], context[6], "refc-core flags... filenames...\nsrefc-core @flag-list-file.txt\n\n-c, --cpp-command, --cpp-command-exe command-line\n        C++ command line prefix for building executable module\n--cpp-command-lib command-line\n        C++ command line prefix for building library module\n-f, --cpp-flag flag\n        Additional flag for C++ compiler, quoted in command line\n-F, --cpp-flags flags\n        Additional flags for C++ compiler, don\'t quoted in command line\n-g, --debug-info\n        Information of variable table for step-by-step debugger\n-e, --error-file filename\n        Compiler creates empty file with this name if compilation failed\n--grammar-check\n        Dont compile sources, only syntax (w/o semantic) check for sources\n--incorporated filename\n        Marks that a module with the name is statically linked to this module\n--markup-context\n        Save catched variable names in closure content\n-O keys[change]\n        Optimization keys:\n          -OP - conjoint pattern optimization\n          -OQ - extended conjoint pattern optimization\n          -OR - building result optimization\n          -Od - use direct code generation instead interpretation code,\n                compile functions to C++ instead RASL\n          -OT - tree optimization (expands direct calls for closures)\n          -OD - drive functions with $DRIVE, inline functions with $INLINE\n          -OI - inline functions with $DRIVE and $INLINE\n          -OS - specialize functions with $SPEC\n        Flags D, I, S implicitly contain T\n        Change key mode (optional):\n          -O...+ - set the flags with previous setted\n          -O...- - reject the flags from previous setted\n          -O...= - assign the flags, previous setted will be skipped\n-p, --prefix prefix-name\n        set prefix file name\n-r, --reference reference-name\n        Compiled module depends from the reference\n-D, --runtime-dir, --runtime-directory dir\n        Add the directory to search list and include list for C++ compiler\n-d, --dir, --directory dir\n        Add the directory to search list\n-o, --target-file target-file-name\n        Name of target file\n-x, --makeexe\n        Compile to executable file\n-l, --makelib\n        Compile to library file (with or w/o native code)\n-R      Compile to library RASL module (w/o native code)\n-C, --compile-only\n        Compile sources w/o linking\n--targsuffix, --targetsuffix, --targsuf, --exesuffix, --exesuf suffix\n        Suffix for executable file (for example, .exe)\n--libsuffix, --libsuf suffix\n        Suffix for library file (for example, .dll or .so)\n--chmod-x, --chmod-x-command command\n        Must be empty on Windws, \"chmod +x\" on POSIX\n--prelude filename.refi\n        Prelude file with builtin functions declarations\n--classic, --extended\n        Switch Refal-5-lambda syntax analyzer to full compatibility\n        with classic Refal-5 or not. Default is --extended\n--log logfile.log\n        Logs compilation process. Compiler writes to log syntax tree\n        after desugaring, after tree optimization, high-leve RASL\n--opt-tree-cycles number\n        Max number of tree optimization passes\n--help  Print this help\n--version\n        Print version\n--keep-rasl, --keep-rasls, --dont-keep-rasl, --dont-keep-rasls\n        Save or don\'t save temporary .rasl after compilation\n--tmp-dir, --temp-dir directory\n        Directory for intermediate .rasl files, current is default\n--ref5rsl\n        Use environment variable REF5RSL as search path\n--rename-exist-rasls, --dont-rename-exist-rasls\n        If tmp-dir already contain file with name that being produced\n        new file use new name\n\nLong keys with params may be used with equation:\n--tmp-dir dirname or --tmp-dir=dirname\n\nEach line of arg-list-file.txt is interpreted as independed key\n", 3739);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: 's'/1 }"refc-core flags... filenames...\nsrefc-core @flag-list-file.txt\n\n-c, --cpp-command, --cpp-command-exe command-line\n        C++ command line prefix for building executable module\n--cpp-command-lib command-line\n        C++ command line prefix for building library module\n-f, --cpp-flag flag\n        Additional flag for C++ compiler, quoted in command line\n-F, --cpp-flags flags\n        Additional flags for C++ compiler, don\'t quoted in command line\n-g, --debug-info\n        Information of variable table for step-by-step debugger\n-e, --error-file filename\n        Compiler creates empty file with this name if compilation failed\n--grammar-check\n        Dont compile sources, only syntax (w/o semantic) check for sources\n--incorporated filename\n        Marks that a module with the name is statically linked to this module\n--markup-context\n        Save catched variable names in closure content\n-O keys[change]\n        Optimization keys:\n          -OP - conjoint pattern optimization\n          -OQ - extended conjoint pattern optimization\n          -OR - building result optimization\n          -Od - use direct code generation instead interpretation code,\n                compile functions to C++ instead RASL\n          -OT - tree optimization (expands direct calls for closures)\n          -OD - drive functions with $DRIVE, inline functions with $INLINE\n          -OI - inline functions with $DRIVE and $INLINE\n          -OS - specialize functions with $SPEC\n        Flags D, I, S implicitly contain T\n        Change key mode (optional):\n          -O...+ - set the flags with previous setted\n          -O...- - reject the flags from previous setted\n          -O...= - assign the flags, previous setted will be skipped\n-p, --prefix prefix-name\n        set prefix file name\n-r, --reference reference-name\n        Compiled module depends from the reference\n-D, --runtime-dir, --runtime-directory dir\n        Add the directory to search list and include list for C++ compiler\n-d, --dir, --directory dir\n        Add the directory to search list\n-o, --target-file target-file-name\n        Name of target file\n-x, --makeexe\n        Compile to executable file\n-l, --makelib\n        Compile to library file (with or w/o native code)\n-R      Compile to library RASL module (w/o native code)\n-C, --compile-only\n        Compile sources w/o linking\n--targsuffix, --targetsuffix, --targsuf, --exesuffix, --exesuf suffix\n        Suffix for executable file (for example, .exe)\n--libsuffix, --libsuf suffix\n        Suffix for library file (for example, .dll or .so)\n--chmod-x, --chmod-x-command command\n        Must be empty on Windws, \"chmod +x\" on POSIX\n--prelude filename.refi\n        Prelude file with builtin functions declarations\n--classic, --extended\n        Switch Refal-5-lambda syntax analyzer to full compatibility\n        with classic Refal-5 or not. Default is --extended\n--log logfile.log\n        Logs compilation process. Compiler writes to log syntax tree\n        after desugaring, after tree optimization, high-leve RASL\n--opt-tree-cycles number\n        Max number of tree optimization passes\n--help  Print this help\n--version\n        Print version\n--keep-rasl, --keep-rasls, --dont-keep-rasl, --dont-keep-rasls\n        Save or don\'t save temporary .rasl after compilation\n--tmp-dir, --temp-dir directory\n        Directory for intermediate .rasl files, current is default\n--ref5rsl\n        Use environment variable REF5RSL as search path\n--overwrite-exist-rasls, --dont-overwrite-exist-rasls\n        If tmp-dir already contain file with name that being produced\n        new file use new name\n\nLong keys with params may be used with equation:\n--tmp-dir dirname or --tmp-dir=dirname\n\nEach line of arg-list-file.txt is interpreted as independed key\n"/5 >/7 Tile{ ]] }
+  refalrts::alloc_chars(vm, context[5], context[6], "refc-core flags... filenames...\nsrefc-core @flag-list-file.txt\n\n-c, --cpp-command, --cpp-command-exe command-line\n        C++ command line prefix for building executable module\n--cpp-command-lib command-line\n        C++ command line prefix for building library module\n-f, --cpp-flag flag\n        Additional flag for C++ compiler, quoted in command line\n-F, --cpp-flags flags\n        Additional flags for C++ compiler, don\'t quoted in command line\n-g, --debug-info\n        Information of variable table for step-by-step debugger\n-e, --error-file filename\n        Compiler creates empty file with this name if compilation failed\n--grammar-check\n        Dont compile sources, only syntax (w/o semantic) check for sources\n--incorporated filename\n        Marks that a module with the name is statically linked to this module\n--markup-context\n        Save catched variable names in closure content\n-O keys[change]\n        Optimization keys:\n          -OP - conjoint pattern optimization\n          -OQ - extended conjoint pattern optimization\n          -OR - building result optimization\n          -Od - use direct code generation instead interpretation code,\n                compile functions to C++ instead RASL\n          -OT - tree optimization (expands direct calls for closures)\n          -OD - drive functions with $DRIVE, inline functions with $INLINE\n          -OI - inline functions with $DRIVE and $INLINE\n          -OS - specialize functions with $SPEC\n        Flags D, I, S implicitly contain T\n        Change key mode (optional):\n          -O...+ - set the flags with previous setted\n          -O...- - reject the flags from previous setted\n          -O...= - assign the flags, previous setted will be skipped\n-p, --prefix prefix-name\n        set prefix file name\n-r, --reference reference-name\n        Compiled module depends from the reference\n-D, --runtime-dir, --runtime-directory dir\n        Add the directory to search list and include list for C++ compiler\n-d, --dir, --directory dir\n        Add the directory to search list\n-o, --target-file target-file-name\n        Name of target file\n-x, --makeexe\n        Compile to executable file\n-l, --makelib\n        Compile to library file (with or w/o native code)\n-R      Compile to library RASL module (w/o native code)\n-C, --compile-only\n        Compile sources w/o linking\n--targsuffix, --targetsuffix, --targsuf, --exesuffix, --exesuf suffix\n        Suffix for executable file (for example, .exe)\n--libsuffix, --libsuf suffix\n        Suffix for library file (for example, .dll or .so)\n--chmod-x, --chmod-x-command command\n        Must be empty on Windws, \"chmod +x\" on POSIX\n--prelude filename.refi\n        Prelude file with builtin functions declarations\n--classic, --extended\n        Switch Refal-5-lambda syntax analyzer to full compatibility\n        with classic Refal-5 or not. Default is --extended\n--log logfile.log\n        Logs compilation process. Compiler writes to log syntax tree\n        after desugaring, after tree optimization, high-leve RASL\n--opt-tree-cycles number\n        Max number of tree optimization passes\n--help  Print this help\n--version\n        Print version\n--keep-rasl, --keep-rasls, --dont-keep-rasl, --dont-keep-rasls\n        Save or don\'t save temporary .rasl after compilation\n--tmp-dir, --temp-dir directory\n        Directory for intermediate .rasl files, current is default\n--ref5rsl\n        Use environment variable REF5RSL as search path\n--overwrite-exist-rasls, --dont-overwrite-exist-rasls\n        If tmp-dir already contain file with name that being produced\n        new file use new name\n\nLong keys with params may be used with equation:\n--tmp-dir dirname or --tmp-dir=dirname\n\nEach line of arg-list-file.txt is interpreted as independed key\n", 3745);
   refalrts::alloc_close_call(vm, context[7]);
   refalrts::update_name(context[4], functions[efunc_Prout]);
   refalrts::reinit_char(context[1], 's');
@@ -4116,7 +4192,7 @@ static refalrts::FnResult func_PrintHelp(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_PrintHelp("PrintHelp", 3316339153U, 252455384U, func_PrintHelp);
+static refalrts::NativeReference nat_ref_PrintHelp("PrintHelp", 4257791294U, 4125625950U, func_PrintHelp);
 
 
 static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4466,7 +4542,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", 3316339153U, 252455384U, func_gen_Map_Z1);
+static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", 4257791294U, 4125625950U, func_gen_Map_Z1);
 
 
 //End of file
