@@ -54,32 +54,33 @@ enum ident {
   ident_CmdCEnumm_Item = 7,
   ident_CmdCEnumm_Start = 8,
   ident_CmdCEnumm_End = 9,
-  ident_Functionm_ToRASL = 10,
-  ident_Functionm_ToNative = 11,
-  ident_CmdNativeFunction = 12,
-  ident_CmdEnum = 13,
-  ident_CmdSwap = 14,
-  ident_CmdConditionFuncm_ToRASL = 15,
-  ident_CmdConditionFuncm_ToNative = 16,
-  ident_CmdDeclaration = 17,
-  ident_CmdEmitNativeCode = 18,
-  ident_GNm_Entry = 19,
-  ident_Hash = 20,
-  ident_GNm_Local = 21,
-  ident_CmdFnStart = 22,
-  ident_CmdProfileFunction = 23,
-  ident_CmdLoadConstants = 24,
-  ident_CmdFnEnd = 25,
-  ident_CmdNativeFuncDescr = 26,
-  ident_CmdSentence = 27,
-  ident_CmdEndSentence = 28,
-  ident_CmdStartSentence = 29,
-  ident_CmdOpenELoop = 30,
-  ident_AlgLeft = 31,
-  ident_CmdOpenedEm_Start = 32,
-  ident_CmdOpenedEm_End = 33,
-  ident_CmdVariableDebugTable = 34,
-  ident_CmdComment = 35,
+  ident_UnitName = 10,
+  ident_Functionm_ToRASL = 11,
+  ident_Functionm_ToNative = 12,
+  ident_CmdNativeFunction = 13,
+  ident_CmdEnum = 14,
+  ident_CmdSwap = 15,
+  ident_CmdConditionFuncm_ToRASL = 16,
+  ident_CmdConditionFuncm_ToNative = 17,
+  ident_CmdDeclaration = 18,
+  ident_CmdEmitNativeCode = 19,
+  ident_GNm_Entry = 20,
+  ident_Hash = 21,
+  ident_GNm_Local = 22,
+  ident_CmdFnStart = 23,
+  ident_CmdProfileFunction = 24,
+  ident_CmdLoadConstants = 25,
+  ident_CmdFnEnd = 26,
+  ident_CmdNativeFuncDescr = 27,
+  ident_CmdSentence = 28,
+  ident_CmdEndSentence = 29,
+  ident_CmdStartSentence = 30,
+  ident_CmdOpenELoop = 31,
+  ident_AlgLeft = 32,
+  ident_CmdOpenedEm_Start = 33,
+  ident_CmdOpenedEm_End = 34,
+  ident_CmdVariableDebugTable = 35,
+  ident_CmdComment = 36,
 };
 
 
@@ -1940,7 +1941,7 @@ static refalrts::FnResult func_SetCookies(refalrts::VM *vm, refalrts::Iter arg_b
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & SetCookies/4 s.new#1/9 s.new#2/10 (/7 s.new#3/11 t.new#4/12 e.new#5/5 )/8 >/1
+  // </0 & SetCookies/4 s.new#1/9 s.new#2/10 (/7 s.new#3/11 e.new#4/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
@@ -1955,19 +1956,43 @@ static refalrts::FnResult func_SetCookies(refalrts::VM *vm, refalrts::Iter arg_b
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[11], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
+  // closed e.new#4 as range 5
+  do {
+    // </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # UnitName/11 e.SrcName#1/12 )/8 >/1
+    context[12] = context[5];
+    context[13] = context[6];
+    if( ! refalrts::ident_term( identifiers[ident_UnitName], context[11] ) )
+      continue;
+    // closed e.SrcName#1 as range 12
+    //DEBUG: s.Hash1#1: 9
+    //DEBUG: s.Hash2#1: 10
+    //DEBUG: e.SrcName#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # UnitName/11 e.SrcName#1/12 )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & SetCookies/4 s.new#5/9 s.new#6/10 (/7 s.new#7/11 t.new#8/12 e.new#9/5 )/8 >/1
   context[13] = refalrts::tvar_left( context[12], context[5], context[6] );
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#5 as range 5
+  // closed e.new#9 as range 5
   do {
-    // </0 & SetCookies/4 s.new#6/9 s.new#7/10 (/7 s.new#8/11 s.new#9/12 e.new#10/14 )/8 >/1
+    // </0 & SetCookies/4 s.new#10/9 s.new#11/10 (/7 s.new#12/11 s.new#13/12 e.new#14/14 )/8 >/1
     context[14] = context[5];
     context[15] = context[6];
     if( ! refalrts::svar_term( context[12], context[12] ) )
       continue;
-    // closed e.new#10 as range 14
+    // closed e.new#14 as range 14
     do {
-      // </0 & SetCookies/4 s.new#11/9 s.new#12/10 (/7 s.new#13/11 s.new#14/12 (/20 e.new#15/18 )/21 e.new#16/16 )/8 >/1
+      // </0 & SetCookies/4 s.new#15/9 s.new#16/10 (/7 s.new#17/11 s.new#18/12 (/20 e.new#19/18 )/21 e.new#20/16 )/8 >/1
       context[16] = context[14];
       context[17] = context[15];
       context[18] = 0;
@@ -1976,8 +2001,8 @@ static refalrts::FnResult func_SetCookies(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! context[20] )
         continue;
       refalrts::bracket_pointers(context[20], context[21]);
-      // closed e.new#15 as range 18
-      // closed e.new#16 as range 16
+      // closed e.new#19 as range 18
+      // closed e.new#20 as range 16
       do {
         // </0 & SetCookies/4 s.Hash1#1/9 s.Hash2#1/10 (/7 # Function-ToRASL/11 s.ScopeClass#1/12 (/20 e.Name#1/22 )/21 e.Commands#1/24 )/8 >/1
         context[22] = context[18];

@@ -3,10 +3,13 @@
 #include <errno.h>
 #include <new>
 #include <set>
+#include <typeinfo>
 #include <utility>
 
 #include "refalrts-dynamic.h"
 #include "refalrts-commands.h"
+#include "refalrts-native-module.h"
+#include "refalrts-utils.h"
 
 //FROM refalrts-functions
 #include "refalrts-functions.h"
@@ -30,6 +33,7 @@ refalrts::Module::Module(
   , m_funcs_table()
   , m_tables()
   , m_native(native)
+  , m_os_module(0)
   , m_global_variables()
   , m_domain(domain)
   , m_unresolved_native_functions()
@@ -49,6 +53,13 @@ refalrts::Module::Module(
   try {
     Loader loader(this, module_name.c_str());
     loader.enumerate_blocks();
+
+    if (! m_unresolved_native_functions.empty() && ! m_native) {
+      if (! load_os_module(event, callback_data)) {
+        return;
+      }
+    }
+
     if (m_native) {
       alloc_global_variables();
       success = resolve_native_functions(event, callback_data);
@@ -228,6 +239,16 @@ bool refalrts::Module::resolve_native_functions(
   return success;
 }
 
+bool refalrts::Module::load_os_module(
+  refalrts::LoadModuleEvent event, void *callback_data
+) {
+  m_os_module = refalrts::api::load_os_module(
+    m_name.c_str(), &m_native, event, callback_data
+  );
+
+  return m_os_module != 0;
+}
+
 bool refalrts::Module::has_alias(const std::string& alias) const {
   return std::find(m_aliases.begin(), m_aliases.end(), alias) != m_aliases.end();
 }
@@ -284,8 +305,89 @@ void refalrts::Module::deactivate() {
     FuncsMap::iterator p = m_funcs_table.begin();
     RefalFunction *function = p->second;
     m_funcs_table.erase(p);
-    /* TODO: продумать освобождение статических ящиков */
+    if (RefalSwap *swap = dynamic_cast<RefalSwap *>(function)) {
+      if (swap->left_call != 0) {
+        Iter left_call = swap->left_call;
+        Iter right_call = left_call->link_info;
+
+        weld(left_call->prev, right_call->next);
+        m_domain->free_nodes(left_call, right_call);
+      }
+    }
     function->deactivate();
+  }
+
+  if (m_os_module) {
+    refalrts::api::unload_os_module(m_os_module);
+    m_os_module = 0;
+    m_native = 0;
+  }
+}
+
+void refalrts::Module::make_dump(refalrts::VM *vm) {
+  FILE *dump_stream = vm->dump_stream();
+
+  fprintf(
+    dump_stream,
+    "      functions: %lu\n"
+    "      const tables (scopes): %lu\n"
+    "      global variables size: %lu\n"
+    "      references: %lu\n"
+    "      aliases: %lu\n",
+    (unsigned long) m_funcs_table.size(),
+    (unsigned long) m_tables.size(),
+    (unsigned long) m_global_variables.size(),
+    (unsigned long) m_references.size(),
+    (unsigned long) m_aliases.size()
+  );
+
+  fprintf(dump_stream, "\n      FUNCTIONS:\n");
+  int count = 0;
+  for (
+    FuncsMap::const_iterator p = m_funcs_table.begin();
+    p != m_funcs_table.end();
+    ++p
+  ) {
+    const RefalFuncName& name = p->first;
+    const RefalFunction* func = p->second;
+    fprintf(
+      dump_stream,
+      "%10d. %s (%u:%u) - %s\n",
+      ++count, name.name, name.cookie1, name.cookie2, typeid(*func).name()
+    );
+  }
+
+  fprintf(dump_stream, "\n      SCOPES:\n");
+  count = 0;
+  for (
+    std::list<ConstTable>::const_iterator p = m_tables.begin();
+    p != m_tables.end();
+    ++p
+  ) {
+    fprintf(
+      dump_stream, "%10d. %u:%u - %s\n",
+      ++count, p->cookie1, p->cookie2, p->unit_name.c_str()
+    );
+  }
+
+  fprintf(dump_stream, "\n      REFERENCES:\n");
+  count = 0;
+  for (
+    ReferenceMap::const_iterator p = m_references.begin();
+    p != m_references.end();
+    ++p
+  ) {
+    fprintf(dump_stream, "%10d. %s\n", ++count, p->first.c_str());
+  }
+
+  fprintf(dump_stream, "\n      ALIASES:\n");
+  count = 0;
+  for (
+    std::vector<std::string>::const_iterator p = m_aliases.begin();
+    p != m_aliases.end();
+    ++p
+  ) {
+    fprintf(dump_stream, "%10d. %s\n", ++count, p->c_str());
   }
 }
 
@@ -543,7 +645,7 @@ void refalrts::Module::Loader::enumerate_blocks() {
               &table->idents[0],
               &table->numbers[0],
               &table->strings[0],
-              "filename.sref"
+              table->unit_name.c_str()
             )
           );
         }
@@ -589,6 +691,11 @@ void refalrts::Module::Loader::enumerate_blocks() {
 
       case cBlockTypeIncorporated:
         m_module->m_aliases.push_back(read_asciiz());
+        break;
+
+      case cBlockTypeUnitName:
+        PARSE_ASSERT(table != 0, "CONST_TABLE must precede unit name block");
+        table->unit_name = read_asciiz();
         break;
 
       default:
@@ -710,9 +817,13 @@ refalrts::Module *refalrts::Domain::ModuleStorage::load_module(
     p != module->references().end();
     ++p
   ) {
-    Module *ref_module = load_module(p->first, &substack, event, callback_data);
-    ref_success = ref_success && ref_module != 0;
-    p->second = ref_module;
+    if (module->has_alias(p->first)) {
+      p->second = module;
+    } else {
+      Module *ref_module = load_module(p->first, &substack, event, callback_data);
+      ref_success = ref_success && ref_module != 0;
+      p->second = ref_module;
+    }
   }
 
   m_modules.push_back(module);
@@ -779,6 +890,18 @@ void refalrts::Domain::ModuleStorage::unload_module(
   assert(m_domain == module->domain());
   module->del_ref();
   gc(vm, pos, result);
+}
+
+void refalrts::Domain::ModuleStorage::make_dump(refalrts::VM *vm) {
+  FILE *dump_stream = vm->dump_stream();
+
+  int count = 0;
+  for (
+    ModuleList::const_iterator p = m_modules.begin(); p != m_modules.end(); ++p
+  ) {
+    fprintf(dump_stream, "%4d. %s\n", ++count, (*p)->name().c_str());
+    (*p)->make_dump(vm);
+  }
 }
 
 refalrts::Module *
@@ -862,6 +985,10 @@ refalrts::Domain::Domain(refalrts::DiagnosticConfig *diagnostic_config)
   , m_allocated_functions()
   , m_chunks(0)
   , m_memory_use(0)
+  , m_global_free_begin(0, &m_global_free_end)
+  , m_global_free_end(&m_global_free_begin, 0)
+  , m_swap_begin(0, &m_swap_end)
+  , m_swap_end(&m_swap_begin, 0)
 {
   /* пусто */
 }
@@ -916,6 +1043,20 @@ refalrts::Domain::load_module(
 }
 
 bool refalrts::Domain::alloc_nodes(refalrts::Iter& begin, refalrts::Iter& end) {
+  if (m_global_free_begin.next != &m_global_free_end) {
+    begin = m_global_free_begin.next;
+    end = begin;
+
+    size_t portion = 1;
+    while (portion < Chunk::cSize && end->next != &m_global_free_end) {
+      ++portion;
+      end = end->next;
+    }
+
+    weld(&m_global_free_begin, end->next);
+    return true;
+  }
+
   if (m_memory_use + Chunk::cSize >= m_diagnostic_config->memory_limit) {
     return false;
   }
@@ -939,6 +1080,58 @@ bool refalrts::Domain::alloc_nodes(refalrts::Iter& begin, refalrts::Iter& end) {
   end = &new_chunk->elems[Chunk::cSize - 1];
 
   return true;
+}
+
+void refalrts::Domain::free_nodes(refalrts::Iter begin, refalrts::Iter end) {
+  assert(begin != 0);
+  assert(end != 0);
+  assert(begin->prev != end);
+  assert(begin != end->next);
+
+  end->next = 0;
+  for (Iter p = begin; p != 0; p = p->next) {
+    if (cDataClosure == p->tag) {
+      refalrts::Iter head = p->link_info;
+      -- head->number_info;
+
+      if (0 == head->number_info) {
+        unwrap_closure(p);
+        // теперь перед p находится «развёрнутое» замыкание
+        p->tag = cDataIllegal;
+        p = head;
+      }
+    }
+    p->tag = cDataIllegal;
+    p->file_info = 0;
+  }
+
+  weld(end, m_global_free_begin.next);
+  weld(&m_global_free_begin, begin);
+}
+
+void refalrts::Domain::swap_save(refalrts::Iter begin, refalrts::Iter end) {
+  list_splice(m_swap_begin.next, begin, end);
+}
+
+void refalrts::Domain::make_dump(refalrts::VM *vm) {
+  FILE *dump_stream = vm->dump_stream();
+  fprintf(dump_stream, "\nDOMAIN CONTENT:\n");
+
+  fprintf(dump_stream, "\nSWAPS:\n");
+  vm->print_seq(dump_stream, &m_swap_begin, &m_swap_end);
+
+  fprintf(dump_stream, "\nIDENTIFIERS:\n");
+  int count = 0;
+  for (
+    IdentsMap::const_iterator p = m_idents_table.begin();
+    p != m_idents_table.end();
+    ++p
+  ) {
+    fprintf(dump_stream, "%4d. %s\n", ++count, p->second->name());
+  }
+
+  fprintf(dump_stream, "\nMODULES:\n");
+  m_storage.make_dump(vm);
 }
 
 bool refalrts::Domain::initialize(
@@ -1008,6 +1201,44 @@ void refalrts::Domain::free_domain_memory() {
 //------------------------------------------------------------------------------
 // Идентификаторы
 //------------------------------------------------------------------------------
+
+refalrts::RefalIdentDescr::RefalIdentDescr(const char *name)
+  : m_name(0)
+{
+  size_t length = strlen(name);
+  m_name = static_cast<char*>(memcpy(new char[length + 1], name, length + 1));
+}
+
+refalrts::RefalIdentDescr::~RefalIdentDescr() {
+  delete[] m_name;
+}
+
+refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
+  refalrts::Domain *domain, const char *name
+) {
+  if (! name) {
+    name = "";
+  }
+
+  RefalIdentifier res = domain->lookup_ident(name);
+  if (! res) {
+    try {
+      res = new RefalIdentDescr(name);
+      bool allocated = domain->register_ident(res);
+
+      if (! allocated) {
+        delete res;
+        res = 0;
+      }
+    } catch (std::bad_alloc&) {
+      if (res) {
+        delete res;
+        res = 0;
+      }
+    }
+  }
+  return res;
+}
 
 size_t refalrts::Domain::idents_count() {
   return m_idents_table.size();

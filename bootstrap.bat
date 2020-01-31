@@ -8,26 +8,25 @@ setlocal
 
   call scripts\load-config.bat || exit /b 1
 
-  %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp
+  %CPPLINEE%rasl-appender\_rasl-appender.exe rasl-appender\rasl-appender.cpp ^
+    %CPPLINEESUF% || exit /b 1
 
   call :MAKE_DIR compiler srefc-core || exit /b 1
   call :MAKE_DIR lexgen lexgen || exit /b 1
   call :MAKE_DIR srmake srmake-core || exit /b 1
   call :MAKE_DIR rsl-decompiler rsl-decompiler || exit /b 1
 
-  set DEBUG=OFF
-  call :MAKE_DIR srlib-rich-prefix srlib-rich-prefix || exit /b 1
-  move bin\srlib-rich-prefix.exe srlib\rich\rich.exe-prefix
-  call :MAKE_DIR srlib-slim-prefix srlib-slim-prefix || exit /b 1
-  move bin\srlib-slim-prefix.exe srlib\slim\slim.exe-prefix
+  pushd lib-prefixes
+  call make.bat || exit /b 1
+  popd
 
-  set DEBUG=ON
-  call :MAKE_DIR srlib-rich-debug-prefix srlib-rich-debug-prefix || exit /b 1
-  move bin\srlib-rich-debug-prefix.exe srlib\rich-debug\rich-debug.exe-prefix
-  call :MAKE_DIR srlib-slim-debug-prefix srlib-slim-debug-prefix || exit /b 1
-  move bin\srlib-slim-debug-prefix.exe srlib\slim-debug\slim-debug.exe-prefix
+  for %%L in (Hash Library GetOpt LibraryEx Platform) do (
+    call bin\srmake --scratch -X-OCdDPRS --makelib lib\src\%%L ^
+      -o bin\%%L.dll || exit /b 1
+  )
 
   if exist *.obj erase *.obj
+  if exist bin\*.tds erase bin\*.tds
   erase rasl-appender\_rasl-appender.*
 
   goto :EOF
@@ -42,8 +41,9 @@ setlocal
   pushd %DIR%
   set FILELIST=
   for %%c in (*.cpp) do call :ADD_FILE_TO_LIST %%c
-  %CPPLINEE%%TARGET% -I..\srlib\scratch %FILELIST% ^
-    ..\srlib\scratch\platform-Windows\refalrts-platform-specific.cpp
+  %CPPLINEE%%TARGET% -I..\lib\scratch-rt %FILELIST% ^
+    ..\lib\scratch-rt\platform-Windows\refalrts-platform-specific.cpp ^
+    %CPPLINEESUF%
   if exist *.obj erase *.obj
   if exist ..\bin\*.tds erase ..\bin\*.tds
 

@@ -89,50 +89,51 @@ enum ident {
   ident_k63_ = 4,
   ident_m_ = 5,
   ident_ModuleID = 6,
-  ident_Functionm_ToRASL = 7,
-  ident_Functionm_ToNative = 8,
-  ident_CmdNativeFuncDescr = 9,
-  ident_CmdNativeFunction = 10,
-  ident_CmdEnum = 11,
-  ident_CmdEnumDescr = 12,
-  ident_CmdSwap = 13,
-  ident_CmdSwapDescr = 14,
-  ident_CmdConditionFuncm_ToRASL = 15,
-  ident_CmdConditionFuncDecsrRasl = 16,
-  ident_CmdConditionFuncm_ToNative = 17,
-  ident_CmdConditionFuncDecsrNative = 18,
-  ident_CmdDeclaration = 19,
-  ident_CmdEmitNativeCode = 20,
-  ident_CmdInterpretFuncDescr = 21,
-  ident_LABEL = 22,
-  ident_CmdProfileFunction = 23,
-  ident_CmdLoadConstants = 24,
-  ident_DebugInfo = 25,
-  ident_NoDebugInfo = 26,
-  ident_CmdSentence = 27,
-  ident_CmdOpenELoop = 28,
-  ident_AlgLeft = 29,
-  ident_CmdVariableDebugTable = 30,
-  ident_CmdComment = 31,
-  ident_CmdUseRes = 32,
-  ident_CmdCallCondition = 33,
-  ident_CmdPushState = 34,
-  ident_CmdNextStep = 35,
-  ident_CmdOnFailGoTo = 36,
-  ident_CmdProfilerStopSentence = 37,
-  ident_CmdEStart = 38,
-  ident_CmdFail = 39,
-  ident_CmdEPrepare = 40,
-  ident_CmdReserveBacktrackStack = 41,
-  ident_Funck32_namek58_ = 42,
-  ident_CmdStringArray = 43,
-  ident_RASL = 44,
-  ident_Items = 45,
-  ident_CmdFuncArray = 46,
-  ident_CmdIdentArray = 47,
-  ident_GNm_Entry = 48,
-  ident_CmdCreateElem = 49,
-  ident_ElString = 50,
+  ident_UnitName = 7,
+  ident_Functionm_ToRASL = 8,
+  ident_Functionm_ToNative = 9,
+  ident_CmdNativeFuncDescr = 10,
+  ident_CmdNativeFunction = 11,
+  ident_CmdEnum = 12,
+  ident_CmdEnumDescr = 13,
+  ident_CmdSwap = 14,
+  ident_CmdSwapDescr = 15,
+  ident_CmdConditionFuncm_ToRASL = 16,
+  ident_CmdConditionFuncDecsrRasl = 17,
+  ident_CmdConditionFuncm_ToNative = 18,
+  ident_CmdConditionFuncDecsrNative = 19,
+  ident_CmdDeclaration = 20,
+  ident_CmdEmitNativeCode = 21,
+  ident_CmdInterpretFuncDescr = 22,
+  ident_LABEL = 23,
+  ident_CmdProfileFunction = 24,
+  ident_CmdLoadConstants = 25,
+  ident_DebugInfo = 26,
+  ident_NoDebugInfo = 27,
+  ident_CmdSentence = 28,
+  ident_CmdOpenELoop = 29,
+  ident_AlgLeft = 30,
+  ident_CmdVariableDebugTable = 31,
+  ident_CmdComment = 32,
+  ident_CmdUseRes = 33,
+  ident_CmdCallCondition = 34,
+  ident_CmdPushState = 35,
+  ident_CmdNextStep = 36,
+  ident_CmdOnFailGoTo = 37,
+  ident_CmdProfilerStopSentence = 38,
+  ident_CmdEStart = 39,
+  ident_CmdFail = 40,
+  ident_CmdEPrepare = 41,
+  ident_CmdReserveBacktrackStack = 42,
+  ident_Funck32_namek58_ = 43,
+  ident_CmdStringArray = 44,
+  ident_RASL = 45,
+  ident_Items = 46,
+  ident_CmdFuncArray = 47,
+  ident_CmdIdentArray = 48,
+  ident_GNm_Entry = 49,
+  ident_CmdCreateElem = 50,
+  ident_ElString = 51,
 };
 
 
@@ -1846,7 +1847,7 @@ static refalrts::FnResult func_ClassifyItems(refalrts::VM *vm, refalrts::Iter ar
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & ClassifyItems/4 (/7 e.new#1/5 )/8 (/11 s.new#2/13 t.new#3/14 e.new#4/9 )/12 >/1
+  // </0 & ClassifyItems/4 (/7 e.new#1/5 )/8 (/11 s.new#2/13 e.new#3/9 )/12 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -1864,22 +1865,52 @@ static refalrts::FnResult func_ClassifyItems(refalrts::VM *vm, refalrts::Iter ar
   // closed e.new#1 as range 5
   if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
+  // closed e.new#3 as range 9
+  do {
+    // </0 & ClassifyItems/4 (/7 e.FuncScopeClass#1/14 )/8 (/11 # UnitName/13 e.SrcName#1/16 )/12 >/1
+    context[14] = context[5];
+    context[15] = context[6];
+    context[16] = context[9];
+    context[17] = context[10];
+    if( ! refalrts::ident_term( identifiers[ident_UnitName], context[13] ) )
+      continue;
+    // closed e.FuncScopeClass#1 as range 14
+    // closed e.SrcName#1 as range 16
+    //DEBUG: e.FuncScopeClass#1: 14
+    //DEBUG: e.SrcName#1: 16
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & ClassifyItems/4 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.FuncScopeClass#1/14 AsIs: )/8 AsIs: (/11 AsIs: # UnitName/13 AsIs: e.SrcName#1/16 AsIs: )/12 } Tile{ ]] }
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[7], context[12] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & ClassifyItems/4 (/7 e.new#4/5 )/8 (/11 s.new#5/13 t.new#6/14 e.new#7/9 )/12 >/1
+  // closed e.new#4 as range 5
   context[15] = refalrts::tvar_left( context[14], context[9], context[10] );
   if( ! context[15] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#4 as range 9
+  // closed e.new#7 as range 9
   do {
-    // </0 & ClassifyItems/4 (/7 e.new#5/16 )/8 (/11 s.new#6/13 s.new#7/14 e.new#8/18 )/12 >/1
+    // </0 & ClassifyItems/4 (/7 e.new#8/16 )/8 (/11 s.new#9/13 s.new#10/14 e.new#11/18 )/12 >/1
     context[16] = context[5];
     context[17] = context[6];
     context[18] = context[9];
     context[19] = context[10];
     if( ! refalrts::svar_term( context[14], context[14] ) )
       continue;
-    // closed e.new#5 as range 16
-    // closed e.new#8 as range 18
+    // closed e.new#8 as range 16
+    // closed e.new#11 as range 18
     do {
-      // </0 & ClassifyItems/4 (/7 e.new#9/20 )/8 (/11 s.new#10/13 s.new#11/14 (/26 e.new#12/24 )/27 e.new#13/22 )/12 >/1
+      // </0 & ClassifyItems/4 (/7 e.new#12/20 )/8 (/11 s.new#13/13 s.new#14/14 (/26 e.new#15/24 )/27 e.new#16/22 )/12 >/1
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
@@ -1890,9 +1921,9 @@ static refalrts::FnResult func_ClassifyItems(refalrts::VM *vm, refalrts::Iter ar
       if( ! context[26] )
         continue;
       refalrts::bracket_pointers(context[26], context[27]);
-      // closed e.new#9 as range 20
-      // closed e.new#12 as range 24
-      // closed e.new#13 as range 22
+      // closed e.new#12 as range 20
+      // closed e.new#15 as range 24
+      // closed e.new#16 as range 22
       do {
         // </0 & ClassifyItems/4 (/7 e.FuncScopeClass#1/28 )/8 (/11 # Function-ToRASL/13 s.ScopeClass#1/14 (/26 e.Name#1/30 )/27 e.FunctionBody#1/32 )/12 >/1
         context[28] = context[20];

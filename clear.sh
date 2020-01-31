@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -f bin/*-core bin/lexgen
-rm -f srlib/*/*.exe-prefix
+rm -f bin/*-core bin/lexgen bin/rsl-decompiler
+rm -f lib/*.*-prefix

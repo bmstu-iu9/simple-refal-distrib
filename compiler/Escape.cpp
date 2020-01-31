@@ -1,5 +1,5 @@
-// This file automatically generated from '../common/Escape.ref'
-// Don't edit! Edit '../common/Escape.ref' and recompile it
+// This file automatically generated from '..\common\Escape.ref'
+// Don't edit! Edit '..\common\Escape.ref' and recompile it
 
 #include "refalrts.h"
 

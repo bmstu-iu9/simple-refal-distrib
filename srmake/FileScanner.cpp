@@ -99,12 +99,13 @@ enum ident {
   ident_True = 19,
   ident_False = 20,
   ident_NotFound = 21,
-  ident_NotSet = 22,
-  ident_Fails = 23,
-  ident_BadEscapeCode = 24,
-  ident_BadEscapeSymbol = 25,
-  ident_EOLAfterSlash = 26,
-  ident_Fail = 27,
+  ident_REF5RSL = 22,
+  ident_NotSet = 23,
+  ident_Fails = 24,
+  ident_BadEscapeCode = 25,
+  ident_BadEscapeSymbol = 26,
+  ident_EOLAfterSlash = 27,
+  ident_Fail = 28,
 };
 
 
@@ -2736,36 +2737,57 @@ static refalrts::FnResult func_gen_GetFolders_L1(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & GetFolders\1/4 (/7 s.FolderTag#2/9 e.Folder#2/5 )/8 >/1
+  // </0 & GetFolders\1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[5] = 0;
-  context[6] = 0;
-  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
-  if( ! context[7] )
+  // closed e.new#0 as range 2
+  // </0 & GetFolders\1/4 t.new#1/5 >/1
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  refalrts::bracket_pointers(context[7], context[8]);
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
+  do {
+    // </0 & GetFolders\1/4 # REF5RSL/5 >/1
+    if( ! refalrts::ident_term( identifiers[ident_REF5RSL], context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & GetFolders\1/4 # REF5RSL/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # REF5RSL/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_REF5RSL]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & GetFolders\1/4 (/5 s.FolderTag#2/9 e.Folder#2/7 )/6 >/1
+  context[7] = 0;
+  context[8] = 0;
+  if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Folder#2 as range 5
+  if( ! refalrts::svar_left( context[9], context[7], context[8] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Folder#2 as range 7
   //DEBUG: s.FolderTag#2: 9
-  //DEBUG: e.Folder#2: 5
+  //DEBUG: e.Folder#2: 7
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} & GetFolders\1/4 (/7 s.FolderTag#2/9 {REMOVED TILE} )/8 {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Folder#2/5 } Tile{ HalfReuse: )/1 ]] }
+  //TRASH: {REMOVED TILE} & GetFolders\1/4 (/5 s.FolderTag#2/9 {REMOVED TILE} )/6 {REMOVED TILE}
+  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Folder#2/7 } Tile{ HalfReuse: )/1 ]] }
   refalrts::reinit_open_bracket(context[0]);
   refalrts::reinit_close_bracket(context[1]);
   refalrts::link_brackets( context[0], context[1] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::splice_to_freelist_open( vm, context[0], res );
   return refalrts::cSuccess;
 }

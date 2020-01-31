@@ -12,7 +12,7 @@ source ./scripts/load-config.sh . || exit 1
 source ./scripts/platform-specific.sh
 
 APPENDER=rasl-appender/_rasl-appender$(platform_exe_suffix)
-$CPPLINEE$APPENDER rasl-appender/rasl-appender.cpp || exit 1
+$CPPLINEE$APPENDER rasl-appender/rasl-appender.cpp $CPPLINEESUF || exit 1
 
 make_dir() {
   DIR=$1
@@ -29,9 +29,10 @@ make_dir() {
     )
   fi
 
-  $CPPLINEE$TARGET -Isrlib/scratch $FILELIST \
-    $(platform_subdir_lookup srlib/scratch)/refalrts-platform-specific.cpp \
-    srlib/scratch/platform-POSIX/refalrts-platform-POSIX.cpp
+  $CPPLINEE$TARGET -Ilib/scratch-rt $FILELIST \
+    $(platform_subdir_lookup lib/scratch-rt)/refalrts-platform-specific.cpp \
+    lib/scratch-rt/platform-POSIX/refalrts-platform-POSIX.cpp \
+    $CPPLINEESUF
 
   if [ ! -e $TARGET ]; then
     echo "Can't create file $TARGET, aborting"
@@ -46,17 +47,11 @@ make_dir lexgen lexgen
 make_dir srmake srmake-core
 make_dir rsl-decompiler rsl-decompiler
 
-DEBUG=OFF
-make_dir srlib-rich-prefix srlib-rich-prefix
-mv bin/srlib-rich-prefix$(platform_exe_suffix) srlib/rich/rich.exe-prefix
-make_dir srlib-slim-prefix srlib-slim-prefix
-mv bin/srlib-slim-prefix$(platform_exe_suffix) srlib/slim/slim.exe-prefix
-make_dir srlib-rich-debug-prefix srlib-rich-debug-prefix
+( cd lib-prefixes && ./make.sh ) || exit 1
 
-DEBUG=ON
-mv bin/srlib-rich-debug-prefix$(platform_exe_suffix) srlib/rich-debug/rich-debug.exe-prefix
-make_dir srlib-slim-debug-prefix srlib-slim-debug-prefix
-mv bin/srlib-slim-debug-prefix$(platform_exe_suffix) srlib/slim-debug/slim-debug.exe-prefix
-chmod -x srlib/*/*.exe-prefix
+for L in Hash Library GetOpt LibraryEx Platform; do
+  bin/srmake --scratch -X-OCdDPRS --makelib "lib/src/$L" \
+    -o "bin/$L$(platform_lib_suffix)" || exit 1
+done
 
 rm -f $APPENDER

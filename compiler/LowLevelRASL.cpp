@@ -3,7 +3,7 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2463563627_39141868
+#define cookie_ns cookie_ns_336254288_2550877372
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -41,9 +41,9 @@ enum efunc {
   efunc_SetScopeIDs = 32,
   efunc_MapReduce = 33,
   efunc_CalcDigest = 34,
-  efunc_HashLittle2m_Chars = 35,
-  efunc_Canonize = 36,
-  efunc_gen_LowLevelRASL_A1 = 37,
+  efunc_Canonize = 35,
+  efunc_gen_LowLevelRASL_A1 = 36,
+  efunc_HashLittle2m_Chars = 37,
   efunc_HashFuncName = 38,
   efunc_CharFromScopeClass = 39,
   efunc_DisplayName = 40,
@@ -52,15 +52,15 @@ enum efunc {
   efunc_SetScopeIDsm_Patch = 43,
   efunc_OutlineConstantsm_WithNative = 44,
   efunc_OutlineConstantsm_RASLOnly = 45,
-  efunc_gen_OutlineConstantsm_WithNative_S1A2 = 46,
+  efunc_gen_OutlineConstantsm_WithNative_S2A2 = 46,
   efunc_OutlineConstantsm_Commands = 47,
-  efunc_gen_OutlineConstantsm_WithNative_S1A1 = 48,
+  efunc_gen_OutlineConstantsm_WithNative_S2A1 = 48,
   efunc_UpdateFuncTable = 49,
-  efunc_gen_OutlineConstantsm_WithNative_S2A1 = 50,
-  efunc_gen_OutlineConstantsm_WithNative_S3C1 = 51,
+  efunc_gen_OutlineConstantsm_WithNative_S3A1 = 50,
+  efunc_gen_OutlineConstantsm_WithNative_S4C1 = 51,
   efunc_OneOf = 52,
-  efunc_gen_OutlineConstantsm_WithNative_S3A2 = 53,
-  efunc_gen_OutlineConstantsm_WithNative_S4A1 = 54,
+  efunc_gen_OutlineConstantsm_WithNative_S4A2 = 53,
+  efunc_gen_OutlineConstantsm_WithNative_S5A1 = 54,
   efunc_UpdateIdentTable = 55,
   efunc_gen_OutlineConstantsm_RASLOnly_S1A1 = 56,
   efunc_gen_MapAccum_Z1 = 57,
@@ -91,41 +91,42 @@ enum ident {
   ident_k42_ = 3,
   ident_k63_ = 4,
   ident_m_ = 5,
-  ident_Function = 6,
-  ident_CmdNativeFunction = 7,
-  ident_CmdEnum = 8,
-  ident_CmdSwap = 9,
-  ident_CmdConditionFunc = 10,
-  ident_CmdDeclaration = 11,
-  ident_CmdDefineIdent = 12,
-  ident_CmdEmitNativeCode = 13,
-  ident_GNm_Entry = 14,
-  ident_GNm_Local = 15,
-  ident_CmdNumber = 16,
-  ident_CmdNumberSave = 17,
-  ident_CmdCreateElem = 18,
-  ident_ElNumber = 19,
-  ident_CmdSentence = 20,
-  ident_CmdOpenELoop = 21,
-  ident_AlgLeft = 22,
-  ident_Cookie1 = 23,
-  ident_Cookie2 = 24,
-  ident_NativeBlock = 25,
-  ident_True = 26,
-  ident_CmdName = 27,
-  ident_CmdNameSave = 28,
-  ident_ElName = 29,
-  ident_CmdADT = 30,
-  ident_CmdADTSave = 31,
-  ident_CmdIdent = 32,
-  ident_CmdIdentSave = 33,
-  ident_ElIdent = 34,
-  ident_OnlyInterpret = 35,
-  ident_Functionm_ToRASL = 36,
-  ident_OnlyDirect = 37,
-  ident_Functionm_ToNative = 38,
-  ident_CmdConditionFuncm_ToRASL = 39,
-  ident_CmdConditionFuncm_ToNative = 40,
+  ident_UnitName = 6,
+  ident_Function = 7,
+  ident_CmdNativeFunction = 8,
+  ident_CmdEnum = 9,
+  ident_CmdSwap = 10,
+  ident_CmdConditionFunc = 11,
+  ident_CmdDeclaration = 12,
+  ident_CmdDefineIdent = 13,
+  ident_CmdEmitNativeCode = 14,
+  ident_GNm_Entry = 15,
+  ident_GNm_Local = 16,
+  ident_CmdNumber = 17,
+  ident_CmdNumberSave = 18,
+  ident_CmdCreateElem = 19,
+  ident_ElNumber = 20,
+  ident_CmdSentence = 21,
+  ident_CmdOpenELoop = 22,
+  ident_AlgLeft = 23,
+  ident_Cookie1 = 24,
+  ident_Cookie2 = 25,
+  ident_NativeBlock = 26,
+  ident_True = 27,
+  ident_CmdName = 28,
+  ident_CmdNameSave = 29,
+  ident_ElName = 30,
+  ident_CmdADT = 31,
+  ident_CmdADTSave = 32,
+  ident_CmdIdent = 33,
+  ident_CmdIdentSave = 34,
+  ident_ElIdent = 35,
+  ident_OnlyInterpret = 36,
+  ident_Functionm_ToRASL = 37,
+  ident_OnlyDirect = 38,
+  ident_Functionm_ToNative = 39,
+  ident_CmdConditionFuncm_ToRASL = 40,
+  ident_CmdConditionFuncm_ToNative = 41,
 };
 
 
@@ -226,7 +227,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 2463563627U, 39141868U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", 336254288U, 2550877372U, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -287,9 +288,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 39141868UL);
+    refalrts::alloc_number(vm, context[9], 2550877372UL);
     refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 2463563627UL);
+    refalrts::reinit_number(context[5], 336254288UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -316,8 +317,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 2463563627UL);
-  refalrts::reinit_number(context[7], 39141868UL);
+  refalrts::reinit_number(context[5], 336254288UL);
+  refalrts::reinit_number(context[7], 2550877372UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -329,7 +330,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 2463563627U, 39141868U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 336254288U, 2550877372U, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -585,7 +586,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 2463563627U, 39141868U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 336254288U, 2550877372U, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -685,7 +686,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 2463563627U, 39141868U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", 336254288U, 2550877372U, func_Residue);
 
 
 static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -762,7 +763,7 @@ static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Apply("Apply", 2463563627U, 39141868U, func_Apply);
+static refalrts::NativeReference nat_ref_Apply("Apply", 336254288U, 2550877372U, func_Apply);
 
 
 static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -835,7 +836,7 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Map("Map", 2463563627U, 39141868U, func_Map);
+static refalrts::NativeReference nat_ref_Map("Map", 336254288U, 2550877372U, func_Map);
 
 
 static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -916,7 +917,7 @@ static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Reduce("Reduce", 2463563627U, 39141868U, func_Reduce);
+static refalrts::NativeReference nat_ref_Reduce("Reduce", 336254288U, 2550877372U, func_Reduce);
 
 
 static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -956,7 +957,7 @@ static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Fetch("Fetch", 2463563627U, 39141868U, func_Fetch);
+static refalrts::NativeReference nat_ref_Fetch("Fetch", 336254288U, 2550877372U, func_Fetch);
 
 
 static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1003,7 +1004,7 @@ static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapAccum("MapAccum", 2463563627U, 39141868U, func_MapAccum);
+static refalrts::NativeReference nat_ref_MapAccum("MapAccum", 336254288U, 2550877372U, func_MapAccum);
 
 
 static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1104,7 +1105,7 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 2463563627U, 39141868U, func_DoMapAccum);
+static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 336254288U, 2550877372U, func_DoMapAccum);
 
 
 static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1167,7 +1168,7 @@ static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", 2463563627U, 39141868U, func_DoMapAccumm_Aux);
+static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", 336254288U, 2550877372U, func_DoMapAccumm_Aux);
 
 
 static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1205,7 +1206,7 @@ static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapReduce("MapReduce", 2463563627U, 39141868U, func_MapReduce);
+static refalrts::NativeReference nat_ref_MapReduce("MapReduce", 336254288U, 2550877372U, func_MapReduce);
 
 
 static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1245,7 +1246,7 @@ static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UnBracket("UnBracket", 2463563627U, 39141868U, func_UnBracket);
+static refalrts::NativeReference nat_ref_UnBracket("UnBracket", 336254288U, 2550877372U, func_UnBracket);
 
 
 static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1281,7 +1282,7 @@ static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", 2463563627U, 39141868U, func_DelAccumulator);
+static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", 336254288U, 2550877372U, func_DelAccumulator);
 
 
 static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1318,7 +1319,7 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 2463563627U, 39141868U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", 336254288U, 2550877372U, func_Inc);
 
 
 static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1388,7 +1389,7 @@ static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Dec("Dec", 2463563627U, 39141868U, func_Dec);
+static refalrts::NativeReference nat_ref_Dec("Dec", 336254288U, 2550877372U, func_Dec);
 
 
 static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1449,7 +1450,7 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 2463563627U, 39141868U, func_gen_Pipe_S2L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 336254288U, 2550877372U, func_gen_Pipe_S2L1);
 
 
 static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1481,7 +1482,7 @@ static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 2463563627U, 39141868U, func_gen_Pipe_S3L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 336254288U, 2550877372U, func_gen_Pipe_S3L1);
 
 
 static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1569,7 +1570,7 @@ static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Pipe("Pipe", 2463563627U, 39141868U, func_Pipe);
+static refalrts::NativeReference nat_ref_Pipe("Pipe", 336254288U, 2550877372U, func_Pipe);
 
 
 static refalrts::FnResult func_Seq(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1599,7 +1600,7 @@ static refalrts::FnResult func_Seq(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Seq("Seq", 2463563627U, 39141868U, func_Seq);
+static refalrts::NativeReference nat_ref_Seq("Seq", 336254288U, 2550877372U, func_Seq);
 
 
 static refalrts::FnResult func_gen_LowLevelRASL_A5(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1656,7 +1657,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_A5(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A5("LowLevelRASL=5", 2463563627U, 39141868U, func_gen_LowLevelRASL_A5);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A5("LowLevelRASL=5", 336254288U, 2550877372U, func_gen_LowLevelRASL_A5);
 
 
 static refalrts::FnResult func_gen_LowLevelRASL_A4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1721,7 +1722,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_A4(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A4("LowLevelRASL=4", 2463563627U, 39141868U, func_gen_LowLevelRASL_A4);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A4("LowLevelRASL=4", 336254288U, 2550877372U, func_gen_LowLevelRASL_A4);
 
 
 static refalrts::FnResult func_gen_LowLevelRASL_A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1791,7 +1792,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_A3(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A3("LowLevelRASL=3", 2463563627U, 39141868U, func_gen_LowLevelRASL_A3);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A3("LowLevelRASL=3", 336254288U, 2550877372U, func_gen_LowLevelRASL_A3);
 
 
 static refalrts::FnResult func_gen_LowLevelRASL_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1845,7 +1846,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_A2(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A2("LowLevelRASL=2", 2463563627U, 39141868U, func_gen_LowLevelRASL_A2);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A2("LowLevelRASL=2", 336254288U, 2550877372U, func_gen_LowLevelRASL_A2);
 
 
 static refalrts::FnResult func_gen_LowLevelRASL_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1914,7 +1915,7 @@ static refalrts::FnResult func_gen_LowLevelRASL_A1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A1("LowLevelRASL=1", 2463563627U, 39141868U, func_gen_LowLevelRASL_A1);
+static refalrts::NativeReference nat_ref_gen_LowLevelRASL_A1("LowLevelRASL=1", 336254288U, 2550877372U, func_gen_LowLevelRASL_A1);
 
 
 static refalrts::FnResult func_LowLevelRASL(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1951,18 +1952,18 @@ static refalrts::FnResult func_LowLevelRASL(refalrts::VM *vm, refalrts::Iter arg
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} s.GenMode#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LowLevelRASL=1/4 } Tile{ AsIs: s.DebugInfo#1/6 HalfReuse: s.GenMode1 #5/9 } </11 & MapReduce/12 & CalcDigest/13 (/14 </15 & HashLittle2-Chars/16 4001567069/17 291363191/18 </19 & Canonize/20 Tile{ AsIs: e.SrcName#1/7 } >/21 >/22 Tile{ AsIs: )/10 AsIs: e.ProgramElements#1/2 AsIs: >/1 } >/23 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LowLevelRASL=1/4 } Tile{ AsIs: s.DebugInfo#1/6 HalfReuse: s.GenMode1 #5/9 } </11 & MapReduce/12 & CalcDigest/13 (/14 4001567069/15 291363191/16 )/17 (/18 # UnitName/19 </20 & Canonize/21 Tile{ AsIs: e.SrcName#1/7 } >/22 Tile{ AsIs: )/10 AsIs: e.ProgramElements#1/2 AsIs: >/1 } >/23 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::alloc_name(vm, context[12], functions[efunc_MapReduce]);
   refalrts::alloc_name(vm, context[13], functions[efunc_CalcDigest]);
   refalrts::alloc_open_bracket(vm, context[14]);
-  refalrts::alloc_open_call(vm, context[15]);
-  refalrts::alloc_name(vm, context[16], functions[efunc_HashLittle2m_Chars]);
-  refalrts::alloc_number(vm, context[17], 4001567069UL);
-  refalrts::alloc_number(vm, context[18], 291363191UL);
-  refalrts::alloc_open_call(vm, context[19]);
-  refalrts::alloc_name(vm, context[20], functions[efunc_Canonize]);
-  refalrts::alloc_close_call(vm, context[21]);
+  refalrts::alloc_number(vm, context[15], 4001567069UL);
+  refalrts::alloc_number(vm, context[16], 291363191UL);
+  refalrts::alloc_close_bracket(vm, context[17]);
+  refalrts::alloc_open_bracket(vm, context[18]);
+  refalrts::alloc_ident(vm, context[19], identifiers[ident_UnitName]);
+  refalrts::alloc_open_call(vm, context[20]);
+  refalrts::alloc_name(vm, context[21], functions[efunc_Canonize]);
   refalrts::alloc_close_call(vm, context[22]);
   refalrts::alloc_close_call(vm, context[23]);
   refalrts::update_name(context[4], functions[efunc_gen_LowLevelRASL_A1]);
@@ -1971,19 +1972,18 @@ static refalrts::FnResult func_LowLevelRASL(refalrts::VM *vm, refalrts::Iter arg
   refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[11] );
-  refalrts::link_brackets( context[14], context[10] );
+  refalrts::link_brackets( context[18], context[10] );
   refalrts::push_stack( vm, context[22] );
-  refalrts::push_stack( vm, context[15] );
-  refalrts::push_stack( vm, context[21] );
-  refalrts::push_stack( vm, context[19] );
+  refalrts::push_stack( vm, context[20] );
+  refalrts::link_brackets( context[14], context[17] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[23], context[23] );
   res = refalrts::splice_evar( res, context[10], context[1] );
-  res = refalrts::splice_evar( res, context[21], context[22] );
+  res = refalrts::splice_evar( res, context[22], context[22] );
   res = refalrts::splice_evar( res, context[7], context[8] );
-  res = refalrts::splice_evar( res, context[11], context[20] );
+  res = refalrts::splice_evar( res, context[11], context[21] );
   res = refalrts::splice_evar( res, context[6], context[9] );
   refalrts::splice_to_freelist_open( vm, context[4], res );
   return refalrts::cSuccess;
@@ -2059,7 +2059,7 @@ static refalrts::FnResult func_Canonize(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Canonize("Canonize", 2463563627U, 39141868U, func_Canonize);
+static refalrts::NativeReference nat_ref_Canonize("Canonize", 336254288U, 2550877372U, func_Canonize);
 
 
 static refalrts::FnResult func_CalcDigest(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2102,6 +2102,39 @@ static refalrts::FnResult func_CalcDigest(refalrts::VM *vm, refalrts::Iter arg_b
   if( ! refalrts::svar_left( context[15], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.new#4 as range 9
+  do {
+    // </0 & CalcDigest/4 (/7 s.Hash1#1/13 s.Hash2#1/14 )/8 (/11 # UnitName/15 e.SrcName#1/16 )/12 >/1
+    context[16] = context[9];
+    context[17] = context[10];
+    if( ! refalrts::ident_term( identifiers[ident_UnitName], context[15] ) )
+      continue;
+    // closed e.SrcName#1 as range 16
+    //DEBUG: s.Hash1#1: 13
+    //DEBUG: s.Hash2#1: 14
+    //DEBUG: e.SrcName#1: 16
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & HashLittle2-Chars/7 AsIs: s.Hash1#1/13 AsIs: s.Hash2#1/14 } e.SrcName#1/16/18 Tile{ AsIs: >/1 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: # UnitName/15 AsIs: e.SrcName#1/16 AsIs: )/12 } Tile{ ]] }
+    refalrts::copy_evar(vm, context[18], context[19], context[16], context[17]);
+    refalrts::reinit_open_bracket(context[0]);
+    refalrts::reinit_open_call(context[4]);
+    refalrts::reinit_name(context[7], functions[efunc_HashLittle2m_Chars]);
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[0], context[8] );
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[4] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[8], context[12] );
+    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_evar( res, context[18], context[19] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
   do {
     // </0 & CalcDigest/4 (/7 s.new#5/13 s.new#6/14 )/8 (/11 s.new#7/15 s.new#8/18 e.new#9/16 )/12 >/1
     context[16] = context[9];
@@ -2399,7 +2432,7 @@ static refalrts::FnResult func_CalcDigest(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CalcDigest("CalcDigest", 2463563627U, 39141868U, func_CalcDigest);
+static refalrts::NativeReference nat_ref_CalcDigest("CalcDigest", 336254288U, 2550877372U, func_CalcDigest);
 
 
 static refalrts::FnResult func_HashFuncName(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2460,7 +2493,7 @@ static refalrts::FnResult func_HashFuncName(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_HashFuncName("HashFuncName", 2463563627U, 39141868U, func_HashFuncName);
+static refalrts::NativeReference nat_ref_HashFuncName("HashFuncName", 336254288U, 2550877372U, func_HashFuncName);
 
 
 static refalrts::FnResult func_CharFromScopeClass(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2516,7 +2549,7 @@ static refalrts::FnResult func_CharFromScopeClass(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_CharFromScopeClass("CharFromScopeClass", 2463563627U, 39141868U, func_CharFromScopeClass);
+static refalrts::NativeReference nat_ref_CharFromScopeClass("CharFromScopeClass", 336254288U, 2550877372U, func_CharFromScopeClass);
 
 
 static refalrts::FnResult func_SetScopeIDs(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2607,7 +2640,7 @@ static refalrts::FnResult func_SetScopeIDs(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetScopeIDs("SetScopeIDs", 2463563627U, 39141868U, func_SetScopeIDs);
+static refalrts::NativeReference nat_ref_SetScopeIDs("SetScopeIDs", 336254288U, 2550877372U, func_SetScopeIDs);
 
 
 static refalrts::FnResult func_SetScopeIDsm_Commands(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2643,7 +2676,7 @@ static refalrts::FnResult func_SetScopeIDsm_Commands(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetScopeIDsm_Commands("SetScopeIDs-Commands", 2463563627U, 39141868U, func_SetScopeIDsm_Commands);
+static refalrts::NativeReference nat_ref_SetScopeIDsm_Commands("SetScopeIDs-Commands", 336254288U, 2550877372U, func_SetScopeIDsm_Commands);
 
 
 static refalrts::FnResult func_SetScopeIDsm_Command(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2881,7 +2914,7 @@ static refalrts::FnResult func_SetScopeIDsm_Command(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetScopeIDsm_Command("SetScopeIDs-Command", 2463563627U, 39141868U, func_SetScopeIDsm_Command);
+static refalrts::NativeReference nat_ref_SetScopeIDsm_Command("SetScopeIDs-Command", 336254288U, 2550877372U, func_SetScopeIDsm_Command);
 
 
 static refalrts::FnResult func_SetScopeIDsm_Patch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2963,7 +2996,7 @@ static refalrts::FnResult func_SetScopeIDsm_Patch(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SetScopeIDsm_Patch("SetScopeIDs-Patch", 2463563627U, 39141868U, func_SetScopeIDsm_Patch);
+static refalrts::NativeReference nat_ref_SetScopeIDsm_Patch("SetScopeIDs-Patch", 336254288U, 2550877372U, func_SetScopeIDsm_Patch);
 
 
 static refalrts::FnResult func_SelectConstantsOutliner(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3100,10 +3133,10 @@ static refalrts::FnResult func_SelectConstantsOutliner(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SelectConstantsOutliner("SelectConstantsOutliner", 2463563627U, 39141868U, func_SelectConstantsOutliner);
+static refalrts::NativeReference nat_ref_SelectConstantsOutliner("SelectConstantsOutliner", 336254288U, 2550877372U, func_SelectConstantsOutliner);
 
 
-static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S2A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3112,7 +3145,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A2(refalrts::V
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & OutlineConstants-WithNative$1=2/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 t.Tables#3/10 e.Commands#3/2 >/1
+  // </0 & OutlineConstants-WithNative$2=2/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 t.Tables#3/10 e.Commands#3/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3154,10 +3187,10 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A2(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S1A2("OutlineConstants-WithNative$1=2", 2463563627U, 39141868U, func_gen_OutlineConstantsm_WithNative_S1A2);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S2A2("OutlineConstants-WithNative$2=2", 336254288U, 2550877372U, func_gen_OutlineConstantsm_WithNative_S2A2);
 
 
-static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3166,7 +3199,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A1(refalrts::V
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & OutlineConstants-WithNative$1=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 (/12 e.Commands#1/10 )/13 t.Tables#2/14 s.Id#2/16 >/1
+  // </0 & OutlineConstants-WithNative$2=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 (/12 e.Commands#1/10 )/13 t.Tables#2/14 s.Id#2/16 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3203,9 +3236,9 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A1(refalrts::V
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Id#2/16 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$1=2/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 HalfReuse: </12 } Tile{ HalfReuse: & OutlineConstants-Commands/13 AsIs: t.Tables#2/14 } Tile{ AsIs: e.Commands#1/10 } >/17 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$2=2/4 AsIs: s.ScopeClass#1/5 AsIs: (/8 AsIs: e.Name#1/6 AsIs: )/9 HalfReuse: </12 } Tile{ HalfReuse: & OutlineConstants-Commands/13 AsIs: t.Tables#2/14 } Tile{ AsIs: e.Commands#1/10 } >/17 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_call(vm, context[17]);
-  refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S1A2]);
+  refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S2A2]);
   refalrts::reinit_open_call(context[12]);
   refalrts::reinit_name(context[13], functions[efunc_OutlineConstantsm_Commands]);
   refalrts::push_stack( vm, context[1] );
@@ -3223,10 +3256,10 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S1A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S1A1("OutlineConstants-WithNative$1=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_WithNative_S1A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S2A1("OutlineConstants-WithNative$2=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_WithNative_S2A1);
 
 
-static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S3A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3235,7 +3268,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S2A1(refalrts::V
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & OutlineConstants-WithNative$2=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 t.SrcPos#1/10 (/14 e.Code#1/12 )/15 t.Tables#2/16 s.Id#2/18 >/1
+  // </0 & OutlineConstants-WithNative$3=1/4 s.ScopeClass#1/5 (/8 e.Name#1/6 )/9 t.SrcPos#1/10 (/14 e.Code#1/12 )/15 t.Tables#2/16 s.Id#2/18 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3292,10 +3325,10 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S2A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S2A1("OutlineConstants-WithNative$2=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_WithNative_S2A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S3A1("OutlineConstants-WithNative$3=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_WithNative_S3A1);
 
 
-static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S3A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S4A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3304,7 +3337,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S3A2(refalrts::V
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  // </0 & OutlineConstants-WithNative$3=2/4 s.Definition#1/5 s.ScopeClass#1/6 (/9 e.Name#1/7 )/10 t.Tables#3/11 s.Id#3/13 >/1
+  // </0 & OutlineConstants-WithNative$4=2/4 s.Definition#1/5 s.ScopeClass#1/6 (/9 e.Name#1/7 )/10 t.Tables#3/11 s.Id#3/13 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3350,10 +3383,10 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S3A2(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S3A2("OutlineConstants-WithNative$3=2", 2463563627U, 39141868U, func_gen_OutlineConstantsm_WithNative_S3A2);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S4A2("OutlineConstants-WithNative$4=2", 336254288U, 2550877372U, func_gen_OutlineConstantsm_WithNative_S4A2);
 
 
-static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S4A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S5A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -3362,7 +3395,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S4A1(refalrts::V
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & OutlineConstants-WithNative$4=1/4 t.Tables#2/5 s.Id#2/7 >/1
+  // </0 & OutlineConstants-WithNative$5=1/4 t.Tables#2/5 s.Id#2/7 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -3379,7 +3412,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S4A1(refalrts::V
   //DEBUG: s.Id#2: 7
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & OutlineConstants-WithNative$4=1/4 {REMOVED TILE} s.Id#2/7 >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & OutlineConstants-WithNative$5=1/4 {REMOVED TILE} s.Id#2/7 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ AsIs: t.Tables#2/5 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -3389,7 +3422,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_WithNative_S4A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S4A1("OutlineConstants-WithNative$4=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_WithNative_S4A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_WithNative_S5A1("OutlineConstants-WithNative$5=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_WithNative_S5A1);
 
 
 static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3423,6 +3456,29 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & OutlineConstants-WithNative/4 t.Tables#1/10 (/7 # UnitName/9 e.SrcName#1/12 )/8 >/1
+    context[12] = context[5];
+    context[13] = context[6];
+    if( ! refalrts::ident_term( identifiers[ident_UnitName], context[9] ) )
+      continue;
+    // closed e.SrcName#1 as range 12
+    //DEBUG: t.Tables#1: 10
+    //DEBUG: e.SrcName#1: 12
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & OutlineConstants-WithNative/4 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Tables#1/10 AsIs: (/7 AsIs: # UnitName/9 AsIs: e.SrcName#1/12 AsIs: )/8 } Tile{ ]] }
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[10], context[8] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
   do {
     // </0 & OutlineConstants-WithNative/4 t.new#4/10 (/7 s.new#5/9 s.new#6/14 e.new#7/12 )/8 >/1
     context[12] = context[5];
@@ -3459,12 +3515,12 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OutlineConstants-WithNative$1=1/9 AsIs: s.ScopeClass#1/14 AsIs: (/19 AsIs: e.Name#1/21 AsIs: )/20 } (/25 Tile{ AsIs: e.Commands#1/23 } )/26 Tile{ AsIs: </0 Reuse: & UpdateFuncTable/4 AsIs: t.Tables#1/10 } e.Name#1/21/27 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OutlineConstants-WithNative$2=1/9 AsIs: s.ScopeClass#1/14 AsIs: (/19 AsIs: e.Name#1/21 AsIs: )/20 } (/25 Tile{ AsIs: e.Commands#1/23 } )/26 Tile{ AsIs: </0 Reuse: & UpdateFuncTable/4 AsIs: t.Tables#1/10 } e.Name#1/21/27 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
         refalrts::alloc_open_bracket(vm, context[25]);
         refalrts::alloc_close_bracket(vm, context[26]);
         refalrts::copy_evar(vm, context[27], context[28], context[21], context[22]);
         refalrts::reinit_open_call(context[7]);
-        refalrts::reinit_name(context[9], functions[efunc_gen_OutlineConstantsm_WithNative_S1A1]);
+        refalrts::reinit_name(context[9], functions[efunc_gen_OutlineConstantsm_WithNative_S2A1]);
         refalrts::update_name(context[4], functions[efunc_UpdateFuncTable]);
         refalrts::reinit_close_call(context[8]);
         refalrts::push_stack( vm, context[1] );
@@ -3507,12 +3563,12 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OutlineConstants-WithNative$2=1/9 AsIs: s.ScopeClass#1/14 AsIs: (/19 AsIs: e.Name#1/21 AsIs: )/20 AsIs: t.SrcPos#1/25 } (/27 Tile{ AsIs: e.Code#1/23 } )/28 Tile{ AsIs: </0 Reuse: & UpdateFuncTable/4 AsIs: t.Tables#1/10 } e.Name#1/21/29 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OutlineConstants-WithNative$3=1/9 AsIs: s.ScopeClass#1/14 AsIs: (/19 AsIs: e.Name#1/21 AsIs: )/20 AsIs: t.SrcPos#1/25 } (/27 Tile{ AsIs: e.Code#1/23 } )/28 Tile{ AsIs: </0 Reuse: & UpdateFuncTable/4 AsIs: t.Tables#1/10 } e.Name#1/21/29 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
       refalrts::alloc_open_bracket(vm, context[27]);
       refalrts::alloc_close_bracket(vm, context[28]);
       refalrts::copy_evar(vm, context[29], context[30], context[21], context[22]);
       refalrts::reinit_open_call(context[7]);
-      refalrts::reinit_name(context[9], functions[efunc_gen_OutlineConstantsm_WithNative_S2A1]);
+      refalrts::reinit_name(context[9], functions[efunc_gen_OutlineConstantsm_WithNative_S3A1]);
       refalrts::update_name(context[4], functions[efunc_UpdateFuncTable]);
       refalrts::reinit_close_call(context[8]);
       refalrts::push_stack( vm, context[1] );
@@ -3554,7 +3610,7 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     refalrts::alloc_open_call(vm, context[17]);
-    refalrts::alloc_name(vm, context[19], functions[efunc_gen_OutlineConstantsm_WithNative_S3C1]);
+    refalrts::alloc_name(vm, context[19], functions[efunc_gen_OutlineConstantsm_WithNative_S4C1]);
     refalrts::alloc_open_call(vm, context[20]);
     refalrts::alloc_name(vm, context[21], functions[efunc_OneOf]);
     refalrts::copy_stvar(vm, context[22], context[9]);
@@ -3585,7 +3641,7 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
       return rec_res;
     refalrts::this_is_generated_function(vm);
     do {
-      // </17 & OutlineConstants-WithNative$3?1/21 # True/22 >/18
+      // </17 & OutlineConstants-WithNative$4?1/21 # True/22 >/18
       context[19] = 0;
       context[20] = 0;
       context[21] = refalrts::call_left( context[19], context[20], context[17], context[18] );
@@ -3601,9 +3657,9 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # True/22 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$3=2/4 } Tile{ AsIs: s.Definition#1/9 AsIs: s.ScopeClass#1/14 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Name#1/15 } Tile{ AsIs: )/8 AsIs: </17 Reuse: & UpdateFuncTable/21 } Tile{ AsIs: t.Tables#1/10 } e.Name#1/15/23 Tile{ AsIs: >/18 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$4=2/4 } Tile{ AsIs: s.Definition#1/9 AsIs: s.ScopeClass#1/14 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Name#1/15 } Tile{ AsIs: )/8 AsIs: </17 Reuse: & UpdateFuncTable/21 } Tile{ AsIs: t.Tables#1/10 } e.Name#1/15/23 Tile{ AsIs: >/18 AsIs: >/1 ]] }
       refalrts::copy_evar(vm, context[23], context[24], context[15], context[16]);
-      refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S3A2]);
+      refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S4A2]);
       refalrts::update_name(context[21], functions[efunc_UpdateFuncTable]);
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
@@ -3641,8 +3697,8 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$4=1/4 } Tile{ HalfReuse: </7 HalfReuse: & UpdateIdentTable/9 } Tile{ AsIs: t.Tables#1/10 } Tile{ AsIs: e.Name#1/12 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
-    refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S4A1]);
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & OutlineConstants-WithNative$5=1/4 } Tile{ HalfReuse: </7 HalfReuse: & UpdateIdentTable/9 } Tile{ AsIs: t.Tables#1/10 } Tile{ AsIs: e.Name#1/12 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+    refalrts::update_name(context[4], functions[efunc_gen_OutlineConstantsm_WithNative_S5A1]);
     refalrts::reinit_open_call(context[7]);
     refalrts::reinit_name(context[9], functions[efunc_UpdateIdentTable]);
     refalrts::reinit_close_call(context[8]);
@@ -3684,7 +3740,7 @@ static refalrts::FnResult func_OutlineConstantsm_WithNative(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OutlineConstantsm_WithNative("OutlineConstants-WithNative", 2463563627U, 39141868U, func_OutlineConstantsm_WithNative);
+static refalrts::NativeReference nat_ref_OutlineConstantsm_WithNative("OutlineConstants-WithNative", 336254288U, 2550877372U, func_OutlineConstantsm_WithNative);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_RASLOnly_S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3738,7 +3794,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_RASLOnly_S1A1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_RASLOnly_S1A1("OutlineConstants-RASLOnly$1=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_RASLOnly_S1A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_RASLOnly_S1A1("OutlineConstants-RASLOnly$1=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_RASLOnly_S1A1);
 
 
 static refalrts::FnResult func_OutlineConstantsm_RASLOnly(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3855,7 +3911,7 @@ static refalrts::FnResult func_OutlineConstantsm_RASLOnly(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OutlineConstantsm_RASLOnly("OutlineConstants-RASLOnly", 2463563627U, 39141868U, func_OutlineConstantsm_RASLOnly);
+static refalrts::NativeReference nat_ref_OutlineConstantsm_RASLOnly("OutlineConstants-RASLOnly", 336254288U, 2550877372U, func_OutlineConstantsm_RASLOnly);
 
 
 static refalrts::FnResult func_OutlineConstantsm_Commands(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3889,7 +3945,7 @@ static refalrts::FnResult func_OutlineConstantsm_Commands(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OutlineConstantsm_Commands("OutlineConstants-Commands", 2463563627U, 39141868U, func_OutlineConstantsm_Commands);
+static refalrts::NativeReference nat_ref_OutlineConstantsm_Commands("OutlineConstants-Commands", 336254288U, 2550877372U, func_OutlineConstantsm_Commands);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3947,7 +4003,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S1A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S1A1("OutlineConstants-OneCommand$1=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S1A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S1A1("OutlineConstants-OneCommand$1=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S1A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4008,7 +4064,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S2A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S2A1("OutlineConstants-OneCommand$2=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S2A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S2A1("OutlineConstants-OneCommand$2=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S2A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S3A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4069,7 +4125,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S3A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S3A1("OutlineConstants-OneCommand$3=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S3A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S3A1("OutlineConstants-OneCommand$3=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S3A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S4A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4130,7 +4186,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S4A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S4A1("OutlineConstants-OneCommand$4=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S4A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S4A1("OutlineConstants-OneCommand$4=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S4A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S5A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4191,7 +4247,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S5A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S5A1("OutlineConstants-OneCommand$5=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S5A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S5A1("OutlineConstants-OneCommand$5=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S5A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S6A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4249,7 +4305,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S6A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S6A1("OutlineConstants-OneCommand$6=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S6A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S6A1("OutlineConstants-OneCommand$6=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S6A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S7A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4310,7 +4366,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S7A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S7A1("OutlineConstants-OneCommand$7=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S7A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S7A1("OutlineConstants-OneCommand$7=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S7A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S8A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4371,7 +4427,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S8A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S8A1("OutlineConstants-OneCommand$8=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S8A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S8A1("OutlineConstants-OneCommand$8=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S8A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S9A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4413,7 +4469,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S9A1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S9A1("OutlineConstants-OneCommand$9=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S9A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S9A1("OutlineConstants-OneCommand$9=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S9A1);
 
 
 static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S10A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4463,7 +4519,7 @@ static refalrts::FnResult func_gen_OutlineConstantsm_OneCommand_S10A1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S10A1("OutlineConstants-OneCommand$10=1", 2463563627U, 39141868U, func_gen_OutlineConstantsm_OneCommand_S10A1);
+static refalrts::NativeReference nat_ref_gen_OutlineConstantsm_OneCommand_S10A1("OutlineConstants-OneCommand$10=1", 336254288U, 2550877372U, func_gen_OutlineConstantsm_OneCommand_S10A1);
 
 
 static refalrts::FnResult func_OutlineConstantsm_OneCommand(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4931,7 +4987,7 @@ static refalrts::FnResult func_OutlineConstantsm_OneCommand(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_OutlineConstantsm_OneCommand("OutlineConstants-OneCommand", 2463563627U, 39141868U, func_OutlineConstantsm_OneCommand);
+static refalrts::NativeReference nat_ref_OutlineConstantsm_OneCommand("OutlineConstants-OneCommand", 336254288U, 2550877372U, func_OutlineConstantsm_OneCommand);
 
 
 static refalrts::FnResult func_gen_UpdateFuncTable_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4980,7 +5036,7 @@ static refalrts::FnResult func_gen_UpdateFuncTable_A1(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_UpdateFuncTable_A1("UpdateFuncTable=1", 2463563627U, 39141868U, func_gen_UpdateFuncTable_A1);
+static refalrts::NativeReference nat_ref_gen_UpdateFuncTable_A1("UpdateFuncTable=1", 336254288U, 2550877372U, func_gen_UpdateFuncTable_A1);
 
 
 static refalrts::FnResult func_UpdateFuncTable(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5039,7 +5095,7 @@ static refalrts::FnResult func_UpdateFuncTable(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UpdateFuncTable("UpdateFuncTable", 2463563627U, 39141868U, func_UpdateFuncTable);
+static refalrts::NativeReference nat_ref_UpdateFuncTable("UpdateFuncTable", 336254288U, 2550877372U, func_UpdateFuncTable);
 
 
 static refalrts::FnResult func_gen_UpdateIdentTable_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5087,7 +5143,7 @@ static refalrts::FnResult func_gen_UpdateIdentTable_A1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_UpdateIdentTable_A1("UpdateIdentTable=1", 2463563627U, 39141868U, func_gen_UpdateIdentTable_A1);
+static refalrts::NativeReference nat_ref_gen_UpdateIdentTable_A1("UpdateIdentTable=1", 336254288U, 2550877372U, func_gen_UpdateIdentTable_A1);
 
 
 static refalrts::FnResult func_UpdateIdentTable(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5148,7 +5204,7 @@ static refalrts::FnResult func_UpdateIdentTable(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UpdateIdentTable("UpdateIdentTable", 2463563627U, 39141868U, func_UpdateIdentTable);
+static refalrts::NativeReference nat_ref_UpdateIdentTable("UpdateIdentTable", 336254288U, 2550877372U, func_UpdateIdentTable);
 
 
 static refalrts::FnResult func_UpdateTable(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5263,7 +5319,7 @@ static refalrts::FnResult func_UpdateTable(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UpdateTable("UpdateTable", 2463563627U, 39141868U, func_UpdateTable);
+static refalrts::NativeReference nat_ref_UpdateTable("UpdateTable", 336254288U, 2550877372U, func_UpdateTable);
 
 
 static refalrts::FnResult func_MarkFunctionGenMode(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5445,7 +5501,7 @@ static refalrts::FnResult func_MarkFunctionGenMode(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkFunctionGenMode("MarkFunctionGenMode", 2463563627U, 39141868U, func_MarkFunctionGenMode);
+static refalrts::NativeReference nat_ref_MarkFunctionGenMode("MarkFunctionGenMode", 336254288U, 2550877372U, func_MarkFunctionGenMode);
 
 
 static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5522,7 +5578,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", 2463563627U, 39141868U, func_gen_Map_Z1);
+static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", 336254288U, 2550877372U, func_gen_Map_Z1);
 
 
 static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5565,7 +5621,7 @@ static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", 2463563627U, 39141868U, func_gen_MapAccum_Z1);
+static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", 336254288U, 2550877372U, func_gen_MapAccum_Z1);
 
 
 static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5660,7 +5716,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z1("DoMapAccum@1", 2463563627U, 39141868U, func_gen_DoMapAccum_Z1);
+static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z1("DoMapAccum@1", 336254288U, 2550877372U, func_gen_DoMapAccum_Z1);
 
 
 static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5720,7 +5776,7 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z1("DoMapAccum-Aux@1", 2463563627U, 39141868U, func_gen_DoMapAccumm_Aux_Z1);
+static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z1("DoMapAccum-Aux@1", 336254288U, 2550877372U, func_gen_DoMapAccumm_Aux_Z1);
 
 
 //End of file

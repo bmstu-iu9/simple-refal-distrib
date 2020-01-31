@@ -5,16 +5,13 @@
 
 #include "refalrts.h"
 #include "refalrts-commands.h"
-#include "refalrts-utils.h"
-
-//FROM refalrts-dynamic
-#include "refalrts-dynamic.h"
-//FROM refalrts-functions
 #include "refalrts-functions.h"
-//FROM refalrts-profiler
-#include "refalrts-profiler.h"
-//FROM refalrts-vm
+#include "refalrts-native-module.h"
+#include "refalrts-utils.h"
 #include "refalrts-vm.h"
+
+//FROM refalrts-vm-api
+#include "refalrts-vm-api.h"
 
 //FROM refalrts-platform-specific
 #include "refalrts-platform-specific.h"
@@ -53,7 +50,7 @@ void refalrts::load_constants(
   assert(callee->tag == cDataFunction);
 
   RefalFunction *func = callee->function_info;
-  assert(func->rasl == RefalNativeFunction::run);
+  assert(func->rasl[0].cmd == refalrts::icPerformNative);
 
   RefalNativeFunction *nat_func = static_cast<RefalNativeFunction*>(func);
 
@@ -256,7 +253,7 @@ refalrts::Iter refalrts::tvar_right(
 bool refalrts::repeated_stvar_term(
   refalrts::VM *vm, refalrts::Iter stvar_sample, refalrts::Iter pos
 ) {
-  return vm->repeated_stvar_term(stvar_sample, pos);
+  return get_api(vm)->repeated_stvar_term(vm, stvar_sample, pos);
 }
 
 refalrts::Iter refalrts::repeated_stvar_left(
@@ -264,7 +261,7 @@ refalrts::Iter refalrts::repeated_stvar_left(
   refalrts::Iter& stvar, refalrts::Iter stvar_sample,
   refalrts::Iter& first, refalrts::Iter& last
 ) {
-  return vm->repeated_stvar_left(stvar, stvar_sample, first, last);
+  return get_api(vm)->repeated_stvar_left(vm, stvar, stvar_sample, first, last);
 }
 
 refalrts::Iter refalrts::repeated_stvar_right(
@@ -272,7 +269,9 @@ refalrts::Iter refalrts::repeated_stvar_right(
   refalrts::Iter& stvar, refalrts::Iter stvar_sample,
   refalrts::Iter& first, refalrts::Iter& last
 ) {
-  return vm->repeated_stvar_right(stvar, stvar_sample, first, last);
+  return get_api(vm)->repeated_stvar_right(
+    vm, stvar, stvar_sample, first, last
+  );
 }
 
 bool refalrts::repeated_evar_left(
@@ -281,8 +280,8 @@ bool refalrts::repeated_evar_left(
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample,
   refalrts::Iter& first, refalrts::Iter& last
 ) {
-  return vm->repeated_evar_left(
-    evar_b, evar_e, evar_b_sample, evar_e_sample, first, last
+  return get_api(vm)->repeated_evar_left(
+    vm, evar_b, evar_e, evar_b_sample, evar_e_sample, first, last
   );
 }
 
@@ -292,8 +291,8 @@ bool refalrts::repeated_evar_right(
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample,
   refalrts::Iter& first, refalrts::Iter& last
 ) {
-  return vm->repeated_evar_right(
-    evar_b, evar_e, evar_b_sample, evar_e_sample, first, last
+  return get_api(vm)->repeated_evar_right(
+    vm, evar_b, evar_e, evar_b_sample, evar_e_sample, first, last
   );
 }
 
@@ -323,90 +322,90 @@ unsigned refalrts::read_chars(
 // Операции построения результата
 
 void refalrts::reset_allocator(refalrts::VM *vm) {
-  vm->reset_allocator();
+  get_api(vm)->reset_allocator(vm);
 }
 
 void refalrts::copy_evar(
   refalrts::VM *vm, refalrts::Iter& evar_res_b, refalrts::Iter& evar_res_e,
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample
 ) {
-  vm->copy_evar(evar_res_b, evar_res_e, evar_b_sample, evar_e_sample);
+  get_api(vm)->copy_evar(vm, evar_res_b, evar_res_e, evar_b_sample, evar_e_sample);
 }
 
 void refalrts::copy_stvar(
   refalrts::VM *vm, refalrts::Iter& stvar_res, refalrts::Iter stvar_sample
 ) {
-  vm->copy_stvar(stvar_res, stvar_sample);
+  get_api(vm)->copy_stvar(vm, stvar_res, stvar_sample);
 }
 
 void refalrts::alloc_copy_evar(
   refalrts::VM *vm, refalrts::Iter& res,
   refalrts::Iter evar_b_sample, refalrts::Iter evar_e_sample
 ) {
-  vm->alloc_copy_evar(res, evar_b_sample, evar_e_sample);
+  get_api(vm)->alloc_copy_evar(vm, res, evar_b_sample, evar_e_sample);
 }
 
 void refalrts::alloc_copy_svar_(
   refalrts::VM *vm, refalrts::Iter& svar_res, refalrts::Iter svar_sample
 ) {
-  vm->copy_node(svar_res, svar_sample);
+  get_api(vm)->alloc_copy_svar(vm, svar_res, svar_sample);
 }
 
 
 void refalrts::alloc_char(refalrts::VM *vm, refalrts::Iter& res, char ch) {
-  vm->alloc_char(res, ch);
+  get_api(vm)->alloc_char(vm, res, ch);
 }
 
 void refalrts::alloc_number(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalNumber num
 ) {
-  vm->alloc_number(res, num);
+  get_api(vm)->alloc_number(vm, res, num);
 }
 
 void refalrts::alloc_name(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalFunction *fn
 ) {
-  vm->alloc_name(res, fn);
+  get_api(vm)->alloc_name(vm, res, fn);
 }
 
 void refalrts::alloc_ident(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::RefalIdentifier ident
 ) {
-  vm->alloc_ident(res, ident);
+  get_api(vm)->alloc_ident(vm, res, ident);
 }
 
 void refalrts::alloc_open_adt(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_open_adt(res);
+  get_api(vm)->alloc_open_adt(vm, res);
 }
 
 void refalrts::alloc_close_adt(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_close_adt(res);
+  get_api(vm)->alloc_close_adt(vm, res);
 }
 
 void refalrts::alloc_open_bracket(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_open_bracket(res);
+  get_api(vm)->alloc_open_bracket(vm, res);
 }
 
 void refalrts::alloc_close_bracket(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_close_bracket(res);
+  get_api(vm)->alloc_close_bracket(vm, res);
 }
 
 void refalrts::alloc_open_call(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_open_call(res);
+  get_api(vm)->alloc_open_call(vm, res);
 }
 
 void refalrts::alloc_close_call(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_close_call(res);
+  get_api(vm)->alloc_close_call(vm, res);
 }
 
 void refalrts::alloc_closure_head(refalrts::VM *vm, refalrts::Iter& res) {
-  vm->alloc_closure_head(res);
+  get_api(vm)->alloc_closure_head(vm, res);
 }
 
 void refalrts::alloc_unwrapped_closure(
   refalrts::VM *vm, refalrts::Iter& res, refalrts::Iter head
 ) {
-  vm->alloc_unwrapped_closure(res, head);
+  get_api(vm)->alloc_unwrapped_closure(vm, res, head);
 }
 
 void refalrts::alloc_chars(
@@ -414,33 +413,24 @@ void refalrts::alloc_chars(
   refalrts::Iter& res_b, refalrts::Iter& res_e,
   const char buffer[], unsigned buflen
 ) {
-  vm->alloc_chars(res_b, res_e, buffer, buflen);
+  get_api(vm)->alloc_chars(vm, res_b, res_e, buffer, buflen);
 }
 
 void refalrts::alloc_string(
   refalrts::VM *vm,
   refalrts::Iter& res_b, refalrts::Iter& res_e, const char *string
 ) {
-  vm->alloc_string(res_b, res_e, string);
+  get_api(vm)->alloc_string(vm, res_b, res_e, string);
 }
 
 refalrts::FnResult refalrts::checked_alloc(
   refalrts::VM *vm, refalrts::CheckedAllocFn function, void *data
 ) {
-  jmp_buf on_memory_fail;
-  jmp_buf *old = vm->reset_memory_fail(&on_memory_fail);
-  if (setjmp(on_memory_fail)) {
-    vm->reset_memory_fail(old);
-    return cNoMemory;
-  }
-
-  FnResult res = function(vm, data);
-  vm->reset_memory_fail(old);
-  return res;
+  return get_api(vm)->checked_alloc(vm, function, data);
 }
 
 void refalrts::push_stack(refalrts::VM *vm, refalrts::Iter call_bracket) {
-  vm->push_stack(call_bracket);
+  get_api(vm)->push_stack(vm, call_bracket);
 }
 
 void refalrts::link_brackets(Iter left, Iter right) {
@@ -448,7 +438,48 @@ void refalrts::link_brackets(Iter left, Iter right) {
 }
 
 void refalrts::reinit_svar(refalrts::Iter res, refalrts::Iter sample) {
-  return VM::reinit_svar(res, sample);
+  // КОД СКОПИРОВАН ИЗ refalrts-vm.cpp!!!
+  // Так сделано ради возможности собрать .dll-ку без refalrts-vm.cpp,
+  // см. задачу #170.
+
+  // TODO: отрефакторить как-нибудь когда-нибудь
+  res->tag = sample->tag;
+
+  switch(sample->tag) {
+    case refalrts::cDataChar:
+      res->char_info = sample->char_info;
+      break;
+
+    case refalrts::cDataNumber:
+      res->number_info = sample->number_info;
+      break;
+
+    case refalrts::cDataFunction:
+      res->function_info = sample->function_info;
+      break;
+
+    case refalrts::cDataIdentifier:
+      res->ident_info = sample->ident_info;
+      break;
+
+    case refalrts::cDataClosure: {
+      res->tag = refalrts::cDataClosure;
+      refalrts::Iter head = sample->link_info;
+      res->link_info = head;
+      ++ (head->number_info);
+    }
+    break;
+
+    case refalrts::cDataFile:
+      res->file_info = sample->file_info;
+      break;
+
+    /*
+      Копируем только атом, скобок быть не должно.
+    */
+    default:
+      refalrts_switch_default_violation(sample->tag);
+  }
 }
 
 void refalrts::reinit_char(refalrts::Iter res, char ch) {
@@ -538,7 +569,7 @@ refalrts::Iter refalrts::splice_evar(
 void refalrts::splice_to_freelist(
   refalrts::VM *vm, refalrts::Iter begin, refalrts::Iter end
 ) {
-  vm->splice_to_freelist(begin, end);
+  get_api(vm)->splice_to_freelist(vm, begin, end);
 }
 
 extern void refalrts::splice_to_freelist_open(
@@ -552,7 +583,7 @@ extern void refalrts::splice_to_freelist_open(
 refalrts::Iter refalrts::splice_from_freelist(
   refalrts::VM *vm, refalrts::Iter pos
 ) {
-  return vm->splice_from_freelist(pos);
+  return get_api(vm)->splice_from_freelist(vm, pos);
 }
 
 /*
@@ -605,7 +636,7 @@ refalrts::Iter refalrts::wrap_closure(refalrts::Iter closure) {
 // Средства профилирования
 
 void refalrts::this_is_generated_function(refalrts::VM *vm) {
-  vm->profiler()->start_generated_function();
+  get_api(vm)->start_generated_function(vm);
 }
 
 double refalrts::ticks_per_second() {
@@ -615,17 +646,15 @@ double refalrts::ticks_per_second() {
 void refalrts::read_performance_counters(
   refalrts::VM *vm, double counters[]
 ) {
-  vm->profiler()->read_counters(counters);
-  vm->read_counters(counters);
-  vm->domain()->read_counters(counters);
+  get_api(vm)->read_performance_counters(vm, counters);
 }
 
 void refalrts::stop_sentence(refalrts::VM *vm) {
-  vm->profiler()->stop_sentence();
+  get_api(vm)->stop_sentence(vm);
 }
 
 void refalrts::start_e_loop(refalrts::VM *vm) {
-  vm->profiler()->start_e_loop();
+  get_api(vm)->start_e_loop(vm);
 }
 
 //------------------------------------------------------------------------------
@@ -633,17 +662,17 @@ void refalrts::start_e_loop(refalrts::VM *vm) {
 // Прочие операции
 
 void refalrts::set_return_code(refalrts::VM *vm, int code) {
-  vm->set_return_code(code);
+  get_api(vm)->set_return_code(vm, code);
 }
 
 const char* refalrts::arg(refalrts::VM *vm, unsigned int param) {
-  return vm->arg(param);
+  return get_api(vm)->arg(vm, param);
 }
 
 void refalrts::debug_print_expr(
   refalrts::VM *vm, void *file, refalrts::Iter first, refalrts::Iter last
 ) {
-  vm->print_seq(static_cast<FILE*>(file), first, last);
+  get_api(vm)->print_seq(vm, file, first, last);
 }
 
 //==============================================================================
@@ -654,48 +683,10 @@ void refalrts::debug_print_expr(
 
 // Идентификаторы
 
-refalrts::RefalIdentDescr::RefalIdentDescr(const char *name)
-  : m_name(0)
-{
-  size_t length = strlen(name);
-  m_name = static_cast<char*>(memcpy(new char[length + 1], name, length + 1));
-}
-
-refalrts::RefalIdentDescr::~RefalIdentDescr() {
-  delete[] m_name;
-}
-
-refalrts::RefalIdentifier refalrts::RefalIdentDescr::implode(
-  refalrts::Domain *domain, const char *name
-) {
-  if (! name) {
-    name = "";
-  }
-
-  RefalIdentifier res = domain->lookup_ident(name);
-  if (! res) {
-    try {
-      res = new RefalIdentDescr(name);
-      bool allocated = domain->register_ident(res);
-
-      if (! allocated) {
-        delete res;
-        res = 0;
-      }
-    } catch (std::bad_alloc&) {
-      if (res) {
-        delete res;
-        res = 0;
-      }
-    }
-  }
-  return res;
-}
-
 refalrts::RefalIdentifier refalrts::ident_implode(
   refalrts::VM *vm, const char *name
 ) {
-  return ident_implode(vm->domain(), name);
+  return get_api(vm)->ident_implode(vm, name);
 }
 
 //------------------------------------------------------------------------------
@@ -706,14 +697,15 @@ refalrts::RefalFunction *
 refalrts::lookup_function_in_domain(
   refalrts::VM *vm, const refalrts::RefalFuncName& name
 ) {
-  return vm->domain()->lookup_function(name);
+  return get_api(vm)->lookup_function_in_domain(vm, name);
 }
 
 refalrts::RefalFunction *
 refalrts::lookup_function_in_module(
+  refalrts::VM *vm,
   refalrts::Module *module, const refalrts::RefalFuncName& name
 ) {
-  return module->lookup_function(name);
+  return get_api(vm)->lookup_function_in_module(module, name);
 }
 
 const refalrts::RefalFuncName *refalrts::function_name(
@@ -747,26 +739,20 @@ refalrts::NativeReference::NativeReference(
 //==============================================================================
 
 refalrts::FnResult refalrts::recursive_call_main_loop(refalrts::VM *vm) {
-  jmp_buf *old = vm->reset_memory_fail(0);
-
-  const  refalrts::RASLCommand rasl[] = {
-    { refalrts::icPushState, 0, 0, 0 },
-    { refalrts::icNextStep, 0, 0, 0 },
-    { refalrts::icMainLoopReturnSuccess, 0, 0, 0 }
-  };
-  FnResult res = vm->main_loop(rasl);
-  vm->reset_memory_fail(old);
-  return res;
+  return get_api(vm)->main_loop(vm);
 }
 
 
 //==============================================================================
 
-void refalrts::SwitchDefaultViolation::print() {
+void refalrts::switch_default_violation_impl(
+  const char *filename, int line_no, long bad_switch_value, const char *bad_expr
+) {
   fprintf(
     stderr, "%s:%d:INTERNAL ERROR: switch value %s == %ld not handled\n",
-    m_filename, m_line, m_bad_expr, m_bad_switch_value
+    filename, line_no, bad_expr, bad_switch_value
   );
+  exit(151);
 }
 
 //==============================================================================
@@ -778,15 +764,11 @@ refalrts::GlobalRefBase::GlobalRefBase(size_t size)
 }
 
 void *refalrts::GlobalRefBase::ptr(refalrts::VM *vm) {
-  return ptr(vm->module());
-}
-
-void *refalrts::GlobalRefBase::ptr(refalrts::Module *module) {
-  return module->global_variable(m_offset);
+  return get_api(vm)->ref_ptr(vm, m_offset);
 }
 
 refalrts::Module *refalrts::current_module(refalrts::VM *vm) {
-  return vm->module();
+  return get_api(vm)->current_module(vm);
 }
 
 namespace {
@@ -809,14 +791,14 @@ refalrts::Module *refalrts::load_module(
   if (! event) {
     event = empty_module_loading_error_callback;
   }
-  return vm->domain()->load_module(vm, pos, name, event, callback_data, result);
+  return get_api(vm)->load_module(vm, pos, name, event, callback_data, result);
 }
 
 void refalrts::unload_module(
   refalrts::VM *vm, refalrts::Iter pos, refalrts::Module *module,
   refalrts::FnResult& result
 ) {
-  return vm->domain()->unload_module(vm, pos, module, result);
+  return get_api(vm)->unload_module(vm, pos, module, result);
 }
 
 refalrts::RefalFunction * refalrts::load_module_rep(
@@ -827,30 +809,24 @@ refalrts::RefalFunction * refalrts::load_module_rep(
   if (! event) {
     event = empty_module_loading_error_callback;
   }
-  Module *module = refalrts::load_module(vm, pos, name, event, callback_data, result);
-  return module ? module->representant() : 0;
+  return get_api(vm)->load_module_rep(
+    vm, pos, name, event, callback_data, result
+  );
 }
 
 bool refalrts::unload_module(
   refalrts::VM *vm, refalrts::Iter pos, refalrts::RefalFunction *module_rep,
   refalrts::FnResult& result
 ) {
-  ModuleRepresentant *rep = dynamic_cast<ModuleRepresentant*>(module_rep);
-  if (rep != 0 && rep->module != 0) {
-    refalrts::unload_module(vm, pos, rep->module, result);
-    return true;
-  } else {
-    return false;
-  }
+  return get_api(vm)->unload_module_rep(vm, pos, module_rep, result);
 }
 
 refalrts::Module *refalrts::module_from_function_rep(
-  refalrts::RefalFunction *module_rep
+  refalrts::VM *vm, refalrts::RefalFunction *module_rep
 ) {
-  ModuleRepresentant *rep = dynamic_cast<ModuleRepresentant*>(module_rep);
-  return rep != 0 ? rep->module : 0;
+  return get_api(vm)->module_from_function_rep(module_rep);
 }
 
 bool refalrts::dangerous_state(refalrts::VM *vm) {
-  return vm->domain()->dangerous_state();
+  return get_api(vm)->dangerous_state(vm);
 }
